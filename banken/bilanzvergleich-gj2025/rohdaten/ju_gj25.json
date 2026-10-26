@@ -1,0 +1,298 @@
+{
+ "Deutsche Bank AG": {
+  "0": 6183.0,
+  "-1": 2883.0
+ },
+ "UniCredit Bank GmbH (HypoVereinsbank)": {
+  "0": 2000.0,
+  "-1": 1920.0
+ },
+ "ING-DiBa AG": {
+  "0": 0.0,
+  "-1": 0.0
+ },
+ "TOYOTA Kreditbank GmbH": {
+  "0": 296.235,
+  "-1": 400.635
+ },
+ "Volkswagen Bank GmbH": {
+  "0": 0.0,
+  "-1": 0.0
+ },
+ "Aareal Bank AG": {
+  "0": -81.1,
+  "-1": 1.988
+ },
+ "Deutsche Pfandbriefbank AG": {
+  "0": 298.0,
+  "-1": 40.0
+ },
+ "Oldenburgische Landesbank AG": {
+  "0": 215.8,
+  "-1": 365.5
+ },
+ "Hamburg Commercial Bank AG": {
+  "0": 45.903,
+  "-1": 30.583
+ },
+ "UmweltBank AG": {
+  "0": 1.286,
+  "-1": 0.0
+ },
+ "National-Bank AG": {
+  "0": 23.428,
+  "-1": 21.298
+ },
+ "Joh. Berenberg, Gossler & Co. KG": {
+  "0": 0.161,
+  "-1": 90.0
+ },
+ "MERKUR PRIVATBANK KGaA": {
+  "0": 12.579,
+  "-1": 11.587
+ },
+ "Baader Bank AG": {
+  "0": 38.0,
+  "-1": 19.156
+ },
+ "Isbank AG": {
+  "0": 30.764,
+  "-1": 36.154
+ },
+ "Münchener Hypothekenbank eG (MünchenerHyp)": {
+  "0": 57.734,
+  "-1": 56.563
+ },
+ "BBBank eG": {
+  "0": 20.56,
+  "-1": 19.758
+ },
+ "Berliner Volksbank eG": {
+  "0": 39.954,
+  "-1": 39.135
+ },
+ "Frankfurter Volksbank Rhein/Main eG": {
+  "0": 17.39,
+  "-1": 17.598
+ },
+ "Sparda-Bank Baden-Württemberg eG": {
+  "0": 13.955,
+  "-1": 14.88
+ },
+ "Volksbank Darmstadt Mainz eG": {
+  "0": 19.65,
+  "-1": 18.522
+ },
+ "Volksbank Mittelhessen eG": {
+  "0": 33.256,
+  "-1": 58.628
+ },
+ "Volksbank eG – Die Gestalterbank": {
+  "0": 25.186,
+  "-1": 22.758
+ },
+ "Sparda-Bank West eG": {
+  "0": 15.241,
+  "-1": 13.502
+ },
+ "meine Volksbank Raiffeisenbank eG": {
+  "0": 52.385,
+  "-1": 46.392
+ },
+ "Volksbank pur eG": {
+  "0": 17.004,
+  "-1": 15.789
+ },
+ "Sparda-Bank Südwest eG": {
+  "0": 15.0,
+  "-1": 0.254
+ },
+ "Dortmunder Volksbank eG": {
+  "0": 19.336,
+  "-1": 16.637
+ },
+ "GLS Gemeinschaftsbank eG": {
+  "0": 18.482,
+  "-1": 17.861
+ },
+ "Volksbank im Münsterland eG": {
+  "0": 16.62,
+  "-1": 16.083
+ },
+ "VerbundVolksbank OWL eG": {
+  "0": 25.528,
+  "-1": 24.199
+ },
+ "Volksbank in Ostwestfalen eG": {
+  "0": 21.012,
+  "-1": 20.73
+ },
+ "Volksbank Kraichgau eG": {
+  "0": 19.202,
+  "-1": 17.438
+ },
+ "Sparda-Bank Hessen eG": {
+  "0": 10.309,
+  "-1": 10.07
+ },
+ "Hannoversche Volksbank eG": {
+  "0": 17.064,
+  "-1": 16.866
+ },
+ "Evangelische Bank eG": {
+  "0": 11.095,
+  "-1": 10.42
+ },
+ "Volksbank Stuttgart eG": {
+  "0": 22.117,
+  "-1": 21.95
+ },
+ "Pax-Bank für Kirche und Caritas eG": {
+  "0": 19.897,
+  "-1": 6.299
+ },
+ "Wiesbadener Volksbank eG": {
+  "0": 13.915,
+  "-1": 13.772
+ },
+ "Sparda-Bank Berlin eG": {
+  "0": 4.55,
+  "-1": 4.761
+ },
+ "VR Bank RheinAhrEifel eG": {
+  "0": 10.695,
+  "-1": 10.135
+ },
+ "Vereinigte VR Bank Kur- und Rheinpfalz eG": {
+  "0": 10.046,
+  "-1": 9.982
+ },
+ "Volksbank Köln Bonn eG": {
+  "0": 15.044,
+  "-1": 14.125
+ },
+ "BANK IM BISTUM ESSEN eG": {
+  "0": 7.235,
+  "-1": 7.369
+ },
+ "VR-Bank Bonn Rhein-Sieg eG": {
+  "0": 14.045,
+  "-1": 14.007
+ },
+ "Bank für Kirche und Diakonie eG – KD-Bank": {
+  "0": 13.439,
+  "-1": 13.13
+ },
+ "Volksbank BRAWO eG": {
+  "0": 0.187,
+  "-1": 26.531
+ },
+ "VR-Bank Ludwigsburg eG": {
+  "0": 7.276,
+  "-1": 7.099
+ },
+ "Volksbank Mittlerer Neckar eG": {
+  "0": 9.431,
+  "-1": 8.639
+ },
+ "Sparda-Bank Hannover eG": {
+  "0": 7.713,
+  "-1": 7.562
+ },
+ "Vereinigte Volksbanken eG": {
+  "0": 4.353,
+  "-1": 3.8
+ },
+ "DZ BANK AG Deutsche Zentral-Genossenschaftsbank": {
+  "0": 639.0,
+  "-1": 425.0
+ },
+ "Hamburger Sparkasse AG (Haspa)": {
+  "0": 0.0,
+  "-1": 0.0
+ },
+ "Kreissparkasse Köln": {
+  "0": 63.712,
+  "-1": 77.682
+ },
+ "Sparkasse KölnBonn": {
+  "0": 36.6,
+  "-1": 37.43
+ },
+ "Frankfurter Sparkasse": {
+  "0": 60.0,
+  "-1": 60.0
+ },
+ "Sparkasse Hannover": {
+  "0": 20.0,
+  "-1": 20.541
+ },
+ "Sparkasse Pforzheim Calw": {
+  "0": 15.0,
+  "-1": 15.0
+ },
+ "Nassauische Sparkasse": {
+  "0": 38.228,
+  "-1": 64.97
+ },
+ "Sparkasse Nürnberg": {
+  "0": 27.317,
+  "-1": 22.318
+ },
+ "Sparkasse Dortmund": {
+  "0": 8.0,
+  "-1": 8.0
+ },
+ "Sparkasse Paderborn-Detmold-Höxter": {
+  "0": 14.695,
+  "-1": 14.641
+ },
+ "Sparkasse Westmünsterland": {
+  "0": 15.026,
+  "-1": 15.026
+ },
+ "Sparkasse Krefeld": {
+  "0": 7.701,
+  "-1": 7.664
+ },
+ "Sparkasse Holstein": {
+  "0": 18.053,
+  "-1": 17.578
+ },
+ "Sparkasse Heidelberg": {
+  "0": 6.31,
+  "-1": 6.251
+ },
+ "Landesbank Baden-Württemberg (LBBW)": {
+  "0": 23.0,
+  "-1": 350.0
+ },
+ "Landesbank Hessen-Thüringen Girozentrale (Helaba)": {
+  "0": 466.0,
+  "-1": 246.0
+ },
+ "Bayerische Landesbank (BayernLB)": {
+  "0": 450.0,
+  "-1": 800.0
+ },
+ "Norddeutsche Landesbank Girozentrale (NORD/LB)": {
+  "0": 159.0,
+  "-1": 434.0
+ },
+ "Landesbank Berlin AG (seit 15.07.2025 BSK 1818 AG; Trägerin der Berliner Sparkasse)": {
+  "0": 0.0,
+  "-1": 0.0
+ },
+ "Landesbank Saar (SaarLB)": {
+  "0": 18.4,
+  "-1": 41.4
+ },
+ "Deutsche Kreditbank AG (DKB, Tochter der BayernLB)": {
+  "0": 296.235,
+  "-1": 400.635
+ },
+ "DekaBank Deutsche Girozentrale": {
+  "0": 400.161,
+  "-1": 300.073
+ }
+}

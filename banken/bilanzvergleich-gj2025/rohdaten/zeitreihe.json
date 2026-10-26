@@ -1,0 +1,1085 @@
+{
+ "items": [
+  {
+   "name": "Deutsche Bank AG",
+   "cal": {
+    "ju": {
+     "2025": 6183.0,
+     "2024": 2883.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "UniCredit Bank GmbH (HypoVereinsbank)",
+   "cal": {
+    "ju": {
+     "2025": 2000.0,
+     "2024": 1920.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "ING-DiBa AG",
+   "cal": {
+    "ju": {
+     "2025": 0.0,
+     "2024": 0.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volkswagen Bank GmbH",
+   "cal": {
+    "ju": {
+     "2025": 0.0,
+     "2024": 0.0,
+     "2021": 0.0,
+     "2020": 0.0,
+     "2022": 0.0,
+     "2023": 0.0
+    },
+    "fonds": {
+     "2021": 25.565,
+     "2022": 25.565,
+     "2023": 25.565
+    },
+    "bs": {
+     "2021": 81833.0,
+     "2020": 81584.0,
+     "2022": 73291.0,
+     "2023": 82328.0
+    }
+   },
+   "note": "Jahresüberschuss 0: Gewinnabführung",
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Aareal Bank AG",
+   "cal": {
+    "ju": {
+     "2025": -81.1,
+     "2024": 1988.1,
+     "2022": 61.0,
+     "2021": 30.0,
+     "2020": 89.8,
+     "2023": 391.3
+    },
+    "bs": {
+     "2022": 48397.5,
+     "2021": 48670.3,
+     "2020": 44228.5,
+     "2023": 49168.9
+    },
+    "ek": {
+     "2022": 1908.6,
+     "2021": 1847.6,
+     "2023": 2299.9
+    },
+    "fonds": {
+     "2022": 167.6,
+     "2021": 167.6,
+     "2020": 167.6,
+     "2023": 167.6
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Deutsche Pfandbriefbank AG",
+   "cal": {
+    "ju": {
+     "2025": 298.0,
+     "2024": 40.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Oldenburgische Landesbank AG",
+   "cal": {
+    "ju": {
+     "2025": 215.8,
+     "2024": 365.5,
+     "2023": 182.7,
+     "2022": 217.8
+    },
+    "bs": {
+     "2023": 29115.4,
+     "2022": 26426.8
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Hamburg Commercial Bank AG",
+   "cal": {
+    "ju": {
+     "2025": 45.903,
+     "2024": 30.583
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "UmweltBank AG",
+   "cal": {
+    "ju": {
+     "2025": 1.286,
+     "2024": 0.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "National-Bank AG",
+   "cal": {
+    "ju": {
+     "2025": 23.428,
+     "2024": 21.298,
+     "2023": 19.393,
+     "2022": 16.893
+    },
+    "bs": {
+     "2023": 6390.022,
+     "2022": 6130.313
+    },
+    "fonds": {
+     "2023": 51.8,
+     "2022": 23.5
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Joh. Berenberg, Gossler & Co. KG",
+   "cal": {
+    "ju": {
+     "2025": 20.217,
+     "2024": 81.613,
+     "2023": 55,
+     "2022": 55,
+     "2021": 170
+    }
+   },
+   "note": "Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet)",
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "MERKUR PRIVATBANK KGaA",
+   "cal": {
+    "ju": {
+     "2025": 12.579,
+     "2024": 11.587
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Isbank AG",
+   "cal": {
+    "ju": {
+     "2025": 30.764,
+     "2024": 36.154
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Münchener Hypothekenbank eG (MünchenerHyp)",
+   "cal": {
+    "ju": {
+     "2025": 57.734,
+     "2024": 56.563
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "BBBank eG",
+   "cal": {
+    "ju": {
+     "2025": 20.56,
+     "2024": 19.758
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Berliner Volksbank eG",
+   "cal": {
+    "ju": {
+     "2025": 39.954,
+     "2024": 39.135
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Frankfurter Volksbank Rhein/Main eG",
+   "cal": {
+    "ju": {
+     "2025": 17.39,
+     "2024": 17.598
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparda-Bank Baden-Württemberg eG",
+   "cal": {
+    "ju": {
+     "2025": 13.955,
+     "2024": 14.88
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank Darmstadt Mainz eG",
+   "cal": {
+    "ju": {
+     "2025": 19.65,
+     "2024": 18.522
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank Mittelhessen eG",
+   "cal": {
+    "ju": {
+     "2025": 33.256,
+     "2024": 58.628
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank eG – Die Gestalterbank",
+   "cal": {
+    "ju": {
+     "2025": 25.186,
+     "2024": 22.758
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparda-Bank West eG",
+   "cal": {
+    "ju": {
+     "2025": 15.241,
+     "2024": 13.502
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "meine Volksbank Raiffeisenbank eG",
+   "cal": {
+    "ju": {
+     "2025": 52.385,
+     "2024": 46.392
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank pur eG",
+   "cal": {
+    "ju": {
+     "2025": 17.004,
+     "2024": 15.789
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparda-Bank Südwest eG",
+   "cal": {
+    "ju": {
+     "2025": 15.254,
+     "2024": 15.476,
+     "2023": 15.364,
+     "2022": 10.57,
+     "2021": 12.423
+    },
+    "bs": {
+     "2023": 10968.999,
+     "2022": 11140.646,
+     "2021": 11052.643
+    },
+    "fonds": {
+     "2023": 231.3,
+     "2022": 201.3,
+     "2021": 201.3
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Dortmunder Volksbank eG",
+   "cal": {
+    "ju": {
+     "2025": 19.336,
+     "2024": 16.637
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "GLS Gemeinschaftsbank eG",
+   "cal": {
+    "ju": {
+     "2025": 18.482,
+     "2024": 17.861
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank im Münsterland eG",
+   "cal": {
+    "ju": {
+     "2025": 16.62,
+     "2024": 16.083
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "VerbundVolksbank OWL eG",
+   "cal": {
+    "ju": {
+     "2025": 25.528,
+     "2024": 24.199
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank in Ostwestfalen eG",
+   "cal": {
+    "ju": {
+     "2025": 21.012,
+     "2024": 20.73
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank Kraichgau eG",
+   "cal": {
+    "ju": {
+     "2025": 19.202,
+     "2024": 17.438
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparda-Bank Hessen eG",
+   "cal": {
+    "ju": {
+     "2025": 10.309,
+     "2024": 10.07
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Hannoversche Volksbank eG",
+   "cal": {
+    "ju": {
+     "2025": 17.064,
+     "2024": 16.866
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Evangelische Bank eG",
+   "cal": {
+    "ju": {
+     "2025": 11.095,
+     "2024": 10.42
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank Stuttgart eG",
+   "cal": {
+    "ju": {
+     "2025": 22.117,
+     "2024": 21.95
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Pax-Bank für Kirche und Caritas eG",
+   "cal": {
+    "ju": {
+     "2025": 19.897,
+     "2024": 6.299
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Wiesbadener Volksbank eG",
+   "cal": {
+    "ju": {
+     "2025": 13.915,
+     "2024": 13.772
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparda-Bank Berlin eG",
+   "cal": {
+    "ju": {
+     "2025": 4.55,
+     "2024": 4.761
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "VR Bank RheinAhrEifel eG",
+   "cal": {
+    "ju": {
+     "2025": 10.695,
+     "2024": 10.135
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Vereinigte VR Bank Kur- und Rheinpfalz eG",
+   "cal": {
+    "ju": {
+     "2025": 10.046,
+     "2024": 9.982,
+     "2023": 9.595,
+     "2022": 8.719
+    },
+    "bs": {
+     "2023": 6719.722,
+     "2022": 6861.692
+    },
+    "fonds": {
+     "2023": 425.0,
+     "2022": 391.0
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Volksbank Köln Bonn eG",
+   "cal": {
+    "ju": {
+     "2025": 15.044,
+     "2024": 14.125
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "BANK IM BISTUM ESSEN eG",
+   "cal": {
+    "ju": {
+     "2025": 7.235,
+     "2024": 7.369
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "VR-Bank Bonn Rhein-Sieg eG",
+   "cal": {
+    "ju": {
+     "2025": 14.045,
+     "2024": 14.007
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Bank für Kirche und Diakonie eG – KD-Bank",
+   "cal": {
+    "ju": {
+     "2025": 13.439,
+     "2024": 13.13
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Volksbank BRAWO eG",
+   "cal": {
+    "ju": {
+     "2025": 0.187,
+     "2024": 26.531,
+     "2023": 25.925,
+     "2022": 31.683,
+     "2021": 26.631
+    }
+   },
+   "note": "Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.",
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "VR-Bank Ludwigsburg eG",
+   "cal": {
+    "ju": {
+     "2025": 7.276,
+     "2024": 7.099,
+     "2023": 8.646,
+     "2022": 6.052
+    },
+    "bs": {
+     "2023": 4240.473,
+     "2022": 4011.934
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Volksbank Mittlerer Neckar eG",
+   "cal": {
+    "ju": {
+     "2025": 9.431,
+     "2024": 8.639
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparda-Bank Hannover eG",
+   "cal": {
+    "ju": {
+     "2025": 7.713,
+     "2024": 7.562
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Vereinigte Volksbanken eG",
+   "cal": {
+    "ju": {
+     "2025": 4.353,
+     "2024": 3.8,
+     "2023": 3.67,
+     "2022": 1.735,
+     "2021": 1.851,
+     "2020": 1.797
+    },
+    "bs": {
+     "2023": 5155.474,
+     "2022": 5197.071,
+     "2021": 4994.264,
+     "2020": 4735.591
+    },
+    "fonds": {
+     "2023": 239.5,
+     "2022": 218.0,
+     "2021": 182.6,
+     "2020": 166.7
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "DZ BANK AG Deutsche Zentral-Genossenschaftsbank",
+   "cal": {
+    "ju": {
+     "2025": 639.0,
+     "2024": 425.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Hamburger Sparkasse AG (Haspa)",
+   "cal": {
+    "ju": {
+     "2025": 0.0,
+     "2024": 0.0,
+     "2023": 0.0,
+     "2022": 0.0
+    },
+    "bs": {
+     "2023": 59624.0,
+     "2022": 57006.0
+    },
+    "fonds": {
+     "2023": 802.0,
+     "2022": 702.0
+    }
+   },
+   "note": "Jahresüberschuss 0: Gewinnabführung",
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Kreissparkasse Köln",
+   "cal": {
+    "ju": {
+     "2025": 63.712,
+     "2024": 77.682,
+     "2023": 97.668
+    },
+    "bs": {
+     "2024": 29644.4,
+     "2023": 29372.0
+    },
+    "fonds": {
+     "2024": 930.181,
+     "2023": 770.181
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse KölnBonn",
+   "cal": {
+    "ju": {
+     "2025": 36.6,
+     "2024": 37.43,
+     "2023": 39.938,
+     "2022": 27.184,
+     "2021": 18.344,
+     "2020": 20.524
+    },
+    "bs": {
+     "2023": 28034.0,
+     "2022": 27969.0,
+     "2021": 27766.0,
+     "2020": 27969.0
+    },
+    "fonds": {
+     "2023": 475.0,
+     "2022": 327.0,
+     "2021": 258.586,
+     "2020": 238.586
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Frankfurter Sparkasse",
+   "cal": {
+    "ju": {
+     "2025": 60.0,
+     "2024": 60.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparkasse Hannover",
+   "cal": {
+    "ju": {
+     "2025": 20.0,
+     "2024": 20.541,
+     "2023": 20.0,
+     "2022": 70.0
+    },
+    "bs": {
+     "2023": 20813.235,
+     "2022": 20449.524
+    },
+    "ek": {
+     "2023": 1059.0,
+     "2022": 1041.8
+    },
+    "fonds": {
+     "2023": 764.6,
+     "2022": 630.4
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Pforzheim Calw",
+   "cal": {
+    "ju": {
+     "2025": 15.0,
+     "2024": 15.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Nassauische Sparkasse",
+   "cal": {
+    "ju": {
+     "2025": 38.228,
+     "2024": 64.97,
+     "2023": 63.852,
+     "2022": 39.36,
+     "2021": 39.363,
+     "2020": 36.241
+    },
+    "bs": {
+     "2023": 14722.0,
+     "2022": 15432.0,
+     "2021": 15037.0,
+     "2020": 14293.0
+    },
+    "fonds": {
+     "2023": 123.103,
+     "2022": 123.103,
+     "2021": 123.103,
+     "2020": 123.103
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Nürnberg",
+   "cal": {
+    "ju": {
+     "2025": 27.317,
+     "2024": 22.318,
+     "2022": 15.13,
+     "2021": 14.793,
+     "2020": 10.436
+    },
+    "bs": {
+     "2023": 12440.0,
+     "2022": 12644.0,
+     "2021": 13227.0,
+     "2020": 12354.0
+    },
+    "fonds": {
+     "2021": 357.4,
+     "2020": 323.6
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Dortmund",
+   "cal": {
+    "ju": {
+     "2025": 8.0,
+     "2024": 8.0,
+     "2023": 8.0,
+     "2022": 8.0
+    },
+    "bs": {
+     "2023": 12139.0,
+     "2022": 11985.0,
+     "2024": 11873.0
+    },
+    "fonds": {
+     "2023": 957.301,
+     "2022": 909.337,
+     "2024": 1013.216
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Paderborn-Detmold-Höxter",
+   "cal": {
+    "ju": {
+     "2025": 14.695,
+     "2024": 14.641,
+     "2023": 14.59,
+     "2022": 10.824,
+     "2021": 18.907,
+     "2020": 18.925
+    },
+    "bs": {
+     "2023": 11375.246,
+     "2022": 11604.65,
+     "2021": 8909.504,
+     "2020": 8375.039
+    },
+    "ek": {
+     "2023": 590.731,
+     "2022": 579.313,
+     "2021": 479.451,
+     "2020": 472.838
+    },
+    "fonds": {
+     "2023": 703.0,
+     "2022": 646.457,
+     "2021": 494.3,
+     "2020": 481.7
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Westmünsterland",
+   "cal": {
+    "ju": {
+     "2025": 15.026,
+     "2024": 15.026
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Sparkasse Krefeld",
+   "cal": {
+    "ju": {
+     "2025": 7.701,
+     "2024": 7.664,
+     "2023": 7.762,
+     "2022": 5.474,
+     "2021": 5.13,
+     "2020": 6.585
+    },
+    "bs": {
+     "2023": 9796.238,
+     "2022": 10226.307,
+     "2021": 10329.937,
+     "2020": 9459.811
+    },
+    "ek": {
+     "2023": 508.383,
+     "2022": 500.621,
+     "2021": 495.146,
+     "2020": 490.016
+    },
+    "fonds": {
+     "2023": 447.075,
+     "2022": 387.775,
+     "2021": 387.775,
+     "2020": 371.775
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Holstein",
+   "cal": {
+    "ju": {
+     "2025": 18.053,
+     "2024": 17.578,
+     "2023": 17.058,
+     "2022": 15.047,
+     "2021": 14.019,
+     "2020": 12.053
+    },
+    "bs": {
+     "2023": 9239.2,
+     "2022": 8917.6,
+     "2021": 8237.7,
+     "2020": 7390.7
+    },
+    "fonds": {
+     "2022": 343.5,
+     "2021": 305.6,
+     "2020": 280.3
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Sparkasse Heidelberg",
+   "cal": {
+    "ju": {
+     "2025": 6.31,
+     "2024": 6.251,
+     "2023": 5.6,
+     "2022": 6.1,
+     "2021": 5.996,
+     "2020": 5.974
+    },
+    "bs": {
+     "2023": 8381.8,
+     "2022": 8052.4,
+     "2021": 8058.4,
+     "2020": 8203.9
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Landesbank Baden-Württemberg (LBBW)",
+   "cal": {
+    "ju": {
+     "2025": 23.0,
+     "2024": 350.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Landesbank Hessen-Thüringen Girozentrale (Helaba)",
+   "cal": {
+    "ju": {
+     "2025": 466.0,
+     "2024": 246.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Bayerische Landesbank (BayernLB)",
+   "cal": {
+    "ju": {
+     "2025": 450.0,
+     "2024": 800.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Norddeutsche Landesbank Girozentrale (NORD/LB)",
+   "cal": {
+    "ju": {
+     "2025": 159.0,
+     "2024": 434.0,
+     "2021": 75.616,
+     "2020": 292.838
+    },
+    "bs": {
+     "2021": 115243.444,
+     "2020": 126824.411
+    },
+    "fonds": {
+     "2021": 82.708,
+     "2020": 82.708
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Landesbank Berlin AG (seit 15.07.2025 BSK 1818 AG; Trägerin der Berliner Sparkasse)",
+   "cal": {
+    "ju": {
+     "2025": 0.0,
+     "2024": 0.0
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Landesbank Saar (SaarLB)",
+   "cal": {
+    "ju": {
+     "2025": 18.4,
+     "2024": 41.4
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "DekaBank Deutsche Girozentrale",
+   "cal": {
+    "ju": {
+     "2025": 400.161,
+     "2024": 300.073,
+     "2023": 300.073,
+     "2022": 200.177,
+     "2021": 200.177,
+     "2020": 40.071
+    },
+    "bs": {
+     "2023": 86156.0,
+     "2022": 100420.0,
+     "2021": 90756.0,
+     "2020": 87676.0
+    },
+    "fonds": {
+     "2023": 4852.966,
+     "2022": 4713.447,
+     "2021": 4145.772,
+     "2020": 3960.077
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "M.M.Warburg & CO (AG & Co.) KGaA",
+   "cal": {
+    "bs": {
+     "2023": 3286.36,
+     "2022": 4032.472,
+     "2021": 4338.9,
+     "2020": 5179.9,
+     "2024": 3178.549
+    },
+    "fonds": {
+     "2023": 3.849,
+     "2022": 3.849,
+     "2021": 3.849,
+     "2020": 3.849,
+     "2024": 17.17
+    },
+    "ju": {
+     "2023": 10.0,
+     "2022": 34.607
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  },
+  {
+   "name": "Commerzbank AG",
+   "cal": {
+    "ju": {
+     "2025": 2374,
+     "2024": 2294
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Landesbank Baden-Württemberg",
+   "cal": {
+    "ju": {
+     "2025": 350,
+     "2024": 330
+    }
+   },
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
+  },
+  {
+   "name": "Stadtsparkasse Düsseldorf",
+   "cal": {
+    "bs": {
+     "2021": 16128.0,
+     "2020": 13462.0,
+     "2022": 15974.0,
+     "2023": 15244.0
+    }
+   },
+   "old": true,
+   "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft)."
+  }
+ ]
+}

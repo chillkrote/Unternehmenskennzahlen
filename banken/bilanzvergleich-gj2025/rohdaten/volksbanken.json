@@ -1,0 +1,239 @@
+{
+ "group": "Volksbanken",
+ "ranking_basis": "HGB-Bilanzsumme 31.12.2025 laut Jahresabschluss der Banken (Kandidaten aus BVR-Liste 'Alle Banken 2025 (vorläufige Werte)', https://www.bvr.de/p.nsf/0/D3E488DF22571CECC1257D0A005439B7/$file/Liste_AlleBanken%202025_neu.pdf, bzw. Platow Brief 10.03.2026); MünchenerHyp ergänzt (nicht in BVR-Liste). Inklusive der Spezialinstitute MünchenerHyp und apoBank (Rang 1/2); ohne diese wären Meine Volksbank Raiffeisenbank und Volksbank pur Rang 11/12. Vorjahreswerte = Vorjahr der Bank laut Bilanz (bei Fusionen nicht die zusammengefassten Pro-forma-Werte; diese in notes). BVR-Vorabwerte liegen durchweg 0,1-0,2 Mrd € über den HGB-Bilanzsummen.",
+ "banks": [
+  {
+   "rank": 1,
+   "name": "Münchener Hypothekenbank eG (MünchenerHyp)",
+   "sitz": "München",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 53478420000,
+   "eigenkapital": 1919159000,
+   "fonds_340g": 122000000,
+   "davon_340e": null,
+   "vj_bilanzsumme": 54515220000,
+   "vj_eigenkapital": 1843703000,
+   "vj_fonds_340g": 120000000,
+   "source_url": "https://www.mhb.de/sites/default/files/2026-08/MHB%20Halbjahresfinanzbericht%202026.pdf ; VJ: https://www.mhb.de/sites/default/files/2025-08/MHB%20Halbjahresfinanzbericht%202025.pdf",
+   "source_doc": "Halbjahresfinanzbericht 2026, Bilanz Passivseite S. 17, Vergleichsspalte 31.12.2025 (T€); VJ: Halbjahresfinanzbericht 2025 S. 17, Spalte 31.12.2024 (T€)",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "SPEZIALINSTITUT (Pfandbriefbank in Rechtsform eG; nicht in BVR-Top-20-Liste der Primärbanken). Werte = HGB-Bilanzwerte 31.12. als Vergleichsspalte im HGB-Halbjahresabschluss (T€-Genauigkeit). Jahresabschluss im GB 2025 (S. 138 ff., https://www.mhb.de/sites/default/files/2026_04/MHB_GB_2025_DE_interaktiv.pdf) war per Tool nicht bis zur Bilanz lesbar; GB S. 20 bestätigt Bilanzsumme 53,5 Mrd. € (VJ 54,5). EK 2025 = gez. Kapital 1.294.489 + Ergebnisrücklagen 568.000 + Bilanzgewinn 56.670 T€; keine Kapitalrücklage. Kein 'darunter § 340e'-Ausweis in der Bilanz. Fonds-Zuführung 2025: 2 Mio €. Regulatorisch (EU CC1 Zeile 3a, OLB 2025 S. 12): 122,00 Mio €."
+  },
+  {
+   "rank": 2,
+   "name": "Deutsche Apotheker- und Ärztebank eG (apoBank)",
+   "sitz": "Düsseldorf",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 52437800000,
+   "eigenkapital": 2204800000,
+   "fonds_340g": 1273200000,
+   "davon_340e": null,
+   "vj_bilanzsumme": 51811800000,
+   "vj_eigenkapital": 2093900000,
+   "vj_fonds_340g": 1186500000,
+   "source_url": "https://www.apobank.de/dam/jcr:a9b230d5-f5c2-4f43-ada5-85be449002d2/apobank-offenlegungsbericht-31122025.pdf",
+   "source_doc": "Offenlegungsbericht 31.12.2025, Tabelle 3 EU CC2 (HGB-Bilanz, Passiva 9-14), S. 26 (Mio. €, 1 Nachkommastelle)",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "SPEZIALINSTITUT (Standesbank Heilberufe). Werte sind die HGB-Bilanzwerte laut EU CC2 im Offenlegungsbericht, nur auf 0,1 Mio € genau (in EUR umgerechnet). Jahresfinanzbericht 2025 (Bilanz S. 72, https://www.apobank.de/dam/jcr:a2f745c7-f83d-4724-ab10-5057effcb335/apobank-jahresfinanzbericht-2025.pdf) war per Tool nicht bis zur Bilanz lesbar; dessen Überblick nennt Bilanzsumme 52.438 Mio € (VJ 51.812) – konsistent. EK 2025 = gez. Kapital 1.392,8 + Kapitalrücklage 0,0 + Ergebnisrücklagen 712,2 + Bilanzgewinn 99,8 Mio €. 'davon § 340e' nicht ermittelbar. Regulatorischer Fonds (EU CC1 Zeile EU-3a) 1.225,3 Mio € (VJ 1.167,1) weicht vom Bilanzwert ab (nicht erläutert). BVR-Liste (vorläufig) 52.443.000 T€."
+  },
+  {
+   "rank": 3,
+   "name": "BBBank eG",
+   "sitz": "Karlsruhe",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 22319544375.14,
+   "eigenkapital": 1008666189.67,
+   "fonds_340g": 543000000.0,
+   "davon_340e": 200000.0,
+   "vj_bilanzsumme": 19356202000,
+   "vj_eigenkapital": 694801000,
+   "vj_fonds_340g": 440000000,
+   "source_url": "https://berichte.bbbank.de/2025/assets/downloads/bbbank-geschaeftsbericht-2025.pdf",
+   "source_doc": "Geschäftsbericht 2025, Jahresbilanz Passivseite S. 23",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "Fusion 2025: Verschmelzung der PSD Bank Berlin-Brandenburg eG (Vorstandserweiterung zum 1.9.2025). Bilanz zeigt zwei Vorjahresspalten: VJ-Werte hier = 'Vorjahr der Bank' (Fn. 2, T€). Zusammengefasste VJ inkl. PSD BB (Fn. 1): Bilanzsumme 21.836.642 T€, Fonds 501.345 T€, EK 848.015 T€ (Summe der Einzelposten 164.607+0+672.325+11.083). VJ-EK 694.801 T€ = Summe der Einzelposten (78.551+0+608.550+7.700), Gesamtsumme nicht gedruckt. davon § 340e VJ: 200 T€. Kennzahlentabelle des GB nennt 'Eigenkapital' 1.638 Mio € (andere Abgrenzung, nicht bilanzielles EK). BVR-Liste (vorläufig) 22.501.273 T€ – Abweichung zur HGB-Bilanzsumme. Weitere Fusion mit PSD Bank Hessen-Thüringen für 2026 geplant."
+  },
+  {
+   "rank": 4,
+   "name": "Berliner Volksbank eG",
+   "sitz": "Berlin",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 20080678049.83,
+   "eigenkapital": 1252771302.75,
+   "fonds_340g": 770131000.0,
+   "davon_340e": 0.0,
+   "vj_bilanzsumme": 18466668471.64,
+   "vj_eigenkapital": 1223264014.75,
+   "vj_fonds_340g": 682227000.0,
+   "source_url": "https://atruvia.scene7.com/is/content/atruvia/geschaeftsbericht-2025-berliner-volksbankpdf ; VJ: https://www.berliner-volksbank.de/content/dam/f0120-0/cloud-transfer/meine-bank/ueber-uns/geschaeftsbericht-2024-berliner-volksbank.pdf",
+   "source_doc": "Geschäftsbericht 2025, Jahresbilanz Passivseite S. 7; VJ exakt aus Geschäftsbericht 2024, Passivseite S. 11",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "EK 2025 = gez. Kapital 831.269.556,00 + Kapitalrücklage 0 + Ergebnisrücklagen 381.501.746,75 + Bilanzgewinn 40.000.000,00. Keine Fusion; Erwerb ABK Allgemeine Beamten Bank AG (Closing 3.1.2025) als Tochter, nicht verschmolzen. Pressemitteilung 25.3.2026 bestätigt Fonds 770,1 Mio €. davon § 340e: 0 (VJ 0)."
+  },
+  {
+   "rank": 5,
+   "name": "Frankfurter Volksbank Rhein/Main eG",
+   "sitz": "Frankfurt am Main",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 19331861000,
+   "eigenkapital": null,
+   "fonds_340g": null,
+   "davon_340e": null,
+   "vj_bilanzsumme": 19262877000,
+   "vj_eigenkapital": null,
+   "vj_fonds_340g": null,
+   "source_url": "https://atruvia.scene7.com/is/content/atruvia/geschaeftsbericht-2025-ohne-konzern-web",
+   "source_doc": "Geschäftsbericht 2025 (ohne Konzern), Lagebericht Tabelle Bilanzsumme (T€) und Eigenkapitaltabelle S. 20/21; Jahresbilanz S. 42 nicht lesbar",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "Bilanzsumme aus Lagebericht (T€). Bilanz S. 42 war per Tool nicht erreichbar (PDF-Text nach S. 25 abgeschnitten; frankfurter-volksbank.de per robots gesperrt; Bundesanzeiger nicht erreichbar) -> EK und Fonds getrennt nicht verifiziert (null). Lagebericht: 'Eigenkapital laut Bilanz' (= Passivposten 9 Nachrangige Verbindlichkeiten + 11 Fonds + 12 Eigenkapital) 2.348.690 T€ (VJ 2.245.769); Nachrangige Verbindlichkeiten 39.705 T€ (VJ 39.723) -> Fonds 340g + bilanzielles EK zusammen 2.308.985 T€ (VJ 2.206.046) [eigene Ableitung]. Zuführung Fonds 340g 2025: 101.400 T€ (2024: 74.500 T€). Fusion mit Raiffeisen-Volksbank Aschaffenburg 2024; 2025 erstes gemeinsames Jahr. BVR-Liste (vorläufig) 19.663.125 T€; Pressemitteilung 16.3.2026: 19,33 Mrd €."
+  },
+  {
+   "rank": 6,
+   "name": "Sparda-Bank Baden-Württemberg eG",
+   "sitz": "Stuttgart",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 15536073002.7,
+   "eigenkapital": 829742753.16,
+   "fonds_340g": 250220000.0,
+   "davon_340e": 220000.0,
+   "vj_bilanzsumme": 14970075200.88,
+   "vj_eigenkapital": 822623687.35,
+   "vj_fonds_340g": 250140000.0,
+   "source_url": "https://a.storyblok.com/f/242083/x/05745ae4ae/geschaftsbericht-sparda-bank-bw-2025.pdf ; VJ: https://a.storyblok.com/f/242083/x/208d743524/geschaftsbericht-sparda-bank-bw-2024.pdf",
+   "source_doc": "Geschäftsbericht 2025, Jahresbilanz Passivseite S. 25; VJ exakt aus Geschäftsbericht 2024, Passivseite S. 25",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "EK 2025 = gez. Kapital 295.429.881,22 + Kapitalrücklage 20.101.823,78 + Ergebnisrücklagen 501.656.433,20 + Bilanzgewinn 12.554.614,96. davon § 340e: 220.000 € (VJ 140.000 €). VJ-EK: Im GB 2024 ist als Summe 822.632.687,35 € gedruckt/extrahiert, die Einzelposten ergeben aber 822.623.687,35 € (Differenz 9.000 €; Einzelposten-Summe deckt sich mit den T€-VJ-Werten im GB 2025: 822.623 T€) – hier die Einzelposten-Summe verwendet, bitte ggf. am Original prüfen. Knapp vor Volksbank Darmstadt Mainz (Differenz ca. 13 Mio €). BVR-Liste (vorläufig) 15.596.980 T€."
+  },
+  {
+   "rank": 7,
+   "name": "Volksbank Darmstadt Mainz eG",
+   "sitz": "Mainz",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 15523063879.04,
+   "eigenkapital": 661128174.76,
+   "fonds_340g": 905200000.0,
+   "davon_340e": 0.0,
+   "vj_bilanzsumme": 15069780466.2,
+   "vj_eigenkapital": 604318542.91,
+   "vj_fonds_340g": 853700000.0,
+   "source_url": "https://atruvia.scene7.com/is/content/atruvia/Volksbank_DAMZ_GB2025_FINALpdf ; VJ: https://www.volksbanking.de/content/dam/f0580-0/volksbank_darmstadt_mainz/ihre_volksbank/PDF/Volksbank_DAMZ_GB2024_VF.pdf",
+   "source_doc": "Geschäftsbericht 2025, Jahresbilanz Passivseite S. 20; VJ exakt aus Geschäftsbericht 2024, Passivseite S. 19",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "EK 2025 = gez. Kapital 232.859.067,50 + Kapitalrücklage 4.260.820,21 + Ergebnisrücklagen 404.320.000,00 + Bilanzgewinn 19.688.287,05. davon § 340e: 0 (VJ 0). Fusion Mainzer Volksbank + Volksbank Darmstadt-Südhessen (2023/24), keine Fusion 2025. Sehr hoher Fonds 340g relativ zum bilanziellen EK. BVR-Liste (vorläufig) 15.684.501 T€."
+  },
+  {
+   "rank": 8,
+   "name": "Volksbank Mittelhessen eG",
+   "sitz": "Gießen",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 14192921344.11,
+   "eigenkapital": 887180368.42,
+   "fonds_340g": 550000000.0,
+   "davon_340e": null,
+   "vj_bilanzsumme": 11631555000,
+   "vj_eigenkapital": 730819000,
+   "vj_fonds_340g": 415000000,
+   "source_url": "https://jahresberichte.vb-mittelhessen.de/wp-content/uploads/2026/04/volksbank-mittelhessen-jahresabschluss-2025.pdf",
+   "source_doc": "Jahresabschluss 2025, Jahresbilanz Passivseite S. 51",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "Fusionen 2025 (Fn.: 'durch die Verschmelzungen übernommene Institute'; laut Börsen-Zeitung u.a. VR-Bankverein Bad Hersfeld-Rotenburg (1.1.2025), Volksbank Feldatal, Volksbank Schupbach (rückwirkend 1.1.2025) sowie Raiffeisenbank im Hochtaunus). VJ-Werte hier = 'Vorjahr der Bank' (Fn. 2, T€); VJ-EK als Summe der Einzelposten (124.061+295.000+295.000+16.758 T€), Summe nicht gedruckt. Zusammengefasste VJ inkl. übernommener Institute (Fn. 1): Bilanzsumme 15.491.141 T€, Fonds 523.110 T€, EK 1.017.875 T€ (Summe Einzelposten 314.805+340.539+343.600+18.931). EK 2025 = gez. Kapital 158.354.900,00 + Ergebnisrücklagen 710.000.000,00 + Bilanzgewinn 18.825.468,42 (keine Kapitalrücklage ausgewiesen). Kein 'darunter § 340e'-Vermerk im extrahierten Text -> null. Textlayout der PDF teils verschoben; Summen rechnerisch geprüft. BVR-Liste (vorläufig) 14.333.328 T€."
+  },
+  {
+   "rank": 9,
+   "name": "Volksbank eG – Die Gestalterbank",
+   "sitz": "Villingen-Schwenningen / Offenburg",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 14154938646.95,
+   "eigenkapital": 702223493.51,
+   "fonds_340g": 535000000.0,
+   "davon_340e": 0.0,
+   "vj_bilanzsumme": 13991719554.56,
+   "vj_eigenkapital": 653249033.39,
+   "vj_fonds_340g": 535000000.0,
+   "source_url": "https://atruvia.scene7.com/is/content/atruvia/Jahresabschluss-2025pdf-1 ; VJ: https://atruvia.scene7.com/is/content/atruvia/Jahresabschluss-2024pdf-2",
+   "source_doc": "Jahresabschluss 2025, Jahresbilanz Passivseite (Bilanzseite 2); VJ exakt aus Jahresabschluss 2024, Passivseite",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "Seitenzahl im PDF-Text nicht eindeutig (Kopfzeile 'Aktivseite 2'). EK 2025 = gez. Kapital 281.220.947,37 + Kapitalrücklage 0 + Ergebnisrücklagen 401.800.000,00 + Bilanzgewinn 19.202.546,14. Fonds 2025 unverändert 535 Mio €. davon § 340e: 0. Fusion mit Volksbank Rhein-Wehra eG eingetragen 4.11.2024; keine Fusion 2025. BVR-Liste (vorläufig) 14.282.684 T€."
+  },
+  {
+   "rank": 10,
+   "name": "Sparda-Bank West eG",
+   "sitz": "Düsseldorf",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 13932791145.4,
+   "eigenkapital": 752190862.71,
+   "fonds_340g": 212640190.07,
+   "davon_340e": 7071.0,
+   "vj_bilanzsumme": 13006401467.67,
+   "vj_eigenkapital": 726592877.76,
+   "vj_fonds_340g": 191390190.07,
+   "source_url": "https://atruvia.scene7.com/is/content/atruvia/Sparda-Gesch%C3%A4ftsbericht-2025-Webpdf ; VJ: https://www.sparda-west.de/internetauftritt/downloads/geschaeftsbericht-2024.pdf",
+   "source_doc": "Geschäftsbericht 2025, Jahresbilanz Passivseite S. 20; VJ exakt aus Geschäftsbericht 2024, Passivseite S. 19",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "EK 2025 = gez. Kapital 320.853.364,00 + Kapitalrücklage 0 + Ergebnisrücklagen 416.096.977,43 + Bilanzgewinn 15.240.521,28. davon § 340e: 7.071 € (VJ 7.071 €). Keine Fusion. BVR-Liste (vorläufig) 14.002.748 T€."
+  }
+ ],
+ "reference": [
+  {
+   "name": "DZ BANK AG Deutsche Zentral-Genossenschaftsbank",
+   "sitz": "Frankfurt am Main",
+   "fiscal_year": 2025,
+   "stichtag": "2025-12-31",
+   "bilanzsumme": 404200000000,
+   "eigenkapital": null,
+   "fonds_340g": null,
+   "davon_340e": null,
+   "vj_bilanzsumme": 386200000000,
+   "vj_eigenkapital": null,
+   "vj_fonds_340g": null,
+   "source_url": "https://www.dzbank.de/content/dam/dzbank/dokumente/de/dzbank/investor_relations/berichte/DZ_BANK_AG_2025_Gesamt_final.pdf",
+   "source_doc": "DZ BANK AG Jahresabschluss und Lagebericht 2025 (HGB), Lagebericht Vermögenslage S. 25; Bilanz S. 180 nicht lesbar",
+   "source_type": "Jahresabschluss HGB",
+   "notes": "Zentralinstitut, nur Referenz. Bilanzsumme nur gerundet aus Lagebericht ('erhöhte sich ... um +18,0 Mrd. € auf 404,2 Mrd. €', VJ 386,2 Mrd. €). HGB-Bilanz (S. 180) per Tool nicht erreichbar (PDF-Text nach S. 25 abgeschnitten; Bundesanzeiger nicht erreichbar) -> EK und Fonds 340g null. Lagebericht S. 24: Zuführung zum Fonds für allgemeine Bankrisiken § 340g 2025: 200 Mio € (2024: 0); Jahresüberschuss 639 Mio €, vorgeschlagene Einstellung 200 Mio € in Gewinnrücklagen."
+  }
+ ],
+ "excluded": [
+  {
+   "name": "DZ BANK AG",
+   "reason": "Zentralinstitut – per Vorgabe ausgeschlossen (als Referenz geführt)"
+  },
+  {
+   "name": "DZ HYP AG",
+   "reason": "Zentralinstitut/Tochter DZ BANK – per Vorgabe ausgeschlossen"
+  },
+  {
+   "name": "meine Volksbank Raiffeisenbank eG (Rosenheim)",
+   "reason": "Rang 11 nach Bilanzsumme (BVR vorläufig 12.481.648 T€) – knapp außerhalb Top 10; nicht erhoben"
+  },
+  {
+   "name": "Volksbank pur eG (Karlsruhe)",
+   "reason": "Rang 12 (BVR vorläufig 12.255.119 T€)"
+  },
+  {
+   "name": "Sparda-Bank Südwest eG (Mainz)",
+   "reason": "Rang 13 (BVR vorläufig 12.048.677 T€)"
+  },
+  {
+   "name": "Dortmunder Volksbank eG",
+   "reason": "Rang 14 (BVR vorläufig 11.825.472 T€)"
+  },
+  {
+   "name": "SozialBank AG",
+   "reason": "BVR-Mitglied, aber AG; Bilanzsumme 10,8 Mrd € – unter Top 10"
+  },
+  {
+   "name": "TeamBank AG, BAG Bankaktiengesellschaft Hamm",
+   "reason": "Spezialinstitute/AG, in BVR-Liste nicht enthalten"
+  }
+ ]
+}

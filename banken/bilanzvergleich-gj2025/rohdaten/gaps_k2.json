@@ -1,0 +1,33 @@
+{
+ "stand": "2026-10-24",
+ "items": [
+  {
+   "name": "Frankfurter Volksbank Rhein/Main eG",
+   "fiscal_year": 2025,
+   "source_url": "https://atruvia.scene7.com/is/content/atruvia/geschaeftsbericht-2025-ohne-konzern-web",
+   "source_doc": "Geschäftsbericht 2025 (ohne Konzern), Jahresbilanz zum 31.12.2025 S. 42",
+   "source_type": "Jahresabschluss HGB",
+   "_force": true,
+   "_full": true,
+   "eigenkapital": 967085081.38,
+   "fonds_340g": 1341900000.0,
+   "davon_340e": 61000.0,
+   "vj_eigenkapital": 965547000.0,
+   "vj_fonds_340g": 1240500000.0,
+   "notes": "Jahresbilanz jetzt lesbar: Fonds 1.341,9 Mio. (VJ 1.240,5), EK 967,1 Mio. (VJ 965,5). Die frühere Ableitung (Fonds 1.267,4 / EK 1.041,6) hatte dieselbe Summe, aber eine falsche Aufteilung."
+  },
+  {
+   "name": "Volkswagen Bank GmbH",
+   "fiscal_year": 2025,
+   "_force": true,
+   "fonds_340g": 25565000.0,
+   "vj_fonds_340g": 25565000.0,
+   "source_doc": "Jahresabschluss 2025, Bilanz Passivposten 9 (T€)",
+   "notes": "Fonds genau 25.565 T€ laut Jahresbilanz (vorher gerundet 26 Mio.)."
+  },
+  {
+   "name": "TOYOTA Kreditbank GmbH",
+   "notes": "Korrektur 24.10.2026: Bis zur Fassung vom 24.10. 10:13 standen hier durch einen Zuordnungsfehler (Namensteil 'Kreditbank') EK und Fonds der DKB. Jetzt wieder die eigenen Werte; Fonds § 340g 2024/25 nicht belegt."
+  }
+ ]
+}

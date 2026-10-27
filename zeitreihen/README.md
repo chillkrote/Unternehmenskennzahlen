@@ -24,7 +24,7 @@ Einheitliche Ablage aller Zeitreihen über alle Erhebungen und Branchen. Die Erh
 | `rechnungslegung` | `HGB`, `IFRS` oder `aufsichtlich` (Pillar 3); Reihen werden nie vermischt |
 | `ebene` | `Einzel` oder `Konzern` |
 | `quelle` | Quelle bzw. Hinweis aus der Erhebung |
-| `pruefstatus` | `geparst`, `plausibilisiert` oder `manuell bestätigt` |
+| `pruefstatus` | `geparst` (maschinell aus dem Dokument gelesen), `verankert` (Wert aus der Vorjahresspalte eines älteren Berichts, bestätigt durch Übereinstimmung mit einem bereits bekannten Wert derselben Zeile), `plausibilisiert` (Sprung zu den Nachbarjahren geprüft) oder `manuell bestätigt` (Stichprobe gegen das Dokument). Stand 27.10.2026: 4.687 `geparst`, 90 `verankert`; Stichproben des Projektreviews (siehe `review/`) bestätigten alle geprüften Werte. |
 
 ## Regeln
 

@@ -1,0 +1,12 @@
+DAX: 40 Mitglieder laut Wikipedia, 40 im Universum zugeordnet
+MDAX: 50 Mitglieder laut Wikipedia, 50 im Universum zugeordnet
+SDAX: 70 Mitglieder laut Wikipedia, 70 im Universum zugeordnet
+TecDAX: 30 Mitglieder laut Wikipedia, 30 im Universum zugeordnet
+Abweichung U000175 Dr. Ing. h.c. F. Porsche AG: universum=MDAX Wikipedia=-
+Abweichung U000712 Volkswagen AG: universum=- Wikipedia=DAX
+Abweichung U000351 KSB SE & Co. KGaA: universum=- Wikipedia=SDAX
+Abweichung U000238 Fuchs SE: universum=- Wikipedia=MDAX
+Abweichung U000516 Sartorius Aktiengesellschaft: universum=- Wikipedia=MDAX
+Abweichung U000630 Stratec SE: universum=- Wikipedia=SDAX
+Abweichung U000451 OHB SE: universum=- Wikipedia=SDAX
+Abweichung U000739 Wüstenrot & Württembergische AG: universum=SDAX Wikipedia=-

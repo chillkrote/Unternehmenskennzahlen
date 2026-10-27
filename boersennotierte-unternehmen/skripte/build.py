@@ -222,6 +222,19 @@ def jahresschluss(d):
 
 
 # --- Zeilen bauen ------------------------------------------------------------------------------------------------
+# Offensichtliche Datenfehler (Yahoo-Felder bei Holdings, Sonderfällen) nicht anzeigen; als Anteil (1,0 = 100 %)
+GRENZEN = {"Ausschüttungsquote (Yahoo)": (0, 3), "Dividendenrendite": (0, 0.5), "EBIT-Marge": (-5, 1),
+           "Nettomarge": (-5, 1), "KGV (12M, Yahoo)": (0, 1000), "KGV (GJ)": (0, 1000)}
+
+
+def plausibel(z):
+    for k, (lo, hi) in GRENZEN.items():
+        v = z.get(k)
+        if isinstance(v, (int, float)) and not lo <= v <= hi:
+            z[k] = None
+    return z
+
+
 def zeile_uebersicht(u, d, bafin, dok, zusatz):
     info = (d or {}).get("info", {})
     js = jahre(d or {})
@@ -282,7 +295,7 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
     if mitarb is None and ma and ma[0][1] >= 3:
         mitarb = ma[0][0]
         hinweise.append("Mitarbeiterzahl häufigster Wert im Bericht, ungeprüft")
-    return {
+    z = {
         "Hinweise zur Datenqualität": "; ".join(hinweise) or None,
         "Unternehmen": u["name"], "ISIN": u["isin_haupt"], "Weitere Gattungen": u["weitere_isins"], "Kürzel": u["kuerzel"],
         "Yahoo-Ticker": u["yahoo"], "Segment": u["segment"], "Weitere Segmente": u["weitere_segmente"], "Index": u["index"],
@@ -323,6 +336,7 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
         "Insider % (Yahoo)": info.get("heldPercentInsiders"), "Institutionen % (Yahoo)": info.get("heldPercentInstitutions"),
         "Geschäftsbericht (Repo)": dk[0]["datei"] if dk else None, "Geschäftsbericht (Quelle)": dk[0]["quelle_url"] if dk else None,
     }
+    return plausibel(z)
 
 
 PROZENT = {"Umsatzwachstum", "EBIT-Marge", "Nettomarge", "EK-Quote", "EK-Rendite (EK Aktionäre)", "Dividendenrendite",

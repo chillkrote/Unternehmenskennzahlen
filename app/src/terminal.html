@@ -26,6 +26,7 @@
   --geno: #2f86dd;
   --lb: #17a88a;
   --priv: #9a6fe0;
+  --foe: #d9a21b;
   /* Struktur-Rampen (keine Gruppenfarben) */
   --s1: #3a4350; --s2: #535e6d; --s3: #717d8d; --s4: #939eac;
   --c1: #7a4d08; --c2: #c27a0c; --c3: #ffb238;
@@ -263,7 +264,7 @@ const GRUPPEN = [
   { id: "Landesbanken", kurz: "LB", farbe: "var(--lb)" },
   { id: "Private Banken", kurz: "PRIV", farbe: "var(--priv)" },
 ];
-const G = Object.fromEntries(GRUPPEN.map(g => [g.id, g]));
+const G = Object.fromEntries(GRUPPEN.concat([{ id: "Förder- und Sonderinstitute", kurz: "FÖRD", farbe: "var(--foe)" }]).map(g => [g.id, g]));   // Förderbanken nur zur Einfärbung, nicht als Vergleichsgruppe
 let DATA, BANKEN;
 
 /* ---------- Formatierung ---------- */
@@ -272,6 +273,7 @@ const f0 = nf(0), f1 = nf(1), f2 = nf(2);
 const mio = v => v == null ? "n. v." : f0.format(v);
 const pct = (v, d = 1) => v == null ? "n. v." : nf(d).format(v * 100) + " %";
 const pp = v => v == null ? "n. v." : (v > 0 ? "+" : "") + f2.format(v) + " Pp.";
+const sicherUrl = u => /^(https?:\/\/|#|mailto:)/i.test(String(u).trim()) ? u : "#";   // nur http(s) in href zulassen
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const kurz = n => n.replace(/\s*\(.*?\)\s*/g, " ").replace(/ Girozentrale| Aktiengesellschaft/g, "").trim();
 

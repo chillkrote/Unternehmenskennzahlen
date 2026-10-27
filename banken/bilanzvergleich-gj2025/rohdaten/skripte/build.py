@@ -216,6 +216,47 @@ NE = load("nacherhebung_2026-10-27.json") or {}
 def ne_val(name, y, k):
     x = ((NE.get(name) or {}).get("jahre") or {}).get(str(y), {}).get(k)
     return x
+# ---------- Website-Erhebung 27.10.2026 ----------
+# Jahresabschlüsse 2025 von den Bankwebsites bzw. aus dem Lobbyregister des Bundestags, von Hand aus der Jahresbilanz abgelesen (Mio. €).
+# Werte aus der Jahresbilanz ersetzen schwächere Angaben (Sekundärquelle, Rangliste, Lagebericht, EBA-Hub CC2);
+# Einträge mit vj_only (nur Vorjahr, z. B. aus EU CC2 des Offenlegungsberichts 2024) füllen nur leere Zellen.
+WS = {norm(i["bank"]): i for i in (load("websites_2026-10-27.json") or {"items": []})["items"]}
+WSF = (("bilanzsumme", "bs"), ("eigenkapital", "ek"), ("fonds_340g", "fonds"), ("davon_340e", "f340e"),
+       ("vj_bilanzsumme", "vj_bs"), ("vj_eigenkapital", "vj_ek"), ("vj_fonds_340g", "vj_fonds"))
+def ws_fmt(v):
+    return "n. v." if v is None else f"{v / 1e6:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
+for g_, r_, b_ in rows:
+    w = WS.get(norm(b_["name"]))
+    if not w:
+        continue
+    changed, old = [], {f: b_.get(f) for f, _ in WSF}
+    if not w.get("vj_only"):
+        if (b_.get("fiscal_year") or 0) != w["gj"]:
+            for f, _ in WSF:
+                b_[f] = None  # anderes Geschäftsjahr: Altwerte verwerfen
+            changed.append(f"GJ {b_.get('fiscal_year') or 'n. v.'} → {w['gj']}")
+        b_["fiscal_year"], b_["stichtag"] = w["gj"], f"{w['gj']}-12-31"
+        b_["source_type"], b_["source_url"], b_["source_doc"] = w["typ"], w["url"], w["doc"]
+    for f, k in WSF:
+        v = w.get(k)
+        if v is None or (w.get("vj_only") and b_.get(f) is not None):
+            continue
+        v *= 1e6
+        if old.get(f) is None or abs(old[f] - v) > 0.05e6:
+            changed.append(f"{f} {ws_fmt(old.get(f))} → {ws_fmt(v)}")
+        b_[f] = v
+    for y, ks in ((w["gj"], ("ju", "bilgew")), (w["gj"] - 1, ("vj_ju", "vj_bilgew"))):
+        for k in ks:
+            if w.get(k) is not None:
+                NE.setdefault(b_["name"], {"jahre": {}}).setdefault("jahre", {}).setdefault(str(y), {})[k.replace("vj_", "")] = \
+                    {"wert": w[k], "quelle": w["url"], "dokument": w["doc"]}
+    if w.get("vj_only"):
+        b_["notes"] = ((b_.get("notes") or "") + f" | Website-Erhebung 27.10.2026 (Vorjahr): {w['doc']} – {w['url']}. {w.get('note') or ''}").strip(" |")
+    else:
+        b_["notes"] = ((b_.get("notes") or "") + f" | Website-Erhebung 27.10.2026: Werte aus {w['doc']}"
+                       + (f"; geändert: {', '.join(changed)}" if changed else "; bisherige Werte bestätigt") + f". {w.get('note') or ''}").strip(" |")
+    if changed:
+        b_["_nach"] = True
 # Sitz der Hub-Banken aus der GLEIF-LEI-Datenbank
 GLEIF = (load("gleif_sitz.json") or {"items": {}})["items"]
 def city(c):

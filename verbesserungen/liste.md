@@ -23,7 +23,7 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | # | Punkt | W/A | Status |
 |---|---|---|---|
 | B1 | Sechs Sparkassen: Übersicht auf HGB-Bilanz aus CC2 umstellen (M3, PR #30) | 3/1 | ☐ |
-| B2 | Bilanzen die nicht aufgehen (LBS NordWest/NordOst, VB Stuttgart): Bilanzgewinn als Posten (M4) | 2/1 | ☐ |
+| B2 | Bilanzen die nicht aufgehen (LBS NordWest/NordOst, VB Stuttgart): Bilanzgewinn als Posten (M4) | 2/1 | ☑ LBS NordWest (19,0) und NordOst (5,0): Bilanzgewinn aus Geschäftsbericht, Bilanzen gehen auf; VB Stuttgart (0,5) bleibt Rundung |
 | B3 | Governance-Querverweise/`person_id` (M9) | 2/2 | ☐ |
 | B4 | `zeitreihen/README.md`: Status „verankert“ dokumentieren (N3) | 1/1 | ☑ |
 | B5 | Doppelt abgelegte PDFs (N5) | 1/2 | ☐ |

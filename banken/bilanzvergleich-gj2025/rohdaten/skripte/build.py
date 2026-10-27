@@ -1145,6 +1145,11 @@ for gname, rolle, b in rows:
     d = BIL.get(norm(b["name"]))
     vals = [gname, rolle, b["name"]]
     if d:
+        # CC2 weist den Bilanzgewinn manchmal nicht im Eigenkapital aus: deckt er genau die Differenz Aktiva − Passiva, kommt er zum Eigenkapital
+        bgv = ne_val(b["name"], 2025, "bilgew")
+        diff = sum(d["aktiva"].get(k, 0) for k, _ in AKT) - sum(d["passiva"].get(k, 0) for k, _ in PAS)
+        if bgv and bgv["wert"] and diff >= 2 and abs(diff - bgv["wert"]) <= 0.6:
+            d = dict(d, passiva=dict(d["passiva"], ek=d["passiva"].get("ek", 0) + bgv["wert"]), note=((d.get("note") or "") + f"Bilanzgewinn {bgv['wert']:.1f} Mio. € (Geschäftsbericht) zum Eigenkapital addiert, in EU CC2 nicht enthalten").strip())
         vals += [d["aktiva"].get(k, 0) for k, _ in AKT] + [f"=SUM({L_(cA0)}{r}:{L_(cSA - 1)}{r})"]
         vals += [d["passiva"].get(k, 0) for k, _ in PAS] + [f"=SUM({L_(cP0)}{r}:{L_(cSP - 1)}{r})"]
         vals += [mio(b.get("bilanzsumme")), f"={L_(cSA)}{r}-{L_(cSP)}{r}", f"=IF(ISNUMBER({L_(cBS)}{r}),{L_(cSA)}{r}-{L_(cBS)}{r},\"n. v.\")"]

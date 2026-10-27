@@ -3049,8 +3049,8 @@
    "2025": {
     "bilgew": {
      "wert": 5.0,
-     "quelle": "https://www.lbs.de/api/download/7384/Offenlegungsbericht 2025_LBS_NordOst_AG.pdf?hash=Offenlegungsbericht_2025_LBS_Nord_Ost_AG_0b8a3395a5",
-     "dokument": "Offenlegungsbericht 2025, Tabelle EU CC2 (Bilanz laut Jahresabschluss)"
+     "quelle": "banken/bilanzvergleich-gj2025/dokumente/lbs-landesbausparkasse-nordost-ag/lbs-nordost-geschaeftsbericht-2025.pdf",
+     "dokument": "Geschäftsbericht 2025, Bilanz Passiva Posten 8d"
     },
     "bs": {
      "wert": 8901.3,
@@ -3168,6 +3168,11 @@
      "wert": 19.0,
      "quelle": "https://www.lbs.de/api/download/7185/Geschäftsbericht-LBS-NordWest-2025.pdf?hash=Geschaeftsbericht_LBS_Nord_West_2025_4b7757b461",
      "dokument": "Jahresabschluss/Geschäftsbericht 2025 (Bilanz und GuV)"
+    },
+    "bilgew": {
+     "wert": 19.0,
+     "quelle": "banken/bilanzvergleich-gj2025/dokumente/lbs-landesbausparkasse-nordwest/geschaeftsbericht-lbs-nordwest-2025.pdf",
+     "dokument": "Geschäftsbericht 2025, Kennzahlenübersicht und Bilanz Passiva Posten 8d"
     }
    }
   }

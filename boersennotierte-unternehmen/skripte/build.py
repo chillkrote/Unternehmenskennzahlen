@@ -160,7 +160,7 @@ def lade():
     ap = BASIS / "rohdaten" / "berichte_abgleich.json"
     if ap.exists():
         for uid, berichte in json.loads(ap.read_text(encoding="utf-8")).items():
-            gut = [(sum(1 for a in r["abgleich"].values() if a.get("bestaetigt")), len(r.get("segmente", [])), n, r)
+            gut = [(sum(1 for a in r["abgleich"].values() if bestaetigt(a)), len(r.get("segmente", [])), n, r)
                    for n, r in berichte.items() if "abgleich" in r]
             if gut:
                 _, _, n, r = max(gut, key=lambda g: g[:2])
@@ -222,6 +222,12 @@ def jahresschluss(d):
 
 
 # --- Zeilen bauen ------------------------------------------------------------------------------------------------
+def bestaetigt(a):
+    """Yahoo-Wert im Bericht bestätigt, und zwar für das neueste Yahoo-Jahr (ein Treffer in einem älteren Jahr zählt nicht)."""
+    y = a.get("yahoo") or {}
+    return bool(a.get("bestaetigt")) and (not y or str(a.get("jahr")) == max(y)[:4])
+
+
 # Offensichtliche Datenfehler (Yahoo-Felder bei Holdings, Sonderfällen) nicht anzeigen; als Anteil (1,0 = 100 %)
 GRENZEN = {"Ausschüttungsquote (Yahoo)": (0, 3), "Dividendenrendite": (0, 0.5), "EBIT-Marge": (-5, 1),
            "Nettomarge": (-5, 1), "KGV (12M, Yahoo)": (0, 1000), "KGV (GJ)": (0, 1000)}
@@ -287,7 +293,7 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
     z = zusatz.get(u["unternehmen_id"], {})
     ab = z.get("abgleich") or {}
     if ab:
-        ok = [k for k, a in ab.items() if a.get("bestaetigt")]
+        ok = [k for k, a in ab.items() if bestaetigt(a)]
         if len(ok) < len([a for a in ab.values() if a.get("yahoo")]) / 2:
             hinweise.append(f"nur {len(ok)} von {len(ab)} Yahoo-Kennzahlen im Bericht wiedergefunden, prüfen")
     ma = z.get("bericht_mitarbeiter") or []
@@ -304,7 +310,7 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
         "Letztes GJ (Ende)": j0, "Berichtswährung": info.get("financialCurrency"),
         "Mitarbeiter": mitarb,
         "Mitarbeiter laut Bericht (Kandidaten)": ", ".join(f"{n} ({c}×)" for n, c in ma[:3]) or None,
-        "Abgleich Yahoo mit Bericht": (" · ".join(f"{k} {'✓' if a.get('bestaetigt') else '✗'}" for k, a in ab.items()) if ab else None),
+        "Abgleich Yahoo mit Bericht": (" · ".join(f"{k} {'✓' if bestaetigt(a) else ('(✓ älteres Jahr)' if a.get('bestaetigt') else '✗')}" for k, a in ab.items()) if ab else None),
         "Dividende je Aktie laut Bericht (Kandidaten)": ", ".join(f"{n} ({c}×)" for n, c in (z.get("bericht_dividende") or [])[:3]) or None,
         "Umsatz (Mio.)": mio("", ums), "Umsatzwachstum": teile(ums - ums_v, abs(ums_v)) if ums is not None and ums_v else None,
         "EBITDA (Mio.)": mio("", ebitda), "EBIT (Mio.)": mio("", ebit), "EBIT-Marge": teile(ebit, ums),
@@ -439,7 +445,7 @@ def zeilen_abgleich(u, zusatz, dok):
         kand = a.get("kandidat") or {}
         out.append({"Unternehmen": u["name"], "ISIN": u["isin_haupt"], "Kennzahl": k,
                     "Yahoo-Wert neuestes Jahr (Mio.)": mio("", y[neueste]) if neueste else None, "Yahoo-Jahr": neueste,
-                    "im Bericht bestätigt": "ja" if a.get("bestaetigt") else ("nein" if y else "kein Yahoo-Wert"),
+                    "im Bericht bestätigt": "ja" if bestaetigt(a) else ("nur älteres Jahr" if a.get("bestaetigt") else ("nein" if y else "kein Yahoo-Wert")),
                     "bestätigtes Jahr": a.get("jahr"), "Seite im Bericht": a.get("seite"), "Einheit im Bericht": a.get("einheit"),
                     "Fundstelle (Textzeile)": a.get("zeile"),
                     "Berichtszeile (erste Tabellenzeile, ungeprüft)": kand.get("zeile"), "Seite Berichtszeile": kand.get("seite"),

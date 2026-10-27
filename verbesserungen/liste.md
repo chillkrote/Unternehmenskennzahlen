@@ -10,10 +10,10 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | A1 | Links nur `http(s):` zulassen (N11) | 2/1 | ☑ PR #35 |
 | A2 | Fünfte Bankengruppe „Förder- und Sonderinstitute“ mit Farbe (N9) | 2/1 | ☑ PR #35 |
 | A3 | Abhängigkeiten pinnen `==` (N8) | 2/1 | ☑ PR #35 (Obergrenzen statt Festpinnen, Version in Actions nicht prüfbar) |
-| A4 | Ehrlicher User-Agent + robots.txt-Prüfung in Crawlern (N6) | 2/2 | ☐ |
-| A5 | `berichte_abrufen.py` streamt Downloads (N7) | 1/1 | ☐ |
+| A4 | Ehrlicher User-Agent + robots.txt-Prüfung in Crawlern (N6) | 2/2 | ✋ Rückfrage: ehrlicher UA kann Abrufe von Seiten verringern, die Browser-Kennungen verlangen |
+| A5 | `berichte_abrufen.py` streamt Downloads (N7) | 1/1 | ☑ |
 | A6 | Plausibilitätsgrenzen für Yahoo-Quoten in `build.py` (M7) | 3/1 | ☑ PR #35 (Quote/Multiple außerhalb Grenzen = leer) |
-| A7 | Yahoo-Abgleich: „bestätigt“ nur für das letzte GJ (M6) | 2/2 | ☐ |
+| A7 | Yahoo-Abgleich: „bestätigt“ nur für das letzte GJ (M6) | 2/2 | ☑ nur das neueste Yahoo-Jahr zählt als bestätigt, ältere Treffer als „nur älteres Jahr“ |
 | A8 | Prozent-Einheit je Spalte statt Wert-Heuristik (N4) | 1/2 | ☐ |
 | A9 | Prüfskript `pruefung/pruefe.py` (Bilanz geht auf, IDs, index.csv, SHA-256) | 3/2 | ☑ `pruefung/pruefe.py` |
 | A10 | Terminal: Export (CSV) der aktuellen Tabelle, Watchlist, Hilfetexte | 2/3 | ☐ |

@@ -1,18 +1,48 @@
 # Volkswirtschaftliche Kennzahlen
 
-Zeitreihen für das Terminal-Modul „Volkswirtschaft“ (Deutschland, Euroraum, EU-27, FR, IT, ES, NL, AT), Quelle Eurostat (Dissemination-API, JSON-stat, ohne Schlüssel, kostenfrei).
+Zeitreihen, Prognosen und Konjunkturindikatoren für das Terminal-Modul „Volkswirtschaft“. Alle Quellen sind frei zugänglich und ohne Schlüssel nutzbar; Bot-Sperren (BMWE, ifo.de, imf.org) werden nicht umgangen, diese Seiten sind nur verlinkt.
+
+## Dateien
 
 | Datei | Inhalt |
 |---|---|
-| `serien.csv` | Katalog: je Reihe Thema, Name, Einheit, Format, Takt, Datensatz, Filter, Abruf-URL, Abrufdatum, erster/letzter Zeitraum, Hinweis |
-| `zeitreihe_lang.csv` | `serie_id, geo, zeit, wert` (Monat `2026-09`, Quartal `2026-Q2`, Jahr `2025`) |
-| `laender.csv`, `themen.csv` | Bezeichnungen |
-| `berichte.csv` | regelmäßige Berichte mit Link (Bundesbank, Destatis, Sachverständigenrat, ifo, EZB, IWF) |
-| `rohdaten/eurostat/*.json.gz` | unveränderte API-Antworten je Reihe |
-| `skripte/abruf_eurostat.py` | Abruf; neue Reihe = ein weiterer Eintrag in `SERIEN` |
+| `serien.csv` | Katalog: je Reihe Thema, Name, Einheit, Format, Takt, Quelle, Datensatz, Filter, Abruf-URL, Abrufdatum, Zeitraum, `prognose_ab` (erster Projektionszeitraum), Hinweis |
+| `zeitreihe_lang.csv` | Langformat `serie_id, geo, zeit, wert` (Monat `2026-09`, Quartal `2026-Q2`, Jahr `2025`); Quelle, Abrufdatum und Einheit je Reihe stehen in `serien.csv` |
+| `laender.csv` | `geo, name, oecd` (alle 38 OECD-Mitglieder, Euroraum, EU-27, OECD gesamt, G7; ISO-2-Codes in Eurostat-Schreibweise: EL, UK) |
+| `themen.csv` | Themenbezeichnungen |
+| `prognosen_institute.csv` | Prognosen für Deutschland (handgepflegt, eine Zeile je Ausgabe und Größe): Herausgeber, Ausgabe, Veröffentlichung, Jahreswerte 2025 bis 2028, `beleg` (Primärdokument oder Presse), URL, Hinweis. Ältere Ausgaben bleiben stehen |
+| `prognosen_oecd.csv` | Economic Outlook, Ausgaben 114 bis 119 (Nov. 2023 bis Juni 2026), alle OECD-Länder: BIP, Inflation, Arbeitslosenquote, Finanzierungssaldo (vom Skript geschrieben) |
+| `konjunkturindikatoren.csv` | ifo, ZEW, Konsumklima, PMI u. a.: aktueller Wert, Vorwert, Veröffentlichung, nächste Termine, Link und Beschreibung (handgepflegt) |
+| `ifo_geschaeftsklima.csv` | erfasste Monatswerte des ifo-Index mit Beleg (handgepflegt) |
+| `berichte.csv` | regelmäßige Berichte mit Link (Bundesbank, Destatis, Institute, EU-Kommission, IWF, OECD) |
+| `rohdaten/eurostat/*.json.gz`, `rohdaten/oecd/*.csv.gz` | unveränderte API-Antworten je Reihe |
 
-Reihen: BIP und Verwendung, HVPI nach Komponenten, Erzeugerpreise, Arbeitslosenquote, Arbeitskosten, Erwerbstätige, Einzelhandel, Produktion, Bau, Stimmungsindikatoren, Euribor, Schulden- und Defizitquote.
+## Abruf
 
-Abruf: `python3 -I volkswirtschaft/skripte/abruf_eurostat.py`, danach `python3 app/build.py`.
+```
+python3 -I volkswirtschaft/skripte/abruf_eurostat.py   # europäische Länder (EU, EFTA, UK, TR), 27 Reihen
+python3 -I volkswirtschaft/skripte/abruf_oecd.py       # alle OECD-Länder, 28 Reihen + Economic-Outlook-Ausgaben
+python3 -I volkswirtschaft/skripte/abruf_ifo.py        # ifo-Reihe aus ifo_geschaeftsklima.csv
+python3 app/build.py                                   # Terminal neu bauen
+```
 
-Grenzen: Der Euroraum ist bei Eurostat je Datensatz EA20 oder EA21 (Arbeitslosenquote); Arbeitskosten und Euribor liegen nicht für alle Länder vor. Bundesbank- und Destatis-Reihen (GENESIS braucht Anmeldung) sind nicht eingebunden; die Berichte sind als Links erfasst. Die Veröffentlichungsstände unterscheiden sich je Reihe (Stand je Zeile in der Übersicht).
+Jedes Skript ersetzt nur die Reihen seiner Quelle (`skripte/gemeinsam.py`), sie laufen einzeln und in beliebiger Reihenfolge. **Neue Reihe = ein Eintrag in `SERIEN`** (`s(...)` bzw. `eo(...)` in `abruf_oecd.py`, `s(...)` in `abruf_eurostat.py`); das Terminal liest die CSV ohne Codeänderung. Neue Economic-Outlook-Ausgabe = eine Zeile in `EO_AUSGABEN` und `EO_PROGNOSE_AB` anpassen. Die OECD begrenzt Abrufe (rund 60 pro Stunde); `abruf_oecd.py` braucht etwa 35.
+
+## Reihen
+
+- Eurostat (europäische OECD-Länder, seit 2005): BIP und Verwendung, HVPI nach Komponenten, Erzeugerpreise, Arbeitslosenquote, Arbeitskosten, Erwerbstätige, Einzelhandel, Produktion, Bau, Stimmung, Euribor, Schulden- und Defizitquote.
+- OECD (alle Mitglieder): BIP-Wachstum (Quartal), Inflation und Kerninflation, Arbeitslosigkeit gesamt und Jugend (Monat), Frühindikator CLI, Geschäfts- und Verbrauchervertrauen, dazu 20 Jahresreihen aus dem Economic Outlook 119 (BIP, Inflation, Zinsen, Staatssaldo und -schuld, Leistungsbilanz, Konsum, Investitionen, Sparquote, Produktivität u. a.) mit Projektionen ab 2026.
+- ifo Geschäftsklimaindex: nur erfasste Monate (Quelle und Beleg je Monat).
+
+Wo Eurostat und OECD dieselbe Größe liefern (BIP, HVPI/CPI, Arbeitslosenquote), gilt im Terminal Eurostat für europäische Länder und die OECD-Reihe für alle übrigen (USA, Japan, Kanada, …).
+
+## Prognosen für Deutschland
+
+Stand 27.10.2026: Gemeinschaftsdiagnose (Herbst und Frühjahr 2026), Bundesregierung, Sachverständigenrat, ifo, IfW Kiel, DIW, RWI, IWH, IW Köln, IMK, Bundesbank, EU-Kommission, IWF, OECD, jeweils mit Vorgängerausgaben soweit gefunden. Spalte `beleg`: *Primärdokument* = PDF oder Seite des Herausgebers gelesen (Gemeinschaftsdiagnose, Sachverständigenrat, IMK, DIW, OECD-API), *Presse* = Zahlen aus Pressemeldungen und nicht am Original geprüft. Abgeleitete Werte (z. B. Sommerprognose aus der Revisionsangabe der Herbstprognose) sind im Hinweis gekennzeichnet. Lücken: IWH, IW Köln, ifo Sommer und EU-Kommission nur lückenhaft; Inflationsangabe der Herbstprojektion der Bundesregierung nur aus einer Fachmeldung.
+
+## Grenzen
+
+- Der Euroraum ist bei Eurostat je Datensatz EA20 oder EA21 (Arbeitslosenquote); Arbeitskosten und Euribor liegen nicht für alle Länder vor; der CLI nur für 13 Länder.
+- Länder- und Reihenstand unterscheiden sich (Stand je Zeile im Terminal).
+- ifo-Zeitreihe (xlsx), GENESIS (Anmeldung) und IWF-Datenabruf sind nicht automatisch erreichbar; Werte und Termine des ifo-Index wurden von der ifo-Seite übernommen, Lage- und Erwartungsindex liegen nur qualitativ vor.
+- Jahreswerte des Economic Outlook gelten für den Stand EO 119 (Juni 2026); ab 2026 Projektion.

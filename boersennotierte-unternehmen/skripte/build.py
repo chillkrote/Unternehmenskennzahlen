@@ -157,6 +157,17 @@ def lade():
     p = BASIS / "rohdaten" / "berichte_kennzahlen.json"
     if p.exists():
         zusatz = json.loads(p.read_text(encoding="utf-8"))
+    ap = BASIS / "rohdaten" / "berichte_abgleich.json"
+    if ap.exists():
+        for uid, berichte in json.loads(ap.read_text(encoding="utf-8")).items():
+            gut = [(sum(1 for a in r["abgleich"].values() if a.get("bestaetigt")), len(r.get("segmente", [])), n, r)
+                   for n, r in berichte.items() if "abgleich" in r]
+            if gut:
+                _, _, n, r = max(gut, key=lambda g: g[:2])
+                zusatz.setdefault(uid, {}).update({"abgleich": r["abgleich"], "bericht_datei": n,
+                                                    "bericht_mitarbeiter": r.get("mitarbeiter_kandidaten", []),
+                                                    "bericht_dividende": r.get("dividende_kandidaten", []),
+                                                    "bericht_segmente": r.get("segmente", [])})
     dok = {}
     for p in glob.glob(str(BASIS / "*" / "dokumente" / "index.csv")):
         for z in csv.DictReader(open(p, encoding="utf-8-sig"), delimiter=";"):
@@ -235,7 +246,6 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
     gross = bafin.get(u["unternehmen_id"], [])
     fremd = [x for x in gross if schluessel(x["meldepflichtiger"]) != schluessel(x["emittent"])]
     top = fremd[0] if fremd else None
-    z = zusatz.get(u["unternehmen_id"], {})
     dk = sorted(dok.get(u["unternehmen_id"], []), key=lambda x: x["geschaeftsjahr"], reverse=True)
     div = dividenden_je_jahr(d or {})
     gleiche_waehrung = info.get("financialCurrency") in (None, info.get("currency"))
@@ -261,6 +271,17 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
             hinweise.append("Eigenkapital größer als Bilanzsumme, prüfen")
         if kurs and info.get("sharesOutstanding") and mcap and abs(kurs * info["sharesOutstanding"] / mcap - 1) > 0.5:
             hinweise.append("Börsenwert weicht stark von Kurs × Aktienzahl ab (mehrere Gattungen?)")
+    z = zusatz.get(u["unternehmen_id"], {})
+    ab = z.get("abgleich") or {}
+    if ab:
+        ok = [k for k, a in ab.items() if a.get("bestaetigt")]
+        if len(ok) < len([a for a in ab.values() if a.get("yahoo")]) / 2:
+            hinweise.append(f"nur {len(ok)} von {len(ab)} Yahoo-Kennzahlen im Bericht wiedergefunden, prüfen")
+    ma = z.get("bericht_mitarbeiter") or []
+    mitarb = z.get("mitarbeiter") or info.get("fullTimeEmployees")
+    if mitarb is None and ma and ma[0][1] >= 3:
+        mitarb = ma[0][0]
+        hinweise.append("Mitarbeiterzahl häufigster Wert im Bericht, ungeprüft")
     return {
         "Hinweise zur Datenqualität": "; ".join(hinweise) or None,
         "Unternehmen": u["name"], "ISIN": u["isin_haupt"], "Weitere Gattungen": u["weitere_isins"], "Kürzel": u["kuerzel"],
@@ -268,7 +289,10 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
         "Land": u["land"], "Sitz (Yahoo)": u["sitz"], "Subsektor (Börse)": u["subsektor_db"], "Industrie (Yahoo)": u["industrie_yahoo"],
         "Website": u["website"],
         "Letztes GJ (Ende)": j0, "Berichtswährung": info.get("financialCurrency"),
-        "Mitarbeiter": z.get("mitarbeiter") or info.get("fullTimeEmployees"),
+        "Mitarbeiter": mitarb,
+        "Mitarbeiter laut Bericht (Kandidaten)": ", ".join(f"{n} ({c}×)" for n, c in ma[:3]) or None,
+        "Abgleich Yahoo mit Bericht": (" · ".join(f"{k} {'✓' if a.get('bestaetigt') else '✗'}" for k, a in ab.items()) if ab else None),
+        "Dividende je Aktie laut Bericht (Kandidaten)": ", ".join(f"{n} ({c}×)" for n, c in (z.get("bericht_dividende") or [])[:3]) or None,
         "Umsatz (Mio.)": mio("", ums), "Umsatzwachstum": teile(ums - ums_v, abs(ums_v)) if ums is not None and ums_v else None,
         "EBITDA (Mio.)": mio("", ebitda), "EBIT (Mio.)": mio("", ebit), "EBIT-Marge": teile(ebit, ums),
         "Ergebnis Aktionäre (Mio.)": mio("", jue), "Nettomarge": teile(jue, ums),
@@ -391,6 +415,35 @@ def zeilen_roh(u, d):
     return out
 
 
+def zeilen_abgleich(u, zusatz, dok):
+    z = zusatz.get(u["unternehmen_id"], {})
+    out = []
+    art = next((x["dokumentart"] for x in dok.get(u["unternehmen_id"], []) if x["datei"].endswith("/" + (z.get("bericht_datei") or "-"))), None)
+    for k, a in (z.get("abgleich") or {}).items():
+        y = a.get("yahoo") or {}
+        neueste = max(y) if y else None
+        kand = a.get("kandidat") or {}
+        out.append({"Unternehmen": u["name"], "ISIN": u["isin_haupt"], "Kennzahl": k,
+                    "Yahoo-Wert neuestes Jahr (Mio.)": mio("", y[neueste]) if neueste else None, "Yahoo-Jahr": neueste,
+                    "im Bericht bestätigt": "ja" if a.get("bestaetigt") else ("nein" if y else "kein Yahoo-Wert"),
+                    "bestätigtes Jahr": a.get("jahr"), "Seite im Bericht": a.get("seite"), "Einheit im Bericht": a.get("einheit"),
+                    "Fundstelle (Textzeile)": a.get("zeile"),
+                    "Berichtszeile (erste Tabellenzeile, ungeprüft)": kand.get("zeile"), "Seite Berichtszeile": kand.get("seite"),
+                    "Einheit laut Tabellenkopf (vermutet)": kand.get("einheit"), "Bericht": z.get("bericht_datei"), "Dokumentart": art})
+    return out
+
+
+def zeilen_segmente(u, zusatz):
+    z = zusatz.get(u["unternehmen_id"], {})
+    out = []
+    for seg in z.get("bericht_segmente", []):
+        kopf = " | ".join(seg.get("ueberschrift", [])[:3])
+        for zeile in seg.get("zeilen", []):
+            out.append({"Unternehmen": u["name"], "ISIN": u["isin_haupt"], "Seite im Bericht": seg["seite"], "Überschrift": kopf,
+                        "Zeile (Bezeichnung und Werte)": zeile, "Einheit (vermutet)": seg.get("einheit"), "Bericht": z.get("bericht_datei")})
+    return out
+
+
 def zeilen_zusatz(u, zusatz):
     z = zusatz.get(u["unternehmen_id"])
     if not z:
@@ -402,6 +455,7 @@ def zeilen_zusatz(u, zusatz):
 
 
 # --- Excel -------------------------------------------------------------------------------------------------------
+ILLEGAL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
 KOPF_FILL = PatternFill("solid", fgColor="1F3864")
 KOPF_FONT = Font(color="FFFFFF", bold=True)
 
@@ -423,6 +477,8 @@ def blatt(wb, titel, zeilen, hinweis=None, breite=None):
     for r, z in enumerate(zeilen, start + 1):
         for i, s in enumerate(spalten, 1):
             v = z.get(s)
+            if isinstance(v, str):
+                v = ILLEGAL.sub("", v)
             c = ws.cell(r, i, v)
             if isinstance(v, float):
                 if s in PROZENT:
@@ -464,7 +520,7 @@ METHODIK = [
 def mappe(pfad, titel, firmen, yahoo, bafin, zusatz, dok, branchenspalte=False):
     wb = Workbook()
     wb.remove(wb.active)
-    ueb, guv, bil, cf, kz, mk, akt, roh, seg, doks = [], [], [], [], [], [], [], [], [], []
+    ueb, guv, bil, cf, kz, mk, akt, roh, seg, doks, abg, segb = [], [], [], [], [], [], [], [], [], [], [], []
     for u in firmen:
         d = yahoo.get(u["isin_haupt"])
         z = zeile_uebersicht(u, d, bafin, dok, zusatz)
@@ -478,6 +534,8 @@ def mappe(pfad, titel, firmen, yahoo, bafin, zusatz, dok, branchenspalte=False):
         mk += zeilen_markt(u, d)
         akt += zeilen_aktionaere(u, bafin)
         seg += zeilen_zusatz(u, zusatz)
+        abg += zeilen_abgleich(u, zusatz, dok)
+        segb += zeilen_segmente(u, zusatz)
         if not branchenspalte:
             roh += zeilen_roh(u, d)
         for x in dok.get(u["unternehmen_id"], []):
@@ -494,6 +552,8 @@ def mappe(pfad, titel, firmen, yahoo, bafin, zusatz, dok, branchenspalte=False):
     blatt(wb, "Aktionäre (BaFin)", akt, "Stimmrechtsmitteilungen laut BaFin-Datenbank (Stand des Gesamtexports), absteigend nach Anteil.")
     if seg:
         blatt(wb, "Segmente", seg, "Segmentangaben aus den Geschäftsberichten.")
+    blatt(wb, "Abgleich Bericht", abg, "Yahoo-Zahlen gegen den Geschäftsbericht im Repo: ist der Wert (irgendeines der letzten Jahre, in EUR/Tsd./Mio.) in einer passend bezeichneten Zeile des Berichts zu finden? Automatische Textsuche, Fundstelle zum Nachprüfen.")
+    blatt(wb, "Segmente (Bericht)", segb, "Ungeprüfter Rohextrakt der Segmenttabellen aus dem Anhang der Geschäftsberichte (Zeilen mit Umsatz/Ergebnis/Vermögen/Investitionen usw.). Spalten und Einheit stehen im Bericht auf der angegebenen Seite.", breite=40)
     blatt(wb, "Dokumente", doks, "Im Repo abgelegte Originaldokumente.")
     if roh:
         blatt(wb, "Rohdaten Yahoo", roh, "Alle Posten wie von Yahoo geliefert (volle Einheiten, Berichtswährung).")

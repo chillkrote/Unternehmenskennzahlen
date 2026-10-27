@@ -6,7 +6,9 @@ Einheitliche Ablage aller Zeitreihen über alle Erhebungen und Branchen. Die Erh
 
 - `zeitreihe_lang.csv`: eine Zeile je Unternehmen, Kennzahl und Stichtag.
 - `stammdaten.csv`: eine Zeile je Unternehmen (ID, Name, Branche, Gruppe, Rechtsnachfolge).
-- `skripte/`: Skripte, die das Langformat erzeugen (`migriere_banken.py` überführt die Bankenexcel).
+- `Zeitreihen_Banken.xlsx`: Excel mit einem Blatt je Kennzahl (Zeilen Banken, Spalten Jahre), erzeugt von `skripte/excel_export.py`.
+- `skripte/`: `migriere_banken.py` überführt die Bankenexcel ins Langformat, `excel_export.py` baut daraus die Excel.
+- Das Bank-Terminal (`app/`, Ansicht TS auf F6) liest `zeitreihe_lang.csv` über `datenschicht.lade_lang`; mehr Jahre erscheinen dort ohne Codeänderung.
 
 ## Spalten von `zeitreihe_lang.csv`
 

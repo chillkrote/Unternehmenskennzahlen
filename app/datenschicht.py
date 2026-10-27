@@ -5,8 +5,10 @@ daraus einen Datensatz je Bank. Spalten werden über ihre Überschrift gesucht,
 nicht über die Position: neue Spalten oder zusätzliche Banken (z. B. aus dem
 EBA-Hub) kommen ohne Codeänderung mit. Fehlt eine Spalte, bleibt das Feld leer.
 """
+import csv
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 import openpyxl
@@ -79,6 +81,27 @@ FELDER = {
 }
 
 ZEITREIHE = "Zeitreihe 2021-2025"
+# Langformat (zeitreihen/): HGB-Einzelreihen je Bank und Jahr, beliebig viele Jahre
+ZEITREIHE_LANG = REPO / "zeitreihen/zeitreihe_lang.csv"
+LANG_KENNZAHLEN = ("bilanzsumme", "eigenkapital", "fonds_340g", "jahresueberschuss")
+
+
+def slug(name):
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+def lade_lang(banken, datei=ZEITREIHE_LANG):
+    """Legt je Bank `zr` = {kennzahl: {jahr: wert}} aus dem Langformat an (HGB, Einzelabschluss)."""
+    if not Path(datei).exists():
+        return
+    nach_id = {slug(b["bank"]): b for b in banken}
+    with open(datei, encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            b = nach_id.get(r["unternehmen_id"])
+            if b is None or r["kennzahl"] not in LANG_KENNZAHLEN or r["rechnungslegung"] != "HGB":
+                continue
+            b.setdefault("zr", {}).setdefault(r["kennzahl"], {})[r["stichtag"][:4]] = float(r["wert"])
 BILANZEN = "Bilanzen 31.12.2025"
 
 
@@ -158,7 +181,9 @@ def lade(excel=STANDARD_EXCEL):
             if any(v for v in aktiva.values()):
                 b["bilanz"] = {"aktiva": aktiva, "passiva": passiva}
 
-    return list(banken.values())
+    liste = list(banken.values())
+    lade_lang(liste)
+    return liste
 
 
 def main():

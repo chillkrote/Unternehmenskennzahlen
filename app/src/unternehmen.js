@@ -277,11 +277,11 @@ const UNT = (() => {
     if (S.dokTyp !== "alle" && !typen.includes(S.dokTyp)) S.dokTyp = "alle";
     const zeigen = S.dokTyp === "alle" ? d : d.filter(x => x.typ === S.dokTyp);
     const chips = typen.length > 1 ? chipRow([["alle", "Alle", d.length], ...typen.map(t => [t, t, d.filter(x => x.typ === t).length])], "data-udok", S.dokTyp) : "";
-    return panel({ code: "DOK", titel: "Dokumente", sub: `${d.length} Datei${d.length === 1 ? "" : "en"} im Repo · Download und Ansicht über GitHub`, body: chips +
+    return panel({ code: "DOK", titel: "Dokumente", sub: `${d.length} Datei${d.length === 1 ? "" : "en"} im Repo · Datei öffnen bzw. herunterladen über GitHub`, body: chips +
       `<div class="scroll"><table><thead><tr><th style="text-align:left">Jahr</th><th style="text-align:left">Art</th><th style="text-align:left">Dokument</th><th>Größe</th><th style="text-align:left">Quelle</th><th></th></tr></thead><tbody>${zeigen.map(x => `<tr><td>${x.jahr || "–"}</td><td style="text-align:left;font-family:var(--sans)">${esc(x.typ)}</td>
         <td style="text-align:left;font-family:var(--sans)" title="${esc(x.pfad)}">${esc(x.titel)}<div class="pct">${esc(x.pfad)}${x.sha256 ? ` · SHA-256 ${esc(x.sha256.slice(0, 10))}…` : ""}</div></td><td class="n">${mb(x.kb)}</td>
         <td style="text-align:left;font-family:var(--sans)">${x.url ? `<a class="flink" href="${esc(x.url)}" target="_blank" rel="noopener">Original${x.abruf ? ` (${esc(x.abruf.replace(/^Download /, ""))})` : ""}</a>` : "–"}</td>
-        <td style="white-space:nowrap"><a class="btn" href="${esc(dokUrl(x.pfad, "raw"))}" target="_blank" rel="noopener" download>Download</a> <a class="btn" href="${esc(dokUrl(x.pfad, "blob"))}" target="_blank" rel="noopener">GitHub</a></td></tr>`).join("")}</tbody></table></div>`,
+        <td style="white-space:nowrap"><a class="btn" href="${esc(dokUrl(x.pfad, "raw"))}" target="_blank" rel="noopener">Datei</a> <a class="btn" href="${esc(dokUrl(x.pfad, "blob"))}" target="_blank" rel="noopener">GitHub</a></td></tr>`).join("")}</tbody></table></div>`,
       fuss: "Die Dateien liegen im GitHub-Repo; je nach Repo-Einstellung ist dafür eine Anmeldung mit Zugriff nötig. Der Pfad zeigt den Speicherort im Repo." });
   }
 

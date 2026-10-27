@@ -9,9 +9,9 @@ from lib import *
 from lib import slug, UNI, mitglieder, mandate, werdegang, verg, kenn, M, X, K
 
 DOC = 'banken/bilanzvergleich-gj2025/dokumente/'
-CB = (DOC + 'commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf', 'commerzbank-ag')
-DB = (DOC + 'deutsche-bank-ag/annual-financial-statements-of-deutsche-bank-ag-2025.pdf', 'deutsche-bank-ag')
-HV = (DOC + 'unicredit-bank-gmbh-hypovereinsbank/20260313-unicredit-bank-gmbh-jahresabschluss-2025.pdf', 'unicredit-bank-gmbh-hypovereinsbank')
+CB = (DOC + 'commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf', 'U000124')
+DB = (DOC + 'deutsche-bank-ag/annual-financial-statements-of-deutsche-bank-ag-2025.pdf', 'U000148')
+HV = (DOC + 'unicredit-bank-gmbh-hypovereinsbank/20260313-unicredit-bank-gmbh-jahresabschluss-2025.pdf', 'U000676')
 
 # ---------------- Commerzbank (Jahresabschluss HGB 2025) ----------------
 for n, f, seit in [('Dr. Bettina Orlopp','Vorsitzende',''),('Michael Kotzbauer','stellv. Vorsitzender',''),('Sabine Mlnarsky','Mitglied',''),

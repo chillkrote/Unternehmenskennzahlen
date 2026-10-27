@@ -17,6 +17,8 @@ U = HIER.parent
 YAHOO = U.parent / "rohdaten" / "yahoo"
 sys.path.insert(0, str(HIER))
 from universum import BRANCHEN  # noqa: E402
+sys.path.insert(0, str(U.parents[1] / "stammdaten"))
+import ids  # noqa: E402
 
 RECHTSFORM = re.compile(r"\b(aktiengesellschaft|ag|se|kgaa|gmbh|co|kg|n\.?v|s\.?a|plc|inc|ltd|limited|holding|holdings|group|gruppe|"
                         r"spolka akcyjna|s\.?p\.?a|corp|corporation|& co|und)\b\.?", re.I)
@@ -95,26 +97,21 @@ def main():
         z.update({a: b for a, b in k.items() if not a.startswith("_")})
         if not z["branche"]:
             z["branche"] = branche_yahoo(z["sektor_yahoo"], z["industrie_yahoo"])
-        if not z.get("unternehmen_id"):
-            z["unternehmen_id"] = slug(z["name"])
-    # einmal vergebene IDs bleiben stabil (Ordnernamen der Dokumente), auch wenn sich der Name bei Yahoo ändert
-    ids_p = U / "ids.json"
-    ids = json.loads(ids_p.read_text(encoding="utf-8")) if ids_p.exists() else {}
-    for z in zeilen:
-        if z["isin"] in ids and not korr.get("instrumente", {}).get(z["isin"], {}).get("unternehmen_id"):
-            z["unternehmen_id"] = ids[z["isin"]]
-    # gleiche Unternehmen (mehrere Gattungen) über den normierten Namen zusammenführen
+        z["ordner"] = z.get("unternehmen_id") or slug(z["name"])  # alte Schreibweise: bleibt Ordnername der Dokumente (Alias im Register)
+    # Unternehmens-ID aus dem zentralen Register (stammdaten/): ISIN zuerst, dann Ordnername/Name; nur wirklich Neues bekommt eine neue ID.
+    # Aktiengattungen desselben Unternehmens (gleicher normierter Name) teilen sich eine ID.
+    reg = ids.lade(neu=True)
     nach_schl = defaultdict(list)
     for z in zeilen:
-        if z.get("ausschluss"):
-            continue
-        nach_schl[schluessel(z["name"])].append(z)
+        nach_schl[schluessel(z["name"]) if not z.get("ausschluss") else z["isin"]].append(z)
     for gruppe in nach_schl.values():
-        uid = sorted({z["unternehmen_id"] for z in gruppe}, key=len)[0]
+        bekannt = sorted({u for u in (reg.nach_isin.get(z["isin"]) or reg.aufloesen(z["ordner"]) for z in gruppe) if u})
+        h = gruppe[0]
+        uid = bekannt[0] if bekannt else reg.registrieren(
+            name=h["name"], branche=h["branche"], isin=h["isin"], weitere_isins=[z["isin"] for z in gruppe[1:]], ordner=h["ordner"],
+            sitz=(h["sitz"] or "").split(",")[0].strip(), land=h["land"], ticker=h["yahoo"], herkunft="Börse")
         for z in gruppe:
             z["unternehmen_id"] = uid
-    ids.update({z["isin"]: z["unternehmen_id"] for z in zeilen})
-    ids_p.write_text(json.dumps(dict(sorted(ids.items())), ensure_ascii=False, indent=1), encoding="utf-8")
     felder = ["unternehmen_id", "isin", "wkn", "kuerzel", "yahoo", "xetra", "name", "name_boerse", "segment", "weitere_segmente",
               "boerse", "reguliert", "land", "sitz", "index", "sektor_db", "subsektor_db", "sektor_maccess", "sektor_yahoo",
               "industrie_yahoo", "branche", "website", "ausschluss", "quelle"]
@@ -147,6 +144,12 @@ def main():
         w = csv.DictWriter(f, list(out[0]), delimiter=";")
         w.writeheader()
         w.writerows(out)
+    for u in out:  # Stammdaten (Ticker, Sitz, Branche, ISINs) im Register nachziehen; IDs und Namen bleiben unverändert
+        r = reg.unternehmen[u["unternehmen_id"]]
+        reg.aktualisieren(u["unternehmen_id"], isin_haupt=u["isin_haupt"], weitere_isins=u["weitere_isins"], ticker=u["yahoo"],
+                          branche=u["branche"] if r["herkunft"] == "Börse" else "", land=u["land"],
+                          sitz=(u["sitz"] or "").split(",")[0].strip() if not r["sitz"] else "")
+    reg.speichern()
     print(len(out), "Unternehmen,", sum(1 for z in zeilen if z.get("ausschluss")), "Gattungen ausgeschlossen")
     print(Counter(u["branche"] or "OHNE" for u in out).most_common())
 

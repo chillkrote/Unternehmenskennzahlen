@@ -496,6 +496,7 @@ const UNT = (() => {
   }
 
   function viewProfil(id) {
+    id = NACH_ID[id] ? id : ((UD.alt_ids || {})[id] || id);   // alte Lesezeichen (#firma-deutsche-bank-ag) auf die zentrale ID umleiten
     const f = NACH_ID[id];
     if (!f) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Unternehmen mit der Kennung <code>${esc(id)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
     S.profil = id;
@@ -653,5 +654,5 @@ const UNT = (() => {
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
+  return { init, da, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
 })();

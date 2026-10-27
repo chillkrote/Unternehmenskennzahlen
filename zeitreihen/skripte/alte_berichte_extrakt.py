@@ -13,7 +13,6 @@ import csv
 import re
 import subprocess
 import sys
-import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -21,13 +20,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from mehrjahres_extrakt import ZEILEN, zahlen  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "stammdaten"))
+import ids as stamm  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
 LANG = REPO / "zeitreihen/zeitreihe_lang.csv"
 SKALEN = (1e-6, 1e-3, 1.0, 1e3)   # EUR, TEUR, Mio. EUR, Mrd. EUR -> Mio. EUR
-
-
-def slug(n):
-    s = unicodedata.normalize("NFKD", n).encode("ascii", "ignore").decode()
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
 def pdftext(pdf, cache):
@@ -109,10 +105,6 @@ def main():
     a = p.parse_args()
     cache, wurzel = Path(a.cache), Path(a.pdfordner)
     cache.mkdir(parents=True, exist_ok=True)
-    ids = {}
-    with open(REPO / "zeitreihen/stammdaten.csv", encoding="utf-8") as f:
-        for r in csv.DictReader(f):
-            ids[slug(r["name"])] = r["unternehmen_id"]
     bekannt, ankerfrei = defaultdict(dict), defaultdict(dict)
     with open(LANG, encoding="utf-8", newline="") as f:
         for r in csv.DictReader(f):
@@ -122,7 +114,7 @@ def main():
     berichte = []
     with open(a.index, encoding="utf-8", newline="") as f:
         for r in csv.DictReader(f):
-            uid = ids.get(slug(r["bank"]))
+            uid = stamm.lade().aufloesen(r["bank"])
             if uid:
                 berichte.append((uid, wurzel / r["datei"], r["datei"]))
     with cf.ThreadPoolExecutor(8) as ex:

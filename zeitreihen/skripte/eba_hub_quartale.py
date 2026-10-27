@@ -7,12 +7,14 @@ Aufruf: python3 -I eba_hub_quartale.py
 import csv
 import json
 import re
-import unicodedata
+import sys
 from pathlib import Path
 
 import openpyxl
 
 REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "stammdaten"))
+import ids as stamm  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
 ROH = REPO / "banken/bilanzvergleich-gj2025/rohdaten"
 LANG = REPO / "zeitreihen/zeitreihe_lang.csv"
 
@@ -26,14 +28,10 @@ ZEILEN = {
 QUOTEN = {"cet1_quote", "t1_quote", "gk_quote", "gk_anforderung", "leverage_ratio", "lcr", "nsfr"}
 
 
-def slug(n):
-    s = unicodedata.normalize("NFKD", n).encode("ascii", "ignore").decode()
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
-
-
 def main():
     j = json.load(open(ROH / "eba_hub_neu_2025.json"))
-    lei = {e["lei"]: slug(e["name"]) for k in ("neu", "bestehend") for e in j[k]}
+    lei = {e["lei"]: stamm.lade().aufloesen(e["name"]) for k in ("neu", "bestehend") for e in j[k]}
+    lei = {k: v for k, v in lei.items() if v}
     ws = openpyxl.load_workbook(ROH / "eba-hub/eba_hub_km1_de_alle_stichtage.xlsx").active
     werte = {}
     for r in ws.iter_rows(min_row=4, values_only=True):

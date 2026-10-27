@@ -1,5 +1,7 @@
 """Gemeinsame Helfer der Governance-Erhebung. Seitenangaben = PDF-Seite."""
-import csv, re, os, unicodedata
+import csv, re, os, sys, unicodedata
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'stammdaten'))
+import ids  # zentrale Unternehmens-IDs (stammdaten/)
 OUT = os.path.join(os.path.dirname(__file__), '..')
 def slug(n):
     n = re.sub(r'\b(Prof\.|Dr\.|Professor|Dipl\.-\w+\.?|h\.c\.|Ing\.)\s*', '', n)
@@ -7,10 +9,10 @@ def slug(n):
     return re.sub(r'[^a-z0-9]+', '-', n).strip('-')
 
 # bekannte IDs aus dem Universum (Mandate in Unternehmen, die selbst im Repo stehen)
-UNI = {'Münchener Rückversicherungs-Gesellschaft AG': 'muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf',
-       'JENOPTIK AG': 'jenoptik-ag', 'TUI AG': 'tui-ag', 'Rheinmetall AG': 'rheinmetall-ag',
-       'Siemens Energy AG': 'siemens-energy-ag', 'Bayer AG': 'bayer-aktiengesellschaft', 'Traton SE': 'traton-se',
-       'Knorr Bremse AG': 'knorr-bremse-ag', 'Commerz Real AG': '', 'Bertelsmann SE & Co.KGaA': ''}
+UNI = {'Münchener Rückversicherungs-Gesellschaft AG': 'U000420',
+       'JENOPTIK AG': 'U000317', 'TUI AG': 'U000670', 'Rheinmetall AG': 'U000502',
+       'Siemens Energy AG': 'U000537', 'Bayer AG': 'U000065', 'Traton SE': 'U000668',
+       'Knorr Bremse AG': 'U000331', 'Commerz Real AG': '', 'Bertelsmann SE & Co.KGaA': ''}
 
 mitglieder, mandate, werdegang, verg, kenn = [], [], [], [], []
 
@@ -41,6 +43,16 @@ def w(name, rows, cols):
         for r in rows: wr.writerow({c: r.get(c, '') for c in cols})
 
 def write_all():
+    reg = ids.lade(neu=True)
+    unbekannt = set()
+    for rows in (mitglieder, mandate, verg, kenn):
+        for r in rows:
+            for c in ('unternehmen_id', 'gesellschaft_unternehmen_id', 'ueber_unternehmen_id'):
+                v = r.get(c)
+                if v and v not in reg.unternehmen:       # alte Schreibweise (Slug) oder Name -> zentrale ID
+                    r[c] = reg.aufloesen(v) or v
+                    if r[c] not in reg.unternehmen: unbekannt.add(v)
+    if unbekannt: raise SystemExit('Keine Unternehmens-ID in stammdaten/ für: %s' % sorted(unbekannt))
     pers = {}
     for r in mitglieder + [dict(person_id=m['person_id'], name=m['name']) for m in mandate]:
         pers.setdefault(r['person_id'], r['name'])

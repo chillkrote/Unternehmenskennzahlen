@@ -1,0 +1,50 @@
+name: Stammdaten prüfen
+
+# Kontrolle der zentralen Unternehmens-IDs (stammdaten/): jede ISIN gehört zu genau einer ID, keine verwaisten ID-Verweise,
+# keine verschwundenen IDs gegenüber dem Basis-Branch. Schlägt der Lauf fehl, darf der Stand nicht nach main.
+# Der Build des Terminals (app/build.py) führt dieselbe Prüfung aus, bevor die Börsen- und Terminworkflows committen.
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - "stammdaten/**"
+      - "app/data/**"
+      - "governance/**"
+      - "termine/**.csv"
+      - "zeitreihen/**.csv"
+      - "boersennotierte-unternehmen/**.csv"
+      - "boersennotierte-unternehmen/**.json"
+      - ".github/workflows/stammdaten.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: stammdaten-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # ohne die großen PDF-/HTML-Dokumente (mehrere GB); die Prüfung liest nur CSV und JSON
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.html
+            !*.htm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tests
+        run: python3 -m unittest discover -s stammdaten -v
+      - name: Prüfung gegen den Stand von main
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then REF="origin/${{ github.base_ref }}"; else REF="HEAD^"; fi
+          git rev-parse --verify "$REF" >/dev/null 2>&1 || REF="HEAD"
+          python3 stammdaten/pruefe_ids.py --gegen="$REF"

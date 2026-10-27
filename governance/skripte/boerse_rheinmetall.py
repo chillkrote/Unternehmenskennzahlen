@@ -1,6 +1,6 @@
 from lib import *
-G = ('governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf', 'rheinmetall-ag')
-uni('E.ON SE','e-on-se'); uni('Deutsche Bank AG','deutsche-bank-ag'); uni('freenet AG','freenet-ag'); uni('Nemetschek SE','nemetschek-se')
+G = ('governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf', 'U000502')
+uni('E.ON SE','U000195'); uni('Deutsche Bank AG','U000148'); uni('freenet AG','U000231'); uni('Nemetschek SE','U000433')
 for n,f,s,b in [('Armin Papperger','Vorsitzender (CEO)','2012-01-01',''),('Klaus Neumann','Mitglied (CFO)','',''),('Dr. Vera Saal','Mitglied (Personal)','2025',''),
                 ('René Gansauge','Mitglied (COO)','2025-01-01',''),('Dr. Ursula Biernert-Kloß','Mitglied','2024-10-01','2025-08-31')]:
     M(G,'Vorstand',n,f,'',s,b,94 if n!='Dr. Ursula Biernert-Kloß' else 192)

@@ -14,6 +14,9 @@ from pathlib import Path
 import openpyxl
 
 REPO = Path(__file__).resolve().parent.parent
+import sys  # noqa: E402
+sys.path.insert(0, str(REPO / "stammdaten"))
+import ids as stamm  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
 STANDARD_EXCEL = REPO / "banken/bilanzvergleich-gj2025/auswertung/Bilanzvergleich_Banken_GJ2025.xlsx"
 
 # Blatt -> {Feldname im Datensatz: Spaltenüberschrift in der Excel}
@@ -88,11 +91,6 @@ LANG_KENNZAHLEN = ("bilanzsumme", "eigenkapital", "fonds_340g", "jahresueberschu
 QUARTAL_KENNZAHLEN = ("cet1_quote", "gk_quote", "leverage_ratio", "lcr", "nsfr")
 
 
-def slug(name):
-    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
-
-
 GRUPPEN_LANG = REPO / "zeitreihen/gruppen_lang.csv"
 
 
@@ -111,7 +109,7 @@ def lade_lang(banken, datei=ZEITREIHE_LANG):
     """Legt je Bank `zr` = {kennzahl: {jahr: wert}} (HGB, Einzelabschluss) und `zq` = {kennzahl: {stichtag: wert}} (aufsichtlich) an."""
     if not Path(datei).exists():
         return
-    nach_id = {slug(b["bank"]): b for b in banken}
+    nach_id = {b["id"]: b for b in banken if b.get("id")}
     with open(datei, encoding="utf-8", newline="") as f:
         for r in csv.DictReader(f):
             b = nach_id.get(r["unternehmen_id"])
@@ -201,6 +199,15 @@ def lade(excel=STANDARD_EXCEL):
                 b["bilanz"] = {"aktiva": aktiva, "passiva": passiva}
 
     liste = list(banken.values())
+    reg = stamm.lade()
+    unbekannt = []
+    for b in liste:   # Median- und Kopfzeilen der Gruppentabellen haben keine Gruppe und keine ID
+        b["id"] = reg.aufloesen(b["bank"])
+        if b["id"] is None and b.get("gruppe") not in (None, "Gruppe"):
+            unbekannt.append(b["bank"])
+    if unbekannt:
+        raise SystemExit("Banken nicht in stammdaten/unternehmen_ids.csv: " + "; ".join(unbekannt))
+    liste = [b for b in liste if b["id"]]
     lade_lang(liste)
     return liste
 

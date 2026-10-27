@@ -1,0 +1,18 @@
+entscheidung,unternehmen_id,name_bank_stammdaten,id_alt_bank,name_boerse,id_alt_boerse,begruendung
+zusammengeführt,U000056,Baader Bank AG,baader-bank-ag,Baader Bank Aktiengesellschaft,baader-bank-aktiengesellschaft,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000124,Commerzbank AG,commerzbank-ag,Commerzbank AG,commerzbank-ag,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000148,Deutsche Bank AG,deutsche-bank-ag,Deutsche Bank Aktiengesellschaft,deutsche-bank-aktiengesellschaft,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000158,Deutsche Pfandbriefbank AG,deutsche-pfandbriefbank-ag,Deutsche Pfandbriefbank AG,deutsche-pfandbriefbank-ag,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000397,MERKUR PRIVATBANK KGaA,merkur-privatbank-kgaa,Merkur PrivatBank KgaA,merkur-privatbank-kgaa,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000480,ProCredit Holding AG,procredit-holding-ag,ProCredit Holding AG,procredit-holding-ag,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000675,UmweltBank AG,umweltbank-ag,UmweltBank AG,umweltbank-ag,gleicher normierter Name; Bank im Bilanzvergleich und notierte Gesellschaft sind dasselbe Rechtssubjekt (Ticker/ISIN bestätigen es)
+zusammengeführt,U000685,Varengold Bank AG,varengold-bank-ag,Ascory Bank AG,ascory-bank-ag,Umbenennung: GLEIF führt LEI 529900BIK4WRWS06MR52 unter dem Rechtsnamen Ascory Bank AG (vorher Varengold Bank AG); dasselbe Rechtssubjekt
+geprüft: getrennt gelassen,GRENKE BANK AG / Grenke AG,GRENKE BANK AG,grenke-bank-ag,Grenke AG,grenke-ag,EBA-Hub führt den Bericht der Bank unter dem Namen GRENKE AG (Konzernbericht der Muttergesellschaft); Bank (Tochter) und notierte AG sind getrennte Rechtsträger
+geprüft: getrennt gelassen,U000629 / U000631,Sto SE & Co. KGaA,,Ströer SE & Co. KGaA,,"Namensähnlichkeit 0.933, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000581 / U000605,Sparkasse Holstein,,Sparkasse Südholstein,,"Namensähnlichkeit 0.919, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000364 / U000365,LBS Landesbausparkasse NordOst AG,,LBS Landesbausparkasse NordWest,,"Namensähnlichkeit 0.915, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000561 / U000562,Sparda-Bank Südwest eG,,Sparda-Bank West eG,,"Namensähnlichkeit 0.914, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000336 / U000348,Kreissparkasse Böblingen,,Kreissparkasse Waiblingen,,"Namensähnlichkeit 0.894, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000336 / U000347,Kreissparkasse Böblingen,,Kreissparkasse Tübingen,,"Namensähnlichkeit 0.889, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000334 / U000350,KPS AG,,K+S Aktiengesellschaft,,"Namensähnlichkeit 0.889, eigene Rechtsträger (Prüfliste für Robin)"
+geprüft: getrennt gelassen,U000037 / U000296,Altech Advanced Materials AG,,IBU-tec advanced materials AG,,"Namensähnlichkeit 0.88, eigene Rechtsträger (Prüfliste für Robin)"

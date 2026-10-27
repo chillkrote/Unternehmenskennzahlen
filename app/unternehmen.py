@@ -14,6 +14,9 @@ Quellen (alle optional, alles wächst ohne Codeänderung mit):
   deren Unterordner die Unternehmens-ID ist, dazu index.csv-Dateien in solchen Ordnern
   (Spalten unternehmen_id/name, datei/pfad, titel, typ, jahr, url, abrufdatum).
 
+Die Unternehmens-ID kommt ausschließlich aus stammdaten/ (U000123); Namen, ISIN, alte IDs und Ordnernamen werden dort aufgelöst.
+Unbekannte Unternehmen brechen den Bau ab (erst in die Stammdaten aufnehmen).
+
 Solange keine Unternehmen außerhalb der Banken vorliegen, kommen Beispieldaten aus
 unternehmen_demo.py dazu (je Unternehmen als demo markiert).
 """
@@ -28,6 +31,9 @@ from pathlib import Path
 import openpyxl
 
 REPO = Path(__file__).resolve().parent.parent
+import sys  # noqa: E402
+sys.path.insert(0, str(REPO / "stammdaten"))
+import ids as stamm  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
 HIER = Path(__file__).resolve().parent
 KATALOG = json.loads((HIER / "unternehmen_katalog.json").read_text())
 GITHUB_REPO = os.environ.get("TERMINAL_REPO", "chillkrote/Unternehmenskennzahlen")
@@ -164,7 +170,7 @@ def aus_banken(banken, markt):
              "roe": _q(jue, b.get("ek")), "roa": _q(jue, b.get("bs")), "fonds_bs": b.get("fonds_bs"),
              "cet1_quote": b.get("cet1_quote"), "gk_quote": b.get("gk_quote"), "lr": b.get("lr"), "rwa_dichte": b.get("rwa_dichte"),
              "w_bilanzsumme": wachstum - 1 if wachstum else None}
-        f = {"id": slug(b["bank"]), "name": b["bank"], "branche": "banken", "gruppe": b.get("gruppe"), "rolle": b.get("rolle"),
+        f = {"id": b["id"], "name": b["bank"], "branche": "banken", "gruppe": b.get("gruppe"), "rolle": b.get("rolle"),
              "sitz": b.get("sitz"), "bank": b["bank"], "notiert": False, "abschluss": "HGB-Einzelabschluss"}
         m = nach_bank.get(b["bank"])
         if m and m.get("ebene") == "Institut":
@@ -257,19 +263,12 @@ def _dok(wurzel, pfad):
 
 
 def _finder(ids):
-    """Name oder Ordnername -> Unternehmens-ID. Ordner schreiben Umlaute teils als ae/oe/ue, die IDs lassen sie weg;
-    sehr lange Namen sind gekürzt (eindeutiges Präfix genügt)."""
-    schl = lambda s: re.sub(r"(?<=[aou])e", "", slug(s))
-    nach = {schl(i): i for i in ids}
+    """Name, Ordnername, alte ID oder neue ID -> Unternehmens-ID (nur solche, die in ids vorkommen); Auflösung über stammdaten/."""
+    reg = stamm.lade()
 
     def finde(name):
-        if not name:
-            return None
-        k = schl(name)
-        if k in nach:
-            return nach[k]
-        lang = [i for s, i in nach.items() if len(k) >= 30 and s.startswith(k)]
-        return lang[0] if len(lang) == 1 else None
+        uid = reg.aufloesen(name) if name else None
+        return uid if uid in ids else None
     return finde
 
 
@@ -381,7 +380,9 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
     kennzahlen = [k for k in KATALOG["kennzahlen"] if k["key"] in benutzt] + [e for k, e in extra.items() if k in benutzt]
     return {"demo": ist_demo, "quellen": quellen, "repo": GITHUB_REPO, "zweig": "main",
             "gruppen": KATALOG["gruppen"] + ["Weitere Kennzahlen"], "branchen": branchenliste(firmen),
-            "kennzahlen": kennzahlen, "unternehmen": firmen}
+            "kennzahlen": kennzahlen, "unternehmen": firmen,
+            # alte Schreibweisen der IDs -> zentrale ID (Lesezeichen #firma-<alt> bleiben gültig)
+            "alt_ids": {a["alias"]: a["unternehmen_id"] for a in stamm.lade().aliase if a["art"] == "id_alt"}}
 
 
 def _csv(pfad):
@@ -457,20 +458,30 @@ def branchen_excel(wurzel):
             quellen.append("/".join(teile))
             firmen += f
             extra.update({k["key"]: k for k in e})
-    gesehen, eindeutig = set(), []
+    reg = stamm.lade()
+    gesehen, eindeutig, unbekannt = set(), [], []
     for f in firmen:       # dieselbe Gesellschaft in Gesamt- und Branchenmappe nur einmal (erste Fundstelle zuerst)
-        f["id"] = f.get("id") or slug(f["name"])
-        if f["id"] in gesehen or (f.get("isin") and f["isin"] in gesehen):
+        uid = reg.aufloesen(f.get("id")) or reg.aufloesen(f.get("isin")) or reg.aufloesen(f["name"])
+        if uid is None:
+            unbekannt.append(f"{f['name']} ({f.get('isin') or 'ohne ISIN'})")
             continue
-        gesehen.update({f["id"], f.get("isin")} - {None})
+        f["id"] = uid
+        if uid in gesehen:
+            continue
+        gesehen.add(uid)
         eindeutig.append(f)
+    if unbekannt:
+        raise SystemExit("Nicht in stammdaten/unternehmen_ids.csv: " + "; ".join(sorted(set(unbekannt))[:20])
+                         + " -> zuerst über stammdaten/ids.py registrieren (Universum-Skript oder ids.lade().registrieren)")
     return eindeutig, extra, quellen
 
 
 def stammdaten(wurzel, firmen, nach_id):
     """Untergruppe und Rolle ergänzen; Unternehmen, die nur in den Stammdaten stehen (auch nicht notierte), aufnehmen."""
     for s in lese_stammdaten(wurzel):
-        uid = s.get("unternehmen_id") or slug(s.get("name", ""))
+        uid = stamm.lade().aufloesen(s.get("unternehmen_id")) or stamm.lade().aufloesen(s.get("name"))
+        if uid is None:
+            continue
         if s.get("gruppe") == "Gruppe" or "(Median)" in (s.get("name") or ""):  # Auswertungszeilen der Excel, keine Unternehmen
             continue
         f = nach_id.get(uid)
@@ -494,7 +505,10 @@ def beispieldaten(demo, firmen, nach_id, quellen):
         return False
     d = json.loads(Path(demo).read_text())
     for f in d["unternehmen"]:
-        f.update(id=f.get("id") or slug(f["name"]), branche=f.get("branche") or "sonstige", notiert=True, demo=True)
+        uid = stamm.lade().aufloesen(f.get("isin")) or stamm.lade().aufloesen(f["name"])
+        if uid is None:  # Beispieldaten ohne Eintrag in den Stammdaten bleiben draußen
+            continue
+        f.update(id=uid, branche=f.get("branche") or "sonstige", notiert=True, demo=True)
         if f["id"] not in nach_id:
             firmen.append(f)
             nach_id[f["id"]] = f

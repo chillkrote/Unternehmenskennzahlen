@@ -6,7 +6,7 @@ zeitreihen/stammdaten.csv. Aufruf: python3 -I migriere_banken.py
 """
 import csv
 import re
-import unicodedata
+import sys
 from pathlib import Path
 
 import openpyxl
@@ -14,6 +14,8 @@ import openpyxl
 REPO = Path(__file__).resolve().parents[2]
 EXCEL = REPO / "banken/bilanzvergleich-gj2025/auswertung/Bilanzvergleich_Banken_GJ2025.xlsx"
 AUS = REPO / "zeitreihen"
+sys.path.insert(0, str(REPO / "stammdaten"))
+import ids as stamm  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
 
 # Spaltenpräfix im Blatt -> (kennzahl, einheit)
 ZR_KENNZAHLEN = {
@@ -36,9 +38,11 @@ FELDER = ["unternehmen_id", "kennzahl", "stichtag", "wert", "einheit", "waehrung
           "rechnungslegung", "ebene", "quelle", "pruefstatus"]
 
 
-def slug(name):
-    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+def bank_id(name):
+    uid = stamm.lade().aufloesen(name)
+    if uid is None:
+        raise SystemExit(f"{name!r} fehlt in stammdaten/unternehmen_ids.csv")
+    return uid
 
 
 def zahl(v):
@@ -60,7 +64,7 @@ def main():
     # Bankenreihen 2021-2025, Einzelabschluss HGB (Konzernwerte nur dort, wo die Quelle es vermerkt)
     for kopf, z in tabelle(wb["Zeitreihe 2021-2025"]):
         name = z[kopf.index("Bank")]
-        uid = slug(name)
+        uid = bank_id(name)
         stamm[uid] = {"unternehmen_id": uid, "name": name, "branche": "banken",
                       "gruppe": z[kopf.index("Gruppe")], "rolle": z[kopf.index("Rolle")],
                       "nachfolger_von": "", "nachfolge_datum": ""}
@@ -76,7 +80,7 @@ def main():
                          "quelle": hinweis, "pruefstatus": "geparst"})
     # Aufsichtsrechtliche Kennzahlen zum 31.12.2025 aus der Offenlegung (Ebene steht im Blatt)
     for kopf, z in tabelle(wb["Offenlegung 31.12.2025"]):
-        uid = slug(z[kopf.index("Bank")])
+        uid = bank_id(z[kopf.index("Bank")])
         for spalte, (kz, einheit) in OFF_KENNZAHLEN.items():
             if spalte in kopf and zahl(z[kopf.index(spalte)]) is not None:
                 lang.append({"unternehmen_id": uid, "kennzahl": kz, "stichtag": "2025-12-31",

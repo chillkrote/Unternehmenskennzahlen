@@ -20,7 +20,10 @@ def main():
     vorlage = (HIER / "src/terminal.html").read_text()
     (HIER / "dist").mkdir(exist_ok=True)
     ziel = HIER / "dist/bankterminal.html"
-    seite = vorlage.replace("__DATEN__", roh.replace("</", "<\\/"))
+    # Börsendaten liegen getrennt (marktdaten.py, täglich); fehlen sie, zeigt das Terminal MKT leer
+    markt_datei = HIER / "data/markt.json"
+    markt = markt_datei.read_text() if markt_datei.exists() else "null"
+    seite = vorlage.replace("__DATEN__", roh.replace("</", "<\\/")).replace("__MARKT__", markt.replace("</", "<\\/"))
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (HIER / "dist/bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

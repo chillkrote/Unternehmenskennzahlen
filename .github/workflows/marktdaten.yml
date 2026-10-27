@@ -1,0 +1,34 @@
+name: Börsendaten Bank-Terminal
+
+# Einmal je Handelstag nach Xetra-Schluss: Kurse über yfinance holen,
+# Terminal neu bauen und Änderungen in main committen.
+on:
+  schedule:
+    - cron: "30 18 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  abruf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r app/requirements.txt
+      - run: python3 app/marktdaten.py
+      - run: python3 app/build.py
+      - name: Änderungen committen
+        run: |
+          git add app/data/markt.json app/dist
+          if git diff --cached --quiet; then
+            echo "Keine neuen Kurse."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Börsendaten $(date -u +%Y-%m-%d)"
+          git push

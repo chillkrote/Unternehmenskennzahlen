@@ -60,13 +60,14 @@ jobs:
         run: python3 app/kurse_historie.py | tee /tmp/woche.log
       - name: Zusammenfassung
         if: always()
+        continue-on-error: true
         run: |
           {
             echo "### Börsendaten ($WAS)"
             for f in /tmp/markt.log /tmp/woche.log; do
               [ -f "$f" ] || continue
-              echo '```'; grep -E "Banken mit Kursen|Ticker,|::warning::|Fehler" "$f" | head -5; echo '```'
-              echo "<details><summary>Ausfälle</summary>"; echo; echo '```'; grep -E "^   " "$f" | head -60; echo '```'; echo "</details>"
+              echo '```'; grep -E "Banken mit Kursen|Ticker,|::warning::|Fehler" "$f" | head -5 || true; echo '```'
+              echo "<details><summary>Ausfälle</summary>"; echo; echo '```'; grep -E "^   " "$f" | head -60 || true; echo '```'; echo "</details>"
             done
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Änderungen pushen

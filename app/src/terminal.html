@@ -137,6 +137,35 @@ tr.sel td { background: var(--amber-bg); }
 .picks input { background: #000; border: 1px dashed var(--line); border-radius: 999px; padding: 4px 12px; min-width: 0; width: 280px; max-width: 100%; color: var(--key); }
 .sub-h { color: var(--ink-2); font-size: 12px; margin: 4px 0 4px; }
 
+/* Interaktive Streudiagramme (UEB 2, BRA 5) */
+.uscat .sc-bar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 6px 0 8px; }
+.sc-find { background: #000; border: 1px dashed var(--line); border-radius: 999px; padding: 4px 12px; width: 280px; max-width: 100%; color: var(--key); font: inherit; }
+.sc-find:focus { border-style: solid; border-color: var(--key); outline: 0; }
+.sc-reset { background: transparent; border: 1px solid var(--amber-dim); color: var(--amber); border-radius: 999px; padding: 3px 11px; cursor: pointer; font-size: 12px; }
+.sc-reset:hover { background: var(--amber-bg); }
+.sc-info { color: var(--ink-3); font-size: 11.5px; }
+.sc-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.sc-chip { display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--ink-2); font-size: 12px; cursor: pointer; transition: opacity .15s, border-color .15s, color .15s; }
+.sc-chip i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.sc-chip span { color: var(--ink-3); font: 11px var(--mono); }
+.sc-chip:hover, .sc-chip.hov { color: var(--ink); border-color: var(--s2); }
+.sc-chip[aria-pressed="false"] { opacity: .4; }
+.sc-chip[aria-pressed="false"] i { background: transparent !important; box-shadow: inset 0 0 0 1.5px var(--ink-3); }
+.sc-plot { touch-action: none; cursor: crosshair; user-select: none; }
+.sc-plot.ziehen { cursor: grabbing !important; }
+.sc-plot svg { overflow: hidden; }
+.sc-plot svg .pt { transition: fill-opacity .12s; }
+.sc-plot svg.has-hot .pt, .sc-plot svg.has-br .pt:not(.brhot) { fill-opacity: .12; }
+.sc-plot svg.has-br .pt.brhot { fill-opacity: .9; stroke: var(--ink); }
+tr.hl-x td { background: var(--amber-bg); }
+td.colhl { background: var(--panel-2); }
+svg.has-hl rect[data-umk]:not(.hl-b) { opacity: .35; }
+svg.has-hh rect[data-hr]:not(.hh) { opacity: .4; }
+svg.has-hh rect.hh { stroke: var(--ink-2); }
+svg.has-hh text.hh { fill: var(--key); }
+th.sortable:focus-visible { outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) { .sc-plot svg .pt, .sc-chip { transition: none; } }
+
 #tip { position: fixed; z-index: 20; pointer-events: none; background: rgba(0, 0, 0, .94); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .5); padding: 7px 10px; color: var(--ink); max-width: 320px; white-space: pre-line; display: none; font: 12px/1.5 var(--mono); }
 #tip b { color: var(--amber); font: 600 12px/1.5 var(--sans); }
 .subkeys { display: flex; gap: 6px; align-items: center; padding: 8px 0 10px; overflow-x: auto; scrollbar-width: none; font-size: 12px; }
@@ -333,6 +362,36 @@ document.addEventListener("mousemove", e => {
   const w = tip.offsetWidth, h = tip.offsetHeight;
   tip.style.left = Math.min(e.clientX + 14, innerWidth - w - 8) + "px";
   tip.style.top = (e.clientY + 16 + h > innerHeight ? e.clientY - h - 10 : e.clientY + 16) + "px";
+});
+
+/* ---------- Fadenkreuz für Zeitreihendiagramme ----------
+   Ein Diagramm meldet sich mit data-fk="<id>" an und liefert in FK[id] seine Geometrie (x0, x1, y0, y1, px) und
+   rows(px) -> { x, kopf, zeilen: [{ farbe, text, y }] }. Dann folgt eine Hilfslinie der Maus, rastet auf den
+   nächsten Messwert ein und der Tooltip nennt alle Reihen zu diesem Zeitpunkt. */
+const FK = {};
+function fkInit() {
+  document.querySelectorAll("svg[data-fk]").forEach(svg => {
+    const c = FK[svg.dataset.fk]; if (!c) return;
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g"); g.setAttribute("style", "pointer-events:none"); svg.appendChild(g);
+    const aus = () => { g.innerHTML = ""; svg.removeAttribute("data-tip"); };
+    svg.addEventListener("pointermove", e => {
+      const r = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal, px = (e.clientX - r.left) * vb.width / r.width, py = (e.clientY - r.top) * vb.height / r.height;
+      if (px < c.x0 - 4 || px > c.x1 + 4 || py < c.y0 - 4 || py > c.y1 + 4) return aus();
+      const z = c.rows(px); if (!z) return aus();
+      g.innerHTML = `<line x1="${z.x}" x2="${z.x}" y1="${c.y0}" y2="${c.y1}" stroke="var(--ink-2)" stroke-dasharray="3 3"/>` + z.zeilen.map(t => `<circle cx="${z.x}" cy="${t.y}" r="4" fill="${t.farbe}" stroke="var(--panel)" stroke-width="1.5"/>`).join("");
+      svg.setAttribute("data-tip", `<b>${z.kopf}</b>\n` + z.zeilen.map(t => `<span style="color:${t.farbe}">●</span> ${t.text}`).join("\n"));
+    });
+    svg.addEventListener("pointerleave", aus);
+  });
+}
+
+/* Korrelationsmatrix: Zeile und Spalte der Zelle unter der Maus hervorheben, Rest zurücknehmen */
+document.addEventListener("mouseover", e => {
+  document.querySelectorAll("svg.has-hh").forEach(x => { x.classList.remove("has-hh"); x.querySelectorAll(".hh").forEach(y => y.classList.remove("hh")); });
+  const m = e.target.closest && e.target.closest('svg[aria-label="Korrelationsmatrix"]'), t = m && e.target.closest("[data-hr],[data-hc]");
+  if (!t) return;
+  const i = t.dataset.hr, j = t.dataset.hc; m.classList.add("has-hh");
+  m.querySelectorAll("[data-hr],[data-hc]").forEach(x => { if ((i != null && x.dataset.hr === i) || (j != null && x.dataset.hc === j)) x.classList.add("hh"); });
 });
 
 /* ---------- SVG-Bausteine ---------- */
@@ -586,7 +645,13 @@ function tsChart(banken, kz) {
   const alle = rr.flatMap(r => r.pts.map(p => p[1]));
   let lo = Math.min(...alle, tsIndex ? 100 : q ? Infinity : 0), hi = Math.max(...alle, tsIndex ? 100 : 0); const pad = (hi - lo) * .06 || 1; hi += pad; if (lo < 0) lo -= pad;
   const sx = j => x0 + (x1 - x0) * (jhi === jlo ? .5 : (j - jlo) / (jhi - jlo)), sy = v => y1 - (y1 - y0) * (v - lo) / (hi - lo);
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  FK.ts = { x0, x1, y0, y1, rows: px => {
+    const alleJ = [...new Set(js)]; if (!alleJ.length) return null;
+    const j = alleJ.reduce((a, b) => Math.abs(sx(a) - px) <= Math.abs(sx(b) - px) ? a : b);
+    const zeilen = rr.map(r => ({ r, p: r.pts.find(p => p[0] === j) })).filter(z => z.p).sort((a, b) => b.p[1] - a.p[1]);
+    return { x: sx(j), kopf: lab(j), zeilen: zeilen.map(z => ({ farbe: G[z.r.b.gruppe].farbe, y: sy(z.p[1]), text: `${esc(kurz(z.r.b.bank))}: ${tsIndex ? f1.format(z.p[1]) + " (Index)" : q ? pct(z.p[1], 2) : mio(z.p[1]) + " Mio. €"}` })) };
+  } };
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" data-fk="ts">`;
   niceTicks(lo, hi, 6).forEach(t => s += `<line class="gl" x1="${x0}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${x0 - 6}" y="${sy(t)}" text-anchor="end" dominant-baseline="middle">${tsIndex ? f0.format(t) : q ? pct(t, 0) : f0.format(t)}</text>`);
   const schritt = q ? .25 : 1, zahl = Math.round((jhi - jlo) / schritt);
   for (let n = 0; n <= zahl; n++) { const j = jlo + n * schritt; if (zahl > 8 && n % 2 && !q) continue; s += `<line class="gl" x1="${sx(j)}" x2="${sx(j)}" y1="${y0}" y2="${y1}"/><text x="${sx(j)}" y="${y1 + 14}" text-anchor="middle">${lab(j)}</text>`; }
@@ -594,7 +659,7 @@ function tsChart(banken, kz) {
   rr.forEach(r => {
     const f = G[r.b.gruppe].farbe, d = r.pts.map(([j, v], i) => `${i ? "L" : "M"}${sx(j).toFixed(1)},${sy(v).toFixed(1)}`).join("");
     s += `<path d="${d}" fill="none" stroke="${f}" stroke-width="1.8" stroke-linejoin="round"/>`;
-    r.pts.forEach(([j, v]) => s += `<circle cx="${sx(j)}" cy="${sy(v)}" r="3" fill="${f}" data-tip="${esc(`<b>${esc(kurz(r.b.bank))}</b>\n${lab(j)}: ${tsIndex ? f1.format(v) + " (Index)" : q ? pct(v, 2) : mio(v) + " Mio. €"}`)}"/>`);
+    r.pts.forEach(([j, v]) => s += `<circle cx="${sx(j)}" cy="${sy(v)}" r="3" fill="${f}"/>`);
     const l = r.pts[r.pts.length - 1]; s += `<text x="${sx(l[0]) + 8}" y="${sy(l[1])}" dominant-baseline="middle" style="fill:${f}">${esc(kurz(r.b.bank).slice(0, 16))}</text>`;
   });
   return s + "</svg>";
@@ -709,7 +774,20 @@ function indexChart(liste) {
   let lo = Math.min(100, ...alle), hi = Math.max(100, ...alle); const pad = (hi - lo) * .06; lo -= pad; hi += pad;
   const t0 = new Date(start).getTime(), t1 = new Date(letzter).getTime();
   const sx = d => x0 + (x1 - x0) * (new Date(d).getTime() - t0) / (t1 - t0 || 1), sy = v => y1 - (y1 - y0) * (v - lo) / (hi - lo);
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  FK.mkt = { x0, x1, y0, y1, rows: px => {
+    const t = t0 + (px - x0) / (x1 - x0) * (t1 - t0), zeilen = [];
+    let kopf = "";
+    reihen.forEach(r => {
+      let best = null, bd = Infinity; for (const p of r.pts) { const d = Math.abs(new Date(p[0]).getTime() - t); if (d < bd) { bd = d; best = p; } }
+      if (best) zeilen.push({ r, d: best[0], v: best[1] });
+    });
+    if (!zeilen.length) return null;
+    const ref = zeilen.reduce((a, b) => Math.abs(new Date(a.d) - t) <= Math.abs(new Date(b.d) - t) ? a : b).d;
+    kopf = ref.split("-").reverse().join(".");
+    const pass = zeilen.filter(z => Math.abs(new Date(z.d) - new Date(ref)) < 5 * 864e5).sort((a, b) => b.v - a.v);
+    return { x: sx(ref), kopf, zeilen: pass.slice(0, 12).map(z => ({ farbe: z.r.w.ticker === mktMarkiert ? "var(--amber)" : "var(--s3)", y: sy(z.v), text: `${esc(kurz(z.r.w.bank))}: ${f1.format(z.v)} (${chg(z.v / 100 - 1)})` })) };
+  } };
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" data-fk="mkt">`;
   niceTicks(lo, hi, 6).forEach(t => s += `<line class="gl" x1="${x0}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${x0 - 6}" y="${sy(t)}" text-anchor="end" dominant-baseline="middle">${f0.format(t)}</text>`);
   s += `<line x1="${x0}" x2="${x1}" y1="${sy(100)}" y2="${sy(100)}" stroke="var(--ink-3)" stroke-dasharray="2 3"/>`;
   // Monatsmarken
@@ -725,7 +803,7 @@ function indexChart(liste) {
     const ende = r.pts[r.pts.length - 1][1];
     const tt = esc(`<b>${esc(kurz(r.w.bank))}</b>${r.w.mutter ? "\nKurs der Mutter: " + esc(r.w.mutter) : ""}\n${r.w.ticker} · Index ${f1.format(ende)} (${chg(ende / 100 - 1)} seit ${start.split("-").reverse().join(".")})`);
     s += `<path d="${d}" fill="none" stroke="${an ? "var(--amber)" : "var(--s3)"}" stroke-width="${an ? 2.2 : 1.2}" stroke-linejoin="round"/>`;
-    s += `<path d="${d}" fill="none" stroke="transparent" stroke-width="9" data-tip="${tt}" data-mkt="${r.w.ticker}" style="cursor:pointer"/>`;
+    s += `<path d="${d}" fill="none" stroke="transparent" stroke-width="9" data-mkt="${r.w.ticker}" style="cursor:pointer"/>`;
   });
   // Endbeschriftung mit einfacher Kollisionsvermeidung
   const labels = reihen.map(r => ({ r, y: sy(r.pts[r.pts.length - 1][1]) })).sort((a, b) => a.y - b.y);
@@ -924,6 +1002,7 @@ function render() {
   UNT.nachRender();
   VWL.nachRender();
   KOR.nachRender();
+  fkInit();
 }
 function gehe(v) { if (location.hash === "#" + v) render(); else location.hash = v; }
 function bankFinden(q) { q = q.trim().toLowerCase(); if (!q) return null; return BANKEN.find(b => b.bank.toLowerCase() === q) || BANKEN.find(b => b.bank.toLowerCase().includes(q)); }

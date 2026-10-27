@@ -4,6 +4,7 @@
    Läuft vor dem Hauptskript; nutzt dessen Hilfsfunktionen (panel, pct, median, ...) erst zur Laufzeit. */
 "use strict";
 const UNT = (() => {
+  let hoverBereit = false;
   let UD = null, KZU = {}, BR = {}, FIRMEN = [], NACH_ID = {};
   const S = { branche: "alle", gruppe: "alle", notiert: "alle", markiert: null, sort: { k: "marktkap", ab: true }, rang: null, tBranche: "alle", tZeit: "90", tArt: "alle",
     sx: "ebit_marge", sy: "kgv", usx: "kgv", usy: "ebit_marge", auswahl: null, matrixSort: null, dokTyp: "alle" };
@@ -16,6 +17,7 @@ const UNT = (() => {
     BR = Object.fromEntries(UD.branchen.map(b => [b.id, b]));
     FIRMEN = UD.unternehmen.filter(f => BR[f.branche]);
     NACH_ID = Object.fromEntries(FIRMEN.map(f => [f.id, f]));
+    if (!hoverBereit) { hoverBereit = true; hoverVerdrahten(); }
     return true;
   }
   const da = () => !!UD;
@@ -115,33 +117,187 @@ const UNT = (() => {
     const zelle = (z, k) => { const v = z.wert(k); if (v == null) return `<td class="n">–</td>`; const [lo, hi] = spanne[k], t = hi > lo ? (v - lo) / (hi - lo) : .5;
       return `<td style="background:rgba(255,168,40,${(.04 + .26 * t).toFixed(3)})">${fmt(k, v)}</td>`; };
     const kopf = (k, t) => `<th class="sortable" data-umatrix="${k}">${t}${sk === k ? " ▼" : ""}</th>`;
-    return `<div class="scroll"><table><thead><tr><th>Branche</th>${kopf("n", "n")}<th>notiert</th>${kopf("mk", "Σ Börsenwert")}${spalten.map(k => `<th class="sortable" data-umatrix="${k}" title="${esc(kzName(k))}">${esc(kurzKz(k))}${sk === k ? " ▼" : ""}</th>`).join("")}</tr></thead>
+    return `<div class="scroll"><table class="hov"><thead><tr><th>Branche</th>${kopf("n", "n")}<th>notiert</th>${kopf("mk", "Σ Börsenwert")}${spalten.map(k => `<th class="sortable" data-umatrix="${k}" title="${esc(kzName(k))}">${esc(kurzKz(k))}${sk === k ? " ▼" : ""}</th>`).join("")}</tr></thead>
       <tbody>${zeilen.map(z => `<tr class="click" data-uopen="${esc(z.id)}"><td>${esc(z.name)}</td><td class="n">${z.n}</td><td class="n">${z.nn || "–"}</td><td>${z.mk ? mrd(z.mk) : "–"}</td>${spalten.map(k => zelle(z, k)).join("")}</tr>`).join("")}</tbody></table></div>`;
   }
 
-  function streuU(liste, kx, ky, hervor, hervorG) {
+  /* ----- Interaktives Streudiagramm -----
+     Hover (nächster Punkt im Umkreis, Rest tritt zurück), Tooltip, Klick öffnet das Profil, Legende schaltet Branchen,
+     Rad zoomt, Ziehen verschiebt, Doppelklick setzt zurück, Suche markiert ein Unternehmen. Nach dem Aufbau wird nichts
+     mehr über render() neu gezeichnet; Hover und Zoom ändern nur Attribute und Klassen. */
+  const BR_FARBE = ["#ffa828", "#4aa3ff", "#2fc4a0", "#a98bf0", "#f0627a", "#8ccf4a", "#6ad0e8", "#e07fd0", "#c28a5a", "#8aa0b8", "#5f7be0", "#d9d0a0"];
+  const brFarbe = id => { const i = UD.branchen.findIndex(b => b.id === id); return BR_FARBE[(i < 0 ? 0 : i) % BR_FARBE.length]; };
+  const SCAT = {}, SCST = {};      // id -> Konfiguration (wird beim Aufbau der Seite gefüllt, beim Einhängen gelesen)
+  const SVGNS = "http://www.w3.org/2000/svg";
+  function streuU(liste, kx, ky, hervor, hervorG, opt = {}) {
     const pts = liste.filter(f => w(f, kx) != null && w(f, ky) != null);
     if (pts.length < 3 || !KZU[kx] || !KZU[ky]) return `<p class="n">Zu wenige Werte für diese Kombination.</p>`;
-    const W = 720, H = 400, x0 = 50, x1 = W - 16, y0 = 16, y1 = H - 32;
-    const rg = k => { const xs = pts.map(f => w(f, k)); const lo = quant(xs, .03), hi = quant(xs, .97), p = (hi - lo) * .12 || .1; return [lo - p, hi + p]; };
-    const [lx, hx] = rg(kx), [ly, hy] = rg(ky);
-    const sx = v => x0 + (x1 - x0) * (Math.min(Math.max(v, lx), hx) - lx) / (hx - lx), sy = v => y1 - (y1 - y0) * (Math.min(Math.max(v, ly), hy) - ly) / (hy - ly);
+    const id = "sc" + (opt.id || "x");
+    SCAT[id] = { pts, kx, ky, hervor, hervorG, legende: !!opt.legende };
+    const brs = opt.legende ? UD.branchen.map(b => [b, pts.filter(f => f.branche === b.id).length]).filter(x => x[1]) : [];
+    return `<div class="uscat" id="${id}" data-sc="${id}">
+      <div class="sc-bar"><input type="search" class="sc-find" list="firmenliste" placeholder="Unternehmen suchen …" aria-label="Unternehmen im Streudiagramm suchen" autocomplete="off">
+        <button type="button" class="sc-reset" hidden>Zoom zurücksetzen</button><span class="sc-info">Mausrad zoomt · Ziehen verschiebt · Klick öffnet das Profil</span></div>
+      ${brs.length ? `<div class="sc-legend" role="group" aria-label="Branchen ein- oder ausblenden">${brs.map(([b, n]) =>
+        `<button type="button" class="sc-chip" data-scb="${esc(b.id)}" aria-pressed="true" title="Klick blendet aus, Doppelklick zeigt nur diese Branche"><i style="background:${brFarbe(b.id)}"></i>${esc(b.name)} <span>${n}</span></button>`).join("")}</div>` : ""}
+      <div class="sc-plot"></div></div>`;
+  }
+  function scatterInit(el) {
+    const c = SCAT[el.dataset.sc]; if (!c || el._init) return; el._init = true;
+    const { pts, kx, ky } = c, plot = el.querySelector(".sc-plot"), info = el.querySelector(".sc-info"), reset = el.querySelector(".sc-reset"), find = el.querySelector(".sc-find");
     const sk = pts.some(f => w(f, "marktkap")) ? "marktkap" : pts.some(f => w(f, "bilanzsumme")) ? "bilanzsumme" : null;
     const mk = sk ? Math.max(...pts.map(f => w(f, sk) || 0)) || 1 : 1, rad = f => sk ? 3.5 + 9 * Math.sqrt((w(f, sk) || 0) / mk) : 4.5;
+    const rg = k => { const xs = pts.map(f => w(f, k)), lo = quant(xs, .03), hi = quant(xs, .97), p = (hi - lo) * .12 || .1; return [lo - p, hi + p]; };
+    const home = { x: rg(kx), y: rg(ky) };
+    const merk = SCST[el.id] || (SCST[el.id] = { hide: new Set(), find: null, achsen: "", dom: null }), achsen = kx + "|" + ky;
+    if (merk.achsen !== achsen) { merk.achsen = achsen; merk.dom = null; }       // Achsenwechsel setzt den Zoom zurück, Legende und Suche bleiben
+    const st = { dom: merk.dom, hide: merk.hide, hot: null, brHot: null, find: merk.find, W: 0, H: 0 };
+    const farbe = f => c.legende ? brFarbe(f.branche) : (f.branche === c.hervor && c.hervor !== "alle" ? "var(--amber)" : "var(--s3)");
+    const dim = f => c.hervor !== "alle" && c.legende && !(f.branche === c.hervor && (!c.hervorG || c.hervorG === "alle" || f.gruppe === c.hervorG));
     const tk = k => t => KZU[k].fmt === "pct" || KZU[k].fmt === "chg" ? nf(0).format(t * 100) + " %" : KZU[k].fmt === "x" ? f1.format(t) + "x" : f0.format(t);
-    let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
-    niceTicks(lx, hx, 7).forEach(t => s += `<line class="gl" x1="${sx(t)}" x2="${sx(t)}" y1="${y0}" y2="${y1}"/><text x="${sx(t)}" y="${y1 + 15}" text-anchor="middle">${tk(kx)(t)}</text>`);
-    niceTicks(ly, hy, 6).forEach(t => s += `<line class="gl" x1="${x0}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${x0 - 6}" y="${sy(t)}" text-anchor="end" dominant-baseline="middle">${tk(ky)(t)}</text>`);
-    s += `<text x="${x1}" y="${H - 3}" text-anchor="end" style="fill:var(--amber)">${esc(kzName(kx))} →</text><text x="${x0}" y="${y0 - 5}" style="fill:var(--amber)">↑ ${esc(kzName(ky))}</text>`;
-    const istH = f => hervor === "alle" ? false : f.branche === hervor && (!hervorG || hervorG === "alle" || f.gruppe === hervorG);
-    const gr = f => sk ? (w(f, sk) || 0) : 0;
-    [...pts].sort((a, b) => istH(a) - istH(b) || gr(b) - gr(a)).forEach(f => {
-      const h = istH(f) || f.id === S.markiert, tt = `<b>${esc(f.name)}</b>\n${esc(brName(f.branche))}${f.gruppe ? " · " + esc(f.gruppe) : ""}\n${esc(kzName(kx))}: ${fmt(kx, w(f, kx))}\n${esc(kzName(ky))}: ${fmt(ky, w(f, ky))}${sk ? `\n${esc(kzName(sk))}: ${mrd(w(f, sk))}` : ""}`;
-      s += `<circle cx="${sx(w(f, kx))}" cy="${sy(w(f, ky))}" r="${rad(f)}" fill="${f.id === S.markiert ? "var(--key)" : h ? "var(--amber)" : "var(--s3)"}" fill-opacity="${h ? .85 : .5}" stroke="var(--panel)" stroke-width="1.5" data-umk="${esc(f.id)}" style="cursor:pointer" data-tip="${esc(tt)}"/>`;
+    const tipText = f => `<b>${esc(f.name)}</b>\n${esc(brName(f.branche))}${f.gruppe ? " · " + esc(f.gruppe) : ""}\n${esc(kzName(kx))}: ${fmt(kx, w(f, kx))}\n${esc(kzName(ky))}: ${fmt(ky, w(f, ky))}${sk && w(f, sk) != null ? `\n${esc(kzName(sk))}: ${sk === "marktkap" || sk === "bilanzsumme" ? mrd(w(f, sk)) : fmt(sk, w(f, sk))}` : ""}\nKlick: Profil öffnen`;
+    const M = { l: 50, r: 16, t: 16, b: 32 };
+    let svg, circles = [], axes, top, X = [], Y = [], sicht = [];
+    const dom = () => st.dom || home;
+    const sx = v => { const [lo, hi] = dom().x; const t = (v - lo) / (hi - lo); return M.l + (st.W - M.l - M.r) * (st.dom ? t : Math.min(Math.max(t, 0), 1)); };
+    const sy = v => { const [lo, hi] = dom().y; const t = (v - lo) / (hi - lo); return st.H - M.b - (st.H - M.t - M.b) * (st.dom ? t : Math.min(Math.max(t, 0), 1)); };
+    const el_ = (n, a) => { const e = document.createElementNS(SVGNS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+
+    function layout() {
+      st.W = Math.max(300, Math.round(plot.clientWidth || 720)); st.H = Math.round(Math.min(560, Math.max(300, st.W * .56)));
+      plot.innerHTML = `<svg viewBox="0 0 ${st.W} ${st.H}" width="${st.W}" height="${st.H}" role="img" aria-label="Streudiagramm ${esc(kzName(kx))} gegen ${esc(kzName(ky))}"><defs><clipPath id="${el.id}-clip"><rect x="${M.l}" y="${M.t - 4}" width="${st.W - M.l - M.r}" height="${st.H - M.t - M.b + 8}"/></clipPath></defs><g class="sc-axes"></g><g class="sc-pts" clip-path="url(#${el.id}-clip)"></g><g class="sc-top" style="pointer-events:none"></g></svg>`;
+      svg = plot.firstChild; axes = svg.querySelector(".sc-axes"); top = svg.querySelector(".sc-top");
+      const g = svg.querySelector(".sc-pts");
+      const ord = [...pts].sort((a, b) => (w(b, sk) || 0) - (w(a, sk) || 0));       // große zuerst, kleine liegen oben
+      circles = ord.map(f => { const e = el_("circle", { r: rad(f), fill: farbe(f), "fill-opacity": dim(f) ? .22 : .62, stroke: "var(--panel)", "stroke-width": 1.2, class: "pt" }); g.appendChild(e); return { f, e, r: rad(f) }; });
+      place();
+    }
+    /* Positionen, Achsen und Sichtbarkeit neu setzen (Zoom, Verschieben, Legende) */
+    function place() {
+      const d = dom(); let s = "";
+      niceTicks(d.x[0], d.x[1], Math.max(3, Math.round(st.W / 100))).forEach(t => { const x = sx(t); if (x < M.l - 1 || x > st.W - M.r + 1) return; s += `<line class="gl" x1="${x}" x2="${x}" y1="${M.t}" y2="${st.H - M.b}"/><text x="${x}" y="${st.H - M.b + 15}" text-anchor="middle">${tk(kx)(t)}</text>`; });
+      niceTicks(d.y[0], d.y[1], 6).forEach(t => { const y = sy(t); if (y < M.t - 1 || y > st.H - M.b + 1) return; s += `<line class="gl" x1="${M.l}" x2="${st.W - M.r}" y1="${y}" y2="${y}"/><text x="${M.l - 6}" y="${y}" text-anchor="end" dominant-baseline="middle">${tk(ky)(t)}</text>`; });
+      s += `<text x="${st.W - M.r}" y="${st.H - 3}" text-anchor="end" style="fill:var(--amber)">${esc(kzName(kx))} →</text><text x="${M.l}" y="${M.t - 5}" style="fill:var(--amber)">↑ ${esc(kzName(ky))}</text>`;
+      axes.innerHTML = s;
+      sicht = [];
+      for (const o of circles) {
+        const x = sx(w(o.f, kx)), y = sy(w(o.f, ky)), an = !st.hide.has(o.f.branche) && (!st.dom || (x >= M.l - o.r && x <= st.W - M.r + o.r && y >= M.t - o.r && y <= st.H - M.b + o.r));
+        o.x = x; o.y = y; o.an = an;
+        o.e.setAttribute("cx", x); o.e.setAttribute("cy", y); o.e.style.display = an ? "" : "none";
+        if (an) sicht.push(o);
+      }
+      merk.dom = st.dom; merk.find = st.find; reset.hidden = !st.dom;
+      info.textContent = `${sicht.length} von ${pts.length} Unternehmen sichtbar${st.dom ? " · gezoomt" : ""}`;
+      markieren();
+    }
+    /* Hervorhebung: oberste Ebene mit vergrößertem Punkt und Beschriftung, übrige Punkte treten zurück */
+    function markieren() {
+      top.innerHTML = "";
+      const hat = st.hot || st.find;
+      svg.classList.toggle("has-hot", !!st.hot);
+      svg.classList.toggle("has-br", !!st.brHot && !st.hot);
+      for (const o of circles) o.e.classList.toggle("brhot", !!st.brHot && o.f.branche === st.brHot);
+      const zeige = (id, ring) => {
+        const o = circles.find(x => x.f.id === id && x.an); if (!o) return;
+        top.appendChild(el_("circle", { cx: o.x, cy: o.y, r: o.r * (ring ? 1.25 : 1.5) + 2, fill: ring ? "none" : farbe(o.f), "fill-opacity": 1, stroke: ring ? "var(--key)" : "var(--ink)", "stroke-width": ring ? 2 : 1.5 }));
+        const t = el_("text", { x: o.x + o.r * 1.5 + 6, y: o.y - 2, "dominant-baseline": "middle", style: "font-size:12px;font-weight:600;paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round;fill:" + (ring ? "var(--key)" : "var(--ink)") });
+        t.textContent = kurzU(o.f.name);
+        top.appendChild(t);
+        const bb = t.getBBox(); if (bb.x + bb.width > st.W - 4) { t.setAttribute("x", o.x - o.r * 1.5 - 6); t.setAttribute("text-anchor", "end"); }
+      };
+      if (st.find && st.find !== st.hot) zeige(st.find, true);
+      if (st.hot) zeige(st.hot, false);
+      if (!hat && !st.brHot) {                                                   // Ruhezustand: die größten Unternehmen beschriften
+        sicht.filter(o => !dim(o.f)).sort((a, b) => b.r - a.r).slice(0, st.W < 500 ? 4 : 8).forEach(o => {
+          const t = el_("text", { x: o.x + o.r + 3, y: o.y, "dominant-baseline": "middle", style: "fill:var(--ink-2);font-size:10px;paint-order:stroke;stroke:var(--panel);stroke-width:3px" });
+          t.textContent = kurzU(o.f.name).split(" ").slice(0, 2).join(" "); top.appendChild(t);
+        });
+      }
+      el.querySelectorAll(".sc-chip").forEach(b => { b.classList.toggle("hov", st.brHot === b.dataset.scb); });
+    }
+    function setHot(id, quelle) {
+      if (st.hot === id) return;
+      st.hot = id; markieren();
+      const o = id && circles.find(x => x.f.id === id);
+      if (svg) { if (o && quelle !== "ext") svg.setAttribute("data-tip", tipText(o.f)); else svg.removeAttribute("data-tip"); }
+      if (quelle !== "ext") verknuepfen(id);
+    }
+    /* gleiche Unternehmen in Tabellen und Balken auf der Seite mitleuchten lassen */
+    function verknuepfen(id) {
+      document.querySelectorAll(".hl-x").forEach(e => e.classList.remove("hl-x"));
+      if (!id) return;
+      document.querySelectorAll(`tr[data-umk="${CSS.escape(id)}"]`).forEach(r => {
+        r.classList.add("hl-x");
+        const wr = r.closest(".tblwrap"); if (wr) { const a = r.offsetTop, b = a + r.offsetHeight; if (a < wr.scrollTop + 30) wr.scrollTop = a - 30; else if (b > wr.scrollTop + wr.clientHeight) wr.scrollTop = b - wr.clientHeight + 4; }
+      });
+    }
+    el._api = {
+      hover: id => setHot(id && circles.some(o => o.f.id === id && o.an) ? id : null, "ext"),
+      branche: id => { st.brHot = id; markieren(); },
+    };
+    const naechster = (mx, my) => { let best = null, bd = Infinity; for (const o of sicht) { const d = Math.hypot(o.x - mx, o.y - my); if (d < Math.max(14, o.r + 8) && d < bd) { best = o; bd = d; } } return best; };
+    const lokal = e => { const r = svg.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+
+    /* Zeiger: Hover per Nachbarsuche, Ziehen verschiebt */
+    let drag = null;
+    plot.addEventListener("pointermove", e => {
+      if (!svg) return;
+      const [mx, my] = lokal(e);
+      if (drag) {
+        const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+        if (!drag.bewegt && Math.hypot(dx, dy) < 4) return;
+        drag.bewegt = true; plot.classList.add("ziehen"); svg.removeAttribute("data-tip");
+        const [xl, xh] = drag.dom.x, [yl, yh] = drag.dom.y, bw = st.W - M.l - M.r, bh = st.H - M.t - M.b;
+        st.dom = { x: [xl - dx / bw * (xh - xl), xh - dx / bw * (xh - xl)], y: [yl + dy / bh * (yh - yl), yh + dy / bh * (yh - yl)] };
+        place(); return;
+      }
+      const o = naechster(mx, my);
+      plot.style.cursor = o ? "pointer" : "";
+      setHot(o ? o.f.id : null);
     });
-    const beschr = [...pts].filter(f => hervor === "alle" ? true : istH(f)).sort((a, b) => gr(b) - gr(a)).slice(0, hervor === "alle" ? 10 : 12);
-    beschr.forEach(f => s += `<text x="${sx(w(f, kx)) + rad(f) + 3}" y="${sy(w(f, ky))}" dominant-baseline="middle" style="fill:var(--ink);pointer-events:none;font-size:10px">${esc(kurzU(f.name).split(" ").slice(0, 2).join(" "))}</text>`);
-    return s + "</svg>";
+    plot.addEventListener("pointerdown", e => { if (e.button !== 0 || !svg) return; drag = { x: e.clientX, y: e.clientY, dom: { x: [...dom().x], y: [...dom().y] }, bewegt: false }; });
+    addEventListener("pointerup", () => { if (!drag) return; const b = drag.bewegt; drag = null; plot.classList.remove("ziehen"); if (b) { el._ziehte = true; setTimeout(() => el._ziehte = false); } });
+    plot.addEventListener("pointerleave", () => { if (!drag) setHot(null); });
+    plot.addEventListener("click", e => { if (el._ziehte || !svg) return; const o = naechster(...lokal(e)); if (o) gehe("firma-" + o.f.id); });
+    plot.addEventListener("dblclick", () => { st.dom = null; place(); });
+    plot.addEventListener("wheel", e => {
+      if (!svg) return; e.preventDefault();
+      const [mx, my] = lokal(e), d = dom(), f = Math.exp(Math.max(-300, Math.min(300, e.deltaY)) * .0016);
+      const bw = st.W - M.l - M.r, bh = st.H - M.t - M.b, tx = Math.min(1, Math.max(0, (mx - M.l) / bw)), ty = Math.min(1, Math.max(0, 1 - (my - M.t) / bh));
+      const z = (r, t0, ref) => { const span = (r[1] - r[0]) * f, a = r[0] + (r[1] - r[0]) * t0; return [a - span * t0, a + span * (1 - t0)]; };
+      const nx = z(d.x, tx), ny = z(d.y, ty);
+      if (f < 1 && ((nx[1] - nx[0]) < (home.x[1] - home.x[0]) * 1e-3 || (ny[1] - ny[0]) < (home.y[1] - home.y[0]) * 1e-3)) return;
+      st.dom = { x: nx, y: ny }; svg.removeAttribute("data-tip"); st.hot = null; place();
+    }, { passive: false });
+    reset.addEventListener("click", () => { st.dom = null; place(); });
+    /* Suche: markiert, ohne neu zu zeichnen; Enter öffnet das Profil */
+    find.addEventListener("input", () => {
+      const f = finden(find.value), o = f && pts.includes(f) ? f : null;
+      st.find = o ? o.id : null;
+      if (o && st.hide.has(o.branche)) { st.hide.delete(o.branche); legendeSync(); }
+      if (o && st.dom) { st.dom = null; }
+      place();
+    });
+    find.addEventListener("keydown", e => { if (e.key === "Enter") { const f = finden(find.value); if (f && NACH_ID[f.id]) gehe("firma-" + f.id); } if (e.key === "Escape") { find.value = ""; st.find = null; place(); } });
+    /* Legende */
+    const legendeSync = () => el.querySelectorAll(".sc-chip").forEach(b => b.setAttribute("aria-pressed", String(!st.hide.has(b.dataset.scb))));
+    el.addEventListener("mouseover", e => { const b = e.target.closest && e.target.closest(".sc-chip"); if (b && !st.hide.has(b.dataset.scb)) { st.brHot = b.dataset.scb; markieren(); } });
+    el.addEventListener("mouseout", e => { if (e.target.closest && e.target.closest(".sc-chip") && st.brHot) { st.brHot = null; markieren(); } });
+    el.addEventListener("click", e => {
+      const b = e.target.closest && e.target.closest(".sc-chip"); if (!b) return;
+      const id = b.dataset.scb; if (st.hide.has(id)) st.hide.delete(id); else st.hide.add(id);
+      st.brHot = st.hide.has(id) ? null : id; legendeSync(); place();
+    });
+    el.addEventListener("dblclick", e => {
+      const b = e.target.closest && e.target.closest(".sc-chip"); if (!b) return;
+      const alle = [...el.querySelectorAll(".sc-chip")].map(x => x.dataset.scb);
+      st.hide = new Set(alle.filter(x => x !== b.dataset.scb)); legendeSync(); place();
+    });
+    if (typeof ResizeObserver !== "undefined") {
+      let breite = 0; new ResizeObserver(() => { const nb = Math.round(plot.clientWidth); if (nb && nb !== breite) { const erst = !breite; breite = nb; if (!erst) { layout(); } } }).observe(plot);
+    }
+    legendeSync(); if (st.find) { const f = NACH_ID[st.find]; if (f) find.value = f.name; }
+    layout();
   }
   function metrikWahl(attr, aktiv, liste, ks) {
     return `<div class="ctrl" style="margin-bottom:10px">${ks.filter(k => hatL(liste, k)).map(k => `<button type="button" ${attr}="${k}" aria-pressed="${k === aktiv}">${esc(kurzKz(k))}</button>`).join("")}</div>`;
@@ -154,9 +310,9 @@ const UNT = (() => {
       <div class="p" style="grid-column:span 12;border:0;background:none">${kacheln()}</div>
       ${panel({ code: "UEB 1", titel: "Branchenvergleich", sub: "Median je Branche · Tönung = Höhe innerhalb der Spalte (keine Wertung) · Spaltenkopf sortiert · Zeile öffnet die Branche", body: matrix(),
         fuss: `${fuss()}Banken sind eine Branche unter allen: HGB-Einzelabschlüsse, Börsenkennzahlen nur bei selbst notierten Instituten. Nicht börsennotierte Unternehmen erscheinen mit Abschlusskennzahlen, ohne Kapitalmarktwerte.` })}
-      ${panel({ code: "UEB 2", titel: "Alle Unternehmen im Streudiagramm", sub: "Kreisfläche ∝ Börsenwert · Klick auf einen Punkt markiert das Unternehmen", body:
-        `<div class="ctrl" style="margin-bottom:6px"><span>X</span></div>${metrikWahl("data-ussx", S.usx, FIRMEN, STREU_KZ)}<div class="ctrl" style="margin-bottom:6px"><span>Y</span></div>${metrikWahl("data-ussy", S.usy, FIRMEN, STREU_KZ)}${streuU(FIRMEN, S.usx, S.usy, S.branche, S.gruppe)}`,
-        fuss: "Amber = gerade gewählte Branche, Grau = übrige. Ausreißer außerhalb der 3-%/97-%-Perzentile werden am Rand abgeschnitten." })}
+      ${panel({ code: "UEB 2", titel: "Alle Unternehmen im Streudiagramm", sub: "Kreisfläche ∝ Börsenwert · Maus darauf = hervorheben · Klick öffnet das Profil · Legende schaltet Branchen", body:
+        `<div class="ctrl" style="margin-bottom:6px"><span>X</span></div>${metrikWahl("data-ussx", S.usx, FIRMEN, STREU_KZ)}<div class="ctrl" style="margin-bottom:6px"><span>Y</span></div>${metrikWahl("data-ussy", S.usy, FIRMEN, STREU_KZ)}${streuU(FIRMEN, S.usx, S.usy, S.branche, S.gruppe, { id: "ueb", legende: true })}`,
+        fuss: "Farbe = Branche. Die Ansicht beginnt mit den 3-%/97-%-Perzentilen als Rahmen, Ausreißer sitzen am Rand; wer hineinzoomt, sieht sie in echter Lage. Eine in Branche (F2) gewählte Branche bleibt kräftig, die übrigen treten zurück." })}
     </div>`;
   }
 
@@ -231,7 +387,7 @@ const UNT = (() => {
       ${panel({ code: "BRA 2", titel: "Rangfolge", sub: `${esc(kzName(S.rang || ""))} · gestrichelt = Median`, breite: "w6", body: metrikWahl("data-urang", S.rang, liste, [...new Set([...rk, ...STREU_KZ])]) + rangU(S.rang, liste) })}
       ${panel({ code: "BRA 3", titel: "Profil gegen die übrigen Branchen", sub: "Median der Auswahl gegen Median aller anderen Unternehmen", breite: "w6", body: S.branche === "alle" ? `<p class="n">Eine Branche wählen.</p>` : profilTab(liste), fuss: "Grün/Rot bewertet nur Kennzahlen mit eindeutiger Richtung (z. B. Marge höher = besser, Verschuldung niedriger = besser)." })}
       ${ad.length > 1 ? panel({ code: "BRA 4", titel: "Kursentwicklung indexiert", sub: `Schlusskurs, Beginn des Zeitraums = 100 · ${ad.length} Aktien`, breite: "w6", body: ctrl + indexChart(ad), fuss: "Kurse in Landeswährung, nicht dividendenbereinigt." }) : ""}
-      ${kz.length > 1 ? panel({ code: "BRA 5", titel: "Kennzahlen gegeneinander", sub: `Kreisfläche ∝ ${hatL(liste, "marktkap") ? "Börsenwert" : "Bilanzsumme"}`, breite: ad.length > 1 ? "w6" : "", body: `<div class="ctrl" style="margin-bottom:6px"><span>X</span></div>${metrikWahl("data-usx", S.sx, liste, STREU_KZ)}<div class="ctrl" style="margin-bottom:6px"><span>Y</span></div>${metrikWahl("data-usy", S.sy, liste, STREU_KZ)}${streuU(liste, S.sx, S.sy, "alle")}` }) : ""}
+      ${kz.length > 1 ? panel({ code: "BRA 5", titel: "Kennzahlen gegeneinander", sub: `Kreisfläche ∝ ${hatL(liste, "marktkap") ? "Börsenwert" : "Bilanzsumme"}`, breite: ad.length > 1 ? "w6" : "", body: `<div class="ctrl" style="margin-bottom:6px"><span>X</span></div>${metrikWahl("data-usx", S.sx, liste, STREU_KZ)}<div class="ctrl" style="margin-bottom:6px"><span>Y</span></div>${metrikWahl("data-usy", S.sy, liste, STREU_KZ)}${streuU(liste, S.sx, S.sy, "alle", "alle", { id: "bra" })}` }) : ""}
     </div>`;
   }
 
@@ -438,6 +594,28 @@ const UNT = (() => {
     const z = document.getElementById("uzahl"); if (z) z.textContent = n + " angezeigt";
   }
 
+  /* ----- Hover über Seitengrenzen: Tabellenzeile/Balken <-> Streudiagramm, Zeilen- und Spaltenhervorhebung ----- */
+  function hoverVerdrahten() {
+    const sc = () => document.querySelector(".uscat");
+    document.addEventListener("mouseover", e => {
+      const t = e.target; if (!t.closest) return;
+      const inSc = t.closest(".uscat"), s = sc();
+      const zeile = t.closest("tr[data-uopen]");                                  // Branchenzeile -> Branche im Streudiagramm
+      if (s && s._api && !inSc) s._api.branche(zeile ? zeile.dataset.uopen : null);
+      const m = t.closest("[data-umk]");                                          // Tabellenzeile, Balken -> Punkt im Streudiagramm
+      const id = m ? m.dataset.umk : null;
+      if (!inSc) document.querySelectorAll(".uscat").forEach(x => x._api && x._api.hover(id));
+      document.querySelectorAll(".hl-b").forEach(x => x.classList.remove("hl-b"));
+      if (id && !t.closest(".uscat")) { const svg = m.closest("svg"); if (svg) { svg.classList.add("has-hl"); m.classList.add("hl-b"); } }
+      document.querySelectorAll("svg.has-hl").forEach(x => { if (!id || !x.contains(m)) x.classList.remove("has-hl"); });
+      const td = t.closest("td, th"), tb = td && td.closest("table.kzt, table.hov");   // Spalte der Tabelle mitleuchten lassen
+      document.querySelectorAll(".colhl").forEach(x => x.classList.remove("colhl"));
+      if (td && tb) { const i = td.cellIndex; tb.querySelectorAll("tr").forEach(r => { const c = r.cells[i]; if (c && c.tagName !== "TH") c.classList.add("colhl"); }); }
+    });
+    document.addEventListener("mouseleave", () => { document.querySelectorAll(".colhl, .hl-b").forEach(x => x.classList.remove("colhl", "hl-b")); }, true);
+    document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.matches && e.target.matches("th.sortable")) e.target.click(); });
+  }
+
   /* ----- Bedienung ----- */
   function hinzu(id) { if (!S.auswahl) viewVgl(); if (!S.auswahl.includes(id)) { S.auswahl.push(id); if (S.auswahl.length > 6) S.auswahl.shift(); } }
   function finden(q) { q = (q || "").trim().toLowerCase(); if (!q || !UD) return null; return FIRMEN.find(f => f.name.toLowerCase() === q || f.id === q) || FIRMEN.find(f => (f.ticker || "").toLowerCase() === q || (f.isin || "").toLowerCase() === q) || FIRMEN.find(f => f.name.toLowerCase().includes(q)); }
@@ -471,7 +649,8 @@ const UNT = (() => {
     if (a) a.addEventListener("change", () => { const f = finden(a.value); if (f) { hinzu(f.id); render(); } });
     ["usuche", "ubr", "unot"].forEach(i => { const e = document.getElementById(i); if (e) e.addEventListener("input", verzFilter); });
     if (document.getElementById("uverz")) verzFilter();
-  }
+    document.querySelectorAll(".uscat").forEach(scatterInit);
+    document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
   return { init, da, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };

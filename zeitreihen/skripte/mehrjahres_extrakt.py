@@ -140,4 +140,5 @@ def main():
     print(len(neu), "Kandidaten ->", AUS)
 
 
-main()
+if __name__ == "__main__":
+    main()

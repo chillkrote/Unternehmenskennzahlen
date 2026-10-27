@@ -97,4 +97,5 @@ def main():
     print(len(lang), "Werte,", len(stamm), "Unternehmen")
 
 
-main()
+if __name__ == "__main__":
+    main()

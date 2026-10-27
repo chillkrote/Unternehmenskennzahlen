@@ -1,34 +1,80 @@
 name: Börsendaten Terminal
 
-# Einmal je Handelstag nach Xetra-Schluss: Kurse über yfinance holen,
-# Terminal neu bauen und Änderungen in main committen.
+# Daten-Update, kein Terminal-Bau (den übernimmt terminal.yml, nur wenn sich Daten geändert haben).
+#  - Mo-Fr 18:30 UTC (nach Xetra-Schluss): Tageskurse der Banken, Kennzahlen -> app/data/markt.json
+#  - Sa 05:00 UTC: Wochenkurse (zehn Jahre) aller Börsenunternehmen -> app/data/kurse_woche.json
+# Fällt Yahoo teilweise aus (429), bleibt der letzte gute Stand liegen; der Lauf scheitert dann nicht.
+# Kosten: keine. Rund 3 Minuten je Lauf, Schätzung siehe .github/workflows/README.md
 on:
   schedule:
     - cron: "30 18 * * 1-5"
+    - cron: "0 5 * * 6"
   workflow_dispatch:
+    inputs:
+      was:
+        description: "Was abrufen?"
+        type: choice
+        options: [kurse, wochenkurse, beides]
+        default: kurse
 
 permissions:
   contents: write
+  actions: write
+
+# gemeinsame Sperre mit termine.yml: nie zwei Läufe gleichzeitig am Daten-Branch
+concurrency:
+  group: daten-schreiben
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   abruf:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      WAS: ${{ github.event_name == 'schedule' && (github.event.schedule == '0 5 * * 6' && 'wochenkurse' || 'kurse') || inputs.was }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: app/requirements.txt
       - run: pip install -r app/requirements.txt
-      - run: python3 app/marktdaten.py
-      - run: python3 app/build.py
-      - name: Änderungen committen
+      - name: Tageskurse
+        if: env.WAS == 'kurse' || env.WAS == 'beides'
+        run: python3 app/marktdaten.py | tee /tmp/markt.log
+      - name: Wochenkurse
+        if: env.WAS == 'wochenkurse' || env.WAS == 'beides'
+        run: python3 app/kurse_historie.py | tee /tmp/woche.log
+      - name: Zusammenfassung
+        if: always()
         run: |
-          git add app/data/markt.json app/dist
-          if git diff --cached --quiet; then
-            echo "Keine neuen Kurse."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Börsendaten $(date -u +%Y-%m-%d)"
-          git push
+          {
+            echo "### Börsendaten ($WAS)"
+            for f in /tmp/markt.log /tmp/woche.log; do
+              [ -f "$f" ] || continue
+              echo '```'; grep -E "Banken mit Kursen|Ticker,|::warning::|Fehler" "$f" | head -5; echo '```'
+              echo "<details><summary>Ausfälle</summary>"; echo; echo '```'; grep -E "^   " "$f" | head -60; echo '```'; echo "</details>"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Änderungen pushen
+        id: push
+        run: .github/scripts/daten_pushen.sh "Börsendaten $(date -u +%Y-%m-%d) ($WAS)" app/data/markt.json app/data/kurse_woche.json
+      - name: Terminal neu bauen lassen
+        if: steps.push.outputs.geaendert == 'true'
+        run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}

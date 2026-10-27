@@ -1,51 +1,80 @@
 name: Berichtstermine
 
-# Zweimal täglich (morgens vor und abends nach der Veröffentlichungswelle):
-#  1. montags die Finanzkalender der Unternehmen lesen (termine/skripte/finanzkalender_scan.py)
+# Daten-Update, kein Terminal-Bau (den übernimmt terminal.yml, nur wenn sich etwas geändert hat).
+#  05:20 UTC täglich, 16:20 UTC Mo-Fr (vor und nach der Veröffentlichungswelle):
+#  1. montags (und von Hand) die Finanzkalender der Unternehmen lesen (termine/skripte/finanzkalender_scan.py)
 #  2. Termine aus Yahoo Finance, Finanzkalender und termine_manuell.csv zusammenführen (termine/termine.csv)
-#  3. fällige Berichte von den Unternehmenswebsites laden (PDF nach <branche>/dokumente/<id>/, index.csv-Eintrag, SHA-256)
-#  4. Terminal neu bauen und alles in main committen
-# Kosten: keine (GitHub Actions im Rahmen des Kontingents, yfinance und Unternehmenswebsites sind frei zugänglich).
+#  3. fällige Berichte von den Unternehmenswebsites laden (PDF nach <branche>/dokumente/<id>/, index.csv-Eintrag, SHA-256);
+#     ohne fällige Termine endet der Schritt nach Sekunden
+# Teilausfälle (einzelne Seiten, Yahoo 429) lassen den Lauf nicht scheitern; die Zusammenfassung zeigt, was fehlte.
+# Kosten: keine (Actions-Kontingent; yfinance und Unternehmenswebsites sind frei zugänglich).
 on:
   schedule:
-    - cron: "20 5,16 * * *"
+    - cron: "20 5 * * *"
+    - cron: "20 16 * * 1-5"
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
+# gemeinsame Sperre mit marktdaten.yml: nie zwei Läufe gleichzeitig am Daten-Branch
 concurrency:
-  group: berichtstermine
+  group: daten-schreiben
   cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash   # mit pipefail: ein Fehler vor "| tee" bricht den Schritt ab
 
 jobs:
   termine:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
     steps:
+      # Originaldokumente (PDF, 2,9 GB) werden nicht gebraucht; neue PDFs legt der Abruf neu an. index.csv-Dateien sind ausgecheckt.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+          sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: termine/requirements.txt
       - run: pip install -r termine/requirements.txt
       - name: Finanzkalender lesen (montags)
         run: |
           if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            python3 termine/skripte/finanzkalender_scan.py || echo "Finanzkalender-Scan fehlgeschlagen, weiter mit vorhandenem Stand"
+            python3 termine/skripte/finanzkalender_scan.py 2>&1 | tee /tmp/scan.log || echo "::warning::Finanzkalender-Scan fehlgeschlagen, weiter mit vorhandenem Stand"
           fi
-      - run: python3 termine/skripte/termine_erfassen.py
-      - run: python3 termine/skripte/berichte_abrufen.py
-      - run: python3 app/build.py
-      - name: Änderungen committen
+      - name: Termine erfassen
+        run: python3 termine/skripte/termine_erfassen.py 2>&1 | tee /tmp/erfassen.log
+      - name: Fällige Berichte abrufen
+        run: python3 termine/skripte/berichte_abrufen.py 2>&1 | tee /tmp/abruf.log
+      - name: Zusammenfassung
+        if: always()
         run: |
-          git add termine boersennotierte-unternehmen banken app/data app/dist
-          if git diff --cached --quiet; then
-            echo "Keine Änderungen."
-            exit 0
-          fi
-          # Dateien über 100 MB lehnt GitHub ab; der Abruf speichert sie nicht (termine/rohdaten/zu_gross.txt)
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Berichtstermine und neue Berichte $(date -u +%Y-%m-%d)"
-          git pull --rebase -X theirs origin main  # bei Konflikten in app/dist gewinnt der frisch gebaute Stand
-          git push
+          {
+            echo "### Berichtstermine"
+            for f in erfassen abruf scan; do
+              [ -f /tmp/$f.log ] || continue
+              echo "**$f**"; echo '```'; tail -n 8 /tmp/$f.log; echo '```'
+            done
+            echo "Neu geladen: $(grep -c '^OK ' /tmp/abruf.log 2>/dev/null || echo 0), nicht gefunden/offen: $(grep -c '^-- ' /tmp/abruf.log 2>/dev/null || echo 0)"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Änderungen pushen
+        id: push
+        # Dateien über 100 MB lehnt GitHub ab; der Abruf speichert sie nicht (termine/rohdaten/zu_gross.txt)
+        run: .github/scripts/daten_pushen.sh "Berichtstermine und neue Berichte $(date -u +%Y-%m-%d)" termine boersennotierte-unternehmen banken
+      - name: Terminal neu bauen lassen
+        if: steps.push.outputs.geaendert == 'true'
+        run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -171,11 +171,53 @@ for g_, r_, b_ in rows:
     if b_["name"].startswith("State Street") and b_.get("bilanzsumme") is None:
         b_.update(fiscal_year=2023, stichtag="2023-12-31", bilanzsumme=46.2e9, eigenkapital=3.89e9, vj_bilanzsumme=None,
                   source_type="Sekundärquelle (Eulerpool, gerundet, GJ 2023)")
+# ---------- Erweiterung: alle deutschen Einträge im EBA-Pillar-3-Datenhub ----------
+# (eba_hub_neu_2025.json aus mk_hub_neu.py; neue Banken mit Rolle "EBA-Hub", bestehende Banken nur Lückenfüllung)
+HN = load("eba_hub_neu_2025.json") or {"neu": [], "bestehend": []}
+EXTRA_GROUP = "Förder- und Sonderinstitute"
+HUB_URL = "https://edap-public.eba.europa.eu/Report/index/MTE2"
+def e6(v):
+    return None if v is None else v * 1e6
+for h in HN["neu"]:
+    c2 = h.get("cc2") or {}
+    hgb = c2.get("hgb")
+    st_ = "EBA-Hub CC2 (Bilanz laut Abschluss" + (", HGB)" if hgb else ", Summenzeilen; ggf. IFRS/Konzern)") if c2.get("bilanzsumme") else "EBA-Hub (keine Bilanz in CC2)"
+    nt = [f"Ergänzt am 27.10.2026 aus dem EBA-Pillar-3-Datenhub (Hub-Eintrag: {h['hub_name']}, LEI {h['lei']}); Institutsart: {h['art']}."]
+    if c2.get("notes"):
+        nt.append("CC2: " + "; ".join(c2["notes"]) + ".")
+    b = {"name": h["name"], "sitz": None, "fiscal_year": 2025 if c2.get("bilanzsumme") else None, "stichtag": "2025-12-31",
+         "bilanzsumme": e6(c2.get("bilanzsumme")), "eigenkapital": e6(c2.get("eigenkapital")),
+         "fonds_340g": e6(c2.get("fonds_340g")) if hgb or c2.get("fonds_340g") else None,
+         "source_type": st_, "source_url": HUB_URL, "source_doc": "EU CC2/KM1/CC1/OV1 zum 31.12.2025, Data Points Report, Filter Country = Germany",
+         "notes": " ".join(nt), "_hub": h}
+    rows.append((h["gruppe"], "EBA-Hub", b))
+# bestehende Banken: fehlende EK/Fonds aus CC2 (nur HGB-Einzelinstitute) ergänzen
+HB = {}
+for h in HN["bestehend"]:
+    HB.setdefault(norm(h["name"]), []).append(h)
+for g_, r_, b_ in rows:
+    for h in HB.get(norm(b_["name"]), []):
+        c2 = h.get("cc2") or {}
+        if not c2.get("hgb") or not c2.get("bilanzsumme") or c2.get("fonds_340g") is None:
+            continue
+        filled = []
+        for f, k in (("eigenkapital", "eigenkapital"), ("fonds_340g", "fonds_340g")):
+            if b_.get(f) is None and c2.get(k) is not None:
+                b_[f] = c2[k] * 1e6; filled.append(f)
+        if filled:
+            dev = ""
+            if b_.get("bilanzsumme") and abs(b_["bilanzsumme"] / 1e6 - c2["bilanzsumme"]) > 0.005 * c2["bilanzsumme"]:
+                dev = f" Bilanzsumme laut CC2 {c2['bilanzsumme']:,.1f} Mio. weicht von der Bilanzsumme dieser Zeile ab.".replace(",", "X").replace(".", ",").replace("X", ".")
+            b_["notes"] = ((b_.get("notes") or "") + f" | Ergänzung 27.10.2026 ({', '.join(filled)}) aus EU CC2 im EBA-Datenhub (Hub-Eintrag {h['hub_name']}; Bilanz laut Jahresabschluss).{dev}").strip(" |")
+            b_["_nach"] = True
 # sort ranking inside group by Bilanzsumme
-order = {g: i for i, (g, _) in enumerate(groups)}
+ALLG = [g for g, _ in groups] + [EXTRA_GROUP]
+order = {g: i for i, g in enumerate(ALLG)}
+ROLE_ORDER = {"Zusatz": 1, "EBA-Hub": 2}
+CORE = lambda rolle: rolle not in ("Zusatz", "EBA-Hub")
 def sk(r):
     g, rolle, b = r
-    return (order[g], 0 if rolle != "Zusatz" else 1, -(b.get("bilanzsumme") or 0))
+    return (order[g], ROLE_ORDER.get(rolle, 0), -(b.get("bilanzsumme") or 0))
 rows.sort(key=sk)
 for _, _, b in rows:
     k = KK.get(norm(b["name"]))
@@ -188,6 +230,7 @@ HDR = Font(bold=True, color="FFFFFF")
 HFILL = PatternFill("solid", fgColor="1F3864")
 MISS = PatternFill("solid", fgColor="FCE4D6")
 SEC = PatternFill("solid", fgColor="FFF2CC")
+HUBF = PatternFill("solid", fgColor="E2EFDA")
 thin = Side(style="thin", color="BFBFBF")
 
 # ---------- Übersicht ----------
@@ -218,6 +261,8 @@ for gname, rolle, b in rows:
     r = ws.max_row + 1
     if rolle == "Zusatz":
         rank = b.get("rank") if gname == "Sparkassen" else None
+    elif rolle == "EBA-Hub":
+        rank = None
     else:
         rank_ctr[gname] = rank_ctr.get(gname, 0) + 1
         rank = rank_ctr[gname]
@@ -275,6 +320,9 @@ for gname, rolle, b in rows:
     if rolle == "Zusatz":
         for c in range(1, 7):
             ws.cell(r, c).fill = SEC
+    elif rolle == "EBA-Hub":
+        for c in range(1, 7):
+            ws.cell(r, c).fill = HUBF
     for c in (33, 34, 35):
         ws.cell(r, c).alignment = Alignment(wrap_text=False, vertical="top")
 
@@ -300,7 +348,7 @@ for c in range(1, 12):
     cell.alignment = Alignment(wrap_text=True, vertical="top")
 ga.row_dimensions[1].height = 48
 summary = {}
-for gname, sel_all in [(g, [b for gg, rolle, b in rows if gg == g and rolle != "Zusatz"]) for g, _ in groups]:
+for gname, sel_all in [(g, [b for gg, rolle, b in rows if gg == g and CORE(rolle)]) for g, _ in groups]:
   for label, sel in ([("Top 10", sel_all[:10]), ("Top 40", sel_all)] if gname != "Landesbanken" else [("alle", sel_all)]):
       full = [b for b in sel if all(b.get(f) is not None for f in ("bilanzsumme", "eigenkapital", "fonds_340g"))]
       if not full:
@@ -327,7 +375,7 @@ for c in range(1, 10):
     cell = ga.cell(hr, c); cell.font = HDR; cell.fill = HFILL
     cell.alignment = Alignment(wrap_text=True, vertical="top")
 ga.row_dimensions[hr].height = 48
-for gname, sel_all in [(g, [b for gg, rolle, b in rows if gg == g and rolle != "Zusatz"]) for g, _ in groups]:
+for gname, sel_all in [(g, [b for gg, rolle, b in rows if gg == g and CORE(rolle)]) for g, _ in groups]:
   for label, sel in ([("Top 10", sel_all[:10]), ("Top 40", sel_all)] if gname != "Landesbanken" else [("alle", sel_all)]):
       kb = [b for b in sel if b.get("_cet1") is not None]
       if not kb:
@@ -396,6 +444,13 @@ lines = [
     "Blatt 'Zeitreihe 2021-2025' (Stand 24.10.2026): Bilanzsumme, Eigenkapital, Fonds § 340g und Jahresüberschuss je Bank und Jahr (Mio. €) mit jährlichem Wachstum und durchschnittlichem Wachstum p. a. (Formeln). 2025 und 2024 stammen aus dem GJ2025-Bericht (Vorjahresspalte), der Jahresüberschuss aus der GuV. Ältere Jahre wurden nur dort eingetragen, wo der Jahresabschluss bzw. Geschäftsbericht des Instituts frei abrufbar war (Download von der Bankwebsite, automatisiert ausgelesen, Folgejahre gegeneinander geprüft). Viele Sparkassen und Genossenschaftsbanken veröffentlichen ältere Abschlüsse nur im Unternehmensregister/Bundesanzeiger; dort ist der Abruf durch eine Sicherheitsabfrage geschützt, die nicht umgangen wurde. 'n. v.' = nicht erhoben. Der Jahresüberschuss ist das Ergebnis nach Steuern UND nach Zuführung zum Fonds § 340g; bei Banken mit Gewinnabführung steht 0.",
     "Blatt 'Offenlegung 31.12.2025' (Stand 26.10.2026): Gemeldete Kapitalkennzahlen aus Tabelle EU KM1 der Offenlegungsberichte nach Teil 8 CRR (hartes Kernkapital, Kernkapital, Eigenmittel, RWA, Quoten, Gesamtkapitalanforderung EU 11a, Leverage Ratio). Erhoben für 95 von 129 Banken: 32 aus Berichten auf den Bankwebsites, 63 aus dem Pillar-3-Datenhub der EBA (Data Points Report, Template EU KM1, Spalte T, Export über die Weboberfläche am 26.10.2026). Für die 27 Banken mit beiden Quellen stimmten die Werte überein. Der Hub zeigt jeweils die höchste Konsolidierungsebene im EWR; bei Privatbanken und Landesbanken ist das oft eine Gruppe ('Ebene des Berichts'). 34 Banken sind in keiner der beiden Quellen ('n. v.'). AT1 = Kernkapital − CET1, Tier 2 = Eigenmittel − Kernkapital, RWA-Dichte = RWA / HGB-Bilanzsumme (Formeln). Bei Gruppenberichten ist die RWA-Dichte nur ein Richtwert und geht nicht in den Gruppenmedian ein.",
     "Blätter 'Eigenmittel CC1' und 'RWA-Aufteilung OV1' (Stand 26.10.2026): Tabellen EU CC1 (Zusammensetzung der Eigenmittel) und EU OV1 (Aufteilung der Gesamtrisikobeträge) zum 31.12.2025 aus dem Pillar-3-Datenhub der EBA, Export über die Weboberfläche (Rohdateien eba_hub_cc1_20251231.csv, eba_hub_ov1_20251231.csv, aufbereitet in eba_cc1_ov1_2025.json). Verfügbar für 89 der 129 Banken. Kennzahlen als Formeln. Kreditrisikoanpassungen im T2 (CC1 Zeile 50) enthalten bei HGB-Instituten vor allem die Vorsorgereserven nach § 340f. Der Vergleich 'Fonds HGB über aufsichtlichem Fonds' zeigt den Teil des Fonds § 340g, der zum Stichtag noch nicht als CET1 angerechnet war (meist die Zuführung des Geschäftsjahres).",
+    "Erweiterung 27.10.2026 (Rolle 'EBA-Hub', grün hinterlegt): Alle Institute, die im Pillar-3-Datenhub der EBA (edap-public.eba.europa.eu, Data Points Report) mit dem Filter Country = Germany erscheinen, sind in jeder Tabelle ergänzt. "
+    f"Dazu wurden über die normale Weboberfläche exportiert: KM1 für alle Stichtage (170 deutsche Einträge), CC1 und OV1 zum 31.12.2025 (vorhanden) sowie EU CC2 zum 31.12.2025 (159 Einträge). Zusammen sind das {len(HN['neu']) + len(HN['bestehend'])} deutsche Hub-Einträge; {len(HN['bestehend'])} davon gehören zu bereits erfassten Banken (teils mehrere Ebenen je Bank, z. B. HASPA Finanzholding und Hamburger Sparkasse AG), {sum(1 for x in rows if x[1] == 'EBA-Hub')} Institute sind neu und der passenden Gruppe zugeordnet "
+    "(Sparkassen inkl. Landesbausparkassen, Genossenschaftsbanken inkl. Bausparkasse Schwäbisch Hall und BFS SozialFinanz, Private Banken inkl. privater Bausparkassen und EU-Töchtern ausländischer Bankengruppen, die Holding der DekaBank bei den Landesbanken, KfW IPEX-Bank und KfW Beteiligungsholding als neue Gruppe 'Förder- und Sonderinstitute'). "
+    "Neu aufgenommen sind damit auch Häuser, die in der ursprünglichen Auswahl bewusst fehlten (z. B. Post-Brexit-Hubs, Trade Republic, AKA, Standard Chartered); sie zählen weder zu den Top-40-Rängen noch zur 'Gruppenauswertung', die unverändert die bisherige Auswahl zeigt.",
+    "Bilanzsumme, Eigenkapital und Fonds § 340g der neuen Institute stammen aus EU CC2 Spalte a (Bilanz laut Jahresabschluss; bei HGB-Instituten die HGB-Einzelbilanz, bei Konzernen/Holdings IFRS-Summenzeilen, Quellenart je Zeile). Der Hub-Export ('Summarized data') liefert für Positionen ohne Schlüssel keinen Einzelwert; betroffen ist meist 'Verbindlichkeiten gegenüber Kunden'. Dieser Posten ist dann als Differenz Bilanzsumme − übrige Passiva berechnet (Hinweis je Zeile). "
+    "Prüfung: Für 55 bereits erfasste HGB-Institute stimmten Bilanzsumme, Eigenkapital und Fonds aus CC2 mit den Original-Jahresabschlüssen überein. Für 7 bestehende Sparkassen ohne EK/Fonds-Angabe (u. a. KSK Esslingen-Nürtingen, Ludwigsburg, München Starnberg Ebersberg, Waiblingen, Sparkasse Aachen, Mainfranken, Schwaben-Bodensee) wurden EK und Fonds aus CC2 ergänzt. "
+    "KM1 fehlt im Hub bei BSK 1818 AG, Hamburger Sparkasse AG und KfW IPEX-Bank; dort sind CET1, Kernkapital, Eigenmittel, RWA und Quoten aus CC1 übernommen. Aareal Bank (30.06.2026), Siemens Bank und Trade Republic (30.09.2025) haben im Hub kein KM1 zum 31.12.2025; ihr KM1 zum jeweils verfügbaren Stichtag ist mit Hinweis eingetragen. Kein CC2 im Hub: BHW Bausparkasse, Sparkasse Duisburg, Sparkasse Südpfalz, SWK Bank, Trade Republic.",
     "Fehlende Werte sind mit 'n. v.' (nicht verifiziert) gekennzeichnet und orange hinterlegt. Es wurden keine Werte geschätzt.",
     "Beträge in Mio. € (aus Originalangaben in €, T€ oder Mio. € umgerechnet; Genauigkeit je nach Quelle, siehe Anmerkungen).",
     "Hinweis: Rang bezieht sich auf die Reihenfolge innerhalb der Gruppe nach Bilanzsumme laut dieser Erhebung (Top 40 je Gruppe; Landesbanken vollständig).",
@@ -419,12 +474,12 @@ NAMES = {"Private Banken": "Private", "Genossenschaftsbanken": "Genossenschaftsb
 def line(key, order):
     return ", ".join(f"{NAMES[g]} {pc(S40[g][key[0]])} / {pc(S40[g][key[1]])}" for g in order)
 by = lambda k: sorted(S40, key=lambda g: -S40[g][k])
-full = {g: [b for gg, rolle, b in rows if gg == g and rolle != "Zusatz" and all(b.get(f) is not None for f in ("bilanzsumme", "eigenkapital", "fonds_340g"))] for g, _ in groups}
+full = {g: [b for gg, rolle, b in rows if gg == g and CORE(rolle) and all(b.get(f) is not None for f in ("bilanzsumme", "eigenkapital", "fonds_340g"))] for g, _ in groups}
 fge = {g: sorted([b for b in full[g] if b["fonds_340g"] > b["eigenkapital"]], key=lambda b: -(b["fonds_340g"] - b["eigenkapital"]) / b["bilanzsumme"]) for g in full}
 def ex(g, k):
     return ", ".join(f"{short(b['name'])} {pc(b['fonds_340g'] / b['bilanzsumme'])} vs. {pc(b['eigenkapital'] / b['bilanzsumme'])}" for b in fge[g][:k])
 none_ = [NAMES[g].replace("Private", "privaten Bank").replace("Landesbanken", "Landesbank") for g in ("Private Banken", "Landesbanken") if not fge[g]]
-kref = [(i + 1, b) for g in ("Sparkassen",) for i, b in enumerate([b for gg, rolle, b in rows if gg == g and rolle != "Zusatz"]) if "Krefeld" in b["name"]]
+kref = [(i + 1, b) for g in ("Sparkassen",) for i, b in enumerate([b for gg, rolle, b in rows if gg == g and CORE(rolle)]) if "Krefeld" in b["name"]]
 lines_au = [
     "Kurzauswertung Top 40 (Basis: Blatt 'Übersicht'; gewichtete Werte und Mediane nur für Banken mit vollständigen Angaben, siehe 'Gruppenauswertung')",
     "",
@@ -477,6 +532,8 @@ for gname, rolle, b in rows:
     r = zs.max_row + 1
     if rolle == "Zusatz":
         rank = b.get("rank") if gname == "Sparkassen" else None
+    elif rolle == "EBA-Hub":
+        rank = None
     else:
         rk[gname] = rk.get(gname, 0) + 1
         rank = rk[gname]
@@ -521,6 +578,9 @@ for gname, rolle, b in rows:
     if rolle == "Zusatz":
         for c in range(1, 6):
             zs.cell(r, c).fill = SEC
+    elif rolle == "EBA-Hub":
+        for c in range(1, 6):
+            zs.cell(r, c).fill = HUBF
 zs.freeze_panes = "F2"
 zs.column_dimensions["D"].width = 46
 for c in range(6, len(zh)):
@@ -592,6 +652,26 @@ n0 = rr - 1
 en.cell(n0 + 1, 1).value = "Hinweis: 'Kernkapital-Basis' = Eigenkapital + Fonds § 340g (Bilanzposten). Die vollständige CET1-Näherung (abzüglich Bilanzgewinn, immaterielle Werte, aktive latente Steuern) liegt nur für 2025 vor, weil diese Posten für ältere Jahre nicht erhoben wurden."
 # ---------- Offenlegung 31.12.2025 (EU KM1) ----------
 OL = {norm(i["name"]): i for i in (load("offenlegung_2025.json") or {"items": []})["items"]}
+def hub_ol(h, ebene):
+    k = h.get("km1")
+    if not k or k.get("cet1") is None:
+        return None
+    st = h.get("km1_stichtag") or "2025-12-31"
+    hint = "EBA-Hub-Eintrag: " + h["hub_name"] + (f"; {h['km1_hinweis']}" if h.get("km1_hinweis") else "")
+    return {"name": h["name"], "ebene": ebene, "stichtag": st, "cet1": k.get("cet1"), "t1": k.get("t1"), "tc": k.get("tc"), "rwa": k.get("rwa"),
+            "cet1_q": k.get("cet1_q"), "t1_q": k.get("t1_q"), "tc_q": k.get("tc_q"), "gesamt_anf": k.get("gesamt_anf"),
+            "lr_exp": k.get("lr_exp"), "lr": k.get("lr"),
+            "quelle": f"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag {st[8:10]}.{st[5:7]}.{st[:4]}, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",
+            "hinweis": hint}
+for h in HN["neu"]:
+    x = hub_ol(h, h["ebene"])
+    if x:
+        OL[norm(h["name"])] = x
+for h in HN["bestehend"]:
+    if norm(h["name"]) not in OL:
+        x = hub_ol(h, f"laut EBA-Hub: {h['hub_name']} (höchste Ebene im EWR, ggf. Gruppe)")
+        if x:
+            OL[norm(h["name"])] = x
 ol = wb.create_sheet("Offenlegung 31.12.2025")
 oh = ["Gruppe", "Rolle", "Bank", "Ebene des Berichts", "Bilanzsumme HGB (Mio. €)", "Hartes Kernkapital CET1 (Mio. €)", "Kernkapital T1 (Mio. €)",
       "Gesamtkapital (Mio. €)", "Gesamtrisikobetrag RWA (Mio. €)", "CET1-Quote", "Kernkapitalquote", "Gesamtkapitalquote",
@@ -635,6 +715,10 @@ for gname, rolle, b in rows:
     if rolle == "Zusatz":
         for c in range(1, 4):
             ol.cell(r, c).fill = SEC
+    elif rolle == "EBA-Hub":
+        for c in range(1, 4):
+            ol.cell(r, c).fill = HUBF
+    OL_ROWS[-1] = OL_ROWS[-1] + (rolle,)
 ol.freeze_panes = "D2"
 ol.column_dimensions["C"].width = 44
 ol.column_dimensions["D"].width = 22
@@ -651,28 +735,38 @@ gh = ["Gruppe", "Banken mit Bericht", "CET1-Quote (Median)", "Gesamtkapitalquote
 for k, h in enumerate(gh):
     c = ol.cell(g0 + 1, 1 + k); c.value = h; c.font = HDR; c.fill = HFILL; c.alignment = Alignment(wrap_text=True, vertical="top")
 ol.row_dimensions[g0 + 1].height = 48
-for n_, g in enumerate(["Sparkassen", "Genossenschaftsbanken", "Landesbanken", "Private Banken"]):
+MED_VARIANTS = [("bisherige Auswahl", lambda ro: ro != "EBA-Hub"), ("alle inkl. EBA-Hub-Ergänzung", lambda ro: True)]
+GROUPS5 = ["Sparkassen", "Genossenschaftsbanken", "Landesbanken", "Private Banken", EXTRA_GROUP]
+for n_, (vn, vf, g) in enumerate([(vn, vf, g) for vn, vf in MED_VARIANTS for g in GROUPS5]):
     rr = g0 + 2 + n_
-    rs = [r for r, gn, ok, i in OL_ROWS if gn == g and ok]
-    re_ = [r for r, gn, ok, i in OL_ROWS if gn == g and ok and i["ebene"] == "Einzelinstitut"]
-    ol.cell(rr, 1).value = g
+    rs = [r for r, gn, ok, i, ro in OL_ROWS if gn == g and ok and vf(ro)]
+    re_ = [r for r, gn, ok, i, ro in OL_ROWS if gn == g and ok and vf(ro) and i["ebene"] == "Einzelinstitut"]
+    if g == EXTRA_GROUP and vn == "bisherige Auswahl":
+        continue
+    ol.cell(rr, 1).value = f"{g} – {vn}"
     ol.cell(rr, 2).value = len(rs)
     def med(col, rr_list):
-        return "=MEDIAN(" + ",".join(f"{col}{x}" for x in rr_list) + ")" if rr_list else "n. v."
+        return '=IFERROR(MEDIAN(' + ",".join(f"{col}{x}" for x in rr_list) + '),"n. v.")' if rr_list else "n. v."
     ol.cell(rr, 3).value = med("J", rs); ol.cell(rr, 4).value = med("L", rs); ol.cell(rr, 5).value = med("O", rs)
     ol.cell(rr, 6).value = med("S", re_); ol.cell(rr, 7).value = med("T", rs)
     rn = [x for x in rs if isinstance(ol.cell(x, 21).value, float)]
     ol.cell(rr, 8).value = med("U", rn)
     for c in range(3, 9):
         ol.cell(rr, c).number_format = '0.0%'
-ol.cell(g0 + 7, 1).value = ("Quelle: EU KM1 nach CRR zum 31.12.2025, aus den Offenlegungsberichten auf den Websites der Institute und aus dem Pillar-3-Datenhub der EBA (Data Points Report, Export 26.10.2026, Rohdatei eba_hub_km1_20251231.xlsx; Quelle je Zeile). "
+ol.cell(g0 + 2 + 2 * len(GROUPS5), 1).value = ("Quelle: EU KM1 nach CRR zum 31.12.2025, aus den Offenlegungsberichten auf den Websites der Institute und aus dem Pillar-3-Datenhub der EBA (Data Points Report, Export 26.10.2026, Rohdatei eba_hub_km1_20251231.xlsx; Quelle je Zeile). "
                             "Wo beide vorlagen, stimmten die Werte überein. 'n. v.' = weder auf der Website noch im Hub gefunden (meist kleine, nicht komplexe Institute oder Töchter ausländischer Gruppen). "
-                            "'Ebene des Berichts' zeigt, ob der Bericht das Einzelinstitut oder eine Gruppe abdeckt; bei Gruppen ist die RWA-Dichte gegen die HGB-Bilanzsumme des Einzelinstituts nur ein Richtwert.")
+                            "'Ebene des Berichts' zeigt, ob der Bericht das Einzelinstitut oder eine Gruppe abdeckt; bei Gruppen ist die RWA-Dichte gegen die HGB-Bilanzsumme des Einzelinstituts nur ein Richtwert. "
+                            "Rolle 'EBA-Hub' (grün): am 27.10.2026 ergänzte Institute, die im Hub mit Land Deutschland geführt werden; ihre Bilanzsumme stammt aus EU CC2 im Hub. "
+                            "Die Gruppenübersicht zeigt die Mediane für die bisherige Auswahl (Top 40, Landesbanken, Zusatzeinträge) und für alle Banken einschließlich der Hub-Ergänzung (darin auch Bausparkassen, Holdings und EU-Töchter ausländischer Banken).")
 # Eigenmittel (CC1) und RWA-Aufteilung (OV1) aus dem EBA-Datenhub
 HUB = load("eba_cc1_ov1_2025.json") or {"cc1": {}, "ov1": {}}
 HCC = {norm(k): v for k, v in HUB["cc1"].items()}
 HOV = {norm(k): v for k, v in HUB["ov1"].items()}
-GROUPS4 = ["Sparkassen", "Genossenschaftsbanken", "Landesbanken", "Private Banken"]
+for h in HN["neu"] + HN["bestehend"]:
+    for D_, key in ((HCC, "cc1"), (HOV, "ov1")):
+        if h.get(key) and norm(h["name"]) not in D_:
+            D_[norm(h["name"])] = h[key]
+GROUPS4 = GROUPS5
 
 
 def hub_sheet(title, cols, fill_row, ratios, footnote, median_title):
@@ -691,7 +785,7 @@ def hub_sheet(title, cols, fill_row, ratios, footnote, median_title):
         r = ws.max_row + 1
         d, hint = fill_row(b)
         oli = OL.get(norm(b["name"]))
-        ebene = oli["ebene"] if (oli and d) else None
+        ebene = oli["ebene"] if (oli and d) else ((b.get("_hub") or {}).get("ebene") if d else None)
         vals = []
         for h, key, fmt, *_ in cols:
             v = key(b, d) if callable(key) else (d.get(key) if d else None)
@@ -711,7 +805,10 @@ def hub_sheet(title, cols, fill_row, ratios, footnote, median_title):
         if rolle == "Zusatz":
             for c in range(1, 4):
                 ws.cell(r, c).fill = SEC
-        out.append((r, gname, bool(d), ebene == "Einzelinstitut"))
+        elif rolle == "EBA-Hub":
+            for c in range(1, 4):
+                ws.cell(r, c).fill = HUBF
+        out.append((r, gname, bool(d), ebene == "Einzelinstitut", rolle))
     ws.freeze_panes = "D2"
     ws.column_dimensions["C"].width = 44; ws.column_dimensions["D"].width = 30
     for c in range(5, r0 + len(ratios)):
@@ -724,17 +821,19 @@ def hub_sheet(title, cols, fill_row, ratios, footnote, median_title):
     for k, h in enumerate(gh):
         c = ws.cell(g0 + 1, 1 + k); c.value = h; c.font = HDR; c.fill = HFILL; c.alignment = Alignment(wrap_text=True, vertical="top")
     ws.row_dimensions[g0 + 1].height = 75
-    for n_, g in enumerate(GROUPS4):
+    for n_, (vn, vf, g) in enumerate([(vn, vf, g) for vn, vf in MED_VARIANTS for g in GROUPS5]):
         rr = g0 + 2 + n_
-        rs = [r for r, gn, ok, ei in out if gn == g and ok]
-        ws.cell(rr, 1).value = g; ws.cell(rr, 2).value = len(rs)
+        if g == EXTRA_GROUP and vn == "bisherige Auswahl":
+            continue
+        rs = [r for r, gn, ok, ei, ro in out if gn == g and ok and vf(ro)]
+        ws.cell(rr, 1).value = f"{g} – {vn}"; ws.cell(rr, 2).value = len(rs)
         for k, (h, f, only_einzel) in enumerate(ratios):
-            sel = [r for r, gn, ok, ei in out if gn == g and ok and (ei or not only_einzel)]
+            sel = [r for r, gn, ok, ei, ro in out if gn == g and ok and vf(ro) and (ei or not only_einzel)]
             col = get_column_letter(r0 + k)
             c = ws.cell(rr, 3 + k)
-            c.value = "=MEDIAN(" + ",".join(f"{col}{x}" for x in sel) + ")" if sel else "n. v."
+            c.value = '=IFERROR(MEDIAN(' + ",".join(f"{col}{x}" for x in sel) + '),"n. v.")' if sel else "n. v."
             c.number_format = '0.0%'
-    ws.cell(g0 + 7, 1).value = footnote
+    ws.cell(g0 + 2 + 2 * len(GROUPS5), 1).value = footnote + (" Rolle 'EBA-Hub' (grün): am 27.10.2026 ergänzte Institute mit Land Deutschland im Hub; Mediane für die bisherige Auswahl und für alle Banken inkl. Ergänzung.")
     return ws
 
 
@@ -824,6 +923,15 @@ hub_sheet(
 
 # ---------- Bilanzen 31.12.2025 (Formblatt 1 RechKredV, Mio. €) ----------
 BIL = {norm(k): v for k, v in (load("bilanzen_2025.json") or {}).items()}
+BIL_HUB = set()
+for h in HN["neu"] + HN["bestehend"]:
+    c2 = h.get("cc2") or {}
+    if c2.get("fuer_bilanzblatt") and norm(h["name"]) not in BIL:
+        pa = dict(c2["passiva"])
+        BIL[norm(h["name"])] = {"aktiva": c2["aktiva"], "passiva": pa, "page": None,
+                                "source_url": "EBA-Pillar-3-Datenhub, EU CC2 Spalte a (Bilanz laut Jahresabschluss), Hub-Eintrag " + h["hub_name"],
+                                "note": "; ".join(c2.get("notes") or [])}
+        BIL_HUB.add(norm(h["name"]))
 AKT = [("barreserve", "1. Barreserve"), ("schuldtitel_oeff", "2. Schuldtitel öffentlicher Stellen und Wechsel"),
        ("ford_ki", "3. Forderungen an Kreditinstitute"), ("ford_kunden", "4. Forderungen an Kunden"),
        ("schuldverschr", "5. Schuldverschreibungen und andere festverzinsliche Wertpapiere"),
@@ -878,6 +986,9 @@ for gname, rolle, b in rows:
     if rolle == "Zusatz":
         for c in range(1, 4):
             wsb.cell(r, c).fill = SEC
+    elif rolle == "EBA-Hub":
+        for c in range(1, 4):
+            wsb.cell(r, c).fill = HUBF
     bil_rows.append((r, gname, bool(d), rolle))
 last_b = wsb.max_row
 wsb.freeze_panes = "D2"
@@ -894,23 +1005,30 @@ for k, h in enumerate(["Gruppe", "Banken mit Bilanz"] + [h for _, h in AKT] + ["
     c.alignment = Alignment(wrap_text=True, vertical="top")
 wsb.row_dimensions[g0 + 1].height = 90
 rngA = f"$A$2:$A${last_b}"; rngR = f"$B$2:$B${last_b}"
-for n_, g in enumerate(GROUPS4):
+BV = [("bisherige Auswahl", f',{rngR},"<>EBA-Hub"', lambda ro: ro not in ("Zusatz", "EBA-Hub")),
+      ("alle inkl. EBA-Hub-Ergänzung", "", lambda ro: ro != "Zusatz")]
+for n_, (vn, crit, vf, g) in enumerate([(vn, crit, vf, g) for vn, crit, vf in BV for g in GROUPS5]):
     rr = g0 + 2 + n_
+    if g == EXTRA_GROUP and vn == "bisherige Auswahl":
+        continue
     wsb.cell(rr, 1).value = g
-    wsb.cell(rr, 2).value = sum(1 for _, gn, ok, ro in bil_rows if gn == g and ok and ro != "Zusatz")
+    wsb.cell(rr, 2).value = sum(1 for _, gn, ok, ro in bil_rows if gn == g and ok and vf(ro))
+    wsb.cell(rr, 3).value = vn
     for c in range(cA0, cSP + 1):
         col = L_(c); tot = L_(cSA) if c <= cSA else L_(cSP)
         cell = wsb.cell(rr, c)
         if c in (cSA, cSP):
-            cell.value = f"=SUMIFS({col}$2:{col}${last_b},{rngA},$A{rr},{rngR},\"<>Zusatz\")"; cell.number_format = '#,##0'
+            cell.value = f"=SUMIFS({col}$2:{col}${last_b},{rngA},$A{rr},{rngR},\"<>Zusatz\"{crit})"; cell.number_format = '#,##0'
         else:
-            cell.value = (f"=IFERROR(SUMIFS({col}$2:{col}${last_b},{rngA},$A{rr},{rngR},\"<>Zusatz\")"
-                          f"/SUMIFS({tot}$2:{tot}${last_b},{rngA},$A{rr},{rngR},\"<>Zusatz\"),\"n. v.\")")
+            cell.value = (f"=IFERROR(SUMIFS({col}$2:{col}${last_b},{rngA},$A{rr},{rngR},\"<>Zusatz\"{crit})"
+                          f"/SUMIFS({tot}$2:{tot}${last_b},{rngA},$A{rr},{rngR},\"<>Zusatz\"{crit}),\"n. v.\")")
             cell.number_format = '0.0%'
-wsb.cell(g0 + 7, 1).value = ("Quelle: formale HGB-Jahresbilanz (Formblatt 1 RechKredV) aus den Jahresabschlüssen auf den Bankwebsites, ergänzt um Tabelle EU CC2 der Offenlegungsberichte, hauptversammlung.de und das Lobbyregister; ausgelesen am 26.10.2026; "
+wsb.cell(g0 + 2 + 2 * len(GROUPS5), 1).value = ("Quelle: formale HGB-Jahresbilanz (Formblatt 1 RechKredV) aus den Jahresabschlüssen auf den Bankwebsites, ergänzt um Tabelle EU CC2 der Offenlegungsberichte, hauptversammlung.de und das Lobbyregister; ausgelesen am 26.10.2026; "
                              "Rohdaten in bilanzen_2025.json. Hauptposten ohne Unterposten, umgerechnet in Mio. €. 0 = Posten in der Bilanz nicht ausgewiesen. "
-                             "Die Prüfspalten zeigen Rundungsdifferenzen der Quelle; größere Abweichungen sind in der Hinweisspalte erläutert.")
-me.append([f"Blatt 'Bilanzen 31.12.2025' (Stand 26.10.2026): Vollständige HGB-Bilanz (Hauptposten nach Formblatt 1 RechKredV, Mio. €) für {len(BIL)} der 129 Banken, ausgelesen aus den Original-Jahresabschlüssen auf den Bankwebsites (bei MünchenerHyp und Haspa aus der Vorjahresspalte des HGB-Halbjahresberichts 30.06.2026). Nacherhebung 26.10.2026: weitere Banken aus Tabelle EU CC2 der Offenlegungsberichte (Bilanz laut Jahresabschluss, Hauptposten), aus Jahresabschlüssen auf hauptversammlung.de und im Lobbyregister des Bundestags; die Quelle steht je Zeile in der Hinweisspalte. "
+                             "Die Prüfspalten zeigen Rundungsdifferenzen der Quelle; größere Abweichungen sind in der Hinweisspalte erläutert. "
+                             "Ergänzung 27.10.2026: Bilanzen aus Tabelle EU CC2 (Spalte a, Bilanz laut Jahresabschluss) im EBA-Pillar-3-Datenhub für Banken ohne frei verfügbaren Abschluss; "
+                             "im Hub-Export fehlen bei vielen Instituten einzelne Positionswerte (meist 'Verbindlichkeiten gegenüber Kunden'), diese sind als Differenz zur Bilanzsumme berechnet und in der Hinweisspalte genannt.")
+me.append([f"Blatt 'Bilanzen 31.12.2025' (Stand 26.10.2026, Ergänzung 27.10.2026 um {len(BIL_HUB)} Bilanzen aus EU CC2 im EBA-Datenhub): Vollständige HGB-Bilanz (Hauptposten nach Formblatt 1 RechKredV, Mio. €) für {len(BIL) - len(BIL_HUB)} der 129 Banken der bisherigen Auswahl, ausgelesen aus den Original-Jahresabschlüssen auf den Bankwebsites (bei MünchenerHyp und Haspa aus der Vorjahresspalte des HGB-Halbjahresberichts 30.06.2026). Nacherhebung 26.10.2026: weitere Banken aus Tabelle EU CC2 der Offenlegungsberichte (Bilanz laut Jahresabschluss, Hauptposten), aus Jahresabschlüssen auf hauptversammlung.de und im Lobbyregister des Bundestags; die Quelle steht je Zeile in der Hinweisspalte. "
            "Jede Bilanz wurde gegen die gedruckte Summe der Aktiva und Passiva sowie gegen die Bilanzsumme, das Eigenkapital und den Fonds § 340g im Blatt 'Übersicht' geprüft. Summen und Prüfdifferenzen sind Formeln. "
            "Banken, deren Abschluss nur im Unternehmensregister steht oder die nur eine verkürzte Bilanz veröffentlichen, sind 'n. v.'. Unten im Blatt: aggregierte Bilanzstruktur je Gruppe."])
 

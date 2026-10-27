@@ -72,9 +72,10 @@ const KOR = (() => {
   function autokorr(x) { return x.length > 4 ? pearson(x.slice(1), x.slice(0, -1)) : null; }
 
   /* ======================= Zeit ======================= */
-  const RANG = { A: 1, Q: 2, M: 3, D: 4 };
-  const FNAME = { A: "Jahr", Q: "Quartal", M: "Monat", D: "Tag (Handelstage)" };
-  const PPJ = { A: 1, Q: 4, M: 12 };
+  const RANG = { A: 1, Q: 2, M: 3, W: 4, D: 5 };
+  const FNAME = { A: "Jahr", Q: "Quartal", M: "Monat", W: "Woche", D: "Tag (Handelstage)" };
+  const PPJ = { A: 1, Q: 4, M: 12, W: 52 };
+const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t).getUTCDay(); return new Date(t - ((w + 6) % 7) * 864e5).toISOString().slice(0, 10); };
   const pad = n => String(n).padStart(2, "0");
   function parse(k) {
     k = String(k); let m;
@@ -89,10 +90,11 @@ const KOR = (() => {
     if (f === "A") return String(p.y);
     if (f === "Q") return `${p.y}-Q${p.q || Math.ceil(p.mo / 3)}`;
     if (f === "M") return `${p.y}-${pad(p.mo)}`;
+    if (f === "W") return p.d ? montag(p.y, p.mo, p.d) : null;
     return String(k);
   }
   const jahrVon = k => parse(k).y;
-  function pidx(k, f) { const p = parse(k); return f === "A" ? p.y : f === "Q" ? p.y * 4 + p.q - 1 : p.y * 12 + p.mo - 1; }
+  function pidx(k, f) { const p = parse(k); return f === "A" ? p.y : f === "Q" ? p.y * 4 + p.q - 1 : f === "W" ? Math.round(Date.UTC(p.y, p.mo - 1, p.d) / 6048e5) : p.y * 12 + p.mo - 1; }
   const MON = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
   function zl(k) {
     const p = parse(k); if (!p) return String(k);
@@ -181,7 +183,7 @@ const KOR = (() => {
         if (k) r = { label: `${f.name} · ${k.name}`, kurz: `${U.kurz(f.name)} ${k.name}`, freq: "A", pts: k.pts, art: /quote|marge|rendite|ratio/.test(sp.b) ? "quote" : "niveau", agg: "letzter", einheit: k.basis, quelle: "Unternehmen" };
       } else if (sp.typ === "kurs" && U) {
         const f = U.nach[sp.a], k = f && U.kurse(f);
-        if (k) r = { label: `${f.name} · Schlusskurs`, kurz: `${U.kurz(f.name)} Kurs`, freq: "D", pts: k.kurse.map(p => [p[0], p[1]]), art: "kurs", agg: "letzter", einheit: k.waehrung || "", quelle: "Kurse" };
+        if (k) r = { label: `${f.name} · ${k.freq === "W" ? "Wochenschlusskurs" : "Schlusskurs"}`, kurz: `${U.kurz(f.name)} Kurs`, freq: k.freq || "D", pts: k.kurse.map(p => [p[0], p[1]]), art: "kurs", agg: "letzter", einheit: k.waehrung || "", quelle: "Kurse" };
       } else if (sp.typ === "bkz" && U) r = branchenKz(sp.a, sp.b);
       else if (sp.typ === "bkurs" && U) r = branchenKurs(sp.a);
     } catch (e) { r = null; }
@@ -196,14 +198,18 @@ const KOR = (() => {
     const nm = (fs.map(f => fkz(f)[k]).find(Boolean) || {}).name || k;
     return { label: `${U.brName(br)} · Median ${nm}`, kurz: `${U.brName(br)} Median ${nm}`, freq: "A", pts, art: /quote|marge|rendite|ratio/.test(k) ? "quote" : "niveau", agg: "letzter", einheit: `Median über Unternehmen, mind. ${MINF} je Jahr`, quelle: "Branche" };
   }
-  function branchenKurs(br) {                              // gleichgewichteter Index aus den Tagesrenditen der Unternehmen
+  function branchenKurs(br) {                              // gleichgewichteter Wochenindex aus den Renditen aller Unternehmen der Branche
     const fs = U.kursFirmen.filter(f => f.branche === br); if (fs.length < MINF) return null;
-    const tag = new Map();
-    for (const f of fs) { const k = U.kurse(f).kurse; for (let i = 1; i < k.length; i++) if (k[i][1] > 0 && k[i - 1][1] > 0) { const d = k[i][0]; if (!tag.has(d)) tag.set(d, []); tag.get(d).push(Math.log(k[i][1] / k[i - 1][1])); } }
-    const ds = [...tag.keys()].sort().filter(d => tag.get(d).length >= MINF); if (ds.length < 5) return null;
-    let ix = 100; const pts = [[ds[0], ix]];
-    for (let i = 1; i < ds.length; i++) { ix *= Math.exp(mean(tag.get(ds[i]))); pts.push([ds[i], ix]); }
-    return { label: `${U.brName(br)} · Kursindex (gleichgewichtet, ${fs.length} Werte)`, kurz: `${U.brName(br)} Kursindex`, freq: "D", pts, art: "kurs", agg: "letzter", einheit: "Index", quelle: "Branche" };
+    const wo = new Map(), key = new Map();
+    for (const f of fs) {
+      const k = U.kurse(f), pts = aufFreq({ freq: k.freq || "D", pts: k.kurse, agg: "letzter" }, "W", "letzter"), px = new Map(pts.map(p => [pidx(p[0], "W"), p[1]]));
+      for (const [i, v] of px) { const vor = px.get(i - 1); if (vor > 0 && v > 0) { if (!wo.has(i)) wo.set(i, []); wo.get(i).push(Math.log(v / vor)); } }
+      for (const p of pts) key.set(pidx(p[0], "W"), p[0]);
+    }
+    const ws = [...wo.keys()].sort((a, b) => a - b).filter(i => wo.get(i).length >= MINF); if (ws.length < 5) return null;
+    let ix = 100; const pts = [[key.get(ws[0] - 1) || key.get(ws[0]), ix]];
+    for (const i of ws) { ix *= Math.exp(mean(wo.get(i))); pts.push([key.get(i), ix]); }
+    return { label: `${U.brName(br)} · Kursindex (gleichgewichtet, bis ${fs.length} Werte)`, kurz: `${U.brName(br)} Kursindex`, freq: "W", pts: pts.filter(p => p[0]), art: "kurs", agg: "letzter", einheit: "Index, Wochenbasis", quelle: "Branche" };
   }
 
   /* ======================= Zustand ======================= */
@@ -230,7 +236,7 @@ const KOR = (() => {
   /* ======================= Auswertung eines Paares ======================= */
   function vorbereiten(sp, f, tr, agg) {
     const s = resolve(sp); if (!s) return { fehler: "Reihe nicht verfügbar" };
-    if (RANG[s.freq] < RANG[f]) return { fehler: `„${s.kurz}“ liegt nur ${FNAME[s.freq] === "Jahr" ? "jährlich" : s.freq === "Q" ? "vierteljährlich" : "monatlich"} vor, nicht pro ${FNAME[f]}` };
+    if (RANG[s.freq] < RANG[f]) return { fehler: `„${s.kurz}“ liegt nur ${({ A: "jährlich", Q: "vierteljährlich", M: "monatlich", W: "wöchentlich", D: "täglich" })[s.freq]} vor, nicht pro ${FNAME[f]}` };
     const t = tr === "auto" ? autoTrans(s, f) : tr;
     if (t === "yoy" && f === "D") return { fehler: "Veränderung zum Vorjahr gibt es bei Tageswerten nicht" };
     return { s, t, f, pts: transf(aufFreq(s, f, agg), f, t).filter(p => isFinite(p[1])) };
@@ -248,7 +254,7 @@ const KOR = (() => {
     }
     return rows;
   }
-  const lagMax = f => ({ A: 3, Q: 6, M: 12, D: 20 })[f];
+  const lagMax = f => ({ A: 3, Q: 6, M: 12, W: 8, D: 20 })[f];
   function autoFreq(ss) { return ss.reduce((m, s) => RANG[s.freq] < RANG[m] ? s.freq : m, "D"); }
 
   function auswertungPaar() {
@@ -406,7 +412,7 @@ const KOR = (() => {
   /* ----- Modus Paar ----- */
   function viewPaar() {
     const R = auswertungPaar(), typen = TYPEN();
-    const fOpt = [["auto", "Automatisch (gröbste Reihe)"], ["A", "Jahr"], ["Q", "Quartal"], ["M", "Monat"], ["D", "Tag"]];
+    const fOpt = [["auto", "Automatisch (gröbste Reihe)"], ["A", "Jahr"], ["Q", "Quartal"], ["M", "Monat"], ["W", "Woche"], ["D", "Tag"]];
     const trOpt = au => [["auto", "Automatisch" + (au ? ": " + TRANS[au] : "")], ...Object.entries(TRANS)];
     const kopf = `<div style="display:grid;gap:10px">
       <div><b style="color:var(--amber)">A</b> ${slotUi("A", S.A)}</div>
@@ -462,7 +468,7 @@ const KOR = (() => {
     ["Branchen-Kursindizes", () => U ? U.branchen.filter(b => U.kursFirmen.filter(f => f.branche === b.id).length >= MINF).slice(0, 12).map(b => ({ typ: "bkurs", a: b.id, b: "" })) : []],
     ["Kurse und Zinsen/Stimmung", () => { const l = []; if (V) for (const id of ["euribor_3m", "wirtschaftsstimmung", "hicp_gesamt"]) if (V.daten[id] && V.daten[id].DE) l.push({ typ: "vwl", a: id, b: "DE" }); if (U) l.push(...U.kursFirmen.slice().sort((a, b) => (b.werte.marktkap || 0) - (a.werte.marktkap || 0)).slice(0, 5).map(f => ({ typ: "kurs", a: f.id, b: "" }))); return l; }]];
   function viewMatrix() {
-    const fOpt = [["auto", "Automatisch (gröbste Reihe)"], ["A", "Jahr"], ["Q", "Quartal"], ["M", "Monat"], ["D", "Tag"]];
+    const fOpt = [["auto", "Automatisch (gröbste Reihe)"], ["A", "Jahr"], ["Q", "Quartal"], ["M", "Monat"], ["W", "Woche"], ["D", "Tag"]];
     const sers = S.matrix.map(sp => ({ sp, s: resolve(sp) })).filter(x => x.s);
     const f = S.mFreq === "auto" ? (sers.length ? autoFreq(sers.map(x => x.s)) : "M") : S.mFreq;
     const prep = sers.map(x => ({ ...x, v: vorbereiten(x.sp, f, S.mTr, S.agg) }));

@@ -216,6 +216,7 @@ a.brand { color: inherit; text-decoration: none; }
 
 <script id="daten" type="application/json">__DATEN__</script>
 <script id="markt" type="application/json">__MARKT__</script>
+<script id="kurse" type="application/json">__KURSE__</script>
 <script id="unternehmen" type="application/json">__UNTERNEHMEN__</script>
 <script id="vwl" type="application/json">__VWL__</script>
 <script>
@@ -672,7 +673,7 @@ function viewRank() {
 }
 
 /* ---------- Ansicht MKT (Börsendaten, getrennt von den GJ-Daten) ---------- */
-let MARKT = null, mktFenster = "1j", mktMuetter = false, mktMarkiert = "CBK.DE";
+let KURSE = null, MARKT = null, mktFenster = "1j", mktMuetter = false, mktMarkiert = "CBK.DE";
 const chg = v => v == null ? "–" : (v > 0 ? "+" : "") + f1.format(v * 100) + " %";
 const klasse = v => v == null ? "n" : v > 0.0005 ? "pos" : v < -0.0005 ? "neg" : "flat";
 const kursF = (v, w) => v == null ? "n. v." : nf(v >= 1000 ? 0 : 2).format(v) + (w && w !== "EUR" ? " " + w : "");
@@ -980,6 +981,7 @@ async function start() {
   const el = document.getElementById("daten");
   try { DATA = JSON.parse(el.textContent); } catch { DATA = await (await fetch("../data/banken.json")).json(); }
   try { MARKT = JSON.parse(document.getElementById("markt").textContent); } catch { try { MARKT = await (await fetch("../data/markt.json")).json(); } catch { MARKT = null; } }
+  try { KURSE = JSON.parse(document.getElementById("kurse").textContent); } catch { try { KURSE = await (await fetch("../data/kurse_woche.json")).json(); } catch { KURSE = null; } }
   BANKEN = DATA.banken.filter(b => G[b.gruppe]).map(abgeleitet);
   metaBanken = `${BANKEN.length} Institute · Stichtag ${DATA.meta.stichtag.split("-").reverse().join(".")} · Beträge Mio. €`;
   document.getElementById("banklist").innerHTML = BANKEN.map(b => `<option value="${esc(b.bank)}">`).join("");

@@ -49,7 +49,8 @@ def tabelle(ws):
     zeilen = ws.iter_rows(values_only=True)
     kopf = [str(c).strip() if c is not None else "" for c in next(zeilen)]
     for z in zeilen:
-        if z and isinstance(z[kopf.index("Bank")], str):
+        # Median- und Kopfzeilen der Gruppentabellen unter den Banken überspringen
+        if z and isinstance(z[kopf.index("Bank")], str) and z[kopf.index("Gruppe")] != "Gruppe" and "(Median)" not in z[kopf.index("Bank")]:
             yield kopf, z
 
 

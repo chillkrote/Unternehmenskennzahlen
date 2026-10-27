@@ -1,0 +1,2 @@
+boersennotierte-unternehmen/**/dokumente/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+boersennotierte-unternehmen/**/dokumente/**/*.PDF filter=lfs diff=lfs merge=lfs -text

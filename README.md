@@ -18,10 +18,11 @@ Jede Erhebung liegt in einem eigenen Ordner, gruppiert nach Branche:
 | Ordner | Inhalt | Stand |
 |---|---|---|
 | [banken/bilanzvergleich-gj2025](banken/bilanzvergleich-gj2025/) | 129 deutsche Banken (Sparkassen, Genossenschaftsbanken, Landesbanken, Privatbanken): HGB-Bilanzen, Eigenkapital, Kernkapital, Pillar-3-Offenlegung (KM1, CC1, OV1) zum 31.12.2025 | 26.10.2026 |
+| [boersennotierte-unternehmen](boersennotierte-unternehmen/) | alle in Deutschland notierten Aktiengesellschaften (rund 540), je Branche eine Excel mit Bilanz-, GuV-, Cashflow-, Aktionärs- und Kapitalmarktdaten, Geschäftsberichte per Git LFS | 27.10.2026 |
 
 Neue Erhebungen (andere Branchen, weitere Geschäftsjahre) bekommen einen neuen Ordner nach demselben Schema.
 
 ## Hinweise
 
 - Die Dokumente sind öffentlich zugängliche Veröffentlichungen der jeweiligen Unternehmen bzw. des EBA-Pillar-3-Datenhubs. Urheberrechte liegen bei den Herausgebern; das Repository ist privat und dient der Nachvollziehbarkeit der Auswertung.
-- Dateien über ca. 50 MB sollten künftig per Git LFS abgelegt werden.
+- Dateien über ca. 50 MB sollten künftig per Git LFS abgelegt werden. Die PDFs unter `boersennotierte-unternehmen/` liegen grundsätzlich per Git LFS (siehe `.gitattributes`).

@@ -1,0 +1,40 @@
+{
+  "name": "unternehmenskennzahlen-terminal",
+  "productName": "Kennzahlen-Terminal",
+  "version": "0.1.0",
+  "description": "Desktop-Anwendung für das Unternehmens- und Banken-Terminal (Unternehmenskennzahlen)",
+  "author": "Robin",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "prepare-assets": "node scripts/prepare-assets.js",
+    "start": "npm run prepare-assets && electron .",
+    "dist": "npm run prepare-assets && electron-builder --mac dmg zip --arm64 --x64 --publish never"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "5.1.1",
+    "@fontsource/ibm-plex-sans": "5.1.1",
+    "@fontsource/ibm-plex-sans-condensed": "5.1.1"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "net.unternehmenskennzahlen.terminal",
+    "productName": "Kennzahlen-Terminal",
+    "files": ["main.js", "preload.js", "token.html", "package.json"],
+    "extraResources": [
+      { "from": "build/terminal.html", "to": "terminal.html" },
+      { "from": "build/fonts", "to": "fonts" }
+    ],
+    "afterPack": "scripts/adhoc-sign.js",
+    "mac": {
+      "category": "public.app-category.finance",
+      "identity": null,
+      "target": ["dmg", "zip"],
+      "artifactName": "Kennzahlen-Terminal-${version}-${arch}.${ext}"
+    },
+    "dmg": { "title": "Kennzahlen-Terminal ${version}" }
+  }
+}

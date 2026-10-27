@@ -58,12 +58,15 @@ b-metzler-seel-sohn-co-ag,leverage_ratio,2025-12-31,0.10492,Anteil,EUR,aufsichtl
 b-metzler-seel-sohn-co-ag,rwa,2025-12-31,1206.4,Mio. EUR,EUR,aufsichtlich,"laut EBA-Hub: B. Metzler seel. Sohn & Co. Aktiengesellschaft (höchste Ebene im EWR, ggf. Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 b-metzler-seel-sohn-co-ag,t1,2025-12-31,302.8,Mio. EUR,EUR,aufsichtlich,"laut EBA-Hub: B. Metzler seel. Sohn & Co. Aktiengesellschaft (höchste Ebene im EWR, ggf. Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 b-metzler-seel-sohn-co-ag,t1_quote,2025-12-31,0.251034,Anteil,EUR,aufsichtlich,"laut EBA-Hub: B. Metzler seel. Sohn & Co. Aktiengesellschaft (höchste Ebene im EWR, ggf. Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+baader-bank-ag,bilanzsumme,2023-12-31,3938.078,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: baader-bank-ag/1779968374-2025-baaderbank-geschaftsbericht.pdf S. 39,plausibilisiert
 baader-bank-ag,bilanzsumme,2024-12-31,4824.709,Mio. EUR,EUR,HGB,Einzel,,geparst
 baader-bank-ag,bilanzsumme,2025-12-31,3234.676,Mio. EUR,EUR,HGB,Einzel,,geparst
 baader-bank-ag,cet1,2025-12-31,292.17,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,https://www.datocms-assets.com/146209/1782401386-offenlegungsbericht-2025-final.pdf,geparst
 baader-bank-ag,cet1_quote,2025-12-31,0.2532,Anteil,EUR,aufsichtlich,Einzelinstitut,https://www.datocms-assets.com/146209/1782401386-offenlegungsbericht-2025-final.pdf,geparst
+baader-bank-ag,eigenkapital,2023-12-31,165.513,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: baader-bank-ag/1779968374-2025-baaderbank-geschaftsbericht.pdf S. 40,plausibilisiert
 baader-bank-ag,eigenkapital,2024-12-31,189.387,Mio. EUR,EUR,HGB,Einzel,,geparst
 baader-bank-ag,eigenkapital,2025-12-31,232.87,Mio. EUR,EUR,HGB,Einzel,,geparst
+baader-bank-ag,fonds_340g,2023-12-31,62.081,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: baader-bank-ag/1779968374-2025-baaderbank-geschaftsbericht.pdf S. 40,plausibilisiert
 baader-bank-ag,fonds_340g,2024-12-31,73.861,Mio. EUR,EUR,HGB,Einzel,,geparst
 baader-bank-ag,fonds_340g,2025-12-31,87.361,Mio. EUR,EUR,HGB,Einzel,,geparst
 baader-bank-ag,gk_quote,2025-12-31,0.2692,Anteil,EUR,aufsichtlich,Einzelinstitut,https://www.datocms-assets.com/146209/1782401386-offenlegungsbericht-2025-final.pdf,geparst
@@ -140,6 +143,8 @@ bayerische-landesbank-bayernlb,leverage_ratio,2025-12-31,0.0521,Anteil,EUR,aufsi
 bayerische-landesbank-bayernlb,rwa,2025-12-31,65311.8,Mio. EUR,EUR,aufsichtlich,"laut EBA-Hub: Bayerische Landesbank (höchste Ebene im EWR, ggf. Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 bayerische-landesbank-bayernlb,t1,2025-12-31,13658.4,Mio. EUR,EUR,aufsichtlich,"laut EBA-Hub: Bayerische Landesbank (höchste Ebene im EWR, ggf. Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 bayerische-landesbank-bayernlb,t1_quote,2025-12-31,0.2091,Anteil,EUR,aufsichtlich,"laut EBA-Hub: Bayerische Landesbank (höchste Ebene im EWR, ggf. Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+bbbank-eg,bilanzsumme,2022-12-31,16529.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: bbbank-eg/bbbank-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+bbbank-eg,bilanzsumme,2023-12-31,17638.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: bbbank-eg/bbbank-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 bbbank-eg,bilanzsumme,2024-12-31,19356.202,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 bbbank-eg,bilanzsumme,2025-12-31,22319.544,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 bbbank-eg,cet1,2025-12-31,1480.9,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
@@ -155,6 +160,7 @@ bbbank-eg,leverage_ratio,2025-12-31,0.075366,Anteil,EUR,aufsichtlich,Einzelinsti
 bbbank-eg,rwa,2025-12-31,9444.7,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 bbbank-eg,t1,2025-12-31,1480.9,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 bbbank-eg,t1_quote,2025-12-31,0.156801,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+berliner-volksbank-eg,bilanzsumme,2023-12-31,20567.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: berliner-volksbank-eg/geschaeftsbericht-2025-berliner-volksbankpdf.pdf S. 3,plausibilisiert
 berliner-volksbank-eg,bilanzsumme,2024-12-31,18466.668,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 berliner-volksbank-eg,bilanzsumme,2025-12-31,20080.678,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 berliner-volksbank-eg,cet1,2025-12-31,1833.3,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
@@ -633,12 +639,22 @@ j-p-morgan-se,leverage_ratio,2025-12-31,0.072,Anteil,EUR,aufsichtlich,Einzelinst
 j-p-morgan-se,rwa,2025-12-31,125640.6,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 j-p-morgan-se,t1,2025-12-31,27612.3,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 j-p-morgan-se,t1_quote,2025-12-31,0.219772,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
+joh-berenberg-gossler-co-kg,bilanzsumme,2016-12-31,4716.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2017-12-31,4741.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2018-12-31,4693.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2019-12-31,5059.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2020-12-31,4654.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2021-12-31,6376.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2022-12-31,7725.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,bilanzsumme,2023-12-31,6664.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 joh-berenberg-gossler-co-kg,bilanzsumme,2024-12-31,6446.61,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,bilanzsumme,2025-12-31,6428.571,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,eigenkapital,2024-12-31,341.359,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,eigenkapital,2025-12-31,289.963,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,fonds_340g,2024-12-31,8.1,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,fonds_340g,2025-12-31,5.3,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
+joh-berenberg-gossler-co-kg,jahresueberschuss,2019-12-31,61.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2020-12-31,108.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 joh-berenberg-gossler-co-kg,jahresueberschuss,2021-12-31,170,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,jahresueberschuss,2022-12-31,55,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,jahresueberschuss,2023-12-31,55,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
@@ -875,6 +891,7 @@ landesbank-saar-saarlb,eigenkapital,2024-12-31,621.2,Mio. EUR,EUR,HGB,Einzel,Jah
 landesbank-saar-saarlb,eigenkapital,2025-12-31,630.1,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-saar-saarlb,fonds_340g,2024-12-31,256.3,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-saar-saarlb,fonds_340g,2025-12-31,259,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
+landesbank-saar-saarlb,jahresueberschuss,2023-12-31,-23.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: landesbank-saar-saarlb/finanzbericht-2025-saarlb-d.pdf S. 18,plausibilisiert
 landesbank-saar-saarlb,jahresueberschuss,2024-12-31,41.4,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-saar-saarlb,jahresueberschuss,2025-12-31,18.4,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landessparkasse-zu-oldenburg,bilanzsumme,2024-12-31,12384.058,Mio. EUR,EUR,HGB,Einzel,,geparst
@@ -1404,6 +1421,8 @@ sparkasse-dortmund,fonds_340g,2023-12-31,957.301,Mio. EUR,EUR,HGB,Einzel,Jahres�
 sparkasse-dortmund,fonds_340g,2024-12-31,1013.2,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 sparkasse-dortmund,fonds_340g,2025-12-31,1077.4,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 sparkasse-dortmund,gk_quote,2025-12-31,0.1846,Anteil,EUR,aufsichtlich,Einzelinstitut,https://www.sparkasse-dortmund.de/content/dam/myif/spk-dortmund/work/dokumente/pdf/allgemein/offenlegungsbericht-2025.pdf?n&,geparst
+sparkasse-dortmund,jahresueberschuss,2020-12-31,0.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: sparkasse-dortmund/jahresabschluss-2025.pdf S. 19,plausibilisiert
+sparkasse-dortmund,jahresueberschuss,2021-12-31,0.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: sparkasse-dortmund/jahresabschluss-2025.pdf S. 19,plausibilisiert
 sparkasse-dortmund,jahresueberschuss,2022-12-31,8,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 sparkasse-dortmund,jahresueberschuss,2023-12-31,8,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 sparkasse-dortmund,jahresueberschuss,2024-12-31,8,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
@@ -2044,6 +2063,9 @@ ubs-europe-se,leverage_ratio,2025-12-31,0.066294,Anteil,EUR,aufsichtlich,Einzeli
 ubs-europe-se,rwa,2025-12-31,15926.2,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 ubs-europe-se,t1,2025-12-31,3709.3,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 ubs-europe-se,t1_quote,2025-12-31,0.232905,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
+umweltbank-ag,bilanzsumme,2021-12-31,5928.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: umweltbank-ag/umweltbank-gb25.pdf S. 22,plausibilisiert
+umweltbank-ag,bilanzsumme,2022-12-31,5981.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: umweltbank-ag/umweltbank-gb25.pdf S. 22,plausibilisiert
+umweltbank-ag,bilanzsumme,2023-12-31,5688.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: umweltbank-ag/umweltbank-gb25.pdf S. 22,plausibilisiert
 umweltbank-ag,bilanzsumme,2024-12-31,6185.899,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 umweltbank-ag,bilanzsumme,2025-12-31,6805.805,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 umweltbank-ag,eigenkapital,2024-12-31,249.929,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
@@ -2128,6 +2150,9 @@ vereinigte-vr-bank-kur-und-rheinpfalz-eg,leverage_ratio,2025-12-31,0.102436,Ante
 vereinigte-vr-bank-kur-und-rheinpfalz-eg,rwa,2025-12-31,4143.7,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 vereinigte-vr-bank-kur-und-rheinpfalz-eg,t1,2025-12-31,745.4,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 vereinigte-vr-bank-kur-und-rheinpfalz-eg,t1_quote,2025-12-31,0.179889,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+volksbank-brawo-eg,bilanzsumme,2021-12-31,5748.138,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: volksbank-brawo-eg/geschaeftsbericht-2025-volksbank-brawo.pdf S. 8,plausibilisiert
+volksbank-brawo-eg,bilanzsumme,2022-12-31,6086.98,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: volksbank-brawo-eg/geschaeftsbericht-2025-volksbank-brawo.pdf S. 8,plausibilisiert
+volksbank-brawo-eg,bilanzsumme,2023-12-31,6202.163,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: volksbank-brawo-eg/geschaeftsbericht-2025-volksbank-brawo.pdf S. 8,plausibilisiert
 volksbank-brawo-eg,bilanzsumme,2024-12-31,6418.694,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,bilanzsumme,2025-12-31,6468.328,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,eigenkapital,2024-12-31,451.533,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst

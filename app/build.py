@@ -25,7 +25,7 @@ def main():
     markt_datei = HIER / "data/markt.json"
     markt = markt_datei.read_text() if markt_datei.exists() else "null"
     # Unternehmen anderer Branchen: generisch aus den Branchen-Tabellen im Repo (sonst Beispieldaten)
-    firmen = json.dumps(unternehmen.lade(), ensure_ascii=False, separators=(",", ":"))
+    firmen = json.dumps(unternehmen.lade(banken=banken, markt=json.loads(markt) if markt != "null" else None), ensure_ascii=False, separators=(",", ":"))
     (HIER / "data/unternehmen.json").write_text(firmen)
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))

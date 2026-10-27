@@ -1,21 +1,150 @@
 {
-  "_hinweis": "Zuordnung Bank (Muster auf den Banknamen der Excel) -> Yahoo-Finance-Ticker. ebene 'Institut' = die Bank selbst ist börsennotiert; 'Mutter' = nur die Muttergesellschaft (Bank- oder Finanzgruppe) ist notiert, Kennzahlen zur HGB-Bilanz werden dann nicht gebildet. Industrielle Mütter (Autobanken, Siemens) sind bewusst nicht aufgenommen.",
+  "_hinweis": "Zuordnung Bank (Muster auf den Banknamen der Excel) -> Yahoo-Finance-Ticker. ebene 'Institut' = die Bank selbst ist börsennotiert; 'Mutter' = nur die Muttergesellschaft (Bank- oder Finanzgruppe) ist notiert, Kennzahlen zur HGB-Bilanz werden dann nicht gebildet. Industrielle Mütter (Autobanken, Siemens) sind bewusst nicht aufgenommen. 'bilanzwaehrung' nur angeben, wenn der Konzern in einer anderen Währung bilanziert als die Aktie notiert (für KGV/KBV wird dann mit dem Devisenkurs umgerechnet).",
   "ticker": [
-    {"muster": "^Deutsche Bank AG", "ticker": "DBK.DE", "ebene": "Institut"},
-    {"muster": "^Commerzbank", "ticker": "CBK.DE", "ebene": "Institut"},
-    {"muster": "Deutsche Pfandbriefbank", "ticker": "PBB.DE", "ebene": "Institut"},
-    {"muster": "^UmweltBank", "ticker": "UBK.DE", "ebene": "Institut"},
-    {"muster": "MERKUR PRIVATBANK", "ticker": "MBK.DE", "ebene": "Institut"},
-    {"muster": "^Baader Bank", "ticker": "BWB.DE", "ebene": "Institut"},
-    {"muster": "^UniCredit Bank GmbH", "ticker": "UCG.MI", "ebene": "Mutter", "mutter": "UniCredit S.p.A."},
-    {"muster": "^ING-DiBa", "ticker": "INGA.AS", "ebene": "Mutter", "mutter": "ING Groep N.V."},
-    {"muster": "^Santander Consumer Bank", "ticker": "SAN.MC", "ebene": "Mutter", "mutter": "Banco Santander S.A."},
-    {"muster": "^State Street Bank International", "ticker": "STT", "ebene": "Mutter", "mutter": "State Street Corporation"},
-    {"muster": "^flatexDEGIRO Bank", "ticker": "FTK.DE", "ebene": "Mutter", "mutter": "flatexDEGIRO AG"},
-    {"muster": "^GRENKE BANK", "ticker": "GLJ.DE", "ebene": "Mutter", "mutter": "GRENKE AG"},
-    {"muster": "^MLP Banking", "ticker": "MLP.DE", "ebene": "Mutter", "mutter": "MLP SE"},
-    {"muster": "^norisbank", "ticker": "DBK.DE", "ebene": "Mutter", "mutter": "Deutsche Bank AG"},
-    {"muster": "^Akbank AG", "ticker": "AKBNK.IS", "ebene": "Mutter", "mutter": "Akbank T.A.S."},
-    {"muster": "^Isbank AG", "ticker": "ISCTR.IS", "ebene": "Mutter", "mutter": "Türkiye İş Bankası A.S."}
+    {
+      "muster": "^Deutsche Bank AG",
+      "ticker": "DBK.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "^Commerzbank",
+      "ticker": "CBK.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "Deutsche Pfandbriefbank",
+      "ticker": "PBB.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "^UmweltBank",
+      "ticker": "UBK.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "MERKUR PRIVATBANK",
+      "ticker": "MBK.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "^Baader Bank",
+      "ticker": "BWB.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "^UniCredit Bank GmbH",
+      "ticker": "UCG.MI",
+      "ebene": "Mutter",
+      "mutter": "UniCredit S.p.A."
+    },
+    {
+      "muster": "^ING-DiBa",
+      "ticker": "INGA.AS",
+      "ebene": "Mutter",
+      "mutter": "ING Groep N.V."
+    },
+    {
+      "muster": "^Santander Consumer Bank",
+      "ticker": "SAN.MC",
+      "ebene": "Mutter",
+      "mutter": "Banco Santander S.A."
+    },
+    {
+      "muster": "^State Street Bank International",
+      "ticker": "STT",
+      "ebene": "Mutter",
+      "mutter": "State Street Corporation"
+    },
+    {
+      "muster": "^flatexDEGIRO Bank",
+      "ticker": "FTK.DE",
+      "ebene": "Mutter",
+      "mutter": "flatexDEGIRO AG"
+    },
+    {
+      "muster": "^GRENKE BANK",
+      "ticker": "GLJ.DE",
+      "ebene": "Mutter",
+      "mutter": "GRENKE AG"
+    },
+    {
+      "muster": "^MLP Banking",
+      "ticker": "MLP.DE",
+      "ebene": "Mutter",
+      "mutter": "MLP SE"
+    },
+    {
+      "muster": "^norisbank",
+      "ticker": "DBK.DE",
+      "ebene": "Mutter",
+      "mutter": "Deutsche Bank AG"
+    },
+    {
+      "muster": "^Akbank AG",
+      "ticker": "AKBNK.IS",
+      "ebene": "Mutter",
+      "mutter": "Akbank T.A.S."
+    },
+    {
+      "muster": "^Isbank AG",
+      "ticker": "ISCTR.IS",
+      "ebene": "Mutter",
+      "mutter": "Türkiye İş Bankası A.S."
+    },
+    {
+      "muster": "^ProCredit Holding",
+      "ticker": "PCZ.DE",
+      "ebene": "Institut"
+    },
+    {
+      "muster": "^J\\.P\\. Morgan SE",
+      "ticker": "JPM",
+      "ebene": "Mutter",
+      "mutter": "JPMorgan Chase & Co."
+    },
+    {
+      "muster": "^Goldman Sachs Bank Europe",
+      "ticker": "GS",
+      "ebene": "Mutter",
+      "mutter": "The Goldman Sachs Group, Inc."
+    },
+    {
+      "muster": "^Morgan Stanley Europe",
+      "ticker": "MS",
+      "ebene": "Mutter",
+      "mutter": "Morgan Stanley"
+    },
+    {
+      "muster": "^Citigroup Global Markets Europe",
+      "ticker": "C",
+      "ebene": "Mutter",
+      "mutter": "Citigroup Inc."
+    },
+    {
+      "muster": "^UBS Europe",
+      "ticker": "UBSG.SW",
+      "ebene": "Mutter",
+      "mutter": "UBS Group AG",
+      "bilanzwaehrung": "USD"
+    },
+    {
+      "muster": "^Standard Chartered Bank AG",
+      "ticker": "STAN.L",
+      "ebene": "Mutter",
+      "mutter": "Standard Chartered PLC",
+      "bilanzwaehrung": "USD"
+    },
+    {
+      "muster": "^Wüstenrot Bausparkasse",
+      "ticker": "WUW.DE",
+      "ebene": "Mutter",
+      "mutter": "Wüstenrot & Württembergische AG"
+    },
+    {
+      "muster": "^BHW Bausparkasse",
+      "ticker": "DBK.DE",
+      "ebene": "Mutter",
+      "mutter": "Deutsche Bank AG"
+    }
   ]
 }

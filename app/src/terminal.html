@@ -63,6 +63,10 @@ button, input, select { font: inherit; color: inherit; }
 /* Panels */
 .grid { display: grid; gap: 10px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
 .p { grid-column: span 12; background: var(--panel); border: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; }
+.col { grid-column: span 12; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.kzt td:first-child, .kzt th:first-child { position: sticky; left: 0; background: var(--panel); z-index: 1; }
+.kzt th:first-child { background: #10141a; z-index: 2; }
+.kzt tr.click:hover td:first-child { background: #141a22; }
 @media (min-width: 980px) { .w6 { grid-column: span 6; } .w7 { grid-column: span 7; } .w5 { grid-column: span 5; } .w4 { grid-column: span 4; } .w8 { grid-column: span 8; } }
 .ph { display: flex; align-items: baseline; gap: 10px; padding: 4px 8px; border-bottom: 1px solid var(--line); background: #10141a; flex-wrap: wrap; }
 .ph h2 { margin: 0; font: 600 12px/1.3 var(--cond); letter-spacing: .07em; text-transform: uppercase; color: var(--amber); }
@@ -572,7 +576,113 @@ function viewMkt() {
       fuss: `Quelle: ${esc(MARKT.quelle)}, Abruf ${abruf.toLocaleString("de-DE", { dateStyle: "medium", timeStyle: "short" })}. Börsenwert = Kurs × Aktienanzahl laut Yahoo. BW / HGB-EK setzt den Börsenwert des Konzerns ins Verhältnis zum Eigenkapital des HGB-Einzelabschlusses (nur wo die Bank selbst notiert ist), also nur ein Richtwert für das Kurs-Buchwert-Verhältnis.` })}
     ${panel({ code: "MKT 2", titel: "Kursentwicklung indexiert", sub: `Schlusskurs, Beginn des Zeitraums = 100 · ${sichtbar.length} Aktien`, body: ctrl + indexChart(sichtbar),
       fuss: "Kurse in Handelswährung, nicht dividendenbereinigt. Klick auf eine Linie oder Tabellenzeile hebt die Aktie hervor." })}
+    ${kennzahlenPanels(sichtbar)}
   </div>`;
+}
+
+/* ---------- MKT 3–5: Bilanz-, GuV- und Bewertungskennzahlen (Konzern laut Yahoo) ---------- */
+const xf = v => v == null ? "n. v." : f1.format(v) + "x";
+const MKZ = [
+  ["Bewertung", [
+    ["kgv", "KGV (Kurs / EPS)", xf, null],
+    ["kbv", "KBV (Börsenwert / EK)", v => v == null ? "n. v." : f2.format(v) + "x", null],
+    ["ktbv", "Kurs / materieller Buchwert", v => v == null ? "n. v." : f2.format(v) + "x", null],
+    ["div_rendite", "Dividendenrendite (12M)", v => pct(v, 1), true],
+    ["ausschuettung", "Ausschüttungsquote", v => pct(v, 0), null]]],
+  ["Rentabilität (GuV)", [
+    ["roe", "Eigenkapitalrendite RoE", v => pct(v, 1), true],
+    ["rote", "RoTE (mat. EK)", v => pct(v, 1), true],
+    ["roa", "Gesamtkapitalrendite RoA", v => pct(v, 2), true],
+    ["cir", "Cost-Income-Ratio", v => pct(v, 1), false],
+    ["vst_marge", "Vorsteuermarge", v => pct(v, 1), true],
+    ["steuerquote", "Steuerquote", v => pct(v, 1), null],
+    ["zinsanteil", "Zinsüberschuss in % Erträge", v => pct(v, 0), null],
+    ["zinsmarge", "Zinsmarge (ZÜ / Ø Bilanzsumme)", v => pct(v, 2), true]]],
+  ["Bilanz", [
+    ["ek_quote", "Eigenkapitalquote", v => pct(v, 1), true],
+    ["kredit_anteil", "Kredite in % Bilanzsumme", v => pct(v, 0), null],
+    ["goodwill_ek", "Goodwill/Immat. in % EK", v => pct(v, 0), false]]],
+  ["Wachstum zum Vorjahr", [
+    ["w_ertraege", "Erträge", v => chg(v), true],
+    ["w_jue", "Konzernergebnis", v => chg(v), true],
+    ["w_eps", "Ergebnis je Aktie", v => chg(v), true],
+    ["w_bilanzsumme", "Bilanzsumme", v => chg(v), null]]],
+];
+const MKZ_FLACH = Object.fromEntries(MKZ.flatMap(([, l]) => l.map(([k, n, f, hoch]) => [k, { n, f, hoch }])));
+let mktRang = "rote";
+const kzVon = (w, k) => w.kz ? w.kz[k] : null;
+const mioB = v => v == null ? "n. v." : f0.format(v / 1e6);
+
+function kennzahlenTabelle(liste) {
+  const kopf = `<tr><th style="text-align:left">Kennzahl</th>${liste.map(w => `<th class="click" data-mkt="${w.ticker}" title="${esc(w.mutter || w.bank)}" style="${w.ticker === mktMarkiert ? "color:var(--key)" : ""}">${w.ticker.replace(/\.\w+$/, "")}${w.ebene === "Mutter" ? "*" : ""}</th>`).join("")}<th>Median</th></tr>`;
+  const gr = (titel) => `<tr><td colspan="${liste.length + 2}" style="color:var(--amber);padding-top:6px;border-bottom-color:var(--line)">${titel}</td></tr>`;
+  let rows = gr("Größe (Mio., Bilanzwährung)") + [["ertraege", "Erträge"], ["jue", "Konzernergebnis"], ["bilanzsumme", "Bilanzsumme"]].map(([k, n]) =>
+    `<tr><td>${n}</td>${liste.map(w => { const a = (w.abschluesse || [])[0] || {}; return `<td${a[k] == null ? ' class="n"' : ""}>${mioB(a[k])}</td>`; }).join("")}<td class="n">–</td></tr>`).join("");
+  rows += `<tr><td class="n">Geschäftsjahr · Währung</td>${liste.map(w => `<td class="n">${w.kz && w.kz.gj || "–"} · ${w.bilanzwaehrung || ""}</td>`).join("")}<td></td></tr>`;
+  MKZ.forEach(([titel, kz]) => {
+    rows += gr(titel);
+    kz.forEach(([k, n, f, hoch]) => {
+      const v = liste.map(w => kzVon(w, k)), ok = v.filter(x => x != null);
+      const best = ok.length > 2 && hoch != null ? (hoch ? Math.max(...ok) : Math.min(...ok)) : null;
+      const schlecht = ok.length > 2 && hoch != null ? (hoch ? Math.min(...ok) : Math.max(...ok)) : null;
+      rows += `<tr class="click" data-rang="${k}"><td>${n}</td>${v.map(x => `<td class="${x == null ? "n" : x === best ? "pos" : x === schlecht ? "neg" : ""}">${f(x)}</td>`).join("")}<td style="color:var(--amber)">${f(median(ok))}</td></tr>`;
+    });
+  });
+  return `<div class="scroll"><table class="kzt"><thead>${kopf}</thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function rangBalken(k, liste) {
+  const def = MKZ_FLACH[k], z = liste.map(w => ({ w, v: kzVon(w, k) })).filter(x => x.v != null).sort((a, b) => b.v - a.v);
+  if (!z.length) return `<p class="n">Keine Werte.</p>`;
+  const W = 520, x0 = 150, x1 = W - 70, hz = 18, H = z.length * hz + 6;
+  const lo = Math.min(0, ...z.map(x => x.v)), hi = Math.max(0, ...z.map(x => x.v));
+  const sx = v => x0 + (x1 - x0) * (v - lo) / ((hi - lo) || 1), md = median(z.map(x => x.v));
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  s += `<line x1="${sx(0)}" x2="${sx(0)}" y1="0" y2="${H}" stroke="var(--ink-3)"/>`;
+  z.forEach(({ w, v }, i) => {
+    const y = i * hz + 2, an = w.ticker === mktMarkiert, a = Math.min(sx(0), sx(v)), b = Math.max(sx(0), sx(v));
+    s += `<text x="${x0 - 6}" y="${y + hz / 2}" text-anchor="end" dominant-baseline="middle" style="fill:${an ? "var(--amber)" : "var(--ink-2)"}">${esc(w.ticker.replace(/\.\w+$/, ""))}${w.ebene === "Mutter" ? "*" : ""} ${esc(kurz(w.mutter || w.bank).slice(0, 12))}</text>`;
+    s += `<rect x="${a}" y="${y + 3}" width="${Math.max(1, b - a)}" height="${hz - 7}" fill="${an ? "var(--amber)" : v < 0 ? "var(--down)" : "var(--s3)"}" data-mkt="${w.ticker}" style="cursor:pointer" data-tip="${esc(`<b>${esc(w.mutter || w.bank)}</b>\n${def.n}: ${def.f(v)}\nMedian: ${def.f(md)}`)}"/>`;
+    s += `<text x="${x1 + 6}" y="${y + hz / 2}" dominant-baseline="middle" style="fill:var(--ink)">${def.f(v)}</text>`;
+  });
+  s += `<line x1="${sx(md)}" x2="${sx(md)}" y1="0" y2="${H}" stroke="var(--amber)" stroke-dasharray="3 3"/>`;
+  return s + "</svg>";
+}
+
+function bewertungsStreu(liste) {
+  const pts = liste.filter(w => kzVon(w, "rote") != null && kzVon(w, "ktbv") != null);
+  if (pts.length < 3) return `<p class="n">Zu wenige Werte.</p>`;
+  const W = 520, H = 340, x0 = 46, x1 = W - 14, y0 = 14, y1 = H - 30;
+  const xs = pts.map(w => w.kz.rote), ys = pts.map(w => w.kz.ktbv);
+  const lx = Math.min(0, ...xs), hx = Math.max(...xs) * 1.08, hy = Math.max(...ys) * 1.1;
+  const sx = v => x0 + (x1 - x0) * (v - lx) / (hx - lx), sy = v => y1 - (y1 - y0) * v / hy;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  niceTicks(lx, hx, 6).forEach(t => s += `<line class="gl" x1="${sx(t)}" x2="${sx(t)}" y1="${y0}" y2="${y1}"/><text x="${sx(t)}" y="${y1 + 14}" text-anchor="middle">${f0.format(t * 100)} %</text>`);
+  niceTicks(0, hy, 5).forEach(t => s += `<line class="gl" x1="${x0}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${x0 - 6}" y="${sy(t)}" text-anchor="end" dominant-baseline="middle">${f1.format(t)}x</text>`);
+  s += `<line x1="${x0}" x2="${x1}" y1="${sy(1)}" y2="${sy(1)}" stroke="var(--ink-3)" stroke-dasharray="2 3"/>`;
+  // Regressionsgerade KTBV = a + b · RoTE
+  const n = pts.length, mx = sum(xs) / n, my = sum(ys) / n;
+  const bb = sum(xs.map((x, i) => (x - mx) * (ys[i] - my))) / (sum(xs.map(x => (x - mx) ** 2)) || 1), aa = my - bb * mx;
+  const ya = aa + bb * lx, yb = aa + bb * hx;
+  s += `<line x1="${sx(lx)}" x2="${sx(hx)}" y1="${sy(ya)}" y2="${sy(yb)}" stroke="var(--amber-dim)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+  pts.forEach(w => {
+    const an = w.ticker === mktMarkiert, x = sx(w.kz.rote), y = sy(w.kz.ktbv);
+    s += `<circle cx="${x}" cy="${y}" r="${an ? 6 : 4.5}" fill="${an ? "var(--amber)" : w.ebene === "Institut" ? "var(--ink)" : "var(--s3)"}" stroke="var(--panel)" stroke-width="1.5" data-mkt="${w.ticker}" style="cursor:pointer" data-tip="${esc(`<b>${esc(w.mutter || w.bank)}</b>\nRoTE ${pct(w.kz.rote, 1)} · Kurs/mat. BW ${f2.format(w.kz.ktbv)}x\nüber/unter Linie: ${(w.kz.ktbv - (aa + bb * w.kz.rote) >= 0 ? "+" : "") + f2.format(w.kz.ktbv - (aa + bb * w.kz.rote))}x`)}"/>`;
+    s += `<text x="${x + 7}" y="${y}" dominant-baseline="middle" style="fill:${an ? "var(--amber)" : "var(--ink-2)"};pointer-events:none;font-size:9.5px">${w.ticker.replace(/\.\w+$/, "")}</text>`;
+  });
+  s += `<text x="${x1}" y="${H - 2}" text-anchor="end" style="fill:var(--amber)">RoTE →</text><text x="${x0}" y="${y0 - 4}" style="fill:var(--amber)">↑ Kurs / materieller Buchwert</text>`;
+  return s + "</svg>";
+}
+
+function kennzahlenPanels(liste) {
+  const mitKz = liste.filter(w => w.kz && w.kz.gj);
+  const toggle = `<div class="ctrl" style="margin-bottom:6px"><button type="button" data-muetter="1" aria-pressed="${mktMuetter}">inkl. Muttergesellschaften (Peergroup)</button></div>`;
+  const wahl = `<div class="ctrl" style="margin-bottom:6px">${["kgv", "kbv", "div_rendite", "roe", "rote", "cir", "zinsmarge", "ek_quote", "w_jue"].map(k => `<button type="button" data-rang="${k}" aria-pressed="${k === mktRang}">${MKZ_FLACH[k].n.split(" (")[0]}</button>`).join("")}</div>`;
+  return `${panel({ code: "MKT 3", titel: "Kennzahlenvergleich Bilanz & GuV", sub: "letztes Geschäftsjahr, Konzern · grün = bester, rot = schwächster Wert der Zeile (Bewertung ohne Wertung) · Zeile wählt Kennzahl für MKT 4", breite: "w7", body: toggle + kennzahlenTabelle(mitKz),
+      fuss: "Konzernabschlüsse (meist IFRS/US-GAAP) laut Yahoo Finance, nicht die HGB-Einzelabschlüsse der übrigen Ansichten. * = nur die Muttergesellschaft ist notiert. RoE/RoTE/RoA auf Ø Kapital aus Vor- und Berichtsjahr; Cost-Income-Ratio = Verwaltungsaufwand / Erträge (bei US-Banken Summe der Non-Interest-Expense-Posten, ohne Risikovorsorge). Türkische Banken bilanzieren unter Hochinflation (IAS 29). Yahoo-Posten sind nicht geprüft; offensichtlich unplausible Werte (negativer Zinsüberschuss, CIR außerhalb 0–150 %) sind ausgeblendet." })}
+    <div class="col w5">${panel({ code: "MKT 4", titel: "Rangfolge", sub: `${MKZ_FLACH[mktRang].n} · gestrichelt = Median`, body: wahl + rangBalken(mktRang, mitKz) })}
+    ${panel({ code: "MKT 5", titel: "Bewertung gegen Rentabilität", sub: "Kurs / materieller Buchwert gegen RoTE · gestrichelt = Regressionsgerade", body: bewertungsStreu(mitKz),
+      fuss: "Punkte über der Geraden sind gemessen an ihrer Rentabilität teurer bewertet als die Vergleichsgruppe, Punkte darunter günstiger. Weiß = Bank selbst notiert, grau = Mutter." })}</div>`;
 }
 
 function quotes() {
@@ -622,6 +732,7 @@ document.addEventListener("click", e => {
   else if (t.closest("[data-weg]")) { const n = t.closest("[data-weg]").dataset.weg; auswahl = auswahl.filter(x => x !== n); render(); }
   else if (t.closest("[data-fenster]")) { mktFenster = t.closest("[data-fenster]").dataset.fenster; render(); }
   else if (t.closest("[data-muetter]")) { mktMuetter = !mktMuetter; render(); }
+  else if (t.closest("[data-rang]")) { mktRang = t.closest("[data-rang]").dataset.rang; render(); }
   else if (t.closest("[data-mkt]")) { mktMarkiert = t.closest("[data-mkt]").dataset.mkt; if (t.closest(".quotes")) e.preventDefault(); gehe("mkt"); }
   else if (t.closest("[data-bank]")) { bankDazu(t.closest("[data-bank]").dataset.bank); }
 });

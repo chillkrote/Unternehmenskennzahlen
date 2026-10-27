@@ -1,0 +1,198 @@
+﻿prioritaet;gruppe;bank;unternehmen_id;bilanzsumme_2025_mio_eur;fehlende_jahre_anzahl;fehlende_jahre;abschluesse_zu_holen_gj;anzahl_abschluesse
+A;Private Banken;Deutsche Bank AG;deutsche-bank-ag;1186374;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Commerzbank AG;commerzbank-ag;543673;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;J.P. Morgan SE;j-p-morgan-se;433545;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;DZ BANK AG Deutsche Zentral-Genossenschaftsbank;dz-bank-ag-deutsche-zentral-genossenschaftsbank;404200;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Landesbank Baden-Württemberg (LBBW);landesbank-baden-wurttemberg-lbbw;353168;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;UniCredit Bank GmbH (HypoVereinsbank);unicredit-bank-gmbh-hypovereinsbank;270431;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;ING-DiBa AG;ing-diba-ag;223151;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Goldman Sachs Bank Europe SE;goldman-sachs-bank-europe-se;216768;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Volkswagen Financial Services AG;volkswagen-financial-services-ag;202271;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Landesbank Hessen-Thüringen Girozentrale (Helaba);landesbank-hessen-thuringen-girozentrale-helaba;181426;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Bayerische Landesbank (BayernLB);bayerische-landesbank-bayernlb;156763;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Deutsche Kreditbank AG (DKB, Tochter der BayernLB);deutsche-kreditbank-ag-dkb-tochter-der-bayernlb;138456;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Norddeutsche Landesbank Girozentrale (NORD/LB);norddeutsche-landesbank-girozentrale-nord-lb;127695;7;2016 2017 2018 2019 2020 2022 2023;2023 2020 2018 2016;4
+A;Private Banken;Volkswagen Bank GmbH;volkswagen-bank-gmbh;118679;4;2016 2017 2018 2019;2019 2017;2
+A;Private Banken;Morgan Stanley Europe SE;morgan-stanley-europe-se;103756;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;DekaBank Deutsche Girozentrale;dekabank-deutsche-girozentrale;88598;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+A;Genossenschaftsbanken;Bausparkasse Schwäbisch Hall AG;bausparkasse-schwabisch-hall-ag;80823;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Hamburger Sparkasse AG (Haspa);hamburger-sparkasse-ag-haspa;56914;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+A;Private Banken;UBS Europe SE;ubs-europe-se;54143;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;Münchener Hypothekenbank eG (MünchenerHyp);munchener-hypothekenbank-eg-munchenerhyp;53478;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;Deutsche Apotheker- und Ärztebank eG (apoBank);deutsche-apotheker-und-arztebank-eg-apobank;52438;2;2016 2017;2017;1
+A;Private Banken;Aareal Bank AG;aareal-bank-ag;51842;2;2016 2017;2017;1
+A;Private Banken;Santander Consumer Bank AG;santander-consumer-bank-ag;49177;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Erwerbsgesellschaft der S-Finanzgruppe mbH & Co. KG (Holding der DekaBank);erwerbsgesellschaft-der-s-finanzgruppe-mbh-co-kg-holding-der-dekabank;45833;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;"Landesbank Berlin AG (seit 15.07.2025 BSK 1818 AG; Trägerin der Berliner Sparkasse)";landesbank-berlin-ag-seit-15-07-2025-bsk-1818-ag-tragerin-der-berliner-sparkasse;44801;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Deutsche Pfandbriefbank AG;deutsche-pfandbriefbank-ag;39953;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Förder- und Sonderinstitute;KfW Beteiligungsholding GmbH;kfw-beteiligungsholding-gmbh;39590;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Förder- und Sonderinstitute;KfW IPEX-Bank GmbH;kfw-ipex-bank-gmbh;39590;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;LBS Landesbausparkasse Süd;lbs-landesbausparkasse-sud;37793;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Oldenburgische Landesbank AG;oldenburgische-landesbank-ag;37161;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+A;Private Banken;Wüstenrot Bausparkasse AG;wustenrot-bausparkasse-ag;36878;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Kreissparkasse Köln;kreissparkasse-koln;30860;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+A;Private Banken;Hamburg Commercial Bank AG;hamburg-commercial-bank-ag;29320;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Sparkasse KölnBonn;sparkasse-kolnbonn;29176;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+A;Private Banken;BMW Bank GmbH;bmw-bank-gmbh;29066;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Stadtsparkasse München;stadtsparkasse-munchen;24016;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Frankfurter Sparkasse;frankfurter-sparkasse;23436;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;BBBank eG;bbbank-eg;22320;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+A;Sparkassen;Sparkasse Hannover;sparkasse-hannover;22128;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+A;Sparkassen;LBS Landesbausparkasse NordWest;lbs-landesbausparkasse-nordwest;21482;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;Berliner Volksbank eG;berliner-volksbank-eg;20081;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+A;Genossenschaftsbanken;Frankfurter Volksbank Rhein/Main eG;frankfurter-volksbank-rhein-main-eg;19332;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Landesbanken;Landesbank Saar (SaarLB);landesbank-saar-saarlb;19227;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Sparkasse Pforzheim Calw;sparkasse-pforzheim-calw;17631;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Mittelbrandenburgische Sparkasse in Potsdam (MBS);mittelbrandenburgische-sparkasse-in-potsdam-mbs;17185;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Sparkassen;Ostsächsische Sparkasse Dresden;ostsachsische-sparkasse-dresden;16138;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Standard Chartered Bank AG;standard-chartered-bank-ag;16019;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;Sparda-Bank Baden-Württemberg eG;sparda-bank-baden-wurttemberg-eg;15536;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Private Banken;Mercedes-Benz Bank AG;mercedes-benz-bank-ag;15535;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+A;Genossenschaftsbanken;Volksbank Darmstadt Mainz eG;volksbank-darmstadt-mainz-eg;15523;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+B;Sparkassen;Stadtsparkasse Düsseldorf;stadtsparkasse-dusseldorf;15349;4;2016 2017 2018 2019;2019 2017;2
+B;Sparkassen;Die Sparkasse Bremen AG;die-sparkasse-bremen-ag;15146;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Aachen;sparkasse-aachen;15071;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Private Banken;IKB Deutsche Industriebank AG;ikb-deutsche-industriebank-ag;14348;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Münsterland Ost;sparkasse-munsterland-ost;14270;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Volksbank Mittelhessen eG;volksbank-mittelhessen-eg;14193;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Volksbank eG – Die Gestalterbank;volksbank-eg-die-gestalterbank;14155;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Sparda-Bank West eG;sparda-bank-west-eg;13933;4;2016 2017 2018 2019;2019 2017;2
+B;Sparkassen;Kreissparkasse Heilbronn;kreissparkasse-heilbronn;13566;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Kreissparkasse München Starnberg Ebersberg;kreissparkasse-munchen-starnberg-ebersberg;13462;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Kreissparkasse Ludwigsburg;kreissparkasse-ludwigsburg;13300;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Kreissparkasse Esslingen-Nürtingen;kreissparkasse-esslingen-nurtingen;13228;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Landessparkasse zu Oldenburg;landessparkasse-zu-oldenburg;13215;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Nürnberg;sparkasse-nurnberg;12966;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+B;Private Banken;Hauck Aufhäuser Lampe Privatbank AG;hauck-aufhauser-lampe-privatbank-ag;12870;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Dortmund;sparkasse-dortmund;12786;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+B;Genossenschaftsbanken;meine Volksbank Raiffeisenbank eG;meine-volksbank-raiffeisenbank-eg;12358;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Schwaben-Bodensee;sparkasse-schwaben-bodensee;12304;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Volksbank pur eG;volksbank-pur-eg;12107;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Stadt- und Kreissparkasse Leipzig;stadt-und-kreissparkasse-leipzig;12091;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Karlsruhe;sparkasse-karlsruhe;12003;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Sparda-Bank Südwest eG;sparda-bank-sudwest-eg;11983;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+B;Sparkassen;Kreissparkasse Böblingen;kreissparkasse-boblingen;11914;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Paderborn-Detmold-Höxter;sparkasse-paderborn-detmold-hoxter;11887;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+B;Genossenschaftsbanken;Dortmunder Volksbank eG;dortmunder-volksbank-eg;11652;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Private Banken;ProCredit Holding AG;procredit-holding-ag;11595;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Westmünsterland;sparkasse-westmunsterland;11579;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;GLS Gemeinschaftsbank eG;gls-gemeinschaftsbank-eg;11555;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Private Banken;Siemens Bank GmbH;siemens-bank-gmbh;11463;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Volksbank im Münsterland eG;volksbank-im-munsterland-eg;11327;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Mainfranken Würzburg;sparkasse-mainfranken-wurzburg;11201;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Private Banken;N26 Bank SE;n26-bank-se;11108;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Kreissparkasse Waiblingen;kreissparkasse-waiblingen;11005;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;VerbundVolksbank OWL eG;verbundvolksbank-owl-eg;10955;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;BFS SozialFinanz AG (SozialBank);bfs-sozialfinanz-ag-sozialbank;10779;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Volksbank in Ostwestfalen eG;volksbank-in-ostwestfalen-eg;10705;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Krefeld;sparkasse-krefeld;10646;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+B;Genossenschaftsbanken;Volksbank Kraichgau eG;volksbank-kraichgau-eg;10542;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Essen;sparkasse-essen;10339;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+B;Sparkassen;Sparkasse Holstein;sparkasse-holstein;9756;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+B;Private Banken;Bank11 für Privatkunden und Handel GmbH;bank11-fur-privatkunden-und-handel-gmbh;9635;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Private Banken;B. Metzler seel. Sohn & Co. AG;b-metzler-seel-sohn-co-ag;9521;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Sparkasse Hildesheim Goslar Peine;sparkasse-hildesheim-goslar-peine;9488;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Sparda-Bank Hessen eG;sparda-bank-hessen-eg;9353;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Sparda-Bank München eG;sparda-bank-munchen-eg;9266;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;Förde Sparkasse;forde-sparkasse;9245;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Hannoversche Volksbank eG;hannoversche-volksbank-eg;9165;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Sparkassen;LBS Landesbausparkasse NordOst AG;lbs-landesbausparkasse-nordost-ag;8901;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Evangelische Bank eG;evangelische-bank-eg;8833;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+B;Genossenschaftsbanken;Volksbank Stuttgart eG;volksbank-stuttgart-eg;8812;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Bochum;sparkasse-bochum;8789;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Ford Bank GmbH;ford-bank-gmbh;8784;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Stadtsparkasse Augsburg;stadtsparkasse-augsburg;8765;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Debeka Bausparkasse AG;debeka-bausparkasse-ag;8733;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Hyundai Capital Bank Europe GmbH;hyundai-capital-bank-europe-gmbh;8642;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Pax-Bank für Kirche und Caritas eG;pax-bank-fur-kirche-und-caritas-eg;8592;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Freiburg-Nördlicher Breisgau;sparkasse-freiburg-nordlicher-breisgau;8377;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Heidelberg;sparkasse-heidelberg;8349;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+C;Sparkassen;Stadtsparkasse Wuppertal;stadtsparkasse-wuppertal;8295;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Stadt- und Kreissparkasse Erlangen Höchstadt Herzogenaurach;stadt-und-kreissparkasse-erlangen-hochstadt-herzogenaurach;8176;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Allgäu;sparkasse-allgau;8034;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Saarbrücken;sparkasse-saarbrucken;7895;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Aschaffenburg Miltenberg;sparkasse-aschaffenburg-miltenberg;7855;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kreissparkasse Steinfurt;kreissparkasse-steinfurt;7847;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Wiesbadener Volksbank eG;wiesbadener-volksbank-eg;7827;4;2016 2017 2018 2019;2019 2017;2
+C;Genossenschaftsbanken;Sparda-Bank Berlin eG;sparda-bank-berlin-eg;7719;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Bielefeld;sparkasse-bielefeld;7706;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Vest Recklinghausen;sparkasse-vest-recklinghausen;7700;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Celle-Gifhorn-Wolfsburg;sparkasse-celle-gifhorn-wolfsburg;7577;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Taunus-Sparkasse;taunus-sparkasse;7502;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Ulm;sparkasse-ulm;7282;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR Bank RheinAhrEifel eG;vr-bank-rheinahreifel-eg;7205;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Vereinigte VR Bank Kur- und Rheinpfalz eG;vereinigte-vr-bank-kur-und-rheinpfalz-eg;7127;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+C;Sparkassen;Sparkasse Ingolstadt Eichstätt;sparkasse-ingolstadt-eichstatt;7048;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Südholstein;sparkasse-sudholstein;6995;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;flatexDEGIRO Bank SE;flatexdegiro-bank-se;6937;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;UmweltBank AG;umweltbank-ag;6806;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+C;Sparkassen;Kreissparkasse Tübingen;kreissparkasse-tubingen;6766;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kreissparkasse Biberach;kreissparkasse-biberach;6753;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kreissparkasse Ostalb;kreissparkasse-ostalb;6745;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Volksbank Köln Bonn eG;volksbank-koln-bonn-eg;6714;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;BANK IM BISTUM ESSEN eG;bank-im-bistum-essen-eg;6689;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Rosenheim-Bad Aibling;sparkasse-rosenheim-bad-aibling;6679;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Stadt- und Kreis-Sparkasse Darmstadt;stadt-und-kreis-sparkasse-darmstadt;6650;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Rheinhessen Sparkasse;rheinhessen-sparkasse;6647;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;National-Bank AG;national-bank-ag;6636;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+C;Genossenschaftsbanken;VR-Bank Bonn Rhein-Sieg eG;vr-bank-bonn-rhein-sieg-eg;6636;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kasseler Sparkasse;kasseler-sparkasse;6595;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Bank für Kirche und Diakonie eG – KD-Bank;bank-fur-kirche-und-diakonie-eg-kd-bank;6582;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;LIGA Bank eG;liga-bank-eg;6559;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Deutsche Bausparkasse Badenia AG;deutsche-bausparkasse-badenia-ag;6424;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kreissparkasse Reutlingen;kreissparkasse-reutlingen;6339;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Volksbank Raiffeisenbank Bayern Mitte eG;volksbank-raiffeisenbank-bayern-mitte-eg;6219;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;OstseeSparkasse Rostock;ostseesparkasse-rostock;6215;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR-Bank Ludwigsburg eG;vr-bank-ludwigsburg-eg;6169;6;2016 2017 2018 2019 2020 2021;2021 2019 2017;3
+C;Genossenschaftsbanken;Volksbank Mittlerer Neckar eG;volksbank-mittlerer-neckar-eg;6146;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Erzgebirgssparkasse;erzgebirgssparkasse;5993;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Hanau;sparkasse-hanau;5940;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Mittelfranken-Süd;sparkasse-mittelfranken-sud;5924;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Ansbach;sparkasse-ansbach;5877;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Sparda-Bank Hannover eG;sparda-bank-hannover-eg;5850;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kreissparkasse Ravensburg;kreissparkasse-ravensburg;5813;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse im Kreis Herford;sparkasse-im-kreis-herford;5789;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Vorpommern;sparkasse-vorpommern;5745;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Rhein Neckar Nord;sparkasse-rhein-neckar-nord;5736;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Vereinigte Volksbanken eG;vereinigte-volksbanken-eg;5711;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+C;Sparkassen;Sparkasse Koblenz;sparkasse-koblenz;5698;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR Bank Nord eG;vr-bank-nord-eg;5667;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR Bank Starnberg-Zugspitze eG;vr-bank-starnberg-zugspitze-eg;5639;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Trier;sparkasse-trier;5512;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR TeilhaberBank Metropolregion Nürnberg eG;vr-teilhaberbank-metropolregion-nurnberg-eg;5512;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Sparda-Bank Nürnberg eG;sparda-bank-nurnberg-eg;5499;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Donner & Reuschel AG;donner-reuschel-ag;5486;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Niederbayern-Mitte;sparkasse-niederbayern-mitte;5463;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR Bank Rhein-Neckar eG;vr-bank-rhein-neckar-eg;5399;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Offenburg/Ortenau;sparkasse-offenburg-ortenau;5362;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Regensburg;sparkasse-regensburg;5360;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Mittelthüringen;sparkasse-mittelthuringen;5355;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Kreissparkasse Halle-Wiedenbrück;kreissparkasse-halle-wiedenbruck;5334;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Landshut;sparkasse-landshut;5262;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Chemnitz;sparkasse-chemnitz;5222;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Düren;sparkasse-duren;5145;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Hellweg-Lippe;sparkasse-hellweg-lippe;5130;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Sparkassen;Sparkasse Rhein-Nahe;sparkasse-rhein-nahe;5090;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;VR Bank Heilbronn Schwäbisch Hall eG;vr-bank-heilbronn-schwabisch-hall-eg;4892;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;MERKUR PRIVATBANK KGaA;merkur-privatbank-kgaa;4109;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Baader Bank AG;baader-bank-ag;3235;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+C;Private Banken;M.M.Warburg & CO (AG & Co.) KGaA;m-m-warburg-co-ag-co-kgaa;3177;5;2016 2017 2018 2019 2020;2020 2018 2016;3
+C;Private Banken;GRENKE BANK AG;grenke-bank-ag;2812;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Isbank AG;isbank-ag;2212;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;SECB Swiss Euro Clearing Bank GmbH;secb-swiss-euro-clearing-bank-gmbh;1958;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;Volksbank Düsseldorf Neuss eG;volksbank-dusseldorf-neuss-eg;1951;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;ALTE LEIPZIGER Bauspar AG;alte-leipziger-bauspar-ag;1902;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Genossenschaftsbanken;PSD Bank München eG;psd-bank-munchen-eg;1878;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;FIL Holdings (Germany) GmbH (Fidelity);fil-holdings-germany-gmbh-fidelity;1267;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Varengold Bank AG;varengold-bank-ag;1065;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Akbank AG;akbank-ag;0;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Bank Deutsches Kraftfahrzeuggewerbe GmbH (BDK);bank-deutsches-kraftfahrzeuggewerbe-gmbh-bdk;0;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;C24 Bank GmbH;c24-bank-gmbh;0;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+C;Private Banken;Hanseatic Bank GmbH & Co KG;hanseatic-bank-gmbh-co-kg;0;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;MLP Banking AG;mlp-banking-ag;0;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;norisbank GmbH;norisbank-gmbh;0;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+C;Private Banken;ODDO BHF SE;oddo-bhf-se;0;8;2016 2017 2018 2019 2020 2021 2022 2023;2023 2021 2019 2017;4
+C;Private Banken;Raisin Bank AG;raisin-bank-ag;0;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+C;Private Banken;State Street Bank International GmbH;state-street-bank-international-gmbh;0;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+C;Private Banken;TARGOBANK AG;targobank-ag;0;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4
+C;Private Banken;TOYOTA Kreditbank GmbH;toyota-kreditbank-gmbh;0;7;2016 2017 2018 2019 2020 2021 2022;2022 2020 2018 2016;4

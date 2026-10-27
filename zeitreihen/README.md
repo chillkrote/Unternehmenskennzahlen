@@ -9,6 +9,7 @@ Einheitliche Ablage aller Zeitreihen über alle Erhebungen und Branchen. Die Erh
 - `Zeitreihen_Banken.xlsx`: Excel mit einem Blatt je Kennzahl (Zeilen Banken, Spalten Jahre), erzeugt von `skripte/excel_export.py`.
 - `gruppen_lang.csv`: Gruppenreihen der Bundesbank (Sparkassen, Kreditgenossenschaften, Landesbanken, Kreditbanken, Großbanken) ab 1993, erzeugt von `skripte/bundesbank_gruppen.py` über die offene SDMX-Schnittstelle (keine Anmeldung). Bilanzsumme, Jahresüberschuss, Zinsüberschuss, Betriebsergebnis, EK-Rentabilität; dazu Bilanzstatistik (Dezember, ab 2002) mit Kapital und Zahl der Institute.
 - `skripte/eba_hub_quartale.py`: übernimmt EU-KM1-Werte aller Stichtage (Juni 2025 bis Juni 2026) aus dem EBA-Hub-Export.
+- `abrufliste_unternehmensregister.csv`: je Bank die kleinste Menge Geschäftsjahre, deren Jahresabschlüsse alle fehlenden Bilanzsummen 2016–2023 abdecken (ein Abschluss enthält Berichtsjahr und Vorjahr), sortiert nach Bilanzsumme in Stufen A/B/C; erzeugt von `skripte/abrufliste.py`. Für manuelle Downloads, die Sicherheitsabfrage des Unternehmensregisters wird nicht umgangen.
 - `skripte/`: `migriere_banken.py` überführt die Bankenexcel ins Langformat, `excel_export.py` baut daraus die Excel.
 - Das Bank-Terminal (`app/`, Ansicht TS auf F6) liest `zeitreihe_lang.csv` über `datenschicht.lade_lang`; mehr Jahre erscheinen dort ohne Codeänderung.
 

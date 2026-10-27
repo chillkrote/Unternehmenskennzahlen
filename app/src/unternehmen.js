@@ -5,7 +5,7 @@
 "use strict";
 const UNT = (() => {
   let UD = null, KZU = {}, BR = {}, FIRMEN = [], NACH_ID = {};
-  const S = { branche: "alle", gruppe: "alle", notiert: "alle", markiert: null, sort: { k: "marktkap", ab: true }, rang: null,
+  const S = { branche: "alle", gruppe: "alle", notiert: "alle", markiert: null, sort: { k: "marktkap", ab: true }, rang: null, tBranche: "alle", tZeit: "90", tArt: "alle",
     sx: "ebit_marge", sy: "kgv", usx: "kgv", usy: "ebit_marge", auswahl: null, matrixSort: null, dokTyp: "alle" };
 
   /* ----- Aufbereitung ----- */
@@ -357,8 +357,55 @@ const UNT = (() => {
       ${reihen.length ? panel({ code: "UNT 3", titel: "Zeitreihen", sub: "je Kennzahl über die erhobenen Stichtage, Amber = jüngster Wert", body: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${reihen.map(([k, r]) => `<div><div class="sub-h">${esc(kzName(k))} <span class="pct">${esc(r.basis)}</span></div>${reiheSvg(k, r)}</div>`).join("")}</div>`, fuss: "Rechnungslegung und Konsolidierungsebene stehen je Reihe; Reihen verschiedener Basis werden nicht vermischt." }) : ""}
       ${gremienPanel(f)}
       ${verguetungPanel(f)}
+      ${termineProfil(f)}
       ${dokumentePanel(f)}
     </div>`;
+  }
+
+
+  /* ----- Berichtstermine (termine/termine.csv, siehe termine/README.md) ----- */
+  const heuteIso = () => new Date().toISOString().slice(0, 10);
+  const datumDe = iso => { const [j, m, t] = iso.split("-"); return `${t}.${m}.${j}`; };
+  const TAGE = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+  const wochentag = iso => TAGE[new Date(iso + "T12:00:00Z").getUTCDay()];
+  const TSTATUS = { "erwartet": ["erwartet", "Schätzung (Yahoo Finance), noch nicht vom Unternehmen bestätigt"], "bestätigt": ["bestätigt", "Termin laut Finanzkalender des Unternehmens"],
+    "angekündigt": ["bestätigt", "Termin laut Finanzkalender des Unternehmens"], "erschienen": ["erschienen", "Bericht ist veröffentlicht"] };
+  const tStatus = t => (TSTATUS[t.status] || [t.status, ""]);
+  function tagInfo(termin) { const d = Math.round((new Date(termin + "T12:00:00Z") - new Date(heuteIso() + "T12:00:00Z")) / 864e5); return d === 0 ? "heute" : d === 1 ? "morgen" : d > 1 ? `in ${d} Tagen` : d === -1 ? "gestern" : `vor ${-d} Tagen`; }
+  const alleTermine = () => { const g = new Set(); // dieselbe Aktie unter zwei Kennungen (Bilanzvergleich-Bank und Börsenunternehmen) nur einmal
+    return FIRMEN.flatMap(f => (f.termine || []).map(t => ({ ...t, f }))).filter(t => { const k = (t.f.ticker || t.f.id).split(".")[0].toUpperCase() + t.termin + t.berichtsart; return g.has(k) ? false : (g.add(k), true); }); };
+  const berichtLink = t => t.datei ? `<a class="btn" href="${esc(dokUrl(t.datei, "raw"))}" target="_blank" rel="noopener">Bericht</a>` : t.abruf_status === "gesperrt" ? `<span class="pct" title="Seite verweigert den automatischen Abruf">gesperrt</span>` : t.abruf_status === "nicht_gefunden" ? `<span class="pct">nicht gefunden</span>` : "";
+  const quelleTxt = t => t.quelle === "yahoo" ? "Yahoo Finance" : t.quelle === "finanzkalender" ? "Finanzkalender" : t.quelle === "manuell" ? "manuell erfasst" : t.quelle;
+  const termineHinweis = "Termine aus Yahoo Finance sind Schätzungen (Status „erwartet“); Termine aus dem Finanzkalender des Unternehmens oder von Hand erfasste gelten als bestätigt. Fällige Berichte lädt der Abruf täglich nach GitHub (termine/), sofern die Unternehmenswebsite sie ohne Bot-Schutz anbietet.";
+
+  function termineProfil(f) {
+    const t = f.termine || [];
+    if (!t.length) return panel({ code: "TRM", titel: "Berichtstermine", body: `<p class="n">Für dieses Unternehmen ist kein Veröffentlichungstermin bekannt (Yahoo Finance und Finanzkalender liefern keinen). Von Hand ergänzen: <code>termine/termine_manuell.csv</code>.</p>` });
+    const h = heuteIso(), naechster = t.find(x => x.termin >= h && x.status !== "erschienen") || t.find(x => x.termin >= h);
+    const kopf = naechster ? `<p style="margin:0 0 10px"><strong style="font:600 18px var(--mono)">${wochentag(naechster.termin)} ${datumDe(naechster.termin)}</strong> · ${esc(naechster.berichtsart)} (Periode bis ${datumDe(naechster.periode_ende)}) · ${tagInfo(naechster.termin)} · <span class="pct" title="${esc(tStatus(naechster)[1])}">${esc(tStatus(naechster)[0])}</span></p>` : `<p class="n">Kein künftiger Termin bekannt.</p>`;
+    return panel({ code: "TRM", titel: "Berichtstermine", sub: "Quartals-, Halbjahres- und Jahresberichte", body: kopf +
+      `<div class="scroll"><table><thead><tr><th style="text-align:left">Termin</th><th style="text-align:left">Bericht</th><th style="text-align:left">Periode bis</th><th style="text-align:left">Status</th><th style="text-align:left">Quelle</th><th></th></tr></thead><tbody>${t.map(x => `<tr><td>${datumDe(x.termin)} <span class="pct">${wochentag(x.termin)}</span></td><td style="text-align:left;font-family:var(--sans)">${esc(x.berichtsart)}</td><td>${x.periode_ende ? datumDe(x.periode_ende) : "–"}</td><td style="text-align:left;font-family:var(--sans)" title="${esc(tStatus(x)[1])}">${esc(tStatus(x)[0])}</td><td style="text-align:left;font-family:var(--sans)">${x.quelle_url ? `<a class="flink" href="${esc(x.quelle_url)}" target="_blank" rel="noopener">${esc(quelleTxt(x))}</a>` : esc(quelleTxt(x))}</td><td>${berichtLink(x)}</td></tr>`).join("")}</tbody></table></div>`, fuss: termineHinweis });
+  }
+
+  function viewTermine() {
+    const alle = alleTermine(), h = heuteIso();
+    if (!alle.length) return `<div class="grid">${panel({ code: "TRM", titel: "Berichtstermine", body: `<p class="n">Noch keine Termine im Repo. <code>python3 termine/skripte/termine_erfassen.py</code> erzeugt <code>termine/termine.csv</code>; der Workflow „Berichtstermine“ macht das täglich.</p>` })}</div>`;
+    const bis = S.tZeit === "alle" ? "9999" : new Date(Date.now() + (+S.tZeit) * 864e5).toISOString().slice(0, 10);
+    const arten = [...new Set(alle.map(t => t.berichtsart))].sort();
+    const passt = t => (S.tBranche === "alle" || t.f.branche === S.tBranche) && (S.tArt === "alle" || t.berichtsart === S.tArt);
+    const kommend = alle.filter(t => passt(t) && t.termin >= h && t.termin <= bis).sort((a, b) => a.termin.localeCompare(b.termin) || a.f.name.localeCompare(b.f.name, "de"));
+    const zuletzt = alle.filter(t => passt(t) && t.termin < h).sort((a, b) => b.termin.localeCompare(a.termin) || a.f.name.localeCompare(b.f.name, "de"));
+    const brN = id => alle.filter(t => t.f.branche === id).length;
+    const ctrl = chipRow([["alle", "Alle Branchen", alle.length], ...UD.branchen.filter(b => brN(b.id)).map(b => [b.id, b.name, brN(b.id)])], "data-utb", S.tBranche)
+      + chipRow([["30", "30 Tage"], ["90", "90 Tage"], ["180", "180 Tage"], ["alle", "Alle künftigen"]].map(([i, n]) => [i, n]), "data-utz", S.tZeit)
+      + (arten.length > 1 ? chipRow([["alle", "Alle Berichtsarten"], ...arten.map(a => [a, a])], "data-uta", S.tArt) : "");
+    let monat = "";
+    const zeile = t => `<tr><td style="white-space:nowrap">${datumDe(t.termin)} <span class="pct">${wochentag(t.termin)}</span></td><td style="text-align:left;font-family:var(--sans)">${profilLink(t.f, t.f.name)}${t.f.ticker ? ` <span class="pct">${esc(t.f.ticker)}</span>` : ""}</td><td style="text-align:left;font-family:var(--sans)">${esc(t.berichtsart)}${t.periode_ende ? ` <span class="pct">bis ${datumDe(t.periode_ende)}</span>` : ""}</td><td style="text-align:left;font-family:var(--sans)" title="${esc(tStatus(t)[1])}">${esc(tStatus(t)[0])}</td><td class="n">${t.termin >= h ? tagInfo(t.termin) : ""}</td><td>${t.termin < h ? berichtLink(t) : ""}</td></tr>`;
+    const kopfZ = `<thead><tr><th style="text-align:left">Termin</th><th style="text-align:left">Unternehmen</th><th style="text-align:left">Bericht</th><th style="text-align:left">Status</th><th></th><th></th></tr></thead>`;
+    const kommendHtml = kommend.length ? `<div class="scroll"><table>${kopfZ}<tbody>${kommend.map(t => { const m = t.termin.slice(0, 7), z = m !== monat ? `<tr><td colspan="6" class="grp">${["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"][+m.slice(5) - 1]} ${m.slice(0, 4)}</td></tr>` : ""; monat = m; return z + zeile(t); }).join("")}</tbody></table></div>` : `<p class="n">Im gewählten Zeitraum ist kein Termin bekannt.</p>`;
+    const nG = zuletzt.filter(t => t.datei).length;
+    return `<div class="grid">${panel({ code: "TRM", titel: "Kommende Berichtstermine", sub: `${kommend.length} Termine · ${new Set(kommend.map(t => t.f.id)).size} Unternehmen`, body: ctrl + kommendHtml, fuss: termineHinweis })}
+      ${panel({ code: "TRM 2", titel: "Zuletzt fällig", sub: `${zuletzt.length} Berichte der letzten Wochen · ${nG} davon im Repo`, body: zuletzt.length ? `<div class="scroll"><table>${kopfZ}<tbody>${zuletzt.slice(0, 80).map(zeile).join("")}</tbody></table></div>` : `<p class="n">Noch keine fälligen Berichte erfasst.</p>` })}</div>`;
   }
 
   /* ----- Verzeichnis aller Unternehmen ----- */
@@ -390,6 +437,9 @@ const UNT = (() => {
     if ((v = g("data-ug")) != null) { S.gruppe = v; render(); return true; }
     if ((v = g("data-un")) != null) { S.notiert = v; render(); return true; }
     if ((v = g("data-ugj")) != null) { S.govGj = +v; render(); return true; }
+    if ((v = g("data-utb")) != null) { S.tBranche = v; render(); return true; }
+    if ((v = g("data-utz")) != null) { S.tZeit = v; render(); return true; }
+    if ((v = g("data-uta")) != null) { S.tArt = v; render(); return true; }
     if ((v = g("data-udok")) != null) { S.dokTyp = v; render(); return true; }
     if ((v = g("data-uopen")) != null) { S.branche = v; S.gruppe = g("data-ugruppe") || "alle"; S.notiert = "alle"; S.rang = null; gehe("u-branche"); return true; }
     if ((v = g("data-usort")) != null) { S.sort = { k: v, ab: S.sort.k === v ? !S.sort.ab : true, manuell: true, auto: S.branche + S.gruppe + S.notiert }; render(); return true; }
@@ -411,5 +461,5 @@ const UNT = (() => {
   }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
+  return { init, da, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
 })();

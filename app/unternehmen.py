@@ -291,9 +291,38 @@ def dokumente(wurzel, ids):
     return {uid: sorted(d.values(), key=lambda x: (-(x["jahr"] or 0), x["typ"], x["titel"])) for uid, d in out.items()}
 
 
+def berichtstermine(wurzel, nach_id):
+    """termine/termine.csv (termine/skripte/termine_erfassen.py): je Unternehmen f["termine"] = Quartals-/Halbjahres-/Jahresberichte
+    mit Termin, Status (erwartet / bestätigt / erschienen), Quelle und - falls der Abruf-Script den Bericht geladen hat - der Datei im Repo."""
+    p = Path(wurzel) / "termine" / "termine.csv"
+    if not p.exists():
+        return
+    finde = _finder(set(nach_id))
+    basis = lambda t: (t or "").split(".")[0].upper()
+    nach_ticker = {}
+    for u in nach_id.values():
+        if u.get("ticker"):
+            nach_ticker.setdefault(basis(u["ticker"]), []).append(u)
+    with open(p, encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f, delimiter=";"):
+            uid = finde(r.get("unternehmen_id"))
+            u = nach_id.get(uid)
+            if u is None or not r.get("termin"):
+                continue
+            t = {k: r.get(k, "") for k in ("berichtsart", "periode_ende", "termin", "quelle", "quelle_url", "status", "stand", "abruf_status", "datei")}
+            # dieselbe Aktie kann unter zwei Kennungen geführt sein (Bank aus dem Bilanzvergleich, Börsenunternehmen): Termin an beide
+            for x in {id(u): u, **{id(y): y for y in nach_ticker.get(basis(r.get("ticker")), [])}}.values():
+                x.setdefault("termine", []).append(t)
+    for u in nach_id.values():
+        if u.get("termine"):
+            u["termine"].sort(key=lambda t: t["termin"])
+
+
 def _index_lesen(wurzel, p, finde, out):
     """index.csv (Komma oder Semikolon): Unternehmen über ID oder Name, Datei relativ zum Repo, zur index.csv oder zur Erhebung."""
     ordner = (Path(wurzel) / p).parent
+    if not (Path(wurzel) / p).exists():  # z. B. bei teilweisem (sparse) Checkout
+        return
     text = (Path(wurzel) / p).read_text(encoding="utf-8-sig")
     kopf = text.split("\n", 1)[0]
     for r in csv.DictReader(text.splitlines(), delimiter=";" if kopf.count(";") > kopf.count(",") else ","):
@@ -346,6 +375,7 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
     for uid, docs in dokumente(wurzel, set(nach_id)).items():
         nach_id[uid]["dokumente"] = docs
     governance(wurzel, nach_id)
+    berichtstermine(wurzel, nach_id)
     benutzt = {k for f in firmen for k in f["werte"]}
     kennzahlen = [k for k in KATALOG["kennzahlen"] if k["key"] in benutzt] + [e for k, e in extra.items() if k in benutzt]
     return {"demo": ist_demo, "quellen": quellen, "repo": GITHUB_REPO, "zweig": "main",

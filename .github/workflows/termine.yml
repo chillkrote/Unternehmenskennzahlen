@@ -1,0 +1,51 @@
+name: Berichtstermine
+
+# Zweimal täglich (morgens vor und abends nach der Veröffentlichungswelle):
+#  1. montags die Finanzkalender der Unternehmen lesen (termine/skripte/finanzkalender_scan.py)
+#  2. Termine aus Yahoo Finance, Finanzkalender und termine_manuell.csv zusammenführen (termine/termine.csv)
+#  3. fällige Berichte von den Unternehmenswebsites laden (PDF nach <branche>/dokumente/<id>/, index.csv-Eintrag, SHA-256)
+#  4. Terminal neu bauen und alles in main committen
+# Kosten: keine (GitHub Actions im Rahmen des Kontingents, yfinance und Unternehmenswebsites sind frei zugänglich).
+on:
+  schedule:
+    - cron: "20 5,16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: berichtstermine
+  cancel-in-progress: false
+
+jobs:
+  termine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r termine/requirements.txt
+      - name: Finanzkalender lesen (montags)
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python3 termine/skripte/finanzkalender_scan.py || echo "Finanzkalender-Scan fehlgeschlagen, weiter mit vorhandenem Stand"
+          fi
+      - run: python3 termine/skripte/termine_erfassen.py
+      - run: python3 termine/skripte/berichte_abrufen.py
+      - run: python3 app/build.py
+      - name: Änderungen committen
+        run: |
+          git add termine boersennotierte-unternehmen banken app/data app/dist
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          # Dateien über 100 MB lehnt GitHub ab; der Abruf speichert sie nicht (termine/rohdaten/zu_gross.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Berichtstermine und neue Berichte $(date -u +%Y-%m-%d)"
+          git pull --rebase -X theirs origin main  # bei Konflikten in app/dist gewinnt der frisch gebaute Stand
+          git push

@@ -1004,7 +1004,22 @@ function render() {
   UNT.nachRender();
   VWL.nachRender();
   KOR.nachRender();
+  csvKnoepfe();
   fkInit();
+}
+/* CSV-Export: jede Tabelle in der Ansicht bekommt einen Knopf; Werte wie angezeigt (Semikolon, UTF-8 mit BOM, öffnet in Excel) */
+function csvKnoepfe() {
+  document.querySelectorAll("#view table").forEach((t, i) => {
+    const sc = t.closest(".scroll") || t; if (sc.previousElementSibling && sc.previousElementSibling.classList.contains("csvbar")) return;
+    const bar = document.createElement("div"); bar.className = "csvbar"; bar.style.cssText = "text-align:right;margin:0 0 4px";
+    bar.innerHTML = `<button type="button" class="btn">CSV</button>`;
+    bar.firstChild.addEventListener("click", () => {
+      const zl = [...t.rows].map(r => [...r.cells].map(c => '"' + c.innerText.replace(/\s+/g, " ").trim().replace(/"/g, '""') + '"').join(";"));
+      const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["\ufeff" + zl.join("\r\n")], { type: "text/csv;charset=utf-8" }));
+      a.download = ((location.hash.slice(1) || "terminal") + "-" + (i + 1) + ".csv").replace(/[^\w.-]/g, "_"); a.click(); URL.revokeObjectURL(a.href);
+    });
+    sc.parentElement.insertBefore(bar, sc);
+  });
 }
 function gehe(v) { if (location.hash === "#" + v) render(); else location.hash = v; }
 function bankFinden(q) { q = q.trim().toLowerCase(); if (!q) return null; return BANKEN.find(b => b.bank.toLowerCase() === q) || BANKEN.find(b => b.bank.toLowerCase().includes(q)); }

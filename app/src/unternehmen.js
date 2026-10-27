@@ -57,6 +57,12 @@ const UNT = (() => {
     const m = f.ticker && typeof MARKT !== "undefined" && MARKT && MARKT.werte.find(x => x.ticker === f.ticker);
     return m && m.kurse && m.kurse.length > 1 ? { ticker: m.ticker, bank: f.name, mutter: null, ebene: "Institut", kurse: m.kurse, datum: m.datum } : null;
   }
+  /* Kurse für die Korrelationsauswertung: volle Historie (kurse_hist in markt.json), sonst der Verlauf der Ansichten */
+  function kurseHist(f) {
+    const k = kurseVon(f); if (!k) return null;
+    const m = f.ticker && typeof MARKT !== "undefined" && MARKT && MARKT.werte.find(x => x.ticker === f.ticker);
+    return m && m.kurse_hist && m.kurse_hist.length > 1 ? { ...k, kurse: m.kurse_hist } : k;
+  }
   const adapter = liste => liste.map(kurseVon).filter(Boolean);
   const profilLink = (f, text) => `<a class="flink" href="#firma-${f.id}">${esc(text == null ? kurzU(f.name) : text)}</a>`;
   const punkt = f => f.notiert ? `<span class="dot" data-tip="börsennotiert${f.ticker ? " · " + esc(f.ticker) : ""}">●</span>` : "";
@@ -461,5 +467,5 @@ const UNT = (() => {
   }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
+  return { init, da, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
 })();

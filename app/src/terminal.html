@@ -189,6 +189,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#v-laender" data-v="v-laender"><b>F3</b>Länder</a>
       <a class="key" href="#v-quellen" data-v="v-quellen"><b>F4</b>Berichte &amp; Quellen</a>
       <a class="key" href="#v-prog" data-v="v-prog"><b>F5</b>Prognosen</a>
+      <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
     </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
@@ -196,6 +197,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#u-vergleich" data-v="u-vergleich"><b>F3</b>Vergleich</a>
       <a class="key" href="#u-verzeichnis" data-v="u-verzeichnis"><b>F4</b>Verzeichnis</a>
       <a class="key" href="#u-termine" data-v="u-termine"><b>F5</b>Termine</a>
+      <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
     </nav>
     <nav class="subkeys" id="subkeys" aria-label="Banken-Analyse" hidden>
       <span>Branche Banken ›</span>
@@ -221,6 +223,7 @@ __UNTERNEHMEN_JS__
 </script>
 <script>
 __VWL_JS__
+__KORRELATION_JS__
 </script>
 <script>
 "use strict";
@@ -879,7 +882,7 @@ function tape() {
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
-  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine() };
+  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), korr: () => KOR.viewKorr() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
 /* Startseite: zwei Bereiche, jeder mit eigenem Terminal */
@@ -889,6 +892,7 @@ function viewStart() {
   return `<div class="start"><h1>Terminal</h1><p class="lead">Kennzahlen, Daten und Berichte in einer Oberfläche. Wähle einen Bereich.</p><div class="startraster">
     ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u), !UNT.da())}
     ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Stimmungsindikatoren und Zinsen für alle OECD-Länder, dazu Prognosen der Institute und der ifo-Index für Deutschland.", esc(v), !VWL.da())}
+    ${kachel("#korr", "KOR", "Korrelationen &amp; Zusammenhänge", "Pearson und Spearman zwischen Indizes, Unternehmen, Branchen, Kursen und volkswirtschaftlichen Reihen, mit Verzögerung, Streudiagramm und Matrix.", esc(KOR.meta()), !UNT.da() && !VWL.da())}
   </div></div>`;
 }
 function render() {
@@ -918,6 +922,7 @@ function render() {
   if (add) add.addEventListener("change", () => { bankDazu(add.value); });
   UNT.nachRender();
   VWL.nachRender();
+  KOR.nachRender();
 }
 function gehe(v) { if (location.hash === "#" + v) render(); else location.hash = v; }
 function bankFinden(q) { q = q.trim().toLowerCase(); if (!q) return null; return BANKEN.find(b => b.bank.toLowerCase() === q) || BANKEN.find(b => b.bank.toLowerCase().includes(q)); }
@@ -930,7 +935,7 @@ function bankDazu(name) {
 }
 document.addEventListener("click", e => {
   const t = e.target;
-  if (VWL.klick(t) || UNT.klick(t)) return;
+  if (VWL.klick(t) || UNT.klick(t) || KOR.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }
   else if (t.closest("[data-sy]")) { streuY = t.closest("[data-sy]").dataset.sy; render(); }
@@ -952,7 +957,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
   if (bereich === "v") {
-    const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", prog: "v-prog", prognosen: "v-prog", start: "start" }[c], s = VWL.finden(v);
+    const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", prog: "v-prog", prognosen: "v-prog", korr: "korr", korrelation: "korr", start: "start" }[c], s = VWL.finden(v);
     if (a) gehe(a); else if (s) { VWL.waehle(s.serie_id); gehe("v-reihe"); } else if (c === "unt") gehe("u-ueb");
     return;
   }
@@ -964,7 +969,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const f = UNT.finden(v); if (f) gehe("firma-" + f.id); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine" })[e.key];
+  const m = (bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });

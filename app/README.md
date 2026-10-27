@@ -19,7 +19,7 @@ Andere Excel-Datei: `python3 app/build.py --excel pfad/zur/datei.xlsx`.
 |---|---|
 | `datenschicht.py` | liest `banken/bilanzvergleich-gj2025/auswertung/Bilanzvergleich_Banken_GJ2025.xlsx` (Blätter Übersicht, Offenlegung, CC1, OV1, Bilanzen, Zeitreihe) und baut einen Datensatz je Bank. Spalten werden über ihre Überschrift gefunden, neue Banken und Spalten kommen ohne Codeänderung mit. |
 | `build.py` | ruft die Datenschicht auf und bettet die Daten in die Oberfläche ein |
-| `marktdaten.py` | holt Schlusskurse (12 Monate), Renditen, Börsenwert und die letzten Konzernabschlüsse (GuV, Bilanz) über yfinance, rechnet daraus die Kennzahlen und schreibt `data/markt.json`, getrennt von den GJ-Bilanzdaten |
+| `marktdaten.py` | holt Schlusskurse (letztes Jahr für die Ansichten, bis zu zehn Jahre als `kurse_hist` für die Korrelation), Renditen, Börsenwert und die letzten Konzernabschlüsse (GuV, Bilanz) über yfinance, rechnet daraus die Kennzahlen und schreibt `data/markt.json`, getrennt von den GJ-Bilanzdaten |
 | `boersen_ticker.json` | Zuordnung Bank -> Ticker. `Institut` = Bank selbst notiert (Deutsche Bank, Commerzbank, pbb, UmweltBank, Merkur, Baader), `Mutter` = nur die Bank- oder Finanzgruppe darüber ist notiert (UniCredit, ING, Santander, State Street, flatexDEGIRO, GRENKE, MLP, Akbank, İşbank, JPMorgan, Goldman Sachs, Morgan Stanley, Citigroup, UBS, Standard Chartered, W&W; norisbank und BHW über Deutsche Bank). ProCredit ist selbst notiert. `bilanzwaehrung` angeben, wenn der Konzern in anderer Währung bilanziert als die Aktie notiert. Neue Ticker hier eintragen. |
 | `src/terminal.html` | Oberfläche (HTML/CSS/JS ohne Bibliotheken, Diagramme als SVG) |
 | `data/banken.json` | erzeugter Datensatz |
@@ -81,3 +81,17 @@ Gruppenwerte ohne Zusatzeinträge (DZ BANK, DekaBank, DKB). KM1-Werte stammen te
 Das Terminal öffnet mit einer Startseite (`#start`) und zwei Kacheln. **Unternehmen** führt in das Branchen-Terminal (F1 Branchen, F2 Branche, F3 Vergleich, F4 Verzeichnis, Profilseiten `#firma-<id>` mit Kennzahlen, Gremien, Vergütung und Dokumenten). **Volkswirtschaft** führt in das makroökonomische Terminal (F1 Überblick, F2 Zeitreihen, F3 Länder, F4 Berichte & Quellen). Die Daten dafür liegen in `volkswirtschaft/` und werden von `vwl.py` eingelesen; `build.py` bettet sie ein.
 
 Gremien und Vergütung auf der Profilseite kommen aus `governance/*.csv` und hängen über `unternehmen_id` am Unternehmen; neue Zeilen erscheinen nach `python3 app/build.py` ohne Codeänderung.
+
+## Korrelation (KOR, F6)
+
+Statistische Korrelationsauswertung, vollständig im Browser gerechnet (`src/korrelation.js`, keine Bibliotheken, läuft daher auch im Artifact und in einer Desktop-App). Erreichbar über F6 in beiden Bereichen, die Startseite oder die Kommandozeile (`KORR`).
+
+| Modus | Inhalt |
+|---|---|
+| Zeitreihen A ↔ B | zwei frei gewählte Reihen: VWL-Reihe und Land, Jahreskennzahl eines Unternehmens, Aktienkurs, Median einer Kennzahl je Branche, gleichgewichteter Kursindex einer Branche. Wahl von Zeitraum (Jahre), Frequenz (Jahr, Quartal, Monat, Tag), Transformation je Reihe (Niveau, Differenz, Veränderung zur Vorperiode, Log-Rendite, Veränderung zum Vorjahr), Verzögerung (Kreuzkorrelation), Pearson oder Spearman. Ausgabe: r, ρ, p-Wert, p-Wert mit effektiver Stichprobe, 95-%-Intervall (Fisher-z), R², Regressionsgerade, Streudiagramm, Kreuzkorrelation, Verlauf, automatische Hinweise |
+| Matrix | bis 14 Reihen, alle Paare als Heatmap; Klick auf eine Zelle öffnet das Paar. Voreinstellungen: VWL-Kernreihen, Kurse großer Werte, Branchen-Kursindizes |
+| Querschnitt | zwei Kennzahlen über alle Unternehmen (Filter Branche, Notierung, optional log₁₀), Streudiagramm mit Klick ins Profil, Kennzahlenmatrix |
+
+Regeln: Perioden ohne Wert in einer der beiden Reihen fallen heraus, es wird nichts interpoliert. Projektionen (`prognose_ab`) sind ausgeschlossen. Bei Umrechnung auf gröbere Frequenz gilt der Mittelwert für Raten und Salden, sonst der letzte Wert. Hinweise erscheinen bei n < 10 und n < 30, bei Niveaureihen mit Trend (Scheinkorrelation), hoher Autokorrelation (n_eff nach Bartlett), überlappenden Vorjahresraten, Durbin-Watson < 1, starker Abweichung zwischen Pearson und Spearman und beim besten von mehreren Lags (nicht multipel getestet). Der Datenbestand bestimmt, was auswertbar ist: Jahreskennzahlen mit Zeitreihe gibt es derzeit nur für Banken, Kurse liegen bis zu zehn Jahre täglich vor (`kurse_hist` in `markt.json`, die Ansichten zeigen weiter das letzte Jahr). Neue Reihen im Repo erscheinen automatisch.
+
+Die Statistik wurde gegen SciPy geprüft (Pearson, Spearman, p-Werte, Regression stimmen auf mindestens 10 Stellen überein).

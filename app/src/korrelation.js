@@ -360,11 +360,11 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
     const short = s => s.length > 34 ? s.slice(0, 33) + "…" : s;
     let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Korrelationsmatrix" style="max-width:${W}px">`;
     namen.forEach((nm, i) => {
-      s += `<text x="${L - 8}" y="${T + i * cs + cs / 2 + 4}" text-anchor="end" data-tip="${esc(nm)}">${i + 1} ${esc(short(nm))}</text><text x="${L + i * cs + cs / 2}" y="${T - 10}" text-anchor="middle">${i + 1}</text>`;
+      s += `<text x="${L - 8}" y="${T + i * cs + cs / 2 + 4}" text-anchor="end" data-hr="${i}" data-tip="${esc(nm)}">${i + 1} ${esc(short(nm))}</text><text x="${L + i * cs + cs / 2}" y="${T - 10}" text-anchor="middle" data-hc="${i}">${i + 1}</text>`;
       for (let j = 0; j < n; j++) {
         const c = zellen[i][j], v = c ? (methode === "spearman" ? c.rho : c.r) : null, p = c ? (methode === "spearman" ? c.pRho : c.p) : null;
         const tip = i === j ? esc(nm) : c && v != null ? esc(`<b>${namen[i]}</b>\n↔ ${namen[j]}\n${methode === "spearman" ? "Spearman ρ" : "Pearson r"} = ${fr(v)}\np = ${fp(p)} · n = ${c.n}${c.n < 10 ? "\nn < 10: kaum belastbar" : ""}`) : esc(`${namen[i]}\n↔ ${namen[j]}\nzu wenige gemeinsame Werte${c ? " (n = " + c.n + ")" : ""}`);
-        s += `<rect x="${L + j * cs + 1}" y="${T + i * cs + 1}" width="${cs - 2}" height="${cs - 2}" rx="3" fill="${i === j ? "var(--panel-2)" : farbeR(v, p)}" stroke="var(--line)" ${klickAttr && i !== j && v != null ? `${klickAttr(i, j)} style="cursor:pointer"` : ""} data-tip="${tip}"/>`;
+        s += `<rect x="${L + j * cs + 1}" y="${T + i * cs + 1}" width="${cs - 2}" height="${cs - 2}" rx="3" fill="${i === j ? "var(--panel-2)" : farbeR(v, p)}" stroke="var(--line)" data-hr="${i}" data-hc="${j}" ${klickAttr && i !== j && v != null ? `${klickAttr(i, j)} style="cursor:pointer"` : ""} data-tip="${tip}"/>`;
         if (i !== j && v != null) s += `<text x="${L + j * cs + cs / 2}" y="${T + i * cs + cs / 2 + 4}" text-anchor="middle" style="fill:${p != null && p > .05 ? "var(--ink-3)" : "var(--ink)"};font-family:var(--mono);font-size:${cs > 44 ? 12 : 10.5}px;pointer-events:none">${fr(v)}</text>`;
       }
     });

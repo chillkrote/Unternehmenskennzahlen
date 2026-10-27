@@ -99,3 +99,10 @@ Statistische Korrelationsauswertung, vollständig im Browser gerechnet (`src/kor
 Regeln: Perioden ohne Wert in einer der beiden Reihen fallen heraus, es wird nichts interpoliert. Projektionen (`prognose_ab`) sind ausgeschlossen. Bei Umrechnung auf gröbere Frequenz gilt der Mittelwert für Raten und Salden, sonst der letzte Wert. Hinweise erscheinen bei n < 10 und n < 30, bei Niveaureihen mit Trend (Scheinkorrelation), hoher Autokorrelation (n_eff nach Bartlett), überlappenden Vorjahresraten, Durbin-Watson < 1, starker Abweichung zwischen Pearson und Spearman und beim besten von mehreren Lags (nicht multipel getestet). Der Datenbestand bestimmt, was auswertbar ist: Jahreskennzahlen mit Zeitreihe gibt es derzeit nur für Banken, Kurse: Banken mit Börsennotierung täglich bis zu zehn Jahre (`kurse_hist` in `markt.json`), alle übrigen Notierten als Wochenschlusskurse über zehn Jahre (`data/kurse_woche.json`); die Ansichten zeigen weiter das letzte Jahr. Branchen-Kursindizes (gleichgewichtet, Wochenbasis) gibt es damit für alle Branchen. Neue Reihen im Repo erscheinen automatisch.
 
 Die Statistik wurde gegen SciPy geprüft (Pearson, Spearman, p-Werte, Regression stimmen auf mindestens 10 Stellen überein).
+
+## Bedienung der Diagramme
+
+* **UEB 2 / BRA 5 (Streudiagramme):** Der Punkt unter der Maus (Umkreis von ca. 14 px) wird vergrößert und beschriftet, die übrigen treten zurück; Tooltip mit Branche und Kennzahlen; Klick öffnet das Profil. Legende schaltet Branchen aus (Doppelklick: nur diese), Hover auf die Legende oder eine Branchenzeile in UEB 1 hebt die Branche hervor. Mausrad zoomt, Ziehen verschiebt, Doppelklick setzt zurück; die Suche markiert ein Unternehmen (Enter öffnet das Profil). Das Diagramm passt sich der Fensterbreite an.
+* **BRA:** Hover über eine Tabellenzeile oder einen Balken markiert dasselbe Unternehmen im Streudiagramm und umgekehrt; in Tabellen leuchtet zusätzlich die Spalte unter der Maus. Spaltenköpfe sind per Tab erreichbar und per Enter sortierbar.
+* **MKT 2 und TS:** Fadenkreuz mit Wertetabelle aller Reihen am nächsten Messpunkt.
+* **KOR (Matrix):** Zeile und Spalte der Zelle unter der Maus werden hervorgehoben.

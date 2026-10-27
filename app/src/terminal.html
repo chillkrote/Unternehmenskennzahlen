@@ -1,4 +1,4 @@
-<title>Bank-Terminal GJ 2025</title>
+<title>Terminal</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
@@ -157,6 +157,20 @@ select { background: #000; border: 1px solid var(--line); border-radius: 999px; 
 .tile strong { white-space: nowrap; }
 .tile .mini { color: var(--ink-3); font: 11px/1.3 var(--mono); }
 .tile b { color: var(--ink); font: 600 13px/1.2 var(--sans); }
+a.brand { color: inherit; text-decoration: none; }
+.start { max-width: 980px; margin: 8vh auto 0; padding: 0 4px; }
+.start h1 { margin: 0 0 6px; font: 600 40px/1.1 var(--sans); letter-spacing: -.01em; }
+.start .lead { margin: 0 0 28px; color: var(--ink-2); font-size: 16px; }
+.startraster { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.startkachel { position: relative; display: grid; gap: 10px; align-content: start; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px 22px; color: inherit; text-decoration: none; min-height: 220px; transition: border-color .15s, background .15s; }
+.startkachel::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--amber); border-radius: 12px 0 0 12px; }
+.startkachel:hover, .startkachel:focus-visible { border-color: var(--amber); background: var(--panel-2); outline: none; }
+.startkachel h2 { margin: 4px 0 0; font: 600 22px/1.25 var(--sans); }
+.startkachel p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+.startkachel .zeile { margin-top: auto; padding-top: 12px; color: var(--ink-3); font: 12px var(--mono); }
+.startkachel .los { color: var(--amber); font-size: 13px; font-weight: 500; }
+.startkachel .code { justify-self: start; background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-dim); border-radius: 4px; padding: 1px 7px; font: 600 11px var(--mono); letter-spacing: .08em; }
+.startkachel.aus { opacity: .5; }
 [hidden] { display: none !important; }
 @media (max-width: 600px) { .tape .stats strong { font-size: 13px; } .meta { display: none; } .key { padding-inline: 10px; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -165,11 +179,17 @@ select { background: #000; border: 1px solid var(--line); border-radius: 999px; 
 <div class="wrap">
   <header class="top">
     <div class="cmd">
-      <span class="brand"><b>BKT</b>Bank-Terminal</span>
+      <a class="brand" href="#start" title="Startseite"><b>TRM</b>Terminal</a>
       <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter" autocomplete="off" list="firmenliste"></label>
       <span class="meta" id="meta"></span>
     </div>
-    <nav class="keys" aria-label="Funktionen">
+    <nav class="keys" id="keys-v" aria-label="Volkswirtschaft" hidden>
+      <a class="key" href="#v-ueb" data-v="v-ueb"><b>F1</b>Überblick</a>
+      <a class="key" href="#v-reihe" data-v="v-reihe"><b>F2</b>Zeitreihen</a>
+      <a class="key" href="#v-laender" data-v="v-laender"><b>F3</b>Länder</a>
+      <a class="key" href="#v-quellen" data-v="v-quellen"><b>F4</b>Berichte &amp; Quellen</a>
+    </nav>
+    <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
       <a class="key" href="#u-branche" data-v="u-branche"><b>F2</b>Branche</a>
       <a class="key" href="#u-vergleich" data-v="u-vergleich"><b>F3</b>Vergleich</a>
@@ -187,13 +207,18 @@ select { background: #000; border: 1px solid var(--line); border-radius: 999px; 
 </div>
 <datalist id="banklist"></datalist>
 <datalist id="firmenliste"></datalist>
+<datalist id="serienliste"></datalist>
 <div id="tip" role="tooltip"></div>
 
 <script id="daten" type="application/json">__DATEN__</script>
 <script id="markt" type="application/json">__MARKT__</script>
 <script id="unternehmen" type="application/json">__UNTERNEHMEN__</script>
+<script id="vwl" type="application/json">__VWL__</script>
 <script>
 __UNTERNEHMEN_JS__
+</script>
+<script>
+__VWL_JS__
 </script>
 <script>
 "use strict";
@@ -851,23 +876,46 @@ function tape() {
 
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
+  start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
-let aktuell = "u-ueb", metaBanken = "";
+let aktuell = "start", metaBanken = "", bereich = "";
+/* Startseite: zwei Bereiche, jeder mit eigenem Terminal */
+function viewStart() {
+  const u = UNT.da() ? UNT.meta() : "", v = VWL.da() ? VWL.meta() : "";
+  const kachel = (href, code, titel, text, zeile, aus) => `<a class="startkachel${aus ? " aus" : ""}" href="${aus ? "#start" : href}"><span class="code">${code}</span><h2>${titel}</h2><p>${text}</p><div class="zeile">${zeile}</div><span class="los">Öffnen →</span></a>`;
+  return `<div class="start"><h1>Terminal</h1><p class="lead">Kennzahlen, Daten und Berichte in einer Oberfläche. Wähle einen Bereich.</p><div class="startraster">
+    ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u), !UNT.da())}
+    ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Nachfrageindikatoren und Zinsen für Deutschland, den Euroraum und große Volkswirtschaften.", esc(v), !VWL.da())}
+  </div></div>`;
+}
 function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
-  else { aktuell = VIEWS[h] ? h : "u-ueb"; html = VIEWS[aktuell](); }
-  const bank = BANKVIEWS.includes(aktuell);
+  else { aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }
+  const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), st = aktuell === "start";
+  if (!st && (vw ? "v" : "u") !== bereich) {
+    bereich = vw ? "v" : "u";
+    document.getElementById("firmenliste").innerHTML = bereich === "u" ? UNT.datalist() : "";
+    document.getElementById("serienliste").innerHTML = bereich === "v" ? VWL.datalist() : "";
+    const c = document.getElementById("cmd");
+    c.setAttribute("list", bereich === "v" ? "serienliste" : "firmenliste");
+    c.placeholder = bereich === "v" ? "Reihe (BIP, Inflation …) · UEB · REIHE · LAENDER · QUELLEN · dann Enter" : "Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter";
+  }
+  document.querySelector(".cmdline").hidden = st;
+  document.querySelector(".top .meta").hidden = st;
+  document.getElementById("keys-u").hidden = st || vw;
+  document.getElementById("keys-v").hidden = st || !vw;
   document.getElementById("subkeys").hidden = !bank;
   document.getElementById("tape").hidden = document.getElementById("quotes").hidden = !bank;
-  document.getElementById("meta").textContent = bank ? metaBanken : UNT.meta();
+  document.getElementById("meta").textContent = st ? "" : vw ? VWL.meta() : bank ? metaBanken : UNT.meta();
   const aktiv = bank ? "u-branche" : aktuell.startsWith("firma-") ? "u-verzeichnis" : aktuell;
   document.querySelectorAll(".key, .subkeys a").forEach(k => (k.dataset.v === aktuell || (k.classList.contains("key") && k.dataset.v === aktiv)) ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
   document.getElementById("view").innerHTML = html;
   const add = document.getElementById("cmpadd");
   if (add) add.addEventListener("change", () => { bankDazu(add.value); });
   UNT.nachRender();
+  VWL.nachRender();
 }
 function gehe(v) { if (location.hash === "#" + v) render(); else location.hash = v; }
 function bankFinden(q) { q = q.trim().toLowerCase(); if (!q) return null; return BANKEN.find(b => b.bank.toLowerCase() === q) || BANKEN.find(b => b.bank.toLowerCase().includes(q)); }
@@ -880,7 +928,7 @@ function bankDazu(name) {
 }
 document.addEventListener("click", e => {
   const t = e.target;
-  if (UNT.klick(t)) return;
+  if (VWL.klick(t) || UNT.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }
   else if (t.closest("[data-sy]")) { streuY = t.closest("[data-sy]").dataset.sy; render(); }
@@ -901,6 +949,12 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   if (e.key !== "Enter") return;
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
+  if (bereich === "v") {
+    const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", start: "start" }[c], s = VWL.finden(v);
+    if (a) gehe(a); else if (s) { VWL.waehle(s.serie_id); gehe("v-reihe"); } else if (c === "unt") gehe("u-ueb");
+    return;
+  }
+  if (c === "start" || c === "vwl") { gehe(c === "start" ? "start" : "v-ueb"); return; }
   const alias = { ueb: "u-ueb", bra: "u-branche", branchen: "u-ueb", ucmp: "u-vergleich", verz: "u-verzeichnis" }[c];
   if (VIEWS[c]) gehe(c);
   else if (alias) gehe(alias);
@@ -908,7 +962,8 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const f = UNT.finden(v); if (f) gehe("firma-" + f.id); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis" }[e.key];
+  const m = (bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis" })[e.key];
+  if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });
 addEventListener("hashchange", () => { render(); scrollTo(0, 0); });
@@ -924,7 +979,9 @@ async function start() {
   let ud = null;
   try { ud = JSON.parse(document.getElementById("unternehmen").textContent); } catch { try { ud = await (await fetch("../data/unternehmen.json")).json(); } catch { ud = null; } }
   UNT.init(ud);
-  document.getElementById("firmenliste").innerHTML = UNT.datalist();
+  let vd = null;
+  try { vd = JSON.parse(document.getElementById("vwl").textContent); } catch { vd = null; }
+  VWL.init(vd);
   tape();
   quotes();
   render();

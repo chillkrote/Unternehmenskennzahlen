@@ -7,7 +7,12 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 D = os.path.dirname(os.path.abspath(__file__)) + "/"
 if os.path.isdir(D + "data"):
     D += "data/"
-OUT = os.environ.get("OUT", "/mnt/project-files/bilanzvergleich/Bilanzvergleich_Banken_GJ2025.xlsx")
+# im Repo liegt das Skript unter rohdaten/skripte/, die JSONs eine Ebene höher; Ausgabe dann nach auswertung/
+IM_REPO = not os.path.exists(D + "private.json") and os.path.exists(D + "../private.json")
+if IM_REPO:
+    D = os.path.normpath(D + "..") + "/"
+OUT = os.environ.get("OUT", D + "../auswertung/Bilanzvergleich_Banken_GJ2025.xlsx" if IM_REPO
+                     else "/mnt/project-files/bilanzvergleich/Bilanzvergleich_Banken_GJ2025.xlsx")
 
 def load(f):
     p = D + f

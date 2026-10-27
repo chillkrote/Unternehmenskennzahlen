@@ -111,9 +111,9 @@ def lese_excel(pfad, ordner_branche=None):
                 meta_sp["name"] = j
             elif any(n in v for v in META.values()):
                 meta_sp.setdefault(next(k for k, v in META.items() if n in v), j)
-            elif n in ALIAS:
+            elif n in ALIAS and ALIAS[n] not in {k for k, _ in spalten.values()}:
                 spalten[j] = (ALIAS[n], h)
-            elif h:
+            elif h:  # unbekannt oder zweite Spalte derselben Kennzahl (z. B. „KGV (12M, Yahoo)“ neben „KGV (GJ)“): eigene Kennzahl, erste Spalte gilt
                 spalten[j] = (None, h)
         blatt_branche = branche_id(ws.title) or ordner_branche
         for r in zeilen[kopf_i + 1:]:
@@ -132,7 +132,8 @@ def lese_excel(pfad, ordner_branche=None):
                 if key is None:
                     # unbekannte Spalte: als eigene Kennzahl führen, wenn überhaupt Zahlen drinstehen
                     key = "x_" + re.sub(r"[^a-z0-9]+", "_", _norm(h)).strip("_")
-                    extra.setdefault(key, {"key": key, "name": re.sub(r"\s*\(.*?\)", "", h).strip(), "fmt": _fmt_aus_ueberschrift(h),
+                    kurzname = re.sub(r"\s*\(.*?\)", "", h).strip()
+                    extra.setdefault(key, {"key": key, "name": h if _norm(kurzname) in ALIAS else kurzname, "fmt": _fmt_aus_ueberschrift(h),
                                            "gruppe": "Weitere Kennzahlen", "hoch": None, "einheit": (re.search(r"\((.*?)\)", h) or [None, None])[1]})
                 if "%" in h and abs(v) > 1.5 and (KATALOG_FMT.get(key) or extra.get(key, {}).get("fmt")) == "pct":
                     v /= 100

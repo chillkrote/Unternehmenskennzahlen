@@ -1,10 +1,11 @@
-"""Baut das Bank-Terminal: Excel -> data/banken.json -> dist/bankterminal.html (eine Datei, Daten eingebettet)."""
+"""Baut das Terminal (Unternehmen und Volkswirtschaft): Excel -> data/banken.json -> dist/bankterminal.html (eine Datei, Daten eingebettet)."""
 import argparse
 import json
 from pathlib import Path
 
 import datenschicht
 import unternehmen
+import vwl
 
 HIER = Path(__file__).resolve().parent
 
@@ -28,9 +29,12 @@ def main():
     # Unternehmen anderer Branchen: generisch aus den Branchen-Tabellen im Repo (sonst Beispieldaten)
     firmen = json.dumps(unternehmen.lade(banken=banken, markt=json.loads(markt) if markt != "null" else None), ensure_ascii=False, separators=(",", ":"))
     (HIER / "data/unternehmen.json").write_text(firmen)
+    vd = vwl.lade()
+    vroh = json.dumps(vd, ensure_ascii=False, separators=(",", ":")) if vd else "null"
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
-             .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")))
+             .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/"))
+             .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__VWL__", vroh.replace("</", "<\\/")))
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (HIER / "dist/bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

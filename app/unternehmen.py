@@ -96,7 +96,9 @@ def _ja(v):
 def lese_excel(pfad, ordner_branche=None):
     wb = openpyxl.load_workbook(pfad, data_only=True, read_only=True)
     firmen, extra = [], {}
-    for ws in wb.worksheets:
+    # Arbeitsmappen mit Blatt „Übersicht“ (eine Zeile je Unternehmen) tragen daneben GuV-, Bilanz- und Rohdatenblätter: nur die Übersicht zählt
+    blaetter = [ws for ws in wb.worksheets if _norm(ws.title) == "uebersicht" or ws.title == "Übersicht"] or wb.worksheets
+    for ws in blaetter:
         zeilen = list(ws.iter_rows(values_only=True))
         kopf_i = next((i for i, r in enumerate(zeilen[:10]) if any(_norm(c) in NAMEN for c in r if c)), None)
         if kopf_i is None:
@@ -320,7 +322,22 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
     """Gibt {branchen, kennzahlen, unternehmen, quellen, demo, repo} zurück."""
     firmen, extra, quellen = branchen_excel(wurzel)
     if banken:
-        firmen += aus_banken(banken, markt)
+        bk = aus_banken(banken, markt)
+        ids = {b["id"]: b for b in bk}
+        rest = []
+        for f in firmen:          # notierte Bank in Branchenmappe und Bilanzvergleich: Bilanzvergleich führt, Börsendaten ergänzen
+            b = ids.get(f["id"])
+            if b is None:
+                rest.append(f)
+                continue
+            for k, v in f["werte"].items():
+                b["werte"].setdefault(k, v)
+            for k in ("ticker", "isin", "sitz", "segment"):
+                if f.get(k) and not b.get(k):
+                    b[k] = f[k]
+            if f.get("notiert"):
+                b["notiert"] = True
+        firmen = rest + bk
         quellen.append("banken/bilanzvergleich-gj2025")
     nach_id = {f["id"]: f for f in firmen}
     stammdaten(wurzel, firmen, nach_id)
@@ -328,6 +345,7 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
     zeitreihen(wurzel, nach_id)
     for uid, docs in dokumente(wurzel, set(nach_id)).items():
         nach_id[uid]["dokumente"] = docs
+    governance(wurzel, nach_id)
     benutzt = {k for f in firmen for k in f["werte"]}
     kennzahlen = [k for k in KATALOG["kennzahlen"] if k["key"] in benutzt] + [e for k, e in extra.items() if k in benutzt]
     return {"demo": ist_demo, "quellen": quellen, "repo": GITHUB_REPO, "zweig": "main",
@@ -335,11 +353,68 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
             "kennzahlen": kennzahlen, "unternehmen": firmen}
 
 
+def _csv(pfad):
+    if not pfad.exists():
+        return []
+    with open(pfad, encoding="utf-8-sig", newline="") as fh:
+        return [{k: (v or "").strip() for k, v in r.items() if k} for r in csv.DictReader(fh)]
+
+
+def _num(v):
+    try:
+        return float(v.replace(",", ".")) if v else None
+    except ValueError:
+        return None
+
+
+def governance(wurzel, nach_id):
+    """governance/*.csv (Schema siehe governance/README.md) -> f["gov"] je unternehmen_id.
+
+    Nichts ist fest verdrahtet: jedes Unternehmen, dessen unternehmen_id in den Tabellen vorkommt, bekommt
+    Gremien, Vergütung, Kennzahlen und die externen Mandate / Stationen seiner Mitglieder."""
+    ordner = Path(wurzel) / "governance"
+    mit, kz, vg = (_csv(ordner / n) for n in ("gremien_mitglieder.csv", "kennzahlen_gremien.csv", "verguetung.csv"))
+    mandate, werdegang = _csv(ordner / "mandate_extern.csv"), _csv(ordner / "werdegang.csv")
+    man_p, wer_p = {}, {}
+    for r in mandate:
+        man_p.setdefault(r["person_id"], []).append({k: r[k] for k in ("typ", "gesellschaft", "gesellschaft_unternehmen_id", "funktion", "gueltig", "ueber_unternehmen_id") if r.get(k)})
+    for r in werdegang:
+        wer_p.setdefault(r["person_id"], []).append({k: r[k] for k in ("station", "organisation", "zeitraum", "art") if r.get(k)})
+    gov = {}
+
+    def g(uid):
+        return gov.setdefault(uid, {"mitglieder": [], "kennzahlen": [], "verguetung": [], "quellen": set()}) if uid in nach_id else None
+
+    for r in mit:
+        d = g(r["unternehmen_id"])
+        if d is None:
+            continue
+        pid = r["person_id"]
+        d["mitglieder"].append({"gj": int(r["gj"]), "organ": r["organ"], "pid": pid, "name": r["name"], "funktion": r["funktion"],
+                                "art": r["vertreter_art"], "seit": r["seit"], "bis": r["bis"], "beruf": r["beruf_laut_dokument"],
+                                "seite": r["seite"], "bem": r["bemerkung"], "mandate": man_p.get(pid, []), "werdegang": wer_p.get(pid, [])})
+        d["quellen"].add(r["quelle_dokument"])
+    for r in kz:
+        d = g(r["unternehmen_id"])
+        if d is not None:
+            d["kennzahlen"].append({"gj": int(r["gj"]), "feld": r["feld"], "wert": r["wert"], "einheit": r["einheit"], "seite": r["seite"], "bem": r["bemerkung"]})
+            d["quellen"].add(r["quelle_dokument"])
+    for r in vg:
+        d = g(r["unternehmen_id"])
+        if d is not None:
+            d["verguetung"].append({"gj": int(r["gj"]), "gremium": r["gremium"], "name": r["name"], "pid": r["person_id"],
+                                    "betrag": _num(r["betrag_tsd_eur"]), "art": r["art"], "seite": r["seite"], "bem": r["bemerkung"]})
+            d["quellen"].add(r["quelle_dokument"])
+    for uid, d in gov.items():
+        d["quellen"] = sorted(q for q in d["quellen"] if q)
+        nach_id[uid]["gov"] = d
+
+
 def branchen_excel(wurzel):
     firmen, extra, quellen = [], {}, []
     for datei in sorted(Path(wurzel).rglob("*.xlsx")):
         teile = datei.relative_to(wurzel).parts
-        if teile[0] in SKIP_DIRS or datei.name.startswith("~$") or "archiv" in teile:
+        if teile[0] in SKIP_DIRS or datei.name.startswith("~$") or "archiv" in teile or "quellen" in teile or "rohdaten" in teile:
             continue
         ordner_branche = next((branche_id(t) for t in teile[:-1] if branche_id(t)), None)
         try:
@@ -351,9 +426,14 @@ def branchen_excel(wurzel):
             quellen.append("/".join(teile))
             firmen += f
             extra.update({k["key"]: k for k in e})
-    for f in firmen:
+    gesehen, eindeutig = set(), []
+    for f in firmen:       # dieselbe Gesellschaft in Gesamt- und Branchenmappe nur einmal (erste Fundstelle zuerst)
         f["id"] = f.get("id") or slug(f["name"])
-    return firmen, extra, quellen
+        if f["id"] in gesehen or (f.get("isin") and f["isin"] in gesehen):
+            continue
+        gesehen.update({f["id"], f.get("isin")} - {None})
+        eindeutig.append(f)
+    return eindeutig, extra, quellen
 
 
 def stammdaten(wurzel, firmen, nach_id):

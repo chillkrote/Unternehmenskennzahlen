@@ -1,4 +1,4 @@
-name: Börsendaten Bank-Terminal
+name: Börsendaten Terminal
 
 # Einmal je Handelstag nach Xetra-Schluss: Kurse über yfinance holen,
 # Terminal neu bauen und Änderungen in main committen.

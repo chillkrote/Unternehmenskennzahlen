@@ -44,5 +44,6 @@ Unternehmensregister und Bundesanzeiger wurden nicht automatisiert abgefragt (Si
 ## Bekannte Abweichungen
 
 - Hanseatic Bank: Übersicht nutzt die Bilanzsumme 2024, das Blatt Bilanzen die von 2025.
-- Stadtsparkasse München (Eigenkapital 1.541 vs. 1.533 Mio. €) und Sparkasse Wuppertal (Bilanzsumme 8.312 vs. 8.295 Mio. €): kleine Differenzen zwischen Bilanz und Übersicht, in der Hinweis-Spalte vermerkt.
+- Stadtsparkasse München (Eigenkapital 1.541 vs. 1.533 Mio. €): kleine Differenz zwischen Bilanz und Übersicht, in der Hinweis-Spalte vermerkt.
+- Bilanzsumme (Korrektur 27.10.2026): Liegt für das GJ 2025 eine formale HGB-Bilanz vor (Jahresabschluss oder EU CC2 „Bilanz laut Jahresabschluss“), ersetzt deren Summe der Aktiva Ranglisten-, Presse- und Websiteangaben in der Übersicht. Betroffen: KSK Esslingen-Nürtingen, Sparkasse Schwaben-Bodensee, Sparkasse Mainfranken Würzburg, KSK Ludwigsburg, KSK München Starnberg Ebersberg, Stadtsparkasse Wuppertal, Stadtsparkasse München und DZ BANK (vorher gerundet). Die DSGV-Rangliste liegt regelmäßig 1–3 % über der HGB-Bilanzsumme. Bei der KSK München Starnberg Ebersberg ist der Hub-Export widersprüchlich (Summenzeile 12.910); maßgeblich ist der Offenlegungsbericht 2025, PDF-Seite 32 („Aktiva insgesamt 13.470“).
 - Nicht übernommen: Sparkasse Bremen (CC2 nur auf Ebene der Finanzholding), Baader Bank (nur Konzernzahlen), TARGOBANK (keine HGB-Bilanz).

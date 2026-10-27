@@ -316,7 +316,7 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
     pts.forEach((p, i) => {
       const o = pts.length > 1 && p.t != null ? .3 + .7 * i / (pts.length - 1) : .75;
       const c = `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="3.6" fill="var(--amber)" fill-opacity="${o.toFixed(2)}" stroke="var(--panel)" stroke-width="1" data-tip="${esc(p.tip)}"${href && p.href ? ' style="cursor:pointer"' : ""}/>`;
-      s += href && p.href ? `<a href="${esc(p.href)}">${c}</a>` : c;
+      s += href && p.href ? `<a href="${esc(sicherUrl(p.href))}">${c}</a>` : c;
     });
     if (st.b != null) { const x0 = Math.min(...xs), x1 = Math.max(...xs); s += `<line x1="${sx(x0)}" y1="${sy(st.a + st.b * x0)}" x2="${sx(x1)}" y2="${sy(st.a + st.b * x1)}" stroke="var(--geno)" stroke-width="1.8" data-tip="${esc(`Regressionsgerade\ny = ${fz(st.a)} + ${fz(st.b)} · x\nR² = ${fr(st.r == null ? null : st.r * st.r)}`)}"/>`; }
     s += `<text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">${esc(xn)}</text><text transform="translate(14 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${esc(yn)}</text></svg>`;

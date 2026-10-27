@@ -16,7 +16,7 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | A7 | Yahoo-Abgleich: „bestätigt“ nur für das letzte GJ (M6) | 2/2 | ☑ nur das neueste Yahoo-Jahr zählt als bestätigt, ältere Treffer als „nur älteres Jahr“ |
 | A8 | Prozent-Einheit je Spalte statt Wert-Heuristik (N4) | 1/2 | ☐ |
 | A9 | Prüfskript `pruefung/pruefe.py` (Bilanz geht auf, IDs, index.csv, SHA-256) | 3/2 | ☑ `pruefung/pruefe.py` |
-| A10 | Terminal: Export (CSV) der aktuellen Tabelle, Watchlist, Hilfetexte | 2/3 | ◐ CSV-Export je Tabelle ☑; Watchlist und Hilfetexte offen |
+| A10 | Terminal: Export (CSV) der aktuellen Tabelle, Watchlist, Hilfetexte | 2/3 | ◐ CSV-Export je Tabelle ☑, Merkliste (★ im Profil, Filter im Verzeichnis) ☑; Hilfetexte offen |
 | A11 | Tests: Smoke-Test (Playwright) als Skript ins Repo | 2/2 | ☑ `app/tests/smoke.js` |
 
 ## B. Datenqualität (Reviewbefunde)

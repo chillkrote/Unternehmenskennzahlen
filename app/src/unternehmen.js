@@ -509,6 +509,7 @@ const UNT = (() => {
     const ctrl = `<div class="ctrl" style="margin-bottom:6px">${Object.entries(FENSTER).map(([k, [n]]) => `<button type="button" data-fenster="${k}" aria-pressed="${k === mktFenster}">${n}</button>`).join("")}</div>`;
     const kopf = `<div class="picks" style="margin-bottom:10px"><a class="flink" href="#u-ueb">Branchen</a> › <a class="flink" href="#u-branche" data-uopen="${esc(f.branche)}">${esc(b.name)}</a>${f.gruppe ? ` › <a class="flink" href="#u-branche" data-uopen="${esc(f.branche)}" data-ugruppe="${esc(f.gruppe)}">${esc(f.gruppe)}</a>` : ""}</div>
       <div class="picks"><h2 style="margin:0;font:600 22px/1.2 var(--sans)">${esc(f.name)}</h2>
+        <button type="button" class="chip" data-uwatch="${esc(f.id)}" aria-pressed="${merkListe().has(f.id)}" title="Merkliste (nur auf diesem Gerät)">${merkListe().has(f.id) ? "★ gemerkt" : "☆ merken"}</button>
         <span class="chip" style="cursor:default">${f.notiert ? `börsennotiert${f.ticker ? " · " + esc(f.ticker) : ""}${f.isin ? " · " + esc(f.isin) : ""}` : "nicht börsennotiert"}</span>
         ${f.mutter ? `<span class="chip" style="cursor:default">Börsenkurs nur der Mutter: ${esc(f.mutter.name || f.mutter.ticker)}</span>` : ""}
         ${f.sitz ? `<span class="chip" style="cursor:default">${esc(f.sitz)}</span>` : ""}${f.rolle ? `<span class="chip" style="cursor:default">${esc(f.rolle)}</span>` : ""}${f.demo ? `<span class="chip" style="cursor:default">Beispieldaten</span>` : ""}
@@ -583,15 +584,19 @@ const UNT = (() => {
     const zeilen = [...FIRMEN].sort((a, b) => a.name.localeCompare(b.name, "de"));
     return `<div class="grid">${panel({ code: "VERZ", titel: "Verzeichnis", sub: `${FIRMEN.length} Unternehmen · Suche nach Name, Ticker oder Gruppe`, body:
       `<div class="picks" style="margin-bottom:12px"><input id="usuche" placeholder="Suchen …" autocomplete="off" style="width:320px"><select id="ubr"><option value="">Alle Branchen</option>${UD.branchen.map(b => `<option value="${esc(b.id)}">${esc(b.name)}</option>`).join("")}</select>
-        <select id="unot"><option value="">Notiert und nicht notiert</option><option value="1">Börsennotiert</option><option value="0">Nicht börsennotiert</option></select><span class="n" id="uzahl"></span></div>
+        <select id="unot"><option value="">Notiert und nicht notiert</option><option value="1">Börsennotiert</option><option value="0">Nicht börsennotiert</option><option value="m">Nur Merkliste ★</option></select><span class="n" id="uzahl"></span></div>
       <div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th><th style="text-align:left">Branche</th><th style="text-align:left">Gruppe</th><th>Dokumente</th><th>Jahre</th></tr></thead><tbody id="uverz">${zeilen.map(f => {
         const jahre = Math.max(0, ...Object.values(f.reihen || {}).map(r => r.punkte.length));
-        return `<tr data-q="${esc((f.name + " " + (f.ticker || "") + " " + (f.gruppe || "") + " " + (f.isin || "")).toLowerCase())}" data-b="${esc(f.branche)}" data-n="${f.notiert ? 1 : 0}"><td>${profilLink(f, f.name)}</td><td>${punkt(f)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(brName(f.branche))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(f.gruppe || "")}</td><td class="${(f.dokumente || []).length ? "" : "n"}">${(f.dokumente || []).length || "–"}</td><td class="n">${jahre || "–"}</td></tr>`; }).join("")}</tbody></table></div>` })}</div>`;
+        return `<tr data-w="${esc(f.id)}" data-q="${esc((f.name + " " + (f.ticker || "") + " " + (f.gruppe || "") + " " + (f.isin || "")).toLowerCase())}" data-b="${esc(f.branche)}" data-n="${f.notiert ? 1 : 0}"><td>${profilLink(f, f.name)}</td><td>${punkt(f)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(brName(f.branche))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(f.gruppe || "")}</td><td class="${(f.dokumente || []).length ? "" : "n"}">${(f.dokumente || []).length || "–"}</td><td class="n">${jahre || "–"}</td></tr>`; }).join("")}</tbody></table></div>` })}</div>`;
   }
+  /* ----- Merkliste (nur im Browser dieses Geräts; ohne Speicher bleibt sie für die Sitzung) ----- */
+  let merk = null;
+  const merkListe = () => { if (!merk) { try { merk = new Set(JSON.parse(localStorage.getItem("merkliste") || "[]")); } catch (e) { merk = new Set(); } } return merk; };
+  function merkUmschalten(id) { const m = merkListe(); m.has(id) ? m.delete(id) : m.add(id); try { localStorage.setItem("merkliste", JSON.stringify([...m])); } catch (e) { /* kein Speicher */ } }
   function verzFilter() {
-    const q = (document.getElementById("usuche") || {}).value, br = (document.getElementById("ubr") || {}).value, nt = (document.getElementById("unot") || {}).value;
+    const q = (document.getElementById("usuche") || {}).value, br = (document.getElementById("ubr") || {}).value, nt = (document.getElementById("unot") || {}).value, nurM = nt === "m";
     let n = 0;
-    document.querySelectorAll("#uverz tr").forEach(tr => { const ok = (!q || tr.dataset.q.includes(q.toLowerCase())) && (!br || tr.dataset.b === br) && (!nt || tr.dataset.n === nt); tr.hidden = !ok; if (ok) n++; });
+    document.querySelectorAll("#uverz tr").forEach(tr => { const ok = (!q || tr.dataset.q.includes(q.toLowerCase())) && (!br || tr.dataset.b === br) && (!nt || (nurM ? merkListe().has(tr.dataset.w) : tr.dataset.n === nt)); tr.hidden = !ok; if (ok) n++; });
     const z = document.getElementById("uzahl"); if (z) z.textContent = n + " angezeigt";
   }
 
@@ -623,6 +628,7 @@ const UNT = (() => {
   function klick(t) {
     const g = a => { const e = t.closest && t.closest("[" + a + "]"); return e ? e.getAttribute(a) : null; };
     let v;
+    if ((v = g("data-uwatch")) != null) { merkUmschalten(v); render(); return true; }
     if ((v = g("data-uadd")) != null) { hinzu(v); gehe("u-vergleich"); return true; }
     if ((v = g("data-uweg")) != null) { S.auswahl = S.auswahl.filter(x => x !== v); render(); return true; }
     if ((v = g("data-ub")) != null) { S.branche = v; S.gruppe = "alle"; S.notiert = "alle"; S.rang = null; render(); return true; }

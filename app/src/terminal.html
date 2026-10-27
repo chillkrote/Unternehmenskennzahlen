@@ -139,9 +139,16 @@ tr.sel td { background: var(--amber-bg); }
 
 #tip { position: fixed; z-index: 20; pointer-events: none; background: rgba(0, 0, 0, .94); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .5); padding: 7px 10px; color: var(--ink); max-width: 320px; white-space: pre-line; display: none; font: 12px/1.5 var(--mono); }
 #tip b { color: var(--amber); font: 600 12px/1.5 var(--sans); }
-.bereich { display: inline-flex; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 2px; }
-.bereich a { padding: 4px 12px; border-radius: 6px; color: var(--ink-2); text-decoration: none; font-size: 12px; }
-.bereich a[aria-current="page"] { background: var(--amber-bg); color: var(--amber); }
+.subkeys { display: flex; gap: 6px; align-items: center; padding: 8px 0 10px; overflow-x: auto; scrollbar-width: none; font-size: 12px; }
+.subkeys span { color: var(--ink-3); white-space: nowrap; margin-right: 4px; }
+.subkeys a { padding: 3px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.subkeys a:hover { color: var(--ink); border-color: var(--s2); }
+.subkeys a[aria-current="page"] { color: var(--amber); background: var(--amber-bg); border-color: var(--amber-dim); }
+.flink { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--s3); } .flink:hover { color: var(--amber); border-color: var(--amber); }
+.btn { display: inline-block; padding: 2px 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); text-decoration: none; font-size: 12px; } .btn:hover { color: var(--amber); border-color: var(--amber-dim); }
+.dot { color: var(--amber); font-size: 10px; }
+button.mini { background: transparent; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); padding: 1px 8px; cursor: pointer; font-size: 12px; } button.mini:hover { color: var(--amber); border-color: var(--amber-dim); }
+select { background: #000; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; color: var(--ink); }
 .tile { display: grid; gap: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; color: inherit; text-decoration: none; cursor: pointer; }
 .tile:hover { border-color: var(--amber); }
 .tile { position: relative; overflow: hidden; gap: 10px; }
@@ -159,20 +166,19 @@ tr.sel td { background: var(--amber-bg); }
   <header class="top">
     <div class="cmd">
       <span class="brand"><b>BKT</b>Bank-Terminal</span>
-      <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="GRP · CMP · MKT · BRA · UCMP · oder Bank-/Firmenname, dann Enter" autocomplete="off" list="banklist"></label>
-      <span class="bereich" id="bereich" role="tablist" aria-label="Bereich"><a href="#grp" data-b="b">Banken</a><a href="#u-ueb" data-b="u" id="bereich-u" hidden>Branchen</a></span>
+      <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter" autocomplete="off" list="firmenliste"></label>
       <span class="meta" id="meta"></span>
     </div>
     <nav class="keys" aria-label="Funktionen">
-      <a class="key" href="#grp" data-v="grp"><b>F1</b>Gruppen</a>
-      <a class="key" href="#quot" data-v="quot"><b>F2</b>Quoten</a>
-      <a class="key" href="#cmp" data-v="cmp"><b>F3</b>Einzelbanken</a>
-      <a class="key" href="#rank" data-v="rank"><b>F4</b>Liste</a>
-      <a class="key" href="#mkt" data-v="mkt" id="key-mkt"><b>F5</b>Börse</a>
-      <a class="key" href="#ts" data-v="ts"><b>F6</b>Zeitreihen</a>
-      <a class="key" href="#u-ueb" data-v="u-ueb" data-b="u"><b>F1</b>Branchen</a>
-      <a class="key" href="#u-branche" data-v="u-branche" data-b="u"><b>F2</b>Branche</a>
-      <a class="key" href="#u-vergleich" data-v="u-vergleich" data-b="u"><b>F3</b>Unternehmen</a>
+      <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
+      <a class="key" href="#u-branche" data-v="u-branche"><b>F2</b>Branche</a>
+      <a class="key" href="#u-vergleich" data-v="u-vergleich"><b>F3</b>Vergleich</a>
+      <a class="key" href="#u-verzeichnis" data-v="u-verzeichnis"><b>F4</b>Verzeichnis</a>
+    </nav>
+    <nav class="subkeys" id="subkeys" aria-label="Banken-Analyse" hidden>
+      <span>Branche Banken ›</span>
+      <a href="#grp" data-v="grp">Gruppen</a><a href="#quot" data-v="quot">Quoten</a><a href="#cmp" data-v="cmp">Einzelbanken</a>
+      <a href="#rank" data-v="rank">Liste</a><a href="#mkt" data-v="mkt" id="key-mkt">Börse</a><a href="#ts" data-v="ts">Zeitreihen</a>
     </nav>
   </header>
   <div class="quotes" id="quotes" aria-label="Schlusskurse"></div>
@@ -798,21 +804,20 @@ function tape() {
 
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
-  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl() };
-const bereichVon = v => v.startsWith("u-") ? "u" : "b";
-let aktuell = "grp", metaBanken = "";
+  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz() };
+const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
+let aktuell = "u-ueb", metaBanken = "";
 function render() {
-  const h = location.hash.slice(1);
-  aktuell = VIEWS[h] ? h : "grp";
-  const ber = bereichVon(aktuell);
-  document.body.dataset.bereich = ber;
-  document.querySelectorAll("[data-b]").forEach(k => { if (k.classList.contains("key")) k.hidden = k.dataset.b !== ber && !(k.dataset.b === undefined && ber === "b"); });
-  document.querySelectorAll(".key:not([data-b])").forEach(k => k.hidden = ber !== "b");
-  document.querySelectorAll("#bereich a").forEach(a => a.dataset.b === ber ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
-  document.getElementById("tape").hidden = document.getElementById("quotes").hidden = ber !== "b";
-  document.getElementById("meta").textContent = ber === "u" ? UNT.meta() : metaBanken;
-  document.querySelectorAll(".key").forEach(k => k.dataset.v === aktuell ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
-  document.getElementById("view").innerHTML = VIEWS[aktuell]();
+  let h = location.hash.slice(1), html;
+  if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
+  else { aktuell = VIEWS[h] ? h : "u-ueb"; html = VIEWS[aktuell](); }
+  const bank = BANKVIEWS.includes(aktuell);
+  document.getElementById("subkeys").hidden = !bank;
+  document.getElementById("tape").hidden = document.getElementById("quotes").hidden = !bank;
+  document.getElementById("meta").textContent = bank ? metaBanken : UNT.meta();
+  const aktiv = bank ? "u-branche" : aktuell.startsWith("firma-") ? "u-verzeichnis" : aktuell;
+  document.querySelectorAll(".key, .subkeys a").forEach(k => (k.dataset.v === aktuell || (k.classList.contains("key") && k.dataset.v === aktiv)) ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
+  document.getElementById("view").innerHTML = html;
   const add = document.getElementById("cmpadd");
   if (add) add.addEventListener("change", () => { bankDazu(add.value); });
   UNT.nachRender();
@@ -821,7 +826,7 @@ function gehe(v) { if (location.hash === "#" + v) render(); else location.hash =
 function bankFinden(q) { q = q.trim().toLowerCase(); if (!q) return null; return BANKEN.find(b => b.bank.toLowerCase() === q) || BANKEN.find(b => b.bank.toLowerCase().includes(q)); }
 function bankDazu(name) {
   const b = bankFinden(name);
-  if (!b) { const f = UNT.finden(name); if (f) { UNT.hinzu(f.name); gehe("u-vergleich"); } return; }
+  if (!b) { const f = UNT.finden(name); if (f) gehe("firma-" + f.id); return; }
   if (auswahl === null) viewCmp();
   if (!auswahl.includes(b.bank)) { auswahl.push(b.bank); if (auswahl.length > 6) auswahl.shift(); }
   gehe(aktuell === "ts" ? "ts" : "cmp");
@@ -847,14 +852,17 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   if (e.key !== "Enter") return;
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
-  const alias = { ueb: "u-ueb", bra: "u-branche", branchen: "u-ueb", ucmp: "u-vergleich" }[c];
-  if (VIEWS[c]) gehe(c); else if (alias && UNT.da()) gehe(alias); else bankDazu(v);
+  const alias = { ueb: "u-ueb", bra: "u-branche", branchen: "u-ueb", ucmp: "u-vergleich", verz: "u-verzeichnis" }[c];
+  if (VIEWS[c]) gehe(c);
+  else if (alias) gehe(alias);
+  else if (BANKVIEWS.includes(aktuell) && bankFinden(v)) bankDazu(v);       // in den Bankenansichten Eingabe = Bank zur Auswahl
+  else { const f = UNT.finden(v); if (f) gehe("firma-" + f.id); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereichVon(aktuell) === "u" ? { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich" } : { F1: "grp", F2: "quot", F3: "cmp", F4: "rank", F5: "mkt", F6: "ts" })[e.key];
+  const m = { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis" }[e.key];
   if (m) { e.preventDefault(); gehe(m); }
 });
-addEventListener("hashchange", render);
+addEventListener("hashchange", () => { render(); scrollTo(0, 0); });
 
 /* ---------- Start ---------- */
 async function start() {
@@ -866,7 +874,8 @@ async function start() {
   document.getElementById("banklist").innerHTML = BANKEN.map(b => `<option value="${esc(b.bank)}">`).join("");
   let ud = null;
   try { ud = JSON.parse(document.getElementById("unternehmen").textContent); } catch { try { ud = await (await fetch("../data/unternehmen.json")).json(); } catch { ud = null; } }
-  if (UNT.init(ud)) { document.getElementById("bereich-u").hidden = false; document.getElementById("firmenliste").innerHTML = UNT.datalist(); }
+  UNT.init(ud);
+  document.getElementById("firmenliste").innerHTML = UNT.datalist();
   tape();
   quotes();
   render();

@@ -1,6 +1,6 @@
 {
   "_hinweis": "Kennzahlen-Katalog für alle Nicht-Bank-Branchen. 'key' ist der interne Name, 'aliase' sind Spaltenüberschriften (ohne Einheit, Groß-/Kleinschreibung egal), über die unternehmen.py die Spalten der Branchen-Excel erkennt. fmt: mio (Mio. in Berichtswährung), pct (Anteil, 0,12 = 12 %), x (Vielfaches), eur (Kurs), zahl. hoch: true = höher ist besser, false = niedriger ist besser, null = keine Wertung. Spalten, die hier nicht vorkommen, werden trotzdem als zusätzliche Kennzahl übernommen.",
-  "gruppen": ["Kapitalmarkt", "Größe & GuV", "Rentabilität", "Bilanz & Cashflow", "Wachstum"],
+  "gruppen": ["Kapitalmarkt", "Größe & GuV", "Rentabilität", "Bilanz & Cashflow", "Wachstum", "Aufsicht (Banken)"],
   "kennzahlen": [
     {"key": "marktkap", "name": "Börsenwert", "einheit": "Mio. €", "fmt": "mio", "gruppe": "Kapitalmarkt", "hoch": null, "aliase": ["börsenwert", "marktkapitalisierung", "market cap", "marktkap"]},
     {"key": "kurs", "name": "Kurs", "einheit": "€", "fmt": "eur", "gruppe": "Kapitalmarkt", "hoch": null, "aliase": ["kurs", "schlusskurs", "aktienkurs"]},
@@ -28,9 +28,16 @@
     {"key": "fcf", "name": "Free Cashflow", "einheit": "Mio. €", "fmt": "mio", "gruppe": "Bilanz & Cashflow", "hoch": null, "aliase": ["free cashflow", "free cash flow", "fcf"]},
     {"key": "fcf_marge", "name": "FCF-Marge", "fmt": "pct", "gruppe": "Bilanz & Cashflow", "hoch": true, "aliase": ["fcf-marge", "free-cashflow-marge"]},
     {"key": "w_umsatz", "name": "Umsatzwachstum", "fmt": "chg", "gruppe": "Wachstum", "hoch": true, "aliase": ["umsatzwachstum", "umsatz wachstum"]},
-    {"key": "w_jue", "name": "Ergebniswachstum", "fmt": "chg", "gruppe": "Wachstum", "hoch": true, "aliase": ["ergebniswachstum", "jahresüberschuss wachstum"]}
+    {"key": "w_jue", "name": "Ergebniswachstum", "fmt": "chg", "gruppe": "Wachstum", "hoch": true, "aliase": ["ergebniswachstum", "jahresüberschuss wachstum"]},
+    {"key": "w_bilanzsumme", "name": "Bilanzsummenwachstum", "fmt": "chg", "gruppe": "Wachstum", "hoch": null, "aliase": ["bilanzsummenwachstum", "wachstum bilanzsumme"]},
+    {"key": "cet1_quote", "name": "CET1-Quote", "fmt": "pct", "gruppe": "Aufsicht (Banken)", "hoch": true, "aliase": ["cet1-quote", "harte kernkapitalquote"]},
+    {"key": "gk_quote", "name": "Gesamtkapitalquote", "fmt": "pct", "gruppe": "Aufsicht (Banken)", "hoch": true, "aliase": ["gesamtkapitalquote"]},
+    {"key": "lr", "name": "Leverage Ratio", "fmt": "pct", "gruppe": "Aufsicht (Banken)", "hoch": true, "aliase": ["leverage ratio", "verschuldungsquote", "leverage_ratio"]},
+    {"key": "rwa_dichte", "name": "RWA-Dichte", "fmt": "pct", "gruppe": "Aufsicht (Banken)", "hoch": null, "aliase": ["rwa-dichte"]},
+    {"key": "fonds_bs", "name": "Fonds § 340g in % BS", "fmt": "pct", "gruppe": "Aufsicht (Banken)", "hoch": true, "aliase": ["fonds § 340g in % bs"]}
   ],
   "branchen": [
+    {"id": "banken", "name": "Banken", "aliase": ["banken", "bank", "kreditinstitute", "kreditinstitut"], "gruppen": ["Sparkassen", "Genossenschaftsbanken", "Landesbanken", "Private Banken", "Förder- und Sonderinstitute"], "schwerpunkt": ["bilanzsumme", "ek_quote", "cet1_quote", "lr", "roe", "kbv"], "analyse": "grp"},
     {"id": "auto", "name": "Automobil & Zulieferer", "aliase": ["automobil", "auto", "fahrzeuge", "automobil & zulieferer"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "fcf_marge", "verschuldung"]},
     {"id": "chemie-pharma", "name": "Chemie, Pharma & Gesundheit", "aliase": ["chemie", "pharma", "gesundheit", "chemie & pharma", "healthcare"], "schwerpunkt": ["ebitda_marge", "umsatz", "kgv", "div_rendite", "verschuldung", "roe"]},
     {"id": "industrie", "name": "Industrie & Bau", "aliase": ["industrie", "bau", "maschinenbau", "industrie & bau"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "roe", "verschuldung"]},

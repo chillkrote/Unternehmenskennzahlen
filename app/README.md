@@ -27,31 +27,47 @@ Andere Excel-Datei: `python3 app/build.py --excel pfad/zur/datei.xlsx`.
 
 Nach jeder Änderung an der Excel (z. B. durch `rohdaten/skripte/build.py`) einfach `app/build.py` neu laufen lassen.
 
-## Ansichten
+## Bankenansichten (über Branche Banken erreichbar, jetzt ohne F-Tasten)
 
-| Taste | Kürzel | Inhalt |
-|---|---|---|
-| F1 | GRP | Gruppenvergleich: Passivstruktur, Kennzahlen-Mediane, CET1-Zusammensetzung (CC1), RWA-Aufteilung (OV1) |
-| F2 | QUOT | Verteilung einer Quote je Gruppe (Punkte je Bank, Median, Quartilsband) und Streudiagramm Risikodichte gegen Kapital |
-| F3 | CMP | Einzelbankvergleich: Kennzahlenmatrix mit Perzentil, Abweichung vom Gruppenmedian, Kapitalquoten gegen Anforderung, Passiv- und RWA-Struktur, Bilanzsumme im Zeitverlauf |
-| F4 | RANK | sortierbare Liste aller Banken, filterbar nach Gruppe |
-| F5 | MKT | Börsendaten: Kurs, 1T/1M/YTD/1J, 52-Wochen-Spanne, Börsenwert, Börsenwert / HGB-EK, indexierter Kursverlauf; Kennzahlenvergleich aus den Konzernabschlüssen (KGV, KBV, Kurs/mat. Buchwert, Dividendenrendite, Ausschüttungsquote, RoE, RoTE, RoA, Cost-Income-Ratio, Vorsteuermarge, Steuerquote, Zinsanteil, Zinsmarge, EK-Quote, Kreditanteil, Goodwill/EK, Wachstum), Rangfolge je Kennzahl und Bewertung gegen Rentabilität (Kurs/mat. Buchwert gegen RoTE) |
+| Kürzel | Inhalt |
+|---|---|
+| GRP | Gruppenvergleich: Passivstruktur, Kennzahlen-Mediane, CET1-Zusammensetzung (CC1), RWA-Aufteilung (OV1) |
+| QUOT | Verteilung einer Quote je Gruppe (Punkte je Bank, Median, Quartilsband) und Streudiagramm Risikodichte gegen Kapital |
+| CMP | Einzelbankvergleich: Kennzahlenmatrix mit Perzentil, Abweichung vom Gruppenmedian, Kapitalquoten gegen Anforderung, Passiv- und RWA-Struktur, Bilanzsumme im Zeitverlauf |
+| RANK | sortierbare Liste aller Banken, filterbar nach Gruppe |
+| MKT | Börsendaten: Kurs, 1T/1M/YTD/1J, 52-Wochen-Spanne, Börsenwert, Börsenwert / HGB-EK, indexierter Kursverlauf; Kennzahlenvergleich aus den Konzernabschlüssen (KGV, KBV, Kurs/mat. Buchwert, Dividendenrendite, Ausschüttungsquote, RoE, RoTE, RoA, Cost-Income-Ratio, Vorsteuermarge, Steuerquote, Zinsanteil, Zinsmarge, EK-Quote, Kreditanteil, Goodwill/EK, Wachstum), Rangfolge je Kennzahl und Bewertung gegen Rentabilität (Kurs/mat. Buchwert gegen RoTE) |
 
 Oben läuft zusätzlich eine Kursleiste mit den letzten Schlusskursen; in CMP erscheinen Börsenwert, Börsenwert / HGB-EK und die Aktie, wo vorhanden.
 
-## Branchen (Unternehmen außerhalb des Bankensektors)
+## Branchen, Unternehmen und Profilseiten
 
-Oben rechts schaltet der Schalter „Banken / Branchen“ um. Im Bereich Branchen gibt es drei Ansichten:
-F1 Branchenübersicht (Kacheln, Mediantabelle je Branche, Streudiagramm aller Unternehmen),
-F2 Branche (Ranglisten, Profil gegen die übrigen Branchen, Kursverlauf, Bewertung gegen Rentabilität),
-F3 Unternehmen (bis zu 6 Unternehmen aus allen Branchen: Kennzahlenmatrix mit Perzentilen, Abstand zum Branchenmedian, indexierte Kurse).
-Befehlszeile: `BRA`, `UCMP`, `UEB` oder ein Firmenname.
+Das Terminal kennt keinen Unterschied mehr zwischen Banken und anderen Unternehmen: Banken sind eine Branche unter allen.
+Aufbau von oben nach unten: **Branche** → **Untergruppe** (z. B. Sparkassen, Genossenschaftsbanken; für andere Branchen die Spalte
+„Gruppe“) → **Notierung** (börsennotiert / nicht börsennotiert, als Filter) → **Unternehmen**.
 
-Datenschicht: `unternehmen.py` liest alle Excel-Tabellen unter `unternehmen*/` (bzw. Branchen-Ordnern) im Repo über die
-Spaltenüberschriften. Welche Überschrift welche Kennzahl ist, steht samt Aliasen in `unternehmen_katalog.json`; neue Branchen
-und Spalten erscheinen ohne Codeänderung. Fehlen die Tabellen, zeigt das Terminal Beispieldaten
-(`unternehmen_demo.py`, Yahoo Finance, ca. 43 deutsche Werte) und kennzeichnet sie als solche.
-`build.py` bettet das Ergebnis ein (`data/unternehmen.json`).
+* F1 Branchen: Kacheln, Mediantabelle je Branche, Streudiagramm aller Unternehmen.
+* F2 Branche: Filter für Branche, Untergruppe und Notierung; Tabelle, Rangfolge, Profil gegen die übrigen Branchen, Kurse, Kennzahlen gegeneinander.
+  In der Branche Banken führt der Block „Spezialansichten Banken“ zu den bisherigen Ansichten GRP, QUOT, CMP, RANK, MKT und TS.
+* F3 Vergleich: bis zu 6 Unternehmen aus beliebigen Branchen (Perzentile in der eigenen Branche, Abstand zum Branchenmedian, Kurse).
+* F4 Verzeichnis: alle Unternehmen mit Suche und Filter.
+* Profilseite je Unternehmen (`#firma-<id>`, auch über die Kommandozeile mit dem Namen): Kennzahlen mit Branchen- und Gruppenmedian,
+  Zeitreihen, Kurse und alle Dokumente des Unternehmens aus dem Repo mit Download- und GitHub-Link, Quelle und Prüfsumme.
+
+Nicht börsennotierte Unternehmen erscheinen mit Abschlusskennzahlen, ohne Kurs- und Bewertungswerte. Ob ein Unternehmen notiert ist,
+steht in der Spalte „Börsennotiert“ der Branchentabelle bzw. in `zeitreihen/stammdaten.csv` (Spalte `notiert`); fehlt sie, gilt ein
+Unternehmen mit Ticker oder ISIN als notiert. Neue Unternehmen kommen über `zeitreihen/stammdaten.csv` (Spalten `unternehmen_id`, `name`,
+`branche`, `gruppe`, optional `notiert`, `isin`, `ticker`, `sitz`) oder über Branchen-Excel hinzu.
+
+Datenschicht `unternehmen.py` (liest alles ohne Codeänderung):
+
+* Branchen-Excel in beliebigen Ordnern des Repos (außer `banken/`, `zeitreihen/`, `app/`): Spalten über die Überschrift, Aliase in
+  `unternehmen_katalog.json`; unbekannte Zahlenspalten werden als weitere Kennzahl übernommen. Neue Branchen erscheinen automatisch.
+* Banken aus dem Bilanzvergleich (HGB-Einzelabschluss) plus Börsendaten der selbst notierten Institute.
+* `zeitreihen/zeitreihe_lang.csv`: Reihen je Unternehmen (Profilseite); der letzte Wert füllt fehlende Kennzahlen.
+* Dokumente: Dateien unter `…/dokumente/<unternehmen-id>/` (auch `webseiten/`, `berichte/`, `geschaeftsberichte/`), dazu jede `index.csv` in
+  solchen Ordnern (Spalten u. a. `unternehmen_id` oder `unternehmen`/`bank`, `datei`, `titel`, `dokumentart`, `jahr`, `quelle_url`,
+  `abruf`, `sha256`). Download-Links zeigen auf `https://github.com/<repo>/raw/main/<pfad>`; Repo über `TERMINAL_REPO` einstellbar.
+* Solange außer den Banken keine Branche Daten hat, zeigt das Terminal Beispieldaten (`unternehmen_demo.py`, Yahoo Finance) und kennzeichnet sie.
 
 ## Täglicher Abruf
 

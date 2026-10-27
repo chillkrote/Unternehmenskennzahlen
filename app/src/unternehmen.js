@@ -57,11 +57,18 @@ const UNT = (() => {
     const m = f.ticker && typeof MARKT !== "undefined" && MARKT && MARKT.werte.find(x => x.ticker === f.ticker);
     return m && m.kurse && m.kurse.length > 1 ? { ticker: m.ticker, bank: f.name, mutter: null, ebene: "Institut", kurse: m.kurse, datum: m.datum } : null;
   }
-  /* Kurse für die Korrelationsauswertung: volle Historie (kurse_hist in markt.json), sonst der Verlauf der Ansichten */
+  /* Kurse für die Korrelationsauswertung: täglich (kurse_hist in markt.json, Banken), sonst Wochenkurse aller Notierten (kurse_woche.json), sonst der Verlauf der Ansichten */
+  let wochenIdx = null;
   function kurseHist(f) {
-    const k = kurseVon(f); if (!k) return null;
     const m = f.ticker && typeof MARKT !== "undefined" && MARKT && MARKT.werte.find(x => x.ticker === f.ticker);
-    return m && m.kurse_hist && m.kurse_hist.length > 1 ? { ...k, kurse: m.kurse_hist } : k;
+    if (m && m.kurse_hist && m.kurse_hist.length > 1) return { ticker: f.ticker, kurse: m.kurse_hist, waehrung: m.waehrung, freq: "D" };
+    if (f.ticker && typeof KURSE !== "undefined" && KURSE && KURSE.t[f.ticker]) {
+      const v = KURSE.t[f.ticker], pts = [];
+      for (let i = 0; i < v.length; i++) if (v[i] != null) pts.push([KURSE.daten[i], v[i]]);
+      if (pts.length > 1) return { ticker: f.ticker, kurse: pts, freq: "W" };
+    }
+    const k = kurseVon(f);
+    return k ? { ...k, freq: "D" } : null;
   }
   const adapter = liste => liste.map(kurseVon).filter(Boolean);
   const profilLink = (f, text) => `<a class="flink" href="#firma-${f.id}">${esc(text == null ? kurzU(f.name) : text)}</a>`;

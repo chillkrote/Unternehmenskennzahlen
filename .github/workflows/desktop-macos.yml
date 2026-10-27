@@ -1,0 +1,48 @@
+name: macOS-App bauen
+
+# Baut die Desktop-Anwendung (Electron) als .dmg für Apple-Silicon und Intel.
+# Ohne Apple-Developer-Konto: ad-hoc signiert, nicht notarisiert (Gatekeeper-Hinweis siehe desktop/README.md).
+# Start von Hand (Actions > macOS-App bauen > Run workflow) oder durch ein Tag "desktop-v*", das zusätzlich ein Release anlegt.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["desktop-v*"]
+  pull_request:
+    paths: ["desktop/**", ".github/workflows/desktop-macos.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  dmg:
+    runs-on: macos-14
+    steps:
+      # nur app/ und desktop/ auschecken: das Repo enthält hunderte MB Originaldokumente
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            app
+            desktop
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - run: npm ci
+        working-directory: desktop
+      - run: npm run dist
+        working-directory: desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Terminal-macOS
+          path: |
+            desktop/dist/*.dmg
+            desktop/dist/*.zip
+          retention-days: 30
+      - name: Release anlegen
+        if: startsWith(github.ref, 'refs/tags/desktop-v')
+        run: gh release create "$GITHUB_REF_NAME" desktop/dist/*.dmg desktop/dist/*.zip --title "Terminal $GITHUB_REF_NAME" --notes "macOS-App (unsigniert). Anleitung: desktop/README.md"
+        env:
+          GH_TOKEN: ${{ github.token }}

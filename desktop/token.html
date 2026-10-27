@@ -1,0 +1,15 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<style>
+body{font:13px -apple-system,system-ui,sans-serif;background:#1c1c1e;color:#eee;margin:0;padding:18px}
+p{margin:0 0 10px;line-height:1.45;color:#bbb} input{width:100%;box-sizing:border-box;padding:8px;border-radius:6px;border:1px solid #555;background:#000;color:#fff;font:12px ui-monospace,monospace}
+.r{display:flex;gap:8px;justify-content:flex-end;margin-top:12px} button{padding:6px 14px;border-radius:6px;border:1px solid #555;background:#333;color:#fff} button.p{background:#d99a1c;border-color:#d99a1c;color:#000}
+</style></head><body>
+<p>Das Repo ist privat. Für das Daten-Update braucht die App einen GitHub-Token mit Lesezugriff (fine-grained, Repository <b>Unternehmenskennzahlen</b>, Berechtigung „Contents: Read-only“). Er wird verschlüsselt im macOS-Schlüsselbund abgelegt.</p>
+<input id="t" type="password" placeholder="github_pat_…" autofocus>
+<div class="r"><button id="a">Abbrechen</button><button id="o" class="p">Speichern</button></div>
+<script>
+const f=document.getElementById("t");
+document.getElementById("o").onclick=()=>tokenDialog.senden(f.value.trim());
+document.getElementById("a").onclick=()=>tokenDialog.abbrechen();
+f.addEventListener("keydown",e=>{if(e.key==="Enter")tokenDialog.senden(f.value.trim())});
+</script></body></html>

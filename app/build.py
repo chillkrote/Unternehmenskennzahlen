@@ -34,7 +34,8 @@ def main():
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/"))
-             .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__VWL__", vroh.replace("</", "<\\/")))
+             .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__VWL__", vroh.replace("</", "<\\/"))
+             .replace("__KORRELATION_JS__", (HIER / "src/korrelation.js").read_text()))
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (HIER / "dist/bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

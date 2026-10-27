@@ -81,3 +81,17 @@ Gruppenwerte ohne Zusatzeinträge (DZ BANK, DekaBank, DKB). KM1-Werte stammen te
 Das Terminal öffnet mit einer Startseite (`#start`) und zwei Kacheln. **Unternehmen** führt in das Branchen-Terminal (F1 Branchen, F2 Branche, F3 Vergleich, F4 Verzeichnis, Profilseiten `#firma-<id>` mit Kennzahlen, Gremien, Vergütung und Dokumenten). **Volkswirtschaft** führt in das makroökonomische Terminal (F1 Überblick, F2 Zeitreihen, F3 Länder, F4 Berichte & Quellen). Die Daten dafür liegen in `volkswirtschaft/` und werden von `vwl.py` eingelesen; `build.py` bettet sie ein.
 
 Gremien und Vergütung auf der Profilseite kommen aus `governance/*.csv` und hängen über `unternehmen_id` am Unternehmen; neue Zeilen erscheinen nach `python3 app/build.py` ohne Codeänderung.
+
+## Korrelation (KOR, F6)
+
+Statistische Korrelationsauswertung, vollständig im Browser gerechnet (`src/korrelation.js`, keine Bibliotheken, läuft daher auch im Artifact und in einer Desktop-App). Erreichbar über F6 in beiden Bereichen, die Startseite oder die Kommandozeile (`KORR`).
+
+| Modus | Inhalt |
+|---|---|
+| Zeitreihen A ↔ B | zwei frei gewählte Reihen: VWL-Reihe und Land, Jahreskennzahl eines Unternehmens, Aktienkurs, Median einer Kennzahl je Branche, gleichgewichteter Kursindex einer Branche. Wahl von Zeitraum (Jahre), Frequenz (Jahr, Quartal, Monat, Tag), Transformation je Reihe (Niveau, Differenz, Veränderung zur Vorperiode, Log-Rendite, Veränderung zum Vorjahr), Verzögerung (Kreuzkorrelation), Pearson oder Spearman. Ausgabe: r, ρ, p-Wert, p-Wert mit effektiver Stichprobe, 95-%-Intervall (Fisher-z), R², Regressionsgerade, Streudiagramm, Kreuzkorrelation, Verlauf, automatische Hinweise |
+| Matrix | bis 14 Reihen, alle Paare als Heatmap; Klick auf eine Zelle öffnet das Paar. Voreinstellungen: VWL-Kernreihen, Kurse großer Werte, Branchen-Kursindizes |
+| Querschnitt | zwei Kennzahlen über alle Unternehmen (Filter Branche, Notierung, optional log₁₀), Streudiagramm mit Klick ins Profil, Kennzahlenmatrix |
+
+Regeln: Perioden ohne Wert in einer der beiden Reihen fallen heraus, es wird nichts interpoliert. Projektionen (`prognose_ab`) sind ausgeschlossen. Bei Umrechnung auf gröbere Frequenz gilt der Mittelwert für Raten und Salden, sonst der letzte Wert. Hinweise erscheinen bei n < 10 und n < 30, bei Niveaureihen mit Trend (Scheinkorrelation), hoher Autokorrelation (n_eff nach Bartlett), überlappenden Vorjahresraten, Durbin-Watson < 1, starker Abweichung zwischen Pearson und Spearman und beim besten von mehreren Lags (nicht multipel getestet). Der Datenbestand bestimmt, was auswertbar ist: Jahreskennzahlen mit Zeitreihe gibt es derzeit nur für Banken, Kurse reichen etwa ein Jahr zurück. Neue Reihen im Repo erscheinen automatisch.
+
+Die Statistik wurde gegen SciPy geprüft (Pearson, Spearman, p-Werte, Regression stimmen auf mindestens 10 Stellen überein).

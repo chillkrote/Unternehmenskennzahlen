@@ -461,5 +461,5 @@ const UNT = (() => {
   }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
+  return { init, da, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseVon }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] };
 })();

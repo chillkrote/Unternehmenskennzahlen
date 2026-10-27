@@ -32,11 +32,11 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | # | Punkt | W/A | Status |
 |---|---|---|---|
 | C1 | Fehlende Kurse der 41 Ticker (Alternativ-Ticker/Suffix prüfen) | 3/2 | ✋ Yahoo antwortet aus der Cloud mit 429; die 40 betroffenen Ticker meist neue ISIN/Neunotierung, im nächsten Actions-Lauf prüfen |
-| C2 | Dividenden und Aktiensplits (Historie, Yahoo-Chart-API) | 3/2 | ☐ |
+| C2 | Dividenden und Aktiensplits (Historie, Yahoo-Chart-API) | 3/2 | ✋ Yahoo aus der Cloud gesperrt (429); Abruf im Actions-Lauf einbauen, ohne Test hier nicht sinnvoll |
 | C3 | Indexzugehörigkeit (DAX, MDAX, SDAX, TecDAX) aus Indexlisten | 3/1 | ☑ `universum/indexzugehoerigkeit.csv` + Abweichungsbericht |
 | C4 | Stimmrechtsmitteilungen / Directors' Dealings (BaFin-Datenbanken, frei) | 2/3 | ☐ |
 | C5 | Governance für restliche DAX/MDAX | 3/3 | ◐ eigener Thread |
-| C6 | Ludwigsburg Vorjahres-Bilanzsumme (statt Zeitungswert) | 1/1 | ☐ |
+| C6 | Ludwigsburg Vorjahres-Bilanzsumme (statt Zeitungswert) | 1/1 | ✋ ungeklärt: Zeitung 12,8–12,9 Mrd. vs. DSGV-Rangliste 2024 13,3 Mrd.; braucht den Jahresabschluss 2024 (Bundesanzeiger, Captcha) |
 | C7 | Sparkassen/Banken mit nur Vorjahres-Abschluss: neue Veröffentlichungen prüfen | 2/2 | ☐ |
 | C8 | Segmentdaten (Umsatz je Segment) aus Berichten | 2/3 | ☐ |
 | C9 | ESG-Kennzahlen aus Nachhaltigkeitsberichten (CO2, Frauenquote) | 2/3 | ☐ |

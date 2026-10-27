@@ -33,7 +33,7 @@ Banken stehen in der Branche `banken` nur mit Kapitalmarktdaten; die eigentliche
 | `universum_instrumente.csv` | eine Zeile je Aktiengattung (Stamm-/Vorzugsaktien getrennt) |
 | `rohdaten_instrumente_roh.csv` | Rohliste aus den Börsenquellen vor Zusammenführung |
 | `korrekturen.json` | Hand-Zuordnungen (Branche, Name, Website, Zusammenführung) für Werte ohne Börsensektor |
-| `ids.json` | einmal vergebene Unternehmens-IDs je ISIN (Ordnernamen bleiben stabil) |
+| *(entfällt)* `ids.json` | ersetzt durch das zentrale Register `stammdaten/` (ID `U000123`, ISIN → ID in `stammdaten/isin_zuordnung.csv`) |
 | `quellen/` | Originalabrufe der Börsenlisten (XLSX, HTML, CSV; Frankfurt-Liste gzip-komprimiert) |
 | `skripte/universum.py` | liest die Quellen, schreibt `rohdaten_instrumente_roh.csv` |
 | `skripte/unternehmen.py` | fasst Gattungen zu Unternehmen zusammen und ordnet Branchen zu |

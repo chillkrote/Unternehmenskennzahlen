@@ -18,7 +18,7 @@ Erhebung für alle Unternehmen des Repos (Banken aus `banken/bilanzvergleich-gj2
 | `verguetung.csv` | Vergütung je Gremium und GJ, Einzelwerte (soweit angegeben) und Gesamt, mit Basis (§ 285 Nr. 9a HGB, § 162 AktG, DCGK-Tabelle) | `unternehmen_id`, `gj`, `gremium`, `person_id` |
 | `kennzahlen_gremien.csv` | Langformat je Unternehmen/GJ: `vorstand_mitglieder_zahl`, `vorstand_frauen_zahl`, `ar_mitglieder_zahl`, `ar_frauen_zahl`, `ar_arbeitnehmervertreter_zahl`, `ar_gewerkschaftsvertreter_zahl`, `mitbestimmung_ar` (MitbestG / DrittelbG / MontanMitbestG / keine), `pay_ratio` (CEO zu Durchschnittsbelegschaft laut Vergütungsbericht, mit Definition), `mitarbeiter_jahresdurchschnitt` | `unternehmen_id`, `gj`, `feld` |
 
-`unternehmen_id` entspricht `zeitreihen/stammdaten.csv` (Banken) bzw. `universum/universum.csv` (Börsenunternehmen). Das Langformat erlaubt neue Felder ohne Schemaänderung und je Wert eine Quelle.
+`unternehmen_id` ist die zentrale Unternehmens-ID aus `stammdaten/unternehmen_ids.csv` (`U000123`); alte Schreibweisen löst `skripte/lib.py` beim Schreiben selbst auf. Das Langformat erlaubt neue Felder ohne Schemaänderung und je Wert eine Quelle.
 
 ## Erhebungsreihenfolge
 1. Pilot Banken aus lokal vorhandenen Jahresabschlüssen: erledigt für Commerzbank, Deutsche Bank, HypoVereinsbank (`skripte/pilot_banken.py`).

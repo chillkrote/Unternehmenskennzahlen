@@ -157,8 +157,10 @@ def gegen_referenz(ref):
         if r["unternehmen_id"] not in jetzt:
             fehler.append(f"ID {r['unternehmen_id']} ({r['name']}) ist gegenüber {ref} verschwunden; IDs werden nie gelöscht oder neu vergeben")
     neu_isin = {r["isin"]: r["unternehmen_id"] for r in ids._lesen(ids.ISINS)}
+    reg = ids.Register()
     for r in alt_i or []:
-        if neu_isin.get(r["isin"], r["unternehmen_id"]) != r["unternehmen_id"]:
+        neu = neu_isin.get(r["isin"], r["unternehmen_id"])
+        if neu != r["unternehmen_id"] and reg.exakt.get(r["unternehmen_id"]) != neu:  # Wechsel nur, wenn die alte ID als Alias auf die neue zeigt (Zusammenführung)
             fehler.append(f"ISIN {r['isin']} wechselte gegenüber {ref} von {r['unternehmen_id']} zu {neu_isin[r['isin']]}")
     return fehler
 

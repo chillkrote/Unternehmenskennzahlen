@@ -55,7 +55,7 @@ Aufbau von oben nach unten: **Branche** → **Untergruppe** (z. B. Sparkassen, G
 
 Nicht börsennotierte Unternehmen erscheinen mit Abschlusskennzahlen, ohne Kurs- und Bewertungswerte. Ob ein Unternehmen notiert ist,
 steht in der Spalte „Börsennotiert“ der Branchentabelle bzw. in `zeitreihen/stammdaten.csv` (Spalte `notiert`); fehlt sie, gilt ein
-Unternehmen mit Ticker oder ISIN als notiert. Neue Unternehmen kommen über `zeitreihen/stammdaten.csv` (Spalten `unternehmen_id`, `name`,
+Unternehmen mit Ticker oder ISIN als notiert. Die Unternehmens-ID kommt ausschließlich aus `stammdaten/` (`U000123`, siehe [stammdaten/README.md](../stammdaten/README.md)); der Build bricht ab, wenn ein Unternehmen dort fehlt oder eine ISIN bei mehreren IDs steht. Alte Lesezeichen `#firma-<alte-id>` werden umgeleitet. Neue Unternehmen kommen über `zeitreihen/stammdaten.csv` (Spalten `unternehmen_id`, `name`,
 `branche`, `gruppe`, optional `notiert`, `isin`, `ticker`, `sitz`) oder über Branchen-Excel hinzu.
 
 Datenschicht `unternehmen.py` (liest alles ohne Codeänderung):

@@ -29,3 +29,7 @@ Erhebung für alle Unternehmen des Repos (Banken aus `banken/bilanzvergleich-gj2
 ## Offen
 - Pay Ratio, Frauenquote Vorstand, Einzelvergütung und ausführliche Lebensläufe stehen nicht im HGB-Jahresabschluss, sondern im Geschäftsbericht bzw. Vergütungsbericht. Für die Börsenunternehmen liegen die PDFs nicht im Repo (LFS-Upload damals gescheitert) und die Unternehmensseiten sind für die Sitzung gesperrt.
 - Anbindung an das Bank-Terminal (`app/`): Profilseite je Unternehmen zeigt Gremien und Kennzahlen; Personen-Profilseite aus `personen`/`gremien_mitglieder`/`mandate_extern`/`werdegang`.
+
+## Berechnungen
+
+`berechnungen/` enthält Pay Ratio und Gender Pay Gap im Vorstand nach Böckler-Methodik (Beschreibung in `berechnungen/METHODE.md`, Skript `skripte/berechnung.py`).

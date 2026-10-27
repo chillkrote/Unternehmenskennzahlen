@@ -5,7 +5,7 @@ uni('SAP SE','sap-se'); uni('Merck KGaA','merck-kgaa'); uni('Lanxess AG','lanxes
 for n,f,t,sp in [('Bjørn Gulden','Vorsitzender (CEO)',6896.216,12),('Harm Ohlmeyer','Finanzen (CFO)',2866.084,12),
                  ('Michelle Robertson','Global Human Resources, People and Culture',2372.289,13),('Mathieu Sidokpohou','Vertrieb',2189.832,13)]:
     M(G,'Vorstand',n,f,'','','',sp,'','Funktion lt. Vergütungsbericht S. %d' % sp)
-    V(R,'Vorstand',n,t*1000,'Gesamtvergütung gem. § 162 AktG (gewährt und geschuldet, ohne Versorgungsaufwand)',sp,'in EUR')
+    V(R,'Vorstand',n,t,'Gesamtvergütung gem. § 162 AktG (gewährt und geschuldet, ohne Versorgungsaufwand)',sp,'in T€ (Quelle in EUR, exakt: %d EUR)' % round(t*1000))
 AR=[('Thomas Rabe','Vorsitzender','Anteilseigner','Vorstandsvorsitzender, Bertelsmann Management SE','2019-05-09',21),
  ('Paul Francis Seline','stellv. Vorsitzender','Arbeitnehmer','Vorsitzender des Betriebsrats Herzogenaurach','2024-05-16',21),
  ('Nassef Sawiris','stellv. Vorsitzender','Anteilseigner','Executive Chairman OCI N.V.','2016-06-15',21),

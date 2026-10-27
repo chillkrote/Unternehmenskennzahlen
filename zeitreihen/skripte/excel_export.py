@@ -52,4 +52,5 @@ def main():
     print("gespeichert:", HIER / "Zeitreihen_Banken.xlsx", wb.sheetnames)
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -39,4 +39,5 @@ def main():
     print(neu)
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -1,4 +1,7 @@
 unternehmen_id,kennzahl,stichtag,wert,einheit,waehrung,rechnungslegung,ebene,quelle,pruefstatus
+aareal-bank-ag,bilanzsumme,2018-12-31,42687.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: aareal-bank-ag/2019_7ed33bf5.pdf S. 2",verankert
+aareal-bank-ag,bilanzsumme,2019-12-31,41137.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: aareal-bank-ag/2020_26de9182.pdf S. 2",verankert
+aareal-bank-ag,bilanzsumme,2020-12-31,45478.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: aareal-bank-ag/2021_76666ad3.pdf S. 2",verankert
 aareal-bank-ag,bilanzsumme,2021-12-31,48670.3,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 aareal-bank-ag,bilanzsumme,2022-12-31,48397.5,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 aareal-bank-ag,bilanzsumme,2023-12-31,49168.9,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
@@ -266,6 +269,12 @@ dekabank-deutsche-girozentrale,leverage_ratio,2025-12-31,0.0882,Anteil,EUR,aufsi
 dekabank-deutsche-girozentrale,rwa,2025-12-31,28441,Mio. EUR,EUR,aufsichtlich,Deka-Gruppe,https://www.deka.de/site/dekade_deka-gruppe_site/get/documents_E-1676338056/dekade/medienpool_dekade/deka_gruppe/de/Dokumente/Investor%20Relations/Finanzpublikationen/Offenlegungsberichte/DekaGruppe_Offenlegungsbericht_2025-12-31_DE.pdf,geparst
 dekabank-deutsche-girozentrale,t1,2025-12-31,7082,Mio. EUR,EUR,aufsichtlich,Deka-Gruppe,https://www.deka.de/site/dekade_deka-gruppe_site/get/documents_E-1676338056/dekade/medienpool_dekade/deka_gruppe/de/Dokumente/Investor%20Relations/Finanzpublikationen/Offenlegungsberichte/DekaGruppe_Offenlegungsbericht_2025-12-31_DE.pdf,geparst
 dekabank-deutsche-girozentrale,t1_quote,2025-12-31,0.249,Anteil,EUR,aufsichtlich,Deka-Gruppe,https://www.deka.de/site/dekade_deka-gruppe_site/get/documents_E-1676338056/dekade/medienpool_dekade/deka_gruppe/de/Dokumente/Investor%20Relations/Finanzpublikationen/Offenlegungsberichte/DekaGruppe_Offenlegungsbericht_2025-12-31_DE.pdf,geparst
+deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2018-12-31,45376.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: deutsche-apotheker-und-arztebank-eg-apobank/2019_8048e99a.pdf S. 3",verankert
+deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2019-12-31,49603.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: deutsche-apotheker-und-arztebank-eg-apobank/2020_6d8d1d57.pdf S. 3",verankert
+deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2020-12-31,59440.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: deutsche-apotheker-und-arztebank-eg-apobank/2021_3b6b2998.pdf S. 3",verankert
+deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2021-12-31,67372.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: deutsche-apotheker-und-arztebank-eg-apobank/2022_f22ae068.pdf S. 3",verankert
+deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2022-12-31,54184.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: deutsche-apotheker-und-arztebank-eg-apobank/2023_de1bdb52.pdf S. 3",verankert
+deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2023-12-31,50727.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: deutsche-apotheker-und-arztebank-eg-apobank/2024_7966e8e2.pdf S. 3",verankert
 deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2024-12-31,51811.8,Mio. EUR,EUR,HGB,Einzel,,geparst
 deutsche-apotheker-und-arztebank-eg-apobank,bilanzsumme,2025-12-31,52437.8,Mio. EUR,EUR,HGB,Einzel,,geparst
 deutsche-apotheker-und-arztebank-eg-apobank,cet1,2025-12-31,3058.1,Mio. EUR,EUR,aufsichtlich,apoBank-Institutsgruppe,https://www.apobank.de/dam/jcr:a9b230d5-f5c2-4f43-ada5-85be449002d2/apobank-offenlegungsbericht-31122025.pdf,geparst
@@ -382,6 +391,8 @@ dz-bank-ag-deutsche-zentral-genossenschaftsbank,eigenkapital,2025-12-31,10926,Mi
 dz-bank-ag-deutsche-zentral-genossenschaftsbank,fonds_340g,2024-12-31,3847,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 dz-bank-ag-deutsche-zentral-genossenschaftsbank,fonds_340g,2025-12-31,4047,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 dz-bank-ag-deutsche-zentral-genossenschaftsbank,gk_quote,2025-12-31,0.235933504,Anteil,EUR,aufsichtlich,"laut EBA-Hub: DZ BANK AG (höchste Ebene im EWR, Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+dz-bank-ag-deutsche-zentral-genossenschaftsbank,jahresueberschuss,2022-12-31,380.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: dz-bank-ag-deutsche-zentral-genossenschaftsbank/2023_1f8b1cb1.pdf S. 23",verankert
+dz-bank-ag-deutsche-zentral-genossenschaftsbank,jahresueberschuss,2023-12-31,478.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: dz-bank-ag-deutsche-zentral-genossenschaftsbank/2024_88e96240.pdf S. 23",verankert
 dz-bank-ag-deutsche-zentral-genossenschaftsbank,jahresueberschuss,2024-12-31,425,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 dz-bank-ag-deutsche-zentral-genossenschaftsbank,jahresueberschuss,2025-12-31,639,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 dz-bank-ag-deutsche-zentral-genossenschaftsbank,leverage_ratio,2025-12-31,0.069844024,Anteil,EUR,aufsichtlich,"laut EBA-Hub: DZ BANK AG (höchste Ebene im EWR, Gruppe)","EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
@@ -639,6 +650,7 @@ j-p-morgan-se,leverage_ratio,2025-12-31,0.072,Anteil,EUR,aufsichtlich,Einzelinst
 j-p-morgan-se,rwa,2025-12-31,125640.6,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 j-p-morgan-se,t1,2025-12-31,27612.3,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 j-p-morgan-se,t1_quote,2025-12-31,0.219772,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
+joh-berenberg-gossler-co-kg,bilanzsumme,2015-12-31,4738.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2017_6d8a1bea.pdf S. 3",verankert
 joh-berenberg-gossler-co-kg,bilanzsumme,2016-12-31,4716.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 joh-berenberg-gossler-co-kg,bilanzsumme,2017-12-31,4741.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 joh-berenberg-gossler-co-kg,bilanzsumme,2018-12-31,4693.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
@@ -653,6 +665,15 @@ joh-berenberg-gossler-co-kg,eigenkapital,2024-12-31,341.359,Mio. EUR,EUR,HGB,Ein
 joh-berenberg-gossler-co-kg,eigenkapital,2025-12-31,289.963,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,fonds_340g,2024-12-31,8.1,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
 joh-berenberg-gossler-co-kg,fonds_340g,2025-12-31,5.3,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
+joh-berenberg-gossler-co-kg,jahresueberschuss,2010-12-31,62.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2015_cc33b040.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2011-12-31,56.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2012-12-31,60.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2013-12-31,66.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2014-12-31,40.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2015-12-31,104.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2016-12-31,161.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2017-12-31,90.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2020_a15c219f.pdf S. 3",verankert
+joh-berenberg-gossler-co-kg,jahresueberschuss,2018-12-31,23.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: joh-berenberg-gossler-co-kg/2018_655fa49a.pdf S. 4",verankert
 joh-berenberg-gossler-co-kg,jahresueberschuss,2019-12-31,61.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 joh-berenberg-gossler-co-kg,jahresueberschuss,2020-12-31,108.0,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: joh-berenberg-gossler-co-kg/berenberg-geschaeftsbericht-2025.pdf S. 3,plausibilisiert
 joh-berenberg-gossler-co-kg,jahresueberschuss,2021-12-31,170,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Jahresüberschuss 2021–2023 aus der 10-Jahres-Übersicht im Lagebericht (Mio. € gerundet),geparst
@@ -845,8 +866,12 @@ landesbank-baden-wurttemberg-lbbw,bilanzsumme,2024-12-31,326149,Mio. EUR,EUR,HGB
 landesbank-baden-wurttemberg-lbbw,bilanzsumme,2025-12-31,353168,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-baden-wurttemberg-lbbw,cet1,2025-12-31,14810,Mio. EUR,EUR,aufsichtlich,LBBW-Konzern,https://www.lbbw.de/konzern/investor-relations/finanzberichte/offenlegungsberichte/2025/lbbw-offenlegungsbericht-2025_amr4m67fr2_m.pdf,geparst
 landesbank-baden-wurttemberg-lbbw,cet1_quote,2025-12-31,0.1712,Anteil,EUR,aufsichtlich,LBBW-Konzern,https://www.lbbw.de/konzern/investor-relations/finanzberichte/offenlegungsberichte/2025/lbbw-offenlegungsbericht-2025_amr4m67fr2_m.pdf,geparst
+landesbank-baden-wurttemberg-lbbw,eigenkapital,2022-12-31,14700.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: landesbank-baden-wurttemberg-lbbw/2016_1e8f4af0.pdf S. 126",verankert
+landesbank-baden-wurttemberg-lbbw,eigenkapital,2023-12-31,14583.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: landesbank-baden-wurttemberg-lbbw/2017_d936bb43.pdf S. 117",verankert
 landesbank-baden-wurttemberg-lbbw,eigenkapital,2024-12-31,14398,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-baden-wurttemberg-lbbw,eigenkapital,2025-12-31,14393,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
+landesbank-baden-wurttemberg-lbbw,fonds_340g,2021-12-31,79.4,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: landesbank-baden-wurttemberg-lbbw/2024_bf294fa3.pdf S. 83",verankert
+landesbank-baden-wurttemberg-lbbw,fonds_340g,2023-12-31,797.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: landesbank-baden-wurttemberg-lbbw/2024_bf294fa3.pdf S. 83",verankert
 landesbank-baden-wurttemberg-lbbw,fonds_340g,2024-12-31,1430,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-baden-wurttemberg-lbbw,fonds_340g,2025-12-31,2382,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 landesbank-baden-wurttemberg-lbbw,gk_quote,2025-12-31,0.2138,Anteil,EUR,aufsichtlich,LBBW-Konzern,https://www.lbbw.de/konzern/investor-relations/finanzberichte/offenlegungsberichte/2025/lbbw-offenlegungsbericht-2025_amr4m67fr2_m.pdf,geparst
@@ -950,6 +975,8 @@ m-m-warburg-co-ag-co-kgaa,bilanzsumme,2022-12-31,4032.472,Mio. EUR,EUR,HGB,Einze
 m-m-warburg-co-ag-co-kgaa,bilanzsumme,2023-12-31,3286.36,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,bilanzsumme,2024-12-31,3178.549,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,bilanzsumme,2025-12-31,3176.792,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
+m-m-warburg-co-ag-co-kgaa,eigenkapital,2022-12-31,225.479,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: m-m-warburg-co-ag-co-kgaa/2023_62df7750.pdf S. 18",verankert
+m-m-warburg-co-ag-co-kgaa,eigenkapital,2023-12-31,235.479,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: m-m-warburg-co-ag-co-kgaa/2024_5110bce2.pdf S. 18",verankert
 m-m-warburg-co-ag-co-kgaa,eigenkapital,2024-12-31,236.479,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,eigenkapital,2025-12-31,197.608,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,fonds_340g,2021-12-31,3.849,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
@@ -957,6 +984,7 @@ m-m-warburg-co-ag-co-kgaa,fonds_340g,2022-12-31,3.849,Mio. EUR,EUR,HGB,Einzel,Ja
 m-m-warburg-co-ag-co-kgaa,fonds_340g,2023-12-31,3.849,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,fonds_340g,2024-12-31,17.17,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,fonds_340g,2025-12-31,13,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
+m-m-warburg-co-ag-co-kgaa,jahresueberschuss,2021-12-31,44.607,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: m-m-warburg-co-ag-co-kgaa/2023_62df7750.pdf S. 14",verankert
 m-m-warburg-co-ag-co-kgaa,jahresueberschuss,2022-12-31,34.607,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 m-m-warburg-co-ag-co-kgaa,jahresueberschuss,2023-12-31,10,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 meine-volksbank-raiffeisenbank-eg,bilanzsumme,2024-12-31,12216.623,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
@@ -1038,6 +1066,15 @@ n26-bank-se,eigenkapital,2024-12-31,462.1,Mio. EUR,EUR,HGB,Einzel,,geparst
 n26-bank-se,eigenkapital,2025-12-31,465.2,Mio. EUR,EUR,HGB,Einzel,,geparst
 n26-bank-se,fonds_340g,2024-12-31,0,Mio. EUR,EUR,HGB,Einzel,,geparst
 n26-bank-se,fonds_340g,2025-12-31,0,Mio. EUR,EUR,HGB,Einzel,,geparst
+nassauische-sparkasse,bilanzsumme,2012-12-31,11863.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2013_8437759e.pdf S. 12",verankert
+nassauische-sparkasse,bilanzsumme,2013-12-31,10621.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2014_6f11468d.pdf S. 12",verankert
+nassauische-sparkasse,bilanzsumme,2014-12-31,10803.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2015_961b3e5b.pdf S. 12",verankert
+nassauische-sparkasse,bilanzsumme,2015-12-31,11300.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2016_98522481.pdf S. 12",verankert
+nassauische-sparkasse,bilanzsumme,2016-12-31,11219.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2017_ee99ea1e.pdf S. 17",verankert
+nassauische-sparkasse,bilanzsumme,2017-12-31,11411.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2018_50622fa2.pdf S. 11",verankert
+nassauische-sparkasse,bilanzsumme,2018-12-31,11772.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2019_4cbe8234.pdf S. 11",verankert
+nassauische-sparkasse,bilanzsumme,2019-12-31,12219.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2020_355744bd.pdf S. 12",verankert
+nassauische-sparkasse,bilanzsumme,2020-12-31,14293.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: nassauische-sparkasse/2021_44d822b3.pdf S. 13",verankert
 nassauische-sparkasse,bilanzsumme,2021-12-31,15037,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 nassauische-sparkasse,bilanzsumme,2022-12-31,15432,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 nassauische-sparkasse,bilanzsumme,2023-12-31,14722,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
@@ -1321,6 +1358,10 @@ sparda-bank-sudwest-eg,leverage_ratio,2025-12-31,0.080006,Anteil,EUR,aufsichtlic
 sparda-bank-sudwest-eg,rwa,2025-12-31,5005.3,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 sparda-bank-sudwest-eg,t1,2025-12-31,831.4,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 sparda-bank-sudwest-eg,t1_quote,2025-12-31,0.166111,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+sparda-bank-west-eg,bilanzsumme,2020-12-31,13146.8,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2021_33ad68af.pdf S. 8",verankert
+sparda-bank-west-eg,bilanzsumme,2021-12-31,12193.5,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2022_ccb4e37e.pdf S. 8",verankert
+sparda-bank-west-eg,bilanzsumme,2022-12-31,12320.1,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2023_4256dc9c.pdf S. 8",verankert
+sparda-bank-west-eg,bilanzsumme,2023-12-31,12148.1,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2024_f52ec64b.pdf S. 7",verankert
 sparda-bank-west-eg,bilanzsumme,2024-12-31,13006.401,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 sparda-bank-west-eg,bilanzsumme,2025-12-31,13932.791,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 sparda-bank-west-eg,cet1,2025-12-31,917.4,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
@@ -1330,6 +1371,9 @@ sparda-bank-west-eg,eigenkapital,2025-12-31,752.191,Mio. EUR,EUR,HGB,Einzel,Jahr
 sparda-bank-west-eg,fonds_340g,2024-12-31,191.39,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 sparda-bank-west-eg,fonds_340g,2025-12-31,212.64,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 sparda-bank-west-eg,gk_quote,2025-12-31,0.210391,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+sparda-bank-west-eg,jahresueberschuss,2020-12-31,130.4,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2023_4256dc9c.pdf S. 10",verankert
+sparda-bank-west-eg,jahresueberschuss,2022-12-31,5.6,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2023_4256dc9c.pdf S. 10",verankert
+sparda-bank-west-eg,jahresueberschuss,2023-12-31,12.9,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparda-bank-west-eg/2024_f52ec64b.pdf S. 10",verankert
 sparda-bank-west-eg,jahresueberschuss,2024-12-31,13.502,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 sparda-bank-west-eg,jahresueberschuss,2025-12-31,15.241,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 sparda-bank-west-eg,leverage_ratio,2025-12-31,0.081095,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
@@ -1448,6 +1492,9 @@ sparkasse-duren,leverage_ratio,2025-12-31,0.0929,Anteil,EUR,aufsichtlich,Einzeli
 sparkasse-duren,rwa,2025-12-31,2755.9,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 sparkasse-duren,t1,2025-12-31,456.5,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 sparkasse-duren,t1_quote,2025-12-31,0.1657,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
+sparkasse-essen,bilanzsumme,2021-12-31,9436.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-essen/2022_091a2e83.pdf S. 3",verankert
+sparkasse-essen,bilanzsumme,2022-12-31,9775.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-essen/2023_3c0cb4ba.pdf S. 3",verankert
+sparkasse-essen,bilanzsumme,2023-12-31,9663.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-essen/2024_3ee6910c.pdf S. 3",verankert
 sparkasse-essen,bilanzsumme,2024-12-31,10014,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-essen,bilanzsumme,2025-12-31,10338.561,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-essen,eigenkapital,2024-12-31,523.7,Mio. EUR,EUR,HGB,Einzel,,geparst
@@ -1737,12 +1784,29 @@ sparkasse-offenburg-ortenau,leverage_ratio,2025-12-31,0.1166,Anteil,EUR,aufsicht
 sparkasse-offenburg-ortenau,rwa,2025-12-31,3239.7,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 sparkasse-offenburg-ortenau,t1,2025-12-31,587.9,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 sparkasse-offenburg-ortenau,t1_quote,2025-12-31,0.1815,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
+sparkasse-osnabruck,bilanzsumme,2014-12-31,5785.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2015_5f78164b.pdf S. 7",verankert
+sparkasse-osnabruck,bilanzsumme,2015-12-31,5805.6,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2016_c48e8f48.pdf S. 8",verankert
+sparkasse-osnabruck,bilanzsumme,2016-12-31,6098.5,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2017_895b0f27.pdf S. 7",verankert
+sparkasse-osnabruck,bilanzsumme,2017-12-31,6446.9,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2018_b5395edf.pdf S. 7",verankert
+sparkasse-osnabruck,bilanzsumme,2018-12-31,6593.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2019_7560765b.pdf S. 7",verankert
+sparkasse-osnabruck,bilanzsumme,2019-12-31,6862.4,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2020_874880a3.pdf S. 9",verankert
+sparkasse-osnabruck,bilanzsumme,2020-12-31,7913.3,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2021_e90562e1.pdf S. 7",verankert
+sparkasse-osnabruck,bilanzsumme,2021-12-31,8405.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2022_6593fb26.pdf S. 8",verankert
+sparkasse-osnabruck,bilanzsumme,2022-12-31,8560.4,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2023_f8aff645.pdf S. 7",verankert
+sparkasse-osnabruck,bilanzsumme,2023-12-31,8213.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 7",verankert
 sparkasse-osnabruck,bilanzsumme,2024-12-31,8331.7,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-osnabruck,bilanzsumme,2025-12-31,8710.5,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-osnabruck,cet1,2025-12-31,785.8,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 sparkasse-osnabruck,cet1_quote,2025-12-31,0.1479,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+sparkasse-osnabruck,eigenkapital,2022-12-31,394.4,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2023_f8aff645.pdf S. 11",verankert
+sparkasse-osnabruck,eigenkapital,2023-12-31,408.7,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 11",verankert
 sparkasse-osnabruck,eigenkapital,2024-12-31,424.7,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-osnabruck,eigenkapital,2025-12-31,443.7,Mio. EUR,EUR,HGB,Einzel,,geparst
+sparkasse-osnabruck,fonds_340g,2018-12-31,3.9,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 7",verankert
+sparkasse-osnabruck,fonds_340g,2019-12-31,4.3,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 7",verankert
+sparkasse-osnabruck,fonds_340g,2020-12-31,10.7,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 7",verankert
+sparkasse-osnabruck,fonds_340g,2021-12-31,10.9,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 7",verankert
+sparkasse-osnabruck,fonds_340g,2023-12-31,331.9,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: sparkasse-osnabruck/2024_02f08b37.pdf S. 7",verankert
 sparkasse-osnabruck,fonds_340g,2024-12-31,368.1,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-osnabruck,fonds_340g,2025-12-31,401.6,Mio. EUR,EUR,HGB,Einzel,,geparst
 sparkasse-osnabruck,gk_quote,2025-12-31,0.1561,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
@@ -1964,6 +2028,7 @@ stadtsparkasse-augsburg,eigenkapital,2024-12-31,522.779,Mio. EUR,EUR,HGB,Einzel,
 stadtsparkasse-augsburg,eigenkapital,2025-12-31,537.036,Mio. EUR,EUR,HGB,Einzel,,geparst
 stadtsparkasse-augsburg,fonds_340g,2024-12-31,362.3,Mio. EUR,EUR,HGB,Einzel,,geparst
 stadtsparkasse-augsburg,fonds_340g,2025-12-31,409.3,Mio. EUR,EUR,HGB,Einzel,,geparst
+stadtsparkasse-dusseldorf,bilanzsumme,2020-12-31,13462.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: stadtsparkasse-dusseldorf/2021_c8684362.pdf S. 72",verankert
 stadtsparkasse-dusseldorf,bilanzsumme,2021-12-31,16128,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 stadtsparkasse-dusseldorf,bilanzsumme,2022-12-31,15974,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
 stadtsparkasse-dusseldorf,bilanzsumme,2023-12-31,15244,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft).,geparst
@@ -2150,6 +2215,12 @@ vereinigte-vr-bank-kur-und-rheinpfalz-eg,leverage_ratio,2025-12-31,0.102436,Ante
 vereinigte-vr-bank-kur-und-rheinpfalz-eg,rwa,2025-12-31,4143.7,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 vereinigte-vr-bank-kur-und-rheinpfalz-eg,t1,2025-12-31,745.4,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 vereinigte-vr-bank-kur-und-rheinpfalz-eg,t1_quote,2025-12-31,0.179889,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+volksbank-brawo-eg,bilanzsumme,2015-12-31,3083.47,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2019_05dd006b.pdf S. 31",verankert
+volksbank-brawo-eg,bilanzsumme,2016-12-31,3248.362,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2020_a7f4b325.pdf S. 33",verankert
+volksbank-brawo-eg,bilanzsumme,2017-12-31,3436.206,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2020_a7f4b325.pdf S. 33",verankert
+volksbank-brawo-eg,bilanzsumme,2018-12-31,3710.636,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2019_05dd006b.pdf S. 31",verankert
+volksbank-brawo-eg,bilanzsumme,2019-12-31,4095.339,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2023_f32e1f3b.pdf S. 60",verankert
+volksbank-brawo-eg,bilanzsumme,2020-12-31,5191.57,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2021_7ee32867.pdf S. 37",verankert
 volksbank-brawo-eg,bilanzsumme,2021-12-31,5748.138,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: volksbank-brawo-eg/geschaeftsbericht-2025-volksbank-brawo.pdf S. 8,plausibilisiert
 volksbank-brawo-eg,bilanzsumme,2022-12-31,6086.98,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: volksbank-brawo-eg/geschaeftsbericht-2025-volksbank-brawo.pdf S. 8,plausibilisiert
 volksbank-brawo-eg,bilanzsumme,2023-12-31,6202.163,Mio. EUR,EUR,HGB,Einzel,Mehrjahresübersicht: volksbank-brawo-eg/geschaeftsbericht-2025-volksbank-brawo.pdf S. 8,plausibilisiert
@@ -2159,17 +2230,28 @@ volksbank-brawo-eg,eigenkapital,2024-12-31,451.533,Mio. EUR,EUR,HGB,Einzel,Jahre
 volksbank-brawo-eg,eigenkapital,2025-12-31,451.324,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,fonds_340g,2024-12-31,230,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,fonds_340g,2025-12-31,94,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
+volksbank-brawo-eg,jahresueberschuss,2015-12-31,11.564,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2019_05dd006b.pdf S. 37",verankert
+volksbank-brawo-eg,jahresueberschuss,2016-12-31,11.963,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2019_05dd006b.pdf S. 37",verankert
+volksbank-brawo-eg,jahresueberschuss,2017-12-31,12.155,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2021_7ee32867.pdf S. 38",verankert
+volksbank-brawo-eg,jahresueberschuss,2018-12-31,12.442,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2021_7ee32867.pdf S. 38",verankert
+volksbank-brawo-eg,jahresueberschuss,2019-12-31,13.225,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2020_a7f4b325.pdf S. 35",verankert
+volksbank-brawo-eg,jahresueberschuss,2020-12-31,17.916,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-brawo-eg/2021_7ee32867.pdf S. 38",verankert
 volksbank-brawo-eg,jahresueberschuss,2021-12-31,26.631,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,jahresueberschuss,2022-12-31,31.683,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,jahresueberschuss,2023-12-31,25.925,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,jahresueberschuss,2024-12-31,26.531,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
 volksbank-brawo-eg,jahresueberschuss,2025-12-31,0.187,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. | Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio.,geparst
+volksbank-darmstadt-mainz-eg,bilanzsumme,2022-12-31,14164.057,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-darmstadt-mainz-eg/2023_99fee32f.pdf S. 12",verankert
+volksbank-darmstadt-mainz-eg,bilanzsumme,2023-12-31,14576.054,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-darmstadt-mainz-eg/2024_7b155e2c.pdf S. 12",verankert
 volksbank-darmstadt-mainz-eg,bilanzsumme,2024-12-31,15069.78,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-darmstadt-mainz-eg,bilanzsumme,2025-12-31,15523.064,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-darmstadt-mainz-eg,eigenkapital,2024-12-31,604.319,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-darmstadt-mainz-eg,eigenkapital,2025-12-31,661.128,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-darmstadt-mainz-eg,fonds_340g,2024-12-31,853.7,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-darmstadt-mainz-eg,fonds_340g,2025-12-31,905.2,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
+volksbank-darmstadt-mainz-eg,jahresueberschuss,2021-12-31,3.482,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-darmstadt-mainz-eg/2023_99fee32f.pdf S. 14",verankert
+volksbank-darmstadt-mainz-eg,jahresueberschuss,2022-12-31,14.683,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-darmstadt-mainz-eg/2023_99fee32f.pdf S. 14",verankert
+volksbank-darmstadt-mainz-eg,jahresueberschuss,2023-12-31,18.165,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volksbank-darmstadt-mainz-eg/2024_7b155e2c.pdf S. 14",verankert
 volksbank-darmstadt-mainz-eg,jahresueberschuss,2024-12-31,18.522,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-darmstadt-mainz-eg,jahresueberschuss,2025-12-31,19.65,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 volksbank-dusseldorf-neuss-eg,bilanzsumme,2025-12-31,1950.562,Mio. EUR,EUR,HGB,Einzel,,geparst
@@ -2316,6 +2398,7 @@ volksbank-stuttgart-eg,leverage_ratio,2025-12-31,0.098497,Anteil,EUR,aufsichtlic
 volksbank-stuttgart-eg,rwa,2025-12-31,5649.8,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 volksbank-stuttgart-eg,t1,2025-12-31,838.1,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
 volksbank-stuttgart-eg,t1_quote,2025-12-31,0.148341,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025 (Export 26.10.2026, Datei eba_hub_km1_20251231.xlsx)",geparst
+volkswagen-bank-gmbh,bilanzsumme,2020-12-31,81584.0,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: volkswagen-bank-gmbh/2021_a7b8d2ed.pdf S. 18",verankert
 volkswagen-bank-gmbh,bilanzsumme,2021-12-31,81833,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft). | Jahresüberschuss 0: Gewinnabführung,geparst
 volkswagen-bank-gmbh,bilanzsumme,2022-12-31,73291,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft). | Jahresüberschuss 0: Gewinnabführung,geparst
 volkswagen-bank-gmbh,bilanzsumme,2023-12-31,82328,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte. Ältere Jahre: automatisch aus Jahresabschlüssen/Geschäftsberichten GJ2021–2023 gelesen (Stichproben geprüft). | Jahresüberschuss 0: Gewinnabführung,geparst
@@ -2446,12 +2529,19 @@ vr-teilhaberbank-metropolregion-nurnberg-eg,leverage_ratio,2025-12-31,0.098653,A
 vr-teilhaberbank-metropolregion-nurnberg-eg,rwa,2025-12-31,3649.5,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 vr-teilhaberbank-metropolregion-nurnberg-eg,t1,2025-12-31,547.1,Mio. EUR,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
 vr-teilhaberbank-metropolregion-nurnberg-eg,t1_quote,2025-12-31,0.149917,Anteil,EUR,aufsichtlich,Einzelinstitut,"EBA Pillar-3-Datenhub, Data Points Report, Template EU KM1, Stichtag 31.12.2025, Filter Country = Germany (Export 27.10.2026, Datei eba_hub_km1_de_alle_stichtage.xlsx)",geparst
+wiesbadener-volksbank-eg,bilanzsumme,2020-12-31,6407.7,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2021_2fdcd993.pdf S. 2",verankert
+wiesbadener-volksbank-eg,bilanzsumme,2021-12-31,7305.1,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2022_6fb592b9.pdf S. 2",verankert
+wiesbadener-volksbank-eg,bilanzsumme,2022-12-31,7879.3,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2023_080934c7.pdf S. 2",verankert
+wiesbadener-volksbank-eg,bilanzsumme,2023-12-31,7998.9,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2024_54fd0b97.pdf S. 2",verankert
 wiesbadener-volksbank-eg,bilanzsumme,2024-12-31,7834.398,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wiesbadener-volksbank-eg,bilanzsumme,2025-12-31,7826.811,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wiesbadener-volksbank-eg,eigenkapital,2024-12-31,461.313,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wiesbadener-volksbank-eg,eigenkapital,2025-12-31,477.69,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wiesbadener-volksbank-eg,fonds_340g,2024-12-31,420.85,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wiesbadener-volksbank-eg,fonds_340g,2025-12-31,443.55,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
+wiesbadener-volksbank-eg,jahresueberschuss,2020-12-31,23.2,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2023_080934c7.pdf S. 32",verankert
+wiesbadener-volksbank-eg,jahresueberschuss,2022-12-31,11.1,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2023_080934c7.pdf S. 32",verankert
+wiesbadener-volksbank-eg,jahresueberschuss,2023-12-31,13.6,Mio. EUR,EUR,HGB,Einzel,"Nachbarspalte in älterem Bericht, verankert an bekanntem Wert: wiesbadener-volksbank-eg/2024_54fd0b97.pdf S. 32",verankert
 wiesbadener-volksbank-eg,jahresueberschuss,2024-12-31,13.772,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wiesbadener-volksbank-eg,jahresueberschuss,2025-12-31,13.915,Mio. EUR,EUR,HGB,Einzel,Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte.,geparst
 wustenrot-bausparkasse-ag,bilanzsumme,2025-12-31,36878.168,Mio. EUR,EUR,HGB,Einzel,,geparst

@@ -84,7 +84,14 @@ def main():
     daten = sorted({d for r in reihen.values() for d in r})
     out = {"abruf": datetime.now(timezone.utc).isoformat(timespec="seconds"), "quelle": "Yahoo Finance (yfinance), Wochenschlusskurse in Börsenwährung (Londoner Kurse in Pence)",
            "daten": daten, "symbol": {t: s for t, s in symbol.items() if s != t}, "t": {t: [r.get(d) for d in daten] for t, r in sorted(reihen.items())}, "fehler": offen}
-    (HIER / "data/kurse_woche.json").write_text(json.dumps(out, separators=(",", ":")))
+    ziel = HIER / "data/kurse_woche.json"
+    # Teilausfall (Yahoo 429): fallen über zehn Prozent der bisherigen Ticker weg, bleibt der letzte gute Stand liegen
+    if ziel.exists():
+        alt = len(json.loads(ziel.read_text())["t"])
+        if alt and len(reihen) < alt * 0.9:
+            print(f"::warning::Nur {len(reihen)} von {alt} Tickern mit Kursen, kurse_woche.json bleibt unverändert")
+            return
+    ziel.write_text(json.dumps(out, separators=(",", ":")))
     print(f"{len(reihen)} Ticker, {len(daten)} Wochen, {len(offen)} ohne Kurse -> data/kurse_woche.json")
 
 

@@ -213,7 +213,16 @@ def main():
     out = {"abruf": datetime.now(timezone.utc).isoformat(timespec="seconds"), "quelle": "Yahoo Finance (yfinance), Schlusskurse",
            "werte": werte, "fehler": fehler}
     (HIER / "data").mkdir(exist_ok=True)
-    (HIER / "data/markt.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")))
+    ziel = HIER / "data/markt.json"
+    # Teilausfall (Yahoo 429, Sperre): bricht mehr als ein Drittel weg, bleibt der letzte gute Stand liegen
+    if ziel.exists():
+        alt = len(json.loads(ziel.read_text())["werte"])
+        if alt and len(werte) < alt * 2 / 3:
+            print(f"::warning::Nur {len(werte)} von {alt} Banken mit Kursen, markt.json bleibt unverändert")
+            for f in fehler:
+                print("  ", f)
+            return
+    ziel.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")))
     print(f"{len(werte)} Banken mit Kursen, {len(fehler)} Fehler -> data/markt.json")
     for f in fehler:
         print("  ", f)

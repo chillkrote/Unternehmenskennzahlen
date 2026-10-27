@@ -188,6 +188,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#v-reihe" data-v="v-reihe"><b>F2</b>Zeitreihen</a>
       <a class="key" href="#v-laender" data-v="v-laender"><b>F3</b>Länder</a>
       <a class="key" href="#v-quellen" data-v="v-quellen"><b>F4</b>Berichte &amp; Quellen</a>
+      <a class="key" href="#v-prog" data-v="v-prog"><b>F5</b>Prognosen</a>
     </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
@@ -877,7 +878,7 @@ function tape() {
 
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
-  start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(),
+  start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
@@ -887,7 +888,7 @@ function viewStart() {
   const kachel = (href, code, titel, text, zeile, aus) => `<a class="startkachel${aus ? " aus" : ""}" href="${aus ? "#start" : href}"><span class="code">${code}</span><h2>${titel}</h2><p>${text}</p><div class="zeile">${zeile}</div><span class="los">Öffnen →</span></a>`;
   return `<div class="start"><h1>Terminal</h1><p class="lead">Kennzahlen, Daten und Berichte in einer Oberfläche. Wähle einen Bereich.</p><div class="startraster">
     ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u), !UNT.da())}
-    ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Nachfrageindikatoren und Zinsen für Deutschland, den Euroraum und große Volkswirtschaften.", esc(v), !VWL.da())}
+    ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Stimmungsindikatoren und Zinsen für alle OECD-Länder, dazu Prognosen der Institute und der ifo-Index für Deutschland.", esc(v), !VWL.da())}
   </div></div>`;
 }
 function render() {
@@ -901,7 +902,7 @@ function render() {
     document.getElementById("serienliste").innerHTML = bereich === "v" ? VWL.datalist() : "";
     const c = document.getElementById("cmd");
     c.setAttribute("list", bereich === "v" ? "serienliste" : "firmenliste");
-    c.placeholder = bereich === "v" ? "Reihe (BIP, Inflation …) · UEB · REIHE · LAENDER · QUELLEN · dann Enter" : "Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter";
+    c.placeholder = bereich === "v" ? "Reihe (BIP, Inflation …) · UEB · REIHE · LAENDER · PROG · QUELLEN · dann Enter" : "Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter";
   }
   document.querySelector(".cmdline").hidden = st;
   document.querySelector(".top .meta").hidden = st;
@@ -951,7 +952,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
   if (bereich === "v") {
-    const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", start: "start" }[c], s = VWL.finden(v);
+    const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", prog: "v-prog", prognosen: "v-prog", start: "start" }[c], s = VWL.finden(v);
     if (a) gehe(a); else if (s) { VWL.waehle(s.serie_id); gehe("v-reihe"); } else if (c === "unt") gehe("u-ueb");
     return;
   }
@@ -963,7 +964,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const f = UNT.finden(v); if (f) gehe("firma-" + f.id); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine" })[e.key];
+  const m = (bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });

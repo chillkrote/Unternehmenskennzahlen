@@ -6,3 +6,15 @@ Konjunkturprognosen,ifo Institut,vierteljährlich,Konjunktur Deutschland,https:/
 Wirtschaftsbericht (Economic Bulletin),Europäische Zentralbank,achtwöchentlich,Euroraum,https://www.ecb.europa.eu/pub/economic-bulletin/html/index.en.html,Wirtschaftslage und Geldpolitik im Euroraum
 World Economic Outlook,Internationaler Währungsfonds,halbjährlich,Weltwirtschaft,https://www.imf.org/en/Publications/WEO,Globale Prognose nach Ländern
 Eurostat-Datenbank,Eurostat,laufend,Datenquelle,https://ec.europa.eu/eurostat/web/main/data/database,Quelle aller Zeitreihen dieses Terminals (Dissemination-API)
+Gemeinschaftsdiagnose,"DIW, ifo, IfW Kiel, IWH, RWI (im Auftrag des BMWE)","halbjährlich (April, September)",Konjunktur Deutschland,https://gemeinschaftsdiagnose.de/,Gemeinsame Prognose der führenden Wirtschaftsforschungsinstitute
+Projektionen der Bundesregierung,Bundesministerium für Wirtschaft und Energie,"halbjährlich (Frühjahr, Herbst) und Jahreswirtschaftsbericht",Konjunktur Deutschland,https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Artikel/Wirtschaft/Projektionen-der-Bundesregierung/projektionen-der-bundesregierung.html,Eckwerte der Bundesregierung (Seite durch Browserprüfung geschützt)
+Konjunkturprognose (Kiel Konjunkturberichte),Kiel Institut für Weltwirtschaft,vierteljährlich,Konjunktur Deutschland,https://www.ifw-kiel.de/de/institut/forschungsbereiche/konjunktur/,Prognose für Deutschland und die Weltwirtschaft
+Konjunkturprognose,DIW Berlin,vierteljährlich,Konjunktur Deutschland,https://www.diw.de/de/diw_01.c.617047.de/prognose_und_konjunkturpolitik.html,"Prognose im Wochenbericht, Grundlinie"
+Konjunktur aktuell / Konjunkturprognose,IWH Halle,vierteljährlich,Konjunktur Deutschland,https://www.iwh-halle.de/,Konjunkturprognose für Deutschland
+RWI-Konjunkturbericht,RWI – Leibniz-Institut für Wirtschaftsforschung,vierteljährlich,Konjunktur Deutschland,https://www.rwi-essen.de/,Konjunkturprognose für Deutschland
+IW-Konjunkturprognose,Institut der deutschen Wirtschaft (IW Köln),zweimal jährlich,Konjunktur Deutschland,https://www.iwkoeln.de/,Prognose und Konjunkturumfrage
+IMK-Konjunkturprognose,IMK der Hans-Böckler-Stiftung,vierteljährlich,Konjunktur Deutschland,https://www.imk-boeckler.de/de/konjunkturprognose-11403.htm,Prognose für Deutschland
+Deutschland-Prognose (Halbjahresprognose),Deutsche Bundesbank,"halbjährlich (Juni, Dezember)",Konjunktur Deutschland,https://www.bundesbank.de/de/presse/pressemitteilungen,Basisprojektion des Eurosystems für Deutschland
+Europäische Wirtschaftsprognose,Europäische Kommission,"zweimal jährlich (Frühjahr, Herbst)",Konjunktur Europa,https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/economic-forecasts_en,Prognose für alle EU-Länder; nächste im November 2026
+Economic Outlook,OECD,zweimal jährlich plus Zwischenbericht,Weltwirtschaft,https://www.oecd.org/en/publications/serials/oecd-economic-outlook_16097408.html,Prognose für alle OECD-Länder; im Terminal als Reihen oecd_eo_* und prognosen_oecd.csv
+OECD Data Explorer,OECD,laufend,Datenquelle,https://data-explorer.oecd.org/,Quelle der OECD-Reihen dieses Terminals (SDMX-API)

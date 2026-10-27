@@ -8,21 +8,24 @@ Schreibt in volkswirtschaft/:
 Neue Kennzahl: Eintrag in SERIEN ergänzen und das Skript neu laufen lassen; das Terminal liest die CSV ohne Codeänderung.
 Aufruf: python3 -I abruf_eurostat.py
 """
-import csv
 import gzip
 import json
 import time
 import urllib.parse
 import urllib.request
 from datetime import date
+import sys
 from pathlib import Path
 
-AUS = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gemeinsam import AUS, schreibe  # noqa: E402
+
 API = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
 SEIT = {"M": "2005-01", "Q": "2005-Q1", "A": "1995"}
-LAENDER = ["DE", "EA20", "EU27_2020", "FR", "IT", "ES", "NL", "AT"]
-GEO_NAMEN = {"DE": "Deutschland", "EA20": "Euroraum", "EU27_2020": "EU-27", "FR": "Frankreich", "IT": "Italien",
-             "ES": "Spanien", "NL": "Niederlande", "AT": "Österreich"}
+# Eurostat liefert die europäischen OECD-Mitglieder (EU, EFTA, Vereinigtes Königreich, Türkei); Länder außerhalb Europas
+# kommen aus abruf_oecd.py. Fehlende Länder je Datensatz (z. B. Arbeitskosten) bleiben leer.
+LAENDER = ["DE", "EA20", "EU27_2020", "AT", "BE", "CZ", "DK", "EE", "FI", "FR", "EL", "HU", "IS", "IE", "IT", "LV", "LT", "LU",
+           "NL", "NO", "PL", "PT", "SK", "SI", "ES", "SE", "CH", "TR", "UK"]
 
 
 def s(id, thema, name, einheit, fmt, art, freq, dataset, filt, kern=False, hinweis="", geo_map=None, laender=None):
@@ -65,8 +68,6 @@ SERIEN = [
     s("schuldenquote", "finanzen", "Staatsschuldenquote (Maastricht)", "% des BIP", "pct1", "rate", "A", "gov_10dd_edpt1", dict(unit="PC_GDP", sector="S13", na_item="GD"), False, "Bruttoschuld des Staates"),
     s("defizitquote", "finanzen", "Finanzierungssaldo des Staates", "% des BIP", "pct1", "rate", "A", "gov_10dd_edpt1", dict(unit="PC_GDP", sector="S13", na_item="B9"), False, "negativ = Defizit"),
 ]
-THEMEN = {"wachstum": "Wachstum & Nachfrage", "preise": "Preise & Inflation", "arbeit": "Arbeit & Löhne",
-          "nachfrage": "Produktion & Stimmung", "finanzen": "Zinsen & Staatsfinanzen"}
 
 
 def abruf(sp):
@@ -109,22 +110,7 @@ def main():
                      "anzahl": len(zeilen), "hinweis": sp["hinweis"]})
         print(f"{sp['id']}: {len(zeilen)} Werte, bis {meta[-1]['letzter_zeitraum']}")
         time.sleep(0.3)
-    with open(AUS / "serien.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, list(meta[0]))
-        w.writeheader()
-        w.writerows(meta)
-    with open(AUS / "zeitreihe_lang.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["serie_id", "geo", "zeit", "wert"])
-        w.writerows(lang)
-    with open(AUS / "laender.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["geo", "name"])
-        w.writerows(GEO_NAMEN.items())
-    with open(AUS / "themen.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["thema", "name"])
-        w.writerows(THEMEN.items())
+    schreibe("Eurostat", meta, lang)
     print(f"{len(meta)} Serien, {len(lang)} Werte")
 
 

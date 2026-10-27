@@ -1,136 +1,161 @@
 <title>Bank-Terminal GJ 2025</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
 <style>
-/* Layout: Terminal-Raster. Kommandozeile oben, Funktionstasten, darunter dichte Panels mit Titelleiste. Nur dunkel. */
+/* Layout: Terminal im Dunkeln, aber luftiger. Kopf mit Kommandozeile und Reitern, Kennzahlen-Kacheln, darunter ein 12er-Raster aus Panels. Zahlen in Mono, Text in Sans. Nur dunkel. */
 :root {
   color-scheme: dark;
-  --bg: #050608;          /* Bildschirm */
-  --panel: #0c0e12;       /* Panel-Fläche */
-  --line: #1e232b;        /* Raster, Rahmen */
-  --grid: #171b21;        /* Diagramm-Gitter */
-  --ink: #e9edf2;         /* Zahlen */
-  --ink-2: #9aa4b1;       /* Beschriftung */
-  --ink-3: #5f6875;       /* Hilfstext */
-  --amber: #ffa828;       /* Terminal-Akzent: Labels, Kommandos */
+  --bg: #07090c;          /* Bildschirm */
+  --panel: #0e1116;       /* Panel-Fläche */
+  --panel-2: #131820;     /* Kopfzeilen, Hover */
+  --line: #1f252e;        /* Rahmen */
+  --line-2: #171c23;      /* Tabellenlinien */
+  --grid: #1a1f27;        /* Diagramm-Gitter */
+  --ink: #e8ecf1;         /* Zahlen */
+  --ink-2: #a3acb8;       /* Beschriftung */
+  --ink-3: #66707d;       /* Hilfstext */
+  --amber: #ffa828;       /* Terminal-Akzent */
   --amber-dim: #a86a10;
-  --key: #f5c400;         /* Funktionstasten */
-  --up: #3ecf6e;          /* über Anforderung / besser */
-  --down: #ff5248;        /* unter Anforderung / schlechter */
+  --amber-bg: rgba(255, 168, 40, .1);
+  --key: #f5c400;         /* Funktionstasten, Ticker */
+  --up: #3ecf6e;
+  --down: #ff5248;
   /* Gruppen (validiert gegen --bg, CVD-sicher) */
   --spk: #e8484f;
   --geno: #2f86dd;
   --lb: #17a88a;
   --priv: #9a6fe0;
   /* Struktur-Rampen (keine Gruppenfarben) */
-  --s1: #39424f; --s2: #525d6c; --s3: #707c8c; --s4: #929dab;
+  --s1: #3a4350; --s2: #535e6d; --s3: #717d8d; --s4: #939eac;
   --c1: #7a4d08; --c2: #c27a0c; --c3: #ffb238;
+  --r: 8px;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --cond: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 html, body { background: var(--bg); color: var(--ink); }
-body { font: 12px/1.45 var(--mono); font-variant-numeric: tabular-nums; }
+body { font: 13px/1.5 var(--sans); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
-.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 10px 28px; display: grid; gap: 10px; }
+.wrap { max-width: 1680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 40px; display: grid; gap: 14px; }
 a { color: var(--amber); }
 button, input, select { font: inherit; color: inherit; }
-:focus-visible { outline: 1px solid var(--key); outline-offset: 1px; }
+:focus-visible { outline: 2px solid var(--key); outline-offset: 2px; border-radius: 4px; }
+code { font-family: var(--mono); color: var(--key); }
 
 /* Kopf */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); display: grid; gap: 6px; padding-block: 4px 6px; border-bottom: 1px solid var(--line); }
-.cmd { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.brand { font-family: var(--cond); font-weight: 600; letter-spacing: .06em; color: var(--bg); background: var(--amber); padding: 1px 8px; text-transform: uppercase; }
-.cmdline { flex: 1 1 260px; min-width: 0; display: flex; align-items: center; gap: 6px; background: #000; border: 1px solid var(--line); padding: 3px 8px; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(7, 9, 12, .92); backdrop-filter: blur(8px); display: grid; gap: 10px; padding-block: 12px 0; border-bottom: 1px solid var(--line); }
+.cmd { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brand { display: inline-flex; align-items: baseline; gap: 8px; font: 600 15px/1 var(--cond); letter-spacing: .04em; color: var(--ink); }
+.brand b { color: var(--bg); background: var(--amber); padding: 4px 7px; border-radius: 5px; font-size: 13px; letter-spacing: .08em; }
+.cmdline { flex: 1 1 280px; min-width: 0; display: flex; align-items: center; gap: 8px; background: #000; border: 1px solid var(--line); border-radius: var(--r); padding: 6px 12px; font-family: var(--mono); transition: border-color .15s; }
+.cmdline:focus-within { border-color: var(--amber-dim); }
 .cmdline span { color: var(--amber); }
-.cmdline input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: var(--key); text-transform: uppercase; }
-.meta { color: var(--ink-3); white-space: nowrap; }
-.keys { display: flex; gap: 4px; flex-wrap: wrap; }
-.key { display: inline-flex; gap: 6px; align-items: baseline; background: #15181d; border: 1px solid var(--line); padding: 2px 8px; cursor: pointer; color: var(--ink-2); }
-.key b { color: var(--bg); background: var(--key); padding: 0 4px; font-weight: 600; }
-.key[aria-current="page"] { border-color: var(--amber); color: var(--amber); }
+.cmdline input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: var(--key); text-transform: uppercase; font-size: 12px; }
+.cmdline input::placeholder { color: var(--ink-3); text-transform: none; }
+.meta { color: var(--ink-3); white-space: nowrap; font-size: 12px; }
+.keys { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.key { display: inline-flex; gap: 8px; align-items: center; padding: 8px 14px 10px; cursor: pointer; color: var(--ink-2); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s, border-color .15s; }
+.key b { color: var(--ink-3); border: 1px solid var(--line); padding: 0 5px; border-radius: 4px; font: 500 10.5px/1.6 var(--mono); }
+.key[aria-current="page"] { color: var(--ink); border-bottom-color: var(--amber); }
+.key[aria-current="page"] b { color: var(--bg); background: var(--key); border-color: var(--key); }
 .key:hover { color: var(--ink); }
 
-/* Ticker: Gruppenmediane */
-.tape { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.tape > div { background: var(--panel); padding: 5px 8px; display: grid; gap: 1px; }
-.tape .g { display: flex; align-items: center; gap: 6px; color: var(--ink-2); font-family: var(--cond); text-transform: uppercase; letter-spacing: .05em; }
-.tape .row { display: flex; justify-content: space-between; gap: 8px; }
-.tape .row span { color: var(--ink-3); }
-.sw { width: 8px; height: 8px; display: inline-block; flex: none; }
+/* Kursleiste */
+.quotes { display: flex; gap: 0; overflow-x: auto; white-space: nowrap; font: 12px/1 var(--mono); scrollbar-width: thin; padding-block: 2px; }
+.quotes .ql { color: var(--ink-3); padding-right: 14px; align-self: center; font-family: var(--sans); text-transform: uppercase; letter-spacing: .06em; font-size: 11px; }
+.quotes a { color: var(--ink); text-decoration: none; padding: 4px 14px; border-left: 1px solid var(--line); }
+.quotes a:hover { background: var(--panel-2); }
+.quotes a b { color: var(--key); font-weight: 500; margin-right: 4px; }
+
+/* Kennzahlen-Kacheln: Gruppenmediane */
+.tape { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.tape > div { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 10px; position: relative; overflow: hidden; }
+.tape > div::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--gf); }
+.tape .g { display: flex; align-items: baseline; gap: 8px; color: var(--ink-2); font-size: 12px; }
+.tape .g b { color: var(--ink); font: 600 13px/1 var(--cond); letter-spacing: .06em; }
+.tape .g span { margin-left: auto; color: var(--ink-3); font-family: var(--mono); font-size: 11px; }
+.tape .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.tape .stats div { display: grid; gap: 2px; }
+.tape .stats span { color: var(--ink-3); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; }
+.tape .stats strong { font: 500 15px/1.2 var(--mono); color: var(--ink); }
+.sw { width: 8px; height: 8px; border-radius: 2px; display: inline-block; flex: none; }
 
 /* Panels */
-.grid { display: grid; gap: 10px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
-.p { grid-column: span 12; background: var(--panel); border: 1px solid var(--line); min-width: 0; display: flex; flex-direction: column; }
-.col { grid-column: span 12; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.grid { display: grid; gap: 14px; align-items: start; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.p { grid-column: span 12; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+.col { grid-column: span 12; display: grid; gap: 14px; align-content: start; min-width: 0; }
 .kzt td:first-child, .kzt th:first-child { position: sticky; left: 0; background: var(--panel); z-index: 1; }
-.kzt th:first-child { background: #10141a; z-index: 2; }
-.kzt tr.click:hover td:first-child { background: #141a22; }
-@media (min-width: 980px) { .w6 { grid-column: span 6; } .w7 { grid-column: span 7; } .w5 { grid-column: span 5; } .w4 { grid-column: span 4; } .w8 { grid-column: span 8; } }
-.ph { display: flex; align-items: baseline; gap: 10px; padding: 4px 8px; border-bottom: 1px solid var(--line); background: #10141a; flex-wrap: wrap; }
-.ph h2 { margin: 0; font: 600 12px/1.3 var(--cond); letter-spacing: .07em; text-transform: uppercase; color: var(--amber); }
-.ph .code { color: var(--key); }
-.ph .sub { color: var(--ink-3); flex: 1 1 200px; }
-.pb { padding: 8px; min-width: 0; }
-.foot { padding: 4px 8px 6px; color: var(--ink-3); border-top: 1px dashed var(--line); }
-.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--ink-2); margin-bottom: 6px; }
-.legend span { display: inline-flex; align-items: center; gap: 5px; }
-.ctrl { display: flex; gap: 4px; flex-wrap: wrap; }
-.ctrl button, .chip { background: #15181d; border: 1px solid var(--line); padding: 1px 7px; cursor: pointer; color: var(--ink-2); }
-.ctrl button[aria-pressed="true"] { color: var(--bg); background: var(--amber); border-color: var(--amber); }
+.kzt th:first-child { z-index: 2; }
+.kzt tr.click:hover td:first-child { background: var(--panel-2); }
+@media (min-width: 1000px) { .w6 { grid-column: span 6; } .w7 { grid-column: span 7; } .w5 { grid-column: span 5; } .w4 { grid-column: span 4; } .w8 { grid-column: span 8; } }
+.ph { display: flex; align-items: baseline; gap: 4px 12px; padding: 12px 16px 0; flex-wrap: wrap; }
+.ph h2 { margin: 0; font: 600 14px/1.3 var(--sans); color: var(--ink); text-wrap: balance; }
+.ph .code { font: 500 10.5px/1 var(--mono); color: var(--amber); background: var(--amber-bg); padding: 3px 6px; border-radius: 4px; margin-right: 6px; vertical-align: 2px; letter-spacing: .04em; }
+.ph .sub { color: var(--ink-3); flex: 1 1 260px; font-size: 12px; }
+.pb { padding: 12px 16px 14px; min-width: 0; }
+.foot { padding: 10px 16px 12px; color: var(--ink-3); border-top: 1px solid var(--line-2); font-size: 11.5px; line-height: 1.55; max-width: 120ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--ink-2); margin-bottom: 10px; font-size: 12px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.ctrl { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.ctrl button, .chip { background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; cursor: pointer; color: var(--ink-2); font-size: 12px; transition: color .15s, border-color .15s, background .15s; }
+.ctrl button:hover { color: var(--ink); border-color: var(--s2); }
+.ctrl button[aria-pressed="true"] { color: var(--amber); background: var(--amber-bg); border-color: var(--amber-dim); }
+.ctrl > span { color: var(--ink-3); font: 500 11px var(--mono); }
 svg { display: block; width: 100%; height: auto; overflow: visible; }
-svg text { font-family: var(--mono); font-size: 10.5px; fill: var(--ink-2); }
+svg text { font-family: var(--sans); font-size: 11px; fill: var(--ink-2); }
 svg .ax { stroke: var(--line); }
 svg .gl { stroke: var(--grid); }
+svg rect[data-tip] { rx: 2px; }
 .scroll { overflow-x: auto; }
 
 /* Tabellen */
 table { border-collapse: collapse; width: 100%; white-space: nowrap; font: inherit; }
-th, td { padding: 2px 8px; text-align: right; border-bottom: 1px solid #12161b; }
-th { color: var(--amber); font-weight: 500; position: sticky; top: 0; background: #10141a; cursor: default; }
+th, td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--line-2); }
+td { font-family: var(--mono); font-size: 12px; }
+td:first-child { font-family: var(--sans); font-size: 13px; }
+th { color: var(--ink-3); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; position: sticky; top: 0; background: var(--panel); border-bottom-color: var(--line); cursor: default; }
 th.sortable { cursor: pointer; }
-th:first-child, td:first-child { text-align: left; }
-tbody tr:hover td { background: #141a22; }
+th.sortable:hover { color: var(--ink); }
+th:first-child, td:first-child { text-align: left; padding-left: 0; }
+tbody tr:hover td { background: var(--panel-2); }
 td.n { color: var(--ink-3); }
+td.grp { font-family: var(--sans); color: var(--amber); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding-top: 14px; border-bottom-color: var(--line); }
 .pos { color: var(--up); } .neg { color: var(--down); }
 .pct { color: var(--ink-3); font-size: 10.5px; }
-.tblwrap { max-height: 560px; overflow: auto; }
+.tblwrap { max-height: 620px; overflow: auto; }
 tr.click { cursor: pointer; }
-
-/* Vergleich */
-.picks { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.chip { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); }
-.chip button { background: none; border: 0; color: var(--ink-3); cursor: pointer; padding: 0 2px; }
-.chip button:hover { color: var(--down); }
-.picks input { background: #000; border: 1px solid var(--line); padding: 1px 6px; min-width: 0; width: 280px; max-width: 100%; color: var(--key); }
-
-/* Kursleiste */
-.quotes { display: flex; gap: 16px; overflow-x: auto; white-space: nowrap; background: #000; border: 1px solid var(--line); padding: 3px 8px; scrollbar-width: thin; }
-.quotes .ql { color: var(--amber); }
-.quotes a { color: var(--ink); text-decoration: none; }
-.quotes a b { color: var(--key); font-weight: 500; }
-tr.sel td { background: #1a1608; }
+tr.sel td { background: var(--amber-bg); }
 .flat { color: var(--ink-2); }
 
-#tip { position: fixed; z-index: 20; pointer-events: none; background: #000; border: 1px solid var(--amber-dim); padding: 4px 7px; color: var(--ink); max-width: 320px; white-space: pre-line; display: none; }
-#tip b { color: var(--amber); font-weight: 500; }
+/* Vergleich */
+.picks { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); cursor: default; padding: 4px 6px 4px 12px; }
+.chip button { background: none; border: 0; color: var(--ink-3); cursor: pointer; padding: 0 4px; border-radius: 999px; }
+.chip button:hover { color: var(--down); }
+.picks input { background: #000; border: 1px dashed var(--line); border-radius: 999px; padding: 4px 12px; min-width: 0; width: 280px; max-width: 100%; color: var(--key); }
+.sub-h { color: var(--ink-2); font-size: 12px; margin: 4px 0 4px; }
+
+#tip { position: fixed; z-index: 20; pointer-events: none; background: rgba(0, 0, 0, .94); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .5); padding: 7px 10px; color: var(--ink); max-width: 320px; white-space: pre-line; display: none; font: 12px/1.5 var(--mono); }
+#tip b { color: var(--amber); font: 600 12px/1.5 var(--sans); }
+@media (max-width: 600px) { .tape .stats strong { font-size: 13px; } .meta { display: none; } .key { padding-inline: 10px; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
 <div class="wrap">
   <header class="top">
     <div class="cmd">
-      <span class="brand">BKT</span>
+      <span class="brand"><b>BKT</b>Bank-Terminal</span>
       <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="GRP · QUOT · CMP · RANK · MKT · oder Bankname, dann Enter" autocomplete="off" list="banklist"></label>
       <span class="meta" id="meta"></span>
     </div>
     <nav class="keys" aria-label="Funktionen">
-      <a class="key" href="#grp" data-v="grp"><b>F1</b>GRP Gruppen</a>
-      <a class="key" href="#quot" data-v="quot"><b>F2</b>QUOT Quoten</a>
-      <a class="key" href="#cmp" data-v="cmp"><b>F3</b>CMP Einzelbanken</a>
-      <a class="key" href="#rank" data-v="rank"><b>F4</b>RANK Liste</a>
-      <a class="key" href="#mkt" data-v="mkt" id="key-mkt"><b>F5</b>MKT Börse</a>
+      <a class="key" href="#grp" data-v="grp"><b>F1</b>Gruppen</a>
+      <a class="key" href="#quot" data-v="quot"><b>F2</b>Quoten</a>
+      <a class="key" href="#cmp" data-v="cmp"><b>F3</b>Einzelbanken</a>
+      <a class="key" href="#rank" data-v="rank"><b>F4</b>Liste</a>
+      <a class="key" href="#mkt" data-v="mkt" id="key-mkt"><b>F5</b>Börse</a>
     </nav>
   </header>
   <div class="quotes" id="quotes" aria-label="Schlusskurse"></div>
@@ -394,9 +419,9 @@ function streu(kx, ky) {
 
 function viewQuot() {
   const knopf = (k, aktiv, attr) => `<button type="button" ${attr}="${k}" aria-pressed="${k === aktiv}">${KZ[k].name}</button>`;
-  const ctrl = `<div class="ctrl" style="margin-bottom:6px">${QUOT_KZ.map(k => knopf(k, quotKz, "data-strip")).join("")}</div>`;
-  const ctrlX = `<div class="ctrl" style="margin-bottom:4px"><span style="color:var(--ink-3);padding-right:4px">X</span>${["rwa_dichte", "lr", "ek_fonds_quote", "fonds_cet1"].map(k => knopf(k, streuX, "data-sx")).join("")}</div>`;
-  const ctrlY = `<div class="ctrl" style="margin-bottom:6px"><span style="color:var(--ink-3);padding-right:4px">Y</span>${["cet1_quote", "gk_quote", "gk_puffer_pp", "lr"].map(k => knopf(k, streuY, "data-sy")).join("")}</div>`;
+  const ctrl = `<div class="ctrl" style="margin-bottom:12px">${QUOT_KZ.map(k => knopf(k, quotKz, "data-strip")).join("")}</div>`;
+  const ctrlX = `<div class="ctrl" style="margin-bottom:8px"><span style="color:var(--ink-3);padding-right:4px">X</span>${["rwa_dichte", "lr", "ek_fonds_quote", "fonds_cet1"].map(k => knopf(k, streuX, "data-sx")).join("")}</div>`;
+  const ctrlY = `<div class="ctrl" style="margin-bottom:12px"><span style="color:var(--ink-3);padding-right:4px">Y</span>${["cet1_quote", "gk_quote", "gk_puffer_pp", "lr"].map(k => knopf(k, streuY, "data-sy")).join("")}</div>`;
   const leg = legende(GRUPPEN.map(g => ({ name: g.kurz + " · " + g.id, farbe: g.farbe })));
   return `<div class="grid">
     ${panel({ code: "QUOT 1", titel: "Verteilung je Gruppe", sub: "jeder Punkt eine Bank · Strich = Median · Band = mittlere 50 %", breite: "w6", body: ctrl + leg + strip(quotKz), fuss: "Median und Band ohne Zusatzeinträge. Blasse Punkte liegen außerhalb der Skala (Wert im Tooltip). Klick auf einen Punkt übernimmt die Bank in CMP." })}
@@ -470,11 +495,11 @@ function viewCmp() {
 
   const ps = banken.map(b => ({ label: kurz(b.bank).slice(0, 22), farbe: G[b.gruppe].farbe, teile: passivStruktur(b) || {}, einheit: "mio" }));
   const ov = banken.map(b => ({ label: kurz(b.bank).slice(0, 22), farbe: G[b.gruppe].farbe, teile: ov1(b) || {}, einheit: "mio" }));
-  const kleine = ["cet1_quote", "lr", "rwa_dichte", "ek_fonds_quote"].map(k => `<div><div style="color:var(--amber);margin:2px 0 2px">${KZ[k].name}</div>${balkenVergleich(k, banken)}</div>`).join("");
+  const kleine = ["cet1_quote", "lr", "rwa_dichte", "ek_fonds_quote"].map(k => `<div><div class="sub-h">${KZ[k].name}</div>${balkenVergleich(k, banken)}</div>`).join("");
 
   return `<div class="grid">
     ${panel({ code: "CMP", titel: "Auswahl", sub: "Banken per Suche, Klick in QUOT oder RANK hinzufügen", body: picks })}
-    ${panel({ code: "CMP 1", titel: "Kennzahlenmatrix", sub: "P = Perzentil unter allen 129 Banken (P99 = höchster Wert)", breite: "w7", body: matrix })}
+    ${panel({ code: "CMP 1", titel: "Kennzahlenmatrix", sub: `P = Perzentil unter allen ${BANKEN.length} Banken (P99 = höchster Wert)`, breite: "w7", body: matrix })}
     ${panel({ code: "CMP 2", titel: "Im Gruppenvergleich", sub: "Balken = Bank, Strich = Median ihrer Gruppe", breite: "w5", body: `<div style="display:grid;gap:8px">${kleine}</div>` })}
     ${panel({ code: "CMP 3", titel: "Kapitalquoten-Stack", sub: "CET1 + AT1 + T2 in % der RWA gegen Anforderung", breite: "w6", body: kapitalStack(banken), fuss: "Anforderung = KM1 Zeile EU 11a (SREP, kombinierte Puffer)." })}
     ${panel({ code: "CMP 4", titel: "Passivstruktur", sub: "HGB-Bilanz 31.12.2025", breite: "w6", body: legende(PASSIV) + stapel100(ps, PASSIV, { labelBreite: 160, hz: 26 }) })}
@@ -489,7 +514,7 @@ const RANK_SP = ["bs", "ek_fonds_quote", "fonds_bs", "cet1_quote", "gk_quote", "
 function viewRank() {
   const liste = BANKEN.filter(b => rankGruppe === "alle" || b.gruppe === rankGruppe)
     .sort((a, b) => { const x = a[rankSort.k], y = b[rankSort.k]; if (x == null) return 1; if (y == null) return -1; return rankSort.ab ? y - x : x - y; });
-  const ctrl = `<div class="ctrl" style="margin-bottom:6px">${["alle", ...GRUPPEN.map(g => g.id)].map(g => `<button type="button" data-rg="${g}" aria-pressed="${g === rankGruppe}">${g === "alle" ? "Alle" : G[g].kurz}</button>`).join("")}</div>`;
+  const ctrl = `<div class="ctrl" style="margin-bottom:12px">${["alle", ...GRUPPEN.map(g => g.id)].map(g => `<button type="button" data-rg="${g}" aria-pressed="${g === rankGruppe}">${g === "alle" ? "Alle" : G[g].kurz}</button>`).join("")}</div>`;
   const kopf = `<tr><th>#</th><th style="text-align:left">Bank</th><th>Gr.</th>${RANK_SP.map(k => `<th class="sortable" data-sort="${k}">${KZ[k].name}${rankSort.k === k ? (rankSort.ab ? " ▼" : " ▲") : ""}</th>`).join("")}</tr>`;
   const rows = liste.map((b, i) => `<tr class="click" data-bank="${esc(b.bank)}" title="Klick: in Vergleich übernehmen"><td class="n">${i + 1}</td><td style="text-align:left">${esc(kurz(b.bank))}</td><td><i class="sw" style="background:${G[b.gruppe].farbe}"></i> ${G[b.gruppe].kurz}</td>${RANK_SP.map(k => b[k] == null ? `<td class="n">n. v.</td>` : `<td${k === "gk_puffer_pp" ? ` class="${b[k] >= 0 ? "pos" : "neg"}"` : ""}>${KZ[k].f(b[k])}</td>`).join("")}</tr>`).join("");
   return `<div class="grid">${panel({ code: "RANK", titel: "Bankenliste", sub: `${liste.length} Institute · Spaltenkopf sortiert · Zeile übernimmt in CMP`, body: ctrl + `<div class="tblwrap"><table><thead>${kopf}</thead><tbody>${rows}</tbody></table></div>` })}</div>`;
@@ -568,7 +593,7 @@ function viewMkt() {
     <td>${spanne(w)}</td><td>${w.marktkap ? f0.format(w.marktkap / 1e6) + (w.waehrung !== "EUR" ? " " + w.waehrung : "") : "n. v."}</td>
     <td${b.mkap_ek == null ? ' class="n"' : ""}>${b.mkap_ek == null ? "–" : f2.format(b.mkap_ek) + "x"}</td><td>${spark(w)}</td></tr>`; }).join("");
   const tab = `<div class="scroll"><table><thead><tr><th>Bank im Datensatz</th><th style="text-align:left">Notierung</th><th style="text-align:left">Ticker</th><th>Schluss</th><th>Stand</th><th>1T</th><th>1M</th><th>YTD</th><th>1J</th><th>52W-Spanne</th><th>Börsenwert (Mio.)</th><th>BW / HGB-EK</th><th>12M</th></tr></thead><tbody>${zeilen}</tbody></table></div>`;
-  const ctrl = `<div class="ctrl" style="margin-bottom:6px">${Object.entries(FENSTER).map(([k, [n]]) => `<button type="button" data-fenster="${k}" aria-pressed="${k === mktFenster}">${n}</button>`).join("")}
+  const ctrl = `<div class="ctrl" style="margin-bottom:12px">${Object.entries(FENSTER).map(([k, [n]]) => `<button type="button" data-fenster="${k}" aria-pressed="${k === mktFenster}">${n}</button>`).join("")}
     <button type="button" data-muetter="1" aria-pressed="${mktMuetter}" style="margin-left:8px">inkl. Muttergesellschaften</button></div>`;
   const abruf = new Date(MARKT.abruf);
   return `<div class="grid">
@@ -615,7 +640,7 @@ const mioB = v => v == null ? "n. v." : f0.format(v / 1e6);
 
 function kennzahlenTabelle(liste) {
   const kopf = `<tr><th style="text-align:left">Kennzahl</th>${liste.map(w => `<th class="click" data-mkt="${w.ticker}" title="${esc(w.mutter || w.bank)}" style="${w.ticker === mktMarkiert ? "color:var(--key)" : ""}">${w.ticker.replace(/\.\w+$/, "")}${w.ebene === "Mutter" ? "*" : ""}</th>`).join("")}<th>Median</th></tr>`;
-  const gr = (titel) => `<tr><td colspan="${liste.length + 2}" style="color:var(--amber);padding-top:6px;border-bottom-color:var(--line)">${titel}</td></tr>`;
+  const gr = (titel) => `<tr><td colspan="${liste.length + 2}" class="grp">${titel}</td></tr>`;
   let rows = gr("Größe (Mio., Bilanzwährung)") + [["ertraege", "Erträge"], ["jue", "Konzernergebnis"], ["bilanzsumme", "Bilanzsumme"]].map(([k, n]) =>
     `<tr><td>${n}</td>${liste.map(w => { const a = (w.abschluesse || [])[0] || {}; return `<td${a[k] == null ? ' class="n"' : ""}>${mioB(a[k])}</td>`; }).join("")}<td class="n">–</td></tr>`).join("");
   rows += `<tr><td class="n">Geschäftsjahr · Währung</td>${liste.map(w => `<td class="n">${w.kz && w.kz.gj || "–"} · ${w.bilanzwaehrung || ""}</td>`).join("")}<td></td></tr>`;
@@ -676,8 +701,8 @@ function bewertungsStreu(liste) {
 
 function kennzahlenPanels(liste) {
   const mitKz = liste.filter(w => w.kz && w.kz.gj);
-  const toggle = `<div class="ctrl" style="margin-bottom:6px"><button type="button" data-muetter="1" aria-pressed="${mktMuetter}">inkl. Muttergesellschaften (Peergroup)</button></div>`;
-  const wahl = `<div class="ctrl" style="margin-bottom:6px">${["kgv", "kbv", "div_rendite", "roe", "rote", "cir", "zinsmarge", "ek_quote", "w_jue"].map(k => `<button type="button" data-rang="${k}" aria-pressed="${k === mktRang}">${MKZ_FLACH[k].n.split(" (")[0]}</button>`).join("")}</div>`;
+  const toggle = `<div class="ctrl" style="margin-bottom:12px"><button type="button" data-muetter="1" aria-pressed="${mktMuetter}">inkl. Muttergesellschaften (Peergroup)</button></div>`;
+  const wahl = `<div class="ctrl" style="margin-bottom:12px">${["kgv", "kbv", "div_rendite", "roe", "rote", "cir", "zinsmarge", "ek_quote", "w_jue"].map(k => `<button type="button" data-rang="${k}" aria-pressed="${k === mktRang}">${MKZ_FLACH[k].n.split(" (")[0]}</button>`).join("")}</div>`;
   return `${panel({ code: "MKT 3", titel: "Kennzahlenvergleich Bilanz & GuV", sub: "letztes Geschäftsjahr, Konzern · grün = bester, rot = schwächster Wert der Zeile (Bewertung ohne Wertung) · Zeile wählt Kennzahl für MKT 4", breite: "w7", body: toggle + kennzahlenTabelle(mitKz),
       fuss: "Konzernabschlüsse (meist IFRS/US-GAAP) laut Yahoo Finance, nicht die HGB-Einzelabschlüsse der übrigen Ansichten. * = nur die Muttergesellschaft ist notiert. RoE/RoTE/RoA auf Ø Kapital aus Vor- und Berichtsjahr; Cost-Income-Ratio = Verwaltungsaufwand / Erträge (bei US-Banken Summe der Non-Interest-Expense-Posten, ohne Risikovorsorge). Türkische Banken bilanzieren unter Hochinflation (IAS 29). Yahoo-Posten sind nicht geprüft; offensichtlich unplausible Werte (negativer Zinsüberschuss, CIR außerhalb 0–150 %) sind ausgeblendet." })}
     <div class="col w5">${panel({ code: "MKT 4", titel: "Rangfolge", sub: `${MKZ_FLACH[mktRang].n} · gestrichelt = Median`, body: wahl + rangBalken(mktRang, mitKz) })}
@@ -689,7 +714,7 @@ function quotes() {
   const el = document.getElementById("quotes");
   if (!MARKT || !MARKT.werte.length) { el.hidden = true; document.getElementById("key-mkt").hidden = !MARKT; return; }
   const stand = eindeutig().reduce((m, w) => w.datum > m ? w.datum : m, "");
-  el.innerHTML = `<span class="ql">SCHLUSS ${stand.split("-").reverse().join(".")}</span>` + eindeutig().filter(w => w.ebene === "Institut").concat(eindeutig().filter(w => w.ebene !== "Institut"))
+  el.innerHTML = `<span class="ql">Schluss ${stand.split("-").reverse().join(".")}</span>` + eindeutig().filter(w => w.ebene === "Institut").concat(eindeutig().filter(w => w.ebene !== "Institut"))
     .map(w => `<a href="#mkt" data-mkt="${w.ticker}"><b>${w.ticker}</b> ${kursF(w.kurs, w.waehrung)} <span class="${klasse(w.r_1t)}">${chg(w.r_1t)}</span></a>`).join("");
 }
 
@@ -697,9 +722,9 @@ function quotes() {
 function tape() {
   document.getElementById("tape").innerHTML = GRUPPEN.map(g => {
     const b = inGruppe(g.id), m = k => median(vals(b, k));
-    return `<div><div class="g"><i class="sw" style="background:${g.farbe}"></i>${g.kurz} <span style="text-transform:none;letter-spacing:0">${g.id} · ${b.length}</span></div>
-      <div class="row"><span>CET1</span>${pct(m("cet1_quote"), 2)}<span>LR</span>${pct(m("lr"), 2)}</div>
-      <div class="row"><span>EK+F/BS</span>${pct(m("ek_fonds_quote"), 2)}<span>RWA/BS</span>${pct(m("rwa_dichte"), 0)}</div></div>`;
+    const st = (n, v) => `<div><span>${n}</span><strong>${v}</strong></div>`;
+    return `<div style="--gf:${g.farbe}"><div class="g"><b>${g.kurz}</b>${g.id}<span>n = ${b.length} · Median</span></div>
+      <div class="stats">${st("CET1", pct(m("cet1_quote"), 1))}${st("Leverage", pct(m("lr"), 1))}${st("EK+F/BS", pct(m("ek_fonds_quote"), 1))}${st("RWA/BS", pct(m("rwa_dichte"), 0))}</div></div>`;
   }).join("");
 }
 

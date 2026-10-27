@@ -210,6 +210,77 @@ for g_, r_, b_ in rows:
                 dev = f" Bilanzsumme laut CC2 {c2['bilanzsumme']:,.1f} Mio. weicht von der Bilanzsumme dieser Zeile ab.".replace(",", "X").replace(".", ",").replace("X", ".")
             b_["notes"] = ((b_.get("notes") or "") + f" | Ergänzung 27.10.2026 ({', '.join(filled)}) aus EU CC2 im EBA-Datenhub (Hub-Eintrag {h['hub_name']}; Bilanz laut Jahresabschluss).{dev}").strip(" |")
             b_["_nach"] = True
+# ---------- Lückenfüllung 27.10.2026 ----------
+# Nacherhebung: Offenlegungsberichte (EU CC2) und Geschäftsberichte von den Websites der Banken (Quellen je Wert in der JSON)
+NE = load("nacherhebung_2026-10-27.json") or {}
+def ne_val(name, y, k):
+    x = ((NE.get(name) or {}).get("jahre") or {}).get(str(y), {}).get(k)
+    return x
+# Sitz der Hub-Banken aus der GLEIF-LEI-Datenbank
+GLEIF = (load("gleif_sitz.json") or {"items": {}})["items"]
+def city(c):
+    if not c:
+        return None
+    c = {"COLOGNE": "Köln"}.get(c.upper(), c)
+    return c.title().replace(" Am ", " am ").replace(" Im ", " im ").replace(" An Der ", " an der ").replace(" Vor Der ", " vor der ") if c.isupper() or " Im " in c else c
+for g_, r_, b_ in rows:
+    if r_ == "EBA-Hub" and not b_.get("sitz"):
+        b_["sitz"] = city((GLEIF.get(b_["_hub"]["lei"]) or {}).get("sitz"))
+# Kernkapital-Posten aus der Bilanz (Blatt Bilanzen bzw. EU CC2 im EBA-Hub), wo die Jahresbilanz-Ablesung fehlt
+BIL0 = {norm(k): v for k, v in (load("bilanzen_2025.json") or {}).items()}
+for g_, r_, b_ in rows:
+    n_ = norm(b_["name"])
+    if n_ in KK:
+        if KK[n_].get("bilanzgewinn") is None and ne_val(b_["name"], 2025, "bilgew"):
+            KK[n_] = dict(KK[n_], bilanzgewinn=ne_val(b_["name"], 2025, "bilgew")["wert"],
+                          notes=((KK[n_].get("notes") or "") + "; Bilanzgewinn aus Nacherhebung 27.10.2026").strip("; "))
+        continue
+    hs = [b_["_hub"]] if b_.get("_hub") else HB.get(n_, [])
+    c2 = next((h["cc2"] for h in hs if (h.get("cc2") or {}).get("hgb") and h["cc2"].get("vollstaendig")), None)
+    bl = BIL0.get(n_)
+    src = None
+    if bl and bl.get("aktiva"):
+        a, p, src = bl["aktiva"], bl["passiva"], (bl.get("source_url") or "") + " (Blatt Bilanzen)"
+    elif c2:
+        a, p, src = c2["aktiva"], c2["passiva"], "EU CC2 im EBA-Datenhub (Bilanz laut Jahresabschluss)"
+    if not src:
+        continue
+    bg = c2.get("bilanzgewinn") if c2 else None
+    if bg is None and ne_val(b_["name"], 2025, "bilgew"):
+        bg = ne_val(b_["name"], 2025, "bilgew")["wert"]
+    ek_ = b_["eigenkapital"] / 1e6 if b_.get("eigenkapital") is not None else None
+    if bg is not None and ek_ and abs(bg) > 0.15 * ek_:
+        bg = None  # unplausibel (vermutlich Gewinnrücklage/Vortrag)
+    KK[n_] = {"name": b_["name"], "source_url": src,
+              "at1_posten": p.get("at1") or 0, "nachrang": p.get("nachrang") or 0, "genussrechte": p.get("genuss") or 0,
+              "bilanzgewinn": None if bg is None else round(bg, 3), "immaterielle": a.get("immat") or 0, "akt_lat_steuern": a.get("akt_lat") or 0,
+              "notes": "Posten am 27.10.2026 aus der Bilanz übernommen" + ("" if bg is not None else "; Bilanzgewinn nicht ausgewiesen bzw. n. v.")}
+# Nacherhebung 27.10.2026: Offenlegungsberichte (EU CC2) und Geschäftsberichte von den Websites der Banken
+for g_, r_, b_ in rows:
+    e = NE.get(b_["name"])
+    if not e:
+        continue
+    gj = b_.get("fiscal_year") or 2025
+    filled, srcs = [], []
+    for f, k, y in (("bilanzsumme", "bs", gj), ("eigenkapital", "ek", gj), ("fonds_340g", "fonds", gj),
+                    ("vj_bilanzsumme", "bs", gj - 1), ("vj_eigenkapital", "ek", gj - 1), ("vj_fonds_340g", "fonds", gj - 1)):
+        x = ne_val(b_["name"], y, k)
+        if b_.get(f) is not None or x is None:
+            continue
+        v = x["wert"]
+        cur = b_.get({"vj_bilanzsumme": "bilanzsumme", "vj_eigenkapital": "eigenkapital", "vj_fonds_340g": "fonds_340g"}.get(f, f))
+        if f.startswith("vj_") and cur:
+            q = v * 1e6 / cur
+            if (k == "bs" and not 0.6 <= q <= 1.6) or (k == "ek" and not 0.7 <= q <= 1.3) or (k == "fonds" and q > 1.3 and v > 1):
+                continue
+        if k == "fonds" and v == 0 and (b_.get("vj_fonds_340g") or b_.get("fonds_340g")):
+            continue
+        b_[f] = v * 1e6; filled.append(f); srcs.append(f"{x['dokument']} ({x['quelle']})")
+    if filled:
+        if "bilanzsumme" in filled:
+            b_["fiscal_year"] = 2025
+        b_["notes"] = ((b_.get("notes") or "") + " | Nacherhebung 27.10.2026 (" + ", ".join(filled) + "): " + "; ".join(sorted(set(srcs)))).strip(" |")
+        b_["_nach"] = True
 # sort ranking inside group by Bilanzsumme
 ALLG = [g for g, _ in groups] + [EXTRA_GROUP]
 order = {g: i for i, g in enumerate(ALLG)}
@@ -451,6 +522,7 @@ lines = [
     "Bilanzsumme, Eigenkapital und Fonds § 340g der neuen Institute stammen aus EU CC2 Spalte a (Bilanz laut Jahresabschluss; bei HGB-Instituten die HGB-Einzelbilanz, bei Konzernen/Holdings IFRS-Summenzeilen, Quellenart je Zeile). Der Hub-Export ('Summarized data') liefert für Positionen ohne Schlüssel keinen Einzelwert; betroffen ist meist 'Verbindlichkeiten gegenüber Kunden'. Dieser Posten ist dann als Differenz Bilanzsumme − übrige Passiva berechnet (Hinweis je Zeile). "
     "Prüfung: Für 55 bereits erfasste HGB-Institute stimmten Bilanzsumme, Eigenkapital und Fonds aus CC2 mit den Original-Jahresabschlüssen überein. Für 7 bestehende Sparkassen ohne EK/Fonds-Angabe (u. a. KSK Esslingen-Nürtingen, Ludwigsburg, München Starnberg Ebersberg, Waiblingen, Sparkasse Aachen, Mainfranken, Schwaben-Bodensee) wurden EK und Fonds aus CC2 ergänzt. "
     "KM1 fehlt im Hub bei BSK 1818 AG, Hamburger Sparkasse AG und KfW IPEX-Bank; dort sind CET1, Kernkapital, Eigenmittel, RWA und Quoten aus CC1 übernommen. Aareal Bank (30.06.2026), Siemens Bank und Trade Republic (30.09.2025) haben im Hub kein KM1 zum 31.12.2025; ihr KM1 zum jeweils verfügbaren Stichtag ist mit Hinweis eingetragen. Kein CC2 im Hub: BHW Bausparkasse, Sparkasse Duisburg, Sparkasse Südpfalz, SWK Bank, Trade Republic.",
+    "Nacherhebung 27.10.2026 (Lückenfüllung): Leere Zellen wurden aus frei abrufbaren Originalberichten nachgetragen, ohne Captcha- oder Bot-Schutz zu umgehen. Quellen: (1) Offenlegungsberichte der Bankwebsites 2021–2025, Tabelle EU CC2 (vollständige HGB-Bilanz inkl. Bilanzgewinn zum Berichtsstichtag), (2) Geschäftsberichte/Jahresabschlüsse (Formblatt 1 und GuV, jeweils auch die Vorjahresspalte), (3) GLEIF-LEI-Register für den Sitz der neuen Hub-Institute. Ein Wert wird nur übernommen, wenn die Zelle leer war und er plausibel zum Bestand passt (Vorjahres-Bilanzsumme 60–160 %, Vorjahres-EK 70–130 % des Berichtsjahres); Quelle je Wert in nacherhebung_2026-10-27.json und in den Anmerkungen. Bei Sparkassen ist der Jahresüberschuss gleich dem Bilanzgewinn (kein Gewinnvortrag; an 11 Sparkassen mit beiden Angaben geprüft), daher ist der Jahresüberschuss dort ggf. aus dem Bilanzgewinn übernommen; für Genossenschaftsbanken gilt das nicht. Kernkapital-Posten neuer Institute stammen aus der Bilanz (CC2). Korrektur: Jahresüberschuss MünchenerHyp 2025/2024 aus dem Geschäftsbericht 2025 (bisher Halbjahreswert). Die Ranglisten von DSGV und BVR für 2021–2024 sind nicht mehr online und konnten nicht genutzt werden.",
     "Fehlende Werte sind mit 'n. v.' (nicht verifiziert) gekennzeichnet und orange hinterlegt. Es wurden keine Werte geschätzt.",
     "Beträge in Mio. € (aus Originalangaben in €, T€ oder Mio. € umgerechnet; Genauigkeit je nach Quelle, siehe Anmerkungen).",
     "Hinweis: Rang bezieht sich auf die Reihenfolge innerhalb der Gruppe nach Bilanzsumme laut dieser Erhebung (Top 40 je Gruppe; Landesbanken vollständig).",
@@ -549,11 +621,42 @@ for gname, rolle, b in rows:
         for y, v in ((z.get("cal") or {}).get(m) or {}).items():
             if v is not None and ser[m].get(int(y)) is None:
                 ser[m][int(y)] = v
+    ne_note = []
+    # Plausibilität gegen den nächstgelegenen schon belegten Wert (BS 50–160 %, EK 65–125 %, Fonds 30–130 %)
+    ref0 = {m: {y_: v_ for y_, v_ in ser[m].items() if isinstance(v_, (int, float))} for m in ser}
+    def ne_ok(m, y, v):
+        rf = ref0.get(m) or {}
+        if m == "ju" or not rf or not isinstance(v, (int, float)):
+            return True
+        yr = min(rf, key=lambda q: abs(q - y)); r0 = rf[yr]
+        if not r0 or r0 <= 0:
+            return True
+        q = v / r0
+        return {"bs": 0.5 <= q <= 1.6, "ek": 0.65 <= q <= 1.25, "fonds": 0.3 <= q <= 1.3}[m]
+    for y, dd in ((NE.get(b["name"]) or {}).get("jahre") or {}).items():
+        if not 2021 <= int(y) <= 2025:
+            continue
+        for m in ("bs", "ek", "fonds", "ju"):
+            if m in dd and ser[m].get(int(y)) is None:
+                if m == "fonds" and dd[m]["wert"] == 0 and any(ser["fonds"].get(x) for x in ser["fonds"]):
+                    continue
+                if not ne_ok(m, int(y), dd[m]["wert"]):
+                    continue
+                ser[m][int(y)] = dd[m]["wert"]; ne_note.append(f"{m} {y}")
+    if gname == "Sparkassen":
+        for y in YEARS:
+            if ser["ju"].get(y) is None:
+                bg = ((NE.get(b["name"]) or {}).get("jahre") or {}).get(str(y), {}).get("bilgew")
+                bgv = bg["wert"] if bg else ((KK.get(norm(b["name"])) or {}).get("bilanzgewinn") if y == gj else None)
+                if bgv:
+                    ser["ju"][y] = bgv; ne_note.append(f"ju {y} = Bilanzgewinn")
     ZR_ROWS.append((r, gname, rolle, b, ser))
     row = [gname, rolle, rank, b["name"], gj]
     for _, m in METR:
         row += [ser[m].get(y) for y in YEARS] + [None] * 5
     note = z.get("note") or ""
+    if ne_note:
+        note = (note + " | " if note else "") + "Nacherhebung 27.10.2026 (" + ", ".join(ne_note) + ") aus Offenlegungsberichten (EU CC2) und Geschäftsberichten, Quellen in nacherhebung_2026-10-27.json" + ("; bei Sparkassen entspricht der Jahresüberschuss dem Bilanzgewinn (kein Gewinnvortrag, an 11 Sparkassen geprüft)" if any("Bilanzgewinn" in x for x in ne_note) else "")
     row += [(z.get("src") or "") + ((" | " + note) if note else "")]
     zs.append(row)
     for mi, (_, m) in enumerate(METR):
@@ -932,6 +1035,12 @@ for h in HN["neu"] + HN["bestehend"]:
                                 "source_url": "EBA-Pillar-3-Datenhub, EU CC2 Spalte a (Bilanz laut Jahresabschluss), Hub-Eintrag " + h["hub_name"],
                                 "note": "; ".join(c2.get("notes") or [])}
         BIL_HUB.add(norm(h["name"]))
+for n_, e in NE.items():
+    bl = e.get("bilanz2025")
+    if bl and norm(n_) not in BIL:
+        pa = dict(bl["passiva"]); pa["ek"] = bl["ek"]
+        BIL[norm(n_)] = {"aktiva": bl["aktiva"], "passiva": pa, "page": None, "source_url": bl["src"]["url"],
+                         "note": "Nacherhebung 27.10.2026: " + bl["src"]["doc"]}
 AKT = [("barreserve", "1. Barreserve"), ("schuldtitel_oeff", "2. Schuldtitel öffentlicher Stellen und Wechsel"),
        ("ford_ki", "3. Forderungen an Kreditinstitute"), ("ford_kunden", "4. Forderungen an Kunden"),
        ("schuldverschr", "5. Schuldverschreibungen und andere festverzinsliche Wertpapiere"),

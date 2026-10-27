@@ -221,6 +221,10 @@ def cc2_bilanz(e, cc1_gewrl=None, lr_exp=None):
     fonds = pas.get("fonds")
     if fonds is None:
         notes.append("kein Posten 'Fonds für allgemeine Bankrisiken' in CC2")
+    elif bs and abs(sum(pas.values()) - bs - fonds / 2) < max(1.0, 0.0005 * bs):
+        # Fonds doppelt gemeldet (Passiv- und Eigenkapitalabschnitt), z. B. Sparkasse Allgäu
+        fonds = pas["fonds"] = fonds / 2
+        notes.append("Fonds für allgemeine Bankrisiken im Hub-Export doppelt gemeldet, einfach gezählt")
     diff_a = round(sum(akt.values()) - bs, 1)
     diff = round(sum(akt.values()) - sum(pas.values()), 1)
     hgb = not unk and bool(akt)

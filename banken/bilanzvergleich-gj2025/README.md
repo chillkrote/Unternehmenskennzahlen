@@ -28,6 +28,7 @@ Vergleich von 129 deutschen Banken (je 40 größte Sparkassen und Genossenschaft
 - **Offenlegung KM1 31.12.2025:** 97 von 129 Banken (32 aus Berichten auf Bank-Websites, 65 aus dem EBA-Datenhub; Landesbank Berlin und Siemens Bank neu).
 - **CC1/OV1:** 90 Banken der bisherigen Auswahl aus dem EBA-Datenhub.
 - **EBA-Hub-Ergänzung (79 neue Banken):** KM1 78, CC1 77, OV1 75, Bilanzsumme 72, Eigenkapital 71, Fonds § 340g 55, volle Bilanz 57. Ohne CC2 im Hub: u. a. Trade Republic, BHW, SWK Bank, Sparkasse Duisburg, Sparkasse Südpfalz. Die neuen Banken sind einer der Gruppen zugeordnet (neue Gruppe „Förder- und Sonderinstitute“ für KfW IPEX und KfW Beteiligungsholding), zählen aber nicht für Top-10/Top-40-Ränge, Gruppenauswertung und Krefeld-Vergleich. Mediane gibt es zweifach: bisherige Auswahl und alle inkl. Ergänzung.
+- **Lückenfüllung 27.10.2026:** Leere Zellen wurden aus frei abrufbaren Berichten nachgetragen (Offenlegungsberichte 2021–2025 mit Tabelle EU CC2, Geschäftsberichte mit Vorjahresspalte, GLEIF-Register für den Sitz). Offene Zellen über alle 208 Banken, vorher → nachher: Sitz 79 → 0, Jahresüberschuss 2025 136 → 68, Kernkapital-Posten (Bilanzgewinn) 132 → 60, Vorjahres-Bilanzsumme 90 → 43, Fonds § 340g 40 → 34, Eigenkapital 14 → 13, Bilanzsumme 7 → 6, volle Bilanz 51 → 50. Zeitreihe: Bilanzsumme 2021 jetzt für 48, 2022 für 61, 2023 für 79 Banken. 233 neue Quell-PDFs unter `dokumente/<bank>/` (in `index.csv` mit „Nacherhebung 27.10.2026“). Werte je Zelle mit Quelle in `rohdaten/nacherhebung_2026-10-27.json`, Sitz in `rohdaten/gleif_sitz.json`, Skripte in `rohdaten/skripte/erhebung/nacherhebung/`. Übernommen wird nur in leere Zellen und nur bei plausibler Größe zum Bestand. Bei Sparkassen ist der Jahresüberschuss gleich dem Bilanzgewinn (an 11 Sparkassen geprüft) und wird daraus übernommen. Korrigiert: Jahresüberschuss MünchenerHyp 2025/2024 (106,1 / 105,6 Mio. € laut GB 2025, vorher Halbjahreswert). Weiter offen sind vor allem KM1/CC1/OV1 für Banken ohne Hub-Eintrag und Abschlüsse privater Banken, die nur im Unternehmensregister stehen. Die DSGV- und BVR-Ranglisten 2021–2024 sind nicht mehr online.
 - **Bilanz aus CC2:** Der Hub-Export lässt Posten ohne eigenen Schlüssel leer (meist Verbindlichkeiten gegenüber Kunden, Schuldtitel, Gewinnrücklage). Diese Posten sind als Differenz zur Bilanzsumme bzw. aus CC1 berechnet und in der Hinweis-Spalte vermerkt. IFRS-Gruppen (z. B. Banken mit Konzernabschluss) erhalten nur Summen.
 
 ## Quellen
@@ -36,6 +37,7 @@ Vergleich von 129 deutschen Banken (je 40 größte Sparkassen und Genossenschaft
 - EBA Pillar 3 Data Hub (edap-public.eba.europa.eu), Export über die normale Oberfläche (Data Points Report, Filter Country = Germany, Summarized data); keine API-Abfragen
 - EU-CC2-Tabellen der Offenlegungsberichte (enthalten die HGB-Bilanz)
 - hauptversammlung.de, Lobbyregister des Bundestages (für einzelne Privatbanken)
+- GLEIF-LEI-Register (api.gleif.org) für den Sitz der neuen Hub-Institute
 
 Unternehmensregister und Bundesanzeiger wurden nicht automatisiert abgefragt (Sicherheitsabfrage).
 

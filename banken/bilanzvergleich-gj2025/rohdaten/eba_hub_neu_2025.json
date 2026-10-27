@@ -3278,24 +3278,25 @@
      "rueckst": 98.107,
      "nachrang": 58.038,
      "genuss": 0.0,
-     "fonds": 414.0,
+     "fonds": 207.0,
      "ek": 568.711
     },
     "bilanzsumme": 8033.925,
     "bilanzsumme_aus_summenzeile": true,
     "eigenkapital": 568.711,
-    "fonds_340g": 414.0,
+    "fonds_340g": 207.0,
     "bilanzgewinn": 50.22980039,
     "hgb": true,
     "unbekannt": [],
-    "differenz_aktiva_passiva": -207.0,
+    "differenz_aktiva_passiva": -0.0,
     "differenz_aktiva_bilanzsumme": 0.0,
     "residual": "handel_a",
     "notes": [
-     "Aktivposten 'Handelsbestand (Aktiva)' im Hub-Export ohne Wert, als Differenz zur Bilanzsumme berechnet"
+     "Aktivposten 'Handelsbestand (Aktiva)' im Hub-Export ohne Wert, als Differenz zur Bilanzsumme berechnet",
+     "Fonds für allgemeine Bankrisiken im Hub-Export doppelt gemeldet, einfach gezählt"
     ],
-    "vollstaendig": false,
-    "fuer_bilanzblatt": false
+    "vollstaendig": true,
+    "fuer_bilanzblatt": true
    },
    "km1_stichtage_im_hub": [
     "2025-12-31"

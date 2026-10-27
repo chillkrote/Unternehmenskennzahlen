@@ -1,0 +1,10 @@
+# Dateinamen-Muster (Regex), die berichte_laden.py nie ablegt: falsche Dokumente oder falsches Geschäftsjahr
+ADCAPITAL_GB24
+HuR_Erklaerung
+GD_UMT_GB2026
+GB_2024_Konzern_d
+Annual_Report_2024_DE
+Halbjahr
+Montega
+Softing_Comment
+Aufsichtsrats

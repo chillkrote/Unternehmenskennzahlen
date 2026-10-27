@@ -4,7 +4,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 
 - **Unternehmen:** 104 (Liste in `../universum/universum.csv`, Spalte `branche` = `industrie`)
 - **Abschlussdaten (Yahoo):** 91 von 104
-- **Geschäftsberichte im Repo:** 51 von 104 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
+- **Geschäftsberichte im Repo:** 54 von 104 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
 - **Auswertung:** [`auswertung/Industrie_Kennzahlen_GJ2025.xlsx`](auswertung/Industrie_Kennzahlen_GJ2025.xlsx)
 
 | Unternehmen | Segment | Index | Geschäftsbericht |
@@ -30,7 +30,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | DATRON AG | Scale |  | [Geschäftsbericht 2025](dokumente/datron-ag/Geschaeftsbericht_fuer_das_Geschaeftsjahr_2025_der_DATRON_AG.pdf) |
 | DEUTZ Aktiengesellschaft | Prime Standard | MDAX | – |
 | DMG MORI AKTIENGESELLSCHAFT | Prime Standard |  | – |
-| Dürr Aktiengesellschaft | Prime Standard | SDAX | – |
+| Dürr Aktiengesellschaft | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/duerr-aktiengesellschaft/annual-report-2025-DE.pdf) |
 | electrovac AG | Prime Standard |  | [Geschäftsbericht 2025](dokumente/electrovac-ag/Geschaftsbericht-2025_2026_DE.pdf) |
 | Energent AG | Freiverkehr/Regionalbörse |  | – |
 | Fast Finance24 Holding AG | Basic Board |  | – |
@@ -52,7 +52,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | Infas Holding AG | General Standard |  | [Konzernabschluss 2025](dokumente/infas-holding-ag/3.-Konzernabschluss-zum-31.-Dezember-2025-einschliesslich-des-zusammengefassten-Konzern-Lageberichts.pdf) |
 | InnoTec TSS AG | Freiverkehr/Regionalbörse |  | [Geschäftsbericht 2025](dokumente/innotec-tss-ag/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf) |
 | Instant Group AG | Primärmarkt |  | – |
-| Jenoptik AG | Prime Standard | MDAX | – |
+| Jenoptik AG | Prime Standard | MDAX | [Geschäftsbericht 2025](dokumente/jenoptik-ag/jenoptik-geschaeftsbericht-2025.pdf) |
 | Jungheinrich Aktiengesellschaft | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/jungheinrich-aktiengesellschaft/download-gb2025-data.pdf) |
 | KAP AG | General Standard |  | [Geschäftsbericht 2025](dokumente/kap-ag/KAP_AG_2025_Gescha__ftsbericht_web.pdf) |
 | KHD Humboldt Wedag International AG | General Standard |  | [Geschäftsbericht 2025](dokumente/khd-humboldt-wedag-international-ag/KHD-AG_Group_Annual_Report___2025.pdf) |
@@ -85,7 +85,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | RENK Group AG | Prime Standard | MDAX | – |
 | Rheinmetall AG | Prime Standard | DAX | [Geschäftsbericht 2025](dokumente/rheinmetall-ag/Rheinmetall-Geschaeftsbericht-2025.pdf) |
 | Ringmetall SE | General Standard |  | – |
-| Siemens Aktiengesellschaft | Prime Standard | DAX | – |
+| Siemens Aktiengesellschaft | Prime Standard | DAX | [Konzernabschluss 2025](dokumente/siemens-aktiengesellschaft/konzernabschluss.pdf) |
 | Siemens Energy AG | Prime Standard | DAX | [Geschäftsbericht 2025](dokumente/siemens-energy-ag/A-Siemens_Energy_Annual_Report_2025-pdf_Original_file.pdf) |
 | Singulus Technologies AG | General Standard |  | [Geschäftsbericht 2025](dokumente/singulus-technologies-ag/Singulus-Technologies_Geschaeftsbericht-25.pdf) |
 | Sino-German United AG | General Standard |  | [Geschäftsbericht 2025](dokumente/sino-german-united-ag/Jahresabschluss-2025-Sino-German-United-AG.pdf) |

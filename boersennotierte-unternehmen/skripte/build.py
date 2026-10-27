@@ -228,6 +228,10 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
     ums_v = posten(d.get("guv"), js[1], ["Total Revenue", "Operating Revenue"]) if d and len(js) > 1 else None
     kurs = (d or {}).get("kurs_letzter", {}).get("schluss") or info.get("currentPrice") or info.get("regularMarketPrice")
     mcap = info.get("marketCap")
+    aktien = info.get("sharesOutstanding") or b(["Ordinary Shares Number", "Share Issued"])
+    mcap_berechnet = False
+    if mcap is None and kurs and aktien:
+        mcap, mcap_berechnet = kurs * aktien, True  # Yahoo liefert keinen Börsenwert: Kurs × Aktienzahl laut Bilanz
     gross = bafin.get(u["unternehmen_id"], [])
     fremd = [x for x in gross if schluessel(x["meldepflichtiger"]) != schluessel(x["emittent"])]
     top = fremd[0] if fremd else None
@@ -235,7 +239,30 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
     dk = sorted(dok.get(u["unternehmen_id"], []), key=lambda x: x["geschaeftsjahr"], reverse=True)
     div = dividenden_je_jahr(d or {})
     gleiche_waehrung = info.get("financialCurrency") in (None, info.get("currency"))
+    hinweise = []
+    if not d:
+        hinweise.append("keine Yahoo-Daten")
+    else:
+        if not js:
+            hinweise.append("kein Abschluss bei Yahoo")
+        elif not j0.startswith(("2025", "2026")):
+            hinweise.append(f"letzter Abschluss {j0[:4]}, nicht GJ 2025")
+        if not gleiche_waehrung:
+            hinweise.append(f"Berichtswährung {info.get('financialCurrency')} ≠ Kurswährung {info.get('currency')}")
+        if mcap is None:
+            hinweise.append("Börsenwert fehlt")
+        elif mcap_berechnet:
+            hinweise.append("Börsenwert = Kurs × Aktienzahl laut Bilanz (Yahoo liefert keinen)")
+        if js and ums is None and ebit is None and jue is None:
+            hinweise.append("GuV leer")
+        if ums is not None and ums_v and abs(ums / ums_v - 1) > 2:
+            hinweise.append("Umsatz ändert sich um mehr als 200 % zum Vorjahr, prüfen")
+        if bs is not None and ek is not None and bs and abs(ek) > bs * 1.05:
+            hinweise.append("Eigenkapital größer als Bilanzsumme, prüfen")
+        if kurs and info.get("sharesOutstanding") and mcap and abs(kurs * info["sharesOutstanding"] / mcap - 1) > 0.5:
+            hinweise.append("Börsenwert weicht stark von Kurs × Aktienzahl ab (mehrere Gattungen?)")
     return {
+        "Hinweise zur Datenqualität": "; ".join(hinweise) or None,
         "Unternehmen": u["name"], "ISIN": u["isin_haupt"], "Weitere Gattungen": u["weitere_isins"], "Kürzel": u["kuerzel"],
         "Yahoo-Ticker": u["yahoo"], "Segment": u["segment"], "Weitere Segmente": u["weitere_segmente"], "Index": u["index"],
         "Land": u["land"], "Sitz (Yahoo)": u["sitz"], "Subsektor (Börse)": u["subsektor_db"], "Industrie (Yahoo)": u["industrie_yahoo"],
@@ -251,7 +278,7 @@ def zeile_uebersicht(u, d, bafin, dok, zusatz):
         "Nettoschulden/EBITDA": teile(netto, ebitda) if ebitda and ebitda > 0 else None,
         "Operativer Cashflow (Mio.)": mio("", ocf), "Free Cashflow (Mio.)": mio("", fcf),
         "Handelswährung": info.get("currency"), "Kurs": kurs, "Kursdatum": (d or {}).get("kurs_letzter", {}).get("datum"),
-        "Aktien (Mio.)": mio("", info.get("sharesOutstanding")), "Börsenwert (Mio.)": mio("", mcap),
+        "Aktien (Mio.)": mio("", aktien), "Börsenwert (Mio.)": mio("", mcap),
         "Enterprise Value (Mio.)": mio("", info.get("enterpriseValue")),
         "KGV (GJ)": teile(mcap, jue) if gleiche_waehrung and jue and jue > 0 else None,
         "KGV (12M, Yahoo)": info.get("trailingPE"), "KGV erwartet (Yahoo)": info.get("forwardPE"),

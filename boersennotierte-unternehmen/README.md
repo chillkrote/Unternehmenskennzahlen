@@ -10,7 +10,7 @@ boersennotierte-unternehmen/
   <branche>/
     README.md               Unternehmen der Branche, Abdeckung, Links zu den Geschäftsberichten
     auswertung/             <Branche>_Kennzahlen_GJ2025.xlsx
-    dokumente/<firma>/      Geschäftsberichte/Jahresfinanzberichte (PDF, per Git LFS)
+    dokumente/<firma>/      Geschäftsberichte/Jahresfinanzberichte (PDF)
     dokumente/index.csv     Quelle, Abrufdatum, SHA-256, Seiten je Dokument
   auswertung/               Gesamtübersicht aller Branchen (eine Excel)
   rohdaten/yahoo/           je ISIN alle Rohdaten von Yahoo Finance (JSON)
@@ -19,7 +19,6 @@ boersennotierte-unternehmen/
   skripte/                  Abruf, Berichtssuche, Excel-Erzeugung
 ```
 
-Die PDFs liegen per **Git LFS** im Repo (Entscheidung vom 27.10.2026). Zum Auschecken der Dateien `git lfs install` und `git lfs pull`.
 
 ## Branchen
 

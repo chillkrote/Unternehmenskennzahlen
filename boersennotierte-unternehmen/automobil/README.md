@@ -4,7 +4,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 
 - **Unternehmen:** 25 (Liste in `../universum/universum.csv`, Spalte `branche` = `automobil`)
 - **Abschlussdaten (Yahoo):** 23 von 25
-- **Geschäftsberichte im Repo:** 11 von 25 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
+- **Geschäftsberichte im Repo:** 12 von 25 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
 - **Auswertung:** [`auswertung/Automobil_Kennzahlen_GJ2025.xlsx`](auswertung/Automobil_Kennzahlen_GJ2025.xlsx)
 
 | Unternehmen | Segment | Index | Geschäftsbericht |
@@ -25,7 +25,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | JOST Werke SE | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/jost-werke-se/jost-werke-se---financial-statements-2025-hgb---final-web.pdf) |
 | Knaus Tabbert AG | Prime Standard |  | [Geschäftsbericht 2025](dokumente/knaus-tabbert-ag/Geschaeftsbericht-2025-DE.pdf) |
 | Mercedes-Benz Group AG | Prime Standard | DAX | – |
-| MS Industrie AG | m:access |  | – |
+| MS Industrie AG | m:access |  | [Jahresfinanzbericht 2025](dokumente/ms-industrie-ag/MS_Industrie_AG_-_JF-Bericht_2025_web-lock.pdf) |
 | Novem Group S.A. | Prime Standard |  | – |
 | paragon GmbH & Co. KGaA | Prime Standard |  | – |
 | Porsche Automobil Holding SE | General Standard | MDAX | [Geschäftsbericht 2025](dokumente/porsche-automobil-holding-se/PSE-GB_Deutsch_2025_.pdf) |

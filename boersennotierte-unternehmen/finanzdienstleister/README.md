@@ -4,7 +4,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 
 - **Unternehmen:** 63 (Liste in `../universum/universum.csv`, Spalte `branche` = `finanzdienstleister`)
 - **Abschlussdaten (Yahoo):** 54 von 63
-- **Geschäftsberichte im Repo:** 25 von 63 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
+- **Geschäftsberichte im Repo:** 30 von 63 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
 - **Auswertung:** [`auswertung/Finanzdienstleister_Kennzahlen_GJ2025.xlsx`](auswertung/Finanzdienstleister_Kennzahlen_GJ2025.xlsx)
 
 | Unternehmen | Segment | Index | Geschäftsbericht |
@@ -13,14 +13,14 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | ALBIS Leasing AG | General Standard |  | – |
 | Allane SE | Prime Standard |  | – |
 | Aquamondi AG | Primärmarkt |  | [Jahresabschluss 2025](dokumente/aquamondi-ag/Jahresabschluss_Aquamondi_2025_2026.pdf) |
-| Ascory Bank AG | Basic Board |  | – |
+| Ascory Bank AG | Basic Board |  | [Geschäftsbericht 2025](dokumente/ascory-bank-ag/20260413-ascory-geschaeftsbericht-2025-web.pdf) |
 | Averdion Se | Freiverkehr/Regionalbörse |  | [Jahresabschluss 2025](dokumente/averdion-se/Digital-Copy_AVERDION-SE_IFRS-JA2025_Attestation-Certificate.pdf) |
 | Berliner Effektengesellschaft AG | Basic Board |  | – |
-| Binect AG | Basic Board |  | – |
+| Binect AG | Basic Board |  | [Geschäftsbericht 2025](dokumente/binect-ag/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf) |
 | Bitcoin Group SE | Primärmarkt |  | [Geschäftsbericht 2025](dokumente/bitcoin-group-se/BitcoinGroup_GB2025.pdf) |
 | Brockhaus Technologies AG | Prime Standard |  | – |
 | CAMERIT AG | General Standard |  | [Geschäftsbericht 2025](dokumente/camerit-ag/CAMERIT_AG_Geschaeftsbericht_fuer-2025-fina-le-Version-Stand-06.04.26.pdf) |
-| Deutsche Beteiligungs AG | Prime Standard | SDAX | – |
+| Deutsche Beteiligungs AG | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/deutsche-beteiligungs-ag/260310_DBAG_Annual_Report_2025.pdf) |
 | Deutsche Börse AG | Prime Standard | DAX | [Jahresabschluss 2025](dokumente/deutsche-boerse-ag/DBAG_Einzelabschluss_DE_2025.pdf) |
 | Deutsche Effecten- und Wechsel-Beteiligungsgesellschaft AG | Basic Board |  | [Geschäftsbericht 2025](dokumente/deutsche-effecten-und-wechsel-beteiligungsgesellschaft-ag/DEWB-GB-2025.pdf) |
 | DF Deutsche Forfait AG | General Standard |  | [Geschäftsbericht 2025](dokumente/df-deutsche-forfait-ag/doc04_-_geschaeftsbericht_deutsch.pdf) |
@@ -53,7 +53,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | OEKOWORLD AG | Scale |  | – |
 | OVB Holding AG | Prime Standard |  | [Geschäftsbericht 2025](dokumente/ovb-holding-ag/ovb_geschaeftsbericht_2025.pdf) |
 | Payments Group Holding GmbH & Co KGaA | Scale |  | – |
-| PEH Wertpapier AG | Scale |  | – |
+| PEH Wertpapier AG | Scale |  | [Geschäftsbericht 2025](dokumente/peh-wertpapier-ag/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf) |
 | Philion SE | Freiverkehr/Regionalbörse |  | – |
 | Pyramid AG | Basic Board |  | – |
 | Rigsave S.P.A. | Scale |  | – |
@@ -70,5 +70,5 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | Tradegate AG Wertpapierhandelsbank | Basic Board |  | – |
 | U.C.A. Aktiengesellschaft | m:access |  | [Geschäftsbericht 2025](dokumente/u-c-a-aktiengesellschaft/UCA_Geschaeftsbericht_2025.pdf) |
 | Valora Effekten Handel AG | Freiverkehr/Regionalbörse |  | [Geschäftsbericht 2025](dokumente/valora-effekten-handel-ag/VEHGeschaeftsbericht2026.pdf) |
-| Value-Holdings AG | m:access |  | – |
+| Value-Holdings AG | m:access |  | [Geschäftsbericht 2025](dokumente/value-holdings-ag/Geschaeftsbericht-Value-Holdings-AG-2025.pdf) |
 | Webac Holding AG | General Standard |  | [Geschäftsbericht 2025](dokumente/webac-holding-ag/GB-2025_online.pdf) |

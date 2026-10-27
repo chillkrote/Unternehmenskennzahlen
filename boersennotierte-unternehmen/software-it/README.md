@@ -4,7 +4,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 
 - **Unternehmen:** 61 (Liste in `../universum/universum.csv`, Spalte `branche` = `software-it`)
 - **Abschlussdaten (Yahoo):** 55 von 61
-- **Geschäftsberichte im Repo:** 32 von 61 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
+- **Geschäftsberichte im Repo:** 36 von 61 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
 - **Auswertung:** [`auswertung/Software_It_Kennzahlen_GJ2025.xlsx`](auswertung/Software_It_Kennzahlen_GJ2025.xlsx)
 
 | Unternehmen | Segment | Index | Geschäftsbericht |
@@ -25,7 +25,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | CHAPTERS Group AG | Basic Board |  | [Geschäftsbericht 2025](dokumente/chapters-group-ag/CHAPTERS-Group-Annual-Report-2025.pdf) |
 | Cogia AG | Primärmarkt |  | – |
 | Cyan AG | Freiverkehr/Regionalbörse |  | – |
-| DATAGROUP SE | Basic Board |  | – |
+| DATAGROUP SE | Basic Board |  | [Geschäftsbericht 2025](dokumente/datagroup-se/Geschaeftsbericht_2024-25_SAFE.pdf) |
 | DCI Database for Commerce and Industry AG | m:access |  | – |
 | DN Group AG | Primärmarkt |  | – |
 | DocCheck AG | Basic Board |  | – |
@@ -38,8 +38,8 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | INTERSHOP Communications Aktiengesellschaft | Prime Standard |  | [Geschäftsbericht 2025](dokumente/intershop-communications-aktiengesellschaft/ISH_GB2025.pdf) |
 | IONOS Group SE | Prime Standard | MDAX | [Geschäftsbericht 2025](dokumente/ionos-group-se/IONOS_Annual_Report_2025.pdf) |
 | IVU Traffic Technologies AG | Prime Standard |  | [Geschäftsbericht 2025](dokumente/ivu-traffic-technologies-ag/IVU_Annual_Report_2025.pdf) |
-| Kontron AG | Prime Standard | SDAX | – |
-| KPS AG | General Standard |  | – |
+| Kontron AG | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/kontron-ag/kontron_geschaeftsbericht_2025_final_sec.pdf) |
+| KPS AG | General Standard |  | [Geschäftsbericht 2025](dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf) |
 | LS telcom AG | General Standard |  | [Geschäftsbericht 2025](dokumente/ls-telcom-ag/gb_2024_2025.pdf) |
 | medondo holding AG | Basic Board |  | [Geschäftsbericht 2025](dokumente/medondo-holding-ag/2026-06-23_Geschaeftsbericht_Konzern-2025_final.pdf) |
 | Mensch und Maschine Software SE | Scale |  | – |
@@ -50,7 +50,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | NorCom Information Technology GmbH & Co KGaA | General Standard |  | – |
 | ORBIS AG | General Standard |  | [Jahresfinanzbericht 2025](dokumente/orbis-ag/2025_Jahresfinanzbericht.pdf) |
 | plenum AG | m:access |  | [Geschäftsbericht 2025](dokumente/plenum-ag/plenum_Konzernbericht_2025.pdf) |
-| POB AG | m:access |  | – |
+| POB AG | m:access |  | [Konzernabschluss 2025](dokumente/pob-ag/pob-ag_offenlegungsdatei-konzern-2025_final_30.06.2026-1.pdf) |
 | PRO DV AG | m:access |  | – |
 | PSI Software SE | Prime Standard |  | [Geschäftsbericht 2025](dokumente/psi-software-se/PSI_2025d.pdf) |
 | q.beyond AG | Prime Standard |  | [Jahresabschluss 2025](dokumente/q-beyond-ag/qbeyond-ag-jahresabschluss-2025-x92bvg6.pdf) |

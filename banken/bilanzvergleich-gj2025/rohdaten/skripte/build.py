@@ -327,6 +327,44 @@ for g_, r_, b_ in rows:
             b_["fiscal_year"] = 2025
         b_["notes"] = ((b_.get("notes") or "") + " | Nacherhebung 27.10.2026 (" + ", ".join(filled) + "): " + "; ".join(sorted(set(srcs)))).strip(" |")
         b_["_nach"] = True
+# formale HGB-Bilanzen 31.12.2025 (Jahresabschluss, EU CC2 der Offenlegung bzw. des EBA-Hubs, Nacherhebung)
+BIL = {norm(k): v for k, v in (load("bilanzen_2025.json") or {}).items()}
+BIL_HUB = set()
+for h in HN["neu"] + HN["bestehend"]:
+    c2 = h.get("cc2") or {}
+    if c2.get("fuer_bilanzblatt") and norm(h["name"]) not in BIL:
+        pa = dict(c2["passiva"])
+        BIL[norm(h["name"])] = {"aktiva": c2["aktiva"], "passiva": pa, "page": None,
+                                "source_url": "EBA-Pillar-3-Datenhub, EU CC2 Spalte a (Bilanz laut Jahresabschluss), Hub-Eintrag " + h["hub_name"],
+                                "note": "; ".join(c2.get("notes") or [])}
+        BIL_HUB.add(norm(h["name"]))
+for n_, e in NE.items():
+    bl = e.get("bilanz2025")
+    if bl and norm(n_) not in BIL:
+        pa = dict(bl["passiva"]); pa["ek"] = bl["ek"]
+        BIL[norm(n_)] = {"aktiva": bl["aktiva"], "passiva": pa, "page": None, "source_url": bl["src"]["url"],
+                         "note": "Nacherhebung 27.10.2026: " + bl["src"]["doc"]}
+# Bilanzsumme aus der formalen Bilanz ersetzt Ranglisten-, Presse- und Websiteangaben (Review 27.10.2026):
+# nur GJ 2025, nur wenn die Quelle der Zeile nicht selbst der Jahresabschluss ist und die Abweichung über 0,5 Mio. € liegt.
+for g_, r_, b_ in rows:
+    d = BIL.get(norm(b_["name"]))
+    if not d or (b_.get("fiscal_year") or 2025) != 2025 or not b_.get("bilanzsumme"):
+        continue
+    if (b_.get("source_type") or "").startswith("Jahresabschluss"):
+        continue
+    summe = sum(v for v in d["aktiva"].values() if isinstance(v, (int, float)))
+    alt = b_["bilanzsumme"] / 1e6
+    if abs(summe - alt) <= 0.5:
+        continue
+    alt_typ = b_.get("source_type") or "n. v."
+    b_["bilanzsumme"] = summe * 1e6
+    b_["source_type"] = "Jahresabschluss HGB (Bilanz laut EU CC2)" if "CC2" in d["source_url"] or "ffenlegung" in d["source_url"] else "Jahresabschluss HGB"
+    quelle = d["source_url"].split("; ")[0]
+    b_["source_url"] = quelle if quelle.startswith("http") else HUB_URL
+    b_["source_doc"] = ("Offenlegungsbericht 31.12.2025, EU CC2 (Bilanz laut Jahresabschluss)" if quelle.startswith("http") and "ffenlegung" in quelle
+                        else quelle if not quelle.startswith("http") else "Jahresabschluss 2025, Bilanz")
+    b_["notes"] = ((b_.get("notes") or "") + f" | Korrektur 27.10.2026: Bilanzsumme aus der formalen HGB-Bilanz ({quelle}) statt {ws_fmt(alt * 1e6)} Mio. € ({alt_typ}).").strip(" |")
+    b_["_nach"] = True
 # sort ranking inside group by Bilanzsumme
 ALLG = [g for g, _ in groups] + [EXTRA_GROUP]
 order = {g: i for i, g in enumerate(ALLG)}
@@ -1071,22 +1109,7 @@ hub_sheet(
 
 
 # ---------- Bilanzen 31.12.2025 (Formblatt 1 RechKredV, Mio. €) ----------
-BIL = {norm(k): v for k, v in (load("bilanzen_2025.json") or {}).items()}
-BIL_HUB = set()
-for h in HN["neu"] + HN["bestehend"]:
-    c2 = h.get("cc2") or {}
-    if c2.get("fuer_bilanzblatt") and norm(h["name"]) not in BIL:
-        pa = dict(c2["passiva"])
-        BIL[norm(h["name"])] = {"aktiva": c2["aktiva"], "passiva": pa, "page": None,
-                                "source_url": "EBA-Pillar-3-Datenhub, EU CC2 Spalte a (Bilanz laut Jahresabschluss), Hub-Eintrag " + h["hub_name"],
-                                "note": "; ".join(c2.get("notes") or [])}
-        BIL_HUB.add(norm(h["name"]))
-for n_, e in NE.items():
-    bl = e.get("bilanz2025")
-    if bl and norm(n_) not in BIL:
-        pa = dict(bl["passiva"]); pa["ek"] = bl["ek"]
-        BIL[norm(n_)] = {"aktiva": bl["aktiva"], "passiva": pa, "page": None, "source_url": bl["src"]["url"],
-                         "note": "Nacherhebung 27.10.2026: " + bl["src"]["doc"]}
+# BIL wird vor der Rangfolge aufgebaut (Bilanzsumme aus der formalen Bilanz, siehe unten)
 AKT = [("barreserve", "1. Barreserve"), ("schuldtitel_oeff", "2. Schuldtitel öffentlicher Stellen und Wechsel"),
        ("ford_ki", "3. Forderungen an Kreditinstitute"), ("ford_kunden", "4. Forderungen an Kunden"),
        ("schuldverschr", "5. Schuldverschreibungen und andere festverzinsliche Wertpapiere"),

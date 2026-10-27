@@ -169,6 +169,7 @@ tr.sel td { background: var(--amber-bg); }
       <a class="key" href="#cmp" data-v="cmp"><b>F3</b>Einzelbanken</a>
       <a class="key" href="#rank" data-v="rank"><b>F4</b>Liste</a>
       <a class="key" href="#mkt" data-v="mkt" id="key-mkt"><b>F5</b>Börse</a>
+      <a class="key" href="#ts" data-v="ts"><b>F6</b>Zeitreihen</a>
       <a class="key" href="#u-ueb" data-v="u-ueb" data-b="u"><b>F1</b>Branchen</a>
       <a class="key" href="#u-branche" data-v="u-branche" data-b="u"><b>F2</b>Branche</a>
       <a class="key" href="#u-vergleich" data-v="u-vergleich" data-b="u"><b>F3</b>Unternehmen</a>
@@ -240,7 +241,7 @@ function abgeleitet(b) {
     if (m.ebene === "Institut" && m.waehrung === "EUR" && m.marktkap) { b.mkap = m.marktkap / 1e6; b.mkap_ek = b.ek ? b.mkap / b.ek : null; }
   }
   b.fonds_cet1 = b.fonds != null && b.cet1 ? b.fonds / b.cet1 : null;
-  b.bs_zr = b.zeitreihe && b.zeitreihe.Bilanzsumme || {};
+  b.bs_zr = b.zr && b.zr.bilanzsumme || b.zeitreihe && b.zeitreihe.Bilanzsumme || {};
   return b;
 }
 
@@ -529,6 +530,52 @@ function viewCmp() {
   </div>`;
 }
 
+/* ---------- Ansicht TS: Zeitreihen (Langformat, HGB-Einzelabschluss) ---------- */
+const TS_KZ = { bilanzsumme: "Bilanzsumme", eigenkapital: "Eigenkapital", fonds_340g: "Fonds § 340g", jahresueberschuss: "Jahresüberschuss" };
+let tsKz = "bilanzsumme", tsIndex = false;
+function tsChart(banken, kz) {
+  const reihen = banken.map(b => ({ b, pts: Object.entries(b.zr && b.zr[kz] || {}).sort().map(([j, v]) => [+j, v]) })).filter(r => r.pts.length);
+  if (!reihen.length) return `<p class="n">Für diese Auswahl liegen keine Werte vor.</p>`;
+  if (tsIndex) reihen.forEach(r => { const v0 = r.pts.find(p => p[1] > 0); r.pts = v0 ? r.pts.map(([j, v]) => [j, v / v0[1] * 100]) : []; });
+  const rr = reihen.filter(r => r.pts.length);
+  const W = 1100, H = 380, x0 = 70, x1 = W - 150, y0 = 12, y1 = H - 26;
+  const js = rr.flatMap(r => r.pts.map(p => p[0])), jlo = Math.min(...js), jhi = Math.max(...js);
+  const alle = rr.flatMap(r => r.pts.map(p => p[1]));
+  let lo = Math.min(...alle, tsIndex ? 100 : 0), hi = Math.max(...alle, tsIndex ? 100 : 0); const pad = (hi - lo) * .06 || 1; hi += pad; if (lo < 0) lo -= pad;
+  const sx = j => x0 + (x1 - x0) * (jhi === jlo ? .5 : (j - jlo) / (jhi - jlo)), sy = v => y1 - (y1 - y0) * (v - lo) / (hi - lo);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  niceTicks(lo, hi, 6).forEach(t => s += `<line class="gl" x1="${x0}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${x0 - 6}" y="${sy(t)}" text-anchor="end" dominant-baseline="middle">${f0.format(t)}</text>`);
+  for (let j = jlo; j <= jhi; j++) s += `<line class="gl" x1="${sx(j)}" x2="${sx(j)}" y1="${y0}" y2="${y1}"/><text x="${sx(j)}" y="${y1 + 14}" text-anchor="middle">${j}</text>`;
+  s += `<line class="ax" x1="${x0}" x2="${x1}" y1="${y1}" y2="${y1}"/>`;
+  rr.forEach(r => {
+    const f = G[r.b.gruppe].farbe, d = r.pts.map(([j, v], i) => `${i ? "L" : "M"}${sx(j).toFixed(1)},${sy(v).toFixed(1)}`).join("");
+    s += `<path d="${d}" fill="none" stroke="${f}" stroke-width="1.8" stroke-linejoin="round"/>`;
+    r.pts.forEach(([j, v]) => s += `<circle cx="${sx(j)}" cy="${sy(v)}" r="3" fill="${f}" data-tip="${esc(`<b>${esc(kurz(r.b.bank))}</b>\n${j}: ${tsIndex ? f1.format(v) + " (Index)" : mio(v) + " Mio. €"}`)}"/>`);
+    const l = r.pts[r.pts.length - 1]; s += `<text x="${sx(l[0]) + 8}" y="${sy(l[1])}" dominant-baseline="middle" style="fill:${f}">${esc(kurz(r.b.bank).slice(0, 16))}</text>`;
+  });
+  return s + "</svg>";
+}
+function tsTabelle(banken, kz) {
+  const js = [...new Set(banken.flatMap(b => Object.keys(b.zr && b.zr[kz] || {})))].sort();
+  if (!js.length) return "";
+  return `<div class="scroll"><table><thead><tr><th>${TS_KZ[kz]} (Mio. €)</th>${js.map(j => `<th>${j}</th>`).join("")}</tr></thead><tbody>${banken.map(b => { const z = b.zr && b.zr[kz] || {};
+    return `<tr><td>${esc(kurz(b.bank).slice(0, 30))}</td>${js.map(j => z[j] != null ? `<td>${mio(z[j])}</td>` : `<td class="n">–</td>`).join("")}</tr>`; }).join("")}</tbody></table></div>`;
+}
+function viewTs() {
+  if (auswahl === null) auswahl = STANDARD_AUSWAHL.map(re => BANKEN.find(b => re.test(b.bank))).filter(Boolean).map(b => b.bank);
+  const banken = auswahl.map(n => BANKEN.find(b => b.bank === n)).filter(Boolean);
+  const picks = `<div class="picks">${banken.map(b => `<span class="chip"><i class="sw" style="background:${G[b.gruppe].farbe}"></i>${esc(kurz(b.bank))}<button type="button" data-weg="${esc(b.bank)}" aria-label="${esc(b.bank)} entfernen">×</button></span>`).join("")}
+    <input id="cmpadd" list="banklist" placeholder="+ Bank hinzufügen (max. 6)" autocomplete="off" ${banken.length >= 6 ? "disabled" : ""}></div>`;
+  const ctrl = `<div class="ctrl" style="margin-bottom:12px">${Object.entries(TS_KZ).map(([k, n]) => `<button type="button" data-tskz="${k}" aria-pressed="${k === tsKz}">${n}</button>`).join("")}
+    <button type="button" data-tsindex="1" aria-pressed="${tsIndex}" style="margin-left:8px">indexiert (erstes Jahr = 100)</button></div>`;
+  return `<div class="grid">
+    ${panel({ code: "TS", titel: "Auswahl", sub: "gleiche Auswahl wie CMP", body: picks })}
+    ${panel({ code: "TS 1", titel: `${TS_KZ[tsKz]} im Zeitverlauf`, sub: "HGB-Einzelabschluss, Stichtag 31.12.", body: ctrl + tsChart(banken, tsKz),
+      fuss: "Reihen reichen so weit zurück, wie Berichte erhoben wurden (Ziel: 10 Jahre). Lücken bleiben Lücken, es wird nicht interpoliert. Bei Fusionen endet die Reihe des Rechtsträgers." })}
+    ${panel({ code: "TS 2", titel: "Werte", sub: "Mio. €", body: tsTabelle(banken, tsKz) })}
+  </div>`;
+}
+
 /* ---------- Ansicht RANK ---------- */
 let rankSort = { k: "bs", ab: true }, rankGruppe = "alle";
 const RANK_SP = ["bs", "ek_fonds_quote", "fonds_bs", "cet1_quote", "gk_quote", "gk_puffer_pp", "lr", "rwa_dichte"];
@@ -750,7 +797,7 @@ function tape() {
 }
 
 /* ---------- Routing & Ereignisse ---------- */
-const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt,
+const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl() };
 const bereichVon = v => v.startsWith("u-") ? "u" : "b";
 let aktuell = "grp", metaBanken = "";
@@ -777,7 +824,7 @@ function bankDazu(name) {
   if (!b) { const f = UNT.finden(name); if (f) { UNT.hinzu(f.name); gehe("u-vergleich"); } return; }
   if (auswahl === null) viewCmp();
   if (!auswahl.includes(b.bank)) { auswahl.push(b.bank); if (auswahl.length > 6) auswahl.shift(); }
-  gehe("cmp");
+  gehe(aktuell === "ts" ? "ts" : "cmp");
 }
 document.addEventListener("click", e => {
   const t = e.target;
@@ -788,6 +835,8 @@ document.addEventListener("click", e => {
   else if (t.closest("[data-rg]")) { rankGruppe = t.closest("[data-rg]").dataset.rg; render(); }
   else if (t.closest("[data-sort]")) { const k = t.closest("[data-sort]").dataset.sort; rankSort = { k, ab: rankSort.k === k ? !rankSort.ab : true }; render(); }
   else if (t.closest("[data-weg]")) { const n = t.closest("[data-weg]").dataset.weg; auswahl = auswahl.filter(x => x !== n); render(); }
+  else if (t.closest("[data-tskz]")) { tsKz = t.closest("[data-tskz]").dataset.tskz; render(); }
+  else if (t.closest("[data-tsindex]")) { tsIndex = !tsIndex; render(); }
   else if (t.closest("[data-fenster]")) { mktFenster = t.closest("[data-fenster]").dataset.fenster; render(); }
   else if (t.closest("[data-muetter]")) { mktMuetter = !mktMuetter; render(); }
   else if (t.closest("[data-rang]")) { mktRang = t.closest("[data-rang]").dataset.rang; render(); }
@@ -802,7 +851,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   if (VIEWS[c]) gehe(c); else if (alias && UNT.da()) gehe(alias); else bankDazu(v);
 });
 document.addEventListener("keydown", e => {
-  const m = (bereichVon(aktuell) === "u" ? { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich" } : { F1: "grp", F2: "quot", F3: "cmp", F4: "rank", F5: "mkt" })[e.key];
+  const m = (bereichVon(aktuell) === "u" ? { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich" } : { F1: "grp", F2: "quot", F3: "cmp", F4: "rank", F5: "mkt", F6: "ts" })[e.key];
   if (m) { e.preventDefault(); gehe(m); }
 });
 addEventListener("hashchange", render);

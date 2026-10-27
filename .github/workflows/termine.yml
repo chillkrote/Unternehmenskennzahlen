@@ -69,12 +69,14 @@ jobs:
             done
             echo "Neu geladen: $(grep -c '^OK ' /tmp/abruf.log 2>/dev/null || true), nicht gefunden/offen: $(grep -c '^-- ' /tmp/abruf.log 2>/dev/null || true)"
           } >> "$GITHUB_STEP_SUMMARY"
+      # Schreiben nur auf main: ein Start von einem anderen Branch ist ein Trockenlauf (Abruf und Zusammenfassung, kein Commit)
       - name: Änderungen pushen
         id: push
+        if: github.ref == 'refs/heads/main'
         # Dateien über 100 MB lehnt GitHub ab; der Abruf speichert sie nicht (termine/rohdaten/zu_gross.txt)
         run: .github/scripts/daten_pushen.sh "Berichtstermine und neue Berichte $(date -u +%Y-%m-%d)" termine boersennotierte-unternehmen banken
       - name: Terminal neu bauen lassen
-        if: steps.push.outputs.geaendert == 'true'
+        if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"
         continue-on-error: true
         env:

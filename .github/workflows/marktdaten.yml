@@ -70,11 +70,13 @@ jobs:
               echo "<details><summary>Ausfälle</summary>"; echo; echo '```'; grep -E "^   " "$f" | head -60 || true; echo '```'; echo "</details>"
             done
           } >> "$GITHUB_STEP_SUMMARY"
+      # Schreiben nur auf main: ein Start von einem anderen Branch ist ein Trockenlauf (Abruf und Zusammenfassung, kein Commit)
       - name: Änderungen pushen
         id: push
+        if: github.ref == 'refs/heads/main'
         run: .github/scripts/daten_pushen.sh "Börsendaten $(date -u +%Y-%m-%d) ($WAS)" app/data/markt.json app/data/kurse_woche.json
       - name: Terminal neu bauen lassen
-        if: steps.push.outputs.geaendert == 'true'
+        if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"
         continue-on-error: true
         env:

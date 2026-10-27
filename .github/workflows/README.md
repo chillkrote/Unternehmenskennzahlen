@@ -16,6 +16,8 @@
 * **Teilausfälle.** Bricht bei Yahoo mehr als ein Drittel der Banken (bzw. mehr als zehn Prozent der Ticker bei den Wochenkursen) weg, bleibt die alte Datei liegen und der Lauf zeigt eine Warnung. Einzelne fehlende Ticker stehen unter `fehler` in den Dateien. Jeder Lauf schreibt eine Zusammenfassung (Seite des Laufs).
 * **pip-Cache** über `setup-python`.
 
+* **Schreiben nur auf main.** Daten-Commit, Push und Auslösen von `terminal.yml` laufen nur auf main. Von einem anderen Branch gestartet, sind `marktdaten.yml` und `termine.yml` Trockenläufe (Abruf und Zusammenfassung, kein Commit); `terminal.yml` baut dort nur das Artifact und veröffentlicht `terminal-dist` nicht.
+
 ## Minutenschätzung je Monat (Free-Plan: 2000 Linux-Minuten für private Repos)
 
 Gemessen am Testlauf vom 27.10.2026 (Abruf inkl. Start je Job ca. 1 min aufgerundet).

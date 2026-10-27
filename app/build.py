@@ -14,7 +14,8 @@ def main():
     p.add_argument("--excel", default=datenschicht.STANDARD_EXCEL)
     a = p.parse_args()
     banken = datenschicht.lade(a.excel)
-    daten = {"meta": {"quelle": Path(a.excel).name, "stichtag": "2025-12-31", "anzahl": len(banken)}, "banken": banken}
+    daten = {"meta": {"quelle": Path(a.excel).name, "stichtag": "2025-12-31", "anzahl": len(banken)}, "banken": banken,
+             "gruppen_zr": datenschicht.lade_gruppen()}
     roh = json.dumps(daten, ensure_ascii=False, separators=(",", ":"))
     (HIER / "data").mkdir(exist_ok=True)
     (HIER / "data/banken.json").write_text(roh)

@@ -84,6 +84,8 @@ ZEITREIHE = "Zeitreihe 2021-2025"
 # Langformat (zeitreihen/): HGB-Einzelreihen je Bank und Jahr, beliebig viele Jahre
 ZEITREIHE_LANG = REPO / "zeitreihen/zeitreihe_lang.csv"
 LANG_KENNZAHLEN = ("bilanzsumme", "eigenkapital", "fonds_340g", "jahresueberschuss")
+# aufsichtliche Quartalsreihen (EBA-Hub, EU KM1): je Stichtag
+QUARTAL_KENNZAHLEN = ("cet1_quote", "gk_quote", "leverage_ratio", "lcr", "nsfr")
 
 
 def slug(name):
@@ -91,17 +93,34 @@ def slug(name):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
+GRUPPEN_LANG = REPO / "zeitreihen/gruppen_lang.csv"
+
+
+def lade_gruppen(datei=GRUPPEN_LANG):
+    """Bundesbank-Gruppenreihen: {kennzahl: {gruppe_id: {jahr: wert}}} (Jahresreihen, Stichtag 31.12.)."""
+    out = {}
+    if not Path(datei).exists():
+        return out
+    with open(datei, encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            out.setdefault(r["kennzahl"], {}).setdefault(r["gruppe_id"], {})[r["stichtag"][:4]] = float(r["wert"])
+    return out
+
+
 def lade_lang(banken, datei=ZEITREIHE_LANG):
-    """Legt je Bank `zr` = {kennzahl: {jahr: wert}} aus dem Langformat an (HGB, Einzelabschluss)."""
+    """Legt je Bank `zr` = {kennzahl: {jahr: wert}} (HGB, Einzelabschluss) und `zq` = {kennzahl: {stichtag: wert}} (aufsichtlich) an."""
     if not Path(datei).exists():
         return
     nach_id = {slug(b["bank"]): b for b in banken}
     with open(datei, encoding="utf-8", newline="") as f:
         for r in csv.DictReader(f):
             b = nach_id.get(r["unternehmen_id"])
-            if b is None or r["kennzahl"] not in LANG_KENNZAHLEN or r["rechnungslegung"] != "HGB":
+            if b is None:
                 continue
-            b.setdefault("zr", {}).setdefault(r["kennzahl"], {})[r["stichtag"][:4]] = float(r["wert"])
+            if r["kennzahl"] in LANG_KENNZAHLEN and r["rechnungslegung"] == "HGB":
+                b.setdefault("zr", {}).setdefault(r["kennzahl"], {})[r["stichtag"][:4]] = float(r["wert"])
+            elif r["kennzahl"] in QUARTAL_KENNZAHLEN and r["rechnungslegung"] == "aufsichtlich":
+                b.setdefault("zq", {}).setdefault(r["kennzahl"], {})[r["stichtag"]] = float(r["wert"])
 BILANZEN = "Bilanzen 31.12.2025"
 
 

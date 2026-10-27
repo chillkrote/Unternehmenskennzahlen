@@ -1,9 +1,9 @@
 from lib import *
-G = ('governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf', 'siemens-energy-ag')
-R = ('governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf', 'siemens-energy-ag')
-uni('Daimler Truck Holding AG','daimler-truck-holding-ag'); uni('Salzgitter AG','salzgitter-ag'); uni('Covestro AG',''); uni('MTU Aero Engines AG','mtu-aero-engines-ag')
-uni('thyssenkrupp AG','thyssenkrupp-ag'); uni('ThyssenKrupp AG','thyssenkrupp-ag'); uni('Traton SE','traton-se'); uni('Henkel AG & Co. KGaA','henkel-ag-und-co-kgaa'); uni('Vonovia SE','vonovia-se')
-uni('Siemens Healthineers AG','siemens-healthineers-ag'); uni('Deutsche Bank AG','deutsche-bank-ag'); uni('Rheinmetall AG','rheinmetall-ag'); uni('Airbus SE','airbus-se')
+G = ('governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf', 'U000537')
+R = ('governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf', 'U000537')
+uni('Daimler Truck Holding AG','U000133'); uni('Salzgitter AG','U000512'); uni('Covestro AG',''); uni('MTU Aero Engines AG','U000415')
+uni('thyssenkrupp AG','U000655'); uni('ThyssenKrupp AG','U000655'); uni('Traton SE','U000668'); uni('Henkel AG & Co. KGaA','U000279'); uni('Vonovia SE','U000716')
+uni('Siemens Healthineers AG','U000538'); uni('Deutsche Bank AG','U000148'); uni('Rheinmetall AG','U000502'); uni('Airbus SE','U000026')
 uni('Frankfurter Allgemeine Zeitung GmbH','')
 # Geschäftsjahr 2025 = 1.10.2024 - 30.9.2025
 for n,f,t24,t25,sp in [('Dr.-Ing. Christian Bruch','Vorsitzender (CEO)',2121,6605,12),('Maria Ferraro','Mitglied',1154,3896,12),('Tim Holt','Mitglied',1161,3860,13),

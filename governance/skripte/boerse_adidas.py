@@ -1,7 +1,7 @@
 from lib import *
-G = ('governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf', 'adidas-ag')
-R = ('governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf', 'adidas-ag')
-uni('SAP SE','sap-se'); uni('Merck KGaA','merck-kgaa'); uni('Lanxess AG','lanxess-aktiengesellschaft'); uni('Wacker Chemie AG','wacker-chemie-ag')
+G = ('governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf', 'U000017')
+R = ('governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf', 'U000017')
+uni('SAP SE','U000515'); uni('Merck KGaA','U000396'); uni('Lanxess AG','U000363'); uni('Wacker Chemie AG','U000727')
 for n,f,t,sp in [('Bjørn Gulden','Vorsitzender (CEO)',6896.216,12),('Harm Ohlmeyer','Finanzen (CFO)',2866.084,12),
                  ('Michelle Robertson','Global Human Resources, People and Culture',2372.289,13),('Mathieu Sidokpohou','Vertrieb',2189.832,13)]:
     M(G,'Vorstand',n,f,'','','',sp,'','Funktion lt. Vergütungsbericht S. %d' % sp)

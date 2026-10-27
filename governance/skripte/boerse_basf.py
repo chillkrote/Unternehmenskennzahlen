@@ -1,7 +1,7 @@
 from lib import *
-G = ('governance/dokumente/basf-se/geschaeftsbericht-2025.pdf', 'basf-se')
-R = ('governance/dokumente/basf-se/verguetungsbericht-2025.pdf', 'basf-se')
-uni('BMW AG',''); uni('Henkel AG & Co. KGaA','henkel-ag-und-co-kgaa'); uni('RWE AG','rwe-aktiengesellschaft')
+G = ('governance/dokumente/basf-se/geschaeftsbericht-2025.pdf', 'U000061')
+R = ('governance/dokumente/basf-se/verguetungsbericht-2025.pdf', 'U000061')
+uni('BMW AG',''); uni('Henkel AG & Co. KGaA','U000279'); uni('RWE AG','U000510')
 VS=[('Dr. Markus Kamieth','Vorsitzender','2024-04-25',6001,'Erstbestellung 2017; Geschäftsbereiche: Corporate Development, Legal/Compliance, HR, Communications, IR','24'),
  ('Dr. Dirk Elvermann','Mitglied (CFO)','2023-04-27',1766,'','24'),('Michael Heinz','Mitglied','2011-05-06',2770,'Mandat endet planmäßig mit der HV am 30.4.2026','24'),
  ('Anup Kothari','Mitglied','2024-03-01',2137,'','24'),('Dr. Stephan Kothrade','Mitglied','2023',2001,'','25'),('Dr. Katja Scharpwinkel','Mitglied','2024',1925,'','25')]

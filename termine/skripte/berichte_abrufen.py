@@ -230,7 +230,7 @@ def main():
             z["stand"] = heute.isoformat()
             if r["ok"]:
                 name = dateiname(r["url"], ende, z["berichtsart"])
-                ziel = tlib.REPO / u["ordner"] / z["unternehmen_id"] / name
+                ziel = tlib.REPO / u["ordner"] / u["ordner_name"] / name
                 ziel.parent.mkdir(parents=True, exist_ok=True)
                 ziel.write_bytes(r["daten"])
                 sha = hashlib.sha256(r["daten"]).hexdigest()
@@ -239,7 +239,7 @@ def main():
                 dok = tlib.REPO / u["ordner"] / "index.csv"
                 neue.setdefault(dok, []).append({
                     "unternehmen": u["name"], "unternehmen_id": z["unternehmen_id"], "dokumentart": ART[z["berichtsart"]][1],
-                    "geschaeftsjahr": str(ende.year if ende else ""), "datei": f"{z['unternehmen_id']}/{name}",
+                    "geschaeftsjahr": str(ende.year if ende else ""), "datei": f"{u['ordner_name']}/{name}",
                     "status": "Originaldokument (PDF)", "quelle_url": r["url"], "abruf": f"Download {heute.strftime('%d.%m.%Y')}",
                     "sha256": sha, "seiten": r["seiten"], "bytes": len(r["daten"]), "verwendet_in": "",
                     "hinweis": f"{z['berichtsart']} Periode bis {z['periode_ende']}, Termin {z['termin']}"})

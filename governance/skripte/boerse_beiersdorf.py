@@ -1,6 +1,6 @@
 from lib import *
-B = ('governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf', 'beiersdorf-aktiengesellschaft')
-uni('Aurubis AG', 'aurubis-ag')
+B = ('governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf', 'U000073')
+uni('Aurubis AG', 'U000053')
 VS = [('Vincent Warnery','Vorsitzender (CEO)','Corporate Development & Strategy, Internal Audit, Supply Chain & Quality, R&D, Derma, Health Care, Communication, Sustainability, Japan','',''),
  ('Oswald Barckhahn','Mitglied','Europe, USA & Canada, Luxury','',''),
  ('Astrid Hermann','Mitglied (CFO)','Finance, Legal & Compliance, IT, tesa SE','',''),

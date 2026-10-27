@@ -1,6 +1,6 @@
 from lib import *
-G = ('governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf', 'deutsche-telekom-ag')
-R = ('governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf', 'deutsche-telekom-ag')
+G = ('governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf', 'U000161')
+R = ('governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf', 'U000161')
 VS = [('Timotheus Höttges','Vorsitzender (CEO)','','',11176.445,23),('Dr. Ferri Abolhassan','Mitglied (T-Systems)','','',1904.509,23),('Birgit Bohle','Mitglied (Personal und Recht)','','',4732.989,23),
  ('Rodrigo Diehl','Mitglied (Deutschland)','2025-03-01','',1504.703,23),('Dr. Christian P. Illek','Mitglied (Finanzen, CFO)','','',4999.266,23),('Thorsten Langheim','Mitglied (USA und Unternehmensentwicklung)','','',5031.368,23),
  ('Dominique Leroy','Mitglied (Europa)','','',4239.794,23),('Dr. Abdurazak Mudesir','Mitglied (Produkt und Technologie)','2025-10-01','',471.850,24),

@@ -1,10 +1,10 @@
 {
- "029-group-se": {
+ "U000001": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "11880-solutions-ag": {
+ "U000002": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -34,16 +34,16 @@
    }
   ]
  },
- "123fahrschule-se": {
+ "U000003": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "1und1-ag": {
+ "U000004": {
   "status": "geladen",
   "url": "https://imagepool.1und1.ag/v2/download/berichte/GB_1u1_2025_DEU.pdf"
  },
- "2g-energy-ag": {
+ "U000005": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -73,32 +73,32 @@
    }
   ]
  },
- "2invest-ag": {
+ "U000006": {
   "status": "geladen",
   "url": "https://2invest-ag.com/wp-content/uploads/2026/04/2invest-AG_Jahresfinanzbericht-2025_v10_clean.pdf"
  },
- "3u-holding-ag": {
+ "U000007": {
   "status": "geladen",
   "url": "https://www.3u.net/wp-content/uploads/2026/03/3u-holding-ag-geschaeftsbericht-2025-UUUJ25D.pdf"
  },
- "7c-solarparken-ag": {
+ "U000009": {
   "status": "geladen",
   "url": "https://www.solarparken.com/Finanzberichte/31122025%20JAHRESABSCHLUSS%202025.pdf"
  },
- "a-i-s-ag": {
+ "U000027": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "a-s-cr-ation-tapeten-ag": {
+ "U000047": {
   "status": "geladen",
   "url": "https://www.as-creation.com/fileadmin/07_Investor_Relations/PDFs/Geschaeftsbericht_AS_2025_final.pdf"
  },
- "aap-implantate-ag": {
+ "U000010": {
   "status": "geladen",
   "url": "https://www.aap.de/cms/api/wp-content/uploads/2026/04/aap_KA2025_dt.pdf"
  },
- "abo-energy-gmbh-und-co-kgaa": {
+ "U000012": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -108,7 +108,7 @@
    }
   ]
  },
- "accentro-real-estate-ag": {
+ "U000013": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -126,65 +126,65 @@
    }
   ]
  },
- "aconnic-ag": {
+ "U000014": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "ad-pepper-media-international-n-v": {
+ "U000020": {
   "status": "geladen",
   "url": "https://adpeppergroup.com/wp-content/uploads/2026/04/adp_geschaeftsbericht-2025_WEB_verschluesselt.pdf"
  },
- "adesso-se": {
+ "U000016": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "adidas-ag": {
+ "U000017": {
   "status": "geladen",
   "url": "https://report.adidas-group.com/2025/de/_assets/downloads/annual-report-adidas-gb25.pdf"
  },
- "adler-group-s-a": {
+ "U000018": {
   "status": "geladen",
   "url": "https://www.adler-group.com/fileadmin/web/docs/IR/Hauptversammlung/2026/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf"
  },
- "adtran-holdings-inc": {
+ "U000021": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "adtran-networks-se": {
+ "U000022": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "advanced-blockchain-ag": {
+ "U000023": {
   "status": "geladen",
   "url": "https://cdn.prod.website-files.com/62794e6eeb0e5f95013b8e82/6a43ce292eaf50b184764e20_Incredulous-Labs-Financialstatements_31.12.2025_unsigned%20de-DE_unverb.pdf"
  },
- "agrob-immobilien-ag": {
+ "U000024": {
   "status": "geladen",
   "url": "https://www.agrob-ag.de/images/downloads/gesch%C3%A4ftsberichte/Geschaeftsbericht_2025.pdf"
  },
- "aht-syngas-technology-n-v": {
+ "U000025": {
   "status": "geladen",
   "url": "https://www.aht-cleantec.com/wp-content/uploads/2026/06/AHT-Annual-Report-2025.pdf"
  },
- "airbus-se": {
+ "U000026": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "aixtron-se": {
+ "U000028": {
   "status": "geladen",
   "url": "https://www.aixtron.com/investoren/publikationen/2025/de/Gesch%C3%A4ftsbericht%202025.pdf"
  },
- "albis-leasing-ag": {
+ "U000031": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "alexanderwerk-ag": {
+ "U000032": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -214,7 +214,7 @@
    }
   ]
  },
- "all-for-one-group-se": {
+ "U000034": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -228,24 +228,24 @@
    }
   ]
  },
- "allane-se": {
+ "U000033": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "allgeier-se": {
+ "U000035": {
   "status": "geladen",
   "url": "https://allgeier.com/download/23/geschaeftsberichte/921491/geschaeftsbericht-2025.pdf"
  },
- "altech-advanced-materials-ag": {
+ "U000037": {
   "status": "geladen",
   "url": "https://www.altechadvancedmaterials.com/wp-content/uploads/2026/04/2025-12-31_AAM_Geschaeftsbericht_v7_clean.pdf"
  },
- "alzchem-group-ag": {
+ "U000039": {
   "status": "geladen",
   "url": "https://www.alzchem.com/fileadmin/Investor_Relations/Finanzberichte/Alzchem-Geschaeftsbericht-2025s.pdf"
  },
- "amadeus-fire-ag": {
+ "U000040": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -275,174 +275,174 @@
    }
   ]
  },
- "amg-critical-materials-n-v": {
+ "U000041": {
   "status": "geladen",
   "url": "https://amg-nv.com/wp-content/uploads/AMG-2025-Annual-Report-1.pdf"
  },
- "anchorcore-se": {
+ "U000042": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "aquamondi-ag": {
+ "U000043": {
   "status": "geladen",
   "url": "https://www.aquamondi.de/assets/pdf/Jahresabschluss_Aquamondi_2025_2026.pdf"
  },
- "aroundtown-sa": {
+ "U000045": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "artec-technologies-ag": {
+ "U000046": {
   "status": "geladen",
   "url": "https://artec.de/wp-content/uploads/artec_technologies_Geschaeftsbericht_2025-1.pdf"
  },
- "ascory-bank-ag": {
+ "U000685": {
   "datei": "finanzdienstleister/dokumente/ascory-bank-ag/20260413-ascory-geschaeftsbericht-2025-web.pdf",
   "status": "geladen",
   "url": "https://www.ascory-bank.de/media/601/download/20260413_ascory-geschaeftsbericht-2025-web.pdf?v=1"
  },
- "asta-energy-solutions-ag": {
+ "U000048": {
   "status": "geladen",
   "url": "https://www.astagroup.com/wp-content/uploads/2026/04/ASTA-Geschaftsbericht-2025_DE.pdf"
  },
- "atoss-software-se": {
+ "U000049": {
   "status": "geladen",
   "url": "https://backend.atoss.com/sites/default/files/2026-03/atoss-geschaeftsbericht-2025.pdf"
  },
- "aumann-ag": {
+ "U000051": {
   "status": "geladen",
   "url": "https://www.aumann.com/fileadmin/templates/downloads/finanzberichte/2025_AAG_Gesch%C3%A4ftsbericht_FINAL.pdf"
  },
- "aumovio-se": {
+ "U000052": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "aurubis-ag": {
+ "U000053": {
   "status": "geladen",
   "url": "https://www.aurubis.com/dam/jcr:d5dd5726-9212-4067-a955-518e6d74d2dc/Aurubis_Jahresabschluss%20AG_GJ%202024_25.2025-12-04-05-28-55.pdf"
  },
- "auto1-group-se": {
+ "U000054": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "averdion-se": {
+ "U000055": {
   "status": "geladen",
   "url": "https://www.averdion.de/wp-content/uploads/Digital-Copy_AVERDION-SE_IFRS-JA2025_Attestation-Certificate.pdf"
  },
- "b-s-banksysteme-aktiengesellschaft": {
+ "U000103": {
   "status": "geladen",
   "url": "https://bs-ag.com/wp-content/uploads/2026/09/GB_2025_26.pdf"
  },
- "baader-bank-aktiengesellschaft": {
+ "U000056": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "basf-se": {
+ "U000061": {
   "status": "geladen",
   "url": "https://www.basf.com/dam/jcr:d54ddca4-f9c7-4b4f-b65e-d6ae3188ee24/basf/www/global/documents/en/investor-relations/calendar-and-publications/reports/2026/BASF_Report_2025.pdf?vid=vXPtEt9DZ7yb6IkPp1tvE.s_sOITjPqa"
  },
- "basler-aktiengesellschaft": {
+ "U000062": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "bastei-luebbe-ag": {
+ "U000063": {
   "datei": "telekom-medien/dokumente/bastei-luebbe-ag/Jahresabschluss_Gesch__ftsjahr_2024_2025_Bastei_L__bbe_AG.pdf",
   "status": "geladen",
   "url": "https://assets.ctfassets.net/dp8z2k6biv78/6i6VyTj4dNUM5WEMIRampV/7cab6d9edc4d7b30db564e69cf2a40df/Jahresabschluss_Gesch%C3%83_ftsjahr_2024_2025_Bastei_L%C3%83_bbe_AG.pdf"
  },
- "bayer-aktiengesellschaft": {
+ "U000065": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "bayerische-motoren-werke-aktiengesellschaft": {
+ "U000067": {
   "status": "nicht gefunden",
   "suche": "fehler: ReadTimeout",
   "versuche": []
  },
- "baywa-aktiengesellschaft": {
+ "U000068": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "bb-biotech-ag": {
+ "U000070": {
   "status": "geladen",
   "url": "https://www.bbbiotech.ch/_Resources/Persistent/2/d/6/d/2d6dca0c44b5cc0dc14c5b5b759ff958a14bc749/BB%20Biotech%20AG%20GB%202025_de.pdf"
  },
- "bechtle-ag": {
+ "U000071": {
   "status": "geladen",
   "url": "https://www.bechtle.com/dam/jcr:bb54f33c-f1f1-4883-a733-f33e53665dd1/Bechtle_gb2025_de.pdf"
  },
- "befesa-s-a": {
+ "U000072": {
   "status": "geladen",
   "url": "https://images.befesa.com/media/2026/04/Befesa_Annual_Report_2025.pdf"
  },
- "beiersdorf-aktiengesellschaft": {
+ "U000073": {
   "status": "geladen",
   "url": "https://reports.beiersdorf.com/annual-report/2025/_assets/downloads/entire-beiersdorf-ar25.pdf?h=5y9hhLi9"
  },
- "beno-holding-ag": {
+ "U000074": {
   "status": "geladen",
   "url": "https://www.beno-gruppe.de/wp-content/uploads/2026/06/BENO-Holding-AG-KA-2025-Testatsexemplar-qeS.pdf"
  },
- "berentzen-gruppe-aktiengesellschaft": {
+ "U000075": {
   "status": "geladen",
   "url": "https://www.berentzen-gruppe.de/fileadmin/media/4_0_investoren/4_3-berichte/2025_Geschaeftsbericht_gesch.pdf"
  },
- "berliner-effektengesellschaft-ag": {
+ "U000076": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "bertrandt-aktiengesellschaft": {
+ "U000078": {
   "status": "geladen",
   "url": "https://www.bertrandt.com/fileadmin/files/files/00_Unternehmen/01_Investor_Relations/03_Finanzberichte/GJ_24-25/Bertrandt_GB_24-25_DEU.pdf"
  },
- "bet-at-home-com-ag": {
+ "U000079": {
   "status": "geladen",
   "url": "https://www.bet-at-home.ag/wp-content/uploads/2026/04/geschaeftsbericht_2025_de.pdf"
  },
- "bhb-brauholding-bayern-mitte-ag": {
+ "U000081": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "bigrep-se": {
+ "U000083": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "bijou-brigitte-modische-accessoires-aktiengesellschaft": {
+ "U000084": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "bike24-holding-ag": {
+ "U000085": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "bilfinger-se": {
+ "U000086": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "binect-ag": {
+ "U000087": {
   "datei": "finanzdienstleister/dokumente/binect-ag/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf",
   "status": "geladen",
   "url": "https://www.binect.com/wp-content/uploads/2026/04/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf"
  },
- "bio-gate-ag": {
+ "U000089": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "biofrontera-ag": {
+ "U000088": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -460,29 +460,29 @@
    }
   ]
  },
- "bioxxmed-ag": {
+ "U000090": {
   "status": "geladen",
   "url": "https://bioxxmed.ag/wp-content/uploads/2026/06/2025-12-31_2025_bXm_JA_final.pdf"
  },
- "bitcoin-group-se": {
+ "U000091": {
   "status": "geladen",
   "url": "https://bitcoingroup.com/_assets/images/PDF/FB_2025/BitcoinGroup_GB2025.pdf"
  },
- "blue-cap-ag": {
+ "U000093": {
   "status": "geladen",
   "url": "https://www.blue-cap.de/app/uploads/2026/05/260508_GB25_BlueCap_gesichert.pdf"
  },
- "borussia-dortmund-gmbh-und-co-kommanditgesellschaft-auf-akti": {
+ "U000096": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "brain-biotech-ag": {
+ "U000097": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "branicks-group-ag": {
+ "U000098": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -512,91 +512,91 @@
    }
   ]
  },
- "bremer-lagerhaus-gesellschaft-aktiengesellschaft-von-1877": {
+ "U000099": {
   "status": "geladen",
   "url": "https://www.blg-logistics.com/fileadmin/Investor_Relation/Geschaeftsbericht_2025/2025_-_Geschaeftsbericht.pdf"
  },
- "brenntag-se": {
+ "U000100": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "brockhaus-technologies-ag": {
+ "U000101": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "brueder-mannesmann-aktiengesellschaft": {
+ "U000102": {
   "status": "geladen",
   "url": "https://bmag-online.de/wp-content/uploads/2026/08/BMAG-GB-2025.pdf"
  },
- "camerit-ag": {
+ "U000105": {
   "status": "geladen",
   "url": "https://www.camerit.de/wp-content/uploads/2026/04/CAMERIT_AG_Geschaeftsbericht_fuer-2025-fina-le-Version-Stand-06.04.26.pdf"
  },
- "cancom-se": {
+ "U000106": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "cannovum-cannabis-ag": {
+ "U000107": {
   "status": "nicht gefunden",
   "suche": "http 404",
   "versuche": []
  },
- "carl-zeiss-meditec-ag": {
+ "U000109": {
   "status": "geladen",
   "url": "https://www.zeiss.com/content/dam/med-ag/investor-relations/financial-publications/afx_geschaeftsbericht_202425.pdf"
  },
- "ceconomy-ag": {
+ "U000110": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "cenit-aktiengesellschaft": {
+ "U000111": {
   "status": "geladen",
   "url": "https://www.cenit.com/fileadmin/Media/cenit/investorrelations/pdf/reports/annual/Final_GB_2025_DE_09.04.26.pdf"
  },
- "centrotherm-international-ag": {
+ "U000112": {
   "status": "geladen",
   "url": "https://codastic-centrotherm-next.cdn.prismic.io/codastic-centrotherm-next/actvmpGXnQHGZHeU_Gesch%C3%A4ftsbericht2025.pdf"
  },
- "cewe-stiftung-und-co-kgaa": {
+ "U000114": {
   "status": "geladen",
   "url": "https://www.cewe-group.com/fileadmin/user_upload_facelift/Nachhaltigkeit/Nachhaltigkeitsberichte/Nachhaltigkeitsberichte_PDF/Geschaeftsbericht2025.pdf"
  },
- "cgre-ag": {
+ "U000115": {
   "status": "geladen",
   "url": "https://cgre.ag/wp-content/uploads/2026/07/CGRE_AG_Testat_JA_2025.pdf"
  },
- "chapters-group-ag": {
+ "U000116": {
   "status": "geladen",
   "url": "https://www.chaptersgroup.de/wp-content/uploads/2026/05/CHAPTERS-Group-Annual-Report-2025.pdf"
  },
- "cherry-se": {
+ "U000117": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "clearvise-ag": {
+ "U000120": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "cliq-digital-ag": {
+ "U000121": {
   "status": "geladen",
   "url": "https://static.cliqdigital.com/files/July2026/Group%20Annual%20Report%202025.pdf"
  },
- "co-don-ag": {
+ "U000122": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "continental-aktiengesellschaft": {
+ "U000125": {
   "status": "geladen",
   "url": "https://cdn.continental.com/fileadmin/__imported/sites/corporate/_international/english/hubpages/30_20investors/30_20reports/annual_20reports/downloads/annual-report-2025.pdf"
  },
- "coreo-ag": {
+ "U000126": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -626,7 +626,7 @@
    }
   ]
  },
- "corestate-capital-holding-s-a": {
+ "U000127": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": [
@@ -656,7 +656,7 @@
    }
   ]
  },
- "covestro-ag": {
+ "U000128": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -670,39 +670,39 @@
    }
   ]
  },
- "cr-energy-ag": {
+ "U000130": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "cts-eventim-ag-und-co-kgaa": {
+ "U000131": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "daimler-truck-holding-ag": {
+ "U000133": {
   "status": "geladen",
   "url": "https://www.daimlertruck.com/fileadmin/user_upload/dokumente/investoren/berichte/geschaeftsberichte/2025/daimer-truck-holding-ag-jahresabschluss-einzelabschluss-2025.pdf"
  },
- "daldrup-und-soehne-aktiengesellschaft": {
+ "U000134": {
   "status": "geladen",
   "url": "https://daldrup.eu/ir/files/Daldrup-Konzern-Geschaeftsbericht-2025.pdf"
  },
- "datagroup-se": {
+ "U000135": {
   "datei": "software-it/dokumente/datagroup-se/Geschaeftsbericht_2024-25_SAFE.pdf",
   "status": "geladen",
   "url": "https://www.datagroup.de/hubfs/Investor%20Relations/Geschaeftsbericht%202024-25_SAFE.pdf"
  },
- "datron-ag": {
+ "U000137": {
   "status": "geladen",
   "url": "https://www.datron.de/fileadmin/dokumente/ir/2026/hauptversammlung/Geschaeftsbericht_fuer_das_Geschaeftsjahr_2025_der_DATRON_AG.pdf"
  },
- "dci-database-for-commerce-and-industry-ag": {
+ "U000138": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "defama-deutsche-fachmarkt-ag": {
+ "U000140": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -732,193 +732,193 @@
    }
   ]
  },
- "delignit-ag": {
+ "U000142": {
   "status": "geladen",
   "url": "https://www.delignit-ag.de/fileadmin/delignit-ag/downloads/finanzinformationen/2025_Geschaeftsbericht_Delignit-AG.pdf"
  },
- "delivery-hero-se": {
+ "U000143": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "delticom-ag": {
+ "U000144": {
   "status": "geladen",
   "url": "https://pubcontent.delti.com/wp-content/uploads/2026/03/Delticom_Geschaeftsbericht_2025.pdf"
  },
- "demire-deutsche-mittelstand-real-estate-ag": {
+ "U000145": {
   "status": "geladen",
   "url": "https://www.demire.ag/wp-content/uploads/DEMIRE_Geschaeftsbericht_2025_DE.pdf"
  },
- "dermapharm-holding-se": {
+ "U000146": {
   "status": "geladen",
   "url": "https://ir.dermapharm.de/fileadmin/Dermapharm-se/Dokumenten/Dokumenten_DE/Investor_Relations/Finanzberichte_Praesentationen/2025/Finanzberichte/DERMAPHARM_FY_2025_GESCHAEFTSBERICHT.pdf"
  },
- "deutsche-beteiligungs-ag": {
+ "U000150": {
   "datei": "finanzdienstleister/dokumente/deutsche-beteiligungs-ag/260310_DBAG_Annual_Report_2025.pdf",
   "status": "geladen",
   "url": "https://www.dbag.com/fileadmin/user_upload/260310_DBAG_Annual_Report_2025.pdf"
  },
- "deutsche-effecten-und-wechsel-beteiligungsgesellschaft-ag": {
+ "U000152": {
   "status": "geladen",
   "url": "https://dewb.de/wp-content/uploads/2026/06/DEWB-GB-2025.pdf"
  },
- "deutsche-euroshop-ag": {
+ "U000153": {
   "status": "geladen",
   "url": "https://www.deutsche-euroshop.de/media/public/db/media/1/2026/03/100117/des_ar25_en_s.pdf"
  },
- "deutsche-grundstuecksauktionen-ag": {
+ "U000154": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "deutsche-konsum-real-estate-ag": {
+ "U000155": {
   "status": "geladen",
   "url": "https://www.deutsche-konsum.de/fileadmin/content/investorrelations/finanzberichte/DKR_Geschaeftsjahr_2024_2025_de.pdf"
  },
- "deutsche-lufthansa-ag": {
+ "U000157": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "deutsche-rohstoff-ag": {
+ "U000160": {
   "status": "nicht gefunden",
   "suche": "fehler: ProxyError",
   "versuche": []
  },
- "deutsche-telekom-ag": {
+ "U000161": {
   "status": "geladen",
   "url": "https://bericht.telekom.com/geschaeftsbericht-2025/_assets/downloads/entire-dtag-gb25.pdf"
  },
- "deutsche-wohnen-se": {
+ "U000162": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "deutz-aktiengesellschaft": {
+ "U000163": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "df-deutsche-forfait-ag": {
+ "U000164": {
   "status": "geladen",
   "url": "https://dfag.de/site/assets/files/7785/doc04_-_geschaeftsbericht_deutsch.pdf"
  },
- "dhl-ag": {
+ "U000165": {
   "status": "nicht gefunden",
   "suche": "fehler: ReadTimeout",
   "versuche": []
  },
- "dierig-holding-ag": {
+ "U000166": {
   "status": "geladen",
   "url": "https://www.dierig.de/fileadmin/Konzernberichte/2025/dierig_gb_2025.pdf"
  },
- "dmg-mori-aktiengesellschaft": {
+ "U000168": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "dn-group-ag": {
+ "U000169": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "doccheck-ag": {
+ "U000170": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "douglas-ag": {
+ "U000173": {
   "status": "geladen",
   "url": "https://douglas.group/fileadmin/user_upload/DOUGLAS_Geschaeftsbericht_2024-2025_DE.pdf"
  },
- "dr-ing-h-c-f-porsche-ag": {
+ "U000175": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "draegerwerk-ag-und-co-kgaa": {
+ "U000174": {
   "status": "nicht gefunden",
   "suche": "fehler: ReadTimeout",
   "versuche": []
  },
- "duerr-aktiengesellschaft": {
+ "U000176": {
   "datei": "industrie/dokumente/duerr-aktiengesellschaft/annual-report-2025-DE.pdf",
   "status": "geladen",
   "url": "https://www.durr-group.com/fileadmin/durr-group.com/Investors/Downloads/Reports/2025/annual-report-2025-DE.pdf"
  },
- "dws-group-gmbh-und-co-kgaa": {
+ "U000177": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "e-on-se": {
+ "U000195": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "eckert-und-ziegler-se": {
+ "U000179": {
   "status": "geladen",
   "url": "https://www.ezag.com/wp-content/uploads/2025/05/euz25e.pdf"
  },
- "ecotel-communication-ag": {
+ "U000180": {
   "status": "geladen",
   "url": "https://www.ecotel.de/fileadmin/Contentpages/Ueber_uns/Geschaeftsbericht_2025/Ecotel_GB25_D_final_upload.pdf"
  },
- "edag-engineering-group-ag": {
+ "U000181": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "edel-se-und-co-kgaa": {
+ "U000182": {
   "status": "geladen",
   "url": "https://www.edel.com/wp-content/uploads/2025/03/Edel-SE-Co.-KGaA-Geschaeftsbericht.pdf"
  },
- "einhell-germany-ag": {
+ "U000183": {
   "status": "geladen",
   "url": "https://www.einhell.com/fileadmin/com/investor-relations/reports/business-reports/en/einhell-business-report-2025-en.pdf"
  },
- "eisen-und-huettenwerke-ag": {
+ "U000184": {
   "status": "geladen",
   "url": "https://www.ehw.ag/fileadmin/pdf/ehw_geschaeftsbericht_2024_2025.pdf"
  },
- "electrovac-ag": {
+ "U000185": {
   "status": "geladen",
   "url": "https://www.electrovac.com/wp-content/uploads/Geschaftsbericht-2025_2026_DE.pdf"
  },
- "eleving-group-s-a": {
+ "U000186": {
   "status": "geladen",
   "url": "https://documents.eleving.com/d/8el82x3koyr8v22r/eleving-group-integrated-annual-report-2025.pdf"
  },
- "elmos-semiconductor-se": {
+ "U000187": {
   "status": "geladen",
   "url": "https://www.elmos.com/fileadmin/elmos-website/about-us/investor_relations/finanzberichte/2026/elmos-gb-2025-d.pdf"
  },
- "elringklinger-ag": {
+ "U000188": {
   "status": "geladen",
   "url": "https://elringklinger.de/fileadmin/user_upload/elringklinger-gb-2025-de-geschuetzt_rgb__2_.pdf"
  },
- "elumeo-se": {
+ "U000189": {
   "status": "geladen",
   "url": "https://www.elumeo.com/investor-relations/publikationen/finanzberichte/?file=2025_Bericht_DE.pdf"
  },
- "enapter-ag": {
+ "U000190": {
   "status": "geladen",
   "url": "https://enapterag.de/wp-content/uploads/2026/06/Konzernabschluss-Enapter-AG-2025-2026-04-30-Konzernabschluss-2025-der-Enapter-AG.pdf"
  },
- "enbw-energie-baden-wuerttemberg-ag": {
+ "U000191": {
   "status": "geladen",
   "url": "https://www.enbw.com/media/bericht/bericht-2025/downloads/enbw-geschaeftsbericht-2025.pdf"
  },
- "energent-ag": {
+ "U000192": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "energiekontor-ag": {
+ "U000193": {
   "status": "geladen",
   "url": "https://www.energiekontor.de/fileadmin/user_upload/IR/berichte/finanzberichte/2025/2025-GJ_Energiekontor_AG_Geschaeftsbericht_s.pdf"
  },
- "eph-group-ag": {
+ "U000196": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -932,15 +932,15 @@
    }
   ]
  },
- "epigenomics-ag": {
+ "U000197": {
   "status": "geladen",
   "url": "https://www.epigenomics.com/wp-content/uploads/2026/04/Epigenomics_Jahresfinanzbericht-2025_v9-clean.pdf"
  },
- "erlebnis-akademie-ag": {
+ "U000198": {
   "status": "geladen",
   "url": "https://www.eak-ag.de/eakag/investoren/finanzberichte/Jahresabschluss/eak_Geschaeftsbericht_2025_web.pdf"
  },
- "ernst-russ-ag": {
+ "U000199": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -970,39 +970,39 @@
    }
   ]
  },
- "erwe-immobilien-ag": {
+ "U000200": {
   "datei": "immobilien/dokumente/erwe-immobilien-ag/Testatsexemplar_ERWE_Immobilien_AG_JA_31.12.2025_eV_signed.pdf",
   "status": "geladen",
   "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/Testatsexemplar_ERWE_Immobilien_AG_JA_31.12.2025_eV_signed.pdf"
  },
- "eurokai-gmbh-und-co-kgaa": {
+ "U000203": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "euwax-ag": {
+ "U000204": {
   "status": "geladen",
   "url": "https://www.euwax-ag.de/media/20260428_gb_eag_final_1.pdf"
  },
- "ev-digital-invest-ag": {
+ "U000206": {
   "status": "nicht gefunden",
   "suche": "fehler: ProxyError",
   "versuche": []
  },
- "evonik-industries-ag": {
+ "U000207": {
   "status": "geladen",
   "url": "https://www.evonik.com/content/dam/evonik/documents/Evonik_Annual_Financial_Statements_2025.pdf"
  },
- "evotec-se": {
+ "U000208": {
   "status": "geladen",
   "url": "https://www.evotec.com/uploads/download-files/IR-ESG/2025/Full-year-2025/Integrated-Annual-Report-2025.pdf"
  },
- "exasol-ag": {
+ "U000209": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "fabasoft-ag": {
+ "U000211": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1032,16 +1032,16 @@
    }
   ]
  },
- "famicord-ag": {
+ "U000213": {
   "status": "geladen",
   "url": "https://ir.famicord.com/wp-content/uploads/2026/05/FamiCord_Annual-Report_2025.pdf"
  },
- "fast-finance24-holding-ag": {
+ "U000214": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "fcr-immobilien-ag": {
+ "U000215": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1071,120 +1071,120 @@
    }
   ]
  },
- "fernheizwerk-neukoelln-ag": {
+ "U000216": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "fielmann-group-ag": {
+ "U000217": {
   "status": "geladen",
   "url": "https://www.fielmann-group.com/fileadmin/fielmann/Dokumente/Publikationen/Geschaeftsberichte/DE/Fielmann_Geschaeftsbericht_2025.pdf"
  },
- "finexity-ag": {
+ "U000219": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "first-sensor-ag": {
+ "U000220": {
   "status": "nicht gefunden",
   "suche": "fehler: ConnectionError",
   "versuche": []
  },
- "flatexdegiro-se": {
+ "U000222": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "formycon-ag": {
+ "U000226": {
   "status": "geladen",
   "url": "https://www.formycon.com/wp-content/uploads/2026/04/FormyconAG_FY2025_DE_sec.pdf"
  },
- "fortec-elektronik-ag": {
+ "U000227": {
   "status": "geladen",
   "url": "https://www.fortecag.de/media/61/ce/d3/1766040579/FORTEC_GB-2025.pdf?ts=1772782275"
  },
- "fraport-ag": {
+ "U000230": {
   "status": "geladen",
   "url": "https://www.fraport.com/content/dam/fraport-company/documents/investoren/termine-und-publikationen/geschaeftsberichte/Fraport_Gesch%C3%A4ftsbericht_2025.pdf/_jcr_content/renditions/original.media_file.download_attachment.file/Fraport_Gesch%C3%A4ftsbericht_2025.pdf"
  },
- "freenet-ag": {
+ "U000231": {
   "status": "geladen",
   "url": "https://www.freenet.ag/binaries/_ts_1773989571280/content/assets/freenetgroup/pdf/ir-deutsch/finanzberichte/2025/freenet_geschaftsbericht_2025_web.pdf"
  },
- "fresenius-medical-care-ag": {
+ "U000233": {
   "status": "geladen",
   "url": "https://freseniusmedicalcare.com/content/dam/fresenius-medical-care/global/en/04_media/pdf/publications/2025/FME_Annual_Report_2025_EN.pdf"
  },
- "fresenius-se-und-co-kgaa": {
+ "U000234": {
   "status": "geladen",
   "url": "https://www.fresenius.com/sites/default/files/2026-03/fresenius_annual_report_2025_0.pdf"
  },
- "friedrich-vorwerk-group-se": {
+ "U000235": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "frosta-aktiengesellschaft": {
+ "U000237": {
   "status": "geladen",
   "url": "https://www.frosta-ag.com/media/FRoSTA-GB-2025-deutsch-FINAL.pdf"
  },
- "fuchs-se": {
+ "U000238": {
   "status": "geladen",
   "url": "https://fuchs.azureedge.net/fileadmin/Home/Investor_Relations/Geschaeftsbericht/Zwischenbericht/2026_25_/FSE_Einzelabschluss_2025_DE_final_interaktiv_geschuetzt.pdf"
  },
- "gateway-real-estate-ag": {
+ "U000240": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "gbs-software-ag": {
+ "U000241": {
   "status": "geladen",
   "url": "https://gbs-ag.com/wp-content/uploads/2026/05/Geschaeftsbericht-GBS-Software-AG-2025-WEB.pdf"
  },
- "gea-group-aktiengesellschaft": {
+ "U000242": {
   "status": "geladen",
   "url": "https://cdn.gea.com/-/media/investors/annual-report/2025/annual-report-2025-de.pdf?rev=675a55a023b8426c95fb97a4eb553dfb"
  },
- "gelsenwasser-ag": {
+ "U000243": {
   "status": "geladen",
   "url": "https://www.gelsenwasser.de/fileadmin/gelsenwasser/50_unternehmen/5.2-investoren/geschaeftsbericht_2025.pdf"
  },
- "geratherm-medical-ag": {
+ "U000244": {
   "status": "geladen",
   "url": "https://www.geratherm.com/fileadmin/Images_Downloads/Investor-Relations/Veroeffentlichungen/Geschaeftsbericht_Geratherm_2025.pdf"
  },
- "gerresheimer-ag": {
+ "U000245": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "gesco-se": {
+ "U000246": {
   "status": "geladen",
   "url": "https://gesco.de/fileadmin/static/pdfs/de/investor_relations/finanzberichte/de/2025/2025-gesco-geschaeftsbericht.pdf"
  },
- "gft-technologies-se": {
+ "U000247": {
   "status": "geladen",
   "url": "https://www.gft.com/dam/jcr:2285ea8c-1426-49e1-b29b-6ee5580e358a/gft-financial-report-integrated-annual-report-2025.pdf"
  },
- "global-fashion-group-s-a": {
+ "U000249": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "going-public-media-ag": {
+ "U000251": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "grammer-ag": {
+ "U000253": {
   "status": "geladen",
   "url": "https://www.grammer.com/media/01_content/05_investor_relations/annual_general_meetings/annual_general_meeting_2026/german/260327_gb-grammer-2025_de.pdf"
  },
- "grand-city-properties-s-a": {
+ "U000254": {
   "status": "geladen",
   "url": "https://www.grandcityproperties.com/grandcityproperties.com/Data_Objects/Downloads/Financial_Reports/FY_2025_Financials/GCP_FY_2025.pdf"
  },
- "greiffenberger-ag": {
+ "U000255": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1214,11 +1214,11 @@
    }
   ]
  },
- "grenke-ag": {
+ "U000256": {
   "status": "geladen",
   "url": "https://www.grenke.com/a/original/gallery/12428/files/original/86034819-b2d7-4fd3-891c-5d0c78f3520f.pdf"
  },
- "h2-core-ag": {
+ "U000258": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1248,33 +1248,33 @@
    }
   ]
  },
- "haier-smart-home-co-ltd": {
+ "U000259": {
   "status": "geladen",
   "url": "https://smart-home.haier.com/media/qyxnwuj4/d-share-28778_ar-2-eng-haier-smart-home-26-march-2236-cl.pdf"
  },
- "hamborner-reit-ag": {
+ "U000260": {
   "status": "geladen",
   "url": "https://www.hamborner.de/wp-content/uploads/2026/04/HAMBORNER-REIT-AG_Geschaeftsbericht_2025.pdf"
  },
- "hamburger-hafen-und-logistik-aktiengesellschaft": {
+ "U000262": {
   "status": "geladen",
   "url": "https://hhla.de/fileadmin/download/investoren/hv/hv-2026/HHLA_2025_Geschaeftsbericht.pdf"
  },
- "hannover-rueck-se": {
+ "U000264": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "hapag-lloyd-aktiengesellschaft": {
+ "U000267": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "hasen-immobilien-ag": {
+ "U000268": {
   "status": "geladen",
   "url": "https://www.hasen-ag.de/images/stories/PDF/Konzernabschluss_2025.pdf"
  },
- "hausvorteil-ag": {
+ "U000270": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1296,43 +1296,43 @@
    }
   ]
  },
- "hawesko-holding-se": {
+ "U000271": {
   "status": "geladen",
   "url": "https://www.hawesko-holding.com/media/pages/investor-relations/geschaftsbericht/f6b5fa517b-1777359265/hawesko_holding_se_geschaeftsbericht_2025.pdf"
  },
- "heidelberg-materials-ag": {
+ "U000274": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "heidelberg-pharma-ag": {
+ "U000275": {
   "status": "geladen",
   "url": "https://heidelberg-pharma.com/images/managed/HDP_Geschaftsbericht_2025.pdf"
  },
- "heidelberger-druckmaschinen-aktiengesellschaft": {
+ "U000273": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "helios-solar-ag": {
+ "U000276": {
   "status": "geladen",
   "url": "https://heliossolarag.com/__l5e/assets-v1/6ae1a565-21b9-466b-aca5-2d85051d4afa/HELIOS_SOLAR_AG_Annual_Report_2025.pdf"
  },
- "hella-gmbh-und-co-kgaa": {
+ "U000277": {
   "status": "geladen",
   "url": "https://www.hella.com/forvia-com/assets/documents/HELLA_Annual_Report_FY2025_secured.pdf"
  },
- "hellofresh-se": {
+ "U000278": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "henkel-ag-und-co-kgaa": {
+ "U000279": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "hensoldt-ag": {
+ "U000280": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1354,53 +1354,53 @@
    }
   ]
  },
- "hgears-ag": {
+ "U000281": {
   "status": "geladen",
   "url": "https://ir.hgears.com/wp-content/uploads/hGears_Annual_Report_EN_2025.pdf"
  },
- "highlight-communications-ag": {
+ "U000282": {
   "status": "nicht gefunden",
   "suche": "fehler: ConnectionError",
   "versuche": []
  },
- "hochtief-aktiengesellschaft": {
+ "U000284": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "hoenle-ag": {
+ "U000288": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "hoftex-group-ag": {
+ "U000285": {
   "status": "geladen",
   "url": "https://www.hoftexgroup.com/hoftexgroupag-de/news-und-media/dateien/finanzberichte/2025/Jahresabschluss-der-Hoftex-Group-AG-zum-31.12.2025.pdf"
  },
- "homag-group-ag": {
+ "U000286": {
   "status": "geladen",
   "url": "https://www.homag.com/fileadmin/image/reports/HOMAG_Jahresabschluss_2025.pdf"
  },
- "hometogo-se": {
+ "U000287": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "hornbach-holding-ag-und-co-kgaa": {
+ "U000289": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "hwa-ag": {
+ "U000292": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "hypoport-se": {
+ "U000293": {
   "status": "geladen",
   "url": "https://www.hypoport.com/wp-content/uploads/2026/03/Hypoport-2025-Q4-Annual-report-English.pdf"
  },
- "hyrican-informationssysteme-aktiengesellschaft": {
+ "U000294": {
   "status": "nicht gefunden",
   "suche": "fehler: ConnectionError",
   "versuche": [
@@ -1418,36 +1418,36 @@
    }
   ]
  },
- "immovaria-real-estate-ag": {
+ "U000298": {
   "status": "geladen",
   "url": "https://www.immovaria-real-estate.de/data.de/2026/IRE%20AG_Testat_31.12.2025_ohne%20Unterschriften.pdf"
  },
- "indus-holding-ag": {
+ "U000299": {
   "status": "geladen",
   "url": "https://indus.eu/wp-content/uploads/INDUS-Holding-AG-Annual-Report-2025.pdf"
  },
- "infas-holding-ag": {
+ "U000300": {
   "status": "geladen",
   "url": "https://www.infas-holding.de/wp-content/uploads/2026/07/3.-Konzernabschluss-zum-31.-Dezember-2025-einschliesslich-des-zusammengefassten-Konzern-Lageberichts.pdf"
  },
- "infineon-technologies-ag": {
+ "U000301": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "init-innovation-in-traffic-systems-se": {
+ "U000303": {
   "status": "geladen",
   "url": "https://www.initse.com/fileadmin/user_upload/Content/8_IR/5_Financial_reports/DE/2025/initSE_Geschaeftsbericht_2025s.pdf"
  },
- "innoscripta-se": {
+ "U000304": {
   "status": "geladen",
   "url": "https://d2tg0v9rmbhfb2.cloudfront.net/investors/hauptversammlung-2026/Festgestellter%20Jahresabschluss.pdf"
  },
- "innotec-tss-ag": {
+ "U000305": {
   "status": "geladen",
   "url": "https://www.innotectss.de/wp-content/uploads/2026/04/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf"
  },
- "instant-group-ag": {
+ "U000306": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1457,21 +1457,21 @@
    }
   ]
  },
- "instone-real-estate-group-se": {
+ "U000307": {
   "status": "nicht gefunden",
   "suche": "http 404",
   "versuche": []
  },
- "international-school-augsburg-ag": {
+ "U000308": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "intershop-communications-aktiengesellschaft": {
+ "U000309": {
   "status": "geladen",
   "url": "https://www.intershop.com/files/Intershop-2020/materials_pdfs/Investors/de/financial-reports/2025/ISH_GB2025.pdf"
  },
- "intica-systems-se": {
+ "U000311": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1501,213 +1501,213 @@
    }
   ]
  },
- "ionos-group-se": {
+ "U000312": {
   "status": "geladen",
   "url": "https://www.ionos-group.com/fileadmin/Publications/Berichte/FY_2025/IONOS_Annual_Report_2025.pdf"
  },
- "ivu-traffic-technologies-ag": {
+ "U000315": {
   "status": "geladen",
   "url": "https://www.ivu.com/fileadmin/ivu/08_Investoren/Berichte/2025/IVU_Annual_Report_2025.pdf"
  },
- "jdc-group-ag": {
+ "U000316": {
   "status": "geladen",
   "url": "https://investor-relations.jdcgroup.de/wp-content/uploads/JDCGROUP_GB2025_DE_RZ.pdf"
  },
- "jenoptik-ag": {
+ "U000317": {
   "datei": "industrie/dokumente/jenoptik-ag/jenoptik-geschaeftsbericht-2025.pdf",
   "status": "geladen",
   "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/berichte-und-tabellen/2025/online/jenoptik-geschaeftsbericht-2025.pdf"
  },
- "jost-werke-se": {
+ "U000319": {
   "status": "geladen",
   "url": "https://www.jost-world.com/globalassets/documents/pdfs/investor-relations/ir-reports/2026/jost-werke-se---financial-statements-2025-hgb---final-web.pdf"
  },
- "jungheinrich-aktiengesellschaft": {
+ "U000321": {
   "status": "geladen",
   "url": "https://media-live2.prod.scw.jungheinrichcloud.com/resource/blob/2383278/c95b4cb0ae97a0f7d3cb70ca7ecacf19/download-gb2025-data.pdf"
  },
- "k-s-aktiengesellschaft": {
+ "U000350": {
   "status": "geladen",
   "url": "https://www.kpluss.com/.downloads/ir/2025/kpluss-capital-market-conferences-dec-2025.pdf"
  },
- "kap-ag": {
+ "U000322": {
   "status": "geladen",
   "url": "https://www.kap.de/fileadmin/user_upload/kap.de/Dateien/Pdf/Geschaeftsberichte/Geschaeftsbericht_2025/KAP_AG_2025_Gescha__ftsbericht_web.pdf"
  },
- "khd-humboldt-wedag-international-ag": {
+ "U000326": {
   "status": "geladen",
   "url": "https://www.khd.com/wp-content/uploads/2026/03/KHD-AG_Group_Annual_Report___2025.pdf"
  },
- "khd-humboldt-wedag-vermoegensverwaltungs-ag": {
+ "U000327": {
   "status": "geladen",
   "url": "https://khdvv.de/wp-content/uploads/2026/02/GB_KHD-VV_2025_Final.pdf"
  },
- "kion-group-ag": {
+ "U000328": {
   "status": "geladen",
   "url": "https://www.kiongroup.com/KION-Website-Main/Investor-Relations/Shareholders-Meeting/2026/Annual-Report-of-KION-Group-for-the-2025-financial-year.pdf"
  },
- "klassik-radio-ag": {
+ "U000329": {
   "status": "geladen",
   "url": "https://assets.ctfassets.net/jkv7j7ridlow/7wtMWTaTYzNWl0cRA13yIw/8bca1246ac9d928ddf69f74c99da4785/KR_GB_online_final.pdf"
  },
- "knaus-tabbert-ag": {
+ "U000330": {
   "status": "geladen",
   "url": "https://www.knaustabbert.de/fileadmin/media/investor-relations/geschaeftsbericht/2025/Geschaeftsbericht-2025-DE.pdf"
  },
- "knorr-bremse-ag": {
+ "U000331": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "koenig-und-bauer-ag": {
+ "U000332": {
   "status": "geladen",
   "url": "https://investors.koenig-bauer.com/fileadmin/user_upload/04_Unternehmen/Investor_Relations/Berichte/Berichte_2025_GB/26-03-26-ir-annual-report-2025-de.pdf"
  },
- "kontron-ag": {
+ "U000333": {
   "datei": "software-it/dokumente/kontron-ag/kontron_geschaeftsbericht_2025_final_sec.pdf",
   "status": "geladen",
   "url": "https://cms.kontron.com/kontron/ir/reports/kontron_geschaeftsbericht_2025_final_sec.pdf"
  },
- "kps-ag": {
+ "U000334": {
   "datei": "software-it/dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf",
   "status": "geladen",
   "url": "https://kps.com/wp-content/uploads/2026/02/KPS-Konzernabschluss-2024-2025-1.pdf"
  },
- "ksb-se-und-co-kgaa": {
+ "U000351": {
   "status": "geladen",
   "url": "https://ksb.com/resource/blob/383566/55f76fc221ca3912a4056b346590527d/ksb-gb25-en-gesamt.pdf"
  },
- "kulmbacher-brauerei-aktien-gesellschaft": {
+ "U000353": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "kws-saat-se-und-co-kgaa": {
+ "U000354": {
   "status": "geladen",
   "url": "https://mediamaster.kws.com/04_Company/03_Investor_Relations/04_Financial_Report/2025_2026/q4/KWS_SAAT_Annual_Report_2025_2026-web.pdf"
  },
- "lampetia-ag": {
+ "U000356": {
   "status": "geladen",
   "url": "https://lampetia-ag.de/wp-content/uploads/2026/07/Lampetia-AG-Jahresabschluss-2025.pdf"
  },
- "lang-und-schwarz-aktiengesellschaft": {
+ "U000362": {
   "status": "geladen",
   "url": "https://www.ls-d.de/media/finanzberichte/gesch%C3%A4ftsberichte/2025/Geschaeftsbericht-2025.pdf"
  },
- "lanxess-aktiengesellschaft": {
+ "U000363": {
   "status": "geladen",
   "url": "https://lanxess.com/-/media/project/lanxess/corporate-internet/investors/reporting/2025/q4/2025-gb-lxs-web.pdf"
  },
- "lechwerke-ag": {
+ "U000367": {
   "status": "geladen",
   "url": "https://www.lew.de/media/5uff0ivi/lew_gb_2025_geschuetzt_gez.pdf"
  },
- "leg-immobilien-se": {
+ "U000368": {
   "status": "geladen",
   "url": "https://ir.leg-se.com/media/document/02cc3255-2a09-4399-9a90-f0bb5df6fa4b/assets/LEG_GB_2025_de.pdf"
  },
- "leifheit-aktiengesellschaft": {
+ "U000369": {
   "status": "geladen",
   "url": "https://www.leifheit-group.com/app/uploads/2026/04/Leifheit_IFRS_DE_PW.pdf"
  },
- "leo-international-precision-health-ag": {
+ "U000370": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "lewag-holding-aktiengesellschaft": {
+ "U000371": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "libero-football-finance-ag": {
+ "U000372": {
   "status": "geladen",
   "url": "https://libero-football-finance.com/wp-content/uploads/2026/05/Libero-football-finance_GB-2025_DE_final.pdf"
  },
- "limes-schlosskliniken-ag": {
+ "U000374": {
   "status": "geladen",
   "url": "https://www.limes-schlosskliniken.de/app/uploads/2026/05/Geschaeftsbericht-2025-LIMES-Schlosskliniken-2.pdf"
  },
- "lion-e-mobility-ag": {
+ "U000375": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "logwin-ag": {
+ "U000377": {
   "status": "geladen",
   "url": "https://www.logwin-logistics.com/fileadmin/user_upload/documents/2026/en/JA_2025_09032026/Logwin_AG_Annual_Financial_Report_2025.pdf"
  },
- "ls-telcom-ag": {
+ "U000379": {
   "status": "geladen",
   "url": "https://www.lstelcom.com/fileadmin/content/lst/company/investor_relations/finanzbericht/gb_2024_2025.pdf"
  },
- "luebke-kelber-ag": {
+ "U000380": {
   "status": "geladen",
   "url": "https://live-files.ynfinite.de/v1/file/6a57a818c5d691d5be1685a4/lkag_gb_2025_rz_15jul26_-_final.pdf"
  },
- "m1-kliniken-ag": {
+ "U000381": {
   "status": "geladen",
   "url": "https://www.m1-kliniken.de/aktie/aktienkurs/aktie/geschaeftsberichte.html?file=files/uploads/geschaeftsberichte/GB-2025_M1%20Kliniken_DEU.pdf"
  },
- "mainova-ag": {
+ "U000382": {
   "status": "geladen",
   "url": "https://www.mainova.de/resource/blob/167250/9056fe6c3a5d914b2f2b918ff2360669/hv-geschaeftsbericht-2025-data.pdf"
  },
- "maschinenfabrik-berthold-hermle-ag": {
+ "U000383": {
   "status": "geladen",
   "url": "https://www.hermle.de/fileadmin/website/6_UNTERNEHMEN-UND-KARRIERE/6_7_Investor_Relations/6_7_2_Finanzberichte/6_7_2_1_Jahresabschluss/Konzernabschluss_2025.pdf"
  },
- "masterflex-se": {
+ "U000384": {
   "status": "geladen",
   "url": "https://cdn.masterflexgroup.com/fileadmin/group/media/investor_relations/Analysten/2025/masterflex_se-jahresabschlss_2025-27032026.pdf"
  },
- "mbb-se": {
+ "U000387": {
   "status": "geladen",
   "url": "https://www.mbb.com/fileadmin/templates/downloads/finanzberichte/260330-MBB-Geschaeftsbericht-2025-DE-Final.pdf"
  },
- "mediclin-aktiengesellschaft": {
+ "U000388": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "medios-ag": {
+ "U000389": {
   "status": "geladen",
   "url": "https://investors.medios.group/fileadmin/IR_Download/Finanzberichte/2026/Medios_GB_2025_DE_gesch%C3%BCtzt.pdf"
  },
- "mednation-ag": {
+ "U000390": {
   "status": "geladen",
   "url": "https://mednation.de/wp-content/uploads/MedNation-AG-Geschaeftsbericht-2025.pdf"
  },
- "medondo-holding-ag": {
+ "U000391": {
   "status": "geladen",
   "url": "https://medondo.com/wp-content/uploads/2026-06-23_Geschaeftsbericht_Konzern-2025_final.pdf"
  },
- "mensch-und-maschine-software-se": {
+ "U000393": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "mercedes-benz-group-ag": {
+ "U000395": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "merck-kgaa": {
+ "U000396": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "merkur-privatbank-kgaa": {
+ "U000397": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "mhp-hotel-ag": {
+ "U000400": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "mineralbrunnen-ueberkingen-teinach-gmbh-und-co-kgaa": {
+ "U000401": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1737,11 +1737,11 @@
    }
   ]
  },
- "ming-le-sports-ag": {
+ "U000402": {
   "status": "geladen",
   "url": "https://www.minglesports.de/wp-content/uploads/2026/04/2025_Ming-Le_Geschaeftsbericht_v12-mit-Pruefungsv.pdf"
  },
- "mister-spex-se": {
+ "U000403": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1759,7 +1759,7 @@
    }
   ]
  },
- "mlp-se": {
+ "U000406": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1789,11 +1789,11 @@
    }
   ]
  },
- "mobotix-ag": {
+ "U000408": {
   "status": "geladen",
   "url": "https://www.mobotix.com/sites/default/files/2026-03/Mx_IR_HV-2026_Konzernabschluss.pdf"
  },
- "mologen-lifescience-ag": {
+ "U000409": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1823,62 +1823,62 @@
    }
   ]
  },
- "mountain-alliance-ag": {
+ "U000411": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "mpc-oceanic-group-ag": {
+ "U000412": {
   "status": "geladen",
   "url": "https://www.mpc-oceanic.com/fileadmin/mpc/oceanic/Downloads/Financial_Reports/Financial_Reports_2025/MPC_Capital_Annual_Report_2025.pdf"
  },
- "mph-health-care-ag": {
+ "U000413": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "ms-industrie-ag": {
+ "U000414": {
   "datei": "automobil/dokumente/ms-industrie-ag/MS_Industrie_AG_-_JF-Bericht_2025_web-lock.pdf",
   "status": "geladen",
   "url": "https://www.ms-industrie.de/download/jahresfinanzbericht-2025/?wpdmdl=4950&refresh=6ae0af9a89e7f1793109914"
  },
- "mtu-aero-engines-ag": {
+ "U000415": {
   "status": "geladen",
   "url": "https://www.mtu.de/fileadmin/DE/5_Investoren/Financial_Report/2025_Results/MTUAeroEnginesAG_Geschaeftsbericht_2025_de_locked.pdf"
  },
- "muehlbauer-holding-ag": {
+ "U000416": {
   "status": "geladen",
   "url": "https://www.muehlbauer.de/media/xyxbjypi/annual_report_2025.pdf"
  },
- "mueller-die-lila-logistik-se": {
+ "U000417": {
   "status": "geladen",
   "url": "https://www.lila-logistik.com/hubfs/M%C3%BCller%20Die%20lila%20Logistik%20SE_Konzernjahresfinanzbericht%202025.pdf?hsLang=de"
  },
- "muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf": {
+ "U000420": {
   "status": "geladen",
   "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Konzerngeschaeftsbericht-2025-de.pdf/_jcr_content/renditions/original./MunichRe-Konzerngeschaeftsbericht-2025-de.pdf"
  },
- "multitude-ag": {
+ "U000418": {
   "status": "geladen",
   "url": "https://www.multitude.com/~/media/Files/M/Multitude/documents/multitude-capital-oyj-annual-report-2025.pdf"
  },
- "mutares-se-und-co-kgaa": {
+ "U000421": {
   "status": "geladen",
   "url": "https://ir.mutares.com/wp-content/uploads/2026/04/Mutares_2025_Nichtfinanzieller_Konzernbericht_final.pdf"
  },
- "mvise-ag": {
+ "U000422": {
   "status": "geladen",
   "url": "https://mvise-group.de/wp-content/uploads/2026/08/mVISE-AG-Geschaeftsbericht-2025_260714_260812.pdf"
  },
- "mvv-energie-ag": {
+ "U000423": {
   "status": "geladen",
   "url": "https://www.mvv.de/fileadmin/user_upload/Investoren/de/geschaeftsjahr_2025/Geschaeftsbericht/MVV_Geschaeftsbericht_GJ_2025_dt.pdf"
  },
- "mwb-fairtrade-wertpapierhandelsbank-ag": {
+ "U000424": {
   "status": "geladen",
   "url": "https://www.mwbfairtrade.com/fileadmin/user_upload/berichte/mwb26003_gb_2025_final_05__11_06.pdf"
  },
- "nabaltec-ag": {
+ "U000426": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1908,7 +1908,7 @@
    }
   ]
  },
- "nagarro-se": {
+ "U000427": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1938,12 +1938,12 @@
    }
   ]
  },
- "nakiki-se": {
+ "U000428": {
   "status": "nicht gefunden",
   "suche": "fehler: ProxyError",
   "versuche": []
  },
- "nanorepro-ag": {
+ "U000429": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1961,7 +1961,7 @@
    }
   ]
  },
- "ncte-ag": {
+ "U000432": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -1991,7 +1991,7 @@
    }
   ]
  },
- "nemetschek-se": {
+ "U000433": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2005,16 +2005,16 @@
    }
   ]
  },
- "netfonds-ag": {
+ "U000434": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "newron-pharmaceuticals-s-p-a": {
+ "U000435": {
   "status": "geladen",
   "url": "https://www.newron.com/sites/newron-pharma-corp/files/news-and-media/regulatory-news/2026/March%2024/Newron_Annual_Report_2025_final.pdf"
  },
- "nexr-technologies-se": {
+ "U000436": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2044,12 +2044,12 @@
    }
   ]
  },
- "nfon-ag": {
+ "U000438": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "noratis-ag": {
+ "U000439": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2079,17 +2079,17 @@
    }
   ]
  },
- "nordex-se": {
+ "U000442": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "norma-group-se": {
+ "U000445": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "novem-group-s-a": {
+ "U000446": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2119,11 +2119,11 @@
    }
   ]
  },
- "novogenia-ag": {
+ "U000447": {
   "status": "geladen",
   "url": "https://novodaily.com/media/66/22/33/1787756513/Konzernabschluss%202025.pdf?ts=1787756513"
  },
- "nuernberger-beteiligungs-ag": {
+ "U000448": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2141,19 +2141,19 @@
    }
   ]
  },
- "nynomic-ag": {
+ "U000449": {
   "status": "geladen",
   "url": "https://www.nynomic.com/wp-content/uploads/2026/05/NynomicAG_GB_2025.pdf"
  },
- "ohb-se": {
+ "U000451": {
   "status": "geladen",
   "url": "https://www.ohb.de/wp-content/uploads/2026/06/OHB_GB2025_E_safe.pdf"
  },
- "orbis-ag": {
+ "U000454": {
   "status": "geladen",
   "url": "https://www.orbis-group.com/fileadmin/dateien/de/downloads/ir/jahresfinanzberichte/2025_Jahresfinanzbericht.pdf"
  },
- "ottobock-se-und-co-kgaa": {
+ "U000457": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2179,33 +2179,33 @@
    }
   ]
  },
- "ovb-holding-ag": {
+ "U000458": {
   "status": "geladen",
   "url": "https://www.ovb.eu/fileadmin/assets/Dokumente/ovb_holding/geschaeftsberichte/ovb_geschaeftsbericht_2025.pdf"
  },
- "paragon-gmbh-und-co-kgaa": {
+ "U000460": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "park-und-bellheimer-ag": {
+ "U000461": {
   "status": "geladen",
   "url": "https://park-bellheimer.b-cdn.net/Finanzberichte/PB_Konzernabschluss_31122025.pdf"
  },
- "path2-hydrogen-ag": {
+ "U000462": {
   "status": "geladen",
   "url": "https://path2hydrogen.com/wp-content/uploads/2026/04/Path2-Hydrogen-AG_-JAP-31.12.25_Testatsexemplar.pdf"
  },
- "patrizia-se": {
+ "U000463": {
   "status": "geladen",
   "url": "https://ir.patrizia.ag/fileadmin/user_upload/Investor_Relations/20260623_PATRIZIA_SE_Geschaeftsbericht_2025.pdf"
  },
- "paul-hartmann-ag": {
+ "U000464": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "payments-group-holding-gmbh-und-co-kgaa": {
+ "U000466": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2215,25 +2215,25 @@
    }
   ]
  },
- "pearl-gold-ag": {
+ "U000467": {
   "status": "geladen",
   "url": "https://www.pearlgoldag.com/wp-content/uploads/2026/10/Jahresabschluss-zum-31.-Dezember-2025.pdf"
  },
- "peh-wertpapier-ag": {
+ "U000468": {
   "datei": "finanzdienstleister/dokumente/peh-wertpapier-ag/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf",
   "status": "geladen",
   "url": "https://www.peh.de/wp-content/uploads/2026/06/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf"
  },
- "pentixapharm-holding-ag": {
+ "U000469": {
   "status": "geladen",
   "url": "https://static1.squarespace.com/static/65acfbc12f6ee568582f8ca4/t/69c4be05c7940151bf42c495/1774501383895/Pentixapharm_GB_2025_e.pdf"
  },
- "pfeiffer-vacuum-technology-ag": {
+ "U000470": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "philion-se": {
+ "U000473": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2247,145 +2247,145 @@
    }
   ]
  },
- "pittler-maschinenfabrik-ag": {
+ "U000474": {
   "status": "geladen",
   "url": "https://pittler-maschinenfabrik.de/fileadmin/Data/PDF-Dateien-Download/Hauptversammlungen/2026/10_PITTLER-MaschinenfabrikAG-Geschaeftsbericht2025.pdf"
  },
- "plenum-ag": {
+ "U000476": {
   "status": "geladen",
   "url": "https://www.plenum.de/fileadmin/3_Unternehmen/4_Investor_Relations/HV_2026/plenum_Konzernbericht_2025.pdf"
  },
- "pne-ag": {
+ "U000477": {
   "status": "geladen",
   "url": "https://www.pnegroup.com/fileadmin/user_upload/Finanzberichte/2025/PNE_Geschaeftsbericht_2025_Deutsch_gesch.pdf"
  },
- "pob-ag": {
+ "U000478": {
   "datei": "software-it/dokumente/pob-ag/pob-ag_offenlegungsdatei-konzern-2025_final_30.06.2026-1.pdf",
   "status": "geladen",
   "url": "https://pob.ag/wp-content/uploads/2026/07/pob-ag_offenlegungsdatei-konzern-2025_final_30.06.2026-1.pdf"
  },
- "porsche-automobil-holding-se": {
+ "U000479": {
   "status": "geladen",
   "url": "https://www.porsche-se.com/fileadmin/downloads/investorrelations/mandatorypublications/annualreport-25/PSE-GB_Deutsch_2025_.pdf"
  },
- "pro-dv-ag": {
+ "U000481": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "prosiebensat-1-media-se": {
+ "U000482": {
   "status": "geladen",
   "url": "https://www.prosiebensat1.com/files/2026/03/25/269e5f07-c91b-4806-8d51-60b6eda9164f.pdf"
  },
- "psi-software-se": {
+ "U000484": {
   "status": "geladen",
   "url": "https://www.psi.de/fileadmin/downloads/de/unternehmen/investor_relations/berichte/geschaeftsberichte/PSI_2025d.pdf"
  },
- "puma-se": {
+ "U000485": {
   "status": "nicht gefunden",
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "pva-tepla-ag": {
+ "U000486": {
   "status": "geladen",
   "url": "https://www.pvatepla.com/fileadmin/sitepackage/pdf/investor_relations/berichte/2026/PVA_TePla_Annual_Report_2025.pdf"
  },
- "pwo-ag": {
+ "U000487": {
   "status": "geladen",
   "url": "https://www.pwo-group.com/media/docs/en/investoren-und-presse/geschaeftsbericht/2025/PWO_Annual_report_2025_s.pdf"
  },
- "pyramid-ag": {
+ "U000488": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "pyrum-innovations-ag": {
+ "U000489": {
   "status": "geladen",
   "url": "https://www.pyrum.net/wp-content/uploads/2026/08/2026-05-08-de-pyrum-geschaeftsbericht-2025.pdf"
  },
- "q-beyond-ag": {
+ "U000490": {
   "status": "geladen",
   "url": "https://www.qbeyond.de/media/pages/investor-relations/ir-publikationen/4461707ec2-1774776821/qbeyond-ag-jahresabschluss-2025-x92bvg6.pdf"
  },
- "qiagen-n-v": {
+ "U000491": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "r-stahl-ag": {
+ "U000507": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "rational-aktiengesellschaft": {
+ "U000494": {
   "status": "geladen",
   "url": "https://www.rational-online.com/media/investor-relations/veroeffentlichungen-gj-2025/rational-ag---annual-report-fy-2025-(single-pages).pdf"
  },
- "rcm-beteiligungs-ag": {
+ "U000495": {
   "status": "geladen",
   "url": "https://www.rcm-ag.de/wp-content/uploads/2026/07/RCM-Geschaeftsbericht-2025.pdf"
  },
- "readcrest-capital-ag": {
+ "U000496": {
   "datei": "immobilien/dokumente/readcrest-capital-ag/Readcrest_Konzernabschluss_2025.pdf",
   "status": "geladen",
   "url": "https://www.readcrest.com/blob/ir-uploads/7127d288-007d-42d9-b643-a4eba3b16a2f/Readcrest_Konzernabschluss_2025.pdf"
  },
- "realtech-ag": {
+ "U000497": {
   "status": "geladen",
   "url": "https://www.realtech.com/wp-content/uploads/REALTECH-AG-Geschaeftsbericht-2025.pdf"
  },
- "redcare-pharmacy-nv": {
+ "U000498": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "regenbogen-ag": {
+ "U000499": {
   "status": "geladen",
   "url": "https://www.regenbogen.ag/resources/persistent/6803799687742b6f055320f6744f1914960e4410/Gesch%C3%A4ftsbericht%202025.pdf"
  },
- "renk-group-ag": {
+ "U000500": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "rheinmetall-ag": {
+ "U000502": {
   "status": "geladen",
   "url": "https://www.rheinmetall.com/Rheinmetall%20Group/Investor%20Relations/Ver%C3%B6ffentlichungen/2026/GB/Rheinmetall-Geschaeftsbericht-2025.pdf"
  },
- "rhoen-klinikum-aktiengesellschaft": {
+ "U000503": {
   "status": "geladen",
   "url": "https://www.rhoen-klinikum-ag.com/fileadmin/FILES/RKA/investoren/Geschaeftsberichte/DE_RHK_GB_2025_PW.pdf"
  },
- "rigsave-s-p-a": {
+ "U000504": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "rostra-ag": {
+ "U000506": {
   "status": "geladen",
   "url": "https://rostra.ag/wp-content/uploads/2026/04/AnnualReport_HGB_DE_2025_RostraAG.pdf"
  },
- "rtl-group-s-a": {
+ "U000508": {
   "status": "geladen",
   "url": "https://company.rtl.com/export/sites/rtlunited/.galleries/downloads/annual_reports/Annual-Report-2025.pdf"
  },
- "rubean-ag": {
+ "U000509": {
   "status": "geladen",
   "url": "https://rubean.com/wp-content/uploads/2026/05/Rubean-AG-JAP-2025.pdf"
  },
- "rwe-aktiengesellschaft": {
+ "U000510": {
   "status": "geladen",
   "url": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2025-GJ/RWE-Geschaeftsbericht-2025.pdf"
  },
- "saf-holland-se": {
+ "U000511": {
   "status": "geladen",
   "url": "https://corporate.safholland.com/fileadmin/user_upload/Corporate_Website/Investor_Relations/Financial_Reports/2025/English/SAF-HOLLAND_SE_-_Annual_Report_2025_final.pdf"
  },
- "salzgitter-ag": {
+ "U000512": {
   "status": "geladen",
   "url": "https://www.salzgitter-ag.com/fileadmin/finanzberichte/2025/gb2025/de/downloads/szag-gb2025-gesamt.pdf"
  },
- "samara-asset-group-plc": {
+ "U000513": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2399,7 +2399,7 @@
    }
   ]
  },
- "sap-se": {
+ "U000515": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2429,71 +2429,71 @@
    }
   ]
  },
- "sartorius-aktiengesellschaft": {
+ "U000516": {
   "status": "geladen",
   "url": "https://www.sartorius.com/download/1796536/fy-2025-download-annual-report-sag-en-data.pdf"
  },
- "sbf-ag": {
+ "U000517": {
   "status": "geladen",
   "url": "https://www.sbf-ag.com/wp-content/uploads/2026/04/sbf-ag_jahresabschluss_konzernabschluss_2025.pdf"
  },
- "schaeffler-ag": {
+ "U000518": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "schloss-wachenheim-ag": {
+ "U000520": {
   "status": "geladen",
   "url": "https://www.schloss-wachenheim.com/upload/dokumente/11138.pdf"
  },
- "schott-pharma-ag-und-co-kgaa": {
+ "U000521": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "schwaelbchen-molkerei-jakob-berz-ag": {
+ "U000522": {
   "status": "geladen",
   "url": "https://www.schwaelbchen-molkerei.de/wp-content/uploads/2026/03/Schwaelbchen_Geschaeftsbericht_2025.pdf"
  },
- "schweizer-electronic-ag": {
+ "U000523": {
   "status": "geladen",
   "url": "https://schweizer.ag/fileadmin/user_upload/Downloads/Finanzberichte/Geschaeftsberichte/2025/2026-04_GB_2025.pdf"
  },
- "scout24-se": {
+ "U000524": {
   "status": "geladen",
   "url": "https://www.scout24.com/media/scout24/Investor_Relations/Berichte_und_Praesentationen/2025/Scout24_Geschaeftsbericht_2025_DE.pdf"
  },
- "scp-standard-capital-partners-ag": {
+ "U000525": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "secunet-security-networks-aktiengesellschaft": {
+ "U000527": {
   "status": "geladen",
   "url": "https://www.secunet.com/fileadmin/user_upload/02_Downloads/IR/HV/HV_2026/Deutsch/03_d_Gesch%C3%A4ftsbericht_2025_-_24.04.2026_-_PDF.pdf"
  },
- "sedlmayr-grund-und-immobilien-ag": {
+ "U000528": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "serviceware-se": {
+ "U000529": {
   "status": "geladen",
   "url": "https://serviceware-se.com/hubfs/investor-relations/serviceware-2024-2025-q4-annual-report.pdf"
  },
- "seven-principles-ag": {
+ "U000530": {
   "status": "geladen",
   "url": "https://7p-group.com/wp-content/uploads/2026/05/SEVEN-PRINCIPLES-AG-Jahresabschluss-2025.pdf"
  },
- "sfc-energy-ag": {
+ "U000531": {
   "status": "geladen",
   "url": "https://ir-api.eqs.com/media/document/921c1ebb-29cc-4038-b29d-8e2c056b844c/assets/DE0007568578-JA-2025-EQ-E-00.pdf"
  },
- "shareholder-value-beteiligungen-ag": {
+ "U000533": {
   "status": "geladen",
   "url": "https://svb-ag.de/wp-content/uploads/2026/04/Geschaeftsbericht-2025.pdf"
  },
- "shelly-group-se": {
+ "U000534": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2503,45 +2503,45 @@
    }
   ]
  },
- "siemens-aktiengesellschaft": {
+ "U000535": {
   "datei": "industrie/dokumente/siemens-aktiengesellschaft/konzernabschluss.pdf",
   "status": "geladen",
   "url": "https://assets.ctfassets.net/17si5cpawjzf/7lBiZKoF0vygZ7PWUlF799/07dd9855e2db2f389d2650d12e18ff14/konzernabschluss.pdf"
  },
- "siemens-energy-ag": {
+ "U000537": {
   "status": "geladen",
   "url": "https://assets.siemens-energy.com/dam/32b27e9a-af91-4915-8b51-b3af012d0d98/A-Siemens_Energy_Annual_Report_2025-pdf_Original%20file.pdf"
  },
- "siemens-healthineers-ag": {
+ "U000538": {
   "status": "geladen",
   "url": "https://corporate.webassets.siemens-healthineers.com/a364b935102e7df5/d7fdacda458e/siemens-healthineers-ir-annual-report-2025.pdf"
  },
- "siltronic-ag": {
+ "U000539": {
   "status": "geladen",
   "url": "https://www.siltronic.com/fileadmin/investorrelations/Archiv/2025/Q4/260420_Siltronic_Geschaeftsbericht_2025_safe.pdf"
  },
- "singulus-technologies-ag": {
+ "U000541": {
   "status": "geladen",
   "url": "https://www.singulus.com/wp-content/uploads/2026/06/Singulus-Technologies_Geschaeftsbericht-25.pdf"
  },
- "sino-ag": {
+ "U000542": {
   "status": "geladen",
   "url": "https://www.sino.de/wp-content/uploads/2026/03/sino-Geschaeftsbericht-2024-2025.pdf"
  },
- "sino-german-united-ag": {
+ "U000543": {
   "status": "geladen",
   "url": "https://sgu-ag.de/wp-content/uploads/2026/03/Jahresabschluss-2025-Sino-German-United-AG.pdf"
  },
- "sirma-group-jsc": {
+ "U000544": {
   "status": "geladen",
   "url": "https://cdn.prod.website-files.com/6827735b8287916cf5029ca6/6a0d8b8ea9d650e2f67a2428_AI%20Generated%208945007AD80FTJTEGH37-20251231%20CON_Report.pdf"
  },
- "sixt-se": {
+ "U000545": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "sm-wirtschaftsberatungs-ag": {
+ "U000551": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2571,42 +2571,42 @@
    }
   ]
  },
- "sma-solar-technology-ag": {
+ "U000548": {
   "status": "geladen",
   "url": "https://www.sma.de/fileadmin/content/global/Investor_Relations/Documents/Publications/Finanzberichte/2025/Geschaeftsbericht-der-SMA-Gruppe-2025.pdf?v=1774464189"
  },
- "smag-mobile-antenna-masts-ag": {
+ "U000546": {
   "status": "geladen",
   "url": "https://static1.squarespace.com/static/697762c00a4ed24c8457c11e/t/6a4de00ab9102f4c043adef2/1783488522328/smag-mobile-antenna-masts-gmbh-ja-2025.pdf"
  },
- "smartbroker-holding-ag": {
+ "U000547": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "smg-hospitality-se": {
+ "U000549": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "smt-scharf-ag": {
+ "U000550": {
   "status": "geladen",
   "url": "https://www.smtscharf.com/investorrelations/wp-content/uploads/2026/04/SMT_Scharf_GB_2025_DE.pdf"
  },
- "snp-schneider-neureither-und-partner-se": {
+ "U000552": {
   "status": "geladen",
   "url": "https://investor-relations.snpgroup.com/siteassets/2-publications/archive/en/2025/sn_2025_gb_eng.pdf"
  },
- "softing-ag": {
+ "U000553": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "solutiance-ag": {
+ "U000554": {
   "status": "geladen",
   "url": "https://solutiance.com/wp-content/uploads/2026/05/260330-Geschaeftsbericht_Homepage1.pdf"
  },
- "spielvereinigung-unterhaching-fussball-gmbh-und-co-kgaa": {
+ "U000613": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2636,64 +2636,64 @@
    }
   ]
  },
- "springer-nature-ag-und-co-kgaa": {
+ "U000614": {
   "datei": "telekom-medien/dokumente/springer-nature-ag-und-co-kgaa/sn-annual-report-2025-en.pdf",
   "status": "geladen",
   "url": "https://annualreport.springernature.com/2025/files/sn-annual-report-2025-en.pdf"
  },
- "stabilus-se": {
+ "U000615": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "steico-se": {
+ "U000626": {
   "status": "geladen",
   "url": "https://www.steico.com/fileadmin/user_upload/Investor_Relations/2025_Veroffentlichungen/2025_Financial_Reports/STEICO_annual-report_2025_DEU_de.pdf"
  },
- "steyr-motors-ag": {
+ "U000627": {
   "status": "geladen",
   "url": "https://ir.steyr-motors.com/wp-content/uploads/2026/06/SteyrMotors_GB-2025_DE.pdf"
  },
- "sto-se-und-co-kgaa": {
+ "U000629": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "stock3-ag": {
+ "U000628": {
   "status": "geladen",
   "url": "https://inside.stock3.com/wp-content/uploads/2026/07/05.-Gebilligter-Konzernabschluss-zum-31.-Dezember-2025.pdf"
  },
- "stratec-se": {
+ "U000630": {
   "status": "geladen",
   "url": "https://www.stratec.com/fileadmin/IR/Financial_Reports/2026/STRATEC_AR_2025_e.pdf"
  },
- "stroeer-se-und-co-kgaa": {
+ "U000631": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "suedwestdeutsche-salzwerke-ag": {
+ "U000633": {
   "status": "geladen",
   "url": "https://www.salzwerke.de/fileadmin/user_upload/salzwerke/dokumente/downloads/Investor_Relations/Geschaeftsberichte/Geschaeftsbericht_2025_save.pdf"
  },
- "suedzucker-ag": {
+ "U000635": {
   "status": "geladen",
   "url": "https://www.suedzuckergroup.com/sites/default/files/2026-05/Suedzucker_Geschaeftsbericht_2025-26.pdf"
  },
- "surteco-group-se": {
+ "U000636": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "suss-microtec-se": {
+ "U000637": {
   "status": "geladen",
   "url": "https://www.suss.com/en/content/download/3228/47132/2026_03_30_SUSS_Annual%20Report%202025.pdf?version=3"
  },
- "swissnet-ag": {
+ "U000639": {
   "status": "geladen",
   "url": "https://swissnet-group.com/wp-content/uploads/2026/08/01_swissnet_Group_Management_Report_2025_final_signed.pdf"
  },
- "symrise-ag": {
+ "U000640": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2723,80 +2723,80 @@
    }
   ]
  },
- "synbiotic-se": {
+ "U000641": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "syzygy-ag": {
+ "U000642": {
   "status": "geladen",
   "url": "https://www.syzygy-group.net/app/uploads/syzygy-ag-annual-report-2025.pdf"
  },
- "tag-immobilien-ag": {
+ "U000643": {
   "status": "geladen",
   "url": "https://www.tag-ag.com/fileadmin/content/geschaeftsberichte/TAG_GB_25_Master_DE.pdf"
  },
- "takkt-ag": {
+ "U000644": {
   "status": "geladen",
   "url": "https://www.takkt.de/fileadmin/user_upload/takkt/GB_2025/TAKKT_Geschaeftsbericht_2025_Deutsch.pdf"
  },
- "talanx-ag": {
+ "U000645": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "tc-unterhaltungselektronik-ag": {
+ "U000648": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "teamviewer-se": {
+ "U000649": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "technotrans-se": {
+ "U000650": {
   "status": "geladen",
   "url": "https://www.technotrans.de/fileadmin/user_upload/Investor_Relations/Finanzberichte/Geschaeftsjahr_2025/GB2025/TEC_GB_2025_DE.pdf"
  },
- "the-grounds-real-estate-development-ag": {
+ "U000651": {
   "status": "geladen",
   "url": "https://www.thegroundsag.com/wp-content/uploads/2026/10/The-Grounds-GB-2025_key.pdf"
  },
- "the-naga-group-ag": {
+ "U000652": {
   "status": "nicht gefunden",
   "suche": "http 404",
   "versuche": []
  },
- "the-platform-group-se-und-co-kgaa": {
+ "U000653": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "the-social-chain-ag": {
+ "U000654": {
   "status": "nicht gefunden",
   "suche": "fehler: ReadTimeout",
   "versuche": []
  },
- "thyssenkrupp-ag": {
+ "U000655": {
   "status": "geladen",
   "url": "https://ucpcdn.thyssenkrupp.com/_binary/UCP5thyssenkruppAG/c12c2a1a-8e3d-45c3-ae1f-e2e494000503/Geschaeftsbericht_2024_2025_der_thyssenkrupp_AG_WEB.pdf"
  },
- "thyssenkrupp-nucera-ag-und-co-kgaa": {
+ "U000656": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "tick-trading-software-ag": {
+ "U000657": {
   "status": "geladen",
   "url": "https://www.tick-ts.com/fileadmin/user_upload/Geschaeftsbericht_fuer_das_Geschaeftsjahr_2024-2025_mit_dem_Bericht_des_Aufsichtsrates.pdf"
  },
- "tin-inn-holding-ag": {
+ "U000658": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "tiscon-ag": {
+ "U000659": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2826,12 +2826,12 @@
    }
   ]
  },
- "tkms-ag-und-co-kgaa": {
+ "U000661": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "tokentus-investment-ag": {
+ "U000662": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2841,21 +2841,21 @@
    }
   ]
  },
- "tonies-se": {
+ "U000663": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "tonkens-agrar-ag": {
+ "U000664": {
   "status": "geladen",
   "url": "https://www.tonkens-agrar.de/files/downloads/finanzberichte/Tonkens%20Agrar%20AG%20Jahresabschluss%202024_2025_web.pdf"
  },
- "tradegate-ag-wertpapierhandelsbank": {
+ "U000666": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "traton-se": {
+ "U000668": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2865,61 +2865,61 @@
    }
   ]
  },
- "ttl-beteiligungs-und-grundbesitz-ag": {
+ "U000669": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "tui-ag": {
+ "U000670": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "turbon-ag": {
+ "U000671": {
   "status": "geladen",
   "url": "https://www.turbon.de/media/45594/turbon_konzern_gb_2025.pdf"
  },
- "u-c-a-aktiengesellschaft": {
+ "U000673": {
   "status": "geladen",
   "url": "https://www.uca.de/de/investor_relations/UCA_Geschaeftsbericht_2025.pdf"
  },
- "uniper-se": {
+ "U000678": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "united-eco-solutions-ag": {
+ "U000679": {
   "status": "nicht gefunden",
   "suche": "fehler: ConnectionError",
   "versuche": []
  },
- "united-internet-ag": {
+ "U000680": {
   "status": "geladen",
   "url": "https://www.united-internet.de/fileadmin/user_upload/Geschaeftsbericht_2025_de.pdf"
  },
- "unitedlabels-aktiengesellschaft": {
+ "U000681": {
   "status": "geladen",
   "url": "https://www.unitedlabels.com/ir/finanzberichte/2025-geschaeftsbericht.pdf"
  },
- "uzin-utz-se": {
+ "U000682": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "valora-effekten-handel-ag": {
+ "U000683": {
   "status": "geladen",
   "url": "https://veh.de/ftp/VEHGeschaeftsbericht2026.pdf"
  },
- "value-holdings-ag": {
+ "U000684": {
   "datei": "finanzdienstleister/dokumente/value-holdings-ag/Geschaeftsbericht-Value-Holdings-AG-2025.pdf",
   "status": "geladen",
   "url": "https://www.value-holdings.de/wp-content/uploads/Geschaeftsbericht-Value-Holdings-AG-2025.pdf"
  },
- "verbio-se": {
+ "U000687": {
   "status": "geladen",
   "url": "https://www.verbio.de/fileadmin/user_upload/Verbio/Investor-Relations/finanzberichte/FY_2026/Geschaeftsbericht_2026_DE_PW.pdf"
  },
- "verve-group-media-se": {
+ "U000691": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -2949,71 +2949,71 @@
    }
   ]
  },
- "vib-vermoegen-ag": {
+ "U000692": {
   "status": "geladen",
   "url": "https://vib-ag.de/downloads/2026/VIB_Vermoegen_AG_GB_2025_geschuetzt.pdf"
  },
- "vidac-pharma-holding-plc": {
+ "U000693": {
   "status": "geladen",
   "url": "https://www.vidacpharma.com/docs/ir/annual-report-2025.pdf"
  },
- "vidinext-ag": {
+ "U000694": {
   "status": "geladen",
   "url": "https://investors.vidinext.com/wp-content/uploads/sites/2/2026/04/GB2025.pdf"
  },
- "villeroy-und-boch-ag": {
+ "U000695": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "vincorion-se": {
+ "U000696": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "viromed-medical-ag": {
+ "U000697": {
   "status": "geladen",
   "url": "https://www.viromed-medical-ag.de/wp-content/uploads/2026/05/Geschaeftsbericht-2025-Viromed-Medical-AG_k.pdf"
  },
- "viscom-se": {
+ "U000698": {
   "status": "geladen",
   "url": "https://www.viscom.com/fileadmin/content/Investor_Relations/Financial_Reports/Annual_Reports/de/260331_Geschaeftsbericht_2025_de.pdf"
  },
- "volkswagen-ag": {
+ "U000712": {
   "status": "geladen",
   "url": "https://uploads.vw-mms.de/system/production/documents/cws/003/212/file_de/41966a4270c8a0a4185b3ab69eaa433cf6892168/2026-03-10-volkswagen-group-geschaeftsbericht-2025-de.pdf?1787739971&amp;disposition=attachment"
  },
- "voltatron-ag": {
+ "U000715": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "vonovia-se": {
+ "U000716": {
   "status": "geladen",
   "url": "https://report.vonovia.com/2025/q4/app/uploads/Vonovia_SE-Geschaeftsbericht_2025_Konzernlagebericht.pdf"
  },
- "vossloh-ag": {
+ "U000717": {
   "status": "geladen",
   "url": "https://www.vossloh.com/media-cdn/v3/assets/bltac4b5fd7f72a536f/blt70e03533e4d9e891/69bad4b2c1bda840fceee74a/Vossloh_Geschaeftsbericht_de_2025.pdf"
  },
- "wacker-chemie-ag": {
+ "U000727": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "wacker-neuson-se": {
+ "U000728": {
   "status": "geladen",
   "url": "https://wackerneusongroup.com/fileadmin/general/downloads-de/03_ir/01_annual-reports/2025/wns_gb_2025_de.pdf"
  },
- "wasgau-produktions-und-handels-ag": {
+ "U000729": {
   "status": "geladen",
   "url": "https://www.wasgau.com/app/uploads/2026/04/06_TOP01_WASGAU-AG-2025_Geschaeftsbericht.pdf"
  },
- "webac-holding-ag": {
+ "U000731": {
   "status": "geladen",
   "url": "https://www.webac-ag.com/assets/files/PDFs/Dokumente_2026/GB-2025_online.pdf"
  },
- "wegrow-ag": {
+ "U000732": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -3043,7 +3043,7 @@
    }
   ]
  },
- "weng-fine-art-ag": {
+ "U000733": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -3073,12 +3073,12 @@
    }
   ]
  },
- "westwing-group-se": {
+ "U000734": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "wild-bunch-ag": {
+ "U000736": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -3108,12 +3108,12 @@
    }
   ]
  },
- "wolftank-group-ag": {
+ "U000737": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
  },
- "wuestenrot-und-wuerttembergische-ag": {
+ "U000739": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
@@ -3143,20 +3143,20 @@
    }
   ]
  },
- "yoc-ag": {
+ "U000740": {
   "status": "geladen",
   "url": "https://yoc.com/api/media/file/GB_2025_YOC_AG_DE_protected.pdf?prefix=media%2Fwebsite_media_files"
  },
- "your-family-entertainment-ag": {
+ "U000741": {
   "status": "geladen",
   "url": "https://www.yfe-ag.com/wp-content/uploads/2026/04/2025-YFE-Jahresfinanzbericht-2025.pdf"
  },
- "zalando-se": {
+ "U000742": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "zeal-network-se": {
+ "U000743": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []

@@ -1,0 +1,1592 @@
+alias,unternehmen_id,art
+029-group-se,U000001,id_alt
+029 Group SE,U000001,name
+11880-solutions-ag,U000002,id_alt
+11880 Solutions AG,U000002,name
+123fahrschule-se,U000003,id_alt
+123fahrschule SE,U000003,name
+1und1-ag,U000004,id_alt
+1&1 AG,U000004,name
+2g-energy-ag,U000005,id_alt
+2G Energy AG,U000005,name
+2invest-ag,U000006,id_alt
+2invest AG,U000006,name
+3u-holding-ag,U000007,id_alt
+3U Holding AG,U000007,name
+468-spac-ii-se,U000008,id_alt
+468 SPAC II SE,U000008,name
+7c-solarparken-ag,U000009,id_alt
+7C Solarparken AG,U000009,name
+aap-implantate-ag,U000010,id_alt
+aap Implantate AG,U000010,name
+aareal-bank-ag,U000011,id_alt
+Aareal Bank AG,U000011,name
+abo-energy-gmbh-und-co-kgaa,U000012,id_alt
+ABO Energy GmbH & Co. KGaA,U000012,name
+accentro-real-estate-ag,U000013,id_alt
+ACCENTRO Real Estate AG,U000013,name
+aconnic-ag,U000014,id_alt
+aconnic AG,U000014,name
+adcapital-ag,U000015,id_alt
+AdCapital AG,U000015,name
+adesso-se,U000016,id_alt
+adesso SE,U000016,name
+adidas-ag,U000017,id_alt
+adidas AG,U000017,name
+adler-group-s-a,U000018,id_alt
+Adler Group S.A.,U000018,name
+adm-hamburg-ag,U000019,id_alt
+ADM Hamburg AG,U000019,name
+ad-pepper-media-international-n-v,U000020,id_alt
+ad pepper media International N.V.,U000020,name
+adtran-holdings-inc,U000021,id_alt
+"ADTRAN Holdings, Inc.",U000021,name
+adtran-networks-se,U000022,id_alt
+Adtran Networks SE,U000022,name
+advanced-blockchain-ag,U000023,id_alt
+Advanced Blockchain AG,U000023,name
+agrob-immobilien-ag,U000024,id_alt
+AGROB Immobilien AG,U000024,name
+aht-syngas-technology-n-v,U000025,id_alt
+AHT Syngas Technology N.V.,U000025,name
+airbus-se,U000026,id_alt
+Airbus SE,U000026,name
+a-i-s-ag,U000027,id_alt
+a.i.s. AG,U000027,name
+aixtron-se,U000028,id_alt
+AIXTRON SE,U000028,name
+aka-ausfuhrkredit-gesellschaft-mbh,U000029,id_alt
+AKA Ausfuhrkredit-Gesellschaft mbH,U000029,name
+AKA Ausfuhrkredit-Gesellschaft mit beschränkter Haftung,U000029,name
+akbank-ag,U000030,id_alt
+Akbank AG,U000030,name
+albis-leasing-ag,U000031,id_alt
+ALBIS Leasing AG,U000031,name
+alexanderwerk-ag,U000032,id_alt
+Alexanderwerk AG,U000032,name
+allane-se,U000033,id_alt
+Allane SE,U000033,name
+all-for-one-group-se,U000034,id_alt
+All for One Group SE,U000034,name
+allgeier-se,U000035,id_alt
+Allgeier SE,U000035,name
+allianz-se,U000036,id_alt
+Allianz SE,U000036,name
+altech-advanced-materials-ag,U000037,id_alt
+Altech Advanced Materials AG,U000037,name
+alte-leipziger-bauspar-ag,U000038,id_alt
+ALTE LEIPZIGER Bauspar AG,U000038,name
+alzchem-group-ag,U000039,id_alt
+Alzchem Group AG,U000039,name
+amadeus-fire-ag,U000040,id_alt
+Amadeus FiRe AG,U000040,name
+amg-critical-materials-n-v,U000041,id_alt
+AMG Critical Materials N.V.,U000041,name
+anchorcore-se,U000042,id_alt
+AnchorCore SE,U000042,name
+aquamondi-ag,U000043,id_alt
+Aquamondi AG,U000043,name
+ari-motors-industries-se,U000044,id_alt
+ARI Motors Industries SE,U000044,name
+aroundtown-sa,U000045,id_alt
+Aroundtown SA,U000045,name
+artec-technologies-ag,U000046,id_alt
+artec technologies AG,U000046,name
+a-s-cr-ation-tapeten-ag,U000047,id_alt
+A.S. Création Tapeten AG,U000047,name
+asta-energy-solutions-ag,U000048,id_alt
+ASTA Energy Solutions AG,U000048,name
+atoss-software-se,U000049,id_alt
+ATOSS Software SE,U000049,name
+audius-se,U000050,id_alt
+Audius SE,U000050,name
+aumann-ag,U000051,id_alt
+Aumann AG,U000051,name
+aumovio-se,U000052,id_alt
+Aumovio SE,U000052,name
+aurubis-ag,U000053,id_alt
+Aurubis AG,U000053,name
+auto1-group-se,U000054,id_alt
+AUTO1 Group SE,U000054,name
+averdion-se,U000055,id_alt
+Averdion Se,U000055,name
+baader-bank-ag,U000056,id_alt
+baader-bank-aktiengesellschaft,U000056,id_alt
+Baader Bank AG,U000056,name
+Baader Bank Aktiengesellschaft,U000056,name
+Baader Beteiligungs GmbH,U000056,name
+bank11-fur-privatkunden-und-handel-gmbh,U000057,id_alt
+Bank11 Holding GmbH,U000057,name
+Bank11 für Privatkunden und Handel GmbH,U000057,name
+bank11-fuer-privatkunden-und-handel-gmbh,U000057,ordner
+bank-deutsches-kraftfahrzeuggewerbe-gmbh-bdk,U000058,id_alt
+Bank Deutsches Kraftfahrzeuggewerbe GmbH (BDK),U000058,name
+bank-fur-kirche-und-diakonie-eg-kd-bank,U000059,id_alt
+Bank für Kirche und Diakonie eG - KD-Bank,U000059,name
+Bank für Kirche und Diakonie eG – KD-Bank,U000059,name
+bank-fuer-kirche-und-diakonie-eg-kd-bank,U000059,ordner
+bank-im-bistum-essen-eg,U000060,id_alt
+BANK IM BISTUM ESSEN eG,U000060,name
+basf-se,U000061,id_alt
+BASF SE,U000061,name
+basler-aktiengesellschaft,U000062,id_alt
+Basler Aktiengesellschaft,U000062,name
+bastei-luebbe-ag,U000063,id_alt
+Bastei Lübbe AG,U000063,name
+bausparkasse-schwabisch-hall-ag,U000064,id_alt
+Bausparkasse Schwäbisch Hall AG,U000064,name
+Bausparkasse Schwäbisch Hall Aktiengesellschaft - Bausparkasse der Volksbanken und Raiffeisenbanken,U000064,name
+Bausparkasse Schwäbisch Hall Aktiengesellschaft - Bausparkasse der Volksbanken und Raiffeisenbanken -,U000064,name
+bausparkasse-schwaebisch-hall-ag,U000064,ordner
+bayer-aktiengesellschaft,U000065,id_alt
+Bayer Aktiengesellschaft,U000065,name
+bayerische-landesbank-bayernlb,U000066,id_alt
+Bayerische Landesbank,U000066,name
+Bayerische Landesbank (BayernLB),U000066,name
+bayerische-motoren-werke-aktiengesellschaft,U000067,id_alt
+Bayerische Motoren Werke Aktiengesellschaft,U000067,name
+baywa-aktiengesellschaft,U000068,id_alt
+BayWa Aktiengesellschaft,U000068,name
+bbbank-eg,U000069,id_alt
+BBBank eG,U000069,name
+bb-biotech-ag,U000070,id_alt
+BB Biotech AG,U000070,name
+bechtle-ag,U000071,id_alt
+Bechtle AG,U000071,name
+befesa-s-a,U000072,id_alt
+Befesa S.A.,U000072,name
+beiersdorf-aktiengesellschaft,U000073,id_alt
+Beiersdorf Aktiengesellschaft,U000073,name
+beno-holding-ag,U000074,id_alt
+BENO Holding AG,U000074,name
+berentzen-gruppe-aktiengesellschaft,U000075,id_alt
+Berentzen-Gruppe Aktiengesellschaft,U000075,name
+berliner-effektengesellschaft-ag,U000076,id_alt
+Berliner Effektengesellschaft AG,U000076,name
+berliner-volksbank-eg,U000077,id_alt
+Berliner Volksbank eG,U000077,name
+bertrandt-aktiengesellschaft,U000078,id_alt
+Bertrandt Aktiengesellschaft,U000078,name
+bet-at-home-com-ag,U000079,id_alt
+bet-at-home.com AG,U000079,name
+bfs-sozialfinanz-ag-sozialbank,U000080,id_alt
+BFS SozialFinanz AG,U000080,name
+BFS SozialFinanz AG (SozialBank),U000080,name
+bhb-brauholding-bayern-mitte-ag,U000081,id_alt
+BHB Brauholding Bayern-Mitte AG,U000081,name
+bhw-bausparkasse-ag,U000082,id_alt
+BHW Bausparkasse AG,U000082,name
+BHW Bausparkasse Aktiengesellschaft,U000082,name
+bigrep-se,U000083,id_alt
+BigRep SE,U000083,name
+bijou-brigitte-modische-accessoires-aktiengesellschaft,U000084,id_alt
+Bijou Brigitte modische Accessoires Aktiengesellschaft,U000084,name
+bike24-holding-ag,U000085,id_alt
+Bike24 Holding AG,U000085,name
+bilfinger-se,U000086,id_alt
+Bilfinger SE,U000086,name
+binect-ag,U000087,id_alt
+Binect AG,U000087,name
+biofrontera-ag,U000088,id_alt
+Biofrontera AG,U000088,name
+bio-gate-ag,U000089,id_alt
+Bio-Gate AG,U000089,name
+bioxxmed-ag,U000090,id_alt
+bioXXmed AG,U000090,name
+bitcoin-group-se,U000091,id_alt
+Bitcoin Group SE,U000091,name
+black-pearl-digital-ag,U000092,id_alt
+Black Pearl Digital AG,U000092,name
+blue-cap-ag,U000093,id_alt
+Blue Cap AG,U000093,name
+b-metzler-seel-sohn-co-ag,U000094,id_alt
+B. Metzler seel. Sohn & Co. AG,U000094,name
+B. Metzler seel. Sohn & Co. Aktiengesellschaft,U000094,name
+bmw-bank-gmbh,U000095,id_alt
+BMW Bank GmbH,U000095,name
+borussia-dortmund-gmbh-und-co-kommanditgesellschaft-auf-akti,U000096,id_alt
+Borussia Dortmund GmbH & Co. Kommanditgesellschaft auf Aktien,U000096,name
+brain-biotech-ag,U000097,id_alt
+BRAIN Biotech AG,U000097,name
+branicks-group-ag,U000098,id_alt
+Branicks Group AG,U000098,name
+bremer-lagerhaus-gesellschaft-aktiengesellschaft-von-1877,U000099,id_alt
+BREMER LAGERHAUS-GESELLSCHAFT -Aktiengesellschaft von 1877-,U000099,name
+brenntag-se,U000100,id_alt
+Brenntag SE,U000100,name
+brockhaus-technologies-ag,U000101,id_alt
+Brockhaus Technologies AG,U000101,name
+brueder-mannesmann-aktiengesellschaft,U000102,id_alt
+Brüder Mannesmann Aktiengesellschaft,U000102,name
+b-s-banksysteme-aktiengesellschaft,U000103,id_alt
+B+S Banksysteme Aktiengesellschaft,U000103,name
+c24-bank-gmbh,U000104,id_alt
+C24 Bank GmbH,U000104,name
+camerit-ag,U000105,id_alt
+CAMERIT AG,U000105,name
+cancom-se,U000106,id_alt
+Cancom SE,U000106,name
+cannovum-cannabis-ag,U000107,id_alt
+Cannovum Cannabis AG,U000107,name
+cantourage-group-se,U000108,id_alt
+Cantourage Group SE,U000108,name
+carl-zeiss-meditec-ag,U000109,id_alt
+Carl Zeiss Meditec AG,U000109,name
+ceconomy-ag,U000110,id_alt
+Ceconomy AG,U000110,name
+cenit-aktiengesellschaft,U000111,id_alt
+CENIT Aktiengesellschaft,U000111,name
+centrotherm-international-ag,U000112,id_alt
+centrotherm international AG,U000112,name
+ceotronics-ag,U000113,id_alt
+CeoTronics AG,U000113,name
+cewe-stiftung-und-co-kgaa,U000114,id_alt
+CEWE Stiftung & Co. KGaA,U000114,name
+cgre-ag,U000115,id_alt
+CGRE AG,U000115,name
+chapters-group-ag,U000116,id_alt
+CHAPTERS Group AG,U000116,name
+cherry-se,U000117,id_alt
+Cherry SE,U000117,name
+circus-se,U000118,id_alt
+Circus SE,U000118,name
+citigroup-global-markets-europe-ag,U000119,id_alt
+Citigroup Global Markets Europe AG,U000119,name
+clearvise-ag,U000120,id_alt
+clearvise AG,U000120,name
+cliq-digital-ag,U000121,id_alt
+Cliq Digital AG,U000121,name
+co-don-ag,U000122,id_alt
+co.don AG,U000122,name
+cogia-ag,U000123,id_alt
+Cogia AG,U000123,name
+commerzbank-ag,U000124,id_alt
+COMMERZBANK Aktiengesellschaft,U000124,name
+Commerzbank AG,U000124,name
+continental-aktiengesellschaft,U000125,id_alt
+Continental Aktiengesellschaft,U000125,name
+coreo-ag,U000126,id_alt
+Coreo AG,U000126,name
+corestate-capital-holding-s-a,U000127,id_alt
+CORESTATE Capital Holding S.A.,U000127,name
+covestro-ag,U000128,id_alt
+Covestro AG,U000128,name
+cpi-property-group-sa,U000129,id_alt
+CPI Property Group SA,U000129,name
+cr-energy-ag,U000130,id_alt
+CR Energy AG,U000130,name
+cts-eventim-ag-und-co-kgaa,U000131,id_alt
+CTS Eventim AG & Co. KGaA,U000131,name
+cyan-ag,U000132,id_alt
+Cyan AG,U000132,name
+daimler-truck-holding-ag,U000133,id_alt
+Daimler Truck Holding AG,U000133,name
+daldrup-und-soehne-aktiengesellschaft,U000134,id_alt
+Daldrup & Söhne Aktiengesellschaft,U000134,name
+datagroup-se,U000135,id_alt
+DATAGROUP SE,U000135,name
+data-modul-aktiengesellschaft-produktion-und-vertrieb-von-el,U000136,id_alt
+DATA MODUL Aktiengesellschaft Produktion und Vertrieb von elektronischen Systemen,U000136,name
+datron-ag,U000137,id_alt
+DATRON AG,U000137,name
+dci-database-for-commerce-and-industry-ag,U000138,id_alt
+DCI Database for Commerce and Industry AG,U000138,name
+debeka-bausparkasse-ag,U000139,id_alt
+Debeka Bausparkasse AG,U000139,name
+Debeka Bausparkasse Aktiengesellschaft Sitz Koblenz am Rhein,U000139,name
+defama-deutsche-fachmarkt-ag,U000140,id_alt
+DEFAMA Deutsche Fachmarkt AG,U000140,name
+dekabank-deutsche-girozentrale,U000141,id_alt
+DekaBank Deutsche Girozentrale,U000141,name
+delignit-ag,U000142,id_alt
+Delignit AG,U000142,name
+delivery-hero-se,U000143,id_alt
+Delivery Hero SE,U000143,name
+delticom-ag,U000144,id_alt
+Delticom AG,U000144,name
+demire-deutsche-mittelstand-real-estate-ag,U000145,id_alt
+DEMIRE Deutsche Mittelstand Real Estate AG,U000145,name
+dermapharm-holding-se,U000146,id_alt
+Dermapharm Holding SE,U000146,name
+deutsche-apotheker-und-arztebank-eg-apobank,U000147,id_alt
+DEUTSCHE APOTHEKER- UND ÄRZTEBANK EG,U000147,name
+Deutsche Apotheker- und Ärztebank eG (apoBank),U000147,name
+deutsche-apotheker-und-aerztebank-eg-apobank,U000147,ordner
+deutsche-bank-ag,U000148,id_alt
+deutsche-bank-aktiengesellschaft,U000148,id_alt
+DEUTSCHE BANK AKTIENGESELLSCHAFT,U000148,name
+Deutsche Bank AG,U000148,name
+Deutsche Bank Aktiengesellschaft,U000148,name
+deutsche-bausparkasse-badenia-ag,U000149,id_alt
+Deutsche Bausparkasse Badenia AG,U000149,name
+Deutsche Bausparkasse Badenia Aktiengesellschaft,U000149,name
+deutsche-beteiligungs-ag,U000150,id_alt
+Deutsche Beteiligungs AG,U000150,name
+deutsche-boerse-ag,U000151,id_alt
+Deutsche Börse AG,U000151,name
+deutsche-effecten-und-wechsel-beteiligungsgesellschaft-ag,U000152,id_alt
+Deutsche Effecten- und Wechsel-Beteiligungsgesellschaft AG,U000152,name
+deutsche-euroshop-ag,U000153,id_alt
+Deutsche EuroShop AG,U000153,name
+deutsche-grundstuecksauktionen-ag,U000154,id_alt
+Deutsche Grundstuecksauktionen AG,U000154,name
+deutsche-konsum-real-estate-ag,U000155,id_alt
+Deutsche Konsum Real Estate AG,U000155,name
+deutsche-kreditbank-ag-dkb-tochter-der-bayernlb,U000156,id_alt
+"Deutsche Kreditbank AG (DKB, Tochter der BayernLB)",U000156,name
+Deutsche Kreditbank Aktiengesellschaft,U000156,name
+deutsche-lufthansa-ag,U000157,id_alt
+Deutsche Lufthansa AG,U000157,name
+deutsche-pfandbriefbank-ag,U000158,id_alt
+Deutsche Pfandbriefbank AG,U000158,name
+deutsche-real-estate-ag,U000159,id_alt
+Deutsche Real Estate AG,U000159,name
+deutsche-rohstoff-ag,U000160,id_alt
+Deutsche Rohstoff AG,U000160,name
+deutsche-telekom-ag,U000161,id_alt
+Deutsche Telekom AG,U000161,name
+deutsche-wohnen-se,U000162,id_alt
+Deutsche Wohnen SE,U000162,name
+deutz-aktiengesellschaft,U000163,id_alt
+DEUTZ Aktiengesellschaft,U000163,name
+df-deutsche-forfait-ag,U000164,id_alt
+DF Deutsche Forfait AG,U000164,name
+dhl-ag,U000165,id_alt
+DHL AG,U000165,name
+dierig-holding-ag,U000166,id_alt
+Dierig Holding AG,U000166,name
+die-sparkasse-bremen-ag,U000167,id_alt
+Die Sparkasse Bremen AG,U000167,name
+Finanzholding der Sparkasse in Bremen,U000167,name
+dmg-mori-aktiengesellschaft,U000168,id_alt
+DMG MORI AKTIENGESELLSCHAFT,U000168,name
+dn-group-ag,U000169,id_alt
+DN Group AG,U000169,name
+doccheck-ag,U000170,id_alt
+DocCheck AG,U000170,name
+donner-reuschel-ag,U000171,id_alt
+Donner & Reuschel AG,U000171,name
+Donner & Reuschel Aktiengesellschaft,U000171,name
+dortmunder-volksbank-eg,U000172,id_alt
+Dortmunder Volksbank eG,U000172,name
+Dortmunder Volksbank eingetragene Genossenschaft,U000172,name
+douglas-ag,U000173,id_alt
+Douglas AG,U000173,name
+draegerwerk-ag-und-co-kgaa,U000174,id_alt
+Drägerwerk AG & Co. KGaA,U000174,name
+dr-ing-h-c-f-porsche-ag,U000175,id_alt
+Dr. Ing. h.c. F. Porsche AG,U000175,name
+duerr-aktiengesellschaft,U000176,id_alt
+Dürr Aktiengesellschaft,U000176,name
+dws-group-gmbh-und-co-kgaa,U000177,id_alt
+DWS Group GmbH & Co. KGaA,U000177,name
+dz-bank-ag-deutsche-zentral-genossenschaftsbank,U000178,id_alt
+DZ BANK AG Deutsche Zentral-Genossenschaftsbank,U000178,name
+"DZ BANK AG Deutsche Zentral-Genossenschaftsbank, Frankfurt am Main",U000178,name
+eckert-und-ziegler-se,U000179,id_alt
+Eckert & Ziegler SE,U000179,name
+ecotel-communication-ag,U000180,id_alt
+ecotel communication ag,U000180,name
+edag-engineering-group-ag,U000181,id_alt
+EDAG Engineering Group AG,U000181,name
+edel-se-und-co-kgaa,U000182,id_alt
+Edel SE & Co. KGaA,U000182,name
+einhell-germany-ag,U000183,id_alt
+Einhell Germany AG,U000183,name
+eisen-und-huettenwerke-ag,U000184,id_alt
+Eisen- und Hüttenwerke AG,U000184,name
+electrovac-ag,U000185,id_alt
+electrovac AG,U000185,name
+eleving-group-s-a,U000186,id_alt
+Eleving Group S.A.,U000186,name
+elmos-semiconductor-se,U000187,id_alt
+Elmos Semiconductor SE,U000187,name
+elringklinger-ag,U000188,id_alt
+ElringKlinger AG,U000188,name
+elumeo-se,U000189,id_alt
+elumeo SE,U000189,name
+enapter-ag,U000190,id_alt
+Enapter AG,U000190,name
+enbw-energie-baden-wuerttemberg-ag,U000191,id_alt
+EnBW Energie Baden-Württemberg AG,U000191,name
+energent-ag,U000192,id_alt
+Energent AG,U000192,name
+energiekontor-ag,U000193,id_alt
+Energiekontor AG,U000193,name
+envitec-biogas-ag,U000194,id_alt
+EnviTec Biogas AG,U000194,name
+e-on-se,U000195,id_alt
+E.ON SE,U000195,name
+eph-group-ag,U000196,id_alt
+EPH Group AG,U000196,name
+epigenomics-ag,U000197,id_alt
+Epigenomics AG,U000197,name
+erlebnis-akademie-ag,U000198,id_alt
+Erlebnis Akademie AG,U000198,name
+ernst-russ-ag,U000199,id_alt
+Ernst Russ AG,U000199,name
+erwe-immobilien-ag,U000200,id_alt
+ERWE Immobilien AG,U000200,name
+erwerbsgesellschaft-der-s-finanzgruppe-mbh-co-kg-holding-der-dekabank,U000201,id_alt
+Erwerbsgesellschaft der S-Finanzgruppe mbH & Co. KG,U000201,name
+Erwerbsgesellschaft der S-Finanzgruppe mbH & Co. KG (Holding der DekaBank),U000201,name
+erzgebirgssparkasse,U000202,id_alt
+Erzgebirgssparkasse,U000202,name
+eurokai-gmbh-und-co-kgaa,U000203,id_alt
+EUROKAI GmbH & Co. KGaA,U000203,name
+euwax-ag,U000204,id_alt
+EUWAX AG,U000204,name
+evangelische-bank-eg,U000205,id_alt
+Evangelische Bank eG,U000205,name
+ev-digital-invest-ag,U000206,id_alt
+EV Digital Invest AG,U000206,name
+evonik-industries-ag,U000207,id_alt
+Evonik Industries AG,U000207,name
+evotec-se,U000208,id_alt
+Evotec SE,U000208,name
+exasol-ag,U000209,id_alt
+Exasol AG,U000209,name
+exceet-group-sca,U000210,id_alt
+exceet Group SCA,U000210,name
+fabasoft-ag,U000211,id_alt
+Fabasoft AG,U000211,name
+fair-value-reit-ag,U000212,id_alt
+Fair Value REIT-AG,U000212,name
+famicord-ag,U000213,id_alt
+FamiCord AG,U000213,name
+fast-finance24-holding-ag,U000214,id_alt
+Fast Finance24 Holding AG,U000214,name
+fcr-immobilien-ag,U000215,id_alt
+FCR Immobilien AG,U000215,name
+fernheizwerk-neukoelln-ag,U000216,id_alt
+Fernheizwerk Neukölln AG,U000216,name
+fielmann-group-ag,U000217,id_alt
+Fielmann Group AG,U000217,name
+fil-holdings-germany-gmbh-fidelity,U000218,id_alt
+FIL Holdings (Germany) GmbH,U000218,name
+FIL Holdings (Germany) GmbH (Fidelity),U000218,name
+finexity-ag,U000219,id_alt
+Finexity AG,U000219,name
+first-sensor-ag,U000220,id_alt
+First Sensor AG,U000220,name
+flatexdegiro-bank-se,U000221,id_alt
+flatexDEGIRO AG,U000221,name
+flatexDEGIRO Bank SE,U000221,name
+flatexdegiro-se,U000222,id_alt
+flatexDEGIRO SE,U000222,name
+ford-bank-gmbh,U000223,id_alt
+FORD BANK GMBH,U000223,name
+Ford Bank GmbH,U000223,name
+forde-sparkasse,U000224,id_alt
+Förde Sparkasse,U000224,name
+foerde-sparkasse,U000224,ordner
+foris-ag,U000225,id_alt
+Foris AG,U000225,name
+formycon-ag,U000226,id_alt
+Formycon AG,U000226,name
+fortec-elektronik-ag,U000227,id_alt
+FORTEC Elektronik AG,U000227,name
+frankfurter-sparkasse,U000228,id_alt
+Frankfurter Sparkasse,U000228,name
+frankfurter-volksbank-rhein-main-eg,U000229,id_alt
+Frankfurter Volksbank Rhein/Main eG,U000229,name
+fraport-ag,U000230,id_alt
+Fraport AG,U000230,name
+freenet-ag,U000231,id_alt
+freenet AG,U000231,name
+frequentis-ag,U000232,id_alt
+Frequentis AG,U000232,name
+fresenius-medical-care-ag,U000233,id_alt
+Fresenius Medical Care AG,U000233,name
+fresenius-se-und-co-kgaa,U000234,id_alt
+Fresenius SE & Co. KGaA,U000234,name
+friedrich-vorwerk-group-se,U000235,id_alt
+Friedrich Vorwerk Group SE,U000235,name
+friwo-ag,U000236,id_alt
+Friwo AG,U000236,name
+frosta-aktiengesellschaft,U000237,id_alt
+FRoSTA Aktiengesellschaft,U000237,name
+fuchs-se,U000238,id_alt
+Fuchs SE,U000238,name
+gabler-group-ag-inh-on,U000239,id_alt
+Gabler Group AG,U000239,name
+gateway-real-estate-ag,U000240,id_alt
+Gateway Real Estate AG,U000240,name
+gbs-software-ag,U000241,id_alt
+GBS Software AG,U000241,name
+gea-group-aktiengesellschaft,U000242,id_alt
+GEA Group Aktiengesellschaft,U000242,name
+gelsenwasser-ag,U000243,id_alt
+Gelsenwasser AG,U000243,name
+geratherm-medical-ag,U000244,id_alt
+Geratherm Medical AG,U000244,name
+gerresheimer-ag,U000245,id_alt
+Gerresheimer AG,U000245,name
+gesco-se,U000246,id_alt
+Gesco SE,U000246,name
+gft-technologies-se,U000247,id_alt
+GFT Technologies SE,U000247,name
+gigaset-ag,U000248,id_alt
+Gigaset AG,U000248,name
+global-fashion-group-s-a,U000249,id_alt
+Global Fashion Group S.A.,U000249,name
+gls-gemeinschaftsbank-eg,U000250,id_alt
+GLS Gemeinschaftsbank e.G.,U000250,name
+GLS Gemeinschaftsbank eG,U000250,name
+going-public-media-ag,U000251,id_alt
+Going Public Media AG,U000251,name
+goldman-sachs-bank-europe-se,U000252,id_alt
+Goldman Sachs Bank Europe SE,U000252,name
+grammer-ag,U000253,id_alt
+Grammer AG,U000253,name
+grand-city-properties-s-a,U000254,id_alt
+Grand City Properties S.A.,U000254,name
+greiffenberger-ag,U000255,id_alt
+Greiffenberger AG,U000255,name
+grenke-ag,U000256,id_alt
+Grenke AG,U000256,name
+grenke-bank-ag,U000257,id_alt
+GRENKE BANK AG,U000257,name
+h2-core-ag,U000258,id_alt
+H2 Core AG,U000258,name
+haier-smart-home-co-ltd,U000259,id_alt
+"Haier Smart Home Co., Ltd.",U000259,name
+hamborner-reit-ag,U000260,id_alt
+Hamborner REIT AG,U000260,name
+hamburg-commercial-bank-ag,U000261,id_alt
+Hamburg Commercial Bank AG,U000261,name
+hamburger-hafen-und-logistik-aktiengesellschaft,U000262,id_alt
+Hamburger Hafen und Logistik Aktiengesellschaft,U000262,name
+hamburger-sparkasse-ag-haspa,U000263,id_alt
+HASPA Finanzholding,U000263,name
+Hamburger Sparkasse AG,U000263,name
+Hamburger Sparkasse AG (Haspa),U000263,name
+hannover-rueck-se,U000264,id_alt
+Hannover Rück SE,U000264,name
+hannoversche-volksbank-eg,U000265,id_alt
+Hannoversche Volksbank eG,U000265,name
+hanseatic-bank-gmbh-co-kg,U000266,id_alt
+Hanseatic Bank GmbH & Co KG,U000266,name
+hapag-lloyd-aktiengesellschaft,U000267,id_alt
+Hapag-Lloyd Aktiengesellschaft,U000267,name
+hasen-immobilien-ag,U000268,id_alt
+Hasen-Immobilien AG,U000268,name
+hauck-aufhauser-lampe-privatbank-ag,U000269,id_alt
+Hauck Aufhäuser Lampe Privatbank AG,U000269,name
+hausvorteil-ag,U000270,id_alt
+Hausvorteil AG,U000270,name
+hawesko-holding-se,U000271,id_alt
+Hawesko Holding SE,U000271,name
+heidelberger-beteiligungsholding-ag,U000272,id_alt
+Heidelberger Beteiligungsholding AG,U000272,name
+heidelberger-druckmaschinen-aktiengesellschaft,U000273,id_alt
+Heidelberger Druckmaschinen Aktiengesellschaft,U000273,name
+heidelberg-materials-ag,U000274,id_alt
+Heidelberg Materials AG,U000274,name
+heidelberg-pharma-ag,U000275,id_alt
+Heidelberg Pharma AG,U000275,name
+helios-solar-ag,U000276,id_alt
+Helios Solar AG,U000276,name
+hella-gmbh-und-co-kgaa,U000277,id_alt
+HELLA GmbH & Co. KGaA,U000277,name
+hellofresh-se,U000278,id_alt
+HelloFresh SE,U000278,name
+henkel-ag-und-co-kgaa,U000279,id_alt
+Henkel AG & Co. KGaA,U000279,name
+hensoldt-ag,U000280,id_alt
+Hensoldt AG,U000280,name
+hgears-ag,U000281,id_alt
+hGears AG,U000281,name
+highlight-communications-ag,U000282,id_alt
+Highlight Communications AG,U000282,name
+hms-bergbau-ag,U000283,id_alt
+HMS Bergbau AG,U000283,name
+hochtief-aktiengesellschaft,U000284,id_alt
+HOCHTIEF Aktiengesellschaft,U000284,name
+hoftex-group-ag,U000285,id_alt
+Hoftex Group AG,U000285,name
+homag-group-ag,U000286,id_alt
+HOMAG Group AG,U000286,name
+hometogo-se,U000287,id_alt
+HomeToGo SE,U000287,name
+hoenle-ag,U000288,id_alt
+Hoenle AG,U000288,name
+hornbach-holding-ag-und-co-kgaa,U000289,id_alt
+HORNBACH Holding AG & Co. KGaA,U000289,name
+hugo-boss-ag,U000290,id_alt
+Hugo Boss AG,U000290,name
+hundr-gmbh-und-co-kgaa,U000291,id_alt
+H&R GmbH & Co. KGaA,U000291,name
+hwa-ag,U000292,id_alt
+HWA AG,U000292,name
+hypoport-se,U000293,id_alt
+Hypoport SE,U000293,name
+hyrican-informationssysteme-aktiengesellschaft,U000294,id_alt
+Hyrican Informationssysteme Aktiengesellschaft,U000294,name
+hyundai-capital-bank-europe-gmbh,U000295,id_alt
+Hyundai Capital Bank Europe GmbH,U000295,name
+ibu-tec-advanced-materials-ag,U000296,id_alt
+IBU-tec advanced materials AG,U000296,name
+ikb-deutsche-industriebank-ag,U000297,id_alt
+IKB Deutsche Industriebank AG,U000297,name
+IKB Deutsche Industriebank Aktiengesellschaft,U000297,name
+immovaria-real-estate-ag,U000298,id_alt
+Immovaria Real Estate AG,U000298,name
+indus-holding-ag,U000299,id_alt
+INDUS Holding AG,U000299,name
+infas-holding-ag,U000300,id_alt
+Infas Holding AG,U000300,name
+infineon-technologies-ag,U000301,id_alt
+Infineon Technologies AG,U000301,name
+ing-diba-ag,U000302,id_alt
+ING Holding Deutschland GmbH,U000302,name
+ING-DiBa AG,U000302,name
+init-innovation-in-traffic-systems-se,U000303,id_alt
+init innovation in traffic systems SE,U000303,name
+innoscripta-se,U000304,id_alt
+innoscripta SE,U000304,name
+innotec-tss-ag,U000305,id_alt
+InnoTec TSS AG,U000305,name
+instant-group-ag,U000306,id_alt
+Instant Group AG,U000306,name
+instone-real-estate-group-se,U000307,id_alt
+Instone Real Estate Group SE,U000307,name
+international-school-augsburg-ag,U000308,id_alt
+International School Augsburg AG,U000308,name
+intershop-communications-aktiengesellschaft,U000309,id_alt
+INTERSHOP Communications Aktiengesellschaft,U000309,name
+intertainment-ag,U000310,id_alt
+Intertainment AG,U000310,name
+intica-systems-se,U000311,id_alt
+InTiCa Systems SE,U000311,name
+ionos-group-se,U000312,id_alt
+IONOS Group SE,U000312,name
+iq-international-ag,U000313,id_alt
+iQ International AG,U000313,name
+isbank-ag,U000314,id_alt
+Isbank AG,U000314,name
+ivu-traffic-technologies-ag,U000315,id_alt
+IVU Traffic Technologies AG,U000315,name
+jdc-group-ag,U000316,id_alt
+JDC Group AG,U000316,name
+jenoptik-ag,U000317,id_alt
+Jenoptik AG,U000317,name
+joh-berenberg-gossler-co-kg,U000318,id_alt
+"Joh. Berenberg, Gossler & Co. KG",U000318,name
+jost-werke-se,U000319,id_alt
+JOST Werke SE,U000319,name
+j-p-morgan-se,U000320,id_alt
+J.P. Morgan SE,U000320,name
+jungheinrich-aktiengesellschaft,U000321,id_alt
+Jungheinrich Aktiengesellschaft,U000321,name
+kap-ag,U000322,id_alt
+KAP AG,U000322,name
+kasseler-sparkasse,U000323,id_alt
+Kasseler Sparkasse,U000323,name
+kfw-beteiligungsholding-gmbh,U000324,id_alt
+KfW Beteiligungsholding GmbH,U000324,name
+kfw-ipex-bank-gmbh,U000325,id_alt
+KfW IPEX-Bank GmbH,U000325,name
+khd-humboldt-wedag-international-ag,U000326,id_alt
+KHD Humboldt Wedag International AG,U000326,name
+khd-humboldt-wedag-vermoegensverwaltungs-ag,U000327,id_alt
+KHD Humboldt Wedag Vermögensverwaltungs-AG,U000327,name
+kion-group-ag,U000328,id_alt
+KION GROUP AG,U000328,name
+klassik-radio-ag,U000329,id_alt
+Klassik Radio AG,U000329,name
+knaus-tabbert-ag,U000330,id_alt
+Knaus Tabbert AG,U000330,name
+knorr-bremse-ag,U000331,id_alt
+Knorr-Bremse AG,U000331,name
+koenig-und-bauer-ag,U000332,id_alt
+Koenig & Bauer AG,U000332,name
+kontron-ag,U000333,id_alt
+Kontron AG,U000333,name
+kps-ag,U000334,id_alt
+KPS AG,U000334,name
+kreissparkasse-biberach,U000335,id_alt
+Kreissparkasse Biberach,U000335,name
+kreissparkasse-boblingen,U000336,id_alt
+Kreissparkasse Böblingen,U000336,name
+kreissparkasse-boeblingen,U000336,ordner
+kreissparkasse-esslingen-nurtingen,U000337,id_alt
+Kreissparkasse Esslingen-Nürtingen,U000337,name
+kreissparkasse-esslingen-nuertingen,U000337,ordner
+kreissparkasse-halle-wiedenbruck,U000338,id_alt
+Kreissparkasse Halle-Wiedenbrück,U000338,name
+kreissparkasse-heilbronn,U000339,id_alt
+Kreissparkasse Heilbronn,U000339,name
+kreissparkasse-koln,U000340,id_alt
+Kreissparkasse Köln,U000340,name
+kreissparkasse-koeln,U000340,ordner
+kreissparkasse-ludwigsburg,U000341,id_alt
+Kreissparkasse Ludwigsburg,U000341,name
+kreissparkasse-munchen-starnberg-ebersberg,U000342,id_alt
+Kreissparkasse München Starnberg Ebersberg,U000342,name
+kreissparkasse-muenchen-starnberg-ebersberg,U000342,ordner
+kreissparkasse-ostalb,U000343,id_alt
+Kreissparkasse Ostalb,U000343,name
+kreissparkasse-ravensburg,U000344,id_alt
+Kreissparkasse Ravensburg,U000344,name
+kreissparkasse-reutlingen,U000345,id_alt
+Kreissparkasse Reutlingen,U000345,name
+kreissparkasse-steinfurt,U000346,id_alt
+Kreissparkasse Steinfurt,U000346,name
+kreissparkasse-tubingen,U000347,id_alt
+Kreissparkasse Tübingen,U000347,name
+kreissparkasse-tuebingen,U000347,ordner
+kreissparkasse-waiblingen,U000348,id_alt
+Kreissparkasse Waiblingen,U000348,name
+krones-ag,U000349,id_alt
+Krones AG,U000349,name
+k-s-aktiengesellschaft,U000350,id_alt
+K+S Aktiengesellschaft,U000350,name
+ksb-se-und-co-kgaa,U000351,id_alt
+KSB SE & Co. KGaA,U000351,name
+kst-beteiligungs-ag,U000352,id_alt
+KST Beteiligungs AG,U000352,name
+kulmbacher-brauerei-aktien-gesellschaft,U000353,id_alt
+Kulmbacher Brauerei Aktien-Gesellschaft,U000353,name
+kws-saat-se-und-co-kgaa,U000354,id_alt
+KWS SAAT SE & Co. KGaA,U000354,name
+laiqon-ag,U000355,id_alt
+LAIQON AG,U000355,name
+lampetia-ag,U000356,id_alt
+Lampetia AG,U000356,name
+landesbank-baden-wurttemberg-lbbw,U000357,id_alt
+Landesbank Baden-Württemberg,U000357,name
+Landesbank Baden-Württemberg (LBBW),U000357,name
+landesbank-baden-wuerttemberg-lbbw,U000357,ordner
+landesbank-berlin-ag-seit-15-07-2025-bsk-1818-ag-tragerin-der-berliner-sparkasse,U000358,id_alt
+BSK 1818 AG,U000358,name
+Landesbank Berlin AG (seit 15.07.2025 BSK 1818 AG; Trägerin der Berliner Sparkasse),U000358,name
+bsk-1818-ag-ehem-landesbank-berlin-ag,U000358,ordner
+landesbank-berlin-ag-seit-15-07-2025-bsk-1818-ag-traegerin-d,U000358,ordner
+landesbank-hessen-thuringen-girozentrale-helaba,U000359,id_alt
+Landesbank Hessen-Thüringen Girozentrale,U000359,name
+Landesbank Hessen-Thüringen Girozentrale (Helaba),U000359,name
+landesbank-hessen-thueringen-girozentrale-helaba,U000359,ordner
+landesbank-saar-saarlb,U000360,id_alt
+Landesbank Saar (SaarLB),U000360,name
+landessparkasse-zu-oldenburg,U000361,id_alt
+Landessparkasse zu Oldenburg,U000361,name
+lang-und-schwarz-aktiengesellschaft,U000362,id_alt
+Lang & Schwarz Aktiengesellschaft,U000362,name
+lanxess-aktiengesellschaft,U000363,id_alt
+LANXESS Aktiengesellschaft,U000363,name
+lbs-landesbausparkasse-nordost-ag,U000364,id_alt
+LBS Landesbausparkasse NordOst AG,U000364,name
+lbs-landesbausparkasse-nordwest,U000365,id_alt
+LBS Landesbausparkasse NordWest,U000365,name
+lbs-landesbausparkasse-sud,U000366,id_alt
+LBS Landesbausparkasse Süd,U000366,name
+lbs-landesbausparkasse-sued,U000366,ordner
+lechwerke-ag,U000367,id_alt
+Lechwerke AG,U000367,name
+leg-immobilien-se,U000368,id_alt
+LEG Immobilien SE,U000368,name
+leifheit-aktiengesellschaft,U000369,id_alt
+Leifheit Aktiengesellschaft,U000369,name
+leo-international-precision-health-ag,U000370,id_alt
+Leo International Precision Health AG,U000370,name
+lewag-holding-aktiengesellschaft,U000371,id_alt
+LEWAG Holding Aktiengesellschaft,U000371,name
+libero-football-finance-ag,U000372,id_alt
+LIBERO Football Finance AG,U000372,name
+liga-bank-eg,U000373,id_alt
+LIGA Bank eG,U000373,name
+limes-schlosskliniken-ag,U000374,id_alt
+LIMES Schlosskliniken AG,U000374,name
+lion-e-mobility-ag,U000375,id_alt
+LION E-Mobility AG,U000375,name
+lm-pay-spolka-akcyjna,U000376,id_alt
+LM Pay Spolka Akcyjna,U000376,name
+logwin-ag,U000377,id_alt
+Logwin AG,U000377,name
+lpkf-laser-und-electronics-se,U000378,id_alt
+LPKF Laser & Electronics SE,U000378,name
+ls-telcom-ag,U000379,id_alt
+LS telcom AG,U000379,name
+luebke-kelber-ag,U000380,id_alt
+Lübke Kelber AG,U000380,name
+m1-kliniken-ag,U000381,id_alt
+M1 Kliniken AG,U000381,name
+mainova-ag,U000382,id_alt
+Mainova AG,U000382,name
+maschinenfabrik-berthold-hermle-ag,U000383,id_alt
+Maschinenfabrik Berthold Hermle AG,U000383,name
+masterflex-se,U000384,id_alt
+Masterflex SE,U000384,name
+maternus-kliniken-ag,U000385,id_alt
+Maternus-Kliniken AG,U000385,name
+max-automation-se,U000386,id_alt
+MAX Automation SE,U000386,name
+mbb-se,U000387,id_alt
+MBB SE,U000387,name
+mediclin-aktiengesellschaft,U000388,id_alt
+MEDICLIN Aktiengesellschaft,U000388,name
+medios-ag,U000389,id_alt
+Medios AG,U000389,name
+mednation-ag,U000390,id_alt
+MedNation AG,U000390,name
+medondo-holding-ag,U000391,id_alt
+medondo holding AG,U000391,name
+meine-volksbank-raiffeisenbank-eg,U000392,id_alt
+meine Volksbank Raiffeisenbank eG,U000392,name
+mensch-und-maschine-software-se,U000393,id_alt
+Mensch und Maschine Software SE,U000393,name
+mercedes-benz-bank-ag,U000394,id_alt
+Mercedes-Benz Bank AG,U000394,name
+mercedes-benz-group-ag,U000395,id_alt
+Mercedes-Benz Group AG,U000395,name
+merck-kgaa,U000396,id_alt
+Merck KGaA,U000396,name
+merkur-privatbank-kgaa,U000397,id_alt
+MERKUR PRIVATBANK KGaA,U000397,name
+Merkur PrivatBank KgaA,U000397,name
+meta-wolf-ag,U000398,id_alt
+Meta Wolf AG,U000398,name
+mevis-medical-solutions-ag,U000399,id_alt
+MeVis Medical Solutions AG,U000399,name
+mhp-hotel-ag,U000400,id_alt
+MHP Hotel AG,U000400,name
+mineralbrunnen-ueberkingen-teinach-gmbh-und-co-kgaa,U000401,id_alt
+Mineralbrunnen Überkingen-Teinach GmbH & Co. KGaA,U000401,name
+ming-le-sports-ag,U000402,id_alt
+Ming Le Sports AG,U000402,name
+mister-spex-se,U000403,id_alt
+Mister Spex SE,U000403,name
+mittelbrandenburgische-sparkasse-in-potsdam-mbs,U000404,id_alt
+Mittelbrandenburgische Sparkasse in Potsdam (MBS),U000404,name
+mlp-banking-ag,U000405,id_alt
+MLP Banking AG,U000405,name
+mlp-se,U000406,id_alt
+MLP SE,U000406,name
+m-m-warburg-co-ag-co-kgaa,U000407,id_alt
+M.M.Warburg & CO (AG & Co.) KGaA,U000407,name
+mobotix-ag,U000408,id_alt
+Mobotix AG,U000408,name
+mologen-lifescience-ag,U000409,id_alt
+MOLOGEN Lifescience AG,U000409,name
+morgan-stanley-europe-se,U000410,id_alt
+Morgan Stanley Europe SE,U000410,name
+mountain-alliance-ag,U000411,id_alt
+Mountain Alliance AG,U000411,name
+mpc-oceanic-group-ag,U000412,id_alt
+MPC Oceanic Group AG,U000412,name
+mph-health-care-ag,U000413,id_alt
+MPH Health Care AG,U000413,name
+ms-industrie-ag,U000414,id_alt
+MS Industrie AG,U000414,name
+mtu-aero-engines-ag,U000415,id_alt
+MTU Aero Engines AG,U000415,name
+muehlbauer-holding-ag,U000416,id_alt
+Mühlbauer Holding AG,U000416,name
+mueller-die-lila-logistik-se,U000417,id_alt
+Müller - Die lila Logistik SE,U000417,name
+multitude-ag,U000418,id_alt
+Multitude AG,U000418,name
+munchener-hypothekenbank-eg-munchenerhyp,U000419,id_alt
+Münchener Hypothekenbank eG,U000419,name
+Münchener Hypothekenbank eG (MünchenerHyp),U000419,name
+muenchener-hypothekenbank-eg-muenchenerhyp,U000419,ordner
+muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf,U000420,id_alt
+Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München,U000420,name
+mutares-se-und-co-kgaa,U000421,id_alt
+Mutares SE & Co. KGaA,U000421,name
+mvise-ag,U000422,id_alt
+mVISE AG,U000422,name
+mvv-energie-ag,U000423,id_alt
+MVV Energie AG,U000423,name
+mwb-fairtrade-wertpapierhandelsbank-ag,U000424,id_alt
+mwb fairtrade Wertpapierhandelsbank AG,U000424,name
+n26-bank-se,U000425,id_alt
+N26 Bank SE,U000425,name
+nabaltec-ag,U000426,id_alt
+Nabaltec AG,U000426,name
+nagarro-se,U000427,id_alt
+Nagarro SE,U000427,name
+nakiki-se,U000428,id_alt
+Nakiki SE,U000428,name
+nanorepro-ag,U000429,id_alt
+NanoRepro AG,U000429,name
+nassauische-sparkasse,U000430,id_alt
+Nassauische Sparkasse,U000430,name
+national-bank-ag,U000431,id_alt
+National-Bank AG,U000431,name
+National-Bank Aktiengesellschaft,U000431,name
+ncte-ag,U000432,id_alt
+NCTE AG,U000432,name
+nemetschek-se,U000433,id_alt
+Nemetschek SE,U000433,name
+netfonds-ag,U000434,id_alt
+Netfonds AG,U000434,name
+newron-pharmaceuticals-s-p-a,U000435,id_alt
+Newron Pharmaceuticals S.p.A.,U000435,name
+nexr-technologies-se,U000436,id_alt
+NeXR Technologies SE,U000436,name
+nexum-group-ag,U000437,id_alt
+Nexum Group AG,U000437,name
+nfon-ag,U000438,id_alt
+NFON AG,U000438,name
+noratis-ag,U000439,id_alt
+Noratis AG,U000439,name
+norcom-information-technology-gmbh-und-co-kgaa,U000440,id_alt
+NorCom Information Technology GmbH & Co KGaA,U000440,name
+norddeutsche-landesbank-girozentrale-nord-lb,U000441,id_alt
+Norddeutsche Landesbank - Girozentrale -,U000441,name
+Norddeutsche Landesbank Girozentrale (NORD/LB),U000441,name
+nordex-se,U000442,id_alt
+Nordex SE,U000442,name
+nordwest-handel-ag,U000443,id_alt
+Nordwest Handel AG,U000443,name
+norisbank-gmbh,U000444,id_alt
+norisbank GmbH,U000444,name
+norma-group-se,U000445,id_alt
+NORMA Group SE,U000445,name
+novem-group-s-a,U000446,id_alt
+Novem Group S.A.,U000446,name
+novogenia-ag,U000447,id_alt
+Novogenia AG,U000447,name
+nuernberger-beteiligungs-ag,U000448,id_alt
+NÜRNBERGER Beteiligungs-AG,U000448,name
+nynomic-ag,U000449,id_alt
+Nynomic AG,U000449,name
+oddo-bhf-se,U000450,id_alt
+ODDO BHF SE,U000450,name
+ohb-se,U000451,id_alt
+OHB SE,U000451,name
+oekoworld-ag,U000452,id_alt
+OEKOWORLD AG,U000452,name
+oldenburgische-landesbank-ag,U000453,id_alt
+Oldenburgische Landesbank AG,U000453,name
+Oldenburgische Landesbank Aktiengesellschaft,U000453,name
+orbis-ag,U000454,id_alt
+ORBIS AG,U000454,name
+ostsachsische-sparkasse-dresden,U000455,id_alt
+Ostsächsische Sparkasse Dresden,U000455,name
+Sachsen-Finanzgruppe,U000455,name
+ostsaechsische-sparkasse-dresden,U000455,ordner
+ostseesparkasse-rostock,U000456,id_alt
+OstseeSparkasse Rostock,U000456,name
+ottobock-se-und-co-kgaa,U000457,id_alt
+Ottobock SE & Co. KGaA,U000457,name
+ovb-holding-ag,U000458,id_alt
+OVB Holding AG,U000458,name
+paion-ag,U000459,id_alt
+Paion AG,U000459,name
+paragon-gmbh-und-co-kgaa,U000460,id_alt
+paragon GmbH & Co. KGaA,U000460,name
+park-und-bellheimer-ag,U000461,id_alt
+Park & Bellheimer AG,U000461,name
+path2-hydrogen-ag,U000462,id_alt
+Path2 Hydrogen AG,U000462,name
+patrizia-se,U000463,id_alt
+PATRIZIA SE,U000463,name
+paul-hartmann-ag,U000464,id_alt
+Paul Hartmann AG,U000464,name
+pax-bank-fur-kirche-und-caritas-eg,U000465,id_alt
+Pax-Bank für Kirche und Caritas eG,U000465,name
+pax-bank-fuer-kirche-und-caritas-eg,U000465,ordner
+payments-group-holding-gmbh-und-co-kgaa,U000466,id_alt
+Payments Group Holding GmbH & Co KGaA,U000466,name
+pearl-gold-ag,U000467,id_alt
+Pearl Gold AG,U000467,name
+peh-wertpapier-ag,U000468,id_alt
+PEH Wertpapier AG,U000468,name
+pentixapharm-holding-ag,U000469,id_alt
+Pentixapharm Holding AG,U000469,name
+pfeiffer-vacuum-technology-ag,U000470,id_alt
+Pfeiffer Vacuum Technology AG,U000470,name
+pferdewetten-de-ag,U000471,id_alt
+Pferdewetten de AG,U000471,name
+pfisterer-holding-se,U000472,id_alt
+PFISTERER Holding SE,U000472,name
+philion-se,U000473,id_alt
+Philion SE,U000473,name
+pittler-maschinenfabrik-ag,U000474,id_alt
+Pittler Maschinenfabrik AG,U000474,name
+plan-optik-ag,U000475,id_alt
+Plan Optik AG,U000475,name
+plenum-ag,U000476,id_alt
+plenum AG,U000476,name
+pne-ag,U000477,id_alt
+PNE AG,U000477,name
+pob-ag,U000478,id_alt
+POB AG,U000478,name
+porsche-automobil-holding-se,U000479,id_alt
+Porsche Automobil Holding SE,U000479,name
+procredit-holding-ag,U000480,id_alt
+ProCredit Holding AG,U000480,name
+pro-dv-ag,U000481,id_alt
+PRO DV AG,U000481,name
+prosiebensat-1-media-se,U000482,id_alt
+ProSiebenSat.1 Media SE,U000482,name
+psd-bank-munchen-eg,U000483,id_alt
+PSD Bank München eG,U000483,name
+psd-bank-muenchen-eg,U000483,ordner
+psi-software-se,U000484,id_alt
+PSI Software SE,U000484,name
+puma-se,U000485,id_alt
+PUMA SE,U000485,name
+pva-tepla-ag,U000486,id_alt
+PVA TePla AG,U000486,name
+pwo-ag,U000487,id_alt
+PWO AG,U000487,name
+pyramid-ag,U000488,id_alt
+Pyramid AG,U000488,name
+pyrum-innovations-ag,U000489,id_alt
+Pyrum Innovations AG,U000489,name
+q-beyond-ag,U000490,id_alt
+q.beyond AG,U000490,name
+qiagen-n-v,U000491,id_alt
+Qiagen N.V.,U000491,name
+quirin-privatbank-ag,U000492,id_alt
+Quirin Privatbank AG,U000492,name
+raisin-bank-ag,U000493,id_alt
+Raisin Bank AG,U000493,name
+rational-aktiengesellschaft,U000494,id_alt
+RATIONAL Aktiengesellschaft,U000494,name
+rcm-beteiligungs-ag,U000495,id_alt
+RCM Beteiligungs AG,U000495,name
+readcrest-capital-ag,U000496,id_alt
+Readcrest Capital AG,U000496,name
+realtech-ag,U000497,id_alt
+RealTech AG,U000497,name
+redcare-pharmacy-nv,U000498,id_alt
+Redcare Pharmacy NV,U000498,name
+regenbogen-ag,U000499,id_alt
+Regenbogen AG,U000499,name
+renk-group-ag,U000500,id_alt
+RENK Group AG,U000500,name
+rheinhessen-sparkasse,U000501,id_alt
+Rheinhessen Sparkasse,U000501,name
+rheinmetall-ag,U000502,id_alt
+Rheinmetall AG,U000502,name
+rhoen-klinikum-aktiengesellschaft,U000503,id_alt
+RHÖN-KLINIKUM Aktiengesellschaft,U000503,name
+rigsave-s-p-a,U000504,id_alt
+Rigsave S.P.A.,U000504,name
+ringmetall-se,U000505,id_alt
+Ringmetall SE,U000505,name
+rostra-ag,U000506,id_alt
+Rostra AG,U000506,name
+r-stahl-ag,U000507,id_alt
+R. STAHL AG,U000507,name
+rtl-group-s-a,U000508,id_alt
+RTL Group S.A.,U000508,name
+rubean-ag,U000509,id_alt
+Rubean AG,U000509,name
+rwe-aktiengesellschaft,U000510,id_alt
+RWE Aktiengesellschaft,U000510,name
+saf-holland-se,U000511,id_alt
+SAF-Holland SE,U000511,name
+salzgitter-ag,U000512,id_alt
+Salzgitter AG,U000512,name
+samara-asset-group-plc,U000513,id_alt
+Samara Asset Group plc,U000513,name
+santander-consumer-bank-ag,U000514,id_alt
+Open Group Deutschland Holding GmbH,U000514,name
+Santander Consumer Bank AG,U000514,name
+sap-se,U000515,id_alt
+SAP SE,U000515,name
+sartorius-aktiengesellschaft,U000516,id_alt
+Sartorius Aktiengesellschaft,U000516,name
+sbf-ag,U000517,id_alt
+SBF AG,U000517,name
+schaeffler-ag,U000518,id_alt
+Schaeffler AG,U000518,name
+scherzer-und-co-ag,U000519,id_alt
+Scherzer & Co AG,U000519,name
+schloss-wachenheim-ag,U000520,id_alt
+Schloss Wachenheim AG,U000520,name
+schott-pharma-ag-und-co-kgaa,U000521,id_alt
+SCHOTT Pharma AG & Co. KGaA,U000521,name
+schwaelbchen-molkerei-jakob-berz-ag,U000522,id_alt
+Schwälbchen Molkerei Jakob Berz AG,U000522,name
+schweizer-electronic-ag,U000523,id_alt
+Schweizer Electronic AG,U000523,name
+scout24-se,U000524,id_alt
+Scout24 SE,U000524,name
+scp-standard-capital-partners-ag,U000525,id_alt
+SCP Standard Capital Partners AG,U000525,name
+secb-swiss-euro-clearing-bank-gmbh,U000526,id_alt
+SECB Swiss Euro Clearing Bank GmbH,U000526,name
+secunet-security-networks-aktiengesellschaft,U000527,id_alt
+secunet Security Networks Aktiengesellschaft,U000527,name
+sedlmayr-grund-und-immobilien-ag,U000528,id_alt
+Sedlmayr Grund und Immobilien AG,U000528,name
+serviceware-se,U000529,id_alt
+Serviceware SE,U000529,name
+seven-principles-ag,U000530,id_alt
+Seven Principles AG,U000530,name
+sfc-energy-ag,U000531,id_alt
+SFC Energy AG,U000531,name
+sgl-carbon-se,U000532,id_alt
+SGL Carbon SE,U000532,name
+shareholder-value-beteiligungen-ag,U000533,id_alt
+Shareholder Value Beteiligungen AG,U000533,name
+shelly-group-se,U000534,id_alt
+Shelly Group SE,U000534,name
+siemens-aktiengesellschaft,U000535,id_alt
+Siemens Aktiengesellschaft,U000535,name
+siemens-bank-gmbh,U000536,id_alt
+Siemens Bank GmbH,U000536,name
+siemens-energy-ag,U000537,id_alt
+Siemens Energy AG,U000537,name
+siemens-healthineers-ag,U000538,id_alt
+Siemens Healthineers AG,U000538,name
+siltronic-ag,U000539,id_alt
+Siltronic AG,U000539,name
+simona-ag,U000540,id_alt
+Simona AG,U000540,name
+singulus-technologies-ag,U000541,id_alt
+Singulus Technologies AG,U000541,name
+sino-ag,U000542,id_alt
+Sino AG,U000542,name
+sino-german-united-ag,U000543,id_alt
+Sino-German United AG,U000543,name
+sirma-group-jsc,U000544,id_alt
+Sirma Group JSC,U000544,name
+sixt-se,U000545,id_alt
+Sixt SE,U000545,name
+smag-mobile-antenna-masts-ag,U000546,id_alt
+SMAG Mobile Antenna Masts AG,U000546,name
+smartbroker-holding-ag,U000547,id_alt
+Smartbroker Holding AG,U000547,name
+sma-solar-technology-ag,U000548,id_alt
+SMA Solar Technology AG,U000548,name
+smg-hospitality-se,U000549,id_alt
+SMG Hospitality SE,U000549,name
+smt-scharf-ag,U000550,id_alt
+SMT Scharf AG,U000550,name
+sm-wirtschaftsberatungs-ag,U000551,id_alt
+SM Wirtschaftsberatungs AG,U000551,name
+snp-schneider-neureither-und-partner-se,U000552,id_alt
+SNP Schneider-Neureither & Partner SE,U000552,name
+softing-ag,U000553,id_alt
+Softing AG,U000553,name
+solutiance-ag,U000554,id_alt
+Solutiance AG,U000554,name
+sparda-bank-baden-wurttemberg-eg,U000555,id_alt
+Sparda-Bank Baden-Württemberg eG,U000555,name
+sparda-bank-baden-wuerttemberg-eg,U000555,ordner
+sparda-bank-berlin-eg,U000556,id_alt
+Sparda-Bank Berlin eG,U000556,name
+sparda-bank-hannover-eg,U000557,id_alt
+Sparda-Bank Hannover eG,U000557,name
+Sparda-Bank Hannover eingetragene Genossenschaft,U000557,name
+sparda-bank-hessen-eg,U000558,id_alt
+Sparda-Bank Hessen eG,U000558,name
+sparda-bank-munchen-eg,U000559,id_alt
+Sparda-Bank München eG,U000559,name
+Sparda-Bank München eingetragene Genossenschaft,U000559,name
+sparda-bank-muenchen-eg,U000559,ordner
+sparda-bank-nurnberg-eg,U000560,id_alt
+SPARDA-BANK NÜRNBERG eG,U000560,name
+Sparda-Bank Nürnberg eG,U000560,name
+sparda-bank-nuernberg-eg,U000560,ordner
+sparda-bank-sudwest-eg,U000561,id_alt
+Sparda-Bank Südwest eG,U000561,name
+sparda-bank-suedwest-eg,U000561,ordner
+sparda-bank-west-eg,U000562,id_alt
+Sparda-Bank West eG,U000562,name
+sparkasse-aachen,U000563,id_alt
+Sparkasse Aachen,U000563,name
+sparkasse-allgau,U000564,id_alt
+Sparkasse Allgäu,U000564,name
+sparkasse-allgaeu,U000564,ordner
+sparkasse-ansbach,U000565,id_alt
+Sparkasse Ansbach,U000565,name
+sparkasse-aschaffenburg-miltenberg,U000566,id_alt
+Sparkasse Aschaffenburg Miltenberg,U000566,name
+sparkasse-bielefeld,U000567,id_alt
+Sparkasse Bielefeld,U000567,name
+sparkasse-bochum,U000568,id_alt
+Sparkasse Bochum,U000568,name
+sparkasse-celle-gifhorn-wolfsburg,U000569,id_alt
+Sparkasse Celle-Gifhorn-Wolfsburg,U000569,name
+sparkasse-chemnitz,U000570,id_alt
+Sparkasse Chemnitz,U000570,name
+sparkasse-dortmund,U000571,id_alt
+Sparkasse Dortmund,U000571,name
+"Sparkasse Dortmund, Zweckverbandssparkasse der Städte Dortmund und Schwerte",U000571,name
+sparkasse-duisburg,U000572,id_alt
+Sparkasse Duisburg,U000572,name
+sparkasse-duren,U000573,id_alt
+Sparkasse Düren,U000573,name
+sparkasse-essen,U000574,id_alt
+Sparkasse Essen,U000574,name
+sparkasse-freiburg-nordlicher-breisgau,U000575,id_alt
+Sparkasse Freiburg - Nördlicher Breisgau,U000575,name
+Sparkasse Freiburg-Nördlicher Breisgau,U000575,name
+sparkasse-freiburg-noerdlicher-breisgau,U000575,ordner
+sparkasse-hanau,U000576,id_alt
+SPARKASSE HANAU,U000576,name
+Sparkasse Hanau,U000576,name
+sparkasse-hannover,U000577,id_alt
+Sparkasse Hannover,U000577,name
+sparkasse-heidelberg,U000578,id_alt
+Sparkasse Heidelberg,U000578,name
+sparkasse-hellweg-lippe,U000579,id_alt
+Sparkasse Hellweg-Lippe,U000579,name
+sparkasse-hildesheim-goslar-peine,U000580,id_alt
+Sparkasse Hildesheim Goslar Peine,U000580,name
+sparkasse-holstein,U000581,id_alt
+Sparkasse Holstein,U000581,name
+sparkasse-im-kreis-herford,U000582,id_alt
+Sparkasse im Kreis Herford,U000582,name
+"Sparkasse im Kreis Herford -Zweckverbandssparkasse des Kreises Herford und der Städte Bünde, Herford, Löhne und Vlotho-",U000582,name
+sparkasse-ingolstadt-eichstatt,U000583,id_alt
+Sparkasse Ingolstadt Eichstätt,U000583,name
+sparkasse-karlsruhe,U000584,id_alt
+Sparkasse Karlsruhe,U000584,name
+sparkasse-koblenz,U000585,id_alt
+Sparkasse Koblenz,U000585,name
+sparkasse-kolnbonn,U000586,id_alt
+Sparkasse KölnBonn,U000586,name
+sparkasse-koelnbonn,U000586,ordner
+sparkasse-krefeld,U000587,id_alt
+Sparkasse Krefeld,U000587,name
+Sparkasse Krefeld - Zweckverbandssparkasse der Stadt Krefeld und des Kreises Viersen -,U000587,name
+sparkasse-landshut,U000588,id_alt
+Sparkasse Landshut,U000588,name
+sparkasse-mainfranken-wurzburg,U000589,id_alt
+Sparkasse Mainfranken Würzburg,U000589,name
+sparkasse-mainfranken-wuerzburg,U000589,ordner
+sparkasse-mittelfranken-sud,U000590,id_alt
+Sparkasse Mittelfranken-Süd,U000590,name
+sparkasse-mittelthuringen,U000591,id_alt
+Sparkasse Mittelthüringen,U000591,name
+sparkasse-mittelthueringen,U000591,ordner
+sparkasse-munsterland-ost,U000592,id_alt
+Sparkasse Münsterland Ost,U000592,name
+sparkasse-muensterland-ost,U000592,ordner
+sparkasse-niederbayern-mitte,U000593,id_alt
+Sparkasse Niederbayern-Mitte,U000593,name
+sparkasse-nurnberg,U000594,id_alt
+Sparkasse Nürnberg,U000594,name
+sparkasse-nuernberg,U000594,ordner
+sparkasse-offenburg-ortenau,U000595,id_alt
+Sparkasse Offenburg/Ortenau,U000595,name
+sparkasse-osnabruck,U000596,id_alt
+Sparkasse Osnabrück,U000596,name
+sparkasse-osnabrueck,U000596,ordner
+sparkasse-paderborn-detmold-hoxter,U000597,id_alt
+Sparkasse Paderborn-Detmold-Höxter,U000597,name
+"Sparkasse Paderborn-Detmold-Höxter (Lippische Spar- und Leihekasse), Zweckverbandssparkasse der Krei",U000597,name
+sparkasse-paderborn-detmold-hoexter,U000597,ordner
+sparkasse-pforzheim-calw,U000598,id_alt
+Sparkasse Pforzheim Calw,U000598,name
+sparkasse-regensburg,U000599,id_alt
+Sparkasse Regensburg,U000599,name
+sparkasse-rhein-nahe,U000600,id_alt
+Sparkasse Rhein-Nahe,U000600,name
+sparkasse-rhein-neckar-nord,U000601,id_alt
+Sparkasse Rhein Neckar Nord,U000601,name
+sparkasse-rosenheim-bad-aibling,U000602,id_alt
+Sparkasse Rosenheim-Bad Aibling,U000602,name
+sparkasse-saarbrucken,U000603,id_alt
+Sparkasse Saarbrücken,U000603,name
+sparkasse-saarbruecken,U000603,ordner
+sparkasse-schwaben-bodensee,U000604,id_alt
+Sparkasse Schwaben-Bodensee,U000604,name
+sparkasse-sudholstein,U000605,id_alt
+Sparkasse Südholstein,U000605,name
+sparkasse-suedholstein,U000605,ordner
+sparkasse-sudpfalz,U000606,id_alt
+Sparkasse Südpfalz,U000606,name
+sparkasse-suedpfalz,U000606,ordner
+sparkasse-trier,U000607,id_alt
+Sparkasse Trier,U000607,name
+sparkasse-ulm,U000608,id_alt
+Sparkasse Ulm,U000608,name
+sparkasse-vest-recklinghausen,U000609,id_alt
+Sparkasse Vest Recklinghausen,U000609,name
+sparkasse-vorpommern,U000610,id_alt
+Sparkasse Vorpommern,U000610,name
+sparkasse-westmunsterland,U000611,id_alt
+Sparkasse Westmünsterland,U000611,name
+sparkasse-westmuensterland,U000611,ordner
+sparta-ag,U000612,id_alt
+Sparta AG,U000612,name
+spielvereinigung-unterhaching-fussball-gmbh-und-co-kgaa,U000613,id_alt
+Spielvereinigung Unterhaching Fußball GmbH & Co. KGaA,U000613,name
+springer-nature-ag-und-co-kgaa,U000614,id_alt
+Springer Nature AG & Co. KGaA,U000614,name
+stabilus-se,U000615,id_alt
+Stabilus SE,U000615,name
+stadtsparkasse-augsburg,U000616,id_alt
+Stadtsparkasse Augsburg,U000616,name
+stadtsparkasse-dusseldorf,U000617,id_alt
+Stadtsparkasse Düsseldorf,U000617,name
+stadtsparkasse-duesseldorf,U000617,ordner
+stadtsparkasse-munchen,U000618,id_alt
+Stadtsparkasse München,U000618,name
+stadtsparkasse-muenchen,U000618,ordner
+stadtsparkasse-wuppertal,U000619,id_alt
+Stadtsparkasse Wuppertal,U000619,name
+stadt-und-kreis-sparkasse-darmstadt,U000620,id_alt
+Sparkasse Darmstadt und Dieburg,U000620,name
+Stadt- und Kreis-Sparkasse Darmstadt,U000620,name
+stadt-und-kreissparkasse-erlangen-hochstadt-herzogenaurach,U000621,id_alt
+Stadt- und Kreissparkasse Erlangen Höchstadt Herzogenaurach,U000621,name
+stadt-und-kreissparkasse-erlangen-hoechstadt-herzogenaurach,U000621,ordner
+stadt-und-kreissparkasse-leipzig,U000622,id_alt
+Stadt- und Kreissparkasse Leipzig,U000622,name
+staige-one-ag,U000623,id_alt
+Staige One AG,U000623,name
+standard-chartered-bank-ag,U000624,id_alt
+STANDARD CHARTERED BANK AG,U000624,name
+Standard Chartered Bank AG,U000624,name
+state-street-bank-international-gmbh,U000625,id_alt
+State Street Bank International GmbH,U000625,name
+State Street Europe Holdings Germany S.a.r.l. & Co. KG,U000625,name
+steico-se,U000626,id_alt
+STEICO SE,U000626,name
+steyr-motors-ag,U000627,id_alt
+Steyr Motors AG,U000627,name
+stock3-ag,U000628,id_alt
+Stock3 AG,U000628,name
+sto-se-und-co-kgaa,U000629,id_alt
+Sto SE & Co. KGaA,U000629,name
+stratec-se,U000630,id_alt
+Stratec SE,U000630,name
+stroeer-se-und-co-kgaa,U000631,id_alt
+Ströer SE & Co. KGaA,U000631,name
+sts-group-ag,U000632,id_alt
+STS Group AG,U000632,name
+suedwestdeutsche-salzwerke-ag,U000633,id_alt
+Südwestdeutsche Salzwerke AG,U000633,name
+sud-west-kreditbank-finanzierung-gmbh-swk-bank,U000634,id_alt
+Süd-West-Kreditbank Finanzierung GmbH,U000634,name
+Süd-West-Kreditbank Finanzierung GmbH (SWK Bank),U000634,name
+suedzucker-ag,U000635,id_alt
+Südzucker AG,U000635,name
+surteco-group-se,U000636,id_alt
+Surteco Group SE,U000636,name
+suss-microtec-se,U000637,id_alt
+SUSS MicroTec SE,U000637,name
+swiss-estates-ag,U000638,id_alt
+Swiss Estates AG,U000638,name
+swissnet-ag,U000639,id_alt
+Swissnet AG,U000639,name
+symrise-ag,U000640,id_alt
+Symrise AG,U000640,name
+synbiotic-se,U000641,id_alt
+SynBiotic SE,U000641,name
+syzygy-ag,U000642,id_alt
+SYZYGY AG,U000642,name
+tag-immobilien-ag,U000643,id_alt
+TAG Immobilien AG,U000643,name
+takkt-ag,U000644,id_alt
+TAKKT AG,U000644,name
+talanx-ag,U000645,id_alt
+Talanx AG,U000645,name
+targobank-ag,U000646,id_alt
+TARGOBANK AG,U000646,name
+taunus-sparkasse,U000647,id_alt
+Taunus-Sparkasse,U000647,name
+tc-unterhaltungselektronik-ag,U000648,id_alt
+TC Unterhaltungselektronik AG,U000648,name
+teamviewer-se,U000649,id_alt
+TeamViewer SE,U000649,name
+technotrans-se,U000650,id_alt
+technotrans SE,U000650,name
+the-grounds-real-estate-development-ag,U000651,id_alt
+The Grounds Real Estate Development AG,U000651,name
+the-naga-group-ag,U000652,id_alt
+The NAGA Group AG,U000652,name
+the-platform-group-se-und-co-kgaa,U000653,id_alt
+The Platform Group SE & Co. KGaA,U000653,name
+the-social-chain-ag,U000654,id_alt
+The Social Chain AG,U000654,name
+thyssenkrupp-ag,U000655,id_alt
+thyssenkrupp AG,U000655,name
+thyssenkrupp-nucera-ag-und-co-kgaa,U000656,id_alt
+thyssenkrupp nucera AG & Co. KGaA,U000656,name
+tick-trading-software-ag,U000657,id_alt
+tick Trading Software AG,U000657,name
+tin-inn-holding-ag,U000658,id_alt
+Tin Inn Holding Ag,U000658,name
+tiscon-ag,U000659,id_alt
+tiscon AG,U000659,name
+tk-accelis-group,U000660,id_alt
+TK Accelis Group,U000660,name
+tkms-ag-und-co-kgaa,U000661,id_alt
+TKMS AG & Co KGaA,U000661,name
+tokentus-investment-ag,U000662,id_alt
+tokentus investment AG,U000662,name
+tonies-se,U000663,id_alt
+tonies SE,U000663,name
+tonkens-agrar-ag,U000664,id_alt
+Tonkens Agrar AG,U000664,name
+toyota-kreditbank-gmbh,U000665,id_alt
+TOYOTA Kreditbank GmbH,U000665,name
+tradegate-ag-wertpapierhandelsbank,U000666,id_alt
+Tradegate AG Wertpapierhandelsbank,U000666,name
+trade-republic-bank-gmbh,U000667,id_alt
+Trade Republic Bank GmbH,U000667,name
+traton-se,U000668,id_alt
+Traton SE,U000668,name
+ttl-beteiligungs-und-grundbesitz-ag,U000669,id_alt
+TTL Beteiligungs- und Grundbesitz-AG,U000669,name
+tui-ag,U000670,id_alt
+TUI AG,U000670,name
+turbon-ag,U000671,id_alt
+Turbon AG,U000671,name
+ubs-europe-se,U000672,id_alt
+UBS Europe SE,U000672,name
+u-c-a-aktiengesellschaft,U000673,id_alt
+U.C.A. Aktiengesellschaft,U000673,name
+umt-united-mobility-technology-ag,U000674,id_alt
+UMT United Mobility Technology AG,U000674,name
+umweltbank-ag,U000675,id_alt
+UmweltBank AG,U000675,name
+unicredit-bank-gmbh-hypovereinsbank,U000676,id_alt
+UniCredit Bank GmbH,U000676,name
+UniCredit Bank GmbH (HypoVereinsbank),U000676,name
+unicredit-spa,U000677,id_alt
+UniCredit SpA,U000677,name
+uniper-se,U000678,id_alt
+Uniper SE,U000678,name
+united-eco-solutions-ag,U000679,id_alt
+United Eco Solutions AG,U000679,name
+united-internet-ag,U000680,id_alt
+United Internet AG,U000680,name
+unitedlabels-aktiengesellschaft,U000681,id_alt
+UNITEDLABELS Aktiengesellschaft,U000681,name
+uzin-utz-se,U000682,id_alt
+Uzin Utz SE,U000682,name
+valora-effekten-handel-ag,U000683,id_alt
+Valora Effekten Handel AG,U000683,name
+value-holdings-ag,U000684,id_alt
+Value-Holdings AG,U000684,name
+ascory-bank-ag,U000685,id_alt
+varengold-bank-ag,U000685,id_alt
+Ascory Bank AG,U000685,name
+Varengold Bank AG,U000685,name
+veganz-group-ag,U000686,id_alt
+Veganz Group AG,U000686,name
+verbio-se,U000687,id_alt
+Verbio SE,U000687,name
+verbundvolksbank-owl-eg,U000688,id_alt
+VerbundVolksbank OWL eG,U000688,name
+vereinigte-volksbanken-eg,U000689,id_alt
+Vereinigte Volksbanken eG,U000689,name
+vereinigte-vr-bank-kur-und-rheinpfalz-eg,U000690,id_alt
+Vereinigte VR Bank Kur- und Rheinpfalz eG,U000690,name
+verve-group-media-se,U000691,id_alt
+Verve Group Media SE,U000691,name
+vib-vermoegen-ag,U000692,id_alt
+VIB Vermoegen AG,U000692,name
+vidac-pharma-holding-plc,U000693,id_alt
+Vidac Pharma Holding Plc,U000693,name
+vidinext-ag,U000694,id_alt
+Vidinext AG,U000694,name
+villeroy-und-boch-ag,U000695,id_alt
+Villeroy & Boch AG,U000695,name
+vincorion-se,U000696,id_alt
+Vincorion SE,U000696,name
+viromed-medical-ag,U000697,id_alt
+Viromed Medical AG,U000697,name
+viscom-se,U000698,id_alt
+Viscom SE,U000698,name
+volksbank-brawo-eg,U000699,id_alt
+Volksbank BRAWO eG,U000699,name
+volksbank-darmstadt-mainz-eg,U000700,id_alt
+Volksbank Darmstadt Mainz eG,U000700,name
+volksbank-dusseldorf-neuss-eg,U000701,id_alt
+Volksbank Düsseldorf Neuss eG,U000701,name
+volksbank-eg-die-gestalterbank,U000702,id_alt
+Volksbank eG - Die Gestalterbank,U000702,name
+Volksbank eG – Die Gestalterbank,U000702,name
+volksbank-im-munsterland-eg,U000703,id_alt
+Volksbank im Münsterland eG,U000703,name
+volksbank-im-muensterland-eg,U000703,ordner
+volksbank-in-ostwestfalen-eg,U000704,id_alt
+Volksbank in Ostwestfalen eG,U000704,name
+volksbank-koln-bonn-eg,U000705,id_alt
+Volksbank Köln Bonn eG,U000705,name
+volksbank-koeln-bonn-eg,U000705,ordner
+volksbank-kraichgau-eg,U000706,id_alt
+Volksbank Kraichgau eG,U000706,name
+volksbank-mittelhessen-eg,U000707,id_alt
+Volksbank Mittelhessen eG,U000707,name
+volksbank-mittlerer-neckar-eg,U000708,id_alt
+Volksbank Mittlerer Neckar eG,U000708,name
+volksbank-pur-eg,U000709,id_alt
+Volksbank pur eG,U000709,name
+volksbank-raiffeisenbank-bayern-mitte-eg,U000710,id_alt
+Volksbank Raiffeisenbank Bayern Mitte eG,U000710,name
+volksbank-stuttgart-eg,U000711,id_alt
+Volksbank Stuttgart eG,U000711,name
+volkswagen-ag,U000712,id_alt
+Volkswagen AG,U000712,name
+volkswagen-bank-gmbh,U000713,id_alt
+Volkswagen Bank GmbH,U000713,name
+volkswagen-financial-services-ag,U000714,id_alt
+Volkswagen Financial Services AG,U000714,name
+voltatron-ag,U000715,id_alt
+Voltatron AG,U000715,name
+vonovia-se,U000716,id_alt
+Vonovia SE,U000716,name
+vossloh-ag,U000717,id_alt
+Vossloh AG,U000717,name
+vr-bank-bonn-rhein-sieg-eg,U000718,id_alt
+VR-Bank Bonn Rhein-Sieg eG,U000718,name
+vr-bank-heilbronn-schwabisch-hall-eg,U000719,id_alt
+VR Bank Heilbronn Schwäbisch Hall eG,U000719,name
+vr-bank-heilbronn-schwaebisch-hall-eg,U000719,ordner
+vr-bank-ludwigsburg-eg,U000720,id_alt
+VR-Bank Ludwigsburg eG,U000720,name
+vr-bank-nord-eg,U000721,id_alt
+VR Bank Nord eG,U000721,name
+vr-bank-rheinahreifel-eg,U000722,id_alt
+VR Bank RheinAhrEifel eG,U000722,name
+vr-bank-rhein-neckar-eg,U000723,id_alt
+VR Bank Rhein-Neckar eG,U000723,name
+vr-bank-starnberg-zugspitze-eg,U000724,id_alt
+VR Bank Starnberg-Zugspitze eG,U000724,name
+vr-teilhaberbank-metropolregion-nurnberg-eg,U000725,id_alt
+VR TeilhaberBank Metropolregion Nürnberg eG,U000725,name
+vr-teilhaberbank-metropolregion-nuernberg-eg,U000725,ordner
+vulcan-energy-resources-ltd,U000726,id_alt
+Vulcan Energy Resources Ltd,U000726,name
+wacker-chemie-ag,U000727,id_alt
+Wacker Chemie AG,U000727,name
+wacker-neuson-se,U000728,id_alt
+Wacker Neuson SE,U000728,name
+wasgau-produktions-und-handels-ag,U000729,id_alt
+WASGAU Produktions & Handels AG,U000729,name
+washtec-ag,U000730,id_alt
+WashTec AG,U000730,name
+webac-holding-ag,U000731,id_alt
+Webac Holding AG,U000731,name
+wegrow-ag,U000732,id_alt
+WeGrow AG,U000732,name
+weng-fine-art-ag,U000733,id_alt
+Weng Fine Art AG,U000733,name
+westwing-group-se,U000734,id_alt
+Westwing Group SE,U000734,name
+wiesbadener-volksbank-eg,U000735,id_alt
+Wiesbadener Volksbank eG,U000735,name
+wild-bunch-ag,U000736,id_alt
+Wild Bunch AG,U000736,name
+wolftank-group-ag,U000737,id_alt
+Wolftank Group AG,U000737,name
+wustenrot-bausparkasse-ag,U000738,id_alt
+Wüstenrot Bausparkasse AG,U000738,name
+Wüstenrot Bausparkasse Aktiengesellschaft,U000738,name
+wuestenrot-bausparkasse-ag,U000738,ordner
+wuestenrot-und-wuerttembergische-ag,U000739,id_alt
+Wüstenrot & Württembergische AG,U000739,name
+yoc-ag,U000740,id_alt
+YOC AG,U000740,name
+your-family-entertainment-ag,U000741,id_alt
+Your Family Entertainment AG,U000741,name
+zalando-se,U000742,id_alt
+Zalando SE,U000742,name
+zeal-network-se,U000743,id_alt
+ZEAL Network SE,U000743,name

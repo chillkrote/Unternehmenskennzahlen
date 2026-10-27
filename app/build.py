@@ -1,6 +1,7 @@
 """Baut das Terminal (Unternehmen und Volkswirtschaft): Excel -> data/banken.json -> dist/bankterminal.html (eine Datei, Daten eingebettet)."""
 import argparse
 import json
+import sys
 from pathlib import Path
 
 import datenschicht
@@ -47,6 +48,14 @@ def main():
                     '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'
                     + seite + "\n</body></html>\n")
     print(f"{len(banken)} Banken -> {ziel}")
+    # Kontrolle der zentralen Unternehmens-IDs (u. a.: jede ISIN nur bei einer ID); ein Verstoß lässt den Bau fehlschlagen,
+    # damit die Workflows (marktdaten, termine) nichts Fehlerhaftes committen
+    sys.path.insert(0, str(HIER.parent / "stammdaten"))
+    import pruefe_ids
+    fehler, info = pruefe_ids.pruefen()
+    print(f"Stammdaten: {info['unternehmen']} Unternehmen, {info['isins']} ISINs, {info['verweise']} ID-Verweise geprüft, {len(fehler)} Fehler")
+    if fehler:
+        raise SystemExit("Stammdaten-Prüfung fehlgeschlagen:\n  " + "\n  ".join(fehler[:30]))
 
 
 if __name__ == "__main__":

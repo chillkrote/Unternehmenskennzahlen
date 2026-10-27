@@ -27,6 +27,8 @@ from pypdf import PdfReader
 
 HIER = Path(__file__).resolve().parent
 BASIS = HIER.parent
+sys.path.insert(0, str(BASIS.parent / "stammdaten"))
+import ids  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 MIN_SEITEN = 16
 MAX_BYTES = 95_000_000  # GitHub-Grenze 100 MB je Datei
@@ -128,6 +130,9 @@ def lade(e, jahr, nur_konzern=False, ohne=()):
 
 def main():
     suche = json.load(open(sys.argv[1], encoding="utf-8"))
+    reg = ids.lade()
+    for e in suche:   # Suchlisten dürfen noch alte IDs oder Namen tragen; ab hier gilt nur die zentrale ID
+        e["id"] = reg.aufloesen(e["id"]) or e["id"]
     jahr = int(next((a.split("=")[1] for a in sys.argv if a.startswith("--jahr=")), 2025))
     uni = {u["unternehmen_id"]: u for u in csv.DictReader(open(BASIS / "universum" / "universum.csv", encoding="utf-8-sig"), delimiter=";")}
     status_p = BASIS / "rohdaten" / "berichte_status.json"
@@ -155,7 +160,7 @@ def main():
                 status[e["id"]] = {"status": "nicht gefunden", "suche": e.get("status"), "versuche": r["versuche"]}
                 print("--", e["id"], e.get("status"), r["versuche"][:1], flush=True)
                 continue
-            ziel = BASIS / u["branche"] / "dokumente" / e["id"] / r["name"]
+            ziel = BASIS / u["branche"] / "dokumente" / reg.ordner(e["id"]) / r["name"]
             ziel.parent.mkdir(parents=True, exist_ok=True)
             ziel.write_bytes(r["daten"])
             sha = hashlib.sha256(r["daten"]).hexdigest()

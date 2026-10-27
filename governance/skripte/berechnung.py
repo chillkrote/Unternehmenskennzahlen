@@ -3,53 +3,55 @@
 Liest verguetung.csv / gremien_mitglieder.csv, ergänzt die unten dokumentierten Eingangsdaten
 und schreibt berechnungen/*.csv. Aufruf aus dem Repo-Root: python3 governance/skripte/berechnung.py
 """
-import csv, os
+import csv, os, sys
+sys.path.insert(0, 'stammdaten')
+import ids  # zentrale Unternehmens-IDs; Ordner der Dokumente unter governance/dokumente/ tragen die alte Schreibweise
 from statistics import mean
 
 D = 'governance'
 rd = lambda f: list(csv.DictReader(open(f'{D}/{f}', encoding='utf-8-sig')))
 VG, MB = rd('verguetung.csv'), rd('gremien_mitglieder.csv')
-GB = lambda u: f'governance/dokumente/{u}/geschaeftsbericht-2025.pdf'
-VB = lambda u: f'governance/dokumente/{u}/verguetungsbericht-2025.pdf'
+GB = lambda u: f'governance/dokumente/{ids.lade().ordner(u)}/geschaeftsbericht-2025.pdf'
+VB = lambda u: f'governance/dokumente/{ids.lade().ordner(u)}/verguetungsbericht-2025.pdf'
 
 # Variante A: Ø-Jahresvergütung der Beschäftigten in Deutschland (FTE) aus der vergleichenden Darstellung (§ 162 Abs. 1 Nr. 2 AktG)
 # unternehmen_id: (T€, Beschäftigtenkreis, Dokument, Seite)
 A = {
- 'adidas-ag': (114.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Personalaufwand je FTE)', VB('adidas-ag'), 19),
- 'mtu-aero-engines-ag': (101.662, 'aktive Stammbelegschaft Deutschland, auf Vollzeit normiert', VB('mtu-aero-engines-ag'), 20),
- 'siemens-energy-ag': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('siemens-energy-ag'), 19),
+ 'U000017': (114.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Personalaufwand je FTE)', VB('U000017'), 19),
+ 'U000415': (101.662, 'aktive Stammbelegschaft Deutschland, auf Vollzeit normiert', VB('U000415'), 20),
+ 'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
 # unternehmen_id: (Personalaufwand Mio. €, Beschäftigte, Basis, Seite Aufwand, Seite Beschäftigte)
 B = {
- 'adidas-ag': (3226, 61952, 'Mitarbeiter im Jahresdurchschnitt (Köpfe)', 436, 454),
- 'basf-se': (12299, 110440, 'Ø Beschäftigte BASF-Gruppe; Aufwand inkl. 878 Mio. € nicht fortgeführter Coatings-Bereich', 412, 262),
- 'beiersdorf-aktiengesellschaft': (1957, 22399, 'Headcount zum Stichtag (Bericht nutzt ab 2025 Headcount statt FTE)', 290, 134),
- 'deutsche-telekom-ag': (19781, 199223, 'Ø Personalbestand Gesamtkonzern (inkl. Beamte und Auszubildende)', 305, 305),
- 'mtu-aero-engines-ag': (1284, 13674, 'Gesamtbelegschaft zum 31.12. (Personen)', 283, 51),
- 'rwe-aktiengesellschaft': (2948, 20120, 'Beschäftigte zum 31.12. in Vollzeitäquivalenten', 192, 3),
- 'siemens-energy-ag': (10424, 101414, 'Ø Mitarbeitende GJ 2025', 192, 107),
+ 'U000017': (3226, 61952, 'Mitarbeiter im Jahresdurchschnitt (Köpfe)', 436, 454),
+ 'U000061': (12299, 110440, 'Ø Beschäftigte BASF-Gruppe; Aufwand inkl. 878 Mio. € nicht fortgeführter Coatings-Bereich', 412, 262),
+ 'U000073': (1957, 22399, 'Headcount zum Stichtag (Bericht nutzt ab 2025 Headcount statt FTE)', 290, 134),
+ 'U000161': (19781, 199223, 'Ø Personalbestand Gesamtkonzern (inkl. Beamte und Auszubildende)', 305, 305),
+ 'U000415': (1284, 13674, 'Gesamtbelegschaft zum 31.12. (Personen)', 283, 51),
+ 'U000510': (2948, 20120, 'Beschäftigte zum 31.12. in Vollzeitäquivalenten', 192, 3),
+ 'U000537': (10424, 101414, 'Ø Mitarbeitende GJ 2025', 192, 107),
 }
 # von den Unternehmen selbst ausgewiesene Quote (andere Definition als Variante A/B, nur zum Abgleich)
 PUBLIZIERT = {
- 'beiersdorf-aktiengesellschaft': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
- 'rheinmetall-ag': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
+ 'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
+ 'U000502': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
 }
 # Rheinmetall weist Personalaufwand je FTE direkt aus (GB S. 56): 97 T€
-B_DIREKT = {'rheinmetall-ag': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE), Konzern', GB('rheinmetall-ag'), 56)}
+B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE), Konzern', GB('U000502'), 56)}
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
- ('Michelle Robertson', 'adidas-ag', GB('adidas-ag'), 43, 'Erfüllung § 76 Abs. 3a AktG (mind. eine Frau) "mit Michelle Robertson"'),
- ('Dr. Katja Scharpwinkel', 'basf-se', GB('basf-se'), 134, '"With Dr. Katja Scharpwinkel, there was one female Board member"'),
- ('Astrid Hermann', 'beiersdorf-aktiengesellschaft', GB('beiersdorf-aktiengesellschaft'), 50, 'Vorstand zu 50 % weiblich, namentlich genannt'),
- ('Nicola D. Lafrentz', 'beiersdorf-aktiengesellschaft', GB('beiersdorf-aktiengesellschaft'), 50, 'namentlich genannt'),
- ('Grita Loebsack', 'beiersdorf-aktiengesellschaft', GB('beiersdorf-aktiengesellschaft'), 50, 'namentlich genannt'),
- ('Katja Garcia Vila', 'mtu-aero-engines-ag', VB('mtu-aero-engines-ag'), 3, 'Bezeichnung "Vorständin"'),
- ('Dr. Silke Maurer', 'mtu-aero-engines-ag', VB('mtu-aero-engines-ag'), 3, 'Bezeichnung "Vorständin"'),
- ('Dr. Vera Saal', 'rheinmetall-ag', GB('rheinmetall-ag'), 94, '"Personalvorständin"'),
- ('Dr. Ursula Biernert-Kloß', 'rheinmetall-ag', GB('rheinmetall-ag'), 163, '"Arbeitsdirektorin"'),
- ('Katja van Doren', 'rwe-aktiengesellschaft', GB('rwe-aktiengesellschaft'), 8, 'Lebenslauf im Bericht ("Personalvorständin ... Ihre Tätigkeit")'),
+ ('Michelle Robertson', 'U000017', GB('U000017'), 43, 'Erfüllung § 76 Abs. 3a AktG (mind. eine Frau) "mit Michelle Robertson"'),
+ ('Dr. Katja Scharpwinkel', 'U000061', GB('U000061'), 134, '"With Dr. Katja Scharpwinkel, there was one female Board member"'),
+ ('Astrid Hermann', 'U000073', GB('U000073'), 50, 'Vorstand zu 50 % weiblich, namentlich genannt'),
+ ('Nicola D. Lafrentz', 'U000073', GB('U000073'), 50, 'namentlich genannt'),
+ ('Grita Loebsack', 'U000073', GB('U000073'), 50, 'namentlich genannt'),
+ ('Katja Garcia Vila', 'U000415', VB('U000415'), 3, 'Bezeichnung "Vorständin"'),
+ ('Dr. Silke Maurer', 'U000415', VB('U000415'), 3, 'Bezeichnung "Vorständin"'),
+ ('Dr. Vera Saal', 'U000502', GB('U000502'), 94, '"Personalvorständin"'),
+ ('Dr. Ursula Biernert-Kloß', 'U000502', GB('U000502'), 163, '"Arbeitsdirektorin"'),
+ ('Katja van Doren', 'U000510', GB('U000510'), 8, 'Lebenslauf im Bericht ("Personalvorständin ... Ihre Tätigkeit")'),
 ]
 frauen = {(n, u) for n, u, *_ in FRAUEN}
 
@@ -59,7 +61,7 @@ def ganzjaehrig(m):
     if b:
         return False
     return not (s.startswith('2025'))
-GJ_BEGINN_AUSNAHME = {'rheinmetall-ag': {'2025-01-01'}}  # 1.1.2025 gilt als volles Jahr
+GJ_BEGINN_AUSNAHME = {'U000502': {'2025-01-01'}}  # 1.1.2025 gilt als volles Jahr
 
 def vorstand(u):
     out = []
@@ -109,7 +111,7 @@ for u in sorted(set(A) | set(B) | set(B_DIREKT)):
             add(u, var, f'Ø ganzjährige Vorstandsmitglieder (n={len(voll)})', mean(x['t'] for x in voll), t, basis, q + [f"{voll[0]['quelle']} S. {voll[0]['seite']}"], bem + zusatz)
 for u, (r, b) in PUBLIZIERT.items():
     rows.append(dict(unternehmen_id=u, gj=2025, variante='Unternehmen', bezug='ausgewiesen', zaehler_teur='', nenner_teur='', pay_ratio=r, nenner_basis=b,
-                     quellen=VB(u) if u != 'beiersdorf-aktiengesellschaft' else GB(u), bemerkung='nur zum Abgleich, andere Definition'))
+                     quellen=VB(u) if u != 'U000073' else GB(u), bemerkung='nur zum Abgleich, andere Definition'))
 
 # Gender Pay Gap im Vorstand (unbereinigt) = (Ø Männer - Ø Frauen) / Ø Männer; nur ganzjährige Mitglieder
 gap = []

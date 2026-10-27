@@ -17,7 +17,7 @@ Einheitliche Ablage aller Zeitreihen über alle Erhebungen und Branchen. Die Erh
 
 | Spalte | Bedeutung |
 |---|---|
-| `unternehmen_id` | Schlüssel aus `stammdaten.csv` (Slug des Namens) |
+| `unternehmen_id` | Schlüssel aus `stammdaten.csv` (zentrale Unternehmens-ID `U000123` aus `stammdaten/unternehmen_ids.csv`) |
 | `kennzahl` | z. B. `bilanzsumme`, `eigenkapital`, `fonds_340g`, `jahresueberschuss`, `cet1`, `cet1_quote` |
 | `stichtag` | Bilanzstichtag (ISO) |
 | `wert`, `einheit`, `waehrung` | Wert in Berichtswährung; Umrechnung erst bei der Anzeige |

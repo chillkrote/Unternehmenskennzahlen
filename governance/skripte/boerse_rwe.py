@@ -1,8 +1,8 @@
 from lib import *
-G = ('governance/dokumente/rwe-aktiengesellschaft/geschaeftsbericht-2025.pdf', 'rwe-aktiengesellschaft')
-R = ('governance/dokumente/rwe-aktiengesellschaft/verguetungsbericht-2025.pdf', 'rwe-aktiengesellschaft')
-uni('Deutsche Telekom AG','deutsche-telekom-ag'); uni('Henkel AG & Co.KGaA','henkel-ag-und-co-kgaa'); uni('BASF SE','basf-se'); uni('Lanxess AG','lanxess-aktiengesellschaft')
-uni('Siemens AG','siemens-aktiengesellschaft'); uni('Dr. Ing. h. c. F. Porsche AG','dr-ing-h-c-f-porsche-ag'); uni('Fraport AG','fraport-ag')
+G = ('governance/dokumente/rwe-aktiengesellschaft/geschaeftsbericht-2025.pdf', 'U000510')
+R = ('governance/dokumente/rwe-aktiengesellschaft/verguetungsbericht-2025.pdf', 'U000510')
+uni('Deutsche Telekom AG','U000161'); uni('Henkel AG & Co.KGaA','U000279'); uni('BASF SE','U000061'); uni('Lanxess AG','U000363')
+uni('Siemens AG','U000535'); uni('Dr. Ing. h. c. F. Porsche AG','U000175'); uni('Fraport AG','U000230')
 for n,f,t,sp,bis in [('Dr. Markus Krebber','Vorsitzender (CEO)',7001,25,''),('Dr. Michael Müller','Mitglied',3538,25,''),('Katja van Doren','Mitglied',1768,25,''),('Zvezdana Seeger','ehemaliges Mitglied (Arbeitsdirektorin)',1467,26,'2023-10'),('Dr. Rolf Martin Schmitz','ehemaliges Mitglied',639,26,'2021-06')]:
     M(G,'Vorstand',n,f,'','',bis,91 if not bis else 31,'','Bezüge 2025 an ehemaliges Mitglied (Vergütungsbericht S. 31, Tabelle Veränderung)' if bis else '')
     V(R,'Vorstand',n,t,'Gesamtvergütung (TR) gewährt und geschuldet § 162 AktG',sp,'ehemaliges Mitglied' if bis else '')

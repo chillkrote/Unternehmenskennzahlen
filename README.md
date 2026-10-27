@@ -13,6 +13,10 @@ Jede Erhebung liegt in einem eigenen Ordner, gruppiert nach Branche:
   auswertung/    fertige Auswertungen (Excel, Listen), archiv/ für ältere Stände
 ```
 
+## Stammdaten
+
+Jedes Unternehmen hat genau eine zentrale ID (`U000123`, [stammdaten/](stammdaten/)), unabhängig von ISIN und Namensschreibweise. Eine Prüfung (`stammdaten/pruefe_ids.py`, im Build und im Workflow) stellt sicher, dass jede ISIN nur bei einer ID steht und keine ID-Verweise ins Leere zeigen.
+
 ## Erhebungen
 
 | Ordner | Inhalt | Stand |

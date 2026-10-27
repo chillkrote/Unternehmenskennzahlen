@@ -1,0 +1,206 @@
+{
+ "_hinweis": "Hand-Zuordnungen je ISIN: branche, name, website, unternehmen_id, bafin_name, ausschluss. Stand 27.10.2026",
+ "instrumente": {
+  "DE0005760029": {
+   "branche": "energie-versorger"
+  },
+  "DE000A37FTW0": {
+   "branche": "industrie",
+   "name": "Alexanderwerk AG",
+   "website": "https://www.alexanderwerk.com"
+  },
+  "DE000A3D6Q45": {
+   "branche": "automobil"
+  },
+  "DE0005088108": {
+   "branche": "banken"
+  },
+  "DE000A11QLP3": {
+   "branche": "immobilien"
+  },
+  "DE000A1CRQD6": {
+   "branche": "handel-konsum"
+  },
+  "DE000BGAG0J3": {
+   "branche": "pharma-gesundheit"
+  },
+  "DE000A1TNV91": {
+   "branche": "finanzdienstleister"
+  },
+  "DE0005275507": {
+   "branche": "handel-konsum"
+  },
+  "DE000A2YN355": {
+   "branche": "technologie"
+  },
+  "DE000A1EWXA4": {
+   "branche": "energie-versorger"
+  },
+  "DE000A3H2226": {
+   "branche": "software-it"
+  },
+  "DE000A2E4SV8": {
+   "branche": "software-it"
+  },
+  "DE000A11QU11": {
+   "branche": "software-it"
+  },
+  "DE0005533400": {
+   "branche": "immobilien"
+  },
+  "DE000A3DW408": {
+   "branche": "software-it"
+  },
+  "AT0000A34DM3": {
+   "branche": "immobilien"
+  },
+  "DE0005706535": {
+   "branche": "transport-logistik",
+   "name": "EUROKAI GmbH & Co. KGaA",
+   "website": "https://www.eurokai.com"
+  },
+  "DE0005660104": {
+   "branche": "finanzdienstleister",
+   "name": "EUWAX AG",
+   "website": "https://www.euwax-ag.de"
+  },
+  "DE000A2P4HL9": {
+   "branche": "handel-konsum"
+  },
+  "DE0005767909": {
+   "branche": "energie-versorger",
+   "name": "Fernheizwerk Neukölln AG",
+   "website": "https://www.fernheizwerk-neukoelln.de"
+  },
+  "DE000A40ET88": {
+   "branche": "finanzdienstleister",
+   "name": "Finexity AG"
+  },
+  "DE000A40KXC8": {
+   "branche": "telekom-medien",
+   "name": "Going Public Media AG"
+  },
+  "DE000A0H1GY2": {
+   "branche": "energie-versorger",
+   "name": "H2 Core AG"
+  },
+  "DE000A31C222": {
+   "branche": "immobilien",
+   "name": "Hausvorteil AG"
+  },
+  "DE000A0JK2B6": {
+   "branche": "immobilien"
+  },
+  "DE0005418404": {
+   "branche": "industrie"
+  },
+  "DE000A2AA1Q5": {
+   "branche": "handel-konsum"
+  },
+  "DE0007857476": {
+   "branche": "telekom-medien",
+   "name": "Klassik Radio AG",
+   "website": "https://www.klassikradio.de"
+  },
+  "DE000A0JDBC7": {
+   "branche": "pharma-gesundheit"
+  },
+  "CH0560888270": {
+   "branche": "technologie"
+  },
+  "PLLMPAY00016": {
+   "branche": "finanzdienstleister"
+  },
+  "DE0005653604": {
+   "branche": "pharma-gesundheit"
+  },
+  "DE0008148206": {
+   "branche": "banken"
+  },
+  "DE000A3E5C24": {
+   "branche": "handel-konsum"
+  },
+  "DE000A2BPK34": {
+   "branche": "software-it"
+  },
+  "IT0004147952": {
+   "branche": "pharma-gesundheit"
+  },
+  "DE000A1X3WF3": {
+   "branche": "finanzdienstleister",
+   "name": "Philion SE"
+  },
+  "DE000A161Z44": {
+   "branche": "software-it"
+  },
+  "DE000A12UMB1": {
+   "branche": "software-it",
+   "website": "https://performance.one"
+  },
+  "DE000A4096T1": {
+   "branche": "software-it"
+  },
+  "DE0005120802": {
+   "branche": "software-it"
+  },
+  "MT0001770107": {
+   "branche": "finanzdienstleister"
+  },
+  "DE000A2TR919": {
+   "branche": "telekom-medien"
+  },
+  "DE000A3CQ5L6": {
+   "branche": "software-it"
+  },
+  "DE0007346603": {
+   "branche": "chemie-rohstoffe",
+   "name": "Südwestdeutsche Salzwerke AG",
+   "website": "https://www.salzwerke.de"
+  },
+  "CH0019304531": {
+   "branche": "immobilien"
+  },
+  "DE000A3E5A59": {
+   "branche": "pharma-gesundheit"
+  },
+  "DE000TKCC1S8": {
+   "branche": "industrie",
+   "name": "TK Accelis Group"
+  },
+  "DE000A3CN9R8": {
+   "branche": "finanzdienstleister"
+  },
+  "DE000A12UK57": {
+   "branche": "finanzdienstleister"
+  },
+  "DE0007600405": {
+   "branche": "finanzdienstleister"
+  },
+  "DE000A2YPDD0": {
+   "branche": "immobilien"
+  },
+  "DE000A40ZVN7": {
+   "branche": "pharma-gesundheit"
+  },
+  "DE000A2LQUV1": {
+   "branche": "chemie-rohstoffe"
+  },
+  "DE0005181606": {
+   "branche": "handel-konsum"
+  },
+  "AT0000A25NJ6": {
+   "branche": "industrie"
+  },
+  "DE000A1X3WW8": {
+   "unternehmen_id": "khd-humboldt-wedag-vermoegensverwaltungs-ag",
+   "name": "KHD Humboldt Wedag Vermögensverwaltungs-AG",
+   "bafin_name": "KHD Humboldt Wedag Vermögensverwaltungs-AG"
+  },
+  "DE0006578008": {
+   "bafin_name": "KHD Humboldt Wedag International AG"
+  },
+  "DE000A421RZ9": {
+   "name": "Gabler Group AG"
+  }
+ }
+}

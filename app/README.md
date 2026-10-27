@@ -75,7 +75,7 @@ Datenschicht `unternehmen.py` (liest alles ohne Codeänderung):
 
 ## Täglicher Abruf
 
-`.github/workflows/marktdaten.yml` läuft an Handelstagen um 18:30 UTC (nach Xetra-Schluss), holt die Kurse, baut das Terminal neu und committet `app/data/markt.json` und `app/dist/` nach main. Manuell startbar unter Actions → „Börsendaten Terminal“ → Run workflow. Yahoo Finance hat keine offizielle API; fällt ein Ticker aus, steht er unter `fehler` in `markt.json`, die übrigen werden trotzdem geschrieben.
+`.github/workflows/marktdaten.yml` läuft an Handelstagen um 18:30 UTC (nach Xetra-Schluss) und holt die Kurse (`app/data/markt.json`, samstags die Wochenkurse); nur bei Änderungen committet er nach main und stößt `terminal.yml` an, das das Terminal baut und als Artifact sowie auf den Branch `terminal-dist` legt (nicht mehr nach main). Aufbau, Takt und Minutenschätzung: `.github/workflows/README.md`. Manuell startbar unter Actions → „Börsendaten Terminal“ → Run workflow. Yahoo Finance hat keine offizielle API; fällt ein Ticker aus, steht er unter `fehler` in `markt.json`, die übrigen werden trotzdem geschrieben.
 
 Die Kommandozeile oben nimmt `GRP`, `QUOT`, `CMP`, `RANK` oder einen Banknamen (übernimmt die Bank in CMP). Klick auf einen Punkt in QUOT oder eine Zeile in RANK übernimmt die Bank ebenfalls.
 

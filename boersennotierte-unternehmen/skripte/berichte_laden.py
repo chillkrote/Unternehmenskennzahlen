@@ -35,6 +35,9 @@ BERICHT = re.compile(r"gesch(ä|ae)ftsbericht|annual\s+report|jahresfinanzberich
                      r"konzernlagebericht|group\s+management\s+report|lagebericht", re.I)
 UNTERJ = re.compile(r"halbjahres|half[- ]year|quartals|quarterly|zwischenbericht|interim\s+report|9[- ]?monats", re.I)
 
+_ap = BASIS / "rohdaten" / "berichte_ausschluss.txt"
+AUSSCHLUSS = "|".join(l.strip() for l in _ap.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")) if _ap.exists() else ""
+
 KOPF = ["unternehmen", "unternehmen_id", "dokumentart", "geschaeftsjahr", "datei", "status", "quelle_url", "abruf", "sha256",
         "seiten", "bytes", "verwendet_in", "hinweis"]
 
@@ -102,6 +105,9 @@ def lade(e, jahr, nur_konzern=False, ohne=()):
             continue
         if len(r.content) > MAX_BYTES:
             versuche.append({"url": k["url"], "grund": f"zu groß ({len(r.content) // 1_000_000} MB)"})
+            continue
+        if AUSSCHLUSS and re.search(AUSSCHLUSS, k["url"].rsplit("/", 1)[-1], re.I):
+            versuche.append({"url": k["url"], "grund": "auf Ausschlussliste"})
             continue
         if re.search(r"halbjahr|hjb|[-_]hj[-_]|h1|quartal|q[1-3][-_]|10-k", k["url"].rsplit("/", 1)[-1], re.I):
             versuche.append({"url": k["url"], "grund": "unterjährig laut Dateiname"})

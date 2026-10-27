@@ -9,7 +9,7 @@
   "suche": "ok",
   "versuche": [
    {
-    "grund": "http 403",
+    "grund": "nur 1 Seiten",
     "url": "https://ir.11880.com/wp-content/uploads/sites/2/2026/04/11880SAG_FY2025Q12026.dt_.pdf"
    },
    {
@@ -46,7 +46,32 @@
  "2g-energy-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "nur 12 Seiten",
+    "url": "https://2-g.com/downloads/de/IR/Analystenberichte%20%26%20Studien/2025/2GB_GR-2025-01-27_DE.pdf"
+   },
+   {
+    "grund": "nur 10 Seiten",
+    "url": "https://2-g.com/downloads/de/IR/Analystenberichte%20%26%20Studien/2025/2GB_GR-2025-10-30_DE.pdf"
+   },
+   {
+    "grund": "nur 10 Seiten",
+    "url": "https://2-g.com/downloads/de/IR/Analystenberichte%20%26%20Studien/2025/2GB_GR-2025-05-26_DE.pdf"
+   },
+   {
+    "grund": "nur 13 Seiten",
+    "url": "https://2-g.com/downloads/de/IR/Analystenberichte%20%26%20Studien/2025/2GB_GR-2025-04-15_DE.pdf"
+   },
+   {
+    "grund": "nur 11 Seiten",
+    "url": "https://2-g.com/downloads/de/IR/Analystenberichte%20%26%20Studien/2025/2GB_GR-2025-02-28_DE.pdf"
+   },
+   {
+    "grund": "nur 10 Seiten",
+    "url": "https://2-g.com/downloads/de/IR/Analystenberichte%20%26%20Studien/2024/2GB_GR-2024-10-10_DE.pdf"
+   }
+  ]
  },
  "2invest-ag": {
   "status": "geladen",
@@ -73,6 +98,16 @@
   "status": "geladen",
   "url": "https://www.aap.de/cms/api/wp-content/uploads/2026/04/aap_KA2025_dt.pdf"
  },
+ "abo-energy-gmbh-und-co-kgaa": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": [
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://www.aboenergy.com/media/pdf/geschaeftsberichte/geschaeftsbericht-abowind-2020.pdf"
+   }
+  ]
+ },
  "accentro-real-estate-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
@@ -80,6 +115,10 @@
    {
     "grund": "nur 5 Seiten",
     "url": "https://live-files.ynfinite.de/v1/file/6a43cd8818d4986251d49850/pik_notice_-_new_super_senior_notes-lcn2godyeymxzlwizq1qkwzmedktbq.pdf"
+   },
+   {
+    "grund": "nur 2 Seiten",
+    "url": "https://live-files.ynfinite.de/v1/file/6a34debec17a680b46e3ed9d/ausu_bung_pik-option_anleihe_2025_2027_-pik_notice_2027_notes.pdf"
    },
    {
     "grund": "Geschäftsjahr nicht erkennbar",
@@ -133,7 +172,7 @@
  },
  "airbus-se": {
   "status": "nicht gefunden",
-  "suche": "ok",
+  "suche": "gesperrt",
   "versuche": []
  },
  "aixtron-se": {
@@ -148,12 +187,46 @@
  "alexanderwerk-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "http 404",
+    "url": "https://www.alexanderwerk.com/de/investoren/finanzberichte/files/downloads/download-katalog/downloads-finanzberichte/2025/ALX_Konzernabschluss_2025_Nachtragsprüfung_Stand 20260703.pdf"
+   },
+   {
+    "grund": "http 404",
+    "url": "https://www.alexanderwerk.com/de/investoren/finanzberichte/files/downloads/download-katalog/downloads-finanzberichte/2025/ALX_Konzernabschluss_2025.pdf"
+   },
+   {
+    "grund": "http 404",
+    "url": "https://www.alexanderwerk.com/en/investor-relations/financial-reports/files/downloads/download-katalog/downloads-finanzberichte/2025/ALX_Konzernabschluss_2025_Nachtragsprüfung_Stand 20260703.pdf"
+   },
+   {
+    "grund": "http 404",
+    "url": "https://www.alexanderwerk.com/en/investor-relations/financial-reports/files/downloads/download-katalog/downloads-finanzberichte/2025/ALX_Konzernabschluss_2025.pdf"
+   },
+   {
+    "grund": "http 404",
+    "url": "https://www.alexanderwerk.com/de/investoren/finanzberichte/files/downloads/download-katalog/downloads-finanzberichte/2025/ALX_Jahresabschluss_2025.pdf"
+   },
+   {
+    "grund": "http 404",
+    "url": "https://www.alexanderwerk.com/en/investor-relations/financial-reports/files/downloads/download-katalog/downloads-finanzberichte/2025/7008_Alexanderwerk_Geschäftsbericht 2025_WEB.pdf"
+   }
+  ]
  },
  "all-for-one-group-se": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://cdn.all-for-one.com/corporate-media/company/investor_relations/verguetungsberichte/hv-2025-all41g-beschluss-verguetungsbericht-2023-24-de-180325.pdf"
+   },
+   {
+    "grund": "nur 4 Seiten",
+    "url": "https://cdn.all-for-one.com/corporate-media/company/investor_relations/hv/hv-2026/hv-2026-all41group-doku-homepage-datenschutz-de-220126.pdf"
+   }
+  ]
  },
  "allane-se": {
   "status": "nicht gefunden",
@@ -178,6 +251,10 @@
   "versuche": [
    {
     "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://group.amadeus-fire.de/wp-content/uploads/2025/03/Amadeus-Fire-Group_Conf.-Call-FY-2024_EN_20250327_final-1.pdf"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
     "url": "https://group.amadeus-fire.de/wp-content/uploads/2025/03/Amadeus-Fire-Group_Conf.-Call-FY-2024_EN_20250327_final.pdf"
    },
    {
@@ -195,10 +272,6 @@
    {
     "grund": "nur 2 Seiten",
     "url": "https://group.amadeus-fire.de/wp-content/uploads/2025/04/8a_2025_Vollmacht_deutsch.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://group.amadeus-fire.de/wp-content/uploads/2025/04/HV-2025_Widerruf_Vollmacht_DE-1.pdf"
    }
   ]
  },
@@ -225,9 +298,9 @@
   "url": "https://artec.de/wp-content/uploads/artec_technologies_Geschaeftsbericht_2025-1.pdf"
  },
  "ascory-bank-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "finanzdienstleister/dokumente/ascory-bank-ag/20260413-ascory-geschaeftsbericht-2025-web.pdf",
+  "status": "geladen",
+  "url": "https://www.ascory-bank.de/media/601/download/20260413_ascory-geschaeftsbericht-2025-web.pdf?v=1"
  },
  "asta-energy-solutions-ag": {
   "status": "geladen",
@@ -278,9 +351,9 @@
   "versuche": []
  },
  "bastei-luebbe-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "telekom-medien/dokumente/bastei-luebbe-ag/Jahresabschluss_Gesch__ftsjahr_2024_2025_Bastei_L__bbe_AG.pdf",
+  "status": "geladen",
+  "url": "https://assets.ctfassets.net/dp8z2k6biv78/6i6VyTj4dNUM5WEMIRampV/7cab6d9edc4d7b30db564e69cf2a40df/Jahresabschluss_Gesch%C3%83_ftsjahr_2024_2025_Bastei_L%C3%83_bbe_AG.pdf"
  },
  "bayer-aktiengesellschaft": {
   "status": "nicht gefunden",
@@ -295,32 +368,7 @@
  "baywa-aktiengesellschaft": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 7 Seiten",
-    "url": "https://www.baywa.com/binaries/content/assets/baywacms/investor-relations/hv-2025/14_erlauterungen-zu-den-rechten-der-aktionare-2025.pdf"
-   },
-   {
-    "grund": "nur 5 Seiten",
-    "url": "https://www.baywa.com/binaries/content/assets/baywacms/investor-relations/hv-2025/15_datenschutzhinweise_-hv-2025.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://www.baywa.com/binaries/content/assets/baywacms/investor-relations/hv-2025/17_baywa-vollmacht-an-stimmrechtsvertreter-2025.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://www.baywa.com/binaries/content/assets/baywacms/investor-relations/hv-2025/18_baywa-vollmacht-an-einen-dritten-2025-entwurf-v2.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://www.baywa.com/binaries/content/assets/baywacms/investor-relations/hv-2025/19_baywa-widerruf-vollmacht-2025.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://www.baywa.com/binaries/content/assets/baywacms/investor-relations/kapitalerhohung-2025/baywa-ag_ad-hoc-mitteilung_kapitalerhohung-2025_bezugspreis_durchfuhrung-erste-tranche.pdf"
-   }
-  ]
+  "versuche": []
  },
  "bb-biotech-ag": {
   "status": "geladen",
@@ -385,9 +433,9 @@
   "versuche": []
  },
  "binect-ag": {
-  "status": "nicht gefunden",
-  "suche": "fehler: ConnectionError",
-  "versuche": []
+  "datei": "finanzdienstleister/dokumente/binect-ag/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf",
+  "status": "geladen",
+  "url": "https://www.binect.com/wp-content/uploads/2026/04/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf"
  },
  "bio-gate-ag": {
   "status": "nicht gefunden",
@@ -439,10 +487,6 @@
   "suche": "ok",
   "versuche": [
    {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://branicks.com/wp-content/uploads/2025/03/250312_Branicks_JA24_DE_safe.pdf"
-   },
-   {
     "grund": "kein Geschäftsbericht/Abschluss erkennbar",
     "url": "https://branicks.com/wp-content/uploads/2026/01/Branicks_EPRA_2025_Deutsch_final_close.pdf"
    },
@@ -456,7 +500,11 @@
    },
    {
     "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://branicks.com/download/publikationen/Branicks_GB2023_D.pdf"
+    "url": "https://branicks.com/wp-content/uploads/2025/03/250312_Branicks_JA24_DE_safe.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://branicks.com/wp-content/uploads/2025/03/250312_Branicks_GB24_EN_safe.pdf"
    },
    {
     "grund": "Geschäftsjahr nicht erkennbar",
@@ -530,11 +578,6 @@
   "suche": "ok",
   "versuche": []
  },
- "circus-se": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
- },
  "clearvise-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
@@ -556,12 +599,62 @@
  "coreo-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://coreo.de/wp-content/uploads/2025/11/Coreo-AG_Halbjahresabschluss-2025_final_verschluesselt.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://coreo.de/wp-content/uploads/2022/07/2021_GB_Coreo_AG__DE_geschuetzt.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://coreo.de/wp-content/uploads/2022/07/2019_Coreo-Konzern_Geschaeftsbericht_DE_geschuetzt.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://coreo.de/wp-content/uploads/2022/07/2018_Coreo_Konzern_GB_DE.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://coreo.de/wp-content/uploads/2022/07/2017_Coreo_Geschaeftsbericht_DE.pdf"
+   },
+   {
+    "grund": "nur 13 Seiten",
+    "url": "https://coreo.de/wp-content/uploads/2022/07/GB_Coreo_2016_DEU_final.pdf"
+   }
+  ]
  },
  "corestate-capital-holding-s-a": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://corestate-capital.com/wp-content/uploads/2019/05/Corestate_3-Month-Financial-Report-1.pdf"
+   },
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://corestate-capital.com/wp-content/uploads/2025/06/20250603_CCHSA_Q1-2025.pdf"
+   },
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://corestate-capital.com/wp-content/uploads/2025/09/20250904_CCHSA_Q2-2025.pdf"
+   },
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://corestate-capital.com/wp-content/uploads/2025/12/20251128_CCHSA_Q3-2025_final.pdf"
+   },
+   {
+    "grund": "nur 11 Seiten",
+    "url": "https://corestate-capital.com/wp-content/uploads/2026/04/20260413_CCHSA_Q4-2025_final.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://corestate-capital.com/wp-content/uploads/2025/12/Instruction_Reinstated_2023_Dec-2025-blank.pdf"
+   }
+  ]
  },
  "covestro-ag": {
   "status": "nicht gefunden",
@@ -596,26 +689,9 @@
   "url": "https://daldrup.eu/ir/files/Daldrup-Konzern-Geschaeftsbericht-2025.pdf"
  },
  "datagroup-se": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.datagroup.de/hubfs/Downloads/IR%20Zahlen/DG-SE-IFRS-KonzernabschlussKonzernlagebericht-Testatsexemplar-210930-unterschrieben-2.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.datagroup.de/hubfs/Downloads/DATAGROUP-SE-Jahresabschluss-mit-Testat-2019.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.datagroup.de/hubfs/Downloads/DATAGROUP-SE-KonzernabschlussKonzernlagebericht-mit-Testat-2020.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.datagroup.de/hubfs/Downloads/DATAGROUP_Geschaeftsbericht_2007-2008.pdf"
-   }
-  ]
+  "datei": "software-it/dokumente/datagroup-se/Geschaeftsbericht_2024-25_SAFE.pdf",
+  "status": "geladen",
+  "url": "https://www.datagroup.de/hubfs/Investor%20Relations/Geschaeftsbericht%202024-25_SAFE.pdf"
  },
  "datron-ag": {
   "status": "geladen",
@@ -628,8 +704,33 @@
  },
  "defama-deutsche-fachmarkt-ag": {
   "status": "nicht gefunden",
-  "suche": "gesperrt",
-  "versuche": []
+  "suche": "ok",
+  "versuche": [
+   {
+    "grund": "http 503",
+    "url": "https://defama.de/wp-content/uploads/2026/05/DEFAMA_Bilanz_2025_Geschaeftsbericht.pdf"
+   },
+   {
+    "grund": "http 503",
+    "url": "https://defama.de/wp-content/uploads/2025/11/DEFAMA_Bilanz_2025-09-30_Neun-Monats-Bericht.pdf"
+   },
+   {
+    "grund": "nur 4 Seiten",
+    "url": "https://defama.de/wp-content/uploads/2022/10/SRC_2022-10-26_DEFAMA.pdf"
+   },
+   {
+    "grund": "nur 6 Seiten",
+    "url": "https://defama.de/wp-content/uploads/2021/01/SRC_2021-01-18_DEFAMA.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://defama.de/wp-content/uploads/2025/07/2025-07-10-IZ-Interview-Matthias-Schrade.pdf"
+   },
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://defama.de/wp-content/uploads/2025/09/DEFAMA_Bilanz_2025-06-30_Halbjahresbericht.pdf"
+   }
+  ]
  },
  "delignit-ag": {
   "status": "geladen",
@@ -653,34 +754,9 @@
   "url": "https://ir.dermapharm.de/fileadmin/Dermapharm-se/Dokumenten/Dokumenten_DE/Investor_Relations/Finanzberichte_Praesentationen/2025/Finanzberichte/DERMAPHARM_FY_2025_GESCHAEFTSBERICHT.pdf"
  },
  "deutsche-beteiligungs-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://www.dbag.de/fileadmin/OGB_2025/Download/DBAG_Geschäftsbericht_2025_Brief_an_die_Aktionäre_deu.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://www.dbag.de/fileadmin/OGB_2025/Download/DBAG_Geschäftsbericht_2025_Im_Gespräch_mit_unserem_Vorstand_deu.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://www.dbag.de/fileadmin/OGB_2025/Download/DBAG_Geschäftsbericht_2025_Highlights_deu.pdf"
-   },
-   {
-    "grund": "http 404",
-    "url": "https://www.dbag.de/fileadmin//OGB_2025/OGB_2025/Download/DBAG_Geschäftsbericht_2025_Brief_an_die_Aktionäre_deu.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://www.dbag.de/fileadmin/OGB_2025/Download/DBAG_Annual_Report_2025_Letter_to_our_shareholders.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://www.dbag.de/fileadmin/OGB_2025/Download/DBAG_Annual_Report_2025_Talking_to_our_Board_of_Management.pdf"
-   }
-  ]
+  "datei": "finanzdienstleister/dokumente/deutsche-beteiligungs-ag/260310_DBAG_Annual_Report_2025.pdf",
+  "status": "geladen",
+  "url": "https://www.dbag.com/fileadmin/user_upload/260310_DBAG_Annual_Report_2025.pdf"
  },
  "deutsche-effecten-und-wechsel-beteiligungsgesellschaft-ag": {
   "status": "geladen",
@@ -766,9 +842,9 @@
   "versuche": []
  },
  "duerr-aktiengesellschaft": {
-  "status": "nicht gefunden",
-  "suche": "fehler: ReadTimeout",
-  "versuche": []
+  "datei": "industrie/dokumente/duerr-aktiengesellschaft/annual-report-2025-DE.pdf",
+  "status": "geladen",
+  "url": "https://www.durr-group.com/fileadmin/durr-group.com/Investors/Downloads/Reports/2025/annual-report-2025-DE.pdf"
  },
  "dws-group-gmbh-und-co-kgaa": {
   "status": "nicht gefunden",
@@ -845,7 +921,16 @@
  "eph-group-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://eph-group.com/assets/ephag_apa25_ja-fur-veroffentlichung-website.pdf"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://eph-group.com/assets/hauptversammlung/hv-2026/ephag_apa25_ja-fur-veroffentlichung-website.pdf"
+   }
+  ]
  },
  "epigenomics-ag": {
   "status": "geladen",
@@ -859,6 +944,14 @@
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": [
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ernst-russ.de/en/files/uploads/dokumente-download/finanzberichte/0_2025_Annual-Report_Ernst-Russ-AG-DS.pdf"
+   },
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ernst-russ.de/en/files/uploads/dokumente-download/finanzberichte/0_2025_Annual-Report_Ernst-Russ-AG-ES.pdf"
+   },
    {
     "grund": "kein lesbares PDF (PdfStreamError)",
     "url": "https://www.ernst-russ.de/de/investor-relations/files/uploads/dokumente-download/finanzberichte/2025_Geschaeftsbericht_Ernst%20Russ%20AG_D.pdf"
@@ -878,34 +971,9 @@
   ]
  },
  "erwe-immobilien-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/ERWE_GB2021_DE_web.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/ERWE_GB_2020_Deutsch_komplett_v11.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/2019_Geschaeftsbericht-Erwe-2019-Deutsch-Final1.0-klein.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/Testatsexemplar_ERWE_AG_IFRS_Konzernabschluss_31.12.2023.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/Mdt._ERWE_KAP_Testat_2022_Qualifizierte_Signatur.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/190502_ERWE_GB2018_web_FINALwebfassung.pdf"
-   }
-  ]
+  "datei": "immobilien/dokumente/erwe-immobilien-ag/Testatsexemplar_ERWE_Immobilien_AG_JA_31.12.2025_eV_signed.pdf",
+  "status": "geladen",
+  "url": "https://www.erwe-ag.com/fileadmin/Ablage/03_Investor_Relations/Finanzberichte/Testatsexemplar_ERWE_Immobilien_AG_JA_31.12.2025_eV_signed.pdf"
  },
  "eurokai-gmbh-und-co-kgaa": {
   "status": "nicht gefunden",
@@ -994,12 +1062,12 @@
     "url": "https://fcr-immobilien.de/wp-content/uploads/2025/04/2025-04-11-FCR-Immobilien-DE-prelim-FY24-results___g7yie3ke.pdf"
    },
    {
-    "grund": "nur 15 Seiten",
-    "url": "https://fcr-immobilien.de/wp-content/uploads/2026/05/2026-04-28-FCR-Immobilien-ENG-FY25-results.pdf"
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://fcr-immobilien.de/wp-content/uploads/2025/08/Konzern-Halbjahresfinanzbericht_2025_FCR_Immobilien_AG.pdf"
    },
    {
     "grund": "nur 15 Seiten",
-    "url": "https://fcr-immobilien.de/wp-content/uploads/2026/04/2026-04-07-FCR-Immobilien-ENG-prelim-FY25-results___ytcv764v.pdf"
+    "url": "https://fcr-immobilien.de/wp-content/uploads/2026/05/2026-04-28-FCR-Immobilien-ENG-FY25-results.pdf"
    }
   ]
  },
@@ -1019,7 +1087,7 @@
  },
  "first-sensor-ag": {
   "status": "nicht gefunden",
-  "suche": "fehler: ReadTimeout",
+  "suche": "fehler: ConnectionError",
   "versuche": []
  },
  "flatexdegiro-se": {
@@ -1235,28 +1303,7 @@
  "heidelberg-materials-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 8 Seiten",
-    "url": "https://www.heidelbergmaterials.de/system/files/2026-08/LF_II%20CM-SLL_abZ-DIBt_2025%2010%2006_D.pdf"
-   },
-   {
-    "grund": "nur 6 Seiten",
-    "url": "https://www.heidelbergmaterials.de/system/files/2025-10/MA_III%20A%204%20N-f_abZ%20Z-3.16-2239_2025%2010%2014_D.pdf"
-   },
-   {
-    "grund": "nur 7 Seiten",
-    "url": "https://www.heidelbergmaterials.de/system/files/2025-10/KW_II%20ALL%205%20N-f_abZ%20Z-3.16-2240_2025%2010%2014_D.pdf"
-   },
-   {
-    "grund": "nur 8 Seiten",
-    "url": "https://www.heidelbergmaterials.de/system/files/2026-06/KW_II%20BM-SF%204%20N_abZ%20Z-3.16-2273_2025%2008%2017_2.pdf"
-   },
-   {
-    "grund": "nur 8 Seiten",
-    "url": "https://www.heidelbergmaterials.de/system/files/2026-04/MA_II%20CM-SLL%204%20N_abZ%20Z-3.16-2278_2025%2012%2003.pdf"
-   }
-  ]
+  "versuche": []
  },
  "heidelberg-pharma-ag": {
   "status": "geladen",
@@ -1300,6 +1347,10 @@
    {
     "grund": "http 404",
     "url": "https://annualreport.hensoldt.net/resource/PDF/HENSOLDT_GB_Finance_E_2024.pdf"
+   },
+   {
+    "grund": "http 404",
+    "url": "https://annualreport.hensoldt.net/resource/PDF/HENSOLDT_GB_Finance_D_2023.pdf"
    }
   ]
  },
@@ -1351,8 +1402,21 @@
  },
  "hyrican-informationssysteme-aktiengesellschaft": {
   "status": "nicht gefunden",
-  "suche": "fehler: ReadTimeout",
-  "versuche": []
+  "suche": "fehler: ConnectionError",
+  "versuche": [
+   {
+    "grund": "ConnectionError",
+    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2026/02 Jahresabschluss 2025 - Lagebericht - Anhang.pdf?_wpnonce=4bb4884dc2"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2026/01 Geschäftszahlen 01.01.-31.12.2025.pdf?_wpnonce=4bb4884dc2"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2012/Geschäftsbericht 2011.pdf?_wpnonce=4bb4884dc2"
+   }
+  ]
  },
  "immovaria-real-estate-ag": {
   "status": "geladen",
@@ -1450,34 +1514,9 @@
   "url": "https://investor-relations.jdcgroup.de/wp-content/uploads/JDCGROUP_GB2025_DE_RZ.pdf"
  },
  "jenoptik-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 3 Seiten",
-    "url": "https://www.jenoptik.de/-/media/websitedocuments/press/2026/pr-jenoptik-jahresabschluss-2025.pdf"
-   },
-   {
-    "grund": "nur 5 Seiten",
-    "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/aktie/stimmrechte/2025/251111-dws-investment-de.pdf"
-   },
-   {
-    "grund": "nur 5 Seiten",
-    "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/aktie/stimmrechte/2025/250930-amundi-de.pdf"
-   },
-   {
-    "grund": "nur 5 Seiten",
-    "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/aktie/stimmrechte/2025/250919-amundi-de.pdf"
-   },
-   {
-    "grund": "nur 15 Seiten",
-    "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/aktie/stimmrechte/2025/250806 blackrock-de.pdf"
-   },
-   {
-    "grund": "nur 15 Seiten",
-    "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/aktie/stimmrechte/2025/250804 blackrock-de.pdf"
-   }
-  ]
+  "datei": "industrie/dokumente/jenoptik-ag/jenoptik-geschaeftsbericht-2025.pdf",
+  "status": "geladen",
+  "url": "https://www.jenoptik.de/-/media/websitedocuments/ir/berichte-und-tabellen/2025/online/jenoptik-geschaeftsbericht-2025.pdf"
  },
  "jost-werke-se": {
   "status": "geladen",
@@ -1525,44 +1564,14 @@
   "url": "https://investors.koenig-bauer.com/fileadmin/user_upload/04_Unternehmen/Investor_Relations/Berichte/Berichte_2025_GB/26-03-26-ir-annual-report-2025-de.pdf"
  },
  "kontron-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "software-it/dokumente/kontron-ag/kontron_geschaeftsbericht_2025_final_sec.pdf",
+  "status": "geladen",
+  "url": "https://cms.kontron.com/kontron/ir/reports/kontron_geschaeftsbericht_2025_final_sec.pdf"
  },
  "kps-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://kps.com/wp-content/uploads/2025/07/KPS-Group-Annual-Report-2023-2024.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://kps.com/wp-content/uploads/2025/07/KPS-Group-Annual-Report-2022-2023.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://kps.com/wp-content/uploads/2025/07/KPS-Group-Annual-Report-2021-2022.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://kps.com/wp-content/uploads/2025/07/KPS_Group_Annual_Report_2020-2021.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://kps.com/wp-content/uploads/2025/07/KPS_Group-Annual-Report_2019-2020.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://kps.com/wp-content/uploads/2025/07/KPS_Group_Annual_Report_2018-2019.pdf"
-   }
-  ]
- },
- "krones-ag": {
-  "status": "nicht gefunden",
-  "suche": "gesperrt",
-  "versuche": []
+  "datei": "software-it/dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf",
+  "status": "geladen",
+  "url": "https://kps.com/wp-content/uploads/2026/02/KPS-Konzernabschluss-2024-2025-1.pdf"
  },
  "ksb-se-und-co-kgaa": {
   "status": "geladen",
@@ -1759,12 +1768,24 @@
     "url": "https://mlp-se.com/redaktion/mlp-se-com/investors/agm/2025/mlp-se-dividend-notice-german-only.pdf"
    },
    {
-    "grund": "nur 5 Seiten",
-    "url": "https://mlp-se.com/redaktion/mlp-se-com/investors/agm/2025/mlp-se-compensation-system-for-the-members-of-the-executive-board-of-mlp-se.pdf"
+    "grund": "nur 1 Seiten",
+    "url": "https://mlp-se.com/redaktion/mlp-se-com/press-releases/2020/mlp-se-pm-e-200326-annual-report-2019.pdf"
    },
    {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://mlp-se.com/redaktion/mlp-se-de/investoren/praesentationen/2025/mlp-se-roadshow-frankfurt-05-2025.pdf"
+    "grund": "nur 1 Seiten",
+    "url": "https://mlp-se.com/redaktion/mlp-se-com/press-releases/2019/mlp-se-pm-e-280319-annual-report-2018.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://mlp-se.com/redaktion/mlp-se-com/press-releases/2018/mlp-se-pm-e-180328-gb2017.pdf"
+   },
+   {
+    "grund": "nur 3 Seiten",
+    "url": "https://mlp-se.com/redaktion/mlp-se-com/press-releases/2017/mlp-ag-pm-e-230316-annual-report-2016.pdf"
+   },
+   {
+    "grund": "nur 3 Seiten",
+    "url": "https://mlp-se.com/redaktion/mlp-se-com/press-releases/2016/mlp-ag-pm-e-24032015-mlp-presents-its-annual-report-2015.pdf"
    }
   ]
  },
@@ -1775,7 +1796,32 @@
  "mologen-lifescience-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "nur 5 Seiten",
+    "url": "https://finchaincapital.com/wp-content/uploads/2026/09/Geschaftsbericht_Finchain_2025_V1.pdf"
+   },
+   {
+    "grund": "nur 6 Seiten",
+    "url": "https://finchaincapital.com/wp-content/uploads/2026/08/Geschaftsbericht_Finchain_2024.pdf"
+   },
+   {
+    "grund": "nur 8 Seiten",
+    "url": "https://finchaincapital.com/wp-content/uploads/2026/08/Geschaftsbericht_Finchain_2023.pdf"
+   },
+   {
+    "grund": "nur 9 Seiten",
+    "url": "https://finchaincapital.com/wp-content/uploads/2025/11/Geschaftsbericht_Finchain_2022_V1.pdf"
+   },
+   {
+    "grund": "nur 6 Seiten",
+    "url": "https://finchaincapital.com/wp-content/uploads/2025/10/Geschaftsbericht_Finchain_2021.pdf"
+   },
+   {
+    "grund": "nur 6 Seiten",
+    "url": "https://finchaincapital.com/wp-content/uploads/2025/10/Geschaftsbericht_Finchain_2020.pdf"
+   }
+  ]
  },
  "mountain-alliance-ag": {
   "status": "nicht gefunden",
@@ -1792,18 +1838,9 @@
   "versuche": []
  },
  "ms-industrie-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 2 Seiten",
-    "url": "https://www.ms-industrie.de/download/ms-industrie-ag-veroeffentlicht-geschaeftsbericht-2025/?wpdmdl=4951&refresh=6ae05f95672781793089429"
-   },
-   {
-    "grund": "nur 3 Seiten",
-    "url": "https://www.ms-industrie.de/download/corporate-news-ms-industrie-ag-uebernimmt-betriebsimmobilie-in-trossingen-und-kommuniziert-eckdaten-zum-geschaeftsjahr-2025-sowie-zur-aktuellen-geschaeftslage-mit-ausblick-fuer-2026/?wpdmdl=4935&refresh=6ae05f9567bb91793089429"
-   }
-  ]
+  "datei": "automobil/dokumente/ms-industrie-ag/MS_Industrie_AG_-_JF-Bericht_2025_web-lock.pdf",
+  "status": "geladen",
+  "url": "https://www.ms-industrie.de/download/jahresfinanzbericht-2025/?wpdmdl=4950&refresh=6ae0af9a89e7f1793109914"
  },
  "mtu-aero-engines-ag": {
   "status": "geladen",
@@ -1884,20 +1921,20 @@
     "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro-Group_2024%20Annual%20Report_EN.pdf?hsLang=en"
    },
    {
-    "grund": "nur 8 Seiten",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE%20-%20Annual%20Report%202024%20-%20Auditors%20Report%20ESEF.pdf?hsLang=en"
+    "grund": "nur 10 Seiten",
+    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE_Best%C3%A4tigungsvermerk_KA2024.pdf?hsLang=en"
    },
    {
     "grund": "kein Geschäftsbericht/Abschluss erkennbar",
     "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE%202024%20Standalone%20FS_EN.pdf?hsLang=en"
    },
    {
-    "grund": "nur 8 Seiten",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE%20-%20Annual%20Financial%20Statements%202024%20-%20Standalone%20-%20Auditors%20Report%20ESEF.pdf?hsLang=en"
+    "grund": "nur 10 Seiten",
+    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE_Best%C3%A4tigungsvermerk_JA2024.pdf?hsLang=en"
    },
    {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Nagarro%20SE_Jahresabschluss%20und%20Lagebericht%20zum%2031.%20Dezember%202020.pdf?hsLang=en"
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual_Report_2025/Annual_report_2025_de.pdf?hsLang=de"
    }
   ]
  },
@@ -1957,7 +1994,16 @@
  "nemetschek-se": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://www.nemetschek.com/sites/default/files/documents/Gesch%C3%A4ftsbericht%202021.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://www.nemetschek.com/sites/default/files/documents/Annual%20Report%202021.pdf"
+   }
+  ]
  },
  "netfonds-ag": {
   "status": "nicht gefunden",
@@ -2082,8 +2128,16 @@
   "suche": "ok",
   "versuche": [
    {
-    "grund": "unterjährig laut Dateiname",
-    "url": "https://www.nuernberger.com/medien/pdf/investor-relations/halbjahresfinanzbericht-2026.pdf"
+    "grund": "nur 3 Seiten",
+    "url": "https://www.nuernberger.com/medien/pdf/media-relations/presseinformationen/pin2026/nuernberger-verdient-2025-voraussichtlich-mehr-als-prognostiziert.pdf"
+   },
+   {
+    "grund": "nur 2 Seiten",
+    "url": "https://www.nuernberger.com/medien/pdf/media-relations/presseinformationen/pin2024/nuernberger-lebensversicherung-auch-2025-ein-verlaesslicher-partner.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://www.nuernberger.com/medien/pdf/media-relations/presseinformationen/pin2025/nuernberger-und-vienna-insurance-group-in-gespraechen-ueber-zusammenarbeit.pdf"
    }
   ]
  },
@@ -2166,9 +2220,9 @@
   "url": "https://www.pearlgoldag.com/wp-content/uploads/2026/10/Jahresabschluss-zum-31.-Dezember-2025.pdf"
  },
  "peh-wertpapier-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "finanzdienstleister/dokumente/peh-wertpapier-ag/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf",
+  "status": "geladen",
+  "url": "https://www.peh.de/wp-content/uploads/2026/06/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf"
  },
  "pentixapharm-holding-ag": {
   "status": "geladen",
@@ -2206,9 +2260,9 @@
   "url": "https://www.pnegroup.com/fileadmin/user_upload/Finanzberichte/2025/PNE_Geschaeftsbericht_2025_Deutsch_gesch.pdf"
  },
  "pob-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "software-it/dokumente/pob-ag/pob-ag_offenlegungsdatei-konzern-2025_final_30.06.2026-1.pdf",
+  "status": "geladen",
+  "url": "https://pob.ag/wp-content/uploads/2026/07/pob-ag_offenlegungsdatei-konzern-2025_final_30.06.2026-1.pdf"
  },
  "porsche-automobil-holding-se": {
   "status": "geladen",
@@ -2272,34 +2326,9 @@
   "url": "https://www.rcm-ag.de/wp-content/uploads/2026/07/RCM-Geschaeftsbericht-2025.pdf"
  },
  "readcrest-capital-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://readcrest.com/blob/ir-uploads/Readcrest_Ad_Hoc_18.11.2025.pdf"
-   },
-   {
-    "grund": "nur 8 Seiten",
-    "url": "https://readcrest.com/blob/ir-uploads/690201264f4e0fa69d0df0f0_Bezugsangebot_Readcrest(25297983.10).pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://readcrest.com/blob/ir-uploads/gemeinsame-begruendete-stellungnahme.pdf"
-   },
-   {
-    "grund": "nur 2 Seiten",
-    "url": "https://readcrest.com/blob/ir-uploads/689a1b863310b7340ad44edd_Positionierung%20als%20Immobilien-Gesellschaft%3B%20Kapitalma%C3%9Fnahmen.pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.readcrest.com/blob/ir-uploads/zulassungsprospekt-2025.pdf"
-   },
-   {
-    "grund": "nur 6 Seiten",
-    "url": "https://www.readcrest.com/blob/ir-uploads/zulassungsprospekt-2025-zusammenfassung.pdf"
-   }
-  ]
+  "datei": "immobilien/dokumente/readcrest-capital-ag/Readcrest_Konzernabschluss_2025.pdf",
+  "status": "geladen",
+  "url": "https://www.readcrest.com/blob/ir-uploads/7127d288-007d-42d9-b643-a4eba3b16a2f/Readcrest_Konzernabschluss_2025.pdf"
  },
  "realtech-ag": {
   "status": "geladen",
@@ -2376,27 +2405,27 @@
   "versuche": [
    {
     "grund": "http 403",
-    "url": "https://www.sap.com/docs/download/investors/2025/sap-2025-integrated-report.pdf"
-   },
-   {
-    "grund": "http 403",
     "url": "https://www.sap.com/docs/download/investors/2025/sap-2025-annual-report-form-20f.pdf"
    },
    {
     "grund": "http 403",
-    "url": "https://www.sap.com/docs/download/investors/2025/sap-2025-compensation-report.pdf"
+    "url": "https://www.sap.com/docs/download/investors/2025/sap-2025-integrated-report.pdf"
    },
    {
     "grund": "http 403",
-    "url": "https://www.sap.com/docs/download/investors/2024/sap-2024-integrated-report.pdf"
+    "url": "https://www.sap.com/docs/download/investors/2025/agm/sap-se-agm-2025-shareholder-rights.pdf"
    },
    {
     "grund": "http 403",
-    "url": "https://www.sap.com/docs/download/investors/2023/sap-2023-integrated-report.pdf"
+    "url": "https://www.sap.com/docs/download/investors/2025/agm/sap-se-agm-2025-countermotions.pdf"
    },
    {
     "grund": "http 403",
-    "url": "https://www.sap.com/docs/download/investors/2024/sap-2024-annual-report-form-20f.pdf"
+    "url": "https://www.sap.com/docs/download/investors/2025/agm/sap-se-agm-2025-terms-of-use.pdf"
+   },
+   {
+    "grund": "http 403",
+    "url": "https://www.sap.com/docs/download/investors/2025/agm/sap-se-agm-2025-infosheet.pdf"
    }
   ]
  },
@@ -2446,24 +2475,7 @@
  "sedlmayr-grund-und-immobilien-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 3 Seiten",
-    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-098-2025_Formular_Schluesselbestellung_A4_27-02a_beschreibbar.pdf"
-   },
-   {
-    "grund": "nur 5 Seiten",
-    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-098-2025_Formular_Hausordnung_A4_27-02.pdf"
-   },
-   {
-    "grund": "nur 3 Seiten",
-    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-089-2025_Formular_Merkblatt_HL_A4_27-02.pdf"
-   },
-   {
-    "grund": "nur 7 Seiten",
-    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-098-2025_Formular_Mieterselbstauskunft_A4_12-03_beschreibar.pdf"
-   }
-  ]
+  "versuche": []
  },
  "serviceware-se": {
   "status": "geladen",
@@ -2492,9 +2504,9 @@
   ]
  },
  "siemens-aktiengesellschaft": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "industrie/dokumente/siemens-aktiengesellschaft/konzernabschluss.pdf",
+  "status": "geladen",
+  "url": "https://assets.ctfassets.net/17si5cpawjzf/7lBiZKoF0vygZ7PWUlF799/07dd9855e2db2f389d2650d12e18ff14/konzernabschluss.pdf"
  },
  "siemens-energy-ag": {
   "status": "geladen",
@@ -2625,9 +2637,9 @@
   ]
  },
  "springer-nature-ag-und-co-kgaa": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "telekom-medien/dokumente/springer-nature-ag-und-co-kgaa/sn-annual-report-2025-en.pdf",
+  "status": "geladen",
+  "url": "https://annualreport.springernature.com/2025/files/sn-annual-report-2025-en.pdf"
  },
  "stabilus-se": {
   "status": "nicht gefunden",
@@ -2687,27 +2699,27 @@
   "versuche": [
    {
     "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMwODkzMjUsImV4cCI6MTc5MzA5NjUyNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9hZ20vZG9jdW1lbnRzLzIwMjYvMjYwMzI2LVN5bXJpc2UtSFYtMjAyNi1WZXJndWV0dW5nc2JlcmljaHQtMjAyNS5wZGYiLCJwYWdlIjo0NTh9.N_y657o2k-9dVi5iAmjehq2qn-9ZeidTU7CiMO6kPz0/260326-Symrise-HV-2026-Verguetungsbericht-2025.pdf"
+    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMxMTAyNTEsImV4cCI6MTc5MzExNDE1MSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLUNvcnBvcmF0ZS1SZXBvcnQtMjAyNS5wZGYiLCJwYWdlIjo3M30.mwx-CC5UCrD57IH9trExhT9tzTRi70p1slqL1RC4cA4/260304-Symrise-Corporate-Report-2025.pdf"
+   },
+   {
+    "grund": "ProxyError",
+    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMxMDc1MTUsImV4cCI6MTc5MzExNDcxNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLVByZXNzLVJlbGVhc2UtRmluYW5jaWFsLVJlc3VsdHMtMjAyNS5wZGYiLCJwYWdlIjo3NH0.t2KAwXu9rlqQIdDp3agWOVoDQhLMPfRiGr6sev2NU2A/260304-Symrise-Press-Release-Financial-Results-2025.pdf"
    },
    {
     "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMwODkzMjUsImV4cCI6MTc5MzA5NjUyNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLVVudGVybmVobWVuc2JlcmljaHQtMjAyNS5wZGYiLCJwYWdlIjo0NTh9.DeGqTvGr3nZxcXAb5kcSnB5zbmbzYSqsrqNXN_F2KKU/260304-Symrise-Unternehmensbericht-2025.pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMwODk2MTUsImV4cCI6MTc5MzA5MzUxNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLVVudGVybmVobWVuc2JlcmljaHQtMjAyNS5wZGYiLCJwYWdlIjo3M30.Jiz9Eoht-vaE6GbEKJB8PMJSiLoFwFeEmc3oIRpzD88/260304-Symrise-Unternehmensbericht-2025.pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMwODQ5ODIsImV4cCI6MTc5MzA5MjE4MiwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLVByZXNzZXByYWVzZW50YXRpb24tRmluYW56ZXJnZWJuaXNzZS0yMDI1LnBkZiIsInBhZ2UiOjc0fQ._1QLbRS-x_jdBFrOHnq2RDaXBM7eK3-3oOYdPIJa1bg/260304-Symrise-Pressepraesentation-Finanzergebnisse-2025.pdf"
+    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMxMDc1MTUsImV4cCI6MTc5MzExNDcxNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLVByZXNzZXByYWVzZW50YXRpb24tRmluYW56ZXJnZWJuaXNzZS0yMDI1LnBkZiIsInBhZ2UiOjc0fQ.ivZfP4godMLxAp8quKnpe3BtaEvzokCLM9R3qZrkN7k/260304-Symrise-Pressepraesentation-Finanzergebnisse-2025.pdf"
    },
    {
     "grund": "nur 1 Seiten",
-    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMwODQ5ODIsImV4cCI6MTc5MzA5MjE4MiwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLUZpbmFuemluZm9ybWF0aW9uZW4tR0otMjAyNS5wZGYiLCJwYWdlIjo3NH0.jJ_XxhQ7A6khy_nowak-nFj-_LerOvd-pCKB7sZ_DqM/260304-Symrise-Finanzinformationen-GJ-2025.pdf"
+    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMxMDc1MTUsImV4cCI6MTc5MzExNDcxNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLUZpbmFuY2lhbC1JbmZvcm1hdGlvbi1GWS0yMDI1LnBkZiIsInBhZ2UiOjc0fQ.gfn6-JJ4XZTHrFpCsLLkR2EnfQJPBC7MTlO893EtncI/260304-Symrise-Financial-Information-FY-2025.pdf"
    },
    {
     "grund": "nur 1 Seiten",
-    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMwODQ5ODIsImV4cCI6MTc5MzA5MjE4MiwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLUZpbmFuemluZm9ybWF0aW9uZW4tUTQtMjAyNS5wZGYiLCJwYWdlIjo3NH0.BnOF39PKJfM39zd6HXub7ku1xVPXiDFQIP_WaRkgIOo/260304-Symrise-Finanzinformationen-Q4-2025.pdf"
+    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMxMDc1MTUsImV4cCI6MTc5MzExNDcxNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLUZpbmFuY2lhbC1JbmZvcm1hdGlvbi1RNC0yMDI1LnBkZiIsInBhZ2UiOjc0fQ.kNKvky6r5RT5mjycTxX2wV6Tv2Xccbj5qFZAD1r1mc8/260304-Symrise-Financial-Information-Q4-2025.pdf"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://www.symrise.com/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTMxMDc1MTUsImV4cCI6MTc5MzExNDcxNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vc3ltcmlzZS9Eb3dubG9hZHNfcmVwb3J0cy9yZXBvcnRzL2RvY3VtZW50cy8yMDI2LzI2MDMwNC1TeW1yaXNlLUNvcnBvcmF0ZS1SZXBvcnQtMjAyNS5wZGYiLCJwYWdlIjo3NH0.7P7W6hYPOMoWmXHcPZCxmOOdt07EWSWNy0MtPezFv2w/260304-Symrise-Corporate-Report-2025.pdf"
    }
   ]
  },
@@ -2763,7 +2775,7 @@
  },
  "the-social-chain-ag": {
   "status": "nicht gefunden",
-  "suche": "fehler: ConnectionError",
+  "suche": "fehler: ReadTimeout",
   "versuche": []
  },
  "thyssenkrupp-ag": {
@@ -2846,7 +2858,12 @@
  "traton-se": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://traton.com/dam/jcr:a170aa30-3e57-4171-8ba6-72aef6cd5bfc/2025-12_TRATON-Code-of-Conduct-V3.2-EN.pdf"
+   }
+  ]
  },
  "ttl-beteiligungs-und-grundbesitz-ag": {
   "status": "nicht gefunden",
@@ -2894,9 +2911,9 @@
   "url": "https://veh.de/ftp/VEHGeschaeftsbericht2026.pdf"
  },
  "value-holdings-ag": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "finanzdienstleister/dokumente/value-holdings-ag/Geschaeftsbericht-Value-Holdings-AG-2025.pdf",
+  "status": "geladen",
+  "url": "https://www.value-holdings.de/wp-content/uploads/Geschaeftsbericht-Value-Holdings-AG-2025.pdf"
  },
  "verbio-se": {
   "status": "geladen",
@@ -2999,12 +3016,62 @@
  "wegrow-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "nur 12 Seiten",
+    "url": "https://wegrow.de/wp-content/uploads/2026/06/WeGrow_AG-Testierter_Jahresabschluss_2025.pdf"
+   },
+   {
+    "grund": "nur 12 Seiten",
+    "url": "https://wegrow.de/wp-content/uploads/2026/05/WeGrow_AG-HV_20260709-Testierter_Jahresabschluss_2025.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://wegrow.de/wp-content/uploads/2025/12/WeGrow-AG_Investorenbrief_2025-Q4.pdf"
+   },
+   {
+    "grund": "nur 9 Seiten",
+    "url": "https://wegrow.de/wp-content/uploads/2025/04/Prospektnachtrag-Nr.-2-vom-15.-April-2025.pdf"
+   },
+   {
+    "grund": "nur 2 Seiten",
+    "url": "https://wegrow.de/wp-content/uploads/2025/12/WeGrow-AG_Pressemitteilung-02.12.205_Hornbach.pdf"
+   },
+   {
+    "grund": "nur 4 Seiten",
+    "url": "https://wegrow.de/wp-content/uploads/2025/09/WeGrow-AG_Pressemitteilung-30.09.2025.pdf"
+   }
+  ]
  },
  "weng-fine-art-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "nur 1 Seiten",
+    "url": "http://wengfineart.com/uploads/Aktionariat-2012.12-2025.12.31.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "http://wengfineart.com/uploads/WFA-Eigenkapital-2004-2025.12.31.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "http://wengfineart.com/uploads/Dividendenausschu%CC%88ttung-2025.12.31.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "http://wengfineart.com/uploads/Finanzierende-Banken-2025-12-31.pdf"
+   },
+   {
+    "grund": "nur 9 Seiten",
+    "url": "https://wengfineart.com/uploads/Bilanz-2025.CH_komplett.pdf"
+   },
+   {
+    "grund": "nur 2 Seiten",
+    "url": "http://wengfineart.com/uploads/HV-2025.BerichtAR.pdf"
+   }
+  ]
  },
  "westwing-group-se": {
   "status": "nicht gefunden",
@@ -3016,28 +3083,28 @@
   "suche": "ok",
   "versuche": [
    {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://wildbunch.eu/wp-content/uploads/2025/10/d_Wild-Bunch_HJB2025.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://wildbunch.eu/wp-content/uploads/2025/08/de_Wild-Bunch_KA2024_safe.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://wildbunch.eu/wp-content/uploads/2025/06/de_Wild-Bunch_KA2023_safe.pdf"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://wildbunch.eu/wp-content/uploads/2025/06/de_Wild-Bunch_KA2022_safe.pdf"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://wildbunch.eu/wp-content/uploads/2022/04/de_Wild-Bunch_KA2021_safe.pdf"
+   },
+   {
     "grund": "Geschäftsjahr nicht erkennbar",
     "url": "https://wildbunch.eu/wp-content/uploads/2026/07/de_Wild-Bunch_KA2024_safe.pdf"
-   },
-   {
-    "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://wildbunch.eu/wp-content/uploads/2025/06/de_Wild-Bunch_KA2023_safe-1.pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://wildbunch.eu/wp-content/uploads/2025/06/de_Wild-Bunch_KA2022_safe-1.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://wildbunch.eu/wp-content/uploads/2017/06/e_Wild-Bunch_PM_Vorabbekanntmachung-testierter-GB-2016-CN.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://wildbunch.eu/wp-content/uploads/2017/06/e_Wild-Bunch_PM_Vorabbekanntmachung-testierter-GB-2015_final_V2-1.pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://wildbunch.eu/wp-content/uploads/2022/05/en_Wild-Bunch_KA2021_safe.pdf"
    }
   ]
  },
@@ -3049,7 +3116,32 @@
  "wuestenrot-und-wuerttembergische-ag": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ww-ag.com:443/media/dokumente/investor_relations_1/berichte_1/geschaeftsberichte/2025_9/BSW_GB_2025.pdf"
+   },
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ww-ag.com:443/media/dokumente/investor_relations_1/berichte_1/geschaeftsberichte/2025_9/WV_-_GB_2025.pdf"
+   },
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ww-ag.com:443/media/dokumente/investor_relations_1/berichte_1/geschaeftsberichte/2025_9/WL_GB_2025.pdf"
+   },
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ww-ag.com:443/media/dokumente/investor_relations_1/berichte_1/geschaeftsberichte/2025_9/WL_Anlage_zum_GB_2025.pdf"
+   },
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ww-ag.com:443/media/dokumente/investor_relations_1/berichte_1/geschaeftsberichte/2025_9/Ertraege_WL_2025.pdf"
+   },
+   {
+    "grund": "kein lesbares PDF (PdfStreamError)",
+    "url": "https://www.ww-ag.com:443/media/dokumente/investor_relations_1/berichte_1/geschaeftsberichte/2025_9/WL_2025_Konsortialgeschaeft.pdf"
+   }
+  ]
  },
  "yoc-ag": {
   "status": "geladen",
@@ -3062,32 +3154,7 @@
  "zalando-se": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://corporate.zalando.com/public/media-download/zalando-se_declaration-of-conformity-2025.pdf?VersionId=61g7zlBqW7kTI7EHDxjHWUNa2ttD0u7y"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://corporate.zalando.com/public/media-download/Zalando-SE_Supervisory-Board_Curriculum%20Vitae%20Anders%20Holch%20Povlsen%20I%20ENG%20I%2012_2025.pdf?VersionId=szVX.dWOr7Q6G3cCjTQSZA62FjSPicTN"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://corporate.zalando.com/public/media-download/Zalando-SE_Supervisory-Board_Curriculum%20Vitae_Zbigniew%20Laskowski%20I%20ENG%20I%2005_2025_0.pdf?VersionId=36Ntl2hWRGNMGfwCiecy25s.ulNExag0"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://corporate.zalando.com/public/media-download/Zalando-SE_Supervisory-Board_Curriculum%20Vitae_Rose%20Reynold%20I%20ENG%20I%2005_2025.pdf?VersionId=n1uxWSIVFJTmV3jw2dxk55UTTRBc2HPV"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://corporate.zalando.com/public/media-download/Zalando-SE_Supervisory-Board_Curriculum%20Vitae_Maggie%20Ratay%20Sloan%20I%20ENG%20I%2005_2025.pdf?VersionId=o2w_elbPxM.JZQaMSvkD07oo4eMi9j1A"
-   },
-   {
-    "grund": "nur 10 Seiten",
-    "url": "https://corporate.zalando.com/public/media-download/2025-08-25%20-%20Transparency%20Report%20on%20Content%20Moderation.pdf?VersionId=KfZTrEzIR.T19gV98XGWfoqt6cn9xrrN"
-   }
-  ]
+  "versuche": []
  },
  "zeal-network-se": {
   "status": "nicht gefunden",

@@ -4,7 +4,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 
 - **Unternehmen:** 29 (Liste in `../universum/universum.csv`, Spalte `branche` = `telekom-medien`)
 - **Abschlussdaten (Yahoo):** 27 von 29
-- **Geschäftsberichte im Repo:** 13 von 29 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
+- **Geschäftsberichte im Repo:** 15 von 29 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
 - **Auswertung:** [`auswertung/Telekom_Medien_Kennzahlen_GJ2025.xlsx`](auswertung/Telekom_Medien_Kennzahlen_GJ2025.xlsx)
 
 | Unternehmen | Segment | Index | Geschäftsbericht |
@@ -12,7 +12,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | 1&1 AG | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/1und1-ag/GB_1u1_2025_DEU.pdf) |
 | 11880 Solutions AG | Prime Standard |  | – |
 | ad pepper media International N.V. | Prime Standard |  | [Jahresfinanzbericht 2025](dokumente/ad-pepper-media-international-n-v/adp_geschaeftsbericht-2025_WEB_verschluesselt.pdf) |
-| Bastei Lübbe AG | Prime Standard |  | – |
+| Bastei Lübbe AG | Prime Standard |  | [Jahresabschluss 2025](dokumente/bastei-luebbe-ag/Jahresabschluss_Gesch__ftsjahr_2024_2025_Bastei_L__bbe_AG.pdf) |
 | Borussia Dortmund GmbH & Co. Kommanditgesellschaft auf Aktien | Prime Standard |  | – |
 | CTS Eventim AG & Co. KGaA | Prime Standard | MDAX | – |
 | Deutsche Telekom AG | Prime Standard | DAX | [Geschäftsbericht 2025](dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf) |
@@ -29,7 +29,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | RTL Group S.A. | Prime Standard | MDAX | [Geschäftsbericht 2025](dokumente/rtl-group-s-a/Annual-Report-2025.pdf) |
 | SCP Standard Capital Partners AG | Scale |  | – |
 | Spielvereinigung Unterhaching Fußball GmbH & Co. KGaA | m:access |  | – |
-| Springer Nature AG & Co. KGaA | Prime Standard | SDAX | – |
+| Springer Nature AG & Co. KGaA | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/springer-nature-ag-und-co-kgaa/sn-annual-report-2025-en.pdf) |
 | Ströer SE & Co. KGaA | Prime Standard | SDAX | – |
 | SYZYGY AG | Prime Standard |  | [Geschäftsbericht 2025](dokumente/syzygy-ag/syzygy-ag-annual-report-2025.pdf) |
 | The Social Chain AG | General Standard |  | – |

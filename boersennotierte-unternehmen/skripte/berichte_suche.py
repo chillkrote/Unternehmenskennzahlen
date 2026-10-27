@@ -18,7 +18,9 @@ from urllib.parse import urljoin, urlparse
 import requests
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-MAX_SEITEN = 30
+MAX_SEITEN = int(__import__("os").environ.get("MAX_SEITEN", 30))
+MAX_TIEFE = int(__import__("os").environ.get("MAX_TIEFE", 2))
+SONDERPFADE = ["/investor-relations", "/ir", "/de/investor-relations", "/investoren", "/en/investor-relations", "/finanzberichte", "/investor-relations/finanzberichte", "/investor-relations/berichte", "/de/investor-relations/finanzberichte-und-praesentationen", "/de/ir", "/aktie", "/investor", "/unternehmen/investor-relations", "/downloads", "/publikationen"]
 IR_WORTE = re.compile(r"investor|/ir\b|/ir/|aktionär|aktionaer|finanzbericht|finanzpublikation|publikation|berichte|reports?\b|"
                       r"geschäftsbericht|geschaeftsbericht|annual|veröffentlichung|veroeffentlichung|downloads?|financial|"
                       r"jahresabschluss|hauptversammlung|unternehmen/zahlen|kennzahlen|news-?center|presse", re.I)
@@ -96,6 +98,14 @@ def suche(eintrag, jahr):
         start = "https://" + start
     host = urlparse(start).netloc.replace("www.", "")
     besucht, warteschlange, pdfs = set(), [(start, 0)], {}
+    if MAX_TIEFE > 2:  # Zweitlauf: übliche IR-Pfade und Sitemap zusätzlich anlaufen
+        basis = "{u.scheme}://{u.netloc}".format(u=urlparse(start))
+        warteschlange += [(basis + pf, 1) for pf in SONDERPFADE]
+        r0, st0 = holen(session, basis + "/sitemap.xml")
+        if st0 == "ok" and r0 is not None:
+            for loc in re.findall(r"<loc>([^<]+)</loc>", r0.text)[:4000]:
+                if IR_WORTE.search(loc) and not loc.lower().endswith((".xml", ".jpg", ".png")):
+                    warteschlange.append((loc, 2))
     status = None
     ende = time.time() + 150  # höchstens 2,5 Minuten je Website
     while warteschlange and len(besucht) < MAX_SEITEN and time.time() < ende:
@@ -121,7 +131,7 @@ def suche(eintrag, jahr):
                     pdfs[ziel] = label
                 else:
                     pdfs.setdefault(ziel, label)
-            elif tiefe < 2 and (host.split(".")[-2] in h) and IR_WORTE.search(ziel + " " + label):
+            elif tiefe < MAX_TIEFE and (host.split(".")[-2] in h) and IR_WORTE.search(ziel + " " + label):
                 ziel = ziel.split("#")[0]
                 if ziel not in besucht:
                     warteschlange.append((ziel, tiefe + 1))

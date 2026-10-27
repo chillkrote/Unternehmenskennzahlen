@@ -4,7 +4,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 
 - **Unternehmen:** 41 (Liste in `../universum/universum.csv`, Spalte `branche` = `immobilien`)
 - **Abschlussdaten (Yahoo):** 33 von 41
-- **Geschäftsberichte im Repo:** 19 von 41 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
+- **Geschäftsberichte im Repo:** 21 von 41 (`dokumente/`, Verzeichnis in `dokumente/index.csv`)
 - **Auswertung:** [`auswertung/Immobilien_Kennzahlen_GJ2025.xlsx`](auswertung/Immobilien_Kennzahlen_GJ2025.xlsx)
 
 | Unternehmen | Segment | Index | Geschäftsbericht |
@@ -27,7 +27,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | Deutsche Real Estate AG | General Standard |  | – |
 | Deutsche Wohnen SE | General Standard |  | – |
 | EPH Group AG | Primärmarkt |  | – |
-| ERWE Immobilien AG | Basic Board |  | – |
+| ERWE Immobilien AG | Basic Board |  | [Jahresabschluss 2025](dokumente/erwe-immobilien-ag/Testatsexemplar_ERWE_Immobilien_AG_JA_31.12.2025_eV_signed.pdf) |
 | Fair Value REIT-AG | General Standard |  | – |
 | FCR Immobilien AG | Scale |  | – |
 | Gateway Real Estate AG | Scale |  | – |
@@ -42,7 +42,7 @@ Teil der Erhebung [Börsennotierte Unternehmen in Deutschland](../README.md). St
 | Noratis AG | Freiverkehr/Regionalbörse |  | – |
 | PATRIZIA SE | Prime Standard | SDAX | [Geschäftsbericht 2025](dokumente/patrizia-se/20260623_PATRIZIA_SE_Geschaeftsbericht_2025.pdf) |
 | RCM Beteiligungs AG | Basic Board |  | [Geschäftsbericht 2025](dokumente/rcm-beteiligungs-ag/RCM-Geschaeftsbericht-2025.pdf) |
-| Readcrest Capital AG | General Standard |  | – |
+| Readcrest Capital AG | General Standard |  | [Konzernabschluss 2025](dokumente/readcrest-capital-ag/Readcrest_Konzernabschluss_2025.pdf) |
 | Sedlmayr Grund und Immobilien AG | m:access |  | – |
 | Swiss Estates AG | Primärmarkt |  | – |
 | TAG Immobilien AG | Prime Standard | MDAX | [Geschäftsbericht 2025](dokumente/tag-immobilien-ag/TAG_GB_25_Master_DE.pdf) |

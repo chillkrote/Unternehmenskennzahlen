@@ -38,16 +38,17 @@
   ],
   "branchen": [
     {"id": "banken", "name": "Banken", "aliase": ["banken", "bank", "kreditinstitute", "kreditinstitut"], "gruppen": ["Sparkassen", "Genossenschaftsbanken", "Landesbanken", "Private Banken", "Förder- und Sonderinstitute"], "schwerpunkt": ["bilanzsumme", "ek_quote", "cet1_quote", "lr", "roe", "kbv"], "analyse": "grp"},
-    {"id": "auto", "name": "Automobil & Zulieferer", "aliase": ["automobil", "auto", "fahrzeuge", "automobil & zulieferer"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "fcf_marge", "verschuldung"]},
-    {"id": "chemie-pharma", "name": "Chemie, Pharma & Gesundheit", "aliase": ["chemie", "pharma", "gesundheit", "chemie & pharma", "healthcare"], "schwerpunkt": ["ebitda_marge", "umsatz", "kgv", "div_rendite", "verschuldung", "roe"]},
-    {"id": "industrie", "name": "Industrie & Bau", "aliase": ["industrie", "bau", "maschinenbau", "industrie & bau"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "roe", "verschuldung"]},
-    {"id": "technologie", "name": "Technologie & Software", "aliase": ["technologie", "software", "it", "halbleiter"], "schwerpunkt": ["ebitda_marge", "w_umsatz", "kuv", "kgv", "fcf_marge", "roe"]},
-    {"id": "konsum", "name": "Konsum & Handel", "aliase": ["konsum", "handel", "konsumgüter", "einzelhandel"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "fcf_marge", "verschuldung"]},
-    {"id": "energie-versorger", "name": "Energie & Versorger", "aliase": ["energie", "versorger", "energie & versorger", "utilities"], "schwerpunkt": ["ebitda_marge", "verschuldung", "ek_quote", "div_rendite", "kgv", "roe"]},
-    {"id": "telekom-medien", "name": "Telekommunikation & Medien", "aliase": ["telekommunikation", "medien", "telekom"], "schwerpunkt": ["ebitda_marge", "verschuldung", "div_rendite", "fcf_marge", "kgv", "roe"]},
-    {"id": "logistik", "name": "Logistik & Verkehr", "aliase": ["logistik", "verkehr", "transport"], "schwerpunkt": ["ebit_marge", "umsatz", "verschuldung", "div_rendite", "kgv", "roe"]},
+    {"id": "auto", "name": "Automobil & Zulieferer", "aliase": ["automobil", "auto", "fahrzeuge", "automobil & zulieferer", "automobil und zulieferer"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "fcf_marge", "verschuldung"]},
+    {"id": "chemie-pharma", "name": "Chemie, Pharma & Gesundheit", "aliase": ["chemie", "pharma", "gesundheit", "chemie & pharma", "pharma, biotech und gesundheit", "chemie und rohstoffe", "healthcare"], "schwerpunkt": ["ebitda_marge", "umsatz", "kgv", "div_rendite", "verschuldung", "roe"]},
+    {"id": "industrie", "name": "Industrie & Bau", "aliase": ["industrie", "bau", "maschinenbau", "industrie, maschinenbau und bau", "industrie & bau"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "roe", "verschuldung"]},
+    {"id": "technologie", "name": "Technologie & Software", "aliase": ["technologie", "software", "it", "halbleiter", "software und it-dienstleistungen", "technologie, halbleiter und elektronik"], "schwerpunkt": ["ebitda_marge", "w_umsatz", "kuv", "kgv", "fcf_marge", "roe"]},
+    {"id": "konsum", "name": "Konsum & Handel", "aliase": ["konsum", "handel", "konsumgüter", "einzelhandel", "handel, konsum und lebensmittel"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "fcf_marge", "verschuldung"]},
+    {"id": "energie-versorger", "name": "Energie & Versorger", "aliase": ["energie", "versorger", "energie & versorger", "utilities", "versorger und erneuerbare energien"], "schwerpunkt": ["ebitda_marge", "verschuldung", "ek_quote", "div_rendite", "kgv", "roe"]},
+    {"id": "telekom-medien", "name": "Telekommunikation & Medien", "aliase": ["telekommunikation", "medien", "telekom", "telekommunikation und medien"], "schwerpunkt": ["ebitda_marge", "verschuldung", "div_rendite", "fcf_marge", "kgv", "roe"]},
+    {"id": "logistik", "name": "Logistik & Verkehr", "aliase": ["logistik", "verkehr", "transport", "transport und logistik"], "schwerpunkt": ["ebit_marge", "umsatz", "verschuldung", "div_rendite", "kgv", "roe"]},
     {"id": "immobilien", "name": "Immobilien", "aliase": ["immobilien", "real estate"], "schwerpunkt": ["ek_quote", "verschuldung", "kbv", "div_rendite", "ebitda_marge", "roe"]},
     {"id": "versicherungen", "name": "Versicherungen", "aliase": ["versicherungen", "versicherung"], "schwerpunkt": ["kgv", "kbv", "div_rendite", "roe", "ek_quote", "r_ytd"]},
+    {"id": "finanzdienstleister", "name": "Finanzdienstleister & Beteiligungen", "aliase": ["finanzdienstleister", "finanzdienstleister und beteiligungsgesellschaften", "beteiligungsgesellschaften"], "schwerpunkt": ["umsatz", "ek_quote", "roe", "kgv", "kbv", "div_rendite"]},
     {"id": "sonstige", "name": "Sonstige", "aliase": ["sonstige", "sonstiges"], "schwerpunkt": ["ebit_marge", "umsatz", "kgv", "div_rendite", "roe", "ek_quote"]}
   ]
 }

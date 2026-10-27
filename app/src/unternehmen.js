@@ -285,6 +285,47 @@ const UNT = (() => {
       fuss: "Die Dateien liegen im GitHub-Repo; je nach Repo-Einstellung ist dafür eine Anmeldung mit Zugriff nötig. Der Pfad zeigt den Speicherort im Repo." });
   }
 
+  /* ----- Gremien und Vergütung (governance/*.csv, über die Unternehmens-ID verbunden) ----- */
+  const GOV_FELD = { vorstand_mitglieder_zahl: "Vorstand: Mitglieder", vorstand_frauen_zahl: "Vorstand: Frauen", geschaeftsfuehrung_mitglieder_zahl: "Geschäftsführung: Mitglieder",
+    geschaeftsfuehrung_frauen_zahl: "Geschäftsführung: Frauen", ar_mitglieder_zahl: "Aufsichtsrat: Mitglieder", ar_frauen_zahl: "Aufsichtsrat: Frauen",
+    ar_arbeitnehmervertreter_zahl: "AR: Arbeitnehmervertreter", ar_gewerkschaftsvertreter_zahl: "AR: davon Gewerkschaft", ar_betriebsraete_zahl: "AR: davon Betriebsräte",
+    mitbestimmung_ar: "Mitbestimmung im AR", pay_ratio: "Pay Ratio (CEO zu Belegschaft)", mitarbeiter_jahresdurchschnitt: "Mitarbeitende (Durchschnitt)" };
+  const govName = k => GOV_FELD[k] || k.replace(/_zahl$/, "").replace(/^ar_/, "AR: ").replace(/_/g, " ");
+  const ORGAN_REIHE = ["Vorstand", "Geschäftsführung", "Aufsichtsrat"];
+  const gjLabel = j => "GJ " + j;
+  function mandateZelle(m) {
+    const ms = m.mandate || [], ws = m.werdegang || [];
+    if (!ms.length && !ws.length) return "";
+    const li = ms.map(x => `<li>${x.gesellschaft_unternehmen_id && NACH_ID[x.gesellschaft_unternehmen_id] ? `<a class="flink" href="#firma-${esc(x.gesellschaft_unternehmen_id)}">${esc(x.gesellschaft)}</a>` : esc(x.gesellschaft)}${x.funktion ? ", " + esc(x.funktion) : ""} <span class="pct">${x.typ === "a" ? "gesetzl. AR" : "vergl. Gremium"}${x.gueltig ? " · " + esc(x.gueltig) : ""}</span></li>`).join("")
+      + ws.map(x => `<li>${esc(x.station || "")}${x.organisation ? ", " + esc(x.organisation) : ""}${x.zeitraum ? ` <span class="pct">${esc(x.zeitraum)}</span>` : ""}</li>`).join("");
+    return `<details><summary class="pct" style="cursor:pointer">${ms.length} Mandat${ms.length === 1 ? "" : "e"}${ws.length ? ` · ${ws.length} Station${ws.length === 1 ? "" : "en"}` : ""}</summary><ul style="margin:4px 0 0 16px;padding:0;font-family:var(--sans);font-size:12px">${li}</ul></details>`;
+  }
+  function gremienPanel(f) {
+    const g = f.gov;
+    if (!g || !(g.mitglieder.length || g.kennzahlen.length)) return panel({ code: "GOV 1", titel: "Gremien", body: `<p class="n">Zu diesem Unternehmen sind Vorstand und Aufsichtsrat noch nicht ermittelt. Die Erhebung steht in <code>governance/</code>; sobald dort Zeilen mit der Kennung <code>${esc(f.id)}</code> stehen, erscheinen sie hier.</p>` });
+    const jahre = [...new Set([...g.mitglieder, ...g.kennzahlen].map(x => x.gj))].sort((a, b) => b - a);
+    if (!jahre.includes(S.govGj)) S.govGj = jahre[0];
+    const chips = jahre.length > 1 ? chipRow(jahre.map(j => [String(j), gjLabel(j), 0]).map(([a, b]) => [a, b]), "data-ugj", String(S.govGj)) : "";
+    const mj = g.mitglieder.filter(m => m.gj === S.govGj), kj = g.kennzahlen.filter(k => k.gj === S.govGj && k.wert !== "");
+    const kacheln = kj.length ? `<div class="tape" style="margin-bottom:12px">${kj.map(k => `<div style="--gf:var(--amber)" data-tip="${esc(govName(k.feld) + (k.bem ? "\n" + k.bem : "") + (k.seite ? "\nPDF-Seite " + k.seite : ""))}"><div class="g"><b>${esc(govName(k.feld))}</b></div><div class="stats" style="grid-template-columns:1fr"><div><strong style="font-size:${k.wert.length > 14 ? 13 : 20}px">${esc(k.wert)}</strong>${k.einheit && k.einheit !== "Personen" ? ` <span class="pct">${esc(k.einheit)}</span>` : ""}</div></div></div>`).join("")}</div>` : "";
+    const organe = [...new Set(mj.map(m => m.organ))].sort((a, b) => (ORGAN_REIHE.indexOf(a) + 99) % 99 - (ORGAN_REIHE.indexOf(b) + 99) % 99);
+    const tab = o => { const l = mj.filter(m => m.organ === o), art = l.some(m => m.art);
+      return `<div class="sub-h">${esc(o)} <span class="pct">${l.length} Personen</span></div><div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Funktion</th>${art ? `<th style="text-align:left">Vertretung</th>` : ""}<th style="text-align:left">Beruf laut Dokument</th><th style="text-align:left">Weitere Mandate</th><th>Seite</th></tr></thead><tbody>${l.map(m => `<tr><td style="text-align:left;font-family:var(--sans)">${esc(m.name)}</td><td style="text-align:left;font-family:var(--sans)">${esc(m.funktion)}${m.seit || m.bis ? ` <span class="pct">${m.seit ? "seit " + esc(m.seit) : ""} ${m.bis ? "bis " + esc(m.bis) : ""}</span>` : ""}</td>${art ? `<td style="text-align:left;font-family:var(--sans)">${esc(m.art)}</td>` : ""}<td style="text-align:left;font-family:var(--sans);white-space:normal;min-width:220px;max-width:420px">${esc(m.beruf)}</td><td style="text-align:left">${mandateZelle(m)}</td><td class="n">${esc(m.seite)}</td></tr>`).join("")}</tbody></table></div>`; };
+    return panel({ code: "GOV 1", titel: "Gremien", sub: `Vorstand bzw. Geschäftsführung und Aufsichtsrat · ${gjLabel(S.govGj)}`, body: chips + kacheln + (organe.length ? organe.map(tab).join("") : `<p class="n">Für ${gjLabel(S.govGj)} sind nur Kennzahlen, keine Mitglieder erhoben.</p>`),
+      fuss: `Quelle: ${g.quellen.map(q => `<a class="flink" href="${esc(dokUrl(q, "blob"))}" target="_blank" rel="noopener">${esc(q.split("/").pop())}</a>`).join(", ") || "governance/"}. Leere Angaben sind nicht ermittelt (Begründung in governance/*.csv, Spalte bemerkung); „Seite“ ist die PDF-Seite.` });
+  }
+  function verguetungPanel(f) {
+    const v = f.gov && f.gov.verguetung || [];
+    if (!v.length) return panel({ code: "GOV 2", titel: "Vergütung", body: `<p class="n">Vergütungsangaben sind für dieses Unternehmen noch nicht ermittelt (Quelle: Anhang nach § 285 Nr. 9a HGB bzw. Vergütungsbericht nach § 162 AktG).</p>` });
+    const jahre = [...new Set(v.map(x => x.gj))].sort((a, b) => b - a), gremien = [...new Set(v.map(x => x.gremium))];
+    const geld = x => x.betrag == null ? "n. v." : f1.format(x.betrag / 1e3);
+    return panel({ code: "GOV 2", titel: "Vergütung", sub: "Gesamtbezüge je Gremium in Mio. €", body: `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Gremium</th><th style="text-align:left">Angabe</th>${jahre.map(j => `<th>${gjLabel(j)}</th>`).join("")}<th style="text-align:left">Basis</th></tr></thead><tbody>${gremien.map(gr => {
+      const namen = [...new Set(v.filter(x => x.gremium === gr).map(x => x.name))];
+      return namen.map((n, i) => { const zs = v.filter(x => x.gremium === gr && x.name === n), basis = zs[0];
+        return `<tr><td style="text-align:left;font-family:var(--sans)">${i === 0 ? esc(gr) : ""}</td><td style="text-align:left;font-family:var(--sans)">${esc(n)}</td>${jahre.map(j => { const z = zs.find(x => x.gj === j); return `<td class="${z ? "" : "n"}"${z && z.bem ? ` data-tip="${esc(z.bem)}"` : ""}>${z ? geld(z) : "–"}</td>`; }).join("")}<td class="n" style="text-align:left;font-family:var(--sans)">${esc(basis.art)}${basis.seite ? ` · PDF-S. ${esc(basis.seite)}` : ""}</td></tr>`; }).join("");
+    }).join("")}</tbody></table></div>`, fuss: "Beträge laut Veröffentlichung des Unternehmens; die Basis (HGB-Gesamtbezüge, Zuwendungen, Pensionsbarwerte) unterscheidet sich je Zeile und ist nicht ohne Weiteres vergleichbar." });
+  }
+
   function viewProfil(id) {
     const f = NACH_ID[id];
     if (!f) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Unternehmen mit der Kennung <code>${esc(id)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
@@ -314,6 +355,8 @@ const UNT = (() => {
         fuss: `${f.abschluss ? esc(f.abschluss) + ". " : ""}${f.demo ? "Beispieldaten aus Yahoo Finance. " : ""}Beträge in Mio. €; P99 = höchster Wert der Branche.` })}
       <div class="col w5">${ad ? panel({ code: "UNT 2", titel: "Kursentwicklung", sub: `${esc(f.ticker)} · Beginn des Zeitraums = 100`, body: ctrl + indexChart([ad]) }) : panel({ code: "UNT 2", titel: "Börse", body: `<p class="n">${f.notiert ? "Keine Kurse im Datensatz." : "Nicht börsennotiert: keine Kurs- und Bewertungskennzahlen."}</p>` })}</div>
       ${reihen.length ? panel({ code: "UNT 3", titel: "Zeitreihen", sub: "je Kennzahl über die erhobenen Stichtage, Amber = jüngster Wert", body: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${reihen.map(([k, r]) => `<div><div class="sub-h">${esc(kzName(k))} <span class="pct">${esc(r.basis)}</span></div>${reiheSvg(k, r)}</div>`).join("")}</div>`, fuss: "Rechnungslegung und Konsolidierungsebene stehen je Reihe; Reihen verschiedener Basis werden nicht vermischt." }) : ""}
+      ${gremienPanel(f)}
+      ${verguetungPanel(f)}
       ${dokumentePanel(f)}
     </div>`;
   }
@@ -346,6 +389,7 @@ const UNT = (() => {
     if ((v = g("data-ub")) != null) { S.branche = v; S.gruppe = "alle"; S.notiert = "alle"; S.rang = null; render(); return true; }
     if ((v = g("data-ug")) != null) { S.gruppe = v; render(); return true; }
     if ((v = g("data-un")) != null) { S.notiert = v; render(); return true; }
+    if ((v = g("data-ugj")) != null) { S.govGj = +v; render(); return true; }
     if ((v = g("data-udok")) != null) { S.dokTyp = v; render(); return true; }
     if ((v = g("data-uopen")) != null) { S.branche = v; S.gruppe = g("data-ugruppe") || "alle"; S.notiert = "alle"; S.rang = null; gehe("u-branche"); return true; }
     if ((v = g("data-usort")) != null) { S.sort = { k: v, ab: S.sort.k === v ? !S.sort.ab : true, manuell: true, auto: S.branche + S.gruppe + S.notiert }; render(); return true; }

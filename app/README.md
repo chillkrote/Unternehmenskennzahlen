@@ -29,8 +29,8 @@ Nach jeder Änderung an der Excel (z. B. durch `rohdaten/skripte/build.py`) einf
 
 ## Bankenansichten (über Branche Banken erreichbar, jetzt ohne F-Tasten)
 
-| Taste | Kürzel | Inhalt |
-|---|---|---|
+| Kürzel | Inhalt |
+|---|---|
 | GRP | Gruppenvergleich: Passivstruktur, Kennzahlen-Mediane, CET1-Zusammensetzung (CC1), RWA-Aufteilung (OV1) |
 | QUOT | Verteilung einer Quote je Gruppe (Punkte je Bank, Median, Quartilsband) und Streudiagramm Risikodichte gegen Kapital |
 | CMP | Einzelbankvergleich: Kennzahlenmatrix mit Perzentil, Abweichung vom Gruppenmedian, Kapitalquoten gegen Anforderung, Passiv- und RWA-Struktur, Bilanzsumme im Zeitverlauf |

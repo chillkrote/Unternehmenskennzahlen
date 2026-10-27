@@ -139,7 +139,7 @@ def devisenkurs(von, nach):
 
 def abruf(eintrag):
     t = yf.Ticker(eintrag["ticker"])
-    h = t.history(period="2y", auto_adjust=False)
+    h = t.history(period="10y", auto_adjust=False)   # zehn Jahre täglich: Kursverlauf der Ansichten = letztes Jahr, Rest für die Korrelation
     fi = t.fast_info
     waehrung, teiler = fi.get("currency"), 1
     if waehrung == "GBp":  # Londoner Kurse in Pence
@@ -177,6 +177,8 @@ def abruf(eintrag):
         "marktkap": marktkap,
         # Kursverlauf: ein Jahr täglich
         "kurse": serie[-260:],
+        # volle Historie (bis zu zehn Jahre, täglich) für die Korrelationsauswertung
+        "kurse_hist": serie,
     }
 
 
@@ -195,7 +197,10 @@ def main():
         except Exception as ex:  # einzelne Ticker dürfen fehlen
             fehler.append(f"{e['ticker']}: {ex}")
             continue
-        werte.append({"bank": treffer[0], "ticker": e["ticker"], "ebene": e["ebene"], "mutter": e.get("mutter"), **cache[e["ticker"]]})
+        daten = dict(cache[e["ticker"]])
+        if any(w["ticker"] == e["ticker"] for w in werte):
+            daten.pop("kurse_hist", None)  # mehrere Banken, ein Ticker (z. B. Deutsche Bank): Historie nur einmal speichern
+        werte.append({"bank": treffer[0], "ticker": e["ticker"], "ebene": e["ebene"], "mutter": e.get("mutter"), **daten})
     def sauber(x):
         if isinstance(x, float):
             return x if math.isfinite(x) else None

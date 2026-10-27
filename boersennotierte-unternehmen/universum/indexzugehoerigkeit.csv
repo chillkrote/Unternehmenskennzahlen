@@ -1,0 +1,191 @@
+﻿unternehmen_id;name;index;quelle;abruf
+U000026;Airbus SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000036;Allianz SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000061;BASF SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000065;Bayer Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000067;Bayerische Motoren Werke Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000073;Beiersdorf Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000100;Brenntag SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000124;Commerzbank AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000125;Continental Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000165;DHL AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000133;Daimler Truck Holding AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000148;Deutsche Bank Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000151;Deutsche Börse AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000161;Deutsche Telekom AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000195;E.ON SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000233;Fresenius Medical Care AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000234;Fresenius SE & Co. KGaA;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000242;GEA Group Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000284;HOCHTIEF Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000264;Hannover Rück SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000274;Heidelberg Materials AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000279;Henkel AG & Co. KGaA;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000301;Infineon Technologies AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000415;MTU Aero Engines AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000395;Mercedes-Benz Group AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000396;Merck KGaA;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000420;Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000491;Qiagen N.V.;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000510;RWE Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000502;Rheinmetall AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000515;SAP SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000524;Scout24 SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000535;Siemens Aktiengesellschaft;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000537;Siemens Energy AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000538;Siemens Healthineers AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000640;Symrise AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000712;Volkswagen AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000716;Vonovia SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000742;Zalando SE;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000017;adidas AG;DAX;https://de.wikipedia.org/wiki/DAX;2026-10-27
+U000028;AIXTRON SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000054;AUTO1 Group SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000045;Aroundtown SA;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000052;Aumovio SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000053;Aurubis AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000071;Bechtle AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000086;Bilfinger SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000131;CTS Eventim AG & Co. KGaA;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000163;DEUTZ Aktiengesellschaft;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000177;DWS Group GmbH & Co. KGaA;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000143;Delivery Hero SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000157;Deutsche Lufthansa AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000187;Elmos Semiconductor SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000207;Evonik Industries AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000230;Fraport AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000238;Fuchs SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000277;HELLA GmbH & Co. KGaA;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000280;Hensoldt AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000290;Hugo Boss AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000312;IONOS Group SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000317;Jenoptik AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000350;K+S Aktiengesellschaft;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000328;KION GROUP AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000331;Knorr-Bremse AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000349;Krones AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000363;LANXESS Aktiengesellschaft;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000368;LEG Immobilien SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000433;Nemetschek SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000442;Nordex SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000485;PUMA SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000479;Porsche Automobil Holding SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000479;Porsche Automobil Holding SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000494;RATIONAL Aktiengesellschaft;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000500;RENK Group AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000508;RTL Group S.A.;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000637;SUSS MicroTec SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000512;Salzgitter AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000516;Sartorius Aktiengesellschaft;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000518;Schaeffler AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000539;Siltronic AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000643;TAG Immobilien AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000661;TKMS AG & Co KGaA;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000670;TUI AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000645;Talanx AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000668;Traton SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000680;United Internet AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000727;Wacker Chemie AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000222;flatexDEGIRO SE;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000231;freenet AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000655;thyssenkrupp AG;MDAX;https://de.wikipedia.org/wiki/MDAX;2026-10-27
+U000004;1&1 AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000048;ASTA Energy Solutions AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000049;ATOSS Software SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000022;Adtran Networks SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000039;Alzchem Group AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000062;Basler Aktiengesellschaft;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000072;Befesa S.A.;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000114;CEWE Stiftung & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000106;Cancom SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000109;Carl Zeiss Meditec AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000146;Dermapharm Holding SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000150;Deutsche Beteiligungs AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000153;Deutsche EuroShop AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000158;Deutsche Pfandbriefbank AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000173;Douglas AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000174;Drägerwerk AG & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000176;Dürr Aktiengesellschaft;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000179;Eckert & Ziegler SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000183;Einhell Germany AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000193;Energiekontor AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000208;Evotec SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000217;Fielmann Group AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000235;Friedrich Vorwerk Group SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000247;GFT Technologies SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000254;Grand City Properties S.A.;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000256;Grenke AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000289;HORNBACH Holding AG & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000260;Hamborner REIT AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000273;Heidelberger Druckmaschinen Aktiengesellschaft;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000278;HelloFresh SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000293;Hypoport SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000299;INDUS Holding AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000319;JOST Werke SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000321;Jungheinrich Aktiengesellschaft;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000351;KSB SE & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000354;KWS SAAT SE & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000333;Kontron AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000378;LPKF Laser & Electronics SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000387;MBB SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000406;MLP SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000389;Medios AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000421;Mutares SE & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000445;NORMA Group SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000427;Nagarro SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000451;OHB SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000457;Ottobock SE & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000463;PATRIZIA SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000477;PNE AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000486;PVA TePla AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000498;Redcare Pharmacy NV;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000511;SAF-Holland SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000521;SCHOTT Pharma AG & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000531;SFC Energy AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000548;SMA Solar Technology AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000534;Shelly Group SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000545;Sixt SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000614;Springer Nature AG & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000615;Stabilus SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000629;Sto SE & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000630;Stratec SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000631;Ströer SE & Co. KGaA;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000635;Südzucker AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000649;TeamViewer SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000687;Verbio SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000696;Vincorion SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000717;Vossloh AG;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000728;Wacker Neuson SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000303;init innovation in traffic systems SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000527;secunet Security Networks Aktiengesellschaft;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000663;tonies SE;SDAX;https://de.wikipedia.org/wiki/SDAX;2026-10-27
+U000028;AIXTRON SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000049;ATOSS Software SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000071;Bechtle AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000109;Carl Zeiss Meditec AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000161;Deutsche Telekom AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000174;Drägerwerk AG & Co. KGaA;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000179;Eckert & Ziegler SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000187;Elmos Semiconductor SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000208;Evotec SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000280;Hensoldt AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000312;IONOS Group SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000301;Infineon Technologies AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000317;Jenoptik AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000333;Kontron AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000433;Nemetschek SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000442;Nordex SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000451;OHB SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000457;Ottobock SE & Co. KGaA;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000486;PVA TePla AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000491;Qiagen N.V.;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000515;SAP SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000548;SMA Solar Technology AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000637;SUSS MicroTec SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000516;Sartorius Aktiengesellschaft;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000538;Siemens Healthineers AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000539;Siltronic AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000649;TeamViewer SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000680;United Internet AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000687;Verbio SE;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27
+U000231;freenet AG;TecDAX;https://de.wikipedia.org/wiki/TecDAX;2026-10-27

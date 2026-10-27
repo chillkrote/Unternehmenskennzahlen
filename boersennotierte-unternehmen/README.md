@@ -50,6 +50,8 @@ Stückzahlen und Abdeckung je Branche stehen im README des Branchenordners.
 | Kennzahlen | Margen, Renditen, EK-Quote, Verschuldung, Capex- und Ausschüttungsquote je Jahr |
 | Kapitalmarkt | Jahresschlusskurse 2019–2025, aktueller Kurs, Dividenden je Jahr, Kursentwicklung |
 | Aktionäre (BaFin) | alle Stimmrechtsmitteilungen je Emittent (§§ 33, 34, 38, 39 WpHG) |
+| Abgleich Bericht | Yahoo-Kennzahlen (Umsatz, Ergebnis, EBIT, Bilanzsumme, Eigenkapital, operativer Cashflow) gegen den Geschäftsbericht im Repo: gefunden ja/nein, Seite und Textzeile zum Nachprüfen |
+| Segmente (Bericht) | ungeprüfter Rohextrakt der Segmenttabellen aus dem Anhang der Berichte (Seite, Zeile, vermutete Einheit) |
 | Dokumente | im Repo abgelegte Berichte mit Quelle und SHA-256 |
 | Rohdaten Yahoo | alle gelieferten Posten in Originalbezeichnung |
 | Methodik | Quellen, Definitionen, Grenzen |
@@ -72,9 +74,14 @@ python3 universum/skripte/unternehmen.py    # Unternehmen, Branchen
 python3 skripte/berichte_suche.py <ein.json> <aus.json>   # Geschäftsberichte auf den IR-Seiten suchen
 python3 skripte/berichte_laden.py <aus.json>              # laden, prüfen, ablegen, index.csv
 python3 skripte/dokumente_umsortieren.py    # nach Branchenänderungen
+python3 skripte/berichte_abgleich.py        # Yahoo-Zahlen gegen die Berichte, Segment-Rohextrakt (rohdaten/berichte_abgleich.json)
 python3 skripte/build.py                    # Excel und Branchen-READMEs
 ```
 
 ## Stand und nächste Etappen
 
-Etappe 1 (27.10.2026): Universum, Branchen, Kapitalmarkt- und Yahoo-Abschlussdaten für alle Unternehmen, Stimmrechte, erste Runde Geschäftsberichte. Offen: fehlende Geschäftsberichte (Websites mit Bot-Schutz oder reinem JavaScript), Abgleich der Yahoo-Zahlen mit den Berichten, Segmentangaben aus den Berichten, Branche für Branche.
+Etappe 1 (27.10.2026): Universum, Branchen, Kapitalmarkt- und Yahoo-Abschlussdaten für alle Unternehmen, Stimmrechte, Geschäftsberichte für 276 Unternehmen.
+
+Etappe 2 (27.10.2026): automatischer Abgleich der Yahoo-Zahlen mit den Berichten (Blatt „Abgleich Bericht“, Spalte „Abgleich Yahoo mit Bericht“ und Hinweise in der Übersicht), Mitarbeiter- und Dividenden-Kandidaten aus den Berichten, Segment-Rohextrakt. „nein“ im Abgleich heißt nur: nicht automatisch gefunden. Häufige Gründe sind ein Einzel- statt Konzernabschluss im Repo, abweichende Definitionen (EBIT, Cashflow) oder Tabellen, die `pdftotext` nicht zeilenweise liefert.
+
+Offen: Berichte für die übrigen Unternehmen (überwiegend Kleinstwerte ohne Website oder mit Bot-Schutz), Konzernabschlüsse statt Einzelabschlüsse, geprüfte Segmentdaten.

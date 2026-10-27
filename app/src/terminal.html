@@ -101,6 +101,14 @@ tr.click { cursor: pointer; }
 .chip button:hover { color: var(--down); }
 .picks input { background: #000; border: 1px solid var(--line); padding: 1px 6px; min-width: 0; width: 280px; max-width: 100%; color: var(--key); }
 
+/* Kursleiste */
+.quotes { display: flex; gap: 16px; overflow-x: auto; white-space: nowrap; background: #000; border: 1px solid var(--line); padding: 3px 8px; scrollbar-width: thin; }
+.quotes .ql { color: var(--amber); }
+.quotes a { color: var(--ink); text-decoration: none; }
+.quotes a b { color: var(--key); font-weight: 500; }
+tr.sel td { background: #1a1608; }
+.flat { color: var(--ink-2); }
+
 #tip { position: fixed; z-index: 20; pointer-events: none; background: #000; border: 1px solid var(--amber-dim); padding: 4px 7px; color: var(--ink); max-width: 320px; white-space: pre-line; display: none; }
 #tip b { color: var(--amber); font-weight: 500; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -110,7 +118,7 @@ tr.click { cursor: pointer; }
   <header class="top">
     <div class="cmd">
       <span class="brand">BKT</span>
-      <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="GRP · QUOT · CMP · RANK · oder Bankname, dann Enter" autocomplete="off" list="banklist"></label>
+      <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="GRP · QUOT · CMP · RANK · MKT · oder Bankname, dann Enter" autocomplete="off" list="banklist"></label>
       <span class="meta" id="meta"></span>
     </div>
     <nav class="keys" aria-label="Funktionen">
@@ -118,8 +126,10 @@ tr.click { cursor: pointer; }
       <a class="key" href="#quot" data-v="quot"><b>F2</b>QUOT Quoten</a>
       <a class="key" href="#cmp" data-v="cmp"><b>F3</b>CMP Einzelbanken</a>
       <a class="key" href="#rank" data-v="rank"><b>F4</b>RANK Liste</a>
+      <a class="key" href="#mkt" data-v="mkt" id="key-mkt"><b>F5</b>MKT Börse</a>
     </nav>
   </header>
+  <div class="quotes" id="quotes" aria-label="Schlusskurse"></div>
   <section class="tape" id="tape" aria-label="Gruppenmediane"></section>
   <main id="view"></main>
 </div>
@@ -127,6 +137,7 @@ tr.click { cursor: pointer; }
 <div id="tip" role="tooltip"></div>
 
 <script id="daten" type="application/json">__DATEN__</script>
+<script id="markt" type="application/json">__MARKT__</script>
 <script>
 "use strict";
 const GRUPPEN = [
@@ -168,8 +179,16 @@ const KZ = {
   fonds_bs: { name: "Fonds § 340g in % BS", f: v => pct(v, 2), hoch: true, quelle: "HGB" },
   fonds_cet1: { name: "Fonds § 340g in % CET1", f: v => pct(v, 1), hoch: null, quelle: "HGB / KM1" },
   bs: { name: "Bilanzsumme (Mio. €)", f: mio, hoch: null, quelle: "HGB" },
+  mkap: { name: "Börsenwert (Mio. €)", f: mio, hoch: null, quelle: "Yahoo", markt: true },
+  mkap_ek: { name: "Börsenwert / HGB-EK", f: v => v == null ? "n. v." : f2.format(v) + "x", hoch: null, quelle: "Yahoo / HGB", markt: true },
 };
 function abgeleitet(b) {
+  const m = MARKT && MARKT.werte.find(w => w.bank === b.bank);
+  if (m) {
+    b.markt = m;
+    // nur wenn die Bank selbst notiert ist: Börsenwert gegen ihr HGB-Eigenkapital
+    if (m.ebene === "Institut" && m.waehrung === "EUR" && m.marktkap) { b.mkap = m.marktkap / 1e6; b.mkap_ek = b.ek ? b.mkap / b.ek : null; }
+  }
   b.fonds_cet1 = b.fonds != null && b.cet1 ? b.fonds / b.cet1 : null;
   b.bs_zr = b.zeitreihe && b.zeitreihe.Bilanzsumme || {};
   return b;
@@ -384,7 +403,7 @@ function viewQuot() {
 /* ---------- Ansicht CMP ---------- */
 let auswahl = null;
 const STANDARD_AUSWAHL = [/Hamburger Sparkasse/, /Berliner Volksbank/, /Helaba/, /^Commerzbank/];
-const CMP_KZ = ["bs", "ek_quote", "ek_fonds_quote", "fonds_bs", "cet1_quote", "gk_quote", "gk_puffer_pp", "lr", "rwa_dichte", "fonds_cet1"];
+const CMP_KZ = ["bs", "ek_quote", "ek_fonds_quote", "fonds_bs", "cet1_quote", "gk_quote", "gk_puffer_pp", "lr", "rwa_dichte", "fonds_cet1", "mkap", "mkap_ek"];
 
 function balkenVergleich(kz, banken) {
   const def = KZ[kz], W = 520, x0 = 170, x1 = W - 74, hz = 19;
@@ -440,7 +459,8 @@ function viewCmp() {
   // Kennzahlenmatrix mit Perzentil
   const matrix = `<div class="scroll"><table><thead><tr><th>Kennzahl</th>${banken.map(b => `<th title="${esc(b.bank)}"><i class="sw" style="background:${G[b.gruppe].farbe}"></i> ${esc(kurz(b.bank).slice(0, 18))}</th>`).join("")}</tr></thead><tbody>
     <tr><td>Gruppe · Rang</td>${banken.map(b => `<td>${G[b.gruppe].kurz} · ${b.rang != null ? f0.format(b.rang) : "–"}</td>`).join("")}</tr>
-    ${CMP_KZ.map(k => { const alle = vals(BANKEN, k); return `<tr><td>${KZ[k].name}</td>${banken.map(b => { const v = b[k]; if (v == null) return `<td class="n">n. v.</td>`; const p = perzentil(v, alle); return `<td>${KZ[k].f(v)} <span class="pct" title="Perzentil unter allen Banken">P${f0.format(p * 100).padStart(2, "0")}</span></td>`; }).join("")}</tr>`; }).join("")}
+    ${CMP_KZ.filter(k => !KZ[k].markt || banken.some(b => b[k] != null)).map(k => { const alle = vals(BANKEN, k); return `<tr><td>${KZ[k].name}</td>${banken.map(b => { const v = b[k]; if (v == null) return `<td class="n">n. v.</td>`; const p = perzentil(v, alle); return `<td>${KZ[k].f(v)} <span class="pct" title="Perzentil unter allen Banken">P${f0.format(p * 100).padStart(2, "0")}</span></td>`; }).join("")}</tr>`; }).join("")}
+    ${banken.some(b => b.markt) ? `<tr><td>Aktie (YTD)</td>${banken.map(b => b.markt ? `<td title="${esc(b.markt.mutter ? "Muttergesellschaft: " + b.markt.mutter : "Bank selbst notiert")}">${b.markt.ticker}${b.markt.ebene === "Mutter" ? "*" : ""} <span class="${klasse(b.markt.r_ytd)}">${chg(b.markt.r_ytd)}</span></td>` : `<td class="n">nicht notiert</td>`).join("")}</tr>` : ""}
     <tr><td>KM1-Ebene</td>${banken.map(b => `<td class="n" title="${esc(b.km1_ebene || "")}">${esc(b.km1_ebene ? (/Konzern|Gruppe|ggf\. Gruppe/.test(b.km1_ebene) ? "Gruppe/Konzern" : "Institut") : "–")}</td>`).join("")}</tr>
   </tbody></table></div>`;
 
@@ -471,6 +491,98 @@ function viewRank() {
   return `<div class="grid">${panel({ code: "RANK", titel: "Bankenliste", sub: `${liste.length} Institute · Spaltenkopf sortiert · Zeile übernimmt in CMP`, body: ctrl + `<div class="tblwrap"><table><thead>${kopf}</thead><tbody>${rows}</tbody></table></div>` })}</div>`;
 }
 
+/* ---------- Ansicht MKT (Börsendaten, getrennt von den GJ-Daten) ---------- */
+let MARKT = null, mktFenster = "1j", mktMuetter = false, mktMarkiert = "CBK.DE";
+const chg = v => v == null ? "–" : (v > 0 ? "+" : "") + f1.format(v * 100) + " %";
+const klasse = v => v == null ? "n" : v > 0.0005 ? "pos" : v < -0.0005 ? "neg" : "flat";
+const kursF = (v, w) => v == null ? "n. v." : nf(v >= 1000 ? 0 : 2).format(v) + (w && w !== "EUR" ? " " + w : "");
+const FENSTER = { "1m": ["1M", 31], "6m": ["6M", 183], "ytd": ["YTD", null], "1j": ["1J", 366] };
+function fensterStart(letzter) {
+  if (mktFenster === "ytd") return letzter.slice(0, 4) + "-01-01";
+  const d = new Date(letzter); d.setDate(d.getDate() - FENSTER[mktFenster][1]); return d.toISOString().slice(0, 10);
+}
+function eindeutig() { const s = new Set(); return MARKT.werte.filter(w => !s.has(w.ticker) && s.add(w.ticker)); }
+
+function spark(w) {
+  const k = w.kurse.map(x => x[1]), W = 110, H = 22, lo = Math.min(...k), hi = Math.max(...k);
+  const pts = k.map((v, i) => `${(i / (k.length - 1) * W).toFixed(1)},${(H - 2 - (v - lo) / (hi - lo || 1) * (H - 4)).toFixed(1)}`).join(" ");
+  const farbe = k[k.length - 1] >= k[0] ? "var(--up)" : "var(--down)";
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:110px" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="${farbe}" stroke-width="1.2"/><circle cx="${W}" cy="${pts.split(" ").pop().split(",")[1]}" r="2" fill="${farbe}"/></svg>`;
+}
+function spanne(w) {
+  const x = (w.kurs - w.tief_52w) / ((w.hoch_52w - w.tief_52w) || 1) * 76 + 2;
+  return `<svg viewBox="0 0 80 10" style="width:80px" data-tip="${esc(`52 Wochen: ${kursF(w.tief_52w, w.waehrung)} – ${kursF(w.hoch_52w, w.waehrung)}`)}"><line x1="2" x2="78" y1="5" y2="5" stroke="var(--s2)" stroke-width="2"/><circle cx="${x}" cy="5" r="3" fill="var(--amber)"/></svg>`;
+}
+
+function indexChart(liste) {
+  const W = 1100, H = 420, x0 = 44, x1 = W - 92, y0 = 12, y1 = H - 26;
+  const letzter = liste.reduce((m, w) => w.datum > m ? w.datum : m, "");
+  const start = fensterStart(letzter);
+  const reihen = liste.map(w => {
+    const k = w.kurse.filter(([d]) => d >= start);
+    const basis = (w.kurse.filter(([d]) => d < start).pop() || k[0])[1];
+    return { w, pts: k.map(([d, c]) => [d, c / basis * 100]) };
+  }).filter(r => r.pts.length > 1);
+  if (!reihen.length) return `<p class="n">Keine Kurse im Zeitraum.</p>`;
+  const alle = reihen.flatMap(r => r.pts.map(p => p[1]));
+  let lo = Math.min(100, ...alle), hi = Math.max(100, ...alle); const pad = (hi - lo) * .06; lo -= pad; hi += pad;
+  const t0 = new Date(start).getTime(), t1 = new Date(letzter).getTime();
+  const sx = d => x0 + (x1 - x0) * (new Date(d).getTime() - t0) / (t1 - t0 || 1), sy = v => y1 - (y1 - y0) * (v - lo) / (hi - lo);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  niceTicks(lo, hi, 6).forEach(t => s += `<line class="gl" x1="${x0}" x2="${x1}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${x0 - 6}" y="${sy(t)}" text-anchor="end" dominant-baseline="middle">${f0.format(t)}</text>`);
+  s += `<line x1="${x0}" x2="${x1}" y1="${sy(100)}" y2="${sy(100)}" stroke="var(--ink-3)" stroke-dasharray="2 3"/>`;
+  // Monatsmarken
+  const d = new Date(start); d.setDate(1); d.setMonth(d.getMonth() + 1);
+  const monate = []; for (; d.getTime() <= t1; d.setMonth(d.getMonth() + 1)) monate.push(d.toISOString().slice(0, 10));
+  const schritt = Math.ceil(monate.length / 8);
+  monate.forEach((m, i) => { if (i % schritt) return; const x = sx(m); s += `<line class="gl" x1="${x}" x2="${x}" y1="${y0}" y2="${y1}"/><text x="${x}" y="${y1 + 14}" text-anchor="middle">${m.slice(5, 7)}/${m.slice(2, 4)}</text>`; });
+  s += `<line class="ax" x1="${x0}" x2="${x1}" y1="${y1}" y2="${y1}"/>`;
+  // Linien: grau, markierte Aktie in Amber obenauf
+  const sortiert = [...reihen].sort((a, b) => (a.w.ticker === mktMarkiert) - (b.w.ticker === mktMarkiert));
+  sortiert.forEach(r => {
+    const an = r.w.ticker === mktMarkiert, d = r.pts.map(([t, v], i) => `${i ? "L" : "M"}${sx(t).toFixed(1)},${sy(v).toFixed(1)}`).join("");
+    const ende = r.pts[r.pts.length - 1][1];
+    const tt = esc(`<b>${esc(kurz(r.w.bank))}</b>${r.w.mutter ? "\nKurs der Mutter: " + esc(r.w.mutter) : ""}\n${r.w.ticker} · Index ${f1.format(ende)} (${chg(ende / 100 - 1)} seit ${start.split("-").reverse().join(".")})`);
+    s += `<path d="${d}" fill="none" stroke="${an ? "var(--amber)" : "var(--s3)"}" stroke-width="${an ? 2.2 : 1.2}" stroke-linejoin="round"/>`;
+    s += `<path d="${d}" fill="none" stroke="transparent" stroke-width="9" data-tip="${tt}" data-mkt="${r.w.ticker}" style="cursor:pointer"/>`;
+  });
+  // Endbeschriftung mit einfacher Kollisionsvermeidung
+  const labels = reihen.map(r => ({ r, y: sy(r.pts[r.pts.length - 1][1]) })).sort((a, b) => a.y - b.y);
+  for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 11) labels[i].y = labels[i - 1].y + 11;
+  labels.forEach(({ r, y }) => { const an = r.w.ticker === mktMarkiert, e = r.pts[r.pts.length - 1][1];
+    s += `<text x="${x1 + 6}" y="${y}" dominant-baseline="middle" style="fill:${an ? "var(--amber)" : "var(--ink-2)"}">${r.w.ticker.replace(/\.\w+$/, "")} ${f0.format(e)}</text>`; });
+  return s + "</svg>";
+}
+
+function viewMkt() {
+  if (!MARKT) return `<div class="grid">${panel({ code: "MKT", titel: "Börsendaten", body: `<p>Keine Börsendaten geladen. <code>python3 app/marktdaten.py</code> und danach <code>python3 app/build.py</code> ausführen.</p>` })}</div>`;
+  const tick = eindeutig(), sichtbar = tick.filter(w => mktMuetter || w.ebene === "Institut");
+  const zeilen = MARKT.werte.map(w => { const b = BANKEN.find(x => x.bank === w.bank) || {}; return `<tr class="click${w.ticker === mktMarkiert ? " sel" : ""}" data-mkt="${w.ticker}">
+    <td>${esc(kurz(w.bank).slice(0, 30))}</td><td class="n" style="text-align:left">${w.ebene === "Institut" ? "Bank selbst" : "Mutter: " + esc(w.mutter || "")}</td><td style="color:var(--key);text-align:left">${w.ticker}</td>
+    <td>${kursF(w.kurs, w.waehrung)}</td><td class="n">${w.datum.split("-").reverse().join(".")}</td>
+    ${["r_1t", "r_1m", "r_ytd", "r_1j"].map(k => `<td class="${klasse(w[k])}">${chg(w[k])}</td>`).join("")}
+    <td>${spanne(w)}</td><td>${w.marktkap ? f0.format(w.marktkap / 1e6) + (w.waehrung !== "EUR" ? " " + w.waehrung : "") : "n. v."}</td>
+    <td${b.mkap_ek == null ? ' class="n"' : ""}>${b.mkap_ek == null ? "–" : f2.format(b.mkap_ek) + "x"}</td><td>${spark(w)}</td></tr>`; }).join("");
+  const tab = `<div class="scroll"><table><thead><tr><th>Bank im Datensatz</th><th style="text-align:left">Notierung</th><th style="text-align:left">Ticker</th><th>Schluss</th><th>Stand</th><th>1T</th><th>1M</th><th>YTD</th><th>1J</th><th>52W-Spanne</th><th>Börsenwert (Mio.)</th><th>BW / HGB-EK</th><th>12M</th></tr></thead><tbody>${zeilen}</tbody></table></div>`;
+  const ctrl = `<div class="ctrl" style="margin-bottom:6px">${Object.entries(FENSTER).map(([k, [n]]) => `<button type="button" data-fenster="${k}" aria-pressed="${k === mktFenster}">${n}</button>`).join("")}
+    <button type="button" data-muetter="1" aria-pressed="${mktMuetter}" style="margin-left:8px">inkl. Muttergesellschaften</button></div>`;
+  const abruf = new Date(MARKT.abruf);
+  return `<div class="grid">
+    ${panel({ code: "MKT 1", titel: "Notierte Banken", sub: `${MARKT.werte.length} Banken des Datensatzes mit Börsenkurs · Zeile markiert die Aktie im Chart`, body: tab,
+      fuss: `Quelle: ${esc(MARKT.quelle)}, Abruf ${abruf.toLocaleString("de-DE", { dateStyle: "medium", timeStyle: "short" })}. Börsenwert = Kurs × Aktienanzahl laut Yahoo. BW / HGB-EK setzt den Börsenwert des Konzerns ins Verhältnis zum Eigenkapital des HGB-Einzelabschlusses (nur wo die Bank selbst notiert ist), also nur ein Richtwert für das Kurs-Buchwert-Verhältnis.` })}
+    ${panel({ code: "MKT 2", titel: "Kursentwicklung indexiert", sub: `Schlusskurs, Beginn des Zeitraums = 100 · ${sichtbar.length} Aktien`, body: ctrl + indexChart(sichtbar),
+      fuss: "Kurse in Handelswährung, nicht dividendenbereinigt. Klick auf eine Linie oder Tabellenzeile hebt die Aktie hervor." })}
+  </div>`;
+}
+
+function quotes() {
+  const el = document.getElementById("quotes");
+  if (!MARKT || !MARKT.werte.length) { el.hidden = true; document.getElementById("key-mkt").hidden = !MARKT; return; }
+  const stand = eindeutig().reduce((m, w) => w.datum > m ? w.datum : m, "");
+  el.innerHTML = `<span class="ql">SCHLUSS ${stand.split("-").reverse().join(".")}</span>` + eindeutig().filter(w => w.ebene === "Institut").concat(eindeutig().filter(w => w.ebene !== "Institut"))
+    .map(w => `<a href="#mkt" data-mkt="${w.ticker}"><b>${w.ticker}</b> ${kursF(w.kurs, w.waehrung)} <span class="${klasse(w.r_1t)}">${chg(w.r_1t)}</span></a>`).join("");
+}
+
 /* ---------- Ticker ---------- */
 function tape() {
   document.getElementById("tape").innerHTML = GRUPPEN.map(g => {
@@ -482,7 +594,7 @@ function tape() {
 }
 
 /* ---------- Routing & Ereignisse ---------- */
-const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank };
+const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt };
 let aktuell = "grp";
 function render() {
   const h = location.hash.slice(1);
@@ -508,6 +620,9 @@ document.addEventListener("click", e => {
   else if (t.closest("[data-rg]")) { rankGruppe = t.closest("[data-rg]").dataset.rg; render(); }
   else if (t.closest("[data-sort]")) { const k = t.closest("[data-sort]").dataset.sort; rankSort = { k, ab: rankSort.k === k ? !rankSort.ab : true }; render(); }
   else if (t.closest("[data-weg]")) { const n = t.closest("[data-weg]").dataset.weg; auswahl = auswahl.filter(x => x !== n); render(); }
+  else if (t.closest("[data-fenster]")) { mktFenster = t.closest("[data-fenster]").dataset.fenster; render(); }
+  else if (t.closest("[data-muetter]")) { mktMuetter = !mktMuetter; render(); }
+  else if (t.closest("[data-mkt]")) { mktMarkiert = t.closest("[data-mkt]").dataset.mkt; if (t.closest(".quotes")) e.preventDefault(); gehe("mkt"); }
   else if (t.closest("[data-bank]")) { bankDazu(t.closest("[data-bank]").dataset.bank); }
 });
 document.getElementById("cmd").addEventListener("keydown", e => {
@@ -517,7 +632,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   if (VIEWS[c]) gehe(c); else bankDazu(v);
 });
 document.addEventListener("keydown", e => {
-  const m = { F1: "grp", F2: "quot", F3: "cmp", F4: "rank" }[e.key];
+  const m = { F1: "grp", F2: "quot", F3: "cmp", F4: "rank", F5: "mkt" }[e.key];
   if (m) { e.preventDefault(); gehe(m); }
 });
 addEventListener("hashchange", render);
@@ -526,10 +641,12 @@ addEventListener("hashchange", render);
 async function start() {
   const el = document.getElementById("daten");
   try { DATA = JSON.parse(el.textContent); } catch { DATA = await (await fetch("../data/banken.json")).json(); }
+  try { MARKT = JSON.parse(document.getElementById("markt").textContent); } catch { try { MARKT = await (await fetch("../data/markt.json")).json(); } catch { MARKT = null; } }
   BANKEN = DATA.banken.filter(b => G[b.gruppe]).map(abgeleitet);
   document.getElementById("meta").textContent = `${BANKEN.length} Institute · Stichtag ${DATA.meta.stichtag.split("-").reverse().join(".")} · Beträge Mio. €`;
   document.getElementById("banklist").innerHTML = BANKEN.map(b => `<option value="${esc(b.bank)}">`).join("");
   tape();
+  quotes();
   render();
 }
 start();

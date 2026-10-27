@@ -1,0 +1,21 @@
+{
+  "_hinweis": "Zuordnung Bank (Muster auf den Banknamen der Excel) -> Yahoo-Finance-Ticker. ebene 'Institut' = die Bank selbst ist börsennotiert; 'Mutter' = nur die Muttergesellschaft (Bank- oder Finanzgruppe) ist notiert, Kennzahlen zur HGB-Bilanz werden dann nicht gebildet. Industrielle Mütter (Autobanken, Siemens) sind bewusst nicht aufgenommen.",
+  "ticker": [
+    {"muster": "^Deutsche Bank AG", "ticker": "DBK.DE", "ebene": "Institut"},
+    {"muster": "^Commerzbank", "ticker": "CBK.DE", "ebene": "Institut"},
+    {"muster": "Deutsche Pfandbriefbank", "ticker": "PBB.DE", "ebene": "Institut"},
+    {"muster": "^UmweltBank", "ticker": "UBK.DE", "ebene": "Institut"},
+    {"muster": "MERKUR PRIVATBANK", "ticker": "MBK.DE", "ebene": "Institut"},
+    {"muster": "^Baader Bank", "ticker": "BWB.DE", "ebene": "Institut"},
+    {"muster": "^UniCredit Bank GmbH", "ticker": "UCG.MI", "ebene": "Mutter", "mutter": "UniCredit S.p.A."},
+    {"muster": "^ING-DiBa", "ticker": "INGA.AS", "ebene": "Mutter", "mutter": "ING Groep N.V."},
+    {"muster": "^Santander Consumer Bank", "ticker": "SAN.MC", "ebene": "Mutter", "mutter": "Banco Santander S.A."},
+    {"muster": "^State Street Bank International", "ticker": "STT", "ebene": "Mutter", "mutter": "State Street Corporation"},
+    {"muster": "^flatexDEGIRO Bank", "ticker": "FTK.DE", "ebene": "Mutter", "mutter": "flatexDEGIRO AG"},
+    {"muster": "^GRENKE BANK", "ticker": "GLJ.DE", "ebene": "Mutter", "mutter": "GRENKE AG"},
+    {"muster": "^MLP Banking", "ticker": "MLP.DE", "ebene": "Mutter", "mutter": "MLP SE"},
+    {"muster": "^norisbank", "ticker": "DBK.DE", "ebene": "Mutter", "mutter": "Deutsche Bank AG"},
+    {"muster": "^Akbank AG", "ticker": "AKBNK.IS", "ebene": "Mutter", "mutter": "Akbank T.A.S."},
+    {"muster": "^Isbank AG", "ticker": "ISCTR.IS", "ebene": "Mutter", "mutter": "Türkiye İş Bankası A.S."}
+  ]
+}

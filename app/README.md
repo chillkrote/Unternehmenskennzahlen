@@ -39,6 +39,20 @@ Nach jeder Änderung an der Excel (z. B. durch `rohdaten/skripte/build.py`) einf
 
 Oben läuft zusätzlich eine Kursleiste mit den letzten Schlusskursen; in CMP erscheinen Börsenwert, Börsenwert / HGB-EK und die Aktie, wo vorhanden.
 
+## Branchen (Unternehmen außerhalb des Bankensektors)
+
+Oben rechts schaltet der Schalter „Banken / Branchen“ um. Im Bereich Branchen gibt es drei Ansichten:
+F1 Branchenübersicht (Kacheln, Mediantabelle je Branche, Streudiagramm aller Unternehmen),
+F2 Branche (Ranglisten, Profil gegen die übrigen Branchen, Kursverlauf, Bewertung gegen Rentabilität),
+F3 Unternehmen (bis zu 6 Unternehmen aus allen Branchen: Kennzahlenmatrix mit Perzentilen, Abstand zum Branchenmedian, indexierte Kurse).
+Befehlszeile: `BRA`, `UCMP`, `UEB` oder ein Firmenname.
+
+Datenschicht: `unternehmen.py` liest alle Excel-Tabellen unter `unternehmen*/` (bzw. Branchen-Ordnern) im Repo über die
+Spaltenüberschriften. Welche Überschrift welche Kennzahl ist, steht samt Aliasen in `unternehmen_katalog.json`; neue Branchen
+und Spalten erscheinen ohne Codeänderung. Fehlen die Tabellen, zeigt das Terminal Beispieldaten
+(`unternehmen_demo.py`, Yahoo Finance, ca. 43 deutsche Werte) und kennzeichnet sie als solche.
+`build.py` bettet das Ergebnis ein (`data/unternehmen.json`).
+
 ## Täglicher Abruf
 
 `.github/workflows/marktdaten.yml` läuft an Handelstagen um 18:30 UTC (nach Xetra-Schluss), holt die Kurse, baut das Terminal neu und committet `app/data/markt.json` und `app/dist/` nach main. Manuell startbar unter Actions → „Börsendaten Bank-Terminal“ → Run workflow. Yahoo Finance hat keine offizielle API; fällt ein Ticker aus, steht er unter `fehler` in `markt.json`, die übrigen werden trotzdem geschrieben.

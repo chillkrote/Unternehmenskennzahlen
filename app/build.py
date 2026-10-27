@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import datenschicht
+import unternehmen
 
 HIER = Path(__file__).resolve().parent
 
@@ -23,7 +24,12 @@ def main():
     # Börsendaten liegen getrennt (marktdaten.py, täglich); fehlen sie, zeigt das Terminal MKT leer
     markt_datei = HIER / "data/markt.json"
     markt = markt_datei.read_text() if markt_datei.exists() else "null"
-    seite = vorlage.replace("__DATEN__", roh.replace("</", "<\\/")).replace("__MARKT__", markt.replace("</", "<\\/"))
+    # Unternehmen anderer Branchen: generisch aus den Branchen-Tabellen im Repo (sonst Beispieldaten)
+    firmen = json.dumps(unternehmen.lade(), ensure_ascii=False, separators=(",", ":"))
+    (HIER / "data/unternehmen.json").write_text(firmen)
+    js = (HIER / "src/unternehmen.js").read_text()
+    seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
+             .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")))
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (HIER / "dist/bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

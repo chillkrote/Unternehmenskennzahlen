@@ -43,6 +43,9 @@ jobs:
           retention-days: 30
       - name: Release anlegen
         if: startsWith(github.ref, 'refs/tags/desktop-v')
-        run: gh release create "$GITHUB_REF_NAME" desktop/dist/*.dmg desktop/dist/*.zip --title "Terminal $GITHUB_REF_NAME" --notes "macOS-App (unsigniert). Anleitung: desktop/README.md"
+        run: |
+          gh release create "$GITHUB_REF_NAME" desktop/dist/*.dmg desktop/dist/*.zip \
+            --title "Kennzahlen-Terminal $GITHUB_REF_NAME" \
+            --notes "macOS-App (unsigniert), Anleitung in desktop/README.md"
         env:
           GH_TOKEN: ${{ github.token }}

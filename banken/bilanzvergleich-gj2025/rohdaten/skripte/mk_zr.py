@@ -20,6 +20,8 @@ ZR_MANUAL = {
  "Volksbank BRAWO eG": {"ju": {"2025": 0.187, "2024": 26.531, "2023": 25.925, "2022": 31.683, "2021": 26.631},
      "note": "Fünfjahresübersicht im Lagebericht; 2025 Fonds-Auflösung 136 Mio."},
  "Volkswagen Bank GmbH": {"fonds": {"2021": 25.565, "2022": 25.565, "2023": 25.565}, "note": "Jahresüberschuss 0: Gewinnabführung"},
+ "Münchener Hypothekenbank eG (MünchenerHyp)": {"ju": {"2025": 106.075, "2024": 105.557},
+     "note": "Jahresüberschuss 2025/2024 aus Geschäftsbericht 2025 (bisheriger Wert 57,7 stammte aus dem Halbjahresbericht)"},
  "Hamburger Sparkasse AG (Haspa)": {"note": "Jahresüberschuss 0: Gewinnabführung"},
 }
 SKIP_JU = {"Baader Bank AG"}

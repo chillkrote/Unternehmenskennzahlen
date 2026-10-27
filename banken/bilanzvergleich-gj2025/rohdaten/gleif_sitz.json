@@ -1,0 +1,716 @@
+{
+ "quelle": "GLEIF LEI-Datenbank, https://api.gleif.org/api/v1/lei-records/<LEI>, Abruf 27.10.2026",
+ "items": {
+  "529900DSIVJWCUQUMP41": {
+   "name": "AKA Ausfuhrkredit-Gesellschaft mbH",
+   "legal_name": "AKA Ausfuhrkredit-Gesellschaft mit beschränkter Haftung",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 7955"
+  },
+  "529900EM0ZU25V87GD50": {
+   "name": "ALTE LEIPZIGER Bauspar AG",
+   "legal_name": "ALTE LEIPZIGER Bauspar AG",
+   "sitz": "Oberursel (Taunus)",
+   "hq": "Oberursel (Taunus)",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 1663"
+  },
+  "5299000R7WZOVIFHLN21": {
+   "name": "BFS SozialFinanz AG (SozialBank)",
+   "legal_name": "BFS SozialFinanz AG",
+   "sitz": "Köln",
+   "hq": "Köln",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 29259"
+  },
+  "7D9EHZL14BBPJWTN6S08": {
+   "name": "BHW Bausparkasse AG",
+   "legal_name": "BHW Bausparkasse Aktiengesellschaft",
+   "sitz": "Hameln",
+   "hq": "Hameln",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 100345"
+  },
+  "529900JZXXU699FCKK89": {
+   "name": "Bausparkasse Schwäbisch Hall AG",
+   "legal_name": "Bausparkasse Schwäbisch Hall Aktiengesellschaft - Bausparkasse der Volksbanken und Raiffeisenbanken -",
+   "sitz": "Schwäbisch Hall",
+   "hq": "Schwäbisch Hall",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 570105"
+  },
+  "6TJCK1B7E7UTXP528Y04": {
+   "name": "Citigroup Global Markets Europe AG",
+   "legal_name": "Citigroup Global Markets Europe AG",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 88301"
+  },
+  "529900FMPYJ0QVTBSD95": {
+   "name": "Debeka Bausparkasse AG",
+   "legal_name": "Debeka Bausparkasse Aktiengesellschaft Sitz Koblenz am Rhein",
+   "sitz": "Koblenz",
+   "hq": "Koblenz",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 1114"
+  },
+  "39120001JPAYYPDRNN92": {
+   "name": "Deutsche Bausparkasse Badenia AG",
+   "legal_name": "Deutsche Bausparkasse Badenia Aktiengesellschaft",
+   "sitz": "Karlsruhe",
+   "hq": "Karlsruhe",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 103751"
+  },
+  "391200EEGLNXBBCVKC73": {
+   "name": "Erwerbsgesellschaft der S-Finanzgruppe mbH & Co. KG (Holding der DekaBank)",
+   "legal_name": "Erwerbsgesellschaft der S-Finanzgruppe mbH & Co. KG",
+   "sitz": "Neuhardenberg",
+   "hq": "Neuhardenberg",
+   "rechtsform_id": "8Z6G",
+   "status": "ACTIVE",
+   "register": "HRA 2542"
+  },
+  "529900LXGM7KMLJE5H80": {
+   "name": "Erzgebirgssparkasse",
+   "legal_name": "Erzgebirgssparkasse",
+   "sitz": "Annaberg-Buchholz",
+   "hq": "Annaberg-Buchholz",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 3997"
+  },
+  "549300ISU0OO19LLYT70": {
+   "name": "FIL Holdings (Germany) GmbH (Fidelity)",
+   "legal_name": "FIL Holdings (Germany) GmbH",
+   "sitz": "Kronberg Im Taunus",
+   "hq": "Kronberg Im Taunus",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 6399"
+  },
+  "549300BZZFFS0SOWR325": {
+   "name": "Ford Bank GmbH",
+   "legal_name": "FORD BANK GMBH",
+   "sitz": "COLOGNE",
+   "hq": "COLOGNE",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 91249"
+  },
+  "8IBZUGJ7JPLH368JE346": {
+   "name": "Goldman Sachs Bank Europe SE",
+   "legal_name": "Goldman Sachs Bank Europe SE",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "SGST",
+   "status": "ACTIVE",
+   "register": "HRB 114190"
+  },
+  "549300ZK53CNGEEI6A29": {
+   "name": "J.P. Morgan SE",
+   "legal_name": "J.P. Morgan SE",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "SGST",
+   "status": "ACTIVE",
+   "register": "HRB 126056"
+  },
+  "5299006OWDQGU3FEDK86": {
+   "name": "Kasseler Sparkasse",
+   "legal_name": "Kasseler Sparkasse",
+   "sitz": "Kassel",
+   "hq": "Kassel",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 9925"
+  },
+  "5299002GPCR602QYJC04": {
+   "name": "KfW Beteiligungsholding GmbH",
+   "legal_name": "KfW Beteiligungsholding GmbH",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 130708"
+  },
+  "529900Q1M1F4M8KMTM64": {
+   "name": "KfW IPEX-Bank GmbH",
+   "legal_name": "KfW IPEX-Bank GmbH",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 79744"
+  },
+  "529900FPOU897IEWGV26": {
+   "name": "Kreissparkasse Biberach",
+   "legal_name": "Kreissparkasse Biberach",
+   "sitz": "Biberach an der Riß",
+   "hq": "Biberach an der Riß",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 640983"
+  },
+  "529900CDFH7GJ76LXH43": {
+   "name": "Kreissparkasse Halle-Wiedenbrück",
+   "legal_name": "Kreissparkasse Halle-Wiedenbrück",
+   "sitz": "Rheda-Wiedenbrück",
+   "hq": "Rheda-Wiedenbrück",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4769"
+  },
+  "52990008SP9ETV9I7047": {
+   "name": "Kreissparkasse Ostalb",
+   "legal_name": "Kreissparkasse Ostalb",
+   "sitz": "Aalen",
+   "hq": "Aalen",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 500980"
+  },
+  "5299002GZMVW234JRW43": {
+   "name": "Kreissparkasse Ravensburg",
+   "legal_name": "Kreissparkasse Ravensburg",
+   "sitz": "Ravensburg",
+   "hq": "Ravensburg",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 551336"
+  },
+  "529900WZ5UJMQE5EXE26": {
+   "name": "Kreissparkasse Reutlingen",
+   "legal_name": "Kreissparkasse Reutlingen",
+   "sitz": "Reutlingen",
+   "hq": "Reutlingen",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 352182"
+  },
+  "5299001SSGO8MMQN8E03": {
+   "name": "Kreissparkasse Steinfurt",
+   "legal_name": "Kreissparkasse Steinfurt",
+   "sitz": "Ibbenbüren",
+   "hq": "Ibbenbüren",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4197"
+  },
+  "529900VZSHKAB0ZU6Z09": {
+   "name": "Kreissparkasse Tübingen",
+   "legal_name": "Kreissparkasse Tübingen",
+   "sitz": "Tübingen",
+   "hq": "Tübingen",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 381312"
+  },
+  "5299004SI3IL8FGDV034": {
+   "name": "LBS Landesbausparkasse NordOst AG",
+   "legal_name": "LBS Landesbausparkasse NordOst AG",
+   "sitz": "Potsdam",
+   "hq": "Potsdam",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 3064 P"
+  },
+  "529900HC4LDSGK0NCJ85": {
+   "name": "LBS Landesbausparkasse NordWest",
+   "legal_name": "LBS Landesbausparkasse NordWest",
+   "sitz": "Münster",
+   "hq": "Münster",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 5303"
+  },
+  "529900FU4WJ2XT7BVE31": {
+   "name": "LBS Landesbausparkasse Süd",
+   "legal_name": "LBS Landesbausparkasse Süd",
+   "sitz": "Stuttgart",
+   "hq": "Stuttgart",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 12924"
+  },
+  "54930056FHWP7GIWYY08": {
+   "name": "Morgan Stanley Europe SE",
+   "legal_name": "Morgan Stanley Europe SE",
+   "sitz": "FRANKFURT AM MAIN",
+   "hq": "FRANKFURT AM MAIN",
+   "rechtsform_id": "SGST",
+   "status": "ACTIVE",
+   "register": "HRB 109880"
+  },
+  "529900AT73S3UKIMP047": {
+   "name": "OstseeSparkasse Rostock",
+   "legal_name": "OstseeSparkasse Rostock",
+   "sitz": "Rostock",
+   "hq": "Rostock",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 1770"
+  },
+  "529900KNPI1D0Y1DGK92": {
+   "name": "PSD Bank München eG",
+   "legal_name": "PSD Bank München eG",
+   "sitz": "Augsburg",
+   "hq": "Augsburg",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 1633"
+  },
+  "529900LIN8L1K9MLTR09": {
+   "name": "ProCredit Holding AG",
+   "legal_name": "ProCredit Holding AG",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 132455"
+  },
+  "5299007CKOPKK8KX5129": {
+   "name": "Rheinhessen Sparkasse",
+   "legal_name": "Rheinhessen Sparkasse",
+   "sitz": "Worms",
+   "hq": "Mainz",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 11366"
+  },
+  "529900YI7GR9R4L1UI63": {
+   "name": "SECB Swiss Euro Clearing Bank GmbH",
+   "legal_name": "SECB Swiss Euro Clearing Bank GmbH",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 46118"
+  },
+  "5299008I9KIOJRP9OZ42": {
+   "name": "Sparda-Bank Nürnberg eG",
+   "legal_name": "SPARDA-BANK NÜRNBERG eG",
+   "sitz": "Nürnberg",
+   "hq": "Nürnberg",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 50"
+  },
+  "529900R5ERJA9VIZHJ29": {
+   "name": "Sparkasse Hanau",
+   "legal_name": "SPARKASSE HANAU",
+   "sitz": "Hanau",
+   "hq": "Hanau",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 5420"
+  },
+  "5299008PIM61AXE4C673": {
+   "name": "Sparkasse Allgäu",
+   "legal_name": "Sparkasse Allgäu",
+   "sitz": "Kempten (Allgäu)",
+   "hq": "Kempten (Allgäu)",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4269"
+  },
+  "529900LUBMIN39VO2E71": {
+   "name": "Sparkasse Ansbach",
+   "legal_name": "Sparkasse Ansbach",
+   "sitz": "Ansbach",
+   "hq": "Ansbach",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 2637"
+  },
+  "529900BR2N56KWNZOM37": {
+   "name": "Sparkasse Aschaffenburg Miltenberg",
+   "legal_name": "Sparkasse Aschaffenburg Miltenberg",
+   "sitz": "Aschaffenburg",
+   "hq": "Aschaffenburg",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 3541"
+  },
+  "529900D0GBT27T9NB551": {
+   "name": "Sparkasse Bielefeld",
+   "legal_name": "Sparkasse Bielefeld",
+   "sitz": "Bielefeld",
+   "hq": "Bielefeld",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 13976"
+  },
+  "5299002GDXM6JRUY4311": {
+   "name": "Sparkasse Celle-Gifhorn-Wolfsburg",
+   "legal_name": "Sparkasse Celle-Gifhorn-Wolfsburg",
+   "sitz": "Gifhorn",
+   "hq": "Gifhorn",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 100285"
+  },
+  "529900X1RCYC7HPDGT34": {
+   "name": "Sparkasse Chemnitz",
+   "legal_name": "Sparkasse Chemnitz",
+   "sitz": "Chemnitz",
+   "hq": "Chemnitz",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 3982"
+  },
+  "529900C2A9G3SP7VPK94": {
+   "name": "Sparkasse Duisburg",
+   "legal_name": "Sparkasse Duisburg",
+   "sitz": "Duisburg",
+   "hq": "Duisburg",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 6587"
+  },
+  "529900BXR8FHQ0546E89": {
+   "name": "Sparkasse Düren",
+   "legal_name": "Sparkasse Düren",
+   "sitz": "Düren",
+   "hq": "Düren",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 1771"
+  },
+  "529900XQUKY370MSCE53": {
+   "name": "Sparkasse Hellweg-Lippe",
+   "legal_name": "Sparkasse Hellweg-Lippe",
+   "sitz": "Lippstadt",
+   "hq": "Lippstadt",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 8408"
+  },
+  "5299005GLFOIV7898E14": {
+   "name": "Sparkasse Ingolstadt Eichstätt",
+   "legal_name": "Sparkasse Ingolstadt Eichstätt",
+   "sitz": "Ingolstadt",
+   "hq": "Ingolstadt",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 1273"
+  },
+  "529900YHNJHJ6HCOV883": {
+   "name": "Sparkasse Koblenz",
+   "legal_name": "Sparkasse Koblenz",
+   "sitz": "Koblenz",
+   "hq": "Koblenz",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4333"
+  },
+  "529900GS01MWP4QSH807": {
+   "name": "Sparkasse Landshut",
+   "legal_name": "Sparkasse Landshut",
+   "sitz": "Landshut",
+   "hq": "Landshut",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 8308"
+  },
+  "529900VJ7CMGXPGH3278": {
+   "name": "Sparkasse Mittelfranken-Süd",
+   "legal_name": "Sparkasse Mittelfranken-Süd",
+   "sitz": "Roth",
+   "hq": "Roth",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 11982"
+  },
+  "529900M7DRA4N1J81L72": {
+   "name": "Sparkasse Mittelthüringen",
+   "legal_name": "Sparkasse Mittelthüringen",
+   "sitz": "Erfurt",
+   "hq": "Erfurt",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 102182"
+  },
+  "529900OC0J2AGDDP1J56": {
+   "name": "Sparkasse Niederbayern-Mitte",
+   "legal_name": "Sparkasse Niederbayern-Mitte",
+   "sitz": "Straubing",
+   "hq": "Straubing",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 2222"
+  },
+  "529900JFTHKPTK4YNL22": {
+   "name": "Sparkasse Offenburg/Ortenau",
+   "legal_name": "Sparkasse Offenburg/Ortenau",
+   "sitz": "Offenburg",
+   "hq": "Offenburg",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 471663"
+  },
+  "5299007M83GBOCBBUP36": {
+   "name": "Sparkasse Regensburg",
+   "legal_name": "Sparkasse Regensburg",
+   "sitz": "Regensburg",
+   "hq": "Regensburg",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 6259"
+  },
+  "5299003MY56ID5EB4A55": {
+   "name": "Sparkasse Rhein Neckar Nord",
+   "legal_name": "Sparkasse Rhein Neckar Nord",
+   "sitz": "Mannheim",
+   "hq": "Mannheim",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4575"
+  },
+  "529900UZ4WGK38RQ1M84": {
+   "name": "Sparkasse Rhein-Nahe",
+   "legal_name": "Sparkasse Rhein-Nahe",
+   "sitz": "Bad Kreuznach",
+   "hq": "Bad Kreuznach",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 3085"
+  },
+  "529900Q34WY4SPLWUU02": {
+   "name": "Sparkasse Rosenheim-Bad Aibling",
+   "legal_name": "Sparkasse Rosenheim-Bad Aibling",
+   "sitz": "Rosenheim",
+   "hq": "Rosenheim",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 7081"
+  },
+  "5299002GPM9IXQLHUC77": {
+   "name": "Sparkasse Saarbrücken",
+   "legal_name": "Sparkasse Saarbrücken",
+   "sitz": "Saarbrücken",
+   "hq": "Saarbrücken",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 8590"
+  },
+  "52990078RM4B6ZUC6648": {
+   "name": "Sparkasse Südholstein",
+   "legal_name": "Sparkasse Südholstein",
+   "sitz": "Neumünster",
+   "hq": "Neumünster",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4911 KI"
+  },
+  "529900U59PV6VXIQ9K43": {
+   "name": "Sparkasse Südpfalz",
+   "legal_name": "Sparkasse Südpfalz",
+   "sitz": "Landau in der Pfalz",
+   "hq": "Landau in der Pfalz",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 2321"
+  },
+  "5299002ER8OE93VD2R07": {
+   "name": "Sparkasse Trier",
+   "legal_name": "Sparkasse Trier",
+   "sitz": "Trier",
+   "hq": "Trier",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4475"
+  },
+  "52990086IBNN51AGC442": {
+   "name": "Sparkasse Ulm",
+   "legal_name": "Sparkasse Ulm",
+   "sitz": "Ulm",
+   "hq": "Ulm",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 2868"
+  },
+  "529900FR6NK5ZQR5EP29": {
+   "name": "Sparkasse Vest Recklinghausen",
+   "legal_name": "Sparkasse Vest Recklinghausen",
+   "sitz": "Recklinghausen",
+   "hq": "Recklinghausen",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 3116"
+  },
+  "529900B6FH6DMERJCI37": {
+   "name": "Sparkasse Vorpommern",
+   "legal_name": "Sparkasse Vorpommern",
+   "sitz": "Greifswald",
+   "hq": "Greifswald",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 1291"
+  },
+  "529900D06C9IHN6BR131": {
+   "name": "Sparkasse im Kreis Herford",
+   "legal_name": "Sparkasse im Kreis Herford -Zweckverbandssparkasse des Kreises Herford und der Städte Bünde, Herford, Löhne und Vlotho-",
+   "sitz": "Herford",
+   "hq": "Herford",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 4596"
+  },
+  "529900UELOQV2KQ0VP31": {
+   "name": "Stadt- und Kreis-Sparkasse Darmstadt",
+   "legal_name": "Sparkasse Darmstadt und Dieburg",
+   "sitz": "Darmstadt",
+   "hq": "Darmstadt",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 6607"
+  },
+  "529900YFF1OOLDFE8X31": {
+   "name": "Stadt- und Kreissparkasse Erlangen Höchstadt Herzogenaurach",
+   "legal_name": "Stadt- und Kreissparkasse Erlangen Höchstadt Herzogenaurach",
+   "sitz": "Erlangen",
+   "hq": "Erlangen",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 7079"
+  },
+  "549300WDT1HWUMTUW770": {
+   "name": "Standard Chartered Bank AG",
+   "legal_name": "STANDARD CHARTERED BANK AG",
+   "sitz": "FRANKFURT AM MAIN",
+   "hq": "FRANKFURT AM MAIN",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 108109"
+  },
+  "529900CLVK38HUKPKF71": {
+   "name": "Süd-West-Kreditbank Finanzierung GmbH (SWK Bank)",
+   "legal_name": "Süd-West-Kreditbank Finanzierung GmbH",
+   "sitz": "Mainz",
+   "hq": "Bingen am Rhein",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 21815"
+  },
+  "52990055VN3I202R2809": {
+   "name": "Taunus-Sparkasse",
+   "legal_name": "Taunus-Sparkasse",
+   "sitz": "Bad Homburg vor der Höhe",
+   "hq": "Bad Homburg vor der Höhe",
+   "rechtsform_id": "XLWA",
+   "status": "ACTIVE",
+   "register": "HRA 3400"
+  },
+  "5299009IFX1XTKDY4568": {
+   "name": "Trade Republic Bank GmbH",
+   "legal_name": "Trade Republic Bank GmbH",
+   "sitz": "Berlin",
+   "hq": "Berlin",
+   "rechtsform_id": "2HBR",
+   "status": "ACTIVE",
+   "register": "HRB 244347B"
+  },
+  "5299007QVIQ7IO64NX37": {
+   "name": "UBS Europe SE",
+   "legal_name": "UBS Europe SE",
+   "sitz": "Frankfurt am Main",
+   "hq": "Frankfurt am Main",
+   "rechtsform_id": "SGST",
+   "status": "ACTIVE",
+   "register": "HRB 107046"
+  },
+  "529900JRKG8AEYL65326": {
+   "name": "VR Bank Heilbronn Schwäbisch Hall eG",
+   "legal_name": "VR Bank Heilbronn Schwäbisch Hall eG",
+   "sitz": "Schwäbisch Hall",
+   "hq": "Schwäbisch Hall",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 570001"
+  },
+  "52990089LBIKLBM8YB23": {
+   "name": "VR Bank Nord eG",
+   "legal_name": "VR Bank Nord eG",
+   "sitz": "Flensburg",
+   "hq": "Flensburg",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 384"
+  },
+  "529900E0WY09Z3H21393": {
+   "name": "VR Bank Rhein-Neckar eG",
+   "legal_name": "VR Bank Rhein-Neckar eG",
+   "sitz": "Mannheim",
+   "hq": "Mannheim",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 3"
+  },
+  "529900JXM2IQSPJHMK02": {
+   "name": "VR Bank Starnberg-Zugspitze eG",
+   "legal_name": "VR Bank Starnberg-Zugspitze eG",
+   "sitz": "Starnberg",
+   "hq": "Starnberg",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 1013"
+  },
+  "529900ZMDTSQYEYCKL45": {
+   "name": "VR TeilhaberBank Metropolregion Nürnberg eG",
+   "legal_name": "VR TeilhaberBank Metropolregion Nürnberg eG",
+   "sitz": "Neustadt an der Aisch",
+   "hq": "Neustadt an der Aisch",
+   "rechtsform_id": "AZFE",
+   "status": "ACTIVE",
+   "register": "GnR 159"
+  },
+  "529900BIK4WRWS06MR52": {
+   "name": "Varengold Bank AG",
+   "legal_name": "Ascory Bank AG",
+   "sitz": "Hamburg",
+   "hq": "Hamburg",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 73684"
+  },
+  "5299008F7LLV7TEYIT04": {
+   "name": "Volksbank Düsseldorf Neuss eG",
+   "legal_name": "Volksbank Düsseldorf Neuss eG",
+   "sitz": "Düsseldorf",
+   "hq": "Neuss",
+   "rechtsform_id": "AZFE",
+   "status": "INACTIVE",
+   "register": "GnR 446"
+  },
+  "529900SSGT49ZZSWYE62": {
+   "name": "Volkswagen Financial Services AG",
+   "legal_name": "Volkswagen Financial Services AG",
+   "sitz": "Braunschweig",
+   "hq": "Braunschweig",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 210842"
+  },
+  "529900S1KHKOEQL5CK20": {
+   "name": "Wüstenrot Bausparkasse AG",
+   "legal_name": "Wüstenrot Bausparkasse Aktiengesellschaft",
+   "sitz": "Kornwestheim",
+   "hq": "Kornwestheim",
+   "rechtsform_id": "6QQB",
+   "status": "ACTIVE",
+   "register": "HRB 205323"
+  }
+ }
+}

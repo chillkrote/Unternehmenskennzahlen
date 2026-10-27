@@ -195,10 +195,11 @@
    "name": "Münchener Hypothekenbank eG (MünchenerHyp)",
    "cal": {
     "ju": {
-     "2025": 57.734,
-     "2024": 56.563
+     "2025": 106.075,
+     "2024": 105.557
     }
    },
+   "note": "Jahresüberschuss 2025/2024 aus Geschäftsbericht 2025 (bisheriger Wert 57,7 stammte aus dem Halbjahresbericht)",
    "src": "Jahresüberschuss 2025/2024: GuV der GJ2025-Berichte."
   },
   {

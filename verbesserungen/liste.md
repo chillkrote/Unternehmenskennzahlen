@@ -10,7 +10,7 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | A1 | Links nur `http(s):` zulassen (N11) | 2/1 | ☑ PR #35 |
 | A2 | Fünfte Bankengruppe „Förder- und Sonderinstitute“ mit Farbe (N9) | 2/1 | ☑ PR #35 |
 | A3 | Abhängigkeiten pinnen `==` (N8) | 2/1 | ☑ PR #35 (Obergrenzen statt Festpinnen, Version in Actions nicht prüfbar) |
-| A4 | Ehrlicher User-Agent + robots.txt-Prüfung in Crawlern (N6) | 2/2 | ✋ Rückfrage: ehrlicher UA kann Abrufe von Seiten verringern, die Browser-Kennungen verlangen |
+| A4 | Ehrlicher User-Agent + robots.txt-Prüfung in Crawlern (N6) | 2/2 | ☑ `lib/hoeflich.py`: ehrliche Kennung und robots.txt in den täglichen Crawlern (Suche, Finanzkalender, Berichtsabruf); Einmal-Skripte unverändert |
 | A5 | `berichte_abrufen.py` streamt Downloads (N7) | 1/1 | ☑ |
 | A6 | Plausibilitätsgrenzen für Yahoo-Quoten in `build.py` (M7) | 3/1 | ☑ PR #35 (Quote/Multiple außerhalb Grenzen = leer) |
 | A7 | Yahoo-Abgleich: „bestätigt“ nur für das letzte GJ (M6) | 2/2 | ☑ nur das neueste Yahoo-Jahr zählt als bestätigt, ältere Treffer als „nur älteres Jahr“ |
@@ -31,9 +31,9 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 ## C. Fehlende Daten, die ich selbst im Netz suchen kann
 | # | Punkt | W/A | Status |
 |---|---|---|---|
-| C1 | Fehlende Kurse der 41 Ticker (Alternativ-Ticker/Suffix prüfen) | 3/2 | ✋ Yahoo antwortet aus der Cloud mit 429; die 40 betroffenen Ticker meist neue ISIN/Neunotierung, im nächsten Actions-Lauf prüfen |
+| C1 | Fehlende Kurse der 41 Ticker (Alternativ-Ticker/Suffix prüfen) | 3/2 | ◐ Ursache: 34 Ticker haben ein anderes Yahoo-Symbol als das Börsenkürzel (z. B. SHA → SHA0.F), 5 sind US-Mütter; `kurse_historie.py` nimmt jetzt zuerst die bekannten Symbole. Ergebnis erst im nächsten Lauf sichtbar; TKCC und CSQ haben kein Symbol |
 | C2 | Dividenden und Aktiensplits (Historie, Yahoo-Chart-API) | 3/2 | ✋ Yahoo aus der Cloud gesperrt (429); Abruf im Actions-Lauf einbauen, ohne Test hier nicht sinnvoll |
-| C3 | Indexzugehörigkeit (DAX, MDAX, SDAX, TecDAX) aus Indexlisten | 3/1 | ☑ `universum/indexzugehoerigkeit.csv` + Abweichungsbericht |
+| C3 | Indexzugehörigkeit (DAX, MDAX, SDAX, TecDAX) aus Indexlisten | 3/1 | ☑ `universum/indexzugehoerigkeit.csv`; Spalte `index` in `universum.csv` für 8 Unternehmen übernommen (`indizes_abgleich.py --anwenden`) |
 | C4 | Stimmrechtsmitteilungen / Directors' Dealings (BaFin-Datenbanken, frei) | 2/3 | ☐ |
 | C5 | Governance für restliche DAX/MDAX | 3/3 | ◐ eigener Thread |
 | C6 | Ludwigsburg Vorjahres-Bilanzsumme (statt Zeitungswert) | 1/1 | ✋ ungeklärt: Zeitung 12,8–12,9 Mrd. vs. DSGV-Rangliste 2024 13,3 Mrd.; braucht den Jahresabschluss 2024 (Bundesanzeiger, Captcha) |

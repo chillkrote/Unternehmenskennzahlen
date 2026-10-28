@@ -6,6 +6,7 @@ Eigene Datei statt markt.json, damit das Terminal klein bleibt: 535 Ticker x 520
 Tägliche Kurse gibt es weiter für die Banken in markt.json (kurse_hist).
 Aufruf: python3 app/kurse_historie.py [--jahre 10]"""
 import argparse
+import csv
 import json
 import math
 import time
@@ -26,6 +27,23 @@ def tickerliste():
     if m.exists():
         t |= {w["ticker"] for w in json.loads(m.read_text())["werte"]}
     return sorted(t)
+
+
+def explizite_symbole():
+    """Ticker -> Yahoo-Symbol, wo das Symbol bekannt ist: 1) Spalte yahoo im Universum der Börsenunternehmen (Symbol wich vom
+    Börsenkürzel ab, z. B. SHA -> SHA0.F), 2) Tickers aus markt.json, die an Yahoo ohne Endung gehandelt werden (US-Mütter wie JPM, GS)."""
+    erg = {}
+    uni = HIER.parent / "boersennotierte-unternehmen/universum/universum.csv"
+    if uni.exists():
+        with open(uni, encoding="utf-8-sig") as f:
+            for r in csv.DictReader(f, delimiter=";"):
+                if r.get("kuerzel") and r.get("yahoo"):
+                    erg[r["kuerzel"]] = r["yahoo"]
+    m = HIER / "data/markt.json"
+    if m.exists():
+        for w in json.loads(m.read_text())["werte"]:
+            erg.setdefault(w["ticker"], w["ticker"])
+    return erg
 
 
 def runden(x):
@@ -70,6 +88,14 @@ def main():
     tick = tickerliste()
     # Ticker ohne Börsenendung (Kürzel der Deutschen Börse) werden nacheinander an den deutschen Handelsplätzen gesucht, nie ohne Endung (Verwechslung mit US-Tickern)
     offen, reihen, symbol = list(tick), {}, {}
+    expl = explizite_symbole()
+    kand = {t: expl[t] for t in offen if t in expl}
+    if kand:
+        print(f"Runde bekannte Yahoo-Symbole: {len(kand)} Ticker", flush=True)
+        erg = laden(sorted(set(kand.values())), a.jahre, a.block)
+        for t, sym in kand.items():
+            if sym in erg:
+                reihen[t] = erg[sym]; symbol[t] = sym; offen.remove(t)
     for suf in [None] + SUFFIXE:
         if not offen:
             break

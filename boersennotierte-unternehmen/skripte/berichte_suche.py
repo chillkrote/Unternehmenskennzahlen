@@ -13,11 +13,15 @@ import json
 import re
 import sys
 import time
+from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
 import requests
 
-UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "lib"))
+import hoeflich  # noqa: E402
+
+UA = hoeflich.UA
 MAX_SEITEN = int(__import__("os").environ.get("MAX_SEITEN", 30))
 MAX_TIEFE = int(__import__("os").environ.get("MAX_TIEFE", 2))
 SONDERPFADE = ["/investor-relations", "/ir", "/de/investor-relations", "/investoren", "/en/investor-relations", "/finanzberichte", "/investor-relations/finanzberichte", "/investor-relations/berichte", "/de/investor-relations/finanzberichte-und-praesentationen", "/de/ir", "/aktie", "/investor", "/unternehmen/investor-relations", "/downloads", "/publikationen"]
@@ -37,6 +41,8 @@ PDF_SCHLECHT = re.compile(r"halbjahr|half[-_ ]?year|quartal|quarter|\bq[1-3]\b|h
 
 
 def holen(session, url, timeout=15):
+    if not hoeflich.erlaubt(url):
+        return None, "robots.txt"
     try:
         r = session.get(url, timeout=timeout, allow_redirects=True, stream=True)
         if "pdf" in r.headers.get("content-type", "") or int(r.headers.get("content-length") or 0) > 5_000_000:

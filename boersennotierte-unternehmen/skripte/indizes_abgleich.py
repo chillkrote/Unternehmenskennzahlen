@@ -1,10 +1,11 @@
 """Indexzugehörigkeit (DAX, MDAX, SDAX, TecDAX) aus den Zusammensetzungs-Tabellen der deutschen Wikipedia
 -> universum/indexzugehoerigkeit.csv (je Unternehmen und Index eine Zeile) und Abweichungsbericht gegen universum.csv.
 Wikipedia ist frei zugänglich; die Tabellen werden von der Redaktion nach der Deutschen Börse gepflegt, Stand steht im Seitentext.
-Aufruf: python3 boersennotierte-unternehmen/skripte/indizes_abgleich.py"""
+Aufruf: python3 boersennotierte-unternehmen/skripte/indizes_abgleich.py [--anwenden]   (--anwenden schreibt die Spalte index in universum.csv um)"""
 import csv
 import html
 import re
+import sys
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -65,6 +66,15 @@ def main():
     for u in uni:
         if soll.get(u["unternehmen_id"], "") != u["index"]:
             print(f"Abweichung {u['unternehmen_id']} {u['name']}: universum={u['index'] or '-'} Wikipedia={soll.get(u['unternehmen_id'], '-')}")
+            if "--anwenden" in sys.argv:
+                u["index"] = soll.get(u["unternehmen_id"], "")
+    if "--anwenden" in sys.argv:
+        with open(UNI, newline="", encoding="utf-8-sig") as f:
+            kopf = next(csv.reader(f, delimiter=";"))
+        with open(UNI, "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.DictWriter(f, kopf, delimiter=";", lineterminator="\r\n")
+            w.writeheader(); w.writerows(uni)
+        print("universum.csv: Spalte index übernommen")
 
 
 if __name__ == "__main__":

@@ -26,7 +26,7 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | B2 | Bilanzen die nicht aufgehen (LBS NordWest/NordOst, VB Stuttgart): Bilanzgewinn als Posten (M4) | 2/1 | ☑ LBS NordWest (19,0) und NordOst (5,0): Bilanzgewinn aus Geschäftsbericht, Bilanzen gehen auf; VB Stuttgart (0,5) bleibt Rundung |
 | B3 | Governance-Querverweise/`person_id` (M9) | 2/2 | ☑ `slug()` setzt ø,ß,æ,ł um (drei Personen: bjorn-gulden, kevin-voss, ursula-biernert-kloss); Firmen-IDs seit PR #31 zentral; Prüfung der person_id in `pruefe.py` |
 | B4 | `zeitreihen/README.md`: Status „verankert“ dokumentieren (N3) | 1/1 | ☑ |
-| B5 | Doppelt abgelegte PDFs (N5) | 1/2 | ◐ `pruefung/dubletten_pdf.py` + `dubletten_pdf.csv`: 31 Gruppen, 155 MB; Löschen erst nach Umstellen der Verweise (index.csv, Governance-Quellen) |
+| B5 | Doppelt abgelegte PDFs (N5) | 2/2 | ✔ 28.10.: 15 Dubletten im selben Ordner gelöscht, Verweise umgestellt (`pruefung/dubletten_loeschen.py`); 17 Gruppen über verschiedene Ordner bleiben bewusst, damit jeder Unternehmensordner vollständig ist |
 
 ## C. Fehlende Daten, die ich selbst im Netz suchen kann
 | # | Punkt | W/A | Status |

@@ -5,7 +5,7 @@ const path = require('node:path');
   const browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1440,height:1000}});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('file://'+path.resolve(process.argv[2]||'app/dist/bankterminal.html'));
-  await page.waitForSelector('#global-land option[value="DE"]');
+  await page.waitForSelector('#global-land option[value="DE"]',{state:'attached'});
   const routes=['u-ueb','u-branche','u-vergleich','u-verzeichnis','u-termine','u-abschluesse','grp','quot','cmp','rank','mkt','ts','v-ueb','v-reihe','v-laender','v-quellen','v-prog','korr'];
   for(const country of ['DE','GB','CH','alle']){
     await page.selectOption('#global-land',country);

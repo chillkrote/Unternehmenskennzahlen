@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main, codex/europe600-abschluesse]
-    paths: ["app/src/**", "app/*.py", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml"]
+    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
   pull_request:
     paths: ["app/src/**", "app/*.py", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
 

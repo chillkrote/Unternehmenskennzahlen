@@ -51,7 +51,7 @@ SCHLECHT = re.compile(r"praesentation|präsentation|presentation|slides?|folien|
                       r"einladung|invitation|hauptversammlung|agm|nachhaltigkeit|sustainab|esg|verguetung|vergütung|remuneration|"
                       r"corporate[-_ ]governance|satzung|ad[-_ ]?hoc|pressemitteilung|press[-_ ]release|stimmrecht|voting|"
                       r"pillar|offenlegung|disclosure|tabellen|tables|xlsx|kennzahlen[-_ ]?uebersicht|datenblatt|databook|supplement|"
-                      r"erklärung|erklaerung|presse|news", re.I)
+                      r"erklärung|erklaerung|presse|news|media[-_ ]?release|research|studie|analyst|reporting[-_ ]?factsheet", re.I)
 
 
 def bewerten(url, label, art, ende):
@@ -62,7 +62,7 @@ def bewerten(url, label, art, ende):
     if re.search(muster, s):
         p += 10
     if SCHLECHT.search(s):
-        p -= 12
+        p -= 20   # mehr als Periode + Jahr + Monat (max. 20) zusammen bringen: Präsentation, Pressetext, Studie ist nie der Bericht
     if art != "Jahresbericht" and re.search(r"gesch(ä|ae)ftsbericht|annual[-_ ]report", datei) and not re.search(muster, datei):
         p -= 10
     jahre = {int(j) for j in re.findall(r"(?<!\d)(20[0-3]\d)(?!\d)", datei)} | {2000 + int(j) for j in re.findall(r"(?:q[1-4]|h[12]|9m|fy|gj|gb)[-_ ]?(\d\d)(?!\d)", datei)}

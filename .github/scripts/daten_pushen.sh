@@ -3,7 +3,8 @@
 # Aufruf: daten_pushen.sh "Commit-Text" pfad...   Ergebnis: geaendert=true|false in $GITHUB_OUTPUT
 set -euo pipefail
 msg="$1"; shift
-git add -- "$@"
+# --sparse: neue PDFs liegen außerhalb der Sparse-Checkout-Definition (PDFs sind ausgeschlossen), sonst verweigert git add sie
+git add --sparse -- "$@"
 if git diff --cached --quiet; then
   echo "Keine Änderungen."
   echo "geaendert=false" >> "${GITHUB_OUTPUT:-/dev/null}"

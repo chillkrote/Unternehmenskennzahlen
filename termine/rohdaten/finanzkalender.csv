@@ -1,16 +1,15 @@
 ﻿unternehmen_id;berichtsart;periode_ende;termin;status;quelle_url;hinweis
 U000009;Q3-Bericht;2026-09-30;2026-11-24;bestätigt;https://www.solarparken.com/finanzkalender.php;Finanzkalender: 24. November 2026 Q3-Zahlen 2026
 U000009;Jahresbericht;2026-12-31;2027-04-08;bestätigt;https://www.solarparken.com/finanzkalender.php;Finanzkalender: 8. April 2027 2026 Zahlen
-U000047;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.as-creation.com/unternehmen/investor-relations/events-und-termine;Finanzkalender: 05.11.2026 | Veröffentlichung Zwischenmitteilung zum 30.09.2026 | Zwischenmitteilung |
-U000047;Q3-Bericht;2026-09-30;2026-11-05;bestätigt;https://www.as-creation.com/unternehmen/investor-relations/events-und-termine;Finanzkalender: 05.11.2026 | Veröffentlichung Zwischenmitteilung zum 30.09.2026 | Zwischenmitteilung |
-U000017;Halbjahresbericht;2026-06-30;2026-10-01;bestätigt;https://www.adidas-group.com/de/investoren/finanzkalender;Finanzkalender: 1. Oktober 2026 â¢ Ergebnisse
-U000017;Q3-Bericht;2026-09-30;2026-10-29;bestätigt;https://www.adidas-group.com/de/investoren/finanzkalender;Finanzkalender: 29. Oktober 2026 â¢ Ergebnisse
 U000035;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://allgeier.com/de/investor-relations/finanzkalender/;Finanzkalender: 13. November 2026 | Veröffentlichung freiwillige Q3-Zwischeninformation zum 30. September 2026 |
 U000035;Q3-Bericht;2026-09-30;2026-11-13;bestätigt;https://allgeier.com/de/investor-relations/finanzkalender/;Finanzkalender: 13. November 2026 | Veröffentlichung freiwillige Q3-Zwischeninformation zum 30. September 2026 |
+U000047;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.as-creation.com/unternehmen/investor-relations/events-und-termine;Finanzkalender: 05.11.2026 | Veröffentlichung Zwischenmitteilung zum 30.09.2026 | Zwischenmitteilung |
+U000047;Q3-Bericht;2026-09-30;2026-11-05;bestätigt;https://www.as-creation.com/unternehmen/investor-relations/events-und-termine;Finanzkalender: 05.11.2026 | Veröffentlichung Zwischenmitteilung zum 30.09.2026 | Zwischenmitteilung |
 U000049;Q3-Bericht;2026-09-30;2026-10-23;bestätigt;https://www.atoss.com/de/unternehmen/investor-relations/finanzkalender-veranstaltungen;Finanzkalender: Quartalsmitteilung zum 9-Monatsabschluss | 23.10.2026 | Mehr | |
 U000049;Q3-Bericht;2026-09-30;2026-10-23;bestätigt;https://www.atoss.com/de/unternehmen/investor-relations/finanzkalender-veranstaltungen;Finanzkalender: Earnings Call Q3 2026 | 23.10.2026 | Aufzeichnung | | | PrÃ¤sentation | |
 U000051;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.aumann.com/investor-relations/finanzkalender;Finanzkalender: 12. November 2026 | Quartalsmitteilung zum 30. September 2026 | Anmeldung zum Earnings Call (14:00Uhr) | |
 U000051;Q3-Bericht;2026-09-30;2026-11-12;bestätigt;https://www.aumann.com/investor-relations/finanzkalender;Finanzkalender: 12. November 2026 | Quartalsmitteilung zum 30. September 2026 | Anmeldung zum Earnings Call (14:00Uhr) | |
+U000067;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.bmwgroup.com/de/investor-relations/corporate-events.html;Finanzkalender: Quartalsmitteilung zum 30. Sept. 2026
 U000075;Q3-Bericht;2026-09-30;2026-10-22;bestätigt;https://www.berentzen-gruppe.de/investoren/finanzkalender;Finanzkalender: 22. Oktober 2026 | Zwischenbericht 9M/2026 |
 U000078;Jahresbericht;2026-09-30;2026-12-17;bestätigt;https://www.bertrandt.com/unternehmen/investor-relations/finanzkalender;Finanzkalender: 17.12.2026 | | | Geschäftsbericht 2025/2026 |
 U000098;Halbjahresbericht;2026-06-30;2026-10-08;bestätigt;https://branicks.com/investor-relations/finanzkalender/;Finanzkalender: 08.10.2026 | Veröffentlichung Q1 2026 |
@@ -24,6 +23,11 @@ U000151;Q3-Bericht;2026-09-30;2026-10-20;bestätigt;https://deutsche-boerse.com/
 U000151;Q3-Bericht;2026-09-30;2026-10-20;bestätigt;https://deutsche-boerse.com/dbg-de/investor-relations/finanzkalender/analystenkonferenz-q3-2026-4706624;Finanzkalender: Quartalsmitteilung 3/2026 – Deutsche Börse Group (20.10.2026)
 U000158;Q3-Bericht;2026-09-30;2026-11-12;bestätigt;https://www.pfandbriefbank.com/investoren/finanzkalender/;Finanzkalender: 12. November 2026 | Ergebnisse Q3 2026 |
 U000161;Q3-Bericht;2026-09-30;2026-11-05;bestätigt;https://www.telekom.com/en/newsroom/latest-updates/media-calendar;Finanzkalender: On Thursday, November 5, 2026, Deutsche Telekom AG will publish its results for the third quarter of 2026.
+U000165;Q3-Bericht;2026-09-30;2026-11-05;bestätigt;https://group.dhl.com/en/media-relations/events.html;Finanzkalender: November 5, 2026 | Results of the first nine months of 2026 | save | |
+U000165;Jahresbericht;2026-12-31;2027-03-05;bestätigt;https://group.dhl.com/en/media-relations/events.html;Finanzkalender: March 5, 2027 | Results of the 2026 fiscal year | save | |
+U000165;Q1-Bericht;2027-03-31;2027-04-29;bestätigt;https://group.dhl.com/en/media-relations/events.html;Finanzkalender: April 29, 2027 | Results of the first quarter of 2027 | save | |
+U000165;Halbjahresbericht;2027-06-30;2027-08-04;bestätigt;https://group.dhl.com/en/media-relations/events.html;Finanzkalender: August 4, 2027 | Results of the first half of 2027 | save | |
+U000165;Q3-Bericht;2027-09-30;2027-10-28;bestätigt;https://group.dhl.com/en/media-relations/events.html;Finanzkalender: October 28, 2027 | Results of the first nine months of 2027 | save | |
 U000187;Q3-Bericht;2026-09-30;2026-11-10;bestätigt;https://www.elmos.com/ueber-elmos/investor/kalender.html;Finanzkalender: Quartalsergebnis Q3/2026 | | 10.11.2026 | |
 U000193;Q3-Bericht;2026-09-30;2026-11-12;bestätigt;https://www.energiekontor.de/investor-relations/finanzkalender.html;Finanzkalender: 12. November 2026 | Zwischenmitteilung zum dritten Quartal 2026 | Veröffentlichung |
 U000207;Q3-Bericht;2026-09-30;2026-11-03;bestätigt;https://www.evonik.com/en/investor-relations/events-calendar.html;Finanzkalender: 03.11.2026 | Reporting Q3 2026 | |
@@ -42,7 +46,7 @@ U000321;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.jungheinr
 U000321;Q3-Bericht;2026-09-30;2026-11-10;bestätigt;https://www.jungheinrich.com/investor-relations/finanzkalender-1372;Finanzkalender: 10.11.2026 | Quartalsmitteilung zum 30.09.2026 | |
 U000327;Jahresbericht;2026-12-31;2027-02-26;bestätigt;https://khdvv.de/finanzkalender/;Finanzkalender: Geschäftsbericht 2026 | 26. Februar 2027 |
 U000327;Halbjahresbericht;2027-06-30;2027-08-13;bestätigt;https://khdvv.de/finanzkalender/;Finanzkalender: Halbjahresbericht 2027 | 13. August 2027 |
-U000329;Q3-Bericht;2026-09-30;2026-10-31;bestätigt;https://www.klassikradio.de/investor-relations/finanzkalender/;Finanzkalender: 31.10.2026 Bericht zum I. Halbjahr 2026 Klassik Radio AG, Augsburg
+U000329;Q3-Bericht;2026-09-30;2026-11-15;bestätigt;https://www.klassikradio.de/investor-relations/finanzkalender/;Finanzkalender: 15.11.2026 Bericht zum I. Halbjahr 2026 Klassik Radio AG, Augsburg
 U000362;Q3-Bericht;2026-09-30;2026-11-13;bestätigt;https://www.ls-d.de/investor-relations/finanzkalender;Finanzkalender: 13.11.2026 | Neunmonatsergebnisse 2026 |
 U000362;Jahresbericht;2026-12-31;2027-02-19;bestätigt;https://www.ls-d.de/investor-relations/finanzkalender;Finanzkalender: 19.02.2027 | vorläufige Zahlen zum Geschäftsjahr 2026 |
 U000362;Q1-Bericht;2027-03-31;2027-05-19;bestätigt;https://www.ls-d.de/investor-relations/finanzkalender;Finanzkalender: 19.05.2027 | Dreimonatsergebnisse 2027 |
@@ -63,8 +67,8 @@ U000423;Jahresbericht;2026-09-30;2026-12-10;bestätigt;https://www.mvv.de/invest
 U000427;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.nagarro.com/en/investor-relations/financial-calendar;Finanzkalender: Publication of Q3 quarterly statement as of September 30, 2026
 U000448;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.nuernberger.com/investor-relations/equity-story/finanzkalender/;Finanzkalender: 30. September 2026: Halbjahresfinanzbericht
 U000477;Q3-Bericht;2026-09-30;2026-11-12;bestätigt;https://www.pnegroup.com/investor-relations/finanzkalender/;Finanzkalender: 12. November 2026 | Veröffentlichung Quartalsmitteilung Q3 2026 | |
-U000481;Q1-Bericht;2027-03-31;2027-06-30;bestätigt;https://www.prodv.com/investor-relations/finanzkalender;Finanzkalender: Zwischenmitteilung zum 30.06.2027
 U000480;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.procredit-holding.com/investor-relations/financial-calendar/;Finanzkalender: Quarterly Report as of 30 September 2026
+U000481;Q1-Bericht;2027-03-31;2027-06-30;bestätigt;https://www.prodv.com/investor-relations/finanzkalender;Finanzkalender: Zwischenmitteilung zum 30.06.2027
 U000494;Halbjahresbericht;2026-06-30;2026-10-01;bestätigt;https://www.rational-online.com/en_us/company/investor-relations/financial-and-investor-relations-calendar/;Finanzkalender: IR Talk | Last Call Q3 2026 | 01 Oct 2026 | 2 p.m. | virtual | |
 U000495;Q3-Bericht;2026-09-30;2026-10-26;bestätigt;https://www.rcm-ag.de/investor-relations/finanzkalender/;Finanzkalender: 26.10.2026: Veröffentlichung der Geschäftszahlen nach dem 3. Quartal 2026 |
 U000503;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.rhoen-klinikum-ag.com/investor-relations/finanzkalender/finanzkalender.html;Finanzkalender: 5. November 2026: Veröffentlichung des Zwischenberichts zum 30. September 2026
@@ -84,6 +88,7 @@ U000543;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://sgu-ag.de/inv
 U000551;Q3-Bericht;2026-09-30;2026-10-26;bestätigt;https://www.smw-ag.de/investor-relations/finanzkalender/;Finanzkalender: 26.10.2026: Veröffentlichung der Geschäftszahlen nach dem 3. Quartal 2026
 U000627;Q1-Bericht;2027-03-31;2027-04-27;bestätigt;https://ir.steyr-motors.com/en/service/;Finanzkalender: 27.04.2027 | | Publication of the Annual Report 2026 | | Add to calendar | |
 U000627;Halbjahresbericht;2027-06-30;2027-09-24;bestätigt;https://ir.steyr-motors.com/en/service/;Finanzkalender: 24.09.2027 | | Publication of Half Year Report 2027 | | Add to calendar | |
+U000628;Q3-Bericht;2026-09-30;2026-10-28;bestätigt;https://stock3.com/wirtschaftskalender;Finanzkalender: 28.10.2026 | | Q2 Holdings Inc. Registered Shares DL -,0001 | |
 U000633;Halbjahresbericht;2027-06-30;2027-08-13;bestätigt;https://www.salzwerke.de/de/investor-relations/finanzkalender.html;Finanzkalender: 13.08.2027 | Veröffentlichung Halbjahresfinanzbericht 2027 |
 U000642;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.syzygy-group.net/finanzkalender/;Finanzkalender: Zwischenbericht zum 30.09.2026
 U000643;Q3-Bericht;2026-09-30;2026-11-10;bestätigt;https://www.tag-ag.com/investor-relations/finanzkalender;Finanzkalender: 10.11.2026 | Veröffentlichung der Zwischenmitteilung 3. Quartal 2026 |
@@ -95,3 +100,4 @@ U000691;Q1-Bericht;2027-03-31;2027-05-27;bestätigt;https://investors.verve.com/
 U000691;Halbjahresbericht;2027-06-30;2027-08-26;bestätigt;https://investors.verve.com/investor-relations/financial-calendar/;Finanzkalender: Interim Report Q2 2027 | 26.08.2027 |
 U000691;Q3-Bericht;2027-09-30;2027-11-29;bestätigt;https://investors.verve.com/investor-relations/financial-calendar/;Finanzkalender: Interim Report Q3 2027 | 29.11.2027 |
 U000717;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.vossloh.com/de/finanzkalender;Finanzkalender: Zwischenmitteilung zum 30. September 2026
+U000739;Halbjahresbericht;2026-06-30;2026-09-30;bestätigt;https://www.ww-ag.com/de/investor-relations/finanzkalender/alle-termine;Finanzkalender: Quartalsmitteilung Wüstenrot & Württembergische AG zum 30. September 2026 |

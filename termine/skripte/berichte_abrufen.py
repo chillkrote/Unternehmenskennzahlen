@@ -135,7 +135,7 @@ def alle_pdfs(start, max_seiten=40, max_sek=120):
         for ziel, label in bs.links(r.url, r.text):
             if ziel.lower().split("?")[0].endswith(".pdf") or "pdf" in ziel.lower().split("/")[-1][-12:]:
                 pdfs[ziel] = max(label, pdfs.get(ziel, ""), key=len)
-            elif tiefe < 2 and basis in urlparse(ziel).netloc and bs.IR_WORTE.search(ziel + " " + label):
+            elif tiefe < 2 and bs.sicherer_abruf.host_gehoert_zu(urlparse(ziel).hostname, basis) and bs.IR_WORTE.search(ziel + " " + label):
                 ziel = ziel.split("#")[0]
                 if ziel not in besucht:
                     queue.append((0 if SEITE_GUT.search(ziel + " " + label) else 1, ziel, tiefe + 1))
@@ -162,7 +162,7 @@ def suchen_und_laden(z, u, start):
             versuche.append((k["url"], "robots.txt"))
             continue
         try:
-            r = s.get(k["url"], timeout=90, stream=True)
+            r = bs.sicherer_abruf.get(s, k["url"], timeout=90, stream=True)   # PDFs dürfen auf CDN-Hosts liegen, aber nur öffentlich erreichbar
             if r.status_code == 200:
                 laenge = int(r.headers.get("Content-Length") or 0)
                 inhalt = b"" if laenge <= MAX_BYTES else None

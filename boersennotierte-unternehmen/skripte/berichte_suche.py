@@ -20,6 +20,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "lib"))
 import hoeflich  # noqa: E402
+import sicherer_abruf  # noqa: E402
 
 UA = hoeflich.UA
 MAX_SEITEN = int(__import__("os").environ.get("MAX_SEITEN", 30))
@@ -44,7 +45,7 @@ def holen(session, url, timeout=15):
     if not hoeflich.erlaubt(url):
         return None, "robots.txt"
     try:
-        r = session.get(url, timeout=timeout, allow_redirects=True, stream=True)
+        r = sicherer_abruf.get(session, url, timeout=timeout, stream=True)   # nur öffentliche Ziele, auch nach Weiterleitungen
         if "pdf" in r.headers.get("content-type", "") or int(r.headers.get("content-length") or 0) > 5_000_000:
             r.close()  # PDFs und große Dateien nicht herunterladen, nur vermerken
             r._content = b""
@@ -137,7 +138,7 @@ def suche(eintrag, jahr):
                     pdfs[ziel] = label
                 else:
                     pdfs.setdefault(ziel, label)
-            elif tiefe < MAX_TIEFE and (host.split(".")[-2] in h) and IR_WORTE.search(ziel + " " + label):
+            elif tiefe < MAX_TIEFE and sicherer_abruf.host_gehoert_zu(urlparse(ziel).hostname, sicherer_abruf.basisdomain(start)) and IR_WORTE.search(ziel + " " + label):
                 ziel = ziel.split("#")[0]
                 if ziel not in besucht:
                     warteschlange.append((ziel, tiefe + 1))

@@ -24,6 +24,7 @@ import tlib
 
 sys.path.insert(0, str(tlib.REPO / "lib"))
 import hoeflich  # noqa: E402
+import sicherer_abruf  # noqa: E402
 
 UA = hoeflich.UA
 KALENDER_LINK = re.compile(r"finanzkalender|financial[-_ ]?calendar|finanztermine|financial[-_ ]?dates|termine|events?[-_/]|"
@@ -94,7 +95,7 @@ def holen(s, url):
     if not hoeflich.erlaubt(url):
         return None, "robots.txt"
     try:
-        r = s.get(url, timeout=20)
+        r = sicherer_abruf.get(s, url, timeout=20)
     except Exception as e:
         return None, f"fehler {type(e).__name__}"
     if r.status_code in (403, 429, 503) or re.search(r"captcha|cf-chl|are you a human|incapsula", r.text[:4000], re.I):
@@ -122,7 +123,7 @@ def kalenderseiten(s, start):
             label = " ".join(re.sub(r"<[^>]+>", " ", m[2]).split())[:120]
             if ziel.lower().split("?")[0].endswith((".pdf", ".zip", ".xlsx", ".jpg", ".png")) or not ziel.startswith("http"):
                 continue
-            if basis not in urlparse(ziel).netloc:
+            if not sicherer_abruf.host_gehoert_zu(urlparse(ziel).hostname, basis):
                 continue
             if KALENDER_LINK.search(ziel + " " + label) and re.search(r"finanz|financial|ir|investor|calendar|kalender|termine|aktion", ziel + label, re.I):
                 if ziel not in treffer:

@@ -47,6 +47,15 @@ Vergleichsfelder in Mio. EUR erhalten nur EUR-Werte und überschreiben keine vor
 Rechnungslegungsbasis. CHF/GBP/USD werden nicht stillschweigend in EUR umgerechnet.
 EPS und Aktienanzahlen behalten ihre im Postennamen ausgewiesene Bedeutung.
 
+`ergaenzungen/` enthält gezielte Übertragungen aus Geschäftsberichten für Lücken des
+Anbieters, mit Quellen-URL, gedruckten Seiten und rechnerischer Kontrolle der Bilanzsummen.
+Diese ersetzen nur die jeweilige Tabelle/Periode. Beispielsweise bleibt Smiths' GuV aus
+der Anbieterquelle erhalten, während die fehlende Bilanz aus einer zugänglichen Berichtskopie
+ergänzt wird. Quelle und Prüfstatus stehen **je Jahr und Tabelle** im Profil.
+Zegonas Bericht 2025 umfasst 15 Monate (01.01.2024–31.03.2025); ein eigenständiger
+Jahresabschluss 2024 wird nicht erfunden. Octaves 2024/2025-Daten sind kombinierte Abschlüsse
+des damaligen Hexagon-Geschäfts, keine eigenständigen Abschlüsse des späteren Emittenten.
+
 ## Oberfläche und Aktualisierung
 
 Der gemeinsame Länderfilter bleibt beim Reiterwechsel erhalten und filtert Unternehmen,

@@ -7,6 +7,17 @@ from abrufen import annual_only,identity_ok
 spec=importlib.util.spec_from_file_location('terminal_europa',ROOT/'app/europa.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 
 class EuropaTests(unittest.TestCase):
+    def test_primary_override_preserves_other_statement_source(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);(root/'europa/daten').mkdir(parents=True);(root/'europa/ergaenzungen').mkdir()
+            common={'unternehmen_id':'U000001','waehrung':'EUR','quelle':'provider','quelle_url':'https://example.com/provider'}
+            (root/'europa/daten/U000001.json').write_text(json.dumps({**common,'bilanz':{'2025-12-31':{'Assets':10}},'guv':{'2025-12-31':{'Revenue':5}}}))
+            (root/'europa/ergaenzungen/U000001.json').write_text(json.dumps({**common,'quelle_url':'https://example.com/report','bilanz':{'2025-12-31':{'Assets':11}},'guv':{}}))
+            p=module.lade_abschluesse(root,'U000001')[0]
+            self.assertEqual(p['bilanz']['Assets'],11);self.assertEqual(p['guv']['Revenue'],5)
+            self.assertEqual(p['quellen']['guv']['quelle_url'],'https://example.com/provider')
+            self.assertEqual(p['quellen']['bilanz']['quelle_url'],'https://example.com/report')
+
     def test_universe(self):
         roster=json.loads((ROOT/'europa/unternehmen.json').read_text())
         self.assertEqual(len(roster),702)

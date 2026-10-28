@@ -50,9 +50,10 @@ jobs:
           merge-multiple: true
       - name: Ergebnis speichern
         run: |
+          python europa/pruefen.py --clean
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add europa/daten
+          git add europa/daten europa/abdeckung.csv europa/abdeckung.json
           git diff --cached --quiet && exit 0
           git commit -m 'Europäische Bilanz- und GuV-Daten mit Abrufstatus ergänzen'
           git pull --rebase origin '${{ github.ref_name }}'

@@ -1,0 +1,446 @@
+{
+  "AIR LIQUIDE": [
+    "AI.PA",
+    "L'Air Liquide"
+  ],
+  "AKER BP": [
+    "AKRBP.OL",
+    "Aker BP"
+  ],
+  "AZIMUT HLDG": [
+    "AZM.MI",
+    "Azimut Holding"
+  ],
+  "BP": [
+    "BP.L",
+    "BP"
+  ],
+  "BRUNELLO CUCINELLI": [
+    "BC.MI",
+    "Brunello Cucinelli"
+  ],
+  "COMPUTACENTER": [
+    "CCC.L",
+    "Computacenter"
+  ],
+  "DRAX GRP": [
+    "DRX.L",
+    "Drax Group"
+  ],
+  "ERICSSON LM B": [
+    "ERIC-B.ST",
+    "Telefonaktiebolaget LM Ericsson"
+  ],
+  "FERRARI": [
+    "RACE.MI",
+    "Ferrari"
+  ],
+  "HEINEKEN HLDG": [
+    "HEIO.AS",
+    "Heineken Holding"
+  ],
+  "HIAB": [
+    "HIAB.HE",
+    "Hiab"
+  ],
+  "ICG": [
+    "ICG.L",
+    "Intermediate Capital Group"
+  ],
+  "INDUSTRIVARDEN C": [
+    "INDU-C.ST",
+    "Industrivarden"
+  ],
+  "INVESTEC": [
+    "INVP.L",
+    "Investec"
+  ],
+  "KERRY GRP": [
+    "KRZ.IR",
+    "Kerry Group"
+  ],
+  "KINGSPAN GRP": [
+    "KRX.IR",
+    "Kingspan Group"
+  ],
+  "KPN": [
+    "KPN.AS",
+    "Koninklijke KPN"
+  ],
+  "PUBLICIS GRP": [
+    "PUB.PA",
+    "Publicis Groupe"
+  ],
+  "QINETIQ GRP": [
+    "QQ.L",
+    "QinetiQ Group"
+  ],
+  "SCOTTISH & SOUTHERN ENERGY": [
+    "SSE.L",
+    "SSE"
+  ],
+  "SWECO 'B'": [
+    "SWEC-B.ST",
+    "Sweco"
+  ],
+  "SWISSQUOTE 'R'": [
+    "SQN.SW",
+    "Swissquote Group"
+  ],
+  "AMUNDI": [
+    "AMUN.PA",
+    "Amundi"
+  ],
+  "ASM INTERNATIONAL": [
+    "ASM.AS",
+    "ASM International"
+  ],
+  "AVANZA BANK HLDG": [
+    "AZA.ST",
+    "Avanza Bank Holding"
+  ],
+  "BAM GROEP KON.": [
+    "BAMNB.AS",
+    "Koninklijke BAM Groep"
+  ],
+  "BT GRP": [
+    "BT-A.L",
+    "BT Group"
+  ],
+  "COMET HOLDINGS 'R'": [
+    "COTN.SW",
+    "Comet Holding"
+  ],
+  "ESSILORLUXOTTICA": [
+    "EL.PA",
+    "EssilorLuxottica"
+  ],
+  "FASTIGHETS BALDER B": [
+    "BALD-B.ST",
+    "Fastighets AB Balder"
+  ],
+  "FLSMIDTH & COMPANY": [
+    "FLS.CO",
+    "FLSmidth"
+  ],
+  "GLANBIA": [
+    "GL9.IR",
+    "Glanbia"
+  ],
+  "HALEON": [
+    "HLN.L",
+    "Haleon"
+  ],
+  "HENNES & MAURITZ B": [
+    "HM-B.ST",
+    "Hennes & Mauritz"
+  ],
+  "HUBER+SUHNER 'R'": [
+    "HUBN.SW",
+    "Huber+Suhner"
+  ],
+  "IG GRP HLDG": [
+    "IGG.L",
+    "IG Group Holdings"
+  ],
+  "ING BANK SLASKI BSK": [
+    "BSK.WA",
+    "ING Bank Slaski"
+  ],
+  "KETY": [
+    "KTY.WA",
+    "Grupa Kety"
+  ],
+  "LATOUR INVESTMENT B": [
+    "LATO-B.ST",
+    "Investment AB Latour"
+  ],
+  "LOOMIS": [
+    "LOOMIS.ST",
+    "Loomis"
+  ],
+  "MOBIMO HLDG": [
+    "MOBN.SW",
+    "Mobimo Holding"
+  ],
+  "OCTAVE INTELLIGENCE SDR": [
+    "OCTV.ST",
+    "Octave Intelligence"
+  ],
+  "PEKAO": [
+    "PEO.WA",
+    "Bank Polska Kasa Opieki"
+  ],
+  "RECKITT BENCKISER GRP": [
+    "RKT.L",
+    "Reckitt Benckiser Group"
+  ],
+  "RINGKJOBING LANDBOBANK": [
+    "RILBA.CO",
+    "Ringkjobing Landbobank"
+  ],
+  "SIG GROUP AG": [
+    "SIGN.SW",
+    "SIG Group"
+  ],
+  "SKF B": [
+    "SKF-B.ST",
+    "SKF"
+  ],
+  "SVENSKA CELLULOSA AKTIE. SCA B": [
+    "SCA-B.ST",
+    "Svenska Cellulosa Aktiebolaget SCA"
+  ],
+  "THALES": [
+    "HO.PA",
+    "Thales"
+  ],
+  "WDP": [
+    "WDP.BR",
+    "Warehouses De Pauw"
+  ],
+  "YARA": [
+    "YAR.OL",
+    "Yara International"
+  ],
+  "A.P.MOLLER-MAERSK B": [
+    "MAERSK-B.CO",
+    "A.P. Moller - Maersk"
+  ],
+  "ACS": [
+    "ACS.MC",
+    "ACS Actividades de Construccion y Servicios"
+  ],
+  "AKER A": [
+    "AKER.OL",
+    "Aker"
+  ],
+  "ALLREAL HLDG": [
+    "ALLN.SW",
+    "Allreal Holding"
+  ],
+  "ATLAS COPCO A": [
+    "ATCO-A.ST",
+    "Atlas Copco"
+  ],
+  "BCA GENERALI": [
+    "BGN.MI",
+    "Banca Generali"
+  ],
+  "BCO SANTANDER": [
+    "SAN.MC",
+    "Banco Santander"
+  ],
+  "CAP GEMINI": [
+    "CAP.PA",
+    "Capgemini"
+  ],
+  "CONVATEC PLC": [
+    "CTEC.L",
+    "ConvaTec Group"
+  ],
+  "DASSAULT SYSTEMS": [
+    "DSY.PA",
+    "Dassault Systemes"
+  ],
+  "EDP (PT)": [
+    "EDP.LS",
+    "EDP"
+  ],
+  "EIFFAGE": [
+    "FGR.PA",
+    "Eiffage"
+  ],
+  "Essity B": [
+    "ESSITY-B.ST",
+    "Essity"
+  ],
+  "GALENICA SANTE AG": [
+    "GALE.SW",
+    "Galenica"
+  ],
+  "HELVETIA BALOISE HLDG": [
+    "HBAN.SW",
+    "Helvetia Baloise Holding"
+  ],
+  "INTERPUMP GRP": [
+    "IP.MI",
+    "Interpump Group"
+  ],
+  "LAGERCRANTZ GROUP 'B'": [
+    "LAGR-B.ST",
+    "Lagercrantz Group"
+  ],
+  "LIFCO B": [
+    "LIFCO-B.ST",
+    "Lifco"
+  ],
+  "LUNDBERGFORETAGEN B": [
+    "LUND-B.ST",
+    "L E Lundbergforetagen"
+  ],
+  "NATIONAL BANK OF GREECE": [
+    "ETE.AT",
+    "National Bank of Greece"
+  ],
+  "PRIMARY HEALTH PROPS.": [
+    "PHP.L",
+    "Primary Health Properties"
+  ],
+  "PZU GROUP": [
+    "PZU.WA",
+    "Powszechny Zaklad Ubezpieczen"
+  ],
+  "ROCHE PS": [
+    "ROG.SW",
+    "Roche Holding"
+  ],
+  "SAAB B": [
+    "SAAB-B.ST",
+    "Saab"
+  ],
+  "SIEGFRIED 'R'": [
+    "SFZN.SW",
+    "Siegfried Holding"
+  ],
+  "SNAM RETE GAS": [
+    "SRG.MI",
+    "Snam"
+  ],
+  "SSAB B": [
+    "SSAB-B.ST",
+    "SSAB"
+  ],
+  "STORA ENSO R": [
+    "STERV.HE",
+    "Stora Enso"
+  ],
+  "SUBSEA7": [
+    "SUBC.OL",
+    "Subsea 7"
+  ],
+  "SUNRISE N A": [
+    "SUNN.SW",
+    "Sunrise"
+  ],
+  "BERKELEY GRP HLDG": [
+    "BKG.L",
+    "Berkeley Group Holdings"
+  ],
+  "CASTELLUM": [
+    "CAST.ST",
+    "Castellum"
+  ],
+  "CSG A": [
+    "CSG.AS",
+    "Czechoslovak Group"
+  ],
+  "HEXAGON B": [
+    "HEXA-B.ST",
+    "Hexagon"
+  ],
+  "IAG": [
+    "IAG.L",
+    "International Consolidated Airlines Group"
+  ],
+  "ING GRP": [
+    "INGA.AS",
+    "ING Groep"
+  ],
+  "KGHM": [
+    "KGH.WA",
+    "KGHM Polska Miedz"
+  ],
+  "MAN GRP": [
+    "EMG.L",
+    "Man Group"
+  ],
+  "MICHELIN": [
+    "ML.PA",
+    "Compagnie Generale des Etablissements Michelin"
+  ],
+  "NESTE": [
+    "NESTE.HE",
+    "Neste"
+  ],
+  "NOVARTIS": [
+    "NOVN.SW",
+    "Novartis"
+  ],
+  "PANDORA": [
+    "PNDORA.CO",
+    "Pandora"
+  ],
+  "PERNOD RICARD": [
+    "RI.PA",
+    "Pernod Ricard"
+  ],
+  "PUIG BRANDS B": [
+    "PUIG.MC",
+    "Puig Brands"
+  ],
+  "ROCKWOOL B": [
+    "ROCK-B.CO",
+    "Rockwool"
+  ],
+  "SAGAX 'B'": [
+    "SAGA-B.ST",
+    "Sagax"
+  ],
+  "SECTRA 'B'": [
+    "SECT-B.ST",
+    "Sectra"
+  ],
+  "SKANDINAVISKA ENSKILDA BK A": [
+    "SEB-A.ST",
+    "Skandinaviska Enskilda Banken"
+  ],
+  "STOREBRAND": [
+    "STB.OL",
+    "Storebrand"
+  ],
+  "SWATCH BEARER": [
+    "UHR.SW",
+    "Swatch Group"
+  ],
+  "SWISS REINSURANCE COMPANY": [
+    "SREN.SW",
+    "Swiss Re"
+  ],
+  "TAYLOR WIMPEY": [
+    "TW.L",
+    "Taylor Wimpey"
+  ],
+  "UMG": [
+    "UMG.AS",
+    "Universal Music Group"
+  ],
+  "UNICREDIT": [
+    "UCG.MI",
+    "UniCredit"
+  ],
+  "UNITED UTILITIES GRP": [
+    "UU.L",
+    "United Utilities Group"
+  ],
+  "EQT": [
+    "EQT.ST",
+    "EQT"
+  ],
+  "ORION B": [
+    "ORNBV.HE",
+    "Orion"
+  ],
+  "ELIS": [
+    "ELIS.PA",
+    "Elis"
+  ],
+  "PKO BANK": [
+    "PKO.WA",
+    "Powszechna Kasa Oszczednosci Bank Polski"
+  ],
+  "PHILIPS": [
+    "PHIA.AS",
+    "Koninklijke Philips"
+  ]
+}

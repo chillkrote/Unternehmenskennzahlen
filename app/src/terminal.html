@@ -783,6 +783,7 @@ function spanne(w) {
 }
 
 function indexChart(liste) {
+  if (!liste.length) return `<p class="n">Keine Kurse in der aktuellen Auswahl.</p>`;
   const W = 1100, H = 420, x0 = 44, x1 = W - 92, y0 = 12, y1 = H - 26;
   const letzter = liste.reduce((m, w) => w.datum > m ? w.datum : m, "");
   const start = fensterStart(letzter);
@@ -837,6 +838,7 @@ function indexChart(liste) {
 
 function viewMkt() {
   if (!MARKT) return `<div class="grid">${panel({ code: "MKT", titel: "Börsendaten", body: `<p>Keine Börsendaten geladen. <code>python3 app/marktdaten.py</code> und danach <code>python3 app/build.py</code> ausführen.</p>` })}</div>`;
+  if (!MARKT.werte.length) return `<div class="grid">${panel({code:'MKT',titel:'Börsendaten',body:'<p class="n">Für die gewählte Länderauswahl sind keine Bankkurse vorhanden.</p>'})}</div>`;
   const tick = eindeutig(), sichtbar = tick.filter(w => mktMuetter || w.ebene === "Institut");
   const zeilen = MARKT.werte.map(w => { const b = BANKEN.find(x => x.bank === w.bank) || {}; return `<tr class="click${w.ticker === mktMarkiert ? " sel" : ""}" data-mkt="${w.ticker}">
     <td>${esc(kurz(w.bank).slice(0, 30))}</td><td class="n" style="text-align:left">${w.ebene === "Institut" ? "Bank selbst" : "Mutter: " + esc(w.mutter || "")}</td><td style="color:var(--key);text-align:left">${w.ticker}</td>

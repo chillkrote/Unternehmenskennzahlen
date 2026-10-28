@@ -22,6 +22,8 @@ class EuropaTests(unittest.TestCase):
 
     def test_identity_rejects_wrong_company(self):
         self.assertFalse(identity_ok({'name':'Jumbo','ticker_kandidat_name':''},{'longName':'Koninklijke Ahold Delhaize N.V.'}))
+        self.assertFalse(identity_ok({'name':'Jumbo','land':'Greece'},{'longName':'Jumbo Interactive','country':'Australia'}))
+        self.assertFalse(identity_ok({'name':'EQT','land':'Sweden'},{'longName':'EQT Corporation','country':'United States'}))
         self.assertTrue(identity_ok({'name':'ASML HLDG'},{'longName':'ASML Holding N.V.'}))
 
     def test_currency_and_existing_basis_preserved(self):

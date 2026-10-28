@@ -1,0 +1,2048 @@
+[
+ {
+  "unternehmen_id": "U000026",
+  "name": "Airbus",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 501
+ },
+ {
+  "unternehmen_id": "U000073",
+  "name": "Beiersdorf",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 473
+ },
+ {
+  "unternehmen_id": "U000125",
+  "name": "Continental",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 527
+ },
+ {
+  "unternehmen_id": "U000161",
+  "name": "Deutsche Telekom",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 516
+ },
+ {
+  "unternehmen_id": "U000233",
+  "name": "Fresenius Medical Care",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 604
+ },
+ {
+  "unternehmen_id": "U000279",
+  "name": "Henkel",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 555
+ },
+ {
+  "unternehmen_id": "U000396",
+  "name": "Merck",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 539
+ },
+ {
+  "unternehmen_id": "U000502",
+  "name": "Rheinmetall",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 551
+ },
+ {
+  "unternehmen_id": "U000535",
+  "name": "Siemens",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 484
+ },
+ {
+  "unternehmen_id": "U000712",
+  "name": "Volkswagen",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 510
+ },
+ {
+  "unternehmen_id": "U000045",
+  "name": "Aroundtown",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 459
+ },
+ {
+  "unternehmen_id": "U000071",
+  "name": "Bechtle",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 466
+ },
+ {
+  "unternehmen_id": "U000163",
+  "name": "DEUTZ",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 477
+ },
+ {
+  "unternehmen_id": "U000230",
+  "name": "Fraport",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 485
+ },
+ {
+  "unternehmen_id": "U000280",
+  "name": "HENSOLDT",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 497
+ },
+ {
+  "unternehmen_id": "U000328",
+  "name": "KION Group",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 519
+ },
+ {
+  "unternehmen_id": "U000433",
+  "name": "Nemetschek",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 487
+ },
+ {
+  "unternehmen_id": "U000494",
+  "name": "Rational",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 478
+ },
+ {
+  "unternehmen_id": "U000516",
+  "name": "Sartorius",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 487
+ },
+ {
+  "unternehmen_id": "U000631",
+  "name": "Ströer",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 484
+ },
+ {
+  "unternehmen_id": "U000649",
+  "name": "TeamViewer",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 476
+ },
+ {
+  "unternehmen_id": "U000680",
+  "name": "United Internet",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 494
+ },
+ {
+  "unternehmen_id": "U000022",
+  "name": "Adtran Networks",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 463
+ },
+ {
+  "unternehmen_id": "U000062",
+  "name": "Basler",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 479
+ },
+ {
+  "unternehmen_id": "U000114",
+  "name": "CEWE",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 477
+ },
+ {
+  "unternehmen_id": "U000173",
+  "name": "Douglas",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 491
+ },
+ {
+  "unternehmen_id": "U000183",
+  "name": "Einhell",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 482
+ },
+ {
+  "unternehmen_id": "U000235",
+  "name": "Friedrich Vorwerk",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 481
+ },
+ {
+  "unternehmen_id": "U000260",
+  "name": "HAMBORNER REIT",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 384
+ },
+ {
+  "unternehmen_id": "U000290",
+  "name": "HUGO BOSS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 477
+ },
+ {
+  "unternehmen_id": "U000319",
+  "name": "JOST Werke",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 497
+ },
+ {
+  "unternehmen_id": "U000354",
+  "name": "KWS SAAT",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 343
+ },
+ {
+  "unternehmen_id": "U000406",
+  "name": "MLP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 482
+ },
+ {
+  "unternehmen_id": "U000457",
+  "name": "Ottobock",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 147
+ },
+ {
+  "unternehmen_id": "U000480",
+  "name": "ProCredit",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 314
+ },
+ {
+  "unternehmen_id": "U000552",
+  "name": "SNP Schneider-Neureither",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 501
+ },
+ {
+  "unternehmen_id": "U000512",
+  "name": "Salzgitter",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 488
+ },
+ {
+  "unternehmen_id": "U000730",
+  "name": "WashTec",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 485
+ },
+ {
+  "unternehmen_id": "U000630",
+  "name": "Stratec",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 481
+ },
+ {
+  "unternehmen_id": "U000393",
+  "name": "Mensch und Maschine",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 437
+ },
+ {
+  "unternehmen_id": "U000661",
+  "name": "TKMS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 122
+ },
+ {
+  "unternehmen_id": "U000534",
+  "name": "Shelly",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 486
+ },
+ {
+  "unternehmen_id": "U000629",
+  "name": "STO",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 503
+ },
+ {
+  "unternehmen_id": "U000756",
+  "name": "3I GROUP PLC.",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 215
+ },
+ {
+  "unternehmen_id": "U000760",
+  "name": "ABERDEEN GROUP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 314
+ },
+ {
+  "unternehmen_id": "U000764",
+  "name": "ACCIONA S.A.",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 516
+ },
+ {
+  "unternehmen_id": "U000768",
+  "name": "ACKERMANS & VAN HAAREN",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 491
+ },
+ {
+  "unternehmen_id": "U000772",
+  "name": "ADMIRAL GRP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 348
+ },
+ {
+  "unternehmen_id": "U000776",
+  "name": "AENA SME",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 484
+ },
+ {
+  "unternehmen_id": "U000780",
+  "name": "AIRTEL AFRICA PLC",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 382
+ },
+ {
+  "unternehmen_id": "U000784",
+  "name": "AKZO NOBEL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 496
+ },
+ {
+  "unternehmen_id": "U000788",
+  "name": "ALFA LAVAL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 491
+ },
+ {
+  "unternehmen_id": "U000792",
+  "name": "ALPHA BANK",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 253
+ },
+ {
+  "unternehmen_id": "U000796",
+  "name": "AMUNDI",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000800",
+  "name": "ANHEUSER-BUSCH INBEV",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 632
+ },
+ {
+  "unternehmen_id": "U000804",
+  "name": "ASM INTERNATIONAL",
+  "status": "offen",
+  "grund": "ASMI.AS: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U000808",
+  "name": "ASSECO POLAND",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 517
+ },
+ {
+  "unternehmen_id": "U000812",
+  "name": "ASSOCIATED BRITISH FOODS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 486
+ },
+ {
+  "unternehmen_id": "U000816",
+  "name": "AVANZA BANK HLDG",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000820",
+  "name": "AXFOOD",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 439
+ },
+ {
+  "unternehmen_id": "U000824",
+  "name": "BAM GROEP KON.",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000828",
+  "name": "BANCA MEDIOLANUM",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 291
+ },
+ {
+  "unternehmen_id": "U000832",
+  "name": "BARCLAYS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 337
+ },
+ {
+  "unternehmen_id": "U000836",
+  "name": "BAWAG GROUP AG",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 352
+ },
+ {
+  "unternehmen_id": "U000840",
+  "name": "BCO BILBAO VIZCAYA ARGENTARIA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 447
+ },
+ {
+  "unternehmen_id": "U000844",
+  "name": "BEAZLEY",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 338
+ },
+ {
+  "unternehmen_id": "U000848",
+  "name": "BELLWAY",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 289
+ },
+ {
+  "unternehmen_id": "U000852",
+  "name": "BNP PARIBAS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 344
+ },
+ {
+  "unternehmen_id": "U000856",
+  "name": "BPER Banca",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 354
+ },
+ {
+  "unternehmen_id": "U000860",
+  "name": "BT GRP",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000864",
+  "name": "BUNZL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 484
+ },
+ {
+  "unternehmen_id": "U000868",
+  "name": "CARREFOUR",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 526
+ },
+ {
+  "unternehmen_id": "U000872",
+  "name": "CEMBRA MONEY BANK",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 272
+ },
+ {
+  "unternehmen_id": "U000876",
+  "name": "COLOPLAST B",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "posten": 343
+ },
+ {
+  "unternehmen_id": "U000880",
+  "name": "COMET HOLDINGS 'R'",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000884",
+  "name": "COVIVIO",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 509
+ },
+ {
+  "unternehmen_id": "U000888",
+  "name": "DANONE",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 519
+ },
+ {
+  "unternehmen_id": "U000892",
+  "name": "DAVIDE CAMPARI",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 514
+ },
+ {
+  "unternehmen_id": "U000896",
+  "name": "DEMANT",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 470
+ },
+ {
+  "unternehmen_id": "U000900",
+  "name": "DKSH HOLDING",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 510
+ },
+ {
+  "unternehmen_id": "U000904",
+  "name": "DNB BANK",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 410
+ },
+ {
+  "unternehmen_id": "U000908",
+  "name": "EDP RENEWABLES",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 522
+ },
+ {
+  "unternehmen_id": "U000912",
+  "name": "ELISA CORPORATION",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 481
+ },
+ {
+  "unternehmen_id": "U000916",
+  "name": "ENDEAVOUR MINING",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 446
+ },
+ {
+  "unternehmen_id": "U000920",
+  "name": "ENI",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 590
+ },
+ {
+  "unternehmen_id": "U000924",
+  "name": "EQUINOR",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 533
+ },
+ {
+  "unternehmen_id": "U000928",
+  "name": "ESSILORLUXOTTICA",
+  "status": "offen",
+  "grund": "ESLX.PA: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U000932",
+  "name": "EUROBANK",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 331
+ },
+ {
+  "unternehmen_id": "U000936",
+  "name": "FASTIGHETS BALDER B",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000940",
+  "name": "FERROVIAL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 616
+ },
+ {
+  "unternehmen_id": "U000944",
+  "name": "FLSMIDTH & COMPANY",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000948",
+  "name": "GALDERMA GROUP N",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 430
+ },
+ {
+  "unternehmen_id": "U000952",
+  "name": "GAZTRANSPORT ET TECHNIGAZ",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 446
+ },
+ {
+  "unternehmen_id": "U000956",
+  "name": "GETINGE B",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 477
+ },
+ {
+  "unternehmen_id": "U000960",
+  "name": "GLANBIA",
+  "status": "offen",
+  "grund": "GLB.IR: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U000964",
+  "name": "GRIFOLS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 600
+ },
+ {
+  "unternehmen_id": "U000968",
+  "name": "HALEON",
+  "status": "offen",
+  "grund": "HLI.L: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U000972",
+  "name": "HENNES & MAURITZ B",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000976",
+  "name": "HERMES INTERNATIONAL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 499
+ },
+ {
+  "unternehmen_id": "U000980",
+  "name": "HOLMEN B",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 475
+ },
+ {
+  "unternehmen_id": "U000984",
+  "name": "HUBER+SUHNER 'R'",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U000988",
+  "name": "IG GRP HLDG",
+  "status": "offen",
+  "grund": "IGGI.L: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U000992",
+  "name": "IMI",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 429
+ },
+ {
+  "unternehmen_id": "U000996",
+  "name": "Industria de Diseno Textil SA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 375
+ },
+ {
+  "unternehmen_id": "U001000",
+  "name": "ING BANK SLASKI BSK",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001004",
+  "name": "INTERTEK GRP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 425
+ },
+ {
+  "unternehmen_id": "U001008",
+  "name": "IPSEN",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 515
+ },
+ {
+  "unternehmen_id": "U001012",
+  "name": "ITALGAS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 521
+ },
+ {
+  "unternehmen_id": "U001016",
+  "name": "JERONIMO MARTINS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 512
+ },
+ {
+  "unternehmen_id": "U001020",
+  "name": "Kering",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 487
+ },
+ {
+  "unternehmen_id": "U001024",
+  "name": "KETY",
+  "status": "offen",
+  "grund": "KTY.WA: Unternehmensidentität nicht bestätigt; PLKETY000011.SG: Unternehmensidentität nicht bestätigt; KTYW.XD: Unternehmensidentität nicht bestätigt; GQ2.MU: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U001028",
+  "name": "KLEPIERRE",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 475
+ },
+ {
+  "unternehmen_id": "U001032",
+  "name": "KONECRANES",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 485
+ },
+ {
+  "unternehmen_id": "U001036",
+  "name": "LATOUR INVESTMENT B",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001040",
+  "name": "LEGAL & GENERAL GRP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 360
+ },
+ {
+  "unternehmen_id": "U001044",
+  "name": "LOGITECH INTERNATIONAL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 389
+ },
+ {
+  "unternehmen_id": "U001048",
+  "name": "LOOMIS",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001052",
+  "name": "LOTTOMATICA GROUP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 507
+ },
+ {
+  "unternehmen_id": "U001056",
+  "name": "M&G",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 401
+ },
+ {
+  "unternehmen_id": "U001060",
+  "name": "MAPFRE",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 374
+ },
+ {
+  "unternehmen_id": "U001064",
+  "name": "MERLIN PROPERTIES SOCIMI",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 431
+ },
+ {
+  "unternehmen_id": "U001068",
+  "name": "MOBIMO HLDG",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001072",
+  "name": "MOTOR OIL (HELLAS)",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 495
+ },
+ {
+  "unternehmen_id": "U001076",
+  "name": "Naturgy Energy Group",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 550
+ },
+ {
+  "unternehmen_id": "U001080",
+  "name": "NEXI SPA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 500
+ },
+ {
+  "unternehmen_id": "U001084",
+  "name": "NN GROUP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 391
+ },
+ {
+  "unternehmen_id": "U001088",
+  "name": "NORSK HYDRO",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 468
+ },
+ {
+  "unternehmen_id": "U001092",
+  "name": "OCTAVE INTELLIGENCE SDR",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001096",
+  "name": "ORION B",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2024",
+   "2025"
+  ],
+  "posten": 206
+ },
+ {
+  "unternehmen_id": "U001100",
+  "name": "ORLEN",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 547
+ },
+ {
+  "unternehmen_id": "U001104",
+  "name": "PEKAO",
+  "status": "offen",
+  "grund": "BP1.SG: Berichtswährung fehlt"
+ },
+ {
+  "unternehmen_id": "U001108",
+  "name": "PHILIPS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 622
+ },
+ {
+  "unternehmen_id": "U001112",
+  "name": "PIRELLI & C. S.P.A.",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 531
+ },
+ {
+  "unternehmen_id": "U001116",
+  "name": "PRUDENTIAL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 348
+ },
+ {
+  "unternehmen_id": "U001120",
+  "name": "PUBLIC POWER",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 546
+ },
+ {
+  "unternehmen_id": "U001124",
+  "name": "RAIFFEISEN BANK INTERNATIONAL",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 340
+ },
+ {
+  "unternehmen_id": "U001128",
+  "name": "RECKITT BENCKISER GRP",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001132",
+  "name": "RELX PLC",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 459
+ },
+ {
+  "unternehmen_id": "U001136",
+  "name": "RINGKJOBING LANDBOBANK",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001140",
+  "name": "RIO TINTO",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 504
+ },
+ {
+  "unternehmen_id": "U001144",
+  "name": "ROSEBANK INDUSTRIES",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2024",
+   "2025"
+  ],
+  "posten": 145
+ },
+ {
+  "unternehmen_id": "U001148",
+  "name": "RYANAIR",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 353
+ },
+ {
+  "unternehmen_id": "U001152",
+  "name": "SAINSBURY (J)",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 353
+ },
+ {
+  "unternehmen_id": "U001156",
+  "name": "SAMPO",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 376
+ },
+ {
+  "unternehmen_id": "U001160",
+  "name": "SANDOZ GROUP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 492
+ },
+ {
+  "unternehmen_id": "U001164",
+  "name": "SCHRODERS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 447
+ },
+ {
+  "unternehmen_id": "U001168",
+  "name": "SECURITAS B",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 486
+ },
+ {
+  "unternehmen_id": "U001172",
+  "name": "SERCO GRP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 424
+ },
+ {
+  "unternehmen_id": "U001176",
+  "name": "SIG GROUP AG",
+  "status": "offen",
+  "grund": "SIG.SW: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U001180",
+  "name": "SKF B",
+  "status": "offen",
+  "grund": "SKF-B.ST: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U001184",
+  "name": "SODEXO",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 400
+ },
+ {
+  "unternehmen_id": "U001188",
+  "name": "SOFINA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 242
+ },
+ {
+  "unternehmen_id": "U001192",
+  "name": "SPAREBANK 1 SOR-NORGE ASA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 333
+ },
+ {
+  "unternehmen_id": "U001196",
+  "name": "SPIRAX",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 462
+ },
+ {
+  "unternehmen_id": "U001200",
+  "name": "STMICROELECTRONICS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 577
+ },
+ {
+  "unternehmen_id": "U001204",
+  "name": "STRAUMANN",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 494
+ },
+ {
+  "unternehmen_id": "U001208",
+  "name": "SVENSKA CELLULOSA AKTIE. SCA B",
+  "status": "offen",
+  "grund": "Keine eindeutig passende Aktie gefunden"
+ },
+ {
+  "unternehmen_id": "U001212",
+  "name": "SWEDISH ORPHAN BIOVITRUM",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 473
+ },
+ {
+  "unternehmen_id": "U001216",
+  "name": "SWISS PRIME SITE",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 479
+ },
+ {
+  "unternehmen_id": "U001220",
+  "name": "TBC BANK GROUP",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 359
+ },
+ {
+  "unternehmen_id": "U001224",
+  "name": "TELECOM ITALIA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 538
+ },
+ {
+  "unternehmen_id": "U001228",
+  "name": "TEMENOS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 427
+ },
+ {
+  "unternehmen_id": "U001232",
+  "name": "TERNA",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 483
+ },
+ {
+  "unternehmen_id": "U001236",
+  "name": "THALES",
+  "status": "offen",
+  "grund": "THL.PA: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U001240",
+  "name": "TRELLEBORG B",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 508
+ },
+ {
+  "unternehmen_id": "U001244",
+  "name": "UCB",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 506
+ },
+ {
+  "unternehmen_id": "U001248",
+  "name": "UNIBAIL-RODAMCO-WESTFIELD",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 460
+ },
+ {
+  "unternehmen_id": "U001251",
+  "name": "UPM KYMMENE",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 525
+ },
+ {
+  "unternehmen_id": "U001255",
+  "name": "Valmet",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 485
+ },
+ {
+  "unternehmen_id": "U001259",
+  "name": "VAR ENERGI",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 476
+ },
+ {
+  "unternehmen_id": "U001263",
+  "name": "VERBUND",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 512
+ },
+ {
+  "unternehmen_id": "U001267",
+  "name": "VOPAK",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 507
+ },
+ {
+  "unternehmen_id": "U001271",
+  "name": "WDP",
+  "status": "offen",
+  "grund": "WDP.BR: Unternehmensidentität nicht bestätigt; WDP.DE: Unternehmensidentität nicht bestätigt; WDPSF: Unternehmensidentität nicht bestätigt; WDPB.XD: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U001275",
+  "name": "WHITBREAD",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 354
+ },
+ {
+  "unternehmen_id": "U001279",
+  "name": "YARA",
+  "status": "offen",
+  "grund": "YAR.OL: Unternehmensidentität nicht bestätigt; YARIY: Unternehmensidentität nicht bestätigt; IU2.SG: Unternehmensidentität nicht bestätigt; YARO.XD: Unternehmensidentität nicht bestätigt"
+ },
+ {
+  "unternehmen_id": "U001283",
+  "name": "ZEGONA COMMUNICATIONS",
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023"
+  ],
+  "posten": 211
+ }
+]

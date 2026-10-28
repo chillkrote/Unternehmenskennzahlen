@@ -10,6 +10,13 @@ if git diff --cached --quiet; then
   echo "geaendert=false" >> "${GITHUB_OUTPUT:-/dev/null}"
   exit 0
 fi
+# Stammdaten prüfen, bevor etwas committet wird (vorher stand die Prüfung nur im späteren Terminal-Build, fehlerhafte Daten
+# lagen dann schon auf main). Bei einem Verstoß wird nichts gepusht; die Änderungen bleiben nur im Runner.
+if ! python3 stammdaten/pruefe_ids.py; then
+  echo "::error::Stammdaten-Prüfung fehlgeschlagen, nichts gepusht"
+  git reset -q
+  exit 1
+fi
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git commit -q -m "$msg"

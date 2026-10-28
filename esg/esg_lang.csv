@@ -1,0 +1,13 @@
+﻿unternehmen_id;gj;kennzahl;wert;einheit;quelle_dokument;seite;pruefstatus;bemerkung
+U000161;2025;thg_scope1;223790;t CO2e;boersennotierte-unternehmen/telekom-medien/dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf;133;manuell aus Tabelle gelesen;Tabelle THG-Bruttoemissionen Scope 1, 2, 3 (ESRS E1-6)
+U000161;2025;thg_scope2_marktbasiert;16375;t CO2e;boersennotierte-unternehmen/telekom-medien/dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf;133;manuell aus Tabelle gelesen;
+U000161;2025;thg_scope3_gesamt;8507234;t CO2e;boersennotierte-unternehmen/telekom-medien/dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf;133;manuell aus Tabelle gelesen;
+U000161;2024;thg_scope1;236355;t CO2e;boersennotierte-unternehmen/telekom-medien/dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf;133;manuell aus Tabelle gelesen;Tabelle THG-Bruttoemissionen Scope 1, 2, 3 (ESRS E1-6)
+U000161;2024;thg_scope2_marktbasiert;16212;t CO2e;boersennotierte-unternehmen/telekom-medien/dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf;133;manuell aus Tabelle gelesen;
+U000161;2024;thg_scope3_gesamt;9733536;t CO2e;boersennotierte-unternehmen/telekom-medien/dokumente/deutsche-telekom-ag/entire-dtag-gb25.pdf;133;manuell aus Tabelle gelesen;
+U000510;2025;thg_scope1;51.89;Mio. t CO2e;boersennotierte-unternehmen/energie-versorger/dokumente/rwe-aktiengesellschaft/RWE-Geschaeftsbericht-2025.pdf;114;manuell aus Tabelle gelesen;Scope-1-THG-Bruttoemissionen (ESRS E1-6)
+U000510;2025;thg_scope2_marktbasiert;0.22;Mio. t CO2e;boersennotierte-unternehmen/energie-versorger/dokumente/rwe-aktiengesellschaft/RWE-Geschaeftsbericht-2025.pdf;114;manuell aus Tabelle gelesen;Marktbezogene Scope-2-THG-Bruttoemissionen
+U000510;2025;thg_scope3_gesamt;19.47;Mio. t CO2e;boersennotierte-unternehmen/energie-versorger/dokumente/rwe-aktiengesellschaft/RWE-Geschaeftsbericht-2025.pdf;114;manuell aus Tabelle gelesen;Gesamte indirekte (Scope-3-)THG-Bruttoemissionen
+U000510;2024;thg_scope1;53.24;Mio. t CO2e;boersennotierte-unternehmen/energie-versorger/dokumente/rwe-aktiengesellschaft/RWE-Geschaeftsbericht-2025.pdf;114;manuell aus Tabelle gelesen;Scope-1-THG-Bruttoemissionen (ESRS E1-6)
+U000510;2024;thg_scope2_marktbasiert;0.39;Mio. t CO2e;boersennotierte-unternehmen/energie-versorger/dokumente/rwe-aktiengesellschaft/RWE-Geschaeftsbericht-2025.pdf;114;manuell aus Tabelle gelesen;Marktbezogene Scope-2-THG-Bruttoemissionen
+U000510;2024;thg_scope3_gesamt;21.77;Mio. t CO2e;boersennotierte-unternehmen/energie-versorger/dokumente/rwe-aktiengesellschaft/RWE-Geschaeftsbericht-2025.pdf;114;manuell aus Tabelle gelesen;Gesamte indirekte (Scope-3-)THG-Bruttoemissionen

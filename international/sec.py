@@ -15,13 +15,24 @@ from international_core import periode_klasse
 
 HOST = "data.sec.gov"
 ANBIETER = "sec-companyfacts"
-MAPPING_VERSION = "sec-v1"
+MAPPING_VERSION = "sec-v2"
 JAHRESFORMULARE = {"10-K", "10-K/A", "10-KT", "10-KT/A", "20-F", "20-F/A", "40-F", "40-F/A"}
 
-# metric_code -> Taxonomie-Tag. Weitere Kennzahlen erst nach fachlichem Fixture und Abgleich mit dem Originalbericht aufnehmen.
+# metric_code -> Taxonomie-Tags in Rangfolge (je Filing und Periode gilt der erste vorhandene Tag, nie ein Mix).
+# Weitere Kennzahlen erst nach fachlichem Fixture und Abgleich mit dem Originalbericht aufnehmen.
 MAPPING = {
-    "assets": {"taxonomy": "us-gaap", "tag": "Assets", "period": "instant", "unit": "USD"},
+    "assets": {"taxonomy": "us-gaap", "tags": ["Assets"], "period": "instant", "unit": "USD"},
+    "equity": {"taxonomy": "us-gaap", "tags": ["StockholdersEquity"], "period": "instant", "unit": "USD"},   # Eigenkapital der Muttergesellschafter, ohne Minderheitsanteile
+    "revenue": {"taxonomy": "us-gaap", "tags": ["RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues", "SalesRevenueNet", "SalesRevenueGoodsNet",
+                                                "RevenueFromContractWithCustomerIncludingAssessedTax"], "period": "duration", "unit": "USD"},
+    "net_income": {"taxonomy": "us-gaap", "tags": ["NetIncomeLoss"], "period": "duration", "unit": "USD"},       # Ergebnis der Muttergesellschafter
+    "equity_incl_nci": {"taxonomy": "us-gaap", "tags": ["StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"], "period": "instant", "unit": "USD"},
+    "net_income_incl_nci": {"taxonomy": "us-gaap", "tags": ["ProfitLoss"], "period": "duration", "unit": "USD"},
+    "operating_cash_flow": {"taxonomy": "us-gaap", "tags": ["NetCashProvidedByUsedInOperatingActivities",
+                                                            "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"], "period": "duration", "unit": "USD"},
 }
+# Für Banken ist Umsatz keine geeignete Kennzahl (siehe MAPPING.md)
+OHNE_BANK = {"revenue"}
 
 
 def cik_normalisieren(cik) -> str:
@@ -52,27 +63,36 @@ def abrufen(client: SichererClient, cik, speicher_verzeichnis):
     return pfad, h2, len(daten)
 
 
-def extrahieren(rohdaten: dict, mapping=MAPPING):
+def extrahieren(rohdaten: dict, mapping=MAPPING, metrics=None):
     """Alle Einträge der gemappten Tags aus Jahresformularen, unverändert und mit allen Kontextangaben."""
     ausgabe = []
     for metric, m in mapping.items():
-        knoten = rohdaten.get("facts", {}).get(m["taxonomy"], {}).get(m["tag"])
-        if not knoten:
+        if metrics is not None and metric not in metrics:
             continue
-        for einheit, eintraege in knoten.get("units", {}).items():
-            if einheit != m["unit"]:
-                continue   # andere Einheiten (z. B. Aktien) bleiben im Rohbeleg, werden nicht gemappt
-            for e in eintraege:
-                if e.get("form") in JAHRESFORMULARE:
-                    ausgabe.append({"metric": metric, "taxonomy": m["taxonomy"], "tag": m["tag"], "unit": einheit, **e})
+        for rang, tag in enumerate(m["tags"]):
+            knoten = rohdaten.get("facts", {}).get(m["taxonomy"], {}).get(tag)
+            if not knoten:
+                continue
+            for einheit, eintraege in knoten.get("units", {}).items():
+                if einheit != m["unit"]:
+                    continue   # andere Einheiten (z. B. Aktien) bleiben im Rohbeleg, werden nicht gemappt
+                for e in eintraege:
+                    if e.get("form") in JAHRESFORMULARE:
+                        ausgabe.append({"metric": metric, "taxonomy": m["taxonomy"], "tag": tag, "rang": rang, "unit": einheit, **e})
     return ausgabe
 
 
 def normalisieren(eintraege, entity_id, source_id):
-    """Fakt-Zeilen für international.fact. Duplikate innerhalb desselben Filings und Periodenendes werden einmal geführt;
-    widersprüchliche Werte im selben Filing ergeben einen Fehler statt stiller Auswahl."""
+    """Fakt-Zeilen für international.fact. Je Kennzahl, Filing und Periode gilt der Tag mit dem besten Rang; Duplikate desselben Tags
+    werden einmal geführt, widersprüchliche Werte im selben Filing ergeben einen Fehler statt stiller Auswahl."""
+    bester = {}
+    for e in eintraege:
+        k = (e["metric"], e["accn"], e.get("start") or "", e["end"])
+        bester[k] = min(bester.get(k, e["rang"]), e["rang"])
     zeilen, gesehen = [], {}
     for e in eintraege:
+        if e["rang"] != bester[(e["metric"], e["accn"], e.get("start") or "", e["end"])]:
+            continue
         end = date.fromisoformat(e["end"])
         start = date.fromisoformat(e["start"]) if e.get("start") else None
         m = MAPPING[e["metric"]]
@@ -103,7 +123,7 @@ def normalisieren(eintraege, entity_id, source_id):
     return zeilen
 
 
-def importieren(conn, rohdatei, sha256, entity_id, cik, dry_run=False, object_key=None):
+def importieren(conn, rohdatei, sha256, entity_id, cik, dry_run=False, object_key=None, bank=False):
     """Schreibt die Companyfacts einer Rohdatei in die Datenbank. Gibt (neu, vorhanden) zurück."""
     with open(rohdatei, "rb") as f:
         roh = json.loads(f.read())
@@ -115,7 +135,8 @@ def importieren(conn, rohdatei, sha256, entity_id, cik, dry_run=False, object_ke
                      (cik_normalisieren(cik), entity_id))
         sid = ingest.quelle_registrieren(conn, ANBIETER, cik_normalisieren(cik), companyfacts_url(cik), sha256,
                                          object_key or str(rohdatei))
-        for z in normalisieren(extrahieren(roh), entity_id, sid):
+        metrics = set(MAPPING) - (OHNE_BANK if bank else set())
+        for z in normalisieren(extrahieren(roh, metrics=metrics), entity_id, sid):
             if ingest.fakt_einfuegen(conn, z):
                 neu += 1
             else:

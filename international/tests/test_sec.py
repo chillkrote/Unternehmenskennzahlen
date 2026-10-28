@@ -32,6 +32,24 @@ class Cik(unittest.TestCase):
                 sec.cik_normalisieren(s)
 
 
+class Pilotliste(unittest.TestCase):
+    def test_zehn_unternehmen_isin_cik_und_stammdaten(self):
+        import csv
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "stammdaten"))
+        import ids
+        reg = ids.lade(neu=True)
+        with open(Path(__file__).resolve().parents[1] / "us_pilot.csv", encoding="utf-8", newline="") as f:
+            zeilen = list(csv.DictReader(f))
+        self.assertEqual(len(zeilen), 10)
+        self.assertEqual(sum(z["bank"] == "ja" for z in zeilen), 2)
+        self.assertEqual(len({z["isin"] for z in zeilen}), 10)
+        for z in zeilen:
+            self.assertTrue(ids.isin_pruefsumme_ok(z["isin"]), z["isin"])
+            sec.cik_normalisieren(z["cik"])
+            self.assertIsNotNone(reg.aufloesen(z["isin"]), f"{z['name']} nicht in stammdaten registriert")
+
+
 class Normalisierung(unittest.TestCase):
     def zeilen(self, r):
         return sec.normalisieren(sec.extrahieren(r), "U000021", 1)
@@ -53,6 +71,24 @@ class Normalisierung(unittest.TestCase):
         self.assertEqual(len(self.zeilen(roh(eintrag(), eintrag(frame="CY2024Q4I")))), 1)
         with self.assertRaisesRegex(ValueError, "Widerspruch"):
             self.zeilen(roh(eintrag(val=1), eintrag(val=2)))
+
+    def test_tagrangfolge_kein_mix_je_filing(self):
+        def tag(name, val, **kw):
+            e = {"end": "2024-12-31", "start": "2024-01-01", "val": val, "accn": "A", "form": "10-K", "filed": "2025-02-01", **kw}
+            return {"units": {"USD": [e]}}
+        r = {"cik": 1, "facts": {"us-gaap": {"Revenues": tag("Revenues", 120),
+                                                "RevenueFromContractWithCustomerExcludingAssessedTax": tag("x", 100)}}}
+        z = sec.normalisieren(sec.extrahieren(r), "U1", 1)
+        self.assertEqual([(x["metric_code"], x["value"]) for x in z], [("revenue", D(100))])
+        # anderes Filing ohne den bevorzugten Tag: dort gilt der nächste Rang
+        r["facts"]["us-gaap"]["Revenues"]["units"]["USD"].append({"end": "2023-12-31", "start": "2023-01-01", "val": 90, "accn": "B", "form": "10-K", "filed": "2024-02-01"})
+        self.assertEqual(sorted(x["value"] for x in sec.normalisieren(sec.extrahieren(r), "U1", 1)), [D(90), D(100)])
+
+    def test_banken_ohne_umsatz(self):
+        r = roh(eintrag())
+        r["facts"]["us-gaap"]["Revenues"] = {"units": {"USD": [eintrag(start="2024-01-01")]}}
+        self.assertEqual({e["metric"] for e in sec.extrahieren(r)}, {"assets", "revenue"})
+        self.assertEqual({e["metric"] for e in sec.extrahieren(r, metrics=set(sec.MAPPING) - sec.OHNE_BANK)}, {"assets"})
 
     def test_fixture_adtran(self):
         r = json.loads(FIXTURE.read_text())

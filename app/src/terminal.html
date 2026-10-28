@@ -356,10 +356,27 @@ function ov1(b) {
 
 /* ---------- Tooltip ---------- */
 const tip = document.getElementById("tip");
+/* Tooltip-Text kommt aus data-tip und kann Datenfelder enthalten (Bemerkungen, Namen). Deshalb nie als HTML parsen:
+   erlaubt sind nur <b>, </b>, <span style="color:…">, </span>; alles andere wird als Text (mit aufgelösten
+   Entities) gesetzt und kann so keine Elemente oder Ereignishandler erzeugen. */
+const TIP_TAG = /(<\/?b>|<span style="color:(?:#[0-9a-fA-F]{3,8}|var\(--[\w-]+\)|rgba?\([\d\s,.%]+\))">|<\/span>)/;
+const TIP_ENT = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&#39;": "'" };
+function tipBauen(roh) {
+  const frag = document.createDocumentFragment();
+  const stapel = [frag];
+  String(roh).split(TIP_TAG).forEach((teil, i) => {
+    if (i % 2 === 0) { if (teil) stapel[0].appendChild(document.createTextNode(teil.replace(/&(?:amp|lt|gt|quot|#39);/g, e => TIP_ENT[e]))); return; }
+    if (teil.startsWith("</")) { if (stapel.length > 1) stapel.shift(); return; }
+    const el = document.createElement(teil.startsWith("<b") ? "b" : "span");
+    if (el.tagName === "SPAN") el.style.color = teil.slice(teil.indexOf("color:") + 6, -2);
+    stapel[0].appendChild(el); stapel.unshift(el);
+  });
+  return frag;
+}
 document.addEventListener("mousemove", e => {
   const t = e.target.closest && e.target.closest("[data-tip]");
   if (!t) { tip.style.display = "none"; return; }
-  tip.innerHTML = t.getAttribute("data-tip");
+  tip.replaceChildren(tipBauen(t.getAttribute("data-tip")));
   tip.style.display = "block";
   const w = tip.offsetWidth, h = tip.offsetHeight;
   tip.style.left = Math.min(e.clientX + 14, innerWidth - w - 8) + "px";

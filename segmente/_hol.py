@@ -25,7 +25,7 @@ try:
 except Exception:
     pass
 idx = W / f"boersennotierte-unternehmen/{branche}/dokumente/index.csv"
-txt = idx.read_text(encoding="utf-8-sig")
+txt = open(idx, encoding="utf-8-sig", newline="").read()
 rows = list(csv.reader(io.StringIO(txt), delimiter=";"))
 rel = f"dokumente/{slug}/{fn}"
 rows = [x for x in rows if not (len(x) > 4 and x[4] == rel)]

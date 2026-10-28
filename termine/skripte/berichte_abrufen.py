@@ -159,18 +159,27 @@ def suchen_und_laden(z, u, start):
         if k["p"] < 6:
             break
         try:
-            r = s.get(k["url"], timeout=90)
+            r = s.get(k["url"], timeout=90, stream=True)
+            if r.status_code == 200:
+                laenge = int(r.headers.get("Content-Length") or 0)
+                inhalt = b"" if laenge <= MAX_BYTES else None
+                for teil in r.iter_content(1 << 20) if inhalt is not None else ():   # nie mehr als die Grenze im Speicher
+                    inhalt += teil
+                    if len(inhalt) > MAX_BYTES:
+                        inhalt = None
+                        break
+            r.close()
         except Exception as e:
             versuche.append((k["url"], type(e).__name__))
             continue
         if r.status_code != 200:
             versuche.append((k["url"], f"http {r.status_code}"))
             continue
-        if len(r.content) > MAX_BYTES:
-            return {"ok": False, "grund": "zu groß", "url": k["url"], "mb": len(r.content) // 1_000_000}
-        ok, grund, n = pruefe(r.content, art, ende)
+        if inhalt is None:
+            return {"ok": False, "grund": "zu groß", "url": k["url"], "mb": (laenge or MAX_BYTES) // 1_000_000}
+        ok, grund, n = pruefe(inhalt, art, ende)
         if ok:
-            return {"ok": True, "url": k["url"], "daten": r.content, "seiten": n}
+            return {"ok": True, "url": k["url"], "daten": inhalt, "seiten": n}
         versuche.append((k["url"], grund))
     return {"ok": False, "grund": "nicht gefunden", "versuche": versuche[:3]}
 

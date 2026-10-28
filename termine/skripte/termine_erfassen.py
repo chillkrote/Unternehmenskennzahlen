@@ -120,6 +120,9 @@ def main():
                 z["status"] = "erschienen"
             if o.get("termin") != z["termin"]:
                 z["hinweis"] = (z["hinweis"] + f" Termin verschoben (vorher {o.get('termin')})").strip()
+            # "stand" gilt ab der letzten inhaltlichen Änderung; sonst würde jeder Lauf alle Zeilen umschreiben und die Diffs unlesbar machen
+            if all(o.get(f, "") == z.get(f, "") for f in tlib.KOPF if f != "stand"):
+                z["stand"] = o.get("stand", z["stand"])
     for k, o in alt.items():
         if k not in neu and ("--ohne-yahoo" in a and o.get("quelle") == "yahoo" or o.get("datei") or o.get("abruf_status") == "geladen" or
                               (o.get("quelle") != "yahoo" and date.fromisoformat(o["termin"]) >= heute - timedelta(days=rueck))):

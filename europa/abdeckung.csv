@@ -325,8 +325,8 @@ U000661,TKMS,Germany,2025,EUR,68,46,Erfasst; Quellen-/Prüfstatus je Tabelle
 U000661,TKMS,Germany,2024,EUR,40,20,Erfasst; Quellen-/Prüfstatus je Tabelle
 U000485,PUMA,Germany,2025,EUR,71,46,Erfasst; Quellen-/Prüfstatus je Tabelle
 U000485,PUMA,Germany,2024,EUR,72,47,Erfasst; Quellen-/Prüfstatus je Tabelle
-U000660,tk accelis,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000660,tk accelis,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000660,tk accelis,Germany,2025,EUR,0,2,Jahresdaten unvollständig/offen
+U000660,tk accelis,Germany,2024,EUR,0,0,Jahresdaten unvollständig/offen
 U000363,LANXESS,Germany,2025,EUR,73,46,Erfasst; Quellen-/Prüfstatus je Tabelle
 U000363,LANXESS,Germany,2024,EUR,73,47,Erfasst; Quellen-/Prüfstatus je Tabelle
 U000534,Shelly,Bulgaria,2025,EUR,67,53,Erfasst; Quellen-/Prüfstatus je Tabelle

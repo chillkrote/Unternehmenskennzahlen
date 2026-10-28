@@ -55,6 +55,11 @@ ergänzt wird. Quelle und Prüfstatus stehen **je Jahr und Tabelle** im Profil.
 Zegonas Bericht 2025 umfasst 15 Monate (01.01.2024–31.03.2025); ein eigenständiger
 Jahresabschluss 2024 wird nicht erfunden. Octaves 2024/2025-Daten sind kombinierte Abschlüsse
 des damaligen Hexagon-Geschäfts, keine eigenständigen Abschlüsse des späteren Emittenten.
+TKMS enthält kombinierte historische Abschlüsse 2022–2024. Rosebanks 2024-Erstabschluss
+umfasst sieben Monate und ist in GBP ausgewiesen, während 2025 in USD berichtet wurde.
+Bei tk accelis sind bislang nur gerundete veröffentlichte Umsatz-/EBITDA-Kennzahlen 2024/25
+belegt; die vollständige Bilanz/GuV bleibt ausdrücklich offen. Der öffentlich lesbare
+Nachweis wird nicht durch Kennzahlen von thyssenkrupp oder einzelnen Tochtergesellschaften ersetzt.
 
 ## Oberfläche und Aktualisierung
 

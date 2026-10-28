@@ -11,8 +11,8 @@ U000065,Bayer,Germany,2025,EUR,74,47,Sekundärquelle; Originalabgleich offen
 U000065,Bayer,Germany,2024,EUR,74,47,Sekundärquelle; Originalabgleich offen
 U000073,Beiersdorf,Germany,2025,EUR,68,51,Sekundärquelle; Originalabgleich offen
 U000073,Beiersdorf,Germany,2024,EUR,67,50,Sekundärquelle; Originalabgleich offen
-U000067,BMW,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000067,BMW,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000067,BMW,Germany,2025,EUR,72,46,Sekundärquelle; Originalabgleich offen
+U000067,BMW,Germany,2024,EUR,73,46,Sekundärquelle; Originalabgleich offen
 U000100,Brenntag,Germany,2025,EUR,75,53,Sekundärquelle; Originalabgleich offen
 U000100,Brenntag,Germany,2024,EUR,76,53,Sekundärquelle; Originalabgleich offen
 U000124,Commerzbank,Germany,2025,EUR,48,41,Sekundärquelle; Originalabgleich offen
@@ -53,8 +53,8 @@ U000396,Merck,Germany,2025,EUR,80,54,Sekundärquelle; Originalabgleich offen
 U000396,Merck,Germany,2024,EUR,79,54,Sekundärquelle; Originalabgleich offen
 U000415,MTU Aero Engines,Germany,2025,EUR,71,50,Sekundärquelle; Originalabgleich offen
 U000415,MTU Aero Engines,Germany,2024,EUR,74,51,Sekundärquelle; Originalabgleich offen
-U000420,Munich Re,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000420,Munich Re,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000420,Munich Re,Germany,2025,EUR,47,38,Sekundärquelle; Originalabgleich offen
+U000420,Munich Re,Germany,2024,EUR,47,38,Sekundärquelle; Originalabgleich offen
 U000491,QIAGEN,Germany,2025,USD,75,50,Sekundärquelle; Originalabgleich offen
 U000491,QIAGEN,Germany,2024,USD,78,50,Sekundärquelle; Originalabgleich offen
 U000502,Rheinmetall,Germany,2025,EUR,82,54,Sekundärquelle; Originalabgleich offen
@@ -103,8 +103,8 @@ U000177,DWS Group,Germany,2025,EUR,59,46,Sekundärquelle; Originalabgleich offen
 U000177,DWS Group,Germany,2024,EUR,60,48,Sekundärquelle; Originalabgleich offen
 U000187,Elmos Semiconductor,Germany,2025,EUR,67,46,Sekundärquelle; Originalabgleich offen
 U000187,Elmos Semiconductor,Germany,2024,EUR,70,45,Sekundärquelle; Originalabgleich offen
-U000207,Evonik,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000207,Evonik,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000207,Evonik,Germany,2025,EUR,76,49,Sekundärquelle; Originalabgleich offen
+U000207,Evonik,Germany,2024,EUR,77,49,Sekundärquelle; Originalabgleich offen
 U000230,Fraport,Germany,2025,EUR,71,48,Sekundärquelle; Originalabgleich offen
 U000230,Fraport,Germany,2024,EUR,71,48,Sekundärquelle; Originalabgleich offen
 U000231,freenet,Germany,2025,EUR,70,49,Sekundärquelle; Originalabgleich offen
@@ -133,10 +133,10 @@ U000433,Nemetschek,Germany,2025,EUR,70,53,Sekundärquelle; Originalabgleich offe
 U000433,Nemetschek,Germany,2024,EUR,69,53,Sekundärquelle; Originalabgleich offen
 U000442,Nordex,Germany,2025,EUR,75,51,Sekundärquelle; Originalabgleich offen
 U000442,Nordex,Germany,2024,EUR,76,51,Sekundärquelle; Originalabgleich offen
-U000175,Porsche AG,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000175,Porsche AG,Germany,2024,,0,0,Jahresdaten unvollständig/offen
-U000479,Porsche SE,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000479,Porsche SE,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000175,Porsche AG,Germany,2025,EUR,80,47,Sekundärquelle; Originalabgleich offen
+U000175,Porsche AG,Germany,2024,EUR,82,48,Sekundärquelle; Originalabgleich offen
+U000479,Porsche SE,Germany,2025,EUR,51,42,Sekundärquelle; Originalabgleich offen
+U000479,Porsche SE,Germany,2024,EUR,54,42,Sekundärquelle; Originalabgleich offen
 U000494,Rational,Germany,2025,EUR,74,42,Sekundärquelle; Originalabgleich offen
 U000494,Rational,Germany,2024,EUR,73,42,Sekundärquelle; Originalabgleich offen
 U000498,Redcare Pharmacy,Netherlands,2025,EUR,68,44,Sekundärquelle; Originalabgleich offen
@@ -193,8 +193,8 @@ U000106,CANCOM,Germany,2025,EUR,75,50,Sekundärquelle; Originalabgleich offen
 U000106,CANCOM,Germany,2024,EUR,74,50,Sekundärquelle; Originalabgleich offen
 U000109,Carl Zeiss Meditec,Germany,2025,EUR,69,43,Sekundärquelle; Originalabgleich offen
 U000109,Carl Zeiss Meditec,Germany,2024,EUR,69,44,Sekundärquelle; Originalabgleich offen
-U000114,CEWE,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000114,CEWE,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000114,CEWE,Germany,2025,EUR,66,48,Sekundärquelle; Originalabgleich offen
+U000114,CEWE,Germany,2024,EUR,67,49,Sekundärquelle; Originalabgleich offen
 U000146,Dermapharm,Germany,2025,EUR,70,52,Sekundärquelle; Originalabgleich offen
 U000146,Dermapharm,Germany,2024,EUR,71,52,Sekundärquelle; Originalabgleich offen
 U000150,Deutsche Beteiligungs,Germany,2025,EUR,37,31,Sekundärquelle; Originalabgleich offen
@@ -209,8 +209,8 @@ U000176,Dürr,Germany,2025,EUR,76,52,Sekundärquelle; Originalabgleich offen
 U000176,Dürr,Germany,2024,EUR,76,53,Sekundärquelle; Originalabgleich offen
 U000179,Eckert & Ziegler,Germany,2025,EUR,73,53,Sekundärquelle; Originalabgleich offen
 U000179,Eckert & Ziegler,Germany,2024,EUR,73,54,Sekundärquelle; Originalabgleich offen
-U000183,Einhell,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000183,Einhell,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000183,Einhell,Germany,2025,EUR,71,50,Sekundärquelle; Originalabgleich offen
+U000183,Einhell,Germany,2024,EUR,70,50,Sekundärquelle; Originalabgleich offen
 U000193,Energiekontor,Germany,2025,EUR,61,49,Sekundärquelle; Originalabgleich offen
 U000193,Energiekontor,Germany,2024,EUR,61,49,Sekundärquelle; Originalabgleich offen
 U000208,EVOTEC,Germany,2025,EUR,86,52,Sekundärquelle; Originalabgleich offen
@@ -287,8 +287,8 @@ U000635,Südzucker,Germany,2025,EUR,76,53,Sekundärquelle; Originalabgleich offe
 U000635,Südzucker,Germany,2024,EUR,75,53,Sekundärquelle; Originalabgleich offen
 U000532,SGL Carbon,Germany,2025,EUR,68,50,Sekundärquelle; Originalabgleich offen
 U000532,SGL Carbon,Germany,2024,EUR,68,50,Sekundärquelle; Originalabgleich offen
-U000527,secunet,Germany,2025,,0,0,Jahresdaten unvollständig/offen
-U000527,secunet,Germany,2024,,0,0,Jahresdaten unvollständig/offen
+U000527,secunet,Germany,2025,EUR,62,46,Sekundärquelle; Originalabgleich offen
+U000527,secunet,Germany,2024,EUR,62,44,Sekundärquelle; Originalabgleich offen
 U000512,Salzgitter,Germany,2025,EUR,73,48,Sekundärquelle; Originalabgleich offen
 U000512,Salzgitter,Germany,2024,EUR,73,49,Sekundärquelle; Originalabgleich offen
 U000717,Vossloh,Germany,2025,EUR,74,50,Sekundärquelle; Originalabgleich offen
@@ -343,8 +343,8 @@ U000696,Vincorion,Germany,2025,EUR,68,46,Sekundärquelle; Originalabgleich offen
 U000696,Vincorion,Germany,2024,EUR,68,46,Sekundärquelle; Originalabgleich offen
 U000663,tonies,Luxembourg,2025,EUR,64,49,Sekundärquelle; Originalabgleich offen
 U000663,tonies,Luxembourg,2024,EUR,65,50,Sekundärquelle; Originalabgleich offen
-U000755,A.P.MOLLER-MAERSK B,Denmark,2025,,0,0,Jahresdaten unvollständig/offen
-U000755,A.P.MOLLER-MAERSK B,Denmark,2024,,0,0,Jahresdaten unvollständig/offen
+U000755,A.P.MOLLER-MAERSK B,Denmark,2025,USD,68,43,Sekundärquelle; Originalabgleich offen
+U000755,A.P.MOLLER-MAERSK B,Denmark,2024,USD,69,43,Sekundärquelle; Originalabgleich offen
 U000756,3I GROUP PLC.,United Kingdom,2025,GBP,35,33,Sekundärquelle; Originalabgleich offen
 U000756,3I GROUP PLC.,United Kingdom,2024,GBP,35,33,Sekundärquelle; Originalabgleich offen
 U000757,A2A,Italy,2025,EUR,65,50,Sekundärquelle; Originalabgleich offen
@@ -549,8 +549,8 @@ U000856,BPER Banca,Italy,2025,EUR,49,39,Sekundärquelle; Originalabgleich offen
 U000856,BPER Banca,Italy,2024,EUR,49,40,Sekundärquelle; Originalabgleich offen
 U000857,BRIDGEPOINT GROUP,United Kingdom,2025,GBP,61,49,Sekundärquelle; Originalabgleich offen
 U000857,BRIDGEPOINT GROUP,United Kingdom,2024,GBP,63,50,Sekundärquelle; Originalabgleich offen
-U000858,BP,United Kingdom,2025,,0,0,Jahresdaten unvollständig/offen
-U000858,BP,United Kingdom,2024,,0,0,Jahresdaten unvollständig/offen
+U000858,BP,United Kingdom,2025,USD,82,46,Sekundärquelle; Originalabgleich offen
+U000858,BP,United Kingdom,2024,USD,82,46,Sekundärquelle; Originalabgleich offen
 U000859,BRITISH AMERICAN TOBACCO,United Kingdom,2025,GBP,73,54,Sekundärquelle; Originalabgleich offen
 U000859,BRITISH AMERICAN TOBACCO,United Kingdom,2024,GBP,73,53,Sekundärquelle; Originalabgleich offen
 U000860,BT GRP,United Kingdom,2025,GBP,79,50,Sekundärquelle; Originalabgleich offen
@@ -833,8 +833,8 @@ U000998,INDUSTRIVARDEN C,Sweden,2025,SEK,32,23,Sekundärquelle; Originalabgleich
 U000998,INDUSTRIVARDEN C,Sweden,2024,SEK,32,23,Sekundärquelle; Originalabgleich offen
 U000999,INFORMA,United Kingdom,2025,GBP,68,51,Sekundärquelle; Originalabgleich offen
 U000999,INFORMA,United Kingdom,2024,GBP,70,51,Sekundärquelle; Originalabgleich offen
-U001000,ING BANK SLASKI BSK,Poland,2025,,0,0,Jahresdaten unvollständig/offen
-U001000,ING BANK SLASKI BSK,Poland,2024,,0,0,Jahresdaten unvollständig/offen
+U001000,ING BANK SLASKI BSK,Poland,2025,PLN,46,36,Sekundärquelle; Originalabgleich offen
+U001000,ING BANK SLASKI BSK,Poland,2024,PLN,46,37,Sekundärquelle; Originalabgleich offen
 U001001,ING GRP,Netherlands,2025,EUR,61,39,Sekundärquelle; Originalabgleich offen
 U001001,ING GRP,Netherlands,2024,EUR,61,45,Sekundärquelle; Originalabgleich offen
 U001002,INFICON,Switzerland,2025,USD,55,39,Sekundärquelle; Originalabgleich offen
@@ -1017,8 +1017,8 @@ U001090,NORDIC SEMICONDUCTOR,Norway,2025,USD,69,47,Sekundärquelle; Originalabgl
 U001090,NORDIC SEMICONDUCTOR,Norway,2024,USD,65,47,Sekundärquelle; Originalabgleich offen
 U001091,NOVONESIS,Denmark,2025,EUR,57,48,Sekundärquelle; Originalabgleich offen
 U001091,NOVONESIS,Denmark,2024,EUR,62,49,Sekundärquelle; Originalabgleich offen
-U001092,OCTAVE INTELLIGENCE SDR,Sweden,2025,,0,0,Jahresdaten unvollständig/offen
-U001092,OCTAVE INTELLIGENCE SDR,Sweden,2024,,0,0,Jahresdaten unvollständig/offen
+U001092,OCTAVE INTELLIGENCE SDR,Sweden,2025,USD,0,0,Jahresdaten unvollständig/offen
+U001092,OCTAVE INTELLIGENCE SDR,Sweden,2024,USD,60,41,Sekundärquelle; Originalabgleich offen
 U001093,NOVARTIS,Switzerland,2025,USD,89,44,Sekundärquelle; Originalabgleich offen
 U001093,NOVARTIS,Switzerland,2024,USD,97,44,Sekundärquelle; Originalabgleich offen
 U001094,NOVO NORDISK B,Denmark,2025,DKK,81,47,Sekundärquelle; Originalabgleich offen

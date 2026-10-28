@@ -555,8 +555,15 @@
  {
   "unternehmen_id": "U000755",
   "name": "A.P.MOLLER-MAERSK B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 450
  },
  {
   "unternehmen_id": "U000759",

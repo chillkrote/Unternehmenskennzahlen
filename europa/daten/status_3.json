@@ -858,8 +858,15 @@
  {
   "unternehmen_id": "U000858",
   "name": "BP",
-  "status": "offen",
-  "grund": "BP: Unternehmensidentität nicht bestätigt; BPAC11.SA: Unternehmensidentität nicht bestätigt; BP.L: Unternehmensidentität nicht bestätigt; BPRE: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 513
  },
  {
   "unternehmen_id": "U000862",

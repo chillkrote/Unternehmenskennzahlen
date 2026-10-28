@@ -6,6 +6,7 @@ Dateien, die im (sparse) Checkout fehlen, werden übersprungen und gezählt; mit
 Aufruf: python3 pruefung/pruefe.py [--voll]"""
 import csv
 import hashlib
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -75,9 +76,36 @@ def banken():
     print(f"Banken: {len(uebers)} Zeilen geprüft")
 
 
+def ohne_titel(n):
+    return re.sub(r"\b(Prof\.|Dr\.|Professor|Dipl\.-\w+\.?|h\.c\.|Ing\.)\s*", "", n).strip()
+
+
+def governance():
+    pers = WURZEL / "governance/personen.csv"
+    if not pers.exists():
+        return
+    with open(pers, encoding="utf-8-sig") as f:
+        bekannt = {z["person_id"]: z["name"] for z in csv.DictReader(f)}
+    for datei in ("gremien_mitglieder", "mandate_extern", "verguetung", "werdegang"):
+        pf = WURZEL / f"governance/{datei}.csv"
+        if not pf.exists():
+            continue
+        with open(pf, encoding="utf-8-sig") as f:
+            for z in csv.DictReader(f):
+                pid = z.get("person_id")
+                if pid and pid not in bekannt:
+                    fehler.append(f"governance/{datei}.csv: person_id {pid} fehlt in personen.csv")
+                elif pid and z.get("name") and ohne_titel(z["name"]) != ohne_titel(bekannt[pid]) and not z["name"].startswith(("Gesamt", "Barwert", "Zahlungen")):
+                    warnungen.append(f"person_id {pid}: Name {z['name']!r} in {datei}.csv, {bekannt[pid]!r} in personen.csv")
+    for pid in bekannt:
+        if not pid.isascii() or not pid.replace("-", "").isalnum() or pid != pid.lower():
+            fehler.append(f"person_id {pid} enthält Sonderzeichen")
+    print(f"Governance: {len(bekannt)} Personen geprüft")
+
+
 def main():
     voll = "--voll" in sys.argv
-    ids(); index_dateien(voll); banken()
+    ids(); index_dateien(voll); banken(); governance()
     for w in warnungen:
         print("WARNUNG", w)
     for f in fehler:

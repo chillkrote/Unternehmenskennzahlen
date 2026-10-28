@@ -24,7 +24,7 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 |---|---|---|---|
 | B1 | Sechs Sparkassen: Übersicht auf HGB-Bilanz aus CC2 umstellen (M3, PR #30) | 3/1 | ☐ |
 | B2 | Bilanzen die nicht aufgehen (LBS NordWest/NordOst, VB Stuttgart): Bilanzgewinn als Posten (M4) | 2/1 | ☑ LBS NordWest (19,0) und NordOst (5,0): Bilanzgewinn aus Geschäftsbericht, Bilanzen gehen auf; VB Stuttgart (0,5) bleibt Rundung |
-| B3 | Governance-Querverweise/`person_id` (M9) | 2/2 | ☐ |
+| B3 | Governance-Querverweise/`person_id` (M9) | 2/2 | ☑ `slug()` setzt ø,ß,æ,ł um (drei Personen: bjorn-gulden, kevin-voss, ursula-biernert-kloss); Firmen-IDs seit PR #31 zentral; Prüfung der person_id in `pruefe.py` |
 | B4 | `zeitreihen/README.md`: Status „verankert“ dokumentieren (N3) | 1/1 | ☑ |
 | B5 | Doppelt abgelegte PDFs (N5) | 1/2 | ◐ `pruefung/dubletten_pdf.py` + `dubletten_pdf.csv`: 31 Gruppen, 155 MB; Löschen erst nach Umstellen der Verweise (index.csv, Governance-Quellen) |
 

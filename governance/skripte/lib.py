@@ -3,8 +3,10 @@ import csv, re, os, sys, unicodedata
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'stammdaten'))
 import ids  # zentrale Unternehmens-IDs (stammdaten/)
 OUT = os.path.join(os.path.dirname(__file__), '..')
+TRANSLIT = str.maketrans({'ø': 'o', 'Ø': 'O', 'æ': 'ae', 'Æ': 'Ae', 'œ': 'oe', 'Œ': 'Oe', 'ß': 'ss', 'ł': 'l', 'Ł': 'L', 'đ': 'd', 'Đ': 'D', 'ð': 'd', 'þ': 'th'})
 def slug(n):
     n = re.sub(r'\b(Prof\.|Dr\.|Professor|Dipl\.-\w+\.?|h\.c\.|Ing\.)\s*', '', n)
+    n = n.translate(TRANSLIT)       # Buchstaben, die NFKD nicht zerlegt (Bjørn -> bjorn statt bjrn)
     n = unicodedata.normalize('NFKD', n).encode('ascii', 'ignore').decode().lower()
     return re.sub(r'[^a-z0-9]+', '-', n).strip('-')
 

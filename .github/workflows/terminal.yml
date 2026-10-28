@@ -9,7 +9,7 @@ name: Terminal bauen
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, codex/europe600-abschluesse]
     paths: ["app/src/**", "app/*.py", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml"]
   pull_request:
     paths: ["app/src/**", "app/*.py", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
@@ -46,6 +46,12 @@ jobs:
           cache-dependency-path: app/requirements.txt
       - run: pip install openpyxl
       - run: python3 app/build.py
+      - run: python3 -m unittest discover -s europa -p 'test_*.py'
+      - name: Länderauswahl in allen Reitern prüfen
+        run: |
+          npm install --prefix /tmp/terminal-tests --no-save playwright
+          /tmp/terminal-tests/node_modules/.bin/playwright install --with-deps chromium --only-shell
+          NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/country-smoke.js app/dist/bankterminal.html
       - uses: actions/upload-artifact@v4
         with:
           name: terminal
@@ -70,3 +76,4 @@ jobs:
         run: |
           echo "### Terminal gebaut" >> "$GITHUB_STEP_SUMMARY"
           echo "$(du -h app/dist/bankterminal.html | cut -f1) aus Stand ${GITHUB_SHA::7}" >> "$GITHUB_STEP_SUMMARY"
+

@@ -5,7 +5,7 @@
    Läuft vor dem Hauptskript; nutzt dessen Hilfsfunktionen (panel, esc, f0, f1, f2) erst zur Laufzeit. */
 "use strict";
 const VWL = (() => {
-  let VD = null, SER = {}, LAND = {}, THEMA = {}, OECD = {}, REIHE = {};
+  let VD = null, ALLE_DATEN = null, SER = {}, LAND = {}, THEMA = {}, OECD = {}, REIHE = {};
   const S = { land: "DE", serie: null, geos: ["DE", "EA20", "FR"], fenster: "5", ljahr: "ist", pgr: "bip_wachstum", palle: false, pjahr: "2026", pland: "US", pherr: null };
   const FARBE = { DE: "var(--amber)", EA20: "#e8ecf1", EU27_2020: "#939eac", OECD: "#939eac" };
   const PAL = ["#2f86dd", "#17a88a", "#9a6fe0", "#e8484f", "#3ecf6e", "#d9a441", "#e07fb0", "#5ec8d8", "#b4c24a", "#c0714a"];
@@ -23,6 +23,7 @@ const VWL = (() => {
   function init(d) {
     VD = d && d.serien && d.serien.length ? d : null;
     if (!VD) return false;
+    ALLE_DATEN = VD;
     SER = Object.fromEntries(VD.serien.map(s => [s.serie_id, s]));
     LAND = Object.fromEntries(VD.laender.map(l => [l.geo, l.name]));
     OECD = Object.fromEntries(VD.laender.map(l => [l.geo, l.oecd === "1"]));
@@ -33,6 +34,14 @@ const VWL = (() => {
     return true;
   }
   const da = () => !!VD;
+  function setLand(code) {
+    if (!ALLE_DATEN) return;
+    if (code === 'alle') { VD = ALLE_DATEN; return; }
+    VD = {...ALLE_DATEN, laender: ALLE_DATEN.laender.filter(l=>l.geo===code),
+      daten: Object.fromEntries(Object.entries(ALLE_DATEN.daten).map(([key,values])=>[key,Object.fromEntries(Object.entries(values).filter(([geo])=>geo===code))])),
+      prognosen: ALLE_DATEN.prognosen.filter(x=>!x.geo || x.geo===code)};
+    S.land = code; S.geos = [code]; S.pland = code;
+  }
 
   /* ----- Zeit und Zahlen ----- */
   const MONATE = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
@@ -309,5 +318,6 @@ const VWL = (() => {
   const finden = q => { q = (q || "").trim().toLowerCase(); return q && VD ? VD.serien.find(s => s.serie_id === q || s.name.toLowerCase().includes(q)) : null; };
   const waehle = id => { S.serie = id; S.ljahr = "ist"; };
   const datalist = () => VD ? VD.serien.map(s => `<option value="${esc(s.name)}">`).join("") : "";
-  return { init, da, korr: () => VD && { serien: VD.serien, laender: VD.laender, themen: VD.themen, daten: VD.daten }, viewUeb, viewReihe, viewLaender, viewProg, viewQuellen, klick, nachRender, meta, finden, waehle, datalist };
+  return { init, da, setLand, laender: () => ALLE_DATEN ? ALLE_DATEN.laender.map(l=>l.geo) : [], korr: () => VD && { serien: VD.serien, laender: VD.laender, themen: VD.themen, daten: VD.daten }, viewUeb, viewReihe, viewLaender, viewProg, viewQuellen, klick, nachRender, meta, finden, waehle, datalist };
 })();
+

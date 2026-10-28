@@ -212,6 +212,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="brand" href="#start" title="Startseite"><b>TRM</b>Terminal</a>
       <label class="cmdline" for="cmd"><span>&gt;</span><input id="cmd" placeholder="Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter" autocomplete="off" list="firmenliste"></label>
       <span class="meta" id="meta"></span>
+      <label for="global-land" style="white-space:nowrap">Land <select id="global-land" aria-label="Länderauswahl für alle Reiter"><option value="alle">Alle Länder</option></select></label>
     </div>
     <nav class="keys" id="keys-v" aria-label="Volkswirtschaft" hidden>
       <a class="key" href="#v-ueb" data-v="v-ueb"><b>F1</b>Überblick</a>
@@ -220,6 +221,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#v-quellen" data-v="v-quellen"><b>F4</b>Berichte &amp; Quellen</a>
       <a class="key" href="#v-prog" data-v="v-prog"><b>F5</b>Prognosen</a>
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
+      <a class="key" href="#u-abschluesse" data-v="u-abschluesse"><b>F7</b>Bilanz &amp; GuV</a>
     </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
@@ -228,6 +230,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#u-verzeichnis" data-v="u-verzeichnis"><b>F4</b>Verzeichnis</a>
       <a class="key" href="#u-termine" data-v="u-termine"><b>F5</b>Termine</a>
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
+      <a class="key" href="#u-abschluesse" data-v="u-abschluesse"><b>F7</b>Bilanz &amp; GuV</a>
     </nav>
     <nav class="subkeys" id="subkeys" aria-label="Banken-Analyse" hidden>
       <span>Branche Banken ›</span>
@@ -980,9 +983,35 @@ function tape() {
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
-  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), korr: () => KOR.viewKorr() };
+  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
+let globalLand = 'alle', alleBanken = [], alleMarktdaten = null;
+function landAnwenden(code) {
+  globalLand = code;
+  UNT.setLand(code); VWL.setLand(code);
+  KOR.resetLand();
+  const byId = new Map(UNT.unternehmenAlle().map(f=>[f.id,f.land_code||'ZZ']));
+  const byName = new Map(UNT.unternehmenAlle().map(f=>[f.name,f.land_code||'ZZ']));
+  BANKEN = code === 'alle' ? alleBanken : alleBanken.filter(b=>(byId.get(b.id)||byName.get(b.bank)||'ZZ')===code);
+  MARKT = alleMarktdaten && {...alleMarktdaten,werte:alleMarktdaten.werte.filter(w=>code==='alle'||BANKEN.some(b=>b.bank===w.bank))};
+  document.getElementById('banklist').innerHTML = BANKEN.map(b=>`<option value="${esc(b.bank)}">`).join('');
+  document.getElementById('firmenliste').innerHTML = UNT.datalist();
+  document.getElementById('serienliste').innerHTML = VWL.datalist();
+  metaBanken = `${BANKEN.length} Institute · Stichtag ${DATA.meta.stichtag} · Beträge Mio. €`;
+  tape(); quotes(); render();
+}
+function landAuswahlInit() {
+  alleBanken = BANKEN; alleMarktdaten = MARKT;
+  const codes = [...new Set([...UNT.laender(),...VWL.laender()])].sort();
+  const labels = new Intl.DisplayNames(['de'],{type:'region'});
+  const name = c => { if(c==='ZZ') return 'Unbekannt'; try { return labels.of(c)||c; } catch { return c; } };
+  const sel = document.getElementById('global-land');
+  sel.innerHTML = '<option value="alle">Alle Länder</option>'+codes.sort((a,b)=>name(a).localeCompare(name(b),'de')).map(c=>`<option value="${esc(c)}">${esc(name(c))}</option>`).join('');
+  try { const saved=localStorage.getItem('terminal-land'); if(codes.includes(saved)) sel.value=saved; } catch {}
+  sel.addEventListener('change',()=>{try{localStorage.setItem('terminal-land',sel.value);}catch{} landAnwenden(sel.value);});
+  landAnwenden(sel.value);
+}
 /* Startseite: zwei Bereiche, jeder mit eigenem Terminal */
 function viewStart() {
   const u = UNT.da() ? UNT.meta() : "", v = VWL.da() ? VWL.meta() : "";
@@ -1104,9 +1133,8 @@ async function start() {
   let vd = null;
   try { vd = JSON.parse(document.getElementById("vwl").textContent); } catch { vd = null; }
   VWL.init(vd);
-  tape();
-  quotes();
-  render();
+  landAuswahlInit();
 }
 start();
 </script>
+

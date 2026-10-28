@@ -602,5 +602,6 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
   /* Einstieg von außen: zwei Reihen vorbelegen (z. B. aus einer Profilseite) */
   function setze(a, b) { init(); if (a) S.A = a; if (b) S.B = b; S.modus = "paar"; S.lag = 0; }
   const meta = () => { init(); return [V ? `${V.serien.length} VWL-Reihen` : "", U ? `${U.zr.length} Unternehmen mit Jahresreihen · ${U.kursFirmen.length} mit Kursen` : ""].filter(Boolean).join(" · "); };
-  return { viewKorr, nachRender, klick, setze, meta, stat, pearson, spearman, pWert };
+  return { resetLand: () => { bereit = false; cache.clear(); }, viewKorr, nachRender, klick, setze, meta, stat, pearson, spearman, pWert };
 })();
+

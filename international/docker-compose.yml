@@ -1,0 +1,20 @@
+# Lokale PostgreSQL-Datenbank für die internationale Erweiterung. Kein bezahlter Dienst.
+# Start:  INTERNATIONAL_DB_PASSWORD='...' docker compose -f international/docker-compose.yml up -d
+# Das Passwort kommt nur aus der Umgebung (ohne Wert bricht compose ab), der Port ist nur auf dem eigenen Rechner erreichbar.
+# Hinweis: diese Datei wurde in der Cloud-Umgebung nicht ausgeführt (dort läuft kein Docker-Daemon); getestet wurde mit PostgreSQL 16 nativ.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: ${INTERNATIONAL_DB_PASSWORD:?INTERNATIONAL_DB_PASSWORD setzen}
+      POSTGRES_DB: international
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - international_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d international"]
+      interval: 5s
+      retries: 10
+volumes:
+  international_pgdata:

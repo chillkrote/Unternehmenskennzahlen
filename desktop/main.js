@@ -3,7 +3,9 @@ const fs = require("fs");
 const path = require("path");
 
 const REPO = "chillkrote/Unternehmenskennzahlen";
-const DATEI_IM_REPO = "app/dist/bankterminal.html";
+// Das Terminal wird nicht mehr nach main committet, sondern vom Workflow "Terminal bauen" auf den Branch terminal-dist geschrieben
+const DATEI_IM_REPO = "bankterminal.html";
+const BRANCH = "terminal-dist";
 const MIT = app.isPackaged ? process.resourcesPath : path.join(__dirname, "build");
 
 let fenster = null;
@@ -47,7 +49,7 @@ function tokenAbfragen() {
 }
 
 async function datenAktualisieren() {
-  const abruf = async token => net.fetch(`https://api.github.com/repos/${REPO}/contents/${DATEI_IM_REPO}`, {
+  const abruf = async token => net.fetch(`https://api.github.com/repos/${REPO}/contents/${DATEI_IM_REPO}?ref=${BRANCH}`, {
     headers: { Accept: "application/vnd.github.raw+json", "User-Agent": "Terminal-Desktop", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
   });
   try {

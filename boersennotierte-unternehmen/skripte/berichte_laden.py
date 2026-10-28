@@ -29,6 +29,8 @@ HIER = Path(__file__).resolve().parent
 BASIS = HIER.parent
 sys.path.insert(0, str(BASIS.parent / "stammdaten"))
 import ids  # noqa: E402  zentrale Unternehmens-IDs (stammdaten/)
+sys.path.insert(0, str(BASIS.parent / "lib"))
+import sicherer_abruf  # noqa: E402
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 MIN_SEITEN = 16
 MAX_BYTES = 95_000_000  # GitHub-Grenze 100 MB je Datei
@@ -98,7 +100,7 @@ def lade(e, jahr, nur_konzern=False, ohne=()):
         if k.get("punkte", 99) < 4:
             break
         try:
-            r = s.get(k["url"], timeout=90)
+            r = sicherer_abruf.get(s, k["url"], timeout=90)
         except Exception as ex:
             versuche.append({"url": k["url"], "grund": type(ex).__name__})
             continue

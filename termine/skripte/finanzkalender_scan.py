@@ -22,7 +22,10 @@ import requests
 
 import tlib
 
-UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+sys.path.insert(0, str(tlib.REPO / "lib"))
+import hoeflich  # noqa: E402
+
+UA = hoeflich.UA
 KALENDER_LINK = re.compile(r"finanzkalender|financial[-_ ]?calendar|finanztermine|financial[-_ ]?dates|termine|events?[-_/]|"
                            r"ir[-_/]?kalender|investor[-_ ]?calendar|calendar|kalender|veranstaltungen", re.I)
 IR_LINK = re.compile(r"investor|/ir\b|/ir/|aktion[aä]r|financial|finanz", re.I)
@@ -88,6 +91,8 @@ def termine_aus_text(zeilen, heute):
 
 
 def holen(s, url):
+    if not hoeflich.erlaubt(url):
+        return None, "robots.txt"
     try:
         r = s.get(url, timeout=20)
     except Exception as e:

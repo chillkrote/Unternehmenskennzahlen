@@ -158,6 +158,9 @@ def suchen_und_laden(z, u, start):
     for k in bew[:6]:
         if k["p"] < 6:
             break
+        if not bs.hoeflich.erlaubt(k["url"]):
+            versuche.append((k["url"], "robots.txt"))
+            continue
         try:
             r = s.get(k["url"], timeout=90, stream=True)
             if r.status_code == 200:

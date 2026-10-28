@@ -14,9 +14,9 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | A5 | `berichte_abrufen.py` streamt Downloads (N7) | 1/1 | ☑ |
 | A6 | Plausibilitätsgrenzen für Yahoo-Quoten in `build.py` (M7) | 3/1 | ☑ PR #35 (Quote/Multiple außerhalb Grenzen = leer) |
 | A7 | Yahoo-Abgleich: „bestätigt“ nur für das letzte GJ (M6) | 2/2 | ☑ nur das neueste Yahoo-Jahr zählt als bestätigt, ältere Treffer als „nur älteres Jahr“ |
-| A8 | Prozent-Einheit je Spalte statt Wert-Heuristik (N4) | 1/2 | ☐ |
+| A8 | Prozent-Einheit je Spalte statt Wert-Heuristik (N4) | 1/2 | ☑ Zellformat, dann Spaltenmaximum statt Wert; Daten unverändert (0 Abweichungen) |
 | A9 | Prüfskript `pruefung/pruefe.py` (Bilanz geht auf, IDs, index.csv, SHA-256) | 3/2 | ☑ `pruefung/pruefe.py` |
-| A10 | Terminal: Export (CSV) der aktuellen Tabelle, Watchlist, Hilfetexte | 2/3 | ◐ CSV-Export je Tabelle ☑, Merkliste (★ im Profil, Filter im Verzeichnis) ☑; Hilfetexte offen |
+| A10 | Terminal: Export (CSV) der aktuellen Tabelle, Watchlist, Hilfetexte | 2/3 | ☑ CSV-Export, Merkliste, Hilfetexte zu allen 33 Kennzahlen (Mouseover in Tabellenköpfen und Profil) |
 | A11 | Tests: Smoke-Test (Playwright) als Skript ins Repo | 2/2 | ☑ `app/tests/smoke.js` |
 
 ## B. Datenqualität (Reviewbefunde)

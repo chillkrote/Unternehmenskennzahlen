@@ -1,4 +1,4 @@
-// Kopiert das zuletzt gebaute Terminal (app/dist/bankterminal.html) und die Schriften nach build/.
+// Kopiert das zuletzt gebaute Terminal (app/dist/bankterminal.html, in CI vorher von Branch terminal-dist geholt) und die Schriften nach build/.
 const fs = require("fs");
 const path = require("path");
 

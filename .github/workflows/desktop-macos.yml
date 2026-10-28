@@ -23,6 +23,14 @@ jobs:
           sparse-checkout: |
             app
             desktop
+      # app/dist in main ist eingefroren; das aktuelle Terminal liegt auf dem Branch terminal-dist (Workflow "Terminal bauen")
+      - name: Aktuelles Terminal von terminal-dist holen
+        run: |
+          mkdir -p app/dist
+          gh api -H "Accept: application/vnd.github.raw+json" "repos/$GITHUB_REPOSITORY/contents/bankterminal.html?ref=terminal-dist" > app/dist/bankterminal.html
+          test "$(wc -c < app/dist/bankterminal.html)" -gt 100000
+        env:
+          GH_TOKEN: ${{ github.token }}
       - uses: actions/setup-node@v4
         with:
           node-version: "22"

@@ -16,7 +16,7 @@ Eine Electron-Hülle um die vorhandene HTML/JS-Oberfläche (`app/dist/banktermin
 
 ## Daten aktualisieren
 
-Menü **Daten → Daten aktualisieren** (⌘U) lädt die neueste `app/dist/bankterminal.html` aus dem Repo (die GitHub-Action „Börsendaten Terminal“ baut sie werktags neu). Weil das Repo privat ist, fragt die App beim ersten Mal nach einem GitHub-Token:
+Menü **Daten → Daten aktualisieren** (⌘U) lädt die neueste `bankterminal.html` vom Branch `terminal-dist` des Repos (die GitHub-Action „Börsendaten Terminal“ baut sie werktags neu). Weil das Repo privat ist, fragt die App beim ersten Mal nach einem GitHub-Token:
 
 1. GitHub → Settings → Developer settings → Fine-grained tokens → neuen Token anlegen, Repository `Unternehmenskennzahlen`, Berechtigung **Contents: Read-only**.
 2. Token in das Fenster der App einfügen. Er wird verschlüsselt im macOS-Schlüsselbund abgelegt (Menü Daten → „GitHub-Token entfernen“ löscht ihn).

@@ -28,6 +28,7 @@ const UNT = (() => {
   const kurzU = n => n.replace(/ (AG|SE|KGaA|GmbH|eG|& Co\. KGaA|plc)\b/g, "").replace(/\(.*?\)/g, "").trim();
   const hatKz = k => !!KZU[k] && FIRMEN.some(f => w(f, k) != null);
   const hatL = (liste, k) => !!KZU[k] && liste.some(f => w(f, k) != null);
+  const kzHilfe = k => (KZU[k] && KZU[k].hilfe) || "";
   const kzName = k => KZU[k] ? KZU[k].name : k === "fonds_340g" ? "Fonds § 340g" : k.replace(/_/g, " ");
   const kurzKz = k => kzName(k).replace(/ \(.*\)/, "");
 
@@ -117,7 +118,7 @@ const UNT = (() => {
     const zelle = (z, k) => { const v = z.wert(k); if (v == null) return `<td class="n">–</td>`; const [lo, hi] = spanne[k], t = hi > lo ? (v - lo) / (hi - lo) : .5;
       return `<td style="background:rgba(255,168,40,${(.04 + .26 * t).toFixed(3)})">${fmt(k, v)}</td>`; };
     const kopf = (k, t) => `<th class="sortable" data-umatrix="${k}">${t}${sk === k ? " ▼" : ""}</th>`;
-    return `<div class="scroll"><table class="hov"><thead><tr><th>Branche</th>${kopf("n", "n")}<th>notiert</th>${kopf("mk", "Σ Börsenwert")}${spalten.map(k => `<th class="sortable" data-umatrix="${k}" title="${esc(kzName(k))}">${esc(kurzKz(k))}${sk === k ? " ▼" : ""}</th>`).join("")}</tr></thead>
+    return `<div class="scroll"><table class="hov"><thead><tr><th>Branche</th>${kopf("n", "n")}<th>notiert</th>${kopf("mk", "Σ Börsenwert")}${spalten.map(k => `<th class="sortable" data-umatrix="${k}" data-tip="${esc("<b>" + kzName(k) + "</b>\n" + kzHilfe(k))}">${esc(kurzKz(k))}${sk === k ? " ▼" : ""}</th>`).join("")}</tr></thead>
       <tbody>${zeilen.map(z => `<tr class="click" data-uopen="${esc(z.id)}"><td>${esc(z.name)}</td><td class="n">${z.n}</td><td class="n">${z.nn || "–"}</td><td>${z.mk ? mrd(z.mk) : "–"}</td>${spalten.map(k => zelle(z, k)).join("")}</tr>`).join("")}</tbody></table></div>`;
   }
 
@@ -338,7 +339,7 @@ const UNT = (() => {
       const a = med(liste, k), b = med(andere, k), d = a != null && b != null ? a - b : null, pc = ["pct", "chg"].includes(KZU[k].fmt), h = KZU[k].hoch;
       const txt = d == null ? "–" : pc ? (d > 0 ? "+" : "") + f1.format(d * 100) + " Pp." : (d > 0 ? "+" : "") + f2.format(d) + (KZU[k].fmt === "x" ? "x" : "");
       const cl = d == null || h == null || Math.abs(d) < 1e-9 ? "" : (d > 0) === h ? "pos" : "neg";
-      return `<tr><td>${esc(kzName(k))}</td><td>${fmt(k, a)}</td><td class="n">${fmt(k, b)}</td><td class="${cl}">${txt}</td></tr>`; }).join("")}</tbody></table></div>`;
+      return `<tr><td data-tip="${esc(kzHilfe(k))}">${esc(kzName(k))}</td><td>${fmt(k, a)}</td><td class="n">${fmt(k, b)}</td><td class="${cl}">${txt}</td></tr>`; }).join("")}</tbody></table></div>`;
   }
 
   function tabelleBranche(liste, b) {
@@ -348,7 +349,7 @@ const UNT = (() => {
     if (S.sort.auto !== S.branche + S.gruppe + S.notiert && !S.sort.manuell) S.sort = { k: sp.includes("bilanzsumme") ? "bilanzsumme" : sp[0], ab: true, auto: S.branche + S.gruppe + S.notiert };
     const sort = [...liste].sort((a, b2) => { const x = w(a, S.sort.k), y = w(b2, S.sort.k); if (x == null) return 1; if (y == null) return -1; return S.sort.ab ? y - x : x - y; });
     const meds = sp.map(k => med(liste, k)), spalte2 = S.branche === "alle" ? "Branche" : (b && b.gruppen.length ? "Gruppe" : null);
-    return `<div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th>${spalte2 ? `<th style='text-align:left'>${spalte2}</th>` : ""}${sp.map(k => `<th class="sortable" data-usort="${k}">${esc(kurzKz(k))}${S.sort.k === k ? (S.sort.ab ? " ▼" : " ▲") : ""}</th>`).join("")}<th></th></tr></thead>
+    return `<div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th>${spalte2 ? `<th style='text-align:left'>${spalte2}</th>` : ""}${sp.map(k => `<th class="sortable" data-usort="${k}" data-tip="${esc("<b>" + kzName(k) + "</b>\n" + kzHilfe(k))}">${esc(kurzKz(k))}${S.sort.k === k ? (S.sort.ab ? " ▼" : " ▲") : ""}</th>`).join("")}<th></th></tr></thead>
       <tbody>${sort.map(f => `<tr class="click${f.id === S.markiert ? " sel" : ""}" data-umk="${esc(f.id)}"><td>${profilLink(f)}</td><td>${punkt(f)}</td>${spalte2 ? `<td class="n" style="text-align:left;font-family:var(--sans)">${esc(spalte2 === "Branche" ? brName(f.branche) : f.gruppe || "")}</td>` : ""}${sp.map(k => { const v = w(f, k); return `<td class="${v == null ? "n" : ["r_ytd", "w_umsatz", "w_jue", "w_bilanzsumme"].includes(k) ? klasse(v) : ""}">${fmt(k, v)}</td>`; }).join("")}<td><button type="button" class="mini" data-uadd="${esc(f.id)}" title="In den Vergleich übernehmen">+</button></td></tr>`).join("")}
       <tr><td style="color:var(--amber)">Median</td><td></td>${spalte2 ? "<td></td>" : ""}${meds.map((v, i) => `<td style="color:var(--amber)">${fmt(sp[i], v)}</td>`).join("")}<td></td></tr></tbody></table></div>`;
   }
@@ -518,7 +519,7 @@ const UNT = (() => {
     const gruppen = UD.gruppen.map(g => {
       const ks = kzs.filter(k => k.gruppe === g); if (!ks.length) return "";
       return `<tr><td colspan="5" class="grp">${esc(g)}</td></tr>` + ks.map(k => { const v = w(f, k.key), a = werte(peers, k.key), p = a.length >= 3 ? perzentil(v, a) : null;
-        return `<tr><td>${esc(k.name)}${k.einheit ? ` <span class="pct">${esc(k.einheit)}</span>` : ""}</td><td>${fmt(k.key, v)}</td><td class="n">${fmt(k.key, median(a))}</td><td class="n">${gp.length > 2 ? fmt(k.key, med(gp, k.key)) : "–"}</td><td class="n">${p == null ? "–" : "P" + f0.format(p * 100).padStart(2, "0")}</td></tr>`; }).join("");
+        return `<tr><td${k.hilfe ? ` data-tip="${esc(k.hilfe)}"` : ""}>${esc(k.name)}${k.einheit ? ` <span class="pct">${esc(k.einheit)}</span>` : ""}</td><td>${fmt(k.key, v)}</td><td class="n">${fmt(k.key, median(a))}</td><td class="n">${gp.length > 2 ? fmt(k.key, med(gp, k.key)) : "–"}</td><td class="n">${p == null ? "–" : "P" + f0.format(p * 100).padStart(2, "0")}</td></tr>`; }).join("");
     }).join("");
     return `<div class="grid">
       <div class="p" style="grid-column:span 12;border:0;background:none">${kopf}<div class="tape" style="margin-top:12px">${top.map(k => kachel(k)).join("")}</div></div>

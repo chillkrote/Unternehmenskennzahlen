@@ -420,6 +420,22 @@
    "typ": "Offenlegungsbericht (EU CC2)",
    "vj_only": true,
    "note": "VJ-EK = gez. Kapital 2,2 + Gewinnrücklage 217,6 + Bilanzgewinn 5,0 Mio."
+  },
+  {
+   "bank": "State Street Bank International GmbH",
+   "gj": 2025,
+   "bs": 49500,
+   "ek": 3892,
+   "fonds": 195,
+   "vj_bs": 48171,
+   "vj_ek": 3892,
+   "vj_fonds": 93,
+   "bilgew": 462,
+   "vj_bilgew": 462,
+   "url": "https://www.statestreet.com/web/disclosures-and-disclaimers/de/offenlegungsbericht-ssegh-gruppe-31122025.pdf",
+   "doc": "Offenlegungsbericht SSEHG-Gruppe 31.12.2025, Tabelle 19 (EU CC2, Bilanz der SSBI laut Jahresabschluss HGB), PDF S. 70–71; Vorjahr: Bericht 31.12.2024, Tabelle 18, PDF S. 64–65",
+   "typ": "Jahresabschluss HGB (Bilanz laut EU CC2 im Offenlegungsbericht)",
+   "note": "Einzelbilanz der SSBI (nicht Gruppe). Eigenkapital = Summe Eigenkapital (gezeichnetes Kapital 109, Kapitalrücklage 3.316, Gewinnrücklagen 4, Bilanzgewinn 462); Fonds für allgemeine Bankrisiken 195 separat. Bisheriger Wert 46.200 Mio. € (GJ 2023) ersetzt."
   }
  ]
 }

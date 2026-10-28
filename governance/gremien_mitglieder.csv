@@ -1,5 +1,5 @@
 ﻿unternehmen_id,gj,organ,person_id,name,funktion,vertreter_art,seit,bis,beruf_laut_dokument,quelle_dokument,seite,bemerkung
-U000017,2025,Vorstand,bjrn-gulden,Bjørn Gulden,Vorsitzender (CEO),,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,12,Funktion lt. Vergütungsbericht S. 12
+U000017,2025,Vorstand,bjorn-gulden,Bjørn Gulden,Vorsitzender (CEO),,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,12,Funktion lt. Vergütungsbericht S. 12
 U000017,2025,Vorstand,harm-ohlmeyer,Harm Ohlmeyer,Finanzen (CFO),,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,12,Funktion lt. Vergütungsbericht S. 12
 U000017,2025,Vorstand,michelle-robertson,Michelle Robertson,"Global Human Resources, People and Culture",,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,13,Funktion lt. Vergütungsbericht S. 13
 U000017,2025,Vorstand,mathieu-sidokpohou,Mathieu Sidokpohou,Vertrieb,,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,13,Funktion lt. Vergütungsbericht S. 13
@@ -110,7 +110,7 @@ U000502,2025,Vorstand,armin-papperger,Armin Papperger,Vorsitzender (CEO),,2012-0
 U000502,2025,Vorstand,klaus-neumann,Klaus Neumann,Mitglied (CFO),,,,,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,
 U000502,2025,Vorstand,vera-saal,Dr. Vera Saal,Mitglied (Personal),,2025,,,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,
 U000502,2025,Vorstand,rene-gansauge,René Gansauge,Mitglied (COO),,2025-01-01,,,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,
-U000502,2025,Vorstand,ursula-biernert-klo,Dr. Ursula Biernert-Kloß,Mitglied,,2024-10-01,2025-08-31,,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,192,
+U000502,2025,Vorstand,ursula-biernert-kloss,Dr. Ursula Biernert-Kloß,Mitglied,,2024-10-01,2025-08-31,,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,192,
 U000502,2025,Aufsichtsrat,ulrich-grillo,Dipl.-Kfm. Ulrich Grillo,Vorsitzender,Anteilseigner,2016-05-10,,CEO der Grillo-Werke AG,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,12,Seit = erstmalige Bestellung lt. Tabelle
 U000502,2025,Aufsichtsrat,klaus-draeger,Dr.-Ing. Klaus Draeger,Mitglied,Anteilseigner,2017-05-09,,Executive Advisor,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,12,Seit = erstmalige Bestellung lt. Tabelle
 U000502,2025,Aufsichtsrat,saori-dubourg,Saori Dubourg,Mitglied,Anteilseigner,2024-05-14,,Vorsitzende des Vorstands der Greiner AG,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,12,Seit = erstmalige Bestellung lt. Tabelle
@@ -208,7 +208,7 @@ U000124,2025,Aufsichtsrat,sandra-persiehl,Sandra Persiehl,Mitglied,Arbeitnehmer,
 U000124,2025,Aufsichtsrat,michael-schramm,Michael Schramm,Mitglied,Arbeitnehmer,,,Bankkaufmann – Commerzbank AG,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,Zuordnung Arbeitnehmer laut Fußnote 1 (von den Arbeitnehmern gewählt)
 U000124,2025,Aufsichtsrat,caroline-seifert,Caroline Seifert,Mitglied,Anteilseigner,,,Unternehmensberaterin für Transformation,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,
 U000124,2025,Aufsichtsrat,gertrude-tumpel-gugerell,Dr. Gertrude Tumpel-Gugerell,Mitglied,Anteilseigner,,2025-05-15,Ehemaliges Mitglied des Direktoriums – Europäische Zentralbank,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,
-U000124,2025,Aufsichtsrat,kevin-vo,Kevin Voß,Mitglied,Arbeitnehmer (Gewerkschaft),,,Gewerkschaftssekretär – ver.di Bundesverwaltung,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,Zuordnung Arbeitnehmer laut Fußnote 1 (von den Arbeitnehmern gewählt)
+U000124,2025,Aufsichtsrat,kevin-voss,Kevin Voß,Mitglied,Arbeitnehmer (Gewerkschaft),,,Gewerkschaftssekretär – ver.di Bundesverwaltung,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,Zuordnung Arbeitnehmer laut Fußnote 1 (von den Arbeitnehmern gewählt)
 U000124,2025,Aufsichtsrat,frederik-werning,Frederik Werning,Mitglied,Arbeitnehmer (Gewerkschaft),,,"Gewerkschaftssekretär – Fachgruppe Bankgewerbe, ver.di Bezirk Münsterland",banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,Zuordnung Arbeitnehmer laut Fußnote 1 (von den Arbeitnehmern gewählt)
 U000124,2025,Aufsichtsrat,frank-westhoff,Frank Westhoff,Mitglied,Anteilseigner,,,Ehemaliges Mitglied des Vorstands – DZ BANK AG,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,
 U000148,2025,Vorstand,christian-sewing,Christian Sewing,Vorsitzender (CEO),,,,,banken/bilanzvergleich-gj2025/dokumente/deutsche-bank-ag/annual-financial-statements-of-deutsche-bank-ag-2025.pdf,53,

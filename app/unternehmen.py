@@ -105,12 +105,16 @@ def lese_excel(pfad, ordner_branche=None):
     # Arbeitsmappen mit Blatt „Übersicht“ (eine Zeile je Unternehmen) tragen daneben GuV-, Bilanz- und Rohdatenblätter: nur die Übersicht zählt
     blaetter = [ws for ws in wb.worksheets if _norm(ws.title) == "uebersicht" or ws.title == "Übersicht"] or wb.worksheets
     for ws in blaetter:
-        zeilen = list(ws.iter_rows(values_only=True))
+        zellen = list(ws.iter_rows())
+        zeilen = [[c.value for c in r] for r in zellen]
         kopf_i = next((i for i, r in enumerate(zeilen[:10]) if any(_norm(c) in NAMEN for c in r if c)), None)
         if kopf_i is None:
             continue
         kopf = [str(c).strip() if c is not None else "" for c in zeilen[kopf_i]]
         spalten, meta_sp = {}, {}
+        pct_spalten, blatt_firmen = {}, []
+        # Spalte ist als Prozent formatiert (Zahl = Anteil, 0,49 = 49 %): dann nie umrechnen
+        als_prozent = {j for r in zellen[kopf_i + 1:] for j, c in enumerate(r) if isinstance(c.value, (int, float)) and "%" in (c.number_format or "")}
         for j, h in enumerate(kopf):
             n = _norm(h)
             if n in NAMEN and "name" not in meta_sp:
@@ -141,11 +145,23 @@ def lese_excel(pfad, ordner_branche=None):
                     kurzname = re.sub(r"\s*\(.*?\)", "", h).strip()
                     extra.setdefault(key, {"key": key, "name": h if _norm(kurzname) in ALIAS else kurzname, "fmt": _fmt_aus_ueberschrift(h),
                                            "gruppe": "Weitere Kennzahlen", "hoch": None, "einheit": (re.search(r"\((.*?)\)", h) or [None, None])[1]})
-                if "%" in h and abs(v) > 1.5 and (KATALOG_FMT.get(key) or extra.get(key, {}).get("fmt")) == "pct":
-                    v /= 100
+                if "%" in h and (KATALOG_FMT.get(key) or extra.get(key, {}).get("fmt")) == "pct":
+                    pct_spalten[key] = j in als_prozent
                 f["werte"][key] = v
             f["notiert"] = _ja(f["notiert"]) if "notiert" in f else bool(f.get("ticker") or f.get("isin") or f["werte"].get("marktkap"))
             firmen.append(f)
+            blatt_firmen.append(f)
+        # Einheit je Spalte: steht „%“ in der Überschrift und sind die Zellen nicht als Prozent formatiert, entscheidet der größte Betrag der Spalte (über 1,5 = Prozentpunkte)
+        # (ein einzelner Wert wie 1,2 % in einer Prozentpunkte-Spalte wird so nicht als 120 % gelesen)
+        for key, formatiert in pct_spalten.items():
+            if formatiert:      # Anteile: nur offensichtliche Ausreißer über 150 % sind Prozentpunkte (z. B. Yahoo-Insider 2,26 für 2,26 %)
+                for g in blatt_firmen:
+                    if key in g["werte"] and abs(g["werte"][key]) > 1.5:
+                        g["werte"][key] /= 100
+            elif max((abs(g["werte"][key]) for g in blatt_firmen if key in g["werte"]), default=0) > 1.5:
+                for g in blatt_firmen:
+                    if key in g["werte"]:
+                        g["werte"][key] /= 100
     return firmen, list(extra.values())
 
 

@@ -12,16 +12,17 @@ Ausgangspunkt ist der Arbeitsauftrag „OECD-Erweiterung“ (Übergabe-Entwurf).
 | Rechenregeln (Skalierung, Pence, Perioden, Wechselkurswahl) | `international_core.py` | offline getestet |
 | Import der deutschen Daten | `import_de.py` | 743 Unternehmen, 4.802 Fakten aus `zeitreihen/zeitreihe_lang.csv`, `--dry-run`, wiederholbar |
 | Abgesicherter HTTP-Abruf | `httpsafe.py` | Allowlist, keine Weiterleitungen, Größen-/Zeitlimit, Retry-After, atomares Speichern, IP-Prüfung für offene Crawler |
-| SEC-Adapter (Companyfacts, Bilanzsumme) | `sec.py` | live für ADTRAN Holdings (U000021, CIK 926282) abgerufen, 36 Fassungen; 3 Werte gegen Bilanzen der 10-K/10-K/A geprüft |
+| SEC-Adapter (Companyfacts) | `sec.py`, `us_pilot.py` | zehn US-Unternehmen (`us_pilot.csv`, davon zwei Banken) live geladen: Bilanzsumme, Eigenkapital (auch inkl. Minderheiten), Umsatz, Ergebnis, operativer Cashflow, ab 2007; berichtigte Fassungen bleiben erhalten |
+| Abgleich mit Originalfilings | `verify_us.py`, `pruefung_us.csv` | 55 Werte (jüngstes Geschäftsjahr je Unternehmen und Kennzahl) gegen die Finanzberichtsseiten der 10-K: alle gleich (38 über Standardbezeichnung, 17 über gleichen Wert in sinnvoll benannter Zeile) |
 | Vergleichsexport `vergleich-v1` | `export_vergleich.py` | deutsche Zeitreihe verlustfrei reproduziert (Regressionstest), plus Sitzland/Standard/Währung/Kreis/Vergleichsgruppe |
-| Länder | `oecd_mitglieder.csv`, `coverage.csv` | 38 Mitglieder |
+| Länder | `oecd_mitglieder.csv`, `coverage.csv` | 38 Mitglieder, Mitgliedschaftsdaten gegen die englische Wikipedia abgeglichen |
 
-Nicht fertig: Pilot Frankreich, weitere US-Unternehmen, Kennzahlen außer Bilanzsumme für die USA, Wechselkurs-Adapter (EZB), Oberflächenfilter, API, Desktop-Länderpakete, Börsenunternehmen (siehe `LUECKEN.md`).
+Nicht fertig: Pilot Frankreich, Mitarbeiter und aufsichtliche Bankkennzahlen für die USA, Wechselkurs-Adapter (EZB), Oberflächenfilter, API, Desktop-Länderpakete, Börsenunternehmen (siehe `LUECKEN.md`).
 
 ## Start (lokal, ohne bezahlten Dienst)
 
 ```bash
-# 1. Datenbank: entweder Docker (nicht in der Cloud-Umgebung getestet) ...
+# 1. Datenbank: entweder Docker (Schritt für Schritt in DOCKER.md; in der Cloud nicht getestet) ...
 INTERNATIONAL_DB_PASSWORD='bitte-setzen' docker compose -f international/docker-compose.yml up -d
 export INTERNATIONAL_DATABASE_URL="postgresql://postgres:bitte-setzen@127.0.0.1:5433/international"
 # ... oder eine vorhandene lokale PostgreSQL-16-Instanz und eine eigene URL.
@@ -32,8 +33,10 @@ python3 international/import_de.py --dry-run      # Probelauf, rollt zurück
 python3 international/import_de.py                # deutsche Daten importieren
 
 export SEC_USER_AGENT="Ihr Name ihre.adresse@example.org"   # SEC verlangt eine echte Kontaktadresse
-python3 international/sec.py --cik 926282 --entity U000021 --dry-run
-python3 international/sec.py --cik 926282 --entity U000021
+python3 international/sec.py --cik 926282 --entity U000021 --dry-run   # ein Unternehmen
+python3 international/us_pilot.py register        # die zehn US-Pilotunternehmen über stammdaten/ids.py anlegen
+python3 international/us_pilot.py import          # laden und importieren (je ca. 4 bis 8 MB, rate-limitiert)
+python3 international/verify_us.py                # Abgleich mit den Originalfilings -> pruefung_us.csv
 
 python3 international/export_vergleich.py [--as-of 2025-04-01]   # -> international/export/vergleich-v1.json
 ```
@@ -54,7 +57,9 @@ Tests (offline, ohne Datenanbieter): `INTERNATIONAL_TEST_DATABASE_URL=postgresql
 3. **Einheiten:** deutsche Werte stehen in Mio. EUR; im Modell als EUR, Originalwert und Skalierung in `provenance`. Der Export rechnet wieder in Mio. um.
 4. **Konsolidierung:** Companyfacts nennt den Kreis nicht; US-Werte stehen deshalb auf `unknown`, bis ein Abgleich mit dem Abschluss vorliegt. Aufsichtliche Werte (Pillar 3/EBA) sind `regulatory`, HGB-Einzelabschlüsse `solo`.
 5. **Abschnitt 7 des Entwurfs** (Tooltip-XSS, Desktop-Quelle, SSRF, Validierung vor Push, Rebase) wurde nicht erneut umgesetzt; dafür gelten die Entwurfs-PRs #43 bis #47. `httpsafe.py` ist der neue sichere Downloader für die internationalen Adapter; die bestehenden Crawler wurden nicht umgestellt.
-6. **Quellenzugriff:** oecd.org liefert für automatische Abrufe HTTP 403 (Bot-Schutz, wird nicht umgangen). Die Mitgliederliste (38 Länder) stützt sich deshalb auf die öffentliche Darstellung (Wikipedia, Stand 28.10.2026: 38 Mitglieder) und den Abgleich der ISO3-Codes mit dem OECD-SDMX-Codelist `CL_AREA`. Beitrittsdaten sind nicht gegen oecd.org geprüft. Vor produktiver Nutzung bitte einmal manuell gegen https://www.oecd.org/en/about/members-partners.html prüfen.
+6. **Quellenzugriff:** oecd.org liefert für automatische Abrufe HTTP 403 (Bot-Schutz, wird nicht umgangen). Die Mitgliedschaftsdaten stammen aus der Tabelle „Current members“ der englischen Wikipedia (Seite OECD, Stand 28.10.2026), die die OECD-Ratifizierungsliste zitiert; alle 38 Länder stimmen mit der Liste und mit den ISO3-Codes im OECD-SDMX-Codelist `CL_AREA` überein. Dabei sind die Gründungsdaten der Gründungsländer auf deren einzelne Ratifizierungsdaten korrigiert worden. Eine Prüfung gegen oecd.org selbst steht aus.
+7. **US-Pilot:** Exxon Mobil wurde nicht gewählt, weil die SEC unter dem Ticker XOM inzwischen die ExxonMobil Holdings Corp (CIK 2115436) führt und die Zuordnung der ISIN zur CIK nicht belegt ist; stattdessen Chevron.
+8. **Umsatz** ist der erste vorhandene Tag aus `RevenueFromContractWithCustomerExcludingAssessedTax`, `Revenues`, `SalesRevenueNet`, `SalesRevenueGoodsNet` (je Filing und Periode, nie gemischt; der Tag steht in `provenance`). Er ist damit je Unternehmen der ausgewiesene Umsatz, nicht immer der Gesamtertrag (Walmart: Net sales 706,4 Mrd. USD, nicht Total revenues 713,2 Mrd.). Für Banken wird kein Umsatz geladen.
 
 ## Kosten
 

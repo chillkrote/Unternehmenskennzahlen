@@ -1,0 +1,11 @@
+name,cik,isin,ticker,branche,bank,hinweis
+ADTRAN Holdings Inc.,926282,US00486H1059,ADTN,technologie,nein,bereits in stammdaten (U000021)
+Apple Inc.,320193,US0378331005,AAPL,technologie,nein,
+Microsoft Corporation,789019,US5949181045,MSFT,software-it,nein,
+JPMorgan Chase & Co.,19617,US46625H1005,JPM,banken,ja,
+Bank of America Corporation,70858,US0605051046,BAC,banken,ja,
+Johnson & Johnson,200406,US4781601046,JNJ,pharma-gesundheit,nein,
+Chevron Corporation,93410,US1667641005,CVX,energie-versorger,nein,Exxon Mobil nicht gewählt: SEC führt ab 2026 ExxonMobil Holdings Corp (CIK 2115436) unter dem Ticker XOM; Zuordnung ISIN zu CIK nicht belegt
+Walmart Inc.,104169,US9311421039,WMT,handel-konsum,nein,
+The Coca-Cola Company,21344,US1912161007,KO,handel-konsum,nein,
+Caterpillar Inc.,18230,US1491231015,CAT,industrie,nein,

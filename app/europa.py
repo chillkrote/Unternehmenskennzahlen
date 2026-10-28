@@ -12,6 +12,10 @@ def lade_abschluesse(root,uid):
         if not file.exists():continue
         data=json.loads(file.read_text())
         if data.get('unternehmen_id')!=uid:raise ValueError(f'Identitätskonflikt in {file}')
+        # A functional-currency change is permitted only when the entire period is
+        # replaced by both original statements, never by mixing currencies in a period.
+        for end in set(data.get('bilanz',{})) & set(data.get('guv',{})):
+            if end in periods and periods[end]['waehrung']!=data.get('waehrung') and data['bilanz'][end] and data['guv'][end]:periods.pop(end)
         for family in ('bilanz','guv'):
             for end,values in data.get(family,{}).items():
                 if not values:continue

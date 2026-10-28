@@ -21,7 +21,7 @@ const path = require('node:path');
   const profiles=await page.evaluate(()=>['EUR','CHF'].map(currency=>UNT.unternehmenAlle().find(f=>(f.abschluesse||[]).some(a=>a.waehrung===currency))).filter(Boolean).map(f=>({id:f.id,currency:f.abschluesse[0].waehrung})));
   for(const profile of profiles){
     await page.evaluate(id=>{location.hash='firma-'+id;},profile.id);await page.waitForTimeout(100);
-    const body=await page.locator('#view').innerText();if(!body.includes('Originalposten')||!body.includes(profile.currency))throw Error('Missing original statement/currency');
+    const body=await page.locator('#view').innerText();if(!body.includes('Originalposten')||!body.includes(profile.currency))throw Error('Missing original statement/currency '+JSON.stringify(profile)+' '+body.slice(-1000)+' ERRORS: '+errors.join('\n'));
   }
   await browser.close();if(errors.length)throw Error(errors.join('\n'));
   console.log('18 routes × 4 country selections; 702 companies; original statement profiles; no JavaScript errors');

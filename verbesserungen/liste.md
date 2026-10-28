@@ -37,7 +37,7 @@ Priorität: Wirkung (W) / Aufwand (A), je 1 (gering) bis 3 (hoch).
 | C4 | Stimmrechtsmitteilungen / Directors' Dealings (BaFin-Datenbanken, frei) | 2/3 | ✋ BaFin-Portal verbietet automatische Abrufe per robots.txt; Stimmrechte kamen aus einem Gesamtexport über die Oberfläche (26.10.), Directors’ Dealings bräuchten denselben Weg: Rückfrage |
 | C5 | Governance für restliche DAX/MDAX | 3/3 | ◐ eigener Thread |
 | C6 | Ludwigsburg Vorjahres-Bilanzsumme (statt Zeitungswert) | 1/1 | ✋ ungeklärt: Zeitung 12,8–12,9 Mrd. vs. DSGV-Rangliste 2024 13,3 Mrd.; braucht den Jahresabschluss 2024 (Bundesanzeiger, Captcha) |
-| C7 | Sparkassen/Banken mit nur Vorjahres-Abschluss: neue Veröffentlichungen prüfen | 2/2 | ☐ |
+| C7 | Sparkassen/Banken mit nur Vorjahres-Abschluss: neue Veröffentlichungen prüfen | 2/2 | ✔ 28.10.: State Street Bank International (GJ 2025 aus EU CC2) ergänzt; TARGOBANK, Raisin, C24, MLP, ODDO, Toyota, Akbank weiterhin ohne neuen Abschluss auffindbar |
 | C8 | Segmentdaten (Umsatz je Segment) aus Berichten | 2/3 | ✋ Rohextrakt (110 Unternehmen) hat keine Spaltennamen der Segmente; geprüfte Segmentdaten brauchen Lesen je Bericht, Umfang vorher mit Robin klären |
 | C9 | ESG-Kennzahlen aus Nachhaltigkeitsberichten (CO2, Frauenquote) | 2/3 | ◐ Pilot `esg/` (Deutsche Telekom, RWE: Scope 1, 2, 3 für 2024 und 2025); Rest braucht Lesen je Bericht |
 | C10 | Analystenschätzungen: nur frei verfügbare Quellen | 1/3 | ☐ prüfen |

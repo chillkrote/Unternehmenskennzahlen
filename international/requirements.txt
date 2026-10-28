@@ -1,0 +1,3 @@
+# getestete Fassungen (Python 3.13); Kernmodul und Tests brauchen nur psycopg, der SEC-Abruf zusätzlich requests
+psycopg[binary]==3.3.6
+requests==2.34.2

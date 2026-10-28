@@ -4,6 +4,7 @@ Keine Quartals- oder TTM-Daten, keine Schätzungen, keine aufgefüllten Nullwert
 Der Anbieter ist eine Sekundärquelle; ein erfolgreicher Abruf ist keine Prüfung des Originals.
 """
 import argparse,json,math,re,time,unicodedata
+from urllib.parse import urlsplit
 from datetime import datetime,timezone
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -11,7 +12,8 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 
 def normalized(s):
-    s=unicodedata.normalize('NFKD',str(s)).encode('ascii','ignore').decode().lower()
+    s=str(s).replace('ø','o').replace('Ø','O').replace('æ','ae').replace('Æ','AE').replace('a/s','as').replace('A/S','as')
+    s=unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().lower().replace('p.l.c.','plc')
     s=s.replace('&',' and ').replace('grp','group').replace('hldg','holding').replace('n.v.','nv').replace('s.a.','sa').replace('s.p.a.','spa')
     s=re.sub(r'\b(ag|se|plc|sa|nv|ab|as|asa|spa|group|holding|holdings|limited|ltd|inc|company|corporation|the|and|co|a|b|p|r|n|publ|gmbh|kgaa|oyj|oy|aktiengesellschaft)\b',' ',s)
     return re.sub('[^a-z0-9]','',s)
@@ -21,7 +23,11 @@ def identity_ok(company,info):
     actual=[info.get('longName',''),info.get('shortName','')]
     # Kurze Namen wie EQT/Jumbo können auch fremde Unternehmen bezeichnen.
     country=lambda s:'United Kingdom' if s=='UK' else s
-    if len(normalized(company['name']))<=5 and company.get('land') and info.get('country') and country(company['land'])!=country(info['country']) and not (company['name']=='ZABKA GROUP' and info['country']=='Luxembourg'):return False
+    def domain(url):
+        host=urlsplit(url or '').hostname or '';parts=host.split('.')
+        return '.'.join(parts[-3:] if host.endswith('.co.uk') else parts[-2:])
+    same_domain=bool(domain(company.get('archiv_url')) and domain(company.get('archiv_url'))==domain(info.get('website')))
+    if len(normalized(company['name']))<=5 and company.get('land') and info.get('country') and country(company['land'])!=country(info['country']) and not same_domain and not (company['name']=='ZABKA GROUP' and info['country']=='Luxembourg'):return False
     return any(a and b and (a==b or (min(len(a),len(b))>=8 and (a in b or b in a)) or SequenceMatcher(None,a,b).ratio()>=.82)
                for a in map(normalized,names) for b in map(normalized,actual))
 

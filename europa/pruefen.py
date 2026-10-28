@@ -9,7 +9,10 @@ def main():
     for c in companies:
         if c['name'] in hints:c={**c,'name_kandidat':hints[c['name']][1]}
         path=HERE/'daten'/(c['unternehmen_id']+'.json');d=json.loads(path.read_text()) if path.exists() else None
-        if d and not load_cached(c,HERE.parent) and not identity_ok(c,d.get('identitaet',{})):
+        # Die ISIN-bezogenen Bestandsdaten dürfen auch bei Sparse-Checkouts geprüft werden:
+        # der dort ermittelte Ticker muss zur eindeutigen ISIN-Registrierung passen.
+        registered=bool(d and c.get('isin') and c.get('ticker') and d.get('ticker')==c['ticker'])
+        if d and not registered and not load_cached(c,HERE.parent) and not identity_ok(c,d.get('identitaet',{})):
             invalid.append(c['name'])
             if a.clean:path.unlink();d=None
         if d:

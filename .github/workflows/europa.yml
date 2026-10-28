@@ -1,0 +1,59 @@
+name: Europäische Jahresabschlüsse
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/europe600-abschluesse]
+    paths: ["europa/abrufen.py", ".github/workflows/europa.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: europa-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  abruf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            europa
+            boersennotierte-unternehmen/rohdaten/yahoo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install 'yfinance>=0.2.65,<1'
+      - run: python europa/abrufen.py --fetch --shard=${{ matrix.shard }}/4 --output=/tmp/europa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: europa-${{ matrix.shard }}
+          path: /tmp/europa
+          retention-days: 14
+  speichern:
+    needs: abruf
+    if: ${{ always() && !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          sparse-checkout: europa
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: europa-*
+          path: europa/daten
+          merge-multiple: true
+      - name: Ergebnis speichern
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add europa/daten
+          git diff --cached --quiet && exit 0
+          git commit -m 'Europäische Bilanz- und GuV-Daten mit Abrufstatus ergänzen'
+          git pull --rebase origin '${{ github.ref_name }}'
+          git push origin HEAD:'${{ github.ref_name }}'

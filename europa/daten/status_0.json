@@ -587,8 +587,15 @@
  {
   "unternehmen_id": "U000767",
   "name": "ACS",
-  "status": "offen",
-  "grund": "ACS.MC: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 513
  },
  {
   "unternehmen_id": "U000771",
@@ -632,8 +639,15 @@
  {
   "unternehmen_id": "U000783",
   "name": "AKER A",
-  "status": "offen",
-  "grund": "AKERBP.OL: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 505
  },
  {
   "unternehmen_id": "U000787",
@@ -651,8 +665,15 @@
  {
   "unternehmen_id": "U000791",
   "name": "ALLREAL HLDG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 412
  },
  {
   "unternehmen_id": "U000795",
@@ -709,8 +730,14 @@
  {
   "unternehmen_id": "U000811",
   "name": "ATLAS COPCO A",
-  "status": "offen",
-  "grund": "ATCOa.ST: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 492
  },
  {
   "unternehmen_id": "U000815",
@@ -779,14 +806,28 @@
  {
   "unternehmen_id": "U000835",
   "name": "BCA GENERALI",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 356
  },
  {
   "unternehmen_id": "U000839",
   "name": "BCO SANTANDER",
-  "status": "offen",
-  "grund": "BSBR: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 454
  },
  {
   "unternehmen_id": "U000843",
@@ -868,8 +909,15 @@
  {
   "unternehmen_id": "U000867",
   "name": "CAP GEMINI",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 499
  },
  {
   "unternehmen_id": "U000871",
@@ -899,8 +947,15 @@
  {
   "unternehmen_id": "U000879",
   "name": "CONVATEC PLC",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 482
  },
  {
   "unternehmen_id": "U000883",
@@ -928,8 +983,15 @@
  {
   "unternehmen_id": "U000891",
   "name": "DASSAULT SYSTEMS",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 482
  },
  {
   "unternehmen_id": "U000895",
@@ -973,14 +1035,28 @@
  {
   "unternehmen_id": "U000907",
   "name": "EDP (PT)",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 561
  },
  {
   "unternehmen_id": "U000911",
   "name": "EIFFAGE",
-  "status": "offen",
-  "grund": "EFGI.PA: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 497
  },
  {
   "unternehmen_id": "U000915",
@@ -1024,8 +1100,15 @@
  {
   "unternehmen_id": "U000927",
   "name": "Essity B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 507
  },
  {
   "unternehmen_id": "U000931",
@@ -1081,8 +1164,15 @@
  {
   "unternehmen_id": "U000947",
   "name": "GALENICA SANTE AG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 489
  },
  {
   "unternehmen_id": "U000951",
@@ -1151,8 +1241,15 @@
  {
   "unternehmen_id": "U000971",
   "name": "HELVETIA BALOISE HLDG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 345
  },
  {
   "unternehmen_id": "U000975",
@@ -1247,8 +1344,15 @@
  {
   "unternehmen_id": "U001003",
   "name": "INTERPUMP GRP",
-  "status": "offen",
-  "grund": "IDP.MI: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 478
  },
  {
   "unternehmen_id": "U001007",
@@ -1343,14 +1447,27 @@
  {
   "unternehmen_id": "U001035",
   "name": "LAGERCRANTZ GROUP 'B'",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 335
  },
  {
   "unternehmen_id": "U001039",
   "name": "LIFCO B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 435
  },
  {
   "unternehmen_id": "U001043",
@@ -1380,8 +1497,15 @@
  {
   "unternehmen_id": "U001051",
   "name": "LUNDBERGFORETAGEN B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 473
  },
  {
   "unternehmen_id": "U001055",
@@ -1436,8 +1560,15 @@
  {
   "unternehmen_id": "U001071",
   "name": "NATIONAL BANK OF GREECE",
-  "status": "offen",
-  "grund": "NAB.AT: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 366
  },
  {
   "unternehmen_id": "U001075",
@@ -1571,8 +1702,15 @@
  {
   "unternehmen_id": "U001115",
   "name": "PRIMARY HEALTH PROPS.",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 261
  },
  {
   "unternehmen_id": "U001119",
@@ -1590,8 +1728,15 @@
  {
   "unternehmen_id": "U001123",
   "name": "PZU GROUP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 402
  },
  {
   "unternehmen_id": "U001127",
@@ -1635,8 +1780,15 @@
  {
   "unternehmen_id": "U001139",
   "name": "ROCHE PS",
-  "status": "offen",
-  "grund": "ROG.SW: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 508
  },
  {
   "unternehmen_id": "U001143",
@@ -1653,8 +1805,15 @@
  {
   "unternehmen_id": "U001147",
   "name": "SAAB B",
-  "status": "offen",
-  "grund": "0GWL.IL: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 503
  },
  {
   "unternehmen_id": "U001151",
@@ -1737,8 +1896,15 @@
  {
   "unternehmen_id": "U001175",
   "name": "SIEGFRIED 'R'",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 446
  },
  {
   "unternehmen_id": "U001179",
@@ -1756,8 +1922,15 @@
  {
   "unternehmen_id": "U001183",
   "name": "SNAM RETE GAS",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 523
  },
  {
   "unternehmen_id": "U001187",
@@ -1786,26 +1959,54 @@
  {
   "unternehmen_id": "U001195",
   "name": "SSAB B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 505
  },
  {
   "unternehmen_id": "U001199",
   "name": "STORA ENSO R",
-  "status": "offen",
-  "grund": "STER.HE: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 522
  },
  {
   "unternehmen_id": "U001203",
   "name": "SUBSEA7",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 498
  },
  {
   "unternehmen_id": "U001207",
   "name": "SUNRISE N A",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 553
  },
  {
   "unternehmen_id": "U001211",

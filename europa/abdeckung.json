@@ -1,0 +1,19 @@
+{
+  "unternehmen": 702,
+  "mit_daten": 687,
+  "ohne_daten": 15,
+  "einzelwerte": 310603,
+  "bilanz_und_guv_2025": 683,
+  "bilanz_und_guv_2024": 684,
+  "gesperrte_identitaeten": [
+    "BMW",
+    "Munich Re",
+    "Evonik",
+    "Porsche AG",
+    "Porsche SE",
+    "CEWE",
+    "Einhell",
+    "secunet"
+  ],
+  "pruefung": "Anbieterabdeckung; kein Vollständigkeitsnachweis der Originalberichte"
+}

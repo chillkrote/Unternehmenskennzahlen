@@ -285,7 +285,7 @@
   "unternehmen_id": "U000048",
   "name": "ASTA Energy Solutions",
   "status": "offen",
-  "grund": "1AST.DE: Keine jährlichen Bilanz-/GuV-Daten"
+  "grund": "1AST.VI: Keine jährlichen Bilanz-/GuV-Daten; 1AST.F: Keine jährlichen Bilanz-/GuV-Daten; 1AST.DE: Keine jährlichen Bilanz-/GuV-Daten; 1AST.HA: Berichtswährung fehlt"
  },
  {
   "unternehmen_id": "U000106",
@@ -617,14 +617,27 @@
  {
   "unternehmen_id": "U000782",
   "name": "AIR LIQUIDE",
-  "status": "offen",
-  "grund": "AIRP.PA: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 492
  },
  {
   "unternehmen_id": "U000786",
   "name": "AKER BP",
-  "status": "offen",
-  "grund": "AKERBP.OL: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 438
  },
  {
   "unternehmen_id": "U000790",
@@ -730,8 +743,15 @@
  {
   "unternehmen_id": "U000822",
   "name": "AZIMUT HLDG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 466
  },
  {
   "unternehmen_id": "U000826",
@@ -844,8 +864,15 @@
  {
   "unternehmen_id": "U000862",
   "name": "BRUNELLO CUCINELLI",
-  "status": "offen",
-  "grund": "BRNW.MI: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 518
  },
  {
   "unternehmen_id": "U000866",
@@ -902,8 +929,15 @@
  {
   "unternehmen_id": "U000882",
   "name": "COMPUTACENTER",
-  "status": "offen",
-  "grund": "CTG.L: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 448
  },
  {
   "unternehmen_id": "U000886",
@@ -971,8 +1005,15 @@
  {
   "unternehmen_id": "U000906",
   "name": "DRAX GRP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 477
  },
  {
   "unternehmen_id": "U000910",
@@ -1028,8 +1069,15 @@
  {
   "unternehmen_id": "U000926",
   "name": "ERICSSON LM B",
-  "status": "offen",
-  "grund": "ERICb.ST: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 533
  },
  {
   "unternehmen_id": "U000930",
@@ -1073,8 +1121,15 @@
  {
   "unternehmen_id": "U000942",
   "name": "FERRARI",
-  "status": "offen",
-  "grund": "FERR.MI: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 532
  },
  {
   "unternehmen_id": "U000946",
@@ -1169,14 +1224,28 @@
  {
   "unternehmen_id": "U000974",
   "name": "HEINEKEN HLDG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 487
  },
  {
   "unternehmen_id": "U000978",
   "name": "HIAB",
-  "status": "offen",
-  "grund": "HIAB.HE: Unternehmensidentität nicht bestätigt; CYJBF: Unternehmensidentität nicht bestätigt; C1C1.F: Unternehmensidentität nicht bestätigt; C1C1.DU: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 503
  },
  {
   "unternehmen_id": "U000982",
@@ -1207,8 +1276,14 @@
  {
   "unternehmen_id": "U000990",
   "name": "ICG",
-  "status": "offen",
-  "grund": "IGGI.L: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 232
  },
  {
   "unternehmen_id": "U000994",
@@ -1226,8 +1301,14 @@
  {
   "unternehmen_id": "U000998",
   "name": "INDUSTRIVARDEN C",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 221
  },
  {
   "unternehmen_id": "U001002",
@@ -1258,8 +1339,14 @@
  {
   "unternehmen_id": "U001010",
   "name": "INVESTEC",
-  "status": "offen",
-  "grund": "INP.L: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 278
  },
  {
   "unternehmen_id": "U001014",
@@ -1302,20 +1389,41 @@
  {
   "unternehmen_id": "U001026",
   "name": "KERRY GRP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 512
  },
  {
   "unternehmen_id": "U001030",
   "name": "KINGSPAN GRP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 471
  },
  {
   "unternehmen_id": "U001034",
   "name": "KPN",
-  "status": "offen",
-  "grund": "KPN.AS: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 504
  },
  {
   "unternehmen_id": "U001038",
@@ -1585,14 +1693,27 @@
  {
   "unternehmen_id": "U001122",
   "name": "PUBLICIS GRP",
-  "status": "offen",
-  "grund": "PSN.PA: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 479
  },
  {
   "unternehmen_id": "U001126",
   "name": "QINETIQ GRP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 363
  },
  {
   "unternehmen_id": "U001130",
@@ -1726,8 +1847,14 @@
  {
   "unternehmen_id": "U001170",
   "name": "SCOTTISH & SOUTHERN ENERGY",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 359
  },
  {
   "unternehmen_id": "U001174",
@@ -1860,14 +1987,28 @@
  {
   "unternehmen_id": "U001214",
   "name": "SWECO 'B'",
-  "status": "offen",
-  "grund": "SWECO-B.ST: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 469
  },
  {
   "unternehmen_id": "U001218",
   "name": "SWISSQUOTE 'R'",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 296
  },
  {
   "unternehmen_id": "U001222",

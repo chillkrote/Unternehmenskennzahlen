@@ -678,8 +678,15 @@
  {
   "unternehmen_id": "U000796",
   "name": "AMUNDI",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 439
  },
  {
   "unternehmen_id": "U000800",
@@ -697,8 +704,15 @@
  {
   "unternehmen_id": "U000804",
   "name": "ASM INTERNATIONAL",
-  "status": "offen",
-  "grund": "ASMI.AS: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 461
  },
  {
   "unternehmen_id": "U000808",
@@ -728,8 +742,15 @@
  {
   "unternehmen_id": "U000816",
   "name": "AVANZA BANK HLDG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 268
  },
  {
   "unternehmen_id": "U000820",
@@ -747,8 +768,15 @@
  {
   "unternehmen_id": "U000824",
   "name": "BAM GROEP KON.",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 499
  },
  {
   "unternehmen_id": "U000828",
@@ -856,8 +884,14 @@
  {
   "unternehmen_id": "U000860",
   "name": "BT GRP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 398
  },
  {
   "unternehmen_id": "U000864",
@@ -911,8 +945,15 @@
  {
   "unternehmen_id": "U000880",
   "name": "COMET HOLDINGS 'R'",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 443
  },
  {
   "unternehmen_id": "U000884",
@@ -1060,8 +1101,15 @@
  {
   "unternehmen_id": "U000928",
   "name": "ESSILORLUXOTTICA",
-  "status": "offen",
-  "grund": "ESLX.PA: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 513
  },
  {
   "unternehmen_id": "U000932",
@@ -1079,8 +1127,15 @@
  {
   "unternehmen_id": "U000936",
   "name": "FASTIGHETS BALDER B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 437
  },
  {
   "unternehmen_id": "U000940",
@@ -1098,8 +1153,15 @@
  {
   "unternehmen_id": "U000944",
   "name": "FLSMIDTH & COMPANY",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 475
  },
  {
   "unternehmen_id": "U000948",
@@ -1143,8 +1205,15 @@
  {
   "unternehmen_id": "U000960",
   "name": "GLANBIA",
-  "status": "offen",
-  "grund": "GLB.IR: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 515
  },
  {
   "unternehmen_id": "U000964",
@@ -1162,14 +1231,28 @@
  {
   "unternehmen_id": "U000968",
   "name": "HALEON",
-  "status": "offen",
-  "grund": "HLI.L: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 499
  },
  {
   "unternehmen_id": "U000972",
   "name": "HENNES & MAURITZ B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 424
  },
  {
   "unternehmen_id": "U000976",
@@ -1200,14 +1283,27 @@
  {
   "unternehmen_id": "U000984",
   "name": "HUBER+SUHNER 'R'",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 411
  },
  {
   "unternehmen_id": "U000988",
   "name": "IG GRP HLDG",
-  "status": "offen",
-  "grund": "IGGI.L: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 450
  },
  {
   "unternehmen_id": "U000992",
@@ -1307,8 +1403,15 @@
  {
   "unternehmen_id": "U001024",
   "name": "KETY",
-  "status": "offen",
-  "grund": "KTY.WA: Unternehmensidentität nicht bestätigt; PLKETY000011.SG: Unternehmensidentität nicht bestätigt; KTYW.XD: Unternehmensidentität nicht bestätigt; GQ2.MU: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 491
  },
  {
   "unternehmen_id": "U001028",
@@ -1339,8 +1442,15 @@
  {
   "unternehmen_id": "U001036",
   "name": "LATOUR INVESTMENT B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 479
  },
  {
   "unternehmen_id": "U001040",
@@ -1370,8 +1480,15 @@
  {
   "unternehmen_id": "U001048",
   "name": "LOOMIS",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 469
  },
  {
   "unternehmen_id": "U001052",
@@ -1428,8 +1545,15 @@
  {
   "unternehmen_id": "U001068",
   "name": "MOBIMO HLDG",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 445
  },
  {
   "unternehmen_id": "U001072",
@@ -1507,10 +1631,13 @@
   "name": "ORION B",
   "status": "Sekundärquelle geladen; Originalabgleich offen",
   "jahre": [
+   "2021",
+   "2022",
+   "2023",
    "2024",
    "2025"
   ],
-  "posten": 206
+  "posten": 495
  },
  {
   "unternehmen_id": "U001100",
@@ -1528,8 +1655,15 @@
  {
   "unternehmen_id": "U001104",
   "name": "PEKAO",
-  "status": "offen",
-  "grund": "BP1.SG: Berichtswährung fehlt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 350
  },
  {
   "unternehmen_id": "U001108",
@@ -1598,8 +1732,15 @@
  {
   "unternehmen_id": "U001128",
   "name": "RECKITT BENCKISER GRP",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 494
  },
  {
   "unternehmen_id": "U001132",
@@ -1617,8 +1758,15 @@
  {
   "unternehmen_id": "U001136",
   "name": "RINGKJOBING LANDBOBANK",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 309
  },
  {
   "unternehmen_id": "U001140",
@@ -1733,14 +1881,27 @@
  {
   "unternehmen_id": "U001176",
   "name": "SIG GROUP AG",
-  "status": "offen",
-  "grund": "SIG.SW: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 494
  },
  {
   "unternehmen_id": "U001180",
   "name": "SKF B",
-  "status": "offen",
-  "grund": "SKF-B.ST: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 491
  },
  {
   "unternehmen_id": "U001184",
@@ -1821,8 +1982,15 @@
  {
   "unternehmen_id": "U001208",
   "name": "SVENSKA CELLULOSA AKTIE. SCA B",
-  "status": "offen",
-  "grund": "Keine eindeutig passende Aktie gefunden"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 467
  },
  {
   "unternehmen_id": "U001212",
@@ -1904,8 +2072,15 @@
  {
   "unternehmen_id": "U001236",
   "name": "THALES",
-  "status": "offen",
-  "grund": "THL.PA: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 488
  },
  {
   "unternehmen_id": "U001240",
@@ -2013,8 +2188,15 @@
  {
   "unternehmen_id": "U001271",
   "name": "WDP",
-  "status": "offen",
-  "grund": "WDP.BR: Unternehmensidentität nicht bestätigt; WDP.DE: Unternehmensidentität nicht bestätigt; WDPSF: Unternehmensidentität nicht bestätigt; WDPB.XD: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 424
  },
  {
   "unternehmen_id": "U001275",
@@ -2031,8 +2213,15 @@
  {
   "unternehmen_id": "U001279",
   "name": "YARA",
-  "status": "offen",
-  "grund": "YAR.OL: Unternehmensidentität nicht bestätigt; YARIY: Unternehmensidentität nicht bestätigt; IU2.SG: Unternehmensidentität nicht bestätigt; YARO.XD: Unternehmensidentität nicht bestätigt"
+  "status": "Sekundärquelle geladen; Originalabgleich offen",
+  "jahre": [
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "posten": 510
  },
  {
   "unternehmen_id": "U001283",

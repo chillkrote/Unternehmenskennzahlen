@@ -1,0 +1,51 @@
+{
+  "unternehmen_id": "U001144",
+  "name": "ROSEBANK INDUSTRIES",
+  "waehrung": "GBP",
+  "quelle": "Geschäftsbericht (Primärquelle)",
+  "quelle_url": "https://cdn.yano.digital/media/33tkljfc/final-proof-8146-rosebank-ar24-25-03-28.pdf",
+  "seiten": [
+    23,
+    25
+  ],
+  "hinweis": "Erstes Geschäftsjahr: sieben Monate bis 31.12.2024, Originalbericht in GBP; 2025 wurde in USD berichtet. Währungen nicht direkt vergleichbar. GBP Mio. in GBP, EPS Pence in GBP je Aktie umgerechnet. Adjusted-Zeilen sind gesonderte APMs.",
+  "pruefstatus": "Primärbericht; Übertragung rechnerisch geprüft",
+  "abruf": "2026-10-28T18:11:15.098571+00:00",
+  "bilanz": {
+    "2024-12-31": {
+      "Non-current assets / Property, plant and equipment": 500000.0,
+      "Total non-current assets": 500000.0,
+      "Current assets / Other receivables": 300000.0,
+      "Current assets / Cash and cash equivalents": 48100000.0,
+      "Total current assets": 48400000.0,
+      "Total assets": 48900000.0,
+      "Current liabilities / Trade and other payables": 4300000.0,
+      "Total current liabilities": 4300000.0,
+      "Net current assets": 44100000.0,
+      "Non-current liabilities / Lease obligations": 500000.0,
+      "Non-current liabilities / Provisions": 200000.0,
+      "Total non-current liabilities": 700000.0,
+      "Total liabilities": 5000000.0,
+      "Net assets": 43900000.0,
+      "Equity / Issued share capital": 48900000.0,
+      "Equity / Retained earnings": -5000000.0,
+      "Equity attributable to owners of the parent": 43900000.0
+    }
+  },
+  "guv": {
+    "2024-12-31": {
+      "Operating expenses": -9500000.0,
+      "Operating loss": -9500000.0,
+      "Finance income": 900000.0,
+      "Loss before tax": -8600000.0,
+      "Tax": 0,
+      "Loss after tax for the period": -8600000.0,
+      "Earnings per share - Basic (GBP per share)": -0.535,
+      "Earnings per share - Diluted (GBP per share)": -0.535,
+      "Adjusted operating loss": -1600000.0,
+      "Adjusted loss after tax": -700000.0,
+      "Adjusted basic earnings per share (GBP per share)": -0.044,
+      "Adjusted diluted earnings per share (GBP per share)": -0.044
+    }
+  }
+}

@@ -5,7 +5,7 @@
 "use strict";
 const UNT = (() => {
   let hoverBereit = false;
-  let UD = null, KZU = {}, BR = {}, FIRMEN = [], NACH_ID = {};
+  let UD = null, KZU = {}, BR = {}, FIRMEN = [], ALLE_FIRMEN = [], NACH_ID = {};
   const S = { branche: "alle", gruppe: "alle", notiert: "alle", markiert: null, sort: { k: "marktkap", ab: true }, rang: null, tBranche: "alle", tZeit: "90", tArt: "alle",
     sx: "ebit_marge", sy: "kgv", usx: "kgv", usy: "ebit_marge", auswahl: null, matrixSort: null, dokTyp: "alle" };
 
@@ -16,11 +16,13 @@ const UNT = (() => {
     KZU = Object.fromEntries(UD.kennzahlen.map(k => [k.key, k]));
     BR = Object.fromEntries(UD.branchen.map(b => [b.id, b]));
     FIRMEN = UD.unternehmen.filter(f => BR[f.branche]);
+    ALLE_FIRMEN = FIRMEN;
     NACH_ID = Object.fromEntries(FIRMEN.map(f => [f.id, f]));
     if (!hoverBereit) { hoverBereit = true; hoverVerdrahten(); }
     return true;
   }
   const da = () => !!UD;
+  function setLand(code) { FIRMEN = code === 'alle' ? ALLE_FIRMEN : ALLE_FIRMEN.filter(f => (f.land_code || 'ZZ') === code); }
   const inBranche = id => id === "alle" ? FIRMEN : FIRMEN.filter(f => f.branche === id);
   const w = (f, k) => f.werte[k] == null ? null : f.werte[k];
   const werte = (liste, k) => liste.map(f => w(f, k)).filter(v => v != null && isFinite(v));
@@ -395,7 +397,7 @@ const UNT = (() => {
   /* ----- Vergleich einzelner Unternehmen ----- */
   function viewVgl() {
     if (!S.auswahl) { const top = [...FIRMEN].sort((a, b) => (w(b, "marktkap") || 0) - (w(a, "marktkap") || 0)); S.auswahl = []; const gesehen = new Set(); top.forEach(f => { if (S.auswahl.length < 4 && !gesehen.has(f.branche)) { gesehen.add(f.branche); S.auswahl.push(f.id); } }); }
-    const cs = S.auswahl.map(n => NACH_ID[n]).filter(Boolean);
+    const cs = S.auswahl.map(n => NACH_ID[n]).filter(f => f && FIRMEN.includes(f));
     const picks = `<div class="picks">${cs.map(f => `<span class="chip">${esc(kurzU(f.name))} <span class="pct">${esc(brName(f.branche))}</span><button type="button" data-uweg="${esc(f.id)}" aria-label="${esc(f.name)} entfernen">×</button></span>`).join("")}
       <input id="uadd" list="firmenliste" placeholder="+ Unternehmen hinzufügen (max. 6)" autocomplete="off" ${cs.length >= 6 ? "disabled" : ""}></div>`;
     const peers = f => inBranche(f.branche);
@@ -499,6 +501,7 @@ const UNT = (() => {
   function viewProfil(id) {
     id = NACH_ID[id] ? id : ((UD.alt_ids || {})[id] || id);   // alte Lesezeichen (#firma-deutsche-bank-ag) auf die zentrale ID umleiten
     const f = NACH_ID[id];
+    if (f && !FIRMEN.includes(f)) return `<div class="grid">${panel({code:'LAND',titel:'Unternehmen außerhalb der Länderauswahl',body:'<p>Wähle das Land des Unternehmens oder „Alle Länder“, um dieses Profil zu öffnen.</p>'})}</div>`;
     if (!f) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Unternehmen mit der Kennung <code>${esc(id)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
     S.profil = id;
     const b = BR[f.branche], peers = inBranche(f.branche), gp = f.gruppe ? peers.filter(x => x.gruppe === f.gruppe) : [];
@@ -513,6 +516,7 @@ const UNT = (() => {
         <button type="button" class="chip" data-uwatch="${esc(f.id)}" aria-pressed="${merkListe().has(f.id)}" title="Merkliste (nur auf diesem Gerät)">${merkListe().has(f.id) ? "★ gemerkt" : "☆ merken"}</button>
         <span class="chip" style="cursor:default">${f.notiert ? `börsennotiert${f.ticker ? " · " + esc(f.ticker) : ""}${f.isin ? " · " + esc(f.isin) : ""}` : "nicht börsennotiert"}</span>
         ${f.mutter ? `<span class="chip" style="cursor:default">Börsenkurs nur der Mutter: ${esc(f.mutter.name || f.mutter.ticker)}</span>` : ""}
+        ${f.land ? `<span class="chip" style="cursor:default" title="${esc(f.land_basis||'Stammdaten')}">${esc(f.land)}</span>` : ""}${(f.indizes||[]).map(i=>`<span class="chip" style="cursor:default">${esc(i)}</span>`).join('')}
         ${f.sitz ? `<span class="chip" style="cursor:default">${esc(f.sitz)}</span>` : ""}${f.rolle ? `<span class="chip" style="cursor:default">${esc(f.rolle)}</span>` : ""}${f.demo ? `<span class="chip" style="cursor:default">Beispieldaten</span>` : ""}
         <button type="button" class="mini" data-uadd="${esc(f.id)}">+ Vergleich</button>${f.bank ? ` <button type="button" class="mini" data-bank="${esc(f.bank)}">+ Banken-Vergleich</button>` : ""}</div>`;
     const reihen = Object.entries(f.reihen || {}).filter(([k, r]) => r.punkte.length >= 2);
@@ -527,6 +531,7 @@ const UNT = (() => {
         fuss: `${f.abschluss ? esc(f.abschluss) + ". " : ""}${f.demo ? "Beispieldaten aus Yahoo Finance. " : ""}Beträge in Mio. €; P99 = höchster Wert der Branche.` })}
       <div class="col w5">${ad ? panel({ code: "UNT 2", titel: "Kursentwicklung", sub: `${esc(f.ticker)} · Beginn des Zeitraums = 100`, body: ctrl + indexChart([ad]) }) : panel({ code: "UNT 2", titel: "Börse", body: `<p class="n">${f.notiert ? "Keine Kurse im Datensatz." : "Nicht börsennotiert: keine Kurs- und Bewertungskennzahlen."}</p>` })}</div>
       ${reihen.length ? panel({ code: "UNT 3", titel: "Zeitreihen", sub: "je Kennzahl über die erhobenen Stichtage, Amber = jüngster Wert", body: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${reihen.map(([k, r]) => `<div><div class="sub-h">${esc(kzName(k))} <span class="pct">${esc(r.basis)}</span></div>${reiheSvg(k, r)}</div>`).join("")}</div>`, fuss: "Rechnungslegung und Konsolidierungsebene stehen je Reihe; Reihen verschiedener Basis werden nicht vermischt." }) : ""}
+      ${abschlussPanel(f)}
       ${gremienPanel(f)}
       ${verguetungPanel(f)}
       ${termineProfil(f)}
@@ -578,6 +583,24 @@ const UNT = (() => {
     const nG = zuletzt.filter(t => t.datei).length;
     return `<div class="grid">${panel({ code: "TRM", titel: "Kommende Berichtstermine", sub: `${kommend.length} Termine · ${new Set(kommend.map(t => t.f.id)).size} Unternehmen`, body: ctrl + kommendHtml, fuss: termineHinweis })}
       ${panel({ code: "TRM 2", titel: "Zuletzt fällig", sub: `${zuletzt.length} Berichte der letzten Wochen · ${nG} davon im Repo`, body: zuletzt.length ? `<div class="scroll"><table>${kopfZ}<tbody>${zuletzt.slice(0, 80).map(zeile).join("")}</tbody></table></div>` : `<p class="n">Noch keine fälligen Berichte erfasst.</p>` })}</div>`;
+  }
+
+  /* Gelieferte Originalposten, pro Abschlussstichtag und Währung; keine Nullauffüllung. */
+  function abschlussPanel(f) {
+    const a = f.abschluesse || [];
+    const archiv = f.archiv_url && /^https:\/\//.test(f.archiv_url) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(f.archiv_url)}">Offizielle Archiv-/Fundstelle</a>` : '';
+    if (!a.length) return panel({code:'ABS',titel:'Bilanz und GuV',body:`<p class="n">Für 2025 und 2024 noch keine vollständigen Posten importiert. Keine Werte geschätzt.</p>${archiv}`});
+    const section = (key,title) => {
+      const labels = [...new Set(a.flatMap(x => Object.keys(x[key] || {})))];
+      if (!labels.length) return `<h3>${title}</h3><p class="n">Keine Posten geliefert.</p>`;
+      return `<h3>${title}</h3><div class="scroll"><table class="kzt"><thead><tr><th>Originalposten</th>${a.map(x=>{const q=x.quellen&&x.quellen[key];return `<th>${x.jahr}<br><span class="pct">${esc(x.ende)} · ${esc(x.waehrung)}</span>${q?`<br><a class="flink" target="_blank" rel="noopener" href="${esc(sicherUrl(q.quelle_url))}" title="${esc((q.status||'')+' '+(q.hinweis||''))}">Quelle${q.seiten?' S. '+esc(q.seiten.join(', ')):''}</a>`:''}</th>`;}).join('')}</tr></thead><tbody>${labels.map(label=>`<tr><td style="text-align:left;white-space:normal">${esc(label)}</td>${a.map(x=>`<td>${x[key][label] == null ? '<span class="n">n. v.</span>' : f2.format(x[key][label])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    };
+    const notes=[...new Set(a.flatMap(x=>Object.values(x.quellen||{}).map(q=>q.hinweis).filter(Boolean)))];
+    return panel({code:'ABS',titel:'Bilanz und Gewinn- und Verlustrechnung',sub:'Gelieferte Jahresposten und dokumentierte Berichtsergänzungen · Beträge unskaliert in Berichtswährung; EPS je Aktie, Aktienanzahlen in Stück',body:`<p>${archiv}</p>${notes.map(n=>`<p class="n">${esc(n)}</p>`).join('')}${section('bilanz','Bilanz')}${section('guv','Gewinn- und Verlustrechnung')}`,fuss:'Quellen- und Prüfstatus je Jahr und Tabelle über den Quellenlink. Sekundärdaten bleiben am Original ungeprüft, soweit nicht anders vermerkt. Geschäftsjahr nach Abschlussstichtag. Fehlende Posten sind keine Nullwerte; keine Garantie sämtlicher Originalberichtsposten.'});
+  }
+  function viewAbschluesse() {
+    const companies = FIRMEN.filter(f=>f.im_tabellenuniversum);
+    return `<div class="grid">${panel({code:'ABS',titel:'Bilanz- und GuV-Abdeckung',sub:`${companies.length} Tabellenunternehmen in der Länderauswahl · Klick auf den Namen öffnet sämtliche gelieferten Posten`,body:`<div class="scroll"><table class="kzt"><thead><tr><th>Unternehmen</th><th>Land</th><th>2025 Bilanz / GuV</th><th>2024 Bilanz / GuV</th><th>Weitere Jahre</th><th>Status</th></tr></thead><tbody>${companies.map(f=>{const aa=f.abschluesse||[],count=y=>{const yy=aa.filter(a=>a.jahr===y);return yy.length?yy.map(a=>`${Object.keys(a.bilanz).length} / ${Object.keys(a.guv).length} (${esc(a.waehrung)})`).join('<br>'):'offen';};return `<tr><td>${profilLink(f,f.name)}</td><td>${esc(f.land||'Unbekannt')}</td><td>${count(2025)}</td><td>${count(2024)}</td><td>${[...new Set(aa.filter(a=>a.jahr<2024).map(a=>a.jahr))].join(', ')||'–'}</td><td>${aa.length?'Quellen-/Prüfstatus im Profil':'Noch nicht importiert'}</td></tr>`;}).join('')}</tbody></table></div>`,fuss:'Zahlen = Anzahl der gelieferten Bilanz-/GuV-Posten, kein Vollständigkeitsnachweis des Originalberichts. Fehlende Unternehmensjahre bleiben sichtbar. Archiv- und Jahresgrenzen aus der Recherche sind im Profil verfügbar.'})}</div>`;
   }
 
   /* ----- Verzeichnis aller Unternehmen ----- */
@@ -661,5 +684,6 @@ const UNT = (() => {
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
+  return { init, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
 })();
+

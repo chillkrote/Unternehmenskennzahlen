@@ -1,0 +1,17 @@
+{
+  "unternehmen_id": "U000660",
+  "name": "tk accelis",
+  "waehrung": "EUR",
+  "quelle": "Offizielle Veröffentlichung zum Börsenstart",
+  "quelle_url": "https://www.thyssenkrupp.com/de/pressedetailseite/tk-accelis-an-der-borse%3A-einer-der-fuhrenden-werkstoffhandler-und-dienstleister-startet-in-die-eigenstandigkeit-96158",
+  "seiten": [],
+  "hinweis": "Nur gerundeter Umsatz und bereinigtes EBITDA des Geschäftsjahrs 2024/25, basierend auf ungeprüften kombinierten Abschlüssen. Vollständige Bilanz/GuV und 2024 nicht verifiziert; keine geschätzten Ersatzwerte. Neue Investorenseite: https://www.investors.tkaccelis.com/",
+  "pruefstatus": "Teilnachweis; vollständiger Abschluss offen",
+  "bilanz": {},
+  "guv": {
+    "2025-09-30": {
+      "Revenue (rounded disclosed value)": 11400000000,
+      "Adjusted EBITDA (unaudited combined financial statements)": 229000000
+    }
+  }
+}

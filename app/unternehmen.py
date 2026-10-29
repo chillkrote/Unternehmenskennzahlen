@@ -386,6 +386,8 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
         quellen.append("banken/bilanzvergleich-gj2025")
     nach_id = {f["id"]: f for f in firmen}
     stammdaten(wurzel, firmen, nach_id)
+    from europa import ergaenzen
+    ergaenzen(wurzel, firmen, nach_id, stamm.lade())
     ist_demo = beispieldaten(demo, firmen, nach_id, quellen)
     zeitreihen(wurzel, nach_id)
     for uid, docs in dokumente(wurzel, set(nach_id)).items():
@@ -564,3 +566,4 @@ if __name__ == "__main__":
     print(f"{len(u)} Unternehmen ({sum(f['notiert'] for f in u)} notiert) in {len(d['branchen'])} Branchen, "
           f"{len(d['kennzahlen'])} Kennzahlen, {sum(len(f.get('dokumente', [])) for f in u)} Dokumente bei "
           f"{sum(1 for f in u if f.get('dokumente'))} Unternehmen, Quellen: {d['quellen']}")
+

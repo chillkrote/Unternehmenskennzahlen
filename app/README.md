@@ -21,6 +21,9 @@ Andere Excel-Datei: `python3 app/build.py --excel pfad/zur/datei.xlsx`.
 | `build.py` | ruft die Datenschicht auf und bettet die Daten in die Oberfläche ein |
 | `marktdaten.py` | holt Schlusskurse (letztes Jahr für die Ansichten, bis zu zehn Jahre als `kurse_hist` für die Korrelation), Renditen, Börsenwert und die letzten Konzernabschlüsse (GuV, Bilanz) über yfinance, rechnet daraus die Kennzahlen und schreibt `data/markt.json`, getrennt von den GJ-Bilanzdaten |
 | `boersen_ticker.json` | Zuordnung Bank -> Ticker. `Institut` = Bank selbst notiert (Deutsche Bank, Commerzbank, pbb, UmweltBank, Merkur, Baader), `Mutter` = nur die Bank- oder Finanzgruppe darüber ist notiert (UniCredit, ING, Santander, State Street, flatexDEGIRO, GRENKE, MLP, Akbank, İşbank, JPMorgan, Goldman Sachs, Morgan Stanley, Citigroup, UBS, Standard Chartered, W&W; norisbank und BHW über Deutsche Bank). ProCredit ist selbst notiert. `bilanzwaehrung` angeben, wenn der Konzern in anderer Währung bilanziert als die Aktie notiert. Neue Ticker hier eintragen. |
+| `boersen_abruf.py` | Bereich BÖR: Wochenkurse über zehn Jahre und Kennzahlen (Stand, 1 T. bis 10 J., 52-Wochen-Spanne, Börsenwert) für Aktienindizes und große Unternehmen laut `boersen_katalog.json` über yfinance -> `data/boerse.json`; Workflow „Börsendaten Terminal“ werktags 22:00 UTC |
+| `boersen_katalog.json` | Katalog: `indizes` (Name, Land, Gruppe Welt/OECD/Nicht-OECD, Region, Yahoo-Symbole als Kandidaten, `etf` wo nur ein ETF als Stellvertreter frei verfügbar ist) und `unternehmen` (Name, Symbol, Land, Sektor). Neue Einträge nur hier ergänzen |
+| `src/boerse.js` | Oberfläche des Bereichs BÖR |
 | `src/terminal.html` | Oberfläche (HTML/CSS/JS ohne Bibliotheken, Diagramme als SVG) |
 | `data/banken.json` | erzeugter Datensatz |
 | `dist/bankterminal.html` | erzeugte, eigenständige Seite (lokal öffnen); `bankterminal.fragment.html` ist die Fassung ohne Dokumentgerüst für das Artifact |
@@ -106,3 +109,9 @@ Die Statistik wurde gegen SciPy geprüft (Pearson, Spearman, p-Werte, Regression
 * **BRA:** Hover über eine Tabellenzeile oder einen Balken markiert dasselbe Unternehmen im Streudiagramm und umgekehrt; in Tabellen leuchtet zusätzlich die Spalte unter der Maus. Spaltenköpfe sind per Tab erreichbar und per Enter sortierbar.
 * **MKT 2 und TS:** Fadenkreuz mit Wertetabelle aller Reihen am nächsten Messpunkt.
 * **KOR (Matrix):** Zeile und Spalte der Zelle unter der Maus werden hervorgehoben.
+
+## Bereich BÖR (Börsendaten, vierte Kachel der Startseite)
+
+Eigener Bereich mit F1 Überblick (Leitindizes, Länderkacheln nach Veränderung seit Jahresbeginn, Gewinner und Verlierer), F2 Indizes (Welt, OECD, Nicht-OECD; Filter nach Gruppe und Region), F3 Unternehmen (große Unternehmen weltweit nach Börsenwert; Filter Land, Sektor, Suche), F4 Verlauf (bis zu zehn Auswahlen aus Indizes und Unternehmen, auf 100 indexiert, Fenster 1 bis 10 Jahre, logarithmisch wählbar) und F5 Quellen.
+Kommandozeile im Bereich: Name eines Index oder Unternehmens übernimmt ihn in den Verlauf.
+Frei verfügbar über Yahoo Finance sind 80 Indizes (15 davon nur als ETF-Stellvertreter, im Namen gekennzeichnet) und 232 Unternehmen aus 29 Ländern. Nicht frei verfügbar sind u. a. WIG20, PX, BUX, Colcap, EGX 30, MOEX, Tadawul-Index und kleinere Börsen Afrikas, Südasiens und Osteuropas. Unternehmen aus `stammdaten/` (Ticker-Treffer) verlinken auf die Profilseite; neue IDs vergibt der Abruf nie.

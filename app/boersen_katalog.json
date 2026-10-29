@@ -1,0 +1,2218 @@
+{
+ "indizes": [
+  {
+   "name": "MSCI World",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^990100-USD-STRD"
+   ],
+   "id": "^990100-USD-STRD"
+  },
+  {
+   "name": "MSCI World (ETF URTH)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "URTH"
+   ],
+   "id": "URTH"
+  },
+  {
+   "name": "MSCI All Country World",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^892400-USD-STRD"
+   ],
+   "id": "^892400-USD-STRD"
+  },
+  {
+   "name": "MSCI Emerging Markets (ETF EEM)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "EEM"
+   ],
+   "etf": true,
+   "id": "EEM"
+  },
+  {
+   "name": "MSCI Europe (ETF IEUR)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "IEUR"
+   ],
+   "etf": true,
+   "id": "IEUR"
+  },
+  {
+   "name": "S&P Global 100 (ETF IOO)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "IOO"
+   ],
+   "etf": true,
+   "id": "IOO"
+  },
+  {
+   "name": "STOXX Europe 600",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^STOXX"
+   ],
+   "id": "^STOXX"
+  },
+  {
+   "name": "EURO STOXX 50",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^STOXX50E"
+   ],
+   "id": "^STOXX50E"
+  },
+  {
+   "name": "EURO STOXX",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^STOXXE"
+   ],
+   "id": "^STOXXE"
+  },
+  {
+   "name": "Euronext 100",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^N100"
+   ],
+   "id": "^N100"
+  },
+  {
+   "name": "FTSE All-World (ETF VT)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "VT"
+   ],
+   "id": "VT"
+  },
+  {
+   "name": "MSCI ACWI (ETF)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "ACWI"
+   ],
+   "id": "ACWI"
+  },
+  {
+   "name": "MSCI EAFE (ETF)",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "EFA"
+   ],
+   "id": "EFA"
+  },
+  {
+   "name": "VIX Volatilität",
+   "land": "",
+   "gruppe": "Welt",
+   "region": "Welt",
+   "symbole": [
+    "^VIX"
+   ],
+   "id": "^VIX"
+  },
+  {
+   "name": "DAX",
+   "land": "Deutschland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^GDAXI"
+   ],
+   "id": "^GDAXI"
+  },
+  {
+   "name": "MDAX",
+   "land": "Deutschland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^MDAXI"
+   ],
+   "id": "^MDAXI"
+  },
+  {
+   "name": "SDAX",
+   "land": "Deutschland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^SDAXI"
+   ],
+   "id": "^SDAXI"
+  },
+  {
+   "name": "TecDAX",
+   "land": "Deutschland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^TECDAX"
+   ],
+   "id": "^TECDAX"
+  },
+  {
+   "name": "CAC 40",
+   "land": "Frankreich",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^FCHI"
+   ],
+   "id": "^FCHI"
+  },
+  {
+   "name": "FTSE 100",
+   "land": "Vereinigtes Königreich",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^FTSE"
+   ],
+   "id": "^FTSE"
+  },
+  {
+   "name": "FTSE 250",
+   "land": "Vereinigtes Königreich",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^FTMC"
+   ],
+   "id": "^FTMC"
+  },
+  {
+   "name": "FTSE MIB",
+   "land": "Italien",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "FTSEMIB.MI"
+   ],
+   "id": "FTSEMIB.MI"
+  },
+  {
+   "name": "IBEX 35",
+   "land": "Spanien",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^IBEX"
+   ],
+   "id": "^IBEX"
+  },
+  {
+   "name": "AEX",
+   "land": "Niederlande",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^AEX"
+   ],
+   "id": "^AEX"
+  },
+  {
+   "name": "BEL 20",
+   "land": "Belgien",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^BFX"
+   ],
+   "id": "^BFX"
+  },
+  {
+   "name": "ATX",
+   "land": "Österreich",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^ATX"
+   ],
+   "id": "^ATX"
+  },
+  {
+   "name": "SMI",
+   "land": "Schweiz",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^SSMI"
+   ],
+   "id": "^SSMI"
+  },
+  {
+   "name": "OMX Stockholm 30",
+   "land": "Schweden",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^OMX"
+   ],
+   "id": "^OMX"
+  },
+  {
+   "name": "OMX Copenhagen 25",
+   "land": "Dänemark",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^OMXC25"
+   ],
+   "id": "^OMXC25"
+  },
+  {
+   "name": "OMX Helsinki 25",
+   "land": "Finnland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^OMXH25"
+   ],
+   "id": "^OMXH25"
+  },
+  {
+   "name": "Oslo Børs Benchmark (OSEBX)",
+   "land": "Norwegen",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "OSEBX.OL"
+   ],
+   "id": "OSEBX.OL"
+  },
+  {
+   "name": "ISEQ Overall",
+   "land": "Irland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^ISEQ"
+   ],
+   "id": "^ISEQ"
+  },
+  {
+   "name": "PSI",
+   "land": "Portugal",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "PSI20.LS",
+    "^PSI20"
+   ],
+   "id": "PSI20.LS"
+  },
+  {
+   "name": "Athex Composite",
+   "land": "Griechenland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "GD.AT",
+    "^ATG"
+   ],
+   "id": "GD.AT"
+  },
+  {
+   "name": "Polen (ETF iShares MSCI Poland)",
+   "land": "Polen",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "EPOL"
+   ],
+   "etf": true,
+   "id": "EPOL"
+  },
+  {
+   "name": "OMX Tallinn",
+   "land": "Estland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^OMXTGI"
+   ],
+   "id": "^OMXTGI"
+  },
+  {
+   "name": "OMX Riga",
+   "land": "Lettland",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^OMXRGI"
+   ],
+   "id": "^OMXRGI"
+  },
+  {
+   "name": "OMX Vilnius",
+   "land": "Litauen",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "^OMXVGI"
+   ],
+   "id": "^OMXVGI"
+  },
+  {
+   "name": "BIST 100",
+   "land": "Türkei",
+   "gruppe": "OECD",
+   "region": "Europa",
+   "symbole": [
+    "XU100.IS",
+    "^XU100"
+   ],
+   "id": "XU100.IS"
+  },
+  {
+   "name": "S&P 500",
+   "land": "USA",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^GSPC"
+   ],
+   "id": "^GSPC"
+  },
+  {
+   "name": "Dow Jones Industrial Average",
+   "land": "USA",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^DJI"
+   ],
+   "id": "^DJI"
+  },
+  {
+   "name": "Nasdaq Composite",
+   "land": "USA",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^IXIC"
+   ],
+   "id": "^IXIC"
+  },
+  {
+   "name": "Nasdaq 100",
+   "land": "USA",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^NDX"
+   ],
+   "id": "^NDX"
+  },
+  {
+   "name": "Russell 2000",
+   "land": "USA",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^RUT"
+   ],
+   "id": "^RUT"
+  },
+  {
+   "name": "Wilshire 5000",
+   "land": "USA",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^W5000"
+   ],
+   "id": "^W5000"
+  },
+  {
+   "name": "S&P/TSX Composite",
+   "land": "Kanada",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^GSPTSE"
+   ],
+   "id": "^GSPTSE"
+  },
+  {
+   "name": "S&P/BMV IPC",
+   "land": "Mexiko",
+   "gruppe": "OECD",
+   "region": "Nordamerika",
+   "symbole": [
+    "^MXX"
+   ],
+   "id": "^MXX"
+  },
+  {
+   "name": "Chile (ETF iShares MSCI Chile)",
+   "land": "Chile",
+   "gruppe": "OECD",
+   "region": "Südamerika",
+   "symbole": [
+    "ECH"
+   ],
+   "etf": true,
+   "id": "ECH"
+  },
+  {
+   "name": "Nikkei 225",
+   "land": "Japan",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^N225"
+   ],
+   "id": "^N225"
+  },
+  {
+   "name": "TOPIX (ETF Nomura TOPIX)",
+   "land": "Japan",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "1306.T"
+   ],
+   "etf": true,
+   "id": "1306.T"
+  },
+  {
+   "name": "KOSPI",
+   "land": "Südkorea",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^KS11"
+   ],
+   "id": "^KS11"
+  },
+  {
+   "name": "KOSDAQ",
+   "land": "Südkorea",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^KQ11"
+   ],
+   "id": "^KQ11"
+  },
+  {
+   "name": "S&P/ASX 200",
+   "land": "Australien",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^AXJO"
+   ],
+   "id": "^AXJO"
+  },
+  {
+   "name": "All Ordinaries",
+   "land": "Australien",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^AORD"
+   ],
+   "id": "^AORD"
+  },
+  {
+   "name": "S&P/NZX 50",
+   "land": "Neuseeland",
+   "gruppe": "OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^NZ50"
+   ],
+   "id": "^NZ50"
+  },
+  {
+   "name": "TA-125",
+   "land": "Israel",
+   "gruppe": "OECD",
+   "region": "Naher Osten",
+   "symbole": [
+    "^TA125.TA"
+   ],
+   "id": "^TA125.TA"
+  },
+  {
+   "name": "TA-35",
+   "land": "Israel",
+   "gruppe": "OECD",
+   "region": "Naher Osten",
+   "symbole": [
+    "TA35.TA"
+   ],
+   "id": "TA35.TA"
+  },
+  {
+   "name": "SSE Composite (Shanghai)",
+   "land": "China",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "000001.SS"
+   ],
+   "id": "000001.SS"
+  },
+  {
+   "name": "SZSE Component (Shenzhen)",
+   "land": "China",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "399001.SZ"
+   ],
+   "id": "399001.SZ"
+  },
+  {
+   "name": "China A-Aktien (ETF Xtrackers CSI 300)",
+   "land": "China",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "ASHR"
+   ],
+   "etf": true,
+   "id": "ASHR"
+  },
+  {
+   "name": "Hang Seng",
+   "land": "Hongkong",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^HSI"
+   ],
+   "id": "^HSI"
+  },
+  {
+   "name": "Hang Seng China Enterprises",
+   "land": "Hongkong",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^HSCE"
+   ],
+   "id": "^HSCE"
+  },
+  {
+   "name": "TAIEX",
+   "land": "Taiwan",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^TWII"
+   ],
+   "id": "^TWII"
+  },
+  {
+   "name": "Straits Times",
+   "land": "Singapur",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^STI"
+   ],
+   "id": "^STI"
+  },
+  {
+   "name": "BSE Sensex",
+   "land": "Indien",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^BSESN"
+   ],
+   "id": "^BSESN"
+  },
+  {
+   "name": "Nifty 50",
+   "land": "Indien",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^NSEI"
+   ],
+   "id": "^NSEI"
+  },
+  {
+   "name": "IDX Composite",
+   "land": "Indonesien",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^JKSE"
+   ],
+   "id": "^JKSE"
+  },
+  {
+   "name": "FTSE Bursa Malaysia KLCI",
+   "land": "Malaysia",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "^KLSE"
+   ],
+   "id": "^KLSE"
+  },
+  {
+   "name": "Thailand (ETF iShares MSCI Thailand)",
+   "land": "Thailand",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "THD"
+   ],
+   "etf": true,
+   "id": "THD"
+  },
+  {
+   "name": "Philippinen (ETF iShares MSCI Philippines)",
+   "land": "Philippinen",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "EPHE"
+   ],
+   "etf": true,
+   "id": "EPHE"
+  },
+  {
+   "name": "Vietnam (ETF VanEck Vietnam)",
+   "land": "Vietnam",
+   "gruppe": "Nicht-OECD",
+   "region": "Asien-Pazifik",
+   "symbole": [
+    "VNM"
+   ],
+   "etf": true,
+   "id": "VNM"
+  },
+  {
+   "name": "Ibovespa",
+   "land": "Brasilien",
+   "gruppe": "Nicht-OECD",
+   "region": "Südamerika",
+   "symbole": [
+    "^BVSP"
+   ],
+   "id": "^BVSP"
+  },
+  {
+   "name": "MERVAL",
+   "land": "Argentinien",
+   "gruppe": "Nicht-OECD",
+   "region": "Südamerika",
+   "symbole": [
+    "^MERV"
+   ],
+   "id": "^MERV"
+  },
+  {
+   "name": "Peru (ETF iShares MSCI Peru)",
+   "land": "Peru",
+   "gruppe": "Nicht-OECD",
+   "region": "Südamerika",
+   "symbole": [
+    "EPU"
+   ],
+   "etf": true,
+   "id": "EPU"
+  },
+  {
+   "name": "FTSE/JSE All Share",
+   "land": "Südafrika",
+   "gruppe": "Nicht-OECD",
+   "region": "Afrika",
+   "symbole": [
+    "^J203.JO",
+    "J203.JO"
+   ],
+   "id": "^J203.JO"
+  },
+  {
+   "name": "FTSE/JSE Top 40",
+   "land": "Südafrika",
+   "gruppe": "Nicht-OECD",
+   "region": "Afrika",
+   "symbole": [
+    "^J200.JO",
+    "J200.JO"
+   ],
+   "id": "^J200.JO"
+  },
+  {
+   "name": "Saudi-Arabien (ETF iShares MSCI Saudi Arabia)",
+   "land": "Saudi-Arabien",
+   "gruppe": "Nicht-OECD",
+   "region": "Naher Osten",
+   "symbole": [
+    "KSA"
+   ],
+   "etf": true,
+   "id": "KSA"
+  },
+  {
+   "name": "Katar (ETF iShares MSCI Qatar)",
+   "land": "Katar",
+   "gruppe": "Nicht-OECD",
+   "region": "Naher Osten",
+   "symbole": [
+    "QAT"
+   ],
+   "etf": true,
+   "id": "QAT"
+  },
+  {
+   "name": "Kuwait (ETF iShares MSCI Kuwait)",
+   "land": "Kuwait",
+   "gruppe": "Nicht-OECD",
+   "region": "Naher Osten",
+   "symbole": [
+    "KWT"
+   ],
+   "etf": true,
+   "id": "KWT"
+  },
+  {
+   "name": "Vereinigte Arabische Emirate (ETF iShares MSCI UAE)",
+   "land": "Vereinigte Arabische Emirate",
+   "gruppe": "Nicht-OECD",
+   "region": "Naher Osten",
+   "symbole": [
+    "UAE"
+   ],
+   "etf": true,
+   "id": "UAE"
+  }
+ ],
+ "unternehmen": [
+  {
+   "name": "Apple",
+   "symbol": "AAPL",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Microsoft",
+   "symbol": "MSFT",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "NVIDIA",
+   "symbol": "NVDA",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Alphabet",
+   "symbol": "GOOGL",
+   "land": "USA",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Amazon",
+   "symbol": "AMZN",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Meta Platforms",
+   "symbol": "META",
+   "land": "USA",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Broadcom",
+   "symbol": "AVGO",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Tesla",
+   "symbol": "TSLA",
+   "land": "USA",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Berkshire Hathaway",
+   "symbol": "BRK-B",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "JPMorgan Chase",
+   "symbol": "JPM",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Eli Lilly",
+   "symbol": "LLY",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Visa",
+   "symbol": "V",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Mastercard",
+   "symbol": "MA",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Exxon Mobil",
+   "symbol": "XOM",
+   "land": "USA",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Walmart",
+   "symbol": "WMT",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "UnitedHealth",
+   "symbol": "UNH",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Johnson & Johnson",
+   "symbol": "JNJ",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Procter & Gamble",
+   "symbol": "PG",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Home Depot",
+   "symbol": "HD",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Costco",
+   "symbol": "COST",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Oracle",
+   "symbol": "ORCL",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "AbbVie",
+   "symbol": "ABBV",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Bank of America",
+   "symbol": "BAC",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Netflix",
+   "symbol": "NFLX",
+   "land": "USA",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Coca-Cola",
+   "symbol": "KO",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Chevron",
+   "symbol": "CVX",
+   "land": "USA",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Merck & Co.",
+   "symbol": "MRK",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Salesforce",
+   "symbol": "CRM",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "AMD",
+   "symbol": "AMD",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "PepsiCo",
+   "symbol": "PEP",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Cisco",
+   "symbol": "CSCO",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Adobe",
+   "symbol": "ADBE",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Thermo Fisher Scientific",
+   "symbol": "TMO",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Linde",
+   "symbol": "LIN",
+   "land": "USA",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Abbott",
+   "symbol": "ABT",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "McDonald's",
+   "symbol": "MCD",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Wells Fargo",
+   "symbol": "WFC",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Walt Disney",
+   "symbol": "DIS",
+   "land": "USA",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Accenture",
+   "symbol": "ACN",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "IBM",
+   "symbol": "IBM",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Caterpillar",
+   "symbol": "CAT",
+   "land": "USA",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "General Electric",
+   "symbol": "GE",
+   "land": "USA",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Intel",
+   "symbol": "INTC",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Qualcomm",
+   "symbol": "QCOM",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Texas Instruments",
+   "symbol": "TXN",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Verizon",
+   "symbol": "VZ",
+   "land": "USA",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "AT&T",
+   "symbol": "T",
+   "land": "USA",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Goldman Sachs",
+   "symbol": "GS",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Morgan Stanley",
+   "symbol": "MS",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Citigroup",
+   "symbol": "C",
+   "land": "USA",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Pfizer",
+   "symbol": "PFE",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Amgen",
+   "symbol": "AMGN",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Nike",
+   "symbol": "NKE",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Boeing",
+   "symbol": "BA",
+   "land": "USA",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Lockheed Martin",
+   "symbol": "LMT",
+   "land": "USA",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Uber",
+   "symbol": "UBER",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Palantir",
+   "symbol": "PLTR",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "ConocoPhillips",
+   "symbol": "COP",
+   "land": "USA",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Philip Morris International",
+   "symbol": "PM",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Starbucks",
+   "symbol": "SBUX",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Booking Holdings",
+   "symbol": "BKNG",
+   "land": "USA",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Intuit",
+   "symbol": "INTU",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Applied Materials",
+   "symbol": "AMAT",
+   "land": "USA",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Danaher",
+   "symbol": "DHR",
+   "land": "USA",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Honeywell",
+   "symbol": "HON",
+   "land": "USA",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "UPS",
+   "symbol": "UPS",
+   "land": "USA",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "TSMC",
+   "symbol": "TSM",
+   "land": "Taiwan",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "ASML",
+   "symbol": "ASML.AS",
+   "land": "Niederlande",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "SAP",
+   "symbol": "SAP.DE",
+   "land": "Deutschland",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Siemens",
+   "symbol": "SIE.DE",
+   "land": "Deutschland",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Allianz",
+   "symbol": "ALV.DE",
+   "land": "Deutschland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Deutsche Telekom",
+   "symbol": "DTE.DE",
+   "land": "Deutschland",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Mercedes-Benz Group",
+   "symbol": "MBG.DE",
+   "land": "Deutschland",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "BMW",
+   "symbol": "BMW.DE",
+   "land": "Deutschland",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Volkswagen Vz.",
+   "symbol": "VOW3.DE",
+   "land": "Deutschland",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Porsche AG",
+   "symbol": "P911.DE",
+   "land": "Deutschland",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "BASF",
+   "symbol": "BAS.DE",
+   "land": "Deutschland",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Bayer",
+   "symbol": "BAYN.DE",
+   "land": "Deutschland",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Munich Re",
+   "symbol": "MUV2.DE",
+   "land": "Deutschland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Deutsche Bank",
+   "symbol": "DBK.DE",
+   "land": "Deutschland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Commerzbank",
+   "symbol": "CBK.DE",
+   "land": "Deutschland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Deutsche Börse",
+   "symbol": "DB1.DE",
+   "land": "Deutschland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Infineon",
+   "symbol": "IFX.DE",
+   "land": "Deutschland",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Adidas",
+   "symbol": "ADS.DE",
+   "land": "Deutschland",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Airbus",
+   "symbol": "AIR.PA",
+   "land": "Frankreich",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Rheinmetall",
+   "symbol": "RHM.DE",
+   "land": "Deutschland",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Hannover Rück",
+   "symbol": "HNR1.DE",
+   "land": "Deutschland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "E.ON",
+   "symbol": "EOAN.DE",
+   "land": "Deutschland",
+   "sektor": "Versorger"
+  },
+  {
+   "name": "RWE",
+   "symbol": "RWE.DE",
+   "land": "Deutschland",
+   "sektor": "Versorger"
+  },
+  {
+   "name": "Deutsche Post (DHL Group)",
+   "symbol": "DHL.DE",
+   "land": "Deutschland",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Siemens Healthineers",
+   "symbol": "SHL.DE",
+   "land": "Deutschland",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Siemens Energy",
+   "symbol": "ENR.DE",
+   "land": "Deutschland",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Merck KGaA",
+   "symbol": "MRK.DE",
+   "land": "Deutschland",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Henkel Vz.",
+   "symbol": "HEN3.DE",
+   "land": "Deutschland",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Zalando",
+   "symbol": "ZAL.DE",
+   "land": "Deutschland",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Heidelberg Materials",
+   "symbol": "HEI.DE",
+   "land": "Deutschland",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Continental",
+   "symbol": "CON.DE",
+   "land": "Deutschland",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "LVMH",
+   "symbol": "MC.PA",
+   "land": "Frankreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Hermès",
+   "symbol": "RMS.PA",
+   "land": "Frankreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "L'Oréal",
+   "symbol": "OR.PA",
+   "land": "Frankreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "TotalEnergies",
+   "symbol": "TTE.PA",
+   "land": "Frankreich",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Sanofi",
+   "symbol": "SAN.PA",
+   "land": "Frankreich",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Schneider Electric",
+   "symbol": "SU.PA",
+   "land": "Frankreich",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Air Liquide",
+   "symbol": "AI.PA",
+   "land": "Frankreich",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "BNP Paribas",
+   "symbol": "BNP.PA",
+   "land": "Frankreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "AXA",
+   "symbol": "CS.PA",
+   "land": "Frankreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Safran",
+   "symbol": "SAF.PA",
+   "land": "Frankreich",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Kering",
+   "symbol": "KER.PA",
+   "land": "Frankreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Danone",
+   "symbol": "BN.PA",
+   "land": "Frankreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Vinci",
+   "symbol": "DG.PA",
+   "land": "Frankreich",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "EssilorLuxottica",
+   "symbol": "EL.PA",
+   "land": "Frankreich",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Dassault Systèmes",
+   "symbol": "DSY.PA",
+   "land": "Frankreich",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Société Générale",
+   "symbol": "GLE.PA",
+   "land": "Frankreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Orange",
+   "symbol": "ORA.PA",
+   "land": "Frankreich",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Nestlé",
+   "symbol": "NESN.SW",
+   "land": "Schweiz",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Roche",
+   "symbol": "RO.SW",
+   "land": "Schweiz",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Novartis",
+   "symbol": "NOVN.SW",
+   "land": "Schweiz",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "UBS",
+   "symbol": "UBSG.SW",
+   "land": "Schweiz",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Zurich Insurance",
+   "symbol": "ZURN.SW",
+   "land": "Schweiz",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "ABB",
+   "symbol": "ABBN.SW",
+   "land": "Schweiz",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Richemont",
+   "symbol": "CFR.SW",
+   "land": "Schweiz",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Holcim",
+   "symbol": "HOLN.SW",
+   "land": "Schweiz",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Swiss Re",
+   "symbol": "SREN.SW",
+   "land": "Schweiz",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Lonza",
+   "symbol": "LONN.SW",
+   "land": "Schweiz",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Novo Nordisk",
+   "symbol": "NOVO-B.CO",
+   "land": "Dänemark",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Maersk",
+   "symbol": "MAERSK-B.CO",
+   "land": "Dänemark",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Vestas",
+   "symbol": "VWS.CO",
+   "land": "Dänemark",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Équinor",
+   "symbol": "EQNR.OL",
+   "land": "Norwegen",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Atlas Copco",
+   "symbol": "ATCO-A.ST",
+   "land": "Schweden",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Spotify",
+   "symbol": "SPOT",
+   "land": "Schweden",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Investor AB",
+   "symbol": "INVE-B.ST",
+   "land": "Schweden",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Volvo",
+   "symbol": "VOLV-B.ST",
+   "land": "Schweden",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Ericsson",
+   "symbol": "ERIC-B.ST",
+   "land": "Schweden",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Nordea",
+   "symbol": "NDA-SE.ST",
+   "land": "Finnland",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Shell",
+   "symbol": "SHEL.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Energie"
+  },
+  {
+   "name": "AstraZeneca",
+   "symbol": "AZN.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "HSBC",
+   "symbol": "HSBA.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Unilever",
+   "symbol": "ULVR.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "BP",
+   "symbol": "BP.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Rio Tinto",
+   "symbol": "RIO.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "GSK",
+   "symbol": "GSK.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "British American Tobacco",
+   "symbol": "BATS.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Diageo",
+   "symbol": "DGE.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Barclays",
+   "symbol": "BARC.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Lloyds",
+   "symbol": "LLOY.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "London Stock Exchange Group",
+   "symbol": "LSEG.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Glencore",
+   "symbol": "GLEN.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Vodafone",
+   "symbol": "VOD.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "RELX",
+   "symbol": "REL.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Rolls-Royce",
+   "symbol": "RR.L",
+   "land": "Vereinigtes Königreich",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Iberdrola",
+   "symbol": "IBE.MC",
+   "land": "Spanien",
+   "sektor": "Versorger"
+  },
+  {
+   "name": "Inditex",
+   "symbol": "ITX.MC",
+   "land": "Spanien",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Banco Santander",
+   "symbol": "SAN.MC",
+   "land": "Spanien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "BBVA",
+   "symbol": "BBVA.MC",
+   "land": "Spanien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Enel",
+   "symbol": "ENEL.MI",
+   "land": "Italien",
+   "sektor": "Versorger"
+  },
+  {
+   "name": "Eni",
+   "symbol": "ENI.MI",
+   "land": "Italien",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Intesa Sanpaolo",
+   "symbol": "ISP.MI",
+   "land": "Italien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "UniCredit",
+   "symbol": "UCG.MI",
+   "land": "Italien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Ferrari",
+   "symbol": "RACE",
+   "land": "Italien",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Stellantis",
+   "symbol": "STLAM.MI",
+   "land": "Italien",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Generali",
+   "symbol": "G.MI",
+   "land": "Italien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "ING Groep",
+   "symbol": "INGA.AS",
+   "land": "Niederlande",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Prosus",
+   "symbol": "PRX.AS",
+   "land": "Niederlande",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Adyen",
+   "symbol": "ADYEN.AS",
+   "land": "Niederlande",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Heineken",
+   "symbol": "HEIA.AS",
+   "land": "Niederlande",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "AB InBev",
+   "symbol": "ABI.BR",
+   "land": "Belgien",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Toyota",
+   "symbol": "7203.T",
+   "land": "Japan",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Sony",
+   "symbol": "6758.T",
+   "land": "Japan",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Mitsubishi UFJ",
+   "symbol": "8306.T",
+   "land": "Japan",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Keyence",
+   "symbol": "6861.T",
+   "land": "Japan",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Hitachi",
+   "symbol": "6501.T",
+   "land": "Japan",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "SoftBank Group",
+   "symbol": "9984.T",
+   "land": "Japan",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Nintendo",
+   "symbol": "7974.T",
+   "land": "Japan",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Tokyo Electron",
+   "symbol": "8035.T",
+   "land": "Japan",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Fast Retailing",
+   "symbol": "9983.T",
+   "land": "Japan",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Sumitomo Mitsui",
+   "symbol": "8316.T",
+   "land": "Japan",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Honda",
+   "symbol": "7267.T",
+   "land": "Japan",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Mitsubishi Corp.",
+   "symbol": "8058.T",
+   "land": "Japan",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Samsung Electronics",
+   "symbol": "005930.KS",
+   "land": "Südkorea",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "SK Hynix",
+   "symbol": "000660.KS",
+   "land": "Südkorea",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Hyundai Motor",
+   "symbol": "005380.KS",
+   "land": "Südkorea",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "LG Energy Solution",
+   "symbol": "373220.KS",
+   "land": "Südkorea",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Tencent",
+   "symbol": "0700.HK",
+   "land": "China",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Alibaba",
+   "symbol": "9988.HK",
+   "land": "China",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Kweichow Moutai",
+   "symbol": "600519.SS",
+   "land": "China",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "ICBC",
+   "symbol": "1398.HK",
+   "land": "China",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "PetroChina",
+   "symbol": "0857.HK",
+   "land": "China",
+   "sektor": "Energie"
+  },
+  {
+   "name": "China Construction Bank",
+   "symbol": "0939.HK",
+   "land": "China",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Meituan",
+   "symbol": "3690.HK",
+   "land": "China",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "CATL",
+   "symbol": "300750.SZ",
+   "land": "China",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "BYD",
+   "symbol": "1211.HK",
+   "land": "China",
+   "sektor": "Automobil"
+  },
+  {
+   "name": "Xiaomi",
+   "symbol": "1810.HK",
+   "land": "China",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Ping An",
+   "symbol": "2318.HK",
+   "land": "China",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "China Mobile",
+   "symbol": "0941.HK",
+   "land": "China",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "PDD Holdings",
+   "symbol": "PDD",
+   "land": "China",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "JD.com",
+   "symbol": "JD",
+   "land": "China",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "NetEase",
+   "symbol": "NTES",
+   "land": "China",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Reliance Industries",
+   "symbol": "RELIANCE.NS",
+   "land": "Indien",
+   "sektor": "Energie"
+  },
+  {
+   "name": "TCS",
+   "symbol": "TCS.NS",
+   "land": "Indien",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "HDFC Bank",
+   "symbol": "HDFCBANK.NS",
+   "land": "Indien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "ICICI Bank",
+   "symbol": "ICICIBANK.NS",
+   "land": "Indien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Infosys",
+   "symbol": "INFY.NS",
+   "land": "Indien",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Bharti Airtel",
+   "symbol": "BHARTIARTL.NS",
+   "land": "Indien",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "State Bank of India",
+   "symbol": "SBIN.NS",
+   "land": "Indien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Hindustan Unilever",
+   "symbol": "HINDUNILVR.NS",
+   "land": "Indien",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Larsen & Toubro",
+   "symbol": "LT.NS",
+   "land": "Indien",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Saudi Aramco",
+   "symbol": "2222.SR",
+   "land": "Saudi-Arabien",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Al Rajhi Bank",
+   "symbol": "1120.SR",
+   "land": "Saudi-Arabien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Petrobras",
+   "symbol": "PBR",
+   "land": "Brasilien",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Vale",
+   "symbol": "VALE",
+   "land": "Brasilien",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Itaú Unibanco",
+   "symbol": "ITUB",
+   "land": "Brasilien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Nu Holdings",
+   "symbol": "NU",
+   "land": "Brasilien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "MercadoLibre",
+   "symbol": "MELI",
+   "land": "Argentinien",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "América Móvil",
+   "symbol": "AMX",
+   "land": "Mexiko",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Walmart de México",
+   "symbol": "WALMEX.MX",
+   "land": "Mexiko",
+   "sektor": "Konsum"
+  },
+  {
+   "name": "Naspers",
+   "symbol": "NPN.JO",
+   "land": "Südafrika",
+   "sektor": "Kommunikation"
+  },
+  {
+   "name": "Gold Fields",
+   "symbol": "GFI",
+   "land": "Südafrika",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "Sea Limited",
+   "symbol": "SE",
+   "land": "Singapur",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "DBS Group",
+   "symbol": "D05.SI",
+   "land": "Singapur",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Commonwealth Bank of Australia",
+   "symbol": "CBA.AX",
+   "land": "Australien",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "BHP",
+   "symbol": "BHP.AX",
+   "land": "Australien",
+   "sektor": "Rohstoffe"
+  },
+  {
+   "name": "CSL",
+   "symbol": "CSL.AX",
+   "land": "Australien",
+   "sektor": "Gesundheit"
+  },
+  {
+   "name": "Royal Bank of Canada",
+   "symbol": "RY.TO",
+   "land": "Kanada",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Shopify",
+   "symbol": "SHOP.TO",
+   "land": "Kanada",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Toronto-Dominion Bank",
+   "symbol": "TD.TO",
+   "land": "Kanada",
+   "sektor": "Finanzen"
+  },
+  {
+   "name": "Enbridge",
+   "symbol": "ENB.TO",
+   "land": "Kanada",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Canadian Natural Resources",
+   "symbol": "CNQ.TO",
+   "land": "Kanada",
+   "sektor": "Energie"
+  },
+  {
+   "name": "Hon Hai (Foxconn)",
+   "symbol": "2317.TW",
+   "land": "Taiwan",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "MediaTek",
+   "symbol": "2454.TW",
+   "land": "Taiwan",
+   "sektor": "Technologie"
+  },
+  {
+   "name": "Turkish Airlines",
+   "symbol": "THYAO.IS",
+   "land": "Türkei",
+   "sektor": "Industrie"
+  },
+  {
+   "name": "Mol Group",
+   "symbol": "MOL.BD",
+   "land": "Ungarn",
+   "sektor": "Energie"
+  },
+  {
+   "name": "PKO Bank Polski",
+   "symbol": "PKO.WA",
+   "land": "Polen",
+   "sektor": "Finanzen"
+  }
+ ]
+}

@@ -223,6 +223,13 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
       <a class="key" href="#u-abschluesse" data-v="u-abschluesse"><b>F7</b>Bilanz &amp; GuV</a>
     </nav>
+    <nav class="keys" id="keys-b" aria-label="Börsendaten" hidden>
+      <a class="key" href="#b-ueb" data-v="b-ueb"><b>F1</b>Überblick</a>
+      <a class="key" href="#b-indizes" data-v="b-indizes"><b>F2</b>Indizes</a>
+      <a class="key" href="#b-unternehmen" data-v="b-unternehmen"><b>F3</b>Unternehmen</a>
+      <a class="key" href="#b-verlauf" data-v="b-verlauf"><b>F4</b>Verlauf</a>
+      <a class="key" href="#b-quellen" data-v="b-quellen"><b>F5</b>Quellen</a>
+    </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
       <a class="key" href="#u-branche" data-v="u-branche"><b>F2</b>Branche</a>
@@ -252,11 +259,13 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="kurse" type="application/json">__KURSE__</script>
 <script id="unternehmen" type="application/json">__UNTERNEHMEN__</script>
 <script id="vwl" type="application/json">__VWL__</script>
+<script id="boerse" type="application/json">__BOERSE__</script>
 <script>
 __UNTERNEHMEN_JS__
 </script>
 <script>
 __VWL_JS__
+__BOERSE_JS__
 __KORRELATION_JS__
 </script>
 <script>
@@ -985,6 +994,7 @@ function tape() {
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
+  "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
@@ -1021,6 +1031,7 @@ function viewStart() {
   return `<div class="start"><h1>Terminal</h1><p class="lead">Kennzahlen, Daten und Berichte in einer Oberfläche. Wähle einen Bereich.</p><div class="startraster">
     ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u), !UNT.da())}
     ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Stimmungsindikatoren und Zinsen für alle OECD-Länder, dazu Prognosen der Institute und der ifo-Index für Deutschland.", esc(v), !VWL.da())}
+    ${kachel("#b-ueb", "BÖR", "Börsendaten", "Kurse und Kennzahlen aller wichtigen Aktienindizes (Welt, OECD, Schwellen- und Entwicklungsländer) und der großen Unternehmen weltweit, mit Verlauf über bis zu zehn Jahre.", esc(BOE.da() ? BOE.meta() : ""), !BOE.da())}
     ${kachel("#korr", "KOR", "Korrelationen &amp; Zusammenhänge", "Pearson und Spearman zwischen Indizes, Unternehmen, Branchen, Kursen und volkswirtschaftlichen Reihen, mit Verzögerung, Streudiagramm und Matrix.", esc(KOR.meta()), !UNT.da() && !VWL.da())}
   </div></div>`;
 }
@@ -1028,22 +1039,24 @@ function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
   else { aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }
-  const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), st = aktuell === "start";
-  if (!st && (vw ? "v" : "u") !== bereich) {
-    bereich = vw ? "v" : "u";
-    document.getElementById("firmenliste").innerHTML = bereich === "u" ? UNT.datalist() : "";
+  const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), bo = aktuell.startsWith("b-"), st = aktuell === "start";
+  const bereichNeu = bo ? "b" : vw ? "v" : "u";
+  if (!st && bereichNeu !== bereich) {
+    bereich = bereichNeu;
+    document.getElementById("firmenliste").innerHTML = bereich === "u" ? UNT.datalist() : bereich === "b" ? BOE.datalist() : "";
     document.getElementById("serienliste").innerHTML = bereich === "v" ? VWL.datalist() : "";
     const c = document.getElementById("cmd");
     c.setAttribute("list", bereich === "v" ? "serienliste" : "firmenliste");
-    c.placeholder = bereich === "v" ? "Reihe (BIP, Inflation …) · UEB · REIHE · LAENDER · PROG · QUELLEN · dann Enter" : "Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter";
+    c.placeholder = bereich === "v" ? "Reihe (BIP, Inflation …) · UEB · REIHE · LAENDER · PROG · QUELLEN · dann Enter" : bereich === "b" ? "Index oder Unternehmen (DAX, Apple …) · UEB · INDIZES · UNT · VERLAUF · QUELLEN · dann Enter" : "Firmenname · BRA · UCMP · VERZ · GRP · CMP · MKT · dann Enter";
   }
   document.querySelector(".cmdline").hidden = st;
   document.querySelector(".top .meta").hidden = st;
-  document.getElementById("keys-u").hidden = st || vw;
+  document.getElementById("keys-u").hidden = st || vw || bo;
+  document.getElementById("keys-b").hidden = st || !bo;
   document.getElementById("keys-v").hidden = st || !vw;
   document.getElementById("subkeys").hidden = !bank;
   document.getElementById("tape").hidden = document.getElementById("quotes").hidden = !bank;
-  document.getElementById("meta").textContent = st ? "" : vw ? VWL.meta() : bank ? metaBanken : UNT.meta();
+  document.getElementById("meta").textContent = st ? "" : bo ? BOE.meta() : vw ? VWL.meta() : bank ? metaBanken : UNT.meta();
   const aktiv = bank ? "u-branche" : aktuell.startsWith("firma-") ? "u-verzeichnis" : aktuell;
   document.querySelectorAll(".key, .subkeys a").forEach(k => (k.dataset.v === aktuell || (k.classList.contains("key") && k.dataset.v === aktiv)) ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
   document.getElementById("view").innerHTML = html;
@@ -1051,6 +1064,7 @@ function render() {
   if (add) add.addEventListener("change", () => { bankDazu(add.value); });
   UNT.nachRender();
   VWL.nachRender();
+  BOE.nachRender();
   KOR.nachRender();
   csvKnoepfe();
   fkInit();
@@ -1080,7 +1094,7 @@ function bankDazu(name) {
 }
 document.addEventListener("click", e => {
   const t = e.target;
-  if (VWL.klick(t) || UNT.klick(t) || KOR.klick(t)) return;
+  if (VWL.klick(t) || BOE.klick(t) || UNT.klick(t) || KOR.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }
   else if (t.closest("[data-sy]")) { streuY = t.closest("[data-sy]").dataset.sy; render(); }
@@ -1101,6 +1115,11 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   if (e.key !== "Enter") return;
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
+  if (bereich === "b") {
+    const a = { ueb: "b-ueb", indizes: "b-indizes", index: "b-indizes", unt: "b-unternehmen", unternehmen: "b-unternehmen", verlauf: "b-verlauf", quellen: "b-quellen", start: "start", korr: "korr" }[c], k = BOE.finden(v);
+    if (a) gehe(a); else if (k) { BOE.waehle(k); gehe("b-verlauf"); }
+    return;
+  }
   if (bereich === "v") {
     const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", prog: "v-prog", prognosen: "v-prog", korr: "korr", korrelation: "korr", start: "start" }[c], s = VWL.finden(v);
     if (a) gehe(a); else if (s) { VWL.waehle(s.serie_id); gehe("v-reihe"); } else if (c === "unt") gehe("u-ueb");
@@ -1114,7 +1133,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const f = UNT.finden(v); if (f) gehe("firma-" + f.id); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
+  const m = (bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });
@@ -1135,6 +1154,9 @@ async function start() {
   let vd = null;
   try { vd = JSON.parse(document.getElementById("vwl").textContent); } catch { vd = null; }
   VWL.init(vd);
+  let bd = null;
+  try { bd = JSON.parse(document.getElementById("boerse").textContent); } catch { bd = null; }
+  BOE.init(bd);
   landAuswahlInit();
 }
 start();

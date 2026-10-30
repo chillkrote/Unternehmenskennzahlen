@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000334",
+ "name": "KPS AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://kps.com/wp-content/uploads/2026/02/KPS-Konzernabschluss-2024-2025-1.pdf",
+ "datei": "boersennotierte-unternehmen/software-it/dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf",
+ "seiten": [
+  31,
+  26
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 101286000.0,
+   "Total Equity Gross Minority Interest": 27423000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 73863000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 127604000.0,
+   "Total Equity Gross Minority Interest": 48397000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 121717000.0
+  }
+ },
+ "kontrolle": {
+  "aktiva_gleich_passiva": true,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 101.286,
+  "yahoo_ek_quote": 0.2707481784254487
+ }
+}

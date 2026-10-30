@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000520",
+ "name": "Schloss Wachenheim AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.schloss-wachenheim.com/upload/dokumente/11138.pdf",
+ "datei": "boersennotierte-unternehmen/handel-konsum/dokumente/schloss-wachenheim-ag/11138.pdf",
+ "seiten": [
+  167,
+  115
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 491003000.0,
+   "Total Equity Gross Minority Interest": 264081000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 226922000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 477526000.0,
+   "Total Equity Gross Minority Interest": 259709000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Net Income": 16426000.0
+  }
+ },
+ "kontrolle": {
+  "aktiva_gleich_passiva": true,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 491.003,
+  "yahoo_ek_quote": 0.5378398909986294
+ }
+}

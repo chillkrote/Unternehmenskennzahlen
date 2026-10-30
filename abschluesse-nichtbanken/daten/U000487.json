@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000487",
+ "name": "PWO AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.pwo-group.com/media/docs/en/investoren-und-presse/geschaeftsbericht/2025/PWO_Annual_report_2025_s.pdf",
+ "datei": "boersennotierte-unternehmen/automobil/dokumente/pwo-ag/PWO_Annual_report_2025_s.pdf",
+ "seiten": [
+  67,
+  65
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 442166000.0,
+   "Total Equity Gross Minority Interest": 165888000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 276278000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 433034000.0,
+   "Total Equity Gross Minority Interest": 162280000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 524685000.0
+  }
+ },
+ "kontrolle": {
+  "aktiva_gleich_passiva": true,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 442.166,
+  "yahoo_ek_quote": 0.3751713157501934
+ }
+}

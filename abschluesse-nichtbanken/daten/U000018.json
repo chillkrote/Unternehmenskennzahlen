@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000018",
+ "name": "Adler Group S.A.",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.adler-group.com/fileadmin/web/docs/IR/Hauptversammlung/2026/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
+ "datei": "boersennotierte-unternehmen/immobilien/dokumente/adler-group-s-a/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
+ "seiten": [
+  198,
+  54
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 4707099000.0,
+   "Total Equity Gross Minority Interest": 859514000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 3847585000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 6887153000.0,
+   "Total Equity Gross Minority Interest": 1565178000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 302219000.0
+  }
+ },
+ "kontrolle": {
+  "aktiva_gleich_passiva": true,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 4707.099,
+  "yahoo_ek_quote": 0.1825995161775862
+ }
+}

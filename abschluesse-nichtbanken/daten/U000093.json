@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000093",
+ "name": "Blue Cap AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.blue-cap.de/app/uploads/2026/05/260508_GB25_BlueCap_gesichert.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/blue-cap-ag/260508_GB25_BlueCap_gesichert.pdf",
+ "seiten": [
+  82,
+  4
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 200840000.0,
+   "Total Equity Gross Minority Interest": 114584000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 86256000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 215997000.0,
+   "Total Equity Gross Minority Interest": 97210000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 129135000.0
+  }
+ },
+ "kontrolle": {
+  "aktiva_gleich_passiva": true,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 200.84,
+  "yahoo_ek_quote": 0.5705287791276639
+ }
+}

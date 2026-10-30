@@ -7,9 +7,9 @@
  "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/m1-kliniken-ag/GB-2025_M1_Kliniken_DEU.pdf",
  "seiten": [
   2,
-  2
+  21
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -22,11 +22,22 @@
    "Total Equity Gross Minority Interest": 134220000.0
   }
  },
- "guv": {},
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 364299000.0,
+   "Net Income": 24100000.0
+  }
+ },
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": null,
-  "yahoo_ek_quote": null
+  "yahoo_ek_quote": null,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 37949000.0
+  }
  }
 }

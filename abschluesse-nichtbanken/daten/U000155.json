@@ -1,0 +1,28 @@
+{
+ "unternehmen_id": "U000155",
+ "name": "Deutsche Konsum Real Estate AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.deutsche-konsum.de/fileadmin/content/investorrelations/finanzberichte/DKR_Geschaeftsjahr_2024_2025_de.pdf",
+ "datei": "boersennotierte-unternehmen/immobilien/dokumente/deutsche-konsum-real-estate-ag/DKR_Geschaeftsjahr_2024_2025_de.pdf",
+ "seiten": [
+  74
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 816840500.0
+  },
+  "2024-12-31": {
+   "Total Assets": 945382000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 816.841,
+  "yahoo_ek_quote": 0.3676131386727274
+ }
+}

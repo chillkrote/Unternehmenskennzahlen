@@ -1,0 +1,37 @@
+{
+ "unternehmen_id": "U000329",
+ "name": "Klassik Radio AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://assets.ctfassets.net/jkv7j7ridlow/7wtMWTaTYzNWl0cRA13yIw/8bca1246ac9d928ddf69f74c99da4785/KR_GB_online_final.pdf",
+ "datei": "boersennotierte-unternehmen/telekom-medien/dokumente/klassik-radio-ag/KR_GB_online_final.pdf",
+ "seiten": [
+  21,
+  37
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 8648000.0,
+   "Total Equity Gross Minority Interest": 4850000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 3798000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 8468000.0,
+   "Total Equity Gross Minority Interest": 3422000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 21585000.0,
+   "Net Income": 2210000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 8.648,
+  "yahoo_ek_quote": 0.5608233117483812
+ }
+}

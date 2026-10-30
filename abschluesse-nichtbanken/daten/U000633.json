@@ -6,10 +6,9 @@
  "quelle_url": "https://www.salzwerke.de/fileadmin/user_upload/salzwerke/dokumente/downloads/Investor_Relations/Geschaeftsberichte/Geschaeftsbericht_2025_save.pdf",
  "datei": "boersennotierte-unternehmen/chemie-rohstoffe/dokumente/suedwestdeutsche-salzwerke-ag/Geschaeftsbericht_2025_save.pdf",
  "seiten": [
-  97,
-  129
+  97
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -20,7 +19,7 @@
  },
  "guv": {},
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000000.0,
   "yahoo_bilanzsumme_mio": null,
   "yahoo_ek_quote": null

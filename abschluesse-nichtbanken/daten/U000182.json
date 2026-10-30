@@ -1,0 +1,46 @@
+{
+ "unternehmen_id": "U000182",
+ "name": "Edel SE & Co. KGaA",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.edel.com/wp-content/uploads/2025/03/Edel-SE-Co.-KGaA-Geschaeftsbericht.pdf",
+ "datei": "boersennotierte-unternehmen/telekom-medien/dokumente/edel-se-und-co-kgaa/Edel-SE-Co.-KGaA-Geschaeftsbericht.pdf",
+ "seiten": [
+  3,
+  14,
+  15,
+  25
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 205101000.0,
+   "Total Equity Gross Minority Interest": 54225000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 150876000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 192560000.0,
+   "Total Equity Gross Minority Interest": 49933000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 258571000.0,
+   "EBIT": 20925000.0,
+   "Net Income": 11541000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 222.441,
+  "yahoo_ek_quote": 0.2694422341205084,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 12593000.0
+  }
+ }
+}

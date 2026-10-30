@@ -1,0 +1,32 @@
+{
+ "unternehmen_id": "U000241",
+ "name": "GBS Software AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://gbs-ag.com/wp-content/uploads/2026/05/Geschaeftsbericht-GBS-Software-AG-2025-WEB.pdf",
+ "datei": "boersennotierte-unternehmen/software-it/dokumente/gbs-software-ag/Geschaeftsbericht-GBS-Software-AG-2025-WEB.pdf",
+ "seiten": [
+  26,
+  27
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 5110617.96,
+   "Total Equity Gross Minority Interest": 4665837.75,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 444780.20999999996
+  },
+  "2024-12-31": {
+   "Total Assets": 3857656.77,
+   "Total Equity Gross Minority Interest": 3529700.41
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1,
+  "yahoo_bilanzsumme_mio": 5.111,
+  "yahoo_ek_quote": 0.9129693877567793
+ }
+}

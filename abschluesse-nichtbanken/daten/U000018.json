@@ -6,10 +6,11 @@
  "quelle_url": "https://www.adler-group.com/fileadmin/web/docs/IR/Hauptversammlung/2026/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
  "datei": "boersennotierte-unternehmen/immobilien/dokumente/adler-group-s-a/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
  "seiten": [
-  198,
-  54
+  54,
+  56,
+  198
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -28,9 +29,15 @@
   }
  },
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 4707.099,
-  "yahoo_ek_quote": 0.1825995161775862
+  "yahoo_ek_quote": 0.1825995161775862,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -64187000.0
+  }
  }
 }

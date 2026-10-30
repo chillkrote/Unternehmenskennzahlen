@@ -1,0 +1,40 @@
+{
+ "unternehmen_id": "U000412",
+ "name": "MPC Oceanic Group AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.mpc-oceanic.com/fileadmin/mpc/oceanic/Downloads/Financial_Reports/Financial_Reports_2025/MPC_Capital_Annual_Report_2025.pdf",
+ "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/mpc-oceanic-group-ag/MPC_Capital_Annual_Report_2025.pdf",
+ "seiten": [
+  48,
+  49,
+  51
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 166221000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 161387000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 43147000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 166.221,
+  "yahoo_ek_quote": 0.8681574530294006,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 11591000.0
+  }
+ }
+}

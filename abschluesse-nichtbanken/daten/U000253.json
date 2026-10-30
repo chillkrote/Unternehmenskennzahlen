@@ -6,10 +6,10 @@
  "quelle_url": "https://www.grammer.com/media/01_content/05_investor_relations/annual_general_meetings/annual_general_meeting_2026/german/260327_gb-grammer-2025_de.pdf",
  "datei": "boersennotierte-unternehmen/automobil/dokumente/grammer-ag/260327_gb-grammer-2025_de.pdf",
  "seiten": [
-  25,
-  20
+  20,
+  25
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -29,7 +29,7 @@
   }
  },
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 1607.226,
   "yahoo_ek_quote": 0.1733452544943897

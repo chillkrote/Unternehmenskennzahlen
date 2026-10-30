@@ -1,0 +1,31 @@
+{
+ "unternehmen_id": "U000642",
+ "name": "SYZYGY AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.syzygy-group.net/app/uploads/syzygy-ag-annual-report-2025.pdf",
+ "datei": "boersennotierte-unternehmen/telekom-medien/dokumente/syzygy-ag/syzygy-ag-annual-report-2025.pdf",
+ "seiten": [
+  187
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 53426000.0,
+   "Total Equity Gross Minority Interest": 17739000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 35687000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 67717000.0,
+   "Total Equity Gross Minority Interest": 27634000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 53.426,
+  "yahoo_ek_quote": 0.3320293490061019
+ }
+}

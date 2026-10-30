@@ -6,10 +6,9 @@
  "quelle_url": "https://yoc.com/api/media/file/GB_2025_YOC_AG_DE_protected.pdf?prefix=media%2Fwebsite_media_files",
  "datei": "boersennotierte-unternehmen/software-it/dokumente/yoc-ag/GB_2025_YOC_AG_DE_protected.pdf",
  "seiten": [
-  98,
-  97
+  98
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -22,13 +21,9 @@
    "Total Equity Gross Minority Interest": 8297350.0
   }
  },
- "guv": {
-  "2025-12-31": {
-   "Net Income": -410526.0
-  }
- },
+ "guv": {},
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1,
   "yahoo_bilanzsumme_mio": 23.588,
   "yahoo_ek_quote": 0.3314856472270655

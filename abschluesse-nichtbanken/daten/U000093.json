@@ -6,10 +6,10 @@
  "quelle_url": "https://www.blue-cap.de/app/uploads/2026/05/260508_GB25_BlueCap_gesichert.pdf",
  "datei": "boersennotierte-unternehmen/industrie/dokumente/blue-cap-ag/260508_GB25_BlueCap_gesichert.pdf",
  "seiten": [
-  82,
-  4
+  4,
+  82
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -28,9 +28,15 @@
   }
  },
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 200.84,
-  "yahoo_ek_quote": 0.5705287791276639
+  "yahoo_ek_quote": 0.5705287791276639,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 12596000.0
+  }
  }
 }

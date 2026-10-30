@@ -1,0 +1,25 @@
+{
+ "unternehmen_id": "U000204",
+ "name": "EUWAX AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.euwax-ag.de/media/20260428_gb_eag_final_1.pdf",
+ "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/euwax-ag/20260428_gb_eag_final_1.pdf",
+ "seiten": [
+  48
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 343847117560.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": null,
+  "yahoo_ek_quote": null
+ }
+}

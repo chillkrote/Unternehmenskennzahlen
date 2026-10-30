@@ -6,10 +6,9 @@
  "quelle_url": "https://www.enbw.com/media/bericht/bericht-2025/downloads/enbw-geschaeftsbericht-2025.pdf",
  "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/enbw-energie-baden-wuerttemberg-ag/enbw-geschaeftsbericht-2025.pdf",
  "seiten": [
-  98,
-  108
+  98
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -24,7 +23,7 @@
  },
  "guv": {},
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000000.0,
   "yahoo_bilanzsumme_mio": 67429.0,
   "yahoo_ek_quote": 0.3214566432840469

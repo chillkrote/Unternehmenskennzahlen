@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000079",
+ "name": "bet-at-home.com AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.bet-at-home.ag/wp-content/uploads/2026/04/geschaeftsbericht_2025_de.pdf",
+ "datei": "boersennotierte-unternehmen/handel-konsum/dokumente/bet-at-home-com-ag/geschaeftsbericht_2025_de.pdf",
+ "seiten": [
+  32,
+  40
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 48887000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 52680000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 52.68,
+  "yahoo_ek_quote": 0.4364464692482916,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -1439000.0
+  }
+ }
+}

@@ -8,7 +8,7 @@
  "seiten": [
   33
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -23,7 +23,7 @@
  },
  "guv": {},
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 2.221,
   "yahoo_ek_quote": 0.5376415789841961

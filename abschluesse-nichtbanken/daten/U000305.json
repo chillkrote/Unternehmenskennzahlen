@@ -1,0 +1,45 @@
+{
+ "unternehmen_id": "U000305",
+ "name": "InnoTec TSS AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.innotectss.de/wp-content/uploads/2026/04/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/innotec-tss-ag/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf",
+ "seiten": [
+  52,
+  53,
+  54,
+  58
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 117885000.0,
+   "Total Equity Gross Minority Interest": 93270000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 24615000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 113170000.0,
+   "Total Equity Gross Minority Interest": 91246000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 119748000.0,
+   "Net Income": 6153000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 117.885,
+  "yahoo_ek_quote": 0.7911948084998092,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 14163000.0
+  }
+ }
+}

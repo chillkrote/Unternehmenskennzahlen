@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000275",
+ "name": "Heidelberg Pharma AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://heidelberg-pharma.com/images/managed/HDP_Geschaftsbericht_2025.pdf",
+ "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/heidelberg-pharma-ag/HDP_Geschaftsbericht_2025.pdf",
+ "seiten": [
+  3
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 38136000.0,
+   "Total Equity Gross Minority Interest": -10918000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 49054000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 60720000.0,
+   "Total Equity Gross Minority Interest": 30866000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 1457000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 38.136,
+  "yahoo_ek_quote": -0.2862928848104194
+ }
+}

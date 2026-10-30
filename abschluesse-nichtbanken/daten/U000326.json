@@ -1,0 +1,44 @@
+{
+ "unternehmen_id": "U000326",
+ "name": "KHD Humboldt Wedag International AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.khd.com/wp-content/uploads/2026/03/KHD-AG_Group_Annual_Report___2025.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/khd-humboldt-wedag-international-ag/KHD-AG_Group_Annual_Report___2025.pdf",
+ "seiten": [
+  60,
+  61,
+  62,
+  64
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 250596000.0,
+   "Total Equity Gross Minority Interest": 105654000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 144942000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 255065000.0,
+   "Total Equity Gross Minority Interest": 107517000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 177922000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 250.596,
+  "yahoo_ek_quote": 0.4216108796628837,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 16725000.0
+  }
+ }
+}

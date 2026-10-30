@@ -38,13 +38,14 @@ def einheit(seite):
         if re.search(rx,kopf,re.I):return f
     return 1.0
 
-SEG=re.compile(r"(?P<lab>[A-Za-zÄÖÜäöüß][^\d\n]{2,90}?)\s{2,}(?P<nums>(?:\(?[-–−]?\d[\d.,]*\)?(?:\s{2,}|\s(?=[\(\d–−-])|$)){2,5})")
+SEG=re.compile(r"(?P<lab>[A-Za-zÄÖÜäöüß][^\d\n]{2,90}?)\s{2,}(?P<nums>(?:\(?[-–−]?\d[\d.,]*\)?(?:\s*%)?(?:\s{2,}|\s(?=[\(\d–−-])|$)){2,6})")
+PCT=re.compile(r"\(?[-–−]?\d[\d.,]*\)?\s*%")
 def zahlen(nums,de):
+    nums=PCT.sub(' ',nums)
     out=[]
     for t in re.findall(r"\(?[-–−]?\d[\d.,]*\)?",nums):
         v=zahl(t,de)
         if v is not None:out.append((t,v))
-    # Anhangsspalte (kleine Ganzzahl ohne Trennzeichen vor ≥2 größeren Werten) entfernen
     if len(out)>=3 and re.fullmatch(r"\d{1,2}",out[0][0]) and abs(out[1][1])>=100:out=out[1:]
     return [v for _,v in out]
 
@@ -54,31 +55,94 @@ def segmente(seite,de):
             n=zahlen(m.group('nums'),de)
             if len(n)>=2:yield m.group('lab').strip(),n
 
-def analysiere(txt):
-    pages=txt.split('\f')
-    de=len(re.findall(r'\b(Umsatzerlöse|Eigenkapital|Konzern|Geschäftsjahr|Verbindlichkeiten)\b',txt))>len(re.findall(r'\b(Revenue|Equity|Liabilities|Financial year)\b',txt))
+def ist_datum(v):
+    return bool(re.fullmatch(r'[0-3]\d[01]\d20(2[3-6])',str(int(abs(v))).zfill(8)))
+
+def deutsch(txt):
+    return len(re.findall(r'\b(Umsatzerlöse|Eigenkapital|Konzern|Geschäftsjahr|Verbindlichkeiten)\b',txt))>len(re.findall(r'\b(Revenue|Equity|Liabilities|Financial year)\b',txt))
+
+def faktor_aus(bs,ref,text):
+    if ref:
+        a,f=min((abs(bs*f/1e6/ref-1),f) for f in(1,1e3,1e6))
+        return f if a<=.25 else None
+    return text
+
+def bilanz_kandidaten(pages,de):
+    """(Seite, [Summe Aktiva-Zeilen], Passiva-Seite). Aktiva und Passiva stehen auf einer oder auf zwei aufeinanderfolgenden Seiten."""
+    per={}
     for i,p in enumerate(pages):
-        ak=[n for lab,n in segmente(p,de) if RX['bilanzsumme'].match(lab) or RX['passiva'].match(lab)]
-        gl=[n for n in ak if n[0]!=0 and sum(1 for m in ak if abs(m[0]-n[0])<=max(1,abs(n[0])*1e-4))>=2]
-        if not gl:continue
-        res={'seite_bilanz':i+1,'de':de,'bilanzsumme':gl[0][:2],'ek':None,'schulden':None}
-        for key in('ek','schulden'):
+        rows=[n for lab,n in segmente(p,de) if (RX['bilanzsumme'].match(lab) or RX['passiva'].match(lab)) and n[0]>0 and not ist_datum(n[0])]
+        if rows:per[i]=rows
+    out=[]
+    for i,rows in per.items():
+        for n in rows:
+            same=sum(1 for m in rows if abs(m[0]-n[0])<=max(1,n[0]*1e-4))>=2
+            nxt=any(abs(m[0]-n[0])<=max(1,n[0]*1e-4) for j in(i-1,i+1) for m in per.get(j,[]))
+            if same or nxt:out.append((i,n[:2]))
+    return out
+
+def guv_zeilen(pages,de,start,ende,keys,pat):
+    for j in range(start,ende):
+        q=pages[j]
+        if not re.search(pat,q[:3500],re.I):continue
+        found={}
+        for lab,n in segmente(q,de):
+            for kk in keys:
+                if kk not in found and RX[kk].match(lab):found[kk]=n[:2]
+        if found:yield j,found
+
+def analysiere(txt,ref=None):
+    """ref: Terminalwerte (Mio. EUR) zur Einheitenbestimmung und Plausibilität; None = nur Seitenkopf."""
+    ref=ref or {}
+    pages=txt.split('\f');de=deutsch(txt)
+    cands=bilanz_kandidaten(pages,de)
+    best=None
+    for i,bs in cands:
+        f=faktor_aus(bs[0],ref.get('bilanzsumme'),einheit(pages[i]) if EIN_RX.search(pages[i][:4000]) else (einheit(pages[i-1]) if i and EIN_RX.search(pages[i-1][:4000]) else None))
+        if not f:continue
+        d=abs(bs[0]*f/1e6/ref['bilanzsumme']-1) if ref.get('bilanzsumme') else 0
+        if best is None or d<best[0]-1e-9:best=(d,i,bs,f)
+    pruefung='Aktiva=Passiva'
+    if not best and ref.get('bilanzsumme'):
+        # zweite Stufe: einzelne Bilanzsummen-Zeile, die dem unabhängigen Terminalwert auf 3 % entspricht
+        for i,p in enumerate(pages):
             for lab,n in segmente(p,de):
-                if RX[key].match(lab) and abs(n[0])<=abs(gl[0][0])*1.001:res[key]=n[:2];break
-        for k,pat in(('umsatz',r'gewinn- und verlustrechnung|gesamtergebnisrechnung|income statement|statement of (comprehensive )?income|profit or loss|gesamtergebnis|konzern-guv'),('cfo',r'kapitalflussrechnung|cash flow statement|statement of cash flows')):
-            for j,q in enumerate(pages):
-                if not re.search(pat,q[:3000],re.I):continue
-                found={}
-                for lab,n in segmente(q,de):
-                    for kk in(('umsatz','ebit','jue') if k=='umsatz' else('cfo',)):
-                        if kk not in found and RX[kk].match(lab):found[kk]=n[:2]
-                if found.get(k):
-                    for kk,v in found.items():res[kk]=v
-                    res['seite_'+('guv' if k=='umsatz' else 'cf')]=j+1;break
-        # Einheit: Seitenkopf der Bilanz, sonst vorherige Seite
-        res['faktor_text']=einheit(p) if EIN_RX.search(p[:4000]) else (einheit(pages[i-1]) if i and EIN_RX.search(pages[i-1][:4000]) else None)
-        return res
-    return None
+                if RX['bilanzsumme'].match(lab) and n[0]>0 and not ist_datum(n[0]):
+                    for f in(1,1e3,1e6):
+                        d=abs(n[0]*f/1e6/ref['bilanzsumme']-1)
+                        if d<=.03 and (best is None or d<best[0]):best=(d,i,n[:2],f)
+        pruefung='Yahoo-Abgleich (3 %)'
+    if not best:return None
+    _,i,bs,f=best
+    res={'seite_bilanz':i+1,'faktor':f,'bilanzsumme':bs,'ek':None,'pruefung':pruefung}
+    for pg in(i,i+1,i-1):
+        if not 0<=pg<len(pages):continue
+        for lab,n in segmente(pages[pg],de):
+            if RX['ek'].match(lab) and res['ek'] is None and 0<abs(n[0])<=bs[0]*1.001:
+                if n[0]!=bs[0]:res['ek']=n[:2];res['seite_ek']=pg+1
+        if res['ek']:break
+    um_ref=ref.get('umsatz')
+    cand=[]
+    for j,found in guv_zeilen(pages,de,0,len(pages),('umsatz','ebit','jue'),r'gewinn- und verlustrechnung|gesamtergebnisrechnung|income statement|statement of (comprehensive )?income|profit or loss|konzern-guv|ergebnisrechnung|gesamtergebnis'):
+        if 'umsatz' in found:
+            d=abs(found['umsatz'][0]*f/1e6/um_ref-1) if um_ref else 0
+            if d<=.35 and found['umsatz'][0]>0 and .01<=found['umsatz'][0]/bs[0]<=15:cand.append((d,j,found))
+    if cand:
+        _,j,found=min(cand,key=lambda c:c[0])
+        res['seite_guv']=j+1;um=found['umsatz'];res['umsatz']=um
+        for kk in('ebit','jue'):
+            if kk in found:res[kk]=found[kk]
+        u=abs(um[0])
+        if 'jue' in res:
+            m=ref.get('netto_marge')
+            if abs(res['jue'][0])>u*1.0 or (m is not None and abs(res['jue'][0]/u-m)>.04):res.pop('jue')
+        if 'ebit' in res:
+            m=ref.get('ebit_marge')
+            if abs(res['ebit'][0])>u or (m is not None and abs(res['ebit'][0]/u-m)>.05):res.pop('ebit')
+    for j,found in guv_zeilen(pages,de,0,len(pages),('cfo',),r'kapitalflussrechnung|cash flow statement|statement of cash flows|cashflow'):
+        v=found['cfo']
+        if .002<=abs(v[0])/bs[0]<=.5:res['cfo']=v;res['seite_cf']=j+1;break
+    return res
 
 if __name__=='__main__':
     print(json.dumps(analysiere(Path(sys.argv[1]).read_text(errors='ignore')),ensure_ascii=False))

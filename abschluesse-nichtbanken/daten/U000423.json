@@ -7,9 +7,10 @@
  "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/mvv-energie-ag/MVV_Geschaeftsbericht_GJ_2025_dt.pdf",
  "seiten": [
   53,
-  177
+  238,
+  243
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -24,13 +25,21 @@
  },
  "guv": {
   "2025-12-31": {
-   "Net Income": 165584000.0
+   "Total Revenue": 5959464000.0,
+   "EBIT": 290597000.0,
+   "Net Income": 186803000.0
   }
  },
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 6634.104,
-  "yahoo_ek_quote": 0.3942057586073417
+  "yahoo_ek_quote": 0.3942057586073417,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 462318000.0
+  }
  }
 }

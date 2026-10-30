@@ -1,0 +1,44 @@
+{
+ "unternehmen_id": "U000075",
+ "name": "Berentzen-Gruppe Aktiengesellschaft",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.berentzen-gruppe.de/fileadmin/media/4_0_investoren/4_3-berichte/2025_Geschaeftsbericht_gesch.pdf",
+ "datei": "boersennotierte-unternehmen/handel-konsum/dokumente/berentzen-gruppe-aktiengesellschaft/2025_Geschaeftsbericht_gesch.pdf",
+ "seiten": [
+  36,
+  77,
+  78,
+  115
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 129752000.0,
+   "Total Equity Gross Minority Interest": 47321000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 82431000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 136831000.0,
+   "Total Equity Gross Minority Interest": 46397000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 162949000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": null,
+  "yahoo_ek_quote": null,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 11932000.0
+  }
+ }
+}

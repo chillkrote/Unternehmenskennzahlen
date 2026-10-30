@@ -1,0 +1,32 @@
+{
+ "unternehmen_id": "U000449",
+ "name": "Nynomic AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.nynomic.com/wp-content/uploads/2026/05/NynomicAG_GB_2025.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/nynomic-ag/NynomicAG_GB_2025.pdf",
+ "seiten": [
+  30,
+  31
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 133836000.0,
+   "Total Equity Gross Minority Interest": 100668000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 33168000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 139526000.0,
+   "Total Equity Gross Minority Interest": 102977000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": null,
+  "yahoo_ek_quote": null
+ }
+}

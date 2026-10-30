@@ -16,21 +16,24 @@ bereits als PDF im Repo (`boersennotierte-unternehmen/*/dokumente`).
 
 ## Prüfregeln
 
-Summe Aktiva = Summe Passiva auf derselben Seite; Einheit (TEUR/Mio.) aus dem Terminalwert Bilanzsumme hergeleitet (Abweichung unter 25 %);
-Eigenkapital höchstens Bilanzsumme und Eigenkapitalquote innerhalb 8 Punkten der Yahoo-Quote; Umsatz 0,75 bis 1,35 des Yahoo-Werts.
-Was nicht besteht, bleibt leer. Verbindlichkeiten sind Bilanzsumme minus Eigenkapital (als abgeleitet benannt).
+- Bilanzsumme: Summe Aktiva = Summe Passiva (gleiche oder Folgeseite); sonst eine einzelne Zeile, die dem Terminalwert (Yahoo) auf 3 % entspricht. Das Feld `kontrolle.bilanzsumme` nennt die Stufe.
+- Einheit (TEUR/Mio.) aus dem Terminalwert hergeleitet (Abweichung unter 25 %), sonst aus dem Seitenkopf.
+- Eigenkapital höchstens Bilanzsumme, Eigenkapitalquote innerhalb 8 Punkten der Yahoo-Quote. Verbindlichkeiten = Bilanzsumme minus Eigenkapital (als abgeleitet benannt).
+- Umsatz positiv, 1 % bis 15fache der Bilanzsumme und innerhalb 35 % des Yahoo-Werts; Ergebnis und EBIT gegen Yahoo-Nettomarge (4 Punkte) und EBIT-Marge (5 Punkte).
+- Operativer Cashflow von der Kapitalflussrechnungs-Seite, 0,2 % bis 50 % der Bilanzsumme; keine Gegenprobe, deshalb im Feld `kontrolle` vermerkt.
 
-## Pilot
+Was nicht besteht, bleibt leer.
 
-`daten/<ID>.json` im Format von `europa/ergaenzungen` für 20 deutsche und luxemburgische Unternehmen (Bilanz 2025 und, wo plausibel, 2024).
-Drei Berichtsseiten von Hand gegengelesen (PWO, RealTech, Blue Cap), alle stimmen. Von 128 Berichten bestanden 34 die Bilanzprüfung,
-20 zusätzlich die Eigenkapitalprüfung. Umsatz bei 8, Ergebnis bei 5; Cashflow und EBIT sind noch nicht übernommen, weil das Layout je Bericht zu stark abweicht.
+## Stand (Ausbau, 30.10.2026)
+
+Von 128 Berichten mit Dateien in `daten/`: Bilanzsumme 77, Eigenkapital 50, Umsatz 41, Ergebnis 20, EBIT 8, operativer Cashflow 42.
+Gegenprobe von Hand (Pilot): PWO, RealTech, Blue Cap. Verbleibende 51 Berichte scheitern an Layout (Aktiva/Passiva getrennt, vermischte Spalten, kein Terminalwert) und sind Kandidaten für Einzellesen.
 
 ## Skripte
 
 ```
 python3 abschluesse-nichtbanken/skripte/vorbereiten.py /tmp/arbeit
-python3 abschluesse-nichtbanken/skripte/pilot.py /tmp/arbeit schreiben
+python3 abschluesse-nichtbanken/skripte/uebernehmen.py /tmp/arbeit schreiben
 ```
 
 ## Offen / nächste Stufen

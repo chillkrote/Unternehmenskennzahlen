@@ -1,0 +1,39 @@
+{
+ "unternehmen_id": "U000243",
+ "name": "Gelsenwasser AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.gelsenwasser.de/fileadmin/gelsenwasser/50_unternehmen/5.2-investoren/geschaeftsbericht_2025.pdf",
+ "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/gelsenwasser-ag/geschaeftsbericht_2025.pdf",
+ "seiten": [
+  40,
+  43,
+  44
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 2871400000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 2978400000.0,
+   "EBIT": 127800000.0,
+   "Net Income": 103500000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000000.0,
+  "yahoo_bilanzsumme_mio": 2871.4,
+  "yahoo_ek_quote": 0.3880337117782267,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 184600000.0
+  }
+ }
+}

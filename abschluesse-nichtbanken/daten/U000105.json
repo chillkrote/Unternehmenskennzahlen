@@ -7,9 +7,9 @@
  "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/camerit-ag/CAMERIT_AG_Geschaeftsbericht_fuer-2025-fina-le-Version-Stand-06.04.26.pdf",
  "seiten": [
   27,
-  40
+  28
  ],
- "pruefstatus": "Primärbericht; automatisch extrahiert, Aktiva=Passiva und Einheit gegen Terminalwert geprüft; Stichprobe offen",
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
  "abruf": "2026-10-30",
  "bilanz": {
   "2025-12-31": {
@@ -24,9 +24,15 @@
  },
  "guv": {},
  "kontrolle": {
-  "aktiva_gleich_passiva": true,
+  "bilanzsumme": "Aktiva=Passiva",
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 2.551,
-  "yahoo_ek_quote": 0.892339588817649
+  "yahoo_ek_quote": 0.892339588817649,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -43000.0
+  }
  }
 }

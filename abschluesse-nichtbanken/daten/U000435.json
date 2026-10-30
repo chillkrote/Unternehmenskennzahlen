@@ -1,0 +1,33 @@
+{
+ "unternehmen_id": "U000435",
+ "name": "Newron Pharmaceuticals S.p.A.",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.newron.com/sites/newron-pharma-corp/files/news-and-media/regulatory-news/2026/March%2024/Newron_Annual_Report_2025_final.pdf",
+ "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/newron-pharmaceuticals-s-p-a/Newron_Annual_Report_2025_final.pdf",
+ "seiten": [
+  57,
+  59
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 40055000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 63908000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 19126000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 40.055,
+  "yahoo_ek_quote": -0.2779927599550618
+ }
+}

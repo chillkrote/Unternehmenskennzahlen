@@ -1212,7 +1212,7 @@ const VWL = (() => {
   /* Revisionen (VWL 7): zwei Sichten auf dieselben Ausgaben.
      "Quartal": was die Herausgeber in einem Veröffentlichungsquartal für die Zieljahre erwarteten (x = Zieljahr), dazu die tatsächliche Entwicklung.
      "Zieljahr": wie sich die Prognose für ein Jahr von Ausgabe zu Ausgabe änderte (x = Veröffentlichung), dazu der tatsächliche Wert. */
-  const HFARBE = { Gemeinschaftsdiagnose: "var(--amber)", Sachverständigenrat: "#2f86dd", "Deutsche Bundesbank": "#17a88a", "Kiel Institut (IfW Kiel)": "#9a6fe0", IWH: "#e8484f", "DIW Berlin": "#3ecf6e", OECD: "#5ec8d8" };
+  const HFARBE = { Gemeinschaftsdiagnose: "var(--amber)", Sachverständigenrat: "#2f86dd", "Deutsche Bundesbank": "#17a88a", "Kiel Institut (IfW Kiel)": "#9a6fe0", IWH: "#e8484f", "DIW Berlin": "#3ecf6e", OECD: "#5ec8d8", RWI: "#e07fb0", "IMK (Hans-Böckler-Stiftung)": "#b4c24a", "IW Köln": "#939eac", "ifo Institut": "#c0714a", IWF: "#8fb4ff", Bundesregierung: "#d8d2c0", "EU-Kommission": "#f2c14e" };
   const hfarbe = h => HFARBE[h] || PAL[[...h].reduce((a, c) => a + c.charCodeAt(0), 0) % PAL.length];
   const hkurz = h => h.replace("Kiel Institut (IfW Kiel)", "IfW Kiel").replace("Deutsche Bundesbank", "Bundesbank").replace("Gemeinschaftsdiagnose", "Gem.diagnose");
   const qKey = d => { const t = (d || "").split("-").map(Number); return t[0] + "-Q" + (Math.floor(((t[1] || 1) - 1) / 3) + 1); };

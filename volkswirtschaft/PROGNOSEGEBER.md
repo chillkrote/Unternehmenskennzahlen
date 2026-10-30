@@ -24,7 +24,7 @@ Datei: `prognosegeber_oecd.csv` (Schema angelehnt an `prognosen_institute.csv` u
 
 ## Abdeckung
 
-- 38 von 38 OECD-Ländern haben mindestens eine Zentralbank und ein Ministerium oder eine Behörde mit eigener Prognose; für 36 gibt es ein Ministerium/eine Behörde oder ein Institut als zweiten Geber (siehe CSV).
+- 37 Länder ohne Deutschland: alle haben eine Zentralbank, 35 ein Ministerium oder eine Behörde mit eigener Prognose, alle mindestens drei Geber verschiedenen Typs (Zählung aus der CSV; Island und Slowenien-Bank/Lettland u. a. sind teils nur mit der Startseite belegt).
 - Ohne eigenes unabhängiges Forschungsinstitut mit freier Prognose gefunden: Australien, Chile, Costa Rica, Tschechien, Island, Israel, Lettland, Litauen, Luxemburg, Mexiko, Norwegen, Portugal, Slowakei, Slowenien. Hier tragen Zentralbank, Ministerium und Banken.
 - Internationale Organisationen (OECD, IWF, EU-Kommission, Weltbank, UN, EZB) decken alle Länder gleichmäßig ab; im Terminal ist bisher nur die OECD (Economic Outlook 114 bis 119) eingebunden.
 

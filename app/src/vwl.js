@@ -6,7 +6,7 @@
 "use strict";
 const VWL = (() => {
   let VD = null, ALLE_DATEN = null, SER = {}, LAND = {}, THEMA = {}, OECD = {}, REIHE = {};
-  const S = { land: "DE", serie: null, geos: ["DE", "EA20", "FR"], fenster: "5", ljahr: "ist", pgr: "bip_wachstum", palle: false, pjahr: "2026", pland: "US", pgeber: "DE", pherr: null, pvint: "erst", phz: "alle" };
+  const S = { land: "DE", serie: null, geos: ["DE", "EA20", "FR"], fenster: "5", ljahr: "ist", pgr: "bip_wachstum", palle: false, pjahr: "2026", rmodus: "quartal", rq: null, rz: null, pland: "US", pgeber: "DE", pherr: null, pvint: "erst", phz: "alle" };
   const FARBE = { DE: "var(--amber)", EA20: "#e8ecf1", EU27_2020: "#939eac", OECD: "#939eac" };
   const PAL = ["#2f86dd", "#17a88a", "#9a6fe0", "#e8484f", "#3ecf6e", "#d9a441", "#e07fb0", "#5ec8d8", "#b4c24a", "#c0714a"];
   const STRICH = { EU27_2020: "5 4", OECD: "5 4" };
@@ -252,34 +252,114 @@ const VWL = (() => {
     jahre.forEach(j => { const v = l.filter(p => !konsens(p)).map(p => wj(p, j)).filter(x => x != null); st.push(v.length ? { n: v.length, lo: Math.min(...v), hi: Math.max(...v), m: v.reduce((a, b) => a + b, 0) / v.length } : null); });
     return `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Herausgeber</th><th style="text-align:left">Ausgabe</th><th style="text-align:left">Stand</th>${jahre.map(j => `<th>${j}</th>`).join("")}<th title="P = Primärdokument gelesen, M = Pressemeldung, A = OECD-API">Beleg</th></tr></thead><tbody>${l.map(p => `<tr><td style="text-align:left;font-family:var(--sans);${p.herausgeber === "Gemeinschaftsdiagnose" || konsens(p) ? "font-weight:600" : ""}">${esc(p.herausgeber)}${INFL_TAG[p.groesse] ? ` <span class="pct">${INFL_TAG[p.groesse]}</span>` : ""}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(p.ausgabe)}</td><td class="n" style="text-align:left">${esc(datumDe(p.datum))}</td>${jahre.map(j => `<td class="${wj(p, j) == null ? "n" : ""}"${imQ(p, j) ? ` data-tip="Vierquartalswert im 3. Quartal ${j}, nicht Kalenderjahr"` : ""}>${pf(p, wj(p, j))}${imQ(p, j) ? "<sup>Q3</sup>" : ""}</td>`).join("")}<td class="n">${bel(p)}</td></tr>`).join("")}</tbody>${fuss ? `<tfoot><tr><td colspan="3" style="text-align:left;font-family:var(--sans)"><b>Spanne</b> (Anzahl)</td>${st.map(x => `<td class="n">${x ? `${f1.format(x.lo)}–${f1.format(x.hi)} (${x.n})` : "–"}</td>`).join("")}<td></td></tr><tr><td colspan="3" style="text-align:left;font-family:var(--sans)"><b>Durchschnitt</b></td>${st.map(x => `<td>${x ? f1.format(x.m) + " %" : "–"}</td>`).join("")}<td></td></tr></tfoot>` : ""}</table></div>`;
   }
-  /* Revisionen: Verlauf der Prognose für ein Zieljahr über die Veröffentlichungsdaten, eine Linie je Herausgeber */
-  function revisionen(geo, grp, jahr) {
-    const gl = grp === "inflation" ? INFLATION : [grp];
-    const l = VD.prognosen.filter(p => p.geo === geo && gl.includes(p.groesse) && p.werte[jahr] != null && !konsens(p));
-    const je = {}; l.forEach(p => (je[p.herausgeber] = je[p.herausgeber] || []).push({ x: datumX(p.datum), d: p.datum, a: p.ausgabe, v: p.werte[jahr] }));
-    const hs = Object.keys(je).filter(h => je[h].length > 1);
-    if (!hs.length) return `<p class="n">Für diese Auswahl liegen zu wenige Ausgaben vor.</p>`;
-    hs.forEach(h => je[h].sort((a, b) => a.x - b.x));
-    const alle = hs.flatMap(h => je[h]), xs = alle.map(q => q.x), vs = alle.map(q => q.v), x0 = Math.min(...xs) - 0.05, x1 = Math.max(...xs) + 0.05;
-    const eng = innerWidth < 640, W = eng ? 430 : 760, H = eng ? 280 : 320, L = 42, R = 14, T = 12, B = 28, ach = nice(Math.min(...vs), Math.max(...vs));
-    const X = t => L + ((t - x0) / (x1 - x0 || 1)) * (W - L - R), Y = v => T + (1 - (v - ach.a) / (ach.b - ach.a || 1)) * (H - T - B);
-    const col = h => h === "Gemeinschaftsdiagnose" ? "var(--amber)" : h === "OECD" ? "#e8ecf1" : PAL[hs.indexOf(h) % PAL.length];
-    let o = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Revisionen der Prognose für ${jahr}">`;
-    ach.tk.forEach(v => { o += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${v === 0 ? "var(--ink-3)" : "var(--grid)"}"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end" style="font-family:var(--mono);font-size:10px">${f1.format(v)}</text>`; });
-    const m0 = Math.ceil((x0 - Math.floor(x0)) * 12), sch = Math.max(1, Math.round((x1 - x0) * 12 / 7));
-    for (let t = Math.floor(x0) + m0 / 12; t <= x1; t += sch / 12) o += `<text x="${X(t)}" y="${H - 8}" text-anchor="middle" style="font-size:10px">${MONATE[Math.floor((t % 1) * 12 + 0.01) % 12]} ${String(Math.floor(t)).slice(2)}</text>`;
+  /* Revisionen (VWL 7): zwei Sichten auf dieselben Ausgaben.
+     "Quartal": was die Herausgeber in einem Veröffentlichungsquartal für die Zieljahre erwarteten (x = Zieljahr), dazu die tatsächliche Entwicklung.
+     "Zieljahr": wie sich die Prognose für ein Jahr von Ausgabe zu Ausgabe änderte (x = Veröffentlichung), dazu der tatsächliche Wert. */
+  const HFARBE = { Gemeinschaftsdiagnose: "var(--amber)", Sachverständigenrat: "#2f86dd", "Deutsche Bundesbank": "#17a88a", "Kiel Institut (IfW Kiel)": "#9a6fe0", IWH: "#e8484f", "DIW Berlin": "#3ecf6e", OECD: "#5ec8d8" };
+  const hfarbe = h => HFARBE[h] || PAL[[...h].reduce((a, c) => a + c.charCodeAt(0), 0) % PAL.length];
+  const hkurz = h => h.replace("Kiel Institut (IfW Kiel)", "IfW Kiel").replace("Deutsche Bundesbank", "Bundesbank").replace("Gemeinschaftsdiagnose", "Gem.diagnose");
+  const qKey = d => { const t = (d || "").split("-").map(Number); return t[0] + "-Q" + (Math.floor(((t[1] || 1) - 1) / 3) + 1); };
+  const qName = k => k.replace(/^(\d+)-Q(\d)$/, "Q$2 $1");
+  const jahrWerte = p => Object.entries(p.werte).filter(([k]) => /^\d{4}$/.test(k));
+  /* tatsächliche Werte je Jahr (nur Deutschland, siehe prognosen_ist.csv): aktueller Stand, sonst erste Veröffentlichung */
+  function istWerte(geo, grp) {
+    const A = VD.abgleich; if (geo !== "DE" || !A) return null;
+    const gs = ISTG[grp]; if (!gs) return null;
+    const o = {};
+    for (const g of gs) for (const v of ["aktuell", "erst"]) A.ist.filter(x => x.groesse === g && x.vintage === v && x.wert != null).forEach(x => { if (!(x.jahr in o)) o[x.jahr] = { w: x.wert, g, v }; });
+    return Object.keys(o).length ? o : null;
+  }
+  const revPool = (geo, grp) => {
+    const gl = grp === "inflation" ? INFLATION : [grp], y0 = new Date().getFullYear() - 15;
+    return VD.prognosen.filter(p => p.geo === geo && gl.includes(p.groesse) && jahrWerte(p).length && +p.datum.slice(0, 4) >= y0);
+  };
+  const revQuartale = pool => { const m = {}; pool.forEach(p => (m[qKey(p.datum)] = m[qKey(p.datum)] || new Set()).add(p.herausgeber)); return Object.keys(m).sort().map(k => [k, m[k].size]); };
+  const revJahre = pool => [...new Set(pool.flatMap(p => jahrWerte(p).map(([j]) => j)))].sort();
+  const revSvg = (W, H, inh, label) => `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" style="width:100%;height:auto;display:block">${inh}</svg>`;
+  const revLegende = (hs, ist) => `<div class="ctrl" style="margin:8px 0">${ist ? `<span class="chip" style="cursor:default"><span style="display:inline-block;width:18px;height:3px;background:#fff;margin-right:6px;vertical-align:middle"></span>Tatsächlich (Ist)</span>` : ""}${hs.map(h => `<span class="chip" style="cursor:default"><span style="display:inline-block;width:18px;height:3px;background:${hfarbe(h)};margin-right:6px;vertical-align:middle"></span>${esc(h)}</span>`).join("")}</div>`;
+  function revGitter(ach, L, R, W, Y) {
+    return ach.tk.map(v => `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${v === 0 ? "var(--ink-3)" : "var(--grid)"}"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end" style="font-family:var(--mono);font-size:10px">${f1.format(v)}</text>`).join("");
+  }
+  function revQuartal(geo, grp, pool, ist, q) {
+    const ed = {};
+    pool.filter(p => qKey(p.datum) === q).forEach(p => { if (!ed[p.herausgeber] || p.datum > ed[p.herausgeber].datum) ed[p.herausgeber] = p; });
+    const hs = Object.keys(ed).sort(), qj = +q.slice(0, 4);
+    if (!hs.length) return `<p class="n">In diesem Quartal wurde nichts veröffentlicht.</p>`;
+    const fj = hs.flatMap(h => jahrWerte(ed[h]).map(([j]) => +j));
+    const j0 = Math.min(qj - 2, ...fj), j1 = Math.max(qj + 1, ...fj);
+    const istJ = ist ? Object.keys(ist).map(Number).filter(j => j >= j0 && j <= j1).sort() : [];
+    const vs = [...hs.flatMap(h => jahrWerte(ed[h]).map(([, v]) => v)), ...istJ.map(j => ist[j].w)];
+    const eng = innerWidth < 640, W = eng ? 430 : 760, H = eng ? 300 : 340, L = 42, R = 16, T = 14, B = 30, ach = nice(Math.min(...vs), Math.max(...vs));
+    const X = j => L + 22 + ((j - j0) / (j1 - j0 || 1)) * (W - L - R - 44), Y = v => T + (1 - (v - ach.a) / (ach.b - ach.a || 1)) * (H - T - B);
+    let o = revGitter(ach, L, R, W, Y);
+    for (let j = j0; j <= j1; j++) o += `<text x="${X(j)}" y="${H - 9}" text-anchor="middle" style="font-size:10px${j === qj ? ";font-weight:700" : ""}">${eng && (j - j0) % 2 ? "" : j}</text>`;
+    o += `<line x1="${X(qj)}" x2="${X(qj)}" y1="${T}" y2="${H - B}" stroke="var(--ink-3)" stroke-dasharray="2 4"/><text x="${X(qj) + 4}" y="${T + 9}" style="font-size:9px;fill:var(--ink-3)">Veröffentlichung</text>`;
+    if (istJ.length) {
+      o += `<path d="${istJ.map((j, i) => (i ? "L" : "M") + X(j).toFixed(1) + " " + Y(ist[j].w).toFixed(1)).join("")}" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/>`;
+      istJ.forEach(j => { o += `<circle cx="${X(j)}" cy="${Y(ist[j].w)}" r="3" fill="#fff"/><circle cx="${X(j)}" cy="${Y(ist[j].w)}" r="10" fill="transparent" data-tip="${esc(`<b>Tatsächlich ${j}</b>\n${f1.format(ist[j].w)} %${ist[j].v === "erst" ? "\n(erste Veröffentlichung)" : ""}`)}"/>`; });
+    }
     hs.forEach(h => {
-      o += `<path d="${je[h].map((q, i) => (i ? "L" : "M") + X(q.x).toFixed(1) + " " + Y(q.v).toFixed(1)).join("")}" fill="none" stroke="${col(h)}" stroke-width="${h === "Gemeinschaftsdiagnose" ? 2.4 : 1.5}" stroke-linejoin="round"/>`;
-      je[h].forEach(q => { o += `<circle cx="${X(q.x)}" cy="${Y(q.v)}" r="4" fill="${col(h)}" data-tip="${esc(`<b>${esc(h)}</b>\n${esc(q.a)} (${datumDe(q.d)})\nPrognose ${jahr}: ${f1.format(q.v)} %`)}"/>`; });
+      const p = ed[h], pts = jahrWerte(p).sort((a, b) => a[0] - b[0]), c = hfarbe(h);
+      o += `<path d="${pts.map(([j, v], i) => (i ? "L" : "M") + X(+j).toFixed(1) + " " + Y(v).toFixed(1)).join("")}" fill="none" stroke="${c}" stroke-width="1.8" stroke-linejoin="round"${konsens(p) ? ` stroke-dasharray="5 4"` : ""}/>`;
+      pts.forEach(([j, v]) => { o += `<circle cx="${X(+j)}" cy="${Y(v)}" r="4.5" fill="${c}" stroke="var(--bg, #0b0f14)" stroke-width="2"/><circle cx="${X(+j)}" cy="${Y(v)}" r="11" fill="transparent" data-tip="${esc(`<b>${esc(h)}</b>\n${esc(p.ausgabe)} (${datumDe(p.datum)})\nPrognose für ${j}: ${f1.format(v)} %${ist && ist[j] ? `\nTatsächlich: ${f1.format(ist[j].w)} %` : ""}`)}"/>`; });
     });
-    return `<div class="ctrl" style="margin-bottom:8px">${hs.map(h => `<span class="chip" style="cursor:default"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${col(h)};margin-right:6px"></span>${esc(h)}</span>`).join("")}</div>${o}</svg>`;
+    const js = [...new Set(hs.flatMap(h => jahrWerte(ed[h]).map(([j]) => j)))].sort();
+    const tab = `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Herausgeber</th><th style="text-align:left">Ausgabe</th>${js.map(j => `<th>${j}</th>`).join("")}</tr></thead><tbody>${hs.map(h => `<tr><td style="text-align:left;font-family:var(--sans)"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${hfarbe(h)};margin-right:6px"></span>${esc(h)}</td><td class="n" style="text-align:left">${esc(ed[h].ausgabe)} · ${datumDe(ed[h].datum)}</td>${js.map(j => `<td>${ed[h].werte[j] != null ? f1.format(ed[h].werte[j]) : "–"}</td>`).join("")}</tr>`).join("")}${ist ? `<tr><td style="text-align:left;font-family:var(--sans)">Tatsächlich (Ist)</td><td class="n" style="text-align:left">${ist[js[0]] && ist[js[0]].v === "erst" ? "erste Veröffentlichung" : "aktueller Stand"}</td>${js.map(j => `<td>${ist[j] ? f1.format(ist[j].w) : "–"}</td>`).join("")}</tr>` : ""}</tbody></table></div>`;
+    return revLegende(hs, istJ.length) + revSvg(W, H, o, `Prognosen im ${qName(q)}`) + tab;
+  }
+  function revJahr(geo, grp, pool, ist, jahr) {
+    /* nur echte Prognosen: Ausgaben bis Ende des Zieljahres (spätere Werte sind Schätzungen des Ist) */
+    const l = pool.filter(p => p.werte[jahr] != null && +p.datum.slice(0, 4) <= +jahr);
+    const je = {}; l.forEach(p => (je[p.herausgeber] = je[p.herausgeber] || []).push({ x: datumX(p.datum), d: p.datum, a: p.ausgabe, v: p.werte[jahr], p }));
+    const hs = Object.keys(je).sort();
+    if (!hs.length) return `<p class="n">Für dieses Zieljahr liegen keine Ausgaben vor.</p>`;
+    hs.forEach(h => je[h].sort((a, b) => a.x - b.x));
+    const iw = ist && ist[jahr] ? ist[jahr] : null, alle = hs.flatMap(h => je[h]);
+    const x0 = Math.floor(Math.min(...alle.map(q => q.x))), x1 = Math.ceil(Math.max(...alle.map(q => q.x)) + 0.01);
+    const vs = [...alle.map(q => q.v), ...(iw ? [iw.w] : [])];
+    const eng = innerWidth < 640, W = eng ? 430 : 760, H = eng ? 300 : 340, L = 42, R = 16, T = 14, B = 30, ach = nice(Math.min(...vs), Math.max(...vs));
+    const X = t => L + ((t - x0) / (x1 - x0 || 1)) * (W - L - R), Y = v => T + (1 - (v - ach.a) / (ach.b - ach.a || 1)) * (H - T - B);
+    let o = revGitter(ach, L, R, W, Y);
+    for (let t = x0; t <= x1; t++) o += `<line x1="${X(t)}" x2="${X(t)}" y1="${T}" y2="${H - B}" stroke="var(--grid)" stroke-dasharray="1 5"/><text x="${X(t)}" y="${H - 9}" text-anchor="${t === x1 ? "end" : t === x0 ? "start" : "middle"}" style="font-size:10px">${t}</text>`;
+    const tj = X(+jahr + 1);
+    if (+jahr + 1 <= x1) o += `<rect x="${X(+jahr)}" y="${T}" width="${tj - X(+jahr)}" height="${H - T - B}" fill="var(--ink-3)" opacity=".10"/><text x="${X(+jahr) + 4}" y="${T + 10}" style="font-size:9px;fill:var(--ink-3)">Zieljahr ${jahr}</text>`;
+    if (iw) o += `<line x1="${L}" x2="${W - R}" y1="${Y(iw.w)}" y2="${Y(iw.w)}" stroke="#fff" stroke-width="2.4"/><text x="${W - R}" y="${Y(iw.w) - 6}" text-anchor="end" style="font-size:10px;fill:#fff" data-tip="${esc(`<b>Tatsächlich ${jahr}</b>\n${f1.format(iw.w)} %${iw.v === "erst" ? "\n(erste Veröffentlichung)" : ""}`)}">Tatsächlich ${f1.format(iw.w)} %</text>`;
+    hs.forEach(h => {
+      const c = hfarbe(h);
+      o += `<path d="${je[h].map((q, i) => (i ? "L" : "M") + X(q.x).toFixed(1) + " " + Y(q.v).toFixed(1)).join("")}" fill="none" stroke="${c}" stroke-width="1.8" stroke-linejoin="round"${konsens(je[h][0].p) ? ` stroke-dasharray="5 4"` : ""}/>`;
+      je[h].forEach(q => { o += `<circle cx="${X(q.x)}" cy="${Y(q.v)}" r="4" fill="${c}" stroke="var(--bg, #0b0f14)" stroke-width="2"/><circle cx="${X(q.x)}" cy="${Y(q.v)}" r="10" fill="transparent" data-tip="${esc(`<b>${esc(h)}</b>\n${esc(q.a)} (${datumDe(q.d)})\nPrognose ${jahr}: ${f1.format(q.v)} %${iw ? `\nTatsächlich: ${f1.format(iw.w)} % (Abweichung ${f2s.format(q.v - iw.w)})` : ""}`)}"/>`; });
+    });
+    return revLegende(hs, !!iw) + revSvg(W, H, o, `Revisionen der Prognose für ${jahr}`) + (iw ? "" : `<p class="n" style="margin-top:6px">Für ${jahr} liegt noch kein tatsächlicher Wert vor (oder keiner in der Datenbasis).</p>`);
+  }
+  function revisionenPanel(geo, grp, pname, g) {
+    const pool = revPool(geo, grp), ist = istWerte(geo, grp);
+    const qs = revQuartale(pool), js = revJahre(pool);
+    if (!qs.length) return panel({ code: "VWL 7", titel: "Revisionen der Prognose", sub: `${pname}, ${g[0]}`, breite: "w7", body: `<p class="n">Keine Prognosen mit Veröffentlichungsdatum erfasst.</p>` });
+    const modus = S.rmodus === "jahr" ? "jahr" : "quartal";
+    const q = qs.some(x => x[0] === S.rq) ? S.rq : (qs.filter(x => x[1] >= 3).pop() || qs[qs.length - 1])[0];
+    const jf = js.includes(S.rz) ? S.rz : (js.includes(S.pjahr) ? S.pjahr : js[js.length - 1]);
+    const qi = qs.findIndex(x => x[0] === q);
+    const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
+    const istJ = ist ? Object.keys(ist) : [];
+    const wahl = modus === "quartal"
+      ? `<label>Veröffentlichungsquartal <select id="vrq" aria-label="Veröffentlichungsquartal">${qs.slice().reverse().map(([k, n]) => opt(k, `${qName(k)} · ${n} Herausgeber`, k === q)).join("")}</select></label>` + chipRow([[qi > 0 ? qs[qi - 1][0] : q, "‹ früher"], [qi < qs.length - 1 ? qs[qi + 1][0] : q, "später ›"]], "data-vrq", "")
+      : `<label>Zieljahr <select id="vrz" aria-label="Zieljahr">${js.slice().reverse().map(j => opt(j, ist && ist[j] ? `${j} · tatsächlich ${f1.format(ist[j].w)} %` : `${j} · noch offen`, j === jf)).join("")}</select></label>`;
+    const sub = modus === "quartal"
+      ? `${pname}, ${g[0]}: Was erwarteten die Herausgeber im ${qName(q)} für die Jahre vor und nach der Veröffentlichung?`
+      : `${pname}, ${g[0]}: Wie veränderte sich die Prognose für ${jf} von Ausgabe zu Ausgabe?`;
+    const erkl = modus === "quartal"
+      ? `So lesen: Jede farbige Linie ist ein Herausgeber, der im gewählten Quartal eine Prognose veröffentlicht hat (nur diese werden gezeigt). Die Punkte sind seine Erwartung für das jeweilige Jahr auf der Zeitachse. Die weiße Linie zeigt, wie sich ${g[0]} tatsächlich entwickelt hat. Liegt ein Punkt über der weißen Linie, war die Prognose zu optimistisch.`
+      : `So lesen: Jeder Punkt ist eine Ausgabe, deren Prognose für ${jf} auf der Zeitachse zum Veröffentlichungsdatum steht. Wandert eine Linie nach oben, wurde die Prognose angehoben. Die weiße Linie ist der tatsächliche Wert für ${jf}; je näher die Punkte kommen, desto besser trifft die Prognose.`;
+    const body = `<div class="ctrl" style="margin-bottom:8px">${chipRow([["quartal", "Nach Quartal"], ["jahr", "Nach Zieljahr"]], "data-vrmodus", modus)}</div><div class="picks" style="margin-bottom:8px">${wahl}</div><p class="n" style="margin:0 0 6px">${erkl}</p>`
+      + (modus === "quartal" ? revQuartal(geo, grp, pool, ist, q) : revJahr(geo, grp, pool, ist, jf));
+    const fuss = `Zeitraum: Ausgaben der letzten 15 Jahre, soweit erfasst (früheste Ausgabe ${datumDe(pool.map(p => p.datum).sort()[0])}). Je Herausgeber und Quartal zählt die letzte Ausgabe. Es erscheinen nur Herausgeber mit Veröffentlichung im gewählten Quartal bzw. für das gewählte Zieljahr. ` + (ist ? `Tatsächlich: ${ISTN[Object.values(ist)[0].g] || "Wert"} laut prognosen_ist.csv (aktueller Stand, sonst erste Veröffentlichung). ` : `Für dieses Land liegen keine tatsächlichen Werte in der Datenbasis vor. `) + `Punkte überfahren für Ausgabe und Wert.`;
+    return panel({ code: "VWL 7", titel: "Revisionen der Prognose", sub, breite: "w7", body, fuss });
   }
 
   /* ----- Treffsicherheit: Prognose gegen tatsächliche Werte (volkswirtschaft/skripte/abgleich_prognosen.py) ----- */
   const HZ = ["alle", "0 bis 6 Monate", "7 bis 12 Monate", "13 bis 18 Monate", "19 bis 24 Monate", "über 24 Monate"];
   const ISTG = { bip_wachstum: ["bip_wachstum"], inflation: ["inflation", "inflation_hvpi"], arbeitslosenquote: ["arbeitslosenquote", "arbeitslosenquote_ilo"], finanzierungssaldo: ["finanzierungssaldo"] };
   const ISTN = { inflation: "Verbraucherpreise (VPI)", inflation_hvpi: "HVPI", arbeitslosenquote: "Quote nach BA", arbeitslosenquote_ilo: "ILO-Erwerbslosenquote" };
-  const zieljahre = (grp, geo = "DE") => { const gl = grp === "inflation" ? INFLATION : [grp]; return [...new Set(VD.prognosen.filter(p => p.geo === geo && gl.includes(p.groesse)).flatMap(p => Object.keys(p.werte)))].sort(); };
   const f2 = new Intl.NumberFormat("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const f2s = new Intl.NumberFormat("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: "exceptZero" });
   function treffsicherheit(grp) {
@@ -318,7 +398,7 @@ const VWL = (() => {
     const ctrl = `<div class="picks" style="margin-bottom:6px">${landWahl("vpgeber", pg, x => pgeos.has(x))}</div>` + chipRow(Object.entries(GROESSEN).filter(([k]) => hat(k)).map(([k, v]) => [k, v[0]]), "data-vpgr", grp) + chipRow([["neu", "Aktuellste Ausgabe je Herausgeber"], ["alle", "Alle Ausgaben (Vergleich älterer Prognosen)"]], "data-vpalle", S.palle ? "alle" : "neu");
     const a = panel({ code: "VWL 6", titel: `Prognosen für ${pname}`, sub: `${g[0]} (${g[1]}) · ` + (de ? "Wirtschaftsforschungsinstitute, Bundesregierung, Bundesbank, EU-Kommission, IWF, OECD" : "Zentralbank, Konsensumfragen und Einzelprognostiker, Ministerien, OECD, soweit frei zugänglich"), body: ctrl + (l.length ? prognoseTabelle(l, !S.palle) : `<p class="n">Keine Prognosen erfasst.</p>`),
       fuss: `Spalten: Prognose für das jeweilige Kalenderjahr, Veränderung ggü. Vorjahr bzw. Quote; ältere Ausgaben bleiben zum Vergleich erhalten. Beleg: P = Primärdokument gelesen, M = Pressemeldung (nicht am Original geprüft), A = OECD-API; Hinweise beim Überfahren. Inflation: Kennzeichnung VPI, HVPI oder PCE je Zeile; Basis (Jahresdurchschnitt oder Q4 zu Q4) und Abgrenzung stehen im Hinweis beim Überfahren des Belegs, Geber sind deshalb nur eingeschränkt vergleichbar. Konsenszeilen (fett) sind in Spanne und Durchschnitt nicht enthalten. Quelle: volkswirtschaft/prognosen_institute.csv, prognosen_oecd.csv und prognosen_international.csv.` });
-    const rv = panel({ code: "VWL 7", titel: "Revisionen der Prognose", sub: `${pname}, ${g[0]}: Prognose für ${S.pjahr} nach Veröffentlichungsdatum`, breite: "w7", body: chipRow(zieljahre(grp, pg).map(j => [j, "für " + j]), "data-vpjahr", S.pjahr) + revisionen(pg, grp, S.pjahr), fuss: "Jeder Punkt eine Ausgabe, Herausgeber mit mindestens zwei Ausgaben. Punkte überfahren für Ausgabe und Wert." });
+    const rv = revisionenPanel(pg, grp, pname, g);
     const oecdGeos = [...new Set(VD.prognosen.filter(p => p.herausgeber === "OECD").map(p => p.geo))];
     const fg = S.pland && oecdGeos.includes(S.pland) ? S.pland : "US", ol = (gr) => ausgaben(fg, gr, false).filter(p => p.herausgeber === "OECD");
     const ob = ["bip_wachstum", "inflation", "arbeitslosenquote", "finanzierungssaldo"].map(gr => { const x = ol(gr); return x.length ? `<h3 style="margin:14px 0 6px;font:600 13px var(--sans)">${esc(GROESSEN[gr][0])} (${esc(GROESSEN[gr][1])})</h3>${prognoseTabelle(x, false)}` : ""; }).join("");
@@ -348,6 +428,8 @@ const VWL = (() => {
     if ((v = g("data-vpgr")) != null) { S.pgr = v; render(); return true; }
     if ((v = g("data-vpalle")) != null) { S.palle = v === "alle"; render(); return true; }
     if ((v = g("data-vpjahr")) != null) { S.pjahr = v; render(); return true; }
+    if ((v = g("data-vrq")) != null) { S.rq = v; render(); return true; }
+    if ((v = g("data-vrmodus")) != null) { S.rmodus = v; render(); return true; }
     if ((v = g("data-vpvint")) != null) { S.pvint = v; render(); return true; }
     if ((v = g("data-vphz")) != null) { S.phz = v; render(); return true; }
     if ((v = g("data-vserie")) != null) { S.serie = v; S.ljahr = "ist"; if (location.hash === "#v-ueb" || location.hash === "#v-quellen") return false; render(); return true; }
@@ -359,6 +441,8 @@ const VWL = (() => {
     bind("vland", v => { S.land = v; render(); });
     bind("vpland", v => { S.pland = v; render(); });
     bind("vpgeber", v => { S.pgeber = v; render(); });
+    bind("vrq", v => { S.rq = v; render(); });
+    bind("vrz", v => { S.rz = v; render(); });
     bind("vgeoadd", v => { if (v && !S.geos.includes(v)) S.geos.push(v); render(); });
   }
   const meta = () => VD ? `${VD.serien.length} Reihen · ${VD.laender.filter(l => l.oecd === "1").length} OECD-Länder · Eurostat, OECD, ifo, Stand ${VD.stand}` : "";

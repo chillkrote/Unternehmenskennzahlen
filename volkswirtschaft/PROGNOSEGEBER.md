@@ -64,6 +64,8 @@ Datei: `prognosegeber_oecd.csv` (Schema angelehnt an `prognosen_institute.csv` u
 | EZB/Eurosystem-Stabsprognosen | Euroraum | Runden Sep 2025 bis Sep 2026 | BIP, HVPI, Arbeitslosigkeit, Finanzierungssaldo | Annex-Excel der jeweiligen Runde |
 | Nationale Zentralbanken des Euroraums (Bundesbank, Banque de France, Banca d'Italia, Banco de España, DNB, OeNB u. a.) | 17 OECD-Länder im Euroraum | Eurosystem-Runden Juni und Dezember, Juni 2024 bis Juni 2026 | BIP, HVPI, Arbeitslosenquote | EZB Macroeconomic Projections Database (API); Kennung der Runde: Buchstabe plus Jahr (W = März, G = Juni, S = September, A = Dezember), über den Vergleich mit den Annex-Dateien bestimmt |
 | Bank of England MPR | UK | Juli 2026 | VPI, BIP, Arbeitslosenquote, Bank Rate | Projektion für das jeweils dritte Quartal (Vierquartalswerte), nicht Kalenderjahre |
+| SECO Expertengruppe | CH | Sep 2026 (und Jun 2026 aus dem Klammerwert) | BIP (Sportevent-bereinigt), VPI, Arbeitslosenquote | Kalenderjahre, aus dem PDF-Anhang der Medienmitteilung |
+| Riksbank (offene API) | SE | alle Runden 2015:1 bis 2026:3 | BIP, CPIF, VPI, Arbeitslosenquote, Leitzins, Finanzierungssaldo | Jahreswerte aus den Quartals- bzw. Monatsreihen der API berechnet |
 
 Vergleichbarkeit: Die Basis (Jahresdurchschnitt oder Q4/Q4) steht je Zeile im `hinweis`. Die Reihen verschiedener Geber sind deshalb nicht ohne Weiteres gleichzusetzen.
 

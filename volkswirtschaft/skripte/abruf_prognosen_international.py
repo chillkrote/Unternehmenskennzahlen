@@ -276,8 +276,117 @@ def boj():
     return [x for x in zeilen if x]
 
 
+# --- EZB/Eurosystem-Stabsprognosen (Annex-Excel je Runde) und Prognosen der nationalen Zentralbanken (EZB-Datenbank MPD) ---
+EZB_RUNDEN = {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dez"}
+MPD_CODE = {"03": "W", "06": "G", "09": "S", "12": "A"}   # Kennung der Runde in der MPD: Buchstabe + Jahr (Dez. 2025 = A25), über den Vergleich mit den Annex-Dateien bestimmt
+NCB = {"AT": "Oesterreichische Nationalbank", "BE": "Nationale Bank van België", "DE": "Deutsche Bundesbank", "EE": "Eesti Pank",
+       "ES": "Banco de España", "FI": "Suomen Pankki", "FR": "Banque de France", "GR": "Bank of Greece", "IE": "Central Bank of Ireland",
+       "IT": "Banca d'Italia", "LT": "Lietuvos bankas", "LU": "Banque centrale du Luxembourg", "LV": "Latvijas Banka", "NL": "De Nederlandsche Bank",
+       "PT": "Banco de Portugal", "SI": "Banka Slovenije", "SK": "Národná banka Slovenska"}
+
+
+def ezb_stab():
+    import openpyxl
+    basis = "https://www.ecb.europa.eu/press/projections/html/"
+    idx = hole(basis + "index.en.html").decode("utf-8", "ignore")
+    seiten = sorted(set(re.findall(r"(ecb\.projections(\d{6})_\w+~\w+\.en\.html)", idx)), key=lambda x: x[1])
+    zeilen = []
+    for datei, ym in seiten:
+        h = hole(basis + datei).decode("utf-8", "ignore")
+        m = re.search(r'href="(/pub/pdf/other/[^"]*annex[^"]*xlsx)"', h)
+        if not m:
+            continue
+        name = f"ezb_annex_{ym}.xlsx"
+        speichere(name, hole("https://www.ecb.europa.eu" + m.group(1)))
+        wb = openpyxl.load_workbook(ROH / name, data_only=True)
+
+        def spalte(blatt, kopf, block=0):
+            ws = wb[blatt]
+            zl = list(ws.iter_rows(values_only=True))
+            kr = next(r for r in zl if r[0] == "Reference period")
+            c = [i for i, v in enumerate(kr) if isinstance(v, str) and v.strip().replace("\n", " ") == kopf][block]
+            return {r[0].year: r[c] for r in zl if hasattr(r[0], "year") and r[0].year >= 2025 and isinstance(r[c], (int, float))}
+        reihen = [("bip_wachstum", "%", spalte("Real Economy (annual)", "Real GDP"), "reales BIP, Veränderung zum Vorjahr"),
+                  ("inflation_hvpi", "%", spalte("Prices (annual)", "HICP"), "HVPI, Veränderung zum Vorjahr"),
+                  ("arbeitslosenquote", "%", spalte("Real Economy (annual)", "Unemployment rate"), "Arbeitslosenquote in % der Erwerbspersonen"),
+                  ("finanzierungssaldo", "% des BIP", spalte("Fiscal", "General government budget balance"), "gesamtstaatlicher Haushaltssaldo")]
+        ausgabe = f"Stabsprognose {EZB_RUNDEN[ym[4:]]} {ym[:4]}"
+        art = "Eurosystem" if ym[4:] in ("06", "12") else "EZB"
+        url = basis + datei
+        for g, e, d, hin in reihen:
+            for jahr, v in d.items():
+                zeilen.append(z("EA20", f"{art}-Stabsprognose", ausgabe, "", g, e, str(jahr), float(v), "Primärdokument", url,
+                                f"Euroraum; {hin}; Annex-Excel der Runde"))
+    return [x for x in zeilen if x]
+
+
+def ncb_mpd():
+    """Prognosen der nationalen Zentralbanken des Euroraums aus der Macroeconomic Projections Database der EZB (Runden Juni und Dezember)."""
+    jetzt = date.today()
+    runden = []
+    for jj in range(jetzt.year - 2, jetzt.year + 1):
+        for mm, bez in (("06", "G"), ("12", "A")):
+            if f"{jj}{mm}" <= f"{jetzt.year}{jetzt.month:02d}":
+                runden.append((f"{jj}-{mm}", bez + str(jj)[2:]))
+    reihen = [("YER", "A", "bip_wachstum", "reales BIP, Veränderung zum Vorjahr"), ("HIC", "A", "inflation_hvpi", "HVPI, Veränderung zum Vorjahr"),
+              ("URX", "F", "arbeitslosenquote", "Arbeitslosenquote in % der Erwerbspersonen")]
+    zeilen, roh = [], []
+    laender = "+".join(NCB)
+    for monat, code in runden:
+        for item, denom, g, hin in reihen:
+            url = f"https://data-api.ecb.europa.eu/service/data/MPD/A.{laender}.{item}.{denom}.{code}.0000?format=csvdata&startPeriod=2025"
+            try:
+                txt = hole(url.replace("+", "%2B"), "text/csv").decode("utf-8")
+            except urllib.error.HTTPError:
+                continue
+            roh.append(txt)
+            for r in csv.DictReader(io.StringIO(txt)):
+                geo = "EL" if r["REF_AREA"] == "GR" else r["REF_AREA"]
+                zeilen.append(z(geo, f"{NCB[r['REF_AREA']]} (Eurosystem-Projektion)", f"Eurosystem-Projektion {EZB_RUNDEN[monat[5:]]} {monat[:4]}", "", g, "%",
+                                r["TIME_PERIOD"], float(r["OBS_VALUE"]), "API", url.split("?")[0],
+                                f"{hin}; Beitrag der nationalen Zentralbank zur Eurosystem-Runde, EZB Macroeconomic Projections Database (Runde {code})"))
+    speichere("ezb_mpd_ncb.csv", "\n".join(roh).encode())
+    return [x for x in zeilen if x]
+
+
+# --- Bank of England Monetary Policy Report ---------------------------------------------------------------------------------------
+def boe():
+    basis = "https://www.bankofengland.co.uk"
+    mon = ["february", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+    jahr = date.today().year
+    treffer = None
+    for m in reversed(mon):   # jüngste veröffentlichte Ausgabe des Jahres mit PDF
+        pdf = f"{basis}/-/media/boe/files/monetary-policy-report/{jahr}/{m}/monetary-policy-report-{m}-{jahr}.pdf"
+        try:
+            daten = hole(pdf)
+        except urllib.error.HTTPError:
+            continue
+        if daten[:4] == b"%PDF":
+            treffer = (m, pdf, daten)
+            break
+    if not treffer:
+        return []
+    m, pdf, daten = treffer
+    speichere(f"boe_mpr_{m}_{jahr}.pdf", daten)
+    t = pdf_text(ROH / f"boe_mpr_{m}_{jahr}.pdf")
+    blk = t[t.index("Summary of outputs of the central projection and scenarios"):]
+    blk = blk[:blk.index("Milder scenario")]
+    kopf = re.search(r"((?:20\d\d Q\d\s+){4})", blk).group(1).split()
+    perioden = [f"{kopf[i]} {kopf[i + 1]}" for i in range(0, 8, 2)]
+    ausgabe = f"MPR {m.capitalize()} {jahr}"
+    zeilen = []
+    for pat, g, e in ((r"CPI inflation \(b\)", "inflation_vpi", "%"), (r"GDP \(c\)", "bip_wachstum", "%"), (r"Unemployment rate \(e\)", "arbeitslosenquote", "%"),
+                      (r"Bank Rate \(i\)", "leitzins", "%")):
+        mm = re.search(pat + r"\s+((?:-?\d+\.\d\s+){4})", blk)
+        for per, v in zip(perioden, mm.group(1).split()):
+            zeilen.append(z("UK", "Bank of England Monetary Policy Report", ausgabe, "", g, e, per.replace(" ", "-"), float(v), "Primärdokument", pdf,
+                            "Zentrale Projektion des MPC; Vierquartalswert im jeweiligen dritten Quartal (nicht Kalenderjahr); Bank Rate = Marktpfad"))
+    return [x for x in zeilen if x]
+
+
 QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury", hmt), ("Funcas", funcas), ("Fed SEP", fed_sep),
-           ("Bank of Canada", boc), ("Bank of Japan", boj)]
+           ("Bank of Canada", boc), ("Bank of Japan", boj), ("EZB-Stabsprognosen", ezb_stab),
+           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe)]
 
 
 def main():

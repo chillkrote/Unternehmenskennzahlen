@@ -24,7 +24,7 @@ Was nicht besteht, bleibt leer. Verbindlichkeiten sind Bilanzsumme minus Eigenka
 
 `daten/<ID>.json` im Format von `europa/ergaenzungen` für 20 deutsche und luxemburgische Unternehmen (Bilanz 2025 und, wo plausibel, 2024).
 Drei Berichtsseiten von Hand gegengelesen (PWO, RealTech, Blue Cap), alle stimmen. Von 128 Berichten bestanden 34 die Bilanzprüfung,
-20 zusätzlich die Eigenkapitalprüfung. Umsatz bei 8, Ergebnis bei 6; Cashflow und EBIT sind noch nicht übernommen, weil das Layout je Bericht zu stark abweicht.
+20 zusätzlich die Eigenkapitalprüfung. Umsatz bei 8, Ergebnis bei 5; Cashflow und EBIT sind noch nicht übernommen, weil das Layout je Bericht zu stark abweicht.
 
 ## Skripte
 

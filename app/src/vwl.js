@@ -6,7 +6,7 @@
 "use strict";
 const VWL = (() => {
   let VD = null, ALLE_DATEN = null, SER = {}, LAND = {}, THEMA = {}, OECD = {}, REIHE = {};
-  const S = { land: "DE", serie: null, geos: ["DE", "EA20", "FR"], fenster: "5", ljahr: "ist", pgr: "bip_wachstum", palle: false, pjahr: "2026", pland: "US", pherr: null };
+  const S = { land: "DE", serie: null, geos: ["DE", "EA20", "FR"], fenster: "5", ljahr: "ist", pgr: "bip_wachstum", palle: false, pjahr: "2026", pland: "US", pherr: null, pvint: "erst", phz: "alle" };
   const FARBE = { DE: "var(--amber)", EA20: "#e8ecf1", EU27_2020: "#939eac", OECD: "#939eac" };
   const PAL = ["#2f86dd", "#17a88a", "#9a6fe0", "#e8484f", "#3ecf6e", "#d9a441", "#e07fb0", "#5ec8d8", "#b4c24a", "#c0714a"];
   const STRICH = { EU27_2020: "5 4", OECD: "5 4" };
@@ -233,7 +233,7 @@ const VWL = (() => {
   const jahre = ["2025", "2026", "2027", "2028"];
   function ausgaben(geo, grp, nurNeueste) {
     const gl = grp === "inflation" ? INFLATION : [grp];
-    let l = VD.prognosen.filter(p => p.geo === geo && gl.includes(p.groesse));
+    let l = VD.prognosen.filter(p => p.geo === geo && gl.includes(p.groesse) && jahre.some(j => p.werte[j] != null));
     l.sort((a, b) => (b.datum > a.datum ? 1 : -1));
     if (nurNeueste) { const seen = {}; l = l.filter(p => seen[p.herausgeber] ? false : (seen[p.herausgeber] = true)); }
     else { const first = {}; l.forEach(p => { if (!(p.herausgeber in first)) first[p.herausgeber] = p.datum; }); l.sort((a, b) => (first[a.herausgeber] < first[b.herausgeber] ? 1 : first[a.herausgeber] > first[b.herausgeber] ? -1 : a.herausgeber < b.herausgeber ? -1 : b.datum > a.datum ? 1 : -1)); }
@@ -268,18 +268,53 @@ const VWL = (() => {
     });
     return `<div class="ctrl" style="margin-bottom:8px">${hs.map(h => `<span class="chip" style="cursor:default"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${col(h)};margin-right:6px"></span>${esc(h)}</span>`).join("")}</div>${o}</svg>`;
   }
+
+  /* ----- Treffsicherheit: Prognose gegen tatsächliche Werte (volkswirtschaft/skripte/abgleich_prognosen.py) ----- */
+  const HZ = ["alle", "0 bis 6 Monate", "7 bis 12 Monate", "13 bis 18 Monate", "19 bis 24 Monate", "über 24 Monate"];
+  const ISTG = { bip_wachstum: ["bip_wachstum"], inflation: ["inflation", "inflation_hvpi"], arbeitslosenquote: ["arbeitslosenquote", "arbeitslosenquote_ilo"], finanzierungssaldo: ["finanzierungssaldo"] };
+  const ISTN = { inflation: "Verbraucherpreise (VPI)", inflation_hvpi: "HVPI", arbeitslosenquote: "Quote nach BA", arbeitslosenquote_ilo: "ILO-Erwerbslosenquote" };
+  const zieljahre = grp => { const gl = grp === "inflation" ? INFLATION : [grp]; return [...new Set(VD.prognosen.filter(p => p.geo === "DE" && gl.includes(p.groesse)).flatMap(p => Object.keys(p.werte)))].sort(); };
+  const f2 = new Intl.NumberFormat("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const f2s = new Intl.NumberFormat("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: "exceptZero" });
+  function treffsicherheit(grp) {
+    const A = VD.abgleich;
+    if (!A || !A.treffsicherheit.length) return "";
+    const gs = ISTG[grp], vint = S.pvint, hz = S.phz;
+    const z = A.treffsicherheit.filter(t => gs.includes(t.g) && t.v === vint && t.hz === hz).sort((a, b) => a.mae - b.mae);
+    const ctrl = chipRow([["erst", "Erste Veröffentlichung"], ["aktuell", "Aktueller (revidierter) Stand"]], "data-vpvint", vint) + chipRow(HZ.map(h => [h, h === "alle" ? "Alle Horizonte" : h]), "data-vphz", hz);
+    const tab = z.length ? `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Herausgeber</th><th style="text-align:left">Abgrenzung</th><th title="Anzahl verglichener Prognosewerte">n</th><th title="Mittlerer absoluter Fehler in Prozentpunkten">MAE</th><th title="Mittlerer Fehler (Prognose minus Ist): positiv = Prognose im Mittel zu hoch">Bias</th><th title="Wurzel des mittleren quadratischen Fehlers">RMSE</th><th>Zeitraum</th></tr></thead><tbody>${z.map(t => `<tr${t.n < 4 ? ' style="opacity:.6"' : ""}><td style="text-align:left;font-family:var(--sans);${t.h === "Gemeinschaftsdiagnose" ? "font-weight:600" : ""}">${esc(t.h)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(ISTN[t.g] || "")}</td><td>${t.n}</td><td>${f2.format(t.mae)}</td><td>${f2s.format(t.bias)}</td><td>${f2.format(t.rmse)}</td><td class="n">${t.von}–${t.bis}</td></tr>`).join("")}</tbody></table></div>` : `<p class="n">Für diese Auswahl liegen keine Vergleichswerte vor.</p>`;
+    return panel({ code: "VWL 9", titel: "Treffsicherheit der Prognosen", sub: `${GROESSEN[grp][0]} · Prognose gegen tatsächlichen Wert, nach Herausgeber`, breite: "w6", body: ctrl + tab,
+      fuss: "Fehler = Prognose minus Ist, in Prozentpunkten; MAE = mittlerer absoluter Fehler, Bias = mittlerer Fehler (positiv: zu hoch), RMSE = Wurzel des mittleren quadratischen Fehlers. Horizont = Monate von der Veröffentlichung bis zum Ende des Zieljahres. Grau: weniger als 4 Werte. Die Jahre 2020 bis 2022 (Pandemie, Energiekrise) gehen mit ein und treiben die Fehler. Ist-Werte: erste Veröffentlichung = Stand der Gemeinschaftsdiagnose im Frühjahr nach dem Jahr (Statistisches Bundesamt, Bundesagentur für Arbeit), aktueller Stand = Eurostat bzw. jüngste Gemeinschaftsdiagnose. Quelle: volkswirtschaft/prognosen_treffsicherheit.csv, prognosen_fehler.csv, prognosen_ist.csv." });
+  }
+  function fehlerMatrix(grp) {
+    const A = VD.abgleich;
+    if (!A || !A.fehler.length) return "";
+    const gs = ISTG[grp], vint = S.pvint, hz = S.phz, fk = vint === "erst" ? "fe" : "fa", ik = vint === "erst" ? "ie" : "ia";
+    const f = A.fehler.filter(x => gs.includes(x.g) && x[fk] != null && (hz === "alle" || x.hz === hz));
+    const hs = [...new Set(f.map(x => x.h))].sort(), js = [...new Set(f.map(x => x.j))].sort();
+    if (!js.length) return "";
+    const ist = {}; A.ist.filter(x => gs.includes(x.groesse) && x.vintage === vint && x.wert != null).forEach(x => { (ist[x.jahr] = ist[x.jahr] || []).push(x); });
+    const farb = v => { const a = Math.min(Math.abs(v) / 3, 1) * 0.55; return v === 0 ? "" : `background:${v > 0 ? `rgba(224,92,92,${a})` : `rgba(80,150,230,${a})`}`; };
+    const zeilen = js.map(j => {
+      const istz = (ist[j] || []).map(x => f1.format(x.wert)).join(" / ") || "–";
+      return `<tr><td style="text-align:left">${j}</td><td>${istz}</td>${hs.map(h => { const v = f.filter(x => x.h === h && x.j === j).map(x => x[fk]); if (!v.length) return `<td class="n">–</td>`; const m = v.reduce((a, b) => a + b, 0) / v.length;
+        return `<td style="${farb(m)}" data-tip="${esc(`<b>${esc(h)}</b>\nZieljahr ${j}: mittlerer Fehler ${f2s.format(m)} Punkte aus ${v.length} Ausgabe${v.length > 1 ? "n" : ""}`)}">${f2s.format(m)}</td>`; }).join("")}</tr>`; }).join("");
+    return panel({ code: "VWL 10", titel: "Prognosefehler nach Zieljahr", sub: `${GROESSEN[grp][0]} · mittlerer Fehler (Prognose minus Ist) je Herausgeber und Zieljahr`, breite: "w6",
+      body: `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Zieljahr</th><th title="Tatsächlicher Wert (bei Inflation und Arbeitslosenquote: beide Abgrenzungen)">Ist</th>${hs.map(h => `<th>${esc(h.replace("Kiel Institut (IfW Kiel)", "IfW Kiel").replace("Deutsche Bundesbank", "Bundesbank").replace("Gemeinschaftsdiagnose", "Gem.diagn."))}</th>`).join("")}</tr></thead><tbody>${zeilen}</tbody></table></div>`,
+      fuss: "Rot: Prognose zu hoch, blau: zu niedrig (Sättigung bei 3 Prozentpunkten). Mittel über alle Ausgaben des Herausgebers für das Zieljahr im gewählten Horizont. Auswahl von Ist-Stand und Horizont wie in VWL 9." });
+  }
   function viewProg() {
     const grp = S.pgr, g = GROESSEN[grp];
     const l = ausgaben("DE", grp, !S.palle);
     const ctrl = chipRow(Object.entries(GROESSEN).map(([k, v]) => [k, v[0]]), "data-vpgr", grp) + chipRow([["neu", "Aktuellste Ausgabe je Herausgeber"], ["alle", "Alle Ausgaben (Vergleich älterer Prognosen)"]], "data-vpalle", S.palle ? "alle" : "neu");
     const a = panel({ code: "VWL 6", titel: "Prognosen für Deutschland", sub: `${g[0]} (${g[1]}) · Wirtschaftsforschungsinstitute, Bundesregierung, Bundesbank, EU-Kommission, IWF, OECD`, body: ctrl + (l.length ? prognoseTabelle(l, !S.palle) : `<p class="n">Keine Prognosen erfasst.</p>`),
       fuss: `Spalten: Prognose für das jeweilige Kalenderjahr, Veränderung ggü. Vorjahr bzw. Quote; ältere Ausgaben bleiben zum Vergleich erhalten. Beleg: P = Primärdokument gelesen, M = Pressemeldung (nicht am Original geprüft), A = OECD-API; Hinweise beim Überfahren. Inflation: Verbraucherpreise (Institute) bzw. HVPI (Bundesbank, OECD). Quelle: volkswirtschaft/prognosen_institute.csv und prognosen_oecd.csv.` });
-    const rv = panel({ code: "VWL 7", titel: "Revisionen der Prognose", sub: `${g[0]}: Prognose für ${S.pjahr} nach Veröffentlichungsdatum`, breite: "w7", body: chipRow(["2025", "2026", "2027", "2028"].map(j => [j, "für " + j]), "data-vpjahr", S.pjahr) + revisionen("DE", grp, S.pjahr), fuss: "Jeder Punkt eine Ausgabe, Herausgeber mit mindestens zwei Ausgaben. Punkte überfahren für Ausgabe und Wert." });
+    const rv = panel({ code: "VWL 7", titel: "Revisionen der Prognose", sub: `${g[0]}: Prognose für ${S.pjahr} nach Veröffentlichungsdatum`, breite: "w7", body: chipRow(zieljahre(grp).map(j => [j, "für " + j]), "data-vpjahr", S.pjahr) + revisionen("DE", grp, S.pjahr), fuss: "Jeder Punkt eine Ausgabe, Herausgeber mit mindestens zwei Ausgaben. Punkte überfahren für Ausgabe und Wert." });
     const oecdGeos = [...new Set(VD.prognosen.filter(p => p.herausgeber === "OECD").map(p => p.geo))];
     const fg = S.pland && oecdGeos.includes(S.pland) ? S.pland : "US", ol = (gr) => ausgaben(fg, gr, false).filter(p => p.herausgeber === "OECD");
     const ob = ["bip_wachstum", "inflation", "arbeitslosenquote", "finanzierungssaldo"].map(gr => { const x = ol(gr); return x.length ? `<h3 style="margin:14px 0 6px;font:600 13px var(--sans)">${esc(GROESSEN[gr][0])} (${esc(GROESSEN[gr][1])})</h3>${prognoseTabelle(x, false)}` : ""; }).join("");
     const oe = panel({ code: "VWL 8", titel: "OECD-Prognosen nach Land", sub: "Economic Outlook, alle Ausgaben seit November 2023", breite: "w5", body: `<div class="picks" style="margin-bottom:6px">${landWahl("vpland", fg, x => oecdGeos.includes(x))}</div>` + (ob || `<p class="n">Keine Daten.</p>`), fuss: "Quelle: OECD Data API (DSD_EO, Ausgaben 114 bis 119); Abruf mit volkswirtschaft/skripte/abruf_oecd.py. Jahreswerte ohne Gewähr der Datenrevision." });
-    return `<div class="grid">${a}${rv}<div class="col w5">${oe}</div></div>`;
+    return `<div class="grid">${a}${rv}<div class="col w5">${oe}</div>${treffsicherheit(grp)}${fehlerMatrix(grp)}</div>`;
   }
 
   function viewQuellen() {
@@ -304,6 +339,8 @@ const VWL = (() => {
     if ((v = g("data-vpgr")) != null) { S.pgr = v; render(); return true; }
     if ((v = g("data-vpalle")) != null) { S.palle = v === "alle"; render(); return true; }
     if ((v = g("data-vpjahr")) != null) { S.pjahr = v; render(); return true; }
+    if ((v = g("data-vpvint")) != null) { S.pvint = v; render(); return true; }
+    if ((v = g("data-vphz")) != null) { S.phz = v; render(); return true; }
     if ((v = g("data-vserie")) != null) { S.serie = v; S.ljahr = "ist"; if (location.hash === "#v-ueb" || location.hash === "#v-quellen") return false; render(); return true; }
     return false;
   }

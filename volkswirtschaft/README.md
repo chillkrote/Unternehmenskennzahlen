@@ -11,6 +11,9 @@ Zeitreihen, Prognosen und Konjunkturindikatoren für das Terminal-Modul „Volks
 | `laender.csv` | `geo, name, oecd` (alle 38 OECD-Mitglieder, Euroraum, EU-27, OECD gesamt, G7; ISO-2-Codes in Eurostat-Schreibweise: EL, UK) |
 | `themen.csv` | Themenbezeichnungen |
 | `prognosen_institute.csv` | Prognosen für Deutschland (handgepflegt, eine Zeile je Ausgabe und Größe): Herausgeber, Ausgabe, Veröffentlichung, Jahreswerte 2025 bis 2028, `beleg` (Primärdokument oder Presse), URL, Hinweis. Ältere Ausgaben bleiben stehen |
+| `prognosen_institute_historie.csv` | Prognosen für Deutschland 2015 bis 2025 im Langformat (`geo, herausgeber, ausgabe, veroeffentlicht, groesse, jahr, wert, einheit, beleg, url, hinweis`): Gemeinschaftsdiagnose (Eckdaten-Tabellen, 20 Ausgaben), Sachverständigenrat (Jahres- und Frühjahrsgutachten, Konjunkturprognosen, 20 Ausgaben), Bundesbank (Juni 2019 bis Juni 2025). Alle Werte aus Primärdokumenten (PDF bzw. Pressemitteilung des Herausgebers), Link je Zeile |
+| `prognosen_ist.csv` | Tatsächliche Werte: `vintage = erst` (Stand der Gemeinschaftsdiagnose im Frühjahr nach dem Jahr, d. h. erste Jahresergebnisse von Destatis/BA) und `aktuell` (Eurostat-API bzw. jüngste Gemeinschaftsdiagnose); Eurostat-Zeilen schreibt `skripte/abruf_ist.py` |
+| `prognosen_fehler.csv`, `prognosen_treffsicherheit.csv` | von `skripte/abgleich_prognosen.py` erzeugt: Fehler (Prognose minus Ist) je Prognosewert; MAE, Bias, RMSE je Herausgeber, Größe, Horizont (Monate bis Jahresende) und Ist-Stand |
 | `prognosen_oecd.csv` | Economic Outlook, Ausgaben 114 bis 119 (Nov. 2023 bis Juni 2026), alle OECD-Länder: BIP, Inflation, Arbeitslosenquote, Finanzierungssaldo (vom Skript geschrieben) |
 | `konjunkturindikatoren.csv` | ifo, ZEW, Konsumklima, PMI u. a.: aktueller Wert, Vorwert, Veröffentlichung, nächste Termine, Link und Beschreibung (handgepflegt) |
 | `ifo_geschaeftsklima.csv` | erfasste Monatswerte des ifo-Index mit Beleg (handgepflegt) |
@@ -46,3 +49,14 @@ Stand 27.10.2026: Gemeinschaftsdiagnose (Herbst und Frühjahr 2026), Bundesregie
 - Länder- und Reihenstand unterscheiden sich (Stand je Zeile im Terminal).
 - ifo-Zeitreihe (xlsx), GENESIS (Anmeldung) und IWF-Datenabruf sind nicht automatisch erreichbar; Werte und Termine des ifo-Index wurden von der ifo-Seite übernommen, Lage- und Erwartungsindex liegen nur qualitativ vor.
 - Jahreswerte des Economic Outlook gelten für den Stand EO 119 (Juni 2026); ab 2026 Projektion.
+
+## Historie und Treffsicherheit (Prognosen Deutschland)
+
+```
+python3 -I volkswirtschaft/skripte/abruf_ist.py          # Eurostat-Istwerte
+python3 -I volkswirtschaft/skripte/abgleich_prognosen.py # Fehler und Treffsicherheit
+```
+
+- Vergleichbarkeit: BIP unbereinigt gegen BIP Ist; Inflation der Institute gegen Verbraucherpreisindex, Bundesbank/EU-Kommission/OECD gegen HVPI; Arbeitslosenquote der Institute gegen BA-Quote, OECD/EU-Kommission/IWF gegen ILO-Quote; kalenderbereinigte BIP-Prognosen gehen nicht in den Abgleich ein. Bei gleicher Ausgabe hat die Historie Vorrang vor `prognosen_institute.csv`.
+- „Erste Veröffentlichung“ ist der Stand der Frühjahrs-Gemeinschaftsdiagnose nach dem Jahr; Eurostat führt keine alten Datenstände. HVPI und ILO-Quote liegen deshalb nur als aktueller Stand vor. Das Jahr 2025 hat nur den aktuellen Stand.
+- Lücken: ifo, IfW Kiel, DIW, IWH, RWI, IW, IMK, Bundesregierung, EU-Kommission und IWF vor 2025 fehlen noch (ifo.de und imf.org sperren automatisierte Abrufe); Bundesbank Dezember 2015 bis Dezember 2018 und Dezember 2019/2020; OECD Economic Outlook vor Ausgabe 114 (nicht über die API). Pro Herausgeber und Horizont sind die Stichproben klein, im Terminal grau markiert unter vier Werten.

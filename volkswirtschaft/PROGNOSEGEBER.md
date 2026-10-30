@@ -47,3 +47,26 @@ Datei: `prognosegeber_oecd.csv` (Schema angelehnt an `prognosen_institute.csv` u
 - Das Schema der Terminal-Tabelle (`prognosen_institute.csv`) ist auf Jahreswerte 2025 bis 2028 mit Spalte `beleg` ausgelegt. Für andere Länder wäre `geo` die Verbindung zu `laender.csv`.
 - Banken/Unternehmen (Typ „Bank/Unternehmen“) sind je Land nur beispielhaft; ob weitere aufgenommen werden sollen, ist offen.
 - Mehrere Fiskalräte sind nur mit Startseite eingetragen; Prognoserhythmen dort sind unregelmäßig.
+
+## Pilot mit Zahlen (30.10.2026)
+
+`prognosen_international.csv` wird von `skripte/abruf_prognosen_international.py` erzeugt (Rohdateien unverändert in `rohdaten/prognosen/`). Jede Zahl stammt aus dem Primärdokument oder der API des Herausgebers, nicht aus Presse.
+
+| Quelle | Land | Ausgabe | Größen | Besonderheit |
+|---|---|---|---|---|
+| EZB Survey of Professional Forecasters | Euroraum | Runden 2025-Q4 bis 2026-Q4 | BIP, HVPI, Arbeitslosigkeit | API ohne Schlüssel; Mittelwert, 2026 bis 2028 und langfristig |
+| Philadelphia Fed SPF | USA | Q3 2026 (14.8.2026) | BIP, Arbeitslosigkeit, VPI, PCE | Median, aus dem PDF gelesen |
+| Federal Reserve SEP | USA | 16.9.2026 | BIP, Arbeitslosigkeit, PCE, Leitzins | Median bis 2029 und langfristig |
+| HM Treasury Konsens | UK | Oktober 2026 (21.10.2026) | BIP, VPI, Arbeitslosigkeit | 30 Einzelprognostiker (Banken, Institute, OBR, IWF, OECD) plus Durchschnitt und Median, 2026 und 2027 |
+| Funcas Panel | Spanien | September 2026 (16.9.2026) | BIP, VPI, Arbeitslosigkeit, Finanzierungssaldo | 19 Einzelpanelisten, Konsens, zitierte Regierung, Banco de España, AIReF, EU-Kommission, IWF, OECD |
+| Bank of Canada MPR | Kanada | 28.10.2026 | BIP, VPI | Q4 gegenüber Vorjahres-Q4, 2026 bis 2028 |
+| Bank of Japan Outlook | Japan | 30.10.2026 | BIP, VPI ohne Frischwaren | Median der Vorstandsprognosen, Fiskaljahre (April bis März) |
+
+Vergleichbarkeit: Die Basis (Jahresdurchschnitt oder Q4/Q4) steht je Zeile im `hinweis`. Die Reihen verschiedener Geber sind deshalb nicht ohne Weiteres gleichzusetzen.
+
+### Nicht aufgenommen und warum
+
+- **OECD Economic Outlook:** läuft bereits über die OECD-SDMX-API (`sdmx.oecd.org`, ohne Schlüssel) in `prognosen_oecd.csv` (Ausgaben 114 bis 119, alle Mitglieder). Die Webseite oecd.org bleibt für Bots gesperrt, die API nicht; auf sie wird nicht verzichtet.
+- **EZB/Eurosystem-Stabsprognosen:** Die EZB-Datenbank (`MPD`) liefert die Reihen, aber die Kennung der Prognoserunde (z. B. `W26`) lässt sich ohne Titel nicht sicher einem Monat zuordnen. Offen, bis die Zuordnung geklärt ist.
+- **Bank of England, Bundesbank, Banque de France, Banca d'Italia:** noch nicht abgerufen (Bank of England: Fan-Chart-Excel, Banque de France: Seite wechselt Pfad, Bundesbank/Banca d'Italia: nur PDF). Offen für den nächsten Schritt.
+- **Funcas-Zahlen** sind spanische Kommastellen im PDF, in der CSV mit Punkt.

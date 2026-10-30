@@ -121,7 +121,7 @@ def hmt():
     tabellen = [("Table 1", 2026, "bip_wachstum", 4), ("Table 2", 2026, "inflation_vpi", 4), ("Table 3", 2026, "arbeitslosenquote", 8),
                 ("Table 4", 2027, "bip_wachstum", 4), ("Table 5", 2027, "inflation_vpi", 4), ("Table 6", 2027, "arbeitslosenquote", 8)]
     zeilen = []
-    sammel = {"Independent": "Konsens (Durchschnitt unabhängiger Prognostiker der letzten 3 Monate)", "Median": "Konsens (Median)"}
+    sammel = {"Independent": "HM-Treasury-Konsens: Durchschnitt unabhängiger Prognostiker (letzte 3 Monate)", "Median": "HM-Treasury-Konsens: Median"}
     for blatt, jahr, groesse, sp in tabellen:
         ws = wb[blatt]
         hin = {"bip_wachstum": "BIP, Jahreswachstum", "inflation_vpi": "VPI (CPI) Q4 gegenüber Vorjahres-Q4",
@@ -132,7 +132,7 @@ def hmt():
                 continue
             name = name.strip()
             if name in sammel:
-                herausgeber, h = "HM Treasury Konsens: " + sammel[name], hin
+                herausgeber, h = sammel[name], hin
             elif name in ("Highest", "Lowest", "Received this month (marked *)", "City"):
                 continue
             else:
@@ -315,7 +315,7 @@ def ezb_stab():
         url = basis + datei
         for g, e, d, hin in reihen:
             for jahr, v in d.items():
-                zeilen.append(z("EA20", f"{art}-Stabsprognose", ausgabe, "", g, e, str(jahr), float(v), "Primärdokument", url,
+                zeilen.append(z("EA20", "EZB und Eurosystem" if art == "Eurosystem" else "EZB", ausgabe, "", g, e, str(jahr), float(v), "Primärdokument", url,
                                 f"Euroraum; {hin}; Annex-Excel der Runde"))
     return [x for x in zeilen if x]
 
@@ -342,7 +342,7 @@ def ncb_mpd():
             roh.append(txt)
             for r in csv.DictReader(io.StringIO(txt)):
                 geo = "EL" if r["REF_AREA"] == "GR" else r["REF_AREA"]
-                zeilen.append(z(geo, f"{NCB[r['REF_AREA']]} (Eurosystem-Projektion)", f"Eurosystem-Projektion {EZB_RUNDEN[monat[5:]]} {monat[:4]}", "", g, "%",
+                zeilen.append(z(geo, f"{NCB[r['REF_AREA']]} (Eurosystem-Projektion)", f"Runde {EZB_RUNDEN[monat[5:]]} {monat[:4]}", "", g, "%",
                                 r["TIME_PERIOD"], float(r["OBS_VALUE"]), "API", url.split("?")[0],
                                 f"{hin}; Beitrag der nationalen Zentralbank zur Eurosystem-Runde, EZB Macroeconomic Projections Database (Runde {code})"))
     speichere("ezb_mpd_ncb.csv", "\n".join(roh).encode())

@@ -54,7 +54,39 @@ def _prognosen():
                                                                          "groesse": r["groesse"], "einheit": r["einheit"], "werte": {}, "beleg": r["beleg"], "url": r["url"], "hinweis": ""})
         g["werte"][r["jahr"]] = v
     aus += list(gruppen.values()) + list(hist.values())
+    aus += _prognosen_international()
     return aus
+
+
+_MON = {"Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04", "Mai": "05", "Jun": "06", "Jul": "07", "Aug": "08", "Sep": "09", "Okt": "10", "Nov": "11", "Dez": "12",
+        "February": "02", "April": "04", "June": "06", "July": "07", "August": "08", "October": "10", "November": "11", "December": "12"}
+
+
+def _monat_aus_ausgabe(a):
+    """Fehlt das Veröffentlichungsdatum, gilt der Monat der Runde (Eurosystem Jun 2026 -> 2026-06, SPF 2026-Q4 -> Umfragemonat 2026-10)."""
+    import re
+    m = re.search(r"(\d{4})-Q([1-4])", a)
+    if m:
+        return f"{m.group(1)}-{(int(m.group(2)) - 1) * 3 + 1:02d}"
+    m = re.search(r"\b([A-Z][a-zäöü]+)\.? (\d{4})\b", a)
+    if m and m.group(1) in _MON:
+        return f"{m.group(2)}-{_MON[m.group(1)]}"
+    return ""
+
+
+def _prognosen_international():
+    """Konsensumfragen und Zentralbankprognosen anderer Länder (prognosen_international.csv): eine Zeile je Herausgeber, Ausgabe und Größe."""
+    gruppen = {}
+    for r in _csv("prognosen_international.csv"):
+        try:
+            v = float(r["wert"])
+        except ValueError:
+            continue
+        k = (r["geo"], r["herausgeber"], r["ausgabe"], r["groesse"])
+        g = gruppen.setdefault(k, {"geo": r["geo"], "herausgeber": r["herausgeber"], "ausgabe": r["ausgabe"], "datum": r["veroeffentlicht"] or _monat_aus_ausgabe(r["ausgabe"]),
+                                   "groesse": r["groesse"], "einheit": r["einheit"], "werte": {}, "beleg": r["beleg"], "url": r["url"], "hinweis": r["hinweis"]})
+        g["werte"][r["jahr"]] = v
+    return list(gruppen.values())
 
 
 def _abgleich():

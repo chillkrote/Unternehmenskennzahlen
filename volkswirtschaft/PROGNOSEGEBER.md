@@ -47,3 +47,34 @@ Datei: `prognosegeber_oecd.csv` (Schema angelehnt an `prognosen_institute.csv` u
 - Das Schema der Terminal-Tabelle (`prognosen_institute.csv`) ist auf Jahreswerte 2025 bis 2028 mit Spalte `beleg` ausgelegt. Für andere Länder wäre `geo` die Verbindung zu `laender.csv`.
 - Banken/Unternehmen (Typ „Bank/Unternehmen“) sind je Land nur beispielhaft; ob weitere aufgenommen werden sollen, ist offen.
 - Mehrere Fiskalräte sind nur mit Startseite eingetragen; Prognoserhythmen dort sind unregelmäßig.
+
+## Pilot mit Zahlen (30.10.2026)
+
+`prognosen_international.csv` wird von `skripte/abruf_prognosen_international.py` erzeugt (Rohdateien unverändert in `rohdaten/prognosen/`). Jede Zahl stammt aus dem Primärdokument oder der API des Herausgebers, nicht aus Presse.
+
+| Quelle | Land | Ausgabe | Größen | Besonderheit |
+|---|---|---|---|---|
+| EZB Survey of Professional Forecasters | Euroraum | Runden 2025-Q4 bis 2026-Q4 | BIP, HVPI, Arbeitslosigkeit | API ohne Schlüssel; Mittelwert, 2026 bis 2028 und langfristig |
+| Philadelphia Fed SPF | USA | Q3 2026 (14.8.2026) | BIP, Arbeitslosigkeit, VPI, PCE | Median, aus dem PDF gelesen |
+| Federal Reserve SEP | USA | 16.9.2026 | BIP, Arbeitslosigkeit, PCE, Leitzins | Median bis 2029 und langfristig |
+| HM Treasury Konsens | UK | Oktober 2026 (21.10.2026) | BIP, VPI, Arbeitslosigkeit | 30 Einzelprognostiker (Banken, Institute, OBR, IWF, OECD) plus Durchschnitt und Median, 2026 und 2027 |
+| Funcas Panel | Spanien | September 2026 (16.9.2026) | BIP, VPI, Arbeitslosigkeit, Finanzierungssaldo | 19 Einzelpanelisten, Konsens, zitierte Regierung, Banco de España, AIReF, EU-Kommission, IWF, OECD |
+| Bank of Canada MPR | Kanada | 28.10.2026 | BIP, VPI | Q4 gegenüber Vorjahres-Q4, 2026 bis 2028 |
+| Bank of Japan Outlook | Japan | 30.10.2026 | BIP, VPI ohne Frischwaren | Median der Vorstandsprognosen, Fiskaljahre (April bis März) |
+| EZB/Eurosystem-Stabsprognosen | Euroraum | Runden Sep 2025 bis Sep 2026 | BIP, HVPI, Arbeitslosigkeit, Finanzierungssaldo | Annex-Excel der jeweiligen Runde |
+| Nationale Zentralbanken des Euroraums (Bundesbank, Banque de France, Banca d'Italia, Banco de España, DNB, OeNB u. a.) | 17 OECD-Länder im Euroraum | Eurosystem-Runden Juni und Dezember, Juni 2024 bis Juni 2026 | BIP, HVPI, Arbeitslosenquote | EZB Macroeconomic Projections Database (API); Kennung der Runde: Buchstabe plus Jahr (W = März, G = Juni, S = September, A = Dezember), über den Vergleich mit den Annex-Dateien bestimmt |
+| Bank of England MPR | UK | Juli 2026 | VPI, BIP, Arbeitslosenquote, Bank Rate | Projektion für das jeweils dritte Quartal (Vierquartalswerte), nicht Kalenderjahre |
+| SECO Expertengruppe | CH | Sep 2026 (und Jun 2026 aus dem Klammerwert) | BIP (Sportevent-bereinigt), VPI, Arbeitslosenquote | Kalenderjahre, aus dem PDF-Anhang der Medienmitteilung |
+| Riksbank (offene API) | SE | alle Runden 2015:1 bis 2026:3 | BIP, CPIF, VPI, Arbeitslosenquote, Leitzins, Finanzierungssaldo | Jahreswerte aus den Quartals- bzw. Monatsreihen der API berechnet |
+
+Vergleichbarkeit: Die Basis (Jahresdurchschnitt oder Q4/Q4) steht je Zeile im `hinweis`. Die Reihen verschiedener Geber sind deshalb nicht ohne Weiteres gleichzusetzen.
+
+### Nicht aufgenommen und warum
+
+- **OECD Economic Outlook:** läuft bereits über die OECD-SDMX-API (`sdmx.oecd.org`, ohne Schlüssel) in `prognosen_oecd.csv` (Ausgaben 114 bis 119, alle Mitglieder). Die Webseite oecd.org bleibt für Bots gesperrt, die API nicht; auf sie wird nicht verzichtet.
+- **Banque de France, Septemberprojektion 2026:** banque-france.fr liefert Bots „Access Denied“ (Akamai), nicht umgangen. Die Juni-Runde (Eurosystem) liegt über die EZB-Datenbank vor.
+- **Bundesbank:** Die Juni-Werte der EZB-Datenbank stimmen mit den bisherigen Presseangaben in `prognosen_institute.csv` überein (BIP 0,5 / 0,8 / 1,4; HVPI 2,9 / 2,7 / 1,9) und sind nun am API-Beleg bestätigt.
+- **Zwischenrunden der nationalen Zentralbanken** (März und September) veröffentlicht die EZB nur für den Euroraum; die Länderwerte gibt es nur für Juni und Dezember.
+- **Bank of England:** Die Ausgabe vom November 2026 ist noch nicht veröffentlicht; die Seiten der Ausgaben wechseln das Muster (2026: Februar, April, Juli).
+- **Weiter offen:** Banca d'Italia, Banco de España und die übrigen Zentralbanken außerhalb der Euro-Runden (Bulletin-Prognosen im Januar, April, Juli, Oktober), Zentralbanken und Institute der übrigen OECD-Länder (Australien, Neuseeland, Schweiz, Schweden, Norwegen, Korea, Mexiko, Chile, Türkei u. a.) und Ministerien.
+- **Funcas-Zahlen** sind spanische Kommastellen im PDF, in der CSV mit Punkt.

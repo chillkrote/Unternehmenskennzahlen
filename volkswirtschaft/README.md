@@ -11,6 +11,7 @@ Zeitreihen, Prognosen und Konjunkturindikatoren für das Terminal-Modul „Volks
 | `laender.csv` | `geo, name, oecd` (alle 38 OECD-Mitglieder, Euroraum, EU-27, OECD gesamt, G7; ISO-2-Codes in Eurostat-Schreibweise: EL, UK) |
 | `themen.csv` | Themenbezeichnungen |
 | `prognosen_institute.csv` | Prognosen für Deutschland (handgepflegt, eine Zeile je Ausgabe und Größe): Herausgeber, Ausgabe, Veröffentlichung, Jahreswerte 2025 bis 2028, `beleg` (Primärdokument oder Presse), URL, Hinweis. Ältere Ausgaben bleiben stehen |
+| `prognosen_international.csv` | Pilot: Prognosen internationaler Geber im Langformat (wie `prognosen_oecd.csv`, plus `hinweis`): EZB-SPF (Euroraum), Philadelphia-Fed-SPF und Fed-SEP (USA), HM-Treasury-Konsens mit 30 Einzelprognostikern (UK), Funcas-Panel mit 19 Panelisten (Spanien), Bank of Canada, Bank of Japan. Rohdateien in `rohdaten/prognosen/`. Liste aller Geber: `prognosegeber_oecd.csv`, siehe `PROGNOSEGEBER.md` |
 | `prognosen_institute_historie.csv` | Prognosen für Deutschland 2015 bis 2025 im Langformat (`geo, herausgeber, ausgabe, veroeffentlicht, groesse, jahr, wert, einheit, beleg, url, hinweis`): Gemeinschaftsdiagnose (Eckdaten-Tabellen, 20 Ausgaben), Sachverständigenrat (Jahres- und Frühjahrsgutachten, Konjunkturprognosen, 20 Ausgaben), Bundesbank (Juni 2019 bis Juni 2025). Alle Werte aus Primärdokumenten (PDF bzw. Pressemitteilung des Herausgebers), Link je Zeile |
 | `prognosen_ist.csv` | Tatsächliche Werte: `vintage = erst` (Stand der Gemeinschaftsdiagnose im Frühjahr nach dem Jahr, d. h. erste Jahresergebnisse von Destatis/BA) und `aktuell` (Eurostat-API bzw. jüngste Gemeinschaftsdiagnose); Eurostat-Zeilen schreibt `skripte/abruf_ist.py` |
 | `prognosen_fehler.csv`, `prognosen_treffsicherheit.csv` | von `skripte/abgleich_prognosen.py` erzeugt: Fehler (Prognose minus Ist) je Prognosewert; MAE, Bias, RMSE je Herausgeber, Größe, Horizont (Monate bis Jahresende) und Ist-Stand |
@@ -25,6 +26,7 @@ Zeitreihen, Prognosen und Konjunkturindikatoren für das Terminal-Modul „Volks
 ```
 python3 -I volkswirtschaft/skripte/abruf_eurostat.py   # europäische Länder (EU, EFTA, UK, TR), 27 Reihen
 python3 -I volkswirtschaft/skripte/abruf_oecd.py       # alle OECD-Länder, 28 Reihen + Economic-Outlook-Ausgaben
+python3 -I volkswirtschaft/skripte/abruf_prognosen_international.py   # Pilot Konsens und G7-Zentralbanken (braucht openpyxl, pdftotext)
 python3 -I volkswirtschaft/skripte/abruf_ifo.py        # ifo-Reihe aus ifo_geschaeftsklima.csv
 python3 app/build.py                                   # Terminal neu bauen
 ```

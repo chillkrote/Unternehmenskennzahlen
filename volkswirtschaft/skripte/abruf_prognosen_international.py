@@ -7,7 +7,8 @@ Die Rohdateien landen unverändert in rohdaten/prognosen/. Die Ausgabe ist ein L
 Die jeweils neueste Ausgabe wird über die Übersichtsseiten gefunden; ältere Ausgaben der Datei bleiben stehen, nur die
 Zeilen derselben Ausgabe werden ersetzt. Abhängigkeiten: openpyxl, pdftotext (poppler).
 """
-import csv, html, io, json, re, subprocess, sys, urllib.error, urllib.request
+import csv
+import json, html, io, json, re, subprocess, sys, urllib.error, urllib.request
 from datetime import date
 from pathlib import Path
 
@@ -384,9 +385,84 @@ def boe():
     return [x for x in zeilen if x]
 
 
+# --- Schweden: Riksbank, offene API für Prognosen (alle Runden seit 2015, je Runde der Prognosepfad in Quartalen/Monaten) ----
+def riksbank():
+    url = "https://api.riksbank.se/monetary_policy_data/v1/forecasts"
+    roh = hole(url)
+    speichere("riksbank_prognosen.json", roh)
+    daten = {s["external_id"]: s["vintages"] for s in json.loads(roh)["data"]}
+    seite = "https://www.riksbank.se/en-gb/statistics/macro-indicators/forecasts-and-outcomes/"
+    zeilen = []
+    for v in daten["SEQGDPNAACA"]:
+        runde = v["metadata"]["policy_round"]
+        ende = v["metadata"]["policy_round_end_dtm"]
+        j0 = int(ende[:4])
+        ausgabe = "Geldpolitischer Bericht " + runde
+        jahre = [str(j0), str(j0 + 1), str(j0 + 2)]
+
+        def reihe(sid):
+            return {o["dt"]: o["value"] for x in daten[sid] if x["metadata"]["policy_round"] == runde for o in x["observations"]}
+
+        def jahres(sid, anz, fkt):
+            r = reihe(sid)
+            out = {}
+            for j in jahre:
+                w = [r[d] for d in r if d.startswith(j)]
+                if len(w) == anz:
+                    out[j] = fkt(w)
+            return out
+        gdp = reihe("SEQGDPNAACA")
+        summe = {j: sum(x for d, x in gdp.items() if d.startswith(j)) for j in [str(j0 - 1)] + jahre if sum(1 for d in gdp if d.startswith(j)) == 4}
+        bip = {j: (summe[j] / summe[str(int(j) - 1)] - 1) * 100 for j in jahre if j in summe and str(int(j) - 1) in summe}
+        mittel = lambda w: sum(w) / len(w)
+        index = {}
+        for sid, g in (("SEMCPIFNAANA", "inflation_cpif"), ("SEMCPINAANA", "inflation_vpi")):
+            r = reihe(sid)
+            jm = {j: mittel([x for d, x in r.items() if d.startswith(j)]) for j in [str(j0 - 1)] + jahre if sum(1 for d in r if d.startswith(j)) == 12}
+            index[g] = {j: (jm[j] / jm[str(int(j) - 1)] - 1) * 100 for j in jahre if j in jm and str(int(j) - 1) in jm}
+        arb = jahres("SEQLABUEASA", 4, mittel)
+        zins = {j: reihe("SEQRATENAYNA").get(f"{j}-12-31") for j in jahre}
+        saldo = {j: reihe("SEAPBSNAYNA").get(f"{j}-12-31") for j in jahre}
+        n = "Kalenderjahr; "
+        for g, ser, hin in (("bip_wachstum", bip, n + "Jahressumme des kalenderbereinigten BIP (aus den Quartalsniveaus der API berechnet)"),
+                            ("inflation_cpif", index["inflation_cpif"], n + "CPIF (Zielgröße der Riksbank), Jahresdurchschnitt aus den Monatsindizes der API"),
+                            ("inflation_vpi", index["inflation_vpi"], n + "VPI, Jahresdurchschnitt aus den Monatsindizes der API"),
+                            ("arbeitslosenquote", arb, n + "Mittel der vier saisonbereinigten Quartalswerte, Alter 15-74"),
+                            ("leitzins", zins, "Politikzins am Jahresende (Prognosepfad der Riksbank)"),
+                            ("finanzierungssaldo", saldo, "Staatlicher Finanzierungssaldo in % des BIP")):
+            for j, x in ser.items():
+                zeilen.append(z("SE", "Sveriges Riksbank", ausgabe, ende, g, "% des BIP" if g == "finanzierungssaldo" else "%", j, x, "API", seite, hin))
+    return [x for x in zeilen if x]
+
+
+# --- Schweiz: SECO-Expertengruppe (Anhang zur Medienmitteilung, aktuelle Prognose und in Klammern die vorherige) ----------
+MON_DE = {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dez"}
+
+
+def seco():
+    seite = "https://www.seco.admin.ch/seco/de/home/wirtschaftslage---wirtschaftspolitik/Wirtschaftslage/Konjunkturprognosen.html"
+    h = hole(seite).decode("utf-8", "ignore")
+    url = re.search(r'href="([^"]*prognose-konjunktur-schweiz-SECO\.pdf)"', h).group(1)
+    speichere("seco_konjunkturprognose.pdf", hole(url))
+    t = pdf_text(ROH / "seco_konjunkturprognose.pdf")
+    m = re.search(r"Medienmitteilung des SECO vom (\d\d)\.(\d\d)\.(20\d\d)", t)
+    neu_d = f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+    v = re.search(r"Prognosen vom (\d\d)\.(\d\d)\.(20\d\d)\s+in Klammern", t)
+    alt_d = f"{v.group(3)}-{v.group(2)}-{v.group(1)}"
+    num = r"(-?\d+\.\d)"
+    hin = "Kalenderjahr, Jahresdurchschnitt; BIP Sportevent-bereinigt; Inflation = Landesindex der Konsumentenpreise"
+    zeilen = []
+    for g, pat in (("bip_wachstum", r"\n\s+BIP\s+"), ("arbeitslosenquote", r"Arbeitslosenquote in %\s+"), ("inflation_vpi", r"Landesindex der Konsumentenpreise\s+")):
+        mm = re.search(pat + num + r"\s+" + num + r"\s+" + num + r"\s+\(" + num + r"\)\s+" + num + r"\s+\(" + num + r"\)", t)
+        w = mm.groups()
+        for d, jahr, x in ((neu_d, "2026", w[2]), (neu_d, "2027", w[4]), (alt_d, "2026", w[3]), (alt_d, "2027", w[5])):
+            zeilen.append(z("CH", "SECO Expertengruppe des Bundes", f"{MON_DE[d[5:7]]} {d[:4]}", d, g, "%", jahr, float(x), "Primärdokument", url, hin))
+    return [x for x in zeilen if x]
+
+
 QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury", hmt), ("Funcas", funcas), ("Fed SEP", fed_sep),
            ("Bank of Canada", boc), ("Bank of Japan", boj), ("EZB-Stabsprognosen", ezb_stab),
-           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe)]
+           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank)]
 
 
 def main():

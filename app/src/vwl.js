@@ -17,8 +17,8 @@ const VWL = (() => {
   const PRESETS = [["Standard", ["DE", "EA20", "FR"]], ["Euroraum groß", ["DE", "FR", "IT", "ES", "NL"]], ["G7", ["DE", "US", "JP", "UK", "FR", "IT", "CA"]], ["Nachbarn", ["DE", "FR", "NL", "AT", "PL", "CZ", "DK", "CH", "BE", "LU"]], ["Deutschland, OECD, USA", ["DE", "OECD", "US"]]];
   const FENSTER = { "5": "5 J.", "10": "10 J.", "20": "20 J.", max: "Max." };
   const GROESSEN = { bip_wachstum: ["BIP real", "%"], inflation: ["Inflation", "%"], arbeitslosenquote: ["Arbeitslosenquote", "%"], finanzierungssaldo: ["Finanzierungssaldo des Staates", "% des BIP"], leitzins: ["Leitzins (Projektion)", "%"] };
-  const INFLATION = ["inflation", "inflation_vpi", "inflation_hvpi", "inflation_pce"];
-  const INFL_TAG = { inflation_vpi: "VPI", inflation_hvpi: "HVPI", inflation_pce: "PCE" };
+  const INFLATION = ["inflation", "inflation_vpi", "inflation_hvpi", "inflation_pce", "inflation_cpif"];
+  const INFL_TAG = { inflation_vpi: "VPI", inflation_hvpi: "HVPI", inflation_pce: "PCE", inflation_cpif: "CPIF" };
   const farbe = g => FARBE[g] || PAL[Math.max(0, S.geos.filter(x => !FARBE[x]).indexOf(g)) % PAL.length];
 
   function init(d) {

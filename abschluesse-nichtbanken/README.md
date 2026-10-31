@@ -24,10 +24,15 @@ bereits als PDF im Repo (`boersennotierte-unternehmen/*/dokumente`).
 
 Was nicht besteht, bleibt leer.
 
-## Stand (Ausbau, 30.10.2026)
+## Stand (31.10.2026)
 
-Von 128 Berichten mit Dateien in `daten/`: Bilanzsumme 77, Eigenkapital 50, Umsatz 41, Ergebnis 20, EBIT 8, operativer Cashflow 42.
-Gegenprobe von Hand (Pilot): PWO, RealTech, Blue Cap. Verbleibende 51 Berichte scheitern an Layout (Aktiva/Passiva getrennt, vermischte Spalten, kein Terminalwert) und sind Kandidaten für Einzellesen.
+Quellen: 184 Berichte 2025 im Repo (Geschäftsbericht, Jahresfinanzbericht, Konzern- oder Jahresabschluss). Davon in `daten/`: Bilanzsumme 98, Eigenkapital 59, Umsatz 46, Ergebnis 23, EBIT 8, operativer Cashflow 52.
+Gegenprobe von Hand: PWO, RealTech, Blue Cap.
+
+## Nachsuche der fehlenden Berichte (31.10.2026)
+
+Von 238 Nicht-Banken ohne Abschlussposten und ohne Geschäftsbericht in der Liste hatten 51 schon einen Jahres- oder Konzernabschluss im Repo. Für die übrigen 187 lief `berichte_suche.py` (Tiefe 3, Sitemap) und `berichte_laden.py` für die 139 mit Website: 5 geladen, 2 davon verworfen (Geschäftsjahr 2019 bzw. 2024). Gründe für den Rest:
+Website ohne auffindbare PDF-Links 54, Bot-Schutz oder Sperre 20 (nicht umgangen), SSL-/Verbindungsfehler 13, PDF ohne Geschäftsjahr oder nur Auszug 25, ohne Website 48. Eine Stichprobe per Websuche (HWA, a.i.s., LEWAG) fand ebenfalls kein frei zugängliches PDF für 2025.
 
 ## Skripte
 

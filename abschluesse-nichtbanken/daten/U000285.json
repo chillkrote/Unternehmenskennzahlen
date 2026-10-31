@@ -1,0 +1,28 @@
+{
+ "unternehmen_id": "U000285",
+ "name": "Hoftex Group AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.hoftexgroup.com/hoftexgroupag-de/news-und-media/dateien/finanzberichte/2025/Jahresabschluss-der-Hoftex-Group-AG-zum-31.12.2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/handel-konsum/dokumente/hoftex-group-ag/Jahresabschluss-der-Hoftex-Group-AG-zum-31.12.2025.pdf",
+ "seiten": [
+  2
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 157977000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 159553000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 165.185,
+  "yahoo_ek_quote": 0.5877349638284348
+ }
+}

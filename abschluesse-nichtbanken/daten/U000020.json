@@ -1,0 +1,31 @@
+{
+ "unternehmen_id": "U000020",
+ "name": "ad pepper media International N.V.",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://adpeppergroup.com/wp-content/uploads/2026/04/adp_geschaeftsbericht-2025_WEB_verschluesselt.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/telekom-medien/dokumente/ad-pepper-media-international-n-v/adp_geschaeftsbericht-2025_WEB_verschluesselt.pdf",
+ "seiten": [
+  41
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 75295000.0,
+   "Total Equity Gross Minority Interest": 38311000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 36984000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 48370000.0,
+   "Total Equity Gross Minority Interest": 20603000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 75.295,
+  "yahoo_ek_quote": 0.5088120061093034
+ }
+}

@@ -4,14 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.demire.ag/wp-content/uploads/DEMIRE_Geschaeftsbericht_2025_DE.pdf",
- "datei": "boersennotierte-unternehmen/immobilien/dokumente/demire-deutsche-mittelstand-real-estate-ag/DEMIRE_Geschaeftsbericht_2025_DE.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/immobilien/dokumente/demire-deutsche-mittelstand-real-estate-ag/DEMIRE_Geschaeftsbericht_2025_DE.pdf",
  "seiten": [
   52,
   53,
   55
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 849190000.0,

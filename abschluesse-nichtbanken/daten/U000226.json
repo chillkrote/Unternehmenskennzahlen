@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.formycon.com/wp-content/uploads/2026/04/FormyconAG_FY2025_DE_sec.pdf",
- "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/formycon-ag/FormyconAG_FY2025_DE_sec.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/pharma-gesundheit/dokumente/formycon-ag/FormyconAG_FY2025_DE_sec.pdf",
  "seiten": [
   148,
   149
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 739527000.0,

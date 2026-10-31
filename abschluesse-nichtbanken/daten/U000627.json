@@ -4,12 +4,12 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://ir.steyr-motors.com/wp-content/uploads/2026/06/SteyrMotors_GB-2025_DE.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/steyr-motors-ag/SteyrMotors_GB-2025_DE.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/steyr-motors-ag/SteyrMotors_GB-2025_DE.pdf",
  "seiten": [
   19
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 45124000.0,

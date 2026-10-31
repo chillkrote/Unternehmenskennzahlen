@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://assets.ctfassets.net/jkv7j7ridlow/7wtMWTaTYzNWl0cRA13yIw/8bca1246ac9d928ddf69f74c99da4785/KR_GB_online_final.pdf",
- "datei": "boersennotierte-unternehmen/telekom-medien/dokumente/klassik-radio-ag/KR_GB_online_final.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/telekom-medien/dokumente/klassik-radio-ag/KR_GB_online_final.pdf",
  "seiten": [
   21,
   37
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 8648000.0,

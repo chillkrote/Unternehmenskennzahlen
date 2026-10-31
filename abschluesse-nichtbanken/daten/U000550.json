@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.smtscharf.com/investorrelations/wp-content/uploads/2026/04/SMT_Scharf_GB_2025_DE.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/smt-scharf-ag/SMT_Scharf_GB_2025_DE.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/smt-scharf-ag/SMT_Scharf_GB_2025_DE.pdf",
  "seiten": [
   52,
   56
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 155339008.24

@@ -4,7 +4,7 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.innotectss.de/wp-content/uploads/2026/04/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/innotec-tss-ag/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/innotec-tss-ag/InnoTec-TSS-AG-Geschaeftsbericht-2025.pdf",
  "seiten": [
   52,
   53,
@@ -12,7 +12,7 @@
   58
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 117885000.0,

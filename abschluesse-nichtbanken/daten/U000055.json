@@ -1,0 +1,34 @@
+{
+ "unternehmen_id": "U000055",
+ "name": "Averdion Se",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.averdion.de/wp-content/uploads/Digital-Copy_AVERDION-SE_IFRS-JA2025_Attestation-Certificate.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/finanzdienstleister/dokumente/averdion-se/Digital-Copy_AVERDION-SE_IFRS-JA2025_Attestation-Certificate.pdf",
+ "seiten": [
+  12,
+  15
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 1741332.61,
+   "Total Equity Gross Minority Interest": 1588627.15,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 152705.4600000002
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1,
+  "yahoo_bilanzsumme_mio": 1.741,
+  "yahoo_ek_quote": 0.9123054038481482,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -109999.87
+  }
+ }
+}

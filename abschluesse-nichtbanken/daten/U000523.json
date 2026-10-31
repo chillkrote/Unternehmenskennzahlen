@@ -1,0 +1,28 @@
+{
+ "unternehmen_id": "U000523",
+ "name": "Schweizer Electronic AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://schweizer.ag/fileadmin/user_upload/Downloads/Finanzberichte/Geschaeftsberichte/2025/2026-04_GB_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/technologie/dokumente/schweizer-electronic-ag/2026-04_GB_2025.pdf",
+ "seiten": [
+  125
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 124740000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 102435000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 124.74,
+  "yahoo_ek_quote": 0.2143819143819144
+ }
+}

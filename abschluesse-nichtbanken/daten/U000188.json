@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://elringklinger.de/fileadmin/user_upload/elringklinger-gb-2025-de-geschuetzt_rgb__2_.pdf",
- "datei": "boersennotierte-unternehmen/automobil/dokumente/elringklinger-ag/elringklinger-gb-2025-de-geschuetzt_rgb__2_.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/automobil/dokumente/elringklinger-ag/elringklinger-gb-2025-de-geschuetzt_rgb__2_.pdf",
  "seiten": [
   50,
   54
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 1890400000.0

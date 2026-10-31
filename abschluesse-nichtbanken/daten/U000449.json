@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.nynomic.com/wp-content/uploads/2026/05/NynomicAG_GB_2025.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/nynomic-ag/NynomicAG_GB_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/nynomic-ag/NynomicAG_GB_2025.pdf",
  "seiten": [
   30,
   31
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 133836000.0,

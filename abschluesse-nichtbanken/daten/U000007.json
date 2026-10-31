@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.3u.net/wp-content/uploads/2026/03/3u-holding-ag-geschaeftsbericht-2025-UUUJ25D.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/3u-holding-ag/3u-holding-ag-geschaeftsbericht-2025-UUUJ25D.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/3u-holding-ag/3u-holding-ag-geschaeftsbericht-2025-UUUJ25D.pdf",
  "seiten": [
   57,
   60
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 158595000.0

@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.grammer.com/media/01_content/05_investor_relations/annual_general_meetings/annual_general_meeting_2026/german/260327_gb-grammer-2025_de.pdf",
- "datei": "boersennotierte-unternehmen/automobil/dokumente/grammer-ag/260327_gb-grammer-2025_de.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/automobil/dokumente/grammer-ag/260327_gb-grammer-2025_de.pdf",
  "seiten": [
   20,
   25
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 1607226000.0,

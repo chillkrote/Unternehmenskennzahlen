@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.knaustabbert.de/fileadmin/media/investor-relations/geschaeftsbericht/2025/Geschaeftsbericht-2025-DE.pdf",
- "datei": "boersennotierte-unternehmen/automobil/dokumente/knaus-tabbert-ag/Geschaeftsbericht-2025-DE.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/automobil/dokumente/knaus-tabbert-ag/Geschaeftsbericht-2025-DE.pdf",
  "seiten": [
   149,
   153
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 516682000.0

@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://gesco.de/fileadmin/static/pdfs/de/investor_relations/finanzberichte/de/2025/2025-gesco-geschaeftsbericht.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/gesco-se/2025-gesco-geschaeftsbericht.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/gesco-se/2025-gesco-geschaeftsbericht.pdf",
  "seiten": [
   141,
   142
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 447350000.0

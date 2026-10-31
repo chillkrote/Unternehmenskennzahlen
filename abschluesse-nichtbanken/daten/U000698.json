@@ -4,14 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.viscom.com/fileadmin/content/Investor_Relations/Financial_Reports/Annual_Reports/de/260331_Geschaeftsbericht_2025_de.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/viscom-se/260331_Geschaeftsbericht_2025_de.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/viscom-se/260331_Geschaeftsbericht_2025_de.pdf",
  "seiten": [
   88,
   89,
   90
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 90648000.0,

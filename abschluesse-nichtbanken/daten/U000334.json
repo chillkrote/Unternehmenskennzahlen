@@ -4,13 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://kps.com/wp-content/uploads/2026/02/KPS-Konzernabschluss-2024-2025-1.pdf",
- "datei": "boersennotierte-unternehmen/software-it/dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/software-it/dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf",
  "seiten": [
   26,
   31
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 101286000.0,

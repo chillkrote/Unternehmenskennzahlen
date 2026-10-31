@@ -4,14 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.binect.com/wp-content/uploads/2026/04/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf",
- "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/binect-ag/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/finanzdienstleister/dokumente/binect-ag/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf",
  "seiten": [
   30,
   32,
   36
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 13308061.07

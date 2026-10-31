@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000408",
+ "name": "Mobotix AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.mobotix.com/sites/default/files/2026-03/Mx_IR_HV-2026_Konzernabschluss.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/technologie/dokumente/mobotix-ag/Mx_IR_HV-2026_Konzernabschluss.pdf",
+ "seiten": [
+  5,
+  8
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 73012000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 76818000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 73.012,
+  "yahoo_ek_quote": 0.2132663123870049,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 2914000.0
+  }
+ }
+}

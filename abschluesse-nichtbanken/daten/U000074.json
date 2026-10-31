@@ -1,0 +1,38 @@
+{
+ "unternehmen_id": "U000074",
+ "name": "BENO Holding AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.beno-gruppe.de/wp-content/uploads/2026/06/BENO-Holding-AG-KA-2025-Testatsexemplar-qeS.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/immobilien/dokumente/beno-holding-ag/BENO-Holding-AG-KA-2025-Testatsexemplar-qeS.pdf",
+ "seiten": [
+  2,
+  5
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 99396000.0,
+   "Total Equity Gross Minority Interest": 33993000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 65403000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 97113000.0,
+   "Total Equity Gross Minority Interest": 29320000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": null,
+  "yahoo_ek_quote": null,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 3595000.0
+  }
+ }
+}

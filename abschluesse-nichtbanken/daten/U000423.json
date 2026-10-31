@@ -4,14 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.mvv.de/fileadmin/user_upload/Investoren/de/geschaeftsjahr_2025/Geschaeftsbericht/MVV_Geschaeftsbericht_GJ_2025_dt.pdf",
- "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/mvv-energie-ag/MVV_Geschaeftsbericht_GJ_2025_dt.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/energie-versorger/dokumente/mvv-energie-ag/MVV_Geschaeftsbericht_GJ_2025_dt.pdf",
  "seiten": [
   53,
   238,
   243
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 6634104000.0,

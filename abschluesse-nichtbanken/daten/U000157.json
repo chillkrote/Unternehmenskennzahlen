@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000157",
+ "name": "Deutsche Lufthansa AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://report.lufthansagroup.com/ecomaXL/files/Lufthansa_GB_2025_EN.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/transport-logistik/dokumente/deutsche-lufthansa-ag/Lufthansa_GB_2025_EN.pdf",
+ "seiten": [
+  50,
+  258
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 48394000000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 47052000000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000000.0,
+  "yahoo_bilanzsumme_mio": 48394.0,
+  "yahoo_ek_quote": 0.2419928090259123,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 4037000000.0
+  }
+ }
+}

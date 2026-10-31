@@ -4,12 +4,12 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.cenit.com/fileadmin/Media/cenit/investorrelations/pdf/reports/annual/Final_GB_2025_DE_09.04.26.pdf",
- "datei": "boersennotierte-unternehmen/software-it/dokumente/cenit-aktiengesellschaft/Final_GB_2025_DE_09.04.26.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/software-it/dokumente/cenit-aktiengesellschaft/Final_GB_2025_DE_09.04.26.pdf",
  "seiten": [
   56
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 142229000.0

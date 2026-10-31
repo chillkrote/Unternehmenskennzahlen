@@ -4,14 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.adler-group.com/fileadmin/web/docs/IR/Hauptversammlung/2026/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
- "datei": "boersennotierte-unternehmen/immobilien/dokumente/adler-group-s-a/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/immobilien/dokumente/adler-group-s-a/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf",
  "seiten": [
   54,
   56,
   198
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 4707099000.0,

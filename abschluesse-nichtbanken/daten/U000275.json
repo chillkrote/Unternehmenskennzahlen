@@ -4,12 +4,12 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://heidelberg-pharma.com/images/managed/HDP_Geschaftsbericht_2025.pdf",
- "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/heidelberg-pharma-ag/HDP_Geschaftsbericht_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/pharma-gesundheit/dokumente/heidelberg-pharma-ag/HDP_Geschaftsbericht_2025.pdf",
  "seiten": [
   3
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 38136000.0,

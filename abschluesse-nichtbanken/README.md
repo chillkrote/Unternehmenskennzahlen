@@ -34,6 +34,11 @@ Gegenprobe von Hand: PWO, RealTech, Blue Cap.
 Von 238 Nicht-Banken ohne Abschlussposten und ohne Geschäftsbericht in der Liste hatten 51 schon einen Jahres- oder Konzernabschluss im Repo. Für die übrigen 187 lief `berichte_suche.py` (Tiefe 3, Sitemap) und `berichte_laden.py` für die 139 mit Website: 5 geladen, 2 davon verworfen (Geschäftsjahr 2019 bzw. 2024). Gründe für den Rest:
 Website ohne auffindbare PDF-Links 54, Bot-Schutz oder Sperre 20 (nicht umgangen), SSL-, Verbindungs- und Protokollfehler 13, PDF ohne erkennbares Geschäftsjahr, nur Auszug oder falsche Datei rund 30, ohne Website 48. Eine Stichprobe per Websuche (HWA, a.i.s., LEWAG) fand ebenfalls kein frei zugängliches PDF für 2025.
 
+## Yahoo-Abschlüsse als Sekundärquelle (31.10.2026)
+
+Yahoo antwortet aus dieser Umgebung weiter mit 429, deshalb nutzt `skripte/yahoo_uebernehmen.py` die im Repo liegenden, ISIN-gebundenen Rohdaten (`boersennotierte-unternehmen/rohdaten/yahoo`). Ergebnis in `yahoo/<ID>.json` (alle jährlichen Bilanz-, GuV- und Cashflow-Posten mit Originalbezeichnung, bis zu 5 Jahre, Berichtswährung laut Yahoo): 270 Unternehmen. Offen (`yahoo/offen.csv`): 52 ohne belegte Berichtswährung, 42 ohne Jahresabschlussdaten, 3 ohne Rohdaten. Eine Währung wird nie angenommen.
+Gegenprobe: Bei 74 Unternehmen mit Bericht und Yahoo-Wert weicht die Bilanzsumme 2025 bei 69 um höchstens 2 % ab, bei 5 stärker (Leifheit, OVB und drei weitere, noch zu klären). Berichtsdaten in `daten/` haben Vorrang, Yahoo ergänzt Historie und Lücken.
+
 ## Skripte
 
 ```

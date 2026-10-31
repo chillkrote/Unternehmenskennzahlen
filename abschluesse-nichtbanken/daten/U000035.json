@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000035",
+ "name": "Allgeier SE",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://allgeier.com/download/23/geschaeftsberichte/921491/geschaeftsbericht-2025.pdf",
+ "datei": "boersennotierte-unternehmen/software-it/dokumente/allgeier-se/Geschaeftsbericht-2025.pdf",
+ "seiten": [
+  114,
+  132
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 403098000.0,
+   "Total Equity Gross Minority Interest": 205039000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 198059000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 470677000.0,
+   "Total Equity Gross Minority Interest": 194187000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 402779000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 403.098,
+  "yahoo_ek_quote": 0.5086579442220006
+ }
+}

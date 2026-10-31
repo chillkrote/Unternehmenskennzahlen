@@ -1,0 +1,39 @@
+{
+ "unternehmen_id": "U000041",
+ "name": "AMG Critical Materials N.V.",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://amg-nv.com/wp-content/uploads/AMG-2025-Annual-Report-1.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/amg-critical-materials-n-v/AMG-2025-Annual-Report-1.pdf",
+ "seiten": [
+  138,
+  139,
+  141
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 2255076000.0,
+   "Total Equity Gross Minority Interest": 555255000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 1699821000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 2039589000.0,
+   "Total Equity Gross Minority Interest": 550151000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": null,
+  "yahoo_ek_quote": null,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 76125000.0
+  }
+ }
+}

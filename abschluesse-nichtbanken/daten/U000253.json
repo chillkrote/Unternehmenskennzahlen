@@ -1,0 +1,37 @@
+{
+ "unternehmen_id": "U000253",
+ "name": "Grammer AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.grammer.com/media/01_content/05_investor_relations/annual_general_meetings/annual_general_meeting_2026/german/260327_gb-grammer-2025_de.pdf",
+ "datei": "boersennotierte-unternehmen/automobil/dokumente/grammer-ag/260327_gb-grammer-2025_de.pdf",
+ "seiten": [
+  20,
+  25
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 1607226000.0,
+   "Total Equity Gross Minority Interest": 278605000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 1328621000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 1699575000.0,
+   "Total Equity Gross Minority Interest": 266924000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 1821203000.0,
+   "Net Income": 23476000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 1607.226,
+  "yahoo_ek_quote": 0.1733452544943897
+ }
+}

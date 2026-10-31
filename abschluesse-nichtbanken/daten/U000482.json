@@ -1,0 +1,44 @@
+{
+ "unternehmen_id": "U000482",
+ "name": "ProSiebenSat.1 Media SE",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.prosiebensat1.com/files/2026/03/25/269e5f07-c91b-4806-8d51-60b6eda9164f.pdf",
+ "datei": "boersennotierte-unternehmen/telekom-medien/dokumente/prosiebensat-1-media-se/269e5f07-c91b-4806-8d51-60b6eda9164f.pdf",
+ "seiten": [
+  67,
+  69,
+  74
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 4905000000.0,
+   "Total Equity Gross Minority Interest": 1177000000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 3728000000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 5608000000.0,
+   "Total Equity Gross Minority Interest": 1469000000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 3675000000.0,
+   "Net Income": -181000000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000000.0,
+  "yahoo_bilanzsumme_mio": 4905.0,
+  "yahoo_ek_quote": 0.2399592252803262,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 1097000000.0
+  }
+ }
+}

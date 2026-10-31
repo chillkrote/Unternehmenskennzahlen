@@ -1,0 +1,39 @@
+{
+ "unternehmen_id": "U000698",
+ "name": "Viscom SE",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.viscom.com/fileadmin/content/Investor_Relations/Financial_Reports/Annual_Reports/de/260331_Geschaeftsbericht_2025_de.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/viscom-se/260331_Geschaeftsbericht_2025_de.pdf",
+ "seiten": [
+  88,
+  89,
+  90
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 90648000.0,
+   "Total Equity Gross Minority Interest": 44022000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 46626000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 94645000.0,
+   "Total Equity Gross Minority Interest": 50683000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 81705000.0,
+   "EBIT": -1815000.0,
+   "Net Income": -5625000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 90.648,
+  "yahoo_ek_quote": 0.4856367487423882
+ }
+}

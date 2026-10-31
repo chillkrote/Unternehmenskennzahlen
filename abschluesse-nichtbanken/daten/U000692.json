@@ -1,0 +1,32 @@
+{
+ "unternehmen_id": "U000692",
+ "name": "VIB Vermoegen AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://vib-ag.de/downloads/2026/VIB_Vermoegen_AG_GB_2025_geschuetzt.pdf",
+ "datei": "boersennotierte-unternehmen/immobilien/dokumente/vib-vermoegen-ag/VIB_Vermoegen_AG_GB_2025_geschuetzt.pdf",
+ "seiten": [
+  54,
+  55
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 2198196000.0,
+   "Total Equity Gross Minority Interest": 1040556000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 1157640000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 1897478000.0,
+   "Total Equity Gross Minority Interest": 931971000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 2198.196,
+  "yahoo_ek_quote": 0.473368161892752
+ }
+}

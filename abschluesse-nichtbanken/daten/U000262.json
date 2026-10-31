@@ -1,0 +1,41 @@
+{
+ "unternehmen_id": "U000262",
+ "name": "Hamburger Hafen und Logistik Aktiengesellschaft",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://hhla.de/fileadmin/download/investoren/hv/hv-2026/HHLA_2025_Geschaeftsbericht.pdf",
+ "datei": "boersennotierte-unternehmen/transport-logistik/dokumente/hamburger-hafen-und-logistik-aktiengesellschaft/HHLA_2025_Geschaeftsbericht.pdf",
+ "seiten": [
+  214,
+  216,
+  219
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 3474572000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 3283977000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 1756189000.0,
+   "Net Income": 31685000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 3474.572,
+  "yahoo_ek_quote": 0.2409459352115887,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 273399000.0
+  }
+ }
+}

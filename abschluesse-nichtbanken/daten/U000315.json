@@ -1,0 +1,39 @@
+{
+ "unternehmen_id": "U000315",
+ "name": "IVU Traffic Technologies AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.ivu.com/fileadmin/ivu/08_Investoren/Berichte/2025/IVU_Annual_Report_2025.pdf",
+ "datei": "boersennotierte-unternehmen/software-it/dokumente/ivu-traffic-technologies-ag/IVU_Annual_Report_2025.pdf",
+ "seiten": [
+  86,
+  87,
+  91
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 179026000.0,
+   "Total Equity Gross Minority Interest": 94860000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 84166000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 164012000.0,
+   "Total Equity Gross Minority Interest": 84831000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 179.026,
+  "yahoo_ek_quote": 0.5298671701317127,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 31195000.0
+  }
+ }
+}

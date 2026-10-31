@@ -1,0 +1,39 @@
+{
+ "unternehmen_id": "U000190",
+ "name": "Enapter AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://enapterag.de/wp-content/uploads/2026/06/Konzernabschluss-Enapter-AG-2025-2026-04-30-Konzernabschluss-2025-der-Enapter-AG.pdf",
+ "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/enapter-ag/Konzernabschluss-Enapter-AG-2025-2026-04-30-Konzernabschluss-2025-der-Enapter-AG.pdf",
+ "seiten": [
+  22,
+  23,
+  24
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 141331000.0,
+   "Total Equity Gross Minority Interest": 49235000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 92096000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 143237000.0,
+   "Total Equity Gross Minority Interest": 66429000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 141.331,
+  "yahoo_ek_quote": 0.3483637568804019,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -5143000.0
+  }
+ }
+}

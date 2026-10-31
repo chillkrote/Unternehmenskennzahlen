@@ -1,0 +1,32 @@
+{
+ "unternehmen_id": "U000468",
+ "name": "PEH Wertpapier AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.peh.de/wp-content/uploads/2026/06/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf",
+ "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/peh-wertpapier-ag/2025-Geschaeftsbericht-PEH-Wertpapier-AG_Konzern.pdf",
+ "seiten": [
+  53,
+  54
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 92112000.0,
+   "Total Equity Gross Minority Interest": 34230000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 57882000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 69246000.0,
+   "Total Equity Gross Minority Interest": 30767000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 92.112,
+  "yahoo_ek_quote": 0.3716128191766545
+ }
+}

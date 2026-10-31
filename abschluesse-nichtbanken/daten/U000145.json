@@ -1,0 +1,39 @@
+{
+ "unternehmen_id": "U000145",
+ "name": "DEMIRE Deutsche Mittelstand Real Estate AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.demire.ag/wp-content/uploads/DEMIRE_Geschaeftsbericht_2025_DE.pdf",
+ "datei": "boersennotierte-unternehmen/immobilien/dokumente/demire-deutsche-mittelstand-real-estate-ag/DEMIRE_Geschaeftsbericht_2025_DE.pdf",
+ "seiten": [
+  52,
+  53,
+  55
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 849190000.0,
+   "Total Equity Gross Minority Interest": 150810000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 698380000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 951190000.0,
+   "Total Equity Gross Minority Interest": 241923000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 849.19,
+  "yahoo_ek_quote": 0.1775927648700526,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 29924000.0
+  }
+ }
+}

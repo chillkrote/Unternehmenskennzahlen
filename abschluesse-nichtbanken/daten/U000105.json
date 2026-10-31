@@ -1,0 +1,38 @@
+{
+ "unternehmen_id": "U000105",
+ "name": "CAMERIT AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.camerit.de/wp-content/uploads/2026/04/CAMERIT_AG_Geschaeftsbericht_fuer-2025-fina-le-Version-Stand-06.04.26.pdf",
+ "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/camerit-ag/CAMERIT_AG_Geschaeftsbericht_fuer-2025-fina-le-Version-Stand-06.04.26.pdf",
+ "seiten": [
+  27,
+  28
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 2551000.0,
+   "Total Equity Gross Minority Interest": 2277000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 274000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 2537000.0,
+   "Total Equity Gross Minority Interest": 2276000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 2.551,
+  "yahoo_ek_quote": 0.892339588817649,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -43000.0
+  }
+ }
+}

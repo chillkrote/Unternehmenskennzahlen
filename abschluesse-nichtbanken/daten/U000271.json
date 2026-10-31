@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000271",
+ "name": "Hawesko Holding SE",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.hawesko-holding.com/media/pages/investor-relations/geschaftsbericht/f6b5fa517b-1777359265/hawesko_holding_se_geschaeftsbericht_2025.pdf",
+ "datei": "boersennotierte-unternehmen/handel-konsum/dokumente/hawesko-holding-se/hawesko_holding_se_geschaeftsbericht_2025.pdf",
+ "seiten": [
+  19,
+  25
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 421133000.0,
+   "Total Equity Gross Minority Interest": 125593000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 295540000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 434592000.0,
+   "Total Equity Gross Minority Interest": 125884000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 621536000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 421.133,
+  "yahoo_ek_quote": 0.2982264510261604
+ }
+}

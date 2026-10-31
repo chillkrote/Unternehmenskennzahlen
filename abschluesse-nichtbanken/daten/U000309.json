@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000309",
+ "name": "INTERSHOP Communications Aktiengesellschaft",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.intershop.com/files/Intershop-2020/materials_pdfs/Investors/de/financial-reports/2025/ISH_GB2025.pdf",
+ "datei": "boersennotierte-unternehmen/software-it/dokumente/intershop-communications-aktiengesellschaft/ISH_GB2025.pdf",
+ "seiten": [
+  4,
+  35
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 33332000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 37435000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 33.332,
+  "yahoo_ek_quote": 0.358664346573863,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": -329000.0
+  }
+ }
+}

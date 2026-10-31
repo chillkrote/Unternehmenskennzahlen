@@ -1,0 +1,31 @@
+{
+ "unternehmen_id": "U000543",
+ "name": "Sino-German United AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://sgu-ag.de/wp-content/uploads/2026/03/Jahresabschluss-2025-Sino-German-United-AG.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/sino-german-united-ag/Jahresabschluss-2025-Sino-German-United-AG.pdf",
+ "seiten": [
+  33
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 2221000.0,
+   "Total Equity Gross Minority Interest": 1194000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 1027000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 2282000.0,
+   "Total Equity Gross Minority Interest": 1279000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 2.221,
+  "yahoo_ek_quote": 0.5376415789841961
+ }
+}

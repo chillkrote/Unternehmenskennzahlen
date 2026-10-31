@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000627",
+ "name": "Steyr Motors AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://ir.steyr-motors.com/wp-content/uploads/2026/06/SteyrMotors_GB-2025_DE.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/steyr-motors-ag/SteyrMotors_GB-2025_DE.pdf",
+ "seiten": [
+  19
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 45124000.0,
+   "Total Equity Gross Minority Interest": 23558000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 21566000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 35710000.0,
+   "Total Equity Gross Minority Interest": 22338000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 48480000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 45.124,
+  "yahoo_ek_quote": 0.4994238099459268
+ }
+}

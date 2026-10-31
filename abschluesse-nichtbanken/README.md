@@ -1,0 +1,45 @@
+# Abschlüsse der Nicht-Banken ohne Abschlussposten (Pilot)
+
+## Ausgangslage (30.10.2026)
+
+Das Terminal führt 1.274 Unternehmen. Davon haben 367 Nicht-Banken (327 deutsche) nur Yahoo-Kennzahlen
+(Kurs, Börsenwert, TTM-Quoten) und keine Bilanz-/GuV-Posten im Stil von `europa/daten`. Weitere 205 deutsche Banken
+sind in der Branche Banken über die Bankbilanz abgedeckt (nicht Gegenstand hier). 128 der 367 haben den Geschäftsbericht 2025
+bereits als PDF im Repo (`boersennotierte-unternehmen/*/dokumente`).
+
+## Quellenwahl
+
+1. **Geschäftsberichte im Repo (Primärquelle)**: Bilanzsumme, Eigenkapital, Umsatz, Ergebnis aus der gedruckten Seite. Quelle, Datei und Seite je Unternehmen.
+2. **Yahoo über `europa/abrufen.py`** als Sekundärquelle für Mehrjahreswerte (heute Antwort 429, Lauf später per Workflow).
+3. **ESEF/XBRL**: filings.xbrl.org hat keine deutschen Einreichungen (Deutschland veröffentlicht über das Unternehmensregister, Captcha, nicht umgehen). Für ausländische Emittenten (LU, NL, CH) prüfbar.
+4. **Fehlende Berichte** (239): erst Nachsuche der Bericht-PDFs (`berichte_suche.py`), danach Schritt 1.
+
+## Prüfregeln
+
+- Bilanzsumme: Summe Aktiva = Summe Passiva (gleiche oder Folgeseite); sonst eine einzelne Zeile, die dem Terminalwert (Yahoo) auf 3 % entspricht. Das Feld `kontrolle.bilanzsumme` nennt die Stufe.
+- Einheit (TEUR/Mio.) aus dem Terminalwert hergeleitet (Abweichung unter 25 %), sonst aus dem Seitenkopf.
+- Eigenkapital höchstens Bilanzsumme, Eigenkapitalquote innerhalb 8 Punkten der Yahoo-Quote. Verbindlichkeiten = Bilanzsumme minus Eigenkapital (als abgeleitet benannt).
+- Umsatz positiv, 1 % bis 15fache der Bilanzsumme und innerhalb 35 % des Yahoo-Werts; Ergebnis und EBIT gegen Yahoo-Nettomarge (4 Punkte) und EBIT-Marge (5 Punkte).
+- Operativer Cashflow von der Kapitalflussrechnungs-Seite, 0,2 % bis 50 % der Bilanzsumme; keine Gegenprobe, deshalb im Feld `kontrolle` vermerkt.
+
+Was nicht besteht, bleibt leer.
+
+## Stand (Ausbau, 30.10.2026)
+
+Von 128 Berichten mit Dateien in `daten/`: Bilanzsumme 77, Eigenkapital 50, Umsatz 41, Ergebnis 20, EBIT 8, operativer Cashflow 42.
+Gegenprobe von Hand (Pilot): PWO, RealTech, Blue Cap. Verbleibende 51 Berichte scheitern an Layout (Aktiva/Passiva getrennt, vermischte Spalten, kein Terminalwert) und sind Kandidaten für Einzellesen.
+
+## Skripte
+
+```
+python3 abschluesse-nichtbanken/skripte/vorbereiten.py /tmp/arbeit
+python3 abschluesse-nichtbanken/skripte/uebernehmen.py /tmp/arbeit schreiben
+```
+
+## Offen / nächste Stufen
+
+- Extraktor je Gliederungsvariante (HGB/IFRS) ausbauen: Umsatz, EBIT, Ergebnis, Cashflow, Finanzverbindlichkeiten.
+- Die 94 geprüften, aber unvollständigen Berichte per Seitenvorlage nachtragen.
+- Historie 10 Jahre: Vorjahres-Spalten und ältere Berichte (`zeitreihen/abrufliste_unternehmensregister.csv` als Muster).
+- Nach Freigabe: europäische 534 über `europa/abrufen.py` (Workflow `europa.yml`) mit Primärquellenabgleich.
+- Terminal: Einbindung über `europa.py` (`ergaenzungen/` bzw. neue `daten`-Quelle) als Folgeschritt.

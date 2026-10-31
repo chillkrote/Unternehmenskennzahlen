@@ -1,0 +1,43 @@
+{
+ "unternehmen_id": "U000381",
+ "name": "M1 Kliniken AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.m1-kliniken.de/aktie/aktienkurs/aktie/geschaeftsberichte.html?file=files/uploads/geschaeftsberichte/GB-2025_M1%20Kliniken_DEU.pdf",
+ "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/m1-kliniken-ag/GB-2025_M1_Kliniken_DEU.pdf",
+ "seiten": [
+  2,
+  21
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 189288000.0,
+   "Total Equity Gross Minority Interest": 150011000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 39277000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 187875000.0,
+   "Total Equity Gross Minority Interest": 134220000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 364299000.0,
+   "Net Income": 24100000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": null,
+  "yahoo_ek_quote": null,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 37949000.0
+  }
+ }
+}

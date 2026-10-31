@@ -1,0 +1,28 @@
+{
+ "unternehmen_id": "U000626",
+ "name": "STEICO SE",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.steico.com/fileadmin/user_upload/Investor_Relations/2025_Veroffentlichungen/2025_Financial_Reports/STEICO_annual-report_2025_DEU_de.pdf",
+ "datei": "boersennotierte-unternehmen/industrie/dokumente/steico-se/STEICO_annual-report_2025_DEU_de.pdf",
+ "seiten": [
+  16
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 589011000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 588653000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 589.011,
+  "yahoo_ek_quote": 0.6121344547662045
+ }
+}

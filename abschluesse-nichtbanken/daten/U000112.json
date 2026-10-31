@@ -1,0 +1,37 @@
+{
+ "unternehmen_id": "U000112",
+ "name": "centrotherm international AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://codastic-centrotherm-next.cdn.prismic.io/codastic-centrotherm-next/actvmpGXnQHGZHeU_Gesch%C3%A4ftsbericht2025.pdf",
+ "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/centrotherm-international-ag/actvmpGXnQHGZHeU_Gesch_ftsbericht2025.pdf",
+ "seiten": [
+  2,
+  19
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 403290000.0,
+   "Total Equity Gross Minority Interest": 127727000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 275563000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 398292000.0,
+   "Total Equity Gross Minority Interest": 109340000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 211061000.0,
+   "Net Income": 19194000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 403.29,
+  "yahoo_ek_quote": 0.3167125393637333
+ }
+}

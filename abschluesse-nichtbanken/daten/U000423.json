@@ -1,0 +1,45 @@
+{
+ "unternehmen_id": "U000423",
+ "name": "MVV Energie AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.mvv.de/fileadmin/user_upload/Investoren/de/geschaeftsjahr_2025/Geschaeftsbericht/MVV_Geschaeftsbericht_GJ_2025_dt.pdf",
+ "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/mvv-energie-ag/MVV_Geschaeftsbericht_GJ_2025_dt.pdf",
+ "seiten": [
+  53,
+  238,
+  243
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abruf": "2026-10-30",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 6634104000.0,
+   "Total Equity Gross Minority Interest": 2615202000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 4018902000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 7876016000.0,
+   "Total Equity Gross Minority Interest": 2514523000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 5959464000.0,
+   "EBIT": 290597000.0,
+   "Net Income": 186803000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 6634.104,
+  "yahoo_ek_quote": 0.3942057586073417,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 462318000.0
+  }
+ }
+}

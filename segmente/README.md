@@ -1,6 +1,6 @@
 # Segmentdaten (Umsatz und Segmentergebnis je Berichtssegment)
 
-`segmente_lang.csv` (Semikolon, UTF-8 mit BOM) enthält die Segmentzahlen der DAX-Unternehmen, **von Hand aus der Segmentberichterstattung des jeweiligen Konzernabschlusses gelesen** (Bericht für Bericht).
+`segmente_lang.csv` (Semikolon, UTF-8 mit BOM) enthält die Segmentzahlen der DAX- und MDAX-Unternehmen, **von Hand aus der Segmentberichterstattung des jeweiligen Konzernabschlusses gelesen** (Bericht für Bericht).
 
 Spalten: `unternehmen_id` (zentrale ID `U000123`), `gj`, `segment` (Name wie im Bericht), `kennzahl`, `wert_mio` (Millionen in `waehrung`), `waehrung`, `quelle_dokument` (Pfad der PDF im Repo), `pdf_seite` (Seite in der PDF, nicht die gedruckte Seitenzahl), `pruefstatus`, `bemerkung`.
 

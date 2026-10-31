@@ -32,7 +32,7 @@ Gegenprobe von Hand: PWO, RealTech, Blue Cap.
 ## Nachsuche der fehlenden Berichte (31.10.2026)
 
 Von 238 Nicht-Banken ohne Abschlussposten und ohne Geschäftsbericht in der Liste hatten 51 schon einen Jahres- oder Konzernabschluss im Repo. Für die übrigen 187 lief `berichte_suche.py` (Tiefe 3, Sitemap) und `berichte_laden.py` für die 139 mit Website: 5 geladen, 2 davon verworfen (Geschäftsjahr 2019 bzw. 2024). Gründe für den Rest:
-Website ohne auffindbare PDF-Links 54, Bot-Schutz oder Sperre 20 (nicht umgangen), SSL-/Verbindungsfehler 13, PDF ohne Geschäftsjahr oder nur Auszug 25, ohne Website 48. Eine Stichprobe per Websuche (HWA, a.i.s., LEWAG) fand ebenfalls kein frei zugängliches PDF für 2025.
+Website ohne auffindbare PDF-Links 54, Bot-Schutz oder Sperre 20 (nicht umgangen), SSL-, Verbindungs- und Protokollfehler 13, PDF ohne erkennbares Geschäftsjahr, nur Auszug oder falsche Datei rund 30, ohne Website 48. Eine Stichprobe per Websuche (HWA, a.i.s., LEWAG) fand ebenfalls kein frei zugängliches PDF für 2025.
 
 ## Skripte
 

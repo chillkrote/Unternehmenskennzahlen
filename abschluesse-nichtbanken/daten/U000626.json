@@ -9,6 +9,7 @@
   16
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
  "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
@@ -21,6 +22,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 589.011,
   "yahoo_ek_quote": 0.6121344547662045

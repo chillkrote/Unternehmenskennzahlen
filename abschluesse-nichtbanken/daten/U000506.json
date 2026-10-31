@@ -1,0 +1,29 @@
+{
+ "unternehmen_id": "U000506",
+ "name": "Rostra AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://rostra.ag/wp-content/uploads/2026/04/AnnualReport_HGB_DE_2025_RostraAG.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/finanzdienstleister/dokumente/rostra-ag/AnnualReport_HGB_DE_2025_RostraAG.pdf",
+ "seiten": [
+  17
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 26915481.0,
+   "Total Equity Gross Minority Interest": 10054520.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 16860961.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1,
+  "yahoo_bilanzsumme_mio": 25.579,
+  "yahoo_ek_quote": 0.3408426562211269
+ }
+}

@@ -15,7 +15,7 @@ for p in glob.glob(str(ROOT/'boersennotierte-unternehmen/*/dokumente/index.csv')
 sel.sort(key=lambda x:ART.index(x[6]))
 erste={}
 for x in sel:erste.setdefault(x[0],x)
-sel=[x[:6] for x in erste.values()]
+sel=[x for x in erste.values()]
 for x in sel:
     out=W/'txt'/f'{x[0]}.txt';out.unlink(missing_ok=True)
     subprocess.run(['pdftotext','-layout',str(x[3]),str(out)],timeout=180,stderr=subprocess.DEVNULL)

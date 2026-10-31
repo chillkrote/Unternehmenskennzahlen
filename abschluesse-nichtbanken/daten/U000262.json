@@ -11,6 +11,7 @@
   219
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
  "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
@@ -28,6 +29,7 @@
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 3474.572,
   "yahoo_ek_quote": 0.2409459352115887,

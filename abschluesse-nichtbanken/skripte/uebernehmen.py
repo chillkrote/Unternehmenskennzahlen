@@ -18,7 +18,7 @@ sel=json.load(open(TXT/'sel.json'))
 terminal={f['id']:f for f in json.load(open(ROOT/'app/data/unternehmen.json'))['unternehmen']}
 SPERRE={'U000693':'Berichtswährung nicht EUR belegt','U000259':'Berichtswährung CNY'}
 heute=datetime.date.today().isoformat();stat={'bericht':len(sel),'bilanz':0,'ek':0,'umsatz':0,'jue':0,'ebit':0,'cfo':0};log=[]
-for u,n,br,datei,url,s in sel:
+for u,n,br,datei,url,s,art in sel:
     if u in SPERRE:continue
     w=terminal[u]['werte']
     r=analysiere((TXT/'txt'/f'{u}.txt').read_text(errors='ignore'),w)
@@ -37,8 +37,8 @@ for u,n,br,datei,url,s in sel:
     d={'unternehmen_id':u,'name':n,'waehrung':'EUR','quelle':'Geschäftsbericht (Primärquelle)','quelle_url':url,
        'datei':str(datei),'seiten':sorted({r[k] for k in('seite_bilanz','seite_ek','seite_guv','seite_cf') if k in r}),
        'pruefstatus':'Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen',
-       'abruf':heute,'bilanz':{'2025-12-31':bil},'guv':{'2025-12-31':guv} if guv else {},
-       'kontrolle':{'bilanzsumme':r['pruefung'],'einheitsfaktor':f,'yahoo_bilanzsumme_mio':w.get('bilanzsumme'),'yahoo_ek_quote':q}}
+       'abschluss':'Konzernabschluss' if r['konzern'] else 'Einzelabschluss (HGB); nicht mit Konzernwerten vergleichbar','abruf':heute,'bilanz':{'2025-12-31':bil},'guv':{'2025-12-31':guv} if guv else {},
+       'kontrolle':{'bilanzsumme':r['pruefung'],'spalten_umgekehrt':r['spalten_umgekehrt'],'einheitsfaktor':f,'yahoo_bilanzsumme_mio':w.get('bilanzsumme'),'yahoo_ek_quote':q}}
     if bs[1]>0 and .2<=bs[1]/bs[0]<=5:
         d['bilanz']['2024-12-31']={'Total Assets':bs[1]*f}
         if ek and ek[1]>0 and abs(ek[1])<=bs[1]:d['bilanz']['2024-12-31']['Total Equity Gross Minority Interest']=ek[1]*f

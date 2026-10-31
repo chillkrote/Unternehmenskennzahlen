@@ -7,9 +7,11 @@
  "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/technologie/dokumente/mobotix-ag/Mx_IR_HV-2026_Konzernabschluss.pdf",
  "seiten": [
   5,
+  7,
   8
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
  "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
@@ -19,9 +21,15 @@
    "Total Assets": 76818000.0
   }
  },
- "guv": {},
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 52652000.0,
+   "Net Income": -5462000.0
+  }
+ },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 73.012,
   "yahoo_ek_quote": 0.2132663123870049,
@@ -29,7 +37,7 @@
  },
  "cashflow": {
   "2025-12-31": {
-   "Operating Cash Flow": 2914000.0
+   "Operating Cash Flow": 6001000.0
   }
  }
 }

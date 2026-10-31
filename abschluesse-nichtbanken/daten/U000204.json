@@ -9,6 +9,7 @@
   48
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Einzelabschluss (HGB); nicht mit Konzernwerten vergleichbar",
  "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
@@ -18,6 +19,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": null,
   "yahoo_ek_quote": null

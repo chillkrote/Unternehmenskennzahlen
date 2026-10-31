@@ -19,7 +19,7 @@ def zahl(tok,de):
 
 
 LABEL={
- 'bilanzsumme':r'^(summe aktiva|bilanzsumme|summe vermögen|summe vermögenswerte|total assets|aktiva gesamt|gesamtvermögen|aktiva)\s*$',
+ 'bilanzsumme':r'^(summe aktiva|summe der aktiva|summe der vermögenswerte|bilanzsumme|summe vermögen|summe vermögenswerte|total assets|aktiva gesamt|gesamtvermögen|aktiva)\s*$',
  'passiva':r'^(summe passiva|total equity and liabilities|total liabilities and (share|stock)holders?.? equity|summe eigenkapital und schulden|passiva gesamt|summe eigen- und fremdkapital|equity and liabilities|passiva|summe passiva)\s*$',
  'ek':r'^(summe eigenkapital|eigenkapital insgesamt|eigenkapital gesamt|total equity|konzerneigenkapital|summe konzerneigenkapital|eigenkapital)\s*$',
  'umsatz':r'^(umsatzerlöse|umsatz|revenues?|net sales|sales|revenue from contracts with customers|gesamtleistung)\s*$',
@@ -67,10 +67,22 @@ def faktor_aus(bs,ref,text):
         return f if a<=.25 else None
     return text
 
+def umgekehrt(seite):
+    """True, wenn die Spaltenköpfe das ältere Jahr vor dem neueren nennen (z. B. 31.12.2024 | 31.12.2025)."""
+    for z in seite[:6000].splitlines():
+        a=[m.start() for m in re.finditer(r'2024',z)];b=[m.start() for m in re.finditer(r'2025',z)]
+        if a and b:return a[0]<b[0]
+    return False
+
+def kopf_ok(seite):
+    k=seite[:3500]
+    return not('2024' in k and '2025' not in k)
+
 def bilanz_kandidaten(pages,de):
     """(Seite, [Summe Aktiva-Zeilen], Passiva-Seite). Aktiva und Passiva stehen auf einer oder auf zwei aufeinanderfolgenden Seiten."""
     per={}
     for i,p in enumerate(pages):
+        if not kopf_ok(p):continue
         rows=[n for lab,n in segmente(p,de) if (RX['bilanzsumme'].match(lab) or RX['passiva'].match(lab)) and n[0]>0 and not ist_datum(n[0])]
         if rows:per[i]=rows
     out=[]
@@ -89,7 +101,9 @@ def guv_zeilen(pages,de,start,ende,keys,pat):
         for lab,n in segmente(q,de):
             for kk in keys:
                 if kk not in found and RX[kk].match(lab):found[kk]=n[:2]
-        if found:yield j,found
+        if found:
+            if umgekehrt(q):found={k:v[::-1] for k,v in found.items()}
+            yield j,found
 
 def analysiere(txt,ref=None):
     """ref: Terminalwerte (Mio. EUR) zur Einheitenbestimmung und Plausibilität; None = nur Seitenkopf."""
@@ -114,12 +128,14 @@ def analysiere(txt,ref=None):
         pruefung='Yahoo-Abgleich (3 %)'
     if not best:return None
     _,i,bs,f=best
-    res={'seite_bilanz':i+1,'faktor':f,'bilanzsumme':bs,'ek':None,'pruefung':pruefung}
+    rev=umgekehrt(pages[i])
+    if rev:bs=bs[::-1]
+    res={'seite_bilanz':i+1,'faktor':f,'bilanzsumme':bs,'ek':None,'pruefung':pruefung,'spalten_umgekehrt':rev,'konzern':bool(re.search(r'konzern|consolidated',pages[i][:3500],re.I))}
     for pg in(i,i+1,i-1):
         if not 0<=pg<len(pages):continue
         for lab,n in segmente(pages[pg],de):
             if RX['ek'].match(lab) and res['ek'] is None and 0<abs(n[0])<=bs[0]*1.001:
-                if n[0]!=bs[0]:res['ek']=n[:2];res['seite_ek']=pg+1
+                if n[0] not in(bs[0],bs[1]):res['ek']=(n[:2][::-1] if umgekehrt(pages[pg]) else n[:2]);res['seite_ek']=pg+1
         if res['ek']:break
     um_ref=ref.get('umsatz')
     cand=[]

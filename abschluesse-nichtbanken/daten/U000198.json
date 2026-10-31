@@ -10,6 +10,7 @@
   38
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
  "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
@@ -22,6 +23,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1,
   "yahoo_bilanzsumme_mio": 48.261,
   "yahoo_ek_quote": 0.4453820517880022,
@@ -29,7 +31,7 @@
  },
  "cashflow": {
   "2025-12-31": {
-   "Operating Cash Flow": 5039428.18
+   "Operating Cash Flow": 6053784.62
   }
  }
 }

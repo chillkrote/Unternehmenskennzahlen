@@ -11,25 +11,27 @@
   50
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
  "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
-   "Total Assets": 54229580.0,
-   "Total Equity Gross Minority Interest": 24211262.0,
-   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 30018318.0
+   "Total Assets": 55155030.0,
+   "Total Equity Gross Minority Interest": 23363528.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 31791502.0
   },
   "2024-12-31": {
-   "Total Assets": 55155030.0,
-   "Total Equity Gross Minority Interest": 23363528.0
+   "Total Assets": 54229580.0,
+   "Total Equity Gross Minority Interest": 24211262.0
   }
  },
  "guv": {
   "2025-12-31": {
-   "Total Revenue": 115541783.0
+   "Total Revenue": 124206586.0
   }
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": true,
   "einheitsfaktor": 1,
   "yahoo_bilanzsumme_mio": 55.155,
   "yahoo_ek_quote": 0.4235974126022595,
@@ -37,7 +39,7 @@
  },
  "cashflow": {
   "2025-12-31": {
-   "Operating Cash Flow": 7470968.0
+   "Operating Cash Flow": 4521440.0
   }
  }
 }

@@ -34,7 +34,7 @@ AUSGABE = REPO / "import" / "daten"
 LAND_ISO = {"DE": "Germany", "AT": "Austria", "CH": "Switzerland", "LI": "Liechtenstein", "LU": "Luxembourg",
             "NL": "Netherlands", "BE": "Belgium", "FR": "France", "GB": "UK", "IE": "Ireland", "IT": "Italy",
             "ES": "Spain", "PT": "Portugal", "GR": "Greece", "DK": "Denmark", "SE": "Sweden", "NO": "Norway",
-            "FI": "Finland", "PL": "Poland", "CZ": "Czechia", "US": "USA", "JO": "Jordan"}
+            "FI": "Finland", "PL": "Poland", "CZ": "Czechia", "US": "USA", "JO": "Jordan", "TW": "Taiwan"}
 GLEICH_TOL = 0.005
 SUMME_TOL = 0.01
 GROB_TOL = 0.03

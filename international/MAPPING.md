@@ -18,3 +18,19 @@ Version `de-zeitreihe-v1` (Deutschland) und `sec-v2` (USA). Neue Kennzahlen erst
 | de_fonds_340g | Fonds für allgemeine Bankrisiken, § 340g HGB | fonds_340g | – | nur Deutschland |
 
 Regeln: Konsolidierung `regulatory` für Pillar-3-/EBA-Werte, `solo` für HGB-Einzel, `unknown` solange nicht belegt. Prüfstatus der Zeitreihe: `geparst` → `raw`, alle übrigen (`verankert`, `plausibilisiert`, `manuell bestätigt`) → `validated`; der Originalstatus steht in `provenance`.
+
+## ESEF (Frankreich), Version `esef-v1`
+
+Quelle: xBRL-JSON der ESEF-Einreichung, nur Fakten ohne zusätzliche Dimensionen, nur Währungseinheiten. Rangfolge der Konzepte je Einreichung und Periode (nie gemischt):
+
+| metric.code | IFRS-Konzept |
+|---|---|
+| assets | ifrs-full:Assets |
+| equity | ifrs-full:EquityAttributableToOwnersOfParent |
+| equity_incl_nci | ifrs-full:Equity |
+| revenue | ifrs-full:Revenue, sonst ifrs-full:RevenueFromContractsWithCustomers (für Banken nicht geladen; Sanofi nutzt ein Erweiterungskonzept und bleibt leer) |
+| net_income | ifrs-full:ProfitLossAttributableToOwnersOfParent |
+| net_income_incl_nci | ifrs-full:ProfitLoss |
+| operating_cash_flow | ifrs-full:CashFlowsFromUsedInOperatingActivities |
+
+Mitarbeiter und aufsichtliche Kennzahlen: nicht in den Primärrechnungen getaggt, bleiben leer.

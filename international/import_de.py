@@ -35,7 +35,7 @@ KENNZAHL = {   # Spalte kennzahl in zeitreihe_lang.csv -> metric.code
     "leverage_ratio": "leverage_ratio", "leverage_exposure": "leverage_exposure", "lcr": "lcr", "nsfr": "nsfr", "hqla": "hqla",
 }
 DAUER = {"net_income"}   # Zeitraumwerte; der Beginn wird nur bei Stichtag 31.12. als 1. Januar abgeleitet
-LAND_ISO2 = {"Germany": "DE", "Luxembourg": "LU", "Switzerland": "CH", "Austria": "AT", "Netherlands": "NL", "Italy": "IT",
+LAND_ISO2 = {"Germany": "DE", "France": "FR", "Luxembourg": "LU", "Switzerland": "CH", "Austria": "AT", "Netherlands": "NL", "Italy": "IT",
              "Bulgaria": "BG", "United States": "US", "Cyprus": "CY", "China": "CN", "Poland": "PL", "Malta": "MT",
              "Sweden": "SE", "United Kingdom": "GB", "Australia": "AU"}
 NICHT_OECD = {"BG": "Bulgaria", "CY": "Cyprus", "CN": "China", "MT": "Malta"}   # Sitzländer außerhalb der OECD, damit domicile gesetzt werden kann

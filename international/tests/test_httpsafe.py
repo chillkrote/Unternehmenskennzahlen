@@ -64,12 +64,18 @@ class Allowlist(unittest.TestCase):
         def kaputt():
             yield b"teil"
             raise ConnectionResetError("abgebrochen")
-        c = self.client([(200, {}, kaputt())])
+        c = self.client([(200, {}, kaputt()) for _ in range(3)], max_versuche=3)
         with tempfile.TemporaryDirectory() as d:
-            with self.assertRaises(ConnectionResetError):
-                daten = c.holen("https://data.sec.gov/x")
-                atomar_speichern(d, "a.json", daten)
+            with self.assertRaisesRegex(AbrufFehler, "Verbindungsfehler"):
+                atomar_speichern(d, "a.json", c.holen("https://data.sec.gov/x"))
             self.assertEqual(list(Path(d).iterdir()), [])
+
+    def test_abbruch_dann_erfolg_liefert_nur_vollstaendige_antwort(self):
+        def kaputt():
+            yield b"teil"
+            raise ConnectionResetError("abgebrochen")
+        c = self.client([(200, {}, kaputt()), (200, {}, iter([b"ganz", b"er Inhalt"]))], max_versuche=3)
+        self.assertEqual(c.holen("https://data.sec.gov/x"), b"ganzer Inhalt")
 
     def test_atomar_speichern_ohne_teildatei(self):
         with tempfile.TemporaryDirectory() as d:

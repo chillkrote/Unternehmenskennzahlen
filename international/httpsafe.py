@@ -1,7 +1,7 @@
 """Zentraler, abgesicherter HTTP-Abruf für die Adapter.
 
 * Nur HTTPS, nur Hosts aus einer ausdrücklichen Allowlist (bekannte APIs); Weiterleitungen sind verboten.
-* Identifizierender User-Agent mit echter Kontaktadresse aus der Umgebung (SEC_USER_AGENT), Mindestabstand zwischen Anfragen,
+* Identifizierender User-Agent mit echter Kontaktadresse aus der Umgebung (INTERNATIONAL_USER_AGENT oder SEC_USER_AGENT), Mindestabstand zwischen Anfragen,
   Timeout, maximale Antwortgröße, Retry-After und begrenzter Backoff bei 429/503.
 * Die Antwort wird erst nach vollständigem Empfang (Größe und SHA-256 geprüft) atomar in den Objektspeicher geschrieben;
   ein abgebrochener Download hinterlässt keine Teildatei.
@@ -46,9 +46,9 @@ class SichererClient:
     def __init__(self, erlaubte_hosts, user_agent=None, max_bytes=50_000_000, timeout=30, min_abstand=0.2,
                  max_versuche=3, max_wartezeit=60, transport=None, schlafen=time.sleep, offen=False):
         self.erlaubte_hosts = frozenset(h.lower() for h in erlaubte_hosts)
-        ua = user_agent or os.environ.get("SEC_USER_AGENT", "")
+        ua = user_agent or os.environ.get("INTERNATIONAL_USER_AGENT") or os.environ.get("SEC_USER_AGENT", "")
         if "@" not in ua:
-            raise AbrufFehler("User-Agent mit Kontaktadresse nötig (Umgebungsvariable SEC_USER_AGENT, z. B. 'Name name@example.org')")
+            raise AbrufFehler("User-Agent mit Kontaktadresse nötig (Umgebungsvariable INTERNATIONAL_USER_AGENT oder SEC_USER_AGENT, z. B. 'Name name@example.org')")
         self.user_agent = ua
         self.max_bytes, self.timeout, self.min_abstand = max_bytes, timeout, min_abstand
         self.max_versuche, self.max_wartezeit = max_versuche, max_wartezeit
@@ -82,7 +82,19 @@ class SichererClient:
             if warte > 0:
                 self._schlafen(warte)
             self._letzte = time.monotonic()
-            status, kopf, stuecke = self._transport(url, {"User-Agent": self.user_agent, "Accept-Encoding": "gzip"}, self.timeout)
+            try:
+                status, kopf, stuecke = self._transport(url, {"User-Agent": self.user_agent, "Accept-Encoding": "gzip"}, self.timeout)
+                if status == 200:
+                    daten = bytearray()
+                    for s in stuecke:
+                        daten += s
+                        if len(daten) > self.max_bytes:
+                            raise AbrufFehler(f"Antwort größer als {self.max_bytes} Bytes: {url}")
+            except OSError as e:          # Verbindungsabbruch, Timeout (auch requests-Fehler): begrenzt wiederholen, nie Teildaten liefern
+                if versuch == self.max_versuche:
+                    raise AbrufFehler(f"Verbindungsfehler nach {versuch} Versuchen: {url}: {e!r}") from e
+                self._schlafen(min(2.0 ** versuch, self.max_wartezeit))
+                continue
             if status in (301, 302, 303, 307, 308):
                 raise AbrufFehler(f"Weiterleitung nicht erlaubt ({status}): {url}")
             if status in (429, 503) and versuch < self.max_versuche:
@@ -94,11 +106,6 @@ class SichererClient:
                 continue
             if status != 200:
                 raise AbrufFehler(f"HTTP {status} für {url}")
-            daten = bytearray()
-            for s in stuecke:
-                daten += s
-                if len(daten) > self.max_bytes:
-                    raise AbrufFehler(f"Antwort größer als {self.max_bytes} Bytes: {url}")
             return bytes(daten)
         raise AbrufFehler(f"Abruf ohne Erfolg nach {self.max_versuche} Versuchen: {url}")
 

@@ -53,3 +53,7 @@ python3 abschluesse-nichtbanken/skripte/uebernehmen.py /tmp/arbeit schreiben
 - Historie 10 Jahre: Vorjahres-Spalten und ältere Berichte (`zeitreihen/abrufliste_unternehmensregister.csv` als Muster).
 - Nach Freigabe: europäische 534 über `europa/abrufen.py` (Workflow `europa.yml`) mit Primärquellenabgleich.
 - Terminal: Einbindung über `europa.py` (`ergaenzungen/` bzw. neue `daten`-Quelle) als Folgeschritt.
+
+## Terminal-Anbindung (01.11.2026)
+
+`app/europa.py` (`nichtbanken`, aufgerufen in `app/unternehmen.py` nach `ergaenzen`) lädt für jedes Nicht-Bank-Unternehmen ohne Tabellenabschlüsse zuerst `yahoo/<ID>.json` und legt `daten/<ID>.json` je Periode darüber (Bericht vor Yahoo). Bei abweichender Berichtswährung zählt nur der Bericht. Vergleichsfelder (Bilanzsumme, Eigenkapital, Umsatz, EBIT, Ergebnis, EK-Quote, EBIT-Marge) entstehen nur aus EUR-Abschlüssen und überschreiben keine vorhandenen Werte. Ergebnis: 923 von 1.010 Nicht-Banken haben Abschlüsse im Profil, 87 bleiben offen. Die Ansicht „Bilanz- und GuV-Abdeckung“ (ABS) bleibt auf das Tabellenuniversum beschränkt.

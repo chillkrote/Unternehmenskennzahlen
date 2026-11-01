@@ -386,8 +386,9 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
         quellen.append("banken/bilanzvergleich-gj2025")
     nach_id = {f["id"]: f for f in firmen}
     stammdaten(wurzel, firmen, nach_id)
-    from europa import ergaenzen
+    from europa import ergaenzen, nichtbanken
     ergaenzen(wurzel, firmen, nach_id, stamm.lade())
+    nichtbanken(wurzel, firmen)
     ist_demo = beispieldaten(demo, firmen, nach_id, quellen)
     zeitreihen(wurzel, nach_id)
     for uid, docs in dokumente(wurzel, set(nach_id)).items():

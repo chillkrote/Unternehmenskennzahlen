@@ -5,10 +5,10 @@ from pathlib import Path
 COUNTRIES={'Germany':'DE','Deutschland':'DE','UK':'GB','United Kingdom':'GB','France':'FR','Netherlands':'NL','Belgium':'BE','Italy':'IT','Spain':'ES','Sweden':'SE','Switzerland':'CH','Finland':'FI','Denmark':'DK','Norway':'NO','Austria':'AT','Portugal':'PT','Poland':'PL','Greece':'GR','Ireland':'IE','Luxembourg':'LU','United States':'US','Canada':'CA','China':'CN','Czech Republic':'CZ','Czechia':'CZ','Malta':'MT','Cyprus':'CY','Bulgaria':'BG','Liechtenstein':'LI','Hong Kong':'HK','Australia':'AU','Japan':'JP'}
 MAP={'bilanzsumme':('bilanz','Total Assets'),'ek':('bilanz','Stockholders Equity'),'umsatz':('guv','Total Revenue'),'ebit':('guv','EBIT'),'ebitda':('guv','EBITDA'),'jue':('guv','Net Income')}
 
-def lade_abschluesse(root,uid):
+def lade_abschluesse(root,uid,folders=('daten','ergaenzungen'),base='europa'):
     periods={}
-    for folder in ('daten','ergaenzungen'):
-        file=Path(root)/'europa'/folder/f'{uid}.json'
+    for folder in folders:
+        file=Path(root)/base/folder/f'{uid}.json'
         if not file.exists():continue
         data=json.loads(file.read_text())
         if data.get('unternehmen_id')!=uid:raise ValueError(f'Identitätskonflikt in {file}')
@@ -27,6 +27,32 @@ def lade_abschluesse(root,uid):
                 p['quellen'][family]=source;p.update(quelle=source['quelle'],quelle_url=source['quelle_url'],abruf=source['abruf'],status=source['status'])
     return sorted(periods.values(),key=lambda p:p['ende'],reverse=True)
 
+
+def werte_ableiten(f):
+    # Vergleichsfelder sind Mio. EUR. Fremdwährungsbeträge bleiben ausschließlich in den
+    # Originalabschluss-Tabellen; keine stillschweigende Umrechnung oder Währungsmischung.
+    latest=next((a for a in f['abschluesse'] if a['jahr']==2025),None)
+    if latest:
+        for key,(family,label) in MAP.items():
+            value=latest[family].get(label)
+            if value is None and key=='ek':value=latest[family].get('Total Equity Gross Minority Interest')
+            if value is not None and latest['waehrung']=='EUR':f['werte'].setdefault(key,value/1e6)
+        for key,numerator,denominator in [('ek_quote',('bilanz','Stockholders Equity'),('bilanz','Total Assets')),('ebit_marge',('guv','EBIT'),('guv','Total Revenue'))]:
+            a=latest[numerator[0]].get(numerator[1]);b=latest[denominator[0]].get(denominator[1])
+            if a is None and key=='ek_quote':a=latest['bilanz'].get('Total Equity Gross Minority Interest')
+            if a is not None and b not in (None,0):f['werte'].setdefault(key,a/b)
+
+def nichtbanken(root,firmen):
+    """Abschlüsse der Nicht-Banken ohne Tabellenuniversum: Yahoo (Sekundärquelle) als Basis, Geschäftsbericht je Periode darüber."""
+    n=0
+    for f in firmen:
+        if f.get('abschluesse') or f.get('branche')=='banken':continue
+        base='abschluesse-nichtbanken'
+        try:ab=lade_abschluesse(root,f['id'],('yahoo','daten'),base)
+        except ValueError:ab=lade_abschluesse(root,f['id'],('daten',),base)   # abweichende Berichtswährung: nur der Bericht
+        if ab:f['abschluesse']=ab;werte_ableiten(f);n+=1
+    return n
+
 def ergaenzen(root,firmen,nach_id,register):
     root=Path(root);p=root/'europa/unternehmen.json'
     roster=json.loads(p.read_text()) if p.exists() else []
@@ -43,16 +69,7 @@ def ergaenzen(root,firmen,nach_id,register):
         f['land']=c.get('land') or register.unternehmen[uid].get('land') or 'Unbekannt'
         f['land_basis']='STOXX-Klassifikation' if c.get('land_stoxx') else 'Unternehmensstammdaten'
         f['abschluesse']=lade_abschluesse(root,uid)
-        # Vergleichsfelder sind Mio. EUR. Fremdwährungsbeträge bleiben ausschließlich in den
-        # Originalabschluss-Tabellen; keine stillschweigende Umrechnung oder Währungsmischung.
-        latest=next((a for a in f['abschluesse'] if a['jahr']==2025),None)
-        if latest:
-            for key,(family,label) in MAP.items():
-                value=latest[family].get(label)
-                if value is not None and latest['waehrung']=='EUR':f['werte'].setdefault(key,value/1e6)
-            for key,numerator,denominator in [('ek_quote',('bilanz','Stockholders Equity'),('bilanz','Total Assets')),('ebit_marge',('guv','EBIT'),('guv','Total Revenue'))]:
-                a=latest[numerator[0]].get(numerator[1]);b=latest[denominator[0]].get(denominator[1])
-                if a is not None and b not in (None,0):f['werte'].setdefault(key,a/b)
+        werte_ableiten(f)
     for f in firmen:
         if not f.get('land'):f['land']=register.unternehmen.get(f['id'],{}).get('land') or 'Unbekannt'
         f['land_code']=COUNTRIES.get(f['land'],'ZZ')

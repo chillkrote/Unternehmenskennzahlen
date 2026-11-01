@@ -17,6 +17,7 @@ import export_vergleich
 import import_de
 import ingest
 import sec
+import esef
 
 FIXTURE = Path(__file__).parent / "fixtures" / "sec_companyfacts_adtn_assets.json"
 REPO = Path(__file__).resolve().parents[2]
@@ -250,3 +251,55 @@ class SecImport(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+@dbhelp.braucht_db
+class EsefImport(unittest.TestCase):
+    LEI = "549300E9PC51EN656011"
+    FIX = Path(__file__).parent / "fixtures" / "esef_sanofi_auszug.json"
+
+    def setUp(self):
+        self.ctx = dbhelp.wegwerf_db()
+        self.conn = db.verbinden(self.ctx.__enter__())
+        db.migrieren(self.conn)
+        db.laender_laden(self.conn)
+        self.conn.execute("INSERT INTO international.entity (id, legal_name, domicile, lei) VALUES ('U1','Sanofi','FR',%s)", (self.LEI,))
+
+    def tearDown(self):
+        self.conn.close()
+        self.ctx.__exit__(None, None, None)
+
+    def einr(self, fxo, published):
+        return {"attributes": {"fxo_id": fxo, "published": published, "date_added": published, "sha256": "x", "period_end": "2025-12-31"}}
+
+    def laden(self, pfad, fxo, published, **kw):
+        import hashlib
+        h = hashlib.sha256(Path(pfad).read_bytes()).hexdigest()
+        return esef.importieren(self.conn, pfad, h, "https://filings.xbrl.org/x.json", self.einr(fxo, published), "U1", self.LEI, **kw)
+
+    def test_import_idempotent_berichtigung_und_bekannt_zum(self):
+        import tempfile
+        neu, alt = self.laden(self.FIX, self.LEI + "-2025-12-31-ESEF-FR-0", "2026-02-17 10:00:00")
+        self.assertGreater(neu, 15)
+        self.assertEqual(self.laden(self.FIX, self.LEI + "-2025-12-31-ESEF-FR-0", "2026-02-17 10:00:00"), (0, neu))
+        roh = json.loads(self.FIX.read_text())
+        for f in roh["facts"].values():
+            if f["dimensions"].get("concept") == "ifrs-full:Assets" and f["dimensions"]["period"] == "2026-01-01T00:00:00":
+                f["value"] = "126000000000.0"
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "korr.json"
+            p.write_text(json.dumps(roh))
+            self.laden(p, self.LEI + "-2025-12-31-ESEF-FR-1", "2026-09-01 10:00:00")
+        q = "SELECT value FROM international.fact_as_of(%s) WHERE entity_id='U1' AND metric_code='assets' AND period_end='2025-12-31'"
+        self.assertEqual(self.conn.execute(q, (None,)).fetchone()[0], D(126000000000))
+        self.assertEqual(self.conn.execute(q, (date(2026, 3, 1),)).fetchone()[0], D(126805000000))
+        self.assertEqual(self.conn.execute("SELECT count(*) FROM international.source_document").fetchone()[0], 2)
+
+    def test_dry_run_und_export(self):
+        neu, _ = self.laden(self.FIX, self.LEI + "-2025-12-31-ESEF-FR-0", "2026-02-17 10:00:00", dry_run=True)
+        self.assertGreater(neu, 0)
+        self.assertEqual(self.conn.execute("SELECT count(*) FROM international.fact").fetchone()[0], 0)
+        self.laden(self.FIX, self.LEI + "-2025-12-31-ESEF-FR-0", "2026-02-17 10:00:00")
+        z = [x for x in export_vergleich.exportieren(self.conn)["zeilen"] if x["kennzahl"] == "bilanzsumme" and x["stichtag"] == "2025-12-31"]
+        self.assertEqual((z[0]["sitzland"], z[0]["standard"], z[0]["waehrung"], z[0]["kreis"], z[0]["wert"]), ("FR", "IFRS", "EUR", "group", 126805.0))
+        self.assertEqual(self.conn.execute("SELECT entity_id FROM international.identifier WHERE scheme='LEI' AND value=%s", (self.LEI,)).fetchone()[0], "U1")

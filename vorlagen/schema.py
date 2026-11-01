@@ -68,7 +68,7 @@ LAENDER = ["Germany", "Austria", "Switzerland", "Liechtenstein", "Luxembourg", "
            "Poland", "Czechia", "Hungary", "Romania", "Slovakia", "Slovenia", "Croatia", "Bulgaria", "Estonia", "Latvia",
            "Lithuania", "Malta", "Cyprus", "Turkey", "USA", "Canada", "Mexico", "Brazil", "Japan", "China", "Hong Kong",
            "South Korea", "India", "Australia", "Singapore", "Israel", "South Africa", "United Arab Emirates",
-           "Saudi Arabia", "Sonstige"]
+           "Saudi Arabia", "Jordan", "Sonstige"]
 DOKUMENTARTEN = ["Geschäftsbericht", "Konzernabschluss", "Jahresabschluss", "Lagebericht", "Halbjahresbericht",
                  "Offenlegungsbericht", "Nachhaltigkeitsbericht", "Unternehmensregister/Bundesanzeiger",
                  "SEC-Filing", "Registerauszug", "Börsenprospekt", "Sonstiges"]

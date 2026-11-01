@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000136",
+ "name": "DATA MODUL Aktiengesellschaft Produktion und Vertrieb von elektronischen Systemen",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.data-modul.com/sites/default/files/2026-03/DM_DE_Jahresabschluss%202025_4.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/technologie/dokumente/data-modul-aktiengesellschaft-produktion-und-vertrieb-von-el/DM_DE_Jahresabschluss_2025_4.pdf",
+ "seiten": [
+  47,
+  49
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Einzelabschluss (HGB); nicht mit Konzernwerten vergleichbar",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 165395521.35
+  },
+  "2024-12-31": {
+   "Total Assets": 174105097.17
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 196136754.44,
+   "Net Income": -2531550.74
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1,
+  "yahoo_bilanzsumme_mio": 192.652,
+  "yahoo_ek_quote": 0.7533843406764529
+ }
+}

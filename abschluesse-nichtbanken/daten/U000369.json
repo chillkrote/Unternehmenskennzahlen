@@ -4,33 +4,35 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.leifheit-group.com/app/uploads/2026/04/Leifheit_IFRS_DE_PW.pdf",
- "datei": "boersennotierte-unternehmen/handel-konsum/dokumente/leifheit-aktiengesellschaft/Leifheit_IFRS_DE_PW.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/handel-konsum/dokumente/leifheit-aktiengesellschaft/Leifheit_IFRS_DE_PW.pdf",
  "seiten": [
   53,
   54,
   56
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
-   "Total Assets": 204993000.0,
-   "Total Equity Gross Minority Interest": 98717000.0,
-   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 106276000.0
+   "Total Assets": 185828000.0,
+   "Total Equity Gross Minority Interest": 92930000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 92898000.0
   },
   "2024-12-31": {
-   "Total Assets": 185828000.0,
-   "Total Equity Gross Minority Interest": 92930000.0
+   "Total Assets": 204993000.0,
+   "Total Equity Gross Minority Interest": 98717000.0
   }
  },
  "guv": {
   "2025-12-31": {
-   "Total Revenue": 259206000.0,
-   "Net Income": 8037000.0
+   "Total Revenue": 232575000.0,
+   "Net Income": 6240000.0
   }
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": true,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 185.828,
   "yahoo_ek_quote": 0.5000861011257722,
@@ -38,7 +40,7 @@
  },
  "cashflow": {
   "2025-12-31": {
-   "Operating Cash Flow": 28501000.0
+   "Operating Cash Flow": 15618000.0
   }
  }
 }

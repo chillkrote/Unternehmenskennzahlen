@@ -4,12 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.enbw.com/media/bericht/bericht-2025/downloads/enbw-geschaeftsbericht-2025.pdf",
- "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/enbw-energie-baden-wuerttemberg-ag/enbw-geschaeftsbericht-2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/energie-versorger/dokumente/enbw-energie-baden-wuerttemberg-ag/enbw-geschaeftsbericht-2025.pdf",
  "seiten": [
   98
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 67429000000.0,
@@ -24,6 +25,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000000.0,
   "yahoo_bilanzsumme_mio": 67429.0,
   "yahoo_ek_quote": 0.3214566432840469

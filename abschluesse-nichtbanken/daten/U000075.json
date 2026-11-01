@@ -4,7 +4,7 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.berentzen-gruppe.de/fileadmin/media/4_0_investoren/4_3-berichte/2025_Geschaeftsbericht_gesch.pdf",
- "datei": "boersennotierte-unternehmen/handel-konsum/dokumente/berentzen-gruppe-aktiengesellschaft/2025_Geschaeftsbericht_gesch.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/handel-konsum/dokumente/berentzen-gruppe-aktiengesellschaft/2025_Geschaeftsbericht_gesch.pdf",
  "seiten": [
   36,
   77,
@@ -12,7 +12,8 @@
   115
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 129752000.0,
@@ -31,6 +32,7 @@
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": null,
   "yahoo_ek_quote": null,

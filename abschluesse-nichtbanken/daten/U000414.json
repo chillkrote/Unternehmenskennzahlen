@@ -1,0 +1,43 @@
+{
+ "unternehmen_id": "U000414",
+ "name": "MS Industrie AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.ms-industrie.de/download/jahresfinanzbericht-2025/?wpdmdl=4950&refresh=6ae0af9a89e7f1793109914",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/automobil/dokumente/ms-industrie-ag/MS_Industrie_AG_-_JF-Bericht_2025_web-lock.pdf",
+ "seiten": [
+  18,
+  37,
+  38
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 134084000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 137609000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 144603000.0,
+   "Net Income": -5280000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 134.084,
+  "yahoo_ek_quote": 0.4083484979565049,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 4845000.0
+  }
+ }
+}

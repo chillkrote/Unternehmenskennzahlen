@@ -4,29 +4,31 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.bertrandt.com/fileadmin/files/files/00_Unternehmen/01_Investor_Relations/03_Finanzberichte/GJ_24-25/Bertrandt_GB_24-25_DEU.pdf",
- "datei": "boersennotierte-unternehmen/industrie/dokumente/bertrandt-aktiengesellschaft/Bertrandt_GB_24-25_DEU.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/bertrandt-aktiengesellschaft/Bertrandt_GB_24-25_DEU.pdf",
  "seiten": [
   185,
-  265,
-  267
+  264,
+  265
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
-   "Total Assets": 734261000.0
+   "Total Assets": 879538000.0
   },
   "2024-12-31": {
-   "Total Assets": 879538000.0
+   "Total Assets": 734261000.0
   }
  },
  "guv": {
   "2025-12-31": {
-   "Total Revenue": 976523000.0
+   "Total Revenue": 913964000.0
   }
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": true,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 734.261,
   "yahoo_ek_quote": 0.4182014297368374,
@@ -34,7 +36,7 @@
  },
  "cashflow": {
   "2025-12-31": {
-   "Operating Cash Flow": 25660000.0
+   "Operating Cash Flow": 76884000.0
   }
  }
 }

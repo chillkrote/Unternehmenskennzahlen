@@ -4,7 +4,7 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://investor-relations.jdcgroup.de/wp-content/uploads/JDCGROUP_GB2025_DE_RZ.pdf",
- "datei": "boersennotierte-unternehmen/finanzdienstleister/dokumente/jdc-group-ag/JDCGROUP_GB2025_DE_RZ.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/finanzdienstleister/dokumente/jdc-group-ag/JDCGROUP_GB2025_DE_RZ.pdf",
  "seiten": [
   3,
   30,
@@ -12,7 +12,8 @@
   52
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 244415000.0,
@@ -33,6 +34,7 @@
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 244.415,
   "yahoo_ek_quote": 0.2780516744062353,

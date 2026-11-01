@@ -1,0 +1,35 @@
+{
+ "unternehmen_id": "U000286",
+ "name": "HOMAG Group AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.homag.com/fileadmin/image/reports/HOMAG_Jahresabschluss_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/industrie/dokumente/homag-group-ag/HOMAG_Jahresabschluss_2025.pdf",
+ "seiten": [
+  12,
+  13
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Einzelabschluss (HGB); nicht mit Konzernwerten vergleichbar",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 342996919.17
+  },
+  "2024-12-31": {
+   "Total Assets": 419592980.59
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 4997000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1,
+  "yahoo_bilanzsumme_mio": 342.997,
+  "yahoo_ek_quote": 0.3096443746696175
+ }
+}

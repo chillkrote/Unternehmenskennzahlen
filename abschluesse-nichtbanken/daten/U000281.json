@@ -4,13 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://ir.hgears.com/wp-content/uploads/hGears_Annual_Report_EN_2025.pdf",
- "datei": "boersennotierte-unternehmen/automobil/dokumente/hgears-ag/hGears_Annual_Report_EN_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/automobil/dokumente/hgears-ag/hGears_Annual_Report_EN_2025.pdf",
  "seiten": [
   56,
   58
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 76271000.0
@@ -22,6 +23,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 76.271,
   "yahoo_ek_quote": 0.3193743362483775,

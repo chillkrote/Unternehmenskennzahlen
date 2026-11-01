@@ -4,14 +4,15 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.thegroundsag.com/wp-content/uploads/2026/10/The-Grounds-GB-2025_key.pdf",
- "datei": "boersennotierte-unternehmen/immobilien/dokumente/the-grounds-real-estate-development-ag/The-Grounds-GB-2025_key.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/immobilien/dokumente/the-grounds-real-estate-development-ag/The-Grounds-GB-2025_key.pdf",
  "seiten": [
   72,
   73,
   78
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 168157000.0,
@@ -26,6 +27,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 168.157,
   "yahoo_ek_quote": 0.3719857038362959,

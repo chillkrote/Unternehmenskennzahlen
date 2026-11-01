@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000461",
+ "name": "Park & Bellheimer AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://park-bellheimer.b-cdn.net/Finanzberichte/PB_Konzernabschluss_31122025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/handel-konsum/dokumente/park-und-bellheimer-ag/PB_Konzernabschluss_31122025.pdf",
+ "seiten": [
+  72,
+  73
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 36464000.0,
+   "Total Equity Gross Minority Interest": 17055000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 19409000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 36.464,
+  "yahoo_ek_quote": 0.4677292278668133,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 5942000.0
+  }
+ }
+}

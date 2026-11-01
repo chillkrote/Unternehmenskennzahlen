@@ -4,12 +4,13 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.syzygy-group.net/app/uploads/syzygy-ag-annual-report-2025.pdf",
- "datei": "boersennotierte-unternehmen/telekom-medien/dokumente/syzygy-ag/syzygy-ag-annual-report-2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/telekom-medien/dokumente/syzygy-ag/syzygy-ag-annual-report-2025.pdf",
  "seiten": [
   187
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 53426000.0,
@@ -24,6 +25,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 53.426,
   "yahoo_ek_quote": 0.3320293490061019

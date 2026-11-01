@@ -4,7 +4,7 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.lstelcom.com/fileadmin/content/lst/company/investor_relations/finanzbericht/gb_2024_2025.pdf",
- "datei": "boersennotierte-unternehmen/software-it/dokumente/ls-telcom-ag/gb_2024_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/software-it/dokumente/ls-telcom-ag/gb_2024_2025.pdf",
  "seiten": [
   52,
   53,
@@ -12,7 +12,8 @@
   56
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 37770000.0,
@@ -26,13 +27,12 @@
  },
  "guv": {
   "2025-12-31": {
-   "Total Revenue": 40822000.0,
-   "EBIT": 722000.0,
-   "Net Income": 654000.0
+   "Total Revenue": 42709000.0
   }
  },
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 37.77,
   "yahoo_ek_quote": 0.3911305268731798,
@@ -40,7 +40,7 @@
  },
  "cashflow": {
   "2025-12-31": {
-   "Operating Cash Flow": 5943000.0
+   "Operating Cash Flow": 5737000.0
   }
  }
 }

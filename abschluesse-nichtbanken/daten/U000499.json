@@ -1,0 +1,30 @@
+{
+ "unternehmen_id": "U000499",
+ "name": "Regenbogen AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.regenbogen.ag/resources/persistent/6803799687742b6f055320f6744f1914960e4410/Gesch%C3%A4ftsbericht%202025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/handel-konsum/dokumente/regenbogen-ag/Gesch_ftsbericht_2025.pdf",
+ "seiten": [
+  2
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Einzelabschluss (HGB); nicht mit Konzernwerten vergleichbar",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 32057000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 37871000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 32.056,
+  "yahoo_ek_quote": 0.4444097862072108
+ }
+}

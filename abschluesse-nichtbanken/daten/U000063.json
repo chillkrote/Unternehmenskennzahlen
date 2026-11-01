@@ -1,0 +1,36 @@
+{
+ "unternehmen_id": "U000063",
+ "name": "Bastei Lübbe AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://assets.ctfassets.net/dp8z2k6biv78/6i6VyTj4dNUM5WEMIRampV/7cab6d9edc4d7b30db564e69cf2a40df/Jahresabschluss_Gesch%C3%83_ftsjahr_2024_2025_Bastei_L%C3%83_bbe_AG.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/telekom-medien/dokumente/bastei-luebbe-ag/Jahresabschluss_Gesch__ftsjahr_2024_2025_Bastei_L__bbe_AG.pdf",
+ "seiten": [
+  47,
+  49
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Einzelabschluss (HGB); nicht mit Konzernwerten vergleichbar",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 86681000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 75348000.0
+  }
+ },
+ "guv": {
+  "2025-12-31": {
+   "Total Revenue": 100110000.0,
+   "Net Income": 8868000.0
+  }
+ },
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 109.022,
+  "yahoo_ek_quote": 0.6052264680523197
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "unternehmen_id": "U000166",
+ "name": "Dierig Holding AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.dierig.de/fileadmin/Konzernberichte/2025/dierig_gb_2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/handel-konsum/dokumente/dierig-holding-ag/dierig_gb_2025.pdf",
+ "seiten": [
+  84,
+  85,
+  88
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 143123000.0,
+   "Total Equity Gross Minority Interest": 56054000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 87069000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 118626000.0,
+   "Total Equity Gross Minority Interest": 52652000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 143.123,
+  "yahoo_ek_quote": 0.3916561279458927,
+  "cashflow": "Seite gelesen, keine Gegenprobe"
+ },
+ "cashflow": {
+  "2025-12-31": {
+   "Operating Cash Flow": 2213000.0
+  }
+ }
+}

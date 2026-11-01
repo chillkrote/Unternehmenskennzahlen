@@ -5,34 +5,9 @@
   "versuche": []
  },
  "U000002": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://ir.11880.com/wp-content/uploads/sites/2/2026/04/11880SAG_FY2025Q12026.dt_.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://ir.11880.com/wp-content/uploads/sites/2/2026/04/11880SAG_FY2025Q12026.eng_.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://ir.11880.com/wp-content/uploads/sites/2/2025/04/11880SAG_FY-2024.dt.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://ir.11880.com/wp-content/uploads/sites/2/2025/04/11880SAG_FY2024.eng.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://ir.11880.com/wp-content/uploads/sites/2/2024/04/300424_11880SAG_FY2023_dt.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://ir.11880.com/wp-content/uploads/sites/2/2024/04/300424_11880SAG_FY2023_eng.pdf"
-   }
-  ]
+  "datei": "telekom-medien/dokumente/11880-solutions-ag/11-88-0-IFRS-Konzernbericht-DE-PW.pdf",
+  "status": "geladen",
+  "url": "https://ir.11880.com/wp-content/uploads/sites/2/2026/04/11-88-0-IFRS-Konzernbericht-DE-PW.pdf"
  },
  "U000003": {
   "status": "nicht gefunden",
@@ -85,15 +60,6 @@
   "status": "geladen",
   "url": "https://www.solarparken.com/Finanzberichte/31122025%20JAHRESABSCHLUSS%202025.pdf"
  },
- "U000027": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
- },
- "U000047": {
-  "status": "geladen",
-  "url": "https://www.as-creation.com/fileadmin/07_Investor_Relations/PDFs/Geschaeftsbericht_AS_2025_final.pdf"
- },
  "U000010": {
   "status": "geladen",
   "url": "https://www.aap.de/cms/api/wp-content/uploads/2026/04/aap_KA2025_dt.pdf"
@@ -117,10 +83,6 @@
     "url": "https://live-files.ynfinite.de/v1/file/6a43cd8818d4986251d49850/pik_notice_-_new_super_senior_notes-lcn2godyeymxzlwizq1qkwzmedktbq.pdf"
    },
    {
-    "grund": "nur 2 Seiten",
-    "url": "https://live-files.ynfinite.de/v1/file/6a34debec17a680b46e3ed9d/ausu_bung_pik-option_anleihe_2025_2027_-pik_notice_2027_notes.pdf"
-   },
-   {
     "grund": "Geschäftsjahr nicht erkennbar",
     "url": "https://live-files.ynfinite.de/v1/file/6a3a9691214a3fd059563f50/accentro_gb_de_web.pdf"
    }
@@ -131,9 +93,15 @@
   "suche": "fehler: SSLError",
   "versuche": []
  },
- "U000020": {
-  "status": "geladen",
-  "url": "https://adpeppergroup.com/wp-content/uploads/2026/04/adp_geschaeftsbericht-2025_WEB_verschluesselt.pdf"
+ "U000015": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": [
+   {
+    "grund": "falsches Geschäftsjahr (2019/2024)",
+    "url": "(geladen und verworfen)"
+   }
+  ]
  },
  "U000016": {
   "status": "nicht gefunden",
@@ -147,6 +115,10 @@
  "U000018": {
   "status": "geladen",
   "url": "https://www.adler-group.com/fileadmin/web/docs/IR/Hauptversammlung/2026/Adler_Group_SA_-_Integrated_Report_-_as_at_31.12.2025.pdf"
+ },
+ "U000020": {
+  "status": "geladen",
+  "url": "https://adpeppergroup.com/wp-content/uploads/2026/04/adp_geschaeftsbericht-2025_WEB_verschluesselt.pdf"
  },
  "U000021": {
   "status": "nicht gefunden",
@@ -173,6 +145,11 @@
  "U000026": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
+  "versuche": []
+ },
+ "U000027": {
+  "status": "nicht gefunden",
+  "suche": "ok",
   "versuche": []
  },
  "U000028": {
@@ -214,6 +191,11 @@
    }
   ]
  },
+ "U000033": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": []
+ },
  "U000034": {
   "status": "nicht gefunden",
   "suche": "ok",
@@ -221,17 +203,8 @@
    {
     "grund": "nur 1 Seiten",
     "url": "https://cdn.all-for-one.com/corporate-media/company/investor_relations/verguetungsberichte/hv-2025-all41g-beschluss-verguetungsbericht-2023-24-de-180325.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://cdn.all-for-one.com/corporate-media/company/investor_relations/hv/hv-2026/hv-2026-all41group-doku-homepage-datenschutz-de-220126.pdf"
    }
   ]
- },
- "U000033": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
  },
  "U000035": {
   "status": "geladen",
@@ -297,10 +270,9 @@
   "status": "geladen",
   "url": "https://artec.de/wp-content/uploads/artec_technologies_Geschaeftsbericht_2025-1.pdf"
  },
- "U000685": {
-  "datei": "finanzdienstleister/dokumente/ascory-bank-ag/20260413-ascory-geschaeftsbericht-2025-web.pdf",
+ "U000047": {
   "status": "geladen",
-  "url": "https://www.ascory-bank.de/media/601/download/20260413_ascory-geschaeftsbericht-2025-web.pdf?v=1"
+  "url": "https://www.as-creation.com/fileadmin/07_Investor_Relations/PDFs/Geschaeftsbericht_AS_2025_final.pdf"
  },
  "U000048": {
   "status": "geladen",
@@ -331,10 +303,6 @@
  "U000055": {
   "status": "geladen",
   "url": "https://www.averdion.de/wp-content/uploads/Digital-Copy_AVERDION-SE_IFRS-JA2025_Attestation-Certificate.pdf"
- },
- "U000103": {
-  "status": "geladen",
-  "url": "https://bs-ag.com/wp-content/uploads/2026/09/GB_2025_26.pdf"
  },
  "U000056": {
   "status": "nicht gefunden",
@@ -437,28 +405,15 @@
   "status": "geladen",
   "url": "https://www.binect.com/wp-content/uploads/2026/04/Binect-AG_Geschaeftsbericht_Konzernabschluss-2025_secured.pdf"
  },
- "U000089": {
+ "U000088": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
  },
- "U000088": {
+ "U000089": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "unterjährig laut Dateiname",
-    "url": "https://investors.biofrontera-us.com/wp-content/uploads/2026/05/Form-10-K-for-Biofrontera-INC-filed-03_19_2026-BFRI-Biofrontera-Inc.-Annual-report-pursuant-to-Section-13-or-15d-10-K-2026-03-19.pdf"
-   },
-   {
-    "grund": "unterjährig laut Dateiname",
-    "url": "https://investors.biofrontera-us.com/wp-content/uploads/2025/03/Form10-K_Annual_Report_2024.pdf"
-   },
-   {
-    "grund": "unterjährig laut Dateiname",
-    "url": "https://investors.biofrontera-us.com/wp-content/uploads/2023/04/BFRI-Annual_report_pursuant_to_Section_13or15d-10-K2023-03-13.pdf"
-   }
-  ]
+  "versuche": []
  },
  "U000090": {
   "status": "geladen",
@@ -530,6 +485,10 @@
   "status": "geladen",
   "url": "https://bmag-online.de/wp-content/uploads/2026/08/BMAG-GB-2025.pdf"
  },
+ "U000103": {
+  "status": "geladen",
+  "url": "https://bs-ag.com/wp-content/uploads/2026/09/GB_2025_26.pdf"
+ },
  "U000105": {
   "status": "geladen",
   "url": "https://www.camerit.de/wp-content/uploads/2026/04/CAMERIT_AG_Geschaeftsbericht_fuer-2025-fina-le-Version-Stand-06.04.26.pdf"
@@ -578,6 +537,36 @@
   "suche": "ok",
   "versuche": []
  },
+ "U000118": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": [
+   {
+    "grund": "nur 8 Seiten",
+    "url": "https://cdn.prod.website-files.com/69488513498b20ea4f33e2c7/69488513498b20ea4f33e559_Jahresabschluss%202023%20Circus%20SE.pdf"
+   },
+   {
+    "grund": "nur 7 Seiten",
+    "url": "https://cdn.prod.website-files.com/69488513498b20ea4f33e2c7/69488513498b20ea4f33e8d6_Bezugsangebot_Circus_BarKE25_final.pdf"
+   },
+   {
+    "grund": "nur 12 Seiten",
+    "url": "https://cdn.prod.website-files.com/69488513498b20ea4f33e2c7/69488513498b20ea4f33e7e1_Circus_SE_WIB.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://cdn.prod.website-files.com/69488513498b20ea4f33e2c7/69488513498b20ea4f33e9e2_8.%20Circus_Vollmacht%20an%20die%20Stimmrechtsvertreter%20der%20Gesellschaft_2025.pdf"
+   },
+   {
+    "grund": "nur 1 Seiten",
+    "url": "https://cdn.prod.website-files.com/69488513498b20ea4f33e2c7/69488513498b20ea4f33e929_9.%20Circus_Vollmacht%20an%20einen%20Dritten_2025.pdf"
+   },
+   {
+    "grund": "Geschäftsjahr nicht erkennbar",
+    "url": "https://cdn.prod.website-files.com/69488513498b20ea4f33e2c7/69488513498b20ea4f33e4cd_Annual%20Report%202023%20-%20Circus%20SE_DE.pdf"
+   }
+  ]
+ },
  "U000120": {
   "status": "nicht gefunden",
   "suche": "ok",
@@ -601,7 +590,7 @@
   "suche": "ok",
   "versuche": [
    {
-    "grund": "unterjährig laut Dateiname",
+    "grund": "auf Ausschlussliste",
     "url": "https://coreo.de/wp-content/uploads/2025/11/Coreo-AG_Halbjahresabschluss-2025_final_verschluesselt.pdf"
    },
    {
@@ -659,16 +648,7 @@
  "U000128": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.covestro.com/-/media/covestro/corporate/investors/debt/debt-issuance-program/documents/covestro-debt-issuance-program-base-prospectus-dated-march-14-2025.pdf?rev=afdda37898f54a5ba83574f1447ac7c3&amp;hash=EC37D836798011D3E154F9533974A8F6"
-   },
-   {
-    "grund": "nur 15 Seiten",
-    "url": "https://www.covestro.com/-/media/covestro/corporate/investors/debt/debt-issuance-program/documents/1st-supplement-to-the-base-prospectus-dated-march-14-2025.pdf?rev=e419f705bb664d1785d41a8837a006b2&amp;hash=0E32C9BD9F2A900658F084B10F10F4F7"
-   }
-  ]
+  "versuche": []
  },
  "U000130": {
   "status": "nicht gefunden",
@@ -703,34 +683,9 @@
   "versuche": []
  },
  "U000140": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": [
-   {
-    "grund": "http 503",
-    "url": "https://defama.de/wp-content/uploads/2026/05/DEFAMA_Bilanz_2025_Geschaeftsbericht.pdf"
-   },
-   {
-    "grund": "http 503",
-    "url": "https://defama.de/wp-content/uploads/2025/11/DEFAMA_Bilanz_2025-09-30_Neun-Monats-Bericht.pdf"
-   },
-   {
-    "grund": "nur 4 Seiten",
-    "url": "https://defama.de/wp-content/uploads/2022/10/SRC_2022-10-26_DEFAMA.pdf"
-   },
-   {
-    "grund": "nur 6 Seiten",
-    "url": "https://defama.de/wp-content/uploads/2021/01/SRC_2021-01-18_DEFAMA.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://defama.de/wp-content/uploads/2025/07/2025-07-10-IZ-Interview-Matthias-Schrade.pdf"
-   },
-   {
-    "grund": "unterjährig laut Dateiname",
-    "url": "https://defama.de/wp-content/uploads/2025/09/DEFAMA_Bilanz_2025-06-30_Halbjahresbericht.pdf"
-   }
-  ]
+  "datei": "immobilien/dokumente/defama-deutsche-fachmarkt-ag/DEFAMA_Bilanz_2025_Geschaeftsbericht.pdf",
+  "status": "geladen",
+  "url": "https://defama.de/wp-content/uploads/2026/05/DEFAMA_Bilanz_2025_Geschaeftsbericht.pdf"
  },
  "U000142": {
   "status": "geladen",
@@ -782,7 +737,7 @@
  },
  "U000160": {
   "status": "nicht gefunden",
-  "suche": "fehler: ProxyError",
+  "suche": "fehler: ValueError",
   "versuche": []
  },
  "U000161": {
@@ -831,14 +786,14 @@
   "status": "geladen",
   "url": "https://douglas.group/fileadmin/user_upload/DOUGLAS_Geschaeftsbericht_2024-2025_DE.pdf"
  },
- "U000175": {
-  "status": "nicht gefunden",
-  "suche": "gesperrt",
-  "versuche": []
- },
  "U000174": {
   "status": "nicht gefunden",
   "suche": "fehler: ReadTimeout",
+  "versuche": []
+ },
+ "U000175": {
+  "status": "nicht gefunden",
+  "suche": "gesperrt",
   "versuche": []
  },
  "U000176": {
@@ -849,11 +804,6 @@
  "U000177": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
- },
- "U000195": {
-  "status": "nicht gefunden",
-  "suche": "gesperrt",
   "versuche": []
  },
  "U000179": {
@@ -917,6 +867,11 @@
  "U000193": {
   "status": "geladen",
   "url": "https://www.energiekontor.de/fileadmin/user_upload/IR/berichte/finanzberichte/2025/2025-GJ_Energiekontor_AG_Geschaeftsbericht_s.pdf"
+ },
+ "U000195": {
+  "status": "nicht gefunden",
+  "suche": "gesperrt",
+  "versuche": []
  },
  "U000196": {
   "status": "nicht gefunden",
@@ -986,7 +941,7 @@
  },
  "U000206": {
   "status": "nicht gefunden",
-  "suche": "fehler: ProxyError",
+  "suche": "fehler: ValueError",
   "versuche": []
  },
  "U000207": {
@@ -1062,7 +1017,7 @@
     "url": "https://fcr-immobilien.de/wp-content/uploads/2025/04/2025-04-11-FCR-Immobilien-DE-prelim-FY24-results___g7yie3ke.pdf"
    },
    {
-    "grund": "unterjährig laut Dateiname",
+    "grund": "auf Ausschlussliste",
     "url": "https://fcr-immobilien.de/wp-content/uploads/2025/08/Konzern-Halbjahresfinanzbericht_2025_FCR_Immobilien_AG.pdf"
    },
    {
@@ -1087,7 +1042,7 @@
  },
  "U000220": {
   "status": "nicht gefunden",
-  "suche": "fehler: ConnectionError",
+  "suche": "fehler: SSLError",
   "versuche": []
  },
  "U000222": {
@@ -1189,7 +1144,7 @@
   "suche": "ok",
   "versuche": [
    {
-    "grund": "unterjährig laut Dateiname",
+    "grund": "auf Ausschlussliste",
     "url": "https://greiffenberger.de/wp-content/uploads/2025/08/Greiffenberger_Halbjahresbericht_2025.pdf"
    },
    {
@@ -1277,28 +1232,16 @@
  "U000270": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 15 Seiten",
-    "url": "https://www.hausvorteil.com/files/Finanzberichte/HausVorteil%20AG_JAP%2031.12.25_Testatsexemplar_sign.pdf"
-   },
-   {
-    "grund": "http 404",
-    "url": "https://www.hausvorteil.com/Finanzberichte/HausVorteil%20AG_JAP%2031.12.25_Testatsexemplar_sign.pdf"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.hausvorteil.com/files/PCR_HausVorteil_2025_12_01_ENG.pdf"
-   },
-   {
-    "grund": "nur 3 Seiten",
-    "url": "https://www.hausvorteil.com/files/HH-Hamburg_HRB_167566-CD-20251107231421.pdf"
-   }
-  ]
+  "versuche": []
  },
  "U000271": {
   "status": "geladen",
   "url": "https://www.hawesko-holding.com/media/pages/investor-relations/geschaftsbericht/f6b5fa517b-1777359265/hawesko_holding_se_geschaeftsbericht_2025.pdf"
+ },
+ "U000273": {
+  "status": "nicht gefunden",
+  "suche": "gesperrt",
+  "versuche": []
  },
  "U000274": {
   "status": "nicht gefunden",
@@ -1308,11 +1251,6 @@
  "U000275": {
   "status": "geladen",
   "url": "https://heidelberg-pharma.com/images/managed/HDP_Geschaftsbericht_2025.pdf"
- },
- "U000273": {
-  "status": "nicht gefunden",
-  "suche": "gesperrt",
-  "versuche": []
  },
  "U000276": {
   "status": "geladen",
@@ -1368,11 +1306,6 @@
   "suche": "ok",
   "versuche": []
  },
- "U000288": {
-  "status": "nicht gefunden",
-  "suche": "gesperrt",
-  "versuche": []
- },
  "U000285": {
   "status": "geladen",
   "url": "https://www.hoftexgroup.com/hoftexgroupag-de/news-und-media/dateien/finanzberichte/2025/Jahresabschluss-der-Hoftex-Group-AG-zum-31.12.2025.pdf"
@@ -1386,10 +1319,45 @@
   "suche": "ok",
   "versuche": []
  },
+ "U000288": {
+  "status": "nicht gefunden",
+  "suche": "gesperrt",
+  "versuche": []
+ },
  "U000289": {
   "status": "nicht gefunden",
   "suche": "ok",
   "versuche": []
+ },
+ "U000291": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": [
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://www.hur.com/fileadmin/user_upload/media/Berichte_IR/2026/HuR_GB2025.pdf"
+   },
+   {
+    "grund": "nur 13 Seiten",
+    "url": "https://www.hur.com/fileadmin/user_upload/media/Hauptversammlung_2025/HR_-_Veroeffentlichungsversion_Verguetungssystem_fuer_die_Mitglieder_der_Geschaeftsfuehrung_2025_54025703.1_.pdf"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://www.hur.com/fileadmin/user_upload/media/Hauptversammlung_2026/HuR_Verguetungsbericht2025.pdf"
+   },
+   {
+    "grund": "auf Ausschlussliste",
+    "url": "https://www.hur.com/fileadmin/user_upload/media/Berichte_IR/2026/HuR_Erklaerung_Unternehmensfuehrung2025.pdf"
+   },
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://www.hur.com/fileadmin/user_upload/media/Berichte_IR/2025/HuR_Q3_2025.pdf"
+   },
+   {
+    "grund": "unterjährig laut Dateiname",
+    "url": "https://www.hur.com/fileadmin/user_upload/media/Berichte_IR/2025/HuR_Q2_2025.pdf"
+   }
+  ]
  },
  "U000292": {
   "status": "nicht gefunden",
@@ -1406,15 +1374,15 @@
   "versuche": [
    {
     "grund": "ConnectionError",
-    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2026/02 Jahresabschluss 2025 - Lagebericht - Anhang.pdf?_wpnonce=4bb4884dc2"
+    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2026/02 Jahresabschluss 2025 - Lagebericht - Anhang.pdf?_wpnonce=8929c99e4e"
    },
    {
     "grund": "nur 1 Seiten",
-    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2026/01 Geschäftszahlen 01.01.-31.12.2025.pdf?_wpnonce=4bb4884dc2"
+    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2026/01 Geschäftszahlen 01.01.-31.12.2025.pdf?_wpnonce=8929c99e4e"
    },
    {
     "grund": "Geschäftsjahr nicht erkennbar",
-    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2012/Geschäftsbericht 2011.pdf?_wpnonce=4bb4884dc2"
+    "url": "https://hyrican.de/wp-content/uploads/Investor-Relations/2012/Geschäftsbericht 2011.pdf?_wpnonce=8929c99e4e"
    }
   ]
  },
@@ -1526,10 +1494,6 @@
   "status": "geladen",
   "url": "https://media-live2.prod.scw.jungheinrichcloud.com/resource/blob/2383278/c95b4cb0ae97a0f7d3cb70ca7ecacf19/download-gb2025-data.pdf"
  },
- "U000350": {
-  "status": "geladen",
-  "url": "https://www.kpluss.com/.downloads/ir/2025/kpluss-capital-market-conferences-dec-2025.pdf"
- },
  "U000322": {
   "status": "geladen",
   "url": "https://www.kap.de/fileadmin/user_upload/kap.de/Dateien/Pdf/Geschaeftsberichte/Geschaeftsbericht_2025/KAP_AG_2025_Gescha__ftsbericht_web.pdf"
@@ -1572,6 +1536,10 @@
   "datei": "software-it/dokumente/kps-ag/KPS-Konzernabschluss-2024-2025-1.pdf",
   "status": "geladen",
   "url": "https://kps.com/wp-content/uploads/2026/02/KPS-Konzernabschluss-2024-2025-1.pdf"
+ },
+ "U000350": {
+  "status": "geladen",
+  "url": "https://www.kpluss.com/.downloads/ir/2025/kpluss-capital-market-conferences-dec-2025.pdf"
  },
  "U000351": {
   "status": "geladen",
@@ -1854,13 +1822,13 @@
   "status": "geladen",
   "url": "https://www.lila-logistik.com/hubfs/M%C3%BCller%20Die%20lila%20Logistik%20SE_Konzernjahresfinanzbericht%202025.pdf?hsLang=de"
  },
- "U000420": {
-  "status": "geladen",
-  "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Konzerngeschaeftsbericht-2025-de.pdf/_jcr_content/renditions/original./MunichRe-Konzerngeschaeftsbericht-2025-de.pdf"
- },
  "U000418": {
   "status": "geladen",
   "url": "https://www.multitude.com/~/media/Files/M/Multitude/documents/multitude-capital-oyj-annual-report-2025.pdf"
+ },
+ "U000420": {
+  "status": "geladen",
+  "url": "https://www.munichre.com/content/dam/munichre/mrwebsiteslaunches/2025-annual-report/MunichRe-Konzerngeschaeftsbericht-2025-de.pdf/_jcr_content/renditions/original./MunichRe-Konzerngeschaeftsbericht-2025-de.pdf"
  },
  "U000421": {
   "status": "geladen",
@@ -1918,29 +1886,21 @@
    },
    {
     "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro-Group_2024%20Annual%20Report_EN.pdf?hsLang=en"
-   },
-   {
-    "grund": "nur 10 Seiten",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE_Best%C3%A4tigungsvermerk_KA2024.pdf?hsLang=en"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE%202024%20Standalone%20FS_EN.pdf?hsLang=en"
-   },
-   {
-    "grund": "nur 10 Seiten",
-    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual-Report-2024/Nagarro%20SE_Best%C3%A4tigungsvermerk_JA2024.pdf?hsLang=en"
-   },
-   {
-    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
     "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual_Report_2025/Annual_report_2025_de.pdf?hsLang=de"
+   },
+   {
+    "grund": "kein Geschäftsbericht/Abschluss erkennbar",
+    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual_Report_2025/Nagarro%20SE_2025%20Standalone%20FS_DE.pdf?hsLang=de"
+   },
+   {
+    "grund": "nur 14 Seiten",
+    "url": "https://www.nagarro.com/hubfs/Investors/InvestorDocuments/Annual_Report_2025/Remuneration_report_2025_de.pdf?hsLang=de"
    }
   ]
  },
  "U000428": {
   "status": "nicht gefunden",
-  "suche": "fehler: ProxyError",
+  "suche": "fehler: ValueError",
   "versuche": []
  },
  "U000429": {
@@ -2035,7 +1995,7 @@
     "url": "https://nexr-technologies.de/wp-content/uploads/2024/11/FINAL-Geschaftsbericht-2018_Staramba-SE-_EN-_20190813.pdf"
    },
    {
-    "grund": "kein lesbares PDF (PdfStreamError)",
+    "grund": "ValueError",
     "url": "https://staramba.com/wp-content/uploads/2019/04/staramba-se-_geschaeftsbericht-2017-_eng-_20190123.pdf"
    },
    {
@@ -2046,7 +2006,7 @@
  },
  "U000438": {
   "status": "nicht gefunden",
-  "suche": "ok",
+  "suche": "robots.txt",
   "versuche": []
  },
  "U000439": {
@@ -2126,20 +2086,7 @@
  "U000448": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": [
-   {
-    "grund": "nur 3 Seiten",
-    "url": "https://www.nuernberger.com/medien/pdf/media-relations/presseinformationen/pin2026/nuernberger-verdient-2025-voraussichtlich-mehr-als-prognostiziert.pdf"
-   },
-   {
-    "grund": "nur 2 Seiten",
-    "url": "https://www.nuernberger.com/medien/pdf/media-relations/presseinformationen/pin2024/nuernberger-lebensversicherung-auch-2025-ein-verlaesslicher-partner.pdf"
-   },
-   {
-    "grund": "nur 1 Seiten",
-    "url": "https://www.nuernberger.com/medien/pdf/media-relations/presseinformationen/pin2025/nuernberger-und-vienna-insurance-group-in-gespraechen-ueber-zusammenarbeit.pdf"
-   }
-  ]
+  "versuche": []
  },
  "U000449": {
   "status": "geladen",
@@ -2312,11 +2259,6 @@
   "suche": "ok",
   "versuche": []
  },
- "U000507": {
-  "status": "nicht gefunden",
-  "suche": "gesperrt",
-  "versuche": []
- },
  "U000494": {
   "status": "geladen",
   "url": "https://www.rational-online.com/media/investor-relations/veroeffentlichungen-gj-2025/rational-ag---annual-report-fy-2025-(single-pages).pdf"
@@ -2364,6 +2306,11 @@
  "U000506": {
   "status": "geladen",
   "url": "https://rostra.ag/wp-content/uploads/2026/04/AnnualReport_HGB_DE_2025_RostraAG.pdf"
+ },
+ "U000507": {
+  "status": "nicht gefunden",
+  "suche": "gesperrt",
+  "versuche": []
  },
  "U000508": {
   "status": "geladen",
@@ -2475,7 +2422,24 @@
  "U000528": {
   "status": "nicht gefunden",
   "suche": "ok",
-  "versuche": []
+  "versuche": [
+   {
+    "grund": "nur 3 Seiten",
+    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-098-2025_Formular_Schluesselbestellung_A4_27-02a_beschreibbar.pdf"
+   },
+   {
+    "grund": "nur 5 Seiten",
+    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-098-2025_Formular_Hausordnung_A4_27-02.pdf"
+   },
+   {
+    "grund": "nur 3 Seiten",
+    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-089-2025_Formular_Merkblatt_HL_A4_27-02.pdf"
+   },
+   {
+    "grund": "nur 7 Seiten",
+    "url": "https://www.sedlmayr-ag.de/wp-content/uploads/2025/03/SGI-098-2025_Formular_Mieterselbstauskunft_A4_12-03_beschreibar.pdf"
+   }
+  ]
  },
  "U000529": {
   "status": "geladen",
@@ -2541,6 +2505,28 @@
   "suche": "gesperrt",
   "versuche": []
  },
+ "U000546": {
+  "status": "geladen",
+  "url": "https://static1.squarespace.com/static/697762c00a4ed24c8457c11e/t/6a4de00ab9102f4c043adef2/1783488522328/smag-mobile-antenna-masts-gmbh-ja-2025.pdf"
+ },
+ "U000547": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": []
+ },
+ "U000548": {
+  "status": "geladen",
+  "url": "https://www.sma.de/fileadmin/content/global/Investor_Relations/Documents/Publications/Finanzberichte/2025/Geschaeftsbericht-der-SMA-Gruppe-2025.pdf?v=1774464189"
+ },
+ "U000549": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": []
+ },
+ "U000550": {
+  "status": "geladen",
+  "url": "https://www.smtscharf.com/investorrelations/wp-content/uploads/2026/04/SMT_Scharf_GB_2025_DE.pdf"
+ },
  "U000551": {
   "status": "nicht gefunden",
   "suche": "ok",
@@ -2571,36 +2557,14 @@
    }
   ]
  },
- "U000548": {
-  "status": "geladen",
-  "url": "https://www.sma.de/fileadmin/content/global/Investor_Relations/Documents/Publications/Finanzberichte/2025/Geschaeftsbericht-der-SMA-Gruppe-2025.pdf?v=1774464189"
- },
- "U000546": {
-  "status": "geladen",
-  "url": "https://static1.squarespace.com/static/697762c00a4ed24c8457c11e/t/6a4de00ab9102f4c043adef2/1783488522328/smag-mobile-antenna-masts-gmbh-ja-2025.pdf"
- },
- "U000547": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
- },
- "U000549": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
- },
- "U000550": {
-  "status": "geladen",
-  "url": "https://www.smtscharf.com/investorrelations/wp-content/uploads/2026/04/SMT_Scharf_GB_2025_DE.pdf"
- },
  "U000552": {
   "status": "geladen",
   "url": "https://investor-relations.snpgroup.com/siteassets/2-publications/archive/en/2025/sn_2025_gb_eng.pdf"
  },
  "U000553": {
-  "status": "nicht gefunden",
-  "suche": "ok",
-  "versuche": []
+  "datei": "software-it/dokumente/softing-ag/Softing_AG_KAP_31.12.25_Testat_signed_signed.pdf",
+  "status": "geladen",
+  "url": "https://investor.softing.com/fileadmin/sof-files/pdf/ir/hv/2026/Softing_AG_KAP_31.12.25_Testat_signed_signed.pdf"
  },
  "U000554": {
   "status": "geladen",
@@ -2654,14 +2618,14 @@
   "status": "geladen",
   "url": "https://ir.steyr-motors.com/wp-content/uploads/2026/06/SteyrMotors_GB-2025_DE.pdf"
  },
+ "U000628": {
+  "status": "geladen",
+  "url": "https://inside.stock3.com/wp-content/uploads/2026/07/05.-Gebilligter-Konzernabschluss-zum-31.-Dezember-2025.pdf"
+ },
  "U000629": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
   "versuche": []
- },
- "U000628": {
-  "status": "geladen",
-  "url": "https://inside.stock3.com/wp-content/uploads/2026/07/05.-Gebilligter-Konzernabschluss-zum-31.-Dezember-2025.pdf"
  },
  "U000630": {
   "status": "geladen",
@@ -2775,7 +2739,7 @@
  },
  "U000654": {
   "status": "nicht gefunden",
-  "suche": "fehler: ReadTimeout",
+  "suche": "fehler: ConnectionError",
   "versuche": []
  },
  "U000655": {
@@ -2883,6 +2847,16 @@
   "status": "geladen",
   "url": "https://www.uca.de/de/investor_relations/UCA_Geschaeftsbericht_2025.pdf"
  },
+ "U000674": {
+  "status": "nicht gefunden",
+  "suche": "ok",
+  "versuche": [
+   {
+    "grund": "falsches Geschäftsjahr (2019/2024)",
+    "url": "(geladen und verworfen)"
+   }
+  ]
+ },
  "U000678": {
   "status": "nicht gefunden",
   "suche": "gesperrt",
@@ -2914,6 +2888,11 @@
   "datei": "finanzdienstleister/dokumente/value-holdings-ag/Geschaeftsbericht-Value-Holdings-AG-2025.pdf",
   "status": "geladen",
   "url": "https://www.value-holdings.de/wp-content/uploads/Geschaeftsbericht-Value-Holdings-AG-2025.pdf"
+ },
+ "U000685": {
+  "datei": "finanzdienstleister/dokumente/ascory-bank-ag/20260413-ascory-geschaeftsbericht-2025-web.pdf",
+  "status": "geladen",
+  "url": "https://www.ascory-bank.de/media/601/download/20260413_ascory-geschaeftsbericht-2025-web.pdf?v=1"
  },
  "U000687": {
   "status": "geladen",

@@ -1,0 +1,33 @@
+{
+ "unternehmen_id": "U000454",
+ "name": "ORBIS AG",
+ "waehrung": "EUR",
+ "quelle": "Geschäftsbericht (Primärquelle)",
+ "quelle_url": "https://www.orbis-group.com/fileadmin/dateien/de/downloads/ir/jahresfinanzberichte/2025_Jahresfinanzbericht.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/software-it/dokumente/orbis-ag/2025_Jahresfinanzbericht.pdf",
+ "seiten": [
+  13
+ ],
+ "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
+ "bilanz": {
+  "2025-12-31": {
+   "Total Assets": 87753000.0,
+   "Total Equity Gross Minority Interest": 42114000.0,
+   "Total Liabilities Net Minority Interest (abgeleitet: Bilanzsumme minus Eigenkapital)": 45639000.0
+  },
+  "2024-12-31": {
+   "Total Assets": 88409000.0,
+   "Total Equity Gross Minority Interest": 41026000.0
+  }
+ },
+ "guv": {},
+ "kontrolle": {
+  "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
+  "einheitsfaktor": 1000.0,
+  "yahoo_bilanzsumme_mio": 87.753,
+  "yahoo_ek_quote": 0.4799152165737923
+ }
+}

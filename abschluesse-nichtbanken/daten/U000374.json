@@ -4,13 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://www.limes-schlosskliniken.de/app/uploads/2026/05/Geschaeftsbericht-2025-LIMES-Schlosskliniken-2.pdf",
- "datei": "boersennotierte-unternehmen/pharma-gesundheit/dokumente/limes-schlosskliniken-ag/Geschaeftsbericht-2025-LIMES-Schlosskliniken-2.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/pharma-gesundheit/dokumente/limes-schlosskliniken-ag/Geschaeftsbericht-2025-LIMES-Schlosskliniken-2.pdf",
  "seiten": [
   20,
   22
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 45174690.0,
@@ -25,6 +26,7 @@
  "guv": {},
  "kontrolle": {
   "bilanzsumme": "Aktiva=Passiva",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1,
   "yahoo_bilanzsumme_mio": 45.175,
   "yahoo_ek_quote": 0.5938129957283603,

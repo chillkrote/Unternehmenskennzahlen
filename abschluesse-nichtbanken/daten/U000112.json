@@ -4,13 +4,14 @@
  "waehrung": "EUR",
  "quelle": "Geschäftsbericht (Primärquelle)",
  "quelle_url": "https://codastic-centrotherm-next.cdn.prismic.io/codastic-centrotherm-next/actvmpGXnQHGZHeU_Gesch%C3%A4ftsbericht2025.pdf",
- "datei": "boersennotierte-unternehmen/energie-versorger/dokumente/centrotherm-international-ag/actvmpGXnQHGZHeU_Gesch_ftsbericht2025.pdf",
+ "datei": "/home/user/unternehmenskennzahlen/boersennotierte-unternehmen/energie-versorger/dokumente/centrotherm-international-ag/actvmpGXnQHGZHeU_Gesch_ftsbericht2025.pdf",
  "seiten": [
   2,
   19
  ],
  "pruefstatus": "Primärbericht; automatisch extrahiert und gegen Terminalwerte geprüft; Stichprobe offen",
- "abruf": "2026-10-30",
+ "abschluss": "Konzernabschluss",
+ "abruf": "2026-10-31",
  "bilanz": {
   "2025-12-31": {
    "Total Assets": 403290000.0,
@@ -30,6 +31,7 @@
  },
  "kontrolle": {
   "bilanzsumme": "Yahoo-Abgleich (3 %)",
+  "spalten_umgekehrt": false,
   "einheitsfaktor": 1000.0,
   "yahoo_bilanzsumme_mio": 403.29,
   "yahoo_ek_quote": 0.3167125393637333

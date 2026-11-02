@@ -2301,8 +2301,12 @@ XTB,U001280,name
 ZEALAND PHARMA,U001281,name
 ZURICH INSURANCE GROUP,U001282,name
 ZEGONA COMMUNICATIONS,U001283,name
-LVMH Moët Hennessy Louis Vuitton SE,U001284,name
-TotalEnergies SE,U001285,name
-Schneider Electric SE,U001286,name
-Capgemini SE,U001287,name
+LVMH Moët Hennessy Louis Vuitton SE,U001058,name
+TotalEnergies SE,U001235,name
+Schneider Electric SE,U001165,name
+Capgemini SE,U000867,name
 Société Générale,U001288,name
+U001284,U001058,id_alt
+U001287,U000867,id_alt
+U001286,U001165,id_alt
+U001285,U001235,id_alt

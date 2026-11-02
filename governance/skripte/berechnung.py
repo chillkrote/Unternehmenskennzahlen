@@ -21,6 +21,7 @@ A = {
  'U000279': (105.283, 'Gesamtbelegschaft Deutschland (Ø-Vergütung, Vollzeitkraft ohne Altersversorgung)', VB('U000279'), 56),
  'U000017': (114.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Personalaufwand je FTE)', VB('U000017'), 19),
  'U000415': (101.662, 'aktive Stammbelegschaft Deutschland, auf Vollzeit normiert', VB('U000415'), 20),
+ 'U000036': (95.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Ø-Vergütung lt. vergleichender Darstellung)', GB('U000036'), 333),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte

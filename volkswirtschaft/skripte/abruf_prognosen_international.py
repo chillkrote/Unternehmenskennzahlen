@@ -525,6 +525,44 @@ def bok():
     return [x for x in zeilen if x]
 
 
+# --- Tschechien: Tschechische Nationalbank, Tabelle der Kernindikatoren zum Bericht zur Geldpolitik (Excel je Ausgabe) ----------
+CNB_AUSGABEN = (("zima", "Feb"), ("jaro", "Mai"), ("leto", "Aug"), ("podzim", "Nov"))
+
+
+def cnb():
+    import warnings
+    import openpyxl
+    zeilen = []
+    seite = "https://www.cnb.cz/en/monetary-policy/monetary-policy-reports/"
+    for jahr in (2024, 2025, 2026):
+        for saison, mon in CNB_AUSGABEN:
+            url = f"https://www.cnb.cz/export/sites/cnb/cs/menova-politika/.galleries/zpravy_o_menove_politice/{jahr}/{saison}_{jahr}/download/zomp_{jahr}_{saison}_makroindikatory.xlsx"
+            try:
+                roh = hole(url)
+            except urllib.error.HTTPError:
+                continue
+            name = f"cnb_makroindikatory_{jahr}_{saison}.xlsx"
+            speichere(name, roh)
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                ws = openpyxl.load_workbook(ROH / name, data_only=True).worksheets[0]
+            rows = [r for r in ws.iter_rows(values_only=True)]
+            kopf = next((r for r in rows if isinstance(r[2], int) and isinstance(r[3], int)), None)
+            if not kopf:
+                continue
+            for g, pre, hin in (("bip_wachstum", "HDP  (%, meziročně, reálně", "BIP real, Veränderung zum Vorjahr"),
+                                ("inflation_vpi", "Spotřebitelské ceny", "VPI, Veränderung zum Vorjahr, Jahresdurchschnitt"),
+                                ("arbeitslosenquote", "Obecná míra nezaměstnanosti (ILO", "Arbeitslosenquote nach ILO, Jahresdurchschnitt, Alter 15-64"),
+                                ("leitzins", "2T repo sazba", "Zweiwochen-Repo-Satz der CNB (Leitzins), Jahresdurchschnitt")):
+                zl = next((r for r in rows if isinstance(r[1], str) and r[1].strip().startswith(pre)), None)
+                if not zl:
+                    continue
+                for ci, j in enumerate(kopf):
+                    if isinstance(j, int) and j >= jahr and isinstance(zl[ci], (int, float)):
+                        zeilen.append(z("CZ", "Česká národní banka", f"Bericht zur Geldpolitik {mon} {jahr}", "", g, "%", str(j), float(zl[ci]), "Primärdokument", url, hin))
+    return [x for x in zeilen if x]
+
+
 # --- Schweiz: SECO-Expertengruppe (Anhang zur Medienmitteilung, aktuelle Prognose und in Klammern die vorherige) ----------
 MON_DE = {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dez"}
 
@@ -552,7 +590,7 @@ def seco():
 
 QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury", hmt), ("Funcas", funcas), ("Fed SEP", fed_sep),
            ("Bank of Canada", boc), ("Bank of Japan", boj), ("EZB-Stabsprognosen", ezb_stab),
-           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba), ("Bank of Korea", bok)]
+           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba), ("Bank of Korea", bok), ("CNB Tschechien", cnb)]
 
 
 def main():

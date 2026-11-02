@@ -16,3 +16,7 @@ geprüft: getrennt gelassen,U000336 / U000348,Kreissparkasse Böblingen,,Kreissp
 geprüft: getrennt gelassen,U000336 / U000347,Kreissparkasse Böblingen,,Kreissparkasse Tübingen,,"Namensähnlichkeit 0.889, eigene Rechtsträger (Prüfliste für Robin)"
 geprüft: getrennt gelassen,U000334 / U000350,KPS AG,,K+S Aktiengesellschaft,,"Namensähnlichkeit 0.889, eigene Rechtsträger (Prüfliste für Robin)"
 geprüft: getrennt gelassen,U000037 / U000296,Altech Advanced Materials AG,,IBU-tec advanced materials AG,,"Namensähnlichkeit 0.88, eigene Rechtsträger (Prüfliste für Robin)"
+zusammengeführt,U001058,LVMH Moët Hennessy Louis Vuitton SE,U001058,LVMH Moët Hennessy Louis Vuitton SE,U001284,"ESEF-Pilot und Europa-Liste führten dasselbe Rechtssubjekt (gleiche ISIN/LEI laut GLEIF), Abgleich 02.11.2026"
+zusammengeführt,U000867,Capgemini SE,U000867,Capgemini SE,U001287,"ESEF-Pilot und Europa-Liste führten dasselbe Rechtssubjekt (gleiche ISIN/LEI laut GLEIF), Abgleich 02.11.2026"
+zusammengeführt,U001165,Schneider Electric SE,U001165,Schneider Electric SE,U001286,"ESEF-Pilot und Europa-Liste führten dasselbe Rechtssubjekt (gleiche ISIN/LEI laut GLEIF), Abgleich 02.11.2026"
+zusammengeführt,U001235,TotalEnergies SE,U001235,TotalEnergies SE,U001285,"ESEF-Pilot und Europa-Liste führten dasselbe Rechtssubjekt (gleiche ISIN/LEI laut GLEIF), Abgleich 02.11.2026"

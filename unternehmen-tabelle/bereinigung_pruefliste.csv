@@ -1,91 +1,91 @@
-grund,name_1,name_2,ticker
-beide gleichartig,Fielmann Group,Fielmann Group AG,None|FIE.DE
-mehr als zwei Zeilen,DHL,DHL|DHL AG (DHL)|DHL AG,|DHL|DHL.DE
-beide gleichartig,CCC,CCC (3095),None|3095
-beide gleichartig,BSE,BSE LTD (BSE),None|BSE
-beide gleichartig,SGH,SGH (SGH),None|SGH
-beide gleichartig,WISR,Wisr Limited (WZR),None|WZR
-beide gleichartig,AXA,AXA SA (CS),None|CS
-mehr als zwei Zeilen,Heineken,Heineken|HEINEKEN NV (HEIA)|HEINEKEN HOLDING NV (HEIO),|HEIA|HEIO
-beide mit ID,Schneider Electric,SCHNEIDER ELECTRIC (SU),
-beide mit ID,TotalEnergies,TOTALENERGIES (TTE),
-beide gleichartig,UCB,UCB SA (UCB),None|UCB
-beide gleichartig,Korea Investment Corporation (KIC),KOREA INVESTMENT HOLDINGS LTD,None|071050
-beide gleichartig,The Israel Corporation Ltd.,Israel,ILCO|ILCO
-Ticker verschieden,Cap,CAP (198080),CAP|198080
-mehr als zwei Zeilen,Wonik Holdings,Wonik Holdings|Wonik|WonIk (032940),030530||032940
-beide gleichartig,SMI,SMI HOLDINGS GROUP LTD (198),None|198
-Ticker verschieden,Meridian Energy,MERIDIAN ENERGY LTD (MEL),MEZ|MEL
-beide gleichartig,EAGLE BANCORP (MT),EAGLE BANCORP INC,EBMT|EGBN
-beide gleichartig,FIRST BANCORP (NC),"FIRST BANCORP, INC",FBNC|FNLC
-Ticker verschieden,"Sunway Co., Ltd.",SUNWAY (002469),603333|002469
-beide gleichartig,SMART CONTROL (001266),SMART CONTROL (002877),001266|002877
-beide gleichartig,SBS (002098),SBS (300293),002098|300293
-beide gleichartig,YUNDA CORP. (002120),YUNDA (300440),002120|300440
-beide gleichartig,COSMOS (002133),COSMOS (300856),002133|300856
-mehr als zwei Zeilen,SUNRISE (002256),SUNRISE (002256)|SUNRISE GROUP (002593)|SUNRISE COMPANY (002752)|SUNRISE (002937),002256|002593|002752|002937
-beide gleichartig,TRS (002567),TRS (300229),002567|300229
-beide gleichartig,SYGF (002841),SYGF (300563),002841|300563
-beide gleichartig,TJT (002977),TJT (300245),002977|300245
-beide gleichartig,JZ GROUP (300040),JZ (301133),300040|301133
-beide gleichartig,CENTURY (300078),CENTURY (300494),300078|300494
-Ticker verschieden,SOFTBANK GROUP CORP,SOFTBANK (9434),9984|9434
-Ticker verschieden,OTSUKA HOLDINGS,OTSUKA CORP (4768),4578|4768
-Ticker verschieden,VALTERRA PLATINUM LTD,VALTERRA PLATINUM LTD (VALT),VAL|VALT
-ISIN/LEI widersprüchlich,YOUNGONE,YOUNGONE HOLDINGS LTD (009970),
-Ticker verschieden,AXIA ENERGIA PRF SA,AXIA ENERGIA PRF SA (AXIA21),AXIA7|AXIA21
-beide gleichartig,HTC,Htc (6208),2498|6208
-ISIN/LEI widersprüchlich,SKF INDIA (INDUSTRIAL) LTD,SKF INDIA LTD (SKFINDIA),
-Ticker verschieden,DYNAMIC HOLDING LTD,DYNAMIC (8928),3715|8928
-Ticker verschieden,TVS HOLDINGS,TVS HOLDINGS LTD (SDCIN),TVSHLTD|SDCIN
-ISIN/LEI widersprüchlich,CHINA HEALTH GROUP INC.,CHINA HEALTH GROUP LIMITED (673),
-ISIN/LEI widersprüchlich,KISCO Holdings,KISCO Corp. (104700),
-ISIN/LEI widersprüchlich,"GOLFZON Co., Ltd.",GOLFZON HOLDINGS (121440),
-ISIN/LEI widersprüchlich,Daesang,Daesang Holdings (084690),
-beide gleichartig,DTC,Dt&C (187220),066670|187220
-ISIN/LEI widersprüchlich,SeAH Steel Corporation,SeAH Steel Holdings Corporation (003030),
-ISIN/LEI widersprüchlich,"ALT Co., Ltd.","ALT Co.,Ltd. (172670)",
-ISIN/LEI widersprüchlich,"WOORY INDUSTRIAL CO.,LTD.","WOORY INDUSTRIAL HOLDINGS CO.,LTD. (072470)",
-ISIN/LEI widersprüchlich,Ubiquoss Inc.,Ubiquoss Holdings Inc. (078070),
-ISIN/LEI widersprüchlich,Com2uS Corporation,Com2uS Holdings (063080),
-ISIN/LEI widersprüchlich,KEC Corporation,KEC HOLDINGS (006200),
-ISIN/LEI widersprüchlich,HYUNDAI CORPORATION,HYUNDAI CORPORATION HOLDINGS (227840),
-mehr als zwei Zeilen,Asian Hotels (East) Limited,Asian Hotels (East) Limited|Asian Hotels (West) Limited (AHLWEST)|Asian Hotels (North) Limited (ASIANHOTNR),AHLEAST|AHLWEST|ASIANHOTNR
-ISIN/LEI widersprüchlich,Future Enterprises Limited,Future Enterprises Limited (FELDVR),
-ISIN/LEI widersprüchlich,GACM Technologies Limited,GACM Technologies Limited (GATECHDVR),
-ISIN/LEI widersprüchlich,Jain Irrigation Systems Limited,Jain Irrigation Systems Limited (JISLJALEQS),
-ISIN/LEI widersprüchlich,Rane Holdings Limited,Rane (Madras) Limited (RML),
-Ticker verschieden,Avenira Limited,Avenira Limited (AEVN),AEV|AEVN
-Ticker verschieden,Bpm Minerals Limited,Bpm Minerals Limited (BPMN),BPM|BPMN
-Ticker verschieden,Charger Metals Nl,Charger Metals Nl (CHRCB),CHR|CHRCB
-Ticker verschieden,Cynata Therapeutics Limited,Cynata Therapeutics Limited (CYPN),CYP|CYPN
-Ticker verschieden,Emu Nl,Emu Nl (EMUCA),EMU|EMUCA
-Ticker verschieden,Enova Mining Limited,Enova Mining Limited (ENVN),ENV|ENVN
-Ticker verschieden,Latrobe Magnesium Limited,Latrobe Magnesium Limited (LMGN),LMG|LMGN
-beide gleichartig,News Corporation.. (NWS),News Corporation.. (NWSLV),NWS|NWSLV
-mehr als zwei Zeilen,CHC (1103),CHC (1103)|CHC (3703)|CHC (4164)|CHC (9930),1103|3703|4164|9930
-mehr als zwei Zeilen,TTC (1309),TTC (1309)|TTC (2913)|TTC (3388),1309|2913|3388
-mehr als zwei Zeilen,C.F.CORP. (1435),C.F.CORP. (1435)|CF (9935)|CF (5426),1435|9935|5426
-beide gleichartig,UNIVERSAL (1445),UNIVERSAL (3218),1445|3218
-beide gleichartig,FALCON (1516),FALCON (4513),1516|4513
-beide gleichartig,TYC (1522),TYC (8931),1522|8931
-beide gleichartig,EMC (1735),EMC (5299),1735|5299
-beide gleichartig,MBI (1783),MBI (3527),1783|3527
-beide gleichartig,SPT (1789),SPT (8431),1789|8431
-beide gleichartig,CHAMPION (1806),CHAMPION (3257),1806|3257
-beide gleichartig,eLAND (2248),eLand (6925),2248|6925
-beide gleichartig,ECS (2331),ECS (8905),2331|8905
-beide gleichartig,H.T. (2419),HT (3114),2419|3114
-beide gleichartig,GW (2423),GW (3272),2423|3272
-beide gleichartig,SLC (2616),SLC (4167),2616|4167
-beide gleichartig,JH (3011),JH (6903),3011|6903
-mehr als zwei Zeilen,APEX (3052),APEX (3052)|Apex (4927)|APEX (5210),3052|4927|5210
-beide gleichartig,EXCELSIOR (4104),Excelsior (6496),4104|6496
-mehr als zwei Zeilen,KL (6431),KL (6431)|KL (4527)|KL (6264),6431|4527|6264
-beide gleichartig,SUN MAX (6591),Sunmax (4728),6591|4728
-mehr als zwei Zeilen,AIC (9912),AIC (9912)|AIC (3693)|AIC (6291),9912|3693|6291
-beide gleichartig,ANT (3646),ANT (4542),3646|4542
-beide gleichartig,DMT (4138),DMT (6144),4138|6144
-beide gleichartig,GCS (4991),GCS (7747),4991|7747
-beide gleichartig,FORMOSA (5312),Formosa (8171),5312|8171
-beide gleichartig,PSC (5355),PSC (6577),5355|6577
+grund,name_1,name_2,ticker,entscheidung,begruendung
+beide gleichartig,Fielmann Group,Fielmann Group AG,None|FIE.DE,zusammengelegt,"dasselbe Unternehmen, Zeile ohne Daten"
+mehr als zwei Zeilen,DHL,DHL|DHL AG (DHL)|DHL AG,|DHL|DHL.DE,zusammengelegt,"dasselbe Unternehmen (Deutsche Post DHL), Börsenzeile und Kürzel"
+beide gleichartig,CCC,CCC (3095),None|3095,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,BSE,BSE LTD (BSE),None|BSE,zusammengelegt,"Kürzel-Zeile ohne Daten, gleicher Name"
+beide gleichartig,SGH,SGH (SGH),None|SGH,zusammengelegt,"Kürzel-Zeile ohne Daten, ASX-Code SGH"
+beide gleichartig,WISR,Wisr Limited (WZR),None|WZR,zusammengelegt,"Kürzel-Zeile ohne Daten, gleicher Name"
+beide gleichartig,AXA,AXA SA (CS),None|CS,zusammengelegt,"gleiche Gesellschaft (ISIN FR0000120628 laut Zeile), Börsenzeile mit Registereintrag"
+mehr als zwei Zeilen,Heineken,Heineken|HEINEKEN NV (HEIA)|HEINEKEN HOLDING NV (HEIO),|HEIA|HEIO,zusammengelegt,gleiche Gesellschaft; Heineken Holding bleibt eigene Zeile
+beide mit ID,Schneider Electric,SCHNEIDER ELECTRIC (SU),,zusammengelegt,gleiche ID nach Registerzusammenführung
+beide mit ID,TotalEnergies,TOTALENERGIES (TTE),,zusammengelegt,gleiche ID nach Registerzusammenführung
+beide gleichartig,UCB,UCB SA (UCB),None|UCB,zusammengelegt,"gleiche Gesellschaft, Börsenzeile mit Registereintrag"
+beide gleichartig,Korea Investment Corporation (KIC),KOREA INVESTMENT HOLDINGS LTD,None|071050,getrennt gelassen,"kein gemeinsamer Ticker/keine gemeinsame ISIN, Zuordnung nicht belegt: getrennt gelassen"
+beide gleichartig,The Israel Corporation Ltd.,Israel,ILCO|ILCO,zusammengelegt,"gleicher Ticker ILCO, verkürzter Name"
+Ticker verschieden,Cap,CAP (198080),CAP|198080,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,Wonik Holdings,Wonik Holdings|Wonik|WonIk (032940),030530||032940,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SMI,SMI HOLDINGS GROUP LTD (198),None|198,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+Ticker verschieden,Meridian Energy,MERIDIAN ENERGY LTD (MEL),MEZ|MEL,zusammengelegt,"gleiche Gesellschaft, zusätzlich am NZX (MEL)"
+beide gleichartig,EAGLE BANCORP (MT),EAGLE BANCORP INC,EBMT|EGBN,getrennt gelassen,"kein gemeinsamer Ticker/keine gemeinsame ISIN, Zuordnung nicht belegt: getrennt gelassen"
+beide gleichartig,FIRST BANCORP (NC),"FIRST BANCORP, INC",FBNC|FNLC,getrennt gelassen,"kein gemeinsamer Ticker/keine gemeinsame ISIN, Zuordnung nicht belegt: getrennt gelassen"
+Ticker verschieden,"Sunway Co., Ltd.",SUNWAY (002469),603333|002469,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SMART CONTROL (001266),SMART CONTROL (002877),001266|002877,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SBS (002098),SBS (300293),002098|300293,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,YUNDA CORP. (002120),YUNDA (300440),002120|300440,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,COSMOS (002133),COSMOS (300856),002133|300856,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,SUNRISE (002256),SUNRISE (002256)|SUNRISE GROUP (002593)|SUNRISE COMPANY (002752)|SUNRISE (002937),002256|002593|002752|002937,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,TRS (002567),TRS (300229),002567|300229,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SYGF (002841),SYGF (300563),002841|300563,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,TJT (002977),TJT (300245),002977|300245,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,JZ GROUP (300040),JZ (301133),300040|301133,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,CENTURY (300078),CENTURY (300494),300078|300494,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+Ticker verschieden,SOFTBANK GROUP CORP,SOFTBANK (9434),9984|9434,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+Ticker verschieden,OTSUKA HOLDINGS,OTSUKA CORP (4768),4578|4768,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+Ticker verschieden,VALTERRA PLATINUM LTD,VALTERRA PLATINUM LTD (VALT),VAL|VALT,zusammengelegt,"gleiche Gesellschaft, zusätzlich London (VALT)"
+ISIN/LEI widersprüchlich,YOUNGONE,YOUNGONE HOLDINGS LTD (009970),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+Ticker verschieden,AXIA ENERGIA PRF SA,AXIA ENERGIA PRF SA (AXIA21),AXIA7|AXIA21,getrennt gelassen,andere Aktiengattung bzw. eigene Rechtsträger
+beide gleichartig,HTC,Htc (6208),2498|6208,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+ISIN/LEI widersprüchlich,SKF INDIA (INDUSTRIAL) LTD,SKF INDIA LTD (SKFINDIA),,getrennt gelassen,ISIN/LEI widersprechen sich: verschiedene Wertpapiere oder Rechtsträger
+Ticker verschieden,DYNAMIC HOLDING LTD,DYNAMIC (8928),3715|8928,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+Ticker verschieden,TVS HOLDINGS,TVS HOLDINGS LTD (SDCIN),TVSHLTD|SDCIN,getrennt gelassen,"kein gemeinsamer Ticker/keine gemeinsame ISIN, Zuordnung nicht belegt: getrennt gelassen"
+ISIN/LEI widersprüchlich,CHINA HEALTH GROUP INC.,CHINA HEALTH GROUP LIMITED (673),,getrennt gelassen,ISIN/LEI widersprechen sich: verschiedene Wertpapiere oder Rechtsträger
+ISIN/LEI widersprüchlich,KISCO Holdings,KISCO Corp. (104700),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,"GOLFZON Co., Ltd.",GOLFZON HOLDINGS (121440),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,Daesang,Daesang Holdings (084690),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+beide gleichartig,DTC,Dt&C (187220),066670|187220,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+ISIN/LEI widersprüchlich,SeAH Steel Corporation,SeAH Steel Holdings Corporation (003030),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,"ALT Co., Ltd.","ALT Co.,Ltd. (172670)",,getrennt gelassen,ISIN/LEI widersprechen sich: verschiedene Wertpapiere oder Rechtsträger
+ISIN/LEI widersprüchlich,"WOORY INDUSTRIAL CO.,LTD.","WOORY INDUSTRIAL HOLDINGS CO.,LTD. (072470)",,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,Ubiquoss Inc.,Ubiquoss Holdings Inc. (078070),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,Com2uS Corporation,Com2uS Holdings (063080),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,KEC Corporation,KEC HOLDINGS (006200),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+ISIN/LEI widersprüchlich,HYUNDAI CORPORATION,HYUNDAI CORPORATION HOLDINGS (227840),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+mehr als zwei Zeilen,Asian Hotels (East) Limited,Asian Hotels (East) Limited|Asian Hotels (West) Limited (AHLWEST)|Asian Hotels (North) Limited (ASIANHOTNR),AHLEAST|AHLWEST|ASIANHOTNR,getrennt gelassen,andere Aktiengattung bzw. eigene Rechtsträger
+ISIN/LEI widersprüchlich,Future Enterprises Limited,Future Enterprises Limited (FELDVR),,getrennt gelassen,ISIN/LEI widersprechen sich: verschiedene Wertpapiere oder Rechtsträger
+ISIN/LEI widersprüchlich,GACM Technologies Limited,GACM Technologies Limited (GATECHDVR),,getrennt gelassen,ISIN/LEI widersprechen sich: verschiedene Wertpapiere oder Rechtsträger
+ISIN/LEI widersprüchlich,Jain Irrigation Systems Limited,Jain Irrigation Systems Limited (JISLJALEQS),,getrennt gelassen,ISIN/LEI widersprechen sich: verschiedene Wertpapiere oder Rechtsträger
+ISIN/LEI widersprüchlich,Rane Holdings Limited,Rane (Madras) Limited (RML),,getrennt gelassen,Holding und Operativgesellschaft sind eigene Rechtsträger mit eigener ISIN
+Ticker verschieden,Avenira Limited,Avenira Limited (AEVN),AEV|AEVN,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code AEVN"
+Ticker verschieden,Bpm Minerals Limited,Bpm Minerals Limited (BPMN),BPM|BPMN,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code BPMN"
+Ticker verschieden,Charger Metals Nl,Charger Metals Nl (CHRCB),CHR|CHRCB,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code CHRCB"
+Ticker verschieden,Cynata Therapeutics Limited,Cynata Therapeutics Limited (CYPN),CYP|CYPN,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code CYPN"
+Ticker verschieden,Emu Nl,Emu Nl (EMUCA),EMU|EMUCA,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code EMUCA"
+Ticker verschieden,Enova Mining Limited,Enova Mining Limited (ENVN),ENV|ENVN,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code ENVN"
+Ticker verschieden,Latrobe Magnesium Limited,Latrobe Magnesium Limited (LMGN),LMG|LMGN,zusammengelegt,"gleiche Gesellschaft, weiterer ASX-Code LMGN"
+beide gleichartig,News Corporation.. (NWS),News Corporation.. (NWSLV),NWS|NWSLV,getrennt gelassen,andere Aktiengattung bzw. eigene Rechtsträger
+mehr als zwei Zeilen,CHC (1103),CHC (1103)|CHC (3703)|CHC (4164)|CHC (9930),1103|3703|4164|9930,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,TTC (1309),TTC (1309)|TTC (2913)|TTC (3388),1309|2913|3388,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,C.F.CORP. (1435),C.F.CORP. (1435)|CF (9935)|CF (5426),1435|9935|5426,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,UNIVERSAL (1445),UNIVERSAL (3218),1445|3218,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,FALCON (1516),FALCON (4513),1516|4513,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,TYC (1522),TYC (8931),1522|8931,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,EMC (1735),EMC (5299),1735|5299,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,MBI (1783),MBI (3527),1783|3527,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SPT (1789),SPT (8431),1789|8431,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,CHAMPION (1806),CHAMPION (3257),1806|3257,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,eLAND (2248),eLand (6925),2248|6925,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,ECS (2331),ECS (8905),2331|8905,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,H.T. (2419),HT (3114),2419|3114,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,GW (2423),GW (3272),2423|3272,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SLC (2616),SLC (4167),2616|4167,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,JH (3011),JH (6903),3011|6903,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,APEX (3052),APEX (3052)|Apex (4927)|APEX (5210),3052|4927|5210,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,EXCELSIOR (4104),Excelsior (6496),4104|6496,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,KL (6431),KL (6431)|KL (4527)|KL (6264),6431|4527|6264,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,SUN MAX (6591),Sunmax (4728),6591|4728,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+mehr als zwei Zeilen,AIC (9912),AIC (9912)|AIC (3693)|AIC (6291),9912|3693|6291,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,ANT (3646),ANT (4542),3646|4542,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,DMT (4138),DMT (6144),4138|6144,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,GCS (4991),GCS (7747),4991|7747,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,FORMOSA (5312),Formosa (8171),5312|8171,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"
+beide gleichartig,PSC (5355),PSC (6577),5355|6577,getrennt gelassen,"verschiedene Börsencodes (Taiwan/China/Korea), eigene Unternehmen mit ähnlichem Namen"

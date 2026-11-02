@@ -1,7 +1,7 @@
 name: Berichtstermine
 
 # Daten-Update, kein Terminal-Bau (den übernimmt terminal.yml, nur wenn sich etwas geändert hat).
-#  05:20 UTC täglich, 16:20 UTC Mo-Fr (vor und nach der Veröffentlichungswelle):
+#  05:17 UTC täglich, 16:47 UTC Mo-Fr (vor und nach der Veröffentlichungswelle):
 #  1. montags (und von Hand) die Finanzkalender der Unternehmen lesen (termine/skripte/finanzkalender_scan.py)
 #  2. Termine aus Yahoo Finance, Finanzkalender und termine_manuell.csv zusammenführen (termine/termine.csv)
 #  3. fällige Berichte von den Unternehmenswebsites laden (PDF nach <branche>/dokumente/<id>/, index.csv-Eintrag, SHA-256);
@@ -10,8 +10,8 @@ name: Berichtstermine
 # Kosten: keine (Actions-Kontingent; yfinance und Unternehmenswebsites sind frei zugänglich).
 on:
   schedule:
-    - cron: "20 5 * * *"
-    - cron: "20 16 * * 1-5"
+    - cron: "17 5 * * *"
+    - cron: "47 16 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 60
     steps:
       # Originaldokumente (PDF, 2,9 GB) werden nicht gebraucht; neue PDFs legt der Abruf neu an. index.csv-Dateien sind ausgecheckt.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
           filter: blob:none
@@ -42,7 +42,7 @@ jobs:
             !*.pdf
             !*.gz
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip

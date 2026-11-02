@@ -23,7 +23,18 @@ jobs:
     env:
       INTERNATIONAL_TEST_DATABASE_URL: postgresql://postgres:ci-nur-lokal@localhost:5432/postgres
     steps:
-      - uses: actions/checkout@v4
+      # ohne die großen PDF-/HTML-Dokumente (mehrere GB); die Tests brauchen nur Code, CSV und JSON
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+            !*.html
+            !*.htm
       # pg_dump/pg_restore müssen zur Server-Version (16) passen: der Runner liefert einen neueren Client,
       # dessen Dump `SET transaction_timeout` enthält, das PostgreSQL 16 nicht kennt (test_backup_und_restore).
       - name: PostgreSQL-16-Client installieren
@@ -32,7 +43,7 @@ jobs:
           sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
           sudo apt-get install -y postgresql-client-16
           echo "/usr/lib/postgresql/16/bin" >> "$GITHUB_PATH"
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
       - run: pip install -r international/requirements.txt

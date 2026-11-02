@@ -18,7 +18,7 @@ jobs:
     runs-on: macos-14
     steps:
       # nur app/ und desktop/ auschecken: das Repo enthält hunderte MB Originaldokumente
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           sparse-checkout: |
             app

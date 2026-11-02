@@ -1,6 +1,6 @@
-# Prüfbericht Importvorlage_Unternehmen_befuellt_DE.xlsx
+# Prüfbericht Importvorlage_Unternehmen_befuellt_ALLE.xlsx
 
-25974 Unternehmen, 0 Kennzahlenwerte, 4098 Dokumente. 6 Fehler, 40646 Warnungen.
+26299 Unternehmen, 0 Kennzahlenwerte, 4098 Dokumente. 6 Fehler, 41245 Warnungen.
 
 ## Fehler
 - Unternehmen Z1525 (LVMH Moët Hennessy): Widerspruch zum Bestand: ISIN FR0000121014 → U001284; LEI IOG4E947OATN0KJYSD45 → U001284; Name → U001058
@@ -1928,7 +1928,6 @@
 - Unternehmen Z3392 (Automatic Data Processing): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z3394 (AvalonBay Communities, Inc.): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z3396 (Baker Hughes, a GE Company): börsennotiert, aber keine ISIN angegeben
-- Unternehmen Z3398 (Bank of America Corp): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z3399 (The Bank of New York Mellon Corp.): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z3400 (Bard (C.R.) Inc.): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z3401 (Baxter International Inc.): börsennotiert, aber keine ISIN angegeben
@@ -9635,7 +9634,6 @@
 - Unternehmen Z12475 (AIRBUS GROUP (AIR)): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z12478 (LOWES COMPANIES INC): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z12479 (MIZUHO FINANCIAL GROUP): börsennotiert, aber keine ISIN angegeben
-- Unternehmen Z12480 (UNICREDIT (UCG)): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z12481 (DBS GROUP HOLDINGS LTD (D05)): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z12482 (ZURICH INSURANCE GROUP AG): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z12482 (ZURICH INSURANCE GROUP AG): ähnlicher Name im Bestand: ZURICH INSURANCE GROUP (U001282); bitte prüfen, ob dasselbe Unternehmen
@@ -14683,6 +14681,282 @@
 - Unternehmen Z25315 (DACOME (9960)): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z25316 (YYS (9962)): börsennotiert, aber keine ISIN angegeben
 - Unternehmen Z25975 (Lufthansa): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26025 (Sartorius Stedim): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26026 (3I GROUP PLC.): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26027 (A2A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26028 (AAK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26029 (ABERDEEN GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26030 (AALBERTS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26031 (ABN AMRO BANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26032 (ACCIONA S.A.): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26033 (ACCELLERON INDUSTRIES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26034 (ACS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26035 (ACKERMANS & VAN HAAREN): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26036 (ADDTECH B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26037 (ACERINOX): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26038 (ADMIRAL GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26039 (ADP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26040 (AEDIFICA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26041 (AKER A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26042 (AL SYDBANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26043 (ALK-ABELLO B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26044 (ALLEGRO.EU): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26045 (ALLREAL HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26046 (ALPHA BANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26047 (ALLFUNDS GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26048 (AMADEUS IT GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26049 (ANDRITZ): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26050 (ARCADIS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26051 (ASML HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26052 (ARKEMA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26053 (ASSA ABLOY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26054 (ASSICURAZIONI GENERALI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26055 (ATLAS COPCO A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26056 (AT&S AUSTRIA TECH.&SYSTEMTECH): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26057 (AUTOTRADER GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26058 (AVANZA BANK HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26059 (AXFOOD): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26060 (AZIMUT HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26061 (BALFOUR BEATTY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26062 (BAM GROEP KON.): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26063 (BANCA MONTE DEI PASCHI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26064 (BANKINTER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26065 (BANQUE CANTONALE VAUDOISE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26066 (BCA GENERALI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26067 (BARRATT REDROW): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26068 (BCO SANTANDER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26069 (BCO BILBAO VIZCAYA ARGENTARIA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26070 (BCO COMERCIAL PORTUGUES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26071 (BCO SABADELL): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26072 (BEIJER REF AB): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26073 (BE SEMICONDUCTOR): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26074 (BELLWAY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26075 (BERKELEY GRP HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26076 (BKW): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26077 (BRIDGEPOINT GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26078 (BT GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26079 (BRUNELLO CUCINELLI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26080 (BURBERRY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26081 (CARLSBERG B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26082 (CELLNEX TELECOM): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26083 (CEMBRA MONEY BANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26084 (CASTELLUM): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26085 (CD PROJEKT RED SA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26086 (CIE FINANCIERE RICHEMONT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26087 (COLOPLAST B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26088 (COMET HOLDINGS 'R'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26089 (COMPASS GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26090 (COMPUTACENTER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26091 (CRANSWICK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26092 (CRODA INTERNATIONAL): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26093 (CSG A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26094 (DASSAULT SYSTEMS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26095 (DAVIDE CAMPARI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26096 (DE LONGHI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26097 (DERWENT LONDON): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26098 (DCC ENERGY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26099 (DKSH HOLDING): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26100 (DRAX GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26101 (EDP RENEWABLES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26102 (EASYJET): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26103 (ELIS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26104 (ENAGAS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26105 (EMS-CHEMIE HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26106 (ENTAIN): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26107 (EPIROC A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26108 (ERICSSON LM B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26109 (Essity B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26110 (FASTIGHETS BALDER B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26111 (FDJ UNITED): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26112 (FLSMIDTH & COMPANY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26113 (GALENICA SANTE AG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26114 (GALDERMA GROUP N): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26115 (FRONTLINE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26116 (GAZTRANSPORT ET TECHNIGAZ): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26117 (GAMES WORKSHOP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26118 (GETINGE B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26119 (GEORG FISCHER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26120 (GLANBIA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26121 (GRP SOCIETE GENERALE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26122 (GRIFOLS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26123 (GRP BRUXELLES LAMBERT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26124 (GSK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26125 (HELVETIA BALOISE HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26126 (HENNES & MAURITZ B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26127 (HERA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26128 (HEINEKEN HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26129 (HIKMA PHARMACEUTICALS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26130 (HERMES INTERNATIONAL): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26131 (HEXAGON B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26132 (HIAB): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26133 (HOCHSCHILD MINING): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26134 (HOLMEN B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26135 (HISCOX): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26136 (HUBER+SUHNER 'R'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26137 (HOWDEN JOINERY GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26138 (IBERDROLA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26139 (IG GRP HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26140 (IAG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26141 (ICG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26142 (IMI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26143 (IMCD): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26144 (INCHCAPE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26145 (INDRA SISTEMAS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26146 (INDUSTRIVARDEN C): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26147 (ING BANK SLASKI BSK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26148 (ING GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26149 (INFICON): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26150 (INTERPUMP GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26151 (INTERTEK GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26152 (INTERCONTINENTAL HOTELS GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26153 (INPOST): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26154 (INVESTOR B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26155 (INVESTEC): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26156 (IVECO GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26157 (ITV): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26158 (JOHNSON MATTHEY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26159 (JULIUS BAER GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26160 (JYSKE BANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26161 (KBC GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26162 (KBC ANCORA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26163 (KESKO): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26164 (KETY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26165 (KGHM): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26166 (KERRY GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26167 (KONE B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26168 (KINGSPAN GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26169 (KONECRANES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26170 (KUEHNE + NAGEL): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26171 (LAGERCRANTZ GROUP 'B'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26172 (LATOUR INVESTMENT B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26173 (LIFCO B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26174 (LEGAL & GENERAL GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26175 (LION FINANCE GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26176 (LLOYDS BANKING GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26177 (LINDT & SPRUENGLI P): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26178 (LOOMIS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26179 (Mandatum): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26180 (MAN GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26181 (MARKS & SPENCER GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26182 (METLEN ENERGY & METALS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26183 (MERLIN PROPERTIES SOCIMI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26184 (MOBIMO HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26185 (MONDI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26186 (MOTOR OIL (HELLAS)): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26187 (MYCRONIC): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26188 (Naturgy Energy Group): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26189 (NEXANS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26190 (NIBE INDUSTRIER B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26191 (NKT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26192 (NORDNET): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26193 (NORDIC SEMICONDUCTOR): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26194 (NOVONESIS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26195 (OCTAVE INTELLIGENCE SDR): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26196 (NOVO NORDISK B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26197 (ORION B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26198 (ORSTED): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26199 (PAN AFRICAN RESOURCES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26200 (PARTNERS GRP HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26201 (PEKAO): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26202 (PENNON GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26203 (PERSIMMON): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26204 (PKO BANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26205 (PIRELLI & C. S.P.A.): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26206 (PLUS500): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26207 (PRIMARY HEALTH PROPS.): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26208 (PSP SWISS PROPERTY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26209 (PUIG BRANDS B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26210 (PUBLICIS GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26211 (QUILTER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26212 (QINETIQ GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26213 (Redeia Corporacion): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26214 (RECKITT BENCKISER GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26215 (RANDSTAD): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26216 (REPLY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26217 (RIGHTMOVE GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26218 (RINGKJOBING LANDBOBANK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26219 (ROCHE PS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26220 (ROCKWOOL B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26221 (ROLLS ROYCE HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26222 (RS Group): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26223 (ROSEBANK INDUSTRIES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26224 (ROYAL UNIBREW): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26225 (ROTORK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26226 (SAAB B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26227 (SACYR): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26228 (RUBIS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26229 (SAGAX 'B'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26230 (SAGE GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26231 (SAMPO): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26232 (SAIPEM): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26233 (SBM OFFSHORE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26234 (SCHINDLER P): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26235 (SCHRODERS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26236 (SCOR): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26237 (SEGRO): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26238 (SECTRA 'B'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26239 (SCOTTISH & SOUTHERN ENERGY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26240 (SERCO GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26241 (SFS GROUP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26242 (SIEGFRIED 'R'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26243 (SHAFTESBURY CAPITAL): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26244 (SKANSKA B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26245 (SKF B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26246 (SKANDINAVISKA ENSKILDA BK A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26247 (SNAM RETE GAS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26248 (SMITHS GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26249 (SMITH & NEPHEW): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26250 (SOFTCAT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26251 (SOITEC): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26252 (SPAREBANK 1 SOR-NORGE ASA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26253 (SPIE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26254 (SPAREBANKEN NORGE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26255 (SSAB B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26256 (ST.JAMES'S PLACE CAPITAL): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26257 (SUBSEA7): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26258 (STOREBRAND): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26259 (SULZER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26260 (SUNRISE N A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26261 (SVENSKA CELLULOSA AKTIE. SCA B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26262 (SWATCH BEARER): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26263 (SVENSKA HANDELSBANKEN A): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26264 (SWISS LIFE HLDG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26265 (SWECO 'B'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26266 (SWISS REINSURANCE COMPANY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26267 (SWISSQUOTE 'R'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26268 (Technip Energies): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26269 (TAYLOR WIMPEY): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26270 (TELEFONICA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26271 (TELECOM ITALIA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26272 (TELE2 B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26273 (TELEPERFORMANCE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26274 (TEMENOS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26275 (TOMRA SYSTEMS): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26276 (TP ICAP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26277 (TRITAX BIG BOX REIT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26278 (UMICORE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26279 (UMG): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26280 (UNICAJA BANCO S.A.): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26281 (UNITE GROUP PLC): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26282 (UNITED UTILITIES GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26283 (UNIPOL ASSICURAZIONI): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26284 (VALLOUREC): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26285 (Valmet): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26286 (VALIANT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26287 (VALEO): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26288 (VEND MARKETPLACES): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26289 (VEOLIA ENVIRONNEMENT): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26290 (VOLVO B): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26291 (VOPAK): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26292 (VOESTALPINE): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26293 (VODAFONE GRP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26294 (VZ HOLDING 'N'): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26295 (WDP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26296 (WPP): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26297 (WHITBREAD): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26298 (YARA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26299 (ZEALAND PHARMA): börsennotiert, aber keine ISIN angegeben
+- Unternehmen Z26300 (ZEGONA COMMUNICATIONS): börsennotiert, aber keine ISIN angegeben
 - Unternehmen BAWAG: keine Kennzahlen im Blatt Kennzahlen
 - Unternehmen CA Immobilien: keine Kennzahlen im Blatt Kennzahlen
 - Unternehmen DO & CO: keine Kennzahlen im Blatt Kennzahlen
@@ -40657,6 +40931,331 @@
 - Unternehmen Your Family Entertainment AG: keine Kennzahlen im Blatt Kennzahlen
 - Unternehmen ZEAL Network SE: keine Kennzahlen im Blatt Kennzahlen
 - Unternehmen Lufthansa: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen 468 SPAC II SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Adler Group S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ad pepper media International N.V.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ADTRAN Holdings, Inc.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AHT Syngas Technology N.V.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AMG Critical Materials N.V.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AnchorCore SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Aroundtown SA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ASTA Energy Solutions AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BB Biotech AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Befesa S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BigRep SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CORESTATE Capital Holding S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CPI Property Group SA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen EDAG Engineering Group AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Eleving Group S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen EPH Group AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen exceet Group SCA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Fabasoft AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Frequentis AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Global Fashion Group S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Grand City Properties S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Haier Smart Home Co., Ltd.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Highlight Communications AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HomeToGo SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen iQ International AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Kontron AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LION E-Mobility AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LM Pay Spolka Akcyjna: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Logwin AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Multitude AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Newron Pharmaceuticals S.p.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Novem Group S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Qiagen N.V.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Redcare Pharmacy NV: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Rigsave S.P.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RTL Group S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Samara Asset Group plc: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Shelly Group SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Sirma Group JSC: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SMG Hospitality SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Steyr Motors AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Swiss Estates AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Swissnet AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen tonies SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Verve Group Media SE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Vidac Pharma Holding Plc: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Vidinext AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Wolftank Group AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Sartorius Stedim: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen 3I GROUP PLC.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen A2A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AAK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ABERDEEN GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AALBERTS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ABN AMRO BANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ACCIONA S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ACCELLERON INDUSTRIES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ACS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ACKERMANS & VAN HAAREN: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ADDTECH B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ACERINOX: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ADMIRAL GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ADP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AEDIFICA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AKER A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AL SYDBANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ALK-ABELLO B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ALLEGRO.EU: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ALLREAL HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ALPHA BANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ALLFUNDS GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AMADEUS IT GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ANDRITZ: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ARCADIS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ASML HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ARKEMA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ASSA ABLOY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ASSICURAZIONI GENERALI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ATLAS COPCO A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AT&S AUSTRIA TECH.&SYSTEMTECH: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AUTOTRADER GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AVANZA BANK HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AXFOOD: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen AZIMUT HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BALFOUR BEATTY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BAM GROEP KON.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BANCA MONTE DEI PASCHI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BANKINTER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BANQUE CANTONALE VAUDOISE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BCA GENERALI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BARRATT REDROW: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BCO SANTANDER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BCO BILBAO VIZCAYA ARGENTARIA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BCO COMERCIAL PORTUGUES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BCO SABADELL: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BEIJER REF AB: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BE SEMICONDUCTOR: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BELLWAY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BERKELEY GRP HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BKW: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BRIDGEPOINT GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BT GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BRUNELLO CUCINELLI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen BURBERRY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CARLSBERG B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CELLNEX TELECOM: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CEMBRA MONEY BANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CASTELLUM: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CD PROJEKT RED SA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CIE FINANCIERE RICHEMONT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen COLOPLAST B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen COMET HOLDINGS 'R': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen COMPASS GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen COMPUTACENTER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CRANSWICK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CRODA INTERNATIONAL: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen CSG A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DASSAULT SYSTEMS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DAVIDE CAMPARI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DE LONGHI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DERWENT LONDON: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DCC ENERGY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DKSH HOLDING: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen DRAX GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen EDP RENEWABLES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen EASYJET: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ELIS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ENAGAS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen EMS-CHEMIE HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ENTAIN: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen EPIROC A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ERICSSON LM B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Essity B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen FASTIGHETS BALDER B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen FDJ UNITED: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen FLSMIDTH & COMPANY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GALENICA SANTE AG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GALDERMA GROUP N: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen FRONTLINE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GAZTRANSPORT ET TECHNIGAZ: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GAMES WORKSHOP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GETINGE B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GEORG FISCHER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GLANBIA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GRP SOCIETE GENERALE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GRIFOLS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GRP BRUXELLES LAMBERT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen GSK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HELVETIA BALOISE HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HENNES & MAURITZ B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HERA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HEINEKEN HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HIKMA PHARMACEUTICALS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HERMES INTERNATIONAL: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HEXAGON B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HIAB: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HOCHSCHILD MINING: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HOLMEN B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HISCOX: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HUBER+SUHNER 'R': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen HOWDEN JOINERY GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen IBERDROLA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen IG GRP HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen IAG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ICG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen IMI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen IMCD: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INCHCAPE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INDRA SISTEMAS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INDUSTRIVARDEN C: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ING BANK SLASKI BSK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ING GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INFICON: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INTERPUMP GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INTERTEK GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INTERCONTINENTAL HOTELS GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INPOST: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INVESTOR B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen INVESTEC: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen IVECO GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ITV: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen JOHNSON MATTHEY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen JULIUS BAER GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen JYSKE BANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KBC GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KBC ANCORA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KESKO: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KETY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KGHM: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KERRY GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KONE B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KINGSPAN GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KONECRANES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen KUEHNE + NAGEL: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LAGERCRANTZ GROUP 'B': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LATOUR INVESTMENT B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LIFCO B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LEGAL & GENERAL GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LION FINANCE GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LLOYDS BANKING GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LINDT & SPRUENGLI P: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen LOOMIS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Mandatum: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MAN GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MARKS & SPENCER GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen METLEN ENERGY & METALS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MERLIN PROPERTIES SOCIMI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MOBIMO HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MONDI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MOTOR OIL (HELLAS): keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen MYCRONIC: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Naturgy Energy Group: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NEXANS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NIBE INDUSTRIER B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NKT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NORDNET: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NORDIC SEMICONDUCTOR: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NOVONESIS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen OCTAVE INTELLIGENCE SDR: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen NOVO NORDISK B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ORION B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ORSTED: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PAN AFRICAN RESOURCES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PARTNERS GRP HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PEKAO: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PENNON GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PERSIMMON: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PKO BANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PIRELLI & C. S.P.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PLUS500: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PRIMARY HEALTH PROPS.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PSP SWISS PROPERTY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PUIG BRANDS B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen PUBLICIS GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen QUILTER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen QINETIQ GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Redeia Corporacion: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RECKITT BENCKISER GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RANDSTAD: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen REPLY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RIGHTMOVE GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RINGKJOBING LANDBOBANK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ROCHE PS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ROCKWOOL B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ROLLS ROYCE HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RS Group: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ROSEBANK INDUSTRIES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ROYAL UNIBREW: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ROTORK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SAAB B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SACYR: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen RUBIS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SAGAX 'B': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SAGE GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SAMPO: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SAIPEM: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SBM OFFSHORE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SCHINDLER P: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SCHRODERS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SCOR: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SEGRO: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SECTRA 'B': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SCOTTISH & SOUTHERN ENERGY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SERCO GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SFS GROUP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SIEGFRIED 'R': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SHAFTESBURY CAPITAL: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SKANSKA B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SKF B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SKANDINAVISKA ENSKILDA BK A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SNAM RETE GAS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SMITHS GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SMITH & NEPHEW: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SOFTCAT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SOITEC: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SPAREBANK 1 SOR-NORGE ASA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SPIE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SPAREBANKEN NORGE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SSAB B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ST.JAMES'S PLACE CAPITAL: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SUBSEA7: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen STOREBRAND: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SULZER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SUNRISE N A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SVENSKA CELLULOSA AKTIE. SCA B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SWATCH BEARER: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SVENSKA HANDELSBANKEN A: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SWISS LIFE HLDG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SWECO 'B': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SWISS REINSURANCE COMPANY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen SWISSQUOTE 'R': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Technip Energies: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TAYLOR WIMPEY: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TELEFONICA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TELECOM ITALIA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TELE2 B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TELEPERFORMANCE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TEMENOS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TOMRA SYSTEMS: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TP ICAP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen TRITAX BIG BOX REIT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen UMICORE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen UMG: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen UNICAJA BANCO S.A.: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen UNITE GROUP PLC: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen UNITED UTILITIES GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen UNIPOL ASSICURAZIONI: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VALLOUREC: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen Valmet: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VALIANT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VALEO: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VEND MARKETPLACES: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VEOLIA ENVIRONNEMENT: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VOLVO B: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VOPAK: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VOESTALPINE: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VODAFONE GRP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen VZ HOLDING 'N': keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen WDP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen WPP: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen WHITBREAD: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen YARA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ZEALAND PHARMA: keine Kennzahlen im Blatt Kennzahlen
+- Unternehmen ZEGONA COMMUNICATIONS: keine Kennzahlen im Blatt Kennzahlen
 
 ## Hinweise
 - Bolloré: bereits im Bestand als U000851 (BOLLORE) – Stammdaten werden nur ergänzt, keine neue ID
@@ -40739,6 +41338,7 @@
 - Wolters Kluwer: bereits im Bestand als U001277 (WOLTERS KLUWER) – Stammdaten werden nur ergänzt, keine neue ID
 - Vår Energi: bereits im Bestand als U001259 (VAR ENERGI) – Stammdaten werden nur ergänzt, keine neue ID
 - Apple Inc.: bereits im Bestand als U000744 (Apple Inc.) – Stammdaten werden nur ergänzt, keine neue ID
+- Bank of America Corp: bereits im Bestand als U000747 (Bank of America Corporation) – Stammdaten werden nur ergänzt, keine neue ID
 - Caterpillar Inc.: bereits im Bestand als U000752 (Caterpillar Inc.) – Stammdaten werden nur ergänzt, keine neue ID
 - Chevron Corp.: bereits im Bestand als U000749 (Chevron Corporation) – Stammdaten werden nur ergänzt, keine neue ID
 - Coca-Cola Company: bereits im Bestand als U000751 (The Coca-Cola Company) – Stammdaten werden nur ergänzt, keine neue ID
@@ -40749,6 +41349,7 @@
 - WALMART INC CMN: bereits im Bestand als U000750 (Walmart Inc.) – Stammdaten werden nur ergänzt, keine neue ID
 - ALLIANZ: bereits im Bestand als U000036 (Allianz SE) – Stammdaten werden nur ergänzt, keine neue ID
 - BRITISH AMERICAN TOBACCO: bereits im Bestand als U000859 (BRITISH AMERICAN TOBACCO) – Stammdaten werden nur ergänzt, keine neue ID
+- UNICREDIT (UCG): bereits im Bestand als U000677 (UniCredit SpA) – Stammdaten werden nur ergänzt, keine neue ID
 - INFINEON TECHNOLOGIES AG: bereits im Bestand als U000301 (Infineon Technologies AG) – Stammdaten werden nur ergänzt, keine neue ID
 - DEUTSCHE BOERSE AG: bereits im Bestand als U000151 (Deutsche Börse AG) – Stammdaten werden nur ergänzt, keine neue ID
 - INDUSTRIA DE DISENO TEXTIL SA: bereits im Bestand als U000996 (Industria de Diseno Textil SA) – Stammdaten werden nur ergänzt, keine neue ID
@@ -41483,3 +42084,328 @@
 - Your Family Entertainment AG: bereits im Bestand als U000741 (Your Family Entertainment AG) – Stammdaten werden nur ergänzt, keine neue ID
 - ZEAL Network SE: bereits im Bestand als U000743 (ZEAL Network SE) – Stammdaten werden nur ergänzt, keine neue ID
 - Lufthansa: bereits im Bestand als U000753 (Lufthansa) – Stammdaten werden nur ergänzt, keine neue ID
+- 468 SPAC II SE: bereits im Bestand als U000008 (468 SPAC II SE) – Stammdaten werden nur ergänzt, keine neue ID
+- Adler Group S.A.: bereits im Bestand als U000018 (Adler Group S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- ad pepper media International N.V.: bereits im Bestand als U000020 (ad pepper media International N.V.) – Stammdaten werden nur ergänzt, keine neue ID
+- ADTRAN Holdings, Inc.: bereits im Bestand als U000021 (ADTRAN Holdings, Inc.) – Stammdaten werden nur ergänzt, keine neue ID
+- AHT Syngas Technology N.V.: bereits im Bestand als U000025 (AHT Syngas Technology N.V.) – Stammdaten werden nur ergänzt, keine neue ID
+- AMG Critical Materials N.V.: bereits im Bestand als U000041 (AMG Critical Materials N.V.) – Stammdaten werden nur ergänzt, keine neue ID
+- AnchorCore SE: bereits im Bestand als U000042 (AnchorCore SE) – Stammdaten werden nur ergänzt, keine neue ID
+- Aroundtown SA: bereits im Bestand als U000045 (Aroundtown SA) – Stammdaten werden nur ergänzt, keine neue ID
+- ASTA Energy Solutions AG: bereits im Bestand als U000048 (ASTA Energy Solutions AG) – Stammdaten werden nur ergänzt, keine neue ID
+- BB Biotech AG: bereits im Bestand als U000070 (BB Biotech AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Befesa S.A.: bereits im Bestand als U000072 (Befesa S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- BigRep SE: bereits im Bestand als U000083 (BigRep SE) – Stammdaten werden nur ergänzt, keine neue ID
+- CORESTATE Capital Holding S.A.: bereits im Bestand als U000127 (CORESTATE Capital Holding S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- CPI Property Group SA: bereits im Bestand als U000129 (CPI Property Group SA) – Stammdaten werden nur ergänzt, keine neue ID
+- EDAG Engineering Group AG: bereits im Bestand als U000181 (EDAG Engineering Group AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Eleving Group S.A.: bereits im Bestand als U000186 (Eleving Group S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- EPH Group AG: bereits im Bestand als U000196 (EPH Group AG) – Stammdaten werden nur ergänzt, keine neue ID
+- exceet Group SCA: bereits im Bestand als U000210 (exceet Group SCA) – Stammdaten werden nur ergänzt, keine neue ID
+- Fabasoft AG: bereits im Bestand als U000211 (Fabasoft AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Frequentis AG: bereits im Bestand als U000232 (Frequentis AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Global Fashion Group S.A.: bereits im Bestand als U000249 (Global Fashion Group S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- Grand City Properties S.A.: bereits im Bestand als U000254 (Grand City Properties S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- Haier Smart Home Co., Ltd.: bereits im Bestand als U000259 (Haier Smart Home Co., Ltd.) – Stammdaten werden nur ergänzt, keine neue ID
+- Highlight Communications AG: bereits im Bestand als U000282 (Highlight Communications AG) – Stammdaten werden nur ergänzt, keine neue ID
+- HomeToGo SE: bereits im Bestand als U000287 (HomeToGo SE) – Stammdaten werden nur ergänzt, keine neue ID
+- iQ International AG: bereits im Bestand als U000313 (iQ International AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Kontron AG: bereits im Bestand als U000333 (Kontron AG) – Stammdaten werden nur ergänzt, keine neue ID
+- LION E-Mobility AG: bereits im Bestand als U000375 (LION E-Mobility AG) – Stammdaten werden nur ergänzt, keine neue ID
+- LM Pay Spolka Akcyjna: bereits im Bestand als U000376 (LM Pay Spolka Akcyjna) – Stammdaten werden nur ergänzt, keine neue ID
+- Logwin AG: bereits im Bestand als U000377 (Logwin AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Multitude AG: bereits im Bestand als U000418 (Multitude AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Newron Pharmaceuticals S.p.A.: bereits im Bestand als U000435 (Newron Pharmaceuticals S.p.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- Novem Group S.A.: bereits im Bestand als U000446 (Novem Group S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- Qiagen N.V.: bereits im Bestand als U000491 (Qiagen N.V.) – Stammdaten werden nur ergänzt, keine neue ID
+- Redcare Pharmacy NV: bereits im Bestand als U000498 (Redcare Pharmacy NV) – Stammdaten werden nur ergänzt, keine neue ID
+- Rigsave S.P.A.: bereits im Bestand als U000504 (Rigsave S.P.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- RTL Group S.A.: bereits im Bestand als U000508 (RTL Group S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- Samara Asset Group plc: bereits im Bestand als U000513 (Samara Asset Group plc) – Stammdaten werden nur ergänzt, keine neue ID
+- Shelly Group SE: bereits im Bestand als U000534 (Shelly Group SE) – Stammdaten werden nur ergänzt, keine neue ID
+- Sirma Group JSC: bereits im Bestand als U000544 (Sirma Group JSC) – Stammdaten werden nur ergänzt, keine neue ID
+- SMG Hospitality SE: bereits im Bestand als U000549 (SMG Hospitality SE) – Stammdaten werden nur ergänzt, keine neue ID
+- Steyr Motors AG: bereits im Bestand als U000627 (Steyr Motors AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Swiss Estates AG: bereits im Bestand als U000638 (Swiss Estates AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Swissnet AG: bereits im Bestand als U000639 (Swissnet AG) – Stammdaten werden nur ergänzt, keine neue ID
+- tonies SE: bereits im Bestand als U000663 (tonies SE) – Stammdaten werden nur ergänzt, keine neue ID
+- Verve Group Media SE: bereits im Bestand als U000691 (Verve Group Media SE) – Stammdaten werden nur ergänzt, keine neue ID
+- Vidac Pharma Holding Plc: bereits im Bestand als U000693 (Vidac Pharma Holding Plc) – Stammdaten werden nur ergänzt, keine neue ID
+- Vidinext AG: bereits im Bestand als U000694 (Vidinext AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Wolftank Group AG: bereits im Bestand als U000737 (Wolftank Group AG) – Stammdaten werden nur ergänzt, keine neue ID
+- Sartorius Stedim: bereits im Bestand als U000754 (Sartorius Stedim) – Stammdaten werden nur ergänzt, keine neue ID
+- 3I GROUP PLC.: bereits im Bestand als U000756 (3I GROUP PLC.) – Stammdaten werden nur ergänzt, keine neue ID
+- A2A: bereits im Bestand als U000757 (A2A) – Stammdaten werden nur ergänzt, keine neue ID
+- AAK: bereits im Bestand als U000758 (AAK) – Stammdaten werden nur ergänzt, keine neue ID
+- ABERDEEN GROUP: bereits im Bestand als U000760 (ABERDEEN GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- AALBERTS: bereits im Bestand als U000761 (AALBERTS) – Stammdaten werden nur ergänzt, keine neue ID
+- ABN AMRO BANK: bereits im Bestand als U000763 (ABN AMRO BANK) – Stammdaten werden nur ergänzt, keine neue ID
+- ACCIONA S.A.: bereits im Bestand als U000764 (ACCIONA S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- ACCELLERON INDUSTRIES: bereits im Bestand als U000766 (ACCELLERON INDUSTRIES) – Stammdaten werden nur ergänzt, keine neue ID
+- ACS: bereits im Bestand als U000767 (ACS) – Stammdaten werden nur ergänzt, keine neue ID
+- ACKERMANS & VAN HAAREN: bereits im Bestand als U000768 (ACKERMANS & VAN HAAREN) – Stammdaten werden nur ergänzt, keine neue ID
+- ADDTECH B: bereits im Bestand als U000769 (ADDTECH B) – Stammdaten werden nur ergänzt, keine neue ID
+- ACERINOX: bereits im Bestand als U000770 (ACERINOX) – Stammdaten werden nur ergänzt, keine neue ID
+- ADMIRAL GRP: bereits im Bestand als U000772 (ADMIRAL GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- ADP: bereits im Bestand als U000773 (ADP) – Stammdaten werden nur ergänzt, keine neue ID
+- AEDIFICA: bereits im Bestand als U000775 (AEDIFICA) – Stammdaten werden nur ergänzt, keine neue ID
+- AKER A: bereits im Bestand als U000783 (AKER A) – Stammdaten werden nur ergänzt, keine neue ID
+- AL SYDBANK: bereits im Bestand als U000785 (AL SYDBANK) – Stammdaten werden nur ergänzt, keine neue ID
+- ALK-ABELLO B: bereits im Bestand als U000787 (ALK-ABELLO B) – Stammdaten werden nur ergänzt, keine neue ID
+- ALLEGRO.EU: bereits im Bestand als U000789 (ALLEGRO.EU) – Stammdaten werden nur ergänzt, keine neue ID
+- ALLREAL HLDG: bereits im Bestand als U000791 (ALLREAL HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- ALPHA BANK: bereits im Bestand als U000792 (ALPHA BANK) – Stammdaten werden nur ergänzt, keine neue ID
+- ALLFUNDS GROUP: bereits im Bestand als U000793 (ALLFUNDS GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- AMADEUS IT GROUP: bereits im Bestand als U000795 (AMADEUS IT GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- ANDRITZ: bereits im Bestand als U000797 (ANDRITZ) – Stammdaten werden nur ergänzt, keine neue ID
+- ARCADIS: bereits im Bestand als U000799 (ARCADIS) – Stammdaten werden nur ergänzt, keine neue ID
+- ASML HLDG: bereits im Bestand als U000805 (ASML HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- ARKEMA: bereits im Bestand als U000806 (ARKEMA) – Stammdaten werden nur ergänzt, keine neue ID
+- ASSA ABLOY: bereits im Bestand als U000809 (ASSA ABLOY) – Stammdaten werden nur ergänzt, keine neue ID
+- ASSICURAZIONI GENERALI: bereits im Bestand als U000810 (ASSICURAZIONI GENERALI) – Stammdaten werden nur ergänzt, keine neue ID
+- ATLAS COPCO A: bereits im Bestand als U000811 (ATLAS COPCO A) – Stammdaten werden nur ergänzt, keine neue ID
+- AT&S AUSTRIA TECH.&SYSTEMTECH: bereits im Bestand als U000814 (AT&S AUSTRIA TECH.&SYSTEMTECH) – Stammdaten werden nur ergänzt, keine neue ID
+- AUTOTRADER GROUP: bereits im Bestand als U000815 (AUTOTRADER GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- AVANZA BANK HLDG: bereits im Bestand als U000816 (AVANZA BANK HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- AXFOOD: bereits im Bestand als U000820 (AXFOOD) – Stammdaten werden nur ergänzt, keine neue ID
+- AZIMUT HLDG: bereits im Bestand als U000822 (AZIMUT HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- BALFOUR BEATTY: bereits im Bestand als U000823 (BALFOUR BEATTY) – Stammdaten werden nur ergänzt, keine neue ID
+- BAM GROEP KON.: bereits im Bestand als U000824 (BAM GROEP KON.) – Stammdaten werden nur ergänzt, keine neue ID
+- BANCA MONTE DEI PASCHI: bereits im Bestand als U000827 (BANCA MONTE DEI PASCHI) – Stammdaten werden nur ergänzt, keine neue ID
+- BANKINTER: bereits im Bestand als U000833 (BANKINTER) – Stammdaten werden nur ergänzt, keine neue ID
+- BANQUE CANTONALE VAUDOISE: bereits im Bestand als U000834 (BANQUE CANTONALE VAUDOISE) – Stammdaten werden nur ergänzt, keine neue ID
+- BCA GENERALI: bereits im Bestand als U000835 (BCA GENERALI) – Stammdaten werden nur ergänzt, keine neue ID
+- BARRATT REDROW: bereits im Bestand als U000838 (BARRATT REDROW) – Stammdaten werden nur ergänzt, keine neue ID
+- BCO SANTANDER: bereits im Bestand als U000839 (BCO SANTANDER) – Stammdaten werden nur ergänzt, keine neue ID
+- BCO BILBAO VIZCAYA ARGENTARIA: bereits im Bestand als U000840 (BCO BILBAO VIZCAYA ARGENTARIA) – Stammdaten werden nur ergänzt, keine neue ID
+- BCO COMERCIAL PORTUGUES: bereits im Bestand als U000841 (BCO COMERCIAL PORTUGUES) – Stammdaten werden nur ergänzt, keine neue ID
+- BCO SABADELL: bereits im Bestand als U000842 (BCO SABADELL) – Stammdaten werden nur ergänzt, keine neue ID
+- BEIJER REF AB: bereits im Bestand als U000845 (BEIJER REF AB) – Stammdaten werden nur ergänzt, keine neue ID
+- BE SEMICONDUCTOR: bereits im Bestand als U000846 (BE SEMICONDUCTOR) – Stammdaten werden nur ergänzt, keine neue ID
+- BELLWAY: bereits im Bestand als U000848 (BELLWAY) – Stammdaten werden nur ergänzt, keine neue ID
+- BERKELEY GRP HLDG: bereits im Bestand als U000849 (BERKELEY GRP HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- BKW: bereits im Bestand als U000854 (BKW) – Stammdaten werden nur ergänzt, keine neue ID
+- BRIDGEPOINT GROUP: bereits im Bestand als U000857 (BRIDGEPOINT GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- BT GRP: bereits im Bestand als U000860 (BT GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- BRUNELLO CUCINELLI: bereits im Bestand als U000862 (BRUNELLO CUCINELLI) – Stammdaten werden nur ergänzt, keine neue ID
+- BURBERRY: bereits im Bestand als U000863 (BURBERRY) – Stammdaten werden nur ergänzt, keine neue ID
+- CARLSBERG B: bereits im Bestand als U000869 (CARLSBERG B) – Stammdaten werden nur ergänzt, keine neue ID
+- CELLNEX TELECOM: bereits im Bestand als U000871 (CELLNEX TELECOM) – Stammdaten werden nur ergänzt, keine neue ID
+- CEMBRA MONEY BANK: bereits im Bestand als U000872 (CEMBRA MONEY BANK) – Stammdaten werden nur ergänzt, keine neue ID
+- CASTELLUM: bereits im Bestand als U000873 (CASTELLUM) – Stammdaten werden nur ergänzt, keine neue ID
+- CD PROJEKT RED SA: bereits im Bestand als U000874 (CD PROJEKT RED SA) – Stammdaten werden nur ergänzt, keine neue ID
+- CIE FINANCIERE RICHEMONT: bereits im Bestand als U000875 (CIE FINANCIERE RICHEMONT) – Stammdaten werden nur ergänzt, keine neue ID
+- COLOPLAST B: bereits im Bestand als U000876 (COLOPLAST B) – Stammdaten werden nur ergänzt, keine neue ID
+- COMET HOLDINGS 'R': bereits im Bestand als U000880 (COMET HOLDINGS 'R') – Stammdaten werden nur ergänzt, keine neue ID
+- COMPASS GRP: bereits im Bestand als U000881 (COMPASS GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- COMPUTACENTER: bereits im Bestand als U000882 (COMPUTACENTER) – Stammdaten werden nur ergänzt, keine neue ID
+- CRANSWICK: bereits im Bestand als U000883 (CRANSWICK) – Stammdaten werden nur ergänzt, keine neue ID
+- CRODA INTERNATIONAL: bereits im Bestand als U000886 (CRODA INTERNATIONAL) – Stammdaten werden nur ergänzt, keine neue ID
+- CSG A: bereits im Bestand als U000889 (CSG A) – Stammdaten werden nur ergänzt, keine neue ID
+- DASSAULT SYSTEMS: bereits im Bestand als U000891 (DASSAULT SYSTEMS) – Stammdaten werden nur ergänzt, keine neue ID
+- DAVIDE CAMPARI: bereits im Bestand als U000892 (DAVIDE CAMPARI) – Stammdaten werden nur ergänzt, keine neue ID
+- DE LONGHI: bereits im Bestand als U000895 (DE LONGHI) – Stammdaten werden nur ergänzt, keine neue ID
+- DERWENT LONDON: bereits im Bestand als U000897 (DERWENT LONDON) – Stammdaten werden nur ergänzt, keine neue ID
+- DCC ENERGY: bereits im Bestand als U000898 (DCC ENERGY) – Stammdaten werden nur ergänzt, keine neue ID
+- DKSH HOLDING: bereits im Bestand als U000900 (DKSH HOLDING) – Stammdaten werden nur ergänzt, keine neue ID
+- DRAX GRP: bereits im Bestand als U000906 (DRAX GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- EDP RENEWABLES: bereits im Bestand als U000908 (EDP RENEWABLES) – Stammdaten werden nur ergänzt, keine neue ID
+- EASYJET: bereits im Bestand als U000910 (EASYJET) – Stammdaten werden nur ergänzt, keine neue ID
+- ELIS: bereits im Bestand als U000913 (ELIS) – Stammdaten werden nur ergänzt, keine neue ID
+- ENAGAS: bereits im Bestand als U000915 (ENAGAS) – Stammdaten werden nur ergänzt, keine neue ID
+- EMS-CHEMIE HLDG: bereits im Bestand als U000917 (EMS-CHEMIE HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- ENTAIN: bereits im Bestand als U000919 (ENTAIN) – Stammdaten werden nur ergänzt, keine neue ID
+- EPIROC A: bereits im Bestand als U000923 (EPIROC A) – Stammdaten werden nur ergänzt, keine neue ID
+- ERICSSON LM B: bereits im Bestand als U000926 (ERICSSON LM B) – Stammdaten werden nur ergänzt, keine neue ID
+- Essity B: bereits im Bestand als U000927 (Essity B) – Stammdaten werden nur ergänzt, keine neue ID
+- FASTIGHETS BALDER B: bereits im Bestand als U000936 (FASTIGHETS BALDER B) – Stammdaten werden nur ergänzt, keine neue ID
+- FDJ UNITED: bereits im Bestand als U000938 (FDJ UNITED) – Stammdaten werden nur ergänzt, keine neue ID
+- FLSMIDTH & COMPANY: bereits im Bestand als U000944 (FLSMIDTH & COMPANY) – Stammdaten werden nur ergänzt, keine neue ID
+- GALENICA SANTE AG: bereits im Bestand als U000947 (GALENICA SANTE AG) – Stammdaten werden nur ergänzt, keine neue ID
+- GALDERMA GROUP N: bereits im Bestand als U000948 (GALDERMA GROUP N) – Stammdaten werden nur ergänzt, keine neue ID
+- FRONTLINE: bereits im Bestand als U000949 (FRONTLINE) – Stammdaten werden nur ergänzt, keine neue ID
+- GAZTRANSPORT ET TECHNIGAZ: bereits im Bestand als U000952 (GAZTRANSPORT ET TECHNIGAZ) – Stammdaten werden nur ergänzt, keine neue ID
+- GAMES WORKSHOP: bereits im Bestand als U000954 (GAMES WORKSHOP) – Stammdaten werden nur ergänzt, keine neue ID
+- GETINGE B: bereits im Bestand als U000956 (GETINGE B) – Stammdaten werden nur ergänzt, keine neue ID
+- GEORG FISCHER: bereits im Bestand als U000958 (GEORG FISCHER) – Stammdaten werden nur ergänzt, keine neue ID
+- GLANBIA: bereits im Bestand als U000960 (GLANBIA) – Stammdaten werden nur ergänzt, keine neue ID
+- GRP SOCIETE GENERALE: bereits im Bestand als U000963 (GRP SOCIETE GENERALE) – Stammdaten werden nur ergänzt, keine neue ID
+- GRIFOLS: bereits im Bestand als U000964 (GRIFOLS) – Stammdaten werden nur ergänzt, keine neue ID
+- GRP BRUXELLES LAMBERT: bereits im Bestand als U000966 (GRP BRUXELLES LAMBERT) – Stammdaten werden nur ergänzt, keine neue ID
+- GSK: bereits im Bestand als U000970 (GSK) – Stammdaten werden nur ergänzt, keine neue ID
+- HELVETIA BALOISE HLDG: bereits im Bestand als U000971 (HELVETIA BALOISE HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- HENNES & MAURITZ B: bereits im Bestand als U000972 (HENNES & MAURITZ B) – Stammdaten werden nur ergänzt, keine neue ID
+- HERA: bereits im Bestand als U000973 (HERA) – Stammdaten werden nur ergänzt, keine neue ID
+- HEINEKEN HLDG: bereits im Bestand als U000974 (HEINEKEN HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- HIKMA PHARMACEUTICALS: bereits im Bestand als U000975 (HIKMA PHARMACEUTICALS) – Stammdaten werden nur ergänzt, keine neue ID
+- HERMES INTERNATIONAL: bereits im Bestand als U000976 (HERMES INTERNATIONAL) – Stammdaten werden nur ergänzt, keine neue ID
+- HEXAGON B: bereits im Bestand als U000977 (HEXAGON B) – Stammdaten werden nur ergänzt, keine neue ID
+- HIAB: bereits im Bestand als U000978 (HIAB) – Stammdaten werden nur ergänzt, keine neue ID
+- HOCHSCHILD MINING: bereits im Bestand als U000979 (HOCHSCHILD MINING) – Stammdaten werden nur ergänzt, keine neue ID
+- HOLMEN B: bereits im Bestand als U000980 (HOLMEN B) – Stammdaten werden nur ergänzt, keine neue ID
+- HISCOX: bereits im Bestand als U000981 (HISCOX) – Stammdaten werden nur ergänzt, keine neue ID
+- HUBER+SUHNER 'R': bereits im Bestand als U000984 (HUBER+SUHNER 'R') – Stammdaten werden nur ergänzt, keine neue ID
+- HOWDEN JOINERY GRP: bereits im Bestand als U000986 (HOWDEN JOINERY GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- IBERDROLA: bereits im Bestand als U000987 (IBERDROLA) – Stammdaten werden nur ergänzt, keine neue ID
+- IG GRP HLDG: bereits im Bestand als U000988 (IG GRP HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- IAG: bereits im Bestand als U000989 (IAG) – Stammdaten werden nur ergänzt, keine neue ID
+- ICG: bereits im Bestand als U000990 (ICG) – Stammdaten werden nur ergänzt, keine neue ID
+- IMI: bereits im Bestand als U000992 (IMI) – Stammdaten werden nur ergänzt, keine neue ID
+- IMCD: bereits im Bestand als U000993 (IMCD) – Stammdaten werden nur ergänzt, keine neue ID
+- INCHCAPE: bereits im Bestand als U000994 (INCHCAPE) – Stammdaten werden nur ergänzt, keine neue ID
+- INDRA SISTEMAS: bereits im Bestand als U000997 (INDRA SISTEMAS) – Stammdaten werden nur ergänzt, keine neue ID
+- INDUSTRIVARDEN C: bereits im Bestand als U000998 (INDUSTRIVARDEN C) – Stammdaten werden nur ergänzt, keine neue ID
+- ING BANK SLASKI BSK: bereits im Bestand als U001000 (ING BANK SLASKI BSK) – Stammdaten werden nur ergänzt, keine neue ID
+- ING GRP: bereits im Bestand als U001001 (ING GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- INFICON: bereits im Bestand als U001002 (INFICON) – Stammdaten werden nur ergänzt, keine neue ID
+- INTERPUMP GRP: bereits im Bestand als U001003 (INTERPUMP GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- INTERTEK GRP: bereits im Bestand als U001004 (INTERTEK GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- INTERCONTINENTAL HOTELS GRP: bereits im Bestand als U001005 (INTERCONTINENTAL HOTELS GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- INPOST: bereits im Bestand als U001006 (INPOST) – Stammdaten werden nur ergänzt, keine neue ID
+- INVESTOR B: bereits im Bestand als U001009 (INVESTOR B) – Stammdaten werden nur ergänzt, keine neue ID
+- INVESTEC: bereits im Bestand als U001010 (INVESTEC) – Stammdaten werden nur ergänzt, keine neue ID
+- IVECO GROUP: bereits im Bestand als U001011 (IVECO GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- ITV: bereits im Bestand als U001014 (ITV) – Stammdaten werden nur ergänzt, keine neue ID
+- JOHNSON MATTHEY: bereits im Bestand als U001017 (JOHNSON MATTHEY) – Stammdaten werden nur ergänzt, keine neue ID
+- JULIUS BAER GRP: bereits im Bestand als U001018 (JULIUS BAER GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- JYSKE BANK: bereits im Bestand als U001019 (JYSKE BANK) – Stammdaten werden nur ergänzt, keine neue ID
+- KBC GRP: bereits im Bestand als U001021 (KBC GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- KBC ANCORA: bereits im Bestand als U001022 (KBC ANCORA) – Stammdaten werden nur ergänzt, keine neue ID
+- KESKO: bereits im Bestand als U001023 (KESKO) – Stammdaten werden nur ergänzt, keine neue ID
+- KETY: bereits im Bestand als U001024 (KETY) – Stammdaten werden nur ergänzt, keine neue ID
+- KGHM: bereits im Bestand als U001025 (KGHM) – Stammdaten werden nur ergänzt, keine neue ID
+- KERRY GRP: bereits im Bestand als U001026 (KERRY GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- KONE B: bereits im Bestand als U001029 (KONE B) – Stammdaten werden nur ergänzt, keine neue ID
+- KINGSPAN GRP: bereits im Bestand als U001030 (KINGSPAN GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- KONECRANES: bereits im Bestand als U001032 (KONECRANES) – Stammdaten werden nur ergänzt, keine neue ID
+- KUEHNE + NAGEL: bereits im Bestand als U001033 (KUEHNE + NAGEL) – Stammdaten werden nur ergänzt, keine neue ID
+- LAGERCRANTZ GROUP 'B': bereits im Bestand als U001035 (LAGERCRANTZ GROUP 'B') – Stammdaten werden nur ergänzt, keine neue ID
+- LATOUR INVESTMENT B: bereits im Bestand als U001036 (LATOUR INVESTMENT B) – Stammdaten werden nur ergänzt, keine neue ID
+- LIFCO B: bereits im Bestand als U001039 (LIFCO B) – Stammdaten werden nur ergänzt, keine neue ID
+- LEGAL & GENERAL GRP: bereits im Bestand als U001040 (LEGAL & GENERAL GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- LION FINANCE GROUP: bereits im Bestand als U001043 (LION FINANCE GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- LLOYDS BANKING GRP: bereits im Bestand als U001045 (LLOYDS BANKING GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- LINDT & SPRUENGLI P: bereits im Bestand als U001046 (LINDT & SPRUENGLI P) – Stammdaten werden nur ergänzt, keine neue ID
+- LOOMIS: bereits im Bestand als U001048 (LOOMIS) – Stammdaten werden nur ergänzt, keine neue ID
+- Mandatum: bereits im Bestand als U001055 (Mandatum) – Stammdaten werden nur ergänzt, keine neue ID
+- MAN GRP: bereits im Bestand als U001057 (MAN GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- MARKS & SPENCER GRP: bereits im Bestand als U001062 (MARKS & SPENCER GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- METLEN ENERGY & METALS: bereits im Bestand als U001063 (METLEN ENERGY & METALS) – Stammdaten werden nur ergänzt, keine neue ID
+- MERLIN PROPERTIES SOCIMI: bereits im Bestand als U001064 (MERLIN PROPERTIES SOCIMI) – Stammdaten werden nur ergänzt, keine neue ID
+- MOBIMO HLDG: bereits im Bestand als U001068 (MOBIMO HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- MONDI: bereits im Bestand als U001070 (MONDI) – Stammdaten werden nur ergänzt, keine neue ID
+- MOTOR OIL (HELLAS): bereits im Bestand als U001072 (MOTOR OIL (HELLAS)) – Stammdaten werden nur ergänzt, keine neue ID
+- MYCRONIC: bereits im Bestand als U001073 (MYCRONIC) – Stammdaten werden nur ergänzt, keine neue ID
+- Naturgy Energy Group: bereits im Bestand als U001076 (Naturgy Energy Group) – Stammdaten werden nur ergänzt, keine neue ID
+- NEXANS: bereits im Bestand als U001082 (NEXANS) – Stammdaten werden nur ergänzt, keine neue ID
+- NIBE INDUSTRIER B: bereits im Bestand als U001083 (NIBE INDUSTRIER B) – Stammdaten werden nur ergänzt, keine neue ID
+- NKT: bereits im Bestand als U001085 (NKT) – Stammdaten werden nur ergänzt, keine neue ID
+- NORDNET: bereits im Bestand als U001089 (NORDNET) – Stammdaten werden nur ergänzt, keine neue ID
+- NORDIC SEMICONDUCTOR: bereits im Bestand als U001090 (NORDIC SEMICONDUCTOR) – Stammdaten werden nur ergänzt, keine neue ID
+- NOVONESIS: bereits im Bestand als U001091 (NOVONESIS) – Stammdaten werden nur ergänzt, keine neue ID
+- OCTAVE INTELLIGENCE SDR: bereits im Bestand als U001092 (OCTAVE INTELLIGENCE SDR) – Stammdaten werden nur ergänzt, keine neue ID
+- NOVO NORDISK B: bereits im Bestand als U001094 (NOVO NORDISK B) – Stammdaten werden nur ergänzt, keine neue ID
+- ORION B: bereits im Bestand als U001096 (ORION B) – Stammdaten werden nur ergänzt, keine neue ID
+- ORSTED: bereits im Bestand als U001099 (ORSTED) – Stammdaten werden nur ergänzt, keine neue ID
+- PAN AFRICAN RESOURCES: bereits im Bestand als U001102 (PAN AFRICAN RESOURCES) – Stammdaten werden nur ergänzt, keine neue ID
+- PARTNERS GRP HLDG: bereits im Bestand als U001103 (PARTNERS GRP HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- PEKAO: bereits im Bestand als U001104 (PEKAO) – Stammdaten werden nur ergänzt, keine neue ID
+- PENNON GRP: bereits im Bestand als U001106 (PENNON GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- PERSIMMON: bereits im Bestand als U001110 (PERSIMMON) – Stammdaten werden nur ergänzt, keine neue ID
+- PKO BANK: bereits im Bestand als U001111 (PKO BANK) – Stammdaten werden nur ergänzt, keine neue ID
+- PIRELLI & C. S.P.A.: bereits im Bestand als U001112 (PIRELLI & C. S.P.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- PLUS500: bereits im Bestand als U001113 (PLUS500) – Stammdaten werden nur ergänzt, keine neue ID
+- PRIMARY HEALTH PROPS.: bereits im Bestand als U001115 (PRIMARY HEALTH PROPS.) – Stammdaten werden nur ergänzt, keine neue ID
+- PSP SWISS PROPERTY: bereits im Bestand als U001119 (PSP SWISS PROPERTY) – Stammdaten werden nur ergänzt, keine neue ID
+- PUIG BRANDS B: bereits im Bestand als U001121 (PUIG BRANDS B) – Stammdaten werden nur ergänzt, keine neue ID
+- PUBLICIS GRP: bereits im Bestand als U001122 (PUBLICIS GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- QUILTER: bereits im Bestand als U001125 (QUILTER) – Stammdaten werden nur ergänzt, keine neue ID
+- QINETIQ GRP: bereits im Bestand als U001126 (QINETIQ GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- Redeia Corporacion: bereits im Bestand als U001127 (Redeia Corporacion) – Stammdaten werden nur ergänzt, keine neue ID
+- RECKITT BENCKISER GRP: bereits im Bestand als U001128 (RECKITT BENCKISER GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- RANDSTAD: bereits im Bestand als U001130 (RANDSTAD) – Stammdaten werden nur ergänzt, keine neue ID
+- REPLY: bereits im Bestand als U001134 (REPLY) – Stammdaten werden nur ergänzt, keine neue ID
+- RIGHTMOVE GRP: bereits im Bestand als U001135 (RIGHTMOVE GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- RINGKJOBING LANDBOBANK: bereits im Bestand als U001136 (RINGKJOBING LANDBOBANK) – Stammdaten werden nur ergänzt, keine neue ID
+- ROCHE PS: bereits im Bestand als U001139 (ROCHE PS) – Stammdaten werden nur ergänzt, keine neue ID
+- ROCKWOOL B: bereits im Bestand als U001141 (ROCKWOOL B) – Stammdaten werden nur ergänzt, keine neue ID
+- ROLLS ROYCE HLDG: bereits im Bestand als U001142 (ROLLS ROYCE HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- RS Group: bereits im Bestand als U001143 (RS Group) – Stammdaten werden nur ergänzt, keine neue ID
+- ROSEBANK INDUSTRIES: bereits im Bestand als U001144 (ROSEBANK INDUSTRIES) – Stammdaten werden nur ergänzt, keine neue ID
+- ROYAL UNIBREW: bereits im Bestand als U001145 (ROYAL UNIBREW) – Stammdaten werden nur ergänzt, keine neue ID
+- ROTORK: bereits im Bestand als U001146 (ROTORK) – Stammdaten werden nur ergänzt, keine neue ID
+- SAAB B: bereits im Bestand als U001147 (SAAB B) – Stammdaten werden nur ergänzt, keine neue ID
+- SACYR: bereits im Bestand als U001149 (SACYR) – Stammdaten werden nur ergänzt, keine neue ID
+- RUBIS: bereits im Bestand als U001150 (RUBIS) – Stammdaten werden nur ergänzt, keine neue ID
+- SAGAX 'B': bereits im Bestand als U001153 (SAGAX 'B') – Stammdaten werden nur ergänzt, keine neue ID
+- SAGE GRP: bereits im Bestand als U001154 (SAGE GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- SAMPO: bereits im Bestand als U001156 (SAMPO) – Stammdaten werden nur ergänzt, keine neue ID
+- SAIPEM: bereits im Bestand als U001158 (SAIPEM) – Stammdaten werden nur ergänzt, keine neue ID
+- SBM OFFSHORE: bereits im Bestand als U001159 (SBM OFFSHORE) – Stammdaten werden nur ergänzt, keine neue ID
+- SCHINDLER P: bereits im Bestand als U001163 (SCHINDLER P) – Stammdaten werden nur ergänzt, keine neue ID
+- SCHRODERS: bereits im Bestand als U001164 (SCHRODERS) – Stammdaten werden nur ergänzt, keine neue ID
+- SCOR: bereits im Bestand als U001166 (SCOR) – Stammdaten werden nur ergänzt, keine neue ID
+- SEGRO: bereits im Bestand als U001167 (SEGRO) – Stammdaten werden nur ergänzt, keine neue ID
+- SECTRA 'B': bereits im Bestand als U001169 (SECTRA 'B') – Stammdaten werden nur ergänzt, keine neue ID
+- SCOTTISH & SOUTHERN ENERGY: bereits im Bestand als U001170 (SCOTTISH & SOUTHERN ENERGY) – Stammdaten werden nur ergänzt, keine neue ID
+- SERCO GRP: bereits im Bestand als U001172 (SERCO GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- SFS GROUP: bereits im Bestand als U001173 (SFS GROUP) – Stammdaten werden nur ergänzt, keine neue ID
+- SIEGFRIED 'R': bereits im Bestand als U001175 (SIEGFRIED 'R') – Stammdaten werden nur ergänzt, keine neue ID
+- SHAFTESBURY CAPITAL: bereits im Bestand als U001178 (SHAFTESBURY CAPITAL) – Stammdaten werden nur ergänzt, keine neue ID
+- SKANSKA B: bereits im Bestand als U001179 (SKANSKA B) – Stammdaten werden nur ergänzt, keine neue ID
+- SKF B: bereits im Bestand als U001180 (SKF B) – Stammdaten werden nur ergänzt, keine neue ID
+- SKANDINAVISKA ENSKILDA BK A: bereits im Bestand als U001181 (SKANDINAVISKA ENSKILDA BK A) – Stammdaten werden nur ergänzt, keine neue ID
+- SNAM RETE GAS: bereits im Bestand als U001183 (SNAM RETE GAS) – Stammdaten werden nur ergänzt, keine neue ID
+- SMITHS GRP: bereits im Bestand als U001185 (SMITHS GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- SMITH & NEPHEW: bereits im Bestand als U001186 (SMITH & NEPHEW) – Stammdaten werden nur ergänzt, keine neue ID
+- SOFTCAT: bereits im Bestand als U001189 (SOFTCAT) – Stammdaten werden nur ergänzt, keine neue ID
+- SOITEC: bereits im Bestand als U001190 (SOITEC) – Stammdaten werden nur ergänzt, keine neue ID
+- SPAREBANK 1 SOR-NORGE ASA: bereits im Bestand als U001192 (SPAREBANK 1 SOR-NORGE ASA) – Stammdaten werden nur ergänzt, keine neue ID
+- SPIE: bereits im Bestand als U001193 (SPIE) – Stammdaten werden nur ergänzt, keine neue ID
+- SPAREBANKEN NORGE: bereits im Bestand als U001194 (SPAREBANKEN NORGE) – Stammdaten werden nur ergänzt, keine neue ID
+- SSAB B: bereits im Bestand als U001195 (SSAB B) – Stammdaten werden nur ergänzt, keine neue ID
+- ST.JAMES'S PLACE CAPITAL: bereits im Bestand als U001197 (ST.JAMES'S PLACE CAPITAL) – Stammdaten werden nur ergänzt, keine neue ID
+- SUBSEA7: bereits im Bestand als U001203 (SUBSEA7) – Stammdaten werden nur ergänzt, keine neue ID
+- STOREBRAND: bereits im Bestand als U001205 (STOREBRAND) – Stammdaten werden nur ergänzt, keine neue ID
+- SULZER: bereits im Bestand als U001206 (SULZER) – Stammdaten werden nur ergänzt, keine neue ID
+- SUNRISE N A: bereits im Bestand als U001207 (SUNRISE N A) – Stammdaten werden nur ergänzt, keine neue ID
+- SVENSKA CELLULOSA AKTIE. SCA B: bereits im Bestand als U001208 (SVENSKA CELLULOSA AKTIE. SCA B) – Stammdaten werden nur ergänzt, keine neue ID
+- SWATCH BEARER: bereits im Bestand als U001209 (SWATCH BEARER) – Stammdaten werden nur ergänzt, keine neue ID
+- SVENSKA HANDELSBANKEN A: bereits im Bestand als U001210 (SVENSKA HANDELSBANKEN A) – Stammdaten werden nur ergänzt, keine neue ID
+- SWISS LIFE HLDG: bereits im Bestand als U001211 (SWISS LIFE HLDG) – Stammdaten werden nur ergänzt, keine neue ID
+- SWECO 'B': bereits im Bestand als U001214 (SWECO 'B') – Stammdaten werden nur ergänzt, keine neue ID
+- SWISS REINSURANCE COMPANY: bereits im Bestand als U001217 (SWISS REINSURANCE COMPANY) – Stammdaten werden nur ergänzt, keine neue ID
+- SWISSQUOTE 'R': bereits im Bestand als U001218 (SWISSQUOTE 'R') – Stammdaten werden nur ergänzt, keine neue ID
+- Technip Energies: bereits im Bestand als U001219 (Technip Energies) – Stammdaten werden nur ergänzt, keine neue ID
+- TAYLOR WIMPEY: bereits im Bestand als U001221 (TAYLOR WIMPEY) – Stammdaten werden nur ergänzt, keine neue ID
+- TELEFONICA: bereits im Bestand als U001223 (TELEFONICA) – Stammdaten werden nur ergänzt, keine neue ID
+- TELECOM ITALIA: bereits im Bestand als U001224 (TELECOM ITALIA) – Stammdaten werden nur ergänzt, keine neue ID
+- TELE2 B: bereits im Bestand als U001225 (TELE2 B) – Stammdaten werden nur ergänzt, keine neue ID
+- TELEPERFORMANCE: bereits im Bestand als U001227 (TELEPERFORMANCE) – Stammdaten werden nur ergänzt, keine neue ID
+- TEMENOS: bereits im Bestand als U001228 (TEMENOS) – Stammdaten werden nur ergänzt, keine neue ID
+- TOMRA SYSTEMS: bereits im Bestand als U001237 (TOMRA SYSTEMS) – Stammdaten werden nur ergänzt, keine neue ID
+- TP ICAP: bereits im Bestand als U001241 (TP ICAP) – Stammdaten werden nur ergänzt, keine neue ID
+- TRITAX BIG BOX REIT: bereits im Bestand als U001242 (TRITAX BIG BOX REIT) – Stammdaten werden nur ergänzt, keine neue ID
+- UMICORE: bereits im Bestand als U001243 (UMICORE) – Stammdaten werden nur ergänzt, keine neue ID
+- UMG: bereits im Bestand als U001245 (UMG) – Stammdaten werden nur ergänzt, keine neue ID
+- UNICAJA BANCO S.A.: bereits im Bestand als U001249 (UNICAJA BANCO S.A.) – Stammdaten werden nur ergänzt, keine neue ID
+- UNITE GROUP PLC: bereits im Bestand als U001250 (UNITE GROUP PLC) – Stammdaten werden nur ergänzt, keine neue ID
+- UNITED UTILITIES GRP: bereits im Bestand als U001252 (UNITED UTILITIES GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- UNIPOL ASSICURAZIONI: bereits im Bestand als U001253 (UNIPOL ASSICURAZIONI) – Stammdaten werden nur ergänzt, keine neue ID
+- VALLOUREC: bereits im Bestand als U001254 (VALLOUREC) – Stammdaten werden nur ergänzt, keine neue ID
+- Valmet: bereits im Bestand als U001255 (Valmet) – Stammdaten werden nur ergänzt, keine neue ID
+- VALIANT: bereits im Bestand als U001256 (VALIANT) – Stammdaten werden nur ergänzt, keine neue ID
+- VALEO: bereits im Bestand als U001257 (VALEO) – Stammdaten werden nur ergänzt, keine neue ID
+- VEND MARKETPLACES: bereits im Bestand als U001258 (VEND MARKETPLACES) – Stammdaten werden nur ergänzt, keine neue ID
+- VEOLIA ENVIRONNEMENT: bereits im Bestand als U001261 (VEOLIA ENVIRONNEMENT) – Stammdaten werden nur ergänzt, keine neue ID
+- VOLVO B: bereits im Bestand als U001266 (VOLVO B) – Stammdaten werden nur ergänzt, keine neue ID
+- VOPAK: bereits im Bestand als U001267 (VOPAK) – Stammdaten werden nur ergänzt, keine neue ID
+- VOESTALPINE: bereits im Bestand als U001268 (VOESTALPINE) – Stammdaten werden nur ergänzt, keine neue ID
+- VODAFONE GRP: bereits im Bestand als U001269 (VODAFONE GRP) – Stammdaten werden nur ergänzt, keine neue ID
+- VZ HOLDING 'N': bereits im Bestand als U001270 (VZ HOLDING 'N') – Stammdaten werden nur ergänzt, keine neue ID
+- WDP: bereits im Bestand als U001271 (WDP) – Stammdaten werden nur ergänzt, keine neue ID
+- WPP: bereits im Bestand als U001274 (WPP) – Stammdaten werden nur ergänzt, keine neue ID
+- WHITBREAD: bereits im Bestand als U001275 (WHITBREAD) – Stammdaten werden nur ergänzt, keine neue ID
+- YARA: bereits im Bestand als U001279 (YARA) – Stammdaten werden nur ergänzt, keine neue ID
+- ZEALAND PHARMA: bereits im Bestand als U001281 (ZEALAND PHARMA) – Stammdaten werden nur ergänzt, keine neue ID
+- ZEGONA COMMUNICATIONS: bereits im Bestand als U001283 (ZEGONA COMMUNICATIONS) – Stammdaten werden nur ergänzt, keine neue ID

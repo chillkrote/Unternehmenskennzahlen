@@ -7,6 +7,14 @@ U000017,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/adida
 U000017,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,21,"Biermann (IGBCE-Hauptvorstand), Sikorski (IGBCE Landesbezirksleiter)"
 U000017,2025,mitbestimmung_ar,"paritätisch (MitbestG), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,44,
 U000017,2025,pay_ratio,,,governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf,4,kein Verhältniswert; nur Vertikalvergleich (Entwicklung)
+U000036,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""Number of executive members: 9"""
+U000036,2025,vorstand_frauen_zahl,4,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""four female members, accounting for 44.4 %"" (Corporate Governance Statement); nach § 16 Abs. 2 SEAG mindestens eine Frau"
+U000036,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"sechs Anteilseigner-, sechs Arbeitnehmervertreter"
+U000036,2025,ar_frauen_zahl,5,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""five women (41.7 %) and seven men"" zum 31.12.2025"
+U000036,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"bestellt vom SE-Betriebsrat; vier aus Deutschland, je einer aus Frankreich und Italien"
+U000036,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"""including one trade union representative"" (ver.di); Person im Dokument nicht namentlich ausgewiesen"
+U000036,2025,mitbestimmung_ar,"SE-Beteiligungsvereinbarung (SEBG), 6 von 12 Arbeitnehmervertreter",,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,MitbestG gilt wegen der Rechtsform SE nicht; paritätische Besetzung lt. Vereinbarung
+U000036,2025,pay_ratio,,,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,333,"Allianz weist kein Verhältnis aus, nur Entwicklung Vorstand/Ø-Vergütung (95 T€ Deutschland, FTE); Berechnung siehe berechnungen/pay_ratio.csv"
 U000061,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,140,Stand 31.12.2025; Kurian und Tedeschi folgen ab 1.5.2026
 U000061,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,118,"Frauenanteil 16,7 %"
 U000061,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,141,
@@ -65,6 +73,14 @@ U000415,2025,mitbestimmung_ar,"paritätisch (MitbestG), 6 von 12 Arbeitnehmerver
 U000415,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,238,nicht ausgewertet
 U000415,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,3,"Katja Garcia Vila und Dr. Silke Maurer lt. Bezeichnung ""Vorständin""; Gesamtzahl im Vergütungsbericht nicht beziffert"
 U000415,2025,pay_ratio,,,governance/dokumente/mtu-aero-engines-ag/verguetungsbericht-2025.pdf,20,"Vertikalvergleich zeigt nur Entwicklung der Gesamtvergütung gegenüber Belegschaft in Deutschland, kein Verhältnis"
+U000420,2025,vorstand_mitglieder_zahl,11,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,70,"""elf Mitgliedern, davon zwei Frauen"" zum 31.12.2025"
+U000420,2025,vorstand_frauen_zahl,2,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,71,"Frauenanteil 18,18 %; Personen im Dokument nicht namentlich als Frauen ausgewiesen"
+U000420,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,73,
+U000420,2025,ar_frauen_zahl,9,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,73,"""neun weiblichen und elf männlichen Mitgliedern"" = 45 %"
+U000420,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,"Fußnote ""Vertreter der Arbeitnehmer"" bei zehn Mitgliedern; paritätisch lt. MitbestG"
+U000420,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,"Beier und Grundler (ver.di), Mücke (Vorsitzende Neue Assekuranz Gewerkschaft) lt. Berufsangabe; weitere Gewerkschaftszugehörigkeit nicht ausgewiesen"
+U000420,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter",,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,
+U000420,2025,pay_ratio,,,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/verguetungsbericht-2025.pdf,39,"Kein Verhältnis ausgewiesen; Vergleich nur als Veränderung (Ø-Vergütung Deutschland FTE 2025: -0,2 %), keine Absolutwerte -> Berechnung nach Böckler Variante A nicht möglich"
 U000502,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,Stand Jahresende 2025 (Vorjahr 3)
 U000502,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,"""drei Männern und einer Frau"" = 25 % (Vorjahr 66,7 %)"
 U000502,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,165,je acht Anteilseigner- und Arbeitnehmervertreter (§ 7 Abs. 1 Nr. 2 MitbestG)

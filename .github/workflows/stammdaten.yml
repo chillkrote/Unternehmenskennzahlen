@@ -28,7 +28,7 @@ jobs:
     timeout-minutes: 15
     steps:
       # ohne die großen PDF-/HTML-Dokumente (mehrere GB); die Prüfung liest nur CSV und JSON
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           filter: blob:none
@@ -38,7 +38,7 @@ jobs:
             !*.pdf
             !*.html
             !*.htm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Tests

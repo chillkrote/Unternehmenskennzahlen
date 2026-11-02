@@ -1,16 +1,16 @@
 name: Börsendaten Terminal
 
 # Daten-Update, kein Terminal-Bau (den übernimmt terminal.yml, nur wenn sich Daten geändert haben).
-#  - Mo-Fr 18:30 UTC (nach Xetra-Schluss): Tageskurse der Banken, Kennzahlen -> app/data/markt.json
-#  - Sa 05:00 UTC: Wochenkurse (zehn Jahre) aller Börsenunternehmen -> app/data/kurse_woche.json
-#  - Mo-Fr 22:00 UTC (nach US-Handelsschluss): Bereich BÖR, Aktienindizes weltweit und große Unternehmen -> app/data/boerse.json
+#  - Mo-Fr 18:37 UTC (nach Xetra-Schluss): Tageskurse der Banken, Kennzahlen -> app/data/markt.json
+#  - Sa 05:11 UTC: Wochenkurse (zehn Jahre) aller Börsenunternehmen -> app/data/kurse_woche.json
+#  - Mo-Fr 22:43 UTC (nach US-Handelsschluss): Bereich BÖR, Aktienindizes weltweit und große Unternehmen -> app/data/boerse.json
 # Fällt Yahoo teilweise aus (429), bleibt der letzte gute Stand liegen; der Lauf scheitert dann nicht.
 # Kosten: keine. Rund 3 Minuten je Lauf, Schätzung siehe .github/workflows/README.md
 on:
   schedule:
-    - cron: "30 18 * * 1-5"
-    - cron: "0 5 * * 6"
-    - cron: "0 22 * * 1-5"
+    - cron: "37 18 * * 1-5"
+    - cron: "11 5 * * 6"
+    - cron: "43 22 * * 1-5"
   workflow_dispatch:
     inputs:
       was:
@@ -37,9 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      WAS: ${{ github.event_name == 'schedule' && (github.event.schedule == '0 5 * * 6' && 'wochenkurse' || github.event.schedule == '0 22 * * 1-5' && 'boerse' || 'kurse') || inputs.was }}
+      WAS: ${{ github.event_name == 'schedule' && (github.event.schedule == '11 5 * * 6' && 'wochenkurse' || github.event.schedule == '43 22 * * 1-5' && 'boerse' || 'kurse') || inputs.was }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 1
           filter: blob:none
@@ -48,7 +48,7 @@ jobs:
             !*.pdf
             !*.gz
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip

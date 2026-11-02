@@ -17,6 +17,7 @@ VB = lambda u: f'governance/dokumente/{ids.lade().ordner(u)}/verguetungsbericht-
 # Variante A: Ø-Jahresvergütung der Beschäftigten in Deutschland (FTE) aus der vergleichenden Darstellung (§ 162 Abs. 1 Nr. 2 AktG)
 # unternehmen_id: (T€, Beschäftigtenkreis, Dokument, Seite)
 A = {
+ 'U000151': (121.0, 'Gesamtbelegschaft (Ø-Vergütung, Konzern lt. vergleichender Darstellung)', VB('U000151'), 48),
  'U000279': (105.283, 'Gesamtbelegschaft Deutschland (Ø-Vergütung, Vollzeitkraft ohne Altersversorgung)', VB('U000279'), 56),
  'U000017': (114.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Personalaufwand je FTE)', VB('U000017'), 19),
  'U000415': (101.662, 'aktive Stammbelegschaft Deutschland, auf Vollzeit normiert', VB('U000415'), 20),
@@ -36,6 +37,7 @@ B = {
 }
 # von den Unternehmen selbst ausgewiesene Quote (andere Definition als Variante A/B, nur zum Abgleich)
 PUBLIZIERT = {
+ 'U000151': (97.0, 'ESRS S1-16: höchstbezahlte Person (CEO) zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 111)'),
  'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
  'U000502': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
 }
@@ -114,7 +116,7 @@ for u in sorted(set(A) | set(B) | set(B_DIREKT)):
             add(u, var, f'Ø ganzjährige Vorstandsmitglieder (n={len(voll)})', mean(x['t'] for x in voll), t, basis, q + [f"{voll[0]['quelle']} S. {voll[0]['seite']}"], bem + zusatz)
 for u, (r, b) in PUBLIZIERT.items():
     rows.append(dict(unternehmen_id=u, gj=2025, variante='Unternehmen', bezug='ausgewiesen', zaehler_teur='', nenner_teur='', pay_ratio=r, nenner_basis=b,
-                     quellen=VB(u) if u != 'U000073' else GB(u), bemerkung='nur zum Abgleich, andere Definition'))
+                     quellen=GB(u) if u in ('U000073', 'U000151') else VB(u), bemerkung='nur zum Abgleich, andere Definition'))
 
 # Gender Pay Gap im Vorstand (unbereinigt) = (Ø Männer - Ø Frauen) / Ø Männer; nur ganzjährige Mitglieder
 gap = []

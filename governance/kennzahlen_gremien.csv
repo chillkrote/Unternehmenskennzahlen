@@ -89,6 +89,14 @@ U000537,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/siem
 U000537,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf,241,"Bloemers, Fehrmann (IG Metall-Sekretäre), Kerner (2. Vorsitzender IG Metall); Zuordnung aus Beruf"
 U000537,2025,mitbestimmung_ar,"paritätisch nach MitbestG, 10 von 20 Arbeitnehmervertreter",,governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf,230,"""German Codetermination Act"""
 U000537,2025,pay_ratio,,,governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf,4,kein Zahlenwert: vertikaler Vergleich wird vom Aufsichtsrat intern ermittelt (Vergütungsbericht S. 4)
+U000712,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"Frauenquote im Vorstand 12,5 % = 1 von 8 (nach Ausscheiden Kilian)"
+U000712,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"12,5 %; Hauke Stars (Frau lt. Bericht S. 53)"
+U000712,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"zehn Anteilseigner-, zehn Arbeitnehmervertreter; Land Niedersachsen entsendet zwei Anteilseignervertreter"
+U000712,2025,ar_frauen_zahl,9,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,227,45 %
+U000712,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,
+U000712,2025,ar_gewerkschaftsvertreter_zahl,7,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"""sieben dieser Arbeitnehmervertreter sind von Gewerkschaften gewählte Gewerkschaftsvertreter"""
+U000712,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter, davon 7 Gewerkschaftsvertreter",,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,
+U000712,2025,pay_ratio,,,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,72,"kein Verhältniswert; Vergleich der Veränderung mit bereinigtem Personalaufwand je FTE der Volkswagen AG, absolute Beträge nicht ausgewiesen"
 U000742,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,zum 31.12.2025 (ohne Dembeck); ab 1.1.2026 fünf mit Dimitrova
 U000742,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,Frauenanteil 25 % zum 31.12.2025 (Vorjahr 40 %); ab 1.1.2026 wieder 40 %
 U000742,2025,ar_mitglieder_zahl,9,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,"sechs Anteilseigner-, drei Arbeitnehmervertreter"

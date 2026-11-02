@@ -49,6 +49,7 @@ B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
+ ('Hauke Stars', 'U000712', GB('U000712'), 53, 'Anrede "Frau Stars" im Vergütungsbericht; Frauenquote Vorstand 12,5 % (S. 226)'),
  ('Dr. Astrid Arndt', 'U000742', VB('U000742'), 32, 'Possessivpronomen "ihrem Anstellungsvertrag"; Frauenanteil Vorstand 40 % im Vorjahr (Arndt, Dembeck)'),
  ('Dr. Sandra Dembeck', 'U000742', VB('U000742'), 32, 'Possessivpronomen "ihr Anstellungsvertrag"; Frauenanteil Vorstand GB S. 108'),
  ('Sylvie Nicol', 'U000279', VB('U000279'), 15, 'Geschlechtsangabe (w) in der Vergütungstabelle'),

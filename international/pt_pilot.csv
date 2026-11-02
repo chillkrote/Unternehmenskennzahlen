@@ -1,0 +1,11 @@
+name,isin,lei,ticker,branche,bank,land,bestand_id
+"Edp, S.A.",PTEDP0AM0009,529900CLC3WDMGI9VH80,,energie-versorger,nein,PT,U000907
+"Galp Energia, SGPS, S.A.",PTGAL0AM0009,2138003319Y7NM75FG53,,energie,nein,PT,U000950
+Jerónimo Martins Sgps Sa,PTJMT0AE0001,259400A8SZP10GB5IB19,,handel-konsum,nein,PT,U001016
+Banco Comercial Português S.A.,PTBCP0AM0015,JU1U6S0DG9YLT7N8ZV32,,banken,ja,PT,U000841
+"Sonae - Sgps, S.A.",PTSON0AM0001,549300847SOBT7HY7R50,,handel-konsum,nein,PT,
+"Nos, Sgps, S.A.",PTZON0AM0006,5493004DM8FGIY6QKF37,,telekom-medien,nein,PT,
+"The Navigator Company, S.A.",PTPTI0AM0006,549300UNIB7M2AXUXS35,,industrie,nein,PT,
+Ctt - Correios De Portugal S.A.,PTCTT0AM0001,529900G4A1IKOKC22K56,,transport-logistik,nein,PT,
+"Ren - Redes Energéticas Nacionais, Sgps, S.A.",PTREL0AM0008,549300FR1FN48IGHR915,,energie-versorger,nein,PT,
+"Corticeira Amorim, Sgps, S.A.",PTCOR0AE0006,213800J5M11TDEP3LQ76,,industrie,nein,PT,

@@ -1,0 +1,11 @@
+name,isin,lei,ticker,branche,bank,land,bestand_id
+Powszechna Kasa Oszczędności Bank Polski Spółka Akcyjna,PLPKO0000016,P4GTT6GF1W40CVIMFR43,,banken,ja,PL,U001111
+Orlen Spółka Akcyjna,PLPKN0000018,259400VVMM70CQREJT74,,energie,nein,PL,U001100
+KGHM Polska Miedź Spółka Akcyjna,PLKGHM000017,G30CO71KTT9JDYJESN22,,chemie-rohstoffe,nein,PL,U001025
+Bank Polska Kasa Opieki - Spółka Akcyjna,PLPEKAO00016,5493000LKS7B3UTF7H35,,banken,ja,PL,U001104
+Lpp Spółka Akcyjna,PLLPP0000011,259400NUS7MKGPJL4752,,handel-konsum,nein,PL,U001054
+"""Dino Polska"" Spółka Akcyjna",PLDINPL00011,259400H4L81SMPRTW956,,handel-konsum,nein,PL,U000899
+Cd Projekt Red Spółka Akcyjna,PLOPTTC00011,259400TYO5Q8SH8TL437,,software-it,nein,PL,U000874
+Pge Polska Grupa Energetyczna Spółka Akcyjna,PLPGER000010,259400MP9VXR0E69MJ89,,energie-versorger,nein,PL,
+mBank Spółka Akcyjna,PLBRE0000012,259400DZXF7UJKK2AY35,,banken,ja,PL,U001061
+Orange Polska Spółka Akcyjna,PLTLKPL00017,259400TOMPUOLS65II22,,telekom-medien,nein,PL,

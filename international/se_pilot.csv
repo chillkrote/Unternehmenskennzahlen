@@ -1,0 +1,11 @@
+name,isin,lei,ticker,branche,bank,land,bestand_id
+Aktiebolaget Volvo,SE0000115446,549300HGV012CNC8JD22,,automobil,nein,SE,U001266
+Telefonaktiebolaget LM Ericsson,SE0000108656,549300W9JLPW15XIFM52,,telekom-medien,nein,SE,U000926
+H & M Hennes & Mauritz AB,SE0000106270,529900O5RR7R39FRDM42,,handel-konsum,nein,SE,U000972
+Atlas Copco Aktiebolag,SE0017486889,213800T8PC8Q4FYJZR07,,industrie,nein,SE,U000811
+Sandvik Aktiebolag,SE0000667891,5299008ZUAXN43LVZF54,,industrie,nein,SE,U001162
+Skandinaviska Enskilda Banken AB,SE0000148884,F3JS33DEI6XQ4ZBPTN86,,banken,ja,SE,U001181
+Swedbank AB,SE0000242455,M312WZV08Y7LYUC71685,,banken,ja,SE,U001213
+Svenska Handelsbanken AB,SE0007100599,NHBDILHZTYCNBV5UYZ31,,banken,ja,SE,U001210
+Investor Aktiebolag,SE0015811963,549300VEBQPHRZBKUX38,,finanzdienstleister,nein,SE,U001009
+Telia Company Ab,SE0000667925,213800FSR9RNDUOTXO25,,telekom-medien,nein,SE,U001230

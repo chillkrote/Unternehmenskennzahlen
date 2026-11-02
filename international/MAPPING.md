@@ -34,3 +34,5 @@ Quelle: xBRL-JSON der ESEF-Einreichung, nur Fakten ohne zusätzliche Dimensionen
 | operating_cash_flow | ifrs-full:CashFlowsFromUsedInOperatingActivities |
 
 Mitarbeiter und aufsichtliche Kennzahlen: nicht in den Primärrechnungen getaggt, bleiben leer.
+
+Rundung innerhalb einer ESEF-Einreichung: kommt dasselbe dimensionslose Faktum mehrfach mit Werten vor, die höchstens um einen Schritt der gemeldeten Genauigkeit (`decimals`) abweichen, gilt der häufigste Wert; bei Gleichstand bleibt der Wert unbekannt (nicht importiert). Größere Abweichungen sind ein Widerspruch: die Einreichung wird nicht importiert und im Lauf gemeldet.

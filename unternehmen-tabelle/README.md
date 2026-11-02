@@ -1,6 +1,6 @@
 # Unternehmen-Tabelle (zusammengeführt)
 
-Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **26.130 Unternehmen** (sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`).
+Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **26.113 Unternehmen** (Namenszeilen mit ESEF-Piloten zusammengelegt, siehe `bereinigung_protokoll_esef.csv` und `bereinigung_protokoll_esef_2.csv`).
 
 | Datei | Inhalt |
 |---|---|

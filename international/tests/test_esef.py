@@ -66,8 +66,23 @@ class Normalisierung(unittest.TestCase):
     def test_duplikat_einmal_widerspruch_fehler(self):
         a = "ifrs-full:Assets"
         self.assertEqual(len(self.zeilen([fakt(a, "2026-01-01T00:00:00", 5), fakt(a, "2026-01-01T00:00:00", 5)])), 1)
+        f1, f2 = fakt(a, "2026-01-01T00:00:00", 5), fakt(a, "2026-01-01T00:00:00", 8)
+        f1["decimals"] = f2["decimals"] = 0
         with self.assertRaisesRegex(ValueError, "Widerspruch"):
-            self.zeilen([fakt(a, "2026-01-01T00:00:00", 5), fakt(a, "2026-01-01T00:00:00", 6)])
+            self.zeilen([f1, f2])
+
+    def test_rundungsabweichung_haeufigster_wert_sonst_unbekannt(self):
+        a, p = "ifrs-full:Equity", "2026-01-01T00:00:00"
+
+        def f(w):
+            x = fakt(a, p, w)
+            x["decimals"] = -3
+            return x
+        z = self.zeilen([f(2403793000), f(2403793000), f(2403792000)])
+        self.assertEqual([x["value"] for x in z], [D(2403793000)])
+        self.assertEqual(self.zeilen([f(2403793000), f(2403792000)]), [])     # Gleichstand: unbekannt
+        with self.assertRaisesRegex(ValueError, "Widerspruch"):
+            self.zeilen([f(2403793000), f(2403795000)])                       # über der Rundung
 
     def test_nur_jahresperioden_und_konzeptrang(self):
         r, rc = "ifrs-full:Revenue", "ifrs-full:RevenueFromContractsWithCustomers"
@@ -108,7 +123,10 @@ class Dokument(unittest.TestCase):
 
 
 class Pilotliste(unittest.TestCase):
-    LISTEN = {"fr_pilot.csv": ("FR", 2), "nl_pilot.csv": ("NL", 2), "it_pilot.csv": ("IT", 2), "es_pilot.csv": ("ES", 3)}
+    LISTEN = {"fr_pilot.csv": ("FR", 2), "nl_pilot.csv": ("NL", 2), "it_pilot.csv": ("IT", 2), "es_pilot.csv": ("ES", 3),
+              "be_pilot.csv": ("BE", 1, 10), "at_pilot.csv": ("AT", 2, 10), "fi_pilot.csv": ("FI", 1, 10), "ie_pilot.csv": ("IE", 2, 6),
+              "pt_pilot.csv": ("PT", 1, 10), "dk_pilot.csv": ("DK", 1, 10), "se_pilot.csv": ("SE", 3, 10), "no_pilot.csv": ("NO", 2, 10),
+              "pl_pilot.csv": ("PL", 3, 10)}
 
     def test_zehn_unternehmen_je_land_lei_isin_stammdaten(self):
         import sys
@@ -116,24 +134,28 @@ class Pilotliste(unittest.TestCase):
         import ids
         reg = ids.lade(neu=True)
         alle = set()
-        for datei, (land, banken) in self.LISTEN.items():
+        for datei, (land, banken, *anzahl) in self.LISTEN.items():
+            anzahl = anzahl[0] if anzahl else 10
             with open(Path(__file__).resolve().parents[1] / datei, encoding="utf-8", newline="") as f:
                 zeilen = list(csv.DictReader(f))
-            self.assertEqual(len(zeilen), 10, datei)
+            self.assertEqual(len(zeilen), anzahl, datei)
             self.assertEqual(sum(z["bank"] == "ja" for z in zeilen), banken, datei)
-            self.assertEqual(len({z["lei"] for z in zeilen}), 10, datei)
+            self.assertEqual(len({z["lei"] for z in zeilen}), anzahl, datei)
             for z in zeilen:
                 esef.lei_pruefen(z["lei"])
                 self.assertEqual(z.get("land") or "FR", land, z["name"])
-                self.assertTrue(ids.isin_pruefsumme_ok(z["isin"]) and z["isin"].startswith(land), z["isin"])
-                uid = reg.aufloesen(z["isin"])
+                if z["isin"]:
+                    self.assertTrue(ids.isin_pruefsumme_ok(z["isin"]) and z["isin"].startswith(land), z["isin"])
+                else:    # nur Finnland: GLEIF führt dort keine ISIN, siehe LUECKEN.md
+                    self.assertEqual(land, "FI", z["name"])
+                uid = reg.aufloesen(z["isin"]) if z["isin"] else z["bestand_id"]
                 self.assertIsNotNone(uid, f"{z['name']} nicht in stammdaten registriert")
                 self.assertEqual(reg.unternehmen[uid]["lei"], z["lei"])
                 if z.get("bestand_id"):
                     self.assertEqual(uid, z["bestand_id"], z["name"])
                 self.assertNotIn(uid, alle, f"{z['name']}: ID doppelt")
                 alle.add(uid)
-        self.assertEqual(len(alle), 40)
+        self.assertEqual(len(alle), 126)
 
 
 if __name__ == '__main__':

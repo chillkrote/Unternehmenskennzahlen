@@ -108,22 +108,32 @@ class Dokument(unittest.TestCase):
 
 
 class Pilotliste(unittest.TestCase):
-    def test_zehn_unternehmen_lei_isin_stammdaten(self):
+    LISTEN = {"fr_pilot.csv": ("FR", 2), "nl_pilot.csv": ("NL", 2), "it_pilot.csv": ("IT", 2), "es_pilot.csv": ("ES", 3)}
+
+    def test_zehn_unternehmen_je_land_lei_isin_stammdaten(self):
         import sys
         sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "stammdaten"))
         import ids
         reg = ids.lade(neu=True)
-        with open(Path(__file__).resolve().parents[1] / "fr_pilot.csv", encoding="utf-8", newline="") as f:
-            zeilen = list(csv.DictReader(f))
-        self.assertEqual(len(zeilen), 10)
-        self.assertEqual(sum(z["bank"] == "ja" for z in zeilen), 2)
-        self.assertEqual(len({z["lei"] for z in zeilen}), 10)
-        for z in zeilen:
-            esef.lei_pruefen(z["lei"])
-            self.assertTrue(ids.isin_pruefsumme_ok(z["isin"]) and z["isin"].startswith("FR"), z["isin"])
-            uid = reg.aufloesen(z["isin"])
-            self.assertIsNotNone(uid, f"{z['name']} nicht in stammdaten registriert")
-            self.assertEqual(reg.unternehmen[uid]["lei"], z["lei"])
+        alle = set()
+        for datei, (land, banken) in self.LISTEN.items():
+            with open(Path(__file__).resolve().parents[1] / datei, encoding="utf-8", newline="") as f:
+                zeilen = list(csv.DictReader(f))
+            self.assertEqual(len(zeilen), 10, datei)
+            self.assertEqual(sum(z["bank"] == "ja" for z in zeilen), banken, datei)
+            self.assertEqual(len({z["lei"] for z in zeilen}), 10, datei)
+            for z in zeilen:
+                esef.lei_pruefen(z["lei"])
+                self.assertEqual(z.get("land") or "FR", land, z["name"])
+                self.assertTrue(ids.isin_pruefsumme_ok(z["isin"]) and z["isin"].startswith(land), z["isin"])
+                uid = reg.aufloesen(z["isin"])
+                self.assertIsNotNone(uid, f"{z['name']} nicht in stammdaten registriert")
+                self.assertEqual(reg.unternehmen[uid]["lei"], z["lei"])
+                if z.get("bestand_id"):
+                    self.assertEqual(uid, z["bestand_id"], z["name"])
+                self.assertNotIn(uid, alle, f"{z['name']}: ID doppelt")
+                alle.add(uid)
+        self.assertEqual(len(alle), 40)
 
 
 if __name__ == '__main__':

@@ -2,7 +2,8 @@
 
 Je Unternehmen, Kennzahl und jüngster Periode der jüngsten Einreichung wird die im Dokument sichtbar ausgewiesene Zahl (ix:nonFraction mit
 Skalierung und Vorzeichen) für dasselbe Konzept und denselben Zeitraum gelesen und mit dem Datenbankwert verglichen. Nur 'gleich' zählt als bestätigt.
-Aufruf: INTERNATIONAL_USER_AGENT=... INTERNATIONAL_DATABASE_URL=... python3 international/verify_fr.py
+Aufruf: INTERNATIONAL_USER_AGENT=... INTERNATIONAL_DATABASE_URL=... python3 international/verify_fr.py [--csv=nl_pilot.csv]
+Ohne --csv: fr_pilot.csv; Ergebnis in pruefung_<kürzel>.csv (fr_pilot.csv -> pruefung_fr.csv).
 """
 import csv
 import sys
@@ -16,7 +17,7 @@ HIER = Path(__file__).resolve().parent
 sys.path.insert(0, str(HIER))
 import db  # noqa: E402
 import esef  # noqa: E402
-from httpsafe import SichererClient, atomar_speichern  # noqa: E402
+from httpsafe import AbrufFehler, SichererClient, atomar_speichern  # noqa: E402
 
 IX = "{http://www.xbrl.org/2013/inlineXBRL}"
 XBRLI = "{http://www.xbrl.org/2003/instance}"
@@ -70,11 +71,20 @@ def lies_dokument(daten: bytes):
 
 
 def main():
-    client = SichererClient(esef.HOSTS | {"filings.xbrl.org"}, max_bytes=80_000_000, timeout=180)
+    stamm = "fr_pilot.csv"
+    for a in sys.argv[1:]:
+        if a.startswith("--csv="):
+            stamm = a[6:]
+    if "/" in stamm or not stamm.endswith("_pilot.csv"):
+        raise SystemExit("--csv nur mit <kürzel>_pilot.csv im Ordner international/")
+    with open(HIER / stamm, encoding="utf-8", newline="") as f:
+        leis = [z["lei"] for z in csv.DictReader(f)]
+    ziel = HIER / ("pruefung_" + stamm[:-len("_pilot.csv")] + ".csv")
+    client = SichererClient(esef.HOSTS | {"filings.xbrl.org"}, max_bytes=250_000_000, timeout=180)
     ausgabe = []
     with db.verbinden() as conn:
-        ents = conn.execute("SELECT e.id, e.legal_name, e.lei FROM international.entity e WHERE e.lei IS NOT NULL AND EXISTS "
-                            "(SELECT 1 FROM international.fact f WHERE f.entity_id=e.id AND f.provenance ? 'fxo_id') ORDER BY e.id").fetchall()
+        ents = conn.execute("SELECT e.id, e.legal_name, e.lei FROM international.entity e WHERE e.lei = ANY(%s) AND EXISTS "
+                            "(SELECT 1 FROM international.fact f WHERE f.entity_id=e.id AND f.provenance ? 'fxo_id') ORDER BY e.id", (leis,)).fetchall()
         for uid, name, lei in ents:
             fxo = conn.execute("SELECT provenance->>'fxo_id' FROM international.fact WHERE entity_id=%s AND provenance ? 'fxo_id' "
                                "GROUP BY 1 ORDER BY max(period_end) DESC, 1 DESC LIMIT 1", (uid,)).fetchone()[0]
@@ -82,7 +92,12 @@ def main():
             url = esef.INDEX + einr["attributes"]["report_url"]
             pfad = HIER / "objektspeicher" / "esef" / "berichte" / (fxo.replace("/", "_") + ".xhtml")
             if not pfad.exists():
-                atomar_speichern(pfad.parent, pfad.name, client.holen(url))
+                try:
+                    atomar_speichern(pfad.parent, pfad.name, client.holen(url))
+                except AbrufFehler as ex:
+                    ausgabe.append([uid, name, "", "", "", "", "", fxo, "dokument_nicht_abrufbar", date.today().isoformat()])
+                    print(uid, name, "Dokument nicht abrufbar:", str(ex)[:80], flush=True)
+                    continue
             dok = lies_dokument(pfad.read_bytes())
             for metric, m in esef.MAPPING.items():
                 z = conn.execute("SELECT value, period_start, period_end, provenance->>'concept' FROM international.fact WHERE entity_id=%s AND metric_code=%s "
@@ -94,7 +109,7 @@ def main():
                 status = "nicht_gefunden" if not gefunden else ("gleich" if wert in gefunden else "abweichung")
                 ausgabe.append([uid, name, metric, konzept, f"{beginn or ''}..{ende}", wert, ";".join(str(x) for x in sorted(gefunden or [])), fxo, status, date.today().isoformat()])
             print(uid, name, "geprüft", flush=True)
-    with open(HIER / "pruefung_fr.csv", "w", newline="", encoding="utf-8") as f:
+    with open(ziel, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["unternehmen_id", "name", "kennzahl", "ifrs_konzept", "periode", "wert_datenbank", "wert_dokument", "einreichung", "status", "geprueft_am"])
         w.writerows(ausgabe)

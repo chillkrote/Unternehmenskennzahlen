@@ -35,7 +35,7 @@ KENNZAHL = {   # Spalte kennzahl in zeitreihe_lang.csv -> metric.code
     "leverage_ratio": "leverage_ratio", "leverage_exposure": "leverage_exposure", "lcr": "lcr", "nsfr": "nsfr", "hqla": "hqla",
 }
 DAUER = {"net_income"}   # Zeitraumwerte; der Beginn wird nur bei Stichtag 31.12. als 1. Januar abgeleitet
-LAND_ISO2 = {"Germany": "DE", "France": "FR", "Luxembourg": "LU", "Switzerland": "CH", "Austria": "AT", "Netherlands": "NL", "Italy": "IT",
+LAND_ISO2 = {"Germany": "DE", "France": "FR", "Luxembourg": "LU", "Switzerland": "CH", "Austria": "AT", "Netherlands": "NL", "Italy": "IT", "Spain": "ES",
              "Bulgaria": "BG", "United States": "US", "Cyprus": "CY", "China": "CN", "Poland": "PL", "Malta": "MT",
              "Sweden": "SE", "United Kingdom": "GB", "Australia": "AU"}
 NICHT_OECD = {"BG": "Bulgaria", "CY": "Cyprus", "CN": "China", "MT": "Malta"}   # Sitzländer außerhalb der OECD, damit domicile gesetzt werden kann
@@ -77,7 +77,7 @@ def entitaeten_importieren(conn, stamm, bericht):
             bericht["lei_ungueltig"] += 1
         conn.execute(
             "INSERT INTO international.entity (id, legal_name, domicile, lei, sector) VALUES (%s,%s,%s,%s,%s) "
-            "ON CONFLICT (id) DO UPDATE SET legal_name=EXCLUDED.legal_name, domicile=EXCLUDED.domicile, sector=EXCLUDED.sector",
+            "ON CONFLICT (id) DO UPDATE SET legal_name=EXCLUDED.legal_name, domicile=EXCLUDED.domicile, sector=EXCLUDED.sector, lei=COALESCE(EXCLUDED.lei, international.entity.lei)",
             (uid, z["name"], iso2 if known else None, lei, z["branche"] or None))
         ids = [("LEI", lei)] if lei else []
         ids += [("YAHOO_TICKER", z["ticker"])] if z["ticker"] else []

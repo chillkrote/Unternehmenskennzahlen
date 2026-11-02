@@ -435,6 +435,65 @@ def riksbank():
     return [x for x in zeilen if x]
 
 
+# --- Norwegen: Norges Bank, Tabelle "Projections" im Geldpolitischen Bericht (Ausgaben seit 2024) ----------
+def norges():
+    basis = "https://www.norges-bank.no"
+    idx = hole(basis + "/en/topics/Monetary-policy/Monetary-Policy-Report/").decode("utf-8", "ignore")
+    seiten = sorted(set(re.findall(r'href="(/en/news-events/publications/Monetary-Policy-Report/(20\d\d)/mpr-(\d)(20\d\d)/)"', idx)), key=lambda x: (x[1], x[2]))
+    zeilen = []
+    for pfad, jahr, nr, _ in seiten:
+        h = hole(basis + pfad).decode("utf-8", "ignore")
+        m = re.search(r'href="(/contentassets/[^"?]*/(?:mpr|MPR)[^"?/]*\.pdf)', h)
+        if not m:
+            continue
+        url = basis + m.group(1)
+        name = f"norges_mpr_{nr}_{jahr}.pdf"
+        speichere(name, hole(url))
+        t = pdf_text(ROH / name)
+        blk = t
+        jahre = [str(int(jahr) - 1 + i) for i in range(5)]
+        ausgabe = f"Geldpolitischer Bericht {nr}/{jahr}"
+        for g, pat, hin in (("inflation_vpi", r"^\s+CPI\s", "VPI, Veränderung zum Vorjahr; Jahresdurchschnitt"),
+                            ("bip_wachstum", r"^\s+GDP, mainland Norway", "BIP des Festlands (ohne Öl und Gas), Veränderung zum Vorjahr; Gesamt-BIP inkl. Öl und Gas steht im Bericht"),
+                            ("arbeitslosenquote", r"^\s+Registered unemployment \(rate, level\)", "Registrierte Arbeitslosigkeit (NAV), nicht die Erwerbsumfrage; Jahresdurchschnitt")):
+            kand = [re.findall(r"-?\d+\.\d", re.sub(r"\([^)]*\)", "", x)) for x in blk.splitlines() if re.match(pat, x)]
+            kand = [w for w in kand if len(w) >= 5]
+            if not kand:
+                continue
+            werte = kand[-1][-5:]
+            for j, v in zip(jahre, werte):
+                zeilen.append(z("NO", "Norges Bank", ausgabe, "", g, "%", j, float(v), "Primärdokument", url, hin))
+    return [x for x in zeilen if x]
+
+
+# --- Australien: RBA, Prognosearchiv zum Statement on Monetary Policy (Excel, eine Spalte je Ausgabe, Zeilen = Juni/Dezember) ----------
+def rba():
+    import openpyxl
+    url = "https://www.rba.gov.au/statistics/xls/smp-forecast-archive.xlsx"
+    speichere("rba_smp_forecast_archive.xlsx", hole(url))
+    wb = openpyxl.load_workbook(ROH / "rba_smp_forecast_archive.xlsx", data_only=True)
+    seite = "https://www.rba.gov.au/publications/smp/forecasts-archive.html"
+    zeilen = []
+    for blatt, g, e, hin in (("RGDP", "bip_wachstum", "%", "Veränderung des BIP im Dezemberquartal zum Vorjahresquartal"),
+                             ("CPI", "inflation_vpi", "%", "VPI, Veränderung im Dezemberquartal zum Vorjahresquartal"),
+                             ("UR", "arbeitslosenquote", "%", "Arbeitslosenquote im Dezemberquartal"),
+                             ("CR", "leitzins", "%", "Zielzins (Cash Rate) im Dezemberquartal; Annahme der RBA, ab Mai 2024 gemäß Marktpreisen")):
+        ws = wb[blatt]
+        rows = list(ws.iter_rows(min_row=4, values_only=True))
+        kopf = rows[0]
+        for ci, pub in enumerate(kopf):
+            if ci == 0 or not isinstance(pub, str) or "-" not in pub:
+                continue
+            mon, jahr = pub.split("-")
+            for r in rows[2:]:
+                if not isinstance(r[0], str) or not r[0].startswith("Dec-") or ci >= len(r) or not isinstance(r[ci], (int, float)):
+                    continue
+                if int(r[0][4:]) < int(jahr):
+                    continue
+                zeilen.append(z("AU", "Reserve Bank of Australia", f"SMP {mon} {jahr}", "", g, e, r[0][4:], float(r[ci]), "Primärdokument", seite, hin + "; Archivtabelle des RBA, Rundung je Ausgabe unterschiedlich"))
+    return [x for x in zeilen if x]
+
+
 # --- Schweiz: SECO-Expertengruppe (Anhang zur Medienmitteilung, aktuelle Prognose und in Klammern die vorherige) ----------
 MON_DE = {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dez"}
 
@@ -462,7 +521,7 @@ def seco():
 
 QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury", hmt), ("Funcas", funcas), ("Fed SEP", fed_sep),
            ("Bank of Canada", boc), ("Bank of Japan", boj), ("EZB-Stabsprognosen", ezb_stab),
-           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank)]
+           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba)]
 
 
 def main():

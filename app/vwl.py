@@ -68,6 +68,9 @@ def _monat_aus_ausgabe(a):
     m = re.search(r"(\d{4})-Q([1-4])", a)
     if m:
         return f"{m.group(1)}-{(int(m.group(2)) - 1) * 3 + 1:02d}"
+    m = re.search(r"Bericht ([1-4])/(\d{4})", a)
+    if m:
+        return f"{m.group(2)}-{int(m.group(1)) * 3:02d}"
     m = re.search(r"\b([A-Z][a-zäöü]+)\.? (\d{4})\b", a)
     if m and m.group(1) in _MON:
         return f"{m.group(2)}-{_MON[m.group(1)]}"

@@ -66,6 +66,8 @@ Datei: `prognosegeber_oecd.csv` (Schema angelehnt an `prognosen_institute.csv` u
 | Bank of England MPR | UK | Juli 2026 | VPI, BIP, Arbeitslosenquote, Bank Rate | Projektion für das jeweils dritte Quartal (Vierquartalswerte), nicht Kalenderjahre |
 | SECO Expertengruppe | CH | Sep 2026 (und Jun 2026 aus dem Klammerwert) | BIP (Sportevent-bereinigt), VPI, Arbeitslosenquote | Kalenderjahre, aus dem PDF-Anhang der Medienmitteilung |
 | Riksbank (offene API) | SE | alle Runden 2015:1 bis 2026:3 | BIP, CPIF, VPI, Arbeitslosenquote, Leitzins, Finanzierungssaldo | Jahreswerte aus den Quartals- bzw. Monatsreihen der API berechnet |
+| Norges Bank Geldpolitischer Bericht | NO | 10 Ausgaben 2024 bis 3/2026 | VPI, BIP Festland, registrierte Arbeitslosigkeit | Tabelle "Projections" im Bericht-PDF; erstes Jahr ist der Istwert der Ausgabe |
+| RBA Statement on Monetary Policy | AU | Nov 2018 bis Aug 2026 | BIP, VPI, Arbeitslosenquote, Cash Rate | Archiv-Excel des RBA; Werte jeweils für das Dezemberquartal (Vorjahresvergleich) |
 
 Vergleichbarkeit: Die Basis (Jahresdurchschnitt oder Q4/Q4) steht je Zeile im `hinweis`. Die Reihen verschiedener Geber sind deshalb nicht ohne Weiteres gleichzusetzen.
 

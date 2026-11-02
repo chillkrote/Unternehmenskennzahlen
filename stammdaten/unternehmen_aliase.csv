@@ -1884,7 +1884,9 @@ BURBERRY,U000863,name
 BUNZL,U000864,name
 BUZZI,U000865,name
 BUREAU VERITAS,U000866,name
+U001287,U000867,id_alt
 CAP GEMINI,U000867,name
+Capgemini SE,U000867,name
 CARREFOUR,U000868,name
 CARLSBERG B,U000869,name
 CAIXABANK,U000870,name
@@ -2075,7 +2077,9 @@ LPP,U001054,name
 Mandatum,U001055,name
 M&G,U001056,name
 MAN GRP,U001057,name
+U001284,U001058,id_alt
 LVMH MOET HENNESSY,U001058,name
+LVMH Moët Hennessy Louis Vuitton SE,U001058,name
 MELROSE INDUSTRIES,U001059,name
 MAPFRE,U001060,name
 MBANK,U001061,name
@@ -2182,7 +2186,9 @@ SANOFI,U001161,name
 SANDVIK,U001162,name
 SCHINDLER P,U001163,name
 SCHRODERS,U001164,name
+U001286,U001165,id_alt
 SCHNEIDER ELECTRIC,U001165,name
+Schneider Electric SE,U001165,name
 SCOR,U001166,name
 SEGRO,U001167,name
 SECURITAS B,U001168,name
@@ -2252,7 +2258,9 @@ TGS ASA,U001231,name
 TERNA,U001232,name
 TESCO,U001233,name
 TENARIS,U001234,name
+U001285,U001235,id_alt
 TOTALENERGIES,U001235,name
+TotalEnergies SE,U001235,name
 THALES,U001236,name
 TOMRA SYSTEMS,U001237,name
 THE MAGNUM ICE CREAM COMPANY,U001238,name
@@ -2301,12 +2309,20 @@ XTB,U001280,name
 ZEALAND PHARMA,U001281,name
 ZURICH INSURANCE GROUP,U001282,name
 ZEGONA COMMUNICATIONS,U001283,name
-LVMH Moët Hennessy Louis Vuitton SE,U001058,name
-TotalEnergies SE,U001235,name
-Schneider Electric SE,U001165,name
-Capgemini SE,U000867,name
 Société Générale,U001288,name
-U001284,U001058,id_alt
-U001287,U000867,id_alt
-U001286,U001165,id_alt
-U001285,U001235,id_alt
+Proximus,U001289,name
+Colruyt Group,U001290,name
+Wienerberger AG,U001291,name
+Telekom Austria Aktiengesellschaft,U001292,name
+Mayr-Melnhof Karton Aktiengesellschaft,U001293,name
+Strabag Se,U001294,name
+Flutter Entertainment Public Limited Company,U001295,name
+Permanent Tsb Group Holdings Public Limited Company,U001296,name
+"Sonae - Sgps, S.A.",U001297,name
+"Nos, Sgps, S.A.",U001298,name
+"The Navigator Company, S.A.",U001299,name
+Ctt - Correios De Portugal S.A.,U001300,name
+"Ren - Redes Energéticas Nacionais, Sgps, S.A.",U001301,name
+"Corticeira Amorim, Sgps, S.A.",U001302,name
+Pge Polska Grupa Energetyczna Spółka Akcyjna,U001303,name
+Orange Polska Spółka Akcyjna,U001304,name

@@ -8,6 +8,7 @@
 * Berichtigte Fassungen bleiben erhalten: jede Einreichung ist eine eigene Quelle (fxo_id); aktuelle Sicht über international.fact_as_of.
 """
 import hashlib
+from collections import Counter
 import json
 import re
 from datetime import date, datetime, timedelta
@@ -54,6 +55,13 @@ def lei_zu_isin(client: SichererClient, isin):
         raise AbrufFehler(f"ISIN {isin}: {len(treffer)} LEI-Treffer bei GLEIF, genau 1 erwartet")
     e = treffer[0]["attributes"]["entity"]
     return lei_pruefen(treffer[0]["id"]), e["legalName"]["name"], e["legalAddress"]["country"]
+
+
+def lei_info(client: SichererClient, lei):
+    """GLEIF: LEI -> (Name, Land). Für Melder, deren ISIN GLEIF nicht führt (z. B. Finnland)."""
+    d = json.loads(client.holen(f"https://api.gleif.org/api/v1/lei-records/{quote(lei_pruefen(lei))}"))
+    e = d["data"]["attributes"]["entity"]
+    return e["legalName"]["name"], e["legalAddress"]["country"]
 
 
 def einreichungen(client: SichererClient, lei):
@@ -126,7 +134,7 @@ def normalisieren(eintraege, entity_id, source_id, einreichung):
     for e in eintraege:
         k = (e["metric"], e["start"], e["end"])
         bester[k] = min(bester.get(k, e["rang"]), e["rang"])
-    zeilen, gesehen = [], {}
+    kandidaten = {}
     for e in eintraege:
         if e["rang"] != bester[(e["metric"], e["start"], e["end"])]:
             continue
@@ -135,11 +143,24 @@ def normalisieren(eintraege, entity_id, source_id, einreichung):
         if e["start"] is not None and periode_klasse(e["start"], e["end"]) != "annual":
             continue
         schluessel = f"{e['concept']}|{e['unit']}|{e['start'] or ''}|{e['end']}"
-        if schluessel in gesehen:
-            if gesehen[schluessel] != e["wert"]:
+        kandidaten.setdefault(schluessel, []).append(e)
+    zeilen = []
+    for schluessel, liste in kandidaten.items():
+        werte = Counter(x["wert"] for x in liste)
+        e = liste[0]
+        if len(werte) > 1:
+            # Abweichungen nur im Rahmen der gemeldeten Rundung (ein Schritt der letzten gemeldeten Stelle) sind zulässig:
+            # der häufigste Wert gilt, bei Gleichstand bleibt die Zahl unbekannt. Alles andere ist ein echter Widerspruch.
+            try:       # maßgeblich ist die gröbste gemeldete Genauigkeit
+                toleranz = Decimal(10) ** (-min(int(x["decimals"]) for x in liste))
+            except (TypeError, ValueError):
+                toleranz = Decimal(0)
+            if max(werte) - min(werte) > toleranz:
                 raise ValueError(f"Widerspruch in derselben Einreichung: {schluessel}")
-            continue
-        gesehen[schluessel] = e["wert"]
+            haeufig = werte.most_common()
+            if len(haeufig) > 1 and haeufig[0][1] == haeufig[1][1]:
+                continue
+            e = next(x for x in liste if x["wert"] == haeufig[0][0])
         zeilen.append({
             "entity_id": entity_id, "metric_code": e["metric"], "period_start": e["start"], "period_end": e["end"],
             "value": e["wert"], "unit": e["unit"], "accounting_standard": "IFRS",

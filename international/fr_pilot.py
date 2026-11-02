@@ -14,7 +14,8 @@ sys.path.insert(0, str(HIER))
 sys.path.insert(0, str(HIER.parent / "stammdaten"))
 
 PILOT = HIER / "fr_pilot.csv"
-LAENDER = {"FR": "France", "NL": "Netherlands", "IT": "Italy", "ES": "Spain"}
+LAENDER = {"FR": "France", "NL": "Netherlands", "IT": "Italy", "ES": "Spain", "BE": "Belgium", "AT": "Austria", "FI": "Finland", "IE": "Ireland",
+           "PT": "Portugal", "DK": "Denmark", "SE": "Sweden", "NO": "Norway", "PL": "Poland"}
 
 
 def waehle(argv):
@@ -42,8 +43,12 @@ def registrieren(client=None):
     for z in lies():
         esef.lei_pruefen(z["lei"])
         if client is not None:
-            lei, name, land = esef.lei_zu_isin(client, z["isin"])
             iso = z.get("land") or "FR"
+            if z["isin"]:
+                lei, name, land = esef.lei_zu_isin(client, z["isin"])
+            else:    # ISIN nicht über GLEIF belegt (Finnland): LEI-Datensatz prüfen, ISIN bleibt leer
+                name, land = esef.lei_info(client, z["lei"])
+                lei = z["lei"]
             if lei != z["lei"] or land != iso:
                 raise SystemExit(f"{z['name']}: GLEIF nennt {lei} ({land}), CSV {z['lei']}")
         bestand = z.get("bestand_id") or ""
@@ -51,18 +56,19 @@ def registrieren(client=None):
             # schon erfasste Zeile (nur Name, aus der Tabellenerhebung): ID behalten, ISIN/LEI/Ticker ergänzen
             if bestand not in reg.unternehmen or reg.unternehmen[bestand]["land"] != LAENDER[z.get("land") or "FR"]:
                 raise SystemExit(f"{z['name']}: bestand_id {bestand} unbekannt oder anderes Land")
-            reg.isins_zuordnen(bestand, z["isin"], ())
+            if z["isin"]:
+                reg.isins_zuordnen(bestand, z["isin"], ())
             uid = bestand
         else:
             uid = reg.registrieren(name=z["name"], branche=z["branche"], isin=z["isin"], land=LAENDER[z.get("land") or "FR"], ticker=z["ticker"],
-                                   lei=z["lei"], herkunft="ESEF-Pilot", hinweis=f"ESEF-Pilot {LAENDER[z.get('land') or 'FR']}")
+                                   lei=z["lei"], status="börsennotiert", herkunft="ESEF-Pilot", hinweis=f"ESEF-Pilot {LAENDER[z.get('land') or 'FR']}")
         r = reg.unternehmen[uid]
         # schon vorhandene Zeilen (z. B. aus der Tabellenerhebung, nur mit Namen) ergänzen; abweichende Angaben nie überschreiben
         for feld, wert in (("isin_haupt", z["isin"]), ("lei", z["lei"])):
-            if r[feld] and r[feld] != wert:
+            if wert and r[feld] and r[feld] != wert:
                 raise SystemExit(f"{uid} {z['name']}: {feld} {r[feld]} weicht von {wert} ab")
         reg.aktualisieren(uid, isin_haupt=z["isin"], lei=z["lei"], ticker=z["ticker"] if not r["ticker"] else "", land=LAENDER[z.get("land") or "FR"])
-        ergebnis[z["isin"]] = uid
+        ergebnis[z["isin"] or z["lei"]] = uid
     reg.speichern()
     return ergebnis
 
@@ -79,7 +85,7 @@ def importieren(dry_run=False):
         db.laender_laden(conn)
         import_de.importieren(conn, dry_run=dry_run)     # Entitäten (inkl. neuer FR-IDs) anlegen
         for z in lies():
-            uid = ids_[z["isin"]]
+            uid = ids_[z["isin"] or z["lei"]]
             if dry_run:
                 conn.execute("INSERT INTO international.entity (id, legal_name) VALUES (%s,%s) ON CONFLICT DO NOTHING", (uid, z["name"]))
             gesamt_neu = 0
@@ -92,7 +98,11 @@ def importieren(dry_run=False):
                         raise
                     print(f"  übersprungen (zu groß): {e['attributes']['fxo_id']}")
                     continue
-                neu, alt = esef.importieren(conn, pfad, h, url, e, uid, z["lei"], dry_run=dry_run, bank=z["bank"] == "ja")
+                try:
+                    neu, alt = esef.importieren(conn, pfad, h, url, e, uid, z["lei"], dry_run=dry_run, bank=z["bank"] == "ja")
+                except ValueError as ex:      # echter Widerspruch innerhalb einer Einreichung: diese Einreichung bleibt draußen, der Rest läuft weiter
+                    print(f"  übersprungen (Widerspruch): {e['attributes']['fxo_id']}: {ex}")
+                    continue
                 gesamt_neu += neu
             print(f"{uid} {z['name']}: {len(liste)} Einreichungen, neu {gesamt_neu}")
 

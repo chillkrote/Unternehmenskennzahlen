@@ -3,7 +3,7 @@ name: International (Tests)
 # Offline-Tests der internationalen Erweiterung gegen eine echte PostgreSQL-16-Instanz. Kein Netzwerkzugriff auf Datenanbieter.
 on:
   pull_request:
-    paths: ["international/**", "stammdaten/**", ".github/workflows/international.yml"]
+    paths: ["international/**", "stammdaten/**", "unternehmen-tabelle/**", ".github/workflows/international.yml"]
   workflow_dispatch:
 
 permissions:

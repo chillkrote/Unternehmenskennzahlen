@@ -1,0 +1,22 @@
+aktion,name_behalten,name_entfernt,begruendung
+zusammengelegt,Fielmann Group AG,Fielmann Group,"dasselbe Unternehmen, Zeile ohne Daten"
+zusammengelegt,DHL AG,DHL,"dasselbe Unternehmen (Deutsche Post DHL), Börsenzeile und Kürzel"
+zusammengelegt,DHL AG,DHL AG (DHL),"dasselbe Unternehmen (Deutsche Post DHL), Börsenzeile und Kürzel"
+zusammengelegt,SGH (SGH),SGH,"Kürzel-Zeile ohne Daten, ASX-Code SGH"
+zusammengelegt,Wisr Limited (WZR),WISR,"Kürzel-Zeile ohne Daten, gleicher Name"
+zusammengelegt,AXA SA (CS),AXA,"gleiche Gesellschaft (ISIN FR0000120628 laut Zeile), Börsenzeile mit Registereintrag"
+zusammengelegt,BSE LTD (BSE),BSE,"Kürzel-Zeile ohne Daten, gleicher Name"
+zusammengelegt,UCB SA (UCB),UCB,"gleiche Gesellschaft, Börsenzeile mit Registereintrag"
+zusammengelegt,HEINEKEN NV (HEIA),Heineken,gleiche Gesellschaft; Heineken Holding bleibt eigene Zeile
+zusammengelegt,The Israel Corporation Ltd.,Israel,"gleicher Ticker ILCO, verkürzter Name"
+zusammengelegt,Meridian Energy,MERIDIAN ENERGY LTD (MEL),"gleiche Gesellschaft, zusätzlich am NZX (MEL)"
+zusammengelegt,VALTERRA PLATINUM LTD,VALTERRA PLATINUM LTD (VALT),"gleiche Gesellschaft, zusätzlich London (VALT)"
+zusammengelegt,Avenira Limited,Avenira Limited (AEVN),"gleiche Gesellschaft, weiterer ASX-Code AEVN"
+zusammengelegt,Bpm Minerals Limited,Bpm Minerals Limited (BPMN),"gleiche Gesellschaft, weiterer ASX-Code BPMN"
+zusammengelegt,Charger Metals Nl,Charger Metals Nl (CHRCB),"gleiche Gesellschaft, weiterer ASX-Code CHRCB"
+zusammengelegt,Cynata Therapeutics Limited,Cynata Therapeutics Limited (CYPN),"gleiche Gesellschaft, weiterer ASX-Code CYPN"
+zusammengelegt,Emu Nl,Emu Nl (EMUCA),"gleiche Gesellschaft, weiterer ASX-Code EMUCA"
+zusammengelegt,Enova Mining Limited,Enova Mining Limited (ENVN),"gleiche Gesellschaft, weiterer ASX-Code ENVN"
+zusammengelegt,Latrobe Magnesium Limited,Latrobe Magnesium Limited (LMGN),"gleiche Gesellschaft, weiterer ASX-Code LMGN"
+zusammengelegt,Schneider Electric,SCHNEIDER ELECTRIC (SU),gleiche ID nach Registerzusammenführung
+zusammengelegt,TotalEnergies,TOTALENERGIES (TTE),gleiche ID nach Registerzusammenführung

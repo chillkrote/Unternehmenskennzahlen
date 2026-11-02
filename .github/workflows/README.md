@@ -2,8 +2,8 @@
 
 | Datei | Zweck | Takt (UTC) | Laufzeit |
 |---|---|---|---|
-| `marktdaten.yml` „Börsendaten Terminal“ | Tageskurse der Banken (`app/data/markt.json`); samstags Wochenkurse (`kurse_woche.json`); Bereich BÖR: Aktienindizes weltweit und große Unternehmen (`boerse.json`) | Mo–Fr 18:30, Sa 05:00, Mo–Fr 22:00 | ca. 3 min (Sa ca. 2 min, BÖR ca. 2 min) |
-| `termine.yml` „Berichtstermine“ | Termine erfassen, fällige Berichte laden, montags Finanzkalender lesen | täglich 05:20, Mo–Fr 16:20 | ca. 3–4 min, montags +6 min |
+| `marktdaten.yml` „Börsendaten Terminal“ | Tageskurse der Banken (`app/data/markt.json`); samstags Wochenkurse (`kurse_woche.json`); Bereich BÖR: Aktienindizes weltweit und große Unternehmen (`boerse.json`) | Mo–Fr 18:37, Sa 05:11, Mo–Fr 22:43 (UTC; GitHub startet Zeitpläne oft Stunden später) | ca. 3 min (Sa ca. 2 min, BÖR ca. 2 min) |
+| `termine.yml` „Berichtstermine“ | Termine erfassen, fällige Berichte laden, montags Finanzkalender lesen | täglich 05:17, Mo–Fr 16:47 (UTC; GitHub startet Zeitpläne oft Stunden später) | ca. 3–4 min, montags +6 min |
 | `terminal.yml` „Terminal bauen“ | baut `bankterminal.html` und legt sie als Artifact und auf den Branch `terminal-dist` | nur auf Anforderung | ca. 0,5 min |
 | `desktop-macos.yml` | macOS-App (.dmg) | von Hand, Tag `desktop-v*`, PR an `desktop/` | ca. 2 min, macOS zählt zehnfach |
 
@@ -26,8 +26,8 @@ Gemessen am Testlauf vom 27.10.2026 (Abruf inkl. Start je Job ca. 1 min aufgerun
 |---|---|---|---|
 | Börsendaten Mo–Fr | 22 | 3 | 66 |
 | Wochenkurse Sa | 4 | 3 | 12 |
-| Berichtstermine 05:20 | 30 | 4 | 120 |
-| Berichtstermine 16:20 Mo–Fr | 22 | 4 | 88 |
+| Berichtstermine 05:17 | 30 | 4 | 120 |
+| Berichtstermine 16:47 Mo–Fr | 22 | 4 | 88 |
 | Finanzkalender-Scan Mo | 4 | 6 | 24 |
 | Terminal bauen (nach Datenänderung, ca. 2 je Tag) | 60 | 1 | 60 |
 | **Summe** | | | **ca. 370** |

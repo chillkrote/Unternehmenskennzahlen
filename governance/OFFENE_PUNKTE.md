@@ -45,3 +45,8 @@ Stand 02.11.2026. Diese Liste wird bei jedem Block fortgeschrieben. Sie ist so g
 
 * Erfasst werden nur beruflich relevante, veröffentlichte Angaben (Name, Funktion, Vergütung nach § 162 AktG, Mandate). Kein Wohnort, keine Familie. In einigen Berichten stehen Geburtsdatum und Wohnort; sie werden bewusst nicht übernommen.
 * Personenprofile über die Zeit verknüpfen mehrere Unternehmen; vor einer Veröffentlichung außerhalb des Repos klären, ob eine Prüfung nach DSGVO nötig ist.
+
+## Block 2 (Stand 02.11.2026)
+- Erfasst: Allianz SE (U000036), Munich Re (U000420). Allianz: Pay Ratio nach Variante A gerechnet; Frauen im Vorstand (4 von 9) nur als Zahl, Namen im Bericht nicht ausdrücklich als Frauen ausgewiesen, daher keine Gender-Gap-Rechnung.
+- Munich Re: Vergütungsbericht liegt separat auf munichre.com (Download per curl möglich), enthält keine Absolutwerte der Ø-Belegschaftsvergütung, daher keine Pay Ratio nach Variante A.
+- Nicht erfasst (Vergütungsbericht nur auf Seiten mit Bot-Schutz oder gesperrten Hosts, nicht umgangen): E.ON (eon.com 403), Infineon (infineon.com/eqs 202/503), Mercedes-Benz (403), Bayer (403).

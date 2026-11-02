@@ -494,6 +494,37 @@ def rba():
     return [x for x in zeilen if x]
 
 
+# --- Südkorea: Bank of Korea, Korea Economic Outlook (Zusammenfassungstabelle im PDF; Liste über listCont.do der englischen Seite) ----------
+def bok():
+    basis = "https://www.bok.or.kr"
+    liste = hole(basis + "/eng/singl/newsDataEng/listCont.do?pageIndex=&targetDepth=3&menuNo=400413&syncMenuChekKey=1&searchCnd=1&searchKwd=&depth2=400065&depth3=400413").decode("utf-8", "ignore")
+    zeilen = []
+    for pfad, rest in re.findall(r'href="(/eng/bbs/B0000358/view\.do\?nttId=\d+)[^"]*"(.*?)</a>', liste, flags=re.S):
+        titel = html.unescape(re.sub(r"<[^>]+>|\s+", " ", rest)).strip()
+        mt = re.search(r"Korea Economic Outlook \((\w+) (20\d\d)\)$", titel)
+        if not mt:
+            continue
+        seite = hole(basis + pfad + "&menuNo=400413").decode("utf-8", "ignore")
+        pdf = re.search(r'href="(/fileSrc/eng/[^"\s]*\.pdf)', seite)
+        if not pdf:
+            continue
+        monat, jahr = mt.groups()
+        name = f"bok_outlook_{monat.lower()}_{jahr}.pdf"
+        url = basis + pdf.group(1)
+        speichere(name, hole(url))
+        t = pdf_text(ROH / name)
+        for g, pat, hin in (("bip_wachstum", r"^[^A-Za-z]*GDP growth rate", "BIP, Veränderung zum Vorjahr"),
+                            ("inflation_vpi", r"^[^A-Za-z]*Headline infla\w+", "VPI gesamt, Veränderung zum Vorjahr (Kerninflation steht im Bericht)")):
+            kand = [re.findall(r"-?\d+\.\d", re.sub(r"\([^)]*\)", "", x)) for x in t.splitlines() if re.match(pat, x, re.I)]
+            kand = [w for w in kand if 3 <= len(w) <= 4]
+            if not kand:
+                continue
+            for i, v in enumerate(kand[0]):
+                zeilen.append(z("KR", "Bank of Korea", f"Korea Economic Outlook {monat[:3]} {jahr}", "", g, "%", str(int(jahr) - 1 + i), float(v), "Primärdokument", url,
+                                hin + "; erstes Jahr = Istwert"))
+    return [x for x in zeilen if x]
+
+
 # --- Schweiz: SECO-Expertengruppe (Anhang zur Medienmitteilung, aktuelle Prognose und in Klammern die vorherige) ----------
 MON_DE = {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dez"}
 
@@ -521,7 +552,7 @@ def seco():
 
 QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury", hmt), ("Funcas", funcas), ("Fed SEP", fed_sep),
            ("Bank of Canada", boc), ("Bank of Japan", boj), ("EZB-Stabsprognosen", ezb_stab),
-           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba)]
+           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba), ("Bank of Korea", bok)]
 
 
 def main():

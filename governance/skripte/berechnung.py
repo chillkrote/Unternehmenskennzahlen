@@ -26,6 +26,7 @@ A = {
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
 # unternehmen_id: (Personalaufwand Mio. €, Beschäftigte, Basis, Seite Aufwand, Seite Beschäftigte)
 B = {
+ 'U000125': (5922, 92653, 'Mitarbeitende zum 31.12. (fortgeführte Aktivitäten), Personalaufwand fortgeführte Aktivitäten', 260, 2),
  'U000742': (693.8, 16582, 'Ø Mitarbeiter*innen (ohne Werkstudierende, Praktikant*innen, Auszubildende)', 128, 2),
  'U000279': (3790, 47300, 'Ø Mitarbeiter:innen Konzern', 109, 109),
  'U000017': (3226, 61952, 'Mitarbeiter im Jahresdurchschnitt (Köpfe)', 436, 454),
@@ -37,6 +38,7 @@ B = {
  'U000537': (10424, 101414, 'Ø Mitarbeitende GJ 2025', 192, 107),
 }
 # von den Unternehmen selbst ausgewiesene Quote (andere Definition als Variante A/B, nur zum Abgleich)
+BEM = {'U000125': '; CEO-Wert enthält Abfindung 4.788 T€ (Ausscheiden 31.12.2025); Vorstandsvergütung: nicht aller 2025 aktiven Mitglieder ganzjährig'}
 PUBLIZIERT = {
  'U000151': (97.0, 'ESRS S1-16: höchstbezahlte Person (CEO) zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 111)'),
  'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
@@ -108,7 +110,7 @@ for u in sorted(set(A) | set(B) | set(B_DIREKT)):
         t, basis, doc, s = B_DIREKT[u]
         nenner.append(('B', t, basis, [f'{doc} S. {s}'], 'Personalaufwand je FTE direkt ausgewiesen, nicht um Vorstandsvergütung bereinigt'))
     for var, t, basis, q, bem in nenner:
-        zusatz = '; Vorstandsvergütung = gewährte/geschuldete Vergütung § 162 AktG lt. verguetung.csv'
+        zusatz = BEM.get(u, '') + '; Vorstandsvergütung = gewährte/geschuldete Vergütung § 162 AktG lt. verguetung.csv'
         if ceo:
             c = ceo[0]
             add(u, var, 'Vorstandsvorsitzender', c['t'], t, basis, q + [f"{c['quelle']} S. {c['seite']}"], bem + zusatz)

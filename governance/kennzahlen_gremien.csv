@@ -23,6 +23,14 @@ U000073,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/beier
 U000073,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,298,"Jan Koltze, Regional Head IG BCE"
 U000073,2025,mitbestimmung_ar,paritätisch (6 von 12 Arbeitnehmervertreter),,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,50,Rechtsgrundlage (MitbestG) nicht wörtlich im Dokument; aus Besetzung abgeleitet
 U000073,2025,pay_ratio,125.83,Verhältnis,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,137,"Jahreszielvergütung der höchstbezahlten Person zum Median aller Beschäftigten (nicht CEO-Bezug); Segmente: Consumer 132,54, tesa 108,55"
+U000125,2025,vorstand_mitglieder_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet; 8 Personen im Berichtsjahr tätig (Wechsel durch Aumovio-Abspaltung)
+U000125,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,ar_mitglieder_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,Mitgliederzahl nicht ausgewertet
+U000125,2025,ar_frauen_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,mitbestimmung_ar,paritätisch (MitbestG),,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,71,Verweis auf Mitbestimmungsgesetz im Abschnitt Aufsichtsrat; Zahl der Arbeitnehmervertreter nicht ausgewertet
+U000125,2025,pay_ratio,,,governance/dokumente/continental-aktiengesellschaft/verguetungsbericht-2025.pdf,31,kein Verhältniswert; vergleichende Darstellung nur mit Veränderungsraten (S. 28 und 31)
 U000151,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,41,im GJ 2025 aktive Mitglieder lt. Vergütungsbericht; zum Jahresende 7 (Pottmeyer ausgeschieden 30.9.2025)
 U000151,2025,vorstand_frauen_zahl,2,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,"""The Executive Board of Deutsche Börse AG consists of two female members""; namentlich belegt nur Heike Eckert (Arbeitsdirektorin)"
 U000151,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,acht Anteilseigner- und acht Arbeitnehmervertreter

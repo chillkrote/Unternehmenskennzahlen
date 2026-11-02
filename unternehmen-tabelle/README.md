@@ -1,6 +1,6 @@
 # Unternehmen-Tabelle (zusammengeführt)
 
-Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **26.155 Unternehmen**.
+Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **26.137 Unternehmen**.
 
 | Datei | Inhalt |
 |---|---|
@@ -11,6 +11,7 @@ Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den 
 | `Pruefbericht_importieren.md` | Ausgabe von `vorlagen/importieren.py` |
 | `skripte/deutschland_einfuegen.py` | gleicht alle Unternehmen aus `stammdaten/` ab (ohne Landangabe alle Länder; ergänzt Bestehendes, legt Neues an, schreibt `id_zuordnung.csv` und die CSV mit ID-Spalte) |
 | `skripte/bereinigung.py` | gezielte Bereinigung: benennt 3 Zeilen mit Spaltenüberschrift als Namen um, legt eindeutige Doppelzeilen zusammen; Ergebnis in `bereinigung_protokoll.csv`, offene Fälle in `bereinigung_pruefliste.csv` |
+| `skripte/pruefliste_entscheiden.py` | setzt die Entscheidungen zur Prüfliste um (21 weitere Zusammenlegungen); `bereinigung_pruefliste.csv` hat dazu die Spalten `entscheidung` und `begruendung` für alle 90 Fälle |
 | `skripte/bausteine/` | die einmal benutzten Zusammenführungs- und Anreicherungsskripte (GLEIF, SEC, ETF-Listen, Wikidata, EDGAR, Börsenlisten); sie lesen noch Pfade aus der Arbeitsumgebung und dienen als Nachweis des Vorgehens |
 
 ## Regeln

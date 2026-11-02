@@ -8,6 +8,10 @@ neu = {}; loesch = set()
 for a in csv.DictReader(open(T / 'bereinigung_protokoll.csv', encoding='utf-8')):
     if a['aktion'] == 'zusammengelegt': neu[a['name_entfernt']] = a['name_behalten']
     elif a['aktion'] == 'umbenannt': neu[a['name_entfernt']] = a['name_behalten']
+zweit = T / 'bereinigung_protokoll_pruefliste.csv'
+if zweit.exists():
+    for a in csv.DictReader(open(zweit, encoding='utf-8')):
+        if a['aktion'] == 'zusammengelegt': neu[a['name_entfernt']] = a['name_behalten']
 wb = openpyxl.load_workbook(T / 'Unternehmen_Tabelle.xlsx'); ws = wb['Quellen-Dokumente']
 namen = {r[0] for r in wb['Unternehmen'].iter_rows(min_row=2, values_only=True)}
 n = d = 0

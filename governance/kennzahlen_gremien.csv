@@ -7,6 +7,14 @@ U000017,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/adida
 U000017,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,21,"Biermann (IGBCE-Hauptvorstand), Sikorski (IGBCE Landesbezirksleiter)"
 U000017,2025,mitbestimmung_ar,"paritätisch (MitbestG), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,44,
 U000017,2025,pay_ratio,,,governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf,4,kein Verhältniswert; nur Vertikalvergleich (Entwicklung)
+U000036,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""Number of executive members: 9"""
+U000036,2025,vorstand_frauen_zahl,4,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""four female members, accounting for 44.4 %"" (Corporate Governance Statement); nach § 16 Abs. 2 SEAG mindestens eine Frau"
+U000036,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"sechs Anteilseigner-, sechs Arbeitnehmervertreter"
+U000036,2025,ar_frauen_zahl,5,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""five women (41.7 %) and seven men"" zum 31.12.2025"
+U000036,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"bestellt vom SE-Betriebsrat; vier aus Deutschland, je einer aus Frankreich und Italien"
+U000036,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"""including one trade union representative"" (ver.di); Person im Dokument nicht namentlich ausgewiesen"
+U000036,2025,mitbestimmung_ar,"SE-Beteiligungsvereinbarung (SEBG), 6 von 12 Arbeitnehmervertreter",,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,MitbestG gilt wegen der Rechtsform SE nicht; paritätische Besetzung lt. Vereinbarung
+U000036,2025,pay_ratio,,,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,333,"Allianz weist kein Verhältnis aus, nur Entwicklung Vorstand/Ø-Vergütung (95 T€ Deutschland, FTE); Berechnung siehe berechnungen/pay_ratio.csv"
 U000061,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,140,Stand 31.12.2025; Kurian und Tedeschi folgen ab 1.5.2026
 U000061,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,118,"Frauenanteil 16,7 %"
 U000061,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,141,

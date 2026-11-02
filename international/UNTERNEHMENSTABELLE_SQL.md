@@ -1,6 +1,6 @@
 # Unternehmenstabelle in der SQL-Datenbank
 
-Die zusammengeführte Tabelle (`unternehmen-tabelle/Unternehmen_Tabelle.csv`, Stand PR #71: 26.137 Zeilen) liegt zusätzlich im PostgreSQL-Kernmodell (Schema `international`). Excel und CSV bleiben Ausgabeformate und Quelle der Wahrheit, bis die Datenbank der Arbeitsstand wird; der Export aus der Datenbank ist byteweise gleich der CSV (Test `test_export_ist_byteweise_die_tabelle`).
+Die zusammengeführte Tabelle (`unternehmen-tabelle/Unternehmen_Tabelle.csv`, Stand PR #76: 26.130 Zeilen) liegt zusätzlich im PostgreSQL-Kernmodell (Schema `international`). Excel und CSV bleiben Ausgabeformate und Quelle der Wahrheit, bis die Datenbank der Arbeitsstand wird; der Export aus der Datenbank ist byteweise gleich der CSV (Test `test_export_ist_byteweise_die_tabelle`).
 
 ## Warum SQL zusätzlich zu Excel
 

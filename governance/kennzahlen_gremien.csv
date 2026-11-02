@@ -31,6 +31,15 @@ U000161,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/deutsche-teleko
 U000161,2025,ar_frauen_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,221,Anteil nicht in den ausgewerteten Seiten beziffert
 U000161,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,31,Hinweis: Gewerkschaftsmitglieder unter den Arbeitnehmervertretern führen Vergütung nach DGB-Richtlinien ab; Zahl nicht genannt
 U000161,2025,pay_ratio,,,governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf,23,im Vergütungsbericht 2025 nicht ausgewiesen (nur gesetzlicher Vergleich der Entwicklung nach § 162 AktG)
+U000279,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"Vorstand der Henkel Management AG, 4 Männer und 1 Frau"
+U000279,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,20 %; Sylvie Nicol (w) lt. Vergütungsbericht S. 15
+U000279,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"8 Anteilseigner, 8 Arbeitnehmer"
+U000279,2025,ar_frauen_zahl,7,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"44 %; je 4 Frauen Anteilseigner, 3 Frauen Arbeitnehmer"
+U000279,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,461,
+U000279,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,462,"Mühlenfeld (IGBCE Bezirksleiterin), Vassiliadis (Vorsitzender IGBCE)"
+U000279,2025,mitbestimmung_ar,"paritätisch (MitbestG 1976), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,
+U000279,2025,gesellschafterausschuss_mitglieder_zahl,10,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,56,Henkel AG & Co. KGaA: Gesellschafterausschuss ersetzt teilweise Hauptversammlungsrechte
+U000279,2025,pay_ratio,,,governance/dokumente/henkel-ag-und-co-kgaa/verguetungsbericht-2025.pdf,56,kein Verhältniswert; Ø-Vergütung Gesamtbelegschaft Deutschland 105.283 € (2025) in vergleichender Darstellung
 U000415,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,3,"Stand nach Wechseln 2025: Bussmann, Garcia Vila, Maurer, Schreyögg (Pfänder ab 1.1.2026) - Zahl aus Namen im Vergütungsbericht, nicht ausdrücklich genannt"
 U000415,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,236,je sechs Vertreter der Anteilseigner und der Arbeitnehmer
 U000415,2025,ar_frauen_zahl,4,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,239,"Bortenlänger, Heimerl, Sowa-Frank, Wolf = 33,3 %; zwei Arbeitnehmerseite, zwei Anteilseignerseite"

@@ -17,6 +17,7 @@ VB = lambda u: f'governance/dokumente/{ids.lade().ordner(u)}/verguetungsbericht-
 # Variante A: Ø-Jahresvergütung der Beschäftigten in Deutschland (FTE) aus der vergleichenden Darstellung (§ 162 Abs. 1 Nr. 2 AktG)
 # unternehmen_id: (T€, Beschäftigtenkreis, Dokument, Seite)
 A = {
+ 'U000279': (105.283, 'Gesamtbelegschaft Deutschland (Ø-Vergütung, Vollzeitkraft ohne Altersversorgung)', VB('U000279'), 56),
  'U000017': (114.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Personalaufwand je FTE)', VB('U000017'), 19),
  'U000415': (101.662, 'aktive Stammbelegschaft Deutschland, auf Vollzeit normiert', VB('U000415'), 20),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
@@ -24,6 +25,7 @@ A = {
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
 # unternehmen_id: (Personalaufwand Mio. €, Beschäftigte, Basis, Seite Aufwand, Seite Beschäftigte)
 B = {
+ 'U000279': (3790, 47300, 'Ø Mitarbeiter:innen Konzern', 109, 109),
  'U000017': (3226, 61952, 'Mitarbeiter im Jahresdurchschnitt (Köpfe)', 436, 454),
  'U000061': (12299, 110440, 'Ø Beschäftigte BASF-Gruppe; Aufwand inkl. 878 Mio. € nicht fortgeführter Coatings-Bereich', 412, 262),
  'U000073': (1957, 22399, 'Headcount zum Stichtag (Bericht nutzt ab 2025 Headcount statt FTE)', 290, 134),
@@ -42,6 +44,7 @@ B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
+ ('Sylvie Nicol', 'U000279', VB('U000279'), 15, 'Geschlechtsangabe (w) in der Vergütungstabelle'),
  ('Michelle Robertson', 'U000017', GB('U000017'), 43, 'Erfüllung § 76 Abs. 3a AktG (mind. eine Frau) "mit Michelle Robertson"'),
  ('Dr. Katja Scharpwinkel', 'U000061', GB('U000061'), 134, '"With Dr. Katja Scharpwinkel, there was one female Board member"'),
  ('Astrid Hermann', 'U000073', GB('U000073'), 50, 'Vorstand zu 50 % weiblich, namentlich genannt'),

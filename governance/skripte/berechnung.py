@@ -26,6 +26,7 @@ A = {
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
 # unternehmen_id: (Personalaufwand Mio. €, Beschäftigte, Basis, Seite Aufwand, Seite Beschäftigte)
 B = {
+ 'U000742': (693.8, 16582, 'Ø Mitarbeiter*innen (ohne Werkstudierende, Praktikant*innen, Auszubildende)', 128, 2),
  'U000279': (3790, 47300, 'Ø Mitarbeiter:innen Konzern', 109, 109),
  'U000017': (3226, 61952, 'Mitarbeiter im Jahresdurchschnitt (Köpfe)', 436, 454),
  'U000061': (12299, 110440, 'Ø Beschäftigte BASF-Gruppe; Aufwand inkl. 878 Mio. € nicht fortgeführter Coatings-Bereich', 412, 262),
@@ -46,6 +47,8 @@ B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
+ ('Dr. Astrid Arndt', 'U000742', VB('U000742'), 32, 'Possessivpronomen "ihrem Anstellungsvertrag"; Frauenanteil Vorstand 40 % im Vorjahr (Arndt, Dembeck)'),
+ ('Dr. Sandra Dembeck', 'U000742', VB('U000742'), 32, 'Possessivpronomen "ihr Anstellungsvertrag"; Frauenanteil Vorstand GB S. 108'),
  ('Sylvie Nicol', 'U000279', VB('U000279'), 15, 'Geschlechtsangabe (w) in der Vergütungstabelle'),
  ('Michelle Robertson', 'U000017', GB('U000017'), 43, 'Erfüllung § 76 Abs. 3a AktG (mind. eine Frau) "mit Michelle Robertson"'),
  ('Dr. Katja Scharpwinkel', 'U000061', GB('U000061'), 134, '"With Dr. Katja Scharpwinkel, there was one female Board member"'),

@@ -6,6 +6,8 @@
 const UNT = (() => {
   let hoverBereit = false;
   let UD = null, KZU = {}, BR = {}, FIRMEN = [], ALLE_FIRMEN = [], NACH_ID = {};
+  let REG = null, REGK = {}, REGBR = {}, curLand = "alle", regF = { q: "", br: "", land: "", nt: "", kz: "" }, regSeite = 0, regListe = [];
+  const REG_SEITE = 100;
   const S = { branche: "alle", gruppe: "alle", notiert: "alle", markiert: null, sort: { k: "marktkap", ab: true }, rang: null, tBranche: "alle", tZeit: "90", tArt: "alle",
     sx: "ebit_marge", sy: "kgv", usx: "kgv", usy: "ebit_marge", auswahl: null, matrixSort: null, dokTyp: "alle" };
 
@@ -22,7 +24,7 @@ const UNT = (() => {
     return true;
   }
   const da = () => !!UD;
-  function setLand(code) { FIRMEN = code === 'alle' ? ALLE_FIRMEN : ALLE_FIRMEN.filter(f => (f.land_code || 'ZZ') === code); }
+  function setLand(code) { curLand = code; regSeite = 0; FIRMEN = code === 'alle' ? ALLE_FIRMEN : ALLE_FIRMEN.filter(f => (f.land_code || 'ZZ') === code); }
   const inBranche = id => id === "alle" ? FIRMEN : FIRMEN.filter(f => f.branche === id);
   const w = (f, k) => f.werte[k] == null ? null : f.werte[k];
   const werte = (liste, k) => liste.map(f => w(f, k)).filter(v => v != null && isFinite(v));
@@ -603,8 +605,69 @@ const UNT = (() => {
     return `<div class="grid">${panel({code:'ABS',titel:'Bilanz- und GuV-Abdeckung',sub:`${companies.length} Tabellenunternehmen in der Länderauswahl · Klick auf den Namen öffnet sämtliche gelieferten Posten`,body:`<div class="scroll"><table class="kzt"><thead><tr><th>Unternehmen</th><th>Land</th><th>2025 Bilanz / GuV</th><th>2024 Bilanz / GuV</th><th>Weitere Jahre</th><th>Status</th></tr></thead><tbody>${companies.map(f=>{const aa=f.abschluesse||[],count=y=>{const yy=aa.filter(a=>a.jahr===y);return yy.length?yy.map(a=>`${Object.keys(a.bilanz).length} / ${Object.keys(a.guv).length} (${esc(a.waehrung)})`).join('<br>'):'offen';};return `<tr><td>${profilLink(f,f.name)}</td><td>${esc(f.land||'Unbekannt')}</td><td>${count(2025)}</td><td>${count(2024)}</td><td>${[...new Set(aa.filter(a=>a.jahr<2024).map(a=>a.jahr))].join(', ')||'–'}</td><td>${aa.length?'Quellen-/Prüfstatus im Profil':'Noch nicht importiert'}</td></tr>`;}).join('')}</tbody></table></div>`,fuss:'Zahlen = Anzahl der gelieferten Bilanz-/GuV-Posten, kein Vollständigkeitsnachweis des Originalberichts. Fehlende Unternehmensjahre bleiben sichtbar. Archiv- und Jahresgrenzen aus der Recherche sind im Profil verfügbar.'})}</div>`;
   }
 
+  /* ----- Gesamtregister (alle Zeilen der Unternehmenstabelle, data/register.json, register.py) ----- */
+  function initRegister(d) {
+    if (!d || !d.zeilen || !d.zeilen.length) { REG = null; return false; }
+    const sp = d.spalten;
+    REGBR = d.branchen || {};
+    REG = d.zeilen.map(z => { const o = {}; sp.forEach((c, i) => { o[c] = z[i]; }); o.q = (o.name + " " + o.ticker + " " + o.isin + " " + o.lei + " " + o.sitz).toLowerCase(); return o; });
+    REGK = Object.fromEntries(REG.map(r => [r.k, r]));
+    return true;
+  }
+  let landNamen = null;
+  const landLabel = c => { if (c === "ZZ") return "Sonstige / unbekannt"; try { landNamen = landNamen || new Intl.DisplayNames(["de"], { type: "region" }); return landNamen.of(c) || c; } catch (e) { return c; } };
+  const regBr = id => REGBR[id] || brName(id);
+  const hatKennz = r => !!(r.id && NACH_ID[r.id] && Object.keys(NACH_ID[r.id].werte || {}).length);
+  function regFiltern() {
+    const q = regF.q.trim().toLowerCase(), m = regF.nt === "m" ? merkListe() : null;
+    regListe = REG.filter(r => (curLand === "alle" || r.land === curLand) && (!regF.land || r.land === regF.land) && (!regF.br || r.br === regF.br)
+      && (!q || r.q.includes(q)) && (regF.nt === "" || (m ? m.has(r.id) : String(r.n) === regF.nt)) && (!regF.kz || (regF.kz === "1") === hatKennz(r)));
+    regListe.sort((a, b) => hatKennz(b) - hatKennz(a) || a.name.localeCompare(b.name, "de"));
+  }
+  function regZeile(r) {
+    const f = r.id && NACH_ID[r.id];
+    const link = f ? profilLink(f, r.name) : `<a class="flink" href="#reg-${esc(r.k)}">${esc(r.name)}</a>`;
+    return `<tr><td>${link}</td><td>${r.n ? '<span class="dot" data-tip="börsennotiert">●</span>' : ""}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(landLabel(r.land))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(regBr(r.br))}</td><td class="n" style="text-align:left">${esc(r.ticker)}${r.boerse ? ` <span class="pct">${esc(r.boerse)}</span>` : ""}</td><td class="n" style="text-align:left">${esc(r.isin)}</td><td class="${hatKennz(r) ? "" : "n"}">${hatKennz(r) ? "ja" : "–"}</td></tr>`;
+  }
+  function regZeichnen() {
+    const tb = document.getElementById("uverz"); if (!tb) return;
+    const seiten = Math.max(1, Math.ceil(regListe.length / REG_SEITE));
+    regSeite = Math.min(regSeite, seiten - 1);
+    tb.innerHTML = regListe.slice(regSeite * REG_SEITE, (regSeite + 1) * REG_SEITE).map(regZeile).join("") || `<tr><td colspan="7" class="n">Kein Unternehmen gefunden.</td></tr>`;
+    const z = document.getElementById("uzahl"); if (z) z.textContent = `${regListe.length.toLocaleString("de-DE")} Treffer · Seite ${regSeite + 1} von ${seiten}`;
+    ["upv", "unx"].forEach(i => { const e = document.getElementById(i); if (e) e.disabled = i === "upv" ? regSeite === 0 : regSeite >= seiten - 1; });
+  }
+  function verzFilter() {
+    if (!REG) {                       // ohne Register: nur die Unternehmen mit Kennzahlen, Filter über die Zeilen
+      const q = (document.getElementById("usuche") || {}).value, br = (document.getElementById("ubr") || {}).value, nt = (document.getElementById("unot") || {}).value, nurM = nt === "m";
+      let n = 0;
+      document.querySelectorAll("#uverz tr").forEach(tr => { const ok = (!q || tr.dataset.q.includes(q.toLowerCase())) && (!br || tr.dataset.b === br) && (!nt || (nurM ? merkListe().has(tr.dataset.w) : tr.dataset.n === nt)); tr.hidden = !ok; if (ok) n++; });
+      const z = document.getElementById("uzahl"); if (z) z.textContent = n + " angezeigt";
+      return;
+    }
+    const v = id => (document.getElementById(id) || {}).value || "";
+    regF = { q: v("usuche"), br: v("ubr"), land: v("uland"), nt: v("unot"), kz: v("ukz") };
+    regSeite = 0; regFiltern(); regZeichnen();
+  }
+  function verzSeite(d) { regSeite = Math.max(0, regSeite + d); regZeichnen(); }
   /* ----- Verzeichnis aller Unternehmen ----- */
   function viewVerz() {
+    if (REG) {
+      regFiltern();
+      const laender = [...new Set(REG.filter(r => curLand === "alle" || r.land === curLand).map(r => r.land))].sort((a, b) => landLabel(a).localeCompare(landLabel(b), "de"));
+      const brs = Object.keys(REGBR);
+      const sel = (id, w) => `<select id="${id}">${w}</select>`;
+      const nKz = REG.filter(hatKennz).length;
+      return `<div class="grid">${panel({ code: "VERZ", titel: "Verzeichnis", sub: `${REG.length.toLocaleString("de-DE")} Unternehmen im Gesamtregister · davon ${nKz.toLocaleString("de-DE")} mit Kennzahlen · Suche nach Name, Ticker, ISIN oder LEI`, body:
+        `<div class="picks" style="margin-bottom:12px"><input id="usuche" placeholder="Suchen …" autocomplete="off" style="width:320px" value="${esc(regF.q)}">
+          ${sel("uland", `<option value="">Alle Länder</option>${laender.map(c => `<option value="${esc(c)}"${regF.land === c ? " selected" : ""}>${esc(landLabel(c))}</option>`).join("")}`)}
+          ${sel("ubr", `<option value="">Alle Branchen</option>${brs.map(b => `<option value="${esc(b)}"${regF.br === b ? " selected" : ""}>${esc(regBr(b))}</option>`).join("")}`)}
+          ${sel("unot", `<option value="">Notiert und nicht notiert</option><option value="1"${regF.nt === "1" ? " selected" : ""}>Börsennotiert</option><option value="0"${regF.nt === "0" ? " selected" : ""}>Nicht börsennotiert</option><option value="m"${regF.nt === "m" ? " selected" : ""}>Nur Merkliste ★</option>`)}
+          ${sel("ukz", `<option value="">Mit und ohne Kennzahlen</option><option value="1"${regF.kz === "1" ? " selected" : ""}>Nur mit Kennzahlen</option><option value="0"${regF.kz === "0" ? " selected" : ""}>Nur Stammdaten</option>`)}
+          <button type="button" class="chip" id="upv">‹ zurück</button><button type="button" class="chip" id="unx">weiter ›</button><span class="n" id="uzahl"></span></div>
+        <div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th><th style="text-align:left">Land</th><th style="text-align:left">Branche</th><th style="text-align:left">Ticker · Börse</th><th style="text-align:left">ISIN</th><th>Kennzahlen</th></tr></thead><tbody id="uverz"></tbody></table></div>`,
+        fuss: "Quelle: unternehmen-tabelle/Unternehmen_Tabelle.csv (Stammdaten aus Börsen-, ETF- und Registerlisten; Branche bei vielen Zeilen nur ein Platzhalter). Unternehmen mit Kennzahlen stehen zuerst und öffnen das Profil mit Kennzahlen; die übrigen zeigen die Stammdaten mit Quelle." })}</div>`;
+    }
     const zeilen = [...FIRMEN].sort((a, b) => a.name.localeCompare(b.name, "de"));
     return `<div class="grid">${panel({ code: "VERZ", titel: "Verzeichnis", sub: `${FIRMEN.length} Unternehmen · Suche nach Name, Ticker oder Gruppe`, body:
       `<div class="picks" style="margin-bottom:12px"><input id="usuche" placeholder="Suchen …" autocomplete="off" style="width:320px"><select id="ubr"><option value="">Alle Branchen</option>${UD.branchen.map(b => `<option value="${esc(b.id)}">${esc(b.name)}</option>`).join("")}</select>
@@ -613,17 +676,29 @@ const UNT = (() => {
         const jahre = Math.max(0, ...Object.values(f.reihen || {}).map(r => r.punkte.length));
         return `<tr data-w="${esc(f.id)}" data-q="${esc((f.name + " " + (f.ticker || "") + " " + (f.gruppe || "") + " " + (f.isin || "")).toLowerCase())}" data-b="${esc(f.branche)}" data-n="${f.notiert ? 1 : 0}"><td>${profilLink(f, f.name)}</td><td>${punkt(f)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(brName(f.branche))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(f.gruppe || "")}</td><td class="${(f.dokumente || []).length ? "" : "n"}">${(f.dokumente || []).length || "–"}</td><td class="n">${jahre || "–"}</td></tr>`; }).join("")}</tbody></table></div>` })}</div>`;
   }
+  /* Profil eines Registereintrags ohne Kennzahlen (#reg-<Schlüssel>): Stammdaten und Quelle */
+  function viewReg(k) {
+    const r = REG && REGK[k];
+    if (!r) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Registereintrag mit dem Schlüssel <code>${esc(k)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
+    if (r.id && NACH_ID[r.id]) return viewProfil(r.id);
+    const zeile = (n, v) => v ? `<tr><td>${n}</td><td style="text-align:left;font-family:var(--sans)">${v}</td></tr>` : "";
+    const web = /^https?:\/\//.test(r.web) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(r.web)}">${esc(r.web)}</a>` : esc(r.web);
+    const qu = /^https?:\/\//.test(r.quelle) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(r.quelle)}">${esc(r.quelle)}</a>` : esc(r.quelle);
+    const tab = `<table class="kzt"><tbody>${zeile("Name", esc(r.name))}${zeile("Rechtsform", esc(r.form))}${zeile("Land", esc(landLabel(r.land)))}${zeile("Sitz", esc(r.sitz))}${zeile("Branche", esc(regBr(r.br)))}${zeile("Börsennotiert", r.n ? "ja" : "nein")}${zeile("Börse", esc(r.boerse))}${zeile("Ticker", esc(r.ticker))}${zeile("ISIN", esc(r.isin))}${zeile("LEI", esc(r.lei))}${zeile("Index", esc(r.index))}${zeile("Website", web)}${zeile("Quelle Stammdaten", qu)}${zeile("Hinweise zur Herkunft", esc(r.hinweis))}</tbody></table>`;
+    return `<div class="grid">${panel({ code: "UNT", titel: r.name, sub: `${landLabel(r.land)} · ${regBr(r.br)} · ${r.n ? "börsennotiert" : "nicht börsennotiert"}`, body: `<div class="picks" style="margin-bottom:10px"><a class="flink" href="#u-verzeichnis">‹ Verzeichnis</a>${r.isin ? `<span class="chip" style="cursor:default">${esc(r.isin)}</span>` : ""}</div>
+      <p class="n">Für dieses Unternehmen liegen im Terminal noch keine Kennzahlen vor. Es steht im Gesamtregister (Unternehmenstabelle) mit den Stammdaten unten; Kennzahlen kommen hinzu, sobald Abschlüsse oder Börsendaten erhoben sind.</p>${tab}`, fuss: "Stammdaten aus unternehmen-tabelle/Unternehmen_Tabelle.csv. Unternehmen ohne ID im Register haben bewusst noch keine Unternehmens-ID (Vergabe nur über stammdaten/ids.py). Angaben mit „bitte prüfen“ in den Hinweisen sind automatisch ergänzt." })}</div>`;
+  }
+  /* Ziel für Eingabe in der Befehlszeile: Unternehmen mit Kennzahlen zuerst, sonst Registereintrag */
+  function ziel(q) {
+    const f = finden(q); if (f) return "firma-" + f.id;
+    q = (q || "").trim().toLowerCase(); if (!q || !REG) return null;
+    const r = REG.find(x => x.name.toLowerCase() === q || x.ticker.toLowerCase() === q || x.isin.toLowerCase() === q) || REG.find(x => x.name.toLowerCase().includes(q));
+    return r ? (r.id && NACH_ID[r.id] ? "firma-" + r.id : "reg-" + r.k) : null;
+  }
   /* ----- Merkliste (nur im Browser dieses Geräts; ohne Speicher bleibt sie für die Sitzung) ----- */
   let merk = null;
   const merkListe = () => { if (!merk) { try { merk = new Set(JSON.parse(localStorage.getItem("merkliste") || "[]")); } catch (e) { merk = new Set(); } } return merk; };
   function merkUmschalten(id) { const m = merkListe(); m.has(id) ? m.delete(id) : m.add(id); try { localStorage.setItem("merkliste", JSON.stringify([...m])); } catch (e) { /* kein Speicher */ } }
-  function verzFilter() {
-    const q = (document.getElementById("usuche") || {}).value, br = (document.getElementById("ubr") || {}).value, nt = (document.getElementById("unot") || {}).value, nurM = nt === "m";
-    let n = 0;
-    document.querySelectorAll("#uverz tr").forEach(tr => { const ok = (!q || tr.dataset.q.includes(q.toLowerCase())) && (!br || tr.dataset.b === br) && (!nt || (nurM ? merkListe().has(tr.dataset.w) : tr.dataset.n === nt)); tr.hidden = !ok; if (ok) n++; });
-    const z = document.getElementById("uzahl"); if (z) z.textContent = n + " angezeigt";
-  }
-
   /* ----- Hover über Seitengrenzen: Tabellenzeile/Balken <-> Streudiagramm, Zeilen- und Spaltenhervorhebung ----- */
   function hoverVerdrahten() {
     const sc = () => document.querySelector(".uscat");
@@ -678,13 +753,15 @@ const UNT = (() => {
   function nachRender() {
     const a = document.getElementById("uadd");
     if (a) a.addEventListener("change", () => { const f = finden(a.value); if (f) { hinzu(f.id); render(); } });
-    ["usuche", "ubr", "unot"].forEach(i => { const e = document.getElementById(i); if (e) e.addEventListener("input", verzFilter); });
-    if (document.getElementById("uverz")) verzFilter();
+    ["usuche", "uland", "ubr", "unot", "ukz"].forEach(i => { const e = document.getElementById(i); if (e) e.addEventListener("input", verzFilter); });
+    const pv = document.getElementById("upv"), nx = document.getElementById("unx");
+    if (pv) pv.addEventListener("click", () => verzSeite(-1)); if (nx) nx.addEventListener("click", () => verzSeite(1));
+    if (document.getElementById("uverz")) { if (REG) regZeichnen(); else verzFilter(); }
     document.querySelectorAll(".uscat").forEach(scatterInit);
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
+  return { init, initRegister, viewReg, ziel, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
     // Weltkugel (globus.js): Vergleichsauswahl lesen/setzen, Unternehmen nach ID
     auswahl: () => S.auswahl || [], setAuswahl: ids => { S.auswahl = [...new Set(ids)].slice(-6); }, nachId: id => NACH_ID[id] || NACH_ID[(UD && UD.alt_ids || {})[id]], kurzName: n => kurzU(n), brName: id => brName(id), fmt: (k, v) => fmt(k, v), existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
 })();

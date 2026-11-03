@@ -43,6 +43,15 @@ Nach jeder Änderung an der Excel (z. B. durch `rohdaten/skripte/build.py`) einf
 
 Oben läuft zusätzlich eine Kursleiste mit den letzten Schlusskursen; in CMP erscheinen Börsenwert, Börsenwert / HGB-EK und die Aktie, wo vorhanden.
 
+## Gesamtregister (alle Unternehmen der Unternehmenstabelle)
+
+`app/register.py` liest `unternehmen-tabelle/Unternehmen_Tabelle.csv` (rund 32.600 Zeilen) und schreibt `data/register.json`: eine kompakte, spaltenweise Tabelle nur mit Stammdaten (Name, Land als ISO-Code, Sitz, Branche, ISIN, Ticker, Börse, Notierung, Index, LEI, Website, Quelle, Herkunftshinweis; rund 10 MB, gzip 1,3 MB). `build.py` bettet sie als `<script id="register">` ein, dieselbe Seite speist auch die Weltkugel.
+
+* F4 Verzeichnis zeigt alle Zeilen mit Suche (Name, Ticker, ISIN, LEI), Filter Land, Branche, Notierung und „mit/ohne Kennzahlen“, 100 Zeilen je Seite. Unternehmen mit Kennzahlen stehen zuerst und öffnen das bisherige Profil.
+* Zeilen ohne Kennzahlen öffnen `#reg-<Schlüssel>`: Stammdaten, Quelle, Hinweis „noch keine Kennzahlen“. Der Schlüssel ist ein Hash aus ISIN, sonst LEI, sonst Land+Name (wie `row_key` in `international/import_unternehmen.py`) und **keine Unternehmens-ID**. Zeilen ohne ID bleiben ohne ID; IDs nur über `stammdaten/ids.py`.
+* Die Befehlszeile findet auch Registereinträge (Name, Ticker, ISIN). Die Länderauswahl oben schränkt das Verzeichnis ein.
+* Die Kennzahlen-Ansichten (Branchen, Vergleich, Korrelation) und die Karte arbeiten weiter nur mit den Unternehmen mit Kennzahlen bzw. bekanntem Sitz. Das Artifact-Paket (`artifact_packen.py`) komprimiert das Register mit (gepackt rund 9 bis 10 MB).
+
 ## Branchen, Unternehmen und Profilseiten
 
 Das Terminal kennt keinen Unterschied mehr zwischen Banken und anderen Unternehmen: Banken sind eine Branche unter allen.

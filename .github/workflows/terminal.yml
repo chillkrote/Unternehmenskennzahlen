@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main, codex/europe600-abschluesse]
-    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/geo/**", "app/vendor/**", "stammdaten/geo/sitz_geo.csv", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
+    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/geo/**", "app/vendor/**", "stammdaten/geo/sitz_geo.csv", "unternehmen-tabelle/Unternehmen_Tabelle.csv", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
   pull_request:
-    paths: ["app/src/**", "app/*.py", "app/geo/**", "app/vendor/**", "app/tests/**", "stammdaten/geo/sitz_geo.csv", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
+    paths: ["app/src/**", "app/*.py", "app/geo/**", "app/vendor/**", "app/tests/**", "stammdaten/geo/sitz_geo.csv", "unternehmen-tabelle/Unternehmen_Tabelle.csv", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
 
 permissions:
   contents: write

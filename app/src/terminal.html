@@ -258,6 +258,7 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="markt" type="application/json">__MARKT__</script>
 <script id="kurse" type="application/json">__KURSE__</script>
 <script id="unternehmen" type="application/json">__UNTERNEHMEN__</script>
+<script id="register" type="application/json">__REGISTER__</script>
 <script id="vwl" type="application/json">__VWL__</script>
 <script id="boerse" type="application/json">__BOERSE__</script>
 <script>
@@ -1038,6 +1039,7 @@ function viewStart() {
 function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
+  else if (h.startsWith("reg-")) { aktuell = h; html = UNT.viewReg(h.slice(4)); }
   else { aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }
   const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), bo = aktuell.startsWith("b-"), st = aktuell === "start";
   const bereichNeu = bo ? "b" : vw ? "v" : "u";
@@ -1057,7 +1059,7 @@ function render() {
   document.getElementById("subkeys").hidden = !bank;
   document.getElementById("tape").hidden = document.getElementById("quotes").hidden = !bank;
   document.getElementById("meta").textContent = st ? "" : bo ? BOE.meta() : vw ? VWL.meta() : bank ? metaBanken : UNT.meta();
-  const aktiv = bank ? "u-branche" : aktuell.startsWith("firma-") ? "u-verzeichnis" : aktuell;
+  const aktiv = bank ? "u-branche" : (aktuell.startsWith("firma-") || aktuell.startsWith("reg-")) ? "u-verzeichnis" : aktuell;
   document.querySelectorAll(".key, .subkeys a").forEach(k => (k.dataset.v === aktuell || (k.classList.contains("key") && k.dataset.v === aktiv)) ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
   document.getElementById("view").innerHTML = html;
   const add = document.getElementById("cmpadd");
@@ -1087,7 +1089,7 @@ function gehe(v) { if (location.hash === "#" + v) render(); else location.hash =
 function bankFinden(q) { q = q.trim().toLowerCase(); if (!q) return null; return BANKEN.find(b => b.bank.toLowerCase() === q) || BANKEN.find(b => b.bank.toLowerCase().includes(q)); }
 function bankDazu(name) {
   const b = bankFinden(name);
-  if (!b) { const f = UNT.finden(name); if (f) gehe("firma-" + f.id); return; }
+  if (!b) { const z = UNT.ziel(name); if (z) gehe(z); return; }
   if (auswahl === null) viewCmp();
   if (!auswahl.includes(b.bank)) { auswahl.push(b.bank); if (auswahl.length > 6) auswahl.shift(); }
   gehe(aktuell === "ts" ? "ts" : "cmp");
@@ -1130,7 +1132,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   if (VIEWS[c]) gehe(c);
   else if (alias) gehe(alias);
   else if (BANKVIEWS.includes(aktuell) && bankFinden(v)) bankDazu(v);       // in den Bankenansichten Eingabe = Bank zur Auswahl
-  else { const f = UNT.finden(v); if (f) gehe("firma-" + f.id); else bankDazu(v); }
+  else { const z = UNT.ziel(v); if (z) gehe(z); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
   const m = (bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
@@ -1151,6 +1153,7 @@ async function start() {
   let ud = null;
   try { ud = JSON.parse(document.getElementById("unternehmen").textContent); } catch { try { ud = await (await fetch("../data/unternehmen.json")).json(); } catch { ud = null; } }
   UNT.init(ud);
+  try { UNT.initRegister(JSON.parse(document.getElementById("register").textContent)); } catch { try { UNT.initRegister(await (await fetch("../data/register.json")).json()); } catch { /* ohne Register: nur Unternehmen mit Kennzahlen */ } }
   let vd = null;
   try { vd = JSON.parse(document.getElementById("vwl").textContent); } catch { vd = null; }
   VWL.init(vd);

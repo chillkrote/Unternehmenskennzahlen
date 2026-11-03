@@ -22,10 +22,9 @@ SCHALE = """
 <div id="globus" hidden>
   <div id="gk-karte">
     <div class="gk-kopf">
-      <a class="gk-marke" href="#start" title="Klassisches Terminal"><b>TRM</b>Weltkugel</a>
+      <a class="gk-marke" href="#globus" title="Weltkugel"><b>TRM</b>Weltkugel</a>
       <label class="gk-suche" for="gk-suchfeld"><span>&gt;</span><input id="gk-suchfeld" list="gk-liste" placeholder="Land oder Unternehmen suchen, dann Enter" autocomplete="off"></label>
       <button type="button" class="gk-knopf" data-gkebenen aria-pressed="false">Ebenen</button>
-      <a class="gk-knopf" href="#start">Klassisches Terminal</a>
     </div>
     <div class="gk-ebenen" id="gk-ebenen" hidden></div>
     <div class="gk-hinweis" id="gk-hinweis" style="opacity:0" role="status"></div>
@@ -34,7 +33,7 @@ SCHALE = """
 </div>
 <div id="gk-fenster" hidden></div>
 <div id="gk-dock" hidden></div>
-<a id="gk-zurueck" class="gk-knopf" href="#globus" hidden>◉ Weltkugel</a>
+<a id="gk-zurueck" class="gk-knopf" href="#start" title="Zwischen Weltkugel und Terminal wechseln">▤ Terminal</a>
 <datalist id="gk-liste"></datalist>
 """
 

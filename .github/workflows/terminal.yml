@@ -101,22 +101,11 @@ jobs:
         with:
           name: terminal
           path: site
-      - name: Startseite
+      - name: Startseite ist die Weltkugel (Terminal darin über den Umschalter unten rechts)
         run: |
           cd site
-          cat > index.html <<'HTML'
-          <!doctype html>
-          <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>Unternehmenskennzahlen</title>
-          <style>body{font:16px/1.5 system-ui,sans-serif;background:#0d1117;color:#e6edf3;max-width:34rem;margin:12vh auto;padding:0 16px}
-          a{display:block;margin:12px 0;padding:16px;border:1px solid #30363d;border-radius:8px;color:#58a6ff;text-decoration:none}
-          a:hover{background:#161b22}small{color:#8b949e}</style></head><body>
-          <h1>Unternehmenskennzahlen</h1>
-          <a href="bankterminal.html">Terminal<br><small>Branchen, Unternehmen, Vergleiche, Börsendaten</small></a>
-          <a href="weltkugel.html">Weltkugel<br><small>Länderdaten und Firmensitze (große Datei, lädt einige Sekunden)</small></a>
-          <p><small>Stand: __STAND__</small></p></body></html>
-          HTML
-          sed -i "s/__STAND__/$(date -u +%d.%m.%Y' '%H:%M' UTC')/" index.html
+          cp weltkugel.html index.html
+          rm -f bankterminal.html weltkugel.html
           touch .nojekyll
           ls -lh
       - uses: actions/configure-pages@v5

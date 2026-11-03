@@ -19,7 +19,7 @@ Ausgangspunkt ist der Arbeitsauftrag „OECD-Erweiterung“ (Übergabe-Entwurf).
 | Vergleichsexport `vergleich-v1` | `export_vergleich.py` | deutsche Zeitreihe verlustfrei reproduziert (Regressionstest), plus Sitzland/Standard/Währung/Kreis/Vergleichsgruppe |
 | Länder | `oecd_mitglieder.csv`, `coverage.csv` | 38 Mitglieder, Mitgliedschaftsdaten gegen die englische Wikipedia abgeglichen |
 
-Unternehmenstabelle (28.895 Zeilen, Aliase, Prüfmarken) in SQL: siehe `UNTERNEHMENSTABELLE_SQL.md` (`import_unternehmen.py`, `export_unternehmen.py`).
+Unternehmenstabelle (32.607 Zeilen, Aliase, Prüfmarken) in SQL: siehe `UNTERNEHMENSTABELLE_SQL.md` (`import_unternehmen.py`, `export_unternehmen.py`).
 
 Nicht fertig: Mitarbeiter und aufsichtliche Bankkennzahlen für die USA, Wechselkurs-Adapter (EZB), Oberflächenfilter, API, Desktop-Länderpakete, Börsenunternehmen (siehe `LUECKEN.md`).
 

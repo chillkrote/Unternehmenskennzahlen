@@ -435,6 +435,134 @@ def riksbank():
     return [x for x in zeilen if x]
 
 
+# --- Norwegen: Norges Bank, Tabelle "Projections" im Geldpolitischen Bericht (Ausgaben seit 2024) ----------
+def norges():
+    basis = "https://www.norges-bank.no"
+    idx = hole(basis + "/en/topics/Monetary-policy/Monetary-Policy-Report/").decode("utf-8", "ignore")
+    seiten = sorted(set(re.findall(r'href="(/en/news-events/publications/Monetary-Policy-Report/(20\d\d)/mpr-(\d)(20\d\d)/)"', idx)), key=lambda x: (x[1], x[2]))
+    zeilen = []
+    for pfad, jahr, nr, _ in seiten:
+        h = hole(basis + pfad).decode("utf-8", "ignore")
+        m = re.search(r'href="(/contentassets/[^"?]*/(?:mpr|MPR)[^"?/]*\.pdf)', h)
+        if not m:
+            continue
+        url = basis + m.group(1)
+        name = f"norges_mpr_{nr}_{jahr}.pdf"
+        speichere(name, hole(url))
+        t = pdf_text(ROH / name)
+        blk = t
+        jahre = [str(int(jahr) - 1 + i) for i in range(5)]
+        ausgabe = f"Geldpolitischer Bericht {nr}/{jahr}"
+        for g, pat, hin in (("inflation_vpi", r"^\s+CPI\s", "VPI, Veränderung zum Vorjahr; Jahresdurchschnitt"),
+                            ("bip_wachstum", r"^\s+GDP, mainland Norway", "BIP des Festlands (ohne Öl und Gas), Veränderung zum Vorjahr; Gesamt-BIP inkl. Öl und Gas steht im Bericht"),
+                            ("arbeitslosenquote", r"^\s+Registered unemployment \(rate, level\)", "Registrierte Arbeitslosigkeit (NAV), nicht die Erwerbsumfrage; Jahresdurchschnitt")):
+            kand = [re.findall(r"-?\d+\.\d", re.sub(r"\([^)]*\)", "", x)) for x in blk.splitlines() if re.match(pat, x)]
+            kand = [w for w in kand if len(w) >= 5]
+            if not kand:
+                continue
+            werte = kand[-1][-5:]
+            for j, v in zip(jahre, werte):
+                zeilen.append(z("NO", "Norges Bank", ausgabe, "", g, "%", j, float(v), "Primärdokument", url, hin))
+    return [x for x in zeilen if x]
+
+
+# --- Australien: RBA, Prognosearchiv zum Statement on Monetary Policy (Excel, eine Spalte je Ausgabe, Zeilen = Juni/Dezember) ----------
+def rba():
+    import openpyxl
+    url = "https://www.rba.gov.au/statistics/xls/smp-forecast-archive.xlsx"
+    speichere("rba_smp_forecast_archive.xlsx", hole(url))
+    wb = openpyxl.load_workbook(ROH / "rba_smp_forecast_archive.xlsx", data_only=True)
+    seite = "https://www.rba.gov.au/publications/smp/forecasts-archive.html"
+    zeilen = []
+    for blatt, g, e, hin in (("RGDP", "bip_wachstum", "%", "Veränderung des BIP im Dezemberquartal zum Vorjahresquartal"),
+                             ("CPI", "inflation_vpi", "%", "VPI, Veränderung im Dezemberquartal zum Vorjahresquartal"),
+                             ("UR", "arbeitslosenquote", "%", "Arbeitslosenquote im Dezemberquartal"),
+                             ("CR", "leitzins", "%", "Zielzins (Cash Rate) im Dezemberquartal; Annahme der RBA, ab Mai 2024 gemäß Marktpreisen")):
+        ws = wb[blatt]
+        rows = list(ws.iter_rows(min_row=4, values_only=True))
+        kopf = rows[0]
+        for ci, pub in enumerate(kopf):
+            if ci == 0 or not isinstance(pub, str) or "-" not in pub:
+                continue
+            mon, jahr = pub.split("-")
+            for r in rows[2:]:
+                if not isinstance(r[0], str) or not r[0].startswith("Dec-") or ci >= len(r) or not isinstance(r[ci], (int, float)):
+                    continue
+                if int(r[0][4:]) < int(jahr):
+                    continue
+                zeilen.append(z("AU", "Reserve Bank of Australia", f"SMP {mon} {jahr}", "", g, e, r[0][4:], float(r[ci]), "Primärdokument", seite, hin + "; Archivtabelle des RBA, Rundung je Ausgabe unterschiedlich"))
+    return [x for x in zeilen if x]
+
+
+# --- Südkorea: Bank of Korea, Korea Economic Outlook (Zusammenfassungstabelle im PDF; Liste über listCont.do der englischen Seite) ----------
+def bok():
+    basis = "https://www.bok.or.kr"
+    liste = hole(basis + "/eng/singl/newsDataEng/listCont.do?pageIndex=&targetDepth=3&menuNo=400413&syncMenuChekKey=1&searchCnd=1&searchKwd=&depth2=400065&depth3=400413").decode("utf-8", "ignore")
+    zeilen = []
+    for pfad, rest in re.findall(r'href="(/eng/bbs/B0000358/view\.do\?nttId=\d+)[^"]*"(.*?)</a>', liste, flags=re.S):
+        titel = html.unescape(re.sub(r"<[^>]+>|\s+", " ", rest)).strip()
+        mt = re.search(r"Korea Economic Outlook \((\w+) (20\d\d)\)$", titel)
+        if not mt:
+            continue
+        seite = hole(basis + pfad + "&menuNo=400413").decode("utf-8", "ignore")
+        pdf = re.search(r'href="(/fileSrc/eng/[^"\s]*\.pdf)', seite)
+        if not pdf:
+            continue
+        monat, jahr = mt.groups()
+        name = f"bok_outlook_{monat.lower()}_{jahr}.pdf"
+        url = basis + pdf.group(1)
+        speichere(name, hole(url))
+        t = pdf_text(ROH / name)
+        for g, pat, hin in (("bip_wachstum", r"^[^A-Za-z]*GDP growth rate", "BIP, Veränderung zum Vorjahr"),
+                            ("inflation_vpi", r"^[^A-Za-z]*Headline infla\w+", "VPI gesamt, Veränderung zum Vorjahr (Kerninflation steht im Bericht)")):
+            kand = [re.findall(r"-?\d+\.\d", re.sub(r"\([^)]*\)", "", x)) for x in t.splitlines() if re.match(pat, x, re.I)]
+            kand = [w for w in kand if 3 <= len(w) <= 4]
+            if not kand:
+                continue
+            for i, v in enumerate(kand[0]):
+                zeilen.append(z("KR", "Bank of Korea", f"Korea Economic Outlook {monat[:3]} {jahr}", "", g, "%", str(int(jahr) - 1 + i), float(v), "Primärdokument", url,
+                                hin + "; erstes Jahr = Istwert"))
+    return [x for x in zeilen if x]
+
+
+# --- Tschechien: Tschechische Nationalbank, Tabelle der Kernindikatoren zum Bericht zur Geldpolitik (Excel je Ausgabe) ----------
+CNB_AUSGABEN = (("zima", "Feb"), ("jaro", "Mai"), ("leto", "Aug"), ("podzim", "Nov"))
+
+
+def cnb():
+    import warnings
+    import openpyxl
+    zeilen = []
+    seite = "https://www.cnb.cz/en/monetary-policy/monetary-policy-reports/"
+    for jahr in (2024, 2025, 2026):
+        for saison, mon in CNB_AUSGABEN:
+            url = f"https://www.cnb.cz/export/sites/cnb/cs/menova-politika/.galleries/zpravy_o_menove_politice/{jahr}/{saison}_{jahr}/download/zomp_{jahr}_{saison}_makroindikatory.xlsx"
+            try:
+                roh = hole(url)
+            except urllib.error.HTTPError:
+                continue
+            name = f"cnb_makroindikatory_{jahr}_{saison}.xlsx"
+            speichere(name, roh)
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                ws = openpyxl.load_workbook(ROH / name, data_only=True).worksheets[0]
+            rows = [r for r in ws.iter_rows(values_only=True)]
+            kopf = next((r for r in rows if isinstance(r[2], int) and isinstance(r[3], int)), None)
+            if not kopf:
+                continue
+            for g, pre, hin in (("bip_wachstum", "HDP  (%, meziročně, reálně", "BIP real, Veränderung zum Vorjahr"),
+                                ("inflation_vpi", "Spotřebitelské ceny", "VPI, Veränderung zum Vorjahr, Jahresdurchschnitt"),
+                                ("arbeitslosenquote", "Obecná míra nezaměstnanosti (ILO", "Arbeitslosenquote nach ILO, Jahresdurchschnitt, Alter 15-64"),
+                                ("leitzins", "2T repo sazba", "Zweiwochen-Repo-Satz der CNB (Leitzins), Jahresdurchschnitt")):
+                zl = next((r for r in rows if isinstance(r[1], str) and r[1].strip().startswith(pre)), None)
+                if not zl:
+                    continue
+                for ci, j in enumerate(kopf):
+                    if isinstance(j, int) and j >= jahr and isinstance(zl[ci], (int, float)):
+                        zeilen.append(z("CZ", "Česká národní banka", f"Bericht zur Geldpolitik {mon} {jahr}", "", g, "%", str(j), float(zl[ci]), "Primärdokument", url, hin))
+    return [x for x in zeilen if x]
+
+
 # --- Schweiz: SECO-Expertengruppe (Anhang zur Medienmitteilung, aktuelle Prognose und in Klammern die vorherige) ----------
 MON_DE = {"03": "Mar", "06": "Jun", "09": "Sep", "12": "Dez"}
 
@@ -462,7 +590,7 @@ def seco():
 
 QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury", hmt), ("Funcas", funcas), ("Fed SEP", fed_sep),
            ("Bank of Canada", boc), ("Bank of Japan", boj), ("EZB-Stabsprognosen", ezb_stab),
-           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank)]
+           ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba), ("Bank of Korea", bok), ("CNB Tschechien", cnb)]
 
 
 def main():

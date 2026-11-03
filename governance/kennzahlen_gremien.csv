@@ -7,6 +7,14 @@ U000017,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/adida
 U000017,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,21,"Biermann (IGBCE-Hauptvorstand), Sikorski (IGBCE Landesbezirksleiter)"
 U000017,2025,mitbestimmung_ar,"paritätisch (MitbestG), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,44,
 U000017,2025,pay_ratio,,,governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf,4,kein Verhältniswert; nur Vertikalvergleich (Entwicklung)
+U000036,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""Number of executive members: 9"""
+U000036,2025,vorstand_frauen_zahl,4,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""four female members, accounting for 44.4 %"" (Corporate Governance Statement); nach § 16 Abs. 2 SEAG mindestens eine Frau"
+U000036,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"sechs Anteilseigner-, sechs Arbeitnehmervertreter"
+U000036,2025,ar_frauen_zahl,5,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""five women (41.7 %) and seven men"" zum 31.12.2025"
+U000036,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"bestellt vom SE-Betriebsrat; vier aus Deutschland, je einer aus Frankreich und Italien"
+U000036,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"""including one trade union representative"" (ver.di); Person im Dokument nicht namentlich ausgewiesen"
+U000036,2025,mitbestimmung_ar,"SE-Beteiligungsvereinbarung (SEBG), 6 von 12 Arbeitnehmervertreter",,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,MitbestG gilt wegen der Rechtsform SE nicht; paritätische Besetzung lt. Vereinbarung
+U000036,2025,pay_ratio,,,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,333,"Allianz weist kein Verhältnis aus, nur Entwicklung Vorstand/Ø-Vergütung (95 T€ Deutschland, FTE); Berechnung siehe berechnungen/pay_ratio.csv"
 U000061,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,140,Stand 31.12.2025; Kurian und Tedeschi folgen ab 1.5.2026
 U000061,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,118,"Frauenanteil 16,7 %"
 U000061,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,141,
@@ -23,6 +31,23 @@ U000073,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/beier
 U000073,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,298,"Jan Koltze, Regional Head IG BCE"
 U000073,2025,mitbestimmung_ar,paritätisch (6 von 12 Arbeitnehmervertreter),,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,50,Rechtsgrundlage (MitbestG) nicht wörtlich im Dokument; aus Besetzung abgeleitet
 U000073,2025,pay_ratio,125.83,Verhältnis,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,137,"Jahreszielvergütung der höchstbezahlten Person zum Median aller Beschäftigten (nicht CEO-Bezug); Segmente: Consumer 132,54, tesa 108,55"
+U000125,2025,vorstand_mitglieder_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet; 8 Personen im Berichtsjahr tätig (Wechsel durch Aumovio-Abspaltung)
+U000125,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,ar_mitglieder_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,Mitgliederzahl nicht ausgewertet
+U000125,2025,ar_frauen_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
+U000125,2025,mitbestimmung_ar,paritätisch (MitbestG),,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,71,Verweis auf Mitbestimmungsgesetz im Abschnitt Aufsichtsrat; Zahl der Arbeitnehmervertreter nicht ausgewertet
+U000125,2025,pay_ratio,,,governance/dokumente/continental-aktiengesellschaft/verguetungsbericht-2025.pdf,31,kein Verhältniswert; vergleichende Darstellung nur mit Veränderungsraten (S. 28 und 31)
+U000151,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,41,im GJ 2025 aktive Mitglieder lt. Vergütungsbericht; zum Jahresende 7 (Pottmeyer ausgeschieden 30.9.2025)
+U000151,2025,vorstand_frauen_zahl,2,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,"""The Executive Board of Deutsche Börse AG consists of two female members""; namentlich belegt nur Heike Eckert (Arbeitsdirektorin)"
+U000151,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,acht Anteilseigner- und acht Arbeitnehmervertreter
+U000151,2025,ar_frauen_zahl,,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,Anteilseignerseite 50 % Frauen (4); Arbeitnehmerseite nicht in den ausgewerteten Seiten beziffert
+U000151,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,
+U000151,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,nicht ausgewertet
+U000151,2025,mitbestimmung_ar,"paritätisch (MitbestG), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,142,
+U000151,2025,pay_ratio,97.0,x,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,111,"ESRS S1-16: höchstbezahlte Person (CEO) zu Median-Gesamtvergütung aller Beschäftigten, 2024: 94,7"
+U000151,2025,gender_pay_gap_belegschaft_pct,28.2,%,governance/dokumente/deutsche-boerse-ag/geschaeftsbericht-2025.pdf,111,"ESRS S1-16, unbereinigt, Konzern-Belegschaft (2024: 29,1 %)"
 U000161,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,208,Stand 31.12.2025
 U000161,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,208,"zehn Anteilseigner-, zehn Arbeitnehmervertreter"
 U000161,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,208,
@@ -31,6 +56,15 @@ U000161,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/deutsche-teleko
 U000161,2025,ar_frauen_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,221,Anteil nicht in den ausgewerteten Seiten beziffert
 U000161,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,31,Hinweis: Gewerkschaftsmitglieder unter den Arbeitnehmervertretern führen Vergütung nach DGB-Richtlinien ab; Zahl nicht genannt
 U000161,2025,pay_ratio,,,governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf,23,im Vergütungsbericht 2025 nicht ausgewiesen (nur gesetzlicher Vergleich der Entwicklung nach § 162 AktG)
+U000279,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"Vorstand der Henkel Management AG, 4 Männer und 1 Frau"
+U000279,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,20 %; Sylvie Nicol (w) lt. Vergütungsbericht S. 15
+U000279,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"8 Anteilseigner, 8 Arbeitnehmer"
+U000279,2025,ar_frauen_zahl,7,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"44 %; je 4 Frauen Anteilseigner, 3 Frauen Arbeitnehmer"
+U000279,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,461,
+U000279,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,462,"Mühlenfeld (IGBCE Bezirksleiterin), Vassiliadis (Vorsitzender IGBCE)"
+U000279,2025,mitbestimmung_ar,"paritätisch (MitbestG 1976), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,
+U000279,2025,gesellschafterausschuss_mitglieder_zahl,10,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,56,Henkel AG & Co. KGaA: Gesellschafterausschuss ersetzt teilweise Hauptversammlungsrechte
+U000279,2025,pay_ratio,,,governance/dokumente/henkel-ag-und-co-kgaa/verguetungsbericht-2025.pdf,56,kein Verhältniswert; Ø-Vergütung Gesamtbelegschaft Deutschland 105.283 € (2025) in vergleichender Darstellung
 U000415,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,3,"Stand nach Wechseln 2025: Bussmann, Garcia Vila, Maurer, Schreyögg (Pfänder ab 1.1.2026) - Zahl aus Namen im Vergütungsbericht, nicht ausdrücklich genannt"
 U000415,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,236,je sechs Vertreter der Anteilseigner und der Arbeitnehmer
 U000415,2025,ar_frauen_zahl,4,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,239,"Bortenlänger, Heimerl, Sowa-Frank, Wolf = 33,3 %; zwei Arbeitnehmerseite, zwei Anteilseignerseite"
@@ -39,6 +73,14 @@ U000415,2025,mitbestimmung_ar,"paritätisch (MitbestG), 6 von 12 Arbeitnehmerver
 U000415,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,238,nicht ausgewertet
 U000415,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,3,"Katja Garcia Vila und Dr. Silke Maurer lt. Bezeichnung ""Vorständin""; Gesamtzahl im Vergütungsbericht nicht beziffert"
 U000415,2025,pay_ratio,,,governance/dokumente/mtu-aero-engines-ag/verguetungsbericht-2025.pdf,20,"Vertikalvergleich zeigt nur Entwicklung der Gesamtvergütung gegenüber Belegschaft in Deutschland, kein Verhältnis"
+U000420,2025,vorstand_mitglieder_zahl,11,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,70,"""elf Mitgliedern, davon zwei Frauen"" zum 31.12.2025"
+U000420,2025,vorstand_frauen_zahl,2,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,71,"Frauenanteil 18,18 %; Personen im Dokument nicht namentlich als Frauen ausgewiesen"
+U000420,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,73,
+U000420,2025,ar_frauen_zahl,9,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,73,"""neun weiblichen und elf männlichen Mitgliedern"" = 45 %"
+U000420,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,"Fußnote ""Vertreter der Arbeitnehmer"" bei zehn Mitgliedern; paritätisch lt. MitbestG"
+U000420,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,"Beier und Grundler (ver.di), Mücke (Vorsitzende Neue Assekuranz Gewerkschaft) lt. Berufsangabe; weitere Gewerkschaftszugehörigkeit nicht ausgewiesen"
+U000420,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter",,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,
+U000420,2025,pay_ratio,,,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/verguetungsbericht-2025.pdf,39,"Kein Verhältnis ausgewiesen; Vergleich nur als Veränderung (Ø-Vergütung Deutschland FTE 2025: -0,2 %), keine Absolutwerte -> Berechnung nach Böckler Variante A nicht möglich"
 U000502,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,Stand Jahresende 2025 (Vorjahr 3)
 U000502,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,"""drei Männern und einer Frau"" = 25 % (Vorjahr 66,7 %)"
 U000502,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,165,je acht Anteilseigner- und Arbeitnehmervertreter (§ 7 Abs. 1 Nr. 2 MitbestG)
@@ -63,6 +105,22 @@ U000537,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/siem
 U000537,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf,241,"Bloemers, Fehrmann (IG Metall-Sekretäre), Kerner (2. Vorsitzender IG Metall); Zuordnung aus Beruf"
 U000537,2025,mitbestimmung_ar,"paritätisch nach MitbestG, 10 von 20 Arbeitnehmervertreter",,governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf,230,"""German Codetermination Act"""
 U000537,2025,pay_ratio,,,governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf,4,kein Zahlenwert: vertikaler Vergleich wird vom Aufsichtsrat intern ermittelt (Vergütungsbericht S. 4)
+U000712,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"Frauenquote im Vorstand 12,5 % = 1 von 8 (nach Ausscheiden Kilian)"
+U000712,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"12,5 %; Hauke Stars (Frau lt. Bericht S. 53)"
+U000712,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"zehn Anteilseigner-, zehn Arbeitnehmervertreter; Land Niedersachsen entsendet zwei Anteilseignervertreter"
+U000712,2025,ar_frauen_zahl,9,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,227,45 %
+U000712,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,
+U000712,2025,ar_gewerkschaftsvertreter_zahl,7,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"""sieben dieser Arbeitnehmervertreter sind von Gewerkschaften gewählte Gewerkschaftsvertreter"""
+U000712,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter, davon 7 Gewerkschaftsvertreter",,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,
+U000712,2025,pay_ratio,,,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,72,"kein Verhältniswert; Vergleich der Veränderung mit bereinigtem Personalaufwand je FTE der Volkswagen AG, absolute Beträge nicht ausgewiesen"
+U000742,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,zum 31.12.2025 (ohne Dembeck); ab 1.1.2026 fünf mit Dimitrova
+U000742,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,Frauenanteil 25 % zum 31.12.2025 (Vorjahr 40 %); ab 1.1.2026 wieder 40 %
+U000742,2025,ar_mitglieder_zahl,9,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,"sechs Anteilseigner-, drei Arbeitnehmervertreter"
+U000742,2025,ar_frauen_zahl,5,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,137,"Frauenanteil 55,6 %"
+U000742,2025,ar_arbeitnehmervertreter_zahl,3,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,
+U000742,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,nicht ausgewertet
+U000742,2025,mitbestimmung_ar,"Drittelparität nach SE-Beteiligungsvereinbarung (SEBG), 3 von 9 Arbeitnehmervertreter",,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,"""in Einklang mit den Bestimmungen des SE-Beteiligungsgesetzes (SEBG) getroffenen Beteiligungsvereinbarung"""
+U000742,2025,pay_ratio,,,governance/dokumente/zalando-se/verguetungsbericht-2025.pdf,37,kein Verhältniswert; vergleichende Darstellung nur mit Veränderungsraten (S. 37-38)
 U000124,2025,ar_mitglieder_zahl,20,Personen,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,"Stand 31.12.2025 (22 genannt, 2 ausgeschieden zum 15.5.2025)"
 U000124,2025,ar_arbeitnehmervertreter_zahl,10,Personen,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,"laut Fußnote 1 ""Von den Arbeitnehmerinnen und Arbeitnehmern gewählt"""
 U000124,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,banken/bilanzvergleich-gj2025/dokumente/commerzbank-ag/commerzbank-ag-jahresabschluss-2025.pdf,57,"Gewerkschaftssekretäre ver.di (Voß, Werning); Hans-Böckler-Stiftung (Leuchters) nicht mitgezählt"

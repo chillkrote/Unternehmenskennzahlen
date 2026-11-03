@@ -1,6 +1,6 @@
 # Unternehmen-Tabelle (zusammengeführt)
 
-Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **28.895 Unternehmen** (davon 2.785 neue indische Zeilen aus den BSE-Listen Equity.csv/EQT0.csv und der NSE-Liste EQUITY_L.csv, `skripte/indien_bse_nse.py`; vorher 26.130, sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`). 17 Namenszeilen mit den ESEF-Piloten zusammengelegt (`bereinigung_protokoll_esef.csv`, `bereinigung_protokoll_esef_2.csv`).
+Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **32.607 Unternehmen** (davon 3.712 neue japanische Zeilen aus der JPX-Liste, `skripte/japan_jpx.py`, ohne ISIN; davon 2.785 neue indische Zeilen aus den BSE-Listen Equity.csv/EQT0.csv und der NSE-Liste EQUITY_L.csv, `skripte/indien_bse_nse.py`; vorher 26.130, sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`). 17 Namenszeilen mit den ESEF-Piloten zusammengelegt (`bereinigung_protokoll_esef.csv`, `bereinigung_protokoll_esef_2.csv`), weitere 3 mit den ESEF-Piloten GB, GR, SI, LT, LV, EE, IS, LU, HU, SK, CZ (`bereinigung_protokoll_esef_3.csv`, `skripte/esef_zusammenlegen_3.py`).
 
 | Datei | Inhalt |
 |---|---|
@@ -12,6 +12,7 @@ Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den 
 | `skripte/deutschland_einfuegen.py` | gleicht alle Unternehmen aus `stammdaten/` ab (ohne Landangabe alle Länder; ergänzt Bestehendes, legt Neues an, schreibt `id_zuordnung.csv` und die CSV mit ID-Spalte) |
 | `skripte/bereinigung.py` | gezielte Bereinigung: benennt 3 Zeilen mit Spaltenüberschrift als Namen um, legt eindeutige Doppelzeilen zusammen; Ergebnis in `bereinigung_protokoll.csv`, offene Fälle in `bereinigung_pruefliste.csv` |
 | `skripte/indien_bse_nse.py` | arbeitet BSE-/NSE-Listen ein: Zuordnung per ISIN, Ticker, eindeutigem Namen; füllt nur leere Felder, neue Zeilen mit Platzhalter-Branche |
+| `skripte/japan_jpx.py` | arbeitet die JPX-Liste (TSE-listed Issues, ohne ETFs/REITs) ein: Zuordnung per Ticker/Name, füllt nur leere Felder, Branche grob aus TSE-Sektoren |
 | `skripte/pruefliste_entscheiden.py` | setzt die Entscheidungen zur Prüfliste um (21 weitere Zusammenlegungen); `bereinigung_pruefliste.csv` hat dazu die Spalten `entscheidung` und `begruendung` für alle 90 Fälle |
 | `skripte/bausteine/` | die einmal benutzten Zusammenführungs- und Anreicherungsskripte (GLEIF, SEC, ETF-Listen, Wikidata, EDGAR, Börsenlisten); sie lesen noch Pfade aus der Arbeitsumgebung und dienen als Nachweis des Vorgehens |
 

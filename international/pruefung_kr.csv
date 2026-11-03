@@ -1,0 +1,69 @@
+unternehmen_id,name,kennzahl,dart_konto,periode,wert_datenbank_krw,wert_bericht,rcept_no,zeile_im_bericht,status,geprueft_am
+U001410,Samsung Electronics Co. Ltd.,assets,ifrs-full_Assets,..2025-12-31,566942110000000,566942110 × Einheit Mio. Won,20260310002820,자산총계,gleich,2026-11-03
+U001410,Samsung Electronics Co. Ltd.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,424313255000000,424313255 × Einheit Mio. Won,20260310002820,[지배기업 소유주지분],gleich,2026-11-03
+U001410,Samsung Electronics Co. Ltd.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,436320337000000,436320337 × Einheit Mio. Won,20260310002820,자본총계,gleich,2026-11-03
+U001410,Samsung Electronics Co. Ltd.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,44260956000000,44260956 × Einheit Mio. Won,20260310002820,ㆍ지배기업 소유주지분,gleich,2026-11-03
+U001410,Samsung Electronics Co. Ltd.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,45206805000000,45206805 × Einheit Mio. Won,20260310002820,당기순이익,gleich,2026-11-03
+U001410,Samsung Electronics Co. Ltd.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,85315148000000,85315148 × Einheit Mio. Won,20260310002820,영업활동현금흐름,gleich,2026-11-03
+U001410,Samsung Electronics Co. Ltd.,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,333605938000000,333605938 × Einheit Mio. Won,20260310002820,매출액,gleich,2026-11-03
+U001411,SK Hynix Inc.,assets,ifrs-full_Assets,..2025-12-31,176107659000000,176107659 × Einheit Mio. Won,20260317000635,자 산 총 계,gleich,2026-11-03
+U001411,SK Hynix Inc.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,120516178000000,120516178 × Einheit Mio. Won,20260317000635,Ⅰ. 지배기업의 소유지분,gleich,2026-11-03
+U001411,SK Hynix Inc.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,120666751000000,120666751 × Einheit Mio. Won,20260317000635,자 본 총 계,gleich,2026-11-03
+U001411,SK Hynix Inc.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,42919287000000,42919287 × Einheit Mio. Won,20260317000635,지배기업의 소유주지분,gleich,2026-11-03
+U001411,SK Hynix Inc.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,42947902000000,42947902 × Einheit Mio. Won,20260317000635,당기순이익(손실),gleich,2026-11-03
+U001411,SK Hynix Inc.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,53373126000000,53373126 × Einheit Mio. Won,20260317000635,Ⅰ. 영업활동 현금흐름,gleich,2026-11-03
+U001411,SK Hynix Inc.,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,97146675000000,97146675 × Einheit Mio. Won,20260317000635,Ⅰ. 매출액,gleich,2026-11-03
+U001412,Hyundai Motor Company,assets,ifrs-full_Assets,..2025-12-31,368844849000000,368844849 × Einheit Mio. Won,20260318001394,자산총계,gleich,2026-11-03
+U001412,Hyundai Motor Company,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,115446507000000,115446507 × Einheit Mio. Won,20260318001394,지배기업소유주지분,gleich,2026-11-03
+U001412,Hyundai Motor Company,equity_incl_nci,ifrs-full_Equity,..2025-12-31,127648237000000,127648237 × Einheit Mio. Won,20260318001394,자본총계,gleich,2026-11-03
+U001412,Hyundai Motor Company,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,9445987000000,9445987 × Einheit Mio. Won,20260318001394,지배기업소유주지분,gleich,2026-11-03
+U001412,Hyundai Motor Company,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,10364775000000,10364775 × Einheit Mio. Won,20260318001394,연결당기순이익,gleich,2026-11-03
+U001412,Hyundai Motor Company,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,-5991270000000,-5991270 × Einheit Mio. Won,20260318001394,영업활동으로 인한 현금흐름,gleich,2026-11-03
+U001412,Hyundai Motor Company,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,186254472000000,186254472 × Einheit Mio. Won,20260318001394,매출액,gleich,2026-11-03
+U001413,Kia Corporation,assets,ifrs-full_Assets,..2025-12-31,98979055000000,98979055 × Einheit Mio. Won,20260312001224,자산총계,gleich,2026-11-03
+U001413,Kia Corporation,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,61187884000000,61187884 × Einheit Mio. Won,20260312001224,지배기업 소유주지분,gleich,2026-11-03
+U001413,Kia Corporation,equity_incl_nci,ifrs-full_Equity,..2025-12-31,61190464000000,61190464 × Einheit Mio. Won,20260312001224,자본총계,gleich,2026-11-03
+U001413,Kia Corporation,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,7560983000000,7560983 × Einheit Mio. Won,20260312001224,지배기업소유주지분순이익,gleich,2026-11-03
+U001413,Kia Corporation,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,7554174000000,7554174 × Einheit Mio. Won,20260312001224,당기순이익,gleich,2026-11-03
+U001413,Kia Corporation,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,9054140000000,9054140 × Einheit Mio. Won,20260312001224,영업활동현금흐름,gleich,2026-11-03
+U001413,Kia Corporation,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,114140919000000,114140919 × Einheit Mio. Won,20260312001224,매출액,gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,assets,ifrs-full_Assets,..2025-12-31,67147953000000,67147953 × Einheit Mio. Won,20260312000217,자 산 총 계,gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,20215549000000,20215549 × Einheit Mio. Won,20260312000217,Ⅰ. 지배기업의 소유주지분,gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,29321676000000,29321676 × Einheit Mio. Won,20260312000217,자 본 총 계,gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,-1072810000000,-1072810 × Einheit Mio. Won,20260312000217,1. 지배기업의 소유주지분,gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,80803000000,80803 × Einheit Mio. Won,20260312000217,당기순이익(손실),gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,4432277000000,4432277 × Einheit Mio. Won,20260312000217,영업활동현금흐름,gleich,2026-11-03
+U001414,LG Energy Solution Ltd.,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,23671759000000,23671759 × Einheit Mio. Won,20260312000217,매출액,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,assets,ifrs-full_Assets,..2025-12-31,105192437963565,105192437963565 × Einheit Won,20260311004517,자 산 총 계,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,55730184535521,55730184535521 × Einheit Won,20260311004517,Ⅰ. 지배기업소유주지분,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,62377691037383,62377691037383 × Einheit Won,20260311004517,자 본 총 계,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,657654060164,657654060164 × Einheit Won,20260311004517,1. 지배기업의 소유주지분,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,504403472266,504403472266 × Einheit Won,20260311004517,XI. 당기순이익,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,4571910292218,4571910292218 × Einheit Won,20260311004517,Ⅰ. 영업활동으로 인한 현금흐름,gleich,2026-11-03
+U001415,POSCO Holdings Inc.,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,69094886192787,69094886192787 × Einheit Won,20260311004517,Ⅰ. 매출액,gleich,2026-11-03
+U001416,KB Financial Group Inc.,assets,ifrs-full_Assets,..2025-12-31,797923033000000,797923033 × Einheit Mio. Won,20260324000835,자산총계,gleich_in_anderer_fassung,2026-11-03
+U001416,KB Financial Group Inc.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,59048211000000,59048211 × Einheit Mio. Won,20260324000835,지배기업 주주지분,gleich_in_anderer_fassung,2026-11-03
+U001416,KB Financial Group Inc.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,60829989000000,60829989 × Einheit Mio. Won,20260324000835,자본총계,gleich_in_anderer_fassung,2026-11-03
+U001416,KB Financial Group Inc.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,5833162000000,5833162 × Einheit Mio. Won,20260324000835,지배기업주주지분순이익,gleich_in_anderer_fassung,2026-11-03
+U001416,KB Financial Group Inc.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,5840715000000,5840715 × Einheit Mio. Won,20260324000835,당기순이익,gleich_in_anderer_fassung,2026-11-03
+U001416,KB Financial Group Inc.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,4226378000000,4226378 × Einheit Mio. Won,20260324000835,영업활동으로부터의 현금흐름,gleich_in_anderer_fassung,2026-11-03
+U001417,Shinhan Financial Group Co. Ltd.,assets,ifrs-full_Assets,..2025-12-31,786013485000000,786013485 × Einheit Mio. Won,20261007000218,자산 총계,gleich,2026-11-03
+U001417,Shinhan Financial Group Co. Ltd.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,57959272000000,57959272 × Einheit Mio. Won,20261007000218,Ⅰ. 지배기업 소유주지분,gleich,2026-11-03
+U001417,Shinhan Financial Group Co. Ltd.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,60372324000000,60372324 × Einheit Mio. Won,20261007000218,자본 총계,gleich,2026-11-03
+U001417,Shinhan Financial Group Co. Ltd.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,4971561000000,4971561 × Einheit Mio. Won,20261007000218,(1) 지배기업 소유주지분,gleich,2026-11-03
+U001417,Shinhan Financial Group Co. Ltd.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,5084519000000,5084519 × Einheit Mio. Won,20261007000218,Ⅵ.당기순이익,gleich,2026-11-03
+U001417,Shinhan Financial Group Co. Ltd.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,9730881000000,9730881 × Einheit Mio. Won,20261007000218,영업활동순현금흐름,gleich,2026-11-03
+U001418,NAVER Corporation,assets,ifrs-full_Assets,..2025-12-31,41084496327318,41084496327318 × Einheit Won,20260313001021,자산총계,gleich,2026-11-03
+U001418,NAVER Corporation,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,27581956984245,27581956984245 × Einheit Won,20260313001021,지배기업의 소유주에게 귀속되는 자본,gleich,2026-11-03
+U001418,NAVER Corporation,equity_incl_nci,ifrs-full_Equity,..2025-12-31,28953013365595,28953013365595 × Einheit Won,20260313001021,자본총계,gleich,2026-11-03
+U001418,NAVER Corporation,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,1953214734956,1953214734956 × Einheit Won,20260313001021,지배기업 소유주지분,gleich,2026-11-03
+U001418,NAVER Corporation,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,1818746310015,1818746310015 × Einheit Won,20260313001021,당기순이익,gleich,2026-11-03
+U001418,NAVER Corporation,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,3095806604677,3095806604677 × Einheit Won,20260313001021,영업활동현금흐름,gleich,2026-11-03
+U001418,NAVER Corporation,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,12035007218975,12035007218975 × Einheit Won,20260313001021,영업수익 (주35),gleich,2026-11-03
+U001419,Celltrion Inc.,assets,ifrs-full_Assets,..2025-12-31,22334900189800,22334900189800 × Einheit Won,20260316001415,자산총계,gleich,2026-11-03
+U001419,Celltrion Inc.,equity,ifrs-full_EquityAttributableToOwnersOfParent,..2025-12-31,17208474471870,17208474471870 × Einheit Won,20260316001415,지배기업소유주지분,gleich,2026-11-03
+U001419,Celltrion Inc.,equity_incl_nci,ifrs-full_Equity,..2025-12-31,17352529819114,17352529819114 × Einheit Won,20260316001415,자본총계,gleich,2026-11-03
+U001419,Celltrion Inc.,net_income,ifrs-full_ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,1029613370428,1029613370428 × Einheit Won,20260316001415,지배기업소유주지분,gleich,2026-11-03
+U001419,Celltrion Inc.,net_income_incl_nci,ifrs-full_ProfitLoss,2025-01-01..2025-12-31,1031483789240,1031483789240 × Einheit Won,20260316001415,당기순이익,gleich,2026-11-03
+U001419,Celltrion Inc.,operating_cash_flow,ifrs-full_CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,646050776661,646050776661 × Einheit Won,20260316001415,영업활동으로 인한 현금흐름,gleich,2026-11-03
+U001419,Celltrion Inc.,revenue,ifrs-full_Revenue,2025-01-01..2025-12-31,4162495108881,4162495108881 × Einheit Won,20260316001415,매출액,gleich,2026-11-03

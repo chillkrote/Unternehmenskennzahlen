@@ -1,0 +1,11 @@
+name,isin,stock_code,corp_code,ticker,branche,bank,hinweis
+Samsung Electronics Co. Ltd.,KR7005930003,005930,00126380,005930,technologie,nein,
+SK Hynix Inc.,KR7000660001,000660,00164779,000660,technologie,nein,
+Hyundai Motor Company,KR7005380001,005380,00164742,005380,automobil,nein,
+Kia Corporation,KR7000270009,000270,00106641,000270,automobil,nein,
+LG Energy Solution Ltd.,KR7373220003,373220,01515323,373220,industrie,nein,
+POSCO Holdings Inc.,KR7005490008,005490,00155319,005490,chemie-rohstoffe,nein,
+KB Financial Group Inc.,KR7105560007,105560,00688996,105560,banken,ja,
+Shinhan Financial Group Co. Ltd.,KR7055550008,055550,00382199,055550,banken,ja,
+NAVER Corporation,KR7035420009,035420,00266961,035420,software-it,nein,
+Celltrion Inc.,KR7068270008,068270,00413046,068270,pharma-gesundheit,nein,

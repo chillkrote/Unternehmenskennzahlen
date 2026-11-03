@@ -1,8 +1,8 @@
 """Gesamtregister für das Terminal: alle Zeilen der Unternehmenstabelle (unternehmen-tabelle/Unternehmen_Tabelle.csv) als kompakte,
 spaltenweise Tabelle -> data/register.json. Nur Stammdaten (Name, Land, Sitz, Branche, ISIN, Ticker, Börse, Notierung, Index, LEI, Website,
-Quelle); Kennzahlen kommen weiter aus unternehmen.py. Zeilen mit ID tragen sie mit und verweisen im Terminal auf das Profil mit Kennzahlen.
-Zeilen ohne ID bleiben ohne ID (Neuvergabe nur über stammdaten/ids.py); sie werden über einen stabilen Schlüssel angesprochen
-(ISIN, sonst LEI, sonst Land+Name, wie international/import_unternehmen.py), im Terminal als #reg-<Schlüssel>."""
+Quelle); Kennzahlen kommen weiter aus unternehmen.py. Jede Zeile trägt ihre Unternehmens-ID (stammdaten/, vergeben mit unternehmen-tabelle/skripte/ids_vergeben.py); das Terminal öffnet sie als
+#firma-<ID>, mit Kennzahlen als volles Profil, sonst als Registerprofil mit den Stammdaten. Zeilen ohne ID (neu in der Tabelle, noch nicht
+vergeben) bekommen als Notlösung einen Hash-Schlüssel aus ISIN, sonst LEI, sonst Land+Name (#firma-<Hash>); IDs vergibt nur stammdaten/ids.py."""
 import csv
 import hashlib
 import json
@@ -45,7 +45,7 @@ def lade(pfad=TABELLE):
     codes = land_codes()
     zeilen, sicht, unbekannt = [], {}, {}
     for z in csv.DictReader(open(pfad, encoding="utf-8-sig"), delimiter=";"):
-        k = schluessel(z)
+        k = z["unternehmen_id"].strip() or schluessel(z)
         n = sicht.get(k, 0)
         sicht[k] = n + 1
         if n:                       # gleicher Schlüssel (z. B. Aktiengattungen mit gleicher ISIN): Zähler anhängen

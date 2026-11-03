@@ -507,6 +507,14 @@
 "plz": "19801",
 "status": "ACTIVE"
 },
+"lei:08IRJODWFYBI7QWRGS31": {
+"land": "US",
+"lei": "08IRJODWFYBI7QWRGS31",
+"name": "Weyerhaeuser Company",
+"ort": "SEATTLE",
+"plz": "98104",
+"status": "ACTIVE"
+},
 "lei:097900BGMO0000055872": {
 "land": "LV",
 "lei": "097900BGMO0000055872",
@@ -523,12 +531,60 @@
 "plz": "LT-04215",
 "status": "ACTIVE"
 },
+"lei:0BGI85ALH27ZJP15DY16": {
+"land": "US",
+"lei": "0BGI85ALH27ZJP15DY16",
+"name": "BALL CORPORATION",
+"ort": "Westminster",
+"plz": "80021",
+"status": "ACTIVE"
+},
+"lei:1Z4GXXU7ZHVWFCD8TV52": {
+"land": "US",
+"lei": "1Z4GXXU7ZHVWFCD8TV52",
+"name": "ORACLE CORPORATION",
+"ort": "Austin",
+"plz": "78741",
+"status": "ACTIVE"
+},
+"lei:2138001BOD1J5XK1CX76": {
+"land": "GB",
+"lei": "2138001BOD1J5XK1CX76",
+"name": "CUSTODIAN PROPERTY INCOME REIT PLC",
+"ort": "LEICESTER",
+"plz": "LE1 6RU",
+"status": "ACTIVE"
+},
 "lei:2138001CNF45JP5XZK38": {
 "land": "FI",
 "lei": "2138001CNF45JP5XZK38",
 "name": "KONE OYJ",
 "ort": "ESPOO",
 "plz": "02150",
+"status": "ACTIVE"
+},
+"lei:2138001E12GWLLDQQF16": {
+"land": "GB",
+"lei": "2138001E12GWLLDQQF16",
+"name": "CURRYS PLC",
+"ort": "NEWARK",
+"plz": "NG24 2NH",
+"status": "ACTIVE"
+},
+"lei:2138001KJNGUJ34G7X91": {
+"land": "GB",
+"lei": "2138001KJNGUJ34G7X91",
+"name": "WH SMITH PLC",
+"ort": "SWINDON",
+"plz": "SN5 6PB",
+"status": "ACTIVE"
+},
+"lei:21380028OPRUVBBGKF36": {
+"land": "HK",
+"lei": "21380028OPRUVBBGKF36",
+"name": "STRONG PETROCHEMICAL HOLDINGS LIMITED",
+"ort": "ADMIRALTY",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:2138002P5RNKC5W2JZ46": {
@@ -555,12 +611,44 @@
 "plz": "1349-065",
 "status": "ACTIVE"
 },
+"lei:2138003JYQMRP3SLX189": {
+"land": "US",
+"lei": "2138003JYQMRP3SLX189",
+"name": "FERGUSON ENTERPRISES INC.",
+"ort": "NEWPORT NEWS",
+"plz": "23606",
+"status": "ACTIVE"
+},
 "lei:2138003TO2MTRHWVP686": {
 "land": "GR",
 "lei": "2138003TO2MTRHWVP686",
 "name": "ΓΕΚ ΤΕΡΝΑ Α.Ε.",
 "ort": "ATHENS",
 "plz": "11526",
+"status": "ACTIVE"
+},
+"lei:21380048ADXM6Z67CT18": {
+"land": "GB",
+"lei": "21380048ADXM6Z67CT18",
+"name": "RENISHAW P L C",
+"ort": "WOTTON UNDER EDGE",
+"plz": "GL12 8JR",
+"status": "ACTIVE"
+},
+"lei:2138004WWUJN94K2LH95": {
+"land": "GB",
+"lei": "2138004WWUJN94K2LH95",
+"name": "SAGA PLC",
+"ort": "LONDON",
+"plz": "N1C 4AG",
+"status": "ACTIVE"
+},
+"lei:2138004YAWWM4FWJ3U62": {
+"land": "HK",
+"lei": "2138004YAWWM4FWJ3U62",
+"name": "HONMA GOLF LIMITED",
+"ort": "CENTRAL",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:2138005M92IEIQVEL297": {
@@ -579,12 +667,60 @@
 "plz": "EH2 2YB",
 "status": "ACTIVE"
 },
+"lei:21380064K7N2W7FD6434": {
+"land": "GB",
+"lei": "21380064K7N2W7FD6434",
+"name": "MJ GLEESON PLC",
+"ort": "SHEFFIELD",
+"plz": "S9 1XE",
+"status": "ACTIVE"
+},
+"lei:21380066N3SV9O8IDP37": {
+"land": "GB",
+"lei": "21380066N3SV9O8IDP37",
+"name": "THG PLC",
+"ort": "ALTRINCHAM",
+"plz": "WA15 0AF",
+"status": "ACTIVE"
+},
 "lei:21380068P1DRHMJ8KU70": {
 "land": "GB",
 "lei": "21380068P1DRHMJ8KU70",
 "name": "SHELL PLC",
 "ort": "LONDON",
 "plz": "SE1 7NA",
+"status": "ACTIVE"
+},
+"lei:2138006R85VEOF5YNK29": {
+"land": "GB",
+"lei": "2138006R85VEOF5YNK29",
+"name": "BARRATT REDROW PLC",
+"ort": "COALVILLE",
+"plz": "LE67 1UF",
+"status": "ACTIVE"
+},
+"lei:2138007CEIRKZMNI2979": {
+"land": "GB",
+"lei": "2138007CEIRKZMNI2979",
+"name": "GRAINGER PLC",
+"ort": "NEWCASTLE UPON TYNE",
+"plz": "NE1 4JE",
+"status": "ACTIVE"
+},
+"lei:2138007G6BGTEHI3OT22": {
+"land": "GB",
+"lei": "2138007G6BGTEHI3OT22",
+"name": "CLARKSON PLC",
+"ort": "LONDON",
+"plz": "E1W 1BF",
+"status": "ACTIVE"
+},
+"lei:2138007WU5DJFZFDDV59": {
+"land": "KY",
+"lei": "2138007WU5DJFZFDDV59",
+"name": "Health and Happiness (H&H) International Holdings Limited",
+"ort": "GEORGE TOWN",
+"plz": "KY1-1111",
 "status": "ACTIVE"
 },
 "lei:2138008J191VLSGY5A09": {
@@ -603,12 +739,60 @@
 "plz": "KT16 9BQ",
 "status": "ACTIVE"
 },
+"lei:2138008WRC2652IBSX12": {
+"land": "HK",
+"lei": "2138008WRC2652IBSX12",
+"name": "361 DEGREES INTERNATIONAL LIMITED",
+"ort": "WANCHAI",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:2138008ZOT5K9PJW7168": {
+"land": "GB",
+"lei": "2138008ZOT5K9PJW7168",
+"name": "WATCHES OF SWITZERLAND GROUP PLC",
+"ort": "LEICESTER",
+"plz": "LE19 0AL",
+"status": "ACTIVE"
+},
+"lei:2138009JDFQOXJFCJQ05": {
+"land": "GB",
+"lei": "2138009JDFQOXJFCJQ05",
+"name": "PALACE CAPITAL PLC",
+"ort": "LONDON",
+"plz": "EC4Y 0DT",
+"status": "ACTIVE"
+},
 "lei:2138009Y59EAR7H1UO97": {
 "land": "LV",
 "lei": "2138009Y59EAR7H1UO97",
 "name": "CITADELE BANKA, AKCIJU SABIEDRĪBA",
 "ort": "RIGA",
 "plz": "LV-1010",
+"status": "ACTIVE"
+},
+"lei:213800AKSTYRLHY3X497": {
+"land": "PT",
+"lei": "213800AKSTYRLHY3X497",
+"name": "ALTRI, S.G.P.S., S.A.",
+"ort": "PORTO",
+"plz": "4100-320",
+"status": "ACTIVE"
+},
+"lei:213800BBFZK4W4P98U76": {
+"land": "GB",
+"lei": "213800BBFZK4W4P98U76",
+"name": "LUCECO PLC",
+"ort": "TELFORD",
+"plz": "TF3 3BD",
+"status": "ACTIVE"
+},
+"lei:213800DJCGZRB6523934": {
+"land": "GB",
+"lei": "213800DJCGZRB6523934",
+"name": "NCC GROUP PLC",
+"ort": "MANCHESTER",
+"plz": "M3 3AQ",
 "status": "ACTIVE"
 },
 "lei:213800DJRB539Q1EMW75": {
@@ -619,12 +803,44 @@
 "plz": "LV-1010",
 "status": "ACTIVE"
 },
+"lei:213800DWTSI7ACSGHN32": {
+"land": "HK",
+"lei": "213800DWTSI7ACSGHN32",
+"name": "ALIBABA PICTURES GROUP LIMITED",
+"ort": "CAUSEWAY BAY",
+"plz": null,
+"status": "ACTIVE"
+},
 "lei:213800EC6PW5VU4J9U64": {
 "land": "FI",
 "lei": "213800EC6PW5VU4J9U64",
 "name": "UPM-KYMMENE OYJ",
 "ort": "HELSINKI",
 "plz": "00100",
+"status": "ACTIVE"
+},
+"lei:213800EC7997ZBLZJH69": {
+"land": "GB",
+"lei": "213800EC7997ZBLZJH69",
+"name": "ROLLS-ROYCE HOLDINGS PLC",
+"ort": "LONDON",
+"plz": "N1 9FX",
+"status": "ACTIVE"
+},
+"lei:213800EIMJZZA1GBIE18": {
+"land": "GB",
+"lei": "213800EIMJZZA1GBIE18",
+"name": "NORCROS PLC",
+"ort": "WILMSLOW",
+"plz": "SK9 1BU",
+"status": "ACTIVE"
+},
+"lei:213800F3NOTF47H6AO55": {
+"land": "GB",
+"lei": "213800F3NOTF47H6AO55",
+"name": "THE CITY OF LONDON INVESTMENT TRUST PLC",
+"ort": "LONDON",
+"plz": "EC2M 3AE",
 "status": "ACTIVE"
 },
 "lei:213800FSR9RNDUOTXO25": {
@@ -635,12 +851,92 @@
 "plz": "169 94",
 "status": "ACTIVE"
 },
+"lei:213800GNI5XF3XOATR61": {
+"land": "GB",
+"lei": "213800GNI5XF3XOATR61",
+"name": "REACH PLC",
+"ort": "LONDON",
+"plz": "E14 5AP",
+"status": "ACTIVE"
+},
+"lei:213800H84UJQYSVF9750": {
+"land": "GI",
+"lei": "213800H84UJQYSVF9750",
+"name": "EVOKE PLC",
+"ort": "GIBRALTAR",
+"plz": "GX11 1AA",
+"status": "ACTIVE"
+},
+"lei:213800HBUHCXKIPIYO13": {
+"land": "GR",
+"lei": "213800HBUHCXKIPIYO13",
+"name": "ATTICA Α. Ε. ΣΥΜΜΕΤΟΧΩΝ",
+"ort": "KALLITHEA",
+"plz": "176 74",
+"status": "ACTIVE"
+},
+"lei:213800IEX9ZXJRAOL133": {
+"land": "GB",
+"lei": "213800IEX9ZXJRAOL133",
+"name": "WICKES GROUP PLC",
+"ort": "WATFORD",
+"plz": "WD24 4JL",
+"status": "ACTIVE"
+},
 "lei:213800J5M11TDEP3LQ76": {
 "land": "PT",
 "lei": "213800J5M11TDEP3LQ76",
 "name": "CORTICEIRA AMORIM, SGPS, S.A.",
 "ort": "MOZELOS",
 "plz": "4536-902",
+"status": "ACTIVE"
+},
+"lei:213800J7QUJJBEFSIN38": {
+"land": "GB",
+"lei": "213800J7QUJJBEFSIN38",
+"name": "HGCAPITAL TRUST PLC",
+"ort": "LONDON",
+"plz": "SE1 2AP",
+"status": "ACTIVE"
+},
+"lei:213800JH9QQWHLO99821": {
+"land": "GB",
+"lei": "213800JH9QQWHLO99821",
+"name": "LEGAL & GENERAL GROUP PLC",
+"ort": "LONDON",
+"plz": "EC2R 5AA",
+"status": "ACTIVE"
+},
+"lei:213800JMEDD2Q4N1MC42": {
+"land": "GB",
+"lei": "213800JMEDD2Q4N1MC42",
+"name": "GREAT PORTLAND ESTATES P L C",
+"ort": "LONDON",
+"plz": "W1G 0PW",
+"status": "ACTIVE"
+},
+"lei:213800K4IYJ63C5GSP92": {
+"land": "KY",
+"lei": "213800K4IYJ63C5GSP92",
+"name": "SOLOMON SYSTECH (INTERNATIONAL) LIMITED",
+"ort": "GRAND CAYMAN",
+"plz": "KY1-1001",
+"status": "ACTIVE"
+},
+"lei:213800KC1LJOJTY3JP45": {
+"land": "GB",
+"lei": "213800KC1LJOJTY3JP45",
+"name": "HOWDEN JOINERY GROUP PLC",
+"ort": "LONDON",
+"plz": "W1U 1QY",
+"status": "ACTIVE"
+},
+"lei:213800KSTW8CO6OHZY52": {
+"land": "HK",
+"lei": "213800KSTW8CO6OHZY52",
+"name": "CINDA INTERNATIONAL HOLDINGS LIMITED",
+"ort": "HONG KONG",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:213800KT8MEUJEJ2KW41": {
@@ -667,12 +963,92 @@
 "plz": "SW1Y 4PD",
 "status": "ACTIVE"
 },
+"lei:213800LRO7NS5CYQMN21": {
+"land": "GB",
+"lei": "213800LRO7NS5CYQMN21",
+"name": "BT GROUP PLC",
+"ort": "LONDON",
+"plz": "E1 8EE",
+"status": "ACTIVE"
+},
+"lei:213800M1HN85ACHDBK34": {
+"land": "HK",
+"lei": "213800M1HN85ACHDBK34",
+"name": "TEXHONG INTERNATIONAL GROUP LIMITED",
+"ort": "TSUEN WAN",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:213800MD59RZ8CIQB648": {
+"land": "KY",
+"lei": "213800MD59RZ8CIQB648",
+"name": "CHAOWEI POWER HOLDINGS LIMITED",
+"ort": "GEORGE TOWN",
+"plz": "KY1-1205",
+"status": "ACTIVE"
+},
+"lei:213800MJL6IPZS3ASA11": {
+"land": "GB",
+"lei": "213800MJL6IPZS3ASA11",
+"name": "SMITHS GROUP PLC",
+"ort": "LONDON",
+"plz": "SE1 9AX",
+"status": "ACTIVE"
+},
+"lei:213800OREKC9BL58G144": {
+"land": "GR",
+"lei": "213800OREKC9BL58G144",
+"name": "Ανώνυμη Εταιρία Τσιμέντων ΤΙΤΑΝ",
+"ort": "ATHENS",
+"plz": "111 43",
+"status": "ACTIVE"
+},
+"lei:213800OTQMZQ6WHU8M17": {
+"land": "CN",
+"lei": "213800OTQMZQ6WHU8M17",
+"name": "CONCORD NEW ENERGY GROUP LIMITED",
+"ort": "BEIJING",
+"plz": "100048",
+"status": "ACTIVE"
+},
+"lei:213800OU3FQKGM4M2U23": {
+"land": "ES",
+"lei": "213800OU3FQKGM4M2U23",
+"name": "ENAGAS, S.A.",
+"ort": "Madrid",
+"plz": "28005",
+"status": "ACTIVE"
+},
+"lei:213800OVMJPFP79OB449": {
+"land": "GB",
+"lei": "213800OVMJPFP79OB449",
+"name": "PEPCO GROUP N.V.",
+"ort": "LONDON",
+"plz": "NW1 5DH",
+"status": "ACTIVE"
+},
 "lei:213800QAUUUP6I445N30": {
 "land": "GB",
 "lei": "213800QAUUUP6I445N30",
 "name": "LONDON STOCK EXCHANGE GROUP PLC",
 "ort": "LONDON",
 "plz": "EC4M 7LS",
+"status": "ACTIVE"
+},
+"lei:213800QC8AWD4BO8TH08": {
+"land": "GB",
+"lei": "213800QC8AWD4BO8TH08",
+"name": "HAYS PLC",
+"ort": "LONDON",
+"plz": "EC2V 6DN",
+"status": "ACTIVE"
+},
+"lei:213800QWTXXXF8BNEC87": {
+"land": "GB",
+"lei": "213800QWTXXXF8BNEC87",
+"name": "A.G. BARR P.L.C.",
+"ort": "CUMBERNAULD",
+"plz": "G68 9HD",
 "status": "ACTIVE"
 },
 "lei:213800R3IXBON2LBEI63": {
@@ -689,6 +1065,22 @@
 "name": "MOL MAGYAR OLAJ- ÉS GÁZIPARI NYILVÁNOSAN MŰKÖDŐ RÉSZVÉNYTÁRSASÁG",
 "ort": "BUDAPEST",
 "plz": "1117",
+"status": "ACTIVE"
+},
+"lei:213800S8OBDOZMCMUW34": {
+"land": "GB",
+"lei": "213800S8OBDOZMCMUW34",
+"name": "QINETIQ GROUP PLC",
+"ort": "FARNBOROUGH",
+"plz": "GU14 0LX",
+"status": "ACTIVE"
+},
+"lei:213800SJEZ2WD4VQFS05": {
+"land": "KY",
+"lei": "213800SJEZ2WD4VQFS05",
+"name": "XINGDA INTERNATIONAL HOLDINGS LIMITED",
+"ort": "GRAND CAYMAN",
+"plz": "KY1-1111",
 "status": "ACTIVE"
 },
 "lei:213800T8PC8Q4FYJZR07": {
@@ -715,12 +1107,44 @@
 "plz": "RG14 2FN",
 "status": "ACTIVE"
 },
+"lei:213800TJGBW5VFHQEV54": {
+"land": "GB",
+"lei": "213800TJGBW5VFHQEV54",
+"name": "TT ELECTRONICS PLC",
+"ort": "WOKING",
+"plz": "GU21 6EB",
+"status": "ACTIVE"
+},
+"lei:213800TYYFXKYF3V2A23": {
+"land": "NO",
+"lei": "213800TYYFXKYF3V2A23",
+"name": "ONCOINVENT ASA",
+"ort": "OSLO",
+"plz": "0484",
+"status": "ACTIVE"
+},
 "lei:213800U3Y9UL7Y4QVM11": {
 "land": "GR",
 "lei": "213800U3Y9UL7Y4QVM11",
 "name": "ΜΟΤΟΡ ΟΙΛ (ΕΛΛΑΣ) ΔΙΥΛΙΣΤΗΡΙΑ ΚΟΡΙΝΘΟΥ Α.Ε.",
 "ort": "MAROUSI",
 "plz": "15124",
+"status": "ACTIVE"
+},
+"lei:213800U8Y7E1T1Y2NR27": {
+"land": "CN",
+"lei": "213800U8Y7E1T1Y2NR27",
+"name": "CHINA NEW ENERGY LIMITED",
+"ort": "GUANGZHOU",
+"plz": "510640",
+"status": "ACTIVE"
+},
+"lei:213800VB75KAZBFH5U07": {
+"land": "GB",
+"lei": "213800VB75KAZBFH5U07",
+"name": "CMC MARKETS PLC",
+"ort": "LONDON",
+"plz": "EC3A 7BX",
 "status": "ACTIVE"
 },
 "lei:213800VI8OH5EJM18L21": {
@@ -731,12 +1155,36 @@
 "plz": "19019",
 "status": "ACTIVE"
 },
+"lei:213800VUQHMOGEWKNG87": {
+"land": "GR",
+"lei": "213800VUQHMOGEWKNG87",
+"name": "ΕΛΛΑΚΤΩΡ ΑΝΩΝΥΜΗ ΕΤΑΙΡΕΙΑ",
+"ort": "KIFISIA",
+"plz": "145 64",
+"status": "ACTIVE"
+},
 "lei:213800WKOUWXWFJ5Z514": {
 "land": "NO",
 "lei": "213800WKOUWXWFJ5Z514",
 "name": "YARA INTERNATIONAL ASA",
 "ort": "OSLO",
 "plz": "0277",
+"status": "ACTIVE"
+},
+"lei:213800WQD8ECPZP9PH98": {
+"land": "GB",
+"lei": "213800WQD8ECPZP9PH98",
+"name": "NEXT PLC",
+"ort": "LEICESTER",
+"plz": "LE19 4AT",
+"status": "ACTIVE"
+},
+"lei:213800WXICGMBWHTA933": {
+"land": "GB",
+"lei": "213800WXICGMBWHTA933",
+"name": "SAVILLS PLC",
+"ort": "LONDON",
+"plz": "W1G 0JD",
 "status": "ACTIVE"
 },
 "lei:213800X3Q9LSAKRUWY91": {
@@ -747,12 +1195,36 @@
 "plz": "1080",
 "status": "ACTIVE"
 },
+"lei:213800XC5O6QB2SM1870": {
+"land": "HK",
+"lei": "213800XC5O6QB2SM1870",
+"name": "CHINA WATER INDUSTRY GROUP LIMITED",
+"ort": "SHEUNG WAN",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:213800XTZK2GOHQTYK41": {
+"land": "CN",
+"lei": "213800XTZK2GOHQTYK41",
+"name": "TENCENT MUSIC ENTERTAINMENT GROUP",
+"ort": "深圳",
+"plz": "518057",
+"status": "ACTIVE"
+},
 "lei:213800YOEO5OQ72G2R82": {
 "land": "GB",
 "lei": "213800YOEO5OQ72G2R82",
 "name": "RIO TINTO PLC",
 "ort": "LONDON",
 "plz": "SW1Y 4AD",
+"status": "ACTIVE"
+},
+"lei:213800YPC42DYBKVPF97": {
+"land": "GB",
+"lei": "213800YPC42DYBKVPF97",
+"name": "HARBOUR ENERGY PLC",
+"ort": "LONDON",
+"plz": "SW1W 9SZ",
 "status": "ACTIVE"
 },
 "lei:213800YUBJMZYR1SNG35": {
@@ -811,12 +1283,60 @@
 "plz": "L-3372",
 "status": "ACTIVE"
 },
+"lei:2549000UC1DPF536BS12": {
+"land": "HK",
+"lei": "2549000UC1DPF536BS12",
+"name": "China Shuifa Singyes Energy Holdings Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:2549001ACVFAZRNMKL32": {
+"land": "CN",
+"lei": "2549001ACVFAZRNMKL32",
+"name": "Xiaomi Corporation",
+"ort": "Beijing",
+"plz": "100085",
+"status": "ACTIVE"
+},
 "lei:2549001E0HIPIJQ0W046": {
 "land": "CH",
 "lei": "2549001E0HIPIJQ0W046",
 "name": "Garmin Ltd.",
 "ort": "Schaffhausen",
 "plz": "8200",
+"status": "ACTIVE"
+},
+"lei:2549001Z9KHQTRR29237": {
+"land": "CN",
+"lei": "2549001Z9KHQTRR29237",
+"name": "Hygeia Healthcare Holdings Co., Limited",
+"ort": "Shanghai",
+"plz": "201500",
+"status": "ACTIVE"
+},
+"lei:2549002WHK9XGQC01O62": {
+"land": "HK",
+"lei": "2549002WHK9XGQC01O62",
+"name": "CTF Services Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:2549003R73Q70J5H4I65": {
+"land": "CN",
+"lei": "2549003R73Q70J5H4I65",
+"name": "Li Auto Inc.",
+"ort": "北京",
+"plz": "101399",
+"status": "ACTIVE"
+},
+"lei:2549003WYM14VF96TT33": {
+"land": "BM",
+"lei": "2549003WYM14VF96TT33",
+"name": "Asia Standard International Group Limited",
+"ort": "Hamilton",
+"plz": "HM10",
 "status": "ACTIVE"
 },
 "lei:2549003ZVBH73EPNS513": {
@@ -827,12 +1347,396 @@
 "plz": "6789159",
 "status": "ACTIVE"
 },
+"lei:2549004RMYDSRQL4KW41": {
+"land": "CN",
+"lei": "2549004RMYDSRQL4KW41",
+"name": "Trip.com Group Limited",
+"ort": "Shanghai",
+"plz": "200335",
+"status": "ACTIVE"
+},
+"lei:25490052LLF3XH6G9847": {
+"land": "NL",
+"lei": "25490052LLF3XH6G9847",
+"name": "THE MAGNUM ICE CREAM COMPANY N.V.",
+"ort": "Amsterdam",
+"plz": "1017 BK",
+"status": "ACTIVE"
+},
+"lei:25490058ONL9SCIE1R22": {
+"land": "CN",
+"lei": "25490058ONL9SCIE1R22",
+"name": "Innovent Biologics, Inc.",
+"ort": "Jiangsu",
+"plz": "215123",
+"status": "ACTIVE"
+},
+"lei:2549005Q343BSJ8RSS21": {
+"land": "HK",
+"lei": "2549005Q343BSJ8RSS21",
+"name": "China Mengniu Dairy Company Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:2549006PIKT2YKNBL092": {
+"land": "KY",
+"lei": "2549006PIKT2YKNBL092",
+"name": "Miniso Group Holding Limited",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:2549007DNE3VCVOQT877": {
+"land": "KY",
+"lei": "2549007DNE3VCVOQT877",
+"name": "Winfull Group Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:2549008D4GKSRL4VE775": {
+"land": "HK",
+"lei": "2549008D4GKSRL4VE775",
+"name": "HKR International Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
 "lei:25490093MDYISEP1Y539": {
 "land": "EE",
 "lei": "25490093MDYISEP1Y539",
 "name": "aktsiaselts TALLINNA SADAM",
 "ort": "Tallinn",
 "plz": "15051",
+"status": "ACTIVE"
+},
+"lei:2549009NAG20HWV31U35": {
+"land": "HK",
+"lei": "2549009NAG20HWV31U35",
+"name": "Impro Precision Industries Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900AL64IANZYI1E02": {
+"land": "CN",
+"lei": "254900AL64IANZYI1E02",
+"name": "BAIDU, INC.",
+"ort": "北京",
+"plz": "100085",
+"status": "ACTIVE"
+},
+"lei:254900B1K8DEIEAH9Y68": {
+"land": "CN",
+"lei": "254900B1K8DEIEAH9Y68",
+"name": "Tat Hong Equipment Service Co., Ltd.",
+"ort": "Shanghai",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900B2AH0G13K9G204": {
+"land": "CN",
+"lei": "254900B2AH0G13K9G204",
+"name": "MINTH GROUP LIMITED",
+"ort": "嘉兴市",
+"plz": "314006",
+"status": "ACTIVE"
+},
+"lei:254900BKG9FQLCKFVK72": {
+"land": "HK",
+"lei": "254900BKG9FQLCKFVK72",
+"name": "Sany Heavy Equipment International Holdings Company Limited",
+"ort": "new territories",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900BQ3VMVGVTX1J58": {
+"land": "HK",
+"lei": "254900BQ3VMVGVTX1J58",
+"name": "Chinlink International Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900BX211RVPV37P96": {
+"land": "HK",
+"lei": "254900BX211RVPV37P96",
+"name": "Towngas Smart Energy Company Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900CJNSY1K7T53Z16": {
+"land": "US",
+"lei": "254900CJNSY1K7T53Z16",
+"name": "SNOWFLAKE INC.",
+"ort": "Menlo Park",
+"plz": "94025",
+"status": "ACTIVE"
+},
+"lei:254900CO7POSAPH8UL47": {
+"land": "HK",
+"lei": "254900CO7POSAPH8UL47",
+"name": "OSL Group Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900CXWYN3QX5DWO89": {
+"land": "HK",
+"lei": "254900CXWYN3QX5DWO89",
+"name": "Shimao Services Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900CYW27N7I17Y625": {
+"land": "KY",
+"lei": "254900CYW27N7I17Y625",
+"name": "Tongda Group Holdings Limited",
+"ort": "Georgetown",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:254900D9N2MVSGYJO874": {
+"land": "KY",
+"lei": "254900D9N2MVSGYJO874",
+"name": "China Kepei Education Group Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:254900DDY9OP9TPSE246": {
+"land": "HK",
+"lei": "254900DDY9OP9TPSE246",
+"name": "Deep Source Holding Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900DP080RU6OK2553": {
+"land": "US",
+"lei": "254900DP080RU6OK2553",
+"name": "GE VERNOVA INC.",
+"ort": "CAMBRIDGE",
+"plz": "02141",
+"status": "ACTIVE"
+},
+"lei:254900ECWYGR3QW5GF30": {
+"land": "CN",
+"lei": "254900ECWYGR3QW5GF30",
+"name": "Akeso, Inc.",
+"ort": "Zhongshan",
+"plz": "528437",
+"status": "ACTIVE"
+},
+"lei:254900G7F1RDM4B3S169": {
+"land": "HK",
+"lei": "254900G7F1RDM4B3S169",
+"name": "Bosideng International Holdings Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900JSQWBLJHVYA555": {
+"land": "HK",
+"lei": "254900JSQWBLJHVYA555",
+"name": "China Oriental Group Company Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900KTSZLZ21VV8T33": {
+"land": "HK",
+"lei": "254900KTSZLZ21VV8T33",
+"name": "China Gas Holdings Limited",
+"ort": "Wan Chai",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900LNPK737X4Y3V26": {
+"land": "HK",
+"lei": "254900LNPK737X4Y3V26",
+"name": "Pacific Basin Shipping Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900LXD83YVI2Y4M98": {
+"land": "HK",
+"lei": "254900LXD83YVI2Y4M98",
+"name": "SOCAM Development Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900M7TIYQVKDO8547": {
+"land": "HK",
+"lei": "254900M7TIYQVKDO8547",
+"name": "Sing Tao News Corporation Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900N4SLUMW4XUYY11": {
+"land": "HK",
+"lei": "254900N4SLUMW4XUYY11",
+"name": "騰訊控股有限公司",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900N8L3L7NRJT0120": {
+"land": "HK",
+"lei": "254900N8L3L7NRJT0120",
+"name": "Kaisa Group Holdings Ltd.",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900NL3DXVIEY4HJ17": {
+"land": "HK",
+"lei": "254900NL3DXVIEY4HJ17",
+"name": "Pico Far East Holdings Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900NMDQ8ENTHU1I31": {
+"land": "MO",
+"lei": "254900NMDQ8ENTHU1I31",
+"name": "Wynn Macau, Limited",
+"ort": "Macau",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900OCQEQVNKB0UF58": {
+"land": "HK",
+"lei": "254900OCQEQVNKB0UF58",
+"name": "Chinese Estates Holdings Limited",
+"ort": "HONG KONG",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900OLXCOUQC90M036": {
+"land": "RO",
+"lei": "254900OLXCOUQC90M036",
+"name": "COMPANIA NATIONALA DE TRANSPORT AL ENERGIEI ELECTRICE \"TRANSELECTRICA\" SA",
+"ort": "BUCUREȘTI, SECTORUL 3",
+"plz": "030786",
+"status": "ACTIVE"
+},
+"lei:254900OM3MAXYK8PCC84": {
+"land": "CN",
+"lei": "254900OM3MAXYK8PCC84",
+"name": "JD HEALTH INTERNATIONAL INC.",
+"ort": "北京",
+"plz": "100000",
+"status": "ACTIVE"
+},
+"lei:254900PWX6498SJFLW25": {
+"land": "KY",
+"lei": "254900PWX6498SJFLW25",
+"name": "China Health Group Inc",
+"ort": "Grand Cayman",
+"plz": "KY1-1112",
+"status": "ACTIVE"
+},
+"lei:254900PXCOUI2PZ6W177": {
+"land": "HK",
+"lei": "254900PXCOUI2PZ6W177",
+"name": "MIE Holdings Corporation",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900RHL9MEUS5NKX63": {
+"land": "US",
+"lei": "254900RHL9MEUS5NKX63",
+"name": "NextEra Energy, Inc.",
+"ort": "JUNO BEACH",
+"plz": "33408",
+"status": "ACTIVE"
+},
+"lei:254900RHVY072XPAZE03": {
+"land": "CN",
+"lei": "254900RHVY072XPAZE03",
+"name": "KE Holdings Inc.",
+"ort": "北京",
+"plz": "100016",
+"status": "ACTIVE"
+},
+"lei:254900RKH6RY9KCJQH63": {
+"land": "US",
+"lei": "254900RKH6RY9KCJQH63",
+"name": "VICI PROPERTIES INC.",
+"ort": "BALTIMORE",
+"plz": "21202",
+"status": "ACTIVE"
+},
+"lei:254900SKEFCO9I3GPL05": {
+"land": "HK",
+"lei": "254900SKEFCO9I3GPL05",
+"name": "Ascletis Pharma Inc.",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900SU8V2QDTPJ9R43": {
+"land": "HK",
+"lei": "254900SU8V2QDTPJ9R43",
+"name": "Youzan Technology Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900SW0TNGAGYUTV05": {
+"land": "KY",
+"lei": "254900SW0TNGAGYUTV05",
+"name": "Weimob Inc.",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:254900UPBAZQ2AIEQ396": {
+"land": "CN",
+"lei": "254900UPBAZQ2AIEQ396",
+"name": "IMAX China Holding, Inc.",
+"ort": "Shanghai",
+"plz": "200003",
+"status": "ACTIVE"
+},
+"lei:254900V03B971A7FK886": {
+"land": "CN",
+"lei": "254900V03B971A7FK886",
+"name": "MicroPort CardioFlow Medtech Corporation",
+"ort": "Shanghai",
+"plz": "201203",
+"status": "ACTIVE"
+},
+"lei:254900VIXRIR33M6TO25": {
+"land": "VG",
+"lei": "254900VIXRIR33M6TO25",
+"name": "Glory Wealth Holdings Limited",
+"ort": "Tortola",
+"plz": "VG1110",
+"status": "ACTIVE"
+},
+"lei:254900VOW925DTFGNA02": {
+"land": "CN",
+"lei": "254900VOW925DTFGNA02",
+"name": "Alphamab Oncology",
+"ort": "Suzhou",
+"plz": "234000",
+"status": "ACTIVE"
+},
+"lei:254900VS1MDQSDM9DE09": {
+"land": "HK",
+"lei": "254900VS1MDQSDM9DE09",
+"name": "First Pacific Company Limited",
+"ort": "Hong Kong",
+"plz": "999077",
 "status": "ACTIVE"
 },
 "lei:254900X9GQZM6UGXYF10": {
@@ -843,12 +1747,92 @@
 "plz": "108",
 "status": "ACTIVE"
 },
+"lei:254900YP54EOBADL7333": {
+"land": "HK",
+"lei": "254900YP54EOBADL7333",
+"name": "JS GLOBAL LIFESTYLE COMPANY LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900YPQ9YN14HP4W57": {
+"land": "CN",
+"lei": "254900YPQ9YN14HP4W57",
+"name": "China East Education Holdings Limited",
+"ort": "合肥市",
+"plz": "230000",
+"status": "ACTIVE"
+},
 "lei:254900YTY4EF5Z4W0A51": {
 "land": "IL",
 "lei": "254900YTY4EF5Z4W0A51",
 "name": "נייס בע\"מ",
 "ort": "Ra'Anana",
 "plz": "4366241",
+"status": "ACTIVE"
+},
+"lei:254900YUFIBANZ1XU687": {
+"land": "HK",
+"lei": "254900YUFIBANZ1XU687",
+"name": "Yue Yuen Industrial (Holdings) Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:254900YXZK1Z5CMQGK64": {
+"land": "HK",
+"lei": "254900YXZK1Z5CMQGK64",
+"name": "China Ecotourism Group Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:254900ZT5QBQG3JL9J21": {
+"land": "KY",
+"lei": "254900ZT5QBQG3JL9J21",
+"name": "HBM Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1106",
+"status": "ACTIVE"
+},
+"lei:2594003JTXPYO8NOG018": {
+"land": "PL",
+"lei": "2594003JTXPYO8NOG018",
+"name": "ENEA SPÓŁKA AKCYJNA",
+"ort": "POZNAŃ",
+"plz": "60-198",
+"status": "ACTIVE"
+},
+"lei:25940046GV7I3I2ZN618": {
+"land": "PL",
+"lei": "25940046GV7I3I2ZN618",
+"name": "\"GLOBE TRADE CENTRE\" SPÓŁKA AKCYJNA",
+"ort": "WARSZAWA",
+"plz": "02-146",
+"status": "ACTIVE"
+},
+"lei:2594007JKYYF3WGI0129": {
+"land": "PL",
+"lei": "2594007JKYYF3WGI0129",
+"name": "GRUPA KĘTY SPÓŁKA AKCYJNA",
+"ort": "Kęty",
+"plz": "32-650",
+"status": "ACTIVE"
+},
+"lei:2594008ZF17JSW0OV865": {
+"land": "PL",
+"lei": "2594008ZF17JSW0OV865",
+"name": "INTER CARS SPÓŁKA AKCYJNA",
+"ort": "Swobodnia",
+"plz": "05-180",
+"status": "ACTIVE"
+},
+"lei:25940093SDJZW2C1V355": {
+"land": "PL",
+"lei": "25940093SDJZW2C1V355",
+"name": "BUDIMEX SPÓŁKA AKCYJNA",
+"ort": "WARSZAWA",
+"plz": "01-204",
 "status": "ACTIVE"
 },
 "lei:259400A8SZP10GB5IB19": {
@@ -859,12 +1843,36 @@
 "plz": "1649-033",
 "status": "ACTIVE"
 },
+"lei:259400CSG9BYRIFPJ169": {
+"land": "PL",
+"lei": "259400CSG9BYRIFPJ169",
+"name": "Wirtualna Polska Holding Spółka Akcyjna",
+"ort": "Warszawa",
+"plz": "02-092",
+"status": "ACTIVE"
+},
+"lei:259400CXXTS5M4SKB438": {
+"land": "PL",
+"lei": "259400CXXTS5M4SKB438",
+"name": "PKP CARGO SPÓŁKA AKCYJNA W RESTRUKTURYZACJI",
+"ort": "WARSZAWA",
+"plz": "02-021",
+"status": "ACTIVE"
+},
 "lei:259400DZXF7UJKK2AY35": {
 "land": "PL",
 "lei": "259400DZXF7UJKK2AY35",
 "name": "mBank Spółka Akcyjna",
 "ort": "WARSZAWA",
 "plz": "00-850",
+"status": "ACTIVE"
+},
+"lei:259400EM1ITR201TTX36": {
+"land": "PL",
+"lei": "259400EM1ITR201TTX36",
+"name": "CYFROWY POLSAT SPÓŁKA AKCYJNA",
+"ort": "WARSZAWA",
+"plz": "03-878",
 "status": "ACTIVE"
 },
 "lei:259400H4L81SMPRTW956": {
@@ -875,6 +1883,30 @@
 "plz": "63-700",
 "status": "ACTIVE"
 },
+"lei:259400HYI1DKOD4Y1V58": {
+"land": "PL",
+"lei": "259400HYI1DKOD4Y1V58",
+"name": "ENERGA SPÓŁKA AKCYJNA",
+"ort": "GDAŃSK",
+"plz": "80-309",
+"status": "ACTIVE"
+},
+"lei:259400I7J8I4F638KS93": {
+"land": "PL",
+"lei": "259400I7J8I4F638KS93",
+"name": "CYBER_FOLKS SPÓŁKA AKCYJNA",
+"ort": "POZNAŃ",
+"plz": "61-569",
+"status": "ACTIVE"
+},
+"lei:259400KFX90IZ97UDQ91": {
+"land": "PL",
+"lei": "259400KFX90IZ97UDQ91",
+"name": "NEUCA SPÓŁKA AKCYJNA",
+"ort": "TORUŃ",
+"plz": "87-100",
+"status": "ACTIVE"
+},
 "lei:259400MP9VXR0E69MJ89": {
 "land": "PL",
 "lei": "259400MP9VXR0E69MJ89",
@@ -883,12 +1915,52 @@
 "plz": "00-496",
 "status": "ACTIVE"
 },
+"lei:259400NAPDFBOTNCRL54": {
+"land": "PL",
+"lei": "259400NAPDFBOTNCRL54",
+"name": "TAURON POLSKA ENERGIA SPÓŁKA AKCYJNA",
+"ort": "KATOWICE",
+"plz": "40-114",
+"status": "ACTIVE"
+},
+"lei:259400NS8NTDHP9QQI74": {
+"land": "PL",
+"lei": "259400NS8NTDHP9QQI74",
+"name": "\"DOM DEVELOPMENT\" SPÓŁKA AKCYJNA",
+"ort": "WARSZAWA",
+"plz": "00-078",
+"status": "ACTIVE"
+},
 "lei:259400NUS7MKGPJL4752": {
 "land": "PL",
 "lei": "259400NUS7MKGPJL4752",
 "name": "LPP SPÓŁKA AKCYJNA",
 "ort": "Gdańsk",
 "plz": "80-769",
+"status": "ACTIVE"
+},
+"lei:259400O6XNB3600CYB37": {
+"land": "PL",
+"lei": "259400O6XNB3600CYB37",
+"name": "POLIMEX MOSTOSTAL SPÓŁKA AKCYJNA",
+"ort": "Warszawa",
+"plz": "00-124",
+"status": "ACTIVE"
+},
+"lei:259400QHDOZWMJ103294": {
+"land": "PL",
+"lei": "259400QHDOZWMJ103294",
+"name": "ALIOR BANK SPÓŁKA AKCYJNA",
+"ort": "WARSZAWA",
+"plz": "00-801",
+"status": "ACTIVE"
+},
+"lei:259400T1FZYBIW8XUJ78": {
+"land": "PL",
+"lei": "259400T1FZYBIW8XUJ78",
+"name": "\"KRUK\" SPÓŁKA AKCYJNA",
+"ort": "Wrocław",
+"plz": "53-612",
 "status": "ACTIVE"
 },
 "lei:259400TOMPUOLS65II22": {
@@ -907,12 +1979,60 @@
 "plz": "03-301",
 "status": "ACTIVE"
 },
+"lei:259400UKCY6KD89PTF94": {
+"land": "PL",
+"lei": "259400UKCY6KD89PTF94",
+"name": "\"LUBAWA\" SPÓŁKA AKCYJNA",
+"ort": "Ostrów Wielkopolski",
+"plz": "63-400",
+"status": "ACTIVE"
+},
+"lei:259400UZ7D7YRIDNNA82": {
+"land": "PL",
+"lei": "259400UZ7D7YRIDNNA82",
+"name": "LM PAY Spółka Akcyjna",
+"ort": "Warszawa",
+"plz": "02-247",
+"status": "ACTIVE"
+},
 "lei:259400VVMM70CQREJT74": {
 "land": "PL",
 "lei": "259400VVMM70CQREJT74",
 "name": "ORLEN SPÓŁKA AKCYJNA",
 "ort": "PŁOCK",
 "plz": "09-411",
+"status": "ACTIVE"
+},
+"lei:259400W35VF4Q1XFFE11": {
+"land": "PL",
+"lei": "259400W35VF4Q1XFFE11",
+"name": "TEXT SPÓŁKA AKCYJNA",
+"ort": "WROCŁAW",
+"plz": "53-033",
+"status": "ACTIVE"
+},
+"lei:259400YLRTOBISHBVX41": {
+"land": "PL",
+"lei": "259400YLRTOBISHBVX41",
+"name": "ING BANK ŚLĄSKI SPÓŁKA AKCYJNA",
+"ort": "Katowice",
+"plz": "40-086",
+"status": "ACTIVE"
+},
+"lei:259400ZQ2L60G9NEO560": {
+"land": "PL",
+"lei": "259400ZQ2L60G9NEO560",
+"name": "\"NEWAG\" SPÓŁKA AKCYJNA",
+"ort": "NOWY SĄCZ",
+"plz": "33-300",
+"status": "ACTIVE"
+},
+"lei:29DX7H14B9S6O3FD6V18": {
+"land": "US",
+"lei": "29DX7H14B9S6O3FD6V18",
+"name": "COSTCO WHOLESALE CORPORATION",
+"ort": "Issaquah",
+"plz": "98027",
 "status": "ACTIVE"
 },
 "lei:2EULGUTUI56JI9SAL165": {
@@ -931,12 +2051,100 @@
 "plz": "M5J 0E7",
 "status": "ACTIVE"
 },
+"lei:2NUNNB7D43COUIRE5295": {
+"land": "US",
+"lei": "2NUNNB7D43COUIRE5295",
+"name": "THE AES CORPORATION",
+"ort": "Arlington",
+"plz": "22203",
+"status": "ACTIVE"
+},
+"lei:2TGYMUGI08PO8X8L6150": {
+"land": "US",
+"lei": "2TGYMUGI08PO8X8L6150",
+"name": "General Mills, Inc.",
+"ort": "Minneapolis",
+"plz": "55426",
+"status": "ACTIVE"
+},
 "lei:2W8N8UU78PMDQKZENC08": {
 "land": "IT",
 "lei": "2W8N8UU78PMDQKZENC08",
 "name": "INTESA SANPAOLO SPA",
 "ort": "TORINO",
 "plz": "10121",
+"status": "ACTIVE"
+},
+"lei:2YD5STGSJNMUB7H76907": {
+"land": "US",
+"lei": "2YD5STGSJNMUB7H76907",
+"name": "THE MOSAIC COMPANY",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:300300095A57F80T2461": {
+"land": "CN",
+"lei": "300300095A57F80T2461",
+"name": "CSTONE PHARMACEUTICALS",
+"ort": "Pudong Xinqu",
+"plz": "200126",
+"status": "ACTIVE"
+},
+"lei:3003001IDFNIKMGLFJ67": {
+"land": "TW",
+"lei": "3003001IDFNIKMGLFJ67",
+"name": "FOXCONN INTERCONNECT TECHNOLOGY LIMITED",
+"ort": "New Taipei City",
+"plz": "238",
+"status": "ACTIVE"
+},
+"lei:3003001NYJPPWIEOJT79": {
+"land": "KY",
+"lei": "3003001NYJPPWIEOJT79",
+"name": "InnoCare Pharma Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-9009",
+"status": "ACTIVE"
+},
+"lei:30030021ZM71H1GIKX11": {
+"land": "CN",
+"lei": "30030021ZM71H1GIKX11",
+"name": "ANTON OILFIELD SERVICES GROUP",
+"ort": "朝阳区",
+"plz": "100102",
+"status": "ACTIVE"
+},
+"lei:30030027GU9V3OLVUK70": {
+"land": "KY",
+"lei": "30030027GU9V3OLVUK70",
+"name": "Wise Talent Information Technology Co., Ltd",
+"ort": "大开曼岛",
+"plz": "KY1-1205",
+"status": "ACTIVE"
+},
+"lei:3003005VYMEBAJNJ2Y26": {
+"land": "HK",
+"lei": "3003005VYMEBAJNJ2Y26",
+"name": "Zhongsheng Group Holdings Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:300300FCDZBE6UP9ED24": {
+"land": "HK",
+"lei": "300300FCDZBE6UP9ED24",
+"name": "快手科技",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:300300VE46IBS1WO9M65": {
+"land": "KY",
+"lei": "300300VE46IBS1WO9M65",
+"name": "Peijia Medical Limited",
+"ort": "板球广场",
+"plz": "KY1-1100",
 "status": "ACTIVE"
 },
 "lei:31570010000000004460": {
@@ -1003,12 +2211,204 @@
 "plz": "031 01",
 "status": "ACTIVE"
 },
+"lei:3358003B573EV4KB4Z02": {
+"land": "IN",
+"lei": "3358003B573EV4KB4Z02",
+"name": "MAHINDRA AND MAHINDRA LIMITED",
+"ort": "MUMBAI",
+"plz": "400001",
+"status": "ACTIVE"
+},
+"lei:335800TYLGG93MM7PR89": {
+"land": "IN",
+"lei": "335800TYLGG93MM7PR89",
+"name": "INFOSYS LIMITED",
+"ort": "BANGALORE",
+"plz": "560100",
+"status": "ACTIVE"
+},
+"lei:3912001LS9HMTYQODO63": {
+"land": "DE",
+"lei": "3912001LS9HMTYQODO63",
+"name": "Ringmetall SE",
+"ort": "München",
+"plz": "81667",
+"status": "ACTIVE"
+},
+"lei:3912003NCTLO6YHA9V48": {
+"land": "DE",
+"lei": "3912003NCTLO6YHA9V48",
+"name": "Cantourage Group SE",
+"ort": "Berlin",
+"plz": "10827",
+"status": "ACTIVE"
+},
+"lei:391200501M6ILPRWZW03": {
+"land": "DE",
+"lei": "391200501M6ILPRWZW03",
+"name": "EUROKAI GmbH & Co. KGaA",
+"ort": "Hamburg",
+"plz": "21129",
+"status": "ACTIVE"
+},
+"lei:3912007HK6DG8Q41UN59": {
+"land": "DE",
+"lei": "3912007HK6DG8Q41UN59",
+"name": "Gigaset AG",
+"ort": "Bocholt",
+"plz": "46395",
+"status": "ACTIVE"
+},
+"lei:391200AMEYZ4MF5B1S02": {
+"land": "DE",
+"lei": "391200AMEYZ4MF5B1S02",
+"name": "Intertainment Aktiengesellschaft",
+"ort": "Feldafing",
+"plz": "82340",
+"status": "ACTIVE"
+},
+"lei:391200CTSVFF9EHN8Y59": {
+"land": "DE",
+"lei": "391200CTSVFF9EHN8Y59",
+"name": "net digital AG",
+"ort": "Düsseldorf",
+"plz": "40547",
+"status": "ACTIVE"
+},
+"lei:391200E0ZR3VLW4EM351": {
+"land": "DE",
+"lei": "391200E0ZR3VLW4EM351",
+"name": "Gabler Group AG",
+"ort": "Lübeck",
+"plz": "23568",
+"status": "ACTIVE"
+},
+"lei:391200G4SXDTWLYVJN36": {
+"land": "DE",
+"lei": "391200G4SXDTWLYVJN36",
+"name": "NORDWEST Handel AG",
+"ort": "Dortmund",
+"plz": "44263",
+"status": "ACTIVE"
+},
+"lei:391200HHWCQ0KBSG9U91": {
+"land": "DE",
+"lei": "391200HHWCQ0KBSG9U91",
+"name": "WashTec AG",
+"ort": "Augsburg",
+"plz": "86153",
+"status": "ACTIVE"
+},
+"lei:391200LVVLZVDYZGZB05": {
+"land": "DE",
+"lei": "391200LVVLZVDYZGZB05",
+"name": "MAX Automation SE",
+"ort": "Hamburg",
+"plz": "20459",
+"status": "ACTIVE"
+},
+"lei:391200MMIN9EPH3GOD16": {
+"land": "DE",
+"lei": "391200MMIN9EPH3GOD16",
+"name": "LAIQON AG",
+"ort": "Hamburg",
+"plz": "20099",
+"status": "ACTIVE"
+},
+"lei:391200PXXVRTVCFYFB34": {
+"land": "DE",
+"lei": "391200PXXVRTVCFYFB34",
+"name": "Value-Holdings Aktiengesellschaft",
+"ort": "Augsburg",
+"plz": "86150",
+"status": "ACTIVE"
+},
+"lei:391200QG00R11VCOUR60": {
+"land": "DE",
+"lei": "391200QG00R11VCOUR60",
+"name": "pferdewetten.de AG",
+"ort": "Düsseldorf",
+"plz": "40221",
+"status": "ACTIVE"
+},
+"lei:391200STZEMUP01ZDM10": {
+"land": "DE",
+"lei": "391200STZEMUP01ZDM10",
+"name": "Südwestdeutsche Salzwerke Aktiengesellschaft",
+"ort": "Heilbronn",
+"plz": "74076",
+"status": "ACTIVE"
+},
+"lei:391200TNERKXPD0TM559": {
+"land": "DE",
+"lei": "391200TNERKXPD0TM559",
+"name": "MATERNUS-Kliniken-Aktiengesellschaft",
+"ort": "Berlin",
+"plz": "10117",
+"status": "ACTIVE"
+},
+"lei:391200WJ0J8QYRQNC671": {
+"land": "DE",
+"lei": "391200WJ0J8QYRQNC671",
+"name": "PLANETHIC GROUP AG",
+"ort": "Ludwigsfelde",
+"plz": "14974",
+"status": "ACTIVE"
+},
+"lei:391200XVGFRTWOC6XX47": {
+"land": "DE",
+"lei": "391200XVGFRTWOC6XX47",
+"name": "Meta Wolf AG",
+"ort": "Kranichfeld",
+"plz": "99448",
+"status": "ACTIVE"
+},
+"lei:3C7474T6CDKPR9K6YT90": {
+"land": "US",
+"lei": "3C7474T6CDKPR9K6YT90",
+"name": "GENERAL ELECTRIC COMPANY",
+"ort": "EVENDALE",
+"plz": "45215",
+"status": "ACTIVE"
+},
+"lei:3OIHUMDMI0Z4XVPQ8V78": {
+"land": "HK",
+"lei": "3OIHUMDMI0Z4XVPQ8V78",
+"name": "GUOCO GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:3PPKBHUG1HD6BO7RNR87": {
+"land": "US",
+"lei": "3PPKBHUG1HD6BO7RNR87",
+"name": "TEXTRON INC.",
+"ort": "PROVIDENCE",
+"plz": "02903",
+"status": "ACTIVE"
+},
+"lei:3SOUA6IRML7435B56G12": {
+"land": "US",
+"lei": "3SOUA6IRML7435B56G12",
+"name": "EXELON CORPORATION",
+"ort": "CHICAGO",
+"plz": "60603",
+"status": "ACTIVE"
+},
 "lei:3YJP8HORPAEXJ80D6368": {
 "land": "CL",
 "lei": "3YJP8HORPAEXJ80D6368",
 "name": "BANCO SANTANDER CHILE",
 "ort": "Santiago",
 "plz": "8340455",
+"status": "ACTIVE"
+},
+"lei:41BNNE1AFPNAZELZ6K07": {
+"land": "US",
+"lei": "41BNNE1AFPNAZELZ6K07",
+"name": "APPLIED MATERIALS, INC.",
+"ort": "Wilmington",
+"plz": "19801",
 "status": "ACTIVE"
 },
 "lei:4469000001BZ368XFI90": {
@@ -1043,6 +2443,46 @@
 "plz": "LT-42150",
 "status": "ACTIVE"
 },
+"lei:48510000RTKGDN3E5X15": {
+"land": "LT",
+"lei": "48510000RTKGDN3E5X15",
+"name": "Akcine bendrove \"Snaige\"",
+"ort": "Alytus",
+"plz": "LT-62175",
+"status": "ACTIVE"
+},
+"lei:4NT01YGM4X7ZX86ISY52": {
+"land": "US",
+"lei": "4NT01YGM4X7ZX86ISY52",
+"name": "EQT CORPORATION",
+"ort": "Pittsburgh",
+"plz": "15222",
+"status": "ACTIVE"
+},
+"lei:4XM3TW50JULSLG8BNC79": {
+"land": "US",
+"lei": "4XM3TW50JULSLG8BNC79",
+"name": "ENTERGY CORPORATION",
+"ort": "New Orleans",
+"plz": "70113",
+"status": "ACTIVE"
+},
+"lei:4YV9Y5M8S0BRK1RP0397": {
+"land": "US",
+"lei": "4YV9Y5M8S0BRK1RP0397",
+"name": "MERCK & CO., INC.",
+"ort": "Rahway",
+"plz": "07065-1310",
+"status": "ACTIVE"
+},
+"lei:5067004180KC4123SY12": {
+"land": "CH",
+"lei": "5067004180KC4123SY12",
+"name": "Swiss Estates AG",
+"ort": "Pfäffikon",
+"plz": "8808",
+"status": "ACTIVE"
+},
 "lei:506700FB3467B9W95526": {
 "land": "CH",
 "lei": "506700FB3467B9W95526",
@@ -1059,12 +2499,68 @@
 "plz": "6300",
 "status": "ACTIVE"
 },
+"lei:52990001IQUJ710GHH43": {
+"land": "LT",
+"lei": "52990001IQUJ710GHH43",
+"name": "Akcinė bendrovė \"Invalda INVL\"",
+"ort": "Vilnius",
+"plz": "01110",
+"status": "ACTIVE"
+},
+"lei:529900032TYR45XIEW79": {
+"land": "DE",
+"lei": "529900032TYR45XIEW79",
+"name": "EUWAX Aktiengesellschaft",
+"ort": "Stuttgart",
+"plz": "70174",
+"status": "ACTIVE"
+},
+"lei:5299000D93LTLU0UJR35": {
+"land": "AU",
+"lei": "5299000D93LTLU0UJR35",
+"name": "AMP LIMITED",
+"ort": "SYDNEY",
+"plz": "2000",
+"status": "ACTIVE"
+},
+"lei:5299000Y9D001SNNTJ48": {
+"land": "KY",
+"lei": "5299000Y9D001SNNTJ48",
+"name": "TCL ELECTRONICS HOLDINGS LIMITED",
+"ort": "Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
 "lei:5299001AMHDLKUM80611": {
 "land": "AT",
 "lei": "5299001AMHDLKUM80611",
 "name": "Mayr-Melnhof Karton Aktiengesellschaft",
 "ort": "Wien",
 "plz": "1040",
+"status": "ACTIVE"
+},
+"lei:5299001HL0TU7X15HK51": {
+"land": "HK",
+"lei": "5299001HL0TU7X15HK51",
+"name": "China Resources Land Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299001IP2M662CQH796": {
+"land": "HK",
+"lei": "5299001IP2M662CQH796",
+"name": "Kingdom Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299001L84J5GUJPFO80": {
+"land": "HK",
+"lei": "5299001L84J5GUJPFO80",
+"name": "Ka Shui International Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:5299001O0WJQYB5GYZ19": {
@@ -1075,12 +2571,228 @@
 "plz": "1799",
 "status": "ACTIVE"
 },
+"lei:5299001OEMI45O3O6H29": {
+"land": "NC",
+"lei": "5299001OEMI45O3O6H29",
+"name": "Goodbaby International Holdings Limited",
+"ort": "Kunshan City",
+"plz": "215331",
+"status": "ACTIVE"
+},
+"lei:5299001RDHF8VP5IW690": {
+"land": "HK",
+"lei": "5299001RDHF8VP5IW690",
+"name": "TRULY INTERNATIONAL HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299001VVE1YDGPXXR74": {
+"land": "KY",
+"lei": "5299001VVE1YDGPXXR74",
+"name": "China Shineway Pharmaceutical Group Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
 "lei:5299001W7JIDXCUOUC82": {
 "land": "MX",
 "lei": "5299001W7JIDXCUOUC82",
 "name": "Grupo Aeroportuario del Sureste S.A.B. de CV",
 "ort": "Mexico-City",
 "plz": "11000",
+"status": "ACTIVE"
+},
+"lei:529900291XG0CTK4LF95": {
+"land": "KY",
+"lei": "529900291XG0CTK4LF95",
+"name": "ANTA Sports Products Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:5299002C4WEKXO9UG879": {
+"land": "DE",
+"lei": "5299002C4WEKXO9UG879",
+"name": "PLANOPTIK AG",
+"ort": "Elsoff",
+"plz": "56479",
+"status": "ACTIVE"
+},
+"lei:5299002ICXRUDJG20N51": {
+"land": "BM",
+"lei": "5299002ICXRUDJG20N51",
+"name": "WING TAI PROPERTIES LIMITED",
+"ort": "Hamilton",
+"plz": "HM 12",
+"status": "ACTIVE"
+},
+"lei:5299002Q4JRP5LUE6V15": {
+"land": "BM",
+"lei": "5299002Q4JRP5LUE6V15",
+"name": "GIORDANO INTERNATIONAL LIMITED",
+"ort": "Hamilton",
+"plz": "HM12",
+"status": "ACTIVE"
+},
+"lei:5299002ZKA6IF2OAN791": {
+"land": "KY",
+"lei": "5299002ZKA6IF2OAN791",
+"name": "Glory Sun Financial Group Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:52990038IB31TYK07X63": {
+"land": "DE",
+"lei": "52990038IB31TYK07X63",
+"name": "SGL Carbon SE",
+"ort": "Wiesbaden",
+"plz": "65201",
+"status": "ACTIVE"
+},
+"lei:5299003E71CKRAUCKP31": {
+"land": "BM",
+"lei": "5299003E71CKRAUCKP31",
+"name": "CHINESE PEOPLE HOLDINGS COMPANY LIMITED",
+"ort": "Hamilton",
+"plz": "HM 12",
+"status": "ACTIVE"
+},
+"lei:5299003LVPXHGHTWP936": {
+"land": "DE",
+"lei": "5299003LVPXHGHTWP936",
+"name": "Nexum Group AG",
+"ort": "München",
+"plz": "80539",
+"status": "ACTIVE"
+},
+"lei:5299003MF6ZDA7K38F96": {
+"land": "HK",
+"lei": "5299003MF6ZDA7K38F96",
+"name": "SINOFERT HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299003Z37DVGKKC1W09": {
+"land": "US",
+"lei": "5299003Z37DVGKKC1W09",
+"name": "Burlington Stores, Inc.",
+"ort": "Burlington",
+"plz": "08016",
+"status": "ACTIVE"
+},
+"lei:5299004AF4DSJDB0PA32": {
+"land": "HK",
+"lei": "5299004AF4DSJDB0PA32",
+"name": "NetEase, Inc.",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299004B24AHX4THUB34": {
+"land": "HK",
+"lei": "5299004B24AHX4THUB34",
+"name": "LUKS GROUP (VIETNAM HOLDINGS) COMPANY LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299004BSTX10BXHV941": {
+"land": "DE",
+"lei": "5299004BSTX10BXHV941",
+"name": "HMS Bergbau AG",
+"ort": "Berlin",
+"plz": "12459",
+"status": "ACTIVE"
+},
+"lei:5299004C02FMZCUOIR50": {
+"land": "US",
+"lei": "5299004C02FMZCUOIR50",
+"name": "INGERSOLL RAND INC.",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:5299004ET1N628LCQC47": {
+"land": "BM",
+"lei": "5299004ET1N628LCQC47",
+"name": "Pine Technology Holdings Limited",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:5299004LW4QWGZUB8Y96": {
+"land": "US",
+"lei": "5299004LW4QWGZUB8Y96",
+"name": "BLACKSTONE INC.",
+"ort": "New York",
+"plz": "10154",
+"status": "ACTIVE"
+},
+"lei:5299004M92ACMGS3QI84": {
+"land": "CN",
+"lei": "5299004M92ACMGS3QI84",
+"name": "Lonking Holdings Limited",
+"ort": "Shanghai",
+"plz": "201612",
+"status": "ACTIVE"
+},
+"lei:5299004NH1FCN24LE071": {
+"land": "KY",
+"lei": "5299004NH1FCN24LE071",
+"name": "Comtec Solar Systems Group Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:5299004YXGD1GKV5CH80": {
+"land": "BM",
+"lei": "5299004YXGD1GKV5CH80",
+"name": "ASIA TELE-NET AND TECHNOLOGY CORPORATION LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:5299005HZCEKX4O1J230": {
+"land": "HK",
+"lei": "5299005HZCEKX4O1J230",
+"name": "中国旺旺控股有限公司",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:5299005U9E85Y55OHK45": {
+"land": "LT",
+"lei": "5299005U9E85Y55OHK45",
+"name": "Akcinė bendrovė \"ŽEMAITIJOS PIENAS\"",
+"ort": "Telšiai",
+"plz": "87101",
+"status": "ACTIVE"
+},
+"lei:5299005WPCSQN14NBM26": {
+"land": "BM",
+"lei": "5299005WPCSQN14NBM26",
+"name": "Brilliance China Automotive Holdings Limited",
+"ort": "Hamilton",
+"plz": "HM 12",
+"status": "ACTIVE"
+},
+"lei:52990063CVI7GDV4JZ06": {
+"land": "HK",
+"lei": "52990063CVI7GDV4JZ06",
+"name": "CHINA OIL AND GAS GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:5299006T5ULIIRZ7LK49": {
+"land": "HK",
+"lei": "5299006T5ULIIRZ7LK49",
+"name": "KERRY PROPERTIES LIMITED",
+"ort": "Hong Kong",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:5299006UDSEJCTTEJS30": {
@@ -1099,12 +2811,68 @@
 "plz": "10143",
 "status": "ACTIVE"
 },
+"lei:52990079KTHQHXPGR759": {
+"land": "DE",
+"lei": "52990079KTHQHXPGR759",
+"name": "ÖKOWORLD AG",
+"ort": "Hilden",
+"plz": "40724",
+"status": "ACTIVE"
+},
 "lei:5299007OWYZ6I1E46843": {
 "land": "DK",
 "lei": "5299007OWYZ6I1E46843",
 "name": "Pandora A/S",
 "ort": "KØBENHAVN",
 "plz": "1561",
+"status": "ACTIVE"
+},
+"lei:52990082YXVVZFK1QJ17": {
+"land": "KY",
+"lei": "52990082YXVVZFK1QJ17",
+"name": "Xinyi Glass Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1108",
+"status": "ACTIVE"
+},
+"lei:52990084DFVKX2FRR033": {
+"land": "DE",
+"lei": "52990084DFVKX2FRR033",
+"name": "Fair Value REIT-AG",
+"ort": "Langen (Hessen)",
+"plz": "63225",
+"status": "ACTIVE"
+},
+"lei:52990087CQM1WZXS0649": {
+"land": "BM",
+"lei": "52990087CQM1WZXS0649",
+"name": "Wanda Hotel Development Company Limited",
+"ort": "Hamilton",
+"plz": "HM12",
+"status": "ACTIVE"
+},
+"lei:5299008CRGPD1WZXCD36": {
+"land": "BM",
+"lei": "5299008CRGPD1WZXCD36",
+"name": "PAX GLOBAL TECHNOLOGY LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:5299008H650N7TB9Z004": {
+"land": "DE",
+"lei": "5299008H650N7TB9Z004",
+"name": "tk accelis Group AG & Co. KGaA",
+"ort": "Essen",
+"plz": "45143",
+"status": "ACTIVE"
+},
+"lei:5299008QX6KA3JHWK507": {
+"land": "HK",
+"lei": "5299008QX6KA3JHWK507",
+"name": "COSCO SHIPPING Ports Limited",
+"ort": "Hong Kong",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:5299008ZUAXN43LVZF54": {
@@ -1115,12 +2883,108 @@
 "plz": "101 30",
 "status": "ACTIVE"
 },
+"lei:5299009451AQ2N69M031": {
+"land": "KY",
+"lei": "5299009451AQ2N69M031",
+"name": "Modern Beauty Salon Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
 "lei:52990096Q5LMCH1WU462": {
 "land": "SK",
 "lei": "52990096Q5LMCH1WU462",
 "name": "Československá obchodná banka, a.s.",
 "ort": "Bratislava",
 "plz": "811 02",
+"status": "ACTIVE"
+},
+"lei:5299009DT1ZA5HTU6R38": {
+"land": "US",
+"lei": "5299009DT1ZA5HTU6R38",
+"name": "COMFORT SYSTEMS USA, INC.",
+"ort": "Houston",
+"plz": "77057",
+"status": "ACTIVE"
+},
+"lei:5299009HZHEY886D5W65": {
+"land": "BM",
+"lei": "5299009HZHEY886D5W65",
+"name": "Luye Pharma Group Ltd.",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:5299009IC8ZP94KPH034": {
+"land": "HK",
+"lei": "5299009IC8ZP94KPH034",
+"name": "Pacific Textiles Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:5299009MK4VZID944A20": {
+"land": "KY",
+"lei": "5299009MK4VZID944A20",
+"name": "MICROPORT SCIENTIFIC CORPORATION",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:5299009MPI9B60VN4P25": {
+"land": "KY",
+"lei": "5299009MPI9B60VN4P25",
+"name": "TINGYI (CAYMAN ISLANDS) HOLDING CORP.",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:5299009O3HFIKDVFFJ49": {
+"land": "KY",
+"lei": "5299009O3HFIKDVFFJ49",
+"name": "Asia Cement (China) Holdings Corporation",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:5299009Z78ZEFUJ5E274": {
+"land": "HK",
+"lei": "5299009Z78ZEFUJ5E274",
+"name": "CASH FINANCIAL SERVICES GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900A4S2D4OGOJLL02": {
+"land": "US",
+"lei": "529900A4S2D4OGOJLL02",
+"name": "Opko Health, Inc.",
+"ort": "Miami",
+"plz": "33137",
+"status": "ACTIVE"
+},
+"lei:529900B4W41TCUKJFM73": {
+"land": "KY",
+"lei": "529900B4W41TCUKJFM73",
+"name": "Shenzhou International Group Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900B76JV9QCZINB33": {
+"land": "KY",
+"lei": "529900B76JV9QCZINB33",
+"name": "KINGBOARD LAMINATES HOLDINGS LIMITED",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:529900BAE9P80ACWLV78": {
+"land": "HK",
+"lei": "529900BAE9P80ACWLV78",
+"name": "Sa Sa International Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:529900BJW9B0O6LI2R39": {
@@ -1131,6 +2995,38 @@
 "plz": "7550098",
 "status": "ACTIVE"
 },
+"lei:529900BLBC6YDNWS8530": {
+"land": "HK",
+"lei": "529900BLBC6YDNWS8530",
+"name": "Greentown China Holdings Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:529900BTXZALKUBU3387": {
+"land": "DE",
+"lei": "529900BTXZALKUBU3387",
+"name": "SIMONA Aktiengesellschaft",
+"ort": "Kirn",
+"plz": "55606",
+"status": "ACTIVE"
+},
+"lei:529900BZD77VBI6EC883": {
+"land": "HK",
+"lei": "529900BZD77VBI6EC883",
+"name": "Ground International Development Ltd.",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900C6PP062BE88M21": {
+"land": "BM",
+"lei": "529900C6PP062BE88M21",
+"name": "CHINA YURUN FOOD GROUP LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
 "lei:529900CA1YDA41X76751": {
 "land": "HU",
 "lei": "529900CA1YDA41X76751",
@@ -1139,12 +3035,28 @@
 "plz": "1097",
 "status": "ACTIVE"
 },
+"lei:529900CGHB9UWY40BU45": {
+"land": "DE",
+"lei": "529900CGHB9UWY40BU45",
+"name": "PAION AG",
+"ort": "Aachen",
+"plz": "52078",
+"status": "ACTIVE"
+},
 "lei:529900CLC3WDMGI9VH80": {
 "land": "PT",
 "lei": "529900CLC3WDMGI9VH80",
 "name": "EDP, S.A.",
 "ort": "LISBOA",
 "plz": "1249-300",
+"status": "ACTIVE"
+},
+"lei:529900CT7EGMVQRYNQ45": {
+"land": "BM",
+"lei": "529900CT7EGMVQRYNQ45",
+"name": "SMARTONE TELECOMMUNICATIONS HOLDINGS LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
 "status": "ACTIVE"
 },
 "lei:529900CTIUKTEFNNH157": {
@@ -1163,6 +3075,118 @@
 "plz": "1112",
 "status": "ACTIVE"
 },
+"lei:529900D7BWFE3K9KJ964": {
+"land": "DE",
+"lei": "529900D7BWFE3K9KJ964",
+"name": "KST Beteiligungs AG",
+"ort": "Sindelfingen",
+"plz": "71063",
+"status": "ACTIVE"
+},
+"lei:529900DFH19P073LZ636": {
+"land": "US",
+"lei": "529900DFH19P073LZ636",
+"name": "PROLOGIS, INC.",
+"ort": "BALTIMORE",
+"plz": "21202",
+"status": "ACTIVE"
+},
+"lei:529900DO9BYZ7VA3K502": {
+"land": "CN",
+"lei": "529900DO9BYZ7VA3K502",
+"name": "YUM CHINA HOLDINGS, INC.",
+"ort": "上海",
+"plz": "200030",
+"status": "ACTIVE"
+},
+"lei:529900DQ426GJO276W95": {
+"land": "HK",
+"lei": "529900DQ426GJO276W95",
+"name": "Orient Overseas (International) Ltd.",
+"ort": "Hongkong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900DQVKFLU0PS2P65": {
+"land": "HK",
+"lei": "529900DQVKFLU0PS2P65",
+"name": "CHINA FORTUNE HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900DT3HMFV88ZJE96": {
+"land": "KY",
+"lei": "529900DT3HMFV88ZJE96",
+"name": "EVA Precision Industrial Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900DXNYWSJW4IRQ80": {
+"land": "KY",
+"lei": "529900DXNYWSJW4IRQ80",
+"name": "Tao Heung Holdings Limited",
+"ort": "George Town, Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900E0EOYXYJ0GHY66": {
+"land": "KY",
+"lei": "529900E0EOYXYJ0GHY66",
+"name": "China Resources Cement Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:529900ECSECK5ZDQTE14": {
+"land": "AU",
+"lei": "529900ECSECK5ZDQTE14",
+"name": "CSL LIMITED",
+"ort": "Melbourne",
+"plz": "3000",
+"status": "ACTIVE"
+},
+"lei:529900EDYRQ6K25JEC80": {
+"land": "HK",
+"lei": "529900EDYRQ6K25JEC80",
+"name": "Johnson Electric Holdings Limited",
+"ort": "Shatin, New Territories",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900EN91YAZWB0XH75": {
+"land": "KY",
+"lei": "529900EN91YAZWB0XH75",
+"name": "China Shengmu Organic Milk Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:529900ENOE342DU53X12": {
+"land": "DE",
+"lei": "529900ENOE342DU53X12",
+"name": "Beta Systems Software Aktiengesellschaft",
+"ort": "Berlin",
+"plz": "10587",
+"status": "ACTIVE"
+},
+"lei:529900EO2ZNZMHL6VQ78": {
+"land": "KY",
+"lei": "529900EO2ZNZMHL6VQ78",
+"name": "Boer Power Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1108",
+"status": "ACTIVE"
+},
+"lei:529900ETS9WWPA8WR769": {
+"land": "DE",
+"lei": "529900ETS9WWPA8WR769",
+"name": "SQD.AI Strategies AG",
+"ort": "Düsseldorf",
+"plz": "40547",
+"status": "ACTIVE"
+},
 "lei:529900F3AIQECS8ZSV61": {
 "land": "BE",
 "lei": "529900F3AIQECS8ZSV61",
@@ -1179,12 +3203,44 @@
 "plz": "6107025",
 "status": "ACTIVE"
 },
+"lei:529900FVJ8C1OTM8OL03": {
+"land": "BM",
+"lei": "529900FVJ8C1OTM8OL03",
+"name": "Shangri-la Asia Limited",
+"ort": "Hamilton",
+"plz": "HM12",
+"status": "ACTIVE"
+},
 "lei:529900G4A1IKOKC22K56": {
 "land": "PT",
 "lei": "529900G4A1IKOKC22K56",
 "name": "CTT - CORREIOS DE PORTUGAL S.A.",
 "ort": "Lisboa",
 "plz": "1643-001",
+"status": "ACTIVE"
+},
+"lei:529900GAN2OWXO8O5S70": {
+"land": "KY",
+"lei": "529900GAN2OWXO8O5S70",
+"name": "Chaoda Modern Agriculture (Holdings) Limited",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:529900GL9CBG4AOM3766": {
+"land": "DE",
+"lei": "529900GL9CBG4AOM3766",
+"name": "NorCom Information Technology GmbH & Co. KGaA",
+"ort": "München",
+"plz": "80333",
+"status": "ACTIVE"
+},
+"lei:529900GSTEOHKA0R1M59": {
+"land": "LT",
+"lei": "529900GSTEOHKA0R1M59",
+"name": "Specialioji uždarojo tipo nekilnojamojo turto investicinė bendrovė \"INVL Baltic Real Estate\"",
+"ort": "Vilnius",
+"plz": "01109",
 "status": "ACTIVE"
 },
 "lei:529900H88CH9J67U0764": {
@@ -1195,6 +3251,22 @@
 "plz": "1027",
 "status": "ACTIVE"
 },
+"lei:529900H8DXY6LFTU6M72": {
+"land": "KY",
+"lei": "529900H8DXY6LFTU6M72",
+"name": "Shenguan Holdings (Group) Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900HHI8OH6B42PS54": {
+"land": "BM",
+"lei": "529900HHI8OH6B42PS54",
+"name": "C C Land Holdings Ltd.",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
 "lei:529900HUSBARAFSXJ605": {
 "land": "MX",
 "lei": "529900HUSBARAFSXJ605",
@@ -1203,12 +3275,84 @@
 "plz": "03800",
 "status": "ACTIVE"
 },
+"lei:529900I1QWBV75VEW226": {
+"land": "BM",
+"lei": "529900I1QWBV75VEW226",
+"name": "DIGITAL CHINA HOLDINGS LIMITED",
+"ort": "Hamilton",
+"plz": "HM12",
+"status": "ACTIVE"
+},
+"lei:529900I73VUGSTE6DR27": {
+"land": "DE",
+"lei": "529900I73VUGSTE6DR27",
+"name": "FRIWO AG",
+"ort": "Ostbevern",
+"plz": "48346",
+"status": "ACTIVE"
+},
+"lei:529900ID09TN2DPBP653": {
+"land": "BM",
+"lei": "529900ID09TN2DPBP653",
+"name": "GLORIOUS SUN ENTERPRISES LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900IIE5I72B53SP39": {
+"land": "DE",
+"lei": "529900IIE5I72B53SP39",
+"name": "audius SE",
+"ort": "Weinstadt",
+"plz": "71384",
+"status": "ACTIVE"
+},
+"lei:529900IVSXUPN9PKPO50": {
+"land": "HK",
+"lei": "529900IVSXUPN9PKPO50",
+"name": "Solargiga Energy Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900IYLCAGSW3WSO86": {
+"land": "HK",
+"lei": "529900IYLCAGSW3WSO86",
+"name": "Shunfeng International Clean Energy Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900J18NI3W8LGUS68": {
+"land": "JP",
+"lei": "529900J18NI3W8LGUS68",
+"name": "株式会社ダイナムジャパンホールディングス",
+"ort": "東京都",
+"plz": "116-0013",
+"status": "ACTIVE"
+},
+"lei:529900J2IRSW3ULWN521": {
+"land": "DE",
+"lei": "529900J2IRSW3ULWN521",
+"name": "EnviTec Biogas AG",
+"ort": "Lohne",
+"plz": "49393",
+"status": "ACTIVE"
+},
 "lei:529900J5ALF3JG921927": {
 "land": "AU",
 "lei": "529900J5ALF3JG921927",
 "name": "Mesoblast Limited",
 "ort": "Melbourne",
 "plz": "3000",
+"status": "ACTIVE"
+},
+"lei:529900JFTWJ40GMJ5579": {
+"land": "HK",
+"lei": "529900JFTWJ40GMJ5579",
+"name": "CNNC International Limited",
+"ort": "Hongkong",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:529900JG015JC10LED24": {
@@ -1227,12 +3371,100 @@
 "plz": "75008",
 "status": "ACTIVE"
 },
+"lei:529900JUA05094TOKA73": {
+"land": "KY",
+"lei": "529900JUA05094TOKA73",
+"name": "Uni-President China Holdings Ltd.",
+"ort": "Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:529900JUV4MOM9CE3V12": {
+"land": "HK",
+"lei": "529900JUV4MOM9CE3V12",
+"name": "SITC International Holdings Company Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900JUV61FH7B8VW38": {
+"land": "US",
+"lei": "529900JUV61FH7B8VW38",
+"name": "ARES MANAGEMENT CORPORATION",
+"ort": "Los Angeles",
+"plz": "90067",
+"status": "ACTIVE"
+},
 "lei:529900KCNFQU5OJH7L33": {
 "land": "AT",
 "lei": "529900KCNFQU5OJH7L33",
 "name": "Telekom Austria Aktiengesellschaft",
 "ort": "Wien",
 "plz": "1020",
+"status": "ACTIVE"
+},
+"lei:529900L3YY7VW52QZT63": {
+"land": "DE",
+"lei": "529900L3YY7VW52QZT63",
+"name": "IBU-tec advanced materials AG",
+"ort": "Weimar",
+"plz": "99425",
+"status": "ACTIVE"
+},
+"lei:529900L5AIT07HWHCJ66": {
+"land": "DE",
+"lei": "529900L5AIT07HWHCJ66",
+"name": "Scherzer & Co. Aktiengesellschaft",
+"ort": "Köln",
+"plz": "50670",
+"status": "ACTIVE"
+},
+"lei:529900L89P6LHLQVKI48": {
+"land": "DE",
+"lei": "529900L89P6LHLQVKI48",
+"name": "CEOTRONICS AG",
+"ort": "Rödermark",
+"plz": "63322",
+"status": "ACTIVE"
+},
+"lei:529900LFVU534EBRXD13": {
+"land": "DE",
+"lei": "529900LFVU534EBRXD13",
+"name": "HUGO BOSS AG",
+"ort": "Metzingen",
+"plz": "72555",
+"status": "ACTIVE"
+},
+"lei:529900LPR4ADFEJAR786": {
+"land": "HK",
+"lei": "529900LPR4ADFEJAR786",
+"name": "SINO BIOPHARMACEUTICAL LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900LQYG057CZAZT41": {
+"land": "HK",
+"lei": "529900LQYG057CZAZT41",
+"name": "CGN Mining Company Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900LRFQSJWSSXY627": {
+"land": "BM",
+"lei": "529900LRFQSJWSSXY627",
+"name": "SKYWORTH DIGITAL HOLDINGS LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:529900M1O3AXRD4IBL13": {
+"land": "BM",
+"lei": "529900M1O3AXRD4IBL13",
+"name": "YUEXIU TRANSPORT INFRASTRUCTURE LIMITED",
+"ort": "Hamilton",
+"plz": "HM12",
 "status": "ACTIVE"
 },
 "lei:529900MTJPDPE4MHJ122": {
@@ -1243,12 +3475,76 @@
 "plz": "2500",
 "status": "ACTIVE"
 },
+"lei:529900MWSW56LJ8TRZ61": {
+"land": "DE",
+"lei": "529900MWSW56LJ8TRZ61",
+"name": "Weng Fine Art AG",
+"ort": "Monheim am Rhein",
+"plz": "40789",
+"status": "ACTIVE"
+},
+"lei:529900N7I4DSM16GF659": {
+"land": "AT",
+"lei": "529900N7I4DSM16GF659",
+"name": "FREQUENTIS AG",
+"ort": "Wien",
+"plz": "1100",
+"status": "ACTIVE"
+},
+"lei:529900N99TVMJ68CS860": {
+"land": "KY",
+"lei": "529900N99TVMJ68CS860",
+"name": "New World Department Store China Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900NFW9IP8LMOFM33": {
+"land": "DE",
+"lei": "529900NFW9IP8LMOFM33",
+"name": "VIB Vermögen AG",
+"ort": "Neuburg an der Donau",
+"plz": "86633",
+"status": "ACTIVE"
+},
+"lei:529900NHZVBZQZ8EKN29": {
+"land": "CN",
+"lei": "529900NHZVBZQZ8EKN29",
+"name": "NEW ORIENTAL EDUCATION & TECHNOLOGY GROUP INC.",
+"ort": "BEIJING",
+"plz": "100080",
+"status": "ACTIVE"
+},
 "lei:529900NN7SOJ5QG82X67": {
 "land": "DK",
 "lei": "529900NN7SOJ5QG82X67",
 "name": "COLOPLAST A/S",
 "ort": "Humlebæk",
 "plz": "3050",
+"status": "ACTIVE"
+},
+"lei:529900NYB6ZGZN3MVT56": {
+"land": "KY",
+"lei": "529900NYB6ZGZN3MVT56",
+"name": "Autohome Inc.",
+"ort": "George Town",
+"plz": "KY1-9006",
+"status": "ACTIVE"
+},
+"lei:529900O0VPCGEWIDCX35": {
+"land": "LT",
+"lei": "529900O0VPCGEWIDCX35",
+"name": "Akcinė bendrovė \"PANEVĖŽIO STATYBOS TRESTAS\"",
+"ort": "Panevėžys",
+"plz": "LT-35173",
+"status": "ACTIVE"
+},
+"lei:529900O1QCZWP5IWVY66": {
+"land": "HK",
+"lei": "529900O1QCZWP5IWVY66",
+"name": "GCL-Poly Energy Holdings Limited",
+"ort": "Hong Kong",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:529900O5RR7R39FRDM42": {
@@ -1259,12 +3555,52 @@
 "plz": "106 38",
 "status": "ACTIVE"
 },
+"lei:529900O9GGNBKMJ9UO48": {
+"land": "KY",
+"lei": "529900O9GGNBKMJ9UO48",
+"name": "Nexteer Automotive Group Limited",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
 "lei:529900ODI3047E2LIV03": {
 "land": "FI",
 "lei": "529900ODI3047E2LIV03",
 "name": "Nordea Bank Abp",
 "ort": "Helsinki",
 "plz": "00020",
+"status": "ACTIVE"
+},
+"lei:529900P0TQC1E9Y7FN31": {
+"land": "KY",
+"lei": "529900P0TQC1E9Y7FN31",
+"name": "3SBio Inc.",
+"ort": "GEORGE TOWN",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900P2POH56W116T02": {
+"land": "CN",
+"lei": "529900P2POH56W116T02",
+"name": "Meitu, Inc.",
+"ort": "Xiamen",
+"plz": "361000",
+"status": "ACTIVE"
+},
+"lei:529900P3726G9G3IL454": {
+"land": "CN",
+"lei": "529900P3726G9G3IL454",
+"name": "KANGDA INTERNATIONAL ENVIRONMENTAL COMPANY LIMITED",
+"ort": "重慶市",
+"plz": "400013",
+"status": "ACTIVE"
+},
+"lei:529900PH4ZGUH2MNEU89": {
+"land": "US",
+"lei": "529900PH4ZGUH2MNEU89",
+"name": "HCA Healthcare Inc.",
+"ort": "Nashville",
+"plz": "37203",
 "status": "ACTIVE"
 },
 "lei:529900PHL3J3ZRBC2J44": {
@@ -1275,12 +3611,36 @@
 "plz": "1117",
 "status": "ACTIVE"
 },
+"lei:529900PYFA1HFYKPT360": {
+"land": "HK",
+"lei": "529900PYFA1HFYKPT360",
+"name": "ASMPT LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
 "lei:529900Q9CB1REUMZSS32": {
 "land": "IL",
 "lei": "529900Q9CB1REUMZSS32",
 "name": "Elbit Systems Ltd.",
 "ort": "Haifa",
 "plz": "31053",
+"status": "ACTIVE"
+},
+"lei:529900QF7VIH03SB7Q08": {
+"land": "KY",
+"lei": "529900QF7VIH03SB7Q08",
+"name": "Xinyi Solar Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900QLPKS8U9QOPB59": {
+"land": "KY",
+"lei": "529900QLPKS8U9QOPB59",
+"name": "Wharf Real Estate Investment Company Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
 "status": "ACTIVE"
 },
 "lei:529900QO6EHRM3EZL070": {
@@ -1291,6 +3651,14 @@
 "plz": "1097",
 "status": "ACTIVE"
 },
+"lei:529900QQ64C1XSZG5E12": {
+"land": "BM",
+"lei": "529900QQ64C1XSZG5E12",
+"name": "China Everbright Water Limited",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
 "lei:529900QRMWAKKR3L9W75": {
 "land": "EE",
 "lei": "529900QRMWAKKR3L9W75",
@@ -1299,12 +3667,36 @@
 "plz": "10111",
 "status": "ACTIVE"
 },
+"lei:529900QVUUH13RIZIR85": {
+"land": "KY",
+"lei": "529900QVUUH13RIZIR85",
+"name": "CHINA STATE CONSTRUCTION INTERNATIONAL HOLDINGS",
+"ort": "Grand Cayman",
+"plz": "KY1-1110",
+"status": "ACTIVE"
+},
 "lei:529900RAN1AMTYFPCG62": {
 "land": "HU",
 "lei": "529900RAN1AMTYFPCG62",
 "name": "OPUS GLOBAL Nyilvánosan Működő Részvénytársaság",
 "ort": "Budapest",
 "plz": "1062",
+"status": "ACTIVE"
+},
+"lei:529900RJW1BJJBE2AJ57": {
+"land": "KY",
+"lei": "529900RJW1BJJBE2AJ57",
+"name": "AUSNUTRIA DAIRY CORPORATION LTD",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900RWXR4JI3JYTV70": {
+"land": "US",
+"lei": "529900RWXR4JI3JYTV70",
+"name": "NVR Inc.",
+"ort": "Reston",
+"plz": "20190",
 "status": "ACTIVE"
 },
 "lei:529900S21EQ1BO4ESM68": {
@@ -1323,12 +3715,100 @@
 "plz": "140 53",
 "status": "ACTIVE"
 },
+"lei:529900S7M3E7M2CXPQ78": {
+"land": "CN",
+"lei": "529900S7M3E7M2CXPQ78",
+"name": "China Tian Lun Gas Holdings Limited",
+"ort": "Zhengzhou",
+"plz": "450003",
+"status": "ACTIVE"
+},
+"lei:529900SG21VXEZYNQO29": {
+"land": "HK",
+"lei": "529900SG21VXEZYNQO29",
+"name": "BOE VARITRONIX LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900SKC2U9O25M2019": {
+"land": "BM",
+"lei": "529900SKC2U9O25M2019",
+"name": "CHINA FOODS LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:529900T3QE5253CCXF22": {
+"land": "US",
+"lei": "529900T3QE5253CCXF22",
+"name": "RESMED INC.",
+"ort": "San Diego",
+"plz": "92123",
+"status": "ACTIVE"
+},
+"lei:529900T77L2FV3FZ3U81": {
+"land": "KY",
+"lei": "529900T77L2FV3FZ3U81",
+"name": "Li Ning Company Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900TBMYEYJ2LEV906": {
+"land": "HK",
+"lei": "529900TBMYEYJ2LEV906",
+"name": "Nine Dragons Paper (Holdings) Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:529900TWUN2ALJKWRR11": {
+"land": "BM",
+"lei": "529900TWUN2ALJKWRR11",
+"name": "Beijing Enterprises Water Group Limited",
+"ort": "Hamilton",
+"plz": "HM 12",
+"status": "ACTIVE"
+},
 "lei:529900TYYSRJH2VJSP60": {
 "land": "AT",
 "lei": "529900TYYSRJH2VJSP60",
 "name": "STRABAG SE",
 "ort": "Wien",
 "plz": "1220",
+"status": "ACTIVE"
+},
+"lei:529900U1AQK05ZPOEX95": {
+"land": "KY",
+"lei": "529900U1AQK05ZPOEX95",
+"name": "China Rare Earth Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900U3Z18PIW2UXS70": {
+"land": "KY",
+"lei": "529900U3Z18PIW2UXS70",
+"name": "Tianjin Port Development Holdings Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1108",
+"status": "ACTIVE"
+},
+"lei:529900U65W3LD3SHSM93": {
+"land": "HK",
+"lei": "529900U65W3LD3SHSM93",
+"name": "FOUNDER HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900U7PECBLERIIX44": {
+"land": "BM",
+"lei": "529900U7PECBLERIIX44",
+"name": "LUK FOOK HOLDINGS (INTERNATIONAL) LIMITED",
+"ort": "Hamilton",
+"plz": "HM 12",
 "status": "ACTIVE"
 },
 "lei:529900UB9QON717IL030": {
@@ -1339,6 +3819,110 @@
 "plz": "01302",
 "status": "ACTIVE"
 },
+"lei:529900UB9YEMRM86LV80": {
+"land": "KY",
+"lei": "529900UB9YEMRM86LV80",
+"name": "China Everbright Greentech Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900UD7C9N3AQO1V88": {
+"land": "HK",
+"lei": "529900UD7C9N3AQO1V88",
+"name": "Sihuan Pharmaceutical Holdings Group Ltd.",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900UKY2IB38U0M011": {
+"land": "KY",
+"lei": "529900UKY2IB38U0M011",
+"name": "Ajisen (China) Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1108",
+"status": "ACTIVE"
+},
+"lei:529900UQ6W4AUKX5WI33": {
+"land": "BM",
+"lei": "529900UQ6W4AUKX5WI33",
+"name": "SUNCORP TECHNOLOGIES LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:529900UVT35D3Q7YQY41": {
+"land": "HK",
+"lei": "529900UVT35D3Q7YQY41",
+"name": "Kingsoft Corporation Limited",
+"ort": "Harbour City",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900UVUQAB2M4WBV13": {
+"land": "DE",
+"lei": "529900UVUQAB2M4WBV13",
+"name": "Deutsche Real Estate Aktiengesellschaft",
+"ort": "Berlin",
+"plz": "13347",
+"status": "ACTIVE"
+},
+"lei:529900V0YYM4KPD68R21": {
+"land": "KY",
+"lei": "529900V0YYM4KPD68R21",
+"name": "China Sanjiang Fine Chemicals Company Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900V1Z5X2HLRRAP68": {
+"land": "HK",
+"lei": "529900V1Z5X2HLRRAP68",
+"name": "Inspur International Limited",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900V6LG3TC9XC5S67": {
+"land": "BM",
+"lei": "529900V6LG3TC9XC5S67",
+"name": "GREAT EAGLE HOLDINGS LIMITED",
+"ort": "HAMILTON",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:529900VBK42Y5HHRMD23": {
+"land": "US",
+"lei": "529900VBK42Y5HHRMD23",
+"name": "BlackRock, Inc.",
+"ort": "New York",
+"plz": "10001",
+"status": "ACTIVE"
+},
+"lei:529900VBUXYUOTABSC33": {
+"land": "KY",
+"lei": "529900VBUXYUOTABSC33",
+"name": "IGG Inc",
+"ort": "George Town",
+"plz": "KY1-1205",
+"status": "ACTIVE"
+},
+"lei:529900VPAGLCNHCGGI94": {
+"land": "BM",
+"lei": "529900VPAGLCNHCGGI94",
+"name": "HUABAO INTERNATIONAL HOLDINGS LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:529900VUMILFVLFDBF89": {
+"land": "KY",
+"lei": "529900VUMILFVLFDBF89",
+"name": "Greatview Aseptic Packaging Company Limited",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
 "lei:529900VXIFBHO0SW2I31": {
 "land": "AT",
 "lei": "529900VXIFBHO0SW2I31",
@@ -1347,12 +3931,60 @@
 "plz": "1100",
 "status": "ACTIVE"
 },
+"lei:529900VZFN87OS7WJM66": {
+"land": "KY",
+"lei": "529900VZFN87OS7WJM66",
+"name": "MGM CHINA HOLDINGS LIMITED",
+"ort": "GEORGE TOWN",
+"plz": "KY1-1205",
+"status": "ACTIVE"
+},
+"lei:529900W27M5FY6F1H758": {
+"land": "KY",
+"lei": "529900W27M5FY6F1H758",
+"name": "China Huarong Energy Company Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900W4BQDNMAOSRA49": {
+"land": "US",
+"lei": "529900W4BQDNMAOSRA49",
+"name": "SUNBELT RENTALS HOLDINGS, INC.",
+"ort": "Fort Mill",
+"plz": "29715",
+"status": "ACTIVE"
+},
+"lei:529900W65VE206C6PC25": {
+"land": "DE",
+"lei": "529900W65VE206C6PC25",
+"name": "FORIS AG",
+"ort": "Bonn",
+"plz": "53113",
+"status": "ACTIVE"
+},
+"lei:529900WRKZ47N6I5N743": {
+"land": "KY",
+"lei": "529900WRKZ47N6I5N743",
+"name": "Shengli Oil & Gas Pipe Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
 "lei:529900X0H1IO3RS1A464": {
 "land": "IT",
 "lei": "529900X0H1IO3RS1A464",
 "name": "PRYSMIAN S.P.A.",
 "ort": "Milano",
 "plz": "20126",
+"status": "ACTIVE"
+},
+"lei:529900X0SQJB2J7YDU43": {
+"land": "US",
+"lei": "529900X0SQJB2J7YDU43",
+"name": "EMCOR GROUP, INC.",
+"ort": "Norwalk",
+"plz": "06851",
 "status": "ACTIVE"
 },
 "lei:529900X41C0BSLK67H70": {
@@ -1371,12 +4003,60 @@
 "plz": "00195",
 "status": "ACTIVE"
 },
+"lei:529900XE24B45NN0S512": {
+"land": "HK",
+"lei": "529900XE24B45NN0S512",
+"name": "MODERN DENTAL GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900XTSVH0DH4CEX74": {
+"land": "BM",
+"lei": "529900XTSVH0DH4CEX74",
+"name": "CHINA WATER AFFAIRS GROUP LIMITED",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
 "lei:529900XX7EU9F4GJTY86": {
 "land": "LT",
 "lei": "529900XX7EU9F4GJTY86",
 "name": "Akcinė prekybos bendrovė \"APRANGA\"",
 "ort": "Vilnius",
 "plz": "LT-14311",
+"status": "ACTIVE"
+},
+"lei:529900Y9K70J2INEUB08": {
+"land": "BM",
+"lei": "529900Y9K70J2INEUB08",
+"name": "Esprit Holdings Limited",
+"ort": "Hamilton",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:529900YIYUOJOXSAE372": {
+"land": "KY",
+"lei": "529900YIYUOJOXSAE372",
+"name": "Genscript Biotech Corporation",
+"ort": "George Town",
+"plz": "KY1-1002",
+"status": "ACTIVE"
+},
+"lei:529900YTV0F6LHZT7H57": {
+"land": "KY",
+"lei": "529900YTV0F6LHZT7H57",
+"name": "Yixin Group Limited",
+"ort": "George Town, Grand Cayman",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:529900YXWIZUFHMK8W28": {
+"land": "KY",
+"lei": "529900YXWIZUFHMK8W28",
+"name": "China Literature Limited",
+"ort": "George Town",
+"plz": "KY1-1104",
 "status": "ACTIVE"
 },
 "lei:529900YYR637SPJ0JR59": {
@@ -1387,12 +4067,108 @@
 "plz": "1102",
 "status": "ACTIVE"
 },
+"lei:529900Z4PFOQAUTC3X77": {
+"land": "KY",
+"lei": "529900Z4PFOQAUTC3X77",
+"name": "COMBA TELECOM SYSTEMS HOLDINGS LIMITED",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900Z57DVJXUBLHX66": {
+"land": "HK",
+"lei": "529900Z57DVJXUBLHX66",
+"name": "CHINA MEDICAL SYSTEM HOLDINGS LIMITED",
+"ort": "HONG KONG",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:529900Z8B6L1WCLNHW14": {
+"land": "DE",
+"lei": "529900Z8B6L1WCLNHW14",
+"name": "MeVis Medical Solutions AG",
+"ort": "Bremen",
+"plz": "28359",
+"status": "ACTIVE"
+},
 "lei:529900ZAXBMQDIWPNB72": {
 "land": "AT",
 "lei": "529900ZAXBMQDIWPNB72",
 "name": "voestalpine AG",
 "ort": "Linz",
 "plz": "4020",
+"status": "ACTIVE"
+},
+"lei:529900ZDHJ8HM7VLUX41": {
+"land": "KY",
+"lei": "529900ZDHJ8HM7VLUX41",
+"name": "China Dongxiang (Group) Co., Ltd.",
+"ort": "Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:529900ZG6PNVH5GYXM17": {
+"land": "CN",
+"lei": "529900ZG6PNVH5GYXM17",
+"name": "Cogobuy Group",
+"ort": "Shenzhen",
+"plz": "518057",
+"status": "ACTIVE"
+},
+"lei:529900ZIETUJG71XNM98": {
+"land": "DE",
+"lei": "529900ZIETUJG71XNM98",
+"name": "Deutsche Grundstücksauktionen AG vormals Berliner Grundstücksauktionen",
+"ort": "Berlin",
+"plz": "10707",
+"status": "ACTIVE"
+},
+"lei:529900ZIUEYVSB8QDD25": {
+"land": "US",
+"lei": "529900ZIUEYVSB8QDD25",
+"name": "D.R.Horton, Inc.",
+"ort": "Fort Worth",
+"plz": "76102",
+"status": "ACTIVE"
+},
+"lei:529900ZOP51K5LHLPK04": {
+"land": "BM",
+"lei": "529900ZOP51K5LHLPK04",
+"name": "K. WAH INTERNATIONAL HOLDINGS LIMITED",
+"ort": "Hamilton",
+"plz": "HM 12",
+"status": "ACTIVE"
+},
+"lei:529900ZZZZBTOKZQI549": {
+"land": "KY",
+"lei": "529900ZZZZBTOKZQI549",
+"name": "Xtep International Holdings Ltd.",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:5323X5O7RN0NKFCDRY08": {
+"land": "US",
+"lei": "5323X5O7RN0NKFCDRY08",
+"name": "UNITED RENTALS, INC.",
+"ort": "STAMFORD",
+"plz": "06902",
+"status": "ACTIVE"
+},
+"lei:5493000BD5GJNUDIUG10": {
+"land": "US",
+"lei": "5493000BD5GJNUDIUG10",
+"name": "METTLER-TOLEDO INTERNATIONAL INC.",
+"ort": "Columbus",
+"plz": "43240",
+"status": "ACTIVE"
+},
+"lei:5493000CGCQY2OQU7669": {
+"land": "US",
+"lei": "5493000CGCQY2OQU7669",
+"name": "JABIL INC.",
+"ort": "ST. PETERSBURG",
+"plz": "33716",
 "status": "ACTIVE"
 },
 "lei:5493000FNR3UCEAONM59": {
@@ -1443,12 +4219,108 @@
 "plz": "1500",
 "status": "ACTIVE"
 },
+"lei:5493000USURI3SIL4Z85": {
+"land": "CN",
+"lei": "5493000USURI3SIL4Z85",
+"name": "Ocumension Therapeutics",
+"ort": "蘇州市",
+"plz": "215128",
+"status": "ACTIVE"
+},
+"lei:5493000VJ55ZTYGX4322": {
+"land": "GB",
+"lei": "5493000VJ55ZTYGX4322",
+"name": "RECORD PLC",
+"ort": "LONDON",
+"plz": "W2 6HY",
+"status": "ACTIVE"
+},
+"lei:5493000Y33XDVO2CXC18": {
+"land": "US",
+"lei": "5493000Y33XDVO2CXC18",
+"name": "XEROX HOLDINGS CORPORATION",
+"ort": "NORWALK",
+"plz": "06851",
+"status": "ACTIVE"
+},
+"lei:54930012H97VSM0I2R19": {
+"land": "US",
+"lei": "54930012H97VSM0I2R19",
+"name": "CROWN CASTLE INC.",
+"ort": "Houston",
+"plz": "77024",
+"status": "ACTIVE"
+},
+"lei:54930015RAQRRZ5ZGJ91": {
+"land": "US",
+"lei": "54930015RAQRRZ5ZGJ91",
+"name": "VERTEX PHARMACEUTICALS INCORPORATED",
+"ort": "BOSTON",
+"plz": "02210",
+"status": "ACTIVE"
+},
+"lei:549300184FHZAQ2CDG08": {
+"land": "HK",
+"lei": "549300184FHZAQ2CDG08",
+"name": "CENTURY SUNSHINE GROUP HOLDINGS LIMITED",
+"ort": "Yau Tsim Mong",
+"plz": null,
+"status": "ACTIVE"
+},
 "lei:5493001BABFV7P27OW30": {
 "land": "SI",
 "lei": "5493001BABFV7P27OW30",
 "name": "NOVA LJUBLJANSKA BANKA d.d., Ljubljana",
 "ort": "Ljubljana",
 "plz": "1000",
+"status": "ACTIVE"
+},
+"lei:5493001JZ37UBBZF6L49": {
+"land": "IN",
+"lei": "5493001JZ37UBBZF6L49",
+"name": "STATE BANK OF INDIA",
+"ort": "MUMBAI",
+"plz": "400021",
+"status": "ACTIVE"
+},
+"lei:5493001TD2TH6VDTJU11": {
+"land": "US",
+"lei": "5493001TD2TH6VDTJU11",
+"name": "Wuxi Biologics (Cayman) Inc.",
+"ort": "New York",
+"plz": "10004",
+"status": "ACTIVE"
+},
+"lei:5493001Z3ZE83NGK8Y12": {
+"land": "GB",
+"lei": "5493001Z3ZE83NGK8Y12",
+"name": "Prudential Public Limited Company",
+"ort": "London",
+"plz": "EC4M 7NG",
+"status": "ACTIVE"
+},
+"lei:54930022EOITNKSIGH56": {
+"land": "GB",
+"lei": "54930022EOITNKSIGH56",
+"name": "GENUS PLC",
+"ort": "BASINGSTOKE",
+"plz": "RG21 4FF",
+"status": "ACTIVE"
+},
+"lei:5493002ENHZ6NYET7405": {
+"land": "NL",
+"lei": "5493002ENHZ6NYET7405",
+"name": "EXOR N.V.",
+"ort": "Amsterdam",
+"plz": "1081 LH",
+"status": "ACTIVE"
+},
+"lei:5493002F0SC4JTBU5137": {
+"land": "US",
+"lei": "5493002F0SC4JTBU5137",
+"name": "STRYKER CORPORATION",
+"ort": "PORTAGE",
+"plz": "49002",
 "status": "ACTIVE"
 },
 "lei:5493002QQ7GD21OWF963": {
@@ -1459,6 +4331,22 @@
 "plz": "S7K 5R6",
 "status": "ACTIVE"
 },
+"lei:5493002UNUYXLHOWF752": {
+"land": "BM",
+"lei": "5493002UNUYXLHOWF752",
+"name": "LANCASHIRE HOLDINGS LIMITED",
+"ort": "HAMILTON",
+"plz": "HM 11",
+"status": "ACTIVE"
+},
+"lei:54930038LU8RDPFFVJ57": {
+"land": "GG",
+"lei": "54930038LU8RDPFFVJ57",
+"name": "Partners Group Private Equity Limited",
+"ort": "SAINT PETER PORT",
+"plz": "GY1 6BD",
+"status": "ACTIVE"
+},
 "lei:5493003GE7UJGPQAMN79": {
 "land": "SI",
 "lei": "5493003GE7UJGPQAMN79",
@@ -1467,12 +4355,84 @@
 "plz": "1000",
 "status": "ACTIVE"
 },
+"lei:5493003QENHHS261UR94": {
+"land": "US",
+"lei": "5493003QENHHS261UR94",
+"name": "TARGA RESOURCES CORP.",
+"ort": "HOUSTON",
+"plz": "77002",
+"status": "ACTIVE"
+},
+"lei:5493003WEAK2PJ5WS063": {
+"land": "US",
+"lei": "5493003WEAK2PJ5WS063",
+"name": "CARVANA CO.",
+"ort": "Phoenix",
+"plz": "85018",
+"status": "ACTIVE"
+},
+"lei:5493003ZWBWQPKX2JE67": {
+"land": "KY",
+"lei": "5493003ZWBWQPKX2JE67",
+"name": "Overseas Chinese Town (Asia) Holdings Limited",
+"ort": "George Town",
+"plz": "KY1-1108",
+"status": "ACTIVE"
+},
+"lei:549300487COLIJOB7F68": {
+"land": "HK",
+"lei": "549300487COLIJOB7F68",
+"name": "RADIANCE HOLDINGS (GROUP) COMPANY LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:54930049QLLMPART6V29": {
+"land": "US",
+"lei": "54930049QLLMPART6V29",
+"name": "ARTHUR J. GALLAGHER & CO.",
+"ort": "Wilmington",
+"plz": "19808",
+"status": "ACTIVE"
+},
 "lei:5493004DM8FGIY6QKF37": {
 "land": "PT",
 "lei": "5493004DM8FGIY6QKF37",
 "name": "NOS, SGPS, S.A.",
 "ort": "LISBON",
 "plz": "1600-404",
+"status": "ACTIVE"
+},
+"lei:5493004JF0SDFLM8GD76": {
+"land": "US",
+"lei": "5493004JF0SDFLM8GD76",
+"name": "DUPONT DE NEMOURS, INC.",
+"ort": "Wilmington",
+"plz": "19805",
+"status": "ACTIVE"
+},
+"lei:5493004W8TRGD63APX93": {
+"land": "US",
+"lei": "5493004W8TRGD63APX93",
+"name": "TWILIO INC.",
+"ort": "San Francisco",
+"plz": "94105",
+"status": "ACTIVE"
+},
+"lei:5493005JBO5YSIGK1814": {
+"land": "US",
+"lei": "5493005JBO5YSIGK1814",
+"name": "PHILLIPS 66",
+"ort": "HOUSTON",
+"plz": "77242-1959",
+"status": "ACTIVE"
+},
+"lei:5493005JQNLB3I01JW62": {
+"land": "HK",
+"lei": "5493005JQNLB3I01JW62",
+"name": "FANTASIA HOLDINGS GROUP CO., LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
 "status": "ACTIVE"
 },
 "lei:5493005OLOCYXGTC7E83": {
@@ -1491,12 +4451,52 @@
 "plz": "LT-04215",
 "status": "ACTIVE"
 },
+"lei:54930067J0ZNOEBRW338": {
+"land": "US",
+"lei": "54930067J0ZNOEBRW338",
+"name": "NAVIENT CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:5493006M8GRAQRCSCD67": {
+"land": "CN",
+"lei": "5493006M8GRAQRCSCD67",
+"name": "SEAZEN GROUP LIMITED",
+"ort": "上海市",
+"plz": "200062",
+"status": "ACTIVE"
+},
+"lei:5493006ORUSIL88JOE18": {
+"land": "US",
+"lei": "5493006ORUSIL88JOE18",
+"name": "AMERICAN TOWER CORPORATION",
+"ort": "Boston",
+"plz": "02116",
+"status": "ACTIVE"
+},
 "lei:5493006QMFDDMYWIAM13": {
 "land": "ES",
 "lei": "5493006QMFDDMYWIAM13",
 "name": "BANCO SANTANDER S.A.",
 "ort": "SANTANDER",
 "plz": "39004",
+"status": "ACTIVE"
+},
+"lei:54930078H4OZ5PWZZ326": {
+"land": "CN",
+"lei": "54930078H4OZ5PWZZ326",
+"name": "GANGLONG CHINA PROPERTY GROUP LIMITED",
+"ort": "上海市",
+"plz": "201106",
+"status": "ACTIVE"
+},
+"lei:5493007DY18BGNLDWU14": {
+"land": "US",
+"lei": "5493007DY18BGNLDWU14",
+"name": "CLOUDFLARE, INC.",
+"ort": "San Francisco",
+"plz": "94107",
 "status": "ACTIVE"
 },
 "lei:5493007GBX87QOZACS27": {
@@ -1513,6 +4513,22 @@
 "name": "NOVARTIS AG",
 "ort": "Basel",
 "plz": "4056",
+"status": "ACTIVE"
+},
+"lei:5493007SJLLCTM6J6M37": {
+"land": "ES",
+"lei": "5493007SJLLCTM6J6M37",
+"name": "UNICAJA BANCO SA",
+"ort": "Málaga",
+"plz": "29007",
+"status": "ACTIVE"
+},
+"lei:5493007WSRWZ0UF15X65": {
+"land": "CN",
+"lei": "5493007WSRWZ0UF15X65",
+"name": "HILONG HOLDING LIMITED",
+"ort": "上海",
+"plz": "200949",
 "status": "ACTIVE"
 },
 "lei:54930080G2M7EJ097A27": {
@@ -1539,6 +4555,14 @@
 "plz": "2310502",
 "status": "ACTIVE"
 },
+"lei:54930088VDQ6840Y6597": {
+"land": "US",
+"lei": "54930088VDQ6840Y6597",
+"name": "HUBBELL INCORPORATED",
+"ort": "SHELTON",
+"plz": "06484",
+"status": "ACTIVE"
+},
 "lei:5493008H3828EMEXB082": {
 "land": "BE",
 "lei": "5493008H3828EMEXB082",
@@ -1563,6 +4587,14 @@
 "plz": "05348",
 "status": "ACTIVE"
 },
+"lei:5493008LG4W3I6K8J118": {
+"land": "US",
+"lei": "5493008LG4W3I6K8J118",
+"name": "DECKERS OUTDOOR CORPORATION",
+"ort": "Goleta",
+"plz": "93117",
+"status": "ACTIVE"
+},
 "lei:5493008P6N29Q1AG9464": {
 "land": "IL",
 "lei": "5493008P6N29Q1AG9464",
@@ -1571,12 +4603,52 @@
 "plz": "6936025",
 "status": "ACTIVE"
 },
+"lei:5493008T4YG3AQUI7P67": {
+"land": "ES",
+"lei": "5493008T4YG3AQUI7P67",
+"name": "CELLNEX TELECOM SA",
+"ort": "MADRID",
+"plz": "28007",
+"status": "ACTIVE"
+},
+"lei:5493008V60M52L3PIS45": {
+"land": "KY",
+"lei": "5493008V60M52L3PIS45",
+"name": "Bilibili Inc.",
+"ort": "George Town, Grand Cayman",
+"plz": "KY1-9008",
+"status": "ACTIVE"
+},
+"lei:54930096DB9LCLPN7H13": {
+"land": "US",
+"lei": "54930096DB9LCLPN7H13",
+"name": "XPO, INC.",
+"ort": "Greenwich",
+"plz": "06831",
+"status": "ACTIVE"
+},
 "lei:5493009GY1X8GQ66AM14": {
 "land": "FI",
 "lei": "5493009GY1X8GQ66AM14",
 "name": "Neste Oyj",
 "ort": "Espoo",
 "plz": "02150",
+"status": "ACTIVE"
+},
+"lei:5493009HMD0C90GUV498": {
+"land": "ES",
+"lei": "5493009HMD0C90GUV498",
+"name": "REDEIA CORPORACION SA",
+"ort": "Alcobendas",
+"plz": "28109",
+"status": "ACTIVE"
+},
+"lei:5493009N324KP61RNR30": {
+"land": "HK",
+"lei": "5493009N324KP61RNR30",
+"name": "WULING MOTORS HOLDINGS LIMITED",
+"ort": "Central and Western District",
+"plz": null,
 "status": "ACTIVE"
 },
 "lei:549300A0JPRWG1KI7U06": {
@@ -1595,12 +4667,36 @@
 "plz": "64410",
 "status": "ACTIVE"
 },
+"lei:549300B2FTG34FILDR98": {
+"land": "US",
+"lei": "549300B2FTG34FILDR98",
+"name": "UBER TECHNOLOGIES, INC.",
+"ort": "SAN FRANCISCO",
+"plz": "94158",
+"status": "ACTIVE"
+},
 "lei:549300B8P6MUJ1YWTS08": {
 "land": "FR",
 "lei": "549300B8P6MUJ1YWTS08",
 "name": "CARREFOUR",
 "ort": "MASSY",
 "plz": "91300",
+"status": "ACTIVE"
+},
+"lei:549300BO9IWPF3S48F93": {
+"land": "US",
+"lei": "549300BO9IWPF3S48F93",
+"name": "COTY INC.",
+"ort": "NEW YORK",
+"plz": "10118",
+"status": "ACTIVE"
+},
+"lei:549300BVH5NT4MN90561": {
+"land": "SE",
+"lei": "549300BVH5NT4MN90561",
+"name": "Micro Systemation AB (publ)",
+"ort": "Stockholm",
+"plz": "111 34",
 "status": "ACTIVE"
 },
 "lei:549300CAAOUTT4QDOZ16": {
@@ -1611,12 +4707,36 @@
 "plz": "1000",
 "status": "ACTIVE"
 },
+"lei:549300CE3KUCWLZBG404": {
+"land": "US",
+"lei": "549300CE3KUCWLZBG404",
+"name": "H & R BLOCK, INC.",
+"ort": "Kansas City",
+"plz": "64105",
+"status": "ACTIVE"
+},
+"lei:549300CRL28LF3CSEA14": {
+"land": "DE",
+"lei": "549300CRL28LF3CSEA14",
+"name": "Goldman, Sachs & Co. Wertpapier GmbH",
+"ort": "Frankfurt am Main",
+"plz": "60329",
+"status": "ACTIVE"
+},
 "lei:549300CTHC1CP86P2G96": {
 "land": "LU",
 "lei": "549300CTHC1CP86P2G96",
 "name": "Millicom International Cellular S.A.",
 "ort": "LUXEMBOURG",
 "plz": "L-2330",
+"status": "ACTIVE"
+},
+"lei:549300CUWDAUZSH43859": {
+"land": "US",
+"lei": "549300CUWDAUZSH43859",
+"name": "REALTY INCOME CORPORATION",
+"ort": "BALTIMORE",
+"plz": "21202",
 "status": "ACTIVE"
 },
 "lei:549300CWRXC5EP004533": {
@@ -1627,12 +4747,52 @@
 "plz": "1030",
 "status": "ACTIVE"
 },
+"lei:549300CZ8QS1GE53O776": {
+"land": "US",
+"lei": "549300CZ8QS1GE53O776",
+"name": "JACOBS ENGINEERING GROUP INC.",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:549300D2FBW76FPUSG65": {
+"land": "AU",
+"lei": "549300D2FBW76FPUSG65",
+"name": "QBE INSURANCE GROUP LIMITED",
+"ort": "SYDNEY",
+"plz": "2000",
+"status": "ACTIVE"
+},
 "lei:549300D2K6PKKKXVNN73": {
 "land": "DK",
 "lei": "549300D2K6PKKKXVNN73",
 "name": "A.P. MØLLER - MÆRSK A/S",
 "ort": "Kobenhavn K",
 "plz": "1263",
+"status": "ACTIVE"
+},
+"lei:549300D3L3G0R4U4VT04": {
+"land": "US",
+"lei": "549300D3L3G0R4U4VT04",
+"name": "AMPHENOL CORPORATION",
+"ort": "Wilmington",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:549300D4IEI9VQMVAU18": {
+"land": "HK",
+"lei": "549300D4IEI9VQMVAU18",
+"name": "宏华集团有限公司",
+"ort": "香港",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300D8GOWWH0SJB189": {
+"land": "US",
+"lei": "549300D8GOWWH0SJB189",
+"name": "NISOURCE INC.",
+"ort": "Merrillville",
+"plz": "46410",
 "status": "ACTIVE"
 },
 "lei:549300DAQ1CVT6CXN342": {
@@ -1643,6 +4803,46 @@
 "plz": "2880",
 "status": "ACTIVE"
 },
+"lei:549300DDKQ3XRKSS1646": {
+"land": "CN",
+"lei": "549300DDKQ3XRKSS1646",
+"name": "AsiaInfo Technologies Limited",
+"ort": "Beijing",
+"plz": "100193",
+"status": "ACTIVE"
+},
+"lei:549300DDU6FDRBIELS05": {
+"land": "US",
+"lei": "549300DDU6FDRBIELS05",
+"name": "FOX CORPORATION",
+"ort": "NEW YORK",
+"plz": "10036",
+"status": "ACTIVE"
+},
+"lei:549300DG6RR0NQSFLN74": {
+"land": "US",
+"lei": "549300DG6RR0NQSFLN74",
+"name": "CORPAY, INC.",
+"ort": "Atlanta",
+"plz": "30305",
+"status": "ACTIVE"
+},
+"lei:549300DSFX2IE88NSX47": {
+"land": "US",
+"lei": "549300DSFX2IE88NSX47",
+"name": "BORGWARNER INC.",
+"ort": "Auburn Hills",
+"plz": "48326",
+"status": "ACTIVE"
+},
+"lei:549300DUOO1KXOHPM605": {
+"land": "US",
+"lei": "549300DUOO1KXOHPM605",
+"name": "LAS VEGAS SANDS CORP.",
+"ort": "Las Vegas",
+"plz": "89113",
+"status": "ACTIVE"
+},
 "lei:549300DYMC8BGZZC8844": {
 "land": "DK",
 "lei": "549300DYMC8BGZZC8844",
@@ -1651,12 +4851,36 @@
 "plz": "8200",
 "status": "ACTIVE"
 },
+"lei:549300DZIZ5WPHB3IN57": {
+"land": "HK",
+"lei": "549300DZIZ5WPHB3IN57",
+"name": "JY GRANDMARK HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300E287ZOFT3C5Z56": {
+"land": "US",
+"lei": "549300E287ZOFT3C5Z56",
+"name": "Reliance Steel & Aluminum Co.",
+"ort": "Los Angeles",
+"plz": "90071",
+"status": "ACTIVE"
+},
 "lei:549300E9PC51EN656011": {
 "land": "FR",
 "lei": "549300E9PC51EN656011",
 "name": "SANOFI",
 "ort": "PARIS",
 "plz": "75017",
+"status": "ACTIVE"
+},
+"lei:549300EA7I6T15IBYS12": {
+"land": "US",
+"lei": "549300EA7I6T15IBYS12",
+"name": "KIMCO REALTY OP, LLC",
+"ort": "WILMINGTON",
+"plz": "19801",
 "status": "ACTIVE"
 },
 "lei:549300EEJH4FEPDBBR25": {
@@ -1675,6 +4899,46 @@
 "plz": "15014",
 "status": "ACTIVE"
 },
+"lei:549300EVO6UZDGY05787": {
+"land": "MO",
+"lei": "549300EVO6UZDGY05787",
+"name": "SANDS CHINA LTD.",
+"ort": "MACAO",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:549300F1Y3LN5BX5WN75": {
+"land": "US",
+"lei": "549300F1Y3LN5BX5WN75",
+"name": "Watsco, Inc.",
+"ort": "Tallahassee",
+"plz": "32301-2525",
+"status": "ACTIVE"
+},
+"lei:549300F2A0BXT4SGWD84": {
+"land": "US",
+"lei": "549300F2A0BXT4SGWD84",
+"name": "ROLLINS, INC.",
+"ort": "WILMINGTON",
+"plz": "19803",
+"status": "ACTIVE"
+},
+"lei:549300FC3G3YU2FBZD92": {
+"land": "US",
+"lei": "549300FC3G3YU2FBZD92",
+"name": "THE SOUTHERN COMPANY",
+"ort": "Atlanta",
+"plz": "30308",
+"status": "ACTIVE"
+},
+"lei:549300FMC2ALGA7N9E80": {
+"land": "US",
+"lei": "549300FMC2ALGA7N9E80",
+"name": "DOVER CORPORATION",
+"ort": "DOWNERS GROVE",
+"plz": "60515",
+"status": "ACTIVE"
+},
 "lei:549300FR1FN48IGHR915": {
 "land": "PT",
 "lei": "549300FR1FN48IGHR915",
@@ -1683,12 +4947,60 @@
 "plz": "1749-061",
 "status": "ACTIVE"
 },
+"lei:549300FZX5BFQP32II32": {
+"land": "CN",
+"lei": "549300FZX5BFQP32II32",
+"name": "ZHONG AN GROUP LIMITED",
+"ort": "Hangzhou",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:549300GCEDD8YCF5WU84": {
+"land": "US",
+"lei": "549300GCEDD8YCF5WU84",
+"name": "MOODY'S CORPORATION",
+"ort": "New York",
+"plz": "10007",
+"status": "ACTIVE"
+},
+"lei:549300GGJCRSI2TIEJ46": {
+"land": "US",
+"lei": "549300GGJCRSI2TIEJ46",
+"name": "NUCOR CORPORATION",
+"ort": "CHARLOTTE",
+"plz": "28211",
+"status": "ACTIVE"
+},
+"lei:549300GHBMY8T5GXDE41": {
+"land": "US",
+"lei": "549300GHBMY8T5GXDE41",
+"name": "UNITEDHEALTH GROUP INCORPORATED",
+"ort": "Minnetonka",
+"plz": "55343",
+"status": "ACTIVE"
+},
 "lei:549300GKFG0RYRRQ1414": {
 "land": "NO",
 "lei": "549300GKFG0RYRRQ1414",
 "name": "DNB BANK ASA",
 "ort": "Oslo",
 "plz": "0191",
+"status": "ACTIVE"
+},
+"lei:549300GLKVIO8YRCYN02": {
+"land": "US",
+"lei": "549300GLKVIO8YRCYN02",
+"name": "KEYSIGHT TECHNOLOGIES, INC.",
+"ort": "Santa Rosa",
+"plz": "95403",
+"status": "ACTIVE"
+},
+"lei:549300GSODGFCDQ3DI89": {
+"land": "GB",
+"lei": "549300GSODGFCDQ3DI89",
+"name": "AMCOR PLC",
+"ort": "BRISTOL",
+"plz": "BS30 8XP",
 "status": "ACTIVE"
 },
 "lei:549300H1GO5N7BK34P37": {
@@ -1715,6 +5027,46 @@
 "plz": "405 08",
 "status": "ACTIVE"
 },
+"lei:549300HJTQM36M0E1G39": {
+"land": "US",
+"lei": "549300HJTQM36M0E1G39",
+"name": "SERVICENOW, INC.",
+"ort": "SANTA CLARA",
+"plz": "95054",
+"status": "ACTIVE"
+},
+"lei:549300HNGOW85KIOH584": {
+"land": "PT",
+"lei": "549300HNGOW85KIOH584",
+"name": "SEMAPA - SOCIEDADE DE INVESTIMENTO E GESTÃO, SGPS, S.A.",
+"ort": "Lisboa",
+"plz": "1050-121",
+"status": "ACTIVE"
+},
+"lei:549300HO5WFZUT5N2T22": {
+"land": "US",
+"lei": "549300HO5WFZUT5N2T22",
+"name": "HOWMET AEROSPACE INC.",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:549300HOUABT02D17I63": {
+"land": "CN",
+"lei": "549300HOUABT02D17I63",
+"name": "天譽置業(控股)有限公司",
+"ort": "Guangzhou",
+"plz": "510630",
+"status": "ACTIVE"
+},
+"lei:549300HTIN2PD78UB763": {
+"land": "US",
+"lei": "549300HTIN2PD78UB763",
+"name": "MSCI INC.",
+"ort": "New York",
+"plz": "10007",
+"status": "ACTIVE"
+},
 "lei:549300HWDYC5JXC85138": {
 "land": "BE",
 "lei": "549300HWDYC5JXC85138",
@@ -1729,6 +5081,38 @@
 "name": "LATAM AIRLINES GROUP S.A.",
 "ort": "Santiago",
 "plz": "8320000",
+"status": "ACTIVE"
+},
+"lei:549300HYMKPTC1DTZS42": {
+"land": "HK",
+"lei": "549300HYMKPTC1DTZS42",
+"name": "HOPSON DEVELOPMENT HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300HYPTHBJQINVG57": {
+"land": "US",
+"lei": "549300HYPTHBJQINVG57",
+"name": "PAR TECHNOLOGY CORPORATION",
+"ort": "New Hartford",
+"plz": "13413-4991",
+"status": "ACTIVE"
+},
+"lei:549300I7ROF15MAEVP56": {
+"land": "US",
+"lei": "549300I7ROF15MAEVP56",
+"name": "EDISON INTERNATIONAL",
+"ort": "ROSEMEAD",
+"plz": "91770",
+"status": "ACTIVE"
+},
+"lei:549300IF0HZ7T4762633": {
+"land": "CN",
+"lei": "549300IF0HZ7T4762633",
+"name": "Baozun Inc.",
+"ort": "Shanghai",
+"plz": "200436",
 "status": "ACTIVE"
 },
 "lei:549300IM1QSBY4SLPM26": {
@@ -1747,6 +5131,14 @@
 "plz": "104",
 "status": "ACTIVE"
 },
+"lei:549300IUTGTP6EJP8124": {
+"land": "US",
+"lei": "549300IUTGTP6EJP8124",
+"name": "LEIDOS HOLDINGS, INC.",
+"ort": "Wilmington",
+"plz": "19801",
+"status": "ACTIVE"
+},
 "lei:549300J6ZJW5IH4WEE46": {
 "land": "HU",
 "lei": "549300J6ZJW5IH4WEE46",
@@ -1763,12 +5155,84 @@
 "plz": "829 90",
 "status": "ACTIVE"
 },
+"lei:549300JBU4TV5OCKJV96": {
+"land": "CN",
+"lei": "549300JBU4TV5OCKJV96",
+"name": "NIO INC.",
+"ort": "上海市",
+"plz": "201804",
+"status": "ACTIVE"
+},
+"lei:549300JDML9PYG0CIJ22": {
+"land": "HK",
+"lei": "549300JDML9PYG0CIJ22",
+"name": "CENTRAL CHINA REAL ESTATE LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300JE3W6CWY2NAN77": {
+"land": "US",
+"lei": "549300JE3W6CWY2NAN77",
+"name": "CARRIER GLOBAL CORPORATION",
+"ort": "Palm Beach Gardens",
+"plz": "33418",
+"status": "ACTIVE"
+},
+"lei:549300JOHU21WRN2Z451": {
+"land": "US",
+"lei": "549300JOHU21WRN2Z451",
+"name": "KKR GROUP CO. INC.",
+"ort": "New York",
+"plz": "10001",
+"status": "ACTIVE"
+},
+"lei:549300K4OFRSVPWF2W77": {
+"land": "CN",
+"lei": "549300K4OFRSVPWF2W77",
+"name": "Sunac Services Holdings Limited",
+"ort": "Tianjin",
+"plz": "300391",
+"status": "ACTIVE"
+},
 "lei:549300KGI78MKHO38N42": {
 "land": "SI",
 "lei": "549300KGI78MKHO38N42",
 "name": "ZAVAROVALNICA TRIGLAV, d.d.",
 "ort": "Ljubljana",
 "plz": "1000",
+"status": "ACTIVE"
+},
+"lei:549300KI75VYLLMSK856": {
+"land": "GB",
+"lei": "549300KI75VYLLMSK856",
+"name": "SSE PLC",
+"ort": "PERTH",
+"plz": "PH1 3AQ",
+"status": "ACTIVE"
+},
+"lei:549300KJB5599PCKQK97": {
+"land": "HK",
+"lei": "549300KJB5599PCKQK97",
+"name": "MAOYE INTERNATIONAL HOLDINGS LIMITED",
+"ort": "Wan Chai",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:549300KP43CPCUJOOG15": {
+"land": "US",
+"lei": "549300KP43CPCUJOOG15",
+"name": "VISTRA CORP.",
+"ort": "Irving",
+"plz": "75039",
+"status": "ACTIVE"
+},
+"lei:549300KTTIRAOGXCRV69": {
+"land": "US",
+"lei": "549300KTTIRAOGXCRV69",
+"name": "VERTIV HOLDINGS CO",
+"ort": "NEW YORK",
+"plz": "10282",
 "status": "ACTIVE"
 },
 "lei:549300KV0ZEHT2KVU152": {
@@ -1779,12 +5243,92 @@
 "plz": "1000",
 "status": "ACTIVE"
 },
+"lei:549300L8337U6EWKEW05": {
+"land": "HK",
+"lei": "549300L8337U6EWKEW05",
+"name": "EBROKER GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
 "lei:549300LHK07F2CHV4X31": {
 "land": "ES",
 "lei": "549300LHK07F2CHV4X31",
 "name": "ENDESA SA",
 "ort": "Madrid",
 "plz": "28042",
+"status": "ACTIVE"
+},
+"lei:549300LHSWTJ83AGV359": {
+"land": "HK",
+"lei": "549300LHSWTJ83AGV359",
+"name": "Binhai Investment Company Limited",
+"ort": "Wan Chai",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:549300LJNVY5SW3VTN33": {
+"land": "US",
+"lei": "549300LJNVY5SW3VTN33",
+"name": "TAPESTRY, INC.",
+"ort": "LUTHERVILLE TIMONIUM",
+"plz": "21093",
+"status": "ACTIVE"
+},
+"lei:549300LK5U9PUCUD2X47": {
+"land": "DK",
+"lei": "549300LK5U9PUCUD2X47",
+"name": "Gabriel Holding A/S",
+"ort": "Aalborg",
+"plz": "9000",
+"status": "ACTIVE"
+},
+"lei:549300LKFJ962MZ46593": {
+"land": "US",
+"lei": "549300LKFJ962MZ46593",
+"name": "CISCO SYSTEMS, INC.",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:549300LO13MQ9HYSTR83": {
+"land": "US",
+"lei": "549300LO13MQ9HYSTR83",
+"name": "ARCHER-DANIELS-MIDLAND COMPANY",
+"ort": "Chicago",
+"plz": "60601",
+"status": "ACTIVE"
+},
+"lei:549300MGHLPT1EFHGF84": {
+"land": "HK",
+"lei": "549300MGHLPT1EFHGF84",
+"name": "COUNTRY GARDEN HOLDINGS COMPANY LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300MMNKN0RBJELS20": {
+"land": "KY",
+"lei": "549300MMNKN0RBJELS20",
+"name": "NAGACORP LTD.",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:549300MU9YQJYHDQEF63": {
+"land": "US",
+"lei": "549300MU9YQJYHDQEF63",
+"name": "FORTIVE CORPORATION",
+"ort": "Everett",
+"plz": "98203",
+"status": "ACTIVE"
+},
+"lei:549300N0B7DOGLXWPP39": {
+"land": "US",
+"lei": "549300N0B7DOGLXWPP39",
+"name": "AFLAC INCORPORATED",
+"ort": "COLUMBUS",
+"plz": "31999",
 "status": "ACTIVE"
 },
 "lei:549300N1SDN71ZZ8BO45": {
@@ -1795,12 +5339,44 @@
 "plz": "0283",
 "status": "ACTIVE"
 },
+"lei:549300NB5ZFNLZSV6579": {
+"land": "HK",
+"lei": "549300NB5ZFNLZSV6579",
+"name": "Elegance Optical International Holdings Limited",
+"ort": "Wan Chai",
+"plz": null,
+"status": "ACTIVE"
+},
 "lei:549300NFTY73920OYK69": {
 "land": "NO",
 "lei": "549300NFTY73920OYK69",
 "name": "AKER BP ASA",
 "ort": "Lysaker",
 "plz": "1366",
+"status": "ACTIVE"
+},
+"lei:549300NJ0E6Q0S1VOG90": {
+"land": "HK",
+"lei": "549300NJ0E6Q0S1VOG90",
+"name": "LOGAN GROUP COMPANY LIMITED",
+"ort": "Yau Tsim Mong",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:549300NOMHGVQBX6S778": {
+"land": "US",
+"lei": "549300NOMHGVQBX6S778",
+"name": "GLOBAL PAYMENTS INC.",
+"ort": "Atlanta",
+"plz": "30326",
+"status": "ACTIVE"
+},
+"lei:549300NPDB0BZTK3WO90": {
+"land": "US",
+"lei": "549300NPDB0BZTK3WO90",
+"name": "EVERPURE, INC.",
+"ort": "WILMINGTON",
+"plz": "19808",
 "status": "ACTIVE"
 },
 "lei:549300NYKK9MWM7GGW15": {
@@ -1811,12 +5387,68 @@
 "plz": "1102 CT",
 "status": "ACTIVE"
 },
+"lei:549300O00VUGT4H1PE90": {
+"land": "US",
+"lei": "549300O00VUGT4H1PE90",
+"name": "THE REALREAL, INC.",
+"ort": "San Francisco",
+"plz": "94133",
+"status": "ACTIVE"
+},
 "lei:549300O4AF0C816ILN62": {
 "land": "MX",
 "lei": "549300O4AF0C816ILN62",
 "name": "GRUPO TELEVISA S A B",
 "ort": "Mexico City",
 "plz": "01210",
+"status": "ACTIVE"
+},
+"lei:549300O5C25A0MMHHU33": {
+"land": "US",
+"lei": "549300O5C25A0MMHHU33",
+"name": "Coherent Corp.",
+"ort": "Saxonburg",
+"plz": "16056",
+"status": "ACTIVE"
+},
+"lei:549300OHIIUWSTIZME52": {
+"land": "US",
+"lei": "549300OHIIUWSTIZME52",
+"name": "BLOCK, INC.",
+"ort": "Oakland",
+"plz": "94612",
+"status": "ACTIVE"
+},
+"lei:549300OI5H3Y0I9I4I12": {
+"land": "US",
+"lei": "549300OI5H3Y0I9I4I12",
+"name": "MATSON, INC.",
+"ort": "Honolulu",
+"plz": "96819",
+"status": "ACTIVE"
+},
+"lei:549300OLARYHDXP3WK18": {
+"land": "HK",
+"lei": "549300OLARYHDXP3WK18",
+"name": "SUNAC CHINA HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300OQ91X6COVM4483": {
+"land": "KY",
+"lei": "549300OQ91X6COVM4483",
+"name": "FUFENG GROUP LIMITED",
+"ort": "George Town",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:549300P2UYQ9U5LY1T58": {
+"land": "CN",
+"lei": "549300P2UYQ9U5LY1T58",
+"name": "Zai Lab Limited",
+"ort": "Shanghai",
+"plz": "201210",
 "status": "ACTIVE"
 },
 "lei:549300P6F1BDSFSW5T72": {
@@ -1827,12 +5459,60 @@
 "plz": "1000",
 "status": "ACTIVE"
 },
+"lei:549300PC8KTJ71XKFY89": {
+"land": "US",
+"lei": "549300PC8KTJ71XKFY89",
+"name": "BROWN & BROWN, INC.",
+"ort": "TALLAHASSEE",
+"plz": "32301",
+"status": "ACTIVE"
+},
+"lei:549300PDOU6AR9Z9IN08": {
+"land": "HK",
+"lei": "549300PDOU6AR9Z9IN08",
+"name": "MODERN LAND (CHINA) CO., LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300PFEWKNHRG25N08": {
+"land": "AU",
+"lei": "549300PFEWKNHRG25N08",
+"name": "INSURANCE AUSTRALIA GROUP LIMITED",
+"ort": "Sydney",
+"plz": "2000",
+"status": "ACTIVE"
+},
+"lei:549300PI8IF6UEHMVV14": {
+"land": "HK",
+"lei": "549300PI8IF6UEHMVV14",
+"name": "CHINA MERCHANTS LAND LIMITED",
+"ort": "Central and Western District",
+"plz": null,
+"status": "ACTIVE"
+},
 "lei:549300PPXHEU2JF0AM85": {
 "land": "GB",
 "lei": "549300PPXHEU2JF0AM85",
 "name": "LLOYDS BANKING GROUP PLC",
 "ort": "LONDON",
 "plz": "EC2N 1HZ",
+"status": "ACTIVE"
+},
+"lei:549300PT2CIHYN5GWJ21": {
+"land": "GB",
+"lei": "549300PT2CIHYN5GWJ21",
+"name": "SERCO GROUP PLC",
+"ort": "HOOK",
+"plz": "RG27 9UY",
+"status": "ACTIVE"
+},
+"lei:549300PW7VPFCYKLIV37": {
+"land": "US",
+"lei": "549300PW7VPFCYKLIV37",
+"name": "AVERY DENNISON CORPORATION",
+"ort": "MENTOR",
+"plz": "44060",
 "status": "ACTIVE"
 },
 "lei:549300PZMFIQR79Q0T97": {
@@ -1859,12 +5539,52 @@
 "plz": "4007",
 "status": "ACTIVE"
 },
+"lei:549300Q9ID4640FE0422": {
+"land": "CN",
+"lei": "549300Q9ID4640FE0422",
+"name": "Weibo Corporation",
+"ort": "Beijing",
+"plz": "100080",
+"status": "ACTIVE"
+},
+"lei:549300QQXOOYEF89IC56": {
+"land": "US",
+"lei": "549300QQXOOYEF89IC56",
+"name": "WESTERN DIGITAL CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:549300QWJYQDH4U5XI15": {
+"land": "US",
+"lei": "549300QWJYQDH4U5XI15",
+"name": "VSE CORPORATION",
+"ort": "Alexandria",
+"plz": "22310",
+"status": "ACTIVE"
+},
+"lei:549300R3K12EPXCGDP22": {
+"land": "CN",
+"lei": "549300R3K12EPXCGDP22",
+"name": "POWERLONG REAL ESTATE HOLDINGS LIMITED",
+"ort": "上海市",
+"plz": "201101",
+"status": "ACTIVE"
+},
 "lei:549300RIG2CXWN6IV731": {
 "land": "MX",
 "lei": "549300RIG2CXWN6IV731",
 "name": "CEMEX, S.A.B. DE C.V.",
 "ort": "San Pedro Garza Garcia",
 "plz": "66265",
+"status": "ACTIVE"
+},
+"lei:549300RYVTCSHFKXHB81": {
+"land": "HK",
+"lei": "549300RYVTCSHFKXHB81",
+"name": "Value Partners Group Limited",
+"ort": "Hong Kong",
+"plz": "999077",
 "status": "ACTIVE"
 },
 "lei:549300S1MP1NFDIKT460": {
@@ -1883,12 +5603,60 @@
 "plz": "832 37",
 "status": "ACTIVE"
 },
+"lei:549300S33XN2YGV2XG74": {
+"land": "CN",
+"lei": "549300S33XN2YGV2XG74",
+"name": "LEADING HOLDINGS GROUP LIMITED",
+"ort": "Chengdu",
+"plz": "610000",
+"status": "ACTIVE"
+},
+"lei:549300S5UFTTWALAFE19": {
+"land": "DK",
+"lei": "549300S5UFTTWALAFE19",
+"name": "GLUNZ & JENSEN HOLDING A/S",
+"ort": "Ringsted",
+"plz": "4100",
+"status": "ACTIVE"
+},
+"lei:549300SCJPK3YZJTJR78": {
+"land": "KY",
+"lei": "549300SCJPK3YZJTJR78",
+"name": "ZTO EXPRESS (CAYMAN) INC.",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:549300SCNO12JLWIK605": {
+"land": "US",
+"lei": "549300SCNO12JLWIK605",
+"name": "Markel Group Inc.",
+"ort": "Glen Allen",
+"plz": "23060-6148",
+"status": "ACTIVE"
+},
+"lei:549300SKEDE1VKS0A552": {
+"land": "KY",
+"lei": "549300SKEDE1VKS0A552",
+"name": "AAC TECHNOLOGIES HOLDINGS INC.",
+"ort": "George Town, Grand Cayman",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
 "lei:549300SN6PRK6IJJC215": {
 "land": "CH",
 "lei": "549300SN6PRK6IJJC215",
 "name": "LOGITECH INTERNATIONAL S.A.",
 "ort": "LAUSANNE",
 "plz": "1015",
+"status": "ACTIVE"
+},
+"lei:549300SU3TUM6VH84645": {
+"land": "US",
+"lei": "549300SU3TUM6VH84645",
+"name": "NN, Inc.",
+"ort": "Johnson City",
+"plz": "37604",
 "status": "ACTIVE"
 },
 "lei:549300SZJ9VS8SGXAN81": {
@@ -1907,6 +5675,22 @@
 "plz": "T2P 0J4",
 "status": "ACTIVE"
 },
+"lei:549300TAELI2JXTKK009": {
+"land": "HK",
+"lei": "549300TAELI2JXTKK009",
+"name": "CHINA MODERN DAIRY HOLDINGS LTD.",
+"ort": "Wan Chai",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300TF362HOIC4TJ34": {
+"land": "KY",
+"lei": "549300TF362HOIC4TJ34",
+"name": "REGENT PACIFIC GROUP LIMITED",
+"ort": "GEORGE TOWN",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
 "lei:549300TGIVUUMY40MZ05": {
 "land": "GR",
 "lei": "549300TGIVUUMY40MZ05",
@@ -1915,12 +5699,36 @@
 "plz": "18346",
 "status": "ACTIVE"
 },
+"lei:549300TJB5YBRUPOG437": {
+"land": "US",
+"lei": "549300TJB5YBRUPOG437",
+"name": "Dell Technologies Inc.",
+"ort": "Menlo Park",
+"plz": "94025",
+"status": "ACTIVE"
+},
 "lei:549300TK038P6EV4YU51": {
 "land": "LT",
 "lei": "549300TK038P6EV4YU51",
 "name": "AB Artea bankas",
 "ort": "Šiauliai",
 "plz": "76348",
+"status": "ACTIVE"
+},
+"lei:549300TMDIT8WREDOF45": {
+"land": "US",
+"lei": "549300TMDIT8WREDOF45",
+"name": "MASTEC, INC.",
+"ort": "Coral Gables",
+"plz": "33134",
+"status": "ACTIVE"
+},
+"lei:549300TN1PZNLCD4I551": {
+"land": "US",
+"lei": "549300TN1PZNLCD4I551",
+"name": "TOAST, INC.",
+"ort": "Boston",
+"plz": "02210",
 "status": "ACTIVE"
 },
 "lei:549300TRUWO2CD2G5692": {
@@ -1939,6 +5747,30 @@
 "plz": "15143",
 "status": "ACTIVE"
 },
+"lei:549300TWZSP6O1IH2V34": {
+"land": "US",
+"lei": "549300TWZSP6O1IH2V34",
+"name": "W.W. GRAINGER, INC.",
+"ort": "Lake Forest",
+"plz": "60045",
+"status": "ACTIVE"
+},
+"lei:549300TYWIIKAOK07L47": {
+"land": "HK",
+"lei": "549300TYWIIKAOK07L47",
+"name": "REDSUN PROPERTIES GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300U5Y5EL6PHYLF13": {
+"land": "US",
+"lei": "549300U5Y5EL6PHYLF13",
+"name": "IDEX Corporation",
+"ort": "Wilmington",
+"plz": "19801",
+"status": "ACTIVE"
+},
 "lei:549300UMI5MBLZSXGL15": {
 "land": "IS",
 "lei": "549300UMI5MBLZSXGL15",
@@ -1955,6 +5787,30 @@
 "plz": "2910-738",
 "status": "ACTIVE"
 },
+"lei:549300UQUTN69WGJ7J09": {
+"land": "KY",
+"lei": "549300UQUTN69WGJ7J09",
+"name": "China New Higher Education Group Limited",
+"ort": "GEORGE TOWN",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:549300UTE50ZMDBG8A20": {
+"land": "US",
+"lei": "549300UTE50ZMDBG8A20",
+"name": "L3HARRIS TECHNOLOGIES, INC.",
+"ort": "Melbourne",
+"plz": "32919",
+"status": "ACTIVE"
+},
+"lei:549300UZHTN0CNKBOB19": {
+"land": "US",
+"lei": "549300UZHTN0CNKBOB19",
+"name": "WD-40 Company",
+"ort": "San Diego",
+"plz": "92131",
+"status": "ACTIVE"
+},
 "lei:549300V62YJ9HTLRI486": {
 "land": "AT",
 "lei": "549300V62YJ9HTLRI486",
@@ -1963,12 +5819,60 @@
 "plz": "1020",
 "status": "ACTIVE"
 },
+"lei:549300V7BXPWT6WIPR03": {
+"land": "HK",
+"lei": "549300V7BXPWT6WIPR03",
+"name": "ENN ENERGY HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
 "lei:549300VEBQPHRZBKUX38": {
 "land": "SE",
 "lei": "549300VEBQPHRZBKUX38",
 "name": "Investor Aktiebolag",
 "ort": "Stockholm",
 "plz": "103 32",
+"status": "ACTIVE"
+},
+"lei:549300VIWYMSIGT1U456": {
+"land": "US",
+"lei": "549300VIWYMSIGT1U456",
+"name": "THE CIGNA GROUP",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:549300VSGCJ7E698NM85": {
+"land": "US",
+"lei": "549300VSGCJ7E698NM85",
+"name": "THE CHARLES SCHWAB CORPORATION",
+"ort": "WESTLAKE",
+"plz": "76262",
+"status": "ACTIVE"
+},
+"lei:549300VSMO9KYQWDND94": {
+"land": "US",
+"lei": "549300VSMO9KYQWDND94",
+"name": "TELEDYNE TECHNOLOGIES INCORPORATED",
+"ort": "DOVER",
+"plz": "19904",
+"status": "ACTIVE"
+},
+"lei:549300VSP3RIX7FGDZ51": {
+"land": "US",
+"lei": "549300VSP3RIX7FGDZ51",
+"name": "NEWMONT CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:549300VV176ZO5WQHZ61": {
+"land": "US",
+"lei": "549300VV176ZO5WQHZ61",
+"name": "AMNEAL PHARMACEUTICALS, INC.",
+"ort": "Bridgewater",
+"plz": "08807",
 "status": "ACTIVE"
 },
 "lei:549300VZKC61IR5U8G96": {
@@ -1995,12 +5899,76 @@
 "plz": "164 83",
 "status": "ACTIVE"
 },
+"lei:549300WGKSV867C0JF48": {
+"land": "CN",
+"lei": "549300WGKSV867C0JF48",
+"name": "CIFI HOLDINGS (GROUP) CO. LTD.",
+"ort": "Shanghai",
+"plz": "201100",
+"status": "ACTIVE"
+},
+"lei:549300WZN9I2QKLS0O94": {
+"land": "US",
+"lei": "549300WZN9I2QKLS0O94",
+"name": "CORTEVA, INC.",
+"ort": "Wilmington",
+"plz": "19805",
+"status": "ACTIVE"
+},
+"lei:549300WZWOM80UCFSF54": {
+"land": "US",
+"lei": "549300WZWOM80UCFSF54",
+"name": "MCKESSON CORPORATION",
+"ort": "IRVING",
+"plz": "75039",
+"status": "ACTIVE"
+},
+"lei:549300X2937PB0CJ7I56": {
+"land": "US",
+"lei": "549300X2937PB0CJ7I56",
+"name": "CORNING INCORPORATED",
+"ort": "ALBANY",
+"plz": "12207",
+"status": "ACTIVE"
+},
+"lei:549300XB5J9BFW5JXV97": {
+"land": "US",
+"lei": "549300XB5J9BFW5JXV97",
+"name": "BLOOM ENERGY CORPORATION",
+"ort": "SAN JOSE",
+"plz": "95134",
+"status": "ACTIVE"
+},
+"lei:549300XTVCVV9I7B5T19": {
+"land": "US",
+"lei": "549300XTVCVV9I7B5T19",
+"name": "HUNTINGTON BANCSHARES INCORPORATED",
+"ort": "LUTHERVILLE TIMONIUM",
+"plz": "21093-2264",
+"status": "ACTIVE"
+},
+"lei:549300Y5ML31FVN83730": {
+"land": "CN",
+"lei": "549300Y5ML31FVN83730",
+"name": "H WORLD GROUP LIMITED",
+"ort": "嘉定区",
+"plz": "201803",
+"status": "ACTIVE"
+},
 "lei:549300Y7C05BKC4HZB40": {
 "land": "LU",
 "lei": "549300Y7C05BKC4HZB40",
 "name": "TENARIS S.A.",
 "ort": "Luxembourg",
 "plz": "L-2449",
+"status": "ACTIVE"
+},
+"lei:549300YG42LPE8ZHJE68": {
+"land": "DE",
+"lei": "549300YG42LPE8ZHJE68",
+"name": "ADM HAMBURG AKTIENGESELLSCHAFT",
+"ort": "Hamburg",
+"plz": "21107",
 "status": "ACTIVE"
 },
 "lei:549300YM5CWCAUVOPB53": {
@@ -2011,12 +5979,84 @@
 "plz": "8330099",
 "status": "ACTIVE"
 },
+"lei:549300YS3T1KVQ2SNI84": {
+"land": "HK",
+"lei": "549300YS3T1KVQ2SNI84",
+"name": "吉利汽車控股有限公司",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300YSOKQO5QD6MP25": {
+"land": "HK",
+"lei": "549300YSOKQO5QD6MP25",
+"name": "CHINA AOYUAN GROUP LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300YZEXPDB92M2F02": {
+"land": "US",
+"lei": "549300YZEXPDB92M2F02",
+"name": "VEEVA SYSTEMS INC.",
+"ort": "Pleasanton",
+"plz": "94588",
+"status": "ACTIVE"
+},
 "lei:549300Z8OREY6THCPF67": {
 "land": "IL",
 "lei": "549300Z8OREY6THCPF67",
 "name": "FIVERR INTERNATIONAL LTD",
 "ort": "TEL AVIV",
 "plz": "6473409",
+"status": "ACTIVE"
+},
+"lei:549300ZFEEJ2IP5VME73": {
+"land": "US",
+"lei": "549300ZFEEJ2IP5VME73",
+"name": "STATE STREET CORPORATION",
+"ort": "BOSTON",
+"plz": "02114",
+"status": "ACTIVE"
+},
+"lei:549300ZG20XRKSRKZ238": {
+"land": "PT",
+"lei": "549300ZG20XRKSRKZ238",
+"name": "IBERSOL, SGPS S.A.",
+"ort": "Lordelo do Ouro e Massarelos",
+"plz": "4150-146",
+"status": "ACTIVE"
+},
+"lei:549300ZLBKR8VSU25153": {
+"land": "US",
+"lei": "549300ZLBKR8VSU25153",
+"name": "OTIS WORLDWIDE CORPORATION",
+"ort": "Farmington",
+"plz": "06032",
+"status": "ACTIVE"
+},
+"lei:549300ZOFF0Z2CM87C29": {
+"land": "GG",
+"lei": "549300ZOFF0Z2CM87C29",
+"name": "BH MACRO LIMITED",
+"ort": "ST PETER PORT",
+"plz": "GY1 3QL",
+"status": "ACTIVE"
+},
+"lei:549300ZRISRT38EEYY07": {
+"land": "HK",
+"lei": "549300ZRISRT38EEYY07",
+"name": "AGILE GROUP HOLDINGS LIMITED",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:549300ZS772LUNUMRB03": {
+"land": "US",
+"lei": "549300ZS772LUNUMRB03",
+"name": "TransUnion",
+"ort": "Wilmington",
+"plz": "19808",
 "status": "ACTIVE"
 },
 "lei:5967007LIEEXZX7NA051": {
@@ -2027,12 +6067,68 @@
 "plz": "1366",
 "status": "ACTIVE"
 },
+"lei:5967007LIEEXZXFYNS31": {
+"land": "NO",
+"lei": "5967007LIEEXZXFYNS31",
+"name": "CIRCIO HOLDING ASA",
+"ort": "Oslo",
+"plz": "0160",
+"status": "ACTIVE"
+},
+"lei:5967007LIEEXZXG6DK30": {
+"land": "NO",
+"lei": "5967007LIEEXZXG6DK30",
+"name": "THOR MEDICAL ASA",
+"ort": "Oslo",
+"plz": "0884",
+"status": "ACTIVE"
+},
+"lei:5967007LIEEXZXH3K072": {
+"land": "NO",
+"lei": "5967007LIEEXZXH3K072",
+"name": "DNO ASA",
+"ort": "OSLO",
+"plz": "0113",
+"status": "ACTIVE"
+},
+"lei:5967007LIEEXZXHT0O36": {
+"land": "NO",
+"lei": "5967007LIEEXZXHT0O36",
+"name": "VEND MARKETPLACES ASA",
+"ort": "OSLO",
+"plz": "0159",
+"status": "ACTIVE"
+},
+"lei:5GCSNMQXHEYA1JO8QN11": {
+"land": "US",
+"lei": "5GCSNMQXHEYA1JO8QN11",
+"name": "MASCO CORPORATION",
+"ort": "LIVONIA",
+"plz": "48152",
+"status": "ACTIVE"
+},
 "lei:5QK37QC7NWOJ8D7WVQ45": {
 "land": "ES",
 "lei": "5QK37QC7NWOJ8D7WVQ45",
 "name": "IBERDROLA SA",
 "ort": "Bilbao",
 "plz": "48009",
+"status": "ACTIVE"
+},
+"lei:5RGWIFLMGH3YS7KWI652": {
+"land": "US",
+"lei": "5RGWIFLMGH3YS7KWI652",
+"name": "SYSCO CORPORATION",
+"ort": "Houston",
+"plz": "77077",
+"status": "ACTIVE"
+},
+"lei:5T547R1474YC9HOD8Q74": {
+"land": "US",
+"lei": "5T547R1474YC9HOD8Q74",
+"name": "WATERS CORPORATION",
+"ort": "Milford",
+"plz": "01757",
 "status": "ACTIVE"
 },
 "lei:5UMCZOEYKCVFAW8ZLO05": {
@@ -2051,6 +6147,14 @@
 "plz": null,
 "status": "ACTIVE"
 },
+"lei:635400BR2ROC1FVEBQ56": {
+"land": "IE",
+"lei": "635400BR2ROC1FVEBQ56",
+"name": "Ryanair Holdings Public Limited Company",
+"ort": "Dublin",
+"plz": "K67NY94",
+"status": "ACTIVE"
+},
 "lei:635400DTNHVYGZODKQ93": {
 "land": "IE",
 "lei": "635400DTNHVYGZODKQ93",
@@ -2065,6 +6169,22 @@
 "name": "Flutter Entertainment Public Limited Company",
 "ort": "Dublin",
 "plz": "D04 V972",
+"status": "ACTIVE"
+},
+"lei:635400FJE6GSOJUSNY27": {
+"land": "US",
+"lei": "635400FJE6GSOJUSNY27",
+"name": "Veralto Corporation",
+"ort": "Massachusetts",
+"plz": "02451",
+"status": "ACTIVE"
+},
+"lei:635400H1WKBLOQERUU95": {
+"land": "US",
+"lei": "635400H1WKBLOQERUU95",
+"name": "Arista Networks, Inc",
+"ort": "New Castle",
+"plz": "19808",
 "status": "ACTIVE"
 },
 "lei:635400HM7V74SUB9OG75": {
@@ -2107,6 +6227,14 @@
 "plz": "V92 EH11",
 "status": "ACTIVE"
 },
+"lei:635400XJGDRCVHCKH516": {
+"land": "RO",
+"lei": "635400XJGDRCVHCKH516",
+"name": "Digi Communications N.V.",
+"ort": "Bucharest",
+"plz": "050557",
+"status": "ACTIVE"
+},
 "lei:635400YXSJKSF3H3CB31": {
 "land": "IS",
 "lei": "635400YXSJKSF3H3CB31",
@@ -2131,6 +6259,38 @@
 "plz": "LV-1073",
 "status": "ACTIVE"
 },
+"lei:655600UAX2YV03PRXN31": {
+"land": "CN",
+"lei": "655600UAX2YV03PRXN31",
+"name": "Abbisko Cayman Limited",
+"ort": "上海市",
+"plz": "201210",
+"status": "ACTIVE"
+},
+"lei:6SHGI4ZSSLCXXQSBB395": {
+"land": "US",
+"lei": "6SHGI4ZSSLCXXQSBB395",
+"name": "CITIGROUP INC.",
+"ort": "NEW YORK",
+"plz": "10013",
+"status": "ACTIVE"
+},
+"lei:7245000G0HS48PZWUD53": {
+"land": "NL",
+"lei": "7245000G0HS48PZWUD53",
+"name": "ASR Nederland N.V.",
+"ort": "Utrecht",
+"plz": "3584BA",
+"status": "ACTIVE"
+},
+"lei:7245008G22FOV7TYYJ34": {
+"land": "NL",
+"lei": "7245008G22FOV7TYYJ34",
+"name": "TKH Group N.V.",
+"ort": "Haaksbergen",
+"plz": "7481KJ",
+"status": "ACTIVE"
+},
 "lei:724500973ODKK3IFQ447": {
 "land": "NL",
 "lei": "724500973ODKK3IFQ447",
@@ -2147,12 +6307,44 @@
 "plz": "1506MA",
 "status": "ACTIVE"
 },
+"lei:724500GJBUL3D9TW9Y18": {
+"land": "NL",
+"lei": "724500GJBUL3D9TW9Y18",
+"name": "Universal Music Group N.V.",
+"ort": "Hilversum",
+"plz": "1217EW",
+"status": "ACTIVE"
+},
+"lei:724500HDW6IWR9J5YT90": {
+"land": "NL",
+"lei": "724500HDW6IWR9J5YT90",
+"name": "Alfen N.V.",
+"ort": "Almere",
+"plz": "1332AM",
+"status": "ACTIVE"
+},
+"lei:724500HUXGTQC07CAZ61": {
+"land": "NL",
+"lei": "724500HUXGTQC07CAZ61",
+"name": "Basic-Fit N.V.",
+"ort": "Hoofddorp",
+"plz": "2132JC",
+"status": "ACTIVE"
+},
 "lei:724500K5PTPSST86UQ23": {
 "land": "NL",
 "lei": "724500K5PTPSST86UQ23",
 "name": "Heineken N.V.",
 "ort": "Amsterdam",
 "plz": "1017ZD",
+"status": "ACTIVE"
+},
+"lei:724500Q41FHN0P1GPC53": {
+"land": "NL",
+"lei": "724500Q41FHN0P1GPC53",
+"name": "PostNL N.V.",
+"ort": "'s-Gravenhage",
+"plz": "2521CA",
 "status": "ACTIVE"
 },
 "lei:724500TEM53I0U077B74": {
@@ -2211,6 +6403,22 @@
 "plz": "FI-00130",
 "status": "ACTIVE"
 },
+"lei:784F5XWPLTWKTBV3E584": {
+"land": "US",
+"lei": "784F5XWPLTWKTBV3E584",
+"name": "THE GOLDMAN SACHS GROUP, INC.",
+"ort": "NEW YORK",
+"plz": "10282",
+"status": "ACTIVE"
+},
+"lei:787RXPR0UX0O0XUXPZ81": {
+"land": "US",
+"lei": "787RXPR0UX0O0XUXPZ81",
+"name": "NIKE, INC.",
+"ort": "Beaverton",
+"plz": "97005",
+"status": "ACTIVE"
+},
 "lei:7890003EX1LTLS2FFL84": {
 "land": "TR",
 "lei": "7890003EX1LTLS2FFL84",
@@ -2225,6 +6433,14 @@
 "name": "CAIXABANK SA",
 "ort": "Valencia",
 "plz": "46002",
+"status": "ACTIVE"
+},
+"lei:8156000FE0A2DC5B7852": {
+"land": "IT",
+"lei": "8156000FE0A2DC5B7852",
+"name": "PRADA S.P.A.",
+"ort": "MILANO",
+"plz": "20135",
 "status": "ACTIVE"
 },
 "lei:8156002278562044AF79": {
@@ -2243,6 +6459,38 @@
 "plz": "00144",
 "status": "ACTIVE"
 },
+"lei:81560036DCCA48CA0F08": {
+"land": "IT",
+"lei": "81560036DCCA48CA0F08",
+"name": "S.S. LAZIO - S.P.A.",
+"ort": "FORMELLO",
+"plz": "00060",
+"status": "ACTIVE"
+},
+"lei:8156004110BB8D445B46": {
+"land": "IT",
+"lei": "8156004110BB8D445B46",
+"name": "BRIOSCHI SVILUPPO IMMOBILIARE S.P.A.",
+"ort": "MILANO",
+"plz": "20137",
+"status": "ACTIVE"
+},
+"lei:8156007833AB49068789": {
+"land": "IT",
+"lei": "8156007833AB49068789",
+"name": "THE ITALIAN SEA GROUP S.P.A.",
+"ort": "CARRARA",
+"plz": "54036",
+"status": "ACTIVE"
+},
+"lei:81560094A389646CAF21": {
+"land": "IT",
+"lei": "81560094A389646CAF21",
+"name": "F.I.L.A - FABBRICA ITALIANA LAPIS ED AFFINI - SOCIETA' PER AZIONI SIGLABILE IN FORMA F.I.L.A. S.P.A. O IN FORMA ABBREVIATA CON LA DICITURA ANTICIPATA DAL SIMBOLO DEL GIGLIO STILIZZATO",
+"ort": "PERO",
+"plz": "20016",
+"status": "ACTIVE"
+},
 "lei:8156009E94ED54DE7C31": {
 "land": "IT",
 "lei": "8156009E94ED54DE7C31",
@@ -2251,12 +6499,100 @@
 "plz": "00156",
 "status": "ACTIVE"
 },
+"lei:815600D3D12A6EAC9004": {
+"land": "IT",
+"lei": "815600D3D12A6EAC9004",
+"name": "CALTAGIRONE EDITORE SOCIETA' PER AZIONI",
+"ort": "ROMA",
+"plz": "00187",
+"status": "ACTIVE"
+},
 "lei:815600EBD7FB00525B20": {
 "land": "IT",
 "lei": "815600EBD7FB00525B20",
 "name": "MONCLER S.P.A.",
 "ort": "MILANO",
 "plz": "20144",
+"status": "ACTIVE"
+},
+"lei:824LMFJDH41EY779Q875": {
+"land": "US",
+"lei": "824LMFJDH41EY779Q875",
+"name": "INTERNATIONAL PAPER COMPANY",
+"ort": "Memphis",
+"plz": "38197",
+"status": "ACTIVE"
+},
+"lei:82DYEISM090VG8LTLS26": {
+"land": "US",
+"lei": "82DYEISM090VG8LTLS26",
+"name": "ECOLAB INC.",
+"ort": "SAINT PAUL",
+"plz": "55102",
+"status": "ACTIVE"
+},
+"lei:875500XS4ILCA7TNKD16": {
+"land": "KY",
+"lei": "875500XS4ILCA7TNKD16",
+"name": "LEOCH INTERNATIONAL TECHNOLOGY LIMITED",
+"ort": "Cayman Islands",
+"plz": "KY1-1111",
+"status": "ACTIVE"
+},
+"lei:894500180W6SSACJ1T19": {
+"land": "DE",
+"lei": "894500180W6SSACJ1T19",
+"name": "cyan AG",
+"ort": "München",
+"plz": "80331",
+"status": "ACTIVE"
+},
+"lei:8945001XW4FS15S8Z778": {
+"land": "HK",
+"lei": "8945001XW4FS15S8Z778",
+"name": "Grand Pharmaceutical Group Limited",
+"ort": "Hong Kong",
+"plz": "999077",
+"status": "ACTIVE"
+},
+"lei:89450094KEXKHW5G8K93": {
+"land": "DE",
+"lei": "89450094KEXKHW5G8K93",
+"name": "ARI Motors Industries SE",
+"ort": "Borna",
+"plz": "04552",
+"status": "ACTIVE"
+},
+"lei:894500HMNYJTKW5H0X64": {
+"land": "DE",
+"lei": "894500HMNYJTKW5H0X64",
+"name": "STS Group AG",
+"ort": "Hagen",
+"plz": "58099",
+"status": "ACTIVE"
+},
+"lei:894500L18EYHNJR6VJ41": {
+"land": "CN",
+"lei": "894500L18EYHNJR6VJ41",
+"name": "PW Medtech Group Limited",
+"ort": "Beijing",
+"plz": "101204",
+"status": "ACTIVE"
+},
+"lei:894500NIDXRG5YFJAR60": {
+"land": "DE",
+"lei": "894500NIDXRG5YFJAR60",
+"name": "Staige One AG",
+"ort": "Essen",
+"plz": "45356",
+"status": "ACTIVE"
+},
+"lei:894500WRW54CVN62K416": {
+"land": "AU",
+"lei": "894500WRW54CVN62K416",
+"name": "TELSTRA GROUP LIMITED",
+"ort": "Melbourne",
+"plz": "3000",
 "status": "ACTIVE"
 },
 "lei:894500XO86FKXQGPYV71": {
@@ -2275,6 +6611,14 @@
 "plz": "8320206",
 "status": "ACTIVE"
 },
+"lei:8MCWUBXQ0WE04KMXBX50": {
+"land": "US",
+"lei": "8MCWUBXQ0WE04KMXBX50",
+"name": "QUEST DIAGNOSTICS INCORPORATED",
+"ort": "SECAUCUS",
+"plz": "07094",
+"status": "ACTIVE"
+},
 "lei:8R95QZMKZLJX5Q2XR704": {
 "land": "GB",
 "lei": "8R95QZMKZLJX5Q2XR704",
@@ -2291,10 +6635,98 @@
 "plz": "SW1Y 5AD",
 "status": "ACTIVE"
 },
+"lei:8WDDFXB5T1Z6J0XC1L66": {
+"land": "US",
+"lei": "8WDDFXB5T1Z6J0XC1L66",
+"name": "Target Corporation",
+"ort": "Minneapolis",
+"plz": "55403",
+"status": "ACTIVE"
+},
+"lei:8YQ2GSDWYZXO2EDN3511": {
+"land": "US",
+"lei": "8YQ2GSDWYZXO2EDN3511",
+"name": "PG&E CORPORATION",
+"ort": "OAKLAND",
+"plz": "94612",
+"status": "ACTIVE"
+},
+"lei:9598000ANNAL42UJ7X28": {
+"land": "ES",
+"lei": "9598000ANNAL42UJ7X28",
+"name": "LOGISTA INTEGRAL SA",
+"ort": "Leganés",
+"plz": "28914",
+"status": "ACTIVE"
+},
+"lei:95980020140005178328": {
+"land": "ES",
+"lei": "95980020140005178328",
+"name": "FOMENTO DE CONSTRUCCIONES Y CONTRATAS S.A.",
+"ort": "Madrid",
+"plz": "28050",
+"status": "ACTIVE"
+},
+"lei:95980020140005308793": {
+"land": "ES",
+"lei": "95980020140005308793",
+"name": "INDRA SISTEMAS, S.A.",
+"ort": "Alcobendas",
+"plz": "28108",
+"status": "ACTIVE"
+},
+"lei:95980020140005395317": {
+"land": "ES",
+"lei": "95980020140005395317",
+"name": "OBRASCON HUARTE LAIN, S.A.",
+"ort": "Madrid",
+"plz": "28046",
+"status": "ACTIVE"
+},
+"lei:95980020140005582721": {
+"land": "ES",
+"lei": "95980020140005582721",
+"name": "ACERINOX SA",
+"ort": "MADRID",
+"plz": "28035",
+"status": "ACTIVE"
+},
 "lei:9598004A3FTY3TEHHN09": {
 "land": "ES",
 "lei": "9598004A3FTY3TEHHN09",
 "name": "AMADEUS IT GROUP SOCIEDAD ANONIMA",
+"ort": "Madrid",
+"plz": "28027",
+"status": "ACTIVE"
+},
+"lei:959800HSSNXWRKBK4N60": {
+"land": "ES",
+"lei": "959800HSSNXWRKBK4N60",
+"name": "GRIFOLS S.A.",
+"ort": "Sant Cugat del Vallès",
+"plz": "08174",
+"status": "ACTIVE"
+},
+"lei:959800L8KD863DP30X04": {
+"land": "ES",
+"lei": "959800L8KD863DP30X04",
+"name": "MERLIN PROPERTIES SOCIMI, S.A.",
+"ort": "Madrid",
+"plz": "28046",
+"status": "ACTIVE"
+},
+"lei:959800TZHQRUSH1ESL13": {
+"land": "GB",
+"lei": "959800TZHQRUSH1ESL13",
+"name": "INTERNATIONAL CONSOLIDATED AIRLINES GROUP, S.A.",
+"ort": "Harmondsworth",
+"plz": "UB7 0GB",
+"status": "ACTIVE"
+},
+"lei:959800XKAB9VNAVN9425": {
+"land": "ES",
+"lei": "959800XKAB9VNAVN9425",
+"name": "SACYR SA",
 "ort": "Madrid",
 "plz": "28027",
 "status": "ACTIVE"
@@ -2323,12 +6755,68 @@
 "plz": "92130",
 "status": "ACTIVE"
 },
+"lei:9845000A05E8F937E337": {
+"land": "KY",
+"lei": "9845000A05E8F937E337",
+"name": "POP MART INTERNATIONAL GROUP LIMITED",
+"ort": "George Town",
+"plz": "KY1-1104",
+"status": "ACTIVE"
+},
+"lei:984500B657C5AC8BC588": {
+"land": "HK",
+"lei": "984500B657C5AC8BC588",
+"name": "KuangChi Science Limited",
+"ort": "HONG KONG",
+"plz": null,
+"status": "ACTIVE"
+},
+"lei:984500BDDC5702EEZ482": {
+"land": "DE",
+"lei": "984500BDDC5702EEZ482",
+"name": "Cogia AG",
+"ort": "Frankfurt am Main",
+"plz": "60329",
+"status": "ACTIVE"
+},
+"lei:984500FE452E665C9F85": {
+"land": "US",
+"lei": "984500FE452E665C9F85",
+"name": "INVITATION HOMES INC.",
+"ort": "BALTIMORE",
+"plz": "21202",
+"status": "ACTIVE"
+},
 "lei:984500MDAFVD86E3B328": {
 "land": "IL",
 "lei": "984500MDAFVD86E3B328",
 "name": "מנדיי. קום בע\"מ",
 "ort": "תל אביב - יפו",
 "plz": "6777506",
+"status": "ACTIVE"
+},
+"lei:9C1X8XOOTYY2FNYTVH06": {
+"land": "US",
+"lei": "9C1X8XOOTYY2FNYTVH06",
+"name": "GENERAL DYNAMICS CORPORATION",
+"ort": "Reston",
+"plz": "20190",
+"status": "ACTIVE"
+},
+"lei:9DJT3UXIJIZJI4WXO774": {
+"land": "US",
+"lei": "9DJT3UXIJIZJI4WXO774",
+"name": "BANK OF AMERICA CORPORATION",
+"ort": "Charlotte",
+"plz": "28202",
+"status": "ACTIVE"
+},
+"lei:9N3UAJSNOUXFKQLF3V18": {
+"land": "US",
+"lei": "9N3UAJSNOUXFKQLF3V18",
+"name": "PPL CORPORATION",
+"ort": "Allentown",
+"plz": "18101",
 "status": "ACTIVE"
 },
 "lei:9ZHRYM6F437SQJ6OUG95": {
@@ -2339,12 +6827,44 @@
 "plz": "1030",
 "status": "ACTIVE"
 },
+"lei:ACMHD8HWFMFUIQQ8Y590": {
+"land": "AU",
+"lei": "ACMHD8HWFMFUIQQ8Y590",
+"name": "MACQUARIE GROUP LIMITED",
+"ort": "SYDNEY",
+"plz": "2000",
+"status": "ACTIVE"
+},
+"lei:AI8GXW8LG5WK7E9UD086": {
+"land": "US",
+"lei": "AI8GXW8LG5WK7E9UD086",
+"name": "CENCORA, INC.",
+"ort": "Conshohocken",
+"plz": "19428",
+"status": "ACTIVE"
+},
+"lei:AR5L2ODV9HN37376R084": {
+"land": "US",
+"lei": "AR5L2ODV9HN37376R084",
+"name": "MASTERCARD INCORPORATED",
+"ort": "HARRISON",
+"plz": "10577",
+"status": "ACTIVE"
+},
 "lei:BFXS5XCH7N0Y05NIXW11": {
 "land": "NL",
 "lei": "BFXS5XCH7N0Y05NIXW11",
 "name": "ABN AMRO Bank N.V.",
 "ort": "Amsterdam",
 "plz": "1082PP",
+"status": "ACTIVE"
+},
+"lei:BJOT6DX9ML6BR3Z0O636": {
+"land": "US",
+"lei": "BJOT6DX9ML6BR3Z0O636",
+"name": "Solar Capital Ltd.",
+"ort": "Baltimore",
+"plz": "21201",
 "status": "ACTIVE"
 },
 "lei:BSYCX13Y0NOTV14V9N85": {
@@ -2363,12 +6883,92 @@
 "plz": "00144",
 "status": "ACTIVE"
 },
+"lei:BZLRL03D3GPGMOGFO832": {
+"land": "US",
+"lei": "BZLRL03D3GPGMOGFO832",
+"name": "INTERNATIONAL FLAVORS & FRAGRANCES INC.",
+"ort": "NEW YORK",
+"plz": "10019",
+"status": "ACTIVE"
+},
+"lei:CQ7WZ4NOFWT7FAE6Q943": {
+"land": "US",
+"lei": "CQ7WZ4NOFWT7FAE6Q943",
+"name": "FLUOR CORPORATION",
+"ort": "IRVING",
+"plz": "75039",
+"status": "ACTIVE"
+},
+"lei:CW05CS5KW59QTC0DG824": {
+"land": "US",
+"lei": "CW05CS5KW59QTC0DG824",
+"name": "REGIONS FINANCIAL CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:CWAJJ9DJ5Z7P057HV541": {
+"land": "US",
+"lei": "CWAJJ9DJ5Z7P057HV541",
+"name": "V.F. CORPORATION",
+"ort": "DENVER",
+"plz": "80202",
+"status": "ACTIVE"
+},
+"lei:D71FAKCBLFS2O0RBPG08": {
+"land": "US",
+"lei": "D71FAKCBLFS2O0RBPG08",
+"name": "THE WILLIAMS COMPANIES, INC.",
+"ort": "Tulsa",
+"plz": "74172",
+"status": "ACTIVE"
+},
+"lei:DKOVQUCDW4ZLYCUD4T55": {
+"land": "US",
+"lei": "DKOVQUCDW4ZLYCUD4T55",
+"name": "LEGGETT & PLATT, INCORPORATED",
+"ort": "CARTHAGE",
+"plz": "64836-9649",
+"status": "ACTIVE"
+},
+"lei:DPRBOZP0K5RM2YE8UU08": {
+"land": "US",
+"lei": "DPRBOZP0K5RM2YE8UU08",
+"name": "LOCKHEED MARTIN CORPORATION",
+"ort": "BETHESDA",
+"plz": "20817",
+"status": "ACTIVE"
+},
+"lei:DX6I6ZD3X5WNNCDJKP85": {
+"land": "US",
+"lei": "DX6I6ZD3X5WNNCDJKP85",
+"name": "CARPENTER TECHNOLOGY CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
 "lei:ELPUFM0XZRZO4LFXW404": {
 "land": "GR",
 "lei": "ELPUFM0XZRZO4LFXW404",
 "name": "ΟΡΓΑΝΙΣΜΟΣ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ ΤΗΣ ΕΛΛΑΔΟΣ ΑΝΩΝΥΜΗ ΕΤΑΙΡΕΙΑ",
 "ort": "MAROUSI",
 "plz": "151 24",
+"status": "ACTIVE"
+},
+"lei:EN5TNI6CI43VEPAMHL14": {
+"land": "AU",
+"lei": "EN5TNI6CI43VEPAMHL14",
+"name": "WESTPAC BANKING CORPORATION",
+"ort": "SYDNEY",
+"plz": "2000",
+"status": "ACTIVE"
+},
+"lei:ENYF8GB5SMQZ25S06U51": {
+"land": "US",
+"lei": "ENYF8GB5SMQZ25S06U51",
+"name": "HALLIBURTON COMPANY",
+"ort": "HOUSTON",
+"plz": "77205",
 "status": "ACTIVE"
 },
 "lei:ES7IP3U3RHIGC71XBU11": {
@@ -2387,6 +6987,22 @@
 "plz": "106 40",
 "status": "ACTIVE"
 },
+"lei:FGLT0EWZSUIRRITFOA30": {
+"land": "US",
+"lei": "FGLT0EWZSUIRRITFOA30",
+"name": "EMERSON ELECTRIC CO.",
+"ort": "Saint Louis",
+"plz": "63105",
+"status": "ACTIVE"
+},
+"lei:FRDRIPF3EKNDJ2CQJL29": {
+"land": "US",
+"lei": "FRDRIPF3EKNDJ2CQJL29",
+"name": "ELI LILLY AND COMPANY",
+"ort": "Indianapolis",
+"plz": "46285",
+"status": "ACTIVE"
+},
 "lei:G30CO71KTT9JDYJESN22": {
 "land": "PL",
 "lei": "G30CO71KTT9JDYJESN22",
@@ -2403,6 +7019,70 @@
 "plz": "5656AE",
 "status": "ACTIVE"
 },
+"lei:H3Y3WLYCX0BTO1TRW162": {
+"land": "US",
+"lei": "H3Y3WLYCX0BTO1TRW162",
+"name": "RANGE RESOURCES CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19808",
+"status": "ACTIVE"
+},
+"lei:HDBLS2Q6GV1LSKQPBS54": {
+"land": "US",
+"lei": "HDBLS2Q6GV1LSKQPBS54",
+"name": "Albemarle Corporation",
+"ort": "Charlotte",
+"plz": "28209",
+"status": "ACTIVE"
+},
+"lei:HHWAT5TDOYZMM26KKQ73": {
+"land": "US",
+"lei": "HHWAT5TDOYZMM26KKQ73",
+"name": "SNAP-ON INCORPORATED",
+"ort": "KENOSHA",
+"plz": "53143",
+"status": "ACTIVE"
+},
+"lei:HKUPACFHSSASQK8HLS17": {
+"land": "US",
+"lei": "HKUPACFHSSASQK8HLS17",
+"name": "OMNICOM GROUP INC.",
+"ort": "NEW YORK",
+"plz": "10017",
+"status": "ACTIVE"
+},
+"lei:HLYYNH7UQUORYSJQCN42": {
+"land": "US",
+"lei": "HLYYNH7UQUORYSJQCN42",
+"name": "BRISTOL-MYERS SQUIBB COMPANY",
+"ort": "Princeton",
+"plz": "08543",
+"status": "ACTIVE"
+},
+"lei:HQD377W2YR662HK5JX27": {
+"land": "US",
+"lei": "HQD377W2YR662HK5JX27",
+"name": "ABBOTT LABORATORIES",
+"ort": "Green Oaks",
+"plz": "60064",
+"status": "ACTIVE"
+},
+"lei:I07WOS4YJ0N7YRFE7309": {
+"land": "US",
+"lei": "I07WOS4YJ0N7YRFE7309",
+"name": "RTX CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:I1BZKREC126H0VB1BL91": {
+"land": "US",
+"lei": "I1BZKREC126H0VB1BL91",
+"name": "DUKE ENERGY CORPORATION",
+"ort": "Charlotte",
+"plz": "28202",
+"status": "ACTIVE"
+},
 "lei:I6USJ58BDV2BO5KP3C31": {
 "land": "CZ",
 "lei": "I6USJ58BDV2BO5KP3C31",
@@ -2411,12 +7091,44 @@
 "plz": "140 00",
 "status": "ACTIVE"
 },
+"lei:I7NO6FZO5GUCG585T325": {
+"land": "US",
+"lei": "I7NO6FZO5GUCG585T325",
+"name": "Kirby Corporation",
+"ort": "Carson City",
+"plz": "89703",
+"status": "ACTIVE"
+},
+"lei:ICE2EP6D98PQUILVRZ91": {
+"land": "US",
+"lei": "ICE2EP6D98PQUILVRZ91",
+"name": "BECTON, DICKINSON AND COMPANY",
+"ort": "FRANKLIN LAKES",
+"plz": "07417",
+"status": "ACTIVE"
+},
+"lei:ILUL7B6Z54MRYCF6H308": {
+"land": "US",
+"lei": "ILUL7B6Z54MRYCF6H308",
+"name": "Dominion Energy, Inc.",
+"ort": "Richmond",
+"plz": "23219",
+"status": "ACTIVE"
+},
 "lei:IOG4E947OATN0KJYSD45": {
 "land": "FR",
 "lei": "IOG4E947OATN0KJYSD45",
 "name": "LVMH MOET HENNESSY LOUIS VUITTON",
 "ort": "PARIS",
 "plz": "75008",
+"status": "ACTIVE"
+},
+"lei:IU7C3FTM7Y3BQM112U94": {
+"land": "US",
+"lei": "IU7C3FTM7Y3BQM112U94",
+"name": "THE HARTFORD INSURANCE GROUP, INC.",
+"ort": "Hartford",
+"plz": "06155",
 "status": "ACTIVE"
 },
 "lei:IYKCAVNFR8QGF00HV840": {
@@ -2451,12 +7163,28 @@
 "plz": "48005",
 "status": "ACTIVE"
 },
+"lei:KVWHW7YLZPFJM8QYNJ51": {
+"land": "US",
+"lei": "KVWHW7YLZPFJM8QYNJ51",
+"name": "DANA INCORPORATED",
+"ort": "Maumee",
+"plz": "43537",
+"status": "ACTIVE"
+},
 "lei:L3I9ZG2KFGXZ61BMYR72": {
 "land": "CA",
 "lei": "L3I9ZG2KFGXZ61BMYR72",
 "name": "THE BANK OF NOVA SCOTIA",
 "ort": "Toronto",
 "plz": "M5H 0B4",
+"status": "ACTIVE"
+},
+"lei:LUZQVYP4VS22CLWDAR65": {
+"land": "US",
+"lei": "LUZQVYP4VS22CLWDAR65",
+"name": "3M COMPANY",
+"ort": "St. Paul",
+"plz": "55144",
 "status": "ACTIVE"
 },
 "lei:M312WZV08Y7LYUC71685": {
@@ -2475,6 +7203,14 @@
 "plz": "1577",
 "status": "ACTIVE"
 },
+"lei:MIHC87W9WTYSYZWV1J40": {
+"land": "US",
+"lei": "MIHC87W9WTYSYZWV1J40",
+"name": "CHENIERE ENERGY, INC.",
+"ort": "Houston",
+"plz": "77002",
+"status": "ACTIVE"
+},
 "lei:MLU0ZO3ML4LN2LL2TL39": {
 "land": "GB",
 "lei": "MLU0ZO3ML4LN2LL2TL39",
@@ -2483,12 +7219,52 @@
 "plz": "E14 5HQ",
 "status": "ACTIVE"
 },
+"lei:MP3J6QPYPGN75NVW2S34": {
+"land": "US",
+"lei": "MP3J6QPYPGN75NVW2S34",
+"name": "KIMBERLY-CLARK CORPORATION",
+"ort": "IRVING",
+"plz": "75038",
+"status": "ACTIVE"
+},
+"lei:MSD54751OJP1FS2ND863": {
+"land": "US",
+"lei": "MSD54751OJP1FS2ND863",
+"name": "HORMEL FOODS CORPORATION",
+"ort": "Austin",
+"plz": "55912",
+"status": "ACTIVE"
+},
+"lei:MSFSBD3QN1GSN7Q6C537": {
+"land": "AU",
+"lei": "MSFSBD3QN1GSN7Q6C537",
+"name": "COMMONWEALTH BANK OF AUSTRALIA",
+"ort": "SYDNEY",
+"plz": "2000",
+"status": "ACTIVE"
+},
+"lei:N1GZ7BBF3NP8GI976H15": {
+"land": "US",
+"lei": "N1GZ7BBF3NP8GI976H15",
+"name": "U.S. BANCORP",
+"ort": "MINNEAPOLIS",
+"plz": "55402",
+"status": "ACTIVE"
+},
 "lei:NHBDILHZTYCNBV5UYZ31": {
 "land": "SE",
 "lei": "NHBDILHZTYCNBV5UYZ31",
 "name": "Svenska Handelsbanken AB",
 "ort": "Stockholm",
 "plz": "106 70",
+"status": "ACTIVE"
+},
+"lei:NKNQHM6BLECKVOQP7O46": {
+"land": "US",
+"lei": "NKNQHM6BLECKVOQP7O46",
+"name": "REPUBLIC SERVICES, INC.",
+"ort": "Phoenix",
+"plz": "85054",
 "status": "ACTIVE"
 },
 "lei:NQQ6HPCNCCU6TUTQYE16": {
@@ -2507,6 +7283,22 @@
 "plz": "75009",
 "status": "ACTIVE"
 },
+"lei:OBT0W1ED8G0NWVOLOJ77": {
+"land": "US",
+"lei": "OBT0W1ED8G0NWVOLOJ77",
+"name": "THE ALLSTATE CORPORATION",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:OPX52SQVOZI8IVSWYU66": {
+"land": "US",
+"lei": "OPX52SQVOZI8IVSWYU66",
+"name": "DOLLAR GENERAL CORPORATION",
+"ort": "Goodlettsville",
+"plz": "37072-2171",
+"status": "ACTIVE"
+},
 "lei:OW6OFBNCKXC4US5C7523": {
 "land": "NO",
 "lei": "OW6OFBNCKXC4US5C7523",
@@ -2521,6 +7313,22 @@
 "name": "POWSZECHNA KASA OSZCZĘDNOŚCI BANK POLSKI SPÓŁKA AKCYJNA",
 "ort": "WARSZAWA",
 "plz": "00-116",
+"status": "ACTIVE"
+},
+"lei:PBBKGKLRK5S5C0Y4T545": {
+"land": "US",
+"lei": "PBBKGKLRK5S5C0Y4T545",
+"name": "SEMPRA",
+"ort": "SAN DIEGO",
+"plz": "92101",
+"status": "ACTIVE"
+},
+"lei:PBLD0EJDB5FWOLXP3B76": {
+"land": "US",
+"lei": "PBLD0EJDB5FWOLXP3B76",
+"name": "WELLS FARGO & COMPANY",
+"ort": "San Francisco",
+"plz": "94105",
 "status": "ACTIVE"
 },
 "lei:PQOH26KWDF7CG10L6792": {
@@ -2539,12 +7347,36 @@
 "plz": "M5K 1A2",
 "status": "ACTIVE"
 },
+"lei:PWFTNG3EI0Y73OXWDH08": {
+"land": "US",
+"lei": "PWFTNG3EI0Y73OXWDH08",
+"name": "DEERE & COMPANY",
+"ort": "Moline",
+"plz": "61265",
+"status": "ACTIVE"
+},
 "lei:PY6ZZQWO2IZFZC3IOL08": {
 "land": "GB",
 "lei": "PY6ZZQWO2IZFZC3IOL08",
 "name": "ASTRAZENECA PLC",
 "ort": "CAMBRIDGE",
 "plz": "CB2 0AA",
+"status": "ACTIVE"
+},
+"lei:QEKMOTMBBKA8I816DO57": {
+"land": "US",
+"lei": "QEKMOTMBBKA8I816DO57",
+"name": "THE HOME DEPOT, INC.",
+"ort": "Atlanta",
+"plz": "30339",
+"status": "ACTIVE"
+},
+"lei:QVLWEGTD2S8GJMO8D383": {
+"land": "US",
+"lei": "QVLWEGTD2S8GJMO8D383",
+"name": "ATMOS ENERGY CORPORATION",
+"ort": "DALLAS",
+"plz": "75265",
 "status": "ACTIVE"
 },
 "lei:R0MUWSFPU8MPRO8K5P83": {
@@ -2555,12 +7387,84 @@
 "plz": "75009",
 "status": "ACTIVE"
 },
+"lei:R4PP93JZOLY261QX3811": {
+"land": "US",
+"lei": "R4PP93JZOLY261QX3811",
+"name": "AMERICAN EXPRESS COMPANY",
+"ort": "New York",
+"plz": "10285",
+"status": "ACTIVE"
+},
+"lei:R8V1FN4M5ITGZOG7BS19": {
+"land": "US",
+"lei": "R8V1FN4M5ITGZOG7BS19",
+"name": "LOEWS CORPORATION",
+"ort": "New York",
+"plz": "10019",
+"status": "ACTIVE"
+},
+"lei:RCGZFPDMRW58VJ54VR07": {
+"land": "US",
+"lei": "RCGZFPDMRW58VJ54VR07",
+"name": "SALESFORCE, INC.",
+"ort": "San Francisco",
+"plz": "94105",
+"status": "ACTIVE"
+},
+"lei:RI6HET5SJUEY30V1PS26": {
+"land": "US",
+"lei": "RI6HET5SJUEY30V1PS26",
+"name": "FAIR ISAAC CORPORATION",
+"ort": "Bozeman",
+"plz": "59715",
+"status": "ACTIVE"
+},
+"lei:RIFQSET379FOGTEFKS80": {
+"land": "US",
+"lei": "RIFQSET379FOGTEFKS80",
+"name": "Franklin Templeton, Inc.",
+"ort": "San Mateo",
+"plz": "94403",
+"status": "ACTIVE"
+},
 "lei:RIL4VBPDB0M7Z3KXSF19": {
 "land": "IS",
 "lei": "RIL4VBPDB0M7Z3KXSF19",
 "name": "Arion banki hf.",
 "ort": "Reykjavík",
 "plz": "105",
+"status": "ACTIVE"
+},
+"lei:RIMU48P07456QXSO0R61": {
+"land": "US",
+"lei": "RIMU48P07456QXSO0R61",
+"name": "NORTHROP GRUMMAN CORPORATION",
+"ort": "Wilmington",
+"plz": "19801",
+"status": "ACTIVE"
+},
+"lei:RV5B68J2GV3QGMRPW209": {
+"land": "GB",
+"lei": "RV5B68J2GV3QGMRPW209",
+"name": "BRITISH LAND COMPANY PUBLIC LIMITED COMPANY(THE)",
+"ort": "LONDON",
+"plz": "W1H 7LX",
+"status": "ACTIVE"
+},
+"lei:T27JQIMTYSH41TCD5186": {
+"land": "US",
+"lei": "T27JQIMTYSH41TCD5186",
+"name": "HYATT HOTELS CORPORATION",
+"ort": "CHICAGO",
+"plz": "60606",
+"status": "ACTIVE"
+},
+"lei:T2ZG1WRWZ4BUCMQL9224": {
+"land": "US",
+"lei": "T2ZG1WRWZ4BUCMQL9224",
+"name": "THE GAP, INC.",
+"ort": "San Francisco",
+"plz": "94105",
 "status": "ACTIVE"
 },
 "lei:T8KI5SQ2JRWHL7XY0E11": {
@@ -2571,12 +7475,60 @@
 "plz": "V6C 0B3",
 "status": "ACTIVE"
 },
+"lei:TEL51ETZWP7D0ZM4X325": {
+"land": "US",
+"lei": "TEL51ETZWP7D0ZM4X325",
+"name": "CURTISS-WRIGHT CORPORATION",
+"ort": "Davidson",
+"plz": "28036",
+"status": "ACTIVE"
+},
 "lei:TL2N6M87CW970S5SV098": {
 "land": "ES",
 "lei": "TL2N6M87CW970S5SV098",
 "name": "NATURGY ENERGY GROUP SA",
 "ort": "Madrid",
 "plz": "28028",
+"status": "ACTIVE"
+},
+"lei:U4LOSYZ7YG4W3S5F2G91": {
+"land": "GB",
+"lei": "U4LOSYZ7YG4W3S5F2G91",
+"name": "STANDARD CHARTERED PLC",
+"ort": "LONDON",
+"plz": "EC2V 5DD",
+"status": "ACTIVE"
+},
+"lei:UE2136O97NLB5BYP9H04": {
+"land": "US",
+"lei": "UE2136O97NLB5BYP9H04",
+"name": "MCDONALD'S CORPORATION",
+"ort": "Chicago",
+"plz": "60607",
+"status": "ACTIVE"
+},
+"lei:UWJKFUJFZ02DKWI3RY53": {
+"land": "US",
+"lei": "UWJKFUJFZ02DKWI3RY53",
+"name": "THE COCA-COLA COMPANY",
+"ort": "Atlanta",
+"plz": "30313",
+"status": "ACTIVE"
+},
+"lei:VWMYAEQSTOPNV0SUGU82": {
+"land": "ES",
+"lei": "VWMYAEQSTOPNV0SUGU82",
+"name": "BANKINTER SOCIEDAD ANONIMA",
+"ort": "Madrid",
+"plz": "28046",
+"status": "ACTIVE"
+},
+"lei:W0CZ7N0GH8UIGXDM1H41": {
+"land": "US",
+"lei": "W0CZ7N0GH8UIGXDM1H41",
+"name": "CIENA CORPORATION",
+"ort": "HANOVER",
+"plz": "21076",
 "status": "ACTIVE"
 },
 "lei:W9NG6WMZIYEU8VEDOG48": {
@@ -2587,6 +7539,30 @@
 "plz": "7000",
 "status": "ACTIVE"
 },
+"lei:WAFCR4OKGSC504WU3E95": {
+"land": "US",
+"lei": "WAFCR4OKGSC504WU3E95",
+"name": "Lowe's Companies, Inc.",
+"ort": "Mooresville",
+"plz": "28117",
+"status": "ACTIVE"
+},
+"lei:WHENKOULSSK7WUM60H03": {
+"land": "US",
+"lei": "WHENKOULSSK7WUM60H03",
+"name": "WHIRLPOOL CORPORATION",
+"ort": "Benton Harbor",
+"plz": "49022",
+"status": "ACTIVE"
+},
+"lei:WHKXQACZ14C5XRO8LW03": {
+"land": "US",
+"lei": "WHKXQACZ14C5XRO8LW03",
+"name": "HP INC.",
+"ort": "WILMINGTON",
+"plz": "19801",
+"status": "ACTIVE"
+},
 "lei:WOCMU6HCI0OJWNPRZS33": {
 "land": "IT",
 "lei": "WOCMU6HCI0OJWNPRZS33",
@@ -2595,12 +7571,60 @@
 "plz": "00198",
 "status": "ACTIVE"
 },
+"lei:WPTL2Z3FIYTHSP5V2253": {
+"land": "US",
+"lei": "WPTL2Z3FIYTHSP5V2253",
+"name": "CONOCOPHILLIPS",
+"ort": "Houston",
+"plz": "77079",
+"status": "ACTIVE"
+},
 "lei:WZE1WSENV6JSZFK0JC28": {
 "land": "AU",
 "lei": "WZE1WSENV6JSZFK0JC28",
 "name": "BHP GROUP LIMITED",
 "ort": "MELBOURNE",
 "plz": "3000",
+"status": "ACTIVE"
+},
+"lei:XRZQ5S7HYJFPHJ78L959": {
+"land": "US",
+"lei": "XRZQ5S7HYJFPHJ78L959",
+"name": "AMEREN CORPORATION",
+"ort": "SAINT LOUIS",
+"plz": "63103",
+"status": "ACTIVE"
+},
+"lei:Y6X4K52KMJMZE7I7MY94": {
+"land": "US",
+"lei": "Y6X4K52KMJMZE7I7MY94",
+"name": "S&P GLOBAL INC.",
+"ort": "New York",
+"plz": "10041",
+"status": "ACTIVE"
+},
+"lei:YF6ZV0M6AU4FY94MK914": {
+"land": "US",
+"lei": "YF6ZV0M6AU4FY94MK914",
+"name": "GEN DIGITAL INC.",
+"ort": "TEMPE",
+"plz": "85281",
+"status": "ACTIVE"
+},
+"lei:ZDNAWZWXIKMWI51R2A08": {
+"land": "US",
+"lei": "ZDNAWZWXIKMWI51R2A08",
+"name": "HARLEY-DAVIDSON, INC.",
+"ort": "MILWAUKEE",
+"plz": "53208",
+"status": "ACTIVE"
+},
+"lei:ZW1LRE7C3H17O2ZN9B45": {
+"land": "US",
+"lei": "ZW1LRE7C3H17O2ZN9B45",
+"name": "ATI INC.",
+"ort": "Pittsburgh",
+"plz": "15222",
 "status": "ACTIVE"
 },
 "name:AT:AT&S AUSTRIA TECH.&SYSTEMTECH": {

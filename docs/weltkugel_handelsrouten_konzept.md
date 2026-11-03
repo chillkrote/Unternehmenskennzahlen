@@ -260,10 +260,10 @@ Summe etwa 26–35 Arbeitstage, schrittweise auslieferbar; **Empfehlung: Phase 0
 - **Datenmenge:** OSM weltweit ist zu groß; nur Korridorgeometrie und Knoten übernehmen.
 - **Bezug zu Unternehmen:** Die Nähe eines Firmensitzes zu einem Hafen sagt nichts über dessen Warenwege; die Oberfläche kennzeichnet das als Hinweis.
 
-## 10. Offene Fragen an Robin
+## 10. Entscheidungen (Robin, 03.11.2026)
 
-1. **Modell vs. Messung:** Ist es in Ordnung, dass Bahn- und Straßenflüsse außerhalb EU/USA modelliert sind und entsprechend gekennzeichnet werden?
-2. **IP-Vorauswahl:** Zeitzone/Browsersprache als Standard (ohne Fremddienst) und IP-Abfrage nur optional?
-3. **Strom:** Eigenes Konzept dazu gewünscht (ENTSO-E, Ember)? Auch Pipelines für Öl/Gas (Global Energy Monitor, frei) könnten in dieselbe Struktur.
-4. **Reihenfolge:** Mit Phase 0 und 1 (Schiff und Engstellen) beginnen?
-5. **Pkw/Neuwagen:** Reicht der HS-87-Filter, oder soll es eine eigene Ebene werden?
+1. **Modell vs. Messung:** Ja. Bahn- und Straßenflüsse außerhalb EU/USA werden modelliert und als solche gekennzeichnet.
+2. **IP-Vorauswahl:** Vorschlag angenommen. Zeitzone/Browsersprache als Standard, IP-Abfrage nur optional mit Rückfall auf die Zeitzone.
+3. **Strom und Pipelines:** Eigenes Konzept gewünscht, siehe [weltkugel_strom_pipelines_konzept.md](weltkugel_strom_pipelines_konzept.md).
+4. **Reihenfolge:** Mit Phase 0 und 1 (Schiff und Engstellen) beginnen, sobald Robin die Umsetzung freigibt.
+5. **Pkw/Neuwagen:** Noch offen; bis dahin gilt der HS-87-Filter.

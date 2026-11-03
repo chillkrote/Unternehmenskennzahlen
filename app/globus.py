@@ -27,6 +27,7 @@ SCHALE = """
       <button type="button" class="gk-knopf" data-gkebenen aria-pressed="false">Ebenen</button>
     </div>
     <div class="gk-ebenen" id="gk-ebenen" hidden></div>
+    <div class="gk-stufen" id="gk-stufen" role="group" aria-label="Zoomstufe"></div>
     <div class="gk-hinweis" id="gk-hinweis" style="opacity:0" role="status"></div>
   </div>
   <aside id="gk-seite" aria-label="Länderdaten"></aside>
@@ -106,6 +107,7 @@ def seite(terminal_seite):
         '<script id="geo-tabelle" type="application/json">' + _js(json.dumps(tab, ensure_ascii=False, separators=(",", ":"))) + "</script>",
         '<script id="geo-glyphen" type="application/json">' + json.dumps(glyphen) + "</script>",
         '<script id="geo-handel" type="application/json">' + (_js((HIER / "data/handel.json").read_text()) if (HIER / "data/handel.json").exists() else "null") + "</script>",
+        '<script id="geo-stufen" type="application/json">' + (_js((HIER / "data/handel_stufen.json").read_text()) if (HIER / "data/handel_stufen.json").exists() else "null") + "</script>",
         "<script>\n" + mljs + "\n</script>",
         "<script>\n" + (HIER / "src/globus.js").read_text() + "\n</script>",
     ]

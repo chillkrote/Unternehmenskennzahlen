@@ -11,6 +11,12 @@ const path = require('node:path');
   await page.waitForSelector('#gk-seite h2');
   await page.fill('#gk-suchfeld', 'Deutschland'); await page.press('#gk-suchfeld', 'Enter');
   await page.waitForFunction(() => document.querySelector('#gk-seite h2').textContent === 'Deutschland');
+  // Stufen: Unternehmen und Nachbarländer erscheinen in der Seitenleiste erst in Stufe 3 (ab Zoom 5)
+  if (await page.evaluate(() => !!GLOBUS.karte())) {
+    if (await page.locator('#gk-seite [data-gkfirma]').count()) throw Error('Unternehmen schon in Stufe 1/2 sichtbar');
+    await page.evaluate(() => GLOBUS.karte().jumpTo({ zoom: 6 })); await page.waitForTimeout(400);
+    if (!(await page.locator('#gk-seite').innerText()).toLowerCase().includes('handel mit nachbarländern')) throw Error('Nachbarländer fehlen in Stufe 3');
+  }
   const kacheln = await page.locator('#gk-seite .gk-kz > div').count();
   if (kacheln < 5) throw Error('Zu wenige Kerndaten für Deutschland: ' + kacheln);
   const ids = await page.evaluate(() => [...document.querySelectorAll('#gk-seite [data-gkfirma]')].slice(0, 2).map(b => b.dataset.gkfirma));

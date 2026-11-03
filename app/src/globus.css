@@ -112,3 +112,12 @@
 .gk-stamm .gk-tab td:last-child { white-space: normal; }
 .gk-filter { width: 100%; box-sizing: border-box; background: var(--bg-2, #0d1117); color: var(--ink); border: 1px solid var(--line-2); border-radius: 4px; padding: 6px 8px; font: inherit; }
 .gk-filter:focus { outline: 1px solid var(--amber); border-color: var(--amber); }
+
+/* Zoomstufen */
+.gk-stufen { position: absolute; z-index: 2; left: 12px; bottom: 34px; display: flex; gap: 4px; background: rgba(14, 17, 22, .94); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.gk-stufen button { background: transparent; border: 0; border-radius: 999px; color: var(--ink-3); font: 12px/1 var(--sans); padding: 6px 10px; cursor: pointer; }
+.gk-stufen button b { font: 600 11px/1 var(--mono); margin-right: 3px; }
+.gk-stufen button[aria-pressed="true"] { background: var(--amber); color: #0e1116; }
+.gk-matrix td button, .gk-matrix td { font-size: 11px; }
+.gk-matrix th { text-align: right; }
+@media (max-width: 760px) { .gk-stufen { bottom: 56px; left: 8px; } .gk-stufen button { padding: 6px 7px; font-size: 11px; } }

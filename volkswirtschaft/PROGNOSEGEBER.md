@@ -80,5 +80,12 @@ Vergleichbarkeit: Die Basis (Jahresdurchschnitt oder Q4/Q4) steht je Zeile im `h
 - **Bundesbank:** Die Juni-Werte der EZB-Datenbank stimmen mit den bisherigen Presseangaben in `prognosen_institute.csv` überein (BIP 0,5 / 0,8 / 1,4; HVPI 2,9 / 2,7 / 1,9) und sind nun am API-Beleg bestätigt.
 - **Zwischenrunden der nationalen Zentralbanken** (März und September) veröffentlicht die EZB nur für den Euroraum; die Länderwerte gibt es nur für Juni und Dezember.
 - **Bank of England:** Die Ausgabe vom November 2026 ist noch nicht veröffentlicht; die Seiten der Ausgaben wechseln das Muster (2026: Februar, April, Juli).
+- **Polen (NBP):** nbp.pl liefert Bots eine Imperva-Prüfseite („Pardon Our Interruption“), nicht umgangen.
+- **Türkei (TCMB):** Der Inflationsbericht nennt nur die Jahresend-Inflation (Prognosewert im Fließtext der Übersicht, z. B. 28 % Ende 2026), keine BIP-Tabelle; Seitenmuster der Berichte wechseln. Nicht übernommen, weil Basis (Jahresende) und Text-Parsing unsicher sind.
+- **Chile, Ungarn, Dänemark:** Die Seiten der Zentralbanken liefern ohne Browser keine Dateilisten (Chile) oder die Adressen der Prognosedateien sind nicht gefunden (Ungarn, Dänemark); offen.
+- **Neuseeland (RBNZ, Treasury):** Bot-Schutz (403), nicht umgangen.
+- **Mexiko (Banxico):** Die Berichtsseiten liefern Bots 403/404, die Quartalsberichte liegen unter GUID-Adressen (`…/quarterly-reports/{…}.pdf`) ohne abrufbaren Index; die SIE-Datenbank braucht ein Token. Nicht übernommen.
+- **Israel (Bank of Israel):** Radware-Prüfseite („Verifying your browser“), nicht umgangen.
+- **Kolumbien (Banco de la República):** Auch im Browser-Modus eine Bot-Sperre („eres un bot“), nicht umgangen.
 - **Weiter offen:** Banca d'Italia, Banco de España und die übrigen Zentralbanken außerhalb der Euro-Runden (Bulletin-Prognosen im Januar, April, Juli, Oktober), Zentralbanken und Institute der übrigen OECD-Länder (Australien, Neuseeland, Schweiz, Schweden, Norwegen, Korea, Mexiko, Chile, Türkei u. a.) und Ministerien.
 - **Funcas-Zahlen** sind spanische Kommastellen im PDF, in der CSV mit Punkt.

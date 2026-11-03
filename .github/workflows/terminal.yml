@@ -4,6 +4,8 @@ name: Terminal bauen
 # (8,6 MB pro Commit, doppelt, mehrmals täglich bliesen das Repo auf), sondern
 #  - als Workflow-Artifact "terminal" abgelegt (14 Tage) und
 #  - auf den Branch "terminal-dist" geschrieben, immer als ein einziger Commit (Force-Push, keine Historie).
+# Zusätzlich veröffentlicht der Job "website" jeden Main-Build auf GitHub Pages (Terminal und Weltkugel), so dass die Website immer den
+# aktuellen Stand zeigt. Voraussetzung: Settings > Pages > Source = "GitHub Actions" (einmalig, siehe docs/website.md).
 # Auslöser: die Daten-Workflows rufen diesen Lauf nur auf, wenn sich Daten geändert haben; dazu Änderungen am Terminal-Code
 # und von Hand. Pull Requests bauen nur zur Prüfung.
 on:
@@ -16,6 +18,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: terminal-${{ github.ref }}
@@ -81,3 +85,43 @@ jobs:
           echo "### Terminal gebaut" >> "$GITHUB_STEP_SUMMARY"
           echo "$(du -h app/dist/bankterminal.html | cut -f1) aus Stand ${GITHUB_SHA::7}" >> "$GITHUB_STEP_SUMMARY"
 
+  website:
+    needs: bauen
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: terminal
+          path: site
+      - name: Startseite
+        run: |
+          cd site
+          cat > index.html <<'HTML'
+          <!doctype html>
+          <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>Unternehmenskennzahlen</title>
+          <style>body{font:16px/1.5 system-ui,sans-serif;background:#0d1117;color:#e6edf3;max-width:34rem;margin:12vh auto;padding:0 16px}
+          a{display:block;margin:12px 0;padding:16px;border:1px solid #30363d;border-radius:8px;color:#58a6ff;text-decoration:none}
+          a:hover{background:#161b22}small{color:#8b949e}</style></head><body>
+          <h1>Unternehmenskennzahlen</h1>
+          <a href="bankterminal.html">Terminal<br><small>Branchen, Unternehmen, Vergleiche, Börsendaten</small></a>
+          <a href="weltkugel.html">Weltkugel<br><small>Länderdaten und Firmensitze (große Datei, lädt einige Sekunden)</small></a>
+          <p><small>Stand: __STAND__</small></p></body></html>
+          HTML
+          sed -i "s/__STAND__/$(date -u +%d.%m.%Y' '%H:%M' UTC')/" index.html
+          touch .nojekyll
+          ls -lh
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

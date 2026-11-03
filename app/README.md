@@ -48,9 +48,9 @@ Oben läuft zusätzlich eine Kursleiste mit den letzten Schlusskursen; in CMP er
 `app/register.py` liest `unternehmen-tabelle/Unternehmen_Tabelle.csv` (rund 32.600 Zeilen) und schreibt `data/register.json`: eine kompakte, spaltenweise Tabelle nur mit Stammdaten (Name, Land als ISO-Code, Sitz, Branche, ISIN, Ticker, Börse, Notierung, Index, LEI, Website, Quelle, Herkunftshinweis; rund 10 MB, gzip 1,3 MB). `build.py` bettet sie als `<script id="register">` ein, dieselbe Seite speist auch die Weltkugel.
 
 * F4 Verzeichnis zeigt alle Zeilen mit Suche (Name, Ticker, ISIN, LEI), Filter Land, Branche, Notierung und „mit/ohne Kennzahlen“, 100 Zeilen je Seite. Unternehmen mit Kennzahlen stehen zuerst und öffnen das bisherige Profil.
-* Zeilen ohne Kennzahlen öffnen `#reg-<Schlüssel>`: Stammdaten, Quelle, Hinweis „noch keine Kennzahlen“. Der Schlüssel ist ein Hash aus ISIN, sonst LEI, sonst Land+Name (wie `row_key` in `international/import_unternehmen.py`) und **keine Unternehmens-ID**. Zeilen ohne ID bleiben ohne ID; IDs nur über `stammdaten/ids.py`.
+* Jede Zeile hat eine Unternehmens-ID (seit 03.11.2026 für alle Tabellenzeilen vergeben, `unternehmen-tabelle/skripte/ids_vergeben.py`, über `stammdaten/ids.py`). Zeilen ohne Kennzahlen öffnen unter `#firma-<ID>` ein Registerprofil: Stammdaten, Quelle, Hinweis „noch keine Kennzahlen“. Nur wenn eine Zeile noch keine ID hat, steht ersatzweise ein Hash aus ISIN, sonst LEI, sonst Land+Name im Link. Neue Tabellenzeilen: `ids_vergeben.py` erneut laufen lassen.
 * Die Befehlszeile findet auch Registereinträge (Name, Ticker, ISIN). Die Länderauswahl oben schränkt das Verzeichnis ein.
-* Die Kennzahlen-Ansichten (Branchen, Vergleich, Korrelation) und die Karte arbeiten weiter nur mit den Unternehmen mit Kennzahlen bzw. bekanntem Sitz. Das Artifact-Paket (`artifact_packen.py`) komprimiert das Register mit (gepackt rund 9 bis 10 MB).
+* Die Länderauswahl oben steht standardmäßig auf Deutschland (alle Länder des Registers wählbar, „Alle Länder“ bleibt eine Option). F1 bis F3 enthalten alle Registerunternehmen des Landes als schlanke Einträge ohne Werte (kein Ticker, keine Mediane); Korrelation, Kursabruf und Karte arbeiten weiter nur mit den Unternehmen mit Kennzahlen bzw. bekanntem Sitz. Das Artifact-Paket (`artifact_packen.py`) komprimiert das Register mit (gepackt rund 9 bis 10 MB).
 
 ## Branchen, Unternehmen und Profilseiten
 
@@ -58,8 +58,8 @@ Das Terminal kennt keinen Unterschied mehr zwischen Banken und anderen Unternehm
 Aufbau von oben nach unten: **Branche** → **Untergruppe** (z. B. Sparkassen, Genossenschaftsbanken; für andere Branchen die Spalte
 „Gruppe“) → **Notierung** (börsennotiert / nicht börsennotiert, als Filter) → **Unternehmen**.
 
-* F1 Branchen: Kacheln, Mediantabelle je Branche, Streudiagramm aller Unternehmen.
-* F2 Branche: Filter für Branche, Untergruppe und Notierung; Tabelle, Rangfolge, Profil gegen die übrigen Branchen, Kurse, Kennzahlen gegeneinander.
+* F1 Branchenvergleich: Kacheln, Mediantabelle je Branche, Streudiagramm aller Unternehmen.
+* F2 Einzelbranche: eine Branche im Detail (früher beide Reiter „Branche“). Alle Unternehmen des Registers erscheinen, zuerst die mit Kennzahlen (200 Zeilen, „+ 500 weitere“). Filter für Branche, Untergruppe und Notierung; Tabelle, Rangfolge, Profil gegen die übrigen Branchen, Kurse, Kennzahlen gegeneinander.
   In der Branche Banken führt der Block „Spezialansichten Banken“ zu den bisherigen Ansichten GRP, QUOT, CMP, RANK, MKT und TS.
 * F3 Vergleich: bis zu 6 Unternehmen aus beliebigen Branchen (Perzentile in der eigenen Branche, Abstand zum Branchenmedian, Kurse).
 * F4 Verzeichnis: alle Unternehmen mit Suche und Filter.
@@ -134,7 +134,7 @@ Die Kommandozeile oben nimmt `GRP`, `QUOT`, `CMP`, `RANK` oder einen Banknamen (
 Gruppenwerte ohne Zusatzeinträge (DZ BANK, DekaBank, DKB). KM1-Werte stammen teils von Gruppen- oder Konzernebene; die RWA-Dichte gegen die HGB-Bilanzsumme ist dort nur ein Richtwert.
 
 ## Startseite und Bereiche
-Das Terminal öffnet mit einer Startseite (`#start`) und zwei Kacheln. **Unternehmen** führt in das Branchen-Terminal (F1 Branchen, F2 Branche, F3 Vergleich, F4 Verzeichnis, Profilseiten `#firma-<id>` mit Kennzahlen, Gremien, Vergütung und Dokumenten). **Volkswirtschaft** führt in das makroökonomische Terminal (F1 Überblick, F2 Zeitreihen, F3 Länder, F4 Berichte & Quellen). Die Daten dafür liegen in `volkswirtschaft/` und werden von `vwl.py` eingelesen; `build.py` bettet sie ein.
+Das Terminal öffnet mit einer Startseite (`#start`) und zwei Kacheln. **Unternehmen** führt in das Branchen-Terminal (F1 Branchenvergleich, F2 Einzelbranche, F3 Vergleich, F4 Verzeichnis, Profilseiten `#firma-<id>` mit Kennzahlen, Gremien, Vergütung und Dokumenten). **Volkswirtschaft** führt in das makroökonomische Terminal (F1 Überblick, F2 Zeitreihen, F3 Länder, F4 Berichte & Quellen). Die Daten dafür liegen in `volkswirtschaft/` und werden von `vwl.py` eingelesen; `build.py` bettet sie ein.
 
 Gremien und Vergütung auf der Profilseite kommen aus `governance/*.csv` und hängen über `unternehmen_id` am Unternehmen; neue Zeilen erscheinen nach `python3 app/build.py` ohne Codeänderung.
 

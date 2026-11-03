@@ -6,10 +6,10 @@
 const UNT = (() => {
   let hoverBereit = false;
   let UD = null, KZU = {}, BR = {}, FIRMEN = [], ALLE_FIRMEN = [], NACH_ID = {};
-  let REG = null, REGK = {}, REGBR = {}, curLand = "alle", regF = { q: "", br: "", land: "", nt: "", kz: "" }, regSeite = 0, regListe = [];
+  let OHNE_STUB = [], REG = null, REGK = {}, REGBR = {}, curLand = "alle", regF = { q: "", br: "", land: "", nt: "", kz: "" }, regSeite = 0, regListe = [];
   const REG_SEITE = 100;
   const S = { branche: "alle", gruppe: "alle", notiert: "alle", markiert: null, sort: { k: "marktkap", ab: true }, rang: null, tBranche: "alle", tZeit: "90", tArt: "alle",
-    sx: "ebit_marge", sy: "kgv", usx: "kgv", usy: "ebit_marge", auswahl: null, matrixSort: null, dokTyp: "alle" };
+    sx: "ebit_marge", sy: "kgv", usx: "kgv", usy: "ebit_marge", auswahl: null, matrixSort: null, dokTyp: "alle", zeilen: 200 };
 
   /* ----- Aufbereitung ----- */
   function init(d) {
@@ -317,7 +317,7 @@ const UNT = (() => {
         fuss: `${fuss()}Banken sind eine Branche unter allen: HGB-Einzelabschlüsse, Börsenkennzahlen nur bei selbst notierten Instituten. Nicht börsennotierte Unternehmen erscheinen mit Abschlusskennzahlen, ohne Kapitalmarktwerte.` })}
       ${panel({ code: "UEB 2", titel: "Alle Unternehmen im Streudiagramm", sub: "Kreisfläche ∝ Börsenwert · Maus darauf = hervorheben · Klick öffnet das Profil · Legende schaltet Branchen", body:
         `<div class="ctrl" style="margin-bottom:6px"><span>X</span></div>${metrikWahl("data-ussx", S.usx, FIRMEN, STREU_KZ)}<div class="ctrl" style="margin-bottom:6px"><span>Y</span></div>${metrikWahl("data-ussy", S.usy, FIRMEN, STREU_KZ)}${streuU(FIRMEN, S.usx, S.usy, S.branche, S.gruppe, { id: "ueb", legende: true })}`,
-        fuss: "Farbe = Branche. Die Ansicht beginnt mit den 3-%/97-%-Perzentilen als Rahmen, Ausreißer sitzen am Rand; wer hineinzoomt, sieht sie in echter Lage. Eine in Branche (F2) gewählte Branche bleibt kräftig, die übrigen treten zurück." })}
+        fuss: "Farbe = Branche. Die Ansicht beginnt mit den 3-%/97-%-Perzentilen als Rahmen, Ausreißer sitzen am Rand; wer hineinzoomt, sieht sie in echter Lage. Eine in Einzelbranche (F2) gewählte Branche bleibt kräftig, die übrigen treten zurück." })}
     </div>`;
   }
 
@@ -354,8 +354,8 @@ const UNT = (() => {
     const sort = [...liste].sort((a, b2) => { const x = w(a, S.sort.k), y = w(b2, S.sort.k); if (x == null) return 1; if (y == null) return -1; return S.sort.ab ? y - x : x - y; });
     const meds = sp.map(k => med(liste, k)), spalte2 = S.branche === "alle" ? "Branche" : (b && b.gruppen.length ? "Gruppe" : null);
     return `<div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th>${spalte2 ? `<th style='text-align:left'>${spalte2}</th>` : ""}${sp.map(k => `<th class="sortable" data-usort="${k}" data-tip="${esc("<b>" + kzName(k) + "</b>\n" + kzHilfe(k))}">${esc(kurzKz(k))}${S.sort.k === k ? (S.sort.ab ? " ▼" : " ▲") : ""}</th>`).join("")}<th></th></tr></thead>
-      <tbody>${sort.map(f => `<tr class="click${f.id === S.markiert ? " sel" : ""}" data-umk="${esc(f.id)}"><td>${profilLink(f)}</td><td>${punkt(f)}</td>${spalte2 ? `<td class="n" style="text-align:left;font-family:var(--sans)">${esc(spalte2 === "Branche" ? brName(f.branche) : f.gruppe || "")}</td>` : ""}${sp.map(k => { const v = w(f, k); return `<td class="${v == null ? "n" : ["r_ytd", "w_umsatz", "w_jue", "w_bilanzsumme"].includes(k) ? klasse(v) : ""}">${fmt(k, v)}</td>`; }).join("")}<td><button type="button" class="mini" data-uadd="${esc(f.id)}" title="In den Vergleich übernehmen">+</button></td></tr>`).join("")}
-      <tr><td style="color:var(--amber)">Median</td><td></td>${spalte2 ? "<td></td>" : ""}${meds.map((v, i) => `<td style="color:var(--amber)">${fmt(sp[i], v)}</td>`).join("")}<td></td></tr></tbody></table></div>`;
+      <tbody>${sort.slice(0, S.zeilen).map(f => `<tr class="click${f.id === S.markiert ? " sel" : ""}" data-umk="${esc(f.id)}"><td>${profilLink(f)}</td><td>${punkt(f)}</td>${spalte2 ? `<td class="n" style="text-align:left;font-family:var(--sans)">${esc(spalte2 === "Branche" ? brName(f.branche) : f.gruppe || "")}</td>` : ""}${sp.map(k => { const v = w(f, k); return `<td class="${v == null ? "n" : ["r_ytd", "w_umsatz", "w_jue", "w_bilanzsumme"].includes(k) ? klasse(v) : ""}">${fmt(k, v)}</td>`; }).join("")}<td><button type="button" class="mini" data-uadd="${esc(f.id)}" title="In den Vergleich übernehmen">+</button></td></tr>`).join("")}
+      <tr><td style="color:var(--amber)">Median</td><td></td>${spalte2 ? "<td></td>" : ""}${meds.map((v, i) => `<td style="color:var(--amber)">${fmt(sp[i], v)}</td>`).join("")}<td></td></tr></tbody></table></div>${sort.length > S.zeilen ? `<p class="n" style="margin:8px 0 0">Gezeigt: ${f0.format(Math.min(S.zeilen, sort.length))} von ${f0.format(sort.length)} Unternehmen (Unternehmen mit Werten zuerst, nach der Sortierung). <button type="button" class="chip" data-umehr="1">+ 500 weitere</button> <button type="button" class="chip" data-umehr="alle">alle</button> Das Verzeichnis (F4) durchsucht alle.</p>` : ""}`;
   }
 
   const BANK_ANALYSE = [["grp", "GRP", "Gruppen", "Kennzahlen und Kapitalstruktur je Bankengruppe"], ["quot", "QUOT", "Quoten", "Verteilung der Kapitalquoten, Streudiagramme"],
@@ -504,6 +504,7 @@ const UNT = (() => {
     id = NACH_ID[id] ? id : ((UD.alt_ids || {})[id] || id);   // alte Lesezeichen (#firma-deutsche-bank-ag) auf die zentrale ID umleiten
     const f = NACH_ID[id];
     if (f && !FIRMEN.includes(f)) return `<div class="grid">${panel({code:'LAND',titel:'Unternehmen außerhalb der Länderauswahl',body:'<p>Wähle das Land des Unternehmens oder „Alle Länder“, um dieses Profil zu öffnen.</p>'})}</div>`;
+    if ((!f || f.stub) && REG && REGK[id]) return viewReg(id);
     if (!f) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Unternehmen mit der Kennung <code>${esc(id)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
     S.profil = id;
     const b = BR[f.branche], peers = inBranche(f.branche), gp = f.gruppe ? peers.filter(x => x.gruppe === f.gruppe) : [];
@@ -612,12 +613,21 @@ const UNT = (() => {
     REGBR = d.branchen || {};
     REG = d.zeilen.map(z => { const o = {}; sp.forEach((c, i) => { o[c] = z[i]; }); o.q = (o.name + " " + o.ticker + " " + o.isin + " " + o.lei + " " + o.sitz).toLowerCase(); return o; });
     REGK = Object.fromEntries(REG.map(r => [r.k, r]));
+    // Alle Registerzeilen ohne Kennzahlen als schlanke Einträge in die Branchenansichten (F1, F2, F3), damit dort alle Unternehmen erscheinen.
+    // Kein Ticker (Kursabruf), keine Werte: Mediane und Diagramme bleiben unverändert, die Tabelle zeigt sie unter den Unternehmen mit Werten.
+    const sbr = (BR.sonstige && BR.sonstige.schwerpunkt) || [];
+    REG.forEach(r => { if (r.br && !BR[r.br]) { BR[r.br] = { id: r.br, name: REGBR[r.br] || r.br, schwerpunkt: sbr, gruppen: [] }; UD.branchen.push(BR[r.br]); } });
+    const stubs = REG.filter(r => !NACH_ID[r.id] && BR[r.br]).map(r => ({ id: r.k, name: r.name, branche: r.br, isin: r.isin || undefined, sitz: r.sitz || undefined,
+      notiert: !!r.n, werte: {}, land: landLabel(r.land), land_code: r.land, stub: true }));
+    ALLE_FIRMEN = ALLE_FIRMEN.concat(stubs); FIRMEN = ALLE_FIRMEN;
+    stubs.forEach(f => { NACH_ID[f.id] = f; });
+    OHNE_STUB = ALLE_FIRMEN.filter(f => !f.stub);
     return true;
   }
   let landNamen = null;
   const landLabel = c => { if (c === "ZZ") return "Sonstige / unbekannt"; try { landNamen = landNamen || new Intl.DisplayNames(["de"], { type: "region" }); return landNamen.of(c) || c; } catch (e) { return c; } };
   const regBr = id => REGBR[id] || brName(id);
-  const hatKennz = r => !!(r.id && NACH_ID[r.id] && Object.keys(NACH_ID[r.id].werte || {}).length);
+  const hatKennz = r => { const f = NACH_ID[r.k]; return !!(f && !f.stub && Object.keys(f.werte || {}).length); };
   function regFiltern() {
     const q = regF.q.trim().toLowerCase(), m = regF.nt === "m" ? merkListe() : null;
     regListe = REG.filter(r => (curLand === "alle" || r.land === curLand) && (!regF.land || r.land === regF.land) && (!regF.br || r.br === regF.br)
@@ -625,8 +635,7 @@ const UNT = (() => {
     regListe.sort((a, b) => hatKennz(b) - hatKennz(a) || a.name.localeCompare(b.name, "de"));
   }
   function regZeile(r) {
-    const f = r.id && NACH_ID[r.id];
-    const link = f ? profilLink(f, r.name) : `<a class="flink" href="#reg-${esc(r.k)}">${esc(r.name)}</a>`;
+    const link = `<a class="flink" href="#firma-${esc(r.k)}">${esc(r.name)}</a>`;
     return `<tr><td>${link}</td><td>${r.n ? '<span class="dot" data-tip="börsennotiert">●</span>' : ""}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(landLabel(r.land))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(regBr(r.br))}</td><td class="n" style="text-align:left">${esc(r.ticker)}${r.boerse ? ` <span class="pct">${esc(r.boerse)}</span>` : ""}</td><td class="n" style="text-align:left">${esc(r.isin)}</td><td class="${hatKennz(r) ? "" : "n"}">${hatKennz(r) ? "ja" : "–"}</td></tr>`;
   }
   function regZeichnen() {
@@ -676,11 +685,11 @@ const UNT = (() => {
         const jahre = Math.max(0, ...Object.values(f.reihen || {}).map(r => r.punkte.length));
         return `<tr data-w="${esc(f.id)}" data-q="${esc((f.name + " " + (f.ticker || "") + " " + (f.gruppe || "") + " " + (f.isin || "")).toLowerCase())}" data-b="${esc(f.branche)}" data-n="${f.notiert ? 1 : 0}"><td>${profilLink(f, f.name)}</td><td>${punkt(f)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(brName(f.branche))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(f.gruppe || "")}</td><td class="${(f.dokumente || []).length ? "" : "n"}">${(f.dokumente || []).length || "–"}</td><td class="n">${jahre || "–"}</td></tr>`; }).join("")}</tbody></table></div>` })}</div>`;
   }
-  /* Profil eines Registereintrags ohne Kennzahlen (#reg-<Schlüssel>): Stammdaten und Quelle */
+  /* Profil eines Registereintrags ohne Kennzahlen (#firma-<ID>): Stammdaten und Quelle */
   function viewReg(k) {
     const r = REG && REGK[k];
     if (!r) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Registereintrag mit dem Schlüssel <code>${esc(k)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
-    if (r.id && NACH_ID[r.id]) return viewProfil(r.id);
+    if (NACH_ID[r.k] && !NACH_ID[r.k].stub) return viewProfil(r.k);
     const zeile = (n, v) => v ? `<tr><td>${n}</td><td style="text-align:left;font-family:var(--sans)">${v}</td></tr>` : "";
     const web = /^https?:\/\//.test(r.web) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(r.web)}">${esc(r.web)}</a>` : esc(r.web);
     const qu = /^https?:\/\//.test(r.quelle) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(r.quelle)}">${esc(r.quelle)}</a>` : esc(r.quelle);
@@ -693,7 +702,7 @@ const UNT = (() => {
     const f = finden(q); if (f) return "firma-" + f.id;
     q = (q || "").trim().toLowerCase(); if (!q || !REG) return null;
     const r = REG.find(x => x.name.toLowerCase() === q || x.ticker.toLowerCase() === q || x.isin.toLowerCase() === q) || REG.find(x => x.name.toLowerCase().includes(q));
-    return r ? (r.id && NACH_ID[r.id] ? "firma-" + r.id : "reg-" + r.k) : null;
+    return r ? "firma-" + r.k : null;
   }
   /* ----- Merkliste (nur im Browser dieses Geräts; ohne Speicher bleibt sie für die Sitzung) ----- */
   let merk = null;
@@ -730,15 +739,16 @@ const UNT = (() => {
     if ((v = g("data-uwatch")) != null) { merkUmschalten(v); render(); return true; }
     if ((v = g("data-uadd")) != null) { hinzu(v); gehe("u-vergleich"); return true; }
     if ((v = g("data-uweg")) != null) { S.auswahl = S.auswahl.filter(x => x !== v); render(); return true; }
-    if ((v = g("data-ub")) != null) { S.branche = v; S.gruppe = "alle"; S.notiert = "alle"; S.rang = null; render(); return true; }
-    if ((v = g("data-ug")) != null) { S.gruppe = v; render(); return true; }
-    if ((v = g("data-un")) != null) { S.notiert = v; render(); return true; }
+    if ((v = g("data-umehr")) != null) { S.zeilen = v === "alle" ? 1e9 : S.zeilen + 500; render(); return true; }
+    if ((v = g("data-ub")) != null) { S.branche = v; S.gruppe = "alle"; S.notiert = "alle"; S.rang = null; S.zeilen = 200; render(); return true; }
+    if ((v = g("data-ug")) != null) { S.gruppe = v; S.zeilen = 200; render(); return true; }
+    if ((v = g("data-un")) != null) { S.notiert = v; S.zeilen = 200; render(); return true; }
     if ((v = g("data-ugj")) != null) { S.govGj = +v; render(); return true; }
     if ((v = g("data-utb")) != null) { S.tBranche = v; render(); return true; }
     if ((v = g("data-utz")) != null) { S.tZeit = v; render(); return true; }
     if ((v = g("data-uta")) != null) { S.tArt = v; render(); return true; }
     if ((v = g("data-udok")) != null) { S.dokTyp = v; render(); return true; }
-    if ((v = g("data-uopen")) != null) { S.branche = v; S.gruppe = g("data-ugruppe") || "alle"; S.notiert = "alle"; S.rang = null; gehe("u-branche"); return true; }
+    if ((v = g("data-uopen")) != null) { S.branche = v; S.gruppe = g("data-ugruppe") || "alle"; S.notiert = "alle"; S.rang = null; S.zeilen = 200; gehe("u-branche"); return true; }
     if ((v = g("data-usort")) != null) { S.sort = { k: v, ab: S.sort.k === v ? !S.sort.ab : true, manuell: true, auto: S.branche + S.gruppe + S.notiert }; render(); return true; }
     if ((v = g("data-umatrix")) != null) { S.matrixSort = v; render(); return true; }
     if ((v = g("data-urang")) != null) { S.rang = v; render(); return true; }
@@ -759,9 +769,9 @@ const UNT = (() => {
     if (document.getElementById("uverz")) { if (REG) regZeichnen(); else verzFilter(); }
     document.querySelectorAll(".uscat").forEach(scatterInit);
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
-  const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
+  const datalist = () => UD ? FIRMEN.filter(f => !f.stub).map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, initRegister, viewReg, ziel, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
+  return { init, initRegister, viewReg, ziel, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => OHNE_STUB.length ? OHNE_STUB : ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN.filter(f => !f.stub), branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
     // Weltkugel (globus.js): Vergleichsauswahl lesen/setzen, Unternehmen nach ID
     auswahl: () => S.auswahl || [], setAuswahl: ids => { S.auswahl = [...new Set(ids)].slice(-6); }, nachId: id => NACH_ID[id] || NACH_ID[(UD && UD.alt_ids || {})[id]], kurzName: n => kurzU(n), brName: id => brName(id), fmt: (k, v) => fmt(k, v), existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
 })();

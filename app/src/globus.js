@@ -68,7 +68,7 @@ const GLOBUS = (() => {
   const namensFarbe = () => ["case", ["==", ["get", "iso"], S.land || ""], "#ffa828", "#8b95a3"];
   const VWL_GEO = iso => ({ GB: "UK", GR: "EL" }[iso] || iso);       // Eurostat-/OECD-Kürzel im VWL-Datensatz
   const OSM_URL = "https://tiles.openfreemap.org/planet";
-  const S = { stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
+  const S = { netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
   let map = null, klassisch = null, imGlobus = false, hinweisTimer = 0, osmFehler = 0, osmGeladen = false;
 
   /* ----- Unternehmen mit Sitz-Koordinaten -----
@@ -122,10 +122,25 @@ const GLOBUS = (() => {
   const vorBeschriftung = () => { const l = (map.getStyle().layers || []).find(x => x.type === "symbol" && x.id.startsWith("osm-")); return l ? l.id : undefined; };
   function ebeneAnlegen(e) {
     if (!e.quellen) return;
-    try { e.quellen(map); e.schichten(map, vorBeschriftung()); sichtbar(e); }
+    try { e.quellen(map); e.schichten(map, vorBeschriftung()); sichtbar(e); if (stilBereit && S.netzOffen) ueberlagerung(); }
     catch (err) { console.warn("Ebene", e.id, err); }
   }
-  function sichtbar(e) { (map.getStyle().layers || []).filter(l => l.metadata && l.metadata.ebene === e.id).forEach(l => map.setLayoutProperty(l.id, "visibility", e.an ? "visible" : "none")); if (e.id === "handel") richtungAnwenden(); if (e.id === "kontinente") kontAnwenden(); }
+  /* Handelsebenen treten zurück, solange ein Unternehmensnetz offen ist (sonst liegen Kontinent-/Länderbögen über den Netzbögen);
+     der Schalter "Handel zusätzlich zeigen" in der Legende hebt das auf */
+  const handelVerdraengt = id => (id === "kontinente" || id === "handel") && S.netzOffen && !S.handelMitNetz;
+  const ebeneAn = e => e.an && !handelVerdraengt(e.id);
+  function sichtbar(e) { (map.getStyle().layers || []).filter(l => l.metadata && l.metadata.ebene === e.id).forEach(l => map.setLayoutProperty(l.id, "visibility", ebeneAn(e) ? "visible" : "none")); if (e.id === "handel") richtungAnwenden(); if (e.id === "kontinente") kontAnwenden(); }
+  // bei offenem Unternehmensnetz: Punkte und Namen der Sitze zurücknehmen, damit sie die Netzpunkte nicht verdecken
+  function ueberlagerung() {
+    if (!map || !stilBereit) return;
+    EBENEN.filter(e => e.id === "kontinente" || e.id === "handel").forEach(e => map.getLayer(e.id === "handel" ? "handel-x" : "k-x") && sichtbar(e));
+    const n = !!S.netzOffen;
+    if (map.getLayer("unt-name")) map.setLayoutProperty("unt-name", "visibility", n ? "none" : "visible");
+    if (map.getLayer("unt-land-zahl")) map.setLayoutProperty("unt-land-zahl", "visibility", n ? "none" : "visible");
+    if (map.getLayer("unt-punkt")) map.setPaintProperty("unt-punkt", "circle-opacity", n ? .35 : 1);
+    if (map.getLayer("unt-punkt")) map.setPaintProperty("unt-punkt", "circle-stroke-opacity", n ? .35 : 1);
+    legendeKarte();
+  }
   const schicht = (ebeneId, def, vor) => map.addLayer({ ...def, metadata: { ebene: ebeneId } }, vor);
 
   /* Länderflächen: Auswahl und Hover über feature-state, Beschriftung mit deutschem Namen */
@@ -187,14 +202,30 @@ const GLOBUS = (() => {
         paint: { "text-color": "#e8ecf1", "text-halo-color": "#07090c", "text-halo-width": 1.3 } });
     } });
 
-  /* Handelsströme (data/handel.json, handel_abruf.py): beim gewählten Land Bögen zu den wichtigsten Partnern, Exporte gelb vom Land
-     weg, Importe blau zum Land hin; Breite nach Wert. Format je Land: { jahr, export_welt, import_welt, export: [[ISO2, USD], …], import: […] }.
+  /* Handelsströme (data/handel.json, handel_abruf.py): beim gewählten Land Bögen zu den wichtigsten Partnern, Exporte grün vom Land
+     weg, Importe rot zum Land hin; Breite nach Wert. Format je Land: { jahr, export_welt, import_welt, export: [[ISO2, USD], …], import: […] }.
      Vorbereitet: Lieferketten zwischen Unternehmens-IDs, z. B. { lieferketten: [{ von: "U000123", nach: "U000456", art, gut, quelle }] },
      als Bögen zwischen den Sitzen. */
   const leerFC = { type: "FeatureCollection", features: [] };
   // Verlauf von blass (Herkunft) nach kräftig (Ziel) zeigt die Richtung
   const verlauf = rgb => ["interpolate", ["linear"], ["line-progress"], 0, `rgba(${rgb},0.08)`, 1, `rgba(${rgb},0.95)`];
-  const GELB = "255,168,40", BLAU = "77,163,255";
+  // Exporte grün (durchgezogen, Verlauf blass → kräftig), Importe rot (gestrichelt), beides mit Pfeilspitzen; Seitenwahl: Exporte biegen nach links, Importe nach rechts aus
+  const GRUEN = "62,207,110", ROT = "255,82,82", HEX_EXP = "#3ecf6e", HEX_IMP = "#ff5252";
+  const hPfeil = m => {
+    if (m.hasImage("h-pfeil")) return;
+    const n = 24, data = new Uint8Array(n * n * 4);
+    for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) { const t = (x - 5) / (n - 8), halb = (1 - t) * (n / 2 - 4); data[(y * n + x) * 4 + 3] = t >= 0 && t <= 1 && Math.abs(y - n / 2 + .5) <= halb ? 255 : 0; }
+    m.addImage("h-pfeil", { width: n, height: n, data }, { sdf: true });
+  };
+  // Handelslinie: Export = Verlauf, Import = gestrichelt; dazu eine Pfeilschicht entlang der Linie
+  function handelLinie(eb, id, quelle, imp, breite, op, extra = {}) {
+    const rgb = imp ? ROT : GRUEN;
+    schicht(eb, { id, type: "line", source: quelle, layout: { "line-cap": imp ? "butt" : "round" }, paint: { "line-width": breite, "line-opacity": op,
+      ...(imp ? { "line-color": `rgb(${rgb})`, "line-dasharray": [2.2, 1.6] } : { "line-gradient": verlauf(rgb) }), ...extra } });
+    schicht(eb, { id: id + "-pfeil", type: "symbol", source: quelle, layout: { "symbol-placement": "line", "symbol-spacing": 95, "icon-image": "h-pfeil", "icon-size": .5,
+      "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-rotation-alignment": "map" }, paint: { "icon-color": `rgb(${rgb})`, "icon-opacity": op } });
+  }
+  const HANDEL_SCHICHTEN = ["k-x", "k-m", "handel-x", "handel-m", "nb-x", "nb-m"];
   ebene({ id: "kontinente", name: "Handel zwischen Kontinenten (Stufe 1)", gruppe: "Handel", an: !!HANDEL, geplant: !HANDEL,
     quellen: m => {
       m.addSource("k-x", { type: "geojson", data: kontDaten("export"), lineMetrics: true }); m.addSource("k-m", { type: "geojson", data: kontDaten("import"), lineMetrics: true });
@@ -204,14 +235,14 @@ const GLOBUS = (() => {
       // Länderflächen nach Kontinent eingefärbt; gewählter Kontinent (und Gegenüber) kräftiger
       schicht("kontinente", { id: "k-flaeche", type: "fill", source: "laender", paint: {
         "fill-color": ["match", ["get", "kontinent"], ...KONT.flatMap(k => [k[2], k[4]]), "#8fa3bd"],
-        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 2.2, kontFuell(), 3.2, 0] } }, vorBeschriftung());
-      const breite = ["get", "w"], op = ["interpolate", ["linear"], ["zoom"], 2.1, ["case", ["get", "fokus"], 1, .55], 3.1, 0];
-      for (const [id, q, rgb, off] of [["k-x", "k-x", GELB, -3], ["k-m", "k-m", BLAU, 3]])
-        schicht("kontinente", { id, type: "line", source: q, layout: { "line-cap": "round" }, paint: { "line-width": breite, "line-offset": off, "line-opacity": op, "line-gradient": verlauf(rgb) } });
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 2.2, kontFuell(), 2.7, 0] } }, vorBeschriftung());
+      hPfeil(m);
+      const breite = ["get", "w"], op = ["interpolate", ["linear"], ["zoom"], 2.1, ["case", ["get", "fokus"], 1, .55], 2.6, 0];
+      handelLinie("kontinente", "k-x", "k-x", false, breite, op); handelLinie("kontinente", "k-m", "k-m", true, breite, op);
+      schicht("kontinente", { id: "k-wert", type: "symbol", source: "k-wert", layout: { "text-field": ["get", "t"], "text-font": ["Noto Sans Regular"], "text-size": 11, "text-allow-overlap": false, "text-padding": 6, "symbol-sort-key": ["-", 0, ["get", "wert"]], "text-offset": ["case", ["==", ["get", "richtung"], "export"], ["literal", [0, -.8]], ["literal", [0, .8]]] },
+        paint: { "text-color": ["case", ["==", ["get", "richtung"], "export"], HEX_EXP, HEX_IMP], "text-halo-color": "#07090c", "text-halo-width": 1.4, "text-opacity": ["interpolate", ["linear"], ["zoom"], 2.1, 1, 2.6, 0] } });
       schicht("kontinente", { id: "k-name", type: "symbol", source: "k-pkt", layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Regular"], "text-size": 15, "text-allow-overlap": true },
-        paint: { "text-color": ["case", ["get", "gewaehlt"], "#ffa828", "#d4dbe5"], "text-halo-color": "#07090c", "text-halo-width": 1.6, "text-opacity": ["interpolate", ["linear"], ["zoom"], 2.2, 1, 3.1, 0] } });
-      schicht("kontinente", { id: "k-wert", type: "symbol", source: "k-wert", layout: { "text-field": ["get", "t"], "text-font": ["Noto Sans Regular"], "text-size": 11, "text-allow-overlap": true, "text-offset": ["case", ["==", ["get", "richtung"], "export"], ["literal", [0, -.8]], ["literal", [0, .8]]] },
-        paint: { "text-color": ["case", ["==", ["get", "richtung"], "export"], "#ffa828", "#4da3ff"], "text-halo-color": "#07090c", "text-halo-width": 1.4, "text-opacity": ["interpolate", ["linear"], ["zoom"], 2.1, 1, 3, 0] } });
+        paint: { "text-color": ["case", ["get", "gewaehlt"], "#ffa828", "#d4dbe5"], "text-halo-color": "#07090c", "text-halo-width": 1.6, "text-opacity": ["interpolate", ["linear"], ["zoom"], 2.2, 1, 2.6, 0] } });
     } });
   ebene({ id: "handel", name: "Handelsströme zwischen Ländern (Stufe 2) und Nachbarn (Stufe 3)", gruppe: "Handel", an: !!HANDEL, geplant: !HANDEL,
     quellen: m => {
@@ -220,23 +251,23 @@ const GLOBUS = (() => {
       m.addSource("strom", { type: "geojson", data: stromDaten() });
     },
     schichten: m => {
+      hPfeil(m);
       const breite = ["interpolate", ["linear"], ["get", "anteil"], 0, 1, .25, 7];
-      // Stufe 2: blendet bei ~2,6 ein und ab ~5 wieder aus (dann übernehmen die Nachbarländer)
-      const op2 = ["interpolate", ["linear"], ["zoom"], 2.2, 0, 3, ["case", ["get", "alle"], .28, 1], 4.6, ["case", ["get", "alle"], .28, 1], 5.8, 0];
-      schicht("handel", { id: "handel-x", type: "line", source: "handel-x", layout: { "line-cap": "round", visibility: "visible" }, paint: { "line-width": ["case", ["get", "alle"], ["interpolate", ["linear"], ["get", "anteil"], 0, .6, .25, 2.4], breite], "line-opacity": op2, "line-gradient": verlauf(GELB) } });
-      schicht("handel", { id: "handel-m", type: "line", source: "handel-m", layout: { "line-cap": "round" }, paint: { "line-width": breite, "line-opacity": op2, "line-gradient": verlauf(BLAU) } });
-      // Stufe 3: Nachbarländer, Export und Import nebeneinander
-      const op3 = ["interpolate", ["linear"], ["zoom"], 4.4, 0, 5.4, 1], w3 = ["interpolate", ["linear"], ["get", "anteil"], 0, 1.5, .25, 9];
-      schicht("handel", { id: "nb-x", type: "line", source: "nb-x", layout: { "line-cap": "round" }, paint: { "line-width": w3, "line-offset": -3, "line-opacity": op3, "line-gradient": verlauf(GELB) } });
-      schicht("handel", { id: "nb-m", type: "line", source: "nb-m", layout: { "line-cap": "round" }, paint: { "line-width": w3, "line-offset": 3, "line-opacity": op3, "line-gradient": verlauf(BLAU) } });
-      schicht("handel", { id: "strom-text", type: "symbol", source: "strom", layout: { "text-field": ["get", "t"], "text-font": ["Noto Sans Regular"], "text-size": 11, "text-offset": [0, 1.6], "text-allow-overlap": true },
-        paint: { "text-color": ["case", [">=", ["get", "netto"], 0], "#4da3ff", "#ffa828"], "text-halo-color": "#07090c", "text-halo-width": 1.4, "text-opacity": ["interpolate", ["linear"], ["zoom"], 4.4, 0, 5.4, 1] } });
+      // Stufe 2: von ~2,6 bis ~5 (dann übernehmen die Nachbarländer, ohne Überblendung beider Stufen)
+      const op2 = ["interpolate", ["linear"], ["zoom"], 2.6, 0, 3.2, ["case", ["get", "alle"], .28, 1], 4.4, ["case", ["get", "alle"], .28, 1], 4.9, 0];
+      handelLinie("handel", "handel-x", "handel-x", false, ["case", ["get", "alle"], ["interpolate", ["linear"], ["get", "anteil"], 0, .6, .25, 2.4], breite], op2);
+      handelLinie("handel", "handel-m", "handel-m", true, breite, op2);
+      // Stufe 3: Nachbarländer, Export und Import als getrennte Bögen (Ausbiegung statt Versatz)
+      const op3 = ["interpolate", ["linear"], ["zoom"], 4.9, 0, 5.4, 1], w3 = ["interpolate", ["linear"], ["get", "anteil"], 0, 1.5, .25, 9];
+      handelLinie("handel", "nb-x", "nb-x", false, w3, op3); handelLinie("handel", "nb-m", "nb-m", true, w3, op3);
+      schicht("handel", { id: "strom-text", type: "symbol", source: "strom", layout: { "text-field": ["get", "t"], "text-font": ["Noto Sans Regular"], "text-size": 11, "text-offset": [0, 1.6], "text-allow-overlap": false, "text-padding": 4, "symbol-sort-key": ["-", 0, ["abs", ["get", "netto"]]] },
+        paint: { "text-color": ["case", [">=", ["get", "netto"], 0], HEX_IMP, HEX_EXP], "text-halo-color": "#07090c", "text-halo-width": 1.4, "text-opacity": ["interpolate", ["linear"], ["zoom"], 4.9, 0, 5.4, 1] } });
       richtungAnwenden();
     } });
   ebene({ id: "lieferketten", name: "Lieferketten", gruppe: "In Vorbereitung", an: false, geplant: true });
 
   /* Großkreisbogen zwischen zwei Punkten; Längengrade fortlaufend, damit Bögen über die Datumsgrenze nicht quer über die Karte springen */
-  function bogen(a, b, n = 64) {
+  function bogen(a, b, n = 64, hub = 0) {
     const r = Math.PI / 180, [l1, p1, l2, p2] = [a[0] * r, a[1] * r, b[0] * r, b[1] * r];
     const v = (l, p) => [Math.cos(p) * Math.cos(l), Math.cos(p) * Math.sin(l), Math.sin(p)];
     const A = v(l1, p1), B = v(l2, p2), w = Math.acos(Math.max(-1, Math.min(1, A[0] * B[0] + A[1] * B[1] + A[2] * B[2])));
@@ -251,27 +282,33 @@ const GLOBUS = (() => {
       if (vorher != null) while (vorher - lon > 180) lon += 360;
       vorher = lon; pkt.push([lon, lat]);
     }
+    // Ausbiegen zur Seite (Anteil der Länge): trennt gegenläufige und gleichlaufende Bögen zwischen denselben Orten
+    if (hub) {
+      const dx = pkt[n][0] - pkt[0][0], dy = pkt[n][1] - pkt[0][1], len = Math.hypot(dx, dy) || 1;
+      pkt.forEach((q, i) => { const k = hub * len * Math.sin(Math.PI * i / n); q[0] += -dy / len * k; q[1] = Math.max(-84, Math.min(84, q[1] + dx / len * k)); });
+    }
     return pkt;
   }
+  const HUB = .09;   // Ausbiegung (Anteil der Bogenlänge): Exporte links, Importe rechts von der Linie Herkunft → Ziel
   const mitte = iso => NACH_ISO[iso] ? [NACH_ISO[iso].properties.lx, NACH_ISO[iso].properties.ly] : null;
   const wertFC = f => ({ type: "FeatureCollection", features: f });
   const mrdText = v => f0.format(v / 1e9) + " Mrd.";
-  // Stufe 1: Bögen vom gewählten Kontinent zu den anderen (gelb: Exporte hin, blau: Importe von dort); mit Gegenüber nur dieses Paar kräftig
+  // Stufe 1: Bögen vom gewählten Kontinent zu den anderen (grün: Exporte hin, rot: Importe von dort); mit Gegenüber nur dieses Paar kräftig
   function kontDaten(richtung) {
     if (!HANDEL || !S.kont) return leerFC;
     const a = S.kont, mx = Math.max(1, ...KONT.filter(k => k[0] !== a).flatMap(k => [KMAT[a][k[0]], KMAT[k[0]][a]]));
     return wertFC(KONT.filter(k => k[0] !== a).map(k => {
       const b = k[0], wert = richtung === "export" ? KMAT[a][b] : KMAT[b][a], c1 = KONT.find(x => x[0] === a)[3], c2 = k[3];
       return { type: "Feature", properties: { von: richtung === "export" ? a : b, nach: richtung === "export" ? b : a, richtung, wert, k: 1, w: 2 + 16 * Math.sqrt(wert / mx), fokus: !S.kont2 || S.kont2 === b },
-        geometry: { type: "LineString", coordinates: richtung === "export" ? bogen(c1, c2) : bogen(c2, c1) } };
+        geometry: { type: "LineString", coordinates: richtung === "export" ? bogen(c1, c2, 64, HUB) : bogen(c2, c1, 64, HUB) } };
     }));
   }
   function kontWerte() {
     if (!HANDEL || !S.kont) return leerFC;
     const a = S.kont, c1 = KONT.find(x => x[0] === a)[3], f = [];
     for (const k of KONT) if (k[0] !== a && (!S.kont2 || S.kont2 === k[0])) for (const richtung of ["export", "import"]) {
-      const wert = richtung === "export" ? KMAT[a][k[0]] : KMAT[k[0]][a], bg = bogen(richtung === "export" ? c1 : k[3], richtung === "export" ? k[3] : c1);
-      f.push({ type: "Feature", properties: { t: (richtung === "export" ? "Export " : "Import ") + mrdText(wert), richtung, dy: richtung === "export" ? -.8 : .8 }, geometry: { type: "Point", coordinates: bg[Math.floor(bg.length * (richtung === "export" ? .55 : .45))] } });
+      const wert = richtung === "export" ? KMAT[a][k[0]] : KMAT[k[0]][a], bg = bogen(richtung === "export" ? c1 : k[3], richtung === "export" ? k[3] : c1, 64, HUB);
+      f.push({ type: "Feature", properties: { t: (richtung === "export" ? "Export " : "Import ") + mrdText(wert), richtung, wert, dy: richtung === "export" ? -.8 : .8 }, geometry: { type: "Point", coordinates: bg[Math.floor(bg.length * (richtung === "export" ? .55 : .45))] } });
     }
     return wertFC(f);
   }
@@ -282,7 +319,7 @@ const GLOBUS = (() => {
     ["k-x", "k-m"].forEach(q => map.getSource(q) && map.getSource(q).setData(kontDaten(q === "k-x" ? "export" : "import")));
     if (map.getSource("k-pkt")) map.getSource("k-pkt").setData(kontPunkte());
     if (map.getSource("k-wert")) map.getSource("k-wert").setData(kontWerte());
-    if (map.getLayer("k-flaeche")) map.setPaintProperty("k-flaeche", "fill-opacity", ["interpolate", ["linear"], ["zoom"], 2.2, kontFuell(), 3.2, 0]);
+    if (map.getLayer("k-flaeche")) map.setPaintProperty("k-flaeche", "fill-opacity", ["interpolate", ["linear"], ["zoom"], 2.2, kontFuell(), 2.7, 0]);
   }
   // Stufe 2: je Land die drei größten Export- und Importströme; ohne Auswahl die drei größten Exporte aller Länder (blass)
   function handelDaten(richtung) {
@@ -292,7 +329,7 @@ const GLOBUS = (() => {
       const welt = h[richtung + "_welt"] || 1, heim = mitte(iso);
       return h[richtung].slice(0, 3).filter(([p]) => mitte(p)).map(([p, wert]) => ({ type: "Feature",
         properties: { land: iso, partner: p, name: landName(p), wert, anteil: wert / welt, richtung, alle },
-        geometry: { type: "LineString", coordinates: richtung === "export" ? bogen(heim, mitte(p), 40) : bogen(mitte(p), heim, 40) } }));
+        geometry: { type: "LineString", coordinates: richtung === "export" ? bogen(heim, mitte(p), 40, HUB) : bogen(mitte(p), heim, 40, HUB) } }));
     };
     if (S.land) return wertFC(bauen(S.land, false));
     return richtung === "export" ? wertFC(Object.keys(HANDEL.laender).flatMap(iso => bauen(iso, true))) : leerFC;
@@ -305,7 +342,7 @@ const GLOBUS = (() => {
       const wert = richtung === "export" ? PAAR.get(S.land + ">" + q) : PAAR.get(q + ">" + S.land);
       if (!wert || !mitte(q)) continue;
       f.push({ type: "Feature", properties: { land: S.land, partner: q, name: landName(q), wert, anteil: wert / welt, richtung, nb: 1 },
-        geometry: { type: "LineString", coordinates: richtung === "export" ? bogen(heim, mitte(q), 24) : bogen(mitte(q), heim, 24) } });
+        geometry: { type: "LineString", coordinates: richtung === "export" ? bogen(heim, mitte(q), 24, HUB) : bogen(mitte(q), heim, 24, HUB) } });
     }
     return wertFC(f);
   }
@@ -324,13 +361,10 @@ const GLOBUS = (() => {
   }
   function richtungAnwenden() {
     if (!map || !map.getLayer("handel-x")) return;
-    const an = (EBENEN.find(e => e.id === "handel") || {}).an;
-    map.setLayoutProperty("handel-x", "visibility", an && S.handel !== "import" ? "visible" : "none");
-    map.setLayoutProperty("handel-m", "visibility", an && S.handel !== "export" ? "visible" : "none");
-    map.setLayoutProperty("nb-x", "visibility", an && S.handel !== "import" ? "visible" : "none");
-    map.setLayoutProperty("nb-m", "visibility", an && S.handel !== "export" ? "visible" : "none");
+    const e = EBENEN.find(x => x.id === "handel"), an = !!e && ebeneAn(e);
+    const v = (ids, ok) => ids.forEach(i => { for (const l of [i, i + "-pfeil"]) if (map.getLayer(l)) map.setLayoutProperty(l, "visibility", an && ok ? "visible" : "none"); });
+    v(["handel-x", "nb-x"], S.handel !== "import"); v(["handel-m", "nb-m"], S.handel !== "export");
   }
-
   function punkteDaten() {
     const f = S.land && S.nurLand ? PUNKTE.filter(p => p.properties.land === S.land) : PUNKTE;
     return { type: "FeatureCollection", features: f };
@@ -398,6 +432,7 @@ const GLOBUS = (() => {
     if (S.grund === "einfach") { /* Grundfläche: Länder sind die Landmasse */ }
     stilBereit = true;
     EBENEN.forEach(ebeneAnlegen);
+    ueberlagerung();
     if (S.land && NACH_ISO[S.land]) map.setFeatureState({ source: "laender", id: NACH_ISO[S.land].id }, { gewaehlt: true });
   }
 
@@ -562,7 +597,7 @@ const GLOBUS = (() => {
         <div><div class="t" style="min-height:0">Exporte</div><div class="v" style="font-size:15px">${f0.format(summe(k, true) / 1e9)}</div><div class="z">Mrd. USD</div></div>
         <div><div class="t" style="min-height:0">Importe</div><div class="v" style="font-size:15px">${f0.format(summe(k, false) / 1e9)}</div><div class="z">Mrd. USD</div></div>
         <div><div class="t" style="min-height:0">Binnenhandel</div><div class="v" style="font-size:15px">${f0.format(KMAT[k][k] / 1e9)}</div><div class="z">Mrd. USD</div></div></div>
-        <p class="gk-quelle" style="margin-top:6px">Exporte und Importe gegenüber den anderen fünf Kontinenten. Auf der Karte gelb Exporte aus ${esc(kk[1])}, blau Importe nach ${esc(kk[1])}.</p>
+        <p class="gk-quelle" style="margin-top:6px">Exporte und Importe gegenüber den anderen fünf Kontinenten. Auf der Karte grün (durchgezogen) Exporte aus ${esc(kk[1])}, rot (gestrichelt) Importe nach ${esc(kk[1])}.</p>
         <div class="gk-chips" style="margin-top:8px"><button type="button" data-gkip>Standort per IP bestimmen</button></div></div>
       ${paar}
       <div class="gk-block"><h3>Alle Kontinente, Mrd. USD</h3><table class="gk-tab gk-matrix"><thead>${kopf}</thead><tbody>${matrix}</tbody></table>
@@ -614,6 +649,21 @@ const GLOBUS = (() => {
     const n = S.land ? PUNKTE.filter(p => p.properties.land === S.land).length : PUNKTE.length;
     if (map.getZoom() < ZG[1] && n) hinweis(`Hineinzoomen, um ${f0.format(n)} Unternehmen nach Sitz zu sehen`);
   }
+  /* Legende der Handelsströme auf der Karte: Farbe und Linienstil (nicht nur Farbe) */
+  function legendeKarte() {
+    const host = document.getElementById("gk-karte"); if (!host) return;
+    let el = document.getElementById("gk-legkarte");
+    if (!el) { el = document.createElement("div"); el.id = "gk-legkarte"; el.className = "gk-legkarte"; el.setAttribute("aria-label", "Legende der Handelsströme"); host.appendChild(el); }
+    const eb = ["kontinente", "handel"].map(id => EBENEN.find(x => x.id === id)).filter(x => x && x.an);
+    if (!HANDEL || !eb.length) { el.hidden = true; return; }
+    const zeigt = !S.netzOffen || S.handelMitNetz;
+    const lin = (farbe, strich) => `<svg width="34" height="10" aria-hidden="true"><line x1="1" y1="5" x2="26" y2="5" stroke="${farbe}" stroke-width="2.6" ${strich ? 'stroke-dasharray="5 3"' : 'stroke-linecap="round"'}/><path d="M33 5 L25 1.5 L25 8.5 Z" fill="${farbe}"/></svg>`;
+    el.hidden = false;
+    el.innerHTML = zeigt ? `<b>Handel</b><span>${lin(HEX_EXP, false)}<em style="color:${HEX_EXP}">Export</em> durchgezogen</span><span>${lin(HEX_IMP, true)}<em style="color:${HEX_IMP}">Import</em> gestrichelt</span>
+        <small>Pfeil = Richtung · Export links, Import rechts der Linie · Breite nach Wert</small>${S.netzOffen ? `<button type="button" data-gkhandelnetz>Handel ausblenden</button>` : ""}`
+      : `<b>Handel</b><small>Handelsströme pausiert, solange ein Unternehmensnetz offen ist</small><button type="button" data-gkhandelnetz>Handel zusätzlich zeigen</button>`;
+  }
+  document.addEventListener("globus:netz", ev => { S.netzOffen = !!(ev.detail && ev.detail.offen); if (!S.netzOffen) S.handelMitNetz = false; ueberlagerung(); });
   function hinweis(text) {
     const el = document.getElementById("gk-hinweis"); if (!el) return;
     el.textContent = text; el.style.opacity = "1";
@@ -702,10 +752,10 @@ const GLOBUS = (() => {
     const sp = (a, b) => SPIEGEL.has(a + ">" + b) ? "*" : "";
     return `<div class="gk-block"><h3>Handel mit Nachbarländern</h3><table class="gk-tab"><thead><tr><th>Nachbar</th><th style="text-align:right">Export</th><th style="text-align:right">Import</th></tr></thead><tbody>
       ${z.map(r => `<tr><td><button type="button" class="gk-link" data-gkland="${esc(r.q)}">${esc(landName(r.q))}</button></td><td>${mrd(r.x)}${r.x ? sp(iso, r.q) : ""}</td><td>${mrd(r.m)}${r.m ? sp(r.q, iso) : ""}</td></tr>`).join("")}</tbody></table>
-      <p class="gk-quelle" style="margin-top:6px">Mrd. USD. Auf der Karte gelb Exporte, blau Importe je Nachbar. „–“ = nicht unter den 15 größten Partnern in den Meldungen beider Länder (kleiner oder nicht gemeldet). * = Spiegelmeldung des Nachbarn. Quelle: UN Comtrade; Nachbarn aus den Natural-Earth-Grenzen.</p></div>`;
+      <p class="gk-quelle" style="margin-top:6px">Mrd. USD. Auf der Karte grün (durchgezogen) Exporte, rot (gestrichelt) Importe je Nachbar. „–“ = nicht unter den 15 größten Partnern in den Meldungen beider Länder (kleiner oder nicht gemeldet). * = Spiegelmeldung des Nachbarn. Quelle: UN Comtrade; Nachbarn aus den Natural-Earth-Grenzen.</p></div>`;
   }
   function stromBlock(iso) {
-    const zeile = i => { const s = STUFEN.strom[i]; return s ? `<tr><td>${i === iso ? "<b>" + esc(landName(i)) + "</b>" : `<button type="button" class="gk-link" data-gkland="${esc(i)}">${esc(landName(i))}</button>`}</td><td style="color:var(--${s.netto >= 0 ? "blue, #4da3ff" : "amber"})">${s.netto >= 0 ? "Import" : "Export"} ${f1.format(Math.abs(s.netto))}</td><td>${s.bedarf ? f1.format(Math.abs(s.netto) / s.bedarf * 100) + " %" : "–"}</td><td>${s.jahr}</td></tr>` : ""; };
+    const zeile = i => { const s = STUFEN.strom[i]; return s ? `<tr><td>${i === iso ? "<b>" + esc(landName(i)) + "</b>" : `<button type="button" class="gk-link" data-gkland="${esc(i)}">${esc(landName(i))}</button>`}</td><td style="color:${s.netto >= 0 ? HEX_IMP : HEX_EXP}">${s.netto >= 0 ? "Import" : "Export"} ${f1.format(Math.abs(s.netto))}</td><td>${s.bedarf ? f1.format(Math.abs(s.netto) / s.bedarf * 100) + " %" : "–"}</td><td>${s.jahr}</td></tr>` : ""; };
     const z = [iso, ...nachbarnVon(iso)].map(zeile).join("");
     return `<div class="gk-block"><h3>Strom (Nettohandel)</h3>${z ? `<table class="gk-tab"><thead><tr><th></th><th style="text-align:right">Netto, TWh</th><th style="text-align:right">am Bedarf</th><th style="text-align:right">Jahr</th></tr></thead><tbody>${z}</tbody></table>` : `<p class="gk-leer">Für ${esc(landName(iso))} liegen keine Stromhandelsdaten vor.</p>`}
       <p class="gk-quelle" style="margin-top:6px">Saldo aus Importen und Exporten je Land, nicht nach Partnerland: frei zugängliche bilaterale Stromflüsse gibt es nur für Europa (ENTSO-E, Zugang mit Token), sie sind noch nicht angebunden. Quelle: <a href="${esc(STUFEN.quellen ? STUFEN.quellen.strom_url : "https://ourworldindata.org/electricity-mix")}" target="_blank" rel="noopener">Ember über Our World in Data</a> (CC BY 4.0).</p></div>`;
@@ -727,7 +777,7 @@ const GLOBUS = (() => {
       <table class="gk-tab"><thead><tr><th>Partner</th><th style="text-align:right">Export</th><th style="text-align:right">Import</th></tr></thead><tbody>
         ${zeilen.map(([p, w]) => `<tr><td><button type="button" class="gk-link" data-gkland="${esc(p)}">${esc(landName(p))}</button></td><td>${mrd(w.x)}</td><td>${mrd(w.m)}</td></tr>`).join("")}</tbody></table>
       <div class="gk-chips" style="margin-top:8px">${knopf("beide", "Beide")}${knopf("export", "Exporte")}${knopf("import", "Importe")}<button type="button" data-gkhandelzeigen>Auf dem Globus zeigen</button></div>
-      <p class="gk-quelle" style="margin-top:6px">Mrd. USD, Warenhandel laut Meldung von ${esc(landName(iso))} (Exporte FOB, Importe meist CIF); die zehn größten Partner; auf dem Globus in Stufe 2 die drei größten je Richtung (gelb Exporte, blau Importe). Quelle: <a href="${esc(HANDEL.url)}" target="_blank" rel="noopener">UN Comtrade</a>, Abruf ${esc(HANDEL.abruf)}.</p></div>`;
+      <p class="gk-quelle" style="margin-top:6px">Mrd. USD, Warenhandel laut Meldung von ${esc(landName(iso))} (Exporte FOB, Importe meist CIF); die zehn größten Partner; auf dem Globus in Stufe 2 die drei größten je Richtung (grün Exporte, rot Importe). Quelle: <a href="${esc(HANDEL.url)}" target="_blank" rel="noopener">UN Comtrade</a>, Abruf ${esc(HANDEL.abruf)}.</p></div>`;
   }
   function tabellenBlock(iso) {
     const st = stammImLand(iso); if (!st.length) return "";
@@ -759,7 +809,7 @@ const GLOBUS = (() => {
     if (!iso && stufe === 1) { el.innerHTML = kontSeite(); el.scrollTop = 0; return; }
     if (!iso && stufe === 2 && HANDEL) {
       const top = Object.entries(HANDEL.laender).filter(([i, h]) => h.export_welt && NACH_ISO[i]).sort((a, b) => b[1].export_welt - a[1].export_welt).slice(0, 12);
-      el.innerHTML = `<div><h2>Welthandel nach Ländern</h2><p class="unter" style="margin-top:4px">Land anklicken: die drei größten Export- und Importströme · gelb Exporte, blau Importe · hineinzoomen für Unternehmen und Nachbarländer</p></div>
+      el.innerHTML = `<div><h2>Welthandel nach Ländern</h2><p class="unter" style="margin-top:4px">Land anklicken: die drei größten Export- und Importströme · grün Exporte, rot Importe · hineinzoomen für Unternehmen und Nachbarländer</p></div>
         <div class="gk-block"><h3>Größte Exportländer</h3><ul class="gk-liste">${top.map(([i, h]) => `<li><button type="button" data-gkland="${esc(i)}">${esc(landName(i))}</button><span class="r">${f0.format(h.export_welt / 1e9)} Mrd. USD</span></li>`).join("")}</ul>
         <p class="gk-quelle" style="margin-top:6px">Auf der Karte ohne Auswahl die drei größten Exporte jedes meldenden Landes (blass). UN Comtrade, Abruf ${esc(HANDEL.abruf)}.</p></div>`;
       el.scrollTop = 0; return;
@@ -983,8 +1033,9 @@ const GLOBUS = (() => {
     if ((v = g("data-gkstufe")) != null) {
       const [, z] = STUFEN_TEXT[+v - 1], c = +v === 1 ? ((KONT.find(x => x[0] === S.kont) || [])[3]) : mitte(S.land);
       if (map) { if (+v === 1 && S.land) landWaehlen(null); map.flyTo({ center: c || map.getCenter(), zoom: z, duration: 1400 }); } return true; }
+    if (g("data-gkhandelnetz") != null) { S.handelMitNetz = !S.handelMitNetz; ueberlagerung(); return true; }
     if (g("data-gknurland") != null) { S.nurLand = !S.nurLand; punkteAktualisieren(); seiteZeichnen(); return true; }
-    if ((v = g("data-gkebene")) != null) { const eb = EBENEN.find(x => x.id === v); if (eb) { eb.an = t.checked; if (map) sichtbar(eb); } return true; }
+    if ((v = g("data-gkebene")) != null) { const eb = EBENEN.find(x => x.id === v); if (eb) { eb.an = t.checked; if (map) { sichtbar(eb); legendeKarte(); } } return true; }
     if ((v = g("data-gkgrund")) != null) { try { localStorage.setItem("globus-grund", v); } catch { /* */ } osmFehler = 0; grundkarte(v); ebenenListe(); return true; }
     if (g("data-gkebenen") != null) { const el = document.getElementById("gk-ebenen"); el.hidden = !el.hidden; t.closest("[data-gkebenen]").setAttribute("aria-pressed", String(!el.hidden)); return true; }
     if ((v = g("data-gkvorne")) != null && !t.closest("button")) { const x = S.offen[+v]; if (x) { nachVorne(x); x.el.classList.remove("max"); } return true; }

@@ -76,7 +76,9 @@ const GLOBUS = (() => {
 
   /* ----- Ebenen ----- */
   const EBENEN = [];
-  function ebene(def) { EBENEN.push({ an: true, gruppe: "Karte", ...def }); if (map && map.isStyleLoaded()) ebeneAnlegen(EBENEN[EBENEN.length - 1]); ebenenListe(); }
+  // Später registrierte Ebenen (z. B. netz.js) sofort anlegen, sobald der Stil steht; isStyleLoaded() ist auch während des Kachelladens false
+  let stilBereit = false;
+  function ebene(def) { EBENEN.push({ an: true, gruppe: "Karte", ...def }); if (map && stilBereit) ebeneAnlegen(EBENEN[EBENEN.length - 1]); ebenenListe(); }
   const vorBeschriftung = () => { const l = (map.getStyle().layers || []).find(x => x.type === "symbol" && x.id.startsWith("osm-")); return l ? l.id : undefined; };
   function ebeneAnlegen(e) {
     if (!e.quellen) return;
@@ -261,11 +263,13 @@ const GLOBUS = (() => {
     S.grund = art;
     document.querySelectorAll("[data-gkgrund]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.gkgrund === art)));
     if (!map) return;
+    stilBereit = false;
     map.setStyle(art === "osm" ? stilOSM() : stilEinfach(), { diff: false });
     map.once("style.load", stilGeladen);
   }
   function stilGeladen() {
     if (S.grund === "einfach") { /* Grundfläche: Länder sind die Landmasse */ }
+    stilBereit = true;
     EBENEN.forEach(ebeneAnlegen);
     if (S.land && NACH_ISO[S.land]) map.setFeatureState({ source: "laender", id: NACH_ISO[S.land].id }, { gewaehlt: true });
   }

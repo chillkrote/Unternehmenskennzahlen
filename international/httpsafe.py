@@ -44,10 +44,10 @@ def offene_adresse_pruefen(host, aufloesen=socket.getaddrinfo):
 
 class SichererClient:
     def __init__(self, erlaubte_hosts, user_agent=None, max_bytes=50_000_000, timeout=30, min_abstand=0.2,
-                 max_versuche=3, max_wartezeit=60, transport=None, schlafen=time.sleep, offen=False):
+                 max_versuche=3, max_wartezeit=60, transport=None, schlafen=time.sleep, offen=False, kontakt_pflicht=True):
         self.erlaubte_hosts = frozenset(h.lower() for h in erlaubte_hosts)
         ua = user_agent or os.environ.get("INTERNATIONAL_USER_AGENT") or os.environ.get("SEC_USER_AGENT", "")
-        if "@" not in ua:
+        if kontakt_pflicht and "@" not in ua:     # SEC/GLEIF/ESEF verlangen eine Kontaktadresse; Anbieter mit Schlüssel (DART) nicht
             raise AbrufFehler("User-Agent mit Kontaktadresse nötig (Umgebungsvariable INTERNATIONAL_USER_AGENT oder SEC_USER_AGENT, z. B. 'Name name@example.org')")
         self.user_agent = ua
         self.max_bytes, self.timeout, self.min_abstand = max_bytes, timeout, min_abstand

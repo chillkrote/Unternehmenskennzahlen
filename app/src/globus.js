@@ -5,7 +5,8 @@
 
    Ebenen: jede Darstellung auf der Karte ist eine Ebene in EBENEN (Länder, Unternehmen, später Handelsströme, Lieferketten).
    Eine Ebene bringt ihre Quellen und Schichten selbst mit und wird nach jedem Wechsel der Grundkarte neu angelegt.
-   Neue Ebenen: GLOBUS.ebene({ id, name, gruppe, an, quellen(map), schichten(map, vor), klick?(e, map) }).
+   Neue Ebenen: GLOBUS.ebene({ id, name, gruppe, an, quellen(map), schichten(map, vor), klick?(e, map), vorrang? }).
+   vorrang: Klick und Tooltip gehen vor den Unternehmenspunkten an diese Ebene (Unternehmensnetz, app/src/netz.js).
 
    Läuft nach dem Hauptskript des Terminals im selben Dokument und nutzt dessen Teile weiter:
    UNT.viewProfil (Profil im Fenster), UNT.viewVgl (Vergleich), VWL (Länderdaten), BOE (Indizes), render/gehe (Hash-Navigation). */
@@ -115,7 +116,9 @@ const GLOBUS = (() => {
 
   /* ----- Ebenen ----- */
   const EBENEN = [];
-  function ebene(def) { EBENEN.push({ an: true, gruppe: "Karte", ...def }); if (map && map.isStyleLoaded()) ebeneAnlegen(EBENEN[EBENEN.length - 1]); ebenenListe(); }
+  // Später registrierte Ebenen (z. B. netz.js) sofort anlegen, sobald der Stil steht; isStyleLoaded() ist auch während des Kachelladens false
+  let stilBereit = false;
+  function ebene(def) { EBENEN.push({ an: true, gruppe: "Karte", ...def }); if (map && stilBereit) ebeneAnlegen(EBENEN[EBENEN.length - 1]); ebenenListe(); }
   const vorBeschriftung = () => { const l = (map.getStyle().layers || []).find(x => x.type === "symbol" && x.id.startsWith("osm-")); return l ? l.id : undefined; };
   function ebeneAnlegen(e) {
     if (!e.quellen) return;
@@ -387,11 +390,13 @@ const GLOBUS = (() => {
     S.grund = art;
     document.querySelectorAll("[data-gkgrund]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.gkgrund === art)));
     if (!map) return;
+    stilBereit = false;
     map.setStyle(art === "osm" ? stilOSM() : stilEinfach(), { diff: false });
     map.once("style.load", stilGeladen);
   }
   function stilGeladen() {
     if (S.grund === "einfach") { /* Grundfläche: Länder sind die Landmasse */ }
+    stilBereit = true;
     EBENEN.forEach(ebeneAnlegen);
     if (S.land && NACH_ISO[S.land]) map.setFeatureState({ source: "laender", id: NACH_ISO[S.land].id }, { gewaehlt: true });
   }
@@ -428,10 +433,13 @@ const GLOBUS = (() => {
     map.on("sourcedata", e => { if (e.sourceId === "osm" && e.isSourceLoaded) osmGeladen = true;
     });
     const quer = (p, ids) => map.queryRenderedFeatures(p, { layers: ids.filter(i => map.getLayer(i)) });
+    // Schichten von Ebenen mit vorrang: true liegen über den Unternehmenspunkten (Klick und Tooltip gehen an die Ebene)
+    const vorrangSchichten = () => (map.getStyle().layers || []).filter(l => l.metadata && EBENEN.some(eb => eb.vorrang && eb.an && eb.id === l.metadata.ebene)).map(l => l.id);
     map.on("mousemove", e => {
-      const u = quer(e.point, ["unt-cluster", "unt-punkt", "unt-land-ring"]), hb = u.length ? [] : quer(e.point, ["nb-x", "nb-m", "handel-x", "handel-m", "k-x", "k-m"]), l = u.length ? [] : quer(e.point, ["laender-flaeche"]);
+      const v = quer(e.point, vorrangSchichten()).length > 0;
+      const u = v ? [] : quer(e.point, ["unt-cluster", "unt-punkt", "unt-land-ring"]), hb = u.length ? [] : quer(e.point, ["nb-x", "nb-m", "handel-x", "handel-m", "k-x", "k-m"]), l = u.length ? [] : quer(e.point, ["laender-flaeche"]);
       if (hb.length) { handelTip(e, hb[0]); } else if (handelPop) { handelPop.remove(); handelPop = null; }
-      map.getCanvas().style.cursor = u.length || l.length ? "pointer" : "";
+      map.getCanvas().style.cursor = v || u.length || l.length ? "pointer" : "";
       const id = l.length ? l[0].id : null;
       if (id !== S.hover) {
         if (S.hover != null && map.getSource("laender")) map.setFeatureState({ source: "laender", id: S.hover }, { hover: false });
@@ -442,6 +450,7 @@ const GLOBUS = (() => {
     });
     map.getCanvas().addEventListener("mouseleave", () => tooltip(null));
     map.on("click", e => {
+      for (const eb of EBENEN) if (eb.an && eb.vorrang && eb.klick && eb.klick(e, map) === true) return;
       if (S.stufe === 1) {              // Stufe 1: Kontinent statt Land
         const l1 = quer(e.point, ["laender-flaeche"]);
         if (l1.length && KONT_VON[l1[0].properties.iso]) return kontWaehlen(KONT_VON[l1[0].properties.iso]);
@@ -453,7 +462,7 @@ const GLOBUS = (() => {
       const p = quer(e.point, ["unt-punkt"]);
       if (p.length > 1) return listePopup(e.lngLat, p.map(x => x.properties));
       if (p.length) return oeffnen(p[0].properties.id);
-      for (const eb of EBENEN) if (eb.an && eb.klick && eb.klick(e, map) === true) return;
+      for (const eb of EBENEN) if (eb.an && !eb.vorrang && eb.klick && eb.klick(e, map) === true) return;
       const l = quer(e.point, ["laender-flaeche"]);
       if (l.length) landWaehlen(l[0].properties.iso, { fliegen: true });
       else landWaehlen(null);
@@ -787,9 +796,12 @@ const GLOBUS = (() => {
   /* ----- Fenster (Pop-ups) für Unternehmen und Vergleich ----- */
   const fensterKey = x => x.art + ":" + (x.id || "");
   function fensterEl() { return document.getElementById("gk-fenster"); }
+  // Andere Teile (z. B. das Unternehmensnetz, netz.js) hören auf "globus:firma" bzw. "globus:firma-zu"
+  const melden = (typ, id) => document.dispatchEvent(new CustomEvent(typ, { detail: { id } }));
   function firmaOeffnen(id, opt = {}) {
     const f = UNT.nachId(id); if (!f) return;
     id = f.id;
+    melden("globus:firma", id);
     const da = S.offen.find(x => x.art === "firma" && x.id === id);
     if (da) { nachVorne(da); return; }
     neuesFenster({ art: "firma", id });
@@ -800,6 +812,7 @@ const GLOBUS = (() => {
   const oeffnen = (id, opt = {}) => UNT.nachId(id) ? firmaOeffnen(id, opt) : stammOeffnen(id, opt);
   function stammOeffnen(k, opt = {}) {
     if (!STAMM[k]) return;
+    melden("globus:firma", STAMM[k].id || k);
     const da = S.offen.find(x => x.art === "stamm" && x.id === k);
     if (da) { nachVorne(da); return; }
     neuesFenster({ art: "stamm", id: k });
@@ -897,6 +910,7 @@ const GLOBUS = (() => {
   }
   function schliessen(x) {
     x.el.remove(); S.offen = S.offen.filter(o => o !== x);
+    if (x.art === "firma" || x.art === "stamm") melden("globus:firma-zu", x.art === "stamm" && STAMM[x.id] ? STAMM[x.id].id || x.id : x.id);
     punkteAktualisieren(); dock(); speichern();
   }
   function ziehen(x) {
@@ -1046,7 +1060,8 @@ const GLOBUS = (() => {
     seiteZeichnen();
     if (imGlobus) wiederherstellen();
   }
-  return { init, ebene, landWaehlen, firmaOeffnen, karte: () => map, ebenen: () => EBENEN };
+  return { init, ebene, landWaehlen, firmaOeffnen, oeffnen, bogen, hinweis, sichtbar: id => { const eb = EBENEN.find(x => x.id === id); if (eb && map) sichtbar(eb); },
+    karte: () => map, ebenen: () => EBENEN, imGlobus: () => imGlobus };
 })();
 // Daten des Terminals können (in der komprimierten Vorschau) erst nach dem Entpacken bereitstehen
 (function warte(n) { if (UNT.da() || n > 400) GLOBUS.init(); else setTimeout(() => warte(n + 1), 50); })(0);

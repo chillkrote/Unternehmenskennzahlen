@@ -17,6 +17,7 @@ TAB_SPALTEN = [("name", "Name *"), ("rf", "Rechtsform"), ("sitz", "Sitz"), ("isi
                ("notiert", "Börsennotiert *"), ("branche", "Branche *"), ("lei", "LEI"), ("hr", "Handelsregisternummer"), ("web", "Website"),
                ("bank", "Bank *"), ("index", "Index-Zugehörigkeit"), ("text", "Beschreibung"), ("quelle", "Quelle Stammdaten (URL) *")]
 TAB_LISTE = {"rf", "boerse", "notiert", "branche", "bank", "index"}
+NETZE = HIER.parent / "stammdaten/beziehungen"
 
 SCHALE = """
 <div id="globus" hidden>
@@ -88,6 +89,15 @@ def tabelle():
     return {"spalten": spalten, "listen": listen, "zeilen": zeilen}
 
 
+def netze():
+    """Unternehmensnetze (Standorte und Beziehungen je Konzern) aus stammdaten/beziehungen/daten, geprüft."""
+    if not (NETZE / "beziehungen.py").exists():
+        return {}
+    sys.path.insert(0, str(NETZE))
+    import beziehungen  # noqa: E402
+    return beziehungen.laden()
+
+
 def seite(terminal_seite):
     """Terminal-Seite (Fragment ohne Dokumentgerüst) -> Weltkugel-Fragment."""
     v = HIER / "vendor/maplibre-gl"
@@ -110,5 +120,9 @@ def seite(terminal_seite):
         '<script id="geo-stufen" type="application/json">' + (_js((HIER / "data/handel_stufen.json").read_text()) if (HIER / "data/handel_stufen.json").exists() else "null") + "</script>",
         "<script>\n" + mljs + "\n</script>",
         "<script>\n" + (HIER / "src/globus.js").read_text() + "\n</script>",
+        # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein
+        "<style>\n" + (HIER / "src/netz.css").read_text() + "\n</style>",
+        '<script id="geo-netze" type="application/json">' + _js(json.dumps(netze(), ensure_ascii=False, separators=(",", ":"))) + "</script>",
+        "<script>\n" + (HIER / "src/netz.js").read_text() + "\n</script>",
     ]
     return "\n".join(teile), len(s["zeilen"])

@@ -12,9 +12,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main, codex/europe600-abschluesse]
-    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/geo/**", "app/vendor/**", "stammdaten/geo/sitz_geo.csv", "unternehmen-tabelle/Unternehmen_Tabelle.csv", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
+    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/geo/**", "app/vendor/**", "stammdaten/geo/sitz_geo.csv", "stammdaten/beziehungen/**", "unternehmen-tabelle/Unternehmen_Tabelle.csv", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
   pull_request:
-    paths: ["app/src/**", "app/*.py", "app/geo/**", "app/vendor/**", "app/tests/**", "stammdaten/geo/sitz_geo.csv", "unternehmen-tabelle/Unternehmen_Tabelle.csv", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
+    paths: ["app/src/**", "app/*.py", "app/geo/**", "app/vendor/**", "app/tests/**", "stammdaten/geo/sitz_geo.csv", "stammdaten/beziehungen/**", "unternehmen-tabelle/Unternehmen_Tabelle.csv", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
 
 permissions:
   contents: write
@@ -58,6 +58,10 @@ jobs:
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/country-smoke.js app/dist/bankterminal.html
       - name: Weltkugel prüfen
         run: NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/globus-smoke.js app/dist/weltkugel.html
+      - name: Unternehmensnetze prüfen
+        run: |
+          python3 stammdaten/beziehungen/beziehungen.py pruefen
+          NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/netz-smoke.js app/dist/weltkugel.html
       - uses: actions/upload-artifact@v4
         with:
           name: terminal

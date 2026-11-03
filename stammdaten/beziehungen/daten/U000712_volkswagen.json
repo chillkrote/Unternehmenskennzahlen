@@ -1,0 +1,3451 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U000712",
+ "name": "Volkswagen Konzern",
+ "stand": "2026-11-03",
+ "berichtsjahr": 2025,
+ "hinweis": "Pilotdatensatz. Erfasst sind die wichtigsten Standorte und Beziehungen, nicht alle über 111 Produktionsstandorte. Jede Angabe nennt Quelle und Jahr; Werte aus Presseberichten statt Unternehmensquellen sind als unsicher markiert. Handelsvolumina zwischen Standorten werden vom Konzern nicht in Euro veröffentlicht; angegeben sind die veröffentlichten Stückzahlen (z. B. an andere Werke gelieferte Motoren).",
+ "quellen": {
+  "gb_produktion": {
+   "titel": "Volkswagen Konzern, Geschäftsbericht 2025: Produktion (Nachhaltige Wertsteigerung)",
+   "url": "https://annualreport2025.volkswagen-group.com/group-management-report/sustainable-value-enhancement/production.html",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_produktion2": {
+   "titel": "Volkswagen Konzern, Geschäftsbericht 2025: Produktion (Geschäftsverlauf)",
+   "url": "https://annualreport2025.volkswagen-group.com/group-management-report/business-development/production.html",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_struktur": {
+   "titel": "Volkswagen Konzern, Geschäftsbericht 2025: Struktur und Geschäftstätigkeit",
+   "url": "https://annualreport2025.volkswagen-group.com/group-management-report/structure-and-business-activities.html",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_aktionaere": {
+   "titel": "Volkswagen Konzern, Geschäftsbericht 2025: Aktionärsstruktur",
+   "url": "https://annualreport2025.volkswagen-group.com/group-management-report/shares-and-bonds/shareholder-structure.html",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_konsolidierung": {
+   "titel": "Volkswagen Konzern, Geschäftsbericht 2025, Anhang: Konsolidierungskreis (Gemeinschaftsunternehmen, assoziierte Unternehmen)",
+   "url": "https://annualreport2025.volkswagen-group.com/notes/basis-of-presentation/basis-of-consolidation.html",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_ereignisse": {
+   "titel": "Volkswagen Konzern, Geschäftsbericht 2025, Anhang: Wesentliche Ereignisse (Rivian, TRATON, Northvolt)",
+   "url": "https://annualreport2025.volkswagen-group.com/notes/basis-of-presentation/key-events.html",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "nr_wolfsburg": {
+   "titel": "Volkswagen Newsroom: Wolfsburg",
+   "url": "https://www.volkswagen-newsroom.com/de/wolfsburg-3732",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_braunschweig": {
+   "titel": "Volkswagen Newsroom: Braunschweig",
+   "url": "https://www.volkswagen-newsroom.com/de/braunschweig-3754",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_chemnitz": {
+   "titel": "Volkswagen Newsroom: Chemnitz",
+   "url": "https://www.volkswagen-newsroom.com/de/chemnitz-3738",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_dresden": {
+   "titel": "Volkswagen Newsroom: Dresden",
+   "url": "https://www.volkswagen-newsroom.com/de/dresden-3730",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_emden": {
+   "titel": "Volkswagen Newsroom: Emden",
+   "url": "https://www.volkswagen-newsroom.com/de/emden-3739",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_kassel": {
+   "titel": "Volkswagen Newsroom: Kassel",
+   "url": "https://www.volkswagen-newsroom.com/de/kassel-3756",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_osnabrueck": {
+   "titel": "Volkswagen Newsroom: Osnabrück",
+   "url": "https://www.volkswagen-newsroom.com/de/osnabrueck-3736",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_salzgitter": {
+   "titel": "Volkswagen Newsroom: Salzgitter",
+   "url": "https://www.volkswagen-newsroom.com/de/salzgitter-3758",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_zwickau": {
+   "titel": "Volkswagen Newsroom: Zwickau",
+   "url": "https://www.volkswagen-newsroom.com/de/zwickau-3755",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_autoeuropa": {
+   "titel": "Volkswagen Newsroom: Volkswagen Autoeuropa Lda.",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-autoeuropa-lda-3731",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_polska": {
+   "titel": "Volkswagen Newsroom: Volkswagen Motor Polska (Stand Februar 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-motor-polska-sp-z-oo-3741",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_navarra": {
+   "titel": "Volkswagen Newsroom: Volkswagen Navarra (Stand Februar 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-navarra-sa-3733",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_slovakia": {
+   "titel": "Volkswagen Newsroom: Volkswagen Slovakia (Stand Mai 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-slovakia-a-s-3740",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_china": {
+   "titel": "Volkswagen Newsroom: Volkswagen Group China (Stand Mai 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-group-china-4068",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_indien": {
+   "titel": "Volkswagen Newsroom: Škoda Auto Volkswagen India (Stand Februar 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/skoda-auto-volkswagen-india-4069",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_mexiko": {
+   "titel": "Volkswagen Newsroom: Volkswagen de México (Stand Februar 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-de-mexico-4070",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_chattanooga": {
+   "titel": "Volkswagen Newsroom: Volkswagen Group of America Chattanooga (Stand August 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-group-of-america-chattanooga-4071",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_brasil": {
+   "titel": "Volkswagen Newsroom: Volkswagen do Brasil (Stand Februar 2026)",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-do-brasil-4072",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_argentina": {
+   "titel": "Volkswagen Newsroom: Volkswagen Argentina",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-argentina-sa-4073",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "nr_africa": {
+   "titel": "Volkswagen Newsroom: Volkswagen Group Africa",
+   "url": "https://www.volkswagen-newsroom.com/de/volkswagen-group-africa-4074",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "vwn": {
+   "titel": "Volkswagen Konzern: Volkswagen Nutzfahrzeuge (Markenporträt)",
+   "url": "https://www.volkswagen-group.com/de/volkswagen-nutzfahrzeuge-15999",
+   "herausgeber": "Volkswagen AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "vwn_absatz": {
+   "titel": "transport-online.de: VW Nutzfahrzeuge, Rekordabsatz beim Multivan (Auslieferungen 2025)",
+   "url": "https://transport-online.de/news/vw-nutzfahrzeuge-rekordabsatz-beim-multivan-186907.html",
+   "herausgeber": "transport-online.de",
+   "jahr": 2026,
+   "art": "presse"
+  },
+  "audi_ingolstadt": {
+   "titel": "Audi am Standort Ingolstadt, Zahlen & Fakten (Stand 31.12.2025)",
+   "url": "https://uploads.audi-mediacenter.com/system/production/uploaded_files/36746/file/778c59c6fcae0249e7968b29321cab811dce413c/260317_Audi_in_Ingolstadt_2026_DE.pdf",
+   "herausgeber": "AUDI AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "audi_neckarsulm": {
+   "titel": "Audi in Neckarsulm, Facts & Figures (as of December 31, 2025)",
+   "url": "https://uploads.audi-mediacenter.com/system/production/uploaded_files/36739/file/7895f1c5936bb20c2c19e5abee2c0d9172962c29/260317_Audi_in_Neckarsulm_2026_EN.pdf",
+   "herausgeber": "AUDI AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "audi_mexiko": {
+   "titel": "Audi in Mexiko (San José Chiapa), Zahlen & Fakten (Stand 31.12.2025)",
+   "url": "https://uploads.audi-mediacenter.com/system/production/uploaded_files/37768/file/35908c046f1ba97d8eede97e09bd20bf0186b8c3/260317_Audi_in_Mexiko_2026_DE.pdf",
+   "herausgeber": "AUDI AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "audi_hungaria": {
+   "titel": "Audi Hungaria: stable production volume and increased efficiency in fiscal year 2025",
+   "url": "https://www.audi-mediacenter.com/en/press-releases/audi-hungaria-stable-production-volume-and-increased-efficiency-in-fiscal-year-2025-17068",
+   "herausgeber": "AUDI AG",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "skoda_produktion": {
+   "titel": "Škoda Auto steps up production in 2025, surpassing one million Škoda vehicles built (2.2.2026)",
+   "url": "https://www.skoda-storyboard.com/en/press-releases/skoda-auto-steps-up-production-in-2025-surpassing-one-million-skoda-vehicles-built/",
+   "herausgeber": "Škoda Auto a.s.",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "seat_2025": {
+   "titel": "SEAT & CUPRA breaks all-time sales record in 2025 despite industry headwinds",
+   "url": "https://www.volkswagen-group.com/en/articles/seat-and-cupra-breaks-all-time-sales-record-in-2025-despite-industry-headwinds-20084",
+   "herausgeber": "Volkswagen AG / SEAT S.A.",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "porsche_gb": {
+   "titel": "Porsche AG, Geschäfts- und Nachhaltigkeitsbericht 2025: Geschäftsverlauf (Produktion)",
+   "url": "https://newsroom.porsche.com/de/geschaefts-und-nachhaltigkeitsbericht/lagebericht/geschaeftsverlauf/",
+   "herausgeber": "Dr. Ing. h.c. F. Porsche AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "traton_gb": {
+   "titel": "TRATON GROUP, Annual Report 2025: Key information about the TRATON GROUP",
+   "url": "https://annualreport.traton.com/2025/en/combined-management-report/key-information-about-the-traton-group/index.html",
+   "herausgeber": "TRATON SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "traton_kennzahlen": {
+   "titel": "TRATON GROUP, Annual Report 2025: At a Glance (Kennzahlen)",
+   "url": "https://annualreport.traton.com/2025/en/key-figures/index.html",
+   "herausgeber": "TRATON SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "traton_absatz": {
+   "titel": "TRATON GROUP records total unit sales of around 305,500 vehicles in 2025",
+   "url": "https://www.volkswagen-group.com/en/articles/traton-group-records-total-unit-sales-of-around-305500-vehicles-in-2025-in-a-weak-market-environment-20097",
+   "herausgeber": "TRATON SE",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "man_werke": {
+   "titel": "MAN Truck & Bus: Produktionsstandorte",
+   "url": "https://man.eu/corporate/en/about-man/production-sites/productionsites.html",
+   "herausgeber": "MAN Truck & Bus SE",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "man_ankara": {
+   "titel": "electrive.net: MAN startet Produktion des Lion's City E in Ankara (2.4.2026)",
+   "url": "https://www.electrive.net/2026/04/02/man-startet-produktion-des-lions-city-e-in-ankara/",
+   "herausgeber": "electrive.net",
+   "jahr": 2026,
+   "art": "presse"
+  },
+  "man_krakau": {
+   "titel": "VerkehrsRundschau: Krakau wird zweites E-Lkw-Werk von MAN Trucks",
+   "url": "https://www.verkehrsrundschau.de/nachrichten/nfz-fuhrpark/krakau-wird-zweites-e-lkw-werk-von-man-trucks-3828919",
+   "herausgeber": "VerkehrsRundschau",
+   "jahr": 2026,
+   "art": "presse"
+  },
+  "scania_rugao": {
+   "titel": "Scania marks historic milestone with new global industrial hub in China",
+   "url": "https://news.cision.com/scania/r/scania-marks-historic-milestone-with-new-global-industrial-hub-in-china,c4251391",
+   "herausgeber": "Scania AB",
+   "jahr": 2025,
+   "art": "unternehmen"
+  },
+  "international": {
+   "titel": "Transport Topics: International eyes second San Antonio plant shift",
+   "url": "https://www.ttnews.com/articles/international-san-antonio",
+   "herausgeber": "Transport Topics",
+   "jahr": 2026,
+   "art": "presse"
+  },
+  "vwtb": {
+   "titel": "TRATON: Marke Volkswagen Truck & Bus",
+   "url": "https://traton.com/en/company/brands/vwtb.html",
+   "herausgeber": "TRATON SE",
+   "jahr": 2026,
+   "art": "unternehmen"
+  },
+  "lambo_2025": {
+   "titel": "CarExpert: Lamborghini sets global sales record for fifth consecutive year (Auslieferungen 2025)",
+   "url": "https://www.carexpert.com.au/car-news/lamborghini-sets-global-sales-record-for-fifth-consecutive-year",
+   "herausgeber": "CarExpert",
+   "jahr": 2026,
+   "art": "presse"
+  },
+  "ducati_2025": {
+   "titel": "Motopinas: Ducati reports 50,895 motorcycles delivered in 2025",
+   "url": "https://www.motopinas.com/motorcycle-news/multistrada-still-ducati-best-seller-for-2025-total-sales-down-3-6k-motorcycles.html",
+   "herausgeber": "Motopinas",
+   "jahr": 2026,
+   "art": "presse"
+  },
+  "powerco_salzgitter": {
+   "titel": "Bolsamanía/Europa Press: PowerCo comienza la producción propia de baterías en Salzgitter (17.12.2025)",
+   "url": "https://www.bolsamania.com/noticias_print/ultimas/economiamotor--powerco-comienza-la-produccion-propia-de-baterias-en-su-gigafactoria-de-salzgitter-alemania--21393508.html",
+   "herausgeber": "Europa Press",
+   "jahr": 2025,
+   "art": "presse"
+  },
+  "powerco_sagunto": {
+   "titel": "electrive.net: PowerCo, Batteriefertigung in Spanien soll im Juli 2027 starten",
+   "url": "https://www.electrive.net/2025/10/28/powerco-batteriefertigung-in-spanien-soll-im-juli-2027-starten/",
+   "herausgeber": "electrive.net",
+   "jahr": 2025,
+   "art": "presse"
+  },
+  "powerco_stthomas": {
+   "titel": "battery-tech.net: How is PowerCo building 200 GWh of battery capacity across three hubs",
+   "url": "https://battery-tech.net/how-is-powerco-building-200-gwh-of-battery-capacity-across-three-hubs/",
+   "herausgeber": "battery-tech.net",
+   "jahr": 2025,
+   "art": "presse"
+  },
+  "xpeng": {
+   "titel": "MarkLines: Volkswagen completes acquisition of 4.99% shares of XPeng for USD 705.6 million",
+   "url": "https://www.marklines.com/en/news/299550",
+   "herausgeber": "MarkLines",
+   "jahr": 2023,
+   "art": "presse"
+  },
+  "anhui": {
+   "titel": "autocarpro.in: VW hikes stake in JAC JV to 75%, invests in EV battery supplier",
+   "url": "https://autocarpro.in/news-international/vw-ups-the-ante-in-china-hikes-stake-in-jac-jv-to-75-invests-in-ev-battery-supplier-56468",
+   "herausgeber": "Autocar Professional",
+   "jahr": 2020,
+   "art": "presse"
+  },
+  "uber": {
+   "titel": "electrive.com: Volkswagen and Uber team up on robotaxis (24.4.2025)",
+   "url": "https://www.electrive.com/2025/04/24/volkswagen-and-uber-team-up-on-robotaxis",
+   "herausgeber": "electrive.com",
+   "jahr": 2025,
+   "art": "presse"
+  },
+  "mahindra": {
+   "titel": "electrive.com: Mahindra and VW seal deal for MEB components (16.2.2024)",
+   "url": "https://www.electrive.com/2024/02/16/mahindra-and-vw-seal-deal-for-meb-components",
+   "herausgeber": "electrive.com",
+   "jahr": 2024,
+   "art": "presse"
+  },
+  "ford": {
+   "titel": "electrive.net: Mahindra will MEB-Komponenten von Volkswagen nutzen (Ford als externer MEB-Kunde)",
+   "url": "https://www.electrive.net/2022/05/19/mahindra-will-meb-komponenten-von-volkswagen-nutzen/",
+   "herausgeber": "electrive.net",
+   "jahr": 2022,
+   "art": "presse"
+  },
+  "kassel_antriebe": {
+   "titel": "boerse-global.de: VW-Aktie, wachstumsstarkes Jahr (Kassel über 850.000 E-Antriebe 2025)",
+   "url": "https://www.boerse-global.de/vw-aktie-wachstumsstarkes-jahr/751537",
+   "herausgeber": "boerse-global.de",
+   "jahr": 2026,
+   "art": "presse"
+  }
+ },
+ "standorte": [
+  {
+   "id": "wob",
+   "name": "Konzernzentrale und Stammwerk Wolfsburg",
+   "gesellschaft": "Volkswagen AG",
+   "marke": "Volkswagen Pkw",
+   "unternehmen_id": "U000712",
+   "art": "hauptsitz",
+   "ort": "Wolfsburg",
+   "land": "DE",
+   "taetigkeit": "Sitz der Volkswagen AG und Stammwerk: Fahrzeugbau (Golf, Golf Variant, Tiguan, Touran, Tayron) sowie Komponenten wie Spritzteile und Gelenkwellen. Nebenan liegt die Autostadt (Auslieferung). Im Februar 2026 lief das 49-millionste Fahrzeug aus Wolfsburg vom Band.",
+   "kennzahlen": [],
+   "quellen": [
+    "nr_wolfsburg",
+    "gb_struktur"
+   ],
+   "lat": 52.4206,
+   "lon": 10.7862,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bs",
+   "name": "Komponentenwerk Braunschweig",
+   "gesellschaft": "Volkswagen Group Components",
+   "marke": "Volkswagen Group Components",
+   "art": "komponentenwerk",
+   "ort": "Braunschweig",
+   "land": "DE",
+   "taetigkeit": "Entwicklung und Fertigung von Fahrwerkkomponenten wie Lenkungen und Achsen sowie Batteriesystemen; Typführer für Batteriesysteme im Konzern.",
+   "kennzahlen": [],
+   "quellen": [
+    "nr_braunschweig"
+   ],
+   "lat": 52.2647,
+   "lon": 10.5236,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vwfs",
+   "name": "Volkswagen Financial Services und Volkswagen Bank",
+   "gesellschaft": "Volkswagen Financial Services AG",
+   "marke": "Finanzdienstleistungen",
+   "unternehmen_id": "U000714",
+   "art": "finanzen",
+   "ort": "Braunschweig",
+   "land": "DE",
+   "taetigkeit": "Händler- und Kundenfinanzierung, Leasing, Direktbank, Versicherung, Flottenmanagement und Mobilitätsangebote für die Konzernmarken (Konzernbereich Finanzdienstleistungen).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_struktur"
+   ],
+   "lat": 52.2647,
+   "lon": 10.5236,
+   "koordinate": "ort"
+  },
+  {
+   "id": "chemnitz",
+   "name": "Motorenwerk Chemnitz",
+   "gesellschaft": "Volkswagen Sachsen GmbH",
+   "marke": "Volkswagen Pkw",
+   "art": "komponentenwerk",
+   "ort": "Chemnitz",
+   "land": "DE",
+   "taetigkeit": "Benzin-Direkteinspritzer (TSI) und Motoren-Baugruppen wie Ausgleichswellen und Ventiltriebsmodule; liefert Motoren an die Fahrzeugwerke und Komponenten an die Komponentenwerke des Konzerns. Künftig Thermomanagement für E-Fahrzeuge.",
+   "kennzahlen": [
+    {
+     "name": "Motoren seit Gründung",
+     "wert": 18000000,
+     "einheit": "Motoren",
+     "jahr": 2026,
+     "vergleich": "mehr als"
+    }
+   ],
+   "quellen": [
+    "nr_chemnitz"
+   ],
+   "lat": 50.8324,
+   "lon": 12.9189,
+   "koordinate": "ort"
+  },
+  {
+   "id": "dresden",
+   "name": "Gläserne Manufaktur Dresden",
+   "gesellschaft": "Volkswagen Sachsen GmbH",
+   "marke": "Volkswagen Pkw",
+   "art": "vertrieb",
+   "ort": "Dresden",
+   "land": "DE",
+   "taetigkeit": "Fahrzeugproduktion am 16.12.2025 beendet. Heute Auslieferungszentrum (zweitgrößtes in Deutschland), Erlebniswelt und ab 2026 Innovationscampus mit der TU Dresden.",
+   "kennzahlen": [],
+   "quellen": [
+    "nr_dresden"
+   ],
+   "lat": 51.0493,
+   "lon": 13.7381,
+   "koordinate": "ort"
+  },
+  {
+   "id": "emden",
+   "name": "Werk und Hafen Emden",
+   "gesellschaft": "Volkswagen AG",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Emden",
+   "land": "DE",
+   "taetigkeit": "Elektrofahrzeuge ID.4, ID.7 und ID.7 Tourer. Dazu der wichtigste Hafen des Konzerns, drittgrößter Autoumschlaghafen Europas und Drehscheibe für Im- und Export von Neufahrzeugen.",
+   "kennzahlen": [
+    {
+     "name": "Beschäftigte",
+     "wert": 8000,
+     "einheit": "Personen",
+     "jahr": 2024,
+     "vergleich": "rund"
+    }
+   ],
+   "quellen": [
+    "nr_emden"
+   ],
+   "lat": 53.3671,
+   "lon": 7.2058,
+   "koordinate": "ort"
+  },
+  {
+   "id": "kassel",
+   "name": "Komponentenwerk Kassel (Baunatal)",
+   "gesellschaft": "Volkswagen Group Components",
+   "marke": "Volkswagen Group Components",
+   "art": "komponentenwerk",
+   "ort": "Baunatal",
+   "land": "DE",
+   "taetigkeit": "Größtes Komponentenwerk des Konzerns: Elektroantriebe (u. a. APP550), Getriebe, Großgussteile, Karosserie-Ersatzteile. Liefert Antriebe an die Fahrzeugwerke.",
+   "kennzahlen": [
+    {
+     "name": "Beschäftigte",
+     "wert": 13500,
+     "einheit": "Personen",
+     "jahr": 2026,
+     "vergleich": "rund",
+     "quelle": "nr_kassel"
+    },
+    {
+     "name": "Elektroantriebe",
+     "wert": 850000,
+     "einheit": "Antriebe",
+     "jahr": 2025,
+     "vergleich": "mehr als",
+     "quelle": "kassel_antriebe",
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "nr_kassel",
+    "kassel_antriebe"
+   ],
+   "lat": 51.2551,
+   "lon": 9.4119,
+   "koordinate": "ort"
+  },
+  {
+   "id": "osnabrueck",
+   "name": "Werk Osnabrück",
+   "gesellschaft": "Volkswagen Osnabrück GmbH",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Osnabrück",
+   "land": "DE",
+   "taetigkeit": "Kleinserien und Sonderprojekte: T-Roc Cabriolet (Auslauf Sommer 2027, Zukunft offen). Fertigstellung des Porsche 718 Boxster/Cayman bis Ende Oktober 2025.",
+   "kennzahlen": [
+    {
+     "name": "Porsche 718 fertiggestellt",
+     "wert": 15856,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "porsche_gb"
+    }
+   ],
+   "quellen": [
+    "nr_osnabrueck",
+    "porsche_gb"
+   ],
+   "lat": 52.272,
+   "lon": 8.0476,
+   "koordinate": "ort"
+  },
+  {
+   "id": "salzgitter",
+   "name": "Komponentenwerk Salzgitter",
+   "gesellschaft": "Volkswagen Group Components",
+   "marke": "Volkswagen Group Components",
+   "art": "komponentenwerk",
+   "ort": "Salzgitter",
+   "land": "DE",
+   "taetigkeit": "Motorenvarianten für über 40 Konzernmodelle und E-Komponenten; soll Batteriezentrum des Konzerns werden.",
+   "kennzahlen": [],
+   "quellen": [
+    "nr_salzgitter"
+   ],
+   "lat": 52.1504,
+   "lon": 10.3593,
+   "koordinate": "ort"
+  },
+  {
+   "id": "powerco_sz",
+   "name": "PowerCo Zellfabrik Salzgitter",
+   "gesellschaft": "PowerCo SE",
+   "marke": "PowerCo (Batterie)",
+   "art": "batterie",
+   "ort": "Salzgitter",
+   "land": "DE",
+   "versatz": [
+    0.05,
+    -0.04
+   ],
+   "taetigkeit": "Eigene Batteriezellfertigung des Konzerns (Einheitszelle); laut Presse seit 17.12.2025 in Produktion, Blaupause für Sagunto und St. Thomas.",
+   "kennzahlen": [],
+   "quellen": [
+    "powerco_salzgitter"
+   ],
+   "unsicher": true,
+   "hinweis": "Produktionsstart nur aus Presseberichten, nicht aus dem Geschäftsbericht.",
+   "lat": 52.1104,
+   "lon": 10.4093,
+   "koordinate": "ort"
+  },
+  {
+   "id": "zwickau",
+   "name": "Fahrzeugwerk Zwickau",
+   "gesellschaft": "Volkswagen Sachsen GmbH",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Zwickau",
+   "land": "DE",
+   "taetigkeit": "Größtes E-Auto-Werk des Konzerns in Europa: MEB-Fahrzeuge von Volkswagen, Audi und CUPRA (Mehrmarkenwerk). Seit 2026 zentrales Kompetenzzentrum für Kreislaufwirtschaft (Demontagelinie).",
+   "kennzahlen": [],
+   "quellen": [
+    "nr_zwickau",
+    "gb_produktion"
+   ],
+   "lat": 50.7185,
+   "lon": 12.4939,
+   "koordinate": "ort"
+  },
+  {
+   "id": "hannover",
+   "name": "Volkswagen Nutzfahrzeuge Hannover",
+   "gesellschaft": "Volkswagen AG",
+   "marke": "Volkswagen Nutzfahrzeuge",
+   "art": "fahrzeugwerk",
+   "ort": "Hannover",
+   "land": "DE",
+   "taetigkeit": "Stammsitz und Stammwerk der Marke Volkswagen Nutzfahrzeuge (Bulli): Multivan, California, ID. Buzz sowie ID. Buzz AD, das erste europäische vollautonome Serienfahrzeug.",
+   "kennzahlen": [
+    {
+     "name": "Auslieferungen VWN gesamt",
+     "wert": 401000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "vwn_absatz",
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "vwn",
+    "vwn_absatz"
+   ],
+   "lat": 52.3745,
+   "lon": 9.7386,
+   "koordinate": "ort"
+  },
+  {
+   "id": "poznan",
+   "name": "Volkswagen Poznań",
+   "gesellschaft": "Volkswagen Poznań Sp. z o.o.",
+   "marke": "Volkswagen Nutzfahrzeuge",
+   "art": "fahrzeugwerk",
+   "ort": "Poznań",
+   "land": "PL",
+   "taetigkeit": "Fahrzeugwerk von Volkswagen Nutzfahrzeuge (Caddy).",
+   "kennzahlen": [
+    {
+     "name": "Caddy ausgeliefert",
+     "wert": 110400,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "vwn_absatz",
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "vwn",
+    "vwn_absatz"
+   ],
+   "lat": 52.4007,
+   "lon": 16.9197,
+   "koordinate": "ort"
+  },
+  {
+   "id": "wrzesnia",
+   "name": "Volkswagen Poznań, Werk Września",
+   "gesellschaft": "Volkswagen Poznań Sp. z o.o.",
+   "marke": "Volkswagen Nutzfahrzeuge",
+   "art": "fahrzeugwerk",
+   "ort": "Września",
+   "land": "PL",
+   "taetigkeit": "Einziger Standort für Crafter und MAN TGE; Ausbau für die nächste e-Crafter-Generation.",
+   "kennzahlen": [
+    {
+     "name": "Crafter ausgeliefert",
+     "wert": 73000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "vwn_absatz",
+     "unsicher": true
+    },
+    {
+     "name": "MAN TGE abgesetzt",
+     "wert": 31344,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "traton_kennzahlen"
+    }
+   ],
+   "quellen": [
+    "vwn",
+    "vwn_absatz",
+    "traton_kennzahlen"
+   ],
+   "lat": 52.3251,
+   "lon": 17.5652,
+   "koordinate": "ort"
+  },
+  {
+   "id": "palmela",
+   "name": "Volkswagen Autoeuropa",
+   "gesellschaft": "Volkswagen Autoeuropa Lda.",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Palmela",
+   "land": "PT",
+   "taetigkeit": "T-Roc und T-Roc R. Hauptabnehmerländer Deutschland, Vereinigtes Königreich und Italien; 462 Zulieferer, 17 davon just in time.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 240400,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Anteil am Warenexport Portugals",
+     "wert": 4.5,
+     "einheit": "%",
+     "jahr": 2025
+    },
+    {
+     "name": "Anteil am BIP Portugals",
+     "wert": 1.25,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_autoeuropa"
+   ],
+   "lat": 38.5696,
+   "lon": -8.9012,
+   "koordinate": "ort"
+  },
+  {
+   "id": "polkowice",
+   "name": "Volkswagen Motor Polska",
+   "gesellschaft": "Volkswagen Motor Polska Sp. z o.o.",
+   "marke": "Volkswagen Pkw",
+   "art": "komponentenwerk",
+   "ort": "Polkowice",
+   "land": "PL",
+   "taetigkeit": "Vierzylinder-Dieselmotoren (MDB-Evo) und Motorenhauptkomponenten wie Zylinderköpfe, Kurbelwellen und Kurbelgehäuse; verbaut bei Volkswagen Pkw, Nutzfahrzeuge, Škoda, SEAT und Audi.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 621000,
+     "einheit": "Motoren",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 1175,
+     "einheit": "Personen",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_polska"
+   ],
+   "lat": 51.5039,
+   "lon": 16.0713,
+   "koordinate": "ort"
+  },
+  {
+   "id": "pamplona",
+   "name": "Volkswagen Navarra",
+   "gesellschaft": "Volkswagen Navarra, S.A.",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Pamplona",
+   "land": "ES",
+   "taetigkeit": "T-Cross (133.838) und Taigo (91.186).",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 225225,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 4865,
+     "einheit": "Personen",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_navarra"
+   ],
+   "lat": 42.8157,
+   "lon": -1.6522,
+   "koordinate": "ort"
+  },
+  {
+   "id": "martorell",
+   "name": "SEAT & CUPRA Martorell",
+   "gesellschaft": "SEAT S.A.",
+   "marke": "SEAT/CUPRA",
+   "art": "fahrzeugwerk",
+   "ort": "Martorell",
+   "land": "ES",
+   "taetigkeit": "Hauptwerk von SEAT und CUPRA, baut auch den Audi A1; neue Batteriesystem-Montage. Ab 2026 Elektro-Kleinwagenfamilie (u. a. CUPRA Raval).",
+   "kennzahlen": [
+    {
+     "name": "Produktion Martorell (inkl. Audi A1)",
+     "wert": 470347,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Produktion SEAT S.A. weltweit",
+     "wert": 584693,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "seat_2025"
+   ],
+   "lat": 41.4744,
+   "lon": 1.9307,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sagunto",
+   "name": "PowerCo Sagunto",
+   "gesellschaft": "PowerCo SE",
+   "marke": "PowerCo (Batterie)",
+   "art": "batterie",
+   "ort": "Sagunto",
+   "land": "ES",
+   "taetigkeit": "Batteriezellfabrik im Bau; Vorserie laut Presse ab Herbst 2026, Serienfertigung ab Juli 2027.",
+   "kennzahlen": [],
+   "quellen": [
+    "powerco_sagunto"
+   ],
+   "status": "im Bau",
+   "lat": 39.6793,
+   "lon": -0.2786,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bratislava",
+   "name": "Volkswagen Slovakia, Werk Bratislava",
+   "gesellschaft": "Volkswagen Slovakia, a. s.",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Bratislava",
+   "land": "SK",
+   "taetigkeit": "Mehrmarkenwerk für vier Konzernmarken unter einem Dach (MLB und MQB): VW Touareg und Passat, Audi Q7 und Q8, Porsche Cayenne (auch elektrisch), Škoda Superb.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 336905,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte (mit Martin)",
+     "wert": 11400,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "vergleich": "rund"
+    }
+   ],
+   "quellen": [
+    "nr_slovakia",
+    "gb_produktion"
+   ],
+   "lat": 48.1435,
+   "lon": 17.1083,
+   "koordinate": "ort"
+  },
+  {
+   "id": "martin",
+   "name": "Volkswagen Slovakia, Werk Martin",
+   "gesellschaft": "Volkswagen Slovakia, a. s.",
+   "marke": "Volkswagen Pkw",
+   "art": "komponentenwerk",
+   "ort": "Martin",
+   "land": "SK",
+   "taetigkeit": "Komponenten für Getriebe und Fahrwerke (Synchronringe, Flanschwellen, Differentiale), verwendet von zahlreichen Konzernmarken.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 21600000,
+     "einheit": "Komponenten",
+     "jahr": 2025,
+     "vergleich": "rund"
+    }
+   ],
+   "quellen": [
+    "nr_slovakia"
+   ],
+   "lat": 49.0725,
+   "lon": 18.9292,
+   "koordinate": "ort"
+  },
+  {
+   "id": "mb",
+   "name": "Škoda Auto Mladá Boleslav",
+   "gesellschaft": "Škoda Auto a.s.",
+   "marke": "Škoda",
+   "art": "hauptsitz_tochter",
+   "ort": "Mladá Boleslav",
+   "land": "CZ",
+   "taetigkeit": "Sitz und Hauptwerk von Škoda: Fabia, Scala, Octavia, Kamiq, Enyaq, Elroq auf einer Linie (MQB und MEB). Dazu Batteriesysteme, EA211-Benzinmotoren und MQ200-Schaltgetriebe, auch für andere Konzernmarken.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 605600,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Batteriesysteme",
+     "wert": 329000,
+     "einheit": "Stück",
+     "jahr": 2025,
+     "vergleich": "mehr als"
+    },
+    {
+     "name": "EA211-Motoren",
+     "wert": 513800,
+     "einheit": "Motoren",
+     "jahr": 2025
+    },
+    {
+     "name": "MQ200-Getriebe",
+     "wert": 311300,
+     "einheit": "Getriebe",
+     "jahr": 2025
+    },
+    {
+     "name": "Škoda weltweit",
+     "wert": 1065000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "skoda_produktion"
+   ],
+   "lat": 50.4116,
+   "lon": 14.9031,
+   "koordinate": "ort"
+  },
+  {
+   "id": "kvasiny",
+   "name": "Škoda Werk Kvasiny",
+   "gesellschaft": "Škoda Auto a.s.",
+   "marke": "Škoda",
+   "art": "fahrzeugwerk",
+   "ort": "Kvasiny",
+   "land": "CZ",
+   "taetigkeit": "Octavia, Karoq und Kodiaq; zusätzlich SEAT-Fahrzeuge.",
+   "kennzahlen": [
+    {
+     "name": "Produktion Škoda",
+     "wert": 301500,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Produktion SEAT",
+     "wert": 40200,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "skoda_produktion"
+   ],
+   "lat": 50.2126,
+   "lon": 16.2634,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vrchlabi",
+   "name": "Škoda Werk Vrchlabí",
+   "gesellschaft": "Škoda Auto a.s.",
+   "marke": "Škoda",
+   "art": "komponentenwerk",
+   "ort": "Vrchlabí",
+   "land": "CZ",
+   "taetigkeit": "Siebengang-Doppelkupplungsgetriebe DQ200; mehr als die Hälfte geht an andere Konzernmarken.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 721400,
+     "einheit": "Getriebe",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "skoda_produktion"
+   ],
+   "lat": 50.6271,
+   "lon": 15.6096,
+   "koordinate": "ort"
+  },
+  {
+   "id": "ingolstadt",
+   "name": "AUDI AG Ingolstadt",
+   "gesellschaft": "AUDI AG",
+   "marke": "Audi",
+   "art": "hauptsitz_tochter",
+   "ort": "Ingolstadt",
+   "land": "DE",
+   "taetigkeit": "Stammsitz und größtes Werk des Audi Konzerns mit Technischer Entwicklung: Audi Q2, A3, A6 e-tron, Q6 e-tron; ab 2026 A2 e-tron, neuer Q3 im Verbund mit Győr.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 341420,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 40000,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "vergleich": "rund"
+    }
+   ],
+   "quellen": [
+    "audi_ingolstadt"
+   ],
+   "lat": 48.763,
+   "lon": 11.425,
+   "koordinate": "ort"
+  },
+  {
+   "id": "neckarsulm",
+   "name": "Audi Neckarsulm",
+   "gesellschaft": "AUDI AG",
+   "marke": "Audi",
+   "art": "fahrzeugwerk",
+   "ort": "Neckarsulm",
+   "land": "DE",
+   "taetigkeit": "Audi A5, A6, A8 und e-tron GT mit allen Varianten; Böllinger Höfe bei Heilbronn gehören dazu.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 181454,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 15509,
+     "einheit": "Personen",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "audi_neckarsulm"
+   ],
+   "lat": 49.1917,
+   "lon": 9.2249,
+   "koordinate": "ort"
+  },
+  {
+   "id": "gyoer",
+   "name": "Audi Hungaria Győr",
+   "gesellschaft": "Audi Hungaria Zrt.",
+   "marke": "Audi",
+   "art": "fahrzeugwerk",
+   "ort": "Győr",
+   "land": "HU",
+   "taetigkeit": "Größtes Antriebswerk der Welt für den Konzern (Verbrenner- und Elektroantriebe, ab 2026 MEBeco) und Fahrzeugwerk für Audi Q3, Q3 Sportback und CUPRA Terramar.",
+   "kennzahlen": [
+    {
+     "name": "Antriebe",
+     "wert": 1585290,
+     "einheit": "Antriebe",
+     "jahr": 2025
+    },
+    {
+     "name": "davon elektrisch",
+     "wert": 264871,
+     "einheit": "Antriebe",
+     "jahr": 2025
+    },
+    {
+     "name": "Fahrzeuge",
+     "wert": 200756,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Umsatz",
+     "wert": 9222,
+     "einheit": "Mio. €",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 11430,
+     "einheit": "Personen",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "audi_hungaria"
+   ],
+   "lat": 47.6835,
+   "lon": 17.6343,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sjchiapa",
+   "name": "Audi México San José Chiapa",
+   "gesellschaft": "Audi México S.A. de C.V.",
+   "marke": "Audi",
+   "art": "fahrzeugwerk",
+   "ort": "San José Chiapa",
+   "land": "MX",
+   "taetigkeit": "Audi Q5 und Q5 Sportback für die Weltmärkte außer China.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 146784,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 4943,
+     "einheit": "Personen",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "audi_mexiko"
+   ],
+   "lat": 19.2487,
+   "lon": -97.7199,
+   "koordinate": "ort"
+  },
+  {
+   "id": "zuffenhausen",
+   "name": "Porsche Stuttgart-Zuffenhausen",
+   "gesellschaft": "Dr. Ing. h.c. F. Porsche AG",
+   "marke": "Porsche",
+   "unternehmen_id": "U000175",
+   "art": "hauptsitz_tochter",
+   "ort": "Stuttgart-Zuffenhausen",
+   "land": "DE",
+   "taetigkeit": "Stammsitz und Stammwerk von Porsche (börsennotiert): alle 911 und der Taycan.",
+   "kennzahlen": [
+    {
+     "name": "911",
+     "wert": 55371,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Taycan",
+     "wert": 11510,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Porsche Konzern gesamt",
+     "wert": 261341,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "porsche_gb"
+   ],
+   "lat": 48.8295,
+   "lon": 9.1672,
+   "koordinate": "ort"
+  },
+  {
+   "id": "leipzig",
+   "name": "Porsche Leipzig",
+   "gesellschaft": "Porsche Leipzig GmbH",
+   "marke": "Porsche",
+   "art": "fahrzeugwerk",
+   "ort": "Leipzig",
+   "land": "DE",
+   "taetigkeit": "Macan (79.621) und Panamera (22.289); Verbrenner, Hybrid und elektrisch auf einer Linie.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 101910,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Anteil an Porsche-Produktion",
+     "wert": 39.0,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "porsche_gb"
+   ],
+   "lat": 51.3406,
+   "lon": 12.3747,
+   "koordinate": "ort"
+  },
+  {
+   "id": "crewe",
+   "name": "Bentley Motors Crewe",
+   "gesellschaft": "Bentley Motors Ltd.",
+   "marke": "Bentley",
+   "art": "hauptsitz_tochter",
+   "ort": "Crewe",
+   "land": "GB",
+   "taetigkeit": "Sitz und Werk von Bentley (Markengruppe Progressive mit Audi, Lamborghini, Ducati).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_struktur"
+   ],
+   "hinweis": "Für 2025 keine verlässliche Produktions- oder Auslieferungszahl gefunden.",
+   "lat": 53.0996,
+   "lon": -2.4415,
+   "koordinate": "ort"
+  },
+  {
+   "id": "santagata",
+   "name": "Automobili Lamborghini Sant'Agata Bolognese",
+   "gesellschaft": "Automobili Lamborghini S.p.A.",
+   "marke": "Lamborghini",
+   "art": "hauptsitz_tochter",
+   "ort": "Sant'Agata Bolognese",
+   "land": "IT",
+   "taetigkeit": "Sitz und Werk von Lamborghini (Markengruppe Progressive).",
+   "kennzahlen": [
+    {
+     "name": "Auslieferungen",
+     "wert": 10747,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "gb_struktur",
+    "lambo_2025"
+   ],
+   "lat": 44.6637,
+   "lon": 11.1333,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bologna",
+   "name": "Ducati Borgo Panigale",
+   "gesellschaft": "Ducati Motor Holding S.p.A.",
+   "marke": "Ducati",
+   "art": "hauptsitz_tochter",
+   "ort": "Bologna",
+   "land": "IT",
+   "taetigkeit": "Sitz und Werk von Ducati (Motorräder; Markengruppe Progressive).",
+   "kennzahlen": [
+    {
+     "name": "Auslieferungen",
+     "wert": 50895,
+     "einheit": "Motorräder",
+     "jahr": 2025,
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "gb_struktur",
+    "ducati_2025"
+   ],
+   "lat": 44.4938,
+   "lon": 11.3426,
+   "koordinate": "ort"
+  },
+  {
+   "id": "traton",
+   "name": "TRATON SE und MAN Truck & Bus München",
+   "gesellschaft": "TRATON SE / MAN Truck & Bus SE",
+   "marke": "TRATON (Lkw und Busse)",
+   "unternehmen_id": "U000668",
+   "art": "hauptsitz_tochter",
+   "ort": "München",
+   "land": "DE",
+   "taetigkeit": "Sitz der börsennotierten Lkw-Holding TRATON (Scania, MAN, International, Volkswagen Truck & Bus) und Stammwerk von MAN: schwere Lkw, seit 2025 auch E-Lkw in gemischter Fertigung.",
+   "kennzahlen": [
+    {
+     "name": "Absatz TRATON",
+     "wert": 305486,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "traton_absatz"
+    },
+    {
+     "name": "Absatz MAN",
+     "wert": 101600,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "traton_absatz"
+    },
+    {
+     "name": "Umsatz TRATON",
+     "wert": 44052,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "traton_kennzahlen"
+    }
+   ],
+   "quellen": [
+    "traton_gb",
+    "traton_absatz",
+    "traton_kennzahlen",
+    "man_werke"
+   ],
+   "lat": 48.1371,
+   "lon": 11.5754,
+   "koordinate": "ort"
+  },
+  {
+   "id": "man_krakau",
+   "name": "MAN Truck & Bus Krakau",
+   "gesellschaft": "MAN Truck & Bus Polska",
+   "marke": "MAN",
+   "art": "fahrzeugwerk",
+   "ort": "Niepołomice",
+   "land": "PL",
+   "taetigkeit": "Montage schwerer Lkw und Ausgleichswerk für München; wird zweites E-Lkw-Werk (eTGL, später eTGM).",
+   "kennzahlen": [],
+   "quellen": [
+    "man_werke",
+    "man_krakau"
+   ],
+   "hinweis": "Werk liegt bei Krakau (Niepołomice); Ort ungefähr.",
+   "lat": 50.0331,
+   "lon": 20.2172,
+   "koordinate": "ort"
+  },
+  {
+   "id": "man_starachowice",
+   "name": "MAN Busse Starachowice",
+   "gesellschaft": "MAN Bus Sp. z o.o.",
+   "marke": "MAN",
+   "art": "fahrzeugwerk",
+   "ort": "Starachowice",
+   "land": "PL",
+   "taetigkeit": "Stadt- und Überlandbusse, darunter der elektrische Lion's City E.",
+   "kennzahlen": [],
+   "quellen": [
+    "man_werke"
+   ],
+   "lat": 51.0385,
+   "lon": 21.0821,
+   "koordinate": "ort"
+  },
+  {
+   "id": "man_ankara",
+   "name": "MAN Türkiye Ankara",
+   "gesellschaft": "MAN Türkiye A.Ş.",
+   "marke": "MAN",
+   "art": "fahrzeugwerk",
+   "ort": "Ankara",
+   "land": "TR",
+   "taetigkeit": "Größtes Buswerk von MAN: Stadt-, Überland- und Reisebusse von MAN und NEOPLAN; seit April 2026 auch Lion's City E.",
+   "kennzahlen": [],
+   "quellen": [
+    "man_werke",
+    "man_ankara"
+   ],
+   "lat": 39.9208,
+   "lon": 32.854,
+   "koordinate": "ort"
+  },
+  {
+   "id": "soedertaelje",
+   "name": "Scania Södertälje",
+   "gesellschaft": "Scania CV AB",
+   "marke": "Scania",
+   "art": "hauptsitz_tochter",
+   "ort": "Södertälje",
+   "land": "SE",
+   "taetigkeit": "Sitz und Ursprungswerk von Scania: schwere Lkw, Busse und Motoren.",
+   "kennzahlen": [
+    {
+     "name": "Absatz Scania",
+     "wert": 94100,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "traton_absatz"
+    }
+   ],
+   "quellen": [
+    "traton_gb",
+    "traton_absatz"
+   ],
+   "lat": 59.1964,
+   "lon": 17.6272,
+   "koordinate": "ort"
+  },
+  {
+   "id": "zwolle",
+   "name": "Scania Production Zwolle",
+   "gesellschaft": "Scania Production Zwolle B.V.",
+   "marke": "Scania",
+   "art": "fahrzeugwerk",
+   "ort": "Zwolle",
+   "land": "NL",
+   "taetigkeit": "Lkw-Montage für Europa.",
+   "kennzahlen": [],
+   "quellen": [
+    "scania_rugao"
+   ],
+   "lat": 52.5146,
+   "lon": 6.0977,
+   "koordinate": "ort"
+  },
+  {
+   "id": "rugao",
+   "name": "Scania Rugao",
+   "gesellschaft": "Scania (China)",
+   "marke": "Scania",
+   "art": "fahrzeugwerk",
+   "ort": "Rugao",
+   "land": "CN",
+   "taetigkeit": "Erstes vollständig eigenes Scania-Werk in China, eröffnet Oktober 2025; geplante Kapazität 50.000 Fahrzeuge pro Jahr.",
+   "kennzahlen": [
+    {
+     "name": "geplante Kapazität",
+     "wert": 50000,
+     "einheit": "Fahrzeuge/Jahr",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "traton_gb",
+    "scania_rugao"
+   ],
+   "lat": 32.3735,
+   "lon": 120.5698,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sbc_scania",
+   "name": "Scania São Bernardo do Campo",
+   "gesellschaft": "Scania Latin America",
+   "marke": "Scania",
+   "art": "fahrzeugwerk",
+   "ort": "São Bernardo do Campo",
+   "land": "BR",
+   "versatz": [
+    0.04,
+    0.04
+   ],
+   "taetigkeit": "Lkw und Busse für Lateinamerika.",
+   "kennzahlen": [],
+   "quellen": [
+    "traton_gb",
+    "scania_rugao"
+   ],
+   "lat": -23.668,
+   "lon": -46.5107,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sanantonio",
+   "name": "International Motors San Antonio",
+   "gesellschaft": "International Motors, LLC",
+   "marke": "International",
+   "art": "fahrzeugwerk",
+   "ort": "San Antonio",
+   "land": "US",
+   "taetigkeit": "Einziges US-Montagewerk von International: Lkw der Klassen 6 bis 8, Diesel und elektrisch. Unternehmenssitz in Lisle (Illinois).",
+   "kennzahlen": [
+    {
+     "name": "Absatz International",
+     "wert": 63700,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "traton_absatz"
+    }
+   ],
+   "quellen": [
+    "international",
+    "traton_absatz"
+   ],
+   "lat": 29.4246,
+   "lon": -98.4951,
+   "koordinate": "ort"
+  },
+  {
+   "id": "escobedo",
+   "name": "International Motors Escobedo",
+   "gesellschaft": "International Motors, LLC",
+   "marke": "International",
+   "art": "fahrzeugwerk",
+   "ort": "General Escobedo",
+   "land": "MX",
+   "taetigkeit": "Klasse-8-Lkw und Baugruppen für International-Lkw.",
+   "kennzahlen": [],
+   "quellen": [
+    "international"
+   ],
+   "lat": 25.8085,
+   "lon": -100.3224,
+   "koordinate": "ort"
+  },
+  {
+   "id": "resende",
+   "name": "Volkswagen Truck & Bus Resende",
+   "gesellschaft": "Volkswagen Caminhões e Ônibus",
+   "marke": "Volkswagen Truck & Bus",
+   "art": "fahrzeugwerk",
+   "ort": "Resende",
+   "land": "BR",
+   "taetigkeit": "Sitz und Werk von Volkswagen Truck & Bus: Lkw und Busse für Südamerika, u. a. der elektrische e-Delivery.",
+   "kennzahlen": [
+    {
+     "name": "Absatz VWTB",
+     "wert": 46200,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "traton_absatz"
+    }
+   ],
+   "quellen": [
+    "vwtb",
+    "traton_absatz"
+   ],
+   "lat": -22.4419,
+   "lon": -44.4205,
+   "koordinate": "ort"
+  },
+  {
+   "id": "puebla",
+   "name": "Volkswagen de México Puebla",
+   "gesellschaft": "Volkswagen de México",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Puebla",
+   "land": "MX",
+   "taetigkeit": "Größtes Autowerk Mexikos: Jetta, Taos, Tiguan mit langem Radstand; erste vollelektrische Lackiererei des Konzerns (2025).",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 335716,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte (mit Silao)",
+     "wert": 13000,
+     "einheit": "Personen",
+     "jahr": 2026,
+     "vergleich": "ca."
+    }
+   ],
+   "quellen": [
+    "nr_mexiko"
+   ],
+   "lat": 19.0414,
+   "lon": -98.2063,
+   "koordinate": "ort"
+  },
+  {
+   "id": "silao",
+   "name": "Volkswagen Motorenwerk Silao",
+   "gesellschaft": "Volkswagen de México",
+   "marke": "Volkswagen Pkw",
+   "art": "komponentenwerk",
+   "ort": "Silao",
+   "land": "MX",
+   "taetigkeit": "Motoren EA888 (3. Generation) und EA211 für die Konzernwerke in Nordamerika; Kapazität über 2.500 Motoren am Tag.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 452042,
+     "einheit": "Motoren",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_mexiko"
+   ],
+   "lat": 20.9432,
+   "lon": -101.4292,
+   "koordinate": "ort"
+  },
+  {
+   "id": "chattanooga",
+   "name": "Volkswagen Chattanooga",
+   "gesellschaft": "Volkswagen Group of America",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Chattanooga",
+   "land": "US",
+   "taetigkeit": "Atlas und Atlas Cross Sport; Zentrum für Personalentwicklung sowie Forschung und Entwicklung.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 150000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "vergleich": "ca."
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 4400,
+     "einheit": "Personen",
+     "jahr": 2026,
+     "vergleich": "mehr als"
+    }
+   ],
+   "quellen": [
+    "nr_chattanooga"
+   ],
+   "lat": 35.0457,
+   "lon": -85.3095,
+   "koordinate": "ort"
+  },
+  {
+   "id": "anchieta",
+   "name": "Volkswagen do Brasil Anchieta",
+   "gesellschaft": "Volkswagen do Brasil",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "São Bernardo do Campo",
+   "land": "BR",
+   "taetigkeit": "Nivus, Polo und Saveiro; Sitz von Volkswagen do Brasil, größter Autoexporteur Brasiliens.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 208530,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 7752,
+     "einheit": "Personen",
+     "jahr": 2026
+    }
+   ],
+   "quellen": [
+    "nr_brasil"
+   ],
+   "lat": -23.708,
+   "lon": -46.5507,
+   "koordinate": "ort"
+  },
+  {
+   "id": "taubate",
+   "name": "Volkswagen do Brasil Taubaté",
+   "gesellschaft": "Volkswagen do Brasil",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Taubaté",
+   "land": "BR",
+   "taetigkeit": "Tera und Polo.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 196650,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_brasil"
+   ],
+   "lat": -23.0314,
+   "lon": -45.5613,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sjpinhais",
+   "name": "Volkswagen do Brasil São José dos Pinhais",
+   "gesellschaft": "Volkswagen do Brasil",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "São José dos Pinhais",
+   "land": "BR",
+   "taetigkeit": "T-Cross und Virtus, dazu Achsen.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 133063,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "vergleich": "ca."
+    }
+   ],
+   "quellen": [
+    "nr_brasil"
+   ],
+   "lat": -25.5338,
+   "lon": -49.2072,
+   "koordinate": "ort"
+  },
+  {
+   "id": "saocarlos",
+   "name": "Volkswagen do Brasil Motorenwerk São Carlos",
+   "gesellschaft": "Volkswagen do Brasil",
+   "marke": "Volkswagen Pkw",
+   "art": "komponentenwerk",
+   "ort": "São Carlos",
+   "land": "BR",
+   "taetigkeit": "EA211-Motoren (1,0 bis 1,6 Liter) mit Zylinderkopf, Zylinderblock und Kurbelwelle.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 626871,
+     "einheit": "Motoren",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_brasil"
+   ],
+   "lat": -21.8788,
+   "lon": -47.8568,
+   "koordinate": "ort"
+  },
+  {
+   "id": "pacheco",
+   "name": "Volkswagen Argentina Pacheco",
+   "gesellschaft": "Volkswagen Argentina S.A.",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "General Pacheco",
+   "land": "AR",
+   "taetigkeit": "Pick-up Amarok; Nachfolger ab 2027 (Investition 580 Mio. US-Dollar).",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 45000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_argentina"
+   ],
+   "lat": -34.4537,
+   "lon": -58.6351,
+   "koordinate": "ort"
+  },
+  {
+   "id": "cordoba",
+   "name": "Volkswagen Argentina Córdoba",
+   "gesellschaft": "Volkswagen Argentina S.A.",
+   "marke": "Volkswagen Pkw",
+   "art": "komponentenwerk",
+   "ort": "Córdoba",
+   "land": "AR",
+   "taetigkeit": "Getriebe, dazu Montage von Ducati-Motorrädern (Scrambler, Multistrada, DesertX) und VW Trucks & Buses (Delivery, Constellation).",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 357000,
+     "einheit": "Getriebe",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_argentina"
+   ],
+   "lat": -31.4167,
+   "lon": -64.1834,
+   "koordinate": "ort"
+  },
+  {
+   "id": "kariega",
+   "name": "Volkswagen Group Africa Kariega",
+   "gesellschaft": "Volkswagen Group Africa",
+   "marke": "Volkswagen Pkw",
+   "art": "fahrzeugwerk",
+   "ort": "Kariega",
+   "land": "ZA",
+   "taetigkeit": "Polo, Polo GTI und Polo Vivo sowie EA111-Motoren; einziger Lieferant des Polo für Europa und Asien-Pazifik. Montagewerke zudem in Kenia, Ruanda und Ghana.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 156837,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    },
+    {
+     "name": "EA111-Motoren",
+     "wert": 27080,
+     "einheit": "Motoren",
+     "jahr": 2025
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 3598,
+     "einheit": "Personen",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "nr_africa"
+   ],
+   "lat": -33.7679,
+   "lon": 25.3978,
+   "koordinate": "ort"
+  },
+  {
+   "id": "pune",
+   "name": "Škoda Auto Volkswagen India, Pune",
+   "gesellschaft": "Škoda Auto Volkswagen India Pvt. Ltd.",
+   "marke": "Škoda / Volkswagen",
+   "art": "fahrzeugwerk",
+   "ort": "Pune",
+   "land": "IN",
+   "taetigkeit": "Vollwerk (Presswerk bis Endmontage): Škoda Kushaq, Slavia, Kylaq, VW Taigun und Virtus; Logistikzentrum liefert Bausätze (CKD) nach Vietnam.",
+   "kennzahlen": [
+    {
+     "name": "Produktion laut Faktenblatt",
+     "wert": 264000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2026
+    },
+    {
+     "name": "Škoda-Produktion Indien",
+     "wert": 73800,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025,
+     "quelle": "skoda_produktion"
+    }
+   ],
+   "quellen": [
+    "nr_indien",
+    "skoda_produktion"
+   ],
+   "hinweis": "Ob 264.000 eine Jahresproduktion oder Kapazität ist, sagt das Faktenblatt nicht.",
+   "lat": 18.5214,
+   "lon": 73.8545,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sambhajinagar",
+   "name": "Škoda Auto Volkswagen India, Chhatrapati Sambhajinagar",
+   "gesellschaft": "Škoda Auto Volkswagen India Pvt. Ltd.",
+   "marke": "Škoda / Volkswagen / Audi",
+   "art": "fahrzeugwerk",
+   "ort": "Chhatrapati Sambhajinagar",
+   "land": "IN",
+   "taetigkeit": "Audi A4, A6, Q3, Q5, Q7, Škoda Kodiaq, VW Tiguan und Tayron (früher Aurangabad).",
+   "kennzahlen": [
+    {
+     "name": "Produktion laut Faktenblatt",
+     "wert": 62000,
+     "einheit": "Fahrzeuge",
+     "jahr": 2026
+    }
+   ],
+   "quellen": [
+    "nr_indien"
+   ],
+   "lat": 19.8773,
+   "lon": 75.339,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vietnam",
+   "name": "Škoda-Werk Vietnam (mit Thanh Cong Group)",
+   "gesellschaft": "Thanh Cong Group (Partner)",
+   "marke": "Škoda",
+   "art": "partner",
+   "ort": "Quảng Ninh",
+   "land": "VN",
+   "taetigkeit": "Montage von Škoda Slavia und Kushaq aus indischen Bausätzen, Start 2025 mit Partner Thanh Cong.",
+   "kennzahlen": [
+    {
+     "name": "Produktion",
+     "wert": 2500,
+     "einheit": "Fahrzeuge",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "skoda_produktion"
+   ],
+   "unsicher": true,
+   "hinweis": "Genauer Werksort steht nicht in der Quelle; Provinz Quảng Ninh ist eine Annahme.",
+   "lat": 20.9563,
+   "lon": 107.0763,
+   "koordinate": "ort"
+  },
+  {
+   "id": "saicvw",
+   "name": "SAIC Volkswagen Anting",
+   "gesellschaft": "SAIC Volkswagen Automotive Co., Ltd.",
+   "marke": "Gemeinschaftsunternehmen China",
+   "art": "joint_venture",
+   "ort": "Anting, Shanghai",
+   "land": "CN",
+   "taetigkeit": "Gemeinschaftsunternehmen mit SAIC seit 1984: sechs Fahrzeugwerke (Shanghai drei, Yizheng, Ningbo, Changsha), u. a. ID.3, Lavida, Passat, Tiguan L, Teramont; baut auch Škoda für China.",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 50,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_konsolidierung"
+    },
+    {
+     "name": "Umsatz (100 %)",
+     "wert": 14208,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_konsolidierung"
+    }
+   ],
+   "quellen": [
+    "gb_konsolidierung",
+    "nr_china"
+   ],
+   "lat": 31.2965,
+   "lon": 121.1596,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fawvw",
+   "name": "FAW-Volkswagen Changchun",
+   "gesellschaft": "FAW-Volkswagen Automotive Co., Ltd.",
+   "marke": "Gemeinschaftsunternehmen China",
+   "art": "joint_venture",
+   "ort": "Changchun",
+   "land": "CN",
+   "taetigkeit": "Gemeinschaftsunternehmen mit FAW seit 1991: sechs Fahrzeugwerke (Changchun zwei, Chengdu, Foshan, Qingdao, Tianjin) für Volkswagen, Jetta und Audi.",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 40,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_konsolidierung"
+    },
+    {
+     "name": "Umsatz (100 %)",
+     "wert": 33588,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_konsolidierung"
+    },
+    {
+     "name": "Ergebnis nach Steuern (100 %)",
+     "wert": 2031,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_konsolidierung"
+    }
+   ],
+   "quellen": [
+    "gb_konsolidierung",
+    "nr_china"
+   ],
+   "lat": 43.8845,
+   "lon": 125.3182,
+   "koordinate": "ort"
+  },
+  {
+   "id": "anhui",
+   "name": "Volkswagen Anhui Hefei",
+   "gesellschaft": "Volkswagen (Anhui) Automotive Co., Ltd.",
+   "marke": "Volkswagen China",
+   "art": "joint_venture",
+   "ort": "Hefei",
+   "land": "CN",
+   "taetigkeit": "MEB-Werk für Elektroautos (ID. UNYX 06, 07, 08) und CUPRA Tavascan (nur Export).",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 75,
+     "einheit": "%",
+     "jahr": 2020,
+     "quelle": "anhui"
+    }
+   ],
+   "quellen": [
+    "nr_china",
+    "anhui"
+   ],
+   "lat": 31.8666,
+   "lon": 117.2814,
+   "koordinate": "ort"
+  },
+  {
+   "id": "gotion",
+   "name": "Gotion High-Tech",
+   "gesellschaft": "Gotion High-Tech Co., Ltd.",
+   "marke": "Beteiligung (Batterie)",
+   "unternehmen_id": "U003253",
+   "art": "beteiligung",
+   "ort": "Hefei",
+   "land": "CN",
+   "versatz": [
+    0.06,
+    0.05
+   ],
+   "taetigkeit": "Chinesischer Batteriehersteller; strategische Zusammenarbeit bei Entwicklung, Fertigung und Vertrieb von Batteriezellen.",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 24,
+     "einheit": "%",
+     "jahr": 2025
+    },
+    {
+     "name": "Umsatz (100 %)",
+     "wert": 4797,
+     "einheit": "Mio. €",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_konsolidierung"
+   ],
+   "lat": 31.9166,
+   "lon": 117.3414,
+   "koordinate": "ort"
+  },
+  {
+   "id": "xpeng",
+   "name": "XPeng",
+   "gesellschaft": "XPeng Inc.",
+   "marke": "Beteiligung (Partner)",
+   "unternehmen_id": "U014180",
+   "art": "beteiligung",
+   "ort": "Guangzhou",
+   "land": "CN",
+   "taetigkeit": "Chinesischer E-Auto-Hersteller; Entwicklungspartner von Volkswagen in China.",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 4.99,
+     "einheit": "%",
+     "jahr": 2023
+    },
+    {
+     "name": "Kaufpreis",
+     "wert": 705.6,
+     "einheit": "Mio. USD",
+     "jahr": 2023
+    }
+   ],
+   "quellen": [
+    "xpeng"
+   ],
+   "lat": 23.1288,
+   "lon": 113.259,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sinotruk",
+   "name": "Sinotruk",
+   "gesellschaft": "Sinotruk (Hong Kong) Ltd.",
+   "marke": "Beteiligung TRATON",
+   "unternehmen_id": "U014291",
+   "art": "beteiligung",
+   "ort": "Jinan",
+   "land": "CN",
+   "taetigkeit": "Chinesischer Lkw-Hersteller, assoziiertes Unternehmen über TRATON (MAN).",
+   "kennzahlen": [
+    {
+     "name": "Anteil",
+     "wert": 25,
+     "einheit": "%",
+     "jahr": 2025
+    },
+    {
+     "name": "Umsatz (100 %)",
+     "wert": 12371,
+     "einheit": "Mio. €",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_konsolidierung"
+   ],
+   "hinweis": "Registriert in Hongkong; Punkt am operativen Sitz Jinan.",
+   "lat": 36.652,
+   "lon": 117.1138,
+   "koordinate": "ort"
+  },
+  {
+   "id": "rivian",
+   "name": "Rivian",
+   "gesellschaft": "Rivian Automotive, Inc.",
+   "marke": "Beteiligung (Partner)",
+   "unternehmen_id": "U007795",
+   "art": "beteiligung",
+   "ort": "Irvine",
+   "land": "US",
+   "taetigkeit": "US-Elektroautohersteller; Partner für Software und Elektronik-Architektur.",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 12.3,
+     "einheit": "%",
+     "jahr": 2025
+    },
+    {
+     "name": "geplante Investition VW bis 2028",
+     "wert": 5800,
+     "einheit": "Mio. USD",
+     "jahr": 2025,
+     "vergleich": "bis zu"
+    }
+   ],
+   "quellen": [
+    "gb_ereignisse",
+    "gb_struktur"
+   ],
+   "lat": 33.6857,
+   "lon": -117.826,
+   "koordinate": "ort"
+  },
+  {
+   "id": "rvtech",
+   "name": "Rivian and Volkswagen Group Technologies",
+   "gesellschaft": "Rivian and Volkswagen Group Technologies, LLC",
+   "marke": "Gemeinschaftsunternehmen",
+   "art": "joint_venture",
+   "ort": "Palo Alto",
+   "land": "US",
+   "taetigkeit": "Gemeinschaftsunternehmen (50:50) seit 13.11.2024: Software-definierte Fahrzeugarchitekturen für beide Partner.",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 50,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_struktur",
+    "gb_ereignisse"
+   ],
+   "lat": 37.4443,
+   "lon": -122.1598,
+   "koordinate": "ort"
+  },
+  {
+   "id": "quantumscape",
+   "name": "QuantumScape",
+   "gesellschaft": "QuantumScape Corporation",
+   "marke": "Beteiligung (Batterie)",
+   "unternehmen_id": "U007713",
+   "art": "beteiligung",
+   "ort": "San Jose",
+   "land": "US",
+   "taetigkeit": "Festkörper-Lithium-Metall-Batterien; Vereinbarung zur Industrialisierung mit Konzerngesellschaften (PowerCo).",
+   "kennzahlen": [
+    {
+     "name": "Anteil VW",
+     "wert": 14,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_konsolidierung"
+   ],
+   "lat": 37.3362,
+   "lon": -121.8906,
+   "koordinate": "ort"
+  },
+  {
+   "id": "stthomas",
+   "name": "PowerCo St. Thomas",
+   "gesellschaft": "PowerCo Canada",
+   "marke": "PowerCo (Batterie)",
+   "art": "batterie",
+   "ort": "St. Thomas",
+   "land": "CA",
+   "taetigkeit": "Geplante Zellfabrik für Nordamerika, erste Zellen laut Presse Ende 2027, bis zu 90 GWh.",
+   "kennzahlen": [
+    {
+     "name": "geplante Kapazität",
+     "wert": 90,
+     "einheit": "GWh",
+     "jahr": 2025,
+     "vergleich": "bis zu",
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "powerco_stthomas"
+   ],
+   "status": "im Bau",
+   "unsicher": true,
+   "lat": 42.779,
+   "lon": -81.193,
+   "koordinate": "ort"
+  },
+  {
+   "id": "porschese",
+   "name": "Porsche Automobil Holding SE",
+   "gesellschaft": "Porsche Automobil Holding SE",
+   "marke": "Eigentümer",
+   "unternehmen_id": "U000479",
+   "art": "eigentuemer",
+   "ort": "Stuttgart",
+   "land": "DE",
+   "versatz": [
+    -0.05,
+    0.04
+   ],
+   "taetigkeit": "Mehrheitsaktionärin der Volkswagen AG (Familien Porsche und Piëch).",
+   "kennzahlen": [
+    {
+     "name": "Stimmrechte an VW",
+     "wert": 53.3,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_aktionaere"
+   ],
+   "lat": 48.8184,
+   "lon": 9.13,
+   "koordinate": "ort"
+  },
+  {
+   "id": "niedersachsen",
+   "name": "Land Niedersachsen",
+   "gesellschaft": "Land Niedersachsen",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Hannover",
+   "land": "DE",
+   "versatz": [
+    0.05,
+    0.04
+   ],
+   "taetigkeit": "Zweitgrößte Aktionärin der Volkswagen AG.",
+   "kennzahlen": [
+    {
+     "name": "Stimmrechte an VW",
+     "wert": 20.0,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_aktionaere"
+   ],
+   "lat": 52.4145,
+   "lon": 9.7886,
+   "koordinate": "ort"
+  },
+  {
+   "id": "qatar",
+   "name": "Qatar Holding LLC",
+   "gesellschaft": "Qatar Holding LLC",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Doha",
+   "land": "QA",
+   "taetigkeit": "Drittgrößte Aktionärin der Volkswagen AG.",
+   "kennzahlen": [
+    {
+     "name": "Stimmrechte an VW",
+     "wert": 17.0,
+     "einheit": "%",
+     "jahr": 2025
+    }
+   ],
+   "quellen": [
+    "gb_aktionaere"
+   ],
+   "lat": 25.3109,
+   "lon": 51.5082,
+   "koordinate": "ort"
+  },
+  {
+   "id": "uber",
+   "name": "Uber",
+   "gesellschaft": "Uber Technologies, Inc.",
+   "marke": "Kunde",
+   "unternehmen_id": "U013603",
+   "art": "kunde",
+   "ort": "San Francisco",
+   "land": "US",
+   "taetigkeit": "Kunde und Partner für autonome Fahrdienste: Tausende ID. Buzz AD über die nächsten zehn Jahre in mehreren US-Märkten, Start in Los Angeles (Ende 2026 geplant).",
+   "kennzahlen": [],
+   "quellen": [
+    "uber"
+   ],
+   "lat": 37.7879,
+   "lon": -122.4075,
+   "koordinate": "ort"
+  },
+  {
+   "id": "ford",
+   "name": "Ford-Werke Köln",
+   "gesellschaft": "Ford-Werke GmbH",
+   "marke": "Kunde",
+   "art": "kunde",
+   "ort": "Köln",
+   "land": "DE",
+   "taetigkeit": "Externer Kunde des Elektrobaukastens MEB: Ford baut in Köln den Explorer auf MEB-Basis.",
+   "kennzahlen": [],
+   "quellen": [
+    "ford"
+   ],
+   "lat": 50.9384,
+   "lon": 6.96,
+   "koordinate": "ort"
+  },
+  {
+   "id": "mahindra",
+   "name": "Mahindra & Mahindra",
+   "gesellschaft": "Mahindra & Mahindra Ltd.",
+   "marke": "Kunde",
+   "art": "kunde",
+   "ort": "Mumbai",
+   "land": "IN",
+   "taetigkeit": "Externer Kunde für MEB-Komponenten und Einheitszellen (Plattform INGLO).",
+   "kennzahlen": [],
+   "quellen": [
+    "mahindra"
+   ],
+   "lat": 19.055,
+   "lon": 72.8692,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "porschese",
+   "nach": "wob",
+   "art": "eigentuemer",
+   "text": "Hält 53,3 % der Stimmrechte an der Volkswagen AG.",
+   "anteil": 53.3,
+   "jahr": 2025,
+   "quellen": [
+    "gb_aktionaere"
+   ]
+  },
+  {
+   "von": "niedersachsen",
+   "nach": "wob",
+   "art": "eigentuemer",
+   "text": "Hält 20,0 % der Stimmrechte an der Volkswagen AG.",
+   "anteil": 20.0,
+   "jahr": 2025,
+   "quellen": [
+    "gb_aktionaere"
+   ]
+  },
+  {
+   "von": "qatar",
+   "nach": "wob",
+   "art": "eigentuemer",
+   "text": "Hält 17,0 % der Stimmrechte an der Volkswagen AG.",
+   "anteil": 17.0,
+   "jahr": 2025,
+   "quellen": [
+    "gb_aktionaere"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "ingolstadt",
+   "art": "tochter",
+   "text": "Tochtergesellschaft AUDI AG (Markengruppe Progressive).",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "zuffenhausen",
+   "art": "tochter",
+   "text": "Tochtergesellschaft Porsche AG (börsennotiert, Markengruppe Sport Luxury).",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "mb",
+   "art": "tochter",
+   "text": "Tochtergesellschaft Škoda Auto a.s. (Markengruppe Core).",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "martorell",
+   "art": "tochter",
+   "text": "Tochtergesellschaft SEAT S.A. mit SEAT und CUPRA (Markengruppe Core).",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "traton",
+   "art": "tochter",
+   "text": "Tochtergesellschaft TRATON SE (börsennotiert); direkter Anteil 87,5 % nach Platzierung von 11 Mio. Aktien im März 2025, mittelfristig 75 % plus eine Aktie angestrebt.",
+   "anteil": 87.5,
+   "jahr": 2025,
+   "quellen": [
+    "gb_ereignisse",
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "vwfs",
+   "art": "tochter",
+   "text": "Tochtergesellschaft Volkswagen Financial Services AG (Konzernbereich Finanzdienstleistungen).",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "hannover",
+   "art": "tochter",
+   "text": "Marke Volkswagen Nutzfahrzeuge (rechtlich Teil der Volkswagen AG).",
+   "quellen": [
+    "gb_struktur",
+    "vwn"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "powerco_sz",
+   "art": "tochter",
+   "text": "Batterietochter PowerCo.",
+   "quellen": [
+    "powerco_salzgitter"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "ingolstadt",
+   "nach": "crewe",
+   "art": "tochter",
+   "text": "Bentley gehört zur Markengruppe Progressive unter Führung von Audi.",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "ingolstadt",
+   "nach": "santagata",
+   "art": "tochter",
+   "text": "Lamborghini gehört zur Markengruppe Progressive unter Führung von Audi.",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "ingolstadt",
+   "nach": "bologna",
+   "art": "tochter",
+   "text": "Ducati gehört zur Markengruppe Progressive unter Führung von Audi.",
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "soedertaelje",
+   "art": "tochter",
+   "text": "TRATON-Marke Scania.",
+   "quellen": [
+    "traton_gb"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "sanantonio",
+   "art": "tochter",
+   "text": "TRATON-Marke International (Nordamerika).",
+   "quellen": [
+    "traton_gb"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "resende",
+   "art": "tochter",
+   "text": "TRATON-Marke Volkswagen Truck & Bus (Südamerika).",
+   "quellen": [
+    "traton_gb"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "saicvw",
+   "art": "joint_venture",
+   "text": "Gemeinschaftsunternehmen mit SAIC, Anteil 50 %; 2025 erhaltene Dividende 266 Mio. €.",
+   "anteil": 50,
+   "menge": {
+    "wert": 266,
+    "einheit": "Mio. € Dividende an VW",
+    "jahr": 2025
+   },
+   "quellen": [
+    "gb_konsolidierung"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "fawvw",
+   "art": "joint_venture",
+   "text": "Gemeinschaftsunternehmen mit FAW, Anteil 40 %; 2025 erhaltene Dividende 818 Mio. €.",
+   "anteil": 40,
+   "menge": {
+    "wert": 818,
+    "einheit": "Mio. € Dividende an VW",
+    "jahr": 2025
+   },
+   "quellen": [
+    "gb_konsolidierung"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "anhui",
+   "art": "joint_venture",
+   "text": "Volkswagen Anhui, Anteil 75 % (seit 2020).",
+   "anteil": 75,
+   "jahr": 2020,
+   "quellen": [
+    "anhui",
+    "nr_china"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "rvtech",
+   "art": "joint_venture",
+   "text": "Gemeinschaftsunternehmen mit Rivian, je 50 %.",
+   "anteil": 50,
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "rivian",
+   "nach": "rvtech",
+   "art": "joint_venture",
+   "text": "Rivian hält die anderen 50 % und bringt seine Software-Architektur ein.",
+   "anteil": 50,
+   "quellen": [
+    "gb_struktur"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "rivian",
+   "art": "beteiligung",
+   "text": "Beteiligung 12,3 % nach weiterer Investition von 1 Mrd. USD im Juni 2025; bis zu 5,8 Mrd. USD bis Januar 2028 geplant.",
+   "anteil": 12.3,
+   "menge": {
+    "wert": 1000,
+    "einheit": "Mio. USD investiert",
+    "jahr": 2025
+   },
+   "quellen": [
+    "gb_ereignisse"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "xpeng",
+   "art": "beteiligung",
+   "text": "Beteiligung 4,99 % für rund 706 Mio. USD (2023), Entwicklungspartnerschaft für China.",
+   "anteil": 4.99,
+   "jahr": 2023,
+   "quellen": [
+    "xpeng"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "gotion",
+   "art": "beteiligung",
+   "text": "Assoziiertes Unternehmen, Anteil 24 %; Rahmen für Zusammenarbeit bei Batteriezellen.",
+   "anteil": 24,
+   "jahr": 2025,
+   "quellen": [
+    "gb_konsolidierung"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "quantumscape",
+   "art": "beteiligung",
+   "text": "Assoziiertes Unternehmen, Anteil 14 %; Vereinbarung zur Industrialisierung der Festkörperzelle.",
+   "anteil": 14,
+   "jahr": 2025,
+   "quellen": [
+    "gb_konsolidierung"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "sinotruk",
+   "art": "beteiligung",
+   "text": "Assoziiertes Unternehmen, Anteil 25 %; 2025 erhaltene Dividende 94 Mio. €.",
+   "anteil": 25,
+   "menge": {
+    "wert": 94,
+    "einheit": "Mio. € Dividende",
+    "jahr": 2025
+   },
+   "quellen": [
+    "gb_konsolidierung"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "emden",
+   "art": "produktion",
+   "text": "Werk der Marke Volkswagen Pkw (Elektrofahrzeuge, Exporthafen).",
+   "quellen": [
+    "nr_emden"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "zwickau",
+   "art": "produktion",
+   "text": "MEB-Werk für Volkswagen, Audi und CUPRA.",
+   "quellen": [
+    "gb_produktion",
+    "nr_zwickau"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "osnabrueck",
+   "art": "produktion",
+   "text": "Kleinserien und Sonderprojekte (T-Roc Cabriolet).",
+   "quellen": [
+    "nr_osnabrueck"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "dresden",
+   "art": "produktion",
+   "text": "Ehemalige Fertigung, seit 2026 Auslieferung und Innovationscampus.",
+   "quellen": [
+    "nr_dresden"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "palmela",
+   "art": "produktion",
+   "text": "T-Roc-Werk; Hauptabnehmer Deutschland, Vereinigtes Königreich, Italien.",
+   "menge": {
+    "wert": 240400,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_autoeuropa"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "pamplona",
+   "art": "produktion",
+   "text": "T-Cross und Taigo.",
+   "menge": {
+    "wert": 225225,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_navarra"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "bratislava",
+   "art": "produktion",
+   "text": "Mehrmarkenwerk für VW, Audi, Porsche und Škoda.",
+   "menge": {
+    "wert": 336905,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_slovakia"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "puebla",
+   "art": "produktion",
+   "text": "Jetta, Taos, Tiguan (lang).",
+   "menge": {
+    "wert": 335716,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_mexiko"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "chattanooga",
+   "art": "produktion",
+   "text": "Atlas und Atlas Cross Sport für Nordamerika.",
+   "menge": {
+    "wert": 150000,
+    "einheit": "Fahrzeuge (ca.)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_chattanooga"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "anchieta",
+   "art": "produktion",
+   "text": "Volkswagen do Brasil, Nivus, Polo, Saveiro.",
+   "menge": {
+    "wert": 208530,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_brasil"
+   ]
+  },
+  {
+   "von": "anchieta",
+   "nach": "taubate",
+   "art": "produktion",
+   "text": "Werk von Volkswagen do Brasil: Tera, Polo.",
+   "menge": {
+    "wert": 196650,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_brasil"
+   ]
+  },
+  {
+   "von": "anchieta",
+   "nach": "sjpinhais",
+   "art": "produktion",
+   "text": "Werk von Volkswagen do Brasil: T-Cross, Virtus.",
+   "menge": {
+    "wert": 133063,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_brasil"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "pacheco",
+   "art": "produktion",
+   "text": "Amarok für Südamerika.",
+   "menge": {
+    "wert": 45000,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_argentina"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "kariega",
+   "art": "produktion",
+   "text": "Polo, einziger Lieferant für Europa und Asien-Pazifik.",
+   "menge": {
+    "wert": 156837,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_africa"
+   ]
+  },
+  {
+   "von": "mb",
+   "nach": "pune",
+   "art": "produktion",
+   "text": "Škoda Auto Volkswagen India unter Führung von Škoda.",
+   "menge": {
+    "wert": 73800,
+    "einheit": "Škoda-Fahrzeuge in Indien",
+    "jahr": 2025
+   },
+   "quellen": [
+    "skoda_produktion",
+    "nr_indien"
+   ]
+  },
+  {
+   "von": "pune",
+   "nach": "sambhajinagar",
+   "art": "produktion",
+   "text": "Zweites Werk der indischen Gesellschaft (Audi, Škoda Kodiaq, VW Tiguan/Tayron).",
+   "quellen": [
+    "nr_indien"
+   ]
+  },
+  {
+   "von": "mb",
+   "nach": "kvasiny",
+   "art": "produktion",
+   "text": "Werk von Škoda.",
+   "menge": {
+    "wert": 301500,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "skoda_produktion"
+   ]
+  },
+  {
+   "von": "mb",
+   "nach": "vrchlabi",
+   "art": "produktion",
+   "text": "Getriebewerk von Škoda.",
+   "quellen": [
+    "skoda_produktion"
+   ]
+  },
+  {
+   "von": "ingolstadt",
+   "nach": "neckarsulm",
+   "art": "produktion",
+   "text": "Zweites deutsches Audi-Werk.",
+   "menge": {
+    "wert": 181454,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "audi_neckarsulm"
+   ]
+  },
+  {
+   "von": "ingolstadt",
+   "nach": "gyoer",
+   "art": "produktion",
+   "text": "Audi Hungaria: Antriebe und Fahrzeuge; neuer Q3 im Verbund mit Ingolstadt.",
+   "menge": {
+    "wert": 200756,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "audi_hungaria",
+    "audi_ingolstadt"
+   ]
+  },
+  {
+   "von": "ingolstadt",
+   "nach": "sjchiapa",
+   "art": "produktion",
+   "text": "Audi Q5 für die Welt außer China.",
+   "menge": {
+    "wert": 146784,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "audi_mexiko"
+   ]
+  },
+  {
+   "von": "zuffenhausen",
+   "nach": "leipzig",
+   "art": "produktion",
+   "text": "Macan und Panamera.",
+   "menge": {
+    "wert": 101910,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "porsche_gb"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "man_krakau",
+   "art": "produktion",
+   "text": "MAN-Lkw-Werk, Ausgleichswerk für München.",
+   "quellen": [
+    "man_werke",
+    "man_krakau"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "man_starachowice",
+   "art": "produktion",
+   "text": "MAN-Buswerk.",
+   "quellen": [
+    "man_werke"
+   ]
+  },
+  {
+   "von": "traton",
+   "nach": "man_ankara",
+   "art": "produktion",
+   "text": "Größtes MAN-Buswerk.",
+   "quellen": [
+    "man_werke",
+    "man_ankara"
+   ]
+  },
+  {
+   "von": "soedertaelje",
+   "nach": "zwolle",
+   "art": "produktion",
+   "text": "Scania-Montagewerk.",
+   "quellen": [
+    "scania_rugao"
+   ]
+  },
+  {
+   "von": "soedertaelje",
+   "nach": "rugao",
+   "art": "produktion",
+   "text": "Neues Scania-Werk in China (Oktober 2025).",
+   "quellen": [
+    "traton_gb",
+    "scania_rugao"
+   ]
+  },
+  {
+   "von": "soedertaelje",
+   "nach": "sbc_scania",
+   "art": "produktion",
+   "text": "Scania-Werk in Brasilien.",
+   "quellen": [
+    "traton_gb"
+   ]
+  },
+  {
+   "von": "sanantonio",
+   "nach": "escobedo",
+   "art": "produktion",
+   "text": "International-Werk in Mexiko.",
+   "quellen": [
+    "international"
+   ]
+  },
+  {
+   "von": "powerco_sz",
+   "nach": "sagunto",
+   "art": "produktion",
+   "text": "Zweite PowerCo-Zellfabrik, Salzgitter dient als Blaupause.",
+   "quellen": [
+    "powerco_salzgitter",
+    "powerco_sagunto"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "powerco_sz",
+   "nach": "stthomas",
+   "art": "produktion",
+   "text": "Dritte PowerCo-Zellfabrik (Nordamerika).",
+   "quellen": [
+    "powerco_salzgitter",
+    "powerco_stthomas"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "wob",
+   "nach": "salzgitter",
+   "art": "produktion",
+   "text": "Komponentenwerk der Volkswagen Group Components (Motoren, E-Komponenten).",
+   "quellen": [
+    "nr_salzgitter"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "kassel",
+   "art": "produktion",
+   "text": "Komponentenwerk der Volkswagen Group Components (E-Antriebe, Getriebe, Guss).",
+   "quellen": [
+    "nr_kassel"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "bs",
+   "art": "produktion",
+   "text": "Komponentenwerk der Volkswagen Group Components (Fahrwerk, Batteriesysteme).",
+   "quellen": [
+    "nr_braunschweig"
+   ]
+  },
+  {
+   "von": "hannover",
+   "nach": "poznan",
+   "art": "produktion",
+   "text": "Werk von Volkswagen Nutzfahrzeuge (Caddy).",
+   "menge": {
+    "wert": 110400,
+    "einheit": "Caddy ausgeliefert",
+    "jahr": 2025
+   },
+   "quellen": [
+    "vwn",
+    "vwn_absatz"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "hannover",
+   "nach": "wrzesnia",
+   "art": "produktion",
+   "text": "Werk von Volkswagen Nutzfahrzeuge, einziger Standort für Crafter und MAN TGE.",
+   "menge": {
+    "wert": 73000,
+    "einheit": "Crafter ausgeliefert",
+    "jahr": 2025
+   },
+   "quellen": [
+    "vwn",
+    "vwn_absatz"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "gyoer",
+   "nach": "wob",
+   "art": "lieferung",
+   "gut": "Antriebe (Motoren und E-Antriebe)",
+   "text": "Audi Hungaria liefert Antriebe an Konzernwerke; 2025 insgesamt 1.585.290, davon 264.871 elektrisch. Empfängerwerke nicht einzeln veröffentlicht.",
+   "menge": {
+    "wert": 1585290,
+    "einheit": "Antriebe",
+    "jahr": 2025
+   },
+   "quellen": [
+    "audi_hungaria"
+   ],
+   "ziel_sammel": true
+  },
+  {
+   "von": "polkowice",
+   "nach": "wob",
+   "art": "lieferung",
+   "gut": "Dieselmotoren",
+   "text": "621.000 Dieselmotoren für Volkswagen Pkw, Nutzfahrzeuge, Škoda, SEAT und Audi; Empfängerwerke nicht einzeln veröffentlicht.",
+   "menge": {
+    "wert": 621000,
+    "einheit": "Motoren",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_polska"
+   ],
+   "ziel_sammel": true
+  },
+  {
+   "von": "chemnitz",
+   "nach": "wob",
+   "art": "lieferung",
+   "gut": "TSI-Motoren",
+   "text": "Liefert Motoren an die Fahrzeugwerke des Konzerns; Mengen je Werk nicht veröffentlicht.",
+   "quellen": [
+    "nr_chemnitz"
+   ],
+   "ziel_sammel": true
+  },
+  {
+   "von": "kassel",
+   "nach": "zwickau",
+   "art": "lieferung",
+   "gut": "Elektroantriebe",
+   "text": "Kassel ist Zentrum für E-Antriebe; über 850.000 im Jahr 2025 laut Presse. Zwickau als MEB-Werk steht hier stellvertretend für die Empfänger.",
+   "menge": {
+    "wert": 850000,
+    "einheit": "E-Antriebe (gesamt)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "kassel_antriebe"
+   ],
+   "unsicher": true,
+   "ziel_sammel": true
+  },
+  {
+   "von": "bs",
+   "nach": "zwickau",
+   "art": "lieferung",
+   "gut": "Batteriesysteme, Lenkungen, Achsen",
+   "text": "Typführer für Batteriesysteme und Lieferant von Fahrwerkkomponenten für MEB-Fahrzeuge; Mengen nicht veröffentlicht.",
+   "quellen": [
+    "nr_braunschweig"
+   ],
+   "unsicher": true,
+   "ziel_sammel": true
+  },
+  {
+   "von": "mb",
+   "nach": "zwickau",
+   "art": "lieferung",
+   "gut": "MEB-Batteriesysteme",
+   "text": "Mladá Boleslav baute 2025 mehr als 329.000 Batteriesysteme für Škoda und andere Konzernmarken; Aufteilung nach Empfängern nicht veröffentlicht.",
+   "menge": {
+    "wert": 329000,
+    "einheit": "Batteriesysteme (gesamt)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "skoda_produktion"
+   ],
+   "ziel_sammel": true
+  },
+  {
+   "von": "vrchlabi",
+   "nach": "wob",
+   "art": "lieferung",
+   "gut": "DQ200-Getriebe",
+   "text": "721.400 DQ200 im Jahr 2025, mehr als die Hälfte für andere Konzernmarken.",
+   "menge": {
+    "wert": 360700,
+    "einheit": "Getriebe (mehr als die Hälfte von 721.400)",
+    "jahr": 2025,
+    "vergleich": "mehr als"
+   },
+   "quellen": [
+    "skoda_produktion"
+   ],
+   "ziel_sammel": true
+  },
+  {
+   "von": "martin",
+   "nach": "bratislava",
+   "art": "lieferung",
+   "gut": "Getriebe- und Fahrwerkkomponenten",
+   "text": "21,6 Mio. Komponenten für zahlreiche Konzernmarken; Bratislava steht als Schwesterwerk stellvertretend.",
+   "menge": {
+    "wert": 21600000,
+    "einheit": "Komponenten (gesamt)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_slovakia"
+   ],
+   "ziel_sammel": true
+  },
+  {
+   "von": "silao",
+   "nach": "chattanooga",
+   "art": "lieferung",
+   "gut": "EA888- und EA211-Motoren",
+   "text": "Silao liefert Motoren an die Konzernwerke in Nordamerika (2025: 452.042 Motoren insgesamt).",
+   "menge": {
+    "wert": 452042,
+    "einheit": "Motoren (gesamt)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_mexiko"
+   ]
+  },
+  {
+   "von": "silao",
+   "nach": "puebla",
+   "art": "lieferung",
+   "gut": "EA888- und EA211-Motoren",
+   "text": "Silao liefert Motoren an die Konzernwerke in Nordamerika.",
+   "quellen": [
+    "nr_mexiko"
+   ]
+  },
+  {
+   "von": "silao",
+   "nach": "sjchiapa",
+   "art": "lieferung",
+   "gut": "Motoren",
+   "text": "Audi México zählt zu den nordamerikanischen Konzernwerken; ob Silao dorthin liefert, nennt die Quelle nicht ausdrücklich.",
+   "quellen": [
+    "nr_mexiko"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "saocarlos",
+   "nach": "anchieta",
+   "art": "lieferung",
+   "gut": "EA211-Motoren",
+   "text": "626.871 Motoren 2025; Empfänger nennt die Quelle nicht, naheliegend sind die brasilianischen Fahrzeugwerke.",
+   "menge": {
+    "wert": 626871,
+    "einheit": "Motoren (gesamt)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_brasil"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "cordoba",
+   "nach": "pacheco",
+   "art": "lieferung",
+   "gut": "Getriebe",
+   "text": "357.000 Getriebe 2025; Empfänger nennt die Quelle nicht.",
+   "menge": {
+    "wert": 357000,
+    "einheit": "Getriebe (gesamt)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "nr_argentina"
+   ],
+   "unsicher": true
+  },
+  {
+   "von": "bologna",
+   "nach": "cordoba",
+   "art": "lieferung",
+   "gut": "Ducati-Motorräder (Montage)",
+   "text": "Ducati Scrambler, Multistrada und DesertX werden in Córdoba montiert.",
+   "quellen": [
+    "nr_argentina"
+   ]
+  },
+  {
+   "von": "pune",
+   "nach": "vietnam",
+   "art": "lieferung",
+   "gut": "CKD-Bausätze Slavia und Kushaq",
+   "text": "Das indische Logistikzentrum bereitet Bausätze vor, die im neuen Werk in Vietnam montiert werden (2025: 2.500 Fahrzeuge).",
+   "menge": {
+    "wert": 2500,
+    "einheit": "Fahrzeuge montiert",
+    "jahr": 2025
+   },
+   "quellen": [
+    "skoda_produktion"
+   ]
+  },
+  {
+   "von": "bratislava",
+   "nach": "zuffenhausen",
+   "art": "lieferung",
+   "gut": "Porsche Cayenne (Auftragsfertigung)",
+   "text": "Cayenne für Porsche aus Bratislava (und Malaysia): 76.694 Fahrzeuge 2025.",
+   "menge": {
+    "wert": 76694,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "porsche_gb",
+    "nr_slovakia"
+   ]
+  },
+  {
+   "von": "bratislava",
+   "nach": "mb",
+   "art": "lieferung",
+   "gut": "Škoda Superb (Auftragsfertigung)",
+   "text": "Superb wird neben dem Passat in Bratislava gebaut.",
+   "menge": {
+    "wert": 69500,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "skoda_produktion"
+   ]
+  },
+  {
+   "von": "bratislava",
+   "nach": "ingolstadt",
+   "art": "lieferung",
+   "gut": "Audi Q7 und Q8 (Auftragsfertigung)",
+   "text": "Audi Q7 und Q8 laufen in Bratislava; Stückzahl nicht veröffentlicht.",
+   "quellen": [
+    "nr_slovakia"
+   ]
+  },
+  {
+   "von": "osnabrueck",
+   "nach": "zuffenhausen",
+   "art": "lieferung",
+   "gut": "Porsche 718 Boxster/Cayman",
+   "text": "In Osnabrück fertiggestellt, Produktion Ende Oktober 2025 eingestellt.",
+   "menge": {
+    "wert": 15856,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "porsche_gb"
+   ]
+  },
+  {
+   "von": "martorell",
+   "nach": "ingolstadt",
+   "art": "lieferung",
+   "gut": "Audi A1 (Auftragsfertigung)",
+   "text": "Martorell baut den Audi A1; in den 470.347 Fahrzeugen von 2025 enthalten.",
+   "quellen": [
+    "seat_2025"
+   ]
+  },
+  {
+   "von": "gyoer",
+   "nach": "martorell",
+   "art": "lieferung",
+   "gut": "CUPRA Terramar (Auftragsfertigung)",
+   "text": "Der CUPRA Terramar wird in Győr gebaut.",
+   "menge": {
+    "wert": 71810,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "audi_hungaria"
+   ]
+  },
+  {
+   "von": "kvasiny",
+   "nach": "martorell",
+   "art": "lieferung",
+   "gut": "SEAT-Fahrzeuge (Auftragsfertigung)",
+   "text": "Kvasiny produzierte 2025 zusätzlich SEAT-Fahrzeuge.",
+   "menge": {
+    "wert": 40200,
+    "einheit": "Fahrzeuge",
+    "jahr": 2025
+   },
+   "quellen": [
+    "skoda_produktion"
+   ]
+  },
+  {
+   "von": "wrzesnia",
+   "nach": "traton",
+   "art": "lieferung",
+   "gut": "MAN TGE (Auftragsfertigung)",
+   "text": "Der MAN TGE wird zusammen mit dem Crafter in Września gebaut; MAN setzte 2025 31.344 TGE ab.",
+   "menge": {
+    "wert": 31344,
+    "einheit": "Fahrzeuge (Absatz)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "vwn",
+    "traton_kennzahlen"
+   ]
+  },
+  {
+   "von": "emden",
+   "nach": "wob",
+   "art": "logistik",
+   "gut": "Fahrzeugexport und -import",
+   "text": "Emden ist der wichtigste Hafen des Konzerns und Drehscheibe für Neufahrzeuge; Umschlagsmengen hier nicht erfasst.",
+   "quellen": [
+    "nr_emden"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "ford",
+   "art": "kunde",
+   "gut": "MEB-Elektrobaukasten",
+   "text": "Ford nutzt den MEB für Elektroautos aus Köln (Explorer); Liefermengen nicht veröffentlicht.",
+   "quellen": [
+    "ford"
+   ]
+  },
+  {
+   "von": "wob",
+   "nach": "mahindra",
+   "art": "kunde",
+   "gut": "MEB-Komponenten und Einheitszellen",
+   "text": "Liefervertrag von Februar 2024 über mehrere Jahre, Volumen rund 50 GWh über die Laufzeit.",
+   "menge": {
+    "wert": 50,
+    "einheit": "GWh über die Laufzeit",
+    "jahr": 2024
+   },
+   "quellen": [
+    "mahindra"
+   ]
+  },
+  {
+   "von": "hannover",
+   "nach": "uber",
+   "art": "kunde",
+   "gut": "ID. Buzz AD (über MOIA)",
+   "text": "Tausende autonome ID. Buzz AD für Uber in mehreren US-Märkten über zehn Jahre; MOIA liefert Fahrzeuge, Software und Flottensteuerung.",
+   "quellen": [
+    "uber"
+   ]
+  }
+ ]
+}

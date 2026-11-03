@@ -14,6 +14,8 @@ Ausgangspunkt ist der Arbeitsauftrag „OECD-Erweiterung“ (Übergabe-Entwurf).
 | Abgesicherter HTTP-Abruf | `httpsafe.py` | Allowlist, keine Weiterleitungen, Größen-/Zeitlimit, Retry-After, atomares Speichern, IP-Prüfung für offene Crawler |
 | SEC-Adapter (Companyfacts) | `sec.py`, `us_pilot.py` | zehn US-Unternehmen (`us_pilot.csv`, davon zwei Banken) live geladen: Bilanzsumme, Eigenkapital (auch inkl. Minderheiten), Umsatz, Ergebnis, operativer Cashflow, ab 2007; berichtigte Fassungen bleiben erhalten |
 | ESEF-Adapter (FR, NL, IT, ES, BE, AT, FI, IE, PT, DK, SE, NO, PL, GB, GR, SI, LT, LV, EE, IS, LU, HU, SK, CZ) | `esef.py`, `fr_pilot.py` | je zehn ESEF-Melder (`<kürzel>_pilot.csv`, 225 Unternehmen, Irland nur 6; Finnland und die kleinen Länder oft ohne ISIN, nur LEI; bereits erfasste Zeilen über `bestand_id` ergänzt, keine neuen Dubletten) live über den Filing-Index filings.xbrl.org geladen (3 bis 9 Einreichungen je Unternehmen, Stichtage 2017 bis 2025); LEI je ISIN gegen GLEIF geprüft |
+| DART-Adapter (Südkorea) | `dart.py`, `kr_pilot.py`, `kr_pilot.csv` | zehn Unternehmen (Samsung Electronics, SK Hynix, Hyundai Motor, Kia, LG Energy Solution, POSCO Holdings, KB Financial, Shinhan Financial, NAVER, Celltrion), Konzernabschlüsse K-IFRS aus der OpenDART-API, Beträge in KRW (nie umgerechnet), 601 Werte aus 89 Jahresberichten (GJ2015 bis 2025); Schlüssel nur über `DART_API` und nie in Adresse, Rohdatei oder Fehlermeldung |
+| Abgleich DART | `verify_kr.py`, `pruefung_kr.csv` | 68 Werte (jüngste Periode je Unternehmen und Kennzahl) gegen die Tabellen des Berichtstexts (document.xml): 62 gleich, 6 gleich in der Originalfassung (KB) |
 | Abgleich ESEF | `verify_fr.py`, `pruefung_<kürzel>.csv` | 67 (FR), 63 (NL), 49 (IT), 63 (ES), 63 (BE), 64 (AT), 63 (FI), 37 (IE), 62 (PT), 38 (DK), 66 (SE), 60 (NO), 66 (PL), 102 (GB), 66 (GR), 43 (SI), 46 (LT), 32 (LV), 46 (EE), 48 (IS), 78 (LU), 62 (HU), 36 (SK), 31 (CZ) Werte (jüngste Periode je Unternehmen und Kennzahl) gegen die sichtbaren Zahlen im veröffentlichten iXBRL-Dokument: alle gleich; Poste Italiane und Snam nicht geprüft (Dokument über 250 MB, Status `dokument_nicht_abrufbar`) |
 | Abgleich mit Originalfilings | `verify_us.py`, `pruefung_us.csv` | 55 Werte (jüngstes Geschäftsjahr je Unternehmen und Kennzahl) gegen die Finanzberichtsseiten der 10-K: alle gleich (38 über Standardbezeichnung, 17 über gleichen Wert in sinnvoll benannter Zeile) |
 | SEC-Melder aus CH, CA, AU, MX, CL, TR, IL | `sec_fpi_pilot.py`, `sec_fpi_pilot.csv`, `verify_fpi.py`, `pruefung_sec_fpi.csv` | 40 Melder von 20-F/40-F (teils 10-K), Companyfacts mit den IFRS-Tags (`ifrs-full`, Mapping `sec-ifrs-v1`) in der Berichtswährung ohne Umrechnung; LEI aus GLEIF, ISIN nicht belegt. 239 Werte gegen die Finanzberichtsseiten geprüft, 213 bestätigt, 26 nicht als bestätigt gezählt (siehe LUECKEN.md) |
@@ -47,6 +49,12 @@ python3 international/verify_us.py                # Abgleich mit den Originalfil
 python3 international/fr_pilot.py register [--csv=nl_pilot.csv]   # zehn Pilotunternehmen anlegen (LEI gegen GLEIF geprüft); ohne --csv Frankreich
 python3 international/fr_pilot.py import [--csv=nl_pilot.csv]     # ESEF-Einreichungen laden und importieren
 python3 international/verify_fr.py [--csv=nl_pilot.csv]           # Abgleich mit den Berichtsdokumenten -> pruefung_<kürzel>.csv
+
+
+export DART_API=…                                 # OpenDART-Schlüssel (https://opendart.fss.or.kr), nie ins Repo
+python3 international/kr_pilot.py register       # zehn koreanische Unternehmen anlegen (corp_code und Börsenkürzel gegen DART geprüft)
+python3 international/kr_pilot.py import [--von=2015] [--bis=2025] [--dry-run]   # Konzernabschlüsse laden und importieren
+DART_API=… python3 international/verify_kr.py     # Abgleich mit dem Berichtstext -> pruefung_kr.csv
 
 python3 international/export_vergleich.py [--as-of 2025-04-01]   # -> international/export/vergleich-v1.json
 ```

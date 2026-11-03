@@ -231,8 +231,8 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#b-quellen" data-v="b-quellen"><b>F5</b>Quellen</a>
     </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
-      <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchen</a>
-      <a class="key" href="#u-branche" data-v="u-branche"><b>F2</b>Branche</a>
+      <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchenvergleich</a>
+      <a class="key" href="#u-branche" data-v="u-branche"><b>F2</b>Einzelbranche</a>
       <a class="key" href="#u-vergleich" data-v="u-vergleich"><b>F3</b>Vergleich</a>
       <a class="key" href="#u-verzeichnis" data-v="u-verzeichnis"><b>F4</b>Verzeichnis</a>
       <a class="key" href="#u-termine" data-v="u-termine"><b>F5</b>Termine</a>
@@ -240,7 +240,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#u-abschluesse" data-v="u-abschluesse"><b>F7</b>Bilanz &amp; GuV</a>
     </nav>
     <nav class="subkeys" id="subkeys" aria-label="Banken-Analyse" hidden>
-      <span>Branche Banken ›</span>
+      <span>Einzelbranche Banken ›</span>
       <a href="#grp" data-v="grp">Gruppen</a><a href="#quot" data-v="quot">Quoten</a><a href="#cmp" data-v="cmp">Einzelbanken</a>
       <a href="#rank" data-v="rank">Liste</a><a href="#mkt" data-v="mkt" id="key-mkt">Börse</a><a href="#ts" data-v="ts">Zeitreihen</a>
     </nav>
@@ -1021,7 +1021,9 @@ function landAuswahlInit() {
   const name = c => { if(c==='ZZ') return 'Unbekannt'; try { return labels.of(c)||c; } catch { return c; } };
   const sel = document.getElementById('global-land');
   sel.innerHTML = '<option value="alle">Alle Länder</option>'+codes.sort((a,b)=>name(a).localeCompare(name(b),'de')).map(c=>`<option value="${esc(c)}">${esc(name(c))}</option>`).join('');
-  try { const saved=localStorage.getItem('terminal-land'); if(codes.includes(saved)) sel.value=saved; } catch {}
+  // Vorauswahl Deutschland; wer "Alle Länder" oder ein anderes Land wählt, behält das auf diesem Gerät
+  let saved=null; try { saved=localStorage.getItem('terminal-land'); } catch {}
+  sel.value = saved==='alle' ? 'alle' : codes.includes(saved) ? saved : codes.includes('DE') ? 'DE' : 'alle';
   sel.addEventListener('change',()=>{try{localStorage.setItem('terminal-land',sel.value);}catch{} landAnwenden(sel.value);});
   landAnwenden(sel.value);
 }
@@ -1039,7 +1041,6 @@ function viewStart() {
 function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
-  else if (h.startsWith("reg-")) { aktuell = h; html = UNT.viewReg(h.slice(4)); }
   else { aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }
   const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), bo = aktuell.startsWith("b-"), st = aktuell === "start";
   const bereichNeu = bo ? "b" : vw ? "v" : "u";
@@ -1059,7 +1060,7 @@ function render() {
   document.getElementById("subkeys").hidden = !bank;
   document.getElementById("tape").hidden = document.getElementById("quotes").hidden = !bank;
   document.getElementById("meta").textContent = st ? "" : bo ? BOE.meta() : vw ? VWL.meta() : bank ? metaBanken : UNT.meta();
-  const aktiv = bank ? "u-branche" : (aktuell.startsWith("firma-") || aktuell.startsWith("reg-")) ? "u-verzeichnis" : aktuell;
+  const aktiv = bank ? "u-branche" : aktuell.startsWith("firma-") ? "u-verzeichnis" : aktuell;
   document.querySelectorAll(".key, .subkeys a").forEach(k => (k.dataset.v === aktuell || (k.classList.contains("key") && k.dataset.v === aktiv)) ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
   document.getElementById("view").innerHTML = html;
   const add = document.getElementById("cmpadd");

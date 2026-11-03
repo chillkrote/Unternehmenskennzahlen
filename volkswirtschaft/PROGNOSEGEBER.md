@@ -89,3 +89,8 @@ Vergleichbarkeit: Die Basis (Jahresdurchschnitt oder Q4/Q4) steht je Zeile im `h
 - **Kolumbien (Banco de la República):** Auch im Browser-Modus eine Bot-Sperre („eres un bot“), nicht umgangen.
 - **Weiter offen:** Banca d'Italia, Banco de España und die übrigen Zentralbanken außerhalb der Euro-Runden (Bulletin-Prognosen im Januar, April, Juli, Oktober), Zentralbanken und Institute der übrigen OECD-Länder (Australien, Neuseeland, Schweiz, Schweden, Norwegen, Korea, Mexiko, Chile, Türkei u. a.) und Ministerien.
 - **Funcas-Zahlen** sind spanische Kommastellen im PDF, in der CSV mit Punkt.
+
+
+## Aktualisierung
+
+Der Workflow `.github/workflows/prognosen.yml` ruft werktags um 06:43 UTC alle Quellen ab (`skripte/abruf_prognosen_international.py`), montags zusätzlich OECD Economic Outlook, Istwerte und Prognosefehler. Neue Ausgaben erscheinen in der Lauf-Zusammenfassung als `NEU <Land> <Ausgabe>`. Fällt eine Quelle aus, bleiben ihre bisherigen Werte stehen (`FEHLER-QUELLEN`); liefert eine Ausgabe weniger als 70 % der bisherigen Zeilen, bleibt die bisherige stehen (`WARNUNG`). Unveränderte Werte behalten ihr Abrufdatum, ein Lauf ohne neue Daten erzeugt keinen Commit. Bei Änderung baut `terminal.yml` das Terminal neu. Von Hand: `python3 volkswirtschaft/skripte/abruf_prognosen_international.py`.

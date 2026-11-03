@@ -1,6 +1,6 @@
 # Unternehmen-Tabelle (zusammengeführt)
 
-Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **28.898 Unternehmen** (davon 2.785 neue indische Zeilen aus den BSE-Listen Equity.csv/EQT0.csv und der NSE-Liste EQUITY_L.csv, `skripte/indien_bse_nse.py`; vorher 26.130, sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`). 17 Namenszeilen mit den ESEF-Piloten zusammengelegt (`bereinigung_protokoll_esef.csv`, `bereinigung_protokoll_esef_2.csv`).
+Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **28.895 Unternehmen** (davon 2.785 neue indische Zeilen aus den BSE-Listen Equity.csv/EQT0.csv und der NSE-Liste EQUITY_L.csv, `skripte/indien_bse_nse.py`; vorher 26.130, sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`). 17 Namenszeilen mit den ESEF-Piloten zusammengelegt (`bereinigung_protokoll_esef.csv`, `bereinigung_protokoll_esef_2.csv`).
 
 | Datei | Inhalt |
 |---|---|

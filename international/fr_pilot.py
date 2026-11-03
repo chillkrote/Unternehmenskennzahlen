@@ -15,7 +15,9 @@ sys.path.insert(0, str(HIER.parent / "stammdaten"))
 
 PILOT = HIER / "fr_pilot.csv"
 LAENDER = {"FR": "France", "NL": "Netherlands", "IT": "Italy", "ES": "Spain", "BE": "Belgium", "AT": "Austria", "FI": "Finland", "IE": "Ireland",
-           "PT": "Portugal", "DK": "Denmark", "SE": "Sweden", "NO": "Norway", "PL": "Poland"}
+           "PT": "Portugal", "DK": "Denmark", "SE": "Sweden", "NO": "Norway", "PL": "Poland",
+           "GB": "United Kingdom", "GR": "Greece", "IS": "Iceland", "LU": "Luxembourg", "CZ": "Czech Republic", "HU": "Hungary", "SK": "Slovakia",
+           "SI": "Slovenia", "LT": "Lithuania", "LV": "Latvia", "EE": "Estonia"}
 
 
 def waehle(argv):
@@ -54,8 +56,9 @@ def registrieren(client=None):
         bestand = z.get("bestand_id") or ""
         if bestand:
             # schon erfasste Zeile (nur Name, aus der Tabellenerhebung): ID behalten, ISIN/LEI/Ticker ergänzen
-            if bestand not in reg.unternehmen or reg.unternehmen[bestand]["land"] != LAENDER[z.get("land") or "FR"]:
-                raise SystemExit(f"{z['name']}: bestand_id {bestand} unbekannt oder anderes Land")
+            # Land der Namenszeile (aus der Tabellenerhebung, oft Börsenplatz) darf vom GLEIF-Sitzland abweichen; das Sitzland wird unten übernommen
+            if bestand not in reg.unternehmen:
+                raise SystemExit(f"{z['name']}: bestand_id {bestand} unbekannt")
             if z["isin"]:
                 reg.isins_zuordnen(bestand, z["isin"], ())
             uid = bestand

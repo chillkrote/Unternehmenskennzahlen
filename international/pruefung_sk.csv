@@ -1,0 +1,37 @@
+unternehmen_id,name,kennzahl,ifrs_konzept,periode,wert_datenbank,wert_dokument,einreichung,status,geprueft_am
+U001359,"Tatra banka, a.s.",assets,ifrs-full:Assets,..2025-12-31,23123477000.0,23123477000,3157002JBFAI478MD587-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001359,"Tatra banka, a.s.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,1771718000.0,1771718000,3157002JBFAI478MD587-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001359,"Tatra banka, a.s.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,265906000.0,265906000,3157002JBFAI478MD587-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001359,"Tatra banka, a.s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,155121000.0,155121000,3157002JBFAI478MD587-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001360,"Československá obchodná banka, a.s.",assets,ifrs-full:Assets,..2025-12-31,17429877000.0,17429877000,52990096Q5LMCH1WU462-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001360,"Československá obchodná banka, a.s.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,1680853000.0,1680853000,52990096Q5LMCH1WU462-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001360,"Československá obchodná banka, a.s.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,97672000.0,97672000,52990096Q5LMCH1WU462-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001360,"Československá obchodná banka, a.s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,-1029479000.0,-1029479000,52990096Q5LMCH1WU462-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001361,"Slovenská sporiteľňa, a.s.",assets,ifrs-full:Assets,..2025-12-31,27995997000.0,27995997000,549300S2T3FWVVXWJI89-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001361,"Slovenská sporiteľňa, a.s.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,2406521000.0,2406521000,549300S2T3FWVVXWJI89-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001361,"Slovenská sporiteľňa, a.s.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,2408439000.0,2408439000,549300S2T3FWVVXWJI89-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001361,"Slovenská sporiteľňa, a.s.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,310278000.0,310278000,549300S2T3FWVVXWJI89-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001361,"Slovenská sporiteľňa, a.s.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,310266000.0,310266000,549300S2T3FWVVXWJI89-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001361,"Slovenská sporiteľňa, a.s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,-764962000.0,-764962000,549300S2T3FWVVXWJI89-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001362,"Všeobecná úverová banka, a.s.",assets,ifrs-full:Assets,..2025-12-31,26320181000.0,26320181000,549300JB1P61FUTPEZ75-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001362,"Všeobecná úverová banka, a.s.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,2428880000.0,2428880000,549300JB1P61FUTPEZ75-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001362,"Všeobecná úverová banka, a.s.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,270121000.0,270121000,549300JB1P61FUTPEZ75-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001362,"Všeobecná úverová banka, a.s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,-176340000.0,-176340000,549300JB1P61FUTPEZ75-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001363,"365.bank, a. s.",assets,ifrs-full:Assets,..2025-12-31,4533525000.0,4533525000,315700PLTAXHBHZP5J02-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001363,"365.bank, a. s.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,497085000.0,497085000,315700PLTAXHBHZP5J02-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001363,"365.bank, a. s.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,9317000.0,9317000,315700PLTAXHBHZP5J02-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001363,"365.bank, a. s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,-122404000.0,-122404000,315700PLTAXHBHZP5J02-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",assets,ifrs-full:Assets,..2025-10-31,587546000.0,587546000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-10-31,133650000.0,133650000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",equity_incl_nci,ifrs-full:Equity,..2025-10-31,133650000.0,133650000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",revenue,ifrs-full:Revenue,2024-11-01..2025-10-31,208883000.0,208883000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-11-01..2025-10-31,-11451000.0,-11451000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-11-01..2025-10-31,-11467000.0,-11467000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001364,"Tatry mountain resorts, a.s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-11-01..2025-10-31,35401000.0,35401000,315700YHD1JR6VB1BA90-2025-10-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",assets,ifrs-full:Assets,..2025-12-31,287844000.0,287844000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,71085000.0,71085000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,78992000.0,78992000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",revenue,ifrs-full:Revenue,2025-01-01..2025-12-31,165162000.0,165162000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,22537000.0,22537000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,26541000.0,26541000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03
+U001365,"JOJ Media House, a. s.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,16777000.0,16777000,315700XP27N8YWW3D584-2025-12-31-ESEF-SK-0,gleich,2026-11-03

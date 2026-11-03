@@ -126,7 +126,11 @@ class Pilotliste(unittest.TestCase):
     LISTEN = {"fr_pilot.csv": ("FR", 2), "nl_pilot.csv": ("NL", 2), "it_pilot.csv": ("IT", 2), "es_pilot.csv": ("ES", 3),
               "be_pilot.csv": ("BE", 1, 10), "at_pilot.csv": ("AT", 2, 10), "fi_pilot.csv": ("FI", 1, 10), "ie_pilot.csv": ("IE", 2, 6),
               "pt_pilot.csv": ("PT", 1, 10), "dk_pilot.csv": ("DK", 1, 10), "se_pilot.csv": ("SE", 3, 10), "no_pilot.csv": ("NO", 2, 10),
-              "pl_pilot.csv": ("PL", 3, 10)}
+              "pl_pilot.csv": ("PL", 3, 10),
+              "gb_pilot.csv": ("GB", 4, 16), "gr_pilot.csv": ("GR", 2, 10), "si_pilot.csv": ("SI", 1, 7), "lt_pilot.csv": ("LT", 1, 8),
+              "lv_pilot.csv": ("LV", 2, 6), "ee_pilot.csv": ("EE", 3, 8), "is_pilot.csv": ("IS", 2, 9), "lu_pilot.csv": ("LU", 0, 12),
+              "hu_pilot.csv": ("HU", 0, 9), "sk_pilot.csv": ("SK", 5, 7), "cz_pilot.csv": ("CZ", 3, 7)}
+    OHNE_ISIN = {"FI", "GR", "SI", "LT", "LV", "EE", "IS", "LU", "HU", "SK", "CZ"}
 
     def test_zehn_unternehmen_je_land_lei_isin_stammdaten(self):
         import sys
@@ -146,16 +150,23 @@ class Pilotliste(unittest.TestCase):
                 self.assertEqual(z.get("land") or "FR", land, z["name"])
                 if z["isin"]:
                     self.assertTrue(ids.isin_pruefsumme_ok(z["isin"]) and z["isin"].startswith(land), z["isin"])
-                else:    # nur Finnland: GLEIF führt dort keine ISIN, siehe LUECKEN.md
-                    self.assertEqual(land, "FI", z["name"])
-                uid = reg.aufloesen(z["isin"]) if z["isin"] else z["bestand_id"]
+                else:    # GLEIF führt dort keine inländische ISIN (oder sie ist über den Bestand belegt), siehe LUECKEN.md
+                    self.assertIn(land, self.OHNE_ISIN, z["name"])
+                if z["isin"]:
+                    uid = reg.aufloesen(z["isin"])
+                elif z["bestand_id"]:
+                    uid = z["bestand_id"]
+                else:
+                    treffer = [u for u, r in reg.unternehmen.items() if r["lei"] == z["lei"]]
+                    self.assertEqual(len(treffer), 1, z["name"])
+                    uid = treffer[0]
                 self.assertIsNotNone(uid, f"{z['name']} nicht in stammdaten registriert")
                 self.assertEqual(reg.unternehmen[uid]["lei"], z["lei"])
                 if z.get("bestand_id"):
                     self.assertEqual(uid, z["bestand_id"], z["name"])
                 self.assertNotIn(uid, alle, f"{z['name']}: ID doppelt")
                 alle.add(uid)
-        self.assertEqual(len(alle), 126)
+        self.assertEqual(len(alle), 225)
 
 
 if __name__ == '__main__':

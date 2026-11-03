@@ -1,0 +1,86 @@
+name: Prognosen
+
+# Daten-Update der Konjunkturprognosen (volkswirtschaft/), kein Terminal-Bau (den übernimmt terminal.yml, nur bei Änderung).
+#  06:43 UTC Mo-Fr:
+#  1. alle Prognosegeber abrufen (volkswirtschaft/skripte/abruf_prognosen_international.py, 16 Quellen, ca. 5 Minuten);
+#     neue Ausgaben stehen in der Zusammenfassung ("NEU ..."), halb gelesene Seiten behalten die bisherigen Werte ("WARNUNG ...")
+#  2. montags (und von Hand): OECD Economic Outlook, Istwerte und Prognosefehler neu rechnen
+# Ausfall einzelner Quellen lässt den Lauf nicht scheitern (Warnung in der Zusammenfassung); fallen mehr als die Hälfte aus, schlägt er fehl.
+# Kosten: keine (Actions-Kontingent; alle Quellen frei zugänglich, bot-geschützte Seiten werden nicht abgerufen).
+on:
+  schedule:
+    - cron: "43 6 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: daten-schreiben
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  prognosen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: |
+          sudo apt-get install -y --no-install-recommends poppler-utils
+          pip install -r termine/requirements.txt
+      - name: Prognosegeber abrufen
+        run: python3 volkswirtschaft/skripte/abruf_prognosen_international.py 2>&1 | tee /tmp/prognosen.log
+      - name: OECD, Istwerte und Prognosefehler (montags)
+        if: always()
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            for s in abruf_oecd abruf_ist abgleich_prognosen; do
+              python3 volkswirtschaft/skripte/$s.py 2>&1 | tee -a /tmp/woechentlich.log || echo "::warning::$s fehlgeschlagen, bisheriger Stand bleibt"
+            done
+          fi
+      - name: Rohdatei-Rauschen verwerfen
+        # abgerufene Originalseiten (htm) ändern sich oft nur durch Skripte/Zeitstempel; neue Dateien bleiben
+        run: git checkout -- 'volkswirtschaft/rohdaten/prognosen/*.htm' || true
+      - name: Zusammenfassung
+        if: always()
+        continue-on-error: true
+        run: |
+          {
+            echo "### Prognosen"
+            echo "**Neue Ausgaben:** $(grep -c '^NEU ' /tmp/prognosen.log 2>/dev/null || true)"
+            grep -E '^(NEU|WARNUNG|FEHLER-QUELLEN)' /tmp/prognosen.log 2>/dev/null | sed 's/^/- /' || true
+            echo '```'; tail -n 6 /tmp/prognosen.log 2>/dev/null || true; echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if grep -q '^FEHLER-QUELLEN' /tmp/prognosen.log 2>/dev/null; then
+            echo "::warning::$(grep '^FEHLER-QUELLEN' /tmp/prognosen.log)"
+          fi
+      - name: Zu viele Ausfälle?
+        run: |
+          ausfall=$(grep -c ': FEHLER ' /tmp/prognosen.log || true)
+          [ "$ausfall" -le 8 ] || { echo "::error::$ausfall von 16 Quellen ausgefallen"; exit 1; }
+      - name: Änderungen pushen
+        id: push
+        if: github.ref == 'refs/heads/main'
+        run: .github/scripts/daten_pushen.sh "Prognosen $(date -u +%Y-%m-%d)" volkswirtschaft
+      - name: Terminal neu bauen lassen
+        if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
+        run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -4,6 +4,7 @@
 |---|---|---|---|
 | `marktdaten.yml` „Börsendaten Terminal“ | Tageskurse der Banken (`app/data/markt.json`); samstags Wochenkurse (`kurse_woche.json`); Bereich BÖR: Aktienindizes weltweit und große Unternehmen (`boerse.json`) | Mo–Fr 18:37, Sa 05:11, Mo–Fr 22:43 (UTC; GitHub startet Zeitpläne oft Stunden später) | ca. 3 min (Sa ca. 2 min, BÖR ca. 2 min) |
 | `termine.yml` „Berichtstermine“ | Termine erfassen, fällige Berichte laden, montags Finanzkalender lesen | täglich 05:17, Mo–Fr 16:47 (UTC; GitHub startet Zeitpläne oft Stunden später) | ca. 3–4 min, montags +6 min |
+| `prognosen.yml` „Prognosen“ | Konjunkturprognosen aller Prognosegeber (`volkswirtschaft/prognosen_international.csv`); montags zusätzlich OECD Economic Outlook, Istwerte, Prognosefehler | Mo–Fr 06:43 | ca. 5 min (Mo ca. 8 min) |
 | `terminal.yml` „Terminal bauen“ | baut `bankterminal.html` und legt sie als Artifact und auf den Branch `terminal-dist` | nur auf Anforderung | ca. 0,5 min |
 | `desktop-macos.yml` | macOS-App (.dmg) | von Hand, Tag `desktop-v*`, PR an `desktop/` | ca. 2 min, macOS zählt zehnfach |
 

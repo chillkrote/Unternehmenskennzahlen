@@ -593,27 +593,55 @@ QUELLEN = [("EZB SPF", ezb_spf), ("Philadelphia SPF", philly_spf), ("HM Treasury
            ("Nationale Zentralbanken (MPD)", ncb_mpd), ("Bank of England", boe), ("SECO Schweiz", seco), ("Riksbank Schweden", riksbank), ("Norges Bank", norges), ("RBA Australien", rba), ("Bank of Korea", bok), ("CNB Tschechien", cnb)]
 
 
+def schluessel(r):
+    return (r["geo"], r["herausgeber"], r["ausgabe"], r["groesse"], str(r["jahr"]))
+
+
 def main():
     alt = []
     if ZIEL.exists():
         with open(ZIEL, newline="", encoding="utf-8") as f:
             alt = list(csv.DictReader(f))
     neu = []
+    fehler = []
     for name, fkt in QUELLEN:
         try:
             z_ = fkt()
             print(f"{name}: {len(z_)} Zeilen")
             neu += z_
         except Exception as e:
+            fehler.append(name)
             print(f"{name}: FEHLER {type(e).__name__}: {e}", file=sys.stderr)
+    # Schutz gegen halb gelesene Seiten: liefert eine Ausgabe deutlich weniger Zeilen als bisher, bleibt die bisherige stehen
+    vorher, jetzt = {}, {}
+    for r in alt:
+        vorher.setdefault((r["geo"], r["ausgabe"]), []).append(r)
+    for r in neu:
+        jetzt.setdefault((r["geo"], r["ausgabe"]), []).append(r)
+    behalten = {k for k, v in jetzt.items() if k in vorher and len(v) < 0.7 * len(vorher[k])}
+    for k in sorted(behalten):
+        print(f"WARNUNG {k[0]} {k[1]}: nur {len(jetzt[k])} statt {len(vorher[k])} Zeilen, bisherige Werte bleiben")
+    neu = [r for r in neu if (r["geo"], r["ausgabe"]) not in behalten]
     ausgaben = {(r["geo"], r["ausgabe"]) for r in neu}
     # Zeilen derselben Ausgabe einer erfolgreich abgerufenen Quelle werden ersetzt, alles andere bleibt stehen
-    alt = [r for r in alt if (r["geo"], r["ausgabe"]) not in ausgaben]
+    rest = [r for r in alt if (r["geo"], r["ausgabe"]) not in ausgaben]
+    # unveränderte Werte behalten ihr Abrufdatum, damit ein Lauf ohne neue Daten die Datei nicht ändert
+    bisher = {schluessel(r): r for r in alt}
+    for r in neu:
+        o = bisher.get(schluessel(r))
+        if o and abs(float(o["wert"]) - float(r["wert"])) < 1e-9 and o["url"] == r["url"] and o["hinweis"] == r["hinweis"] and o["beleg"] == r["beleg"] \
+                and o["veroeffentlicht"] == r["veroeffentlicht"]:
+            r["abruf"] = o["abruf"]
+    alle = sorted(rest + neu, key=schluessel)
     with open(ZIEL, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, FELDER)
         w.writeheader()
-        w.writerows(alt + neu)
-    print(len(alt) + len(neu), "Zeilen gesamt")
+        w.writerows(alle)
+    print(len(alle), "Zeilen gesamt")
+    for geo, ausg in sorted(ausgaben - set(vorher)):
+        print(f"NEU {geo} {ausg}")
+    if fehler:
+        print("FEHLER-QUELLEN:", ", ".join(fehler))
 
 
 if __name__ == "__main__":

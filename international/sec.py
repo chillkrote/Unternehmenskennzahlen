@@ -31,6 +31,19 @@ MAPPING = {
     "operating_cash_flow": {"taxonomy": "us-gaap", "tags": ["NetCashProvidedByUsedInOperatingActivities",
                                                             "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"], "period": "duration", "unit": "USD"},
 }
+# IFRS-Melder (Formular 20-F, teils 40-F): dieselben Kennzahlen mit den Tags der Taxonomie ifrs-full, Einheit ist die jeweilige Berichtswährung (ISO 4217).
+# Je Filing und Periode gilt weiterhin der erste vorhandene Tag, us-gaap vor ifrs-full; Zahlen in Fremdwährung werden nie umgerechnet.
+MAPPING_IFRS = {
+    "assets": {"tags": ["Assets"], "period": "instant"},
+    "equity": {"tags": ["EquityAttributableToOwnersOfParent"], "period": "instant"},
+    "equity_incl_nci": {"tags": ["Equity"], "period": "instant"},
+    "revenue": {"tags": ["Revenue", "RevenueFromContractsWithCustomers"], "period": "duration"},
+    "net_income": {"tags": ["ProfitLossAttributableToOwnersOfParent"], "period": "duration"},
+    "net_income_incl_nci": {"tags": ["ProfitLoss"], "period": "duration"},
+    "operating_cash_flow": {"tags": ["CashFlowsFromUsedInOperatingActivities"], "period": "duration"},
+}
+MAPPING_VERSION_IFRS = "sec-ifrs-v1"
+WAEHRUNG = re.compile(r"^[A-Z]{3}$")
 # Für Banken ist Umsatz keine geeignete Kennzahl (siehe MAPPING.md)
 OHNE_BANK = {"revenue"}
 
@@ -64,21 +77,26 @@ def abrufen(client: SichererClient, cik, speicher_verzeichnis):
 
 
 def extrahieren(rohdaten: dict, mapping=MAPPING, metrics=None):
-    """Alle Einträge der gemappten Tags aus Jahresformularen, unverändert und mit allen Kontextangaben."""
+    """Alle Einträge der gemappten Tags aus Jahresformularen, unverändert und mit allen Kontextangaben.
+    Reihenfolge der Ränge: erst us-gaap (Einheit USD), dann ifrs-full (jede ISO-Währung)."""
     ausgabe = []
     for metric, m in mapping.items():
         if metrics is not None and metric not in metrics:
             continue
-        for rang, tag in enumerate(m["tags"]):
-            knoten = rohdaten.get("facts", {}).get(m["taxonomy"], {}).get(tag)
-            if not knoten:
-                continue
-            for einheit, eintraege in knoten.get("units", {}).items():
-                if einheit != m["unit"]:
-                    continue   # andere Einheiten (z. B. Aktien) bleiben im Rohbeleg, werden nicht gemappt
-                for e in eintraege:
-                    if e.get("form") in JAHRESFORMULARE:
-                        ausgabe.append({"metric": metric, "taxonomy": m["taxonomy"], "tag": tag, "rang": rang, "unit": einheit, **e})
+        kandidaten = [("us-gaap" if m["taxonomy"] == "us-gaap" else m["taxonomy"], m["tags"], lambda u, m=m: u == m["unit"], 0)]
+        if mapping is MAPPING and metric in MAPPING_IFRS:
+            kandidaten.append(("ifrs-full", MAPPING_IFRS[metric]["tags"], lambda u: bool(WAEHRUNG.match(u)), 100))
+        for taxonomie, tags, einheit_ok, basis in kandidaten:
+            for rang, tag in enumerate(tags):
+                knoten = rohdaten.get("facts", {}).get(taxonomie, {}).get(tag)
+                if not knoten:
+                    continue
+                for einheit, eintraege in knoten.get("units", {}).items():
+                    if not einheit_ok(einheit):
+                        continue   # andere Einheiten (z. B. Aktien) bleiben im Rohbeleg, werden nicht gemappt
+                    for e in eintraege:
+                        if e.get("form") in JAHRESFORMULARE:
+                            ausgabe.append({"metric": metric, "taxonomy": taxonomie, "tag": tag, "rang": basis + rang, "unit": einheit, **e})
     return ausgabe
 
 
@@ -87,15 +105,17 @@ def normalisieren(eintraege, entity_id, source_id):
     werden einmal geführt, widersprüchliche Werte im selben Filing ergeben einen Fehler statt stiller Auswahl."""
     bester = {}
     for e in eintraege:
-        k = (e["metric"], e["accn"], e.get("start") or "", e["end"])
+        k = (e["metric"], e["accn"], e.get("start") or "", e["end"], e["unit"])
         bester[k] = min(bester.get(k, e["rang"]), e["rang"])
     zeilen, gesehen = [], {}
     for e in eintraege:
-        if e["rang"] != bester[(e["metric"], e["accn"], e.get("start") or "", e["end"])]:
+        if e["rang"] != bester[(e["metric"], e["accn"], e.get("start") or "", e["end"], e["unit"])]:
             continue
         end = date.fromisoformat(e["end"])
         start = date.fromisoformat(e["start"]) if e.get("start") else None
         m = MAPPING[e["metric"]]
+        if e["taxonomy"] == "ifrs-full":
+            m = MAPPING_IFRS[e["metric"]]
         if (m["period"] == "instant") != (start is None):
             continue                   # Periodentyp passt nicht zum Tag (z. B. Dauer statt Stichtag): nicht mappen
         if start is not None and periode_klasse(start, end) != "annual":
@@ -111,10 +131,11 @@ def normalisieren(eintraege, entity_id, source_id):
             "entity_id": entity_id, "metric_code": e["metric"],
             "period_start": start, "period_end": end,
             "value": wert, "unit": e["unit"],
-            "accounting_standard": "US-GAAP" if e["taxonomy"] == "us-gaap" else e["taxonomy"],
+            "accounting_standard": "US-GAAP" if e["taxonomy"] == "us-gaap" else "IFRS" if e["taxonomy"] == "ifrs-full" else e["taxonomy"],
             "consolidation": "unknown",    # Companyfacts nennt den Konsolidierungskreis nicht; Konzernabschluss ist bei 10-K üblich, aber nicht belegt
             "dimensions": {},
-            "source_id": source_id, "source_fact_key": schluessel, "mapping_version": MAPPING_VERSION,
+            "source_id": source_id, "source_fact_key": schluessel,
+            "mapping_version": MAPPING_VERSION_IFRS if e["taxonomy"] == "ifrs-full" else MAPPING_VERSION,
             "quality": "raw",
             "reported_at": date.fromisoformat(e["filed"]) if e.get("filed") else None,
             "provenance": {"form": e.get("form"), "accn": e["accn"], "fy": e.get("fy"), "fp": e.get("fp"), "frame": e.get("frame"),

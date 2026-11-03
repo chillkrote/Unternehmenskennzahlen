@@ -1,0 +1,240 @@
+unternehmen_id,name,kennzahl,xbrl_tag,periode,einheit,wert_datenbank,wert_original,accession,seite,zeilenbezeichnung,status,geprueft_am
+U001044,LOGITECH INTERNATIONAL,assets,us-gaap:Assets,..2026-03-31,USD,3848588000,3848588000000,0001032975-26-000021,R5,Total assets,skala_der_seite_abweichend,2026-11-03
+U001044,LOGITECH INTERNATIONAL,equity,us-gaap:StockholdersEquity,..2026-03-31,USD,2211394000,2211394000000,0001032975-26-000021,R5,Total shareholders' equity,skala_der_seite_abweichend,2026-11-03
+U001044,LOGITECH INTERNATIONAL,revenue,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax,2025-04-01..2026-03-31,USD,4840761000,4840761000,0001032975-26-000021,R3,Net sales,gleich,2026-11-03
+U001044,LOGITECH INTERNATIONAL,net_income,us-gaap:NetIncomeLoss,2025-04-01..2026-03-31,USD,711187000,711187000,0001032975-26-000021,R3,Net income,gleich,2026-11-03
+U001044,LOGITECH INTERNATIONAL,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-04-01..2026-03-31,USD,1037207000,1037207000,0001032975-26-000021,R7,Net cash provided by operating activities,gleich,2026-11-03
+U001093,NOVARTIS,assets,ifrs-full:Assets,..2025-12-31,USD,110949000000,110949000000,0001114448-26-000004,R4,Total assets,gleich,2026-11-03
+U001093,NOVARTIS,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,USD,46130000000,46130000000,0001114448-26-000004,R4,Equity attributable to Novartis AG shareholders,gleich,2026-11-03
+U001093,NOVARTIS,equity_incl_nci,ifrs-full:Equity,..2025-12-31,USD,46549000000,46549000000,0001114448-26-000004,R4,Total equity,gleich,2026-11-03
+U001093,NOVARTIS,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,USD,13984000000,13984000000,0001114448-26-000004,R5,Net income,gleich_andere_zeile,2026-11-03
+U001093,NOVARTIS,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,USD,13967000000,13967000000,0001114448-26-000004,R2,Net income,gleich,2026-11-03
+U001093,NOVARTIS,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,USD,19144000000,19144000000,0001114448-26-000004,R6,Net cash flows from operating activities from continuing operations,gleich_andere_zeile,2026-11-03
+U001246,UBS GROUP,assets,ifrs-full:Assets,..2025-12-31,USD,1617427000000,1617427000000,0001610520-26-000023,R5,Total assets,gleich,2026-11-03
+U001246,UBS GROUP,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,USD,90213000000,90213000000,0001610520-26-000023,R5,Equity attributable to shareholders,gleich,2026-11-03
+U001246,UBS GROUP,equity_incl_nci,ifrs-full:Equity,..2025-12-31,USD,90484000000,90484000000,0001610520-26-000023,R5,Total equity,gleich,2026-11-03
+U001246,UBS GROUP,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,USD,7797000000,7797000000,0001610520-26-000023,R2,Net profit / (loss),gleich_andere_zeile,2026-11-03
+U001246,UBS GROUP,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,USD,21851000000,21851000000,0001610520-26-000023,R9,Net cash flow from / (used in) operating activities,gleich_andere_zeile,2026-11-03
+U001373,On Holding AG,assets,ifrs-full:Assets,..2025-12-31,CHF,2835400000,2835400000.0,0001858985-26-000008,R5,Assets,gleich_andere_zeile,2026-11-03
+U001373,On Holding AG,equity_incl_nci,ifrs-full:Equity,..2025-12-31,CHF,1632400000,1632400000.0,0001858985-26-000008,R5,Equity,gleich_andere_zeile,2026-11-03
+U001373,On Holding AG,revenue,ifrs-full:RevenueFromContractsWithCustomers,2025-01-01..2025-12-31,CHF,3014000000,3014000000.0,0001858985-26-000008,R3,Net sales,gleich,2026-11-03
+U001373,On Holding AG,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,CHF,203700000,203700000.0,0001858985-26-000008,R3,Net income,gleich,2026-11-03
+U001373,On Holding AG,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,CHF,359500000,359500000.0,0001858985-26-000008,R6,Cash inflow from operating activities,gleich_andere_zeile,2026-11-03
+U001374,Garmin Ltd.,assets,us-gaap:Assets,..2025-12-27,USD,10993669000,10993669000,0001193125-26-056028,R4,Total assets,gleich,2026-11-03
+U001374,Garmin Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-27,USD,8972564000,8972564000,0001193125-26-056028,R4,Total stockholders’ equity,gleich,2026-11-03
+U001374,Garmin Ltd.,revenue,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax,2024-12-29..2025-12-27,USD,7245519000,7245519000,0001193125-26-056028,R2,Net sales,gleich,2026-11-03
+U001374,Garmin Ltd.,net_income,us-gaap:NetIncomeLoss,2024-12-29..2025-12-27,USD,1663887000,1663887000,0001193125-26-056028,R2,Net income,gleich,2026-11-03
+U001374,Garmin Ltd.,net_income_incl_nci,us-gaap:ProfitLoss,2024-12-29..2025-12-27,USD,1663887000,1663887000,0001193125-26-056028,R2,Net income,gleich,2026-11-03
+U001374,Garmin Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2024-12-29..2025-12-27,USD,1633359000,1633359000,0001193125-26-056028,R6,Net cash provided by operating activities,gleich,2026-11-03
+U001375,CRISPR Therapeutics AG,assets,us-gaap:Assets,..2025-12-31,USD,2265243000,2265243000,0001193125-26-048957,R2,Total assets,gleich,2026-11-03
+U001375,CRISPR Therapeutics AG,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,1921813000,1921813000,0001193125-26-048957,R2,Total shareholders’ equity,gleich,2026-11-03
+U001375,CRISPR Therapeutics AG,revenue,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax,2025-01-01..2025-12-31,USD,3510000,3510000,0001193125-26-048957,R4,Total revenue,gleich,2026-11-03
+U001375,CRISPR Therapeutics AG,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,-581599000,-581599000,0001193125-26-048957,R10,Net Income (Loss),gleich,2026-11-03
+U001375,CRISPR Therapeutics AG,net_income_incl_nci,us-gaap:ProfitLoss,2025-01-01..2025-12-31,USD,-581599000,-581599000,0001193125-26-048957,R10,Net Income (Loss),gleich,2026-11-03
+U001375,CRISPR Therapeutics AG,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,-345014000,-345014000,0001193125-26-048957,R7,Net cash used in operating activities,gleich_andere_zeile,2026-11-03
+U001376,Royal Bank of Canada,assets,ifrs-full:Assets,..2025-10-31,CAD,2325006000000,2325006000000,0001193125-25-305927,R2,Total assets,gleich,2026-11-03
+U001376,Royal Bank of Canada,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-10-31,CAD,139092000000,139092000000,0001193125-25-305927,R2,Total equity attributable to shareholders,gleich,2026-11-03
+U001376,Royal Bank of Canada,equity_incl_nci,ifrs-full:Equity,..2025-10-31,CAD,139151000000,139151000000,0001193125-25-305927,R2,Total equity,gleich,2026-11-03
+U001376,Royal Bank of Canada,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-11-01..2025-10-31,CAD,20362000000,20362000000,0001193125-25-305927,R5,Net income,gleich_andere_zeile,2026-11-03
+U001376,Royal Bank of Canada,net_income_incl_nci,ifrs-full:ProfitLoss,2024-11-01..2025-10-31,CAD,20369000000,20369000000,0001193125-25-305927,R3,Net income,gleich,2026-11-03
+U001376,Royal Bank of Canada,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-11-01..2025-10-31,CAD,55220000000,55220000000,0001193125-25-305927,R6,Net cash from (used in) operating activities,gleich,2026-11-03
+U001377,The Toronto-Dominion Bank,assets,ifrs-full:Assets,..2025-10-31,CAD,2094558000000,2094558000000,0001562762-25-000289,R2,Total assets,gleich,2026-11-03
+U001377,The Toronto-Dominion Bank,equity_incl_nci,ifrs-full:Equity,..2025-10-31,CAD,127827000000,127827000000,0001562762-25-000289,R2,Total equity,gleich,2026-11-03
+U001377,The Toronto-Dominion Bank,net_income_incl_nci,ifrs-full:ProfitLoss,2024-11-01..2025-10-31,CAD,20538000000,20538000000,0001562762-25-000289,R3,Net income,gleich,2026-11-03
+U001377,The Toronto-Dominion Bank,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-11-01..2025-10-31,CAD,-69646000000,-69646000000,0001562762-25-000289,R7,Net cash from (used in) operating activities,gleich,2026-11-03
+U001378,Bank of Montreal,assets,ifrs-full:Assets,..2025-10-31,CAD,1476802000000,1476802000000,0001193125-25-321328,R10,Total Assets,gleich_andere_zeile,2026-11-03
+U001378,Bank of Montreal,equity_incl_nci,ifrs-full:Equity,..2025-10-31,CAD,88100000000,88100000000,0001193125-25-321328,R10,Total Equity,gleich_andere_zeile,2026-11-03
+U001379,The Bank of Nova Scotia,assets,ifrs-full:Assets,..2025-10-31,CAD,1460042000000,1460042000000,0001193125-25-304643,R2,Total assets,gleich,2026-11-03
+U001379,The Bank of Nova Scotia,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-10-31,CAD,86866000000,86866000000,0001193125-25-304643,R2,Total equity attributable to equity holders of the Bank,gleich,2026-11-03
+U001379,The Bank of Nova Scotia,equity_incl_nci,ifrs-full:Equity,..2025-10-31,CAD,88587000000,88587000000,0001193125-25-304643,R2,Total equity,gleich,2026-11-03
+U001379,The Bank of Nova Scotia,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-11-01..2025-10-31,CAD,7789000000,7789000000,0001193125-25-304643,R3,Net income attributable to equity holders of the Bank,gleich_andere_zeile,2026-11-03
+U001379,The Bank of Nova Scotia,net_income_incl_nci,ifrs-full:ProfitLoss,2024-11-01..2025-10-31,CAD,7758000000,7758000000,0001193125-25-304643,R3,Net income,gleich,2026-11-03
+U001379,The Bank of Nova Scotia,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-11-01..2025-10-31,CAD,5407000000,5407000000,0001193125-25-304643,R8,Net cash from/(used in) operating activities,gleich_andere_zeile,2026-11-03
+U001380,Canadian Imperial Bank of Commerce,assets,ifrs-full:Assets,..2025-10-31,CAD,1116938000000,1116938000000,0001193125-25-307488,R2,Total assets,gleich,2026-11-03
+U001380,Canadian Imperial Bank of Commerce,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-10-31,CAD,64129000000,64129000000,0001193125-25-307488,R2,Total shareholders' equity,gleich,2026-11-03
+U001380,Canadian Imperial Bank of Commerce,equity_incl_nci,ifrs-full:Equity,..2025-10-31,CAD,64413000000,64413000000,0001193125-25-307488,R2,Total equity,gleich,2026-11-03
+U001380,Canadian Imperial Bank of Commerce,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-11-01..2025-10-31,CAD,8429000000,8429000000,0001193125-25-307488,R4,Net income attributable to equity shareholders,gleich_andere_zeile,2026-11-03
+U001380,Canadian Imperial Bank of Commerce,net_income_incl_nci,ifrs-full:ProfitLoss,2024-11-01..2025-10-31,CAD,8454000000,8454000000,0001193125-25-307488,R4,Net income,gleich,2026-11-03
+U001380,Canadian Imperial Bank of Commerce,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-11-01..2025-10-31,CAD,13838000000,13838000000,0001193125-25-307488,R9,Net cash flows provided by (used in) operating activities,gleich_andere_zeile,2026-11-03
+U001381,Canadian Natural Resources Limited,assets,ifrs-full:Assets,..2025-12-31,CAD,91830000000,91830000000,0001017413-26-000018,R3,Assets,gleich_andere_zeile,2026-11-03
+U001381,Canadian Natural Resources Limited,equity_incl_nci,ifrs-full:Equity,..2025-12-31,CAD,44366000000,44366000000,0001017413-26-000018,R3,Shareholders' equity,gleich_andere_zeile,2026-11-03
+U001381,Canadian Natural Resources Limited,revenue,ifrs-full:Revenue,2025-01-01..2025-12-31,CAD,38762000000,38762000000,0001017413-26-000018,R4,Revenue,gleich,2026-11-03
+U001381,Canadian Natural Resources Limited,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,CAD,10820000000,10820000000,0001017413-26-000018,R4,Net earnings,gleich,2026-11-03
+U001381,Canadian Natural Resources Limited,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,CAD,15106000000,15106000000,0001017413-26-000018,R8,Cash flows from operating activities,gleich,2026-11-03
+U001382,Suncor Energy Inc.,assets,ifrs-full:Assets,..2025-12-31,CAD,89913000000,89913000000,0001104659-26-020411,R3,Total assets,gleich,2026-11-03
+U001382,Suncor Energy Inc.,equity_incl_nci,ifrs-full:Equity,..2025-12-31,CAD,45124000000,45124000000,0001104659-26-020411,R3,Equity,gleich_andere_zeile,2026-11-03
+U001382,Suncor Energy Inc.,revenue,ifrs-full:RevenueFromContractsWithCustomers,2025-01-01..2025-12-31,CAD,52377000000,52377000000,0001104659-26-020411,R2,Gross revenues,gleich_andere_zeile,2026-11-03
+U001382,Suncor Energy Inc.,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,CAD,5918000000,5918000000,0001104659-26-020411,R2,Net Earnings,gleich,2026-11-03
+U001383,Teck Resources Limited,assets,ifrs-full:Assets,..2025-12-31,CAD,45436000000,45436000000,0000886986-26-000004,R7,Total assets,gleich,2026-11-03
+U001383,Teck Resources Limited,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,CAD,25096000000,26007000000,0000886986-26-000004,R7,Total equity,abweichung,2026-11-03
+U001383,Teck Resources Limited,equity_incl_nci,ifrs-full:Equity,..2025-12-31,CAD,26007000000,26007000000,0000886986-26-000004,R7,Total equity,gleich,2026-11-03
+U001383,Teck Resources Limited,revenue,ifrs-full:RevenueFromContractsWithCustomers,2025-01-01..2025-12-31,CAD,10756000000,10756000000,0000886986-26-000004,R3,Revenue (Note 6),gleich_andere_zeile,2026-11-03
+U001383,Teck Resources Limited,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,CAD,1401000000,1401000000,0000886986-26-000004,R8,Profit for the year attributable to shareholders of the company,gleich_andere_zeile,2026-11-03
+U001383,Teck Resources Limited,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,CAD,1072000000,1072000000,0000886986-26-000004,R3,Profit for the year,gleich,2026-11-03
+U001383,Teck Resources Limited,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,CAD,1479000000,1479000000,0000886986-26-000004,R6,Net cash from operating activities,gleich,2026-11-03
+U001384,Nutrien Ltd.,assets,ifrs-full:Assets,..2025-12-31,USD,52301000000,52301000000,0001193125-26-081326,R6,TOTAL ASSETS,gleich,2026-11-03
+U001384,Nutrien Ltd.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,USD,25323000000,25323000000,0001193125-26-081326,R6,Equity attributable to owners of parent,gleich,2026-11-03
+U001384,Nutrien Ltd.,equity_incl_nci,ifrs-full:Equity,..2025-12-31,USD,25365000000,25365000000,0001193125-26-081326,R6,TOTAL SHAREHOLDERS' EQUITY,gleich,2026-11-03
+U001384,Nutrien Ltd.,revenue,ifrs-full:RevenueFromContractsWithCustomers,2025-01-01..2025-12-31,USD,26885000000,26885000000,0001193125-26-081326,R2,SALES (Note 3),gleich_andere_zeile,2026-11-03
+U001384,Nutrien Ltd.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,USD,2267000000,2267000000,0001193125-26-081326,R2,"Profit (loss), attributable to owners of parent",gleich_andere_zeile,2026-11-03
+U001384,Nutrien Ltd.,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,USD,2297000000,2297000000,0001193125-26-081326,R2,Profit (loss),gleich,2026-11-03
+U001384,Nutrien Ltd.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,USD,4007000000,4007000000,0001193125-26-081326,R4,CASH PROVIDED BY OPERATING ACTIVITIES,gleich_andere_zeile,2026-11-03
+U001385,Manulife Financial Corporation,assets,ifrs-full:Assets,..2025-12-31,CAD,1025433000000,1025433000000,0001086888-26-000003,R3,Total assets,gleich,2026-11-03
+U001385,Manulife Financial Corporation,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,CAD,50121000000,50121000000,0001086888-26-000003,R3,Total shareholders and other equity holders’ equity,gleich_andere_zeile,2026-11-03
+U001385,Manulife Financial Corporation,equity_incl_nci,ifrs-full:Equity,..2025-12-31,CAD,52488000000,52488000000,0001086888-26-000003,R3,Total equity,gleich,2026-11-03
+U001385,Manulife Financial Corporation,revenue,ifrs-full:Revenue,2025-01-01..2025-12-31,CAD,8129000000,8129000000,0001086888-26-000003,R4,Other revenue (note 13),gleich_andere_zeile,2026-11-03
+U001385,Manulife Financial Corporation,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,CAD,5572000000,5572000000,0001086888-26-000003,R4,Net income (loss) attributed to shareholders,gleich_andere_zeile,2026-11-03
+U001385,Manulife Financial Corporation,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,CAD,6060000000,6060000000,0001086888-26-000003,R4,Net income (loss),gleich,2026-11-03
+U001385,Manulife Financial Corporation,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,CAD,32105000000,32105000000,0001086888-26-000003,R8,Cash provided by (used in) operating activities,gleich_andere_zeile,2026-11-03
+U001386,BHP Group Limited,assets,ifrs-full:Assets,..2025-06-30,USD,108790000000,108790000000,0001193125-25-185641,R4,Total assets,gleich,2026-11-03
+U001386,BHP Group Limited,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-06-30,USD,47665000000,47665000000,0001193125-25-185641,R4,Total equity attributable to BHP shareholders,gleich,2026-11-03
+U001386,BHP Group Limited,equity_incl_nci,ifrs-full:Equity,..2025-06-30,USD,52218000000,52218000000,0001193125-25-185641,R4,Total equity,gleich,2026-11-03
+U001386,BHP Group Limited,revenue,ifrs-full:Revenue,2024-07-01..2025-06-30,USD,51262000000,51262000000,0001193125-25-185641,R2,Revenue,gleich_andere_zeile,2026-11-03
+U001386,BHP Group Limited,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-07-01..2025-06-30,USD,9019000000,,0001193125-25-185641,,,nicht_gefunden,2026-11-03
+U001386,BHP Group Limited,net_income_incl_nci,ifrs-full:ProfitLoss,2024-07-01..2025-06-30,USD,11143000000,11143000000,0001193125-25-185641,R2,Profit after taxation,gleich_andere_zeile,2026-11-03
+U001386,BHP Group Limited,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-07-01..2025-06-30,USD,18692000000,,0001193125-25-185641,,,nicht_gefunden,2026-11-03
+U001387,Mesoblast Limited,assets,ifrs-full:Assets,..2025-06-30,USD,784683000,784683000,0001345099-25-000067,R7,Total Assets,gleich,2026-11-03
+U001387,Mesoblast Limited,equity_incl_nci,ifrs-full:Equity,..2025-06-30,USD,597442000,597442000,0001345099-25-000067,R7,Total Equity,gleich,2026-11-03
+U001387,Mesoblast Limited,revenue,ifrs-full:Revenue,2024-07-01..2025-06-30,USD,17198000,17198000,0001345099-25-000067,R3,Total revenues,gleich,2026-11-03
+U001387,Mesoblast Limited,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-07-01..2025-06-30,USD,-102142000,,0001345099-25-000067,,,nicht_gefunden,2026-11-03
+U001387,Mesoblast Limited,net_income_incl_nci,ifrs-full:ProfitLoss,2024-07-01..2025-06-30,USD,-102142000,,0001345099-25-000067,,,nicht_gefunden,2026-11-03
+U001387,Mesoblast Limited,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-07-01..2025-06-30,USD,-49954000,-49954000,0001345099-25-000067,R8,Net cash (outflows) in operating activities,gleich_andere_zeile,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,MXN,1793920957000,1793920957000000,0001140361-25-018954,R2,Total assets,skala_der_seite_abweichend,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,369085350000,369085350000000,0001140361-25-018954,R2,Equity attributable to equity holders of the parent,skala_der_seite_abweichend,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,432184321000,432184321000000,0001140361-25-018954,R2,Total equity,skala_der_seite_abweichend,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,MXN,869220584000,869220584000000,0001140361-25-018954,R3,Operating revenues,skala_der_seite_abweichend,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,MXN,22902025000,22902025000000,0001140361-25-018954,R2,Profit for the year,skala_der_seite_abweichend,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,27591466000,27591466000000,0001140361-25-018954,R3,Net profit for the year from continuing operations,skala_der_seite_abweichend,2026-11-03
+U001388,"América Móvil, S.A.B. de C.V.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,MXN,239341121000,239341121000000,0001140361-25-018954,R5,Net cash flows provided by continuing operating activities,skala_der_seite_abweichend,2026-11-03
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,MXN,851536000000,851536000000,0001628280-25-019714,R3,TOTAL ASSETS,gleich,2026-11-03
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,297502000000,297502000000,0001628280-25-019714,R3,Equity attributable to equity holders of the parent,gleich,2026-11-03
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,381131000000,381131000000,0001628280-25-019714,R3,TOTAL EQUITY,gleich,2026-11-03
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",revenue,ifrs-full:RevenueFromContractsWithCustomers,2024-01-01..2024-12-31,MXN,781585000000,781585000000,0001628280-25-019714,R4,Total revenues,gleich,2026-11-03
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,40236000000,40236000000,0001628280-25-019714,R4,CONSOLIDATED NET INCOME,gleich_andere_zeile,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",assets,ifrs-full:Assets,..2024-12-31,MXN,251657896000,251657896000,0001410578-25-001050,R2,Total assets,gleich,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,102454056000,102454056000,0001410578-25-001050,R2,Equity attributable to stockholders of the Company,gleich,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,111695625000,111695625000,0001410578-25-001050,R2,Total equity,gleich,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,MXN,62260864000,62260864000,0001410578-25-001050,R3,Revenues,gleich,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,MXN,-8265520000,,0001410578-25-001050,,,nicht_gefunden,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,-8328380000,,0001410578-25-001050,,,nicht_gefunden,2026-11-03
+U001390,"Grupo Televisa, S.A.B.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,MXN,32554116000,32554116000000,0001410578-25-001050,R6,Net cash provided by operating activities,skala_der_seite_abweichend,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,USD,27299000000,27299000000,0001193125-25-097693,R4,TOTAL ASSETS,gleich,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,USD,12176000000,12477000000,0001193125-25-097693,R4,TOTAL STOCKHOLDERS' EQUITY,abweichung,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,USD,12477000000,12477000000,0001193125-25-097693,R4,TOTAL STOCKHOLDERS' EQUITY,gleich,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,USD,16200000000,16200000000,0001193125-25-097693,R2,Revenues,gleich,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,USD,939000000,939000000,0001193125-25-097693,R2,CONTROLLING INTEREST NET INCOME,gleich_andere_zeile,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,USD,960000000,960000000,0001193125-25-097693,R2,CONSOLIDATED NET INCOME,gleich_andere_zeile,2026-11-03
+U001391,"CEMEX, S.A.B. de C.V.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,USD,1894000000,1894000000,0001193125-25-097693,R5,Net cash flows provided by operating activities after interest and income taxes,gleich_andere_zeile,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,MXN,307986000000,307986000000,0001628280-25-017225,R3,TOTAL ASSETS,gleich,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,143428000000,143428000000,0001628280-25-017225,R3,Equity attributable to equity holders of the parent,gleich,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,150541000000,150541000000,0001628280-25-017225,R3,TOTAL EQUITY,gleich,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",revenue,ifrs-full:RevenueFromContractsWithCustomers,2024-01-01..2024-12-31,MXN,279793000000,279793000000,0001628280-25-017225,R4,Total revenues,gleich,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,MXN,23729000000,23729000000,0001628280-25-017225,R6,Consolidated net income,gleich_andere_zeile,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,24549000000,24549000000,0001628280-25-017225,R4,Consolidated net income,gleich_andere_zeile,2026-11-03
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,MXN,42442000000,42442000000,0001628280-25-017225,R7,Net cash flows generated from operating activities,gleich_andere_zeile,2026-11-03
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,MXN,83636752000,83636752000,0001410578-25-000689,R2,Total assets,gleich,2026-11-03
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,54212922000,61612625000,0001410578-25-000689,R2,Total stockholders' equity,abweichung,2026-11-03
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,61612625000,61612625000,0001410578-25-000689,R2,Total stockholders' equity,gleich,2026-11-03
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,MXN,31332787000,31332787000,0001410578-25-000689,R3,Total revenue,gleich,2026-11-03
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,14030438000,14030438000,0001410578-25-000689,R3,Net income for the year,gleich_andere_zeile,2026-11-03
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,MXN,15571041000,15571041000,0001410578-25-000689,R6,Net cash flows generated from operating activities,gleich_andere_zeile,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,MXN,27233060000,27233060000,0001558370-25-005842,R2,Total assets,gleich,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,10384774000,507271000,0001558370-25-005842,R2,Total shareholders' equity,abweichung,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,10544237000,10544237000,0001558370-25-005842,R2,Total shareholders' equity,gleich,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,MXN,15072956000,15072956000,0001558370-25-005842,R3,Total revenues,gleich,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,MXN,4928804000,,0001558370-25-005842,,,nicht_gefunden,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,4936224000,4936224000,0001558370-25-005842,R3,Consolidated net income for the year,gleich_andere_zeile,2026-11-03
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,MXN,6196669000,6196669000,0001558370-25-005842,R5,Net cash flows from operating activities,gleich,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",assets,ifrs-full:Assets,..2024-12-31,MXN,81653073000,,0000950170-25-057571,,,nicht_gefunden,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,MXN,22345799000,22345799000,0000950170-25-057571,R2,Total equity attributable to controlling interest,gleich,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,MXN,24621739000,24621739000,0000950170-25-057571,R2,Total Stockholders' equity,gleich,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,MXN,33614374000,33614374000,0000950170-25-057571,R3,Revenues,gleich,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,MXN,8612157000,8612157000,0000950170-25-057571,R4,Net profit for the year,gleich_andere_zeile,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,MXN,8875439000,8875439000,0000950170-25-057571,R3,Profit for the year,gleich,2026-11-03
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,MXN,16674340000,16674340000,0000950170-25-057571,R6,Net cash provided by operating activities,gleich,2026-11-03
+U001396,Banco de Chile,assets,ifrs-full:Assets,..2024-12-31,CLP,52055542000000,52055542000000,0001213900-25-035593,R3,TOTAL ASSETS,gleich,2026-11-03
+U001396,Banco de Chile,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,CLP,6504894000000,6504896000000,0001213900-25-035593,R3,TOTAL EQUITY,abweichung,2026-11-03
+U001396,Banco de Chile,equity_incl_nci,ifrs-full:Equity,..2024-12-31,CLP,6504896000000,6504896000000,0001213900-25-035593,R3,TOTAL EQUITY,gleich,2026-11-03
+U001396,Banco de Chile,net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,CLP,1248476000000,1248476000000,0001213900-25-035593,R4,NET INCOME FOR THE YEAR,gleich_andere_zeile,2026-11-03
+U001396,Banco de Chile,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,CLP,3694137000000,3694137000000,0001213900-25-035593,R7,Total net cash flows provided by operating activities,gleich_andere_zeile,2026-11-03
+U001397,Banco Santander-Chile,assets,ifrs-full:Assets,..2025-12-31,CLP,68147280000000,68147280000000,0001027552-26-000038,R3,TOTAL ASSETS,gleich,2026-11-03
+U001397,Banco Santander-Chile,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,CLP,5616359000000,5736301000000,0001027552-26-000038,R3,TOTAL EQUITY,abweichung,2026-11-03
+U001397,Banco Santander-Chile,equity_incl_nci,ifrs-full:Equity,..2025-12-31,CLP,5736301000000,5736301000000,0001027552-26-000038,R3,TOTAL EQUITY,gleich,2026-11-03
+U001397,Banco Santander-Chile,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,CLP,1021650000000,,0001027552-26-000038,,,nicht_gefunden,2026-11-03
+U001397,Banco Santander-Chile,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,CLP,1038053000000,1038053000000,0001027552-26-000038,R4,NET INCOME FOR THE YEAR,gleich_andere_zeile,2026-11-03
+U001397,Banco Santander-Chile,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,CLP,55407000000,55407000000,0001027552-26-000038,R8,Total cash flow (used in) provided by operating activities,gleich_andere_zeile,2026-11-03
+U001398,LATAM Airlines Group S.A.,assets,ifrs-full:Assets,..2025-12-31,USD,17640891000,17640891000,0001047716-26-000046,R3,Total assets,gleich,2026-11-03
+U001398,LATAM Airlines Group S.A.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,USD,1345594000,1337202000,0001047716-26-000046,R3,Total equity,abweichung,2026-11-03
+U001398,LATAM Airlines Group S.A.,equity_incl_nci,ifrs-full:Equity,..2025-12-31,USD,1337202000,1337202000,0001047716-26-000046,R3,Total equity,gleich,2026-11-03
+U001398,LATAM Airlines Group S.A.,revenue,ifrs-full:Revenue,2025-01-01..2025-12-31,USD,14265056000,14265056000,0001047716-26-000046,R4,Revenue,gleich,2026-11-03
+U001398,LATAM Airlines Group S.A.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,USD,1459984000,1459984000,0001047716-26-000046,R6,Net income/(loss) for the period,gleich_andere_zeile,2026-11-03
+U001398,LATAM Airlines Group S.A.,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,USD,1463561000,1463561000,0001047716-26-000046,R4,NET INCOME FOR THE YEAR,gleich_andere_zeile,2026-11-03
+U001398,LATAM Airlines Group S.A.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,USD,3737096000,3737096000,0001047716-26-000046,R7,Net cash (outflow) inflow from operating activities,gleich_andere_zeile,2026-11-03
+U001399,Enel Chile S.A.,assets,ifrs-full:Assets,..2024-12-31,CLP,12719897584000,12719897584000,0001558370-25-005756,R2,TOTAL ASSETS,gleich,2026-11-03
+U001399,Enel Chile S.A.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,CLP,4958798421000,4958798421000,0001558370-25-005756,R2,Equity attributable to shareholders of Enel Chile,gleich,2026-11-03
+U001399,Enel Chile S.A.,equity_incl_nci,ifrs-full:Equity,..2024-12-31,CLP,5326379515000,5326379515000,0001558370-25-005756,R2,TOTAL EQUITY,gleich,2026-11-03
+U001399,Enel Chile S.A.,revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,CLP,3904732890000,3904732890000,0001558370-25-005756,R3,Revenue,gleich,2026-11-03
+U001399,Enel Chile S.A.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,CLP,145112153000,145112153000,0001558370-25-005756,R3,Profit (loss) attributable to owners of the parent,gleich_andere_zeile,2026-11-03
+U001399,Enel Chile S.A.,net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,CLP,191042971000,191042971000,0001558370-25-005756,R3,Profit (loss),gleich,2026-11-03
+U001399,Enel Chile S.A.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,CLP,1530905876000,1530905876000,0001558370-25-005756,R5,Net cash flows from operating activities,gleich,2026-11-03
+U001400,Compañía Cervecerías Unidas S.A.,assets,ifrs-full:Assets,..2024-12-31,CLP,3989716990000,3989716990000,0001292814-25-001738,R2,Total Assets,gleich,2026-11-03
+U001400,Compañía Cervecerías Unidas S.A.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,CLP,1525183185000,1525183185000,0001292814-25-001738,R2,Total equity attributable to equity holders of the parent,gleich,2026-11-03
+U001400,Compañía Cervecerías Unidas S.A.,equity_incl_nci,ifrs-full:Equity,..2024-12-31,CLP,1672515310000,1672515310000,0001292814-25-001738,R2,Total Shareholders' Equity,gleich,2026-11-03
+U001400,Compañía Cervecerías Unidas S.A.,revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,CLP,2904566454000,2904566454000,0001292814-25-001738,R3,Net sales,gleich,2026-11-03
+U001400,Compañía Cervecerías Unidas S.A.,net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,CLP,176544797000,176544797000,0001292814-25-001738,R3,Net income of year,gleich_andere_zeile,2026-11-03
+U001400,Compañía Cervecerías Unidas S.A.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,CLP,287516727000,287516727000,0001292814-25-001738,R6,Net cash inflows from operating activities,gleich_andere_zeile,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,assets,ifrs-full:Assets,..2023-12-31,TRY,247083325000,247083325000,0001104659-24-060657,R2,Total assets,gleich,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2023-12-31,TRY,122247819000,122247819000,0001104659-24-060657,R2,"Total equity attributable to equity holders of Turkcell Iletisim Hizmetleri A.S. (""the Company"")",gleich,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,equity_incl_nci,ifrs-full:Equity,..2023-12-31,TRY,122234865000,122234865000,0001104659-24-060657,R2,Total equity,gleich,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,revenue,ifrs-full:Revenue,2023-01-01..2023-12-31,TRY,107116184000,107116184000,0001104659-24-060657,R3,Total revenue,gleich,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2023-01-01..2023-12-31,TRY,12553996000,12553996000,0001104659-24-060657,R5,Profit/ (loss) for the year,gleich_andere_zeile,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,net_income_incl_nci,ifrs-full:ProfitLoss,2023-01-01..2023-12-31,TRY,12532246000,12532246000,0001104659-24-060657,R3,Profit for the year,gleich,2026-11-03
+U001401,Turkcell İletişim Hizmetleri A.Ş.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2023-01-01..2023-12-31,TRY,41721488000,41721488000,0001104659-24-060657,R6,Net cash inflow from operating activities,gleich_andere_zeile,2026-11-03
+U001402,Check Point Software Technologies Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,7806400000,7806400000.0,0001178913-26-001932,R2,Total assets,gleich,2026-11-03
+U001402,Check Point Software Technologies Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,2882100000,2882100000.0,0001178913-26-001932,R2,Total shareholders' equity,gleich,2026-11-03
+U001402,Check Point Software Technologies Ltd.,revenue,us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax,2025-01-01..2025-12-31,USD,2725400000,2725400000.0,0001178913-26-001932,R4,Total revenues,gleich,2026-11-03
+U001402,Check Point Software Technologies Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,1056900000,1056900000.0,0001178913-26-001932,R4,Net income,gleich,2026-11-03
+U001402,Check Point Software Technologies Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,1199400000,1199400000.0,0001178913-26-001932,R8,Net cash provided by operating activities,gleich,2026-11-03
+U001403,NICE Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,5106030000,5106030000,0001003935-26-000010,R3,Total assets,gleich,2026-11-03
+U001403,NICE Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,3876528000,3876528000,0001003935-26-000010,R3,Total shareholders' equity,gleich,2026-11-03
+U001403,NICE Ltd.,equity_incl_nci,us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest,..2025-12-31,USD,3876528000,3876528000,0001003935-26-000010,R3,Total shareholders' equity,gleich,2026-11-03
+U001403,NICE Ltd.,revenue,us-gaap:Revenues,2025-01-01..2025-12-31,USD,2945399000,2945399000,0001003935-26-000010,R5,Total revenue,gleich,2026-11-03
+U001403,NICE Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,612101000,612101000,0001003935-26-000010,R5,Net income,gleich_andere_zeile,2026-11-03
+U001403,NICE Ltd.,net_income_incl_nci,us-gaap:ProfitLoss,2025-01-01..2025-12-31,USD,612101000,612101000,0001003935-26-000010,R5,Net income,gleich,2026-11-03
+U001403,NICE Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,716549000,716549000,0001003935-26-000010,R10,Net cash provided by operating activities,gleich,2026-11-03
+U001404,Wix.com Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,2610974000,2610974000,0001628280-26-015222,R3,TOTAL ASSETS,gleich,2026-11-03
+U001404,Wix.com Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,-366002000,-366002000,0001628280-26-015222,R6,"Total shareholders' equity, ending balance at Dec. 31, 2025",gleich_andere_zeile,2026-11-03
+U001404,Wix.com Ltd.,revenue,us-gaap:Revenues,2025-01-01..2025-12-31,USD,1993044000,1993044000,0001628280-26-015222,R5,Revenues,gleich,2026-11-03
+U001404,Wix.com Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,50646000,50646000,0001628280-26-015222,R5,Net income,gleich,2026-11-03
+U001404,Wix.com Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,582858000,582858000,0001628280-26-015222,R7,Net cash provided by operating activities,gleich,2026-11-03
+U001405,Elbit Systems Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,12661518000,12661518000,0001027664-26-000005,R3,TOTAL ASSETS,gleich,2026-11-03
+U001405,Elbit Systems Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,4129598000,4129598000,0001027664-26-000005,R3,Total Elbit Systems Ltd. equity,gleich_andere_zeile,2026-11-03
+U001405,Elbit Systems Ltd.,equity_incl_nci,us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest,..2025-12-31,USD,4129973000,4129973000,0001027664-26-000005,R3,Total equity,gleich,2026-11-03
+U001405,Elbit Systems Ltd.,revenue,us-gaap:Revenues,2025-01-01..2025-12-31,USD,7938627000,7938627000,0001027664-26-000005,R5,Revenues,gleich,2026-11-03
+U001405,Elbit Systems Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,534339000,534339000,0001027664-26-000005,R5,Net income attributable to Elbit Systems Ltd.’s shareholders,gleich,2026-11-03
+U001405,Elbit Systems Ltd.,net_income_incl_nci,us-gaap:ProfitLoss,2025-01-01..2025-12-31,USD,535619000,535619000,0001027664-26-000005,R5,Net income,gleich,2026-11-03
+U001405,Elbit Systems Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,778378000,778378000,0001027664-26-000005,R10,Net cash provided by operating activities,gleich,2026-11-03
+U001406,Tower Semiconductor Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,3322290000,3322290000,0001178913-26-002318,R2,TOTAL ASSETS,gleich,2026-11-03
+U001406,Tower Semiconductor Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,2919287000,2919287000,0001178913-26-002318,R2,THE COMPANY'S SHAREHOLDERS' EQUITY,gleich_andere_zeile,2026-11-03
+U001406,Tower Semiconductor Ltd.,equity_incl_nci,us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest,..2025-12-31,USD,2904583000,2904583000,0001178913-26-002318,R2,TOTAL SHAREHOLDERS' EQUITY,gleich,2026-11-03
+U001406,Tower Semiconductor Ltd.,revenue,us-gaap:Revenues,2025-01-01..2025-12-31,USD,1566104000,1566104000,0001178913-26-002318,R4,REVENUE,gleich,2026-11-03
+U001406,Tower Semiconductor Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,220470000,220470000,0001178913-26-002318,R4,NET PROFIT ATTRIBUTABLE TO THE COMPANY,gleich,2026-11-03
+U001406,Tower Semiconductor Ltd.,net_income_incl_nci,us-gaap:ProfitLoss,2025-01-01..2025-12-31,USD,218814000,218814000,0001178913-26-002318,R4,NET PROFIT,gleich,2026-11-03
+U001406,Tower Semiconductor Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,395482000,395482000,0001178913-26-002318,R7,Net cash provided by operating activities,gleich,2026-11-03
+U001407,Fiverr International Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,684601000,684601000,0001178913-26-000858,R2,Total assets,gleich,2026-11-03
+U001407,Fiverr International Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,411984000,411984000,0001178913-26-000858,R2,Total shareholders’ equity,gleich,2026-11-03
+U001407,Fiverr International Ltd.,revenue,us-gaap:Revenues,2025-01-01..2025-12-31,USD,430909000,430909000,0001178913-26-000858,R4,Revenue,gleich,2026-11-03
+U001407,Fiverr International Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,20983000,20983000,0001178913-26-000858,R4,Net Income,gleich,2026-11-03
+U001407,Fiverr International Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,104589000,104589000,0001178913-26-000858,R8,Net cash provided by operating activities,gleich,2026-11-03
+U001408,monday.com Ltd.,assets,us-gaap:Assets,..2025-12-31,USD,2106600000,2106600000,0001178913-26-000870,R2,Total assets,gleich,2026-11-03
+U001408,monday.com Ltd.,equity,us-gaap:StockholdersEquity,..2025-12-31,USD,1246836000,1246836000,0001178913-26-000870,R2,Total shareholders’ equity,gleich,2026-11-03
+U001408,monday.com Ltd.,revenue,us-gaap:Revenues,2025-01-01..2025-12-31,USD,1231997000,1231997000,0001178913-26-000870,R4,Revenue,gleich,2026-11-03
+U001408,monday.com Ltd.,net_income,us-gaap:NetIncomeLoss,2025-01-01..2025-12-31,USD,118742000,118742000,0001178913-26-000870,R4,Net income (loss),gleich,2026-11-03
+U001408,monday.com Ltd.,operating_cash_flow,us-gaap:NetCashProvidedByUsedInOperatingActivities,2025-01-01..2025-12-31,USD,333644000,333644000,0001178913-26-000870,R8,Net cash provided by operating activities,gleich,2026-11-03
+U001409,ICL Group Ltd.,assets,ifrs-full:Assets,..2025-12-31,USD,12413000000,12413000000,0001178913-26-000817,R2,Total assets,gleich,2026-11-03
+U001409,ICL Group Ltd.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,USD,5983000000,5983000000,0001178913-26-000817,R2,Total shareholders’ equity,gleich,2026-11-03
+U001409,ICL Group Ltd.,equity_incl_nci,ifrs-full:Equity,..2025-12-31,USD,6243000000,6243000000,0001178913-26-000817,R2,Total equity,gleich,2026-11-03
+U001409,ICL Group Ltd.,revenue,ifrs-full:Revenue,2025-01-01..2025-12-31,USD,7153000000,7153000000,0001178913-26-000817,R3,Sales,gleich,2026-11-03
+U001409,ICL Group Ltd.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,USD,226000000,226000000,0001178913-26-000817,R3,Net income attributable to shareholders of the Company,gleich_andere_zeile,2026-11-03
+U001409,ICL Group Ltd.,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,USD,280000000,280000000,0001178913-26-000817,R3,Net income,gleich,2026-11-03
+U001409,ICL Group Ltd.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,USD,1056000000,1056000000,0001178913-26-000817,R6,Net cash provided by operating activities,gleich,2026-11-03

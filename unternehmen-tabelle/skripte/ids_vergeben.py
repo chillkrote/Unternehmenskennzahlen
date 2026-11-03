@@ -1,8 +1,8 @@
 """Vergibt Unternehmens-IDs für alle Tabellenzeilen ohne ID (03.11.2026, Robin: "Ja").
 
 Weg (nur über stammdaten/ids.py, nie erstellen.py --neu):
-  1. Zeile findet ein bestehendes Unternehmen über den Namensschlüssel (ids.schluessel) und teilt keine ISIN mit einer anderen ID
-     -> übernimmt dessen ID (Abgleich "Name"), keine neue Zeile im Register.
+  1. Zeile findet ein bestehendes Unternehmen über die LEI oder den Namensschlüssel (ids.schluessel) und teilt keine ISIN mit einer
+     anderen ID -> übernimmt dessen ID (Abgleich "LEI" bzw. "Name"), keine neue Zeile im Register.
   2. sonst neue ID (fortlaufend, in Tabellenreihenfolge) mit Name, Rechtsform, Branche, Land, Sitz, Status, LEI und der ISIN,
      sofern diese formal gültig und noch frei ist. Ungültige ISINs (häufig aus CUSIP-Umrechnung) bleiben nur in der Tabelle.
   Ticker bleiben bewusst nur in der Tabelle: app/boersen_abruf.py ordnet über den Ticker zu, und Tickers sind börsenübergreifend nicht eindeutig.
@@ -30,6 +30,10 @@ def main():
         lies = csv.DictReader(f, delimiter=";")
         felder = lies.fieldnames
         zeilen = list(lies)
+    je_lei = {}
+    for u, r in reg.unternehmen.items():
+        if r["lei"]:
+            je_lei.setdefault(r["lei"], set()).add(u)
     vergeben = {}                     # uid -> Zeile (jede bestehende ID höchstens einmal übernehmen)
     for z in zeilen:
         if z["unternehmen_id"]:
@@ -42,14 +46,18 @@ def main():
             continue
         name, isin = z["Name *"].strip(), z["ISIN"].strip().upper()
         uid = None
-        kandidaten = reg.nach_schluessel.get(ids.schluessel(name), set())
+        lei = z["LEI"].strip().upper()
+        kandidaten = je_lei.get(lei, set()) if lei else set()
+        weg_name = "LEI"
+        if len(kandidaten) != 1:
+            kandidaten, weg_name = reg.nach_schluessel.get(ids.schluessel(name), set()), "Name"
         if len(kandidaten) == 1:
             k = next(iter(kandidaten))
             fremde = reg.unternehmen[k]["isin_haupt"]
             if k not in vergeben and (not isin or not fremde or isin == fremde) and reg.nach_isin.get(isin, k) == k:
                 uid = k
                 abgleich += 1
-                art, weg = "bestehend", "Name"
+                art, weg = "bestehend", weg_name
         if uid is None:
             uid = f"U{naechste:06d}"
             naechste += 1
@@ -60,9 +68,15 @@ def main():
             if gueltig and isin in reg.nach_isin:
                 isin_belegt += 1
                 gueltig = False
-            r.update(unternehmen_id=uid, name=name, rechtsform=z["Rechtsform"], branche=z["Branche *"], sitz=z["Sitz"], land=z["Land *"],
+            if lei and lei in je_lei:         # LEI gehört schon einer anderen ID: nur in der Tabelle belassen (Register: eine LEI je ID)
+                lei_frei = ""
+            else:
+                lei_frei = lei
+                if lei:
+                    je_lei[lei] = {uid}
+            r.update(unternehmen_id=uid, name=name, rechtsform=z["Rechtsform"], branche=z["Branche *"], sitz=z["Sitz"], land=z["Land *"], lei=lei_frei,
                      status="börsennotiert" if z["Börsennotiert *"].strip().lower() == "ja" else "nicht börsennotiert",
-                     isin_haupt=isin if gueltig else "", lei=z["LEI"], herkunft="Unternehmenstabelle",
+                     isin_haupt=isin if gueltig else "", herkunft="Unternehmenstabelle",
                      hinweis="ID am 03.11.2026 für alle Tabellenzeilen ohne ID vergeben" + ("" if gueltig or not isin else f"; ISIN {isin} formal ungültig oder vergeben, nur in der Tabelle"))
             reg.unternehmen[uid] = r
             if gueltig:

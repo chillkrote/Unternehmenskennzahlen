@@ -684,6 +684,8 @@ const UNT = (() => {
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta, existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
+  return { init, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN, branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
+    // Weltkugel (globus.js): Vergleichsauswahl lesen/setzen, Unternehmen nach ID
+    auswahl: () => S.auswahl || [], setAuswahl: ids => { S.auswahl = [...new Set(ids)].slice(-6); }, nachId: id => NACH_ID[id] || NACH_ID[(UD && UD.alt_ids || {})[id]], kurzName: n => kurzU(n), brName: id => brName(id), fmt: (k, v) => fmt(k, v), existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
 })();
 

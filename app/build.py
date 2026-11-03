@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import datenschicht
+import globus
 import unternehmen
 import vwl
 
@@ -14,13 +15,20 @@ HIER = Path(__file__).resolve().parent
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--excel", default=datenschicht.STANDARD_EXCEL)
+    p.add_argument("--nur-seite", action="store_true",
+                   help="data/banken.json und data/unternehmen.json nicht neu erzeugen, sondern den vorhandenen Stand einbetten "
+                        "(für Änderungen an der Oberfläche, auch im teilweisen Checkout ohne Dokumentordner)")
     a = p.parse_args()
-    banken = datenschicht.lade(a.excel)
-    daten = {"meta": {"quelle": Path(a.excel).name, "stichtag": "2025-12-31", "anzahl": len(banken)}, "banken": banken,
-             "gruppen_zr": datenschicht.lade_gruppen()}
-    roh = json.dumps(daten, ensure_ascii=False, separators=(",", ":"))
-    (HIER / "data").mkdir(exist_ok=True)
-    (HIER / "data/banken.json").write_text(roh)
+    if a.nur_seite:
+        roh = (HIER / "data/banken.json").read_text()
+        banken = json.loads(roh)["banken"]
+    else:
+        banken = datenschicht.lade(a.excel)
+        daten = {"meta": {"quelle": Path(a.excel).name, "stichtag": "2025-12-31", "anzahl": len(banken)}, "banken": banken,
+                 "gruppen_zr": datenschicht.lade_gruppen()}
+        roh = json.dumps(daten, ensure_ascii=False, separators=(",", ":"))
+        (HIER / "data").mkdir(exist_ok=True)
+        (HIER / "data/banken.json").write_text(roh)
     vorlage = (HIER / "src/terminal.html").read_text()
     (HIER / "dist").mkdir(exist_ok=True)
     ziel = HIER / "dist/bankterminal.html"
@@ -28,8 +36,11 @@ def main():
     markt_datei = HIER / "data/markt.json"
     markt = markt_datei.read_text() if markt_datei.exists() else "null"
     # Unternehmen anderer Branchen: generisch aus den Branchen-Tabellen im Repo (sonst Beispieldaten)
-    firmen = json.dumps(unternehmen.lade(banken=banken, markt=json.loads(markt) if markt != "null" else None), ensure_ascii=False, separators=(",", ":"))
-    (HIER / "data/unternehmen.json").write_text(firmen)
+    if a.nur_seite:
+        firmen = (HIER / "data/unternehmen.json").read_text()
+    else:
+        firmen = json.dumps(unternehmen.lade(banken=banken, markt=json.loads(markt) if markt != "null" else None), ensure_ascii=False, separators=(",", ":"))
+        (HIER / "data/unternehmen.json").write_text(firmen)
     # Wochenkurse aller börsennotierten Unternehmen (kurse_historie.py), getrennt von markt.json, damit das Terminal klein bleibt
     kd = HIER / "data/kurse_woche.json"
     kurse = kd.read_text() if kd.exists() else "null"
@@ -52,6 +63,14 @@ def main():
                     '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'
                     + seite + "\n</body></html>\n")
     print(f"{len(banken)} Banken -> {ziel}")
+    # Weltkugel: dieselbe Seite mit Karte, Ländern und Firmensitzen (alternative Oberfläche)
+    welt, n_sitze = globus.seite(seite)
+    (HIER / "dist/weltkugel.fragment.html").write_text(welt)
+    (HIER / "dist/weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
+                                              '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">'
+                                              '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'
+                                              + welt + "\n</body></html>\n")
+    print(f"Weltkugel: {n_sitze} Firmensitze -> {HIER / 'dist/weltkugel.html'}")
     # Kontrolle der zentralen Unternehmens-IDs (u. a.: jede ISIN nur bei einer ID); ein Verstoß lässt den Bau fehlschlagen,
     # damit die Workflows (marktdaten, termine) nichts Fehlerhaftes committen
     sys.path.insert(0, str(HIER.parent / "stammdaten"))

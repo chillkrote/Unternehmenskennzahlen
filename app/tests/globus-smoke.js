@@ -22,12 +22,14 @@ const path = require('node:path');
   await page.click('[data-gkvgl]');
   const vgl = await page.evaluate(() => UNT.auswahl().length);
   if (vgl !== 2 || await page.locator('.gf').count() !== 3) throw Error('Vergleichsfenster fehlt oder Auswahl falsch: ' + vgl);
-  // Unternehmen nur aus der Unternehmenstabelle (ohne Kennzahlen): Stammdaten-Fenster über die Suche
+  // Unternehmen ohne Kennzahlen (nur Stammdaten aus der Unternehmenstabelle): Fenster über die Suche
   const stamm = await page.evaluate(() => { const r = document.getElementById('geo-tabelle'); const t = r && JSON.parse(r.textContent); if (!t) return null;
-    const j = t.spalten.indexOf('id'), n = t.spalten.indexOf('name'); const z = t.zeilen.find(z => !z[j]); return z && z[n]; });
+    const j = t.spalten.indexOf('id'), n = t.spalten.indexOf('name');
+    const z = t.zeilen.find(z => !z[j] || (UNT.nachId(z[j]) || {}).stub); return z && z[n]; });
   if (stamm) {
+    const vorher = await page.locator('.gf').count();
     await page.fill('#gk-suchfeld', stamm); await page.press('#gk-suchfeld', 'Enter'); await page.waitForTimeout(150);
-    if (!(await page.locator('.gf .gk-stamm').count())) throw Error('Stammdaten-Fenster für ' + stamm + ' fehlt');
+    if (await page.locator('.gf').count() !== vorher + 1) throw Error('Kein Fenster für ' + stamm);
   }
   await page.evaluate(() => { location.hash = 'u-ueb'; }); await page.waitForTimeout(150);
   if (!(await page.locator('#globus').isHidden()) || !(await page.locator('#view').innerText()).length) throw Error('Klassische Ansicht nicht erreichbar');

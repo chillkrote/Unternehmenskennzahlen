@@ -68,7 +68,8 @@ def tabelle():
     for r in csv.DictReader(open(TABELLE, encoding="utf-8-sig"), delimiter=";"):
         cc = tg.LAND.get(r["Land *"].strip(), "")
         k = tg.schluessel(r, cc)
-        g = geo.get(k)
+        # Rückfall auf ISIN bzw. Land+Name, falls die Zeile seit dem letzten Lauf von tabelle_geo.py eine Unternehmens-ID bekommen hat
+        g = geo.get(k) or geo.get("ISIN:" + r["ISIN"].strip()) or geo.get(f"N:{cc}:{r['Name *'].strip()}")
         if k in gesehen or not g or not g["lat"]:
             continue
         gesehen.add(k)

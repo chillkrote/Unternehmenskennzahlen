@@ -35,7 +35,7 @@ const GLOBUS = (() => {
      Unternehmenstabelle (tabelle_geo.csv, Fenster mit Stammdaten). Ist nur das Land bekannt (genau = 0), gibt es keinen eigenen
      Punkt (er würde einen Ort vortäuschen), sondern je Land einen Ring in der Landesmitte mit der Anzahl; er öffnet die Liste. */
   let PUNKTE = [];       // GeoJSON-Features je Unternehmen
-  const STAMM = {};      // Schlüssel der Tabelle -> Zeile als Objekt (nur Unternehmen ohne Profil im Terminal)
+  const STAMM = {};      // Unternehmens-ID bzw. Schlüssel -> Zeile der Tabelle, für alle Unternehmen ohne Kennzahlen im Terminal
   const NUR_LAND = {};   // ISO -> [{ id, name, branche, art }] Unternehmen, deren Sitz nur auf Landesebene bekannt ist
   function tabZeile(z) {
     const o = {}; TABELLE.spalten.forEach((s, j) => { o[s] = TABELLE.listen[s] ? TABELLE.listen[s][z[j]] : z[j]; }); return o;
@@ -44,7 +44,8 @@ const GLOBUS = (() => {
     const sp = SITZE.spalten, i = n => sp.indexOf(n);
     PUNKTE = [];
     const terminal = new Set(), punkt = (lon, lat, p) => PUNKTE.push({ type: "Feature", geometry: { type: "Point", coordinates: [lon, lat] }, properties: p });
-    const firmaProps = f => ({ id: f.id, name: UNT.kurzName(f.name).replace(/ Aktiengesellschaft$/, ""), branche: UNT.brName(f.branche), notiert: f.notiert ? 1 : 0, art: "t" });
+    // art "t": Kennzahlen im Terminal; "s": nur Stammdaten (Platzhalter-Eintrag des Terminals oder nur in der Tabelle)
+    const firmaProps = f => ({ id: f.id, name: UNT.kurzName(f.name).replace(/ Aktiengesellschaft$/, ""), branche: UNT.brName(f.branche), notiert: f.notiert ? 1 : 0, art: f.stub ? "s" : "t" });
     for (const z of SITZE.zeilen) {
       const f = UNT.nachId(z[i("id")]);
       if (!f) continue;                              // nur Unternehmen, die das Terminal kennt
@@ -55,7 +56,7 @@ const GLOBUS = (() => {
     for (const r of TABELLE.zeilen.map(tabZeile)) {
       const f = r.id && UNT.nachId(r.id);
       if (f && terminal.has(f.id)) continue;        // schon mit genauerem Sitz aus sitz_geo.csv
-      if (!f) STAMM[r.k] = r;
+      if (!f || f.stub) STAMM[f ? f.id : r.k] = r;
       const p = f ? { ...firmaProps(f), land: r.land || f.land_code || "" } : { id: r.k, name: r.name, branche: r.branche, land: r.land, notiert: r.notiert === "ja" ? 1 : 0, art: "s" };
       if (f) terminal.add(f.id);
       if (r.genau) punkt(r.lon, r.lat, { ...p, ort: r.ort || r.sitz, genau: 1, unsicher: 0 });
@@ -320,7 +321,7 @@ const GLOBUS = (() => {
       if (r.length) return listeOeffnen(r[0].properties.iso);
       const p = quer(e.point, ["unt-punkt"]);
       if (p.length > 1) return listePopup(e.lngLat, p.map(x => x.properties));
-      if (p.length) return p[0].properties.art === "s" ? stammOeffnen(p[0].properties.id) : firmaOeffnen(p[0].properties.id);
+      if (p.length) return oeffnen(p[0].properties.id);
       for (const eb of EBENEN) if (eb.an && eb.klick && eb.klick(e, map) === true) return;
       const l = quer(e.point, ["laender-flaeche"]);
       if (l.length) landWaehlen(l[0].properties.iso, { fliegen: true });
@@ -363,7 +364,7 @@ const GLOBUS = (() => {
     props.sort((a, b) => a.name.localeCompare(b.name, "de"));
     const orte = [...new Set(props.map(p => p.ort).filter(Boolean))];
     listePop = new maplibregl.Popup({ className: "gk-pop", offset: 14, maxWidth: "320px" }).setLngLat(lngLat)
-      .setHTML(`<b>${f0.format(props.length)} Unternehmen</b> <span class="pct">${esc(orte.slice(0, 3).join(", "))}${orte.length > 3 ? " …" : ""}</span><ul>${props.map(p => `<li><button type="button" ${p.art === "s" ? "data-gkstamm" : "data-gkfirma"}="${esc(p.id)}">${esc(p.name)} <span class="pct">${esc(p.branche)}</span></button></li>`).join("")}</ul>`)
+      .setHTML(`<b>${f0.format(props.length)} Unternehmen</b> <span class="pct">${esc(orte.slice(0, 3).join(", "))}${orte.length > 3 ? " …" : ""}</span><ul>${props.map(p => `<li><button type="button" data-gkfirma="${esc(p.id)}">${esc(p.name)} <span class="pct">${esc(p.branche)}</span></button></li>`).join("")}</ul>`)
       .addTo(map);
   }
 
@@ -566,8 +567,10 @@ const GLOBUS = (() => {
     if (da) { nachVorne(da); return; }
     neuesFenster({ art: "firma", id });
     punkteAktualisieren();
-    if (opt.fliegen && map) { const p = PUNKTE.find(x => x.properties.id === id); if (p) map.flyTo({ center: p.geometry.coordinates, zoom: Math.max(map.getZoom(), 8), duration: 1200 }); }
+    if (opt.fliegen && map) { const p = PUNKTE.find(x => x.properties.id === id); if (p) { if (S.land && S.nurLand && p.properties.land !== S.land) landWaehlen(p.properties.land); map.flyTo({ center: p.geometry.coordinates, zoom: Math.max(map.getZoom(), 8), duration: 1200 }); } else hinweis("Sitz nur auf Landesebene bekannt, daher ohne eigenen Punkt auf der Karte"); }
   }
+  // Profil des Terminals, wenn es das Unternehmen kennt (auch als Platzhalter mit Registerdaten), sonst Stammdaten-Fenster
+  const oeffnen = (id, opt = {}) => UNT.nachId(id) ? firmaOeffnen(id, opt) : stammOeffnen(id, opt);
   function stammOeffnen(k, opt = {}) {
     if (!STAMM[k]) return;
     const da = S.offen.find(x => x.art === "stamm" && x.id === k);
@@ -587,7 +590,7 @@ const GLOBUS = (() => {
     const l = (q ? alle.filter(p => p.name.toLowerCase().includes(q) || (STAMM[p.id] && (STAMM[p.id].isin.toLowerCase() === q || STAMM[p.id].ticker.toLowerCase() === q))) : alle)
       .slice().sort((a, b) => b.art.localeCompare(a.art) || a.name.localeCompare(b.name, "de"));
     return `<p class="gk-quelle" style="margin:6px 0">${f0.format(l.length)} Treffer${l.length > 300 ? ", die ersten 300" : ""}</p><ul class="gk-liste">${l.slice(0, 300).map(p =>
-      `<li><button type="button" ${p.art === "s" ? "data-gkstamm" : "data-gkfirma"}="${esc(p.id)}">${esc(p.name)}</button><span class="r">${esc(p.art === "t" ? "Kennzahlen" : p.branche)}</span></li>`).join("")}</ul>`;
+      `<li><button type="button" data-gkfirma="${esc(p.id)}">${esc(p.name)}</button><span class="r">${esc(p.art === "t" ? "Kennzahlen" : p.branche)}</span></li>`).join("")}</ul>`;
   }
   function listeAnsicht(x) {
     const n = (NUR_LAND[x.id] || []).length;
@@ -729,7 +732,7 @@ const GLOBUS = (() => {
     let v;
     if ((v = g("data-gkliste")) != null) { listeOeffnen(v); return true; }
     if ((v = g("data-gkstamm")) != null) { e.preventDefault(); if (listePop) listePop.remove(); stammOeffnen(v, { fliegen: !t.closest("#gk-fenster") }); return true; }
-    if ((v = g("data-gkfirma")) != null) { e.preventDefault(); if (listePop) listePop.remove(); firmaOeffnen(v, { fliegen: !t.closest("#gk-fenster") }); return true; }
+    if ((v = g("data-gkfirma")) != null) { e.preventDefault(); if (listePop) listePop.remove(); oeffnen(v, { fliegen: !t.closest("#gk-fenster") }); return true; }
     if ((v = g("data-gkland")) != null) { landWaehlen(v || null, { fliegen: !!v }); if (!v && map) map.flyTo({ zoom: 1.7, duration: 1000 }); return true; }
     if ((v = g("data-gkzeigen")) != null) { const ps = PUNKTE.filter(p => p.properties.land === v); if (ps.length && map) { const b = ps.reduce((a, p) => { const [x, y] = p.geometry.coordinates; return [Math.min(a[0], x), Math.min(a[1], y), Math.max(a[2], x), Math.max(a[3], y)]; }, [180, 90, -180, -90]); map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: 60, maxZoom: 9, duration: 1200 }); } return true; }
     if ((v = g("data-gkhandel")) != null) { S.handel = v; const eb = EBENEN.find(x => x.id === "handel"); if (eb && !eb.an) { eb.an = true; ebenenListe(); } richtungAnwenden(); seiteZeichnen(); return true; }
@@ -762,7 +765,7 @@ const GLOBUS = (() => {
     // übrige Tabelle: Name, ISIN oder Kürzel, erst genau, dann Anfang, dann enthalten
     const alle = Object.values(STAMM), qu = q.toUpperCase();
     const st = alle.find(r => r.name.toLowerCase() === ql || r.isin === qu || r.ticker.toUpperCase() === qu) || alle.find(r => r.name.toLowerCase().startsWith(ql)) || (ql.length > 2 && alle.find(r => r.name.toLowerCase().includes(ql)));
-    if (st) stammOeffnen(st.k, { fliegen: true }); else hinweis(`Nichts gefunden für „${q}“`);
+    if (st) oeffnen(st.id || st.k, { fliegen: true }); else hinweis(`Nichts gefunden für „${q}“`);
   }
 
   /* ----- Einbindung in die Navigation des Terminals ----- */

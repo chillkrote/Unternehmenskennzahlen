@@ -31,7 +31,8 @@ const GLOBUS = (() => {
   const KONT = [["EU", "Europa", "Europe", [15, 50], "#5b8def"], ["AS", "Asien", "Asia", [90, 40], "#e0a458"], ["AF", "Afrika", "Africa", [20, 5], "#c76f5a"],
     ["NA", "Nordamerika", "North America", [-100, 45], "#5fb88a"], ["SA", "Südamerika", "South America", [-60, -15], "#b07fd6"], ["OC", "Ozeanien", "Oceania", [135, -25], "#4cb8c4"]];
   const KONT_NAME = Object.fromEntries(KONT.map(k => [k[0], k[1]]));
-  const KONT_VON = {}; LAENDER.features.forEach(f => { const k = KONT.find(x => x[2] === f.properties.kontinent); if (k) KONT_VON[f.properties.iso] = k[0]; });
+  // erster Treffer gewinnt (Australien hat Nebengebiete mit gleichem Code); Gebiete ohne eigene Fläche als Handelspartner ergänzt
+  const KONT_VON = { GI: "EU", TK: "OC" }; LAENDER.features.forEach(f => { const k = KONT.find(x => x[2] === f.properties.kontinent); if (k && !(f.properties.iso in KONT_VON)) KONT_VON[f.properties.iso] = k[0]; });
   // bilaterale Ströme "Exportland>Importland" -> USD: Meldung des Exportlandes, fehlt das Paar dort, die Spiegelmeldung des Importlandes
   const PAAR = new Map(), SPIEGEL = new Set();
   if (HANDEL) {
@@ -53,10 +54,11 @@ const GLOBUS = (() => {
     const v = tz.split("/")[0], ort = tz.split("/").slice(1).join("/");
     if (v === "Europe") return "EU";
     if (v === "Africa") return "AF";
-    if (v === "Asia" || v === "Indian") return "AS";
+    if (v === "Indian") return /Antananarivo|Mauritius|Reunion|Comoro|Mayotte|Mahe/.test(ort) ? "AF" : "AS";
+    if (v === "Asia") return "AS";
     if (v === "Australia" || (v === "Pacific" && !/Honolulu|Johnston/.test(ort))) return "OC";
     if (v === "Pacific") return "NA";
-    if (v === "Atlantic") return /Reykjavik|Azores|Madeira|Canary|Faroe/.test(ort) ? "EU" : "SA";
+    if (v === "Atlantic") return /Reykjavik|Azores|Madeira|Canary|Faroe/.test(ort) ? "EU" : /Bermuda/.test(ort) ? "NA" : /Cape_Verde|St_Helena/.test(ort) ? "AF" : "SA";
     if (v === "America") return /Argentina|Buenos_Aires|Sao_Paulo|Bogota|Lima|Santiago|Caracas|La_Paz|Montevideo|Asuncion|Guayaquil|Cayenne|Paramaribo|Guyana|Bahia|Fortaleza|Recife|Manaus|Belem|Cuiaba|Campo_Grande|Porto_Velho|Rio_Branco|Punta_Arenas|Maceio|Araguaina|Noronha|Boa_Vista|Santarem|Eirunepe|Cordoba|Catamarca|Jujuy|Mendoza|Rosario|Cuiaba/.test(ort) ? "SA" : "NA";
     if (/^(US|Canada|Mexico)$/.test(v)) return "NA";
     const reg = ((navigator.language || "").split("-")[1] || "").toUpperCase();

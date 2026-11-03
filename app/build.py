@@ -6,6 +6,7 @@ from pathlib import Path
 
 import datenschicht
 import globus
+import register
 import unternehmen
 import vwl
 
@@ -47,11 +48,20 @@ def main():
     # Indizes und Weltunternehmen (boersen_abruf.py, Workflow Börsendaten Terminal); fehlt die Datei, bleibt der Bereich leer
     bdat = HIER / "data/boerse.json"
     boerse = bdat.read_text() if bdat.exists() else "null"
+    # Gesamtregister: alle Zeilen der Unternehmenstabelle (nur Stammdaten), getrennt von den Kennzahlen
+    if a.nur_seite and (HIER / "data/register.json").exists():
+        reg = (HIER / "data/register.json").read_text()
+    else:
+        rd, unbekannt = register.lade()
+        reg = json.dumps(rd, ensure_ascii=False, separators=(",", ":"))
+        (HIER / "data/register.json").write_text(reg)
+        if unbekannt:
+            print("Länder ohne ISO-Code im Register:", unbekannt)
     vd = vwl.lade()
     vroh = json.dumps(vd, ensure_ascii=False, separators=(",", ":")) if vd else "null"
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
-             .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/"))
+             .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))
              .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__BOERSE_JS__", (HIER / "src/boerse.js").read_text())
              .replace("__BOERSE__", boerse.replace("</", "<\\/")).replace("__VWL__", vroh.replace("</", "<\\/"))
              .replace("__KURSE__", kurse.replace("</", "<\\/")).replace("__KORRELATION_JS__", (HIER / "src/korrelation.js").read_text()))

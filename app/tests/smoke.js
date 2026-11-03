@@ -14,6 +14,14 @@ const path = require("path");
     await p.evaluate(h => { location.hash = h; }, h);
     await p.waitForTimeout(300);
   }
+  // Gesamtregister: Verzeichnis zeigt alle Zeilen der Unternehmenstabelle, Registerprofil öffnet ohne Fehler
+  await p.evaluate(() => { location.hash = "u-verzeichnis"; });
+  await p.waitForTimeout(500);
+  const treffer = await p.textContent("#uzahl");
+  const nReg = +treffer.split(" ")[0].replace(/\./g, "");
+  if (!(nReg > 30000)) { console.log("Gesamtregister unvollständig:", treffer); fehler.push("Register: " + treffer); }
+  const reg = await p.evaluate(() => { const a = [...document.querySelectorAll('#uverz a[href^="#reg-"]')][0]; return a ? a.getAttribute("href") : null; });
+  if (reg) { await p.evaluate(h => { location.hash = h.slice(1); }, reg); await p.waitForTimeout(300); }
   console.log(`${ansichten.length + 3} Ansichten, ${fehler.length} JavaScript-Fehler`, fehler.slice(0, 5));
   await b.close();
   process.exit(fehler.length ? 1 : 0);

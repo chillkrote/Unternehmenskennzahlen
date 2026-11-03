@@ -54,7 +54,7 @@ Jeder Wert an einer Kante trägt ein **Vertrauensfeld**: `gemessen`, `abgeleitet
 | Lombok, Sunda | Malakka-Alternativen | |
 | Straße von Kertsch, Magellanstraße, Kap Hoorn, Mosambikkanal, Yucatán | Nebenengstellen | nur ab Stufe 2/3 |
 
-IMF PortWatch führt dafür laut meinem Stand rund 28 Engstellen mit täglichen Durchfahrten; die genaue Liste wird beim Einbau gegen die Quelle abgeglichen.
+IMF PortWatch führt dafür 28 Engstellen mit täglichen Durchfahrten (am 03.11.2026 abgefragt): Suezkanal, Panamakanal, Bosporus, Bab-el-Mandeb, Malakka, Hormus, Kap der Guten Hoffnung, Gibraltar, Dover, Öresund, Taiwanstraße, Koreastraße, Tsugaru, Luzon, Lombok, Ombai, Bohai, Torres, Sunda, Makassar, Magellan, Yucatán, Windward-Passage, Mona-Passage, Balabac, Beringstraße, Mindoro, Kertsch. Nicht enthalten sind Dardanellen, Großer Belt und Kieler Kanal; die müssten selbst ergänzt werden.
 
 ### 3.2 Bahn
 
@@ -89,10 +89,10 @@ Legende „Nutzen“: G = Geometrie/Knoten, M = Messwert, K = Kontext/Kalibrieru
 
 | Quelle | Inhalt | Nutzen | Format | Lizenz (Kenntnisstand) | Aktualität | Prüfen |
 |---|---|---|---|---|---|---|
-| IMF PortWatch | tägliche Schiffsdurchfahrten und geschätztes Handelsvolumen je Engstelle; Hafenanläufe und geschätzte Im-/Exporte je Hafen, aus AIS abgeleitet | M, G | ArcGIS-Feature-Service (JSON/CSV), kostenlos, ohne Schlüssel | CC BY 4.0 | täglich bis wöchentlich, mit Verzug von wenigen Tagen | Lizenztext, Abfragegrenzen, Umfang der Hafenliste |
+| IMF PortWatch | tägliche Schiffsdurchfahrten und geschätztes Handelsvolumen je Engstelle; Hafenanläufe und geschätzte Im-/Exporte je Hafen, aus AIS abgeleitet | M, G | ArcGIS-Feature-Service (JSON/CSV), kostenlos, ohne Schlüssel | **IMF-Sonderbedingungen, nicht CC BY** (geprüft 03.11.2026, siehe 4.6) | täglich, Stand 25.10.2026 | Genehmigung der IMF für automatisierten Abruf einholen |
 | World Port Index (NGA, Pub. 150) | rund 3.700 Häfen: Position, Größe, Tiefgang, Kai-Einrichtungen | G | CSV/Shapefile | US-Behördenwerk, gemeinfrei | unregelmäßig (jährliche Überarbeitung) | Download-URL |
-| World Bank Container Port Performance Index (CPPI) | Rang/Effizienz von rund 400 Containerhäfen | K | PDF/Excel | CC BY 4.0 | jährlich, mit Verzug von 1–2 Jahren | Jahrgang |
-| UNCTADstat | Containerumschlag (TEU) je Land, Liner-Shipping-Connectivity-Index (LSCI/PLSCI), Seehandel in Tonnen | M, K | CSV | frei nutzbar mit Quellenangabe | jährlich | Lizenzwortlaut |
+| World Bank Container Port Performance Index (CPPI) | Rang/Effizienz von rund 400 Containerhäfen | K | PDF/Excel | **CC BY-NC 3.0 IGO** (Ausgabe 2020–2024), frühere Ausgaben CC BY 3.0 IGO (geprüft 03.11.2026) | jährlich, mit Verzug von 1–2 Jahren | nicht-kommerzielle Nutzung klären |
+| UNCTADstat | Containerumschlag (TEU) je Land, Liner-Shipping-Connectivity-Index (LSCI/PLSCI), Seehandel in Tonnen | M, K | CSV | CC BY 3.0 IGO (geprüft 03.11.2026) | jährlich | – |
 | Natural Earth | Häfen, Küsten, Meeresflächen | G | GeoJSON/Shapefile | gemeinfrei | statisch | – |
 | Marine Regions (VLIZ) | Namen und Polygone von Meerengen/Seegebieten | G | Shapefile/GeoJSON | CC BY 4.0 (Teil CC BY-NC, prüfen) | gelegentlich | Lizenz je Datensatz |
 | Seeverkehrsgraph | Gerüst aus Fahrwegen zwischen Häfen und Engstellen; Optionen: Open-Source-Bibliothek `searoute` (MIT) bzw. eigener Graph aus PortWatch-Engstellen plus Küstenabstand | G | Graph | Bibliothek MIT, Datenherkunft prüfen | statisch | Herkunft des Graphen |
@@ -146,6 +146,29 @@ Freie Zugzahlen/Tonnen je Landbrücke gibt es nur verstreut (Presse, Betreiberan
 | WTO (schon im Projekt, `app/handel_wto.py`) | ergänzende Handelsstatistik | JSON | frei |
 
 Global fehlt der Modal-Split je Länderpaar. Er wird aus Eurostat/BTS für die EU und die USA übernommen und für den Rest nach Warengruppe und Entfernung **modelliert** (z. B. Rohstoffe/Energie fast nur See, Pharma/Elektronik mit hohem Luftanteil, Nachbarländer mit Landanschluss mit Bahn/Lkw). Diese Regeln stehen in einer offenen Tabelle, nicht im Code versteckt.
+
+### 4.6 Ergebnis der Quellenprüfung (Phase 0, 03.11.2026)
+
+Abgerufen und gelesen am 03.11.2026; „erreichbar“ heißt nur, dass die Adresse antwortet.
+
+| Quelle | Ergebnis |
+|---|---|
+| IMF PortWatch | Dienste erreichbar ohne Schlüssel (ArcGIS-Feature-Services): 28 Engstellen, 2.065 Häfen, Tagesdaten (Engstellen: Durchfahrten und Kapazität je Schiffstyp; Häfen: Anläufe, Importe und Exporte je Schiffstyp), letzter Tag 25.10.2026. **Lizenz ist nicht CC BY**, sondern die IMF-Nutzungsbedingungen: Herunterladen, Kopieren, abgeleitete Werke und Veröffentlichen sind erlaubt mit Quellenangabe („Source: International Monetary Fund, Datenbankname, Link“) und mit Hinweis auf wesentliche Veränderungen. **Automatisierter Massenabruf ist ohne ausdrückliche Erlaubnis untersagt, kommerzielle Weiterverwendung braucht Erlaubnis** (copyright@imf.org), Nutzung zum Training von Sprachmodellen ist ausgeschlossen. Folge: Vor dem automatischen Abruf in der Pipeline die Erlaubnis der IMF einholen; bis dahin nur manuelle Downloads. |
+| World Bank CPPI | Ausgabe 2020–2024 unter CC BY-NC 3.0 IGO (nicht-kommerziell), frühere unter CC BY 3.0 IGO. Für ein nicht-kommerzielles Projekt nutzbar, bei kommerzieller Absicht klären. |
+| UNCTADstat | CC BY 3.0 IGO, Quelle nennen. |
+| OurAirports | Adresse erreichbar (12,8 MB CSV); laut OpenFlights gemeinfrei. |
+| OpenFlights | ODbL; Streckendaten enden 2014 und sind „nur von historischem Wert“. Nur für Lage von Flughäfen, nicht für Routen. |
+| Natural Earth | Hafen-Datei (`ne_10m_ports`) erreichbar; gemeinfrei. |
+| NGA World Port Index | Seite erreichbar, Download-Adresse und Lizenzaussage nicht bestätigt. Offen. |
+| Marine Regions | Seite lieferte beim Abruf einen Zugriffsfehler (403). Lizenz offen. |
+| Eurostat | Lizenz in dieser Prüfung nicht erneut gelesen; Annahme CC BY 4.0 bleibt offen. |
+| Global Energy Monitor | CC BY 4.0 bestätigt; Download über ein Formular, Adresse der Pipeline-Seite hat sich geändert. |
+| Ember | CC BY 4.0 bestätigt; Format der Downloads wurde im Juli 2026 geändert, vor dem Skript prüfen. |
+| ENTSO-E | Token wie beschrieben: Konto anlegen, E-Mail an transparency@entsoe.eu mit Betreff „Restful API access“ und registrierter Adresse im Text, Freischaltung laut Hilfeseite binnen drei Werktagen, danach Token unter „My Account“ erzeugen. Freie Weiterverwendung gilt für eine Liste von Daten (TSO-Daten), diese Liste vor dem Einbau prüfen. |
+
+Wichtigste Folge: Der Schiffsteil hängt an der IMF-Erlaubnis für den automatisierten Abruf. Der Entwurf einer Anfrage liegt dem Thread bei.
+
+Hinweis: Im Repo liegt bereits `app/KONZEPT_Handelsrouten.md` (gleicher Tag, aus der Umsetzung der Zoomstufen). Beide Dokumente sind inhaltlich verwandt; dieses hier ist ausführlicher bei Quellen, Datenmodell und Aufwand, das App-Dokument näher an der Oberfläche. Es gilt dort noch „PortWatch über 1.600 Häfen“, richtig sind 2.065.
 
 ## 5. Datenmodell
 

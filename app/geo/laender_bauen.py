@@ -12,6 +12,8 @@ import urllib.request
 from pathlib import Path
 
 HIER = Path(__file__).resolve().parent
+# Natural Earth führt einige Inselstaaten als "Seven seas (open ocean)"; die Oberfläche kennt nur sechs Kontinente
+KONTINENT_KORREKTUR = {"MV": "Asia", "MU": "Africa", "SC": "Africa"}
 URL = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson"
 
 
@@ -33,7 +35,7 @@ def main():
         p = f["properties"]
         iso = p["ISO_A2_EH"] if p["ISO_A2_EH"] not in ("-99", "") else p["ADM0_A3"]
         feats.append({"type": "Feature", "id": len(feats), "properties": {
-            "iso": iso, "a3": p["ADM0_A3"], "name": p.get("NAME_DE") or p["NAME"], "name_en": p["NAME"], "kontinent": p["CONTINENT"],
+            "iso": iso, "a3": p["ADM0_A3"], "name": p.get("NAME_DE") or p["NAME"], "name_en": p["NAME"], "kontinent": KONTINENT_KORREKTUR.get(iso, p["CONTINENT"]),
             "region": p["SUBREGION"], "einwohner": p["POP_EST"], "einwohner_jahr": p["POP_YEAR"], "bip_mio_usd": p["GDP_MD"],
             "bip_jahr": p["GDP_YEAR"], "einkommen": p["INCOME_GRP"][3:], "lx": round(p["LABEL_X"], 2), "ly": round(p["LABEL_Y"], 2)},
             "geometry": {"type": f["geometry"]["type"], "coordinates": runde(f["geometry"]["coordinates"])}})

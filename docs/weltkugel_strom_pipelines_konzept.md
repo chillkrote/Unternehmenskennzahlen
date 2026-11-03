@@ -20,8 +20,8 @@ Strom und Pipelines sind **leitungsgebunden**: Der Weg ist durch das Netz fest v
 
 | Quelle | Inhalt | Nutzen | Format | Lizenz (Kenntnisstand) | Aktualität | Prüfen |
 |---|---|---|---|---|---|---|
-| ENTSO-E Transparency Platform | physische Grenzflüsse und Handelsfahrpläne Europas, stündlich | Messwert | REST-API (XML), kostenlos, Registrierung mit Sicherheitstoken | frei nutzbar mit Quellenangabe, Wortlaut prüfen | stündlich bis täglich | Token als Secret ablegen; Abfragegrenzen |
-| Ember (Electricity Data Explorer) | Stromimporte/-exporte je Land, Erzeugung, jährlich und monatlich, weltweit | Messwert, Kontext | CSV | CC BY 4.0 | monatlich | Abdeckung der Länder |
+| ENTSO-E Transparency Platform | physische Grenzflüsse und Handelsfahrpläne Europas, stündlich | Messwert | REST-API (XML), kostenlos, Registrierung mit Sicherheitstoken | freie Weiterverwendung für eine Liste von (TSO-)Daten, Liste prüfen (Stand 03.11.2026 nicht vollständig gelesen) | stündlich bis täglich | Token als Secret ablegen; Abfragegrenze (laut Nutzergruppe 2019: 400 Anfragen/Minute) |
+| Ember (Electricity Data Explorer) | Stromimporte/-exporte je Land, Erzeugung, jährlich und monatlich, weltweit | Messwert, Kontext | CSV | CC BY 4.0 (geprüft 03.11.2026); Downloadformat im Juli 2026 geändert | zweimal im Monat | Abdeckung der Länder, neues Format |
 | Eurostat (`nrg_ti_eh`, `nrg_te_eh`) | Stromimporte/-exporte der EU-Länder nach Partnerland | Messwert | TSV/JSON | CC BY 4.0 | jährlich | Tabellencodes |
 | EIA (USA, Open Data, EIA-930) | Stromaustausch der US-Regelzonen mit Kanada/Mexiko | Messwert | CSV/API | US-Behörde, gemeinfrei | stündlich/täglich | API-Schlüssel (kostenlos) |
 | UN Comtrade (im Projekt), HS 2716 | Handelswert Strom bilateral | Kontext | JSON | frei | jährlich | – |
@@ -34,7 +34,7 @@ Nicht verwenden: IEA-Datensätze (kostenpflichtig oder eingeschränkt), kommerzi
 
 | Quelle | Inhalt | Nutzen | Format | Lizenz | Aktualität | Prüfen |
 |---|---|---|---|---|---|---|
-| Global Energy Monitor: Global Oil and Gas Pipeline Trackers | Trassen, Kapazität, Status (in Betrieb/gebaut/geplant) | Geometrie, Kapazität | GeoJSON/Excel | CC BY 4.0 | halbjährlich | Download ohne Registrierung? Status-Feld nutzen |
+| Global Energy Monitor: Global Oil Infrastructure Tracker und Global Gas Infrastructure Tracker | Trassen, Kapazität, Status (in Betrieb/gebaut/geplant) | Geometrie, Kapazität | GeoJSON/Excel, Download über Formular | CC BY 4.0 (geprüft 03.11.2026); Öl-Tracker wird jährlich aktualisiert | jährlich bis halbjährlich | Status-Feld nutzen; Adresse der Download-Seite neu suchen |
 | ENTSOG Transparency Platform | physische Gasflüsse an Grenzpunkten Europas | Messwert | API/CSV | frei, Quelle nennen | täglich | Lizenzwortlaut |
 | EIA | US-Gas/Öl-Pipelineflüsse und -importe nach Grenzpunkt | Messwert | CSV | gemeinfrei | monatlich | – |
 | Eurostat (`nrg_ti_gas`, `nrg_ti_oil`) | Gas-/Ölimporte der EU nach Partnerland | Messwert | TSV | CC BY 4.0 | jährlich/monatlich | – |

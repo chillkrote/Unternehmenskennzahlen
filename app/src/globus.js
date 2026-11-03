@@ -771,7 +771,7 @@ const GLOBUS = (() => {
     document.getElementById("globus").hidden = !an;
     document.getElementById("gk-fenster").hidden = !an;
     document.querySelector(".wrap").style.display = an ? "none" : "";
-    document.getElementById("gk-zurueck").hidden = an;
+    { const u = document.getElementById("gk-zurueck"); u.hidden = false; u.href = an ? "#start" : "#globus"; u.textContent = an ? "▤ Terminal" : "◉ Weltkugel"; }
     if (an) {
       document.getElementById("view").innerHTML = "";        // klassische Ansicht leeren (Diagramm-Hover nicht doppelt binden)
       if (typeof globalLand !== "undefined" && globalLand !== "alle") { const sel = document.getElementById("global-land"); if (sel) sel.value = "alle"; landAnwenden("alle"); }

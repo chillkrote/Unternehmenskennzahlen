@@ -22,11 +22,18 @@ const path = require('node:path');
   await page.click('[data-gkvgl]');
   const vgl = await page.evaluate(() => UNT.auswahl().length);
   if (vgl !== 2 || await page.locator('.gf').count() !== 3) throw Error('Vergleichsfenster fehlt oder Auswahl falsch: ' + vgl);
+  // Unternehmen nur aus der Unternehmenstabelle (ohne Kennzahlen): Stammdaten-Fenster über die Suche
+  const stamm = await page.evaluate(() => { const r = document.getElementById('geo-tabelle'); const t = r && JSON.parse(r.textContent); if (!t) return null;
+    const j = t.spalten.indexOf('id'), n = t.spalten.indexOf('name'); const z = t.zeilen.find(z => !z[j]); return z && z[n]; });
+  if (stamm) {
+    await page.fill('#gk-suchfeld', stamm); await page.press('#gk-suchfeld', 'Enter'); await page.waitForTimeout(150);
+    if (!(await page.locator('.gf .gk-stamm').count())) throw Error('Stammdaten-Fenster für ' + stamm + ' fehlt');
+  }
   await page.evaluate(() => { location.hash = 'u-ueb'; }); await page.waitForTimeout(150);
   if (!(await page.locator('#globus').isHidden()) || !(await page.locator('#view').innerText()).length) throw Error('Klassische Ansicht nicht erreichbar');
   await page.evaluate(() => { location.hash = 'globus'; }); await page.waitForTimeout(150);
   if (await page.locator('#globus').isHidden()) throw Error('Zurück zur Weltkugel geht nicht');
   await browser.close();
   if (errors.length) throw Error(errors.join('\n'));
-  console.log(`Weltkugel: Land, ${kacheln} Kerndaten, 2 Unternehmensfenster, Vergleich, Wechsel zum klassischen Terminal; keine JavaScript-Fehler`);
+  console.log(`Weltkugel: Land, ${kacheln} Kerndaten, 2 Unternehmensfenster, Vergleich,${stamm ? ' Stammdaten-Fenster,' : ''} Wechsel zum klassischen Terminal; keine JavaScript-Fehler`);
 })().catch(e => { console.error(e); process.exit(1); });

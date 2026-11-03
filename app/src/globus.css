@@ -19,7 +19,7 @@
 .gk-ebenen label { display: flex; gap: 8px; align-items: center; padding: 2px 0; cursor: pointer; }
 .gk-ebenen label.aus { cursor: default; color: var(--ink-3); }
 .gk-ebenen .pct { color: var(--ink-3); }
-.gk-legende { display: flex; gap: 10px; align-items: center; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line-2); color: var(--ink-3); }
+.gk-legende { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line-2); color: var(--ink-3); }
 .gk-legende i { display: inline-block; border-radius: 50%; background: var(--amber); vertical-align: middle; margin-right: 4px; }
 .gk-hinweis { position: absolute; z-index: 2; left: 50%; transform: translateX(-50%); bottom: 34px; background: rgba(14, 17, 22, .94); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font: 12px/1.4 var(--sans); color: var(--ink-2); pointer-events: none; transition: opacity .3s; max-width: calc(100% - 24px); text-align: center; }
 
@@ -105,3 +105,10 @@
   .gk-hinweis { bottom: 12px; }
 }
 #gk-fenster[hidden] { display: none; }
+.gk-link { all: unset; cursor: pointer; color: var(--ink); }
+.gk-link:hover, .gk-link:focus-visible { color: var(--amber); text-decoration: underline; }
+.gk-stamm .gk-tab td:first-child { white-space: nowrap; color: var(--ink-3); vertical-align: top; padding-right: 12px; }
+.gk-stamm .gk-tab td { overflow-wrap: anywhere; }
+.gk-stamm .gk-tab td:last-child { white-space: normal; }
+.gk-filter { width: 100%; box-sizing: border-box; background: var(--bg-2, #0d1117); color: var(--ink); border: 1px solid var(--line-2); border-radius: 4px; padding: 6px 8px; font: inherit; }
+.gk-filter:focus { outline: 1px solid var(--amber); border-color: var(--amber); }

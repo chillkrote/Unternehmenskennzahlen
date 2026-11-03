@@ -1,0 +1,44 @@
+unternehmen_id,name,kennzahl,ifrs_konzept,periode,wert_datenbank,wert_dokument,einreichung,status,geprueft_am
+U001308,"Krka, d.d.",assets,ifrs-full:Assets,..2024-12-31,2849021000.0,2849021000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001308,"Krka, d.d.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,2218183000.0,2218183000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001308,"Krka, d.d.",equity_incl_nci,ifrs-full:Equity,..2024-12-31,2237784000.0,2237784000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001308,"Krka, d.d.",revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,1909544000.0,1909544000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001308,"Krka, d.d.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,356986000.0,356986000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001308,"Krka, d.d.",net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,356202000.0,356202000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001308,"Krka, d.d.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,360933000.0,360933000,549300H9RLRTRTLRUZ73-2024-12-31-ESEF-SI-1,gleich,2026-11-03
+U001309,Nova Ljubljanska banka d.d.,assets,ifrs-full:Assets,..2025-12-31,31474832000.0,31474832000,5493001BABFV7P27OW30-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001309,Nova Ljubljanska banka d.d.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,3781576000.0,3781576000,5493001BABFV7P27OW30-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001309,Nova Ljubljanska banka d.d.,equity_incl_nci,ifrs-full:Equity,..2025-12-31,3860334000.0,3860334000,5493001BABFV7P27OW30-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001309,Nova Ljubljanska banka d.d.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,503055000.0,503055000,5493001BABFV7P27OW30-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001309,Nova Ljubljanska banka d.d.,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,518691000.0,518691000,5493001BABFV7P27OW30-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001309,Nova Ljubljanska banka d.d.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,448185000.0,448185000,5493001BABFV7P27OW30-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,assets,ifrs-full:Assets,..2025-12-31,2418361000.0,2418361000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,1042903000.0,1042903000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,equity_incl_nci,ifrs-full:Equity,..2025-12-31,1044418000.0,1044418000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,revenue,ifrs-full:RevenueFromContractsWithCustomers,2025-01-01..2025-12-31,6139821000.0,6139821000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,174045000.0,174045000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,174160000.0,174160000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001310,Petrol d.d.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,214436000.0,214436000,549300CAAOUTT4QDOZ16-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001311,"Zavarovalnica Triglav, d.d.",assets,ifrs-full:Assets,..2025-12-31,5435989665.0,5435989665,549300KGI78MKHO38N42-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001311,"Zavarovalnica Triglav, d.d.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2025-12-31,1072856194.0,1072856194,549300KGI78MKHO38N42-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001311,"Zavarovalnica Triglav, d.d.",equity_incl_nci,ifrs-full:Equity,..2025-12-31,1078116621.0,1078116621,549300KGI78MKHO38N42-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001311,"Zavarovalnica Triglav, d.d.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2025-01-01..2025-12-31,136249030.0,136249030,549300KGI78MKHO38N42-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001311,"Zavarovalnica Triglav, d.d.",net_income_incl_nci,ifrs-full:ProfitLoss,2025-01-01..2025-12-31,136712051.0,136712051,549300KGI78MKHO38N42-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001311,"Zavarovalnica Triglav, d.d.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2025-01-01..2025-12-31,304220287.0,304220287,549300KGI78MKHO38N42-2025-12-31-ESEF-SI-1,gleich,2026-11-03
+U001312,Luka Koper d.d.,assets,ifrs-full:Assets,..2024-12-31,814367538.0,814367538,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001312,Luka Koper d.d.,equity,ifrs-full:EquityAttributableToOwnersOfParent,..2024-12-31,584447005.0,584447005,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001312,Luka Koper d.d.,equity_incl_nci,ifrs-full:Equity,..2024-12-31,584803573.0,584803573,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001312,Luka Koper d.d.,revenue,ifrs-full:Revenue,2024-01-01..2024-12-31,330064897.0,330064897,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001312,Luka Koper d.d.,net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2024-01-01..2024-12-31,60279264.0,60279264,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001312,Luka Koper d.d.,net_income_incl_nci,ifrs-full:ProfitLoss,2024-01-01..2024-12-31,60316070.0,60316070,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001312,Luka Koper d.d.,operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2024-01-01..2024-12-31,78573725.0,78573725,549300H1GO5N7BK34P37-2024-12-31-ESEF-SI-3,gleich,2026-11-03
+U001313,"Telekom Slovenije, d.d.",assets,ifrs-full:Assets,..2023-12-31,1317866000,1317866000,5493003GE7UJGPQAMN79-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001313,"Telekom Slovenije, d.d.",equity_incl_nci,ifrs-full:Equity,..2023-12-31,658638000,658638000,5493003GE7UJGPQAMN79-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001313,"Telekom Slovenije, d.d.",revenue,ifrs-full:Revenue,2023-01-01..2023-12-31,694913000,694913000,5493003GE7UJGPQAMN79-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001313,"Telekom Slovenije, d.d.",net_income_incl_nci,ifrs-full:ProfitLoss,2023-01-01..2023-12-31,47065000,47065000,5493003GE7UJGPQAMN79-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001313,"Telekom Slovenije, d.d.",operating_cash_flow,ifrs-full:CashFlowsFromUsedInOperatingActivities,2023-01-01..2023-12-31,245705000,245705000,5493003GE7UJGPQAMN79-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001314,"Pozavarovalnica Sava, d.d.",assets,ifrs-full:Assets,..2023-12-31,813954322,813954322,549300P6F1BDSFSW5T72-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001314,"Pozavarovalnica Sava, d.d.",equity,ifrs-full:EquityAttributableToOwnersOfParent,..2023-12-31,430897178,430897178,549300P6F1BDSFSW5T72-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001314,"Pozavarovalnica Sava, d.d.",equity_incl_nci,ifrs-full:Equity,..2023-12-31,430897178,430897178,549300P6F1BDSFSW5T72-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001314,"Pozavarovalnica Sava, d.d.",net_income,ifrs-full:ProfitLossAttributableToOwnersOfParent,2023-01-01..2023-12-31,49474802,49474802,549300P6F1BDSFSW5T72-2023-12-31-ESEF-SI-1,gleich,2026-11-03
+U001314,"Pozavarovalnica Sava, d.d.",net_income_incl_nci,ifrs-full:ProfitLoss,2023-01-01..2023-12-31,49474802,49474802,549300P6F1BDSFSW5T72-2023-12-31-ESEF-SI-1,gleich,2026-11-03

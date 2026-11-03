@@ -1,0 +1,8 @@
+name,isin,lei,ticker,branche,bank,land,bestand_id
+"MONETA Money Bank, a.s.",CZ0008040318,I6USJ58BDV2BO5KP3C31,,banken,ja,CZ,
+"Komerční banka, a.s.",CZ0008019106,IYKCAVNFR8QGF00HV840,,banken,ja,CZ,
+"ČEZ, a. s.",CZ0005112300,529900S5R9YHJHYKKG94,,energie-versorger,nein,CZ,
+Raiffeisenbank a.s.,,31570010000000004460,,banken,ja,CZ,
+O2 Czech Republic a.s.,CZ0009093209,3157004ICDH3MRKW7534,,telekom-medien,nein,CZ,
+Philip Morris ČR a.s.,,315700LNPHNXCMNLQC73,,handel-konsum,nein,CZ,
+CZECHOSLOVAK GROUP a.s.,,315700SWFD7G70AVG768,,industrie,nein,CZ,

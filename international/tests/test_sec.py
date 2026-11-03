@@ -105,3 +105,58 @@ class Normalisierung(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class IfrsMelder(unittest.TestCase):
+    """20-F/40-F-Melder mit ifrs-full-Tags: Berichtswährung bleibt erhalten, keine Umrechnung."""
+
+    @staticmethod
+    def roh():
+        def e(val, end, form="20-F", start=None, accn="0000000000-26-000001"):
+            d = {"val": val, "end": end, "accn": accn, "form": form, "filed": "2026-03-01", "fy": 2025, "fp": "FY"}
+            if start:
+                d["start"] = start
+            return d
+        return {"cik": 1, "facts": {"ifrs-full": {
+            "Assets": {"units": {"CHF": [e(900, "2025-12-31")], "USD": [e(1000, "2025-12-31")], "shares": [e(5, "2025-12-31")]}},
+            "ProfitLoss": {"units": {"CHF": [e(70, "2025-12-31", start="2025-01-01")]}},
+            "Revenue": {"units": {"CHF": [e(500, "2025-12-31", start="2025-01-01", form="6-K")]}}}}}
+
+    def test_waehrungen_getrennt_andere_einheiten_und_formulare_nicht(self):
+        z = sec.normalisieren(sec.extrahieren(self.roh()), "U1", 1)
+        werte = {(x["metric_code"], x["unit"]): x["value"] for x in z}
+        self.assertEqual(werte, {("assets", "CHF"): D(900), ("assets", "USD"): D(1000), ("net_income_incl_nci", "CHF"): D(70)})
+
+    def test_standard_und_mappingversion(self):
+        for x in sec.normalisieren(sec.extrahieren(self.roh()), "U1", 1):
+            self.assertEqual(x["accounting_standard"], "IFRS")
+            self.assertEqual(x["mapping_version"], sec.MAPPING_VERSION_IFRS)
+
+    def test_us_gaap_vor_ifrs(self):
+        roh = self.roh()
+        roh["facts"]["us-gaap"] = {"Assets": {"units": {"USD": [{"val": 1000, "end": "2025-12-31", "accn": "0000000000-26-000001", "form": "20-F", "filed": "2026-03-01"}]}}}
+        z = [x for x in sec.normalisieren(sec.extrahieren(roh), "U1", 1) if x["metric_code"] == "assets"]
+        self.assertEqual({(x["unit"], x["accounting_standard"]) for x in z}, {("USD", "US-GAAP"), ("CHF", "IFRS")})
+
+
+class FpiPilotliste(unittest.TestCase):
+    def test_felder_lei_cik_und_register(self):
+        import csv
+        import sys
+        import esef
+        sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "stammdaten"))
+        import ids
+        reg = ids.lade(neu=True)
+        with open(Path(__file__).resolve().parents[1] / "sec_fpi_pilot.csv", encoding="utf-8", newline="") as f:
+            zeilen = list(csv.DictReader(f))
+        self.assertEqual(len(zeilen), 40)
+        self.assertEqual(len({z["lei"] for z in zeilen}), 40)
+        self.assertEqual(len({z["cik"] for z in zeilen}), 40)
+        for z in zeilen:
+            esef.lei_pruefen(z["lei"])
+            self.assertIn(z["land"], {"CH", "CA", "AU", "MX", "CL", "TR", "IL"})
+            self.assertIn(z["bank"], {"ja", "nein"})
+            treffer = [u for u, r in reg.unternehmen.items() if r["lei"] == z["lei"]]
+            self.assertEqual(len(treffer), 1, z["name"])
+            if z["bestand_id"]:
+                self.assertEqual(treffer[0], z["bestand_id"])

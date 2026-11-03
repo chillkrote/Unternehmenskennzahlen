@@ -37,8 +37,10 @@ KENNZAHL = {   # Spalte kennzahl in zeitreihe_lang.csv -> metric.code
 DAUER = {"net_income"}   # Zeitraumwerte; der Beginn wird nur bei Stichtag 31.12. als 1. Januar abgeleitet
 LAND_ISO2 = {"Germany": "DE", "France": "FR", "Luxembourg": "LU", "Switzerland": "CH", "Austria": "AT", "Netherlands": "NL", "Italy": "IT", "Spain": "ES", "Belgium": "BE", "Finland": "FI", "Ireland": "IE", "Portugal": "PT", "Denmark": "DK", "Norway": "NO",
              "Bulgaria": "BG", "United States": "US", "Cyprus": "CY", "China": "CN", "Poland": "PL", "Malta": "MT",
-             "Sweden": "SE", "United Kingdom": "GB", "Australia": "AU"}
+             "Sweden": "SE", "United Kingdom": "GB", "Australia": "AU", "Greece": "GR", "Iceland": "IS", "Czech Republic": "CZ", "Hungary": "HU",
+             "Slovakia": "SK", "Slovenia": "SI", "Lithuania": "LT", "Latvia": "LV", "Estonia": "EE"}
 NICHT_OECD = {"BG": "Bulgaria", "CY": "Cyprus", "CN": "China", "MT": "Malta"}   # Sitzländer außerhalb der OECD, damit domicile gesetzt werden kann
+LAND_ISO2.update({"Canada": "CA", "Mexico": "MX", "Chile": "CL", "Turkey": "TR", "Israel": "IL"})   # SEC-Melder (sec_fpi_pilot.py)
 GRUPPEN_EBENEN = ("konzern", "gruppe", "institutsgruppe")
 
 

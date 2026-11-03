@@ -1,0 +1,9 @@
+name,isin,lei,ticker,branche,bank,land,bestand_id
+AS Tallinna Sadam,,25490093MDYISEP1Y539,,transport-logistik,nein,EE,
+AS Tallinna Vesi,,5493000M6TVS2X0KWC97,,energie-versorger,nein,EE,
+AS Tallink Grupp,,529900QRMWAKKR3L9W75,,transport-logistik,nein,EE,
+AS LHV Group,,529900JG015JC10LED24,,banken,ja,EE,
+AS Tallinna Kaubamaja Grupp,,529900785KF1K0EEW940,,handel-konsum,nein,EE,
+Nordecon AS,,48510000D8HSLK854I81,,industrie,nein,EE,
+AS Inbank,,2138005M92IEIQVEL297,,banken,ja,EE,
+Coop Pank AS,,549300EHNXQVOI120S55,,banken,ja,EE,

@@ -1,6 +1,6 @@
 # Unternehmen-Tabelle (zusammengeführt)
 
-Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **32.610 Unternehmen** (davon 3.712 neue japanische Zeilen aus der JPX-Liste, `skripte/japan_jpx.py`, ohne ISIN; davon 2.785 neue indische Zeilen aus den BSE-Listen Equity.csv/EQT0.csv und der NSE-Liste EQUITY_L.csv, `skripte/indien_bse_nse.py`; vorher 26.130, sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`). 17 Namenszeilen mit den ESEF-Piloten zusammengelegt (`bereinigung_protokoll_esef.csv`, `bereinigung_protokoll_esef_2.csv`).
+Eine Tabelle für alle Unternehmen aus den Länderlisten, Börsenlisten und den Repo-Stammdaten. Stand 02.11.2026: **32.607 Unternehmen** (davon 3.712 neue japanische Zeilen aus der JPX-Liste, `skripte/japan_jpx.py`, ohne ISIN; davon 2.785 neue indische Zeilen aus den BSE-Listen Equity.csv/EQT0.csv und der NSE-Liste EQUITY_L.csv, `skripte/indien_bse_nse.py`; vorher 26.130, sieben Namenszeilen mit ESEF-Pilot zusammengelegt, siehe `bereinigung_protokoll_esef.csv`). 17 Namenszeilen mit den ESEF-Piloten zusammengelegt (`bereinigung_protokoll_esef.csv`, `bereinigung_protokoll_esef_2.csv`), weitere 3 mit den ESEF-Piloten GB, GR, SI, LT, LV, EE, IS, LU, HU, SK, CZ (`bereinigung_protokoll_esef_3.csv`, `skripte/esef_zusammenlegen_3.py`).
 
 | Datei | Inhalt |
 |---|---|

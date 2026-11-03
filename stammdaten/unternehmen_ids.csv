@@ -43,7 +43,7 @@ U000041,AMG Critical Materials N.V.,N.V.,industrie,,,Amsterdam,Netherlands,börs
 U000042,AnchorCore SE,SE,software-it,,,Luxembourg City,Luxembourg,börsennotiert,LU2358378979,,,LRND.DE,anchorcore-se,Börse,,
 U000043,Aquamondi AG,AG,finanzdienstleister,,,Munich,Germany,börsennotiert,DE000A0KF6W7,,,APQ.DU,aquamondi-ag,Börse,,
 U000044,ARI Motors Industries SE,SE,automobil,,,,Germany,börsennotiert,DE000A3D6Q45,,,ARI.F,ari-motors-industries-se,Börse,,
-U000045,Aroundtown SA,,immobilien,,,Luxembourg,Cyprus,börsennotiert,LU1673108939,,,AT1.DE,aroundtown-sa,Börse,,
+U000045,Aroundtown SA,,immobilien,,,Luxembourg,Luxembourg,börsennotiert,LU1673108939,,529900H4DWG3KWMBMQ39,AT1.DE,aroundtown-sa,Börse,,
 U000046,artec technologies AG,AG,software-it,,,Diepholz,Germany,börsennotiert,DE0005209589,,,A6T.DE,artec-technologies-ag,Börse,,
 U000047,A.S. Création Tapeten AG,AG,handel-konsum,,,Gummersbach,Germany,börsennotiert,DE000A1TNNN5,,,ACWN.DE,a-s-cr-ation-tapeten-ag,Börse,,
 U000048,ASTA Energy Solutions AG,AG,industrie,,,Wiener Neustadt,Austria,börsennotiert,AT100ASTA001,,,1AST.DE,asta-energy-solutions-ag,Börse,,
@@ -127,7 +127,7 @@ U000125,Continental Aktiengesellschaft,AG,automobil,,,Hanover,Germany,börsennot
 U000126,Coreo AG,AG,industrie,,,Frankfurt am Main,Germany,börsennotiert,DE000A40KYB8,,,COR.F,coreo-ag,Börse,,
 U000127,CORESTATE Capital Holding S.A.,S.A.,immobilien,,,Luxembourg City,Luxembourg,börsennotiert,LU1296758029,,,CCAP.DE,corestate-capital-holding-s-a,Börse,,
 U000128,Covestro AG,AG,chemie-rohstoffe,,,Leverkusen,Germany,börsennotiert,DE0006062144,,,1COV.DE,covestro-ag,Börse,,
-U000129,CPI Property Group SA,,immobilien,,,,Luxembourg,börsennotiert,LU0251710041,,,O5G.DU,cpi-property-group-sa,Börse,,
+U000129,CPI Property Group SA,,immobilien,,,,Luxembourg,börsennotiert,LU0251710041,,222100CO2ZOTEPGJO223,O5G.DU,cpi-property-group-sa,Börse,,
 U000130,CR Energy AG,AG,immobilien,,,Kleinmachnow,Germany,börsennotiert,DE000A2GS625,,,CRZK.DE,cr-energy-ag,Börse,,
 U000131,CTS Eventim AG & Co. KGaA,AG & Co. KGaA,telekom-medien,,,Hamburg,Germany,börsennotiert,DE0005470306,,,EVD.DE,cts-eventim-ag-und-co-kgaa,Börse,,
 U000132,Cyan AG,AG,software-it,,,,Germany,börsennotiert,DE000A2E4SV8,,,CYR.DU,cyan-ag,Börse,,
@@ -247,7 +247,7 @@ U000245,Gerresheimer AG,AG,pharma-gesundheit,,,Düsseldorf,Germany,börsennotier
 U000246,Gesco SE,SE,industrie,,,Wuppertal,Germany,börsennotiert,DE000A1K0201,,,GSC1.DE,gesco-se,Börse,,
 U000247,GFT Technologies SE,SE,software-it,,,Stuttgart,Germany,börsennotiert,DE0005800601,,,GFT.DE,gft-technologies-se,Börse,,
 U000248,Gigaset AG,AG,technologie,,,,Germany,börsennotiert,DE0005156004,,,GGS.HM,gigaset-ag,Börse,,
-U000249,Global Fashion Group S.A.,S.A.,handel-konsum,,,Senningerberg,Luxembourg,börsennotiert,LU2010095458,,,GFG.DE,global-fashion-group-s-a,Börse,,
+U000249,Global Fashion Group S.A.,S.A.,handel-konsum,,,Senningerberg,Luxembourg,börsennotiert,LU2010095458,,5493001035L29EQRO222,GFG.DE,global-fashion-group-s-a,Börse,,
 U000250,GLS Gemeinschaftsbank eG,eG,banken,Genossenschaftsbanken,Top 40,Bochum,Germany,nicht börsennotiert,,,52990026HQOTT4AJP655,,gls-gemeinschaftsbank-eg,Bank,,
 U000251,Going Public Media AG,AG,telekom-medien,,,Munich,Germany,börsennotiert,DE000A40KXC8,,,G6P0.DE,going-public-media-ag,Börse,,
 U000252,Goldman Sachs Bank Europe SE,SE,banken,Private Banken,EBA-Hub,Frankfurt am Main,Germany,nicht börsennotiert,,,8IBZUGJ7JPLH368JE346,,goldman-sachs-bank-europe-se,Bank,,
@@ -506,7 +506,7 @@ U000504,Rigsave S.P.A.,,finanzdienstleister,,,Brescia,Italy,börsennotiert,IT000
 U000505,Ringmetall SE,SE,industrie,,,,Germany,börsennotiert,DE000A3E5E55,,,HP3.SG,ringmetall-se,Börse,,
 U000506,Rostra AG,AG,finanzdienstleister,,,Düsseldorf,Germany,börsennotiert,DE000A3MQRK6,,,3330.DE,rostra-ag,Börse,,
 U000507,R. STAHL AG,AG,industrie,,,Waldenburg,Germany,börsennotiert,DE000A1PHBB5,,,RSL2.DE,r-stahl-ag,Börse,,
-U000508,RTL Group S.A.,S.A.,telekom-medien,,,Luxembourg,Luxembourg,börsennotiert,LU0061462528,,,RRTL.DE,rtl-group-s-a,Börse,,
+U000508,RTL Group S.A.,S.A.,telekom-medien,,,Luxembourg,Luxembourg,börsennotiert,LU0061462528,,5493000C8J3C3SZYS040,RRTL.DE,rtl-group-s-a,Börse,,
 U000509,Rubean AG,AG,software-it,,,Munich,Germany,börsennotiert,DE0005120802,,,R1B.DE,rubean-ag,Börse,,
 U000510,RWE Aktiengesellschaft,AG,energie-versorger,,,Essen,Germany,börsennotiert,DE0007037129,,,RWE.DE,rwe-aktiengesellschaft,Börse,,
 U000511,SAF-Holland SE,SE,automobil,,,Bessenbach,Germany,börsennotiert,DE000SAFH001,,,SFQ.DE,saf-holland-se,Börse,,
@@ -787,7 +787,7 @@ U000785,AL SYDBANK,,banken,,,,Denmark,börsennotiert,,,,,,Geschäftsberichte-Tab
 U000786,AKER BP,,energie,,,,Norway,börsennotiert,NO0010345853,,549300NFTY73920OYK69,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000787,ALK-ABELLO B,,sonstige,,,,Denmark,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000788,ALFA LAVAL,,industrie,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000789,ALLEGRO.EU,,handel-konsum,,,,Poland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000789,ALLEGRO.EU,,handel-konsum,,,,Luxembourg,börsennotiert,,,222100VRLXV3FPMG4982,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000790,ALCON,,sonstige,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000791,ALLREAL HLDG,,immobilien,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000792,ALPHA BANK,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -799,7 +799,7 @@ U000797,ANDRITZ,,industrie,,,,Austria,börsennotiert,AT0000730007,,549300VZKC61I
 U000798,ANGLO AMERICAN,,chemie-rohstoffe,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000799,ARCADIS,,industrie,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000800,ANHEUSER-BUSCH INBEV,,handel-konsum,,,,Belgium,börsennotiert,BE0974293251,,5493008H3828EMEXB082,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000801,ARCELORMITTAL,,chemie-rohstoffe,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000801,ARCELORMITTAL,,chemie-rohstoffe,,,,Luxembourg,börsennotiert,,,2EULGUTUI56JI9SAL165,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000802,ANTOFAGASTA,,chemie-rohstoffe,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000803,ARGENX,,sonstige,,,,Belgium,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000804,ASM INTERNATIONAL,,technologie,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -811,7 +811,7 @@ U000809,ASSA ABLOY,,industrie,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-T
 U000810,ASSICURAZIONI GENERALI,,versicherungen,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000811,ATLAS COPCO A,,industrie,,,,Sweden,börsennotiert,SE0017486889,,213800T8PC8Q4FYJZR07,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000812,ASSOCIATED BRITISH FOODS,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000813,ASTRAZENECA,,sonstige,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000813,ASTRAZENECA,,sonstige,,,,United Kingdom,börsennotiert,GB0009895292,,PY6ZZQWO2IZFZC3IOL08,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000814,AT&S AUSTRIA TECH.&SYSTEMTECH,,technologie,,,,Austria,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000815,AUTOTRADER GROUP,,technologie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000816,AVANZA BANK HLDG,,banken,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -823,14 +823,14 @@ U000821,AXA,,versicherungen,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tab
 U000822,AZIMUT HLDG,,finanzdienstleister,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000823,BALFOUR BEATTY,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000824,BAM GROEP KON.,,industrie,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000825,BAE SYSTEMS,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000825,BAE SYSTEMS,,industrie,,,,United Kingdom,börsennotiert,GB0002634946,,8SVCSVKSGDWMW2QHOH83,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000826,BABCOCK INTERNATIONAL,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000827,BANCA MONTE DEI PASCHI,,banken,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000828,BANCA MEDIOLANUM,,finanzdienstleister,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000829,BANCO BPM,,banken,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000830,BANK MILLENNIUM,,banken,,,,Poland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000831,BANK OF IRELAND GROUP,,banken,,,,Ireland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000832,BARCLAYS,,banken,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000832,BARCLAYS,,banken,,,,United Kingdom,börsennotiert,GB0031348658,,213800LBQA1Y9L22JB70,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000833,BANKINTER,,banken,,,,Spain,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000834,BANQUE CANTONALE VAUDOISE,,banken,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000835,BCA GENERALI,,banken,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -856,7 +856,7 @@ U000854,BKW,,energie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabel
 U000855,BOUYGUES,,industrie,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000856,BPER Banca,,banken,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000857,BRIDGEPOINT GROUP,,finanzdienstleister,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000858,BP,,energie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000858,BP,,energie,,,,United Kingdom,börsennotiert,GB0007980591,,213800LH1BZH3DI6G760,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000859,BRITISH AMERICAN TOBACCO,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000860,BT GRP,,telekom-medien,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000861,BRITISH LAND COMPANY,,immobilien,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -879,7 +879,7 @@ U000877,CENTRICA,,energie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 2
 U000878,COCA-COLA HBC,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000879,CONVATEC PLC,,sonstige,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000880,COMET HOLDINGS 'R',,technologie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000881,COMPASS GRP,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000881,COMPASS GRP,,handel-konsum,,,,United Kingdom,börsennotiert,GB00BD6K4575,,2138008M6MH9OZ6U2T68,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000882,COMPUTACENTER,,technologie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000883,CRANSWICK,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000884,COVIVIO,,immobilien,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -899,7 +899,7 @@ U000897,DERWENT LONDON,,immobilien,,,,UK,börsennotiert,,,,,,Geschäftsberichte-
 U000898,DCC ENERGY,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000899,DINO POLSKA SA,,handel-konsum,,,,Poland,börsennotiert,PLDINPL00011,,259400H4L81SMPRTW956,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000900,DKSH HOLDING,,industrie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000901,DIAGEO,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000901,DIAGEO,,handel-konsum,,,,United Kingdom,börsennotiert,GB0002374006,,213800ZVIELEA55JMJ32,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000902,DIPLOMA,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000903,DSM FIRMENICH AG,,handel-konsum,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000904,DNB BANK,,banken,,,,Norway,börsennotiert,NO0010161896,,549300GKFG0RYRRQ1414,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -930,7 +930,7 @@ U000928,ESSILORLUXOTTICA,,sonstige,,,,France,börsennotiert,,,,,,Geschäftsberic
 U000929,ERSTE BANK POLSKA,,banken,,,,Poland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000930,ERSTE GROUP BANK,,banken,,,,Austria,börsennotiert,AT0000652011,,PQOH26KWDF7CG10L6792,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000931,EVOLUTION,,handel-konsum,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000932,EUROBANK,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000932,EUROBANK,,sonstige,,,,Greece,börsennotiert,,,JEUVK5RWVJEN8W0C9M24,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000933,EURONEXT,,finanzdienstleister,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000934,EUROFINS SCIENTIFIC,,sonstige,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000935,EXOR NV,,finanzdienstleister,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -955,7 +955,7 @@ U000953,GECINA,,immobilien,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabe
 U000954,GAMES WORKSHOP,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000955,GENMAB,,sonstige,,,,Denmark,börsennotiert,DK0010272202,,529900MTJPDPE4MHJ122,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000956,GETINGE B,,sonstige,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000957,GEK TERNA,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000957,GEK TERNA,,sonstige,,,,Greece,börsennotiert,,,2138003TO2MTRHWVP686,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000958,GEORG FISCHER,,industrie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000959,Getlink,,industrie,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000960,GLANBIA,,handel-konsum,,,,Ireland,börsennotiert,IE0000669501,,635400SRMCBHVMSKJS84,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -968,7 +968,7 @@ U000966,GRP BRUXELLES LAMBERT,,finanzdienstleister,,,,Belgium,börsennotiert,BE0
 U000967,HALMA,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000968,HALEON,,sonstige,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000969,HEINEKEN,,handel-konsum,,,,Netherlands,börsennotiert,NL0000009165,,724500K5PTPSST86UQ23,HEIA,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000970,GSK,,sonstige,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000970,GSK,,sonstige,,,,United Kingdom,börsennotiert,GB00BN7SWP63,,5493000HZTVUYLO1D793,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000971,HELVETIA BALOISE HLDG,,versicherungen,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000972,HENNES & MAURITZ B,,handel-konsum,,,,Sweden,börsennotiert,SE0000106270,,529900O5RR7R39FRDM42,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000973,HERA,,energie,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -983,7 +983,7 @@ U000981,HISCOX,,versicherungen,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabe
 U000982,Holcim,,industrie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000983,HUHTAMAKI,,industrie,,,,Finland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000984,HUBER+SUHNER 'R',,telekom-medien,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U000985,HSBC,,banken,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U000985,HSBC,,banken,,,,United Kingdom,börsennotiert,GB0005405286,,MLU0ZO3ML4LN2LL2TL39,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000986,HOWDEN JOINERY GRP,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000987,IBERDROLA,,energie,,,,Spain,börsennotiert,ES0144580Y14,,5QK37QC7NWOJ8D7WVQ45,IBE,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U000988,IG GRP HLDG,,finanzdienstleister,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1004,7 +1004,7 @@ U001002,INFICON,,industrie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte
 U001003,INTERPUMP GRP,,industrie,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001004,INTERTEK GRP,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001005,INTERCONTINENTAL HOTELS GRP,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001006,INPOST,,industrie,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001006,INPOST,,industrie,,,,Luxembourg,börsennotiert,,,2221003M23QLERR89585,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001007,INTESA SANPAOLO,,banken,,,,Italy,börsennotiert,IT0000072618,,2W8N8UU78PMDQKZENC08,ISP,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001008,IPSEN,,sonstige,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001009,INVESTOR B,,finanzdienstleister,,,,Sweden,börsennotiert,SE0015811963,,549300VEBQPHRZBKUX38,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1013,7 +1013,7 @@ U001011,IVECO GROUP,,industrie,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-T
 U001012,ITALGAS,,energie,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001013,ISS AS,,industrie,,,,Denmark,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001014,ITV,,sonstige,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001015,JUMBO,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001015,JUMBO,,sonstige,,,,Greece,börsennotiert,GRS282183003,,549300TGIVUUMY40MZ05,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001016,JERONIMO MARTINS,,handel-konsum,,,,Portugal,börsennotiert,PTJMT0AE0001,,259400A8SZP10GB5IB19,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001017,JOHNSON MATTHEY,,chemie-rohstoffe,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001018,JULIUS BAER GRP,,finanzdienstleister,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1042,12 +1042,12 @@ U001040,LEGAL & GENERAL GRP,,versicherungen,,,,UK,börsennotiert,,,,,,Geschäfts
 U001041,LEONARDO,,industrie,,,,Italy,börsennotiert,IT0003856405,,529900X4EEX1U9LN3U39,LDO,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001042,LEGRAND,,industrie,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001043,LION FINANCE GROUP,,banken,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001044,LOGITECH INTERNATIONAL,,technologie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001045,LLOYDS BANKING GRP,,banken,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001044,LOGITECH INTERNATIONAL,,technologie,,,,Switzerland,börsennotiert,,,549300SN6PRK6IJJC215,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001045,LLOYDS BANKING GRP,,banken,,,,United Kingdom,börsennotiert,GB0008706128,,549300PPXHEU2JF0AM85,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001046,LINDT & SPRUENGLI P,,handel-konsum,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001047,LONDONMETRIC PROPERTY PLC,,immobilien,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001048,LOOMIS,,industrie,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001049,LONDON STOCK EXCHANGE,,finanzdienstleister,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001049,LONDON STOCK EXCHANGE,,finanzdienstleister,,,,United Kingdom,börsennotiert,GB00B0SWJX34,,213800QAUUUP6I445N30,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001050,LONZA,,sonstige,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001051,LUNDBERGFORETAGEN B,,finanzdienstleister,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001052,LOTTOMATICA GROUP,,handel-konsum,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1061,7 +1061,7 @@ U001059,MELROSE INDUSTRIES,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberich
 U001060,MAPFRE,,versicherungen,,,,Spain,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001061,MBANK,,banken,,,,Poland,börsennotiert,PLBRE0000012,,259400DZXF7UJKK2AY35,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001062,MARKS & SPENCER GRP,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001063,METLEN ENERGY & METALS,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001063,METLEN ENERGY & METALS,,sonstige,,,,Greece,börsennotiert,GRS393503008,,213800KT8MEUJEJ2KW41,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001064,MERLIN PROPERTIES SOCIMI,,immobilien,,,,Spain,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001065,MICHELIN,,automobil,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001066,METSO,,industrie,,,,Finland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1069,14 +1069,14 @@ U001067,MONCLER,,handel-konsum,,,,Italy,börsennotiert,IT0004965148,,815600EBD7F
 U001068,MOBIMO HLDG,,immobilien,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001069,MITIE GROUP,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001070,MONDI,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001071,NATIONAL BANK OF GREECE,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001072,MOTOR OIL (HELLAS),,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001071,NATIONAL BANK OF GREECE,,sonstige,,,,Greece,börsennotiert,GRS003003035,,5UMCZOEYKCVFAW8ZLO05,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001072,MOTOR OIL (HELLAS),,sonstige,,,,Greece,börsennotiert,GRS426003000,,213800U3Y9UL7Y4QVM11,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001073,MYCRONIC,,technologie,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001074,MOWI,,handel-konsum,,,,Norway,börsennotiert,NO0003054108,,549300W1OGQF5LZIH349,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001075,NATWEST GROUP,,banken,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001075,NATWEST GROUP,,banken,,,,United Kingdom,börsennotiert,GB00BM8PJY71,,2138005O9XJIJN4JPN90,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001076,Naturgy Energy Group,,energie,,,,Spain,börsennotiert,ES0116870314,,TL2N6M87CW970S5SV098,NTGY,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001077,NESTE,,energie,,,,Finland,börsennotiert,,,5493009GY1X8GQ66AM14,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001078,NATIONAL GRID,,energie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001078,NATIONAL GRID,,energie,,,,United Kingdom,börsennotiert,GB00BDR05C01,,8R95QZMKZLJX5Q2XR704,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001079,NEXT,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001080,NEXI SPA,,industrie,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001081,NESTLE,,handel-konsum,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1091,7 +1091,7 @@ U001089,NORDNET,,finanzdienstleister,,,,Sweden,börsennotiert,,,,,,Geschäftsber
 U001090,NORDIC SEMICONDUCTOR,,technologie,,,,Norway,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001091,NOVONESIS,,sonstige,,,,Denmark,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001092,OCTAVE INTELLIGENCE SDR,,technologie,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001093,NOVARTIS,,sonstige,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001093,NOVARTIS,,sonstige,,,,Switzerland,börsennotiert,,,5493007HIVTX6SY6XD66,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001094,NOVO NORDISK B,,sonstige,,,,Denmark,börsennotiert,DK0062498333,,549300DAQ1CVT6CXN342,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001095,ORKLA,,handel-konsum,,,,Norway,börsennotiert,NO0003733800,,549300PZS8G8RG6RVZ52,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001096,ORION B,,sonstige,,,,Finland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1118,7 +1118,7 @@ U001116,PRUDENTIAL,,versicherungen,,,,UK,börsennotiert,,,,,,Geschäftsberichte-
 U001117,PRYSMIAN,,industrie,,,,Italy,börsennotiert,IT0004176001,,529900X0H1IO3RS1A464,PRY,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001118,Prosus,,technologie,,,,Netherlands,börsennotiert,NL0013654783,,635400Z5LQ5F9OLVT688,PRX,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001119,PSP SWISS PROPERTY,,immobilien,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001120,PUBLIC POWER,,sonstige,,,,Greece,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001120,PUBLIC POWER,,sonstige,,,,Greece,börsennotiert,GRS434003000,,213800T9Y5XCOVRZ4Y57,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001121,PUIG BRANDS B,,handel-konsum,,,,Spain,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001122,PUBLICIS GRP,,sonstige,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001123,PZU GROUP,,versicherungen,,,,Poland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1138,7 +1138,7 @@ U001136,RINGKJOBING LANDBOBANK,,banken,,,,Denmark,börsennotiert,,,,,,Geschäfts
 U001137,REXEL,,industrie,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001138,REPSOL,,energie,,,,Spain,börsennotiert,ES0173516115,,BSYCX13Y0NOTV14V9N85,REP,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001139,ROCHE PS,,sonstige,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001140,RIO TINTO,,chemie-rohstoffe,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001140,RIO TINTO,,chemie-rohstoffe,,,,United Kingdom,börsennotiert,GB0007188757,,213800YOEO5OQ72G2R82,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001141,ROCKWOOL B,,industrie,,,,Denmark,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001142,ROLLS ROYCE HLDG,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001143,RS Group,,industrie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1175,7 +1175,7 @@ U001173,SFS GROUP,,industrie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberich
 U001174,SEVERN TRENT,,energie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001175,SIEGFRIED 'R',,sonstige,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001176,SIG GROUP AG,,industrie,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001177,SHELL,,energie,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001177,SHELL,,energie,,,,United Kingdom,börsennotiert,GB00BP6MXD84,,21380068P1DRHMJ8KU70,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001178,SHAFTESBURY CAPITAL,,immobilien,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001179,SKANSKA B,,industrie,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001180,SKF B,,chemie-rohstoffe,,,,Sweden,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1231,8 +1231,8 @@ U001229,TELENOR,,telekom-medien,,,,Norway,börsennotiert,NO0010063308,,549300IM1
 U001230,TELIA COMPANY,,telekom-medien,,,,Sweden,börsennotiert,SE0000667925,,213800FSR9RNDUOTXO25,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001231,TGS ASA,,energie,,,,Norway,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001232,TERNA,,energie,,,,Italy,börsennotiert,IT0003242622,,8156009E94ED54DE7C31,TRN,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001233,TESCO,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001234,TENARIS,,energie,,,,Italy,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001233,TESCO,,handel-konsum,,,,United Kingdom,börsennotiert,GB00BLGZ9862,,2138002P5RNKC5W2JZ46,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001234,TENARIS,,energie,,,,Luxembourg,börsennotiert,,,549300Y7C05BKC4HZB40,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001235,TotalEnergies SE,,energie,,,,France,börsennotiert,FR0000120271,,529900S21EQ1BO4ESM68,TTE,,Geschäftsberichte-Tabelle 28.10.2026,,"STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren. | Zusammengeführt mit U001285 (ESEF-Pilot und Europa-Liste führten dasselbe Rechtssubjekt (gleiche ISIN/LEI laut GLEIF), Abgleich 02.11.2026)"
 U001236,THALES,,industrie,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001237,TOMRA SYSTEMS,,industrie,,,,Norway,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1244,7 +1244,7 @@ U001242,TRITAX BIG BOX REIT,,immobilien,,,,UK,börsennotiert,,,,,,Geschäftsberi
 U001243,UMICORE,,chemie-rohstoffe,,,,Belgium,börsennotiert,BE0974320526,,529900F3AIQECS8ZSV61,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001244,UCB,,sonstige,,,,Belgium,börsennotiert,BE0003739530,,2138008J191VLSGY5A09,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001245,UMG,,sonstige,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001246,UBS GROUP,,finanzdienstleister,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001246,UBS GROUP,,finanzdienstleister,,,,Switzerland,börsennotiert,,,549300SZJ9VS8SGXAN81,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001247,UNILEVER PLC,,handel-konsum,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001248,UNIBAIL-RODAMCO-WESTFIELD,,immobilien,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001249,UNICAJA BANCO S.A.,,banken,,,,Spain,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1267,7 +1267,7 @@ U001265,VINCI,,industrie,,,,France,börsennotiert,,,,,,Geschäftsberichte-Tabell
 U001266,VOLVO B,,industrie,,,,Sweden,börsennotiert,SE0000115446,,549300HGV012CNC8JD22,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001267,VOPAK,,energie,,,,Netherlands,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001268,VOESTALPINE,,chemie-rohstoffe,,,,Austria,börsennotiert,AT0000937503,,529900ZAXBMQDIWPNB72,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
-U001269,VODAFONE GRP,,telekom-medien,,,,UK,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
+U001269,VODAFONE GRP,,telekom-medien,,,,United Kingdom,börsennotiert,GB00BH4HKS39,,213800TB53ELEUKM7Q61,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001270,VZ HOLDING 'N',,finanzdienstleister,,,,Switzerland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001271,WDP,,immobilien,,,,Belgium,börsennotiert,BE0974349814,,549300HWDYC5JXC85138,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
 U001272,WARTSILA,,industrie,,,,Finland,börsennotiert,,,,,,Geschäftsberichte-Tabelle 28.10.2026,,STOXX-Länderklassifikation; Identifikatoren noch zu verifizieren.
@@ -1303,3 +1303,108 @@ U001301,"Ren - Redes Energéticas Nacionais, Sgps, S.A.",,energie-versorger,,,,P
 U001302,"Corticeira Amorim, Sgps, S.A.",,industrie,,,,Portugal,börsennotiert,PTCOR0AE0006,,213800J5M11TDEP3LQ76,,,ESEF-Pilot,,ESEF-Pilot Portugal
 U001303,Pge Polska Grupa Energetyczna Spółka Akcyjna,,energie-versorger,,,,Poland,börsennotiert,PLPGER000010,,259400MP9VXR0E69MJ89,,,ESEF-Pilot,,ESEF-Pilot Poland
 U001304,Orange Polska Spółka Akcyjna,,telekom-medien,,,,Poland,börsennotiert,PLTLKPL00017,,259400TOMPUOLS65II22,,,ESEF-Pilot,,ESEF-Pilot Poland
+U001305,Hellenic Telecommunications Organization S.A. (OTE),,telekom-medien,,,,Greece,börsennotiert,GRS260333000,,ELPUFM0XZRZO4LFXW404,,,ESEF-Pilot,,ESEF-Pilot Greece
+U001306,HELLENiQ ENERGY Holdings S.A.,,energie,,,,Greece,börsennotiert,GRS298343005,,213800YUBJMZYR1SNG35,,,ESEF-Pilot,,ESEF-Pilot Greece
+U001307,Athens International Airport S.A.,,transport-logistik,,,,Greece,börsennotiert,GRS495003006,,213800VI8OH5EJM18L21,,,ESEF-Pilot,,ESEF-Pilot Greece
+U001308,"Krka, d.d.",,pharma-gesundheit,,,,Slovenia,börsennotiert,SI0031102120,,549300H9RLRTRTLRUZ73,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001309,Nova Ljubljanska banka d.d.,,banken,,,,Slovenia,börsennotiert,SI0021117344,,5493001BABFV7P27OW30,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001310,Petrol d.d.,,energie,,,,Slovenia,börsennotiert,SI0031102153,,549300CAAOUTT4QDOZ16,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001311,"Zavarovalnica Triglav, d.d.",,versicherungen,,,,Slovenia,börsennotiert,SI0021111651,,549300KGI78MKHO38N42,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001312,Luka Koper d.d.,,transport-logistik,,,,Slovenia,börsennotiert,,,549300H1GO5N7BK34P37,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001313,"Telekom Slovenije, d.d.",,telekom-medien,,,,Slovenia,börsennotiert,,,5493003GE7UJGPQAMN79,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001314,"Pozavarovalnica Sava, d.d.",,versicherungen,,,,Slovenia,börsennotiert,SI0021110513,,549300P6F1BDSFSW5T72,,,ESEF-Pilot,,ESEF-Pilot Slovenia
+U001315,AB Ignitis Grupė,,energie-versorger,,,,Lithuania,börsennotiert,LT0000115768,,5493005RZJHJT5PNHY10,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001316,AB Artea bankas,,banken,,,,Lithuania,börsennotiert,LT0000102253,,549300TK038P6EV4YU51,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001317,Apranga APB,,handel-konsum,,,,Lithuania,börsennotiert,LT0000102337,,529900XX7EU9F4GJTY86,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001318,Rokiškio sūris AB,,handel-konsum,,,,Lithuania,börsennotiert,LT0000100372,,48510000PW42N5W74S87,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001319,"AUGA group, AB",,handel-konsum,,,,Lithuania,börsennotiert,LT0000127466,,48510000P2S3LHJPX414,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001320,AB Amber Grid,,energie-versorger,,,,Lithuania,börsennotiert,,,097900BGMP0000061061,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001321,LITGRID AB,,energie-versorger,,,,Lithuania,börsennotiert,,,529900CTIUKTEFNNH157,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001322,AB Akola group,,handel-konsum,,,,Lithuania,börsennotiert,,,529900UB9QON717IL030,,,ESEF-Pilot,,ESEF-Pilot Lithuania
+U001323,AS Latvenergo,,energie-versorger,,,,Latvia,börsennotiert,,,213800DJRB539Q1EMW75,,,ESEF-Pilot,,ESEF-Pilot Latvia
+U001324,AS DelfinGroup,,finanzdienstleister,,,,Latvia,börsennotiert,,,2138002PKHUJIMVMYB13,,,ESEF-Pilot,,ESEF-Pilot Latvia
+U001325,AS Augstsprieguma tikls,,energie-versorger,,,,Latvia,börsennotiert,,,64883LC3F12690GATG87,,,ESEF-Pilot,,ESEF-Pilot Latvia
+U001326,AS Latvijas Gaze,,energie-versorger,,,,Latvia,börsennotiert,,,097900BGMO0000055872,,,ESEF-Pilot,,ESEF-Pilot Latvia
+U001327,Citadele banka AS,,banken,,,,Latvia,börsennotiert,,,2138009Y59EAR7H1UO97,,,ESEF-Pilot,,ESEF-Pilot Latvia
+U001328,BluOr Bank AS,,banken,,,,Latvia,börsennotiert,,,54930080G2M7EJ097A27,,,ESEF-Pilot,,ESEF-Pilot Latvia
+U001329,AS Tallinna Sadam,,transport-logistik,,,,Estonia,börsennotiert,,,25490093MDYISEP1Y539,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001330,AS Tallinna Vesi,,energie-versorger,,,,Estonia,börsennotiert,,,5493000M6TVS2X0KWC97,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001331,AS Tallink Grupp,,transport-logistik,,,,Estonia,börsennotiert,,,529900QRMWAKKR3L9W75,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001332,AS LHV Group,,banken,,,,Estonia,börsennotiert,,,529900JG015JC10LED24,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001333,AS Tallinna Kaubamaja Grupp,,handel-konsum,,,,Estonia,börsennotiert,,,529900785KF1K0EEW940,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001334,Nordecon AS,,industrie,,,,Estonia,börsennotiert,,,48510000D8HSLK854I81,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001335,AS Inbank,,banken,,,,Estonia,börsennotiert,,,2138005M92IEIQVEL297,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001336,Coop Pank AS,,banken,,,,Estonia,börsennotiert,,,549300EHNXQVOI120S55,,,ESEF-Pilot,,ESEF-Pilot Estonia
+U001337,Íslandsbanki hf.,,banken,,,,Iceland,börsennotiert,,,549300PZMFIQR79Q0T97,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001338,Arion banki hf.,,banken,,,,Iceland,börsennotiert,,,RIL4VBPDB0M7Z3KXSF19,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001339,Icelandair Group hf.,,transport-logistik,,,,Iceland,börsennotiert,,,549300UMI5MBLZSXGL15,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001340,Eimskipafélag Íslands hf.,,transport-logistik,,,,Iceland,börsennotiert,,,549300IUR8Q7Y44KBL02,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001341,Síminn hf.,,telekom-medien,,,,Iceland,börsennotiert,,,254900X9GQZM6UGXYF10,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001342,Brim hf.,,handel-konsum,,,,Iceland,börsennotiert,,,635400YXSJKSF3H3CB31,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001343,Hagar hf.,,handel-konsum,,,,Iceland,börsennotiert,,,635400TICHH43JJTNP54,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001344,Festi hf.,,handel-konsum,,,,Iceland,börsennotiert,,,5493005OLOCYXGTC7E83,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001345,Sjóvá-Almennar tryggingar hf.,,versicherungen,,,,Iceland,börsennotiert,,,213800R3IXBON2LBEI63,,,ESEF-Pilot,,ESEF-Pilot Iceland
+U001346,SES S.A.,,telekom-medien,,,,Luxembourg,börsennotiert,,,5493008JPA4HYMH1HX51,,,ESEF-Pilot,,ESEF-Pilot Luxembourg
+U001347,Millicom International Cellular S.A.,,telekom-medien,,,,Luxembourg,börsennotiert,,,549300CTHC1CP86P2G96,,,ESEF-Pilot,,ESEF-Pilot Luxembourg
+U001348,Luxempart,,finanzdienstleister,,,,Luxembourg,börsennotiert,,,222100WPYK3JKB5F4D19,,,ESEF-Pilot,,ESEF-Pilot Luxembourg
+U001349,Alvotech,,pharma-gesundheit,,,,Luxembourg,börsennotiert,,,222100DCZBOWV5DZ8372,,,ESEF-Pilot,,ESEF-Pilot Luxembourg
+U001350,MOL Magyar Olaj- és Gázipari Nyrt.,,energie,,,,Hungary,börsennotiert,,,213800R83KX5FQFGXS67,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001351,Magyar Telekom Nyrt.,,telekom-medien,,,,Hungary,börsennotiert,,,529900CA1YDA41X76751,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001352,Richter Gedeon Nyrt.,,pharma-gesundheit,,,,Hungary,börsennotiert,,,549300J6ZJW5IH4WEE46,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001353,OPUS GLOBAL Nyrt.,,finanzdienstleister,,,,Hungary,börsennotiert,,,529900RAN1AMTYFPCG62,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001354,ALTEO Nyrt.,,energie-versorger,,,,Hungary,börsennotiert,,,529900PHL3J3ZRBC2J44,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001355,PannErgy Nyrt.,,energie-versorger,,,,Hungary,börsennotiert,,,529900D05TGFDEQACZ88,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001356,AutoWallis Nyrt.,,handel-konsum,,,,Hungary,börsennotiert,,,529900QO6EHRM3EZL070,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001357,DUNA HOUSE HOLDING Nyrt.,,immobilien,,,,Hungary,börsennotiert,,,529900H88CH9J67U0764,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001358,ANY Biztonsági Nyomda Nyrt.,,industrie,,,,Hungary,börsennotiert,,,529900YYR637SPJ0JR59,,,ESEF-Pilot,,ESEF-Pilot Hungary
+U001359,"Tatra banka, a.s.",,banken,,,,Slovakia,börsennotiert,,,3157002JBFAI478MD587,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001360,"Československá obchodná banka, a.s.",,banken,,,,Slovakia,börsennotiert,,,52990096Q5LMCH1WU462,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001361,"Slovenská sporiteľňa, a.s.",,banken,,,,Slovakia,börsennotiert,,,549300S2T3FWVVXWJI89,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001362,"Všeobecná úverová banka, a.s.",,banken,,,,Slovakia,börsennotiert,,,549300JB1P61FUTPEZ75,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001363,"365.bank, a. s.",,banken,,,,Slovakia,börsennotiert,,,315700PLTAXHBHZP5J02,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001364,"Tatry mountain resorts, a.s.",,handel-konsum,,,,Slovakia,börsennotiert,,,315700YHD1JR6VB1BA90,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001365,"JOJ Media House, a. s.",,telekom-medien,,,,Slovakia,börsennotiert,,,315700XP27N8YWW3D584,,,ESEF-Pilot,,ESEF-Pilot Slovakia
+U001366,"MONETA Money Bank, a.s.",,banken,,,,Czech Republic,börsennotiert,CZ0008040318,,I6USJ58BDV2BO5KP3C31,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001367,"Komerční banka, a.s.",,banken,,,,Czech Republic,börsennotiert,CZ0008019106,,IYKCAVNFR8QGF00HV840,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001368,"ČEZ, a. s.",,energie-versorger,,,,Czech Republic,börsennotiert,CZ0005112300,,529900S5R9YHJHYKKG94,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001369,Raiffeisenbank a.s.,,banken,,,,Czech Republic,börsennotiert,,,31570010000000004460,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001370,O2 Czech Republic a.s.,,telekom-medien,,,,Czech Republic,börsennotiert,CZ0009093209,,3157004ICDH3MRKW7534,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001371,Philip Morris ČR a.s.,,handel-konsum,,,,Czech Republic,börsennotiert,,,315700LNPHNXCMNLQC73,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001372,CZECHOSLOVAK GROUP a.s.,,industrie,,,,Czech Republic,börsennotiert,,,315700SWFD7G70AVG768,,,ESEF-Pilot,,ESEF-Pilot Czech Republic
+U001373,On Holding AG,,handel-konsum,,,,Switzerland,börsennotiert,,,506700FB3467B9W95526,,,SEC-Pilot,,SEC CIK 0001858985
+U001374,Garmin Ltd.,,technologie,,,,Switzerland,börsennotiert,,,2549001E0HIPIJQ0W046,,,SEC-Pilot,,SEC CIK 0001121788
+U001375,CRISPR Therapeutics AG,,pharma-gesundheit,,,,Switzerland,börsennotiert,,,506700O6IRRIQLT3W370,,,SEC-Pilot,,SEC CIK 0001674416
+U001376,Royal Bank of Canada,,banken,,,,Canada,börsennotiert,,,ES7IP3U3RHIGC71XBU11,,,SEC-Pilot,,SEC CIK 0001000275
+U001377,The Toronto-Dominion Bank,,banken,,,,Canada,börsennotiert,,,PT3QB789TSUIDF371261,,,SEC-Pilot,,SEC CIK 0000947263
+U001378,Bank of Montreal,,banken,,,,Canada,börsennotiert,,,NQQ6HPCNCCU6TUTQYE16,,,SEC-Pilot,,SEC CIK 0000927971
+U001379,The Bank of Nova Scotia,,banken,,,,Canada,börsennotiert,,,L3I9ZG2KFGXZ61BMYR72,,,SEC-Pilot,,SEC CIK 0000009631
+U001380,Canadian Imperial Bank of Commerce,,banken,,,,Canada,börsennotiert,,,2IGI19DL77OX0HC3ZE78,,,SEC-Pilot,,SEC CIK 0001045520
+U001381,Canadian Natural Resources Limited,,energie,,,,Canada,börsennotiert,,,549300T15RIMIKZC5Q38,,,SEC-Pilot,,SEC CIK 0001017413
+U001382,Suncor Energy Inc.,,energie,,,,Canada,börsennotiert,,,894500XO86FKXQGPYV71,,,SEC-Pilot,,SEC CIK 0000311337
+U001383,Teck Resources Limited,,chemie-rohstoffe,,,,Canada,börsennotiert,,,T8KI5SQ2JRWHL7XY0E11,,,SEC-Pilot,,SEC CIK 0000886986
+U001384,Nutrien Ltd.,,chemie-rohstoffe,,,,Canada,börsennotiert,,,5493002QQ7GD21OWF963,,,SEC-Pilot,,SEC CIK 0001725964
+U001385,Manulife Financial Corporation,,versicherungen,,,,Canada,börsennotiert,,,5493007GBX87QOZACS27,,,SEC-Pilot,,SEC CIK 0001086888
+U001386,BHP Group Limited,,chemie-rohstoffe,,,,Australia,börsennotiert,,,WZE1WSENV6JSZFK0JC28,,,SEC-Pilot,,SEC CIK 0000811809
+U001387,Mesoblast Limited,,pharma-gesundheit,,,,Australia,börsennotiert,,,529900J5ALF3JG921927,,,SEC-Pilot,,SEC CIK 0001345099
+U001388,"América Móvil, S.A.B. de C.V.",,telekom-medien,,,,Mexico,börsennotiert,,,5493000FNR3UCEAONM59,,,SEC-Pilot,,SEC CIK 0001129137
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",,handel-konsum,,,,Mexico,börsennotiert,,,549300A8MDWDJNMLV153,,,SEC-Pilot,,SEC CIK 0001061736
+U001390,"Grupo Televisa, S.A.B.",,telekom-medien,,,,Mexico,börsennotiert,,,549300O4AF0C816ILN62,,,SEC-Pilot,,SEC CIK 0000912892
+U001391,"CEMEX, S.A.B. de C.V.",,chemie-rohstoffe,,,,Mexico,börsennotiert,,,549300RIG2CXWN6IV731,,,SEC-Pilot,,SEC CIK 0001076378
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",,handel-konsum,,,,Mexico,börsennotiert,,,5493008KEVFYPMGTXO33,,,SEC-Pilot,,SEC CIK 0000910631
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",,transport-logistik,,,,Mexico,börsennotiert,,,5299001W7JIDXCUOUC82,,,SEC-Pilot,,SEC CIK 0001123452
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",,transport-logistik,,,,Mexico,börsennotiert,,,529900HUSBARAFSXJ605,,,SEC-Pilot,,SEC CIK 0001378239
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",,transport-logistik,,,,Mexico,börsennotiert,,,4469000001BZ368XFI90,,,SEC-Pilot,,SEC CIK 0001347557
+U001396,Banco de Chile,,banken,,,,Chile,börsennotiert,,,8B4EZFY8IHJC44TT2K84,,,SEC-Pilot,,SEC CIK 0001161125
+U001397,Banco Santander-Chile,,banken,,,,Chile,börsennotiert,,,3YJP8HORPAEXJ80D6368,,,SEC-Pilot,,SEC CIK 0001027552
+U001398,LATAM Airlines Group S.A.,,transport-logistik,,,,Chile,börsennotiert,,,549300HX3UUDPEFTG707,,,SEC-Pilot,,SEC CIK 0001047716
+U001399,Enel Chile S.A.,,energie-versorger,,,,Chile,börsennotiert,,,549300YM5CWCAUVOPB53,,,SEC-Pilot,,SEC CIK 0001659939
+U001400,Compañía Cervecerías Unidas S.A.,,handel-konsum,,,,Chile,börsennotiert,,,529900BJW9B0O6LI2R39,,,SEC-Pilot,,SEC CIK 0000888746
+U001401,Turkcell İletişim Hizmetleri A.Ş.,,telekom-medien,,,,Turkey,börsennotiert,,,7890003EX1LTLS2FFL84,,,SEC-Pilot,,SEC CIK 0001071321
+U001402,Check Point Software Technologies Ltd.,,software-it,,,,Israel,börsennotiert,,,2549003ZVBH73EPNS513,,,SEC-Pilot,,SEC CIK 0001015922
+U001403,NICE Ltd.,,software-it,,,,Israel,börsennotiert,,,254900YTY4EF5Z4W0A51,,,SEC-Pilot,,SEC CIK 0001003935
+U001404,Wix.com Ltd.,,software-it,,,,Israel,börsennotiert,,,5493008P6N29Q1AG9464,,,SEC-Pilot,,SEC CIK 0001576789
+U001405,Elbit Systems Ltd.,,industrie,,,,Israel,börsennotiert,,,529900Q9CB1REUMZSS32,,,SEC-Pilot,,SEC CIK 0001027664
+U001406,Tower Semiconductor Ltd.,,technologie,,,,Israel,börsennotiert,,,54930086ZSNXZOUX0C54,,,SEC-Pilot,,SEC CIK 0000928876
+U001407,Fiverr International Ltd.,,software-it,,,,Israel,börsennotiert,,,549300Z8OREY6THCPF67,,,SEC-Pilot,,SEC CIK 0001762301
+U001408,monday.com Ltd.,,software-it,,,,Israel,börsennotiert,,,984500MDAFVD86E3B328,,,SEC-Pilot,,SEC CIK 0001845338
+U001409,ICL Group Ltd.,,chemie-rohstoffe,,,,Israel,börsennotiert,,,529900FQVQD88SHIGM04,,,SEC-Pilot,,SEC CIK 0000941221

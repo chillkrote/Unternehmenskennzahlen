@@ -77,6 +77,45 @@ Datenschicht `unternehmen.py` (liest alles ohne Codeänderung):
 
 `python3 app/kurse_historie.py` holt über yfinance (kostenlos) zehn Jahre Wochenschlusskurse für alle Ticker aus `data/unternehmen.json` und `data/markt.json` und schreibt `data/kurse_woche.json` (gemeinsame Datumsachse, je Ticker ein Array, null = keine Notiz; rund 1,5 MB, tägliche Kurse wären etwa 20 MB). Ticker ohne Börsenendung werden nacheinander an .DE, .F, .MU, .DU, .SG, .HM, .BE gesucht, nie ohne Endung (Verwechslung mit US-Tickern). `build.py` bettet die Datei ein. Stand 27.10.2026: 510 von 551 Tickern mit Kursen, 41 ohne Treffer (Liste unter `fehler`). Kurse in Börsenwährung, Londoner Kurse in Pence; Korrelationen auf Renditebasis sind davon unberührt.
 
+## Weltkugel (alternative Oberfläche)
+
+`dist/weltkugel.html` ist dieselbe Seite wie das Terminal, mit einer Weltkugel als Startansicht (`#globus`). `build.py` baut sie mit;
+für reine Änderungen an der Oberfläche reicht `python3 app/build.py --nur-seite` (bettet die vorhandenen `data/*.json` ein, auch im
+teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei nicht nach main committet, sondern vom Workflow
+„Terminal bauen“ auf den Branch `terminal-dist` und als Workflow-Artifact abgelegt.
+
+* **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
+  Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,
+  die Unternehmen des Landes und die Börsenindizes aus dem Bereich BÖR. Quelle wie im VWL-Bereich: Eurostat, wo vorhanden, sonst OECD.
+  Länder ohne VWL-Reihen zeigen nur Grundangaben aus Natural Earth.
+* **Unternehmen:** erscheinen beim Hineinzoomen am Sitz, als Gruppen (Zahl = Unternehmen), die beim Zoomen zerfallen. Gruppen in einer
+  Stadt zerfallen nicht weiter; ein Klick zeigt dann die Liste. Gelb = börsennotiert, blau = nicht notiert.
+* **Fenster:** ein Klick auf ein Unternehmen öffnet dessen Profil (dieselbe Ansicht wie `#firma-<id>`) als verschiebbares Fenster;
+  mehrere Fenster gleichzeitig, „Nebeneinander“ ordnet sie an, „+ Vergleich“ sammelt bis zu sechs Unternehmen für das Vergleichsfenster
+  (dieselbe Ansicht wie F3 Vergleich). Links auf andere Ansichten führen ins klassische Terminal, „◉ Weltkugel“ zurück.
+* **Grundkarte:** OpenStreetMap-Daten als Vektorkacheln über [OpenFreeMap](https://openfreemap.org) (kostenlos, ohne Schlüssel und
+  Anmeldung; Namensnennung OpenFreeMap, OpenMapTiles, OpenStreetMap ist eingeblendet). Ohne Netz oder wenn der Kachelserver nicht
+  erreichbar ist, schaltet die Seite auf eine eingebettete einfache Karte aus Natural Earth um. Umschalter unter „Ebenen“.
+* **Ebenen:** Jede Darstellung ist eine Ebene in `EBENEN` (`src/globus.js`). Handelsströme und Lieferketten sind als Ebenen vorgesehen
+  (noch ohne Daten; erwartetes Format im Kommentar über den beiden Einträgen). Neue Ebenen: `GLOBUS.ebene({ id, name, gruppe, quellen(map),
+  schichten(map, vor), klick? })`; sie werden nach jedem Wechsel der Grundkarte neu angelegt.
+
+| Datei | Aufgabe |
+|---|---|
+| `globus.py` | baut `dist/weltkugel.html` aus der Terminal-Seite, Karte, Ländern, Sitzen und Schriften |
+| `src/globus.js`, `src/globus.css` | Oberfläche der Weltkugel |
+| `vendor/maplibre-gl/` | MapLibre GL JS 5.24.0 (BSD-3-Clause, `LICENSE.txt`), eingebettet, damit die Seite ohne CDN läuft |
+| `geo/laender.geojson` | Ländergrenzen Natural Earth 1:50 Mio. (gemeinfrei), erzeugt mit `geo/laender_bauen.py` |
+| `geo/glyphs/` | Schrift Noto Sans (SIL OFL) für Kartenbeschriftungen, Zeichen 0–255 |
+| `../stammdaten/geo/sitz_geo.csv` | Sitz je Unternehmens-ID mit Koordinate, erzeugt mit `stammdaten/geo/sitz_geo.py` (siehe dort) |
+| `artifact_packen.py` | packt eine `dist/*.fragment.html` für die Artifact-Vorschau unter 16 MB (gzip im Browser entpackt) |
+
+Firmensitze: Ort aus `stammdaten/unternehmen_ids.csv`, sonst aus der GLEIF-LEI-Datenbank (über LEI, ISIN oder, als unsicher markiert,
+über den exakten Namen im Land), Koordinate aus GeoNames (Orte ab 500 Einwohnern, sonst Postleitzahl). Stand 03.11.2026: 1.230 von 1.409
+Unternehmen mit Koordinate (im Terminal 1.099 von 1.274). Falsche Treffer in `sitz_geo.csv` von Hand korrigieren und `quelle_ort` auf
+`manuell` setzen; solche Zeilen überschreibt das Skript nicht. Neu abrufen: `python3 stammdaten/geo/sitz_geo.py` (GLEIF-Antworten
+liegen in `gleif_cache.json`, `--offline` nutzt nur diesen Zwischenspeicher).
+
 ## Täglicher Abruf
 
 `.github/workflows/marktdaten.yml` läuft an Handelstagen um 18:30 UTC (nach Xetra-Schluss) und holt die Kurse (`app/data/markt.json`, samstags die Wochenkurse); nur bei Änderungen committet er nach main und stößt `terminal.yml` an, das das Terminal baut und als Artifact sowie auf den Branch `terminal-dist` legt (nicht mehr nach main). Aufbau, Takt und Minutenschätzung: `.github/workflows/README.md`. Manuell startbar unter Actions → „Börsendaten Terminal“ → Run workflow. Yahoo Finance hat keine offizielle API; fällt ein Ticker aus, steht er unter `fehler` in `markt.json`, die übrigen werden trotzdem geschrieben.

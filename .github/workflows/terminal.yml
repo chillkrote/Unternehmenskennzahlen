@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main, codex/europe600-abschluesse]
-    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
+    paths: ["app/src/**", "app/tests/**", "app/*.py", "app/geo/**", "app/vendor/**", "stammdaten/geo/sitz_geo.csv", "app/unternehmen_katalog.json", "europa/**", ".github/workflows/terminal.yml"]
   pull_request:
-    paths: ["app/src/**", "app/*.py", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
+    paths: ["app/src/**", "app/*.py", "app/geo/**", "app/vendor/**", "app/tests/**", "stammdaten/geo/sitz_geo.csv", "app/unternehmen_katalog.json", ".github/workflows/terminal.yml", ".github/scripts/pdf_platzhalter.py"]
 
 permissions:
   contents: write
@@ -52,10 +52,14 @@ jobs:
           npm install --prefix /tmp/terminal-tests --no-save playwright
           /tmp/terminal-tests/node_modules/.bin/playwright install --with-deps chromium --only-shell
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/country-smoke.js app/dist/bankterminal.html
+      - name: Weltkugel prüfen
+        run: NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/globus-smoke.js app/dist/weltkugel.html
       - uses: actions/upload-artifact@v4
         with:
           name: terminal
-          path: app/dist/bankterminal.html
+          path: |
+            app/dist/bankterminal.html
+            app/dist/weltkugel.html
           retention-days: 14
           compression-level: 9
       - name: Auf Branch terminal-dist veröffentlichen
@@ -64,7 +68,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           d=$(mktemp -d)
-          cp app/dist/bankterminal.html app/dist/bankterminal.fragment.html "$d"/
+          cp app/dist/bankterminal.html app/dist/bankterminal.fragment.html app/dist/weltkugel.html app/dist/weltkugel.fragment.html "$d"/
           cd "$d"
           git init -q -b terminal-dist
           git config user.name "github-actions[bot]"

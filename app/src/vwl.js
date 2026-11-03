@@ -449,6 +449,6 @@ const VWL = (() => {
   const finden = q => { q = (q || "").trim().toLowerCase(); return q && VD ? VD.serien.find(s => s.serie_id === q || s.name.toLowerCase().includes(q)) : null; };
   const waehle = id => { S.serie = id; S.ljahr = "ist"; };
   const datalist = () => VD ? VD.serien.map(s => `<option value="${esc(s.name)}">`).join("") : "";
-  return { init, da, setLand, laender: () => ALLE_DATEN ? ALLE_DATEN.laender.map(l=>l.geo) : [], korr: () => VD && { serien: VD.serien, laender: VD.laender, themen: VD.themen, daten: VD.daten }, viewUeb, viewReihe, viewLaender, viewProg, viewQuellen, klick, nachRender, meta, finden, waehle, datalist };
+  return { init, da, setLand, alleDaten: () => ALLE_DATEN, laender: () => ALLE_DATEN ? ALLE_DATEN.laender.map(l=>l.geo) : [], korr: () => VD && { serien: VD.serien, laender: VD.laender, themen: VD.themen, daten: VD.daten }, viewUeb, viewReihe, viewLaender, viewProg, viewQuellen, klick, nachRender, meta, finden, waehle, datalist };
 })();
 

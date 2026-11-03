@@ -1,0 +1,1410 @@
+unternehmen_id,name,ort,plz,land_code,lat,lon,quelle_ort,quelle_koordinate,geonames_id,hinweis
+U000001,029 Group SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000002,11880 Solutions AG,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000003,123fahrschule SE,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000004,1&1 AG,Montabaur,,DE,50.4359,7.8232,stammdaten,geonames-ort,2869746,
+U000005,2G Energy AG,Heek,,DE,52.1167,7.1000,stammdaten,geonames-ort,2908330,
+U000006,2invest AG,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000007,3U Holding AG,Marburg,,DE,50.8090,8.7707,stammdaten,geonames-ort,2873759,
+U000008,468 SPAC II SE,,,LU,,,,,,
+U000009,7C Solarparken AG,Bayreuth,,DE,49.9478,11.5789,stammdaten,geonames-ort,2951825,
+U000010,aap Implantate AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000011,Aareal Bank AG,Wiesbaden,,DE,50.0860,8.2444,stammdaten,geonames-ort,2809346,
+U000012,ABO Energy GmbH & Co. KGaA,Wiesbaden,,DE,50.0860,8.2444,stammdaten,geonames-ort,2809346,
+U000013,ACCENTRO Real Estate AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000014,aconnic AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000015,AdCapital AG,Waldbronn,,DE,48.9183,8.4923,stammdaten,geonames-plz,,
+U000016,adesso SE,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000017,adidas AG,Herzogenaurach,,DE,49.5680,10.8857,stammdaten,geonames-ort,2905457,
+U000018,Adler Group S.A.,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000019,ADM Hamburg AG,Hamburg,21107,DE,53.5507,9.9930,gleif-isin,geonames-ort,2911298,GLEIF 549300YG42LPE8ZHJE68
+U000020,ad pepper media International N.V.,Nuremberg,,NL,49.4542,11.0775,stammdaten,geonames-ort-ausland,2861650,Sitz außerhalb des Registerlands
+U000021,"ADTRAN Holdings, Inc.",Huntsville,,US,34.7304,-86.5859,stammdaten,geonames-ort,4068590,
+U000022,Adtran Networks SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000023,Advanced Blockchain AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000024,AGROB Immobilien AG,Ismaning,,DE,48.2333,11.6833,stammdaten,geonames-ort,2895643,
+U000025,AHT Syngas Technology N.V.,Bonn,,NL,50.7344,7.0955,stammdaten,geonames-ort-ausland,2946447,Sitz außerhalb des Registerlands
+U000026,Airbus SE,Leiden,,NL,52.1583,4.4931,stammdaten,geonames-ort,2751773,
+U000027,a.i.s. AG,Birkenau,,DE,49.5625,8.7069,stammdaten,geonames-ort,2948652,
+U000028,AIXTRON SE,Herzogenrath,,DE,50.8687,6.0932,stammdaten,geonames-ort,2905455,
+U000029,AKA Ausfuhrkredit-Gesellschaft mbH,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000030,Akbank AG,Eschborn,,DE,50.1433,8.5711,stammdaten,geonames-ort,2929134,
+U000031,ALBIS Leasing AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000032,Alexanderwerk AG,Remscheid,,DE,51.1798,7.1925,stammdaten,geonames-ort,2848273,
+U000033,Allane SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000034,All for One Group SE,Filderstadt,,DE,48.6570,9.2205,stammdaten,geonames-ort,3336891,
+U000035,Allgeier SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000036,Allianz SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000037,Altech Advanced Materials AG,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000038,ALTE LEIPZIGER Bauspar AG,Oberursel (Taunus),,DE,50.2073,8.5775,stammdaten,geonames-ort,2858738,
+U000039,Alzchem Group AG,Trostberg,,DE,48.0280,12.5580,stammdaten,geonames-ort,2820964,
+U000040,Amadeus FiRe AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000041,AMG Critical Materials N.V.,Amsterdam,,NL,52.3740,4.8897,stammdaten,geonames-ort,2759794,
+U000042,AnchorCore SE,Luxembourg City,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000043,Aquamondi AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000044,ARI Motors Industries SE,Borna,04552,DE,51.1242,12.4964,gleif-isin,geonames-ort,2946172,GLEIF 89450094KEXKHW5G8K93
+U000045,Aroundtown SA,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000046,artec technologies AG,Diepholz,,DE,52.6069,8.3703,stammdaten,geonames-ort,2937317,
+U000047,A.S. Création Tapeten AG,Gummersbach,,DE,51.0261,7.5647,stammdaten,geonames-ort,2913761,
+U000048,ASTA Energy Solutions AG,Wiener Neustadt,,AT,47.8049,16.2320,stammdaten,geonames-ort,2761353,
+U000049,ATOSS Software SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000050,Audius SE,Weinstadt,71384,DE,48.8092,9.3774,gleif-isin,geonames-plz,,GLEIF 529900IIE5I72B53SP39
+U000051,Aumann AG,Beelen,,DE,51.9291,8.1112,stammdaten,geonames-ort,2951596,
+U000052,Aumovio SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000053,Aurubis AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000054,AUTO1 Group SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000055,Averdion Se,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000056,Baader Bank AG,Unterschleißheim,,DE,48.2804,11.5768,stammdaten,geonames-ort,2818766,
+U000057,Bank11 für Privatkunden und Handel GmbH,Neuss,,DE,51.1981,6.6850,stammdaten,geonames-ort,2864118,
+U000058,Bank Deutsches Kraftfahrzeuggewerbe GmbH (BDK),Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000059,Bank für Kirche und Diakonie eG – KD-Bank,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000060,BANK IM BISTUM ESSEN eG,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000061,BASF SE,Ludwigshafen am Rhein,,DE,49.4812,8.4464,stammdaten,geonames-ort,2875376,
+U000062,Basler Aktiengesellschaft,Ahrensburg,,DE,53.6766,10.2370,stammdaten,geonames-ort,2959083,
+U000063,Bastei Lübbe AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000064,Bausparkasse Schwäbisch Hall AG,Schwäbisch Hall,,DE,49.1113,9.7391,stammdaten,geonames-ort,2835481,
+U000065,Bayer Aktiengesellschaft,Leverkusen,,DE,51.0303,6.9843,stammdaten,geonames-ort,2878234,
+U000066,Bayerische Landesbank (BayernLB),München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000067,Bayerische Motoren Werke Aktiengesellschaft,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000068,BayWa Aktiengesellschaft,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000069,BBBank eG,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000070,BB Biotech AG,Küsnacht,,CH,47.3180,8.5840,stammdaten,geonames-ort,2660089,
+U000071,Bechtle AG,Neckarsulm,,DE,49.1891,9.2253,stammdaten,geonames-ort,2866758,
+U000072,Befesa S.A.,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000073,Beiersdorf Aktiengesellschaft,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000074,BENO Holding AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000075,Berentzen-Gruppe Aktiengesellschaft,Haselünne,,DE,52.6731,7.4867,stammdaten,geonames-ort,2909761,
+U000076,Berliner Effektengesellschaft AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000077,Berliner Volksbank eG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000078,Bertrandt Aktiengesellschaft,Ehningen,,DE,48.6588,8.9412,stammdaten,geonames-ort,2932882,
+U000079,bet-at-home.com AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000080,BFS SozialFinanz AG (SozialBank),Köln,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000081,BHB Brauholding Bayern-Mitte AG,Ingolstadt,,DE,48.7651,11.4237,stammdaten,geonames-ort,2895992,
+U000082,BHW Bausparkasse AG,Hameln,,DE,52.1040,9.3562,stammdaten,geonames-ort,2911271,
+U000083,BigRep SE,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000084,Bijou Brigitte modische Accessoires Aktiengesellschaft,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000085,Bike24 Holding AG,Dresden,,DE,51.0509,13.7383,stammdaten,geonames-ort,2935022,
+U000086,Bilfinger SE,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000087,Binect AG,Weiterstadt,,DE,49.9039,8.5887,stammdaten,geonames-ort,2811644,
+U000088,Biofrontera AG,Leverkusen,,DE,51.0303,6.9843,stammdaten,geonames-ort,2878234,
+U000089,Bio-Gate AG,Nuremberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000090,bioXXmed AG,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000091,Bitcoin Group SE,Herford,,DE,52.1146,8.6734,stammdaten,geonames-ort,2906121,
+U000092,Black Pearl Digital AG,Düsseldorf,40547,DE,51.2232,6.7793,gleif-isin,geonames-ort,2934246,GLEIF 391200CTSVFF9EHN8Y59
+U000093,Blue Cap AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000094,B. Metzler seel. Sohn & Co. AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000095,BMW Bank GmbH,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000096,Borussia Dortmund GmbH & Co. Kommanditgesellschaft auf Aktien,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000097,BRAIN Biotech AG,Zwingenberg,,DE,49.7239,8.6108,stammdaten,geonames-ort,2803515,
+U000098,Branicks Group AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000099,BREMER LAGERHAUS-GESELLSCHAFT -Aktiengesellschaft von 1877-,Bremen,,DE,53.0758,8.8072,stammdaten,geonames-ort,2944388,
+U000100,Brenntag SE,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000101,Brockhaus Technologies AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000102,Brüder Mannesmann Aktiengesellschaft,Remscheid,,DE,51.1798,7.1925,stammdaten,geonames-ort,2848273,
+U000103,B+S Banksysteme Aktiengesellschaft,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000104,C24 Bank GmbH,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000105,CAMERIT AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000106,Cancom SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000107,Cannovum Cannabis AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000108,Cantourage Group SE,Berlin,10827,DE,52.5244,13.4105,gleif-isin,geonames-ort,2950159,GLEIF 3912003NCTLO6YHA9V48
+U000109,Carl Zeiss Meditec AG,Jena,,DE,50.9288,11.5899,stammdaten,geonames-ort,2895044,
+U000110,Ceconomy AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000111,CENIT Aktiengesellschaft,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000112,centrotherm international AG,Blaubeuren,,DE,48.4121,9.7843,stammdaten,geonames-ort,2947949,
+U000113,CeoTronics AG,Rödermark,63322,DE,49.9740,8.8282,gleif-isin,geonames-plz,,GLEIF 529900L89P6LHLQVKI48
+U000114,CEWE Stiftung & Co. KGaA,Oldenburg,,DE,53.1404,8.2148,stammdaten,geonames-ort,2857458,
+U000115,CGRE AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000116,CHAPTERS Group AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000117,Cherry SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000118,Circus SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000119,Citigroup Global Markets Europe AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000120,clearvise AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000121,Cliq Digital AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000122,co.don AG,Teltow,,DE,52.3972,13.2762,stammdaten,geonames-ort,2823567,
+U000123,Cogia AG,Frankfurt am Main,60329,DE,50.1155,8.6842,gleif-isin,geonames-ort,2925533,GLEIF 984500BDDC5702EEZ482
+U000124,Commerzbank AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000125,Continental Aktiengesellschaft,Hanover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000126,Coreo AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000127,CORESTATE Capital Holding S.A.,Luxembourg City,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000128,Covestro AG,Leverkusen,,DE,51.0303,6.9843,stammdaten,geonames-ort,2878234,
+U000129,CPI Property Group SA,LUXEMBOURG,L-2661,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 222100CO2ZOTEPGJO223
+U000130,CR Energy AG,Kleinmachnow,,DE,52.4079,13.2251,stammdaten,geonames-ort,2888523,
+U000131,CTS Eventim AG & Co. KGaA,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000132,Cyan AG,München,80331,DE,48.1374,11.5755,gleif-isin,geonames-ort,2867714,GLEIF 894500180W6SSACJ1T19
+U000133,Daimler Truck Holding AG,Leinfelden-Echterdingen,,DE,48.6941,9.1681,stammdaten,geonames-ort,2879185,
+U000134,Daldrup & Söhne Aktiengesellschaft,Grünwald,,DE,48.0395,11.5232,stammdaten,geonames-ort,2914064,
+U000135,DATAGROUP SE,Pliezhausen,,DE,48.5593,9.2075,stammdaten,geonames-ort,2853192,
+U000136,DATA MODUL Aktiengesellschaft Produktion und Vertrieb von elektronischen Systemen,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000137,DATRON AG,Ober-Ramstadt,,DE,49.8308,8.7489,stammdaten,geonames-ort,2859380,
+U000138,DCI Database for Commerce and Industry AG,Starnberg,,DE,48.0019,11.3442,stammdaten,geonames-ort,2829457,
+U000139,Debeka Bausparkasse AG,Koblenz,,DE,50.3536,7.5788,stammdaten,geonames-ort,2886946,
+U000140,DEFAMA Deutsche Fachmarkt AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000141,DekaBank Deutsche Girozentrale,Frankfurt am Main / Berlin,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000142,Delignit AG,Blomberg,,DE,51.9433,9.0907,stammdaten,geonames-ort,2947641,
+U000143,Delivery Hero SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000144,Delticom AG,Sehnde,,DE,52.3139,9.9682,stammdaten,geonames-ort,2833475,
+U000145,DEMIRE Deutsche Mittelstand Real Estate AG,Langen,,DE,49.9896,8.6685,stammdaten,geonames-ort,2881279,
+U000146,Dermapharm Holding SE,Grünwald,,DE,48.0395,11.5232,stammdaten,geonames-ort,2914064,
+U000147,Deutsche Apotheker- und Ärztebank eG (apoBank),Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000148,Deutsche Bank AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000149,Deutsche Bausparkasse Badenia AG,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000150,Deutsche Beteiligungs AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000151,Deutsche Börse AG,Eschborn,,DE,50.1433,8.5711,stammdaten,geonames-ort,2929134,
+U000152,Deutsche Effecten- und Wechsel-Beteiligungsgesellschaft AG,Jena,,DE,50.9288,11.5899,stammdaten,geonames-ort,2895044,
+U000153,Deutsche EuroShop AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000154,Deutsche Grundstuecksauktionen AG,Berlin,10707,DE,52.5244,13.4105,gleif-isin,geonames-ort,2950159,GLEIF 529900ZIETUJG71XNM98
+U000155,Deutsche Konsum Real Estate AG,Potsdam,,DE,52.3989,13.0657,stammdaten,geonames-ort,2852458,
+U000156,"Deutsche Kreditbank AG (DKB, Tochter der BayernLB)",Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000157,Deutsche Lufthansa AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000158,Deutsche Pfandbriefbank AG,Garching bei München,,DE,48.2490,11.6510,stammdaten,geonames-ort,2922582,
+U000159,Deutsche Real Estate AG,Berlin,13347,DE,52.5244,13.4105,gleif-isin,geonames-ort,2950159,GLEIF 529900UVUQAB2M4WBV13
+U000160,Deutsche Rohstoff AG,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000161,Deutsche Telekom AG,Bonn,,DE,50.7344,7.0955,stammdaten,geonames-ort,2946447,
+U000162,Deutsche Wohnen SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000163,DEUTZ Aktiengesellschaft,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000164,DF Deutsche Forfait AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000165,DHL AG,Bonn,,DE,50.7344,7.0955,stammdaten,geonames-ort,2946447,
+U000166,Dierig Holding AG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000167,Die Sparkasse Bremen AG,Bremen,,DE,53.0758,8.8072,stammdaten,geonames-ort,2944388,
+U000168,DMG MORI AKTIENGESELLSCHAFT,Bielefeld,,DE,52.0333,8.5333,stammdaten,geonames-ort,2949186,
+U000169,DN Group AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000170,DocCheck AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000171,Donner & Reuschel AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000172,Dortmunder Volksbank eG,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000173,Douglas AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000174,Drägerwerk AG & Co. KGaA,Lübeck,,DE,53.8689,10.6873,stammdaten,geonames-ort,2875601,
+U000175,Dr. Ing. h.c. F. Porsche AG,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000176,Dürr Aktiengesellschaft,Bietigheim-Bissingen,,DE,48.9441,9.1175,stammdaten,geonames-ort,2949012,
+U000177,DWS Group GmbH & Co. KGaA,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000178,DZ BANK AG Deutsche Zentral-Genossenschaftsbank,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000179,Eckert & Ziegler SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000180,ecotel communication ag,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000181,EDAG Engineering Group AG,Arbon,,CH,47.5167,9.4333,stammdaten,geonames-ort,2661731,
+U000182,Edel SE & Co. KGaA,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000183,Einhell Germany AG,Landau an der Isar,,DE,48.6725,12.6932,stammdaten,geonames-ort,2881650,
+U000184,Eisen- und Hüttenwerke AG,Andernach,,DE,50.4311,7.4043,stammdaten,geonames-ort,2956206,
+U000185,electrovac AG,Salzweg,,DE,48.6167,13.4833,stammdaten,geonames-ort,2842109,
+U000186,Eleving Group S.A.,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000187,Elmos Semiconductor SE,Leverkusen,,DE,51.0303,6.9843,stammdaten,geonames-ort,2878234,
+U000188,ElringKlinger AG,Dettingen an der Erms,,DE,48.5308,9.3446,stammdaten,geonames-ort,2937898,
+U000189,elumeo SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000190,Enapter AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000191,EnBW Energie Baden-Württemberg AG,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000192,Energent AG,Bayreuth,,DE,49.9478,11.5789,stammdaten,geonames-ort,2951825,
+U000193,Energiekontor AG,Bremen,,DE,53.0758,8.8072,stammdaten,geonames-ort,2944388,
+U000194,EnviTec Biogas AG,Lohne,49393,DE,52.1885,8.6922,gleif-isin,geonames-ort,2876187,GLEIF 529900J2IRSW3ULWN521
+U000195,E.ON SE,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000196,EPH Group AG,Vienna,,AT,48.2085,16.3721,stammdaten,geonames-ort,2761369,
+U000197,Epigenomics AG,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000198,Erlebnis Akademie AG,Bad Kötzting,,DE,49.1765,12.8552,stammdaten,geonames-ort,2885070,
+U000199,Ernst Russ AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000200,ERWE Immobilien AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000201,Erwerbsgesellschaft der S-Finanzgruppe mbH & Co. KG (Holding der DekaBank),Neuhardenberg,,DE,52.5960,14.2377,stammdaten,geonames-ort,2865223,
+U000202,Erzgebirgssparkasse,Annaberg-Buchholz,,DE,50.5795,13.0063,stammdaten,geonames-ort,2956005,
+U000203,EUROKAI GmbH & Co. KGaA,Hamburg,21129,DE,53.5507,9.9930,gleif-isin,geonames-ort,2911298,GLEIF 391200501M6ILPRWZW03
+U000204,EUWAX AG,Stuttgart,70174,DE,48.7823,9.1770,gleif-isin,geonames-ort,2825297,GLEIF 529900032TYR45XIEW79
+U000205,Evangelische Bank eG,Kassel,,DE,51.3167,9.5000,stammdaten,geonames-ort,2892518,
+U000206,EV Digital Invest AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000207,Evonik Industries AG,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000208,Evotec SE,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000209,Exasol AG,Nuremberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000210,exceet Group SCA,,,LU,,,,,,
+U000211,Fabasoft AG,Linz,,AT,48.3064,14.2861,stammdaten,geonames-ort,2772400,
+U000212,Fair Value REIT-AG,Langen (Hessen),63225,DE,49.9896,8.6685,gleif-isin,geonames-ort,2881279,GLEIF 52990084DFVKX2FRR033
+U000213,FamiCord AG,Leipzig,,DE,51.3396,12.3713,stammdaten,geonames-ort,2879139,
+U000214,Fast Finance24 Holding AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000215,FCR Immobilien AG,Pullach,,DE,48.0612,11.5215,stammdaten,geonames-ort,2851739,
+U000216,Fernheizwerk Neukölln AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000217,Fielmann Group AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000218,FIL Holdings (Germany) GmbH (Fidelity),Kronberg im Taunus,,DE,50.1810,8.5130,stammdaten,geonames-ort,2883754,
+U000219,Finexity AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000220,First Sensor AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000221,flatexDEGIRO Bank SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000222,flatexDEGIRO SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000223,Ford Bank GmbH,Köln,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000224,Förde Sparkasse,Kiel,,DE,54.3213,10.1349,stammdaten,geonames-ort,2891122,
+U000225,Foris AG,Bonn,53113,DE,50.7344,7.0955,gleif-isin,geonames-ort,2946447,GLEIF 529900W65VE206C6PC25
+U000226,Formycon AG,Planegg,,DE,48.1067,11.4248,stammdaten,geonames-ort,2853463,
+U000227,FORTEC Elektronik AG,Germering,,DE,48.1339,11.3765,stammdaten,geonames-ort,2921039,
+U000228,Frankfurter Sparkasse,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000229,Frankfurter Volksbank Rhein/Main eG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000230,Fraport AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000231,freenet AG,Büdelsdorf,,DE,54.3182,9.6730,stammdaten,geonames-ort,2942093,
+U000232,Frequentis AG,Wien,1100,AT,48.2085,16.3721,gleif-isin,geonames-ort,2761369,GLEIF 529900N7I4DSM16GF659
+U000233,Fresenius Medical Care AG,Bad Homburg,,DE,50.2268,8.6182,stammdaten,geonames-ort,2953436,
+U000234,Fresenius SE & Co. KGaA,Bad Homburg vor der Höhe,,DE,50.2268,8.6182,stammdaten,geonames-ort,2953436,
+U000235,Friedrich Vorwerk Group SE,Tostedt,,DE,53.2741,9.7194,stammdaten,geonames-ort,2821736,
+U000236,Friwo AG,Ostbevern,48346,DE,52.0402,7.8423,gleif-isin,geonames-ort,2856816,GLEIF 529900I73VUGSTE6DR27
+U000237,FRoSTA Aktiengesellschaft,Bremerhaven,,DE,53.5536,8.5755,stammdaten,geonames-ort,2944368,
+U000238,Fuchs SE,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000239,Gabler Group AG,Lübeck,23568,DE,53.8689,10.6873,gleif-isin,geonames-ort,2875601,GLEIF 391200E0ZR3VLW4EM351
+U000240,Gateway Real Estate AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000241,GBS Software AG,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000242,GEA Group Aktiengesellschaft,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000243,Gelsenwasser AG,Gelsenkirchen,,DE,51.5051,7.0965,stammdaten,geonames-ort,2921466,
+U000244,Geratherm Medical AG,Geschwenda,,DE,50.7318,10.8254,stammdaten,geonames-ort,2920837,
+U000245,Gerresheimer AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000246,Gesco SE,Wuppertal,,DE,51.2563,7.1482,stammdaten,geonames-ort,2805753,
+U000247,GFT Technologies SE,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000248,Gigaset AG,Bocholt,46395,DE,51.8388,6.6153,gleif-isin,geonames-ort,2947421,GLEIF 3912007HK6DG8Q41UN59
+U000249,Global Fashion Group S.A.,Senningerberg,,LU,49.6491,6.2261,stammdaten,geonames-ort,6696266,
+U000250,GLS Gemeinschaftsbank eG,Bochum,,DE,51.4817,7.2165,stammdaten,geonames-ort,2947416,
+U000251,Going Public Media AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000252,Goldman Sachs Bank Europe SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000253,Grammer AG,Ursensollen,,DE,49.4020,11.7550,stammdaten,geonames-ort,2818155,
+U000254,Grand City Properties S.A.,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000255,Greiffenberger AG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000256,Grenke AG,Baden-Baden,,DE,48.7606,8.2398,stammdaten,geonames-ort,2953504,
+U000257,GRENKE BANK AG,Baden-Baden,,DE,48.7606,8.2398,stammdaten,geonames-ort,2953504,
+U000258,H2 Core AG,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000259,"Haier Smart Home Co., Ltd.",Qingdao,,CN,36.0649,120.3804,stammdaten,geonames-ort,1797929,
+U000260,Hamborner REIT AG,Duisburg,,DE,51.4325,6.7652,stammdaten,geonames-ort,2934691,
+U000261,Hamburg Commercial Bank AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000262,Hamburger Hafen und Logistik Aktiengesellschaft,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000263,Hamburger Sparkasse AG (Haspa),Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000264,Hannover Rück SE,Hanover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000265,Hannoversche Volksbank eG,Hannover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000266,Hanseatic Bank GmbH & Co KG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000267,Hapag-Lloyd Aktiengesellschaft,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000268,Hasen-Immobilien AG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000269,Hauck Aufhäuser Lampe Privatbank AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000270,Hausvorteil AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000271,Hawesko Holding SE,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000272,Heidelberger Beteiligungsholding AG,Düsseldorf,40547,DE,51.2232,6.7793,gleif-isin,geonames-ort,2934246,GLEIF 529900ETS9WWPA8WR769
+U000273,Heidelberger Druckmaschinen Aktiengesellschaft,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000274,Heidelberg Materials AG,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000275,Heidelberg Pharma AG,Ladenburg,,DE,49.4731,8.6090,stammdaten,geonames-ort,2881980,
+U000276,Helios Solar AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000277,HELLA GmbH & Co. KGaA,Lippstadt,,DE,51.6737,8.3448,stammdaten,geonames-ort,2876865,
+U000278,HelloFresh SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000279,Henkel AG & Co. KGaA,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000280,Hensoldt AG,Taufkirchen,,DE,48.0486,11.6170,stammdaten,geonames-ort,2823812,
+U000281,hGears AG,Schramberg,,DE,48.2240,8.3858,stammdaten,geonames-ort,2836203,
+U000282,Highlight Communications AG,Pratteln,,CH,47.5207,7.6936,stammdaten,geonames-ort,2659147,
+U000283,HMS Bergbau AG,Berlin,12459,DE,52.5244,13.4105,gleif-isin,geonames-ort,2950159,GLEIF 5299004BSTX10BXHV941
+U000284,HOCHTIEF Aktiengesellschaft,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000285,Hoftex Group AG,Hof,,DE,50.3130,11.9126,stammdaten,geonames-ort,2902768,
+U000286,HOMAG Group AG,Schopfloch,,DE,49.1192,10.3077,stammdaten,geonames-ort,2836407,
+U000287,HomeToGo SE,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000288,Hoenle AG,Gilching,,DE,48.1076,11.2936,stammdaten,geonames-ort,2920433,
+U000289,HORNBACH Holding AG & Co. KGaA,Bornheim,,DE,50.7631,6.9909,stammdaten,geonames-ort,2946111,
+U000290,Hugo Boss AG,Metzingen,72555,DE,48.5369,9.2833,gleif-isin,geonames-ort,2871486,GLEIF 529900LFVU534EBRXD13
+U000291,H&R GmbH & Co. KGaA,Salzbergen,,DE,52.3224,7.3460,stammdaten,geonames-ort,2842175,
+U000292,HWA AG,Affalterbach,,DE,48.9227,9.3236,stammdaten,geonames-ort,2959368,
+U000293,Hypoport SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000294,Hyrican Informationssysteme Aktiengesellschaft,Kindelbrück,,DE,51.2617,11.0900,stammdaten,geonames-ort,2890880,
+U000295,Hyundai Capital Bank Europe GmbH,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000296,IBU-tec advanced materials AG,Weimar,99425,DE,50.9803,11.3290,gleif-isin,geonames-ort,2812482,GLEIF 529900L3YY7VW52QZT63
+U000297,IKB Deutsche Industriebank AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000298,Immovaria Real Estate AG,Nuremberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000299,INDUS Holding AG,Bergisch Gladbach,,DE,50.9856,7.1330,stammdaten,geonames-ort,2950349,
+U000300,Infas Holding AG,Bonn,,DE,50.7344,7.0955,stammdaten,geonames-ort,2946447,
+U000301,Infineon Technologies AG,Neubiberg,,DE,48.0771,11.6581,stammdaten,geonames-ort,2866174,
+U000302,ING-DiBa AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000303,init innovation in traffic systems SE,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000304,innoscripta SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000305,InnoTec TSS AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000306,Instant Group AG,Bremen,,DE,53.0758,8.8072,stammdaten,geonames-ort,2944388,
+U000307,Instone Real Estate Group SE,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000308,International School Augsburg AG,Gersthofen,,DE,48.4243,10.8727,stammdaten,geonames-ort,2920891,
+U000309,INTERSHOP Communications Aktiengesellschaft,Jena,,DE,50.9288,11.5899,stammdaten,geonames-ort,2895044,
+U000310,Intertainment AG,Feldafing,82340,DE,47.9460,11.2933,gleif-isin,geonames-ort,2927464,GLEIF 391200AMEYZ4MF5B1S02
+U000311,InTiCa Systems SE,Passau,,DE,48.5665,13.4312,stammdaten,geonames-ort,2855328,
+U000312,IONOS Group SE,Montabaur,,DE,50.4359,7.8232,stammdaten,geonames-ort,2869746,
+U000313,iQ International AG,Zug,,CH,47.1724,8.5175,stammdaten,geonames-ort,2657908,
+U000314,Isbank AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000315,IVU Traffic Technologies AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000316,JDC Group AG,Wiesbaden,,DE,50.0860,8.2444,stammdaten,geonames-ort,2809346,
+U000317,Jenoptik AG,Jena,,DE,50.9288,11.5899,stammdaten,geonames-ort,2895044,
+U000318,"Joh. Berenberg, Gossler & Co. KG",Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000319,JOST Werke SE,Neu-Isenburg,,DE,50.0483,8.6941,stammdaten,geonames-ort,2864820,
+U000320,J.P. Morgan SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000321,Jungheinrich Aktiengesellschaft,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000322,KAP AG,Fulda,,DE,50.5516,9.6752,stammdaten,geonames-ort,2923822,
+U000323,Kasseler Sparkasse,Kassel,,DE,51.3167,9.5000,stammdaten,geonames-ort,2892518,
+U000324,KfW Beteiligungsholding GmbH,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000325,KfW IPEX-Bank GmbH,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000326,KHD Humboldt Wedag International AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000327,KHD Humboldt Wedag Vermögensverwaltungs-AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000328,KION GROUP AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000329,Klassik Radio AG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000330,Knaus Tabbert AG,Jandelsbrunn,,DE,48.7333,13.7000,stammdaten,geonames-ort,2895213,
+U000331,Knorr-Bremse AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000332,Koenig & Bauer AG,Würzburg,,DE,49.7939,9.9512,stammdaten,geonames-ort,2805615,
+U000333,Kontron AG,Linz,,AT,48.3064,14.2861,stammdaten,geonames-ort,2772400,
+U000334,KPS AG,Unterföhring,,DE,48.1925,11.6429,stammdaten,geonames-ort,2819568,
+U000335,Kreissparkasse Biberach,Biberach an der Riß,,DE,48.0934,9.7905,stammdaten,geonames-ort,2949423,
+U000336,Kreissparkasse Böblingen,Böblingen,,DE,48.6821,9.0117,stammdaten,geonames-ort,2947444,
+U000337,Kreissparkasse Esslingen-Nürtingen,Esslingen,,DE,48.7396,9.3047,stammdaten,geonames-ort,2928751,
+U000338,Kreissparkasse Halle-Wiedenbrück,Rheda-Wiedenbrück,,DE,51.8497,8.3002,stammdaten,geonames-ort,2847690,
+U000339,Kreissparkasse Heilbronn,Heilbronn,,DE,49.1399,9.2205,stammdaten,geonames-ort,2907669,
+U000340,Kreissparkasse Köln,Köln,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000341,Kreissparkasse Ludwigsburg,Ludwigsburg,,DE,48.8973,9.1916,stammdaten,geonames-ort,2875392,
+U000342,Kreissparkasse München Starnberg Ebersberg,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000343,Kreissparkasse Ostalb,Aalen,,DE,48.8378,10.0933,stammdaten,geonames-ort,2959927,
+U000344,Kreissparkasse Ravensburg,Ravensburg,,DE,47.7820,9.6106,stammdaten,geonames-ort,2849802,
+U000345,Kreissparkasse Reutlingen,Reutlingen,,DE,48.4914,9.2043,stammdaten,geonames-ort,2847736,
+U000346,Kreissparkasse Steinfurt,Ibbenbüren,,DE,52.2796,7.7146,stammdaten,geonames-ort,2896817,
+U000347,Kreissparkasse Tübingen,Tübingen,,DE,48.5227,9.0522,stammdaten,geonames-ort,2820860,
+U000348,Kreissparkasse Waiblingen,Waiblingen,,DE,48.8324,9.3164,stammdaten,geonames-ort,2815330,
+U000349,Krones AG,Neutraubling,,DE,48.9874,12.2010,stammdaten,geonames-ort,2863953,
+U000350,K+S Aktiengesellschaft,Kassel,,DE,51.3167,9.5000,stammdaten,geonames-ort,2892518,
+U000351,KSB SE & Co. KGaA,Frankenthal,,DE,49.5341,8.3536,stammdaten,geonames-ort,2925550,
+U000352,KST Beteiligungs AG,Sindelfingen,71063,DE,48.7000,9.0167,gleif-isin,geonames-ort,2831948,GLEIF 529900D7BWFE3K9KJ964
+U000353,Kulmbacher Brauerei Aktien-Gesellschaft,Kulmbach,,DE,50.1007,11.4503,stammdaten,geonames-ort,2882588,
+U000354,KWS SAAT SE & Co. KGaA,Einbeck,,DE,51.8202,9.8696,stammdaten,geonames-ort,2931804,
+U000355,LAIQON AG,Hamburg,20099,DE,53.5507,9.9930,gleif-isin,geonames-ort,2911298,GLEIF 391200MMIN9EPH3GOD16
+U000356,Lampetia AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000357,Landesbank Baden-Württemberg (LBBW),Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000358,Landesbank Berlin AG (seit 15.07.2025 BSK 1818 AG; Trägerin der Berliner Sparkasse),Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000359,Landesbank Hessen-Thüringen Girozentrale (Helaba),Frankfurt am Main / Erfurt,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000360,Landesbank Saar (SaarLB),Saarbrücken,,DE,49.2326,7.0098,stammdaten,geonames-ort,2842647,
+U000361,Landessparkasse zu Oldenburg,Oldenburg,,DE,53.1404,8.2148,stammdaten,geonames-ort,2857458,
+U000362,Lang & Schwarz Aktiengesellschaft,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000363,LANXESS Aktiengesellschaft,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000364,LBS Landesbausparkasse NordOst AG,Potsdam,,DE,52.3989,13.0657,stammdaten,geonames-ort,2852458,
+U000365,LBS Landesbausparkasse NordWest,Münster,,DE,51.9624,7.6257,stammdaten,geonames-ort,2867543,
+U000366,LBS Landesbausparkasse Süd,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000367,Lechwerke AG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000368,LEG Immobilien SE,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000369,Leifheit Aktiengesellschaft,Nassau,,DE,50.3145,7.8003,stammdaten,geonames-ort,2867037,
+U000370,Leo International Precision Health AG,Garching bei München,,DE,48.2490,11.6510,stammdaten,geonames-ort,2922582,
+U000371,LEWAG Holding Aktiengesellschaft,Beverungen,,DE,51.6680,9.3742,stammdaten,geonames-ort,2949475,
+U000372,LIBERO Football Finance AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000373,LIGA Bank eG,Regensburg,,DE,49.0151,12.1016,stammdaten,geonames-ort,2849483,
+U000374,LIMES Schlosskliniken AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000375,LION E-Mobility AG,Zug,,CH,47.1724,8.5175,stammdaten,geonames-ort,2657908,
+U000376,LM Pay Spolka Akcyjna,Warszawa,02-247,PL,52.2298,21.0118,gleif-isin,geonames-ort,756135,GLEIF 259400UZ7D7YRIDNNA82
+U000377,Logwin AG,Grevenmacher,,LU,49.6775,6.4402,stammdaten,geonames-ort,2960515,
+U000378,LPKF Laser & Electronics SE,Garbsen,,DE,52.4196,9.6033,stammdaten,geonames-ort,2922586,
+U000379,LS telcom AG,Lichtenau,,DE,51.1995,9.7186,stammdaten,geonames-ort,2905293,
+U000380,Lübke Kelber AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000381,M1 Kliniken AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000382,Mainova AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000383,Maschinenfabrik Berthold Hermle AG,Gosheim,,DE,48.1343,8.7543,stammdaten,geonames-ort,2918844,
+U000384,Masterflex SE,Gelsenkirchen,,DE,51.5051,7.0965,stammdaten,geonames-ort,2921466,
+U000385,Maternus-Kliniken AG,Berlin,10117,DE,52.5244,13.4105,gleif-isin,geonames-ort,2950159,GLEIF 391200TNERKXPD0TM559
+U000386,MAX Automation SE,Hamburg,20459,DE,53.5507,9.9930,gleif-isin,geonames-ort,2911298,GLEIF 391200LVVLZVDYZGZB05
+U000387,MBB SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000388,MEDICLIN Aktiengesellschaft,Offenburg,,DE,48.4738,7.9450,stammdaten,geonames-ort,2857798,
+U000389,Medios AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000390,MedNation AG,Bonn,,DE,50.7344,7.0955,stammdaten,geonames-ort,2946447,
+U000391,medondo holding AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000392,meine Volksbank Raiffeisenbank eG,Rosenheim,,DE,47.8564,12.1225,stammdaten,geonames-ort,2844988,
+U000393,Mensch und Maschine Software SE,Starnberg,,DE,48.0019,11.3442,stammdaten,geonames-ort,2829457,
+U000394,Mercedes-Benz Bank AG,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000395,Mercedes-Benz Group AG,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000396,Merck KGaA,Darmstadt,,DE,49.8717,8.6503,stammdaten,geonames-ort,2938913,
+U000397,Merkur PrivatBank KgaA,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000398,Meta Wolf AG,Kranichfeld,99448,DE,50.8545,11.2006,gleif-isin,geonames-ort,2884761,GLEIF 391200XVGFRTWOC6XX47
+U000399,MeVis Medical Solutions AG,Bremen,28359,DE,53.0758,8.8072,gleif-isin,geonames-ort,2944388,GLEIF 529900Z8B6L1WCLNHW14
+U000400,MHP Hotel AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000401,Mineralbrunnen Überkingen-Teinach GmbH & Co. KGaA,Bad Teinach-Zavelstein,,DE,48.6905,8.6928,stammdaten,geonames-ort,3206153,
+U000402,Ming Le Sports AG,Mühltal,,DE,49.8156,8.7081,stammdaten,geonames-plz,,
+U000403,Mister Spex SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000404,Mittelbrandenburgische Sparkasse in Potsdam (MBS),Potsdam,,DE,52.3989,13.0657,stammdaten,geonames-ort,2852458,
+U000405,MLP Banking AG,Wiesloch,,DE,49.2950,8.6985,stammdaten,geonames-ort,2809138,
+U000406,MLP SE,Wiesloch,,DE,49.2950,8.6985,stammdaten,geonames-ort,2809138,
+U000407,M.M.Warburg & CO (AG & Co.) KGaA,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000408,Mobotix AG,Winnweiler,,DE,49.5667,7.8500,stammdaten,geonames-ort,2807852,
+U000409,MOLOGEN Lifescience AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000410,Morgan Stanley Europe SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000411,Mountain Alliance AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000412,MPC Oceanic Group AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000413,MPH Health Care AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000414,MS Industrie AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000415,MTU Aero Engines AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000416,Mühlbauer Holding AG,Roding,,DE,49.1943,12.5196,stammdaten,geonames-ort,2845924,
+U000417,Müller - Die lila Logistik SE,Besigheim,,DE,48.9980,9.1427,stammdaten,geonames-ort,2949803,
+U000418,Multitude AG,Zug,,CH,47.1724,8.5175,stammdaten,geonames-ort,2657908,
+U000419,Münchener Hypothekenbank eG (MünchenerHyp),München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000420,Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000421,Mutares SE & Co. KGaA,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000422,mVISE AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000423,MVV Energie AG,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000424,mwb fairtrade Wertpapierhandelsbank AG,Gräfelfing,,DE,48.1188,11.4294,stammdaten,geonames-ort,2918368,
+U000425,N26 Bank SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000426,Nabaltec AG,Schwandorf,,DE,49.3253,12.1098,stammdaten,geonames-ort,2835297,
+U000427,Nagarro SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000428,Nakiki SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000429,NanoRepro AG,Marburg,,DE,50.8090,8.7707,stammdaten,geonames-ort,2873759,
+U000430,Nassauische Sparkasse,Wiesbaden,,DE,50.0860,8.2444,stammdaten,geonames-ort,2809346,
+U000431,National-Bank AG,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000432,NCTE AG,Oberhaching,,DE,48.0245,11.5974,stammdaten,geonames-ort,2860525,
+U000433,Nemetschek SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000434,Netfonds AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000435,Newron Pharmaceuticals S.p.A.,Bresso,,IT,45.5379,9.1892,stammdaten,geonames-ort,3181548,
+U000436,NeXR Technologies SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000437,Nexum Group AG,München,80539,DE,48.1374,11.5755,gleif-isin,geonames-ort,2867714,GLEIF 5299003LVPXHGHTWP936
+U000438,NFON AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000439,Noratis AG,Eschborn,,DE,50.1433,8.5711,stammdaten,geonames-ort,2929134,
+U000440,NorCom Information Technology GmbH & Co KGaA,München,80333,DE,48.1374,11.5755,gleif-isin,geonames-ort,2867714,GLEIF 529900GL9CBG4AOM3766
+U000441,Norddeutsche Landesbank Girozentrale (NORD/LB),Hannover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000442,Nordex SE,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000443,Nordwest Handel AG,Dortmund,44263,DE,51.5149,7.4660,gleif-isin,geonames-ort,2935517,GLEIF 391200G4SXDTWLYVJN36
+U000444,norisbank GmbH,Bonn,,DE,50.7344,7.0955,stammdaten,geonames-ort,2946447,
+U000445,NORMA Group SE,Maintal,,DE,50.1500,8.8333,stammdaten,geonames-ort,2874230,
+U000446,Novem Group S.A.,Contern,,LU,49.5819,6.2267,stammdaten,geonames-ort,2960673,
+U000447,Novogenia AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000448,NÜRNBERGER Beteiligungs-AG,Nuremberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000449,Nynomic AG,Wedel,,DE,53.5837,9.6983,stammdaten,geonames-ort,2813464,
+U000450,ODDO BHF SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000451,OHB SE,Bremen,,DE,53.0758,8.8072,stammdaten,geonames-ort,2944388,
+U000452,OEKOWORLD AG,Hilden,40724,DE,51.1682,6.9309,gleif-isin,geonames-ort,2904795,GLEIF 52990079KTHQHXPGR759
+U000453,Oldenburgische Landesbank AG,Oldenburg,,DE,53.1404,8.2148,stammdaten,geonames-ort,2857458,
+U000454,ORBIS AG,Saarbrücken,,DE,49.2326,7.0098,stammdaten,geonames-ort,2842647,
+U000455,Ostsächsische Sparkasse Dresden,Dresden,,DE,51.0509,13.7383,stammdaten,geonames-ort,2935022,
+U000456,OstseeSparkasse Rostock,Rostock,,DE,54.0887,12.1405,stammdaten,geonames-ort,2844588,
+U000457,Ottobock SE & Co. KGaA,Duderstadt,,DE,51.5131,10.2595,stammdaten,geonames-ort,2934728,
+U000458,OVB Holding AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000459,Paion AG,Aachen,52078,DE,50.7766,6.0834,gleif-isin,geonames-ort,3247449,GLEIF 529900CGHB9UWY40BU45
+U000460,paragon GmbH & Co. KGaA,Delbrück,,DE,51.7650,8.5622,stammdaten,geonames-ort,2938389,
+U000461,Park & Bellheimer AG,Pirmasens,,DE,49.2015,7.6053,stammdaten,geonames-ort,2853574,
+U000462,Path2 Hydrogen AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000463,PATRIZIA SE,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000464,Paul Hartmann AG,Heidenheim,,DE,48.6780,10.1516,stammdaten,geonames-ort,2907851,
+U000465,Pax-Bank für Kirche und Caritas eG,Paderborn,,DE,51.7191,8.7544,stammdaten,geonames-ort,2855745,
+U000466,Payments Group Holding GmbH & Co KGaA,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000467,Pearl Gold AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000468,PEH Wertpapier AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000469,Pentixapharm Holding AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000470,Pfeiffer Vacuum Technology AG,Aßlar,,DE,50.5916,8.4627,stammdaten,geonames-ort,2955009,
+U000471,Pferdewetten de AG,Düsseldorf,40221,DE,51.2232,6.7793,gleif-isin,geonames-ort,2934246,GLEIF 391200QG00R11VCOUR60
+U000472,PFISTERER Holding SE,Winterbach,73650,DE,48.7992,9.4791,gleif-isin,geonames-ort,2807825,GLEIF 529900APPYG9TGZYS639
+U000473,Philion SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000474,Pittler Maschinenfabrik AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000475,Plan Optik AG,Elsoff,56479,DE,50.5758,8.1161,gleif-isin,geonames-ort,2930706,GLEIF 5299002C4WEKXO9UG879
+U000476,plenum AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000477,PNE AG,Cuxhaven,,DE,53.8683,8.6990,stammdaten,geonames-ort,2939658,
+U000478,POB AG,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000479,Porsche Automobil Holding SE,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000480,ProCredit Holding AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000481,PRO DV AG,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000482,ProSiebenSat.1 Media SE,Unterföhring,,DE,48.1925,11.6429,stammdaten,geonames-ort,2819568,
+U000483,PSD Bank München eG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000484,PSI Software SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000485,PUMA SE,Herzogenaurach,,DE,49.5680,10.8857,stammdaten,geonames-ort,2905457,
+U000486,PVA TePla AG,Wettenberg,,DE,50.6167,8.6500,stammdaten,geonames-plz,,
+U000487,PWO AG,Oberkirch,,DE,48.5324,8.0786,stammdaten,geonames-ort,2860080,
+U000488,Pyramid AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000489,Pyrum Innovations AG,Dillingen,,DE,49.3556,6.7278,stammdaten,geonames-ort,2936977,
+U000490,q.beyond AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000491,Qiagen N.V.,Venlo,,NL,51.3700,6.1681,stammdaten,geonames-ort,2745641,
+U000492,Quirin Privatbank AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000493,Raisin Bank AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000494,RATIONAL Aktiengesellschaft,Landsberg am Lech,,DE,48.0482,10.8828,stammdaten,geonames-ort,2881509,
+U000495,RCM Beteiligungs AG,Sindelfingen,,DE,48.7000,9.0167,stammdaten,geonames-ort,2831948,
+U000496,Readcrest Capital AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000497,RealTech AG,Leimen,,DE,49.3474,8.6873,stammdaten,geonames-ort,2879241,
+U000498,Redcare Pharmacy NV,Sevenum,,NL,51.4125,6.0375,stammdaten,geonames-ort,2747382,
+U000499,Regenbogen AG,Schönkirchen,,DE,54.3333,10.2333,stammdaten,geonames-ort,2836532,
+U000500,RENK Group AG,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000501,Rheinhessen Sparkasse,Worms,,DE,49.6328,8.3592,stammdaten,geonames-ort,2806142,
+U000502,Rheinmetall AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000503,RHÖN-KLINIKUM Aktiengesellschaft,Bad Neustadt an der Saale,,DE,50.3217,10.2067,stammdaten,geonames-ort,2953389,
+U000504,Rigsave S.P.A.,Brescia,,IT,45.5356,10.2147,stammdaten,geonames-ort,3181554,
+U000505,Ringmetall SE,München,81667,DE,48.1374,11.5755,gleif-isin,geonames-ort,2867714,GLEIF 3912001LS9HMTYQODO63
+U000506,Rostra AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000507,R. STAHL AG,Waldenburg,,DE,50.8765,12.5992,stammdaten,geonames-ort,2815074,
+U000508,RTL Group S.A.,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000509,Rubean AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000510,RWE Aktiengesellschaft,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000511,SAF-Holland SE,Bessenbach,,DE,49.9694,9.2686,stammdaten,geonames-plz,,
+U000512,Salzgitter AG,Salzgitter,,DE,52.1570,10.4154,stammdaten,geonames-ort,2842150,
+U000513,Samara Asset Group plc,Birkirkara,,MT,35.8971,14.4611,stammdaten,geonames-ort,2563191,
+U000514,Santander Consumer Bank AG,Mönchengladbach,,DE,51.1854,6.4417,stammdaten,geonames-ort,2869894,
+U000515,SAP SE,Walldorf,,DE,49.3064,8.6424,stammdaten,geonames-ort,2814670,
+U000516,Sartorius Aktiengesellschaft,Göttingen,,DE,51.5344,9.9323,stammdaten,geonames-ort,2918632,
+U000517,SBF AG,Leipzig,,DE,51.3396,12.3713,stammdaten,geonames-ort,2879139,
+U000518,Schaeffler AG,Herzogenaurach,,DE,49.5680,10.8857,stammdaten,geonames-ort,2905457,
+U000519,Scherzer & Co AG,Köln,50670,DE,50.9333,6.9500,gleif-isin,geonames-ort,2886242,GLEIF 529900L5AIT07HWHCJ66
+U000520,Schloss Wachenheim AG,Trier,,DE,49.7557,6.6394,stammdaten,geonames-ort,2821164,
+U000521,SCHOTT Pharma AG & Co. KGaA,Mainz,,DE,49.9819,8.2801,stammdaten,geonames-ort,2874225,
+U000522,Schwälbchen Molkerei Jakob Berz AG,Bad Schwalbach,,DE,50.1420,8.0696,stammdaten,geonames-ort,2953348,
+U000523,Schweizer Electronic AG,Schramberg,,DE,48.2240,8.3858,stammdaten,geonames-ort,2836203,
+U000524,Scout24 SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000525,SCP Standard Capital Partners AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000526,SECB Swiss Euro Clearing Bank GmbH,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000527,secunet Security Networks Aktiengesellschaft,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000528,Sedlmayr Grund und Immobilien AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000529,Serviceware SE,Idstein,,DE,50.2177,8.2668,stammdaten,geonames-ort,2896736,
+U000530,Seven Principles AG,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000531,SFC Energy AG,Brunnthal,,DE,48.0065,11.6840,stammdaten,geonames-ort,2943074,
+U000532,SGL Carbon SE,Wiesbaden,65201,DE,50.0860,8.2444,gleif-isin,geonames-ort,2809346,GLEIF 52990038IB31TYK07X63
+U000533,Shareholder Value Beteiligungen AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000534,Shelly Group SE,Sofia,,BG,42.6975,23.3241,stammdaten,geonames-ort,727011,
+U000535,Siemens Aktiengesellschaft,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000536,Siemens Bank GmbH,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000537,Siemens Energy AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000538,Siemens Healthineers AG,Forchheim,,DE,49.7175,11.0588,stammdaten,geonames-ort,2925910,
+U000539,Siltronic AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000540,Simona AG,Kirn,55606,DE,49.7891,7.4577,gleif-isin,geonames-ort,2890314,GLEIF 529900BTXZALKUBU3387
+U000541,Singulus Technologies AG,Kahl am Main,,DE,50.0698,9.0055,stammdaten,geonames-ort,2894245,
+U000542,Sino AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000543,Sino-German United AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000544,Sirma Group JSC,Sofia,,BG,42.6975,23.3241,stammdaten,geonames-ort,727011,
+U000545,Sixt SE,Pullach,,DE,48.0612,11.5215,stammdaten,geonames-ort,2851739,
+U000546,SMAG Mobile Antenna Masts AG,Salzgitter,,DE,52.1570,10.4154,stammdaten,geonames-ort,2842150,
+U000547,Smartbroker Holding AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000548,SMA Solar Technology AG,Niestetal,,DE,51.3083,9.5669,stammdaten,geonames-plz,,
+U000549,SMG Hospitality SE,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000550,SMT Scharf AG,Hamm,,DE,51.6803,7.8209,stammdaten,geonames-ort,2911240,
+U000551,SM Wirtschaftsberatungs AG,Sindelfingen,,DE,48.7000,9.0167,stammdaten,geonames-ort,2831948,
+U000552,SNP Schneider-Neureither & Partner SE,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000553,Softing AG,Haar,,DE,48.1088,11.7265,stammdaten,geonames-ort,2913192,
+U000554,Solutiance AG,Potsdam,,DE,52.3989,13.0657,stammdaten,geonames-ort,2852458,
+U000555,Sparda-Bank Baden-Württemberg eG,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000556,Sparda-Bank Berlin eG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000557,Sparda-Bank Hannover eG,Hannover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000558,Sparda-Bank Hessen eG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000559,Sparda-Bank München eG,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000560,Sparda-Bank Nürnberg eG,Nürnberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000561,Sparda-Bank Südwest eG,Mainz,,DE,49.9819,8.2801,stammdaten,geonames-ort,2874225,
+U000562,Sparda-Bank West eG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000563,Sparkasse Aachen,Aachen,,DE,50.7766,6.0834,stammdaten,geonames-ort,3247449,
+U000564,Sparkasse Allgäu,Kempten (Allgäu),,DE,47.7267,10.3139,stammdaten,geonames-ort,2891621,
+U000565,Sparkasse Ansbach,Ansbach,,DE,49.3048,10.5931,stammdaten,geonames-ort,2955936,
+U000566,Sparkasse Aschaffenburg Miltenberg,Aschaffenburg,,DE,49.9770,9.1521,stammdaten,geonames-ort,2955272,
+U000567,Sparkasse Bielefeld,Bielefeld,,DE,52.0333,8.5333,stammdaten,geonames-ort,2949186,
+U000568,Sparkasse Bochum,Bochum,,DE,51.4817,7.2165,stammdaten,geonames-ort,2947416,
+U000569,Sparkasse Celle-Gifhorn-Wolfsburg,Gifhorn,,DE,52.4794,10.5522,stammdaten,geonames-ort,2920478,
+U000570,Sparkasse Chemnitz,Chemnitz,,DE,50.8357,12.9292,stammdaten,geonames-ort,2940132,
+U000571,Sparkasse Dortmund,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000572,Sparkasse Duisburg,Duisburg,,DE,51.4325,6.7652,stammdaten,geonames-ort,2934691,
+U000573,Sparkasse Düren,Düren,,DE,50.8043,6.4930,stammdaten,geonames-ort,2934486,
+U000574,Sparkasse Essen,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000575,Sparkasse Freiburg-Nördlicher Breisgau,Freiburg i. Br.,,DE,47.9959,7.8522,stammdaten,geonames-ort,2925177,
+U000576,Sparkasse Hanau,Hanau,,DE,50.1342,8.9142,stammdaten,geonames-ort,2911007,
+U000577,Sparkasse Hannover,Hannover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000578,Sparkasse Heidelberg,Heidelberg,,DE,49.4077,8.6908,stammdaten,geonames-ort,2907911,
+U000579,Sparkasse Hellweg-Lippe,Lippstadt,,DE,51.6737,8.3448,stammdaten,geonames-ort,2876865,
+U000580,Sparkasse Hildesheim Goslar Peine,Hildesheim,,DE,52.1508,9.9511,stammdaten,geonames-ort,2904789,
+U000581,Sparkasse Holstein,Eutin,,DE,54.1350,10.6115,stammdaten,geonames-ort,2928381,
+U000582,Sparkasse im Kreis Herford,Herford,,DE,52.1146,8.6734,stammdaten,geonames-ort,2906121,
+U000583,Sparkasse Ingolstadt Eichstätt,Ingolstadt,,DE,48.7651,11.4237,stammdaten,geonames-ort,2895992,
+U000584,Sparkasse Karlsruhe,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000585,Sparkasse Koblenz,Koblenz,,DE,50.3536,7.5788,stammdaten,geonames-ort,2886946,
+U000586,Sparkasse KölnBonn,Köln,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000587,Sparkasse Krefeld,Krefeld,,DE,51.3364,6.5538,stammdaten,geonames-ort,2884509,
+U000588,Sparkasse Landshut,Landshut,,DE,48.5296,12.1618,stammdaten,geonames-ort,2881485,
+U000589,Sparkasse Mainfranken Würzburg,Würzburg,,DE,49.7939,9.9512,stammdaten,geonames-ort,2805615,
+U000590,Sparkasse Mittelfranken-Süd,Roth,,DE,49.2476,11.0911,stammdaten,geonames-ort,2844265,
+U000591,Sparkasse Mittelthüringen,Erfurt,,DE,50.9773,11.0354,stammdaten,geonames-ort,2929670,
+U000592,Sparkasse Münsterland Ost,Münster,,DE,51.9624,7.6257,stammdaten,geonames-ort,2867543,
+U000593,Sparkasse Niederbayern-Mitte,Straubing,,DE,48.8813,12.5739,stammdaten,geonames-ort,2826099,
+U000594,Sparkasse Nürnberg,Nürnberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000595,Sparkasse Offenburg/Ortenau,Offenburg,,DE,48.4738,7.9450,stammdaten,geonames-ort,2857798,
+U000596,Sparkasse Osnabrück,Osnabrück,,DE,52.2741,8.0506,stammdaten,geonames-ort,2856883,
+U000597,Sparkasse Paderborn-Detmold-Höxter,Detmold,,DE,51.9385,8.8732,stammdaten,geonames-ort,2937936,
+U000598,Sparkasse Pforzheim Calw,Pforzheim,,DE,48.8844,8.6989,stammdaten,geonames-ort,2853969,
+U000599,Sparkasse Regensburg,Regensburg,,DE,49.0151,12.1016,stammdaten,geonames-ort,2849483,
+U000600,Sparkasse Rhein-Nahe,Bad Kreuznach,,DE,49.8414,7.8671,stammdaten,geonames-ort,2953416,
+U000601,Sparkasse Rhein Neckar Nord,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000602,Sparkasse Rosenheim-Bad Aibling,Rosenheim,,DE,47.8564,12.1225,stammdaten,geonames-ort,2844988,
+U000603,Sparkasse Saarbrücken,Saarbrücken,,DE,49.2326,7.0098,stammdaten,geonames-ort,2842647,
+U000604,Sparkasse Schwaben-Bodensee,Memmingen,,DE,47.9837,10.1853,stammdaten,geonames-ort,2871992,
+U000605,Sparkasse Südholstein,Neumünster,,DE,54.0740,9.9846,stammdaten,geonames-ort,2864475,
+U000606,Sparkasse Südpfalz,Landau in der Pfalz,,DE,49.1984,8.1169,stammdaten,geonames-ort,2881646,
+U000607,Sparkasse Trier,Trier,,DE,49.7557,6.6394,stammdaten,geonames-ort,2821164,
+U000608,Sparkasse Ulm,Ulm,,DE,48.3984,9.9916,stammdaten,geonames-ort,2820256,
+U000609,Sparkasse Vest Recklinghausen,Recklinghausen,,DE,51.6138,7.1974,stammdaten,geonames-ort,2849647,
+U000610,Sparkasse Vorpommern,Greifswald,,DE,54.0891,13.4024,stammdaten,geonames-ort,2917788,
+U000611,Sparkasse Westmünsterland,Ahaus,,DE,52.0794,7.0134,stammdaten,geonames-ort,2959279,
+U000612,Sparta AG,Berlin,10587,DE,52.5244,13.4105,gleif-isin,geonames-ort,2950159,GLEIF 529900ENOE342DU53X12
+U000613,Spielvereinigung Unterhaching Fußball GmbH & Co. KGaA,Unterhaching,,DE,48.0660,11.6156,stammdaten,geonames-ort,2819465,
+U000614,Springer Nature AG & Co. KGaA,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000615,Stabilus SE,Koblenz,,DE,50.3536,7.5788,stammdaten,geonames-ort,2886946,
+U000616,Stadtsparkasse Augsburg,Augsburg,,DE,48.3715,10.8985,stammdaten,geonames-ort,2954172,
+U000617,Stadtsparkasse Düsseldorf,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000618,Stadtsparkasse München,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000619,Stadtsparkasse Wuppertal,Wuppertal,,DE,51.2563,7.1482,stammdaten,geonames-ort,2805753,
+U000620,Stadt- und Kreis-Sparkasse Darmstadt,Darmstadt,,DE,49.8717,8.6503,stammdaten,geonames-ort,2938913,
+U000621,Stadt- und Kreissparkasse Erlangen Höchstadt Herzogenaurach,Erlangen,,DE,49.5910,11.0078,stammdaten,geonames-ort,2929567,
+U000622,Stadt- und Kreissparkasse Leipzig,Leipzig,,DE,51.3396,12.3713,stammdaten,geonames-ort,2879139,
+U000623,Staige One AG,Essen,45356,DE,51.4566,7.0123,gleif-isin,geonames-ort,2928810,GLEIF 894500NIDXRG5YFJAR60
+U000624,Standard Chartered Bank AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000625,State Street Bank International GmbH,München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000626,STEICO SE,Feldkirchen,,DE,48.1481,11.7310,stammdaten,geonames-ort,2927347,
+U000627,Steyr Motors AG,Steyr,,AT,48.0427,14.4213,stammdaten,geonames-ort,2764359,
+U000628,Stock3 AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000629,Sto SE & Co. KGaA,Stühlingen,,DE,47.7458,8.4481,stammdaten,geonames-ort,2825429,
+U000630,Stratec SE,Birkenfeld,,DE,48.8667,8.6333,stammdaten,geonames-ort,2948598,
+U000631,Ströer SE & Co. KGaA,Cologne,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000632,STS Group AG,Hagen,58099,DE,51.3608,7.4717,gleif-isin,geonames-ort,2912621,GLEIF 894500HMNYJTKW5H0X64
+U000633,Südwestdeutsche Salzwerke AG,Heilbronn,74076,DE,49.1399,9.2205,gleif-isin,geonames-ort,2907669,GLEIF 391200STZEMUP01ZDM10
+U000634,Süd-West-Kreditbank Finanzierung GmbH (SWK Bank),Mainz,,DE,49.9819,8.2801,stammdaten,geonames-ort,2874225,
+U000635,Südzucker AG,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000636,Surteco Group SE,Buttenwiesen,,DE,48.6000,10.7167,stammdaten,geonames-ort,2940611,
+U000637,SUSS MicroTec SE,Garching bei Munchen,,DE,48.2490,11.6510,stammdaten,geonames-ort,2922582,
+U000638,Swiss Estates AG,Pfäffikon,8808,CH,47.3645,8.7920,gleif-isin,geonames-ort,2659219,GLEIF 5067004180KC4123SY12
+U000639,Swissnet AG,Berg,,CH,47.5788,9.1663,stammdaten,geonames-ort,2661557,
+U000640,Symrise AG,Holzminden,,DE,51.8280,9.4455,stammdaten,geonames-ort,2899601,
+U000641,SynBiotic SE,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000642,SYZYGY AG,Bad Homburg vor der Höhe,,DE,50.2268,8.6182,stammdaten,geonames-ort,2953436,
+U000643,TAG Immobilien AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000644,TAKKT AG,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000645,Talanx AG,Hanover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000646,TARGOBANK AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000647,Taunus-Sparkasse,Bad Homburg vor der Höhe,,DE,50.2268,8.6182,stammdaten,geonames-ort,2953436,
+U000648,TC Unterhaltungselektronik AG,Koblenz,,DE,50.3536,7.5788,stammdaten,geonames-ort,2886946,
+U000649,TeamViewer SE,Göppingen,,DE,48.7035,9.6521,stammdaten,geonames-ort,2919054,
+U000650,technotrans SE,Sassenberg,,DE,51.9922,8.0407,stammdaten,geonames-ort,2841351,
+U000651,The Grounds Real Estate Development AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000652,The NAGA Group AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000653,The Platform Group SE & Co. KGaA,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000654,The Social Chain AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000655,thyssenkrupp AG,Essen,,DE,51.4566,7.0123,stammdaten,geonames-ort,2928810,
+U000656,thyssenkrupp nucera AG & Co. KGaA,Dortmund,,DE,51.5149,7.4660,stammdaten,geonames-ort,2935517,
+U000657,tick Trading Software AG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000658,Tin Inn Holding Ag,Wassenberg,,DE,51.1001,6.1548,stammdaten,geonames-ort,2813786,
+U000659,tiscon AG,Linden,,DE,52.3645,9.7116,stammdaten,geonames-ort,2877439,
+U000660,TK Accelis Group,Essen,45143,DE,51.4566,7.0123,gleif-isin,geonames-ort,2928810,GLEIF 5299008H650N7TB9Z004
+U000661,TKMS AG & Co KGaA,Kiel,,DE,54.3213,10.1349,stammdaten,geonames-ort,2891122,
+U000662,tokentus investment AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000663,tonies SE,Luxembourg,,LU,49.6098,6.1327,stammdaten,geonames-ort,2960316,
+U000664,Tonkens Agrar AG,Sülzetal,,DE,52.0167,11.5500,stammdaten,geonames-plz,,
+U000665,TOYOTA Kreditbank GmbH,Köln,,DE,50.9333,6.9500,stammdaten,geonames-ort,2886242,
+U000666,Tradegate AG Wertpapierhandelsbank,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000667,Trade Republic Bank GmbH,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000668,Traton SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000669,TTL Beteiligungs- und Grundbesitz-AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000670,TUI AG,Hanover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000671,Turbon AG,Hattingen,,DE,51.3989,7.1856,stammdaten,geonames-ort,2909230,
+U000672,UBS Europe SE,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000673,U.C.A. Aktiengesellschaft,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000674,UMT United Mobility Technology AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000675,UmweltBank AG,Nürnberg,,DE,49.4542,11.0775,stammdaten,geonames-ort,2861650,
+U000676,UniCredit Bank GmbH (HypoVereinsbank),München,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000677,UniCredit SpA,MILANO,20154,IT,45.4643,9.1895,gleif-lei,geonames-ort,3173435,GLEIF 549300TRUWO2CD2G5692
+U000678,Uniper SE,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000679,United Eco Solutions AG,Frankfurt am Main,,DE,50.1155,8.6842,stammdaten,geonames-ort,2925533,
+U000680,United Internet AG,Montabaur,,DE,50.4359,7.8232,stammdaten,geonames-ort,2869746,
+U000681,UNITEDLABELS Aktiengesellschaft,Münster,,DE,51.9624,7.6257,stammdaten,geonames-ort,2867543,
+U000682,Uzin Utz SE,Ulm,,DE,48.3984,9.9916,stammdaten,geonames-ort,2820256,
+U000683,Valora Effekten Handel AG,Ettlingen,,DE,48.9409,8.4076,stammdaten,geonames-ort,2928615,
+U000684,Value-Holdings AG,Augsburg,86150,DE,48.3715,10.8985,gleif-isin,geonames-ort,2954172,GLEIF 391200PXXVRTVCFYFB34
+U000685,Ascory Bank AG,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000686,Veganz Group AG,Ludwigsfelde,14974,DE,52.3032,13.2540,gleif-isin,geonames-ort,2875379,GLEIF 391200WJ0J8QYRQNC671
+U000687,Verbio SE,Leipzig,,DE,51.3396,12.3713,stammdaten,geonames-ort,2879139,
+U000688,VerbundVolksbank OWL eG,Paderborn,,DE,51.7191,8.7544,stammdaten,geonames-ort,2855745,
+U000689,Vereinigte Volksbanken eG,Böblingen,,DE,48.6821,9.0117,stammdaten,geonames-ort,2947444,
+U000690,Vereinigte VR Bank Kur- und Rheinpfalz eG,Speyer,,DE,49.3208,8.4311,stammdaten,geonames-ort,2830582,
+U000691,Verve Group Media SE,Dublin,,SE,53.3331,-6.2489,stammdaten,geonames-ort-ausland,2964574,Sitz außerhalb des Registerlands
+U000692,VIB Vermoegen AG,Neuburg an der Donau,86633,DE,48.7322,11.1871,gleif-isin,geonames-ort,2866070,GLEIF 529900NFW9IP8LMOFM33
+U000693,Vidac Pharma Holding Plc,London,,GB,51.5085,-0.1257,stammdaten,geonames-ort,2643743,
+U000694,Vidinext AG,Zug,,CH,47.1724,8.5175,stammdaten,geonames-ort,2657908,
+U000695,Villeroy & Boch AG,Mettlach,,DE,49.4949,6.5856,stammdaten,geonames-ort,2871538,
+U000696,Vincorion SE,Wedel,,DE,53.5837,9.6983,stammdaten,geonames-ort,2813464,
+U000697,Viromed Medical AG,Rellingen,,DE,53.6510,9.8290,stammdaten,geonames-ort,2848340,
+U000698,Viscom SE,Hanover,,DE,52.3705,9.7332,stammdaten,geonames-ort,2910831,
+U000699,Volksbank BRAWO eG,Braunschweig/Wolfsburg,,DE,52.2659,10.5267,stammdaten,geonames-ort,2945024,
+U000700,Volksbank Darmstadt Mainz eG,Mainz,,DE,49.9819,8.2801,stammdaten,geonames-ort,2874225,
+U000701,Volksbank Düsseldorf Neuss eG,Düsseldorf,,DE,51.2232,6.7793,stammdaten,geonames-ort,2934246,
+U000702,Volksbank eG – Die Gestalterbank,Villingen-Schwenningen / Offenburg,,DE,48.0623,8.4936,stammdaten,geonames-ort,2817220,
+U000703,Volksbank im Münsterland eG,Münster,,DE,51.9624,7.6257,stammdaten,geonames-ort,2867543,
+U000704,Volksbank in Ostwestfalen eG,Bielefeld,,DE,52.0333,8.5333,stammdaten,geonames-ort,2949186,
+U000705,Volksbank Köln Bonn eG,Bonn,,DE,50.7344,7.0955,stammdaten,geonames-ort,2946447,
+U000706,Volksbank Kraichgau eG,Wiesloch,,DE,49.2950,8.6985,stammdaten,geonames-ort,2809138,
+U000707,Volksbank Mittelhessen eG,Gießen,,DE,50.5873,8.6755,stammdaten,geonames-ort,2920512,
+U000708,Volksbank Mittlerer Neckar eG,Esslingen,,DE,48.7396,9.3047,stammdaten,geonames-ort,2928751,
+U000709,Volksbank pur eG,Karlsruhe,,DE,49.0094,8.4044,stammdaten,geonames-ort,2892794,
+U000710,Volksbank Raiffeisenbank Bayern Mitte eG,Ingolstadt,,DE,48.7651,11.4237,stammdaten,geonames-ort,2895992,
+U000711,Volksbank Stuttgart eG,Stuttgart,,DE,48.7823,9.1770,stammdaten,geonames-ort,2825297,
+U000712,Volkswagen AG,Wolfsburg,,DE,52.4236,10.7760,stammdaten,geonames-ort,2806654,
+U000713,Volkswagen Bank GmbH,Braunschweig,,DE,52.2659,10.5267,stammdaten,geonames-ort,2945024,
+U000714,Volkswagen Financial Services AG,Braunschweig,,DE,52.2659,10.5267,stammdaten,geonames-ort,2945024,
+U000715,Voltatron AG,Fürth,,DE,49.4759,10.9886,stammdaten,geonames-ort,2923544,
+U000716,Vonovia SE,Bochum,,DE,51.4817,7.2165,stammdaten,geonames-ort,2947416,
+U000717,Vossloh AG,Werdohl,,DE,51.2601,7.7661,stammdaten,geonames-ort,2810919,
+U000718,VR-Bank Bonn Rhein-Sieg eG,Siegburg,,DE,50.8002,7.2077,stammdaten,geonames-ort,2832521,
+U000719,VR Bank Heilbronn Schwäbisch Hall eG,Schwäbisch Hall,,DE,49.1113,9.7391,stammdaten,geonames-ort,2835481,
+U000720,VR-Bank Ludwigsburg eG,Ludwigsburg,,DE,48.8973,9.1916,stammdaten,geonames-ort,2875392,
+U000721,VR Bank Nord eG,Flensburg,,DE,54.7880,9.4372,stammdaten,geonames-ort,2926271,
+U000722,VR Bank RheinAhrEifel eG,Koblenz,,DE,50.3536,7.5788,stammdaten,geonames-ort,2886946,
+U000723,VR Bank Rhein-Neckar eG,Mannheim,,DE,49.4891,8.4669,stammdaten,geonames-ort,2873891,
+U000724,VR Bank Starnberg-Zugspitze eG,Starnberg,,DE,48.0019,11.3442,stammdaten,geonames-ort,2829457,
+U000725,VR TeilhaberBank Metropolregion Nürnberg eG,Neustadt an der Aisch,,DE,49.5795,10.6113,stammdaten,geonames-ort,2864057,
+U000726,Vulcan Energy Resources Ltd,Perth,6000,AU,-31.9522,115.8614,gleif-isin,geonames-ort,2063523,GLEIF 8945006OYFHQ9HE4XE54
+U000727,Wacker Chemie AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000728,Wacker Neuson SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000729,WASGAU Produktions & Handels AG,Pirmasens,,DE,49.2015,7.6053,stammdaten,geonames-ort,2853574,
+U000730,WashTec AG,Augsburg,86153,DE,48.3715,10.8985,gleif-isin,geonames-ort,2954172,GLEIF 391200HHWCQ0KBSG9U91
+U000731,Webac Holding AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000732,WeGrow AG,Tönisvorst,,DE,51.3209,6.4941,stammdaten,geonames-ort,2821899,
+U000733,Weng Fine Art AG,Monheim am Rhein,40789,DE,51.0916,6.8922,gleif-isin,geonames-ort,2869791,GLEIF 529900MWSW56LJ8TRZ61
+U000734,Westwing Group SE,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000735,Wiesbadener Volksbank eG,Wiesbaden,,DE,50.0860,8.2444,stammdaten,geonames-ort,2809346,
+U000736,Wild Bunch AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000737,Wolftank Group AG,Innsbruck,,AT,47.2627,11.3945,stammdaten,geonames-ort,2775220,
+U000738,Wüstenrot Bausparkasse AG,Kornwestheim,,DE,48.8616,9.1857,stammdaten,geonames-ort,2885408,
+U000739,Wüstenrot & Württembergische AG,Kornwestheim,,DE,48.8616,9.1857,stammdaten,geonames-ort,2885408,
+U000740,YOC AG,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000741,Your Family Entertainment AG,Munich,,DE,48.1374,11.5755,stammdaten,geonames-ort,2867714,
+U000742,Zalando SE,Berlin,,DE,52.5244,13.4105,stammdaten,geonames-ort,2950159,
+U000743,ZEAL Network SE,Hamburg,,DE,53.5507,9.9930,stammdaten,geonames-ort,2911298,
+U000744,Apple Inc.,Cupertino,95014,US,37.3230,-122.0322,gleif-isin,geonames-ort,5341145,GLEIF HWUPKR0MPOU8FGXBT394
+U000745,Microsoft Corporation,REDMOND,98052-8300,US,47.6740,-122.1215,gleif-isin,geonames-ort,5808079,GLEIF INR2EJN1ERAN0W5ZP974
+U000746,JPMorgan Chase & Co.,NEW YORK,10017,US,40.7143,-74.0060,gleif-isin,geonames-ort,5128581,GLEIF 8I5DZWZKVSZI1NUHU748
+U000747,Bank of America Corporation,Charlotte,28202,US,35.2271,-80.8431,gleif-isin,geonames-ort,4460243,GLEIF 9DJT3UXIJIZJI4WXO774
+U000748,Johnson & Johnson,New Brunswick,08933,US,40.4862,-74.4518,gleif-isin,geonames-ort,5101717,GLEIF 549300G0CFPGEF6X2043
+U000749,Chevron Corporation,,,US,,,,,,
+U000750,Walmart Inc.,WILMINGTON,19801,US,34.2356,-77.9460,gleif-isin,geonames-ort,4499379,GLEIF Y87794H0US1R65VBXU25
+U000751,The Coca-Cola Company,Atlanta,30313,US,33.7490,-84.3880,gleif-isin,geonames-ort,4180439,GLEIF UWJKFUJFZ02DKWI3RY53
+U000752,Caterpillar Inc.,Irving,75039,US,32.8140,-96.9489,gleif-isin,geonames-ort,4700168,GLEIF WRJR7GS4GTRECRRTVX92
+U000753,Lufthansa,,,DE,,,,,,
+U000754,Sartorius Stedim,,,FR,,,,,,
+U000755,A.P.MOLLER-MAERSK B,Kobenhavn K,1263,DK,55.6759,12.5655,gleif-lei,geonames-ort,2618425,GLEIF 549300D2K6PKKKXVNN73
+U000756,3I GROUP PLC.,,,GB,,,,,,
+U000757,A2A,BRESCIA,25124,IT,45.5356,10.2147,gleif-name,geonames-ort,3181554,über den Namen gefunden (GLEIF 81560076E3944316DB24: A2A S.P.A.)
+U000758,AAK,MALMO,215 37,SE,55.6059,13.0007,gleif-name,geonames-ort,2692969,über den Namen gefunden (GLEIF 549300GK4LGIDDWJWL07: AAK AB (PUBL))
+U000759,ABB,Zurich,8050,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF 5493000LKVGOO9PELI61: ABB Ltd)
+U000760,ABERDEEN GROUP,,,GB,,,,,,
+U000761,AALBERTS,Utrecht,3521AZ,NL,52.0908,5.1222,gleif-name,geonames-ort,2745912,über den Namen gefunden (GLEIF 549300EMP9DT6Q35HZ31: Aalberts N.V.)
+U000762,ABIVAX,PARIS,75009,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 969500D8TMNB184OJU95: ABIVAX)
+U000763,ABN AMRO BANK,Amsterdam,1082PP,NL,52.3740,4.8897,gleif-lei,geonames-ort,2759794,GLEIF BFXS5XCH7N0Y05NIXW11
+U000764,ACCIONA S.A.,,,ES,,,,,,
+U000765,ACCOR,ISSY LES MOULINEAUX,92130,FR,48.8210,2.2772,gleif-name,geonames-ort,3012649,über den Namen gefunden (GLEIF 969500QZC2Q0TK11NV07: ACCOR)
+U000766,ACCELLERON INDUSTRIES,Baden,5400,CH,47.4733,8.3059,gleif-name,geonames-ort,2661646,über den Namen gefunden (GLEIF 254900KS0MD2PAARXD14: Accelleron Industries AG)
+U000767,ACS,,,ES,,,,,,
+U000768,ACKERMANS & VAN HAAREN,Antwerpen,2000,BE,51.2205,4.4003,gleif-name,geonames-ort,2803138,über den Namen gefunden (GLEIF 5493005E2GHATS0Z6J59: ACKERMANS & VAN HAAREN)
+U000769,ADDTECH B,Stockholm,102 43,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 549300QZ5U2IDRHPWL60: Addtech AB)
+U000770,ACERINOX,MADRID,28035,ES,40.4165,-3.7026,gleif-name,geonames-ort,3117735,über den Namen gefunden (GLEIF 95980020140005582721: ACERINOX SA)
+U000771,ADYEN,Amsterdam,1011DJ,NL,52.3740,4.8897,gleif-lei,geonames-ort,2759794,GLEIF 724500973ODKK3IFQ447
+U000772,ADMIRAL GRP,CARDIFF,CF10 2EH,GB,51.4800,-3.1800,gleif-name,geonames-ort,2653822,über den Namen gefunden (GLEIF 213800FGVM7Z9EJB2685: ADMIRAL GROUP PLC)
+U000773,ADP,Tremblay-en-France,,FR,48.9496,2.5683,manuell,manuell,,"GLEIF-Namenstreffer war eine andere Gesellschaft (ADP, L'Isle-Jourdain); Sitz der Konzernzentrale von Hand eingetragen (nicht am Dokument geprüft)"
+U000774,ADECCO,Zürich,8008,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF NI14Y5UMU60O7JE9P611: Adecco Group AG)
+U000775,AEDIFICA,Etterbeek,1040,BE,50.8327,4.3883,gleif-name,geonames-ort,2798578,über den Namen gefunden (GLEIF 529900DTKNXL0AXQFN28: AEDIFICA)
+U000776,AENA SME,,,ES,,,,,,
+U000777,AGEAS,Saint-Josse-ten-Noode,1210,BE,50.8538,4.3728,gleif-name,geonames-ort,2787387,über den Namen gefunden (GLEIF 5493005DJBML6LY3RV36: ageas SA/NV)
+U000778,AEGON,,,NL,,,,,,
+U000779,AHOLD DELHAIZE,Zaandam,1506MA,NL,52.4385,4.8264,gleif-lei,geonames-ort,2744118,GLEIF 724500C9GNBV20UYRX36
+U000780,AIRTEL AFRICA PLC,LONDON,W1K 3DE,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 254900ZNZDQL6OWQH623: AIRTEL AFRICA PLC)
+U000781,AIB GROUP,Dublin,,IE,53.3331,-6.2489,gleif-lei,geonames-ort,2964574,GLEIF 635400AKJBGNS5WNQL34
+U000782,AIR LIQUIDE,,,FR,,,,,,
+U000783,AKER A,,,NO,,,,,,
+U000784,AKZO NOBEL,Amsterdam,1077 WW,NL,52.3740,4.8897,gleif-lei,geonames-ort,2759794,GLEIF 724500XYIJUGXAA5QD70
+U000785,AL SYDBANK,Aabenraa,6200,DK,55.0443,9.4174,gleif-name,geonames-ort,2625070,über den Namen gefunden (GLEIF GP5DT10VX1QRQUKVBK64: AL Sydbank A/S)
+U000786,AKER BP,Lysaker,1366,NO,59.9099,10.6355,gleif-lei,geonames-ort,3146631,GLEIF 549300NFTY73920OYK69
+U000787,ALK-ABELLO B,Hørsholm,2970,DK,55.8810,12.5011,gleif-name,geonames-ort,2619856,über den Namen gefunden (GLEIF 529900SGCREUZCZ7P020: ALK-ABELLÓ A/S)
+U000788,ALFA LAVAL,Lund,221 00,SE,55.7058,13.1932,gleif-name,geonames-ort,2693678,über den Namen gefunden (GLEIF 5493004TJSW0K11SHB27: Alfa Laval Holding AB)
+U000789,ALLEGRO.EU,LUXEMBOURG,L-2453,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 222100VRLXV3FPMG4982
+U000790,ALCON,FRIBOURG,1701,CH,46.8024,7.1513,gleif-name,geonames-ort,2660718,über den Namen gefunden (GLEIF 549300LDT5AP8S0NBM78: ALCON AG)
+U000791,ALLREAL HLDG,,,CH,,,,,,
+U000792,ALPHA BANK,,,GR,,,,,,
+U000793,ALLFUNDS GROUP,,,NL,,,,,,
+U000794,ALSTOM,,,FR,,,,,,
+U000795,AMADEUS IT GROUP,Madrid,28027,ES,40.4165,-3.7026,gleif-lei,geonames-ort,3117735,GLEIF 9598004A3FTY3TEHHN09
+U000796,AMUNDI,,,FR,,,,,,
+U000797,ANDRITZ,Graz,8045,AT,47.0673,15.4420,gleif-lei,geonames-ort,2778067,GLEIF 549300VZKC61IR5U8G96
+U000798,ANGLO AMERICAN,,,GB,,,,,,
+U000799,ARCADIS,Amsterdam,1082LZ,NL,52.3740,4.8897,gleif-name,geonames-ort,2759794,über den Namen gefunden (GLEIF 7245000UZH70GO047N03: ARCADIS N.V.)
+U000800,ANHEUSER-BUSCH INBEV,Bruxelles,1000,BE,50.8505,4.3488,gleif-lei,geonames-ort,2800866,GLEIF 5493008H3828EMEXB082
+U000801,ARCELORMITTAL,Luxembourg,L-1160,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 2EULGUTUI56JI9SAL165
+U000802,ANTOFAGASTA,LONDON,W1K 2TJ,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800MY6QVH4FVLD628: ANTOFAGASTA PLC)
+U000803,ARGENX,GENT,9052,BE,51.0500,3.7167,gleif-name,geonames-ort,2797656,über den Namen gefunden (GLEIF 2138003UFXBVYAOGAT72: ARGENX)
+U000804,ASM INTERNATIONAL,Almere,1322AP,NL,52.3702,5.2141,gleif-name,geonames-ort,2759879,über den Namen gefunden (GLEIF 7245001I22ND6ZFHX623: ASM International N.V.)
+U000805,ASML HLDG,Veldhoven,5504DR,NL,51.4183,5.4028,gleif-lei,geonames-ort,2745706,GLEIF 724500Y6DUVHQD6OXN27
+U000806,ARKEMA,PUTEAUX,92800,FR,48.8834,2.2389,gleif-name,geonames-ort,2985034,über den Namen gefunden (GLEIF 9695000EHMS84KKP2785: ARKEMA)
+U000807,ASR NEDERLAND NV,Utrecht,3584BA,NL,52.0908,5.1222,gleif-name,geonames-ort,2745912,über den Namen gefunden (GLEIF 7245000G0HS48PZWUD53: ASR Nederland N.V.)
+U000808,ASSECO POLAND,,,PL,,,,,,
+U000809,ASSA ABLOY,Stockholm,107 23,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 549300YECS8HKCIMMB67: ASSA ABLOY AB)
+U000810,ASSICURAZIONI GENERALI,,,IT,,,,,,
+U000811,ATLAS COPCO A,STOCKHOLM,105 23,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF 213800T8PC8Q4FYJZR07
+U000812,ASSOCIATED BRITISH FOODS,LONDON,W1K 4QY,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF GBQKSY6W7G0OHCQ8OQ72: ASSOCIATED BRITISH FOODS PLC)
+U000813,ASTRAZENECA,CAMBRIDGE,CB2 0AA,GB,52.2000,0.1167,gleif-lei,geonames-ort,2653941,GLEIF PY6ZZQWO2IZFZC3IOL08
+U000814,AT&S AUSTRIA TECH.&SYSTEMTECH,,,AT,,,,,,
+U000815,AUTOTRADER GROUP,MANCHESTER,M1 7BL,GB,53.4809,-2.2374,gleif-name,geonames-ort,2643123,über den Namen gefunden (GLEIF 213800QLK9BZILB1DI86: AUTOTRADER GROUP PLC)
+U000816,AVANZA BANK HLDG,,,SE,,,,,,
+U000817,AVOLTA,Basel,4052,CH,47.5584,7.5733,gleif-name,geonames-ort,2661604,über den Namen gefunden (GLEIF 549300X53WDBVW7TIF57: Avolta AG)
+U000818,AVIVA,,,GB,,,,,,
+U000819,Ayvens,PUTEAUX,92800,FR,48.8834,2.2389,gleif-name,geonames-ort,2985034,über den Namen gefunden (GLEIF 969500E7V019H9NP7427: AYVENS)
+U000820,AXFOOD,Stockholm,107 69,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 549300QIXCZWZLHE8L05: Axfood AB)
+U000821,AXA,,,FR,,,,,,
+U000822,AZIMUT HLDG,,,IT,,,,,,
+U000823,BALFOUR BEATTY,LONDON,E14 5HU,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF CT4UIJ3TUKGYYHMENQ17: BALFOUR BEATTY PLC)
+U000824,BAM GROEP KON.,,,NL,,,,,,
+U000825,BAE SYSTEMS,London,SW1Y 5AD,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 8SVCSVKSGDWMW2QHOH83
+U000826,BABCOCK INTERNATIONAL,LONDON,W1U 1QX,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800CH61IN1FCWME48: BABCOCK INTERNATIONAL LIMITED)
+U000827,BANCA MONTE DEI PASCHI,,,IT,,,,,,
+U000828,BANCA MEDIOLANUM,BASIGLIO,20079,IT,45.3592,9.1585,gleif-name,geonames-ort,6534245,über den Namen gefunden (GLEIF 7LVZJ6XRIE7VNZ4UBX81: BANCA MEDIOLANUM SPA)
+U000829,BANCO BPM,,,IT,,,,,,
+U000830,BANK MILLENNIUM,,,PL,,,,,,
+U000831,BANK OF IRELAND GROUP,,,IE,,,,,,
+U000832,BARCLAYS,LONDON,E14 5HP,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 213800LBQA1Y9L22JB70
+U000833,BANKINTER,,,ES,,,,,,
+U000834,BANQUE CANTONALE VAUDOISE,Lausanne,1003,CH,46.5160,6.6328,gleif-name,geonames-ort,2659994,über den Namen gefunden (GLEIF K1MOBB3OPSBBQO554R76: Banque Cantonale Vaudoise)
+U000835,BCA GENERALI,,,IT,,,,,,
+U000836,BAWAG GROUP AG,Wien,1100,AT,48.2085,16.3721,gleif-name,geonames-ort,2761369,über den Namen gefunden (GLEIF 529900S9YO2JHTIIDG38: BAWAG Group AG)
+U000837,BARRY CALLEBAUT,ZURICH,8005,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF 213800Y5RWKLDPUTT265: BARRY CALLEBAUT AG)
+U000838,BARRATT REDROW,COALVILLE,LE67 1UF,GB,52.7225,-1.3702,gleif-name,geonames-ort,2652698,über den Namen gefunden (GLEIF 2138006R85VEOF5YNK29: BARRATT REDROW PLC)
+U000839,BCO SANTANDER,SANTANDER,39004,ES,43.4659,-3.8049,gleif-lei,geonames-ort,3109718,GLEIF 5493006QMFDDMYWIAM13
+U000840,BCO BILBAO VIZCAYA ARGENTARIA,BILBAO,48005,ES,43.2627,-2.9253,gleif-lei,geonames-ort,3128026,GLEIF K8MS7FD7N5Z2WQ51AZ71
+U000841,BCO COMERCIAL PORTUGUES,Porto,4000-295,PT,41.1485,-8.6110,gleif-lei,geonames-ort,2735943,GLEIF JU1U6S0DG9YLT7N8ZV32
+U000842,BCO SABADELL,,,ES,,,,,,
+U000843,BELIMO HOLDING,Hinwil,8340,CH,47.2943,8.8439,gleif-name,geonames-ort,2660338,über den Namen gefunden (GLEIF 506700339DLX749VEM23: BELIMO Holding AG)
+U000844,BEAZLEY,LONDON,EC2N 4BQ,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800VTOMUWD41GIT12: BEAZLEY PLC)
+U000845,BEIJER REF AB,Malmö,211 34,SE,55.6059,13.0007,gleif-name,geonames-ort,2692969,über den Namen gefunden (GLEIF 549300PZZEUVH08H4G75: Beijer Ref AB (publ))
+U000846,BE SEMICONDUCTOR,,,NL,,,,,,
+U000847,BENEFIT SYSTEMS,,,PL,,,,,,
+U000848,BELLWAY,,,GB,,,,,,
+U000849,BERKELEY GRP HLDG,,,GB,,,,,,
+U000850,BIOMERIEUX,MARCY-L'ETOILE,69280,FR,45.7758,4.6903,gleif-name,geonames-plz,,über den Namen gefunden (GLEIF 549300AK8Y0LBIQ4T071: BIOMERIEUX SA)
+U000851,BOLLORE,ERGUE GABERIC,29500,FR,47.9966,-4.0244,gleif-name,geonames-ort,3019920,über den Namen gefunden (GLEIF 969500LEKCHH6VV86P94: BOLLORE SE)
+U000852,BNP PARIBAS,PARIS,75009,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF R0MUWSFPU8MPRO8K5P83
+U000853,BOLIDEN,,,SE,,,,,,
+U000854,BKW,Bern,3013,CH,46.9481,7.4474,gleif-name,geonames-ort,2661552,über den Namen gefunden (GLEIF 549300IE30SKTUO98Q38: BKW AG)
+U000855,BOUYGUES,,,FR,,,,,,
+U000856,BPER Banca,MODENA,41121,IT,44.6478,10.9254,gleif-name,geonames-ort,3173331,über den Namen gefunden (GLEIF N747OI7JINV7RUUH6190: BPER BANCA S.P.A.)
+U000857,BRIDGEPOINT GROUP,,,GB,,,,,,
+U000858,BP,LONDON,SW1Y 4PD,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 213800LH1BZH3DI6G760
+U000859,BRITISH AMERICAN TOBACCO,,,GB,,,,,,
+U000860,BT GRP,London,EC1A 7AJ,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 894500Y0EA4SAQGZNZ68: BT LIMITED)
+U000861,BRITISH LAND COMPANY,,,GB,,,,,,
+U000862,BRUNELLO CUCINELLI,CORCIANO,06073,IT,43.1282,12.2868,gleif-name,geonames-ort,3178117,über den Namen gefunden (GLEIF 5493003CX2RZ0FOBH256: BRUNELLO CUCINELLI S.P.A.)
+U000863,BURBERRY,LONDON,SW1P 2AW,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800PE1KEFCNFR1R50: BURBERRY GROUP PLC)
+U000864,BUNZL,,,GB,,,,,,
+U000865,BUZZI,CASALE MONFERRATO,15033,IT,45.1334,8.4525,gleif-name,geonames-ort,3180208,über den Namen gefunden (GLEIF 5299003DX5YLKSVJ6K59: BUZZI SPA)
+U000866,BUREAU VERITAS,COURBEVOIE,92400,FR,48.8967,2.2567,gleif-name,geonames-ort,3023141,über den Namen gefunden (GLEIF 969500TPU5T3HA5D1F11: BUREAU VERITAS)
+U000867,Capgemini SE,PARIS,75017,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF 96950077L0TN7BAROX36
+U000868,CARREFOUR,MASSY,91300,FR,48.7269,2.2830,gleif-lei,geonames-ort,2995206,GLEIF 549300B8P6MUJ1YWTS08
+U000869,CARLSBERG B,København V,1799,DK,55.6759,12.5655,gleif-lei,geonames-ort,2618425,GLEIF 5299001O0WJQYB5GYZ19
+U000870,CAIXABANK,Valencia,46002,ES,39.4739,-0.3797,gleif-lei,geonames-ort,2509954,GLEIF 7CUNS533WID6K7DGFI87
+U000871,CELLNEX TELECOM,MADRID,28007,ES,40.4165,-3.7026,gleif-name,geonames-ort,3117735,über den Namen gefunden (GLEIF 5493008T4YG3AQUI7P67: CELLNEX TELECOM SA)
+U000872,CEMBRA MONEY BANK,Zürich,8048,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF 549300ZDHOETLAIVTE82: Cembra Money Bank AG)
+U000873,CASTELLUM,,,SE,,,,,,
+U000874,CD PROJEKT RED SA,Warszawa,03-301,PL,52.2298,21.0118,gleif-lei,geonames-ort,756135,GLEIF 259400TYO5Q8SH8TL437
+U000875,CIE FINANCIERE RICHEMONT,,,CH,,,,,,
+U000876,COLOPLAST B,Humlebæk,3050,DK,55.9618,12.5341,gleif-lei,geonames-ort,2619669,GLEIF 529900NN7SOJ5QG82X67
+U000877,CENTRICA,,,GB,,,,,,
+U000878,COCA-COLA HBC,,,GB,,,,,,
+U000879,CONVATEC PLC,LONDON,W2 6LG,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800LS272L4FIDOH92: CONVATEC GROUP PLC)
+U000880,COMET HOLDINGS 'R',,,CH,,,,,,
+U000881,COMPASS GRP,CHERTSEY,KT16 9BQ,GB,51.3881,-0.5078,gleif-lei,geonames-ort,2653239,GLEIF 2138008M6MH9OZ6U2T68
+U000882,COMPUTACENTER,HATFIELD,AL10 9TW,GB,51.7634,-0.2242,gleif-name,geonames-ort,2647349,über den Namen gefunden (GLEIF 549300XSXUZ1I19DB105: COMPUTACENTER PLC)
+U000883,CRANSWICK,HESSLE,HU13 0PA,GB,53.7245,-0.4384,gleif-name,geonames-ort,2647034,über den Namen gefunden (GLEIF 549300LDZLPU51XOSK43: CRANSWICK PLC)
+U000884,COVIVIO,METZ,57000,FR,49.1191,6.1727,gleif-name,geonames-ort,2994160,über den Namen gefunden (GLEIF 969500P8M3W2XX376054: COVIVIO)
+U000885,CREDIT AGRICOLE,,,FR,,,,,,
+U000886,CRODA INTERNATIONAL,,,GB,,,,,,
+U000887,CVC CAPITAL PARTNERS,,,NL,,,,,,
+U000888,DANONE,,,FR,,,,,,
+U000889,CSG A,,,NL,,,,,,
+U000890,D'IETEREN GROUP,BRUSSELS,1050,BE,50.8505,4.3488,gleif-name,geonames-ort,2800866,über den Namen gefunden (GLEIF 549300DV5KJ23OKVTW34: D'IETEREN GROUP)
+U000891,DASSAULT SYSTEMS,,,FR,,,,,,
+U000892,DAVIDE CAMPARI,,,IT,,,,,,
+U000893,DASSAULT AVIATION,SAINT-CLOUD,92210,FR,48.8460,2.2029,gleif-name,geonames-ort,2981041,über den Namen gefunden (GLEIF 969500CVFTUT88V8QN95: DASSAULT AVIATION)
+U000894,DANSKE BANK,København V,1577,DK,55.6759,12.5655,gleif-lei,geonames-ort,2618425,GLEIF MAES062Z21O4RZ2U7M96
+U000895,DE LONGHI,TREVISO,31100,IT,45.6667,12.2416,gleif-name,geonames-ort,3165201,über den Namen gefunden (GLEIF 8156000E09A52C4F8A38: DE' LONGHI S.P.A.)
+U000896,DEMANT,SMØRUM,2765,DK,55.7423,12.3028,gleif-name,geonames-ort,2613345,über den Namen gefunden (GLEIF 213800RM6L9LN78BVA56: DEMANT A/S)
+U000897,DERWENT LONDON,,,GB,,,,,,
+U000898,DCC ENERGY,BELFAST,BT3 9ED,GB,54.5968,-5.9254,gleif-name,geonames-ort,2655984,über den Namen gefunden (GLEIF 2138005ICRSB2ZUN5N60: DCC ENERGY LTD)
+U000899,DINO POLSKA SA,Krotoszyn,63-700,PL,51.6987,17.4374,gleif-lei,geonames-ort,3094625,GLEIF 259400H4L81SMPRTW956
+U000900,DKSH HOLDING,ZÜRICH,8008,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF 549300HUUUNHO6FJUS42: DKSH HOLDING AG)
+U000901,DIAGEO,LONDON,W1F 7HS,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 213800ZVIELEA55JMJ32
+U000902,DIPLOMA,LONDON,EC1M 6EE,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800D24A8KAO3RLY94: DIPLOMA HOLDINGS PLC)
+U000903,DSM FIRMENICH AG,,,NL,,,,,,
+U000904,DNB BANK,Oslo,0191,NO,59.9127,10.7461,gleif-lei,geonames-ort,3143244,GLEIF 549300GKFG0RYRRQ1414
+U000905,DSV,Høje-Taastrup,2640,DK,55.6508,12.1977,gleif-lei,geonames-plz,,GLEIF 529900X41C0BSLK67H70
+U000906,DRAX GRP,SELBY,YO8 8PH,GB,53.7833,-1.0667,gleif-name,geonames-ort,2638235,über den Namen gefunden (GLEIF 549300YPSNTXR4ZHSR98: DRAX GROUP PLC)
+U000907,EDP (PT),LISBOA,1249-300,PT,38.7251,-9.1498,gleif-lei,geonames-ort,2267057,GLEIF 529900CLC3WDMGI9VH80
+U000908,EDP RENEWABLES,,,PT,,,,,,
+U000909,EDENRED,ISSY-LES-MOULINEAUX,92130,FR,48.8210,2.2772,gleif-name,geonames-ort,3012649,über den Namen gefunden (GLEIF 9695006LOD5B2D7Y0N70: EDENRED)
+U000910,EASYJET,LUTON,LU2 9PF,GB,51.8797,-0.4175,gleif-name,geonames-ort,2643339,über den Namen gefunden (GLEIF 2138001S47XKWIB7TH90: EASYJET PLC)
+U000911,EIFFAGE,,,FR,,,,,,
+U000912,ELISA CORPORATION,HELSINKI,FI-00520,FI,60.1695,24.9354,gleif-lei,geonames-ort,658225,GLEIF 743700TU2S3DXWGU7H32
+U000913,ELIS,PUTEAUX,92800,FR,48.8834,2.2389,gleif-name,geonames-ort,2985034,über den Namen gefunden (GLEIF 969500UX71LCE8MAY492: ELIS)
+U000914,ELIA GROUP,BRUSSELS,1000,BE,50.8505,4.3488,gleif-lei,geonames-ort,2800866,GLEIF 549300S1MP1NFDIKT460
+U000915,ENAGAS,Madrid,28005,ES,40.4165,-3.7026,gleif-name,geonames-ort,3117735,"über den Namen gefunden (GLEIF 213800OU3FQKGM4M2U23: ENAGAS, S.A.)"
+U000916,ENDEAVOUR MINING,London,W8 5EH,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 529900NI5MXQ91GHXR07: ENDEAVOUR MINING PLC)
+U000917,EMS-CHEMIE HLDG,,,CH,,,,,,
+U000918,ENDESA,Madrid,28042,ES,40.4165,-3.7026,gleif-lei,geonames-ort,3117735,GLEIF 549300LHK07F2CHV4X31
+U000919,ENTAIN,,,GB,,,,,,
+U000920,ENI,ROMA,00144,IT,41.8919,12.5113,gleif-lei,geonames-ort,3169070,GLEIF BUCRF72VH5RBN7X3VL35
+U000921,ENEL,Roma,00198,IT,41.8919,12.5113,gleif-lei,geonames-ort,3169070,GLEIF WOCMU6HCI0OJWNPRZS33
+U000922,ENGIE,,,FR,,,,,,
+U000923,EPIROC A,,,SE,,,,,,
+U000924,EQUINOR,Stavanger,4035,NO,58.9701,5.7333,gleif-lei,geonames-ort,3137115,GLEIF OW6OFBNCKXC4US5C7523
+U000925,EQT,Stockholm,103 27,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 213800U7P9GOIRKCTB34: EQT AB)
+U000926,ERICSSON LM B,Stockholm,164 83,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF 549300W9JLPW15XIFM52
+U000927,Essity B,,,SE,,,,,,
+U000928,ESSILORLUXOTTICA,,,FR,,,,,,
+U000929,ERSTE BANK POLSKA,,,PL,,,,,,
+U000930,ERSTE GROUP BANK,WIEN,1100,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF PQOH26KWDF7CG10L6792
+U000931,EVOLUTION,Stockholm,111 47,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 549300SUH6ZR1RF6TA88: Evolution AB (publ))
+U000932,EUROBANK,ATHENS,105 57,GR,37.9838,23.7278,gleif-lei,geonames-ort,264371,GLEIF JEUVK5RWVJEN8W0C9M24
+U000933,EURONEXT,PARIS,75015,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 9695005FC092L0GTDS86: EURONEXT GROUP)
+U000934,EUROFINS SCIENTIFIC,,,FR,,,,,,
+U000935,EXOR NV,Amsterdam,1081 LH,NL,52.3740,4.8897,gleif-name,geonames-ort,2759794,über den Namen gefunden (GLEIF 5493002ENHZ6NYET7405: EXOR N.V.)
+U000936,FASTIGHETS BALDER B,Göteborg,400 15,SE,57.7072,11.9668,gleif-name,geonames-ort,2711537,über den Namen gefunden (GLEIF 549300GHKJCEZOAEUU82: Fastighets AB Balder)
+U000937,EXPERIAN,Nottingham,NG80 1ZZ,GB,52.9536,-1.1505,gleif-name,geonames-ort,2641170,über den Namen gefunden (GLEIF 635400MHX4JQ7JIMB814: EXPERIAN LIMITED)
+U000938,FDJ UNITED,,,FR,,,,,,
+U000939,FINECOBANK,,,IT,,,,,,
+U000940,FERROVIAL,,,ES,,,,,,
+U000941,FINANCIERE DE TUBIZE,IXELLES,1050,BE,50.8333,4.3667,gleif-name,geonames-ort,2795011,über den Namen gefunden (GLEIF 549300I1MGC0OK6W8828: FINANCIERE DE TUBIZE)
+U000942,FERRARI,,,IT,,,,,,
+U000943,FORTUM,Espoo,02150,FI,60.2052,24.6522,gleif-lei,geonames-ort,660158,GLEIF 635400IUIZZIUJSAMF76
+U000944,FLSMIDTH & COMPANY,,,DK,,,,,,
+U000945,FLUGHAFEN ZURICH,Zürich,8058,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF 529900PFO97GCN5SYB55: Flughafen Zürich AG)
+U000946,FRESNILLO,MEXICO CITY,11250,MX,19.4285,-99.1277,gleif-name,geonames-ort,3530597,über den Namen gefunden (GLEIF 549300JXWH1UV5J0XV81: FRESNILLO PLC)
+U000947,GALENICA SANTE AG,,,CH,,,,,,
+U000948,GALDERMA GROUP N,,,CH,,,,,,
+U000949,FRONTLINE,Moss,1530,NO,59.4340,10.6577,gleif-name,geonames-ort,3145375,über den Namen gefunden (GLEIF 54930017C1H7UDNWLL19: FRONTLINE AS)
+U000950,GALP ENERGIA,Lisboa,1349-065,PT,38.7251,-9.1498,gleif-lei,geonames-ort,2267057,GLEIF 2138003319Y7NM75FG53
+U000951,GEBERIT,Jona,8645,CH,47.2298,8.8388,gleif-name,geonames-ort,2660221,über den Namen gefunden (GLEIF 52990093Z5OHD6T7BS47: Geberit AG)
+U000952,GAZTRANSPORT ET TECHNIGAZ,SAINT-REMY-LES-CHEVREUSE,78470,FR,48.7071,2.0769,gleif-name,geonames-ort,2977197,über den Namen gefunden (GLEIF 969500BVOHVZUUFWDT54: GAZTRANSPORT ET TECHNIGAZ)
+U000953,GECINA,PARIS,75002,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 9695003E4MMA10IBTR26: GECINA)
+U000954,GAMES WORKSHOP,NOTTINGHAM,NG7 2WS,GB,52.9536,-1.1505,gleif-name,geonames-ort,2641170,über den Namen gefunden (GLEIF 213800RP9QJQYGWHNT41: GAMES WORKSHOP GROUP PLC)
+U000955,GENMAB,Valby,2500,DK,55.6661,12.5139,gleif-lei,geonames-ort,2610802,GLEIF 529900MTJPDPE4MHJ122
+U000956,GETINGE B,,,SE,,,,,,
+U000957,GEK TERNA,ATHENS,11526,GR,37.9838,23.7278,gleif-lei,geonames-ort,264371,GLEIF 2138003TO2MTRHWVP686
+U000958,GEORG FISCHER,Schaffhausen,8200,CH,47.6973,8.6349,gleif-name,geonames-ort,2658761,über den Namen gefunden (GLEIF 529900CMRQYW4U1W2456: Georg Fischer AG)
+U000959,Getlink,,,FR,,,,,,
+U000960,GLANBIA,Kilkenny,R95 YTD5,IE,52.6542,-7.2522,gleif-lei,geonames-ort,2963398,GLEIF 635400SRMCBHVMSKJS84
+U000961,GJENSIDIGE FORSIKRING,Oslo,0191,NO,59.9127,10.7461,gleif-name,geonames-ort,3143244,über den Namen gefunden (GLEIF 5967007LIEEXZX6FAO47: Gjensidige Forsikring ASA)
+U000962,GIVAUDAN,VERNIER,1214,CH,46.2170,6.0850,gleif-name,geonames-ort,2658154,über den Namen gefunden (GLEIF 213800SVRMQA1TD91D41: GIVAUDAN SA)
+U000963,GRP SOCIETE GENERALE,,,FR,,,,,,
+U000964,GRIFOLS,Sant Cugat del Vallès,08174,ES,41.4706,2.0861,gleif-name,geonames-ort,3110718,über den Namen gefunden (GLEIF 959800HSSNXWRKBK4N60: GRIFOLS S.A.)
+U000965,GLENCORE PLC,,,GB,,,,,,
+U000966,GRP BRUXELLES LAMBERT,BRUSSELS,1000,BE,50.8505,4.3488,gleif-lei,geonames-ort,2800866,GLEIF 549300KV0ZEHT2KVU152
+U000967,HALMA,,,GB,,,,,,
+U000968,HALEON,WEYBRIDGE,KT13 0NY,GB,51.3718,-0.4597,gleif-name,geonames-ort,2634204,über den Namen gefunden (GLEIF 549300PSB3WWEODCUP19: HALEON PLC)
+U000969,HEINEKEN,Amsterdam,1017ZD,NL,52.3740,4.8897,gleif-lei,geonames-ort,2759794,GLEIF 724500K5PTPSST86UQ23
+U000970,GSK,LONDON,WC1A 1DG,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 5493000HZTVUYLO1D793
+U000971,HELVETIA BALOISE HLDG,,,CH,,,,,,
+U000972,HENNES & MAURITZ B,Stockholm,106 38,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF 529900O5RR7R39FRDM42
+U000973,HERA,,,IT,,,,,,
+U000974,HEINEKEN HLDG,,,NL,,,,,,
+U000975,HIKMA PHARMACEUTICALS,,,GB,,,,,,
+U000976,HERMES INTERNATIONAL,PARIS,75008,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 969500Y4IJGHJE2MTJ13: HERMES INTERNATIONAL)
+U000977,HEXAGON B,,,SE,,,,,,
+U000978,HIAB,Helsinki,00180,FI,60.1695,24.9354,gleif-name,geonames-ort,658225,über den Namen gefunden (GLEIF 5493002B0GOVF42KWX33: Hiab Oyj)
+U000979,HOCHSCHILD MINING,London,W1G 0PH,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300JK10TVQ3CCJQ89: HOCHSCHILD MINING PLC)
+U000980,HOLMEN B,,,SE,,,,,,
+U000981,HISCOX,LONDON,EC2N 4BQ,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 2138001M9U9XYDW1G153: HISCOX HOLDINGS LIMITED)
+U000982,Holcim,Zug,6300,CH,47.1724,8.5175,gleif-name,geonames-ort,2657908,über den Namen gefunden (GLEIF 529900EHPFPYHV6IQO98: Holcim AG)
+U000983,HUHTAMAKI,Espoo,02100,FI,60.2052,24.6522,gleif-name,geonames-ort,660158,über den Namen gefunden (GLEIF 5493007050SJVMXN6L29: Huhtamäki Oyj)
+U000984,HUBER+SUHNER 'R',,,CH,,,,,,
+U000985,HSBC,LONDON,E14 5HQ,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF MLU0ZO3ML4LN2LL2TL39
+U000986,HOWDEN JOINERY GRP,LONDON,W1U 1QY,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 254900WXH34CH51C2W87: HOWDEN JOINERY LIMITED)
+U000987,IBERDROLA,Bilbao,48009,ES,43.2627,-2.9253,gleif-lei,geonames-ort,3128026,GLEIF 5QK37QC7NWOJ8D7WVQ45
+U000988,IG GRP HLDG,,,GB,,,,,,
+U000989,IAG,,,GB,,,,,,
+U000990,ICG,LONDON,EC4M 7JW,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300OGASR5WRKJ8R68: ICG PLC)
+U000991,IMPERIAL BRANDS,BRISTOL,BS3 2LL,GB,51.4552,-2.5966,gleif-name,geonames-ort,2654675,über den Namen gefunden (GLEIF 549300DFVPOB67JL3A42: IMPERIAL BRANDS PLC)
+U000992,IMI,BIRMINGHAM,B37 7XZ,GB,52.4814,-1.8998,gleif-name,geonames-ort,2655603,über den Namen gefunden (GLEIF 2138002W9Q21PF751R30: IMI PLC)
+U000993,IMCD,Rotterdam,3072DE,NL,51.9225,4.4792,gleif-name,geonames-ort,2747891,über den Namen gefunden (GLEIF 724500NSJPNFJPDAUP02: IMCD N.V.)
+U000994,INCHCAPE,LONDON,SW1Y 5LP,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800RGEH1MPPNM2T57: INCHCAPE PLC)
+U000995,INDUTRADE,,,SE,,,,,,
+U000996,Industria de Diseno Textil SA,Arteixo,15143,ES,43.3048,-8.5075,gleif-lei,geonames-ort,3129329,GLEIF 549300TTCXZOGZM2EY83
+U000997,INDRA SISTEMAS,Alcobendas,28108,ES,40.5475,-3.6420,gleif-name,geonames-ort,3130583,"über den Namen gefunden (GLEIF 95980020140005308793: INDRA SISTEMAS, S.A.)"
+U000998,INDUSTRIVARDEN C,,,SE,,,,,,
+U000999,INFORMA,LONDON,SW1P 1WG,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800ZGL89FSBNFWN26: INFORMA GROUP LIMITED)
+U001000,ING BANK SLASKI BSK,,,PL,,,,,,
+U001001,ING GRP,AMSTERDAM,1102 CT,NL,52.3740,4.8897,gleif-lei,geonames-ort,2759794,GLEIF 549300NYKK9MWM7GGW15
+U001002,INFICON,Bad Ragaz,7310,CH,47.0060,9.5027,gleif-name,geonames-ort,2661644,über den Namen gefunden (GLEIF 5067008UT6890I0YM937: INFICON HOLDING AG)
+U001003,INTERPUMP GRP,SANT'ILARIO D'ENZA,42049,IT,44.7589,10.4474,gleif-name,geonames-ort,3167304,"über den Namen gefunden (GLEIF 815600C79D0F31F4D395: ""INTERPUMP GROUP S.P.A."")"
+U001004,INTERTEK GRP,LONDON,W1G 0PS,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 2138003GAT25WW1RN369: INTERTEK GROUP PLC)
+U001005,INTERCONTINENTAL HOTELS GRP,WINDSOR,SL4 1RS,GB,51.4833,-0.6000,gleif-name,geonames-ort,2633842,über den Namen gefunden (GLEIF 213800EY2DTHCTWF9R55: INTERCONTINENTAL HOTELS LIMITED)
+U001006,INPOST,LUXEMBOURG,L-1470,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 2221003M23QLERR89585
+U001007,INTESA SANPAOLO,TORINO,10121,IT,45.0705,7.6868,gleif-lei,geonames-ort,3165524,GLEIF 2W8N8UU78PMDQKZENC08
+U001008,IPSEN,PARIS,75015,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 549300M6SGDPB4Z94P11: IPSEN)
+U001009,INVESTOR B,Stockholm,103 32,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF 549300VEBQPHRZBKUX38
+U001010,INVESTEC,,,GB,,,,,,
+U001011,IVECO GROUP,TURIN,10156,IT,45.0705,7.6868,gleif-name,geonames-ort,3165524,über den Namen gefunden (GLEIF 549300Y48YRN3IH38V13: IVECO S.P.A.)
+U001012,ITALGAS,MILANO,20143,IT,45.4643,9.1895,gleif-name,geonames-ort,3173435,über den Namen gefunden (GLEIF 815600F25FF44EF1FA76: ITALGAS S.P.A.)
+U001013,ISS AS,,,DK,,,,,,
+U001014,ITV,Manchester,M17 1FZ,GB,53.4809,-2.2374,gleif-name,geonames-ort,2643123,über den Namen gefunden (GLEIF ZLECI7ED2QMWFGYCXZ59: ITV PLC)
+U001015,JUMBO,MOSCHATO,18346,GR,37.9479,23.6788,gleif-lei,geonames-ort,256750,GLEIF 549300TGIVUUMY40MZ05
+U001016,JERONIMO MARTINS,LISBOA,1649-033,PT,38.7251,-9.1498,gleif-lei,geonames-ort,2267057,GLEIF 259400A8SZP10GB5IB19
+U001017,JOHNSON MATTHEY,LONDON,EC2V 7AD,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 2138001AVBSD1HSC6Z10: JOHNSON MATTHEY PLC)
+U001018,JULIUS BAER GRP,,,CH,,,,,,
+U001019,JYSKE BANK,Silkeborg,8600,DK,56.1697,9.5451,gleif-name,geonames-ort,2614030,über den Namen gefunden (GLEIF 3M5E1GQGKL17HI6CPN30: JYSKE BANK A/S)
+U001020,Kering,PARIS,75007,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 549300VGEJKB7SVUZR78: KERING)
+U001021,KBC GRP,MOLENBEEK-SAINT-JEAN,1080,BE,50.8499,4.3125,gleif-lei,geonames-ort,2791018,GLEIF 213800X3Q9LSAKRUWY91
+U001022,KBC ANCORA,Leuven,3000,BE,50.8796,4.7009,gleif-name,geonames-ort,2792482,über den Namen gefunden (GLEIF 549300I4XZ0RR3ZOSZ55: KBC ANCORA)
+U001023,KESKO,HELSINKI,FI-00580,FI,60.1695,24.9354,gleif-lei,geonames-ort,658225,GLEIF 743700OX6HSVMCAHPB95
+U001024,KETY,,,PL,,,,,,
+U001025,KGHM,Lubin,59-301,PL,51.4009,16.2015,gleif-lei,geonames-ort,3092931,GLEIF G30CO71KTT9JDYJESN22
+U001026,KERRY GRP,TRALEE,V92 EH11,IE,52.2704,-9.7026,gleif-lei,geonames-ort,2961123,GLEIF 635400TLVVBNXLFHWC59
+U001027,KINGFISHER,,,GB,,,,,,
+U001028,KLEPIERRE,PARIS,75009,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 969500PB4U31KEFHZ621: KLEPIERRE)
+U001029,KONE B,ESPOO,02150,FI,60.2052,24.6522,gleif-lei,geonames-ort,660158,GLEIF 2138001CNF45JP5XZK38
+U001030,KINGSPAN GRP,Kingscourt,,IE,53.9081,-6.8056,gleif-lei,geonames-ort,2963169,GLEIF 635400HM7V74SUB9OG75
+U001031,KONGSBERG GRUPPEN,KONGSBERG,3616,NO,59.6686,9.6502,gleif-name,geonames-ort,3149563,über den Namen gefunden (GLEIF 5967007LIEEXZXJ9HK73: KONGSBERG GRUPPEN ASA)
+U001032,KONECRANES,HYVINKÄÄ,FI-05830,FI,60.6333,24.8667,gleif-name,geonames-ort,656913,über den Namen gefunden (GLEIF 549300EF0CDEQZBMA096: Konecranes Oyj)
+U001033,KUEHNE + NAGEL,,,CH,,,,,,
+U001034,KPN,,,NL,,,,,,
+U001035,LAGERCRANTZ GROUP 'B',STOCKHOLM,114 36,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 984500370C8864J44F50: Lagercrantz Holding AB)
+U001036,LATOUR INVESTMENT B,,,SE,,,,,,
+U001037,L'OREAL,PARIS,75008,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF 529900JI1GG6F7RKVI53
+U001038,LAND SECURITIES,LONDON,SW1E 5JL,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800V8IAVKS37D6B88: LAND SECURITIES GROUP PLC)
+U001039,LIFCO B,Enköping,745 85,SE,59.6361,17.0777,gleif-name,geonames-ort,2716166,über den Namen gefunden (GLEIF 549300RTLL4VDQRCTW41: Lifco AB (publ))
+U001040,LEGAL & GENERAL GRP,,,GB,,,,,,
+U001041,LEONARDO,Roma,00195,IT,41.8919,12.5113,gleif-lei,geonames-ort,3169070,GLEIF 529900X4EEX1U9LN3U39
+U001042,LEGRAND,,,FR,,,,,,
+U001043,LION FINANCE GROUP,LONDON,W1J 5RL,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800XKDG12NQG8VC53: LION FINANCE GROUP PLC)
+U001044,LOGITECH INTERNATIONAL,LAUSANNE,1015,CH,46.5160,6.6328,gleif-lei,geonames-ort,2659994,GLEIF 549300SN6PRK6IJJC215
+U001045,LLOYDS BANKING GRP,LONDON,EC2N 1HZ,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 549300PPXHEU2JF0AM85
+U001046,LINDT & SPRUENGLI P,,,CH,,,,,,
+U001047,LONDONMETRIC PROPERTY PLC,LONDON,W1J 5HB,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800OCERWWPQDURL87: LONDONMETRIC PROPERTY PLC)
+U001048,LOOMIS,STOCKHOLM,101 33,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 213800NS2XXVRYS7WP40: LOOMIS AB)
+U001049,LONDON STOCK EXCHANGE,LONDON,EC4M 7LS,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 213800QAUUUP6I445N30
+U001050,LONZA,BASEL,4052,CH,47.5584,7.5733,gleif-name,geonames-ort,2661604,über den Namen gefunden (GLEIF 549300EFW4H2TCZ71055: LONZA GROUP AG)
+U001051,LUNDBERGFORETAGEN B,,,SE,,,,,,
+U001052,LOTTOMATICA GROUP,New York,10019,US,40.7143,-74.0060,gleif-name,geonames-ort,5128581,über den Namen gefunden (GLEIF 549300R72LKEGT4EX026: LOTTOMATICA GROUP S.P.A.)
+U001053,LOTUS BAKERIES,Kaprijke,9971,BE,51.2172,3.6152,gleif-name,geonames-ort,2794707,über den Namen gefunden (GLEIF 5493004C0K34IFI67I03: LOTUS BAKERIES)
+U001054,LPP,Gdańsk,80-769,PL,54.3523,18.6491,gleif-lei,geonames-ort,3099434,GLEIF 259400NUS7MKGPJL4752
+U001055,Mandatum,HELSINKI,FI-00120,FI,60.1695,24.9354,gleif-name,geonames-ort,658225,über den Namen gefunden (GLEIF 743700OAJK6L28Y2NN56: Mandatum Oyj)
+U001056,M&G,,,GB,,,,,,
+U001057,MAN GRP,,,GB,,,,,,
+U001058,LVMH Moët Hennessy Louis Vuitton SE,PARIS,75008,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF IOG4E947OATN0KJYSD45
+U001059,MELROSE INDUSTRIES,LONDON,W1J 8LA,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800RGNXXZY2M7TR85: MELROSE INDUSTRIES PLC)
+U001060,MAPFRE,,,ES,,,,,,
+U001061,MBANK,WARSZAWA,00-850,PL,52.2298,21.0118,gleif-lei,geonames-ort,756135,GLEIF 259400DZXF7UJKK2AY35
+U001062,MARKS & SPENCER GRP,,,GB,,,,,,
+U001063,METLEN ENERGY & METALS,MAROUSI,15125,GR,38.0500,23.8000,gleif-lei,geonames-ort,265243,GLEIF 213800KT8MEUJEJ2KW41
+U001064,MERLIN PROPERTIES SOCIMI,Madrid,28046,ES,40.4165,-3.7026,gleif-name,geonames-ort,3117735,"über den Namen gefunden (GLEIF 959800L8KD863DP30X04: MERLIN PROPERTIES SOCIMI, S.A.)"
+U001065,MICHELIN,,,FR,,,,,,
+U001066,METSO,ESPOO,02230,FI,60.2052,24.6522,gleif-name,geonames-ort,660158,über den Namen gefunden (GLEIF 549300R0VN9C371W0E07: METSO OYJ)
+U001067,MONCLER,MILANO,20144,IT,45.4643,9.1895,gleif-lei,geonames-ort,3173435,GLEIF 815600EBD7FB00525B20
+U001068,MOBIMO HLDG,,,CH,,,,,,
+U001069,MITIE GROUP,LONDON,SE1 9SG,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800MTCLTKEHWZMJ03: MITIE GROUP PLC)
+U001070,MONDI,WEYBRIDGE,KT13 0NY,GB,51.3718,-0.4597,gleif-name,geonames-ort,2634204,über den Namen gefunden (GLEIF 213800LOZA69QFDC9N34: MONDI PLC)
+U001071,NATIONAL BANK OF GREECE,ATHENS,10559,GR,37.9838,23.7278,gleif-lei,geonames-ort,264371,GLEIF 5UMCZOEYKCVFAW8ZLO05
+U001072,MOTOR OIL (HELLAS),MAROUSI,15124,GR,38.0500,23.8000,gleif-lei,geonames-ort,265243,GLEIF 213800U3Y9UL7Y4QVM11
+U001073,MYCRONIC,Täby,183 03,SE,59.4439,18.0687,gleif-name,geonames-ort,2669772,über den Namen gefunden (GLEIF 549300S5CCFESE4C6Y07: Mycronic AB (publ))
+U001074,MOWI,Bergen,5035,NO,60.3930,5.3242,gleif-lei,geonames-ort,3161732,GLEIF 549300W1OGQF5LZIH349
+U001075,NATWEST GROUP,EDINBURGH,EH2 2YB,GB,55.9521,-3.1965,gleif-lei,geonames-ort,2650225,GLEIF 2138005O9XJIJN4JPN90
+U001076,Naturgy Energy Group,Madrid,28028,ES,40.4165,-3.7026,gleif-lei,geonames-ort,3117735,GLEIF TL2N6M87CW970S5SV098
+U001077,NESTE,Espoo,02150,FI,60.2052,24.6522,gleif-lei,geonames-ort,660158,GLEIF 5493009GY1X8GQ66AM14
+U001078,NATIONAL GRID,London,WC2N 5EH,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 8R95QZMKZLJX5Q2XR704
+U001079,NEXT,LEICESTER,LE19 4AT,GB,52.6386,-1.1317,gleif-name,geonames-ort,2644668,über den Namen gefunden (GLEIF 213800O8TRZCFJ9R5760: NEXT GROUP PLC)
+U001080,NEXI SPA,MILANO,20149,IT,45.4643,9.1895,gleif-name,geonames-ort,3173435,über den Namen gefunden (GLEIF 5493000P70CQRQG8SN85: NEXI SPA)
+U001081,NESTLE,VEVEY,1800,CH,46.4630,6.8434,gleif-name,geonames-ort,2658145,über den Namen gefunden (GLEIF KY37LUS27QQX7BB93L28: NESTLÉ S.A.)
+U001082,NEXANS,,,FR,,,,,,
+U001083,NIBE INDUSTRIER B,Markaryd,285 21,SE,56.4614,13.5964,gleif-name,geonames-ort,2692596,über den Namen gefunden (GLEIF 549300ZQH0FIF1P0MX67: NIBE Industrier AB)
+U001084,NN GROUP,,,NL,,,,,,
+U001085,NKT,Brøndby,2605,DK,55.6455,12.4101,gleif-name,geonames-ort,2623340,über den Namen gefunden (GLEIF 529900197LKWCEQ0NL18: NKT A/S)
+U001086,NOKIA,Espoo,02610,FI,60.2052,24.6522,gleif-lei,geonames-ort,660158,GLEIF 549300A0JPRWG1KI7U06
+U001087,NORDEA BANK,Helsinki,00020,FI,60.1695,24.9354,gleif-lei,geonames-ort,658225,GLEIF 529900ODI3047E2LIV03
+U001088,NORSK HYDRO,Oslo,0283,NO,59.9127,10.7461,gleif-lei,geonames-ort,3143244,GLEIF 549300N1SDN71ZZ8BO45
+U001089,NORDNET,,,SE,,,,,,
+U001090,NORDIC SEMICONDUCTOR,Trondheim,7052,NO,63.4305,10.3951,gleif-name,geonames-ort,3133880,über den Namen gefunden (GLEIF 5967007LIEEXZXJGFK95: NORDIC SEMICONDUCTOR ASA)
+U001091,NOVONESIS,,,DK,,,,,,
+U001092,OCTAVE INTELLIGENCE SDR,,,SE,,,,,,
+U001093,NOVARTIS,Basel,4056,CH,47.5584,7.5733,gleif-lei,geonames-ort,2661604,GLEIF 5493007HIVTX6SY6XD66
+U001094,NOVO NORDISK B,Bagsværd,2880,DK,55.7571,12.4558,gleif-lei,geonames-plz,,GLEIF 549300DAQ1CVT6CXN342
+U001095,ORKLA,Oslo,0277,NO,59.9127,10.7461,gleif-lei,geonames-ort,3143244,GLEIF 549300PZS8G8RG6RVZ52
+U001096,ORION B,ESPOO,FI-02200,FI,60.2052,24.6522,gleif-name,geonames-ort,660158,über den Namen gefunden (GLEIF 74370029VAHCXDR7B745: Orion Oyj)
+U001097,ORANGE,ISSY-LES-MOULINEAUX,92130,FR,48.8210,2.2772,gleif-lei,geonames-ort,3012649,GLEIF 969500MCOONR8990S771
+U001098,OMV,VIENNA,1020,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 549300V62YJ9HTLRI486
+U001099,ORSTED,FREDERICIA,7000,DK,55.5657,9.7526,gleif-lei,geonames-ort,2621951,GLEIF W9NG6WMZIYEU8VEDOG48
+U001100,ORLEN,PŁOCK,09-411,PL,52.5468,19.7064,gleif-lei,geonames-ort,3088825,GLEIF 259400VVMM70CQREJT74
+U001101,PANDORA,KØBENHAVN,1561,DK,55.6759,12.5655,gleif-lei,geonames-ort,2618425,GLEIF 5299007OWYZ6I1E46843
+U001102,PAN AFRICAN RESOURCES,LONDON,EC2V 6DN,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800EAXURCXMX6RL85: PAN AFRICAN RESOURCES PLC)
+U001103,PARTNERS GRP HLDG,,,CH,,,,,,
+U001104,PEKAO,WARSZAWA,01-066,PL,52.2298,21.0118,gleif-lei,geonames-ort,756135,GLEIF 5493000LKS7B3UTF7H35
+U001105,PEARSON,,,GB,,,,,,
+U001106,PENNON GRP,EXETER,EX2 7HR,GB,50.7236,-3.5275,gleif-name,geonames-ort,2649808,über den Namen gefunden (GLEIF 213800V1CCTS41GWH423: PENNON GROUP PLC)
+U001107,PIRAEUS BANK,,,GR,,,,,,
+U001108,PHILIPS,Eindhoven,5656AE,NL,51.4408,5.4778,gleif-lei,geonames-ort,2756253,GLEIF H1FJE8H61JGM1JSGM897
+U001109,PERNOD RICARD,PARIS,75008,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 52990097YFPX9J0H5D87: PERNOD RICARD)
+U001110,PERSIMMON,,,GB,,,,,,
+U001111,PKO BANK,WARSZAWA,00-116,PL,52.2298,21.0118,gleif-lei,geonames-ort,756135,GLEIF P4GTT6GF1W40CVIMFR43
+U001112,PIRELLI & C. S.P.A.,,,IT,,,,,,
+U001113,PLUS500,,,GB,,,,,,
+U001114,POSTE ITALIANE,ROMA,00144,IT,41.8919,12.5113,gleif-lei,geonames-ort,3169070,GLEIF 815600354DEDBD0BA991
+U001115,PRIMARY HEALTH PROPS.,,,GB,,,,,,
+U001116,PRUDENTIAL,,,GB,,,,,,
+U001117,PRYSMIAN,Milano,20126,IT,45.4643,9.1895,gleif-lei,geonames-ort,3173435,GLEIF 529900X0H1IO3RS1A464
+U001118,Prosus,Amsterdam,1082 MS,NL,52.3740,4.8897,gleif-lei,geonames-ort,2759794,GLEIF 635400Z5LQ5F9OLVT688
+U001119,PSP SWISS PROPERTY,Zug,6300,CH,47.1724,8.5175,gleif-name,geonames-ort,2657908,über den Namen gefunden (GLEIF 50670042Y437P8X44F56: PSP Swiss Property AG)
+U001120,PUBLIC POWER,ATHENS,104 32,GR,37.9838,23.7278,gleif-lei,geonames-ort,264371,GLEIF 213800T9Y5XCOVRZ4Y57
+U001121,PUIG BRANDS B,Barcelona,08902,ES,41.3888,2.1590,gleif-name,geonames-ort,3128760,über den Namen gefunden (GLEIF 549300OVHNSX30L1AQ94: PUIG BRANDS S.A.)
+U001122,PUBLICIS GRP,,,FR,,,,,,
+U001123,PZU GROUP,,,PL,,,,,,
+U001124,RAIFFEISEN BANK INTERNATIONAL,Wien,1030,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 9ZHRYM6F437SQJ6OUG95
+U001125,QUILTER,,,GB,,,,,,
+U001126,QINETIQ GRP,FARNBOROUGH,GU14 0LX,GB,51.2942,-0.7557,gleif-name,geonames-ort,2649672,über den Namen gefunden (GLEIF 213800S8OBDOZMCMUW34: QINETIQ GROUP PLC)
+U001127,Redeia Corporacion,Alcobendas,28109,ES,40.5475,-3.6420,gleif-name,geonames-ort,3130583,über den Namen gefunden (GLEIF 5493009HMD0C90GUV498: REDEIA CORPORACION SA)
+U001128,RECKITT BENCKISER GRP,SLOUGH,SL1 3UH,GB,51.5095,-0.5954,gleif-name,geonames-ort,2637627,über den Namen gefunden (GLEIF 5493008LGS6KH5PN7Y14: RECKITT BENCKISER LIMITED)
+U001129,RECORDATI,,,IT,,,,,,
+U001130,RANDSTAD,,,NL,,,,,,
+U001131,RENTOKIL INITIAL,CRAWLEY,RH10 9PY,GB,51.1130,-0.1831,gleif-name,geonames-ort,2652053,über den Namen gefunden (GLEIF 549300VN4WV7Z6T14K68: RENTOKIL INITIAL PLC)
+U001132,RELX PLC,LONDON,WC2N 5JR,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300N2HVAE68YIUN41: RELX (HOLDINGS) LIMITED)
+U001133,RENAULT,,,FR,,,,,,
+U001134,REPLY,,,IT,,,,,,
+U001135,RIGHTMOVE GRP,MILTON KEYNES,MK7 8LE,GB,52.0417,-0.7558,gleif-name,geonames-ort,2642465,über den Namen gefunden (GLEIF 213800ABDESCMZ8BOQ86: RIGHTMOVE GROUP LIMITED)
+U001136,RINGKJOBING LANDBOBANK,,,DK,,,,,,
+U001137,REXEL,PARIS,75017,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 969500N6AVPA51648T62: REXEL)
+U001138,REPSOL,Madrid,28045,ES,40.4165,-3.7026,gleif-lei,geonames-ort,3117735,GLEIF BSYCX13Y0NOTV14V9N85
+U001139,ROCHE PS,,,CH,,,,,,
+U001140,RIO TINTO,LONDON,SW1Y 4AD,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 213800YOEO5OQ72G2R82
+U001141,ROCKWOOL B,HEDEHUSENE,2640,DK,55.6495,12.1983,gleif-name,geonames-ort,2620587,über den Namen gefunden (GLEIF 213800QRC7LNX935OZ09: ROCKWOOL A/S)
+U001142,ROLLS ROYCE HLDG,,,GB,,,,,,
+U001143,RS Group,,,GB,,,,,,
+U001144,ROSEBANK INDUSTRIES,London,W1K 6WE,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 98450085B5E44DABFD77: ROSEBANK INDUSTRIES HOLDINGS LIMITED)
+U001145,ROYAL UNIBREW,Faxe,4640,DK,55.2556,12.1193,gleif-name,geonames-ort,2622372,über den Namen gefunden (GLEIF 529900D69KFL8IAP8Q63: ROYAL UNIBREW A/S)
+U001146,ROTORK,,,GB,,,,,,
+U001147,SAAB B,,,SE,,,,,,
+U001148,RYANAIR,,,IE,,,,,,
+U001149,SACYR,,,ES,,,,,,
+U001150,RUBIS,,,FR,,,,,,
+U001151,SAFRAN,VILLE-D'AVRAY,92410,FR,48.8236,2.1931,gleif-name,geonames-ort,2968819,über den Namen gefunden (GLEIF 969500S23A8FSWUTLD60: SAFRAN)
+U001152,SAINSBURY (J),,,GB,,,,,,
+U001153,SAGAX 'B',,,SE,,,,,,
+U001154,SAGE GRP,,,GB,,,,,,
+U001155,SALMAR,Kverva,7266,NO,63.7043,8.5349,gleif-name,geonames-plz,,über den Namen gefunden (GLEIF 5493002IT17S086IXJ86: SALMAR AS)
+U001156,SAMPO,HELSINKI,FI-00130,FI,60.1695,24.9354,gleif-lei,geonames-ort,658225,GLEIF 743700UF3RL386WIDA22
+U001157,SAINT GOBAIN,,,FR,,,,,,
+U001158,SAIPEM,MILAN,20138,IT,45.4643,9.1895,gleif-name,geonames-ort,3173435,über den Namen gefunden (GLEIF 549300PHV8MBDHWB8X12: SAIPEM S.P.A.)
+U001159,SBM OFFSHORE,AMSTERDAM,1118 CL,NL,52.3740,4.8897,gleif-name,geonames-ort,2759794,über den Namen gefunden (GLEIF 549300RDGCRYZ5QE6513: SBM OFFSHORE N.V.)
+U001160,SANDOZ GROUP,,,CH,,,,,,
+U001161,SANOFI,PARIS,75017,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF 549300E9PC51EN656011
+U001162,SANDVIK,Stockholm,101 30,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF 5299008ZUAXN43LVZF54
+U001163,SCHINDLER P,,,CH,,,,,,
+U001164,SCHRODERS,London,EC2Y 5AU,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 2138001YYBULX5SZ2H24: SCHRODERS LIMITED)
+U001165,Schneider Electric SE,Paris,92500,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF 969500A1YF1XUYYXS284
+U001166,SCOR,PARIS,75016,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 96950056ULJ4JI7V3752: SCOR SE)
+U001167,SEGRO,,,GB,,,,,,
+U001168,SECURITAS B,Stockholm,102 28,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 635400TTYKE8EIWDS617: Securitas AB)
+U001169,SECTRA 'B',,,SE,,,,,,
+U001170,SCOTTISH & SOUTHERN ENERGY,,,GB,,,,,,
+U001171,SGS,BAAR,6340,CH,47.1962,8.5295,gleif-name,geonames-ort,2661653,über den Namen gefunden (GLEIF 2138007JNS19JHNA2336: SGS SA)
+U001172,SERCO GRP,HOOK,RG27 9UY,GB,51.3680,-0.3065,gleif-name,geonames-ort,2646653,über den Namen gefunden (GLEIF 549300SRI6M6ZS5MTT55: SERCO LIMITED)
+U001173,SFS GROUP,Heerbrugg,9435,CH,47.4126,9.6266,gleif-name,geonames-plz,,über den Namen gefunden (GLEIF 391200RQ38WAM4BJBO16: SFS Group AG)
+U001174,SEVERN TRENT,COVENTRY,CV1 2LZ,GB,52.4066,-1.5122,gleif-name,geonames-ort,2652221,über den Namen gefunden (GLEIF 213800RPBXRETY4A4C59: SEVERN TRENT PLC)
+U001175,SIEGFRIED 'R',,,CH,,,,,,
+U001176,SIG GROUP AG,Neuhausen am Rheinfall,8212,CH,47.6858,8.6147,gleif-name,geonames-ort,2659485,über den Namen gefunden (GLEIF 5493004Z6P7TSVB1L042: SIG GROUP AG)
+U001177,SHELL,LONDON,SE1 7NA,GB,51.5085,-0.1257,gleif-lei,geonames-ort,2643743,GLEIF 21380068P1DRHMJ8KU70
+U001178,SHAFTESBURY CAPITAL,LONDON,WC2E 8BU,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300TTXXZ1SHUI0D54: SHAFTESBURY CAPITAL PLC)
+U001179,SKANSKA B,,,SE,,,,,,
+U001180,SKF B,,,SE,,,,,,
+U001181,SKANDINAVISKA ENSKILDA BK A,Stockholm,106 40,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF F3JS33DEI6XQ4ZBPTN86
+U001182,SIKA,Baar,6340,CH,47.1962,8.5295,gleif-name,geonames-ort,2661653,über den Namen gefunden (GLEIF 549300R3N69ECGYPU434: Sika AG)
+U001183,SNAM RETE GAS,MILANO,20139,IT,45.4643,9.1895,gleif-lei,geonames-ort,3173435,GLEIF 8156002278562044AF79
+U001184,SODEXO,ISSY-LES-MOULINEAUX,92130,FR,48.8210,2.2772,gleif-name,geonames-ort,3012649,über den Namen gefunden (GLEIF 969500LCBOG12HXPYM84: SODEXO)
+U001185,SMITHS GRP,,,GB,,,,,,
+U001186,SMITH & NEPHEW,WATFORD,WD18 8YE,GB,51.6553,-0.3960,gleif-name,geonames-ort,2634677,über den Namen gefunden (GLEIF 213800ZTMDN8S67S1H61: SMITH & NEPHEW PLC)
+U001187,SONOVA,Stäfa,8712,CH,47.2425,8.7234,gleif-name,geonames-ort,2658518,über den Namen gefunden (GLEIF 529900LOBXKDNHDSBL87: Sonova AG)
+U001188,SOFINA,BRUSSELS,1040,BE,50.8505,4.3488,gleif-lei,geonames-ort,2800866,GLEIF 5493000GMVR38VUO5D39
+U001189,SOFTCAT,MARLOW,SL7 1LW,GB,51.5693,-0.7742,gleif-name,geonames-ort,2643003,über den Namen gefunden (GLEIF 213800N42YZLR9GLVC42: SOFTCAT PLC)
+U001190,SOITEC,BERNIN,38190,FR,45.2677,5.8646,gleif-name,geonames-ort,3033269,über den Namen gefunden (GLEIF 969500ZR92SQCU9TST26: SOITEC)
+U001191,SOPRA STERIA GROUP,ANNECY,74000,FR,45.9088,6.1257,gleif-name,geonames-ort,3037543,über den Namen gefunden (GLEIF 96950020QIOHAAK9V551: SOPRA STERIA GROUP)
+U001192,SPAREBANK 1 SOR-NORGE ASA,STAVANGER,4007,NO,58.9701,5.7333,gleif-lei,geonames-ort,3137115,GLEIF 549300Q3OIWRHQUQM052
+U001193,SPIE,CERGY,95800,FR,49.0365,2.0761,gleif-name,geonames-ort,3027883,über den Namen gefunden (GLEIF 969500TJNS5GSFWJ8X85: SPIE SA)
+U001194,SPAREBANKEN NORGE,Bergen,5011,NO,60.3930,5.3242,gleif-name,geonames-ort,3161732,über den Namen gefunden (GLEIF 213800M7T3CYVZ3ZRT12: SPAREBANKEN NORGE)
+U001195,SSAB B,Stockholm,101 21,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 529900329VS14ZIML164: SSAB AB)
+U001196,SPIRAX,CHELTENHAM,GL53 8ER,GB,51.9001,-2.0797,gleif-name,geonames-ort,2653261,über den Namen gefunden (GLEIF 213800WFVZQMHOZP2W17: SPIRAX GROUP PLC)
+U001197,ST.JAMES'S PLACE CAPITAL,,,GB,,,,,,
+U001198,STANDARD CHARTERED,LONDON,EC2V 5DD,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300CMZRKFV0TJGO90: STANDARD CHARTERED HOLDINGS LIMITED)
+U001199,STORA ENSO R,HELSINKI,FI-00160,FI,60.1695,24.9354,gleif-lei,geonames-ort,658225,GLEIF 7437000ZP669LKUTZ738
+U001200,STMICROELECTRONICS,,,IT,,,,,,
+U001201,STANDARD LIFE,,,GB,,,,,,
+U001202,STELLANTIS,,,IT,,,,,,
+U001203,SUBSEA7,,,NO,,,,,,
+U001204,STRAUMANN,Basel,4002,CH,47.5584,7.5733,gleif-name,geonames-ort,2661604,über den Namen gefunden (GLEIF 50670046ML5FVIM60Z37: Straumann Holding AG)
+U001205,STOREBRAND,Lysaker,1366,NO,59.9099,10.6355,gleif-lei,geonames-ort,3146631,GLEIF 5967007LIEEXZX7NA051
+U001206,SULZER,,,CH,,,,,,
+U001207,SUNRISE N A,,,CH,,,,,,
+U001208,SVENSKA CELLULOSA AKTIE. SCA B,,,SE,,,,,,
+U001209,SWATCH BEARER,,,CH,,,,,,
+U001210,SVENSKA HANDELSBANKEN A,Stockholm,106 70,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF NHBDILHZTYCNBV5UYZ31
+U001211,SWISS LIFE HLDG,,,CH,,,,,,
+U001212,SWEDISH ORPHAN BIOVITRUM,Stockholm,113 64,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 549300124Y3MQI87PT35: Swedish Orphan Biovitrum AB (publ))
+U001213,SWEDBANK,Stockholm,105 34,SE,59.3294,18.0687,gleif-lei,geonames-ort,2673730,GLEIF M312WZV08Y7LYUC71685
+U001214,SWECO 'B',Stockholm,100 26,SE,59.3294,18.0687,gleif-name,geonames-ort,2673730,über den Namen gefunden (GLEIF 549300Q4Y55VICYV6U90: SWECO AB (publ))
+U001215,SWISSCOM,Bern,3050,CH,46.9481,7.4474,gleif-name,geonames-ort,2661552,über den Namen gefunden (GLEIF 5493005SL9HHOXS3B739: Swisscom AG)
+U001216,SWISS PRIME SITE,Zug,6300,CH,47.1724,8.5175,gleif-name,geonames-ort,2657908,über den Namen gefunden (GLEIF 506700XI9H64OPR34158: Swiss Prime Site AG)
+U001217,SWISS REINSURANCE COMPANY,,,CH,,,,,,
+U001218,SWISSQUOTE 'R',,,CH,,,,,,
+U001219,Technip Energies,Nanterre Cedex,92000,FR,48.8920,2.2067,gleif-name,geonames-plz,,über den Namen gefunden (GLEIF 724500FLODI49NSCIP70: Technip Energies N.V.)
+U001220,TBC BANK GROUP,LONDON,EC2N 4AG,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800T6NS9N2WQ3B328: TBC BANK GROUP PLC)
+U001221,TAYLOR WIMPEY,HIGH WYCOMBE,HP12 3NR,GB,51.6291,-0.7493,gleif-name,geonames-ort,2646914,über den Namen gefunden (GLEIF 21380089BTRXTD8S3R66: TAYLOR WIMPEY PLC)
+U001222,SYENSQO,BRUSSELS,1130,BE,50.8505,4.3488,gleif-name,geonames-ort,2800866,über den Namen gefunden (GLEIF 549300060XNJ90PLNS10: SYENSQO)
+U001223,TELEFONICA,MADRID,28013,ES,40.4165,-3.7026,gleif-lei,geonames-ort,3117735,GLEIF 549300EEJH4FEPDBBR25
+U001224,TELECOM ITALIA,,,IT,,,,,,
+U001225,TELE2 B,KISTA,164 94,SE,59.4032,17.9448,gleif-name,geonames-ort,2700791,über den Namen gefunden (GLEIF 213800EKD193RVI9HL76: TELE2 AB)
+U001226,TECHNOPROBE SPA,CERNUSCO LOMBARDONE,23870,IT,45.6909,9.3993,gleif-name,geonames-ort,6535693,über den Namen gefunden (GLEIF 8156007154CD8334D053: TECHNOPROBE S.P.A.)
+U001227,TELEPERFORMANCE,PARIS,75008,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 9695004GI61FHFFNRG61: TELEPERFORMANCE SE)
+U001228,TEMENOS,Grand-Lancy,1212,CH,46.1897,6.1158,gleif-name,geonames-plz,,über den Namen gefunden (GLEIF 5067007NW6550481FH64: TEMENOS AG)
+U001229,TELENOR,Fornebu,1360,NO,59.9005,10.6245,gleif-lei,geonames-plz,,GLEIF 549300IM1QSBY4SLPM26
+U001230,TELIA COMPANY,SOLNA,169 94,SE,59.3600,18.0009,gleif-lei,geonames-ort,2675397,GLEIF 213800FSR9RNDUOTXO25
+U001231,TGS ASA,OSLO,0283,NO,59.9127,10.7461,gleif-name,geonames-ort,3143244,über den Namen gefunden (GLEIF 549300NUPLAXPB0WYH90: TGS ASA)
+U001232,TERNA,ROMA,00156,IT,41.8919,12.5113,gleif-lei,geonames-ort,3169070,GLEIF 8156009E94ED54DE7C31
+U001233,TESCO,WELWYN GARDEN CITY,AL7 1GA,GB,51.8017,-0.2069,gleif-lei,geonames-ort,2634552,GLEIF 2138002P5RNKC5W2JZ46
+U001234,TENARIS,Luxembourg,L-2449,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 549300Y7C05BKC4HZB40
+U001235,TotalEnergies SE,Courbevoie,92400,FR,48.8967,2.2567,gleif-lei,geonames-ort,3023141,GLEIF 529900S21EQ1BO4ESM68
+U001236,THALES,Meudon,,FR,48.8123,2.2385,manuell,manuell,,"GLEIF-Namenstreffer war eine Tochter (SARL THALES, Coutras); Sitz der Konzernzentrale von Hand eingetragen (nicht am Dokument geprüft)"
+U001237,TOMRA SYSTEMS,Asker,1385,NO,59.8333,10.4372,gleif-name,geonames-ort,3162657,über den Namen gefunden (GLEIF 549300J726JCFJU3VT89: TOMRA SYSTEMS ASA)
+U001238,THE MAGNUM ICE CREAM COMPANY,Amsterdam,1017 BK,NL,52.3740,4.8897,gleif-name,geonames-ort,2759794,über den Namen gefunden (GLEIF 25490052LLF3XH6G9847: THE MAGNUM ICE CREAM COMPANY N.V.)
+U001239,TRYG,BALLERUP,2750,DK,55.7317,12.3633,gleif-name,geonames-ort,2624341,über den Namen gefunden (GLEIF 213800ZRS8AC4LSTCE39: TRYG A/S)
+U001240,TRELLEBORG B,TRELLEBORG,231 22,SE,55.3751,13.1569,gleif-name,geonames-ort,2667402,über den Namen gefunden (GLEIF 213800DO5ZGNFXT4RF59: TRELLEBORG HOLDING AB)
+U001241,TP ICAP,,,GB,,,,,,
+U001242,TRITAX BIG BOX REIT,LONDON,W1F 9QZ,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800L6X88MIYPVR714: TRITAX BIG BOX REIT PLC)
+U001243,UMICORE,Brussel,1000,BE,50.8505,4.3488,gleif-lei,geonames-ort,2800866,GLEIF 529900F3AIQECS8ZSV61
+U001244,UCB,ANDERLECHT,1070,BE,50.8362,4.3145,gleif-lei,geonames-ort,2803201,GLEIF 2138008J191VLSGY5A09
+U001245,UMG,,,NL,,,,,,
+U001246,UBS GROUP,Zurich,8001,CH,47.3667,8.5500,gleif-lei,geonames-ort,2657896,GLEIF 549300SZJ9VS8SGXAN81
+U001247,UNILEVER PLC,LONDON,EC4Y 0DY,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300V2U8DC564CK756: UNILEVER GROUP LIMITED)
+U001248,UNIBAIL-RODAMCO-WESTFIELD,PARIS,75016,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 969500SHQITWXSIS7N89: UNIBAIL-RODAMCO-WESTFIELD SE)
+U001249,UNICAJA BANCO S.A.,,,ES,,,,,,
+U001250,UNITE GROUP PLC,BRISTOL,BS2 0PS,GB,51.4552,-2.5966,gleif-name,geonames-ort,2654675,über den Namen gefunden (GLEIF 213800BBUUWVDH9YI827: THE UNITE GROUP PLC)
+U001251,UPM KYMMENE,HELSINKI,00100,FI,60.1695,24.9354,gleif-lei,geonames-ort,658225,GLEIF 213800EC6PW5VU4J9U64
+U001252,UNITED UTILITIES GRP,WARRINGTON,WA5 3LP,GB,53.3925,-2.5802,gleif-name,geonames-ort,2634739,über den Namen gefunden (GLEIF 2138002IEYQAOC88ZJ59: UNITED UTILITIES GROUP PLC)
+U001253,UNIPOL ASSICURAZIONI,BOLOGNA,40128,IT,44.4938,11.3387,gleif-name,geonames-ort,3181928,über den Namen gefunden (GLEIF 8156005CE5E7340CCA86: UNIPOL ASSICURAZIONI S.P.A.)
+U001254,VALLOUREC,MEUDON,92190,FR,48.8138,2.2350,gleif-name,geonames-ort,2994144,über den Namen gefunden (GLEIF 969500P2Q1B47H4MCJ34: VALLOUREC)
+U001255,Valmet,ESPOO,02150,FI,60.2052,24.6522,gleif-name,geonames-ort,660158,über den Namen gefunden (GLEIF 213800D9O7FUQDH83V62: VALMET OYJ)
+U001256,VALIANT,Luzern,6003,CH,47.0505,8.3064,gleif-name,geonames-ort,2659811,über den Namen gefunden (GLEIF 529900R30EKFHO09CN42: Valiant Holding AG)
+U001257,VALEO,PARIS,75017,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 5493006IH2N2WMIBB742: VALEO)
+U001258,VEND MARKETPLACES,OSLO,0159,NO,59.9127,10.7461,gleif-name,geonames-ort,3143244,über den Namen gefunden (GLEIF 5967007LIEEXZXHT0O36: VEND MARKETPLACES ASA)
+U001259,VAR ENERGI,Sandnes,4313,NO,58.8524,5.7352,gleif-name,geonames-ort,3140321,über den Namen gefunden (GLEIF 549300LIVN3FFOJN2K47: VÅR ENERGI ASA)
+U001260,VAT GROUP AG,Haag (Rheintal),9469,CH,47.2099,9.4893,gleif-name,geonames-ort,6940549,über den Namen gefunden (GLEIF 529900YC9EOIM2CNOO20: VAT Holding AG)
+U001261,VEOLIA ENVIRONNEMENT,PARIS,75008,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 969500LENY69X51OOT31: VEOLIA ENVIRONNEMENT)
+U001262,VERISURE,Malmö,201 23,SE,55.6059,13.0007,gleif-name,geonames-ort,2692969,über den Namen gefunden (GLEIF 549300N4W45PST8EVZ40: Verisure Group AB)
+U001263,VERBUND,Wien,1011,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 5299006UDSEJCTTEJS30
+U001264,VESTAS WIND SYSTEMS,Aarhus,8200,DK,56.1567,10.2108,gleif-lei,geonames-ort,2624652,GLEIF 549300DYMC8BGZZC8844
+U001265,VINCI,,,FR,,,,,,
+U001266,VOLVO B,Göteborg,405 08,SE,57.7072,11.9668,gleif-lei,geonames-ort,2711537,GLEIF 549300HGV012CNC8JD22
+U001267,VOPAK,,,NL,,,,,,
+U001268,VOESTALPINE,Linz,4020,AT,48.3064,14.2861,gleif-lei,geonames-ort,2772400,GLEIF 529900ZAXBMQDIWPNB72
+U001269,VODAFONE GRP,NEWBURY,RG14 2FN,GB,51.4015,-1.3247,gleif-lei,geonames-ort,2641689,GLEIF 213800TB53ELEUKM7Q61
+U001270,VZ HOLDING 'N',,,CH,,,,,,
+U001271,WDP,Meise,1861,BE,50.9393,4.3266,gleif-lei,geonames-ort,2791424,GLEIF 549300HWDYC5JXC85138
+U001272,WARTSILA,,,FI,,,,,,
+U001273,WEIR,,,GB,,,,,,
+U001274,WPP,LONDON,SE1 9GL,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 549300GX54BJJFMS8O03: WPP GROUP HOLDINGS LIMITED)
+U001275,WHITBREAD,DUNSTABLE,LU5 5XE,GB,51.8857,-0.5229,gleif-name,geonames-ort,2650657,über den Namen gefunden (GLEIF 2138006LIAYQKUCYBB20: WHITBREAD GROUP PLC)
+U001276,WISE GROUP A,,,GB,,,,,,
+U001277,WOLTERS KLUWER,Alphen aan den Rijn,2408 ZE,NL,52.1292,4.6555,gleif-lei,geonames-ort,2759875,GLEIF 724500TEM53I0U077B74
+U001278,ZABKA GROUP,,,PL,,,,,,
+U001279,YARA,OSLO,0277,NO,59.9127,10.7461,gleif-lei,geonames-ort,3143244,GLEIF 213800WKOUWXWFJ5Z514
+U001280,XTB,,,PL,,,,,,
+U001281,ZEALAND PHARMA,Søborg,2860,DK,55.7361,12.4830,gleif-name,geonames-plz,,über den Namen gefunden (GLEIF 549300ITBB1ULBL4CZ12: ZEALAND PHARMA A/S)
+U001282,ZURICH INSURANCE GROUP,Zürich,8002,CH,47.3667,8.5500,gleif-name,geonames-ort,2657896,über den Namen gefunden (GLEIF 529900QVNRBND50TXP03: Zurich Insurance Group AG)
+U001283,ZEGONA COMMUNICATIONS,LONDON,W1S 3DG,GB,51.5085,-0.1257,gleif-name,geonames-ort,2643743,über den Namen gefunden (GLEIF 213800ASI1VZL2ED4S65: ZEGONA COMMUNICATIONS PLC)
+U001284,LVMH Moët Hennessy Louis Vuitton SE,PARIS,75008,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF IOG4E947OATN0KJYSD45: LVMH MOET HENNESSY LOUIS VUITTON)
+U001285,TotalEnergies SE,,,FR,,,,,,
+U001286,Schneider Electric SE,,,FR,,,,,,
+U001287,Capgemini SE,PARIS,75017,FR,48.8534,2.3488,gleif-name,geonames-ort,2988507,über den Namen gefunden (GLEIF 96950077L0TN7BAROX36: CAPGEMINI)
+U001288,Société Générale,PARIS,75009,FR,48.8534,2.3488,gleif-lei,geonames-ort,2988507,GLEIF O2RNE8IBXP4R0TD8PU41
+U001289,Proximus,BRUSSELS,1030,BE,50.8505,4.3488,gleif-lei,geonames-ort,2800866,GLEIF 549300CWRXC5EP004533
+U001290,Colruyt Group,Halle,1500,BE,50.7338,4.2345,gleif-lei,geonames-ort,2796696,GLEIF 5493000O0NZ1BCXO8K39
+U001291,Wienerberger AG,Wien,1100,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 529900VXIFBHO0SW2I31
+U001292,Telekom Austria Aktiengesellschaft,Wien,1020,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 529900KCNFQU5OJH7L33
+U001293,Mayr-Melnhof Karton Aktiengesellschaft,Wien,1040,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 5299001AMHDLKUM80611
+U001294,Strabag Se,Wien,1220,AT,48.2085,16.3721,gleif-lei,geonames-ort,2761369,GLEIF 529900TYYSRJH2VJSP60
+U001295,Flutter Entertainment Public Limited Company,Dublin,D04 V972,IE,53.3331,-6.2489,gleif-lei,geonames-ort,2964574,GLEIF 635400EG4YIJLJMZJ782
+U001296,Permanent Tsb Group Holdings Public Limited Company,Dublin,D02 H489,IE,53.3331,-6.2489,gleif-lei,geonames-ort,2964574,GLEIF 635400DTNHVYGZODKQ93
+U001297,"Sonae - Sgps, S.A.",Maia,4471-909,PT,41.2357,-8.6199,gleif-lei,geonames-ort,2738014,GLEIF 549300847SOBT7HY7R50
+U001298,"Nos, Sgps, S.A.",LISBON,1600-404,PT,38.7251,-9.1498,gleif-lei,geonames-ort,2267057,GLEIF 5493004DM8FGIY6QKF37
+U001299,"The Navigator Company, S.A.",Setubal,2910-738,PT,38.5244,-8.8882,gleif-lei,geonames-ort,2262963,GLEIF 549300UNIB7M2AXUXS35
+U001300,Ctt - Correios De Portugal S.A.,Lisboa,1643-001,PT,38.7251,-9.1498,gleif-lei,geonames-ort,2267057,GLEIF 529900G4A1IKOKC22K56
+U001301,"Ren - Redes Energéticas Nacionais, Sgps, S.A.",LISBON,1749-061,PT,38.7251,-9.1498,gleif-lei,geonames-ort,2267057,GLEIF 549300FR1FN48IGHR915
+U001302,"Corticeira Amorim, Sgps, S.A.",MOZELOS,4536-902,PT,41.8677,-8.3978,gleif-lei,geonames-ort,2737268,GLEIF 213800J5M11TDEP3LQ76
+U001303,Pge Polska Grupa Energetyczna Spółka Akcyjna,WARSZAWA,00-496,PL,52.2298,21.0118,gleif-lei,geonames-ort,756135,GLEIF 259400MP9VXR0E69MJ89
+U001304,Orange Polska Spółka Akcyjna,WARSZAWA,02-326,PL,52.2298,21.0118,gleif-lei,geonames-ort,756135,GLEIF 259400TOMPUOLS65II22
+U001305,Hellenic Telecommunications Organization S.A. (OTE),MAROUSI,151 24,GR,38.0500,23.8000,gleif-lei,geonames-ort,265243,GLEIF ELPUFM0XZRZO4LFXW404
+U001306,HELLENiQ ENERGY Holdings S.A.,MAROUSI,15125,GR,38.0500,23.8000,gleif-lei,geonames-ort,265243,GLEIF 213800YUBJMZYR1SNG35
+U001307,Athens International Airport S.A.,SPATA ATTIKIS,19019,GR,,,gleif-lei,,,GLEIF 213800VI8OH5EJM18L21; Ort nicht in GeoNames gefunden
+U001308,"Krka, d.d.",Novo mesto,8501,SI,45.8040,15.1689,gleif-lei,geonames-ort,3194351,GLEIF 549300H9RLRTRTLRUZ73
+U001309,Nova Ljubljanska banka d.d.,Ljubljana,1000,SI,46.0511,14.5051,gleif-lei,geonames-ort,3196359,GLEIF 5493001BABFV7P27OW30
+U001310,Petrol d.d.,Ljubljana,1000,SI,46.0511,14.5051,gleif-lei,geonames-ort,3196359,GLEIF 549300CAAOUTT4QDOZ16
+U001311,"Zavarovalnica Triglav, d.d.",Ljubljana,1000,SI,46.0511,14.5051,gleif-lei,geonames-ort,3196359,GLEIF 549300KGI78MKHO38N42
+U001312,Luka Koper d.d.,KOPER - CAPODISTRIA,6000,SI,45.5538,13.7439,gleif-lei,geonames-plz,,GLEIF 549300H1GO5N7BK34P37
+U001313,"Telekom Slovenije, d.d.",Ljubljana,1000,SI,46.0511,14.5051,gleif-lei,geonames-ort,3196359,GLEIF 5493003GE7UJGPQAMN79
+U001314,"Pozavarovalnica Sava, d.d.",Ljubljana,1000,SI,46.0511,14.5051,gleif-lei,geonames-ort,3196359,GLEIF 549300P6F1BDSFSW5T72
+U001315,AB Ignitis Grupė,VILNIUS,LT-04215,LT,54.6892,25.2798,gleif-lei,geonames-ort,593116,GLEIF 5493005RZJHJT5PNHY10
+U001316,AB Artea bankas,Šiauliai,76348,LT,55.9333,23.3167,gleif-lei,geonames-ort,594739,GLEIF 549300TK038P6EV4YU51
+U001317,Apranga APB,Vilnius,LT-14311,LT,54.6892,25.2798,gleif-lei,geonames-ort,593116,GLEIF 529900XX7EU9F4GJTY86
+U001318,Rokiškio sūris AB,Rokiškio,LT-42150,LT,55.9587,25.5947,gleif-lei,geonames-ort,595213,GLEIF 48510000PW42N5W74S87
+U001319,"AUGA group, AB",Vilnius,08130,LT,54.6892,25.2798,gleif-lei,geonames-ort,593116,GLEIF 48510000P2S3LHJPX414
+U001320,AB Amber Grid,Vilnius,LT-04215,LT,54.6892,25.2798,gleif-lei,geonames-ort,593116,GLEIF 097900BGMP0000061061
+U001321,LITGRID AB,Vilnius,LT-05131,LT,54.6892,25.2798,gleif-lei,geonames-ort,593116,GLEIF 529900CTIUKTEFNNH157
+U001322,AB Akola group,Vilnius,01302,LT,54.6892,25.2798,gleif-lei,geonames-ort,593116,GLEIF 529900UB9QON717IL030
+U001323,AS Latvenergo,Rīga,LV-1010,LV,56.9460,24.1059,gleif-lei,geonames-ort,456172,GLEIF 213800DJRB539Q1EMW75
+U001324,AS DelfinGroup,Riga,LV-1013,LV,56.9460,24.1059,gleif-lei,geonames-ort,456172,GLEIF 2138002PKHUJIMVMYB13
+U001325,AS Augstsprieguma tikls,Riga,LV-1073,LV,56.9460,24.1059,gleif-lei,geonames-ort,456172,GLEIF 64883LC3F12690GATG87
+U001326,AS Latvijas Gaze,Riga,LV-1001,LV,56.9460,24.1059,gleif-lei,geonames-ort,456172,GLEIF 097900BGMO0000055872
+U001327,Citadele banka AS,RIGA,LV-1010,LV,56.9460,24.1059,gleif-lei,geonames-ort,456172,GLEIF 2138009Y59EAR7H1UO97
+U001328,BluOr Bank AS,Riga,LV-1050,LV,56.9460,24.1059,gleif-lei,geonames-ort,456172,GLEIF 54930080G2M7EJ097A27
+U001329,AS Tallinna Sadam,Tallinn,15051,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 25490093MDYISEP1Y539
+U001330,AS Tallinna Vesi,Tallinn,10614,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 5493000M6TVS2X0KWC97
+U001331,AS Tallink Grupp,"Kesklinna linnaosa, Tallinn, Harju maakond",10111,EE,59.4355,24.7575,gleif-lei,geonames-ort,795155,GLEIF 529900QRMWAKKR3L9W75
+U001332,AS LHV Group,Tallinn,10145,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 529900JG015JC10LED24
+U001333,AS Tallinna Kaubamaja Grupp,Tallinn,10143,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 529900785KF1K0EEW940
+U001334,Nordecon AS,Tallinn,10149,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 48510000D8HSLK854I81
+U001335,AS Inbank,TALLINN,10414,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 2138005M92IEIQVEL297
+U001336,Coop Pank AS,Tallinn,15014,EE,59.4370,24.7535,gleif-lei,geonames-ort,588409,GLEIF 549300EHNXQVOI120S55
+U001337,Íslandsbanki hf.,Kópavogi,201,IS,64.1123,-21.9130,gleif-lei,geonames-ort,3415212,GLEIF 549300PZMFIQR79Q0T97
+U001338,Arion banki hf.,Reykjavík,105,IS,64.1355,-21.8954,gleif-lei,geonames-ort,3413829,GLEIF RIL4VBPDB0M7Z3KXSF19
+U001339,Icelandair Group hf.,Hafnarfirði,221,IS,64.0671,-21.9377,gleif-lei,geonames-ort,3416706,GLEIF 549300UMI5MBLZSXGL15
+U001340,Eimskipafélag Íslands hf.,Reykjavík,104,IS,64.1355,-21.8954,gleif-lei,geonames-ort,3413829,GLEIF 549300IUR8Q7Y44KBL02
+U001341,Síminn hf.,Reykjavik,108,IS,64.1355,-21.8954,gleif-lei,geonames-ort,3413829,GLEIF 254900X9GQZM6UGXYF10
+U001342,Brim hf.,Reykjavík,101,IS,64.1355,-21.8954,gleif-lei,geonames-ort,3413829,GLEIF 635400YXSJKSF3H3CB31
+U001343,Hagar hf.,Reykjavík,104,IS,64.1355,-21.8954,gleif-lei,geonames-ort,3413829,GLEIF 635400TICHH43JJTNP54
+U001344,Festi hf.,Kópavogur,201,IS,64.1123,-21.9130,gleif-lei,geonames-ort,3415212,GLEIF 5493005OLOCYXGTC7E83
+U001345,Sjóvá-Almennar tryggingar hf.,REYKJAVIK,103,IS,64.1355,-21.8954,gleif-lei,geonames-ort,3413829,GLEIF 213800R3IXBON2LBEI63
+U001346,SES S.A.,Betzdorf,L-6815,LU,49.6833,6.3500,gleif-lei,geonames-ort,2960774,GLEIF 5493008JPA4HYMH1HX51
+U001347,Millicom International Cellular S.A.,LUXEMBOURG,L-2330,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 549300CTHC1CP86P2G96
+U001348,Luxempart,LEUDELANGE,L-3372,LU,49.5683,6.0653,gleif-lei,geonames-ort,2960335,GLEIF 222100WPYK3JKB5F4D19
+U001349,Alvotech,LUXEMBOURG,L-1273,LU,49.6098,6.1327,gleif-lei,geonames-ort,2960316,GLEIF 222100DCZBOWV5DZ8372
+U001350,MOL Magyar Olaj- és Gázipari Nyrt.,BUDAPEST,1117,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 213800R83KX5FQFGXS67
+U001351,Magyar Telekom Nyrt.,Budapest,1097,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900CA1YDA41X76751
+U001352,Richter Gedeon Nyrt.,BUDAPEST,1103,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 549300J6ZJW5IH4WEE46
+U001353,OPUS GLOBAL Nyrt.,Budapest,1062,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900RAN1AMTYFPCG62
+U001354,ALTEO Nyrt.,Budapest,1117,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900PHL3J3ZRBC2J44
+U001355,PannErgy Nyrt.,Budapest,1112,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900D05TGFDEQACZ88
+U001356,AutoWallis Nyrt.,Budapest,1097,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900QO6EHRM3EZL070
+U001357,DUNA HOUSE HOLDING Nyrt.,Budapest,1027,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900H88CH9J67U0764
+U001358,ANY Biztonsági Nyomda Nyrt.,Budapest,1102,HU,47.4984,19.0404,gleif-lei,geonames-ort,3054643,GLEIF 529900YYR637SPJ0JR59
+U001359,"Tatra banka, a.s.",Bratislava 1,81106,SK,48.1482,17.1067,gleif-lei,geonames-ort,3060972,GLEIF 3157002JBFAI478MD587
+U001360,"Československá obchodná banka, a.s.",Bratislava,811 02,SK,48.1482,17.1067,gleif-lei,geonames-ort,3060972,GLEIF 52990096Q5LMCH1WU462
+U001361,"Slovenská sporiteľňa, a.s.",Bratislava,832 37,SK,48.1482,17.1067,gleif-lei,geonames-ort,3060972,GLEIF 549300S2T3FWVVXWJI89
+U001362,"Všeobecná úverová banka, a.s.",Bratislava,829 90,SK,48.1482,17.1067,gleif-lei,geonames-ort,3060972,GLEIF 549300JB1P61FUTPEZ75
+U001363,"365.bank, a. s.",Bratislava,811 02,SK,48.1482,17.1067,gleif-lei,geonames-ort,3060972,GLEIF 315700PLTAXHBHZP5J02
+U001364,"Tatry mountain resorts, a.s.",Liptovský Mikuláš,031 01,SK,49.0806,19.6222,gleif-lei,geonames-ort,3059050,GLEIF 315700YHD1JR6VB1BA90
+U001365,"JOJ Media House, a. s.",Bratislava,831 01,SK,48.1482,17.1067,gleif-lei,geonames-ort,3060972,GLEIF 315700XP27N8YWW3D584
+U001366,"MONETA Money Bank, a.s.",PRAGUE,140 00,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF I6USJ58BDV2BO5KP3C31
+U001367,"Komerční banka, a.s.",Praha 1,114 07,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF IYKCAVNFR8QGF00HV840
+U001368,"ČEZ, a. s.",Praha 4,140 53,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF 529900S5R9YHJHYKKG94
+U001369,Raiffeisenbank a.s.,Praha 4,140 78,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF 31570010000000004460
+U001370,O2 Czech Republic a.s.,Praha 4,140 22,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF 3157004ICDH3MRKW7534
+U001371,Philip Morris ČR a.s.,Praha 2,120 00,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF 315700LNPHNXCMNLQC73
+U001372,CZECHOSLOVAK GROUP a.s.,Praha 8,186 00,CZ,50.0880,14.4208,gleif-lei,geonames-ort,3067696,GLEIF 315700SWFD7G70AVG768
+U001373,On Holding AG,Zürich,8005,CH,47.3667,8.5500,gleif-lei,geonames-ort,2657896,GLEIF 506700FB3467B9W95526
+U001374,Garmin Ltd.,Schaffhausen,8200,CH,47.6973,8.6349,gleif-lei,geonames-ort,2658761,GLEIF 2549001E0HIPIJQ0W046
+U001375,CRISPR Therapeutics AG,Zug,6300,CH,47.1724,8.5175,gleif-lei,geonames-ort,2657908,GLEIF 506700O6IRRIQLT3W370
+U001376,Royal Bank of Canada,Toronto,M5J 2J5,CA,43.6533,-79.3839,gleif-lei,geonames-ort,6167865,GLEIF ES7IP3U3RHIGC71XBU11
+U001377,The Toronto-Dominion Bank,Toronto,M5K 1A2,CA,43.6533,-79.3839,gleif-lei,geonames-ort,6167865,GLEIF PT3QB789TSUIDF371261
+U001378,Bank of Montreal,Toronto,M5X 1A1,CA,43.6533,-79.3839,gleif-lei,geonames-ort,6167865,GLEIF NQQ6HPCNCCU6TUTQYE16
+U001379,The Bank of Nova Scotia,Toronto,M5H 0B4,CA,43.6533,-79.3839,gleif-lei,geonames-ort,6167865,GLEIF L3I9ZG2KFGXZ61BMYR72
+U001380,Canadian Imperial Bank of Commerce,Toronto,M5J 0E7,CA,43.6533,-79.3839,gleif-lei,geonames-ort,6167865,GLEIF 2IGI19DL77OX0HC3ZE78
+U001381,Canadian Natural Resources Limited,CALGARY,T2P 0J4,CA,51.0501,-114.0853,gleif-lei,geonames-ort,5913490,GLEIF 549300T15RIMIKZC5Q38
+U001382,Suncor Energy Inc.,Calgary,T2P 3E3,CA,51.0501,-114.0853,gleif-lei,geonames-ort,5913490,GLEIF 894500XO86FKXQGPYV71
+U001383,Teck Resources Limited,Vancouver,V6C 0B3,CA,49.2497,-123.1193,gleif-lei,geonames-ort,6173331,GLEIF T8KI5SQ2JRWHL7XY0E11
+U001384,Nutrien Ltd.,Saskatoon,S7K 5R6,CA,52.1324,-106.6689,gleif-lei,geonames-ort,6141256,GLEIF 5493002QQ7GD21OWF963
+U001385,Manulife Financial Corporation,Toronto,M4W 1E5,CA,43.6533,-79.3839,gleif-lei,geonames-ort,6167865,GLEIF 5493007GBX87QOZACS27
+U001386,BHP Group Limited,MELBOURNE,3000,AU,-37.8140,144.9633,gleif-lei,geonames-ort,2158177,GLEIF WZE1WSENV6JSZFK0JC28
+U001387,Mesoblast Limited,Melbourne,3000,AU,-37.8140,144.9633,gleif-lei,geonames-ort,2158177,GLEIF 529900J5ALF3JG921927
+U001388,"América Móvil, S.A.B. de C.V.",Mexico City,11529,MX,19.4285,-99.1277,gleif-lei,geonames-ort,3530597,GLEIF 5493000FNR3UCEAONM59
+U001389,"Fomento Económico Mexicano, S.A.B. de C.V.",Monterrey,64410,MX,25.6843,-100.3172,gleif-lei,geonames-ort,3995465,GLEIF 549300A8MDWDJNMLV153
+U001390,"Grupo Televisa, S.A.B.",Mexico City,01210,MX,19.4285,-99.1277,gleif-lei,geonames-ort,3530597,GLEIF 549300O4AF0C816ILN62
+U001391,"CEMEX, S.A.B. de C.V.",San Pedro Garza Garcia,66265,MX,25.6616,-100.4034,gleif-lei,geonames-ort,4005937,GLEIF 549300RIG2CXWN6IV731
+U001392,"Coca-Cola FEMSA, S.A.B. de C.V.",MEXICO CITY,05348,MX,19.4285,-99.1277,gleif-lei,geonames-ort,3530597,GLEIF 5493008KEVFYPMGTXO33
+U001393,"Grupo Aeroportuario del Sureste, S.A.B. de C.V.",Mexico-City,11000,MX,19.4285,-99.1277,gleif-lei,geonames-ort,3530597,GLEIF 5299001W7JIDXCUOUC82
+U001394,"Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",PISO,03800,MX,19.3901,-99.1847,gleif-lei,geonames-plz,,GLEIF 529900HUSBARAFSXJ605
+U001395,"Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",Guadalajara,44530,MX,20.6774,-103.3475,gleif-lei,geonames-ort,4005539,GLEIF 4469000001BZ368XFI90
+U001396,Banco de Chile,Santiago,8320206,CL,-33.4569,-70.6483,gleif-lei,geonames-ort,3871336,GLEIF 8B4EZFY8IHJC44TT2K84
+U001397,Banco Santander-Chile,Santiago,8340455,CL,-33.4569,-70.6483,gleif-lei,geonames-ort,3871336,GLEIF 3YJP8HORPAEXJ80D6368
+U001398,LATAM Airlines Group S.A.,Santiago,8320000,CL,-33.4569,-70.6483,gleif-lei,geonames-ort,3871336,GLEIF 549300HX3UUDPEFTG707
+U001399,Enel Chile S.A.,Santiago,8330099,CL,-33.4569,-70.6483,gleif-lei,geonames-ort,3871336,GLEIF 549300YM5CWCAUVOPB53
+U001400,Compañía Cervecerías Unidas S.A.,Santiago de Chile,7550098,CL,-33.4569,-70.6483,gleif-lei,geonames-ort,3871336,GLEIF 529900BJW9B0O6LI2R39
+U001401,Turkcell İletişim Hizmetleri A.Ş.,İSTANBUL,34854,TR,41.0138,28.9497,gleif-lei,geonames-ort,745044,GLEIF 7890003EX1LTLS2FFL84
+U001402,Check Point Software Technologies Ltd.,Tel Aviv,6789159,IL,32.0809,34.7806,gleif-lei,geonames-ort,293397,GLEIF 2549003ZVBH73EPNS513
+U001403,NICE Ltd.,Ra'Anana,4366241,IL,32.1836,34.8739,gleif-lei,geonames-ort,293807,GLEIF 254900YTY4EF5Z4W0A51
+U001404,Wix.com Ltd.,TEL AVIV-YAFO,6936025,IL,32.0809,34.7806,gleif-lei,geonames-ort,293397,GLEIF 5493008P6N29Q1AG9464
+U001405,Elbit Systems Ltd.,Haifa,31053,IL,32.8130,34.9993,gleif-lei,geonames-ort,294801,GLEIF 529900Q9CB1REUMZSS32
+U001406,Tower Semiconductor Ltd.,Migdal Haemek,2310502,IL,32.6779,35.2416,gleif-lei,geonames-ort,294210,GLEIF 54930086ZSNXZOUX0C54
+U001407,Fiverr International Ltd.,TEL AVIV,6473409,IL,32.0809,34.7806,gleif-lei,geonames-ort,293397,GLEIF 549300Z8OREY6THCPF67
+U001408,monday.com Ltd.,תל אביב - יפו,6777506,IL,32.0809,34.7806,gleif-lei,geonames-ort,293397,GLEIF 984500MDAFVD86E3B328
+U001409,ICL Group Ltd.,Tel Aviv,6107025,IL,32.0809,34.7806,gleif-lei,geonames-ort,293397,GLEIF 529900FQVQD88SHIGM04

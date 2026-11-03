@@ -121,3 +121,14 @@
 .gk-matrix td button, .gk-matrix td { font-size: 11px; }
 .gk-matrix th { text-align: right; }
 @media (max-width: 760px) { .gk-stufen { bottom: 56px; left: 8px; } .gk-stufen button { padding: 6px 7px; font-size: 11px; } }
+
+/* Legende der Handelsströme (Farbe + Linienstil + Pfeil) */
+.gk-legkarte { position: absolute; z-index: 2; left: 12px; bottom: 78px; max-width: 250px; display: grid; gap: 4px; background: rgba(14, 17, 22, .94); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font: 12px/1.4 var(--sans); color: var(--ink-2); }
+.gk-legkarte[hidden] { display: none; }
+.gk-legkarte b { font: 600 11px/1.4 var(--mono); color: var(--amber); letter-spacing: .04em; text-transform: uppercase; }
+.gk-legkarte span { display: flex; align-items: center; gap: 6px; }
+.gk-legkarte em { font-style: normal; font-weight: 600; }
+.gk-legkarte small { color: var(--ink-3); font-size: 11px; }
+.gk-legkarte button { justify-self: start; background: transparent; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); font: 11px var(--sans); padding: 4px 8px; cursor: pointer; }
+.gk-legkarte button:hover { color: var(--ink); border-color: var(--amber-dim); }
+@media (max-width: 760px) { .gk-legkarte { bottom: 100px; left: 8px; max-width: 200px; } }

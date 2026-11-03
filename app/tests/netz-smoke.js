@@ -18,7 +18,7 @@ const path = require('node:path');
   if (!/Volkswagen/.test(titel)) throw Error('Falscher Netztitel: ' + titel);
   const orte = await page.locator('#netz-panel [data-nzort]').count();
   if (orte < 40) throw Error('Zu wenige Standorte in der Liste: ' + orte);
-  const karte = await page.evaluate(() => { const m = GLOBUS.karte(); return m && m.getLayer('netz-linie') ? NETZ.daten().linien.features.length : -1; });
+  const karte = await page.evaluate(() => { const m = GLOBUS.karte(); return m && m.getLayer('netz-linie-tochter') ? NETZ.daten().linien.features.length : -1; });
   await page.evaluate(() => { document.querySelectorAll('.gf [data-gfzu]').forEach(b => b.click()); });
   await foto('1-netz-volkswagen');
   // Standort wählen: Győr (Antriebe)
@@ -28,10 +28,10 @@ const path = require('node:path');
   await foto('2-standort-gyoer');
   // Beziehung über die Detailliste wechseln, dann Filter: Lieferungen aus
   await page.click('#netz-panel [data-nzliste]');
-  await page.click('#netz-panel [data-nzgruppe="lieferung"]');
+  await page.click('#netz-panel [data-nzart="lieferung"]');
   const nachFilter = await page.evaluate(() => NETZ.daten().linien.features.filter(f => f.properties.art === 'lieferung').length);
   if (nachFilter) throw Error('Filter Lieferungen wirkt nicht');
-  await page.click('#netz-panel [data-nzgruppe="lieferung"]');
+  await page.click('#netz-panel [data-nzart="lieferung"]');
   // Einstieg über eine Tochter: Porsche AG
   await page.evaluate(() => GLOBUS.oeffnen('U000175', {}));
   await page.waitForTimeout(300);

@@ -21,26 +21,27 @@ const NETZ = (() => {
     INDEX[nid] = { n: nid, s: haupt.id };
   }
 
-  /* Beziehungsarten: Farbe der Bögen, Filtergruppe */
+  /* Beziehungsarten: Farbe UND Linienstil (nicht nur Farbe), jede Art einzeln filterbar. Weder Grün noch Rot: beides gehört den Handelsströmen
+     (Export grün, Import rot). dash = Strich/Lücke in Linienbreiten (MapLibre), null = durchgezogen; css = gleiches Muster für die Legende in px. */
   const ART = {
-    tochter:       { name: "Tochtergesellschaft", farbe: "#ffa828", gruppe: "struktur" },
-    produktion:    { name: "Werk / Standort", farbe: "#17a88a", gruppe: "struktur" },
-    lieferung:     { name: "Lieferung", farbe: "#4da3ff", gruppe: "lieferung" },
-    logistik:      { name: "Logistik", farbe: "#7f8fa3", gruppe: "lieferung" },
-    joint_venture: { name: "Gemeinschaftsunternehmen", farbe: "#9a6fe0", gruppe: "beteiligung" },
-    beteiligung:   { name: "Beteiligung", farbe: "#c49bff", gruppe: "beteiligung" },
-    eigentuemer:   { name: "Eigentümer", farbe: "#c3cad3", gruppe: "eigentuemer" },
-    kunde:         { name: "Kunde", farbe: "#ff6b6b", gruppe: "kunde" },
-    lieferant:     { name: "Lieferant", farbe: "#d9a21b", gruppe: "lieferung" },
-    partner:       { name: "Partner", farbe: "#c49bff", gruppe: "beteiligung" },
+    tochter:       { name: "Tochtergesellschaft", farbe: "#ffa828", dash: null, css: "" },
+    produktion:    { name: "Produktionsstandort", farbe: "#2ec4d6", dash: [1, 2], css: "1 4" },
+    lieferung:     { name: "Warenverkehr / Lieferung", farbe: "#4da3ff", dash: [4, 2], css: "9 5" },
+    logistik:      { name: "Logistik", farbe: "#8b95a3", dash: [4, 2, 1, 2], css: "9 4 2 4" },
+    joint_venture: { name: "Gemeinschaftsunternehmen", farbe: "#b57bff", dash: [2.4, 1.4], css: "5 3" },
+    beteiligung:   { name: "Beteiligung", farbe: "#ff7ac8", dash: [1, 1.2], css: "2 3" },
+    eigentuemer:   { name: "Eigentümer", farbe: "#e8ecf1", dash: [7, 2, 7, 2], css: "14 4" },
+    kunde:         { name: "Kunde", farbe: "#f2e04a", dash: [3, 1.6, 1, 1.6], css: "6 3 2 3" },
+    lieferant:     { name: "Lieferant", farbe: "#d9a21b", dash: [5, 1.5], css: "10 3" },
+    partner:       { name: "Partner", farbe: "#ff7ac8", dash: [1, 1.2], css: "2 3" },
   };
-  const GRUPPEN = [["struktur", "Töchter und Werke"], ["lieferung", "Lieferungen"], ["beteiligung", "Beteiligungen und JV"], ["eigentuemer", "Eigentümer"], ["kunde", "Kunden"]];
+  const swatch = (a, b = 36) => `<svg class="nz-sw" width="${b}" height="8" aria-hidden="true"><line x1="1" y1="4" x2="${b - 1}" y2="4" stroke="${a.farbe}" stroke-width="2.6"${a.css ? ` stroke-dasharray="${a.css}"` : ' stroke-linecap="round"'}/></svg>`;
   /* Standortarten: Farbe der Punkte */
   const ORT = {
-    hauptsitz: ["Konzernzentrale", "#ffa828"], hauptsitz_tochter: ["Sitz einer Tochter", "#ffc56b"], fahrzeugwerk: ["Fahrzeugwerk", "#17a88a"],
-    komponentenwerk: ["Komponentenwerk", "#4da3ff"], batterie: ["Batteriewerk", "#3ecf6e"], finanzen: ["Finanzdienstleistungen", "#d9a21b"],
-    vertrieb: ["Vertrieb / Auslieferung", "#8b95a3"], entwicklung: ["Entwicklung", "#8b95a3"], joint_venture: ["Gemeinschaftsunternehmen", "#9a6fe0"],
-    beteiligung: ["Beteiligung", "#c49bff"], partner: ["Partner", "#c49bff"], kunde: ["Kunde", "#ff6b6b"], eigentuemer: ["Eigentümer", "#c3cad3"], lieferant: ["Lieferant", "#d9a21b"],
+    hauptsitz: ["Konzernzentrale", "#ffa828"], hauptsitz_tochter: ["Sitz einer Tochter", "#ffc56b"], fahrzeugwerk: ["Fahrzeugwerk", "#2ec4d6"],
+    komponentenwerk: ["Komponentenwerk", "#4da3ff"], batterie: ["Batteriewerk", "#9ad7f2"], finanzen: ["Finanzdienstleistungen", "#d9a21b"],
+    vertrieb: ["Vertrieb / Auslieferung", "#8b95a3"], entwicklung: ["Entwicklung", "#8b95a3"], joint_venture: ["Gemeinschaftsunternehmen", "#b57bff"],
+    beteiligung: ["Beteiligung", "#ff7ac8"], partner: ["Partner", "#ff7ac8"], kunde: ["Kunde", "#f2e04a"], eigentuemer: ["Eigentümer", "#e8ecf1"], lieferant: ["Lieferant", "#d9a21b"],
   };
   const S = { netz: null, aus: new Set(), wahl: null, bez: null };
   const nf = new Intl.NumberFormat("de-DE", { maximumFractionDigits: 2 });
@@ -52,7 +53,7 @@ const NETZ = (() => {
   const wert = z => `${z.vergleich ? e(z.vergleich) + " " : ""}${nf.format(z.wert)} ${e(z.einheit)}`;
 
   /* ----- Kartendaten ----- */
-  const sichtbareBez = d => d.beziehungen.filter(b => !S.aus.has(ART[b.art] ? ART[b.art].gruppe : b.art));
+  const sichtbareBez = d => d.beziehungen.filter(b => !S.aus.has(b.art));
   function sichtbareOrte(d) {
     const ids = new Set([d.haupt]);
     sichtbareBez(d).forEach(b => { ids.add(b.von); ids.add(b.nach); });
@@ -73,24 +74,32 @@ const NETZ = (() => {
   }
   function daten() {
     const leer = { type: "FeatureCollection", features: [] };
-    const d = netz(); if (!d) return { punkte: leer, linien: leer };
+    const d = netz(); if (!d) return { punkte: leer, linien: leer, marken: leer };
     const orte = sichtbareOrte(d);
     const punkte = { type: "FeatureCollection", features: orte.map(s => ({ type: "Feature", geometry: { type: "Point", coordinates: [s.lon, s.lat] },
       properties: { id: s.id, name: s.name, kurz: latin1(s.ort), art: s.art, farbe: (ORT[s.art] || ORT.vertrieb)[1], r: punktRadius(d, s), haupt: s.id === d.haupt ? 1 : 0,
         unsicher: s.unsicher ? 1 : 0, gewaehlt: s.id === S.wahl ? 1 : 0 } })) };
-    const linien = { type: "FeatureCollection", features: sichtbareBez(d).map(b => {
-      const a = d.st[b.von], z = d.st[b.nach];
-      return { type: "Feature", geometry: { type: "LineString", coordinates: GLOBUS.bogen([a.lon, a.lat], [z.lon, z.lat], 48) },
+    // mehrere Beziehungen zwischen denselben zwei Orten: Bögen verschieden weit ausbiegen, damit sie nicht aufeinander liegen
+    const paar = {}, sb = sichtbareBez(d), pk = b => [b.von, b.nach].sort().join("|");
+    sb.forEach(b => { (paar[pk(b)] = paar[pk(b)] || []).push(b); });
+    const marken = [];
+    const linien = { type: "FeatureCollection", features: sb.map(b => {
+      const a = d.st[b.von], z = d.st[b.nach], gr = paar[pk(b)], k = gr.indexOf(b), n = gr.length;
+      const hub = (n > 1 ? (k - (n - 1) / 2) * .07 : 0) * (b.von < b.nach ? 1 : -1);
+      const bg = GLOBUS.bogen([a.lon, a.lat], [z.lon, z.lat], 48, hub);
+      if (b.unsicher) marken.push({ type: "Feature", geometry: { type: "Point", coordinates: bg[24] }, properties: { art: b.art } });
+      return { type: "Feature", geometry: { type: "LineString", coordinates: bg },
         properties: { i: d.beziehungen.indexOf(b), art: b.art, farbe: (ART[b.art] || ART.partner).farbe, breite: breite(b), unsicher: b.unsicher ? 1 : 0,
           bezug: S.wahl && (b.von === S.wahl || b.nach === S.wahl) ? 1 : 0 } };
     }) };
-    return { punkte, linien };
+    return { punkte, linien, marken: { type: "FeatureCollection", features: marken } };
   }
   function aktualisieren() {
     const m = GLOBUS.karte(); if (!m || !m.getSource("netz-punkte")) return;
     const x = daten();
     m.getSource("netz-punkte").setData(x.punkte);
     m.getSource("netz-linien").setData(x.linien);
+    m.getSource("netz-marken").setData(x.marken);
   }
 
   /* Pfeilspitze als SDF-Bild (Farbe kommt aus icon-color) */
@@ -107,17 +116,18 @@ const NETZ = (() => {
 
   const farbeAusDaten = ["get", "farbe"];
   GLOBUS.ebene({ id: "netz", name: "Unternehmensnetz (gewähltes Unternehmen)", gruppe: "Unternehmen", an: true, vorrang: true,
-    quellen: m => { const x = daten(); m.addSource("netz-linien", { type: "geojson", data: x.linien }); m.addSource("netz-punkte", { type: "geojson", data: x.punkte }); pfeil(m); },
+    quellen: m => { const x = daten(); m.addSource("netz-linien", { type: "geojson", data: x.linien }); m.addSource("netz-punkte", { type: "geojson", data: x.punkte }); m.addSource("netz-marken", { type: "geojson", data: x.marken }); pfeil(m); },
     schichten: m => {
       const opac = ["case", ["==", ["get", "bezug"], 1], 1, S.wahl ? .28 : .8];
       const sch = def => m.addLayer({ ...def, metadata: { ebene: "netz" } });
-      sch({ id: "netz-linie", type: "line", source: "netz-linien", filter: ["==", ["get", "unsicher"], 0], layout: { "line-cap": "round" },
-        paint: { "line-color": farbeAusDaten, "line-width": ["get", "breite"], "line-opacity": opac } });
-      sch({ id: "netz-linie-unsicher", type: "line", source: "netz-linien", filter: ["==", ["get", "unsicher"], 1],
-        paint: { "line-color": farbeAusDaten, "line-width": ["get", "breite"], "line-opacity": opac, "line-dasharray": [1.6, 1.4] } });
+      // eine Linienschicht je Art (Strichmuster lassen sich in MapLibre nicht je Objekt wählen)
+      Object.entries(ART).forEach(([art, a]) => sch({ id: "netz-linie-" + art, type: "line", source: "netz-linien", filter: ["==", ["get", "art"], art],
+        layout: { "line-cap": a.dash ? "butt" : "round" }, paint: { "line-color": a.farbe, "line-width": ["get", "breite"], "line-opacity": ["*", opac, ["case", ["==", ["get", "unsicher"], 1], .6, 1]], ...(a.dash ? { "line-dasharray": a.dash } : {}) } }));
       sch({ id: "netz-pfeil", type: "symbol", source: "netz-linien", layout: { "symbol-placement": "line", "symbol-spacing": 110, "icon-image": "netz-pfeil",
-        "icon-size": ["interpolate", ["linear"], ["get", "breite"], 1, .45, 7, .8], "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-rotation-alignment": "map" },
+        "icon-size": ["interpolate", ["linear"], ["get", "breite"], 1, .45, 7, .8], "icon-allow-overlap": false, "icon-padding": 6, "icon-rotation-alignment": "map" },
         paint: { "icon-color": farbeAusDaten, "icon-opacity": opac } });
+      sch({ id: "netz-unsicher", type: "symbol", source: "netz-marken", layout: { "text-field": "?", "text-font": ["Noto Sans Bold"], "text-size": 14, "text-allow-overlap": false, "text-padding": 6 },
+        paint: { "text-color": "#ffd27a", "text-halo-color": "#07090c", "text-halo-width": 1.8 } });
       sch({ id: "netz-halo", type: "circle", source: "netz-punkte", filter: ["==", ["get", "gewaehlt"], 1],
         paint: { "circle-radius": ["+", ["get", "r"], 7], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#ffffff", "circle-stroke-width": 2 } });
       sch({ id: "netz-punkt", type: "circle", source: "netz-punkte",
@@ -126,13 +136,13 @@ const NETZ = (() => {
       sch({ id: "netz-name", type: "symbol", source: "netz-punkte",
         filter: ["any", ["==", ["get", "haupt"], 1], ["==", ["get", "gewaehlt"], 1], [">=", ["zoom"], 3.6]],
         layout: { "text-field": ["get", "kurz"], "text-font": ["Noto Sans Regular"], "text-size": ["case", ["==", ["get", "haupt"], 1], 13, 11], "text-offset": [0, 1.2],
-          "text-anchor": "top", "text-optional": true, "text-max-width": 9 },
+          "text-anchor": "top", "text-optional": true, "text-max-width": 9, "symbol-sort-key": ["-", 0, ["get", "r"]], "text-padding": 3 },
         paint: { "text-color": "#e8ecf1", "text-halo-color": "#07090c", "text-halo-width": 1.4 } });
     },
     klick: (ev, m) => {
       if (!netz()) return false;
-      const lay = ["netz-punkt", "netz-linie", "netz-linie-unsicher"].filter(l => m.getLayer(l));
-      const f = m.queryRenderedFeatures([[ev.point.x - 4, ev.point.y - 4], [ev.point.x + 4, ev.point.y + 4]], { layers: lay });
+      const lay = ["netz-punkt", ...Object.keys(ART).map(k => "netz-linie-" + k)].filter(l => m.getLayer(l));
+      const f = lay.length ? m.queryRenderedFeatures([[ev.point.x - 4, ev.point.y - 4], [ev.point.x + 4, ev.point.y + 4]], { layers: lay }) : [];
       const p = f.find(x => x.layer.id === "netz-punkt");
       if (p) { waehlen(p.properties.id, { fliegen: false }); return true; }
       if (f.length) { bezZeigen(f[0].properties.i); return true; }
@@ -144,8 +154,8 @@ const NETZ = (() => {
   function tooltip(ev) {
     const m = GLOBUS.karte(), d = netz();
     if (!m || !d || !m.getLayer("netz-punkt")) return;
-    const lay = ["netz-punkt", "netz-linie", "netz-linie-unsicher"];
-    const f = ev ? m.queryRenderedFeatures([[ev.point.x - 3, ev.point.y - 3], [ev.point.x + 3, ev.point.y + 3]], { layers: lay }) : [];
+    const lay = ["netz-punkt", ...Object.keys(ART).map(k => "netz-linie-" + k)].filter(l => m.getLayer(l));
+    const f = ev && lay.length ? m.queryRenderedFeatures([[ev.point.x - 3, ev.point.y - 3], [ev.point.x + 3, ev.point.y + 3]], { layers: lay }) : [];
     if (!f.length) { if (tip) { tip.remove(); tip = null; } return; }
     const p = f.find(x => x.layer.id === "netz-punkt") || f[0];
     let html;
@@ -214,16 +224,17 @@ const NETZ = (() => {
     const d = netz(), el = panel();
     el.hidden = !d;
     if (!d) return;
-    const zahl = g => d.beziehungen.filter(b => (ART[b.art] || {}).gruppe === g).length;
+    const arten = d => { const n = {}; d.beziehungen.forEach(b => { n[b.art] = (n[b.art] || 0) + 1; }); return Object.entries(n).sort((x, y) => y[1] - x[1]); };
     const inhalt = S.bez != null ? bezAnsicht(d, d.beziehungen[S.bez]) : S.wahl ? ortAnsicht(d, d.st[S.wahl]) : listeAnsicht(d);
     const qliste = Object.entries(d.quellen).map(([k, q]) => `<li id="nzq-${e(k)}">[${d.quellNr[k]}] <a href="${e(q.url)}" target="_blank" rel="noopener">${e(q.titel)}</a> <span>${e(q.herausgeber || "")}, ${q.jahr}${q.art === "presse" ? ", Presse" : ""}</span></li>`).join("");
     el.innerHTML = `<header><div><small>UNTERNEHMENSNETZ</small><b>${e(d.name)}</b><span>Geschäftsjahr ${d.berichtsjahr} · Stand ${e(d.stand.split("-").reverse().join("."))} · ${d.standorte.length} Standorte, ${d.beziehungen.length} Beziehungen</span></div>
         <div class="nz-kn"><button type="button" data-nzklein aria-label="Panel ein- oder ausklappen" title="Ein-/ausklappen">▾</button><button type="button" data-nzzu aria-label="Netz ausblenden" title="Netz ausblenden">✕</button></div></header>
       <div class="nz-rumpf">
-      <div class="gk-chips nz-chips">${GRUPPEN.filter(([g]) => zahl(g)).map(([g, n]) => { const f = Object.values(ART).find(a => a.gruppe === g).farbe;
-        return `<button type="button" data-nzgruppe="${g}" aria-pressed="${!S.aus.has(g)}"><i style="background:${f}"></i>${n} <span>${zahl(g)}</span></button>`; }).join("")}</div>
+      <div class="gk-chips nz-chips" role="group" aria-label="Beziehungsarten (Legende und Filter)">${arten(d).map(([art, n]) => { const a = ART[art] || ART.partner;
+        return `<button type="button" data-nzart="${art}" aria-pressed="${!S.aus.has(art)}" title="${e(a.name)} ein-/ausblenden">${swatch(a)}${e(a.name)} <span>${n}</span></button>`; }).join("")}</div>
+      <p class="nz-leg">Farbe und Strichmuster zeigen die Art, der Pfeil die Richtung, Breite die Menge bzw. den Anteil, <b>?</b> = unsicher (Linie blasser). Handelsströme sind grün (Export) und rot (Import) und treten zurück, solange dieses Netz offen ist.</p>
       <div class="nz-inhalt">${inhalt}</div>
-      <details class="nz-q"><summary>Quellen und Hinweise (${Object.keys(d.quellen).length})</summary><p>${e(d.hinweis || "")}</p><p>Bögen: Breite nach Stückzahl bzw. Anteil, Pfeil zeigt die Richtung, gestrichelt = unsicher. Punkte: Größe nach Produktion, Koordinate = Ortsmitte.</p><ol>${qliste}</ol></details>
+      <details class="nz-q"><summary>Quellen und Hinweise (${Object.keys(d.quellen).length})</summary><p>${e(d.hinweis || "")}</p><p>Bögen: Breite nach Stückzahl bzw. Anteil, Pfeil zeigt die Richtung, ? und blassere Linie = unsicher. Punkte: Größe nach Produktion, Koordinate = Ortsmitte.</p><ol>${qliste}</ol></details>
       </div>`;
   }
 
@@ -231,6 +242,7 @@ const NETZ = (() => {
   function zeigen(nid, sid, opt = {}) {
     const neu = S.netz !== nid, vorher = S.wahl;
     S.netz = nid; S.bez = null;
+    melden();
     S.wahl = sid && sid !== NETZE[nid].haupt ? sid : null;
     const m = GLOBUS.karte();
     const eb = GLOBUS.ebenen().find(x => x.id === "netz");
@@ -244,7 +256,8 @@ const NETZ = (() => {
   }
   // Kartenmitte neben das Panel legen (breit: Panel rechts, schmal: Panel unten)
   const rand = () => S.netz ? (innerWidth > 820 ? { right: 350, left: 0, top: 0, bottom: 0 } : { bottom: Math.round(innerHeight * .5), left: 0, right: 0, top: 0 }) : { left: 0, right: 0, top: 0, bottom: 0 };
-  function verbergen() { S.netz = null; S.wahl = null; S.bez = null; aktualisieren(); zeichnen(); if (tip) { tip.remove(); tip = null; } const m = GLOBUS.karte(); if (m) m.easeTo({ padding: rand(), duration: 400 }); }
+  function melden() { document.dispatchEvent(new CustomEvent("globus:netz", { detail: { offen: !!S.netz } })); }
+  function verbergen() { S.netz = null; melden(); S.wahl = null; S.bez = null; aktualisieren(); zeichnen(); if (tip) { tip.remove(); tip = null; } const m = GLOBUS.karte(); if (m) m.easeTo({ padding: rand(), duration: 400 }); }
   function waehlen(sid, opt = {}) {
     const d = netz(); if (!d || !d.st[sid]) return;
     S.wahl = sid === S.wahl && !opt.fliegen ? S.wahl : sid; S.bez = null;
@@ -262,7 +275,7 @@ const NETZ = (() => {
     let v;
     if ((v = g("data-nzort")) != null) waehlen(v);
     else if (g("data-nzliste") != null) { S.wahl = null; S.bez = null; aktualisieren(); zeichnen(); }
-    else if ((v = g("data-nzgruppe")) != null) { S.aus.has(v) ? S.aus.delete(v) : S.aus.add(v); if (S.wahl && !sichtbareOrte(netz()).some(s => s.id === S.wahl)) S.wahl = null; aktualisieren(); zeichnen(); }
+    else if ((v = g("data-nzart")) != null) { S.aus.has(v) ? S.aus.delete(v) : S.aus.add(v); if (S.wahl && !sichtbareOrte(netz()).some(s => s.id === S.wahl)) S.wahl = null; aktualisieren(); zeichnen(); }
     else if (g("data-nzzu") != null) verbergen();
     else if (g("data-nzklein") != null) panel().classList.toggle("klein");
     else if ((v = g("data-nzprofil")) != null) GLOBUS.oeffnen(v, { fliegen: false });

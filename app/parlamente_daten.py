@@ -44,6 +44,26 @@ SCHWELLE_TAGE = 30
 # Bundesstaaten (Föderationen) nach der Liste des Forum of Federations; Spanien und Italien sind Regionalstaaten und fehlen bewusst
 FOEDERAL = ["AR", "AT", "AU", "BA", "BE", "BR", "CA", "CH", "DE", "ET", "FM", "IN", "IQ", "KM", "MX", "MY", "NG", "NP", "PK",
             "RU", "SD", "SO", "SS", "AE", "US", "VE"]
+# Regionalstaaten und dezentrale Einheitsstaaten: Regionen, Provinzen, Autonome Gemeinschaften, Grafschaften (Erweiterung 04.11.2026)
+REGIONAL = ["FR", "IT", "ES", "NL", "SE", "NO", "DK", "FI"]
+# Einheiten, die Wikidata unter P150 führt, die aber keine Regierung haben (aufgelöste Regionen, unbewohnte Gebiete)
+AUSSER = {"FR-M", "FR-TF", "FR-CP", "NO-22"}
+# Zusätzliche Einheiten mit eigener Regierung, die Wikidata nicht unter P150 des Staates führt: (Schlüssel, Wikidata-Q, Land)
+EXTRA = [("DK-GL", "Q223", "DK"), ("DK-FO", "Q4628", "DK")]
+# Wikipedia-Artikel der Regionalparlamente, die Wikidata (P194) nicht führt; geprüft am 04.11.2026 (Artikel mit Infobox vorhanden)
+PARL_MANUELL = {"FR-ARA": "Regional Council of Auvergne-Rhône-Alpes", "FR-BFC": "Regional Council of Bourgogne-Franche-Comté",
+                "FR-GES": "Regional Council of Grand Est", "FR-IDF": "Regional Council of Île-de-France", "FR-NAQ": "Regional Council of Nouvelle-Aquitaine",
+                "FR-NOR": "Regional Council of Normandy", "FR-OCC": "Regional Council of Occitania",
+                "FR-PAC": "Regional Council of Provence-Alpes-Côte d'Azur", "FR-PF": "Assembly of French Polynesia",
+                "NL-GR": "Provincial Council of Groningen", "NL-DR": "Provincial Council of Drenthe", "NL-FL": "Provincial Council of Flevoland",
+                "NL-GE": "Provincial Council of Gelderland", "NL-UT": "Provincial Council of Utrecht", "NL-NH": "Provincial Council of North Holland",
+                "NL-ZH": "Provincial Council of South Holland", "NL-ZE": "Provincial Council of Zeeland", "NL-NB": "Provincial Council of North Brabant",
+                "NL-LI": "Provincial Council of Limburg"}
+# Was der Wikidata-Eintrag "Regierungschef" (P6) in der jeweiligen Ebene bedeutet
+ROLLE = {"FR": "Präsident/in des Regionalrats", "IT": "Präsident/in der Region", "ES": "Präsident/in der Autonomen Gemeinschaft",
+         "NL": "Kommissar/in des Königs (ernannt, Vorsitz der Provinzregierung)",
+         "SE": "Landshövding (staatlich ernannt, kein gewählter Regierungschef)", "NO": "Fylkesordfører (Vorsitz des Kreistags)",
+         "DK": "Vorsitz des Regionsrats (Greenland/Färöer: Premierminister)", "FI": "Regierungschef (Åland: Landskapsregering)"}
 # Kammern, die Wikidata nicht als Teil des nationalen Parlaments führt (IPU-Kammercode -> Wikipedia-Artikel)
 KAMMER_WIKI = {"DE-LC01": "Bundestag", "DE-UC01": "Bundesrat (Germany)", "NL-LC01": "House of Representatives (Netherlands)",
                "NL-UC01": "Senate (Netherlands)", "IE-LC01": "Dáil Éireann", "IE-UC01": "Seanad Éireann",
@@ -212,7 +232,7 @@ NATIONAL = """SELECT ?iso ?leg ?legWiki ?kammer ?kWiki ?typ WHERE {
      OPTIONAL { ?kWiki schema:about ?kammer ; schema:isPartOf <https://en.wikipedia.org/> . } }
 }"""
 
-GLIED = """SELECT ?iso ?sub ?subLabel ?subDe ?code ?leg ?legWiki ?kammer ?kWiki ?kTyp ?hog ?hogLabel ?partei ?parteiLabel ?pkurz ?farbe WHERE {
+GLIED = """SELECT ?iso ?sub ?subLabel ?subDe ?code ?leg ?legWiki ?kammer ?kWiki ?kTyp ?hog ?hogLabel ?hstart ?partei ?parteiLabel ?pkurz ?farbe WHERE {
   VALUES ?iso { %s }
   ?land wdt:P297 ?iso ; p:P150 ?st . ?st ps:P150 ?sub . FILTER NOT EXISTS { ?st pq:P582 [] }
   FILTER NOT EXISTS { ?sub wdt:P576 [] }
@@ -222,7 +242,7 @@ GLIED = """SELECT ?iso ?sub ?subLabel ?subDe ?code ?leg ?legWiki ?kammer ?kWiki 
     OPTIONAL { ?legWiki schema:about ?leg ; schema:isPartOf <https://en.wikipedia.org/> . }
     OPTIONAL { ?leg wdt:P527 ?kammer . ?kWiki schema:about ?kammer ; schema:isPartOf <https://en.wikipedia.org/> .
                OPTIONAL { ?kammer wdt:P31/wdt:P279* ?kTyp . VALUES ?kTyp { wd:Q637846 wd:Q375928 } } } }
-  OPTIONAL { ?sub wdt:P6 ?hog .
+  OPTIONAL { ?sub p:P6 ?hs . ?hs ps:P6 ?hog . FILTER NOT EXISTS { ?hs pq:P582 [] } OPTIONAL { ?hs pq:P580 ?hstart }
     OPTIONAL { ?hog p:P102 ?ps . ?ps ps:P102 ?partei . FILTER NOT EXISTS { ?ps pq:P582 [] }
       OPTIONAL { ?partei wdt:P1813 ?pkurz . FILTER(LANG(?pkurz) IN ("de", "en", "mul")) }
       OPTIONAL { ?partei wdt:P465 ?farbe } } }
@@ -247,10 +267,22 @@ def national_artikel():
     return out
 
 
-def gliedstaaten_wd():
-    out = {}
-    for x in sparql(GLIED % " ".join(f'"{i}"' for i in FOEDERAL)):
+GLIED_NL = GLIED.replace("?land wdt:P297 ?iso ; p:P150 ?st . ?st ps:P150 ?sub . FILTER NOT EXISTS { ?st pq:P582 [] }",
+                         "?land wdt:P297 ?iso . ?sub wdt:P31 wd:Q134390 .")  # Provinzen der Niederlande (P150 führt nur die Länder des Königreichs)
+
+
+def glied_extra():
+    """Einheiten mit eigener Regierung, die Wikidata nicht unter P150 des Staates führt (Grönland, Färöer)."""
+    kopf = GLIED.split("WHERE {", 1)[0] + "WHERE {\n  VALUES (?sub ?code ?iso) { %s }\n" % " ".join(f'(wd:{q} "{c}" "{i}")' for c, q, i in EXTRA)
+    rumpf = GLIED.split("FILTER(STRSTARTS(?code, CONCAT(?iso, \"-\")))", 1)[1]
+    return kopf + rumpf
+
+
+def _einlesen(out, rows):
+    for x in rows:
         iso, code = w(x, "iso"), w(x, "code")
+        if code in AUSSER:
+            continue
         g = out.setdefault(iso, {}).setdefault(code, {"name": w(x, "subLabel"), "name_de": w(x, "subDe"), "wikidata": qid(x, "sub"),
                                                        "parlament": "", "kammern": {}, "chef": {}})
         if w(x, "legWiki"):
@@ -258,13 +290,26 @@ def gliedstaaten_wd():
         if w(x, "kWiki"):
             g["kammern"][wiki_titel(w(x, "kWiki"))] = "unterhaus" if w(x, "kTyp").endswith("Q375928") else "oberhaus" if w(x, "kTyp") else "?"
         if w(x, "hog"):
-            c = g["chef"].setdefault(qid(x, "hog"), {"name": w(x, "hogLabel"), "partei": "", "partei_kurz": "", "farbe": ""})
+            c = g["chef"].setdefault(qid(x, "hog"), {"name": w(x, "hogLabel"), "partei": "", "partei_kurz": "", "farbe": "", "seit": ""})
+            if w(x, "hstart") and (not c["seit"] or w(x, "hstart") < c["seit"]):
+                c["seit"] = w(x, "hstart")[:10]
             if w(x, "parteiLabel") and not c["partei"]:
                 c["partei"] = w(x, "parteiLabel")
             if w(x, "pkurz") and (not c["partei_kurz"] or len(w(x, "pkurz")) < len(c["partei_kurz"])):
                 c["partei_kurz"] = w(x, "pkurz")
             if w(x, "farbe") and re.fullmatch(r"[0-9A-Fa-f]{6}", w(x, "farbe")):
                 c["farbe"] = "#" + w(x, "farbe").lower()
+
+
+def gliedstaaten_wd(isos=None):
+    isos = isos or FOEDERAL + REGIONAL
+    out = {}
+    normal = [i for i in isos if i != "NL"]
+    _einlesen(out, sparql(GLIED % " ".join(f'"{i}"' for i in normal)))
+    if "NL" in isos:
+        _einlesen(out, sparql(GLIED_NL % '"NL"'))
+    if any(i in isos for _, _, i in EXTRA):
+        _einlesen(out, sparql(glied_extra()))
     return out
 
 
@@ -498,7 +543,7 @@ def zusammensetzung(feld):
 def kammer_wiki(titel):
     """Infobox legislature eines Kammerartikels: Zusammensetzung, Sitze, letzte und nächste Wahl."""
     t, ziel = wikitext(titel)
-    f = infobox(t, "Infobox legislature")
+    f = infobox(t, "Infobox (?:legislature|parliament)")
     if not f:
         return None
     sitze = None
@@ -595,6 +640,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--geo", action="store_true")
     p.add_argument("--nur-national", action="store_true")
+    p.add_argument("--regional", action="store_true", help="nur Regionalstaaten (REGIONAL) neu abrufen, alles andere aus dem letzten Lauf")
     a = p.parse_args()
     if a.geo or not GEO.exists():
         geo()
@@ -604,13 +650,15 @@ def main():
 
     print("IPU Parline …", file=sys.stderr)
     try:
+        if a.regional:
+            raise RuntimeError("--regional: nationale Kammern aus dem letzten Lauf")
         ipu_d, ipu_lizenz = ipu()
     except Exception as e:  # noqa: BLE001
         print("IPU nicht abrufbar, alter Stand bleibt:", e, file=sys.stderr)
         ipu_d, ipu_lizenz = None, ""
     print("Wikidata …", file=sys.stderr)
-    nat = national_artikel()
-    glied = {} if a.nur_national else gliedstaaten_wd()
+    nat = {} if a.regional else national_artikel()
+    glied = {} if a.nur_national else gliedstaaten_wd(REGIONAL if a.regional else None)
 
     wahlartikel = {}
 
@@ -674,7 +722,7 @@ def main():
     basis = ipu_d if ipu_d is not None else {i: [{k_: v_ for k_, v_ in k.items() if k_ not in ("aktuell", "stimmen", "juengst")} for k in s.get("kammern", [])]
                                                for i, s in alt.get("staaten", {}).items()}
     n = 0
-    for iso, kammern in sorted(basis.items()):
+    for iso, kammern in sorted({} if a.regional else basis.items()):
         art = nat.get(iso, {"leg": set(), "unterhaus": set(), "oberhaus": set()})
         if len(kammern) == 1:
             kammern[0]["typ"] = "einkammer"
@@ -691,10 +739,15 @@ def main():
             if n % 25 == 0:
                 print(f"  {n} nationale Kammern", file=sys.stderr)
         staaten[iso] = {"kammern": kammern}
+    if a.regional:
+        staaten = alt.get("staaten", {})
+        for s_ in staaten.values():
+            for k in s_["kammern"]:
+                k["juengst"] = juengst_status(k)
 
     # Gliedstaaten
     gl_out = {}
-    if a.nur_national:
+    if a.nur_national or a.regional:
         # Gliedstaaten vom letzten vollen Lauf übernehmen, nur den Hinweis "gerade gewählt" neu berechnen
         gl_out = alt.get("gliedstaaten", {})
         for gs in gl_out.values():
@@ -702,7 +755,13 @@ def main():
                 for kam in g["kammern"]:
                     kam["juengst"] = juengst_status(kam)
     for iso, subs in sorted(glied.items()):
+        if a.regional:
+            gl_out[iso] = {}
         for code, g in sorted(subs.items()):
+            if iso in REGIONAL and not g["chef"] and not g["parlament"] and not g["kammern"]:
+                continue  # Einheit ohne Regierung und ohne Parlament in Wikidata (z. B. finnische Landschaften, Saint-Martin)
+            if code in PARL_MANUELL and not g["parlament"] and not g["kammern"]:
+                g["parlament"] = PARL_MANUELL[code]
             kammern = []
             echte = {t: typ for t, typ in g["kammern"].items()}
             liste = [(t, typ) for t, typ in echte.items()]
@@ -719,9 +778,15 @@ def main():
                 kammern[0]["typ"] = "einkammer"
             for kam in kammern:
                 kam["juengst"] = juengst_status(kam)
-            chef = sorted(g["chef"].values(), key=lambda c: (not c["partei"], c["name"]))
+            # aktueller Amtsinhaber: jüngster Amtsantritt (Wikidata führt manchmal Vorgänger ohne Enddatum), dann mit Partei
+            chef = sorted(g["chef"].values(), key=lambda c: (c["seit"] == "", [-ord(ch) for ch in c["seit"]], not c["partei"], c["name"]))
+            # Koalition: Parteien, die die Infobox des Parlaments als Regierung kennzeichnet
+            koal = []
+            for kam in kammern[:1] if kammern and kammern[0].get("aktuell") else []:
+                koal = [re.sub(r"[{}]", "", re.sub(r"\{\{\s*abbr\|[^|]*\|([^}|]*)\}?\}?", r"\1", x["titel"] or x["partei"])).strip()
+                        for x in kam["aktuell"]["sitze"] if x.get("regierung")]
             gl_out.setdefault(iso, {})[code] = {"name": g["name"], "name_de": g["name_de"] if g["name_de"] and g["name_de"] != g["name"] else "",
-                                                "wikidata": g["wikidata"], "regierungschef": chef[0] if chef else None, "kammern": kammern}
+                                                "wikidata": g["wikidata"], "regierungschef": chef[0] if chef else None, "koalition": koal, "kammern": kammern}
         print(f"  Gliedstaaten {iso}: {len(subs)}", file=sys.stderr)
 
     # Parteifarben aus Wikidata (P465) über die verlinkten Wikipedia-Artikel
@@ -770,7 +835,7 @@ def main():
                        "wikidata": {"name": "Wikidata (CC0): Parlamente P194/P527, Gliedstaaten P150/P300, Regierungschef P6, Partei P102, Parteifarbe P465",
                                     "url": "https://www.wikidata.org/"},
                        "geo": {"name": "Natural Earth 1:10 Mio., Admin 1 (gemeinfrei), vereinfacht", "url": "https://www.naturalearthdata.com/"}},
-           "foederal": FOEDERAL, "staaten": staaten, "gliedstaaten": gl_out, "juengst": juengst}
+           "foederal": FOEDERAL, "regional": REGIONAL, "rolle": ROLLE, "staaten": staaten, "gliedstaaten": gl_out, "juengst": juengst}
     if a.nur_national:
         wahlartikel = {**alt_wahl, **wahlartikel}
     CACHE.write_text(json.dumps(wahlartikel, ensure_ascii=False, separators=(",", ":"), sort_keys=True))
@@ -807,7 +872,9 @@ def vereinfachen(pkte, tol):
     return [[round(x, 3), round(y, 3)] for i, (x, y) in enumerate(pkte) if i in behalten]
 
 
-KLEIN = {"AT": .01, "CH": .008, "DE": .008, "BE": .008, "BA": .01, "KM": .005, "AE": .01, "FM": .005}
+# Regionalstaaten mit passenden Natural-Earth-Umrissen (FR, IT, ES, NO: Départements, Provinzen bzw. alte Kreise statt der heutigen Regionen)
+KARTE_REGIONAL = ["SE", "DK", "NL"]
+KLEIN = {"SE": .02, "DK": .01, "NL": .005, "AT": .01, "CH": .008, "DE": .008, "BE": .008, "BA": .01, "KM": .005, "AE": .01, "FM": .005}
 
 
 def geo():
@@ -816,7 +883,7 @@ def geo():
     for f in d["features"]:
         pr = f["properties"]
         iso = pr.get("iso_a2")
-        if iso not in FOEDERAL or not pr.get("iso_3166_2"):
+        if iso not in FOEDERAL + KARTE_REGIONAL or not pr.get("iso_3166_2"):
             continue
         tol = KLEIN.get(iso, .04 if iso not in ("RU", "CA", "US", "AU", "BR") else .06)
         g = f["geometry"]

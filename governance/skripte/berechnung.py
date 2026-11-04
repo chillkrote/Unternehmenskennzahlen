@@ -11,6 +11,7 @@ from statistics import mean
 D = 'governance'
 rd = lambda f: list(csv.DictReader(open(f'{D}/{f}', encoding='utf-8-sig')))
 VG, MB = rd('verguetung.csv'), rd('gremien_mitglieder.csv')
+VG, MB = [r for r in VG if r['gj'] == '2025'], [r for r in MB if r['gj'] == '2025']  # Berechnung nur GJ 2025 (andere Jahre aus Handeingaben nicht einmischen)
 GB = lambda u: f'governance/dokumente/{ids.lade().ordner(u)}/geschaeftsbericht-2025.pdf'
 VB = lambda u: f'governance/dokumente/{ids.lade().ordner(u)}/verguetungsbericht-2025.pdf'
 
@@ -53,6 +54,8 @@ PUBLIZIERT = {
 # Rheinmetall weist Personalaufwand je FTE direkt aus (GB S. 56): 97 T€
 B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE), Konzern', GB('U000502'), 56)}
 
+DOK_B = {}  # Quelle der Variante-B-Eingaben aus Handeingaben (sonst Geschäftsbericht im Repo)
+
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
  ('Ilka Horstmeier', 'U000067', VB('U000067'), 28, 'Bezeichnung "Arbeitsdirektorin"'),
@@ -72,6 +75,30 @@ FRAUEN = [
  ('Dr. Ursula Biernert-Kloß', 'U000502', GB('U000502'), 163, '"Arbeitsdirektorin"'),
  ('Katja van Doren', 'U000510', GB('U000510'), 8, 'Lebenslauf im Bericht ("Personalvorständin ... Ihre Tätigkeit")'),
 ]
+
+# Handeingaben aus der Excel-Importvorlage (governance/vorlage/importieren.py --schreiben): gleiche Struktur, nur GJ 2025
+import glob, json
+PUB_Q = {}
+GESCHLECHT_SONST = []
+for _f in sorted(glob.glob(f'{D}/handeingabe/*.json')):
+    _d = json.load(open(_f, encoding='utf-8'))
+    for g in _d.get('geschlecht', []):
+        if g['geschlecht'] == 'weiblich':
+            FRAUEN.append((g['name'], g['unternehmen_id'], g['quelle_dokument'], g['seite'], g['beleg']))
+        else:
+            GESCHLECHT_SONST.append(g)
+    for r in _d.get('pay_ratio_eingang', []):
+        if int(r['gj']) != 2025:
+            continue
+        u, q, sp = r['unternehmen_id'], r['quelle_dokument'], r['seite']
+        if r['variante'] == 'A':
+            A[u] = (r['durchschnittsverguetung_teur'], r['basis'], q, sp)
+        elif r['variante'] == 'B':
+            B[u] = (r['personalaufwand_mio'], int(r['beschaeftigte']), r['basis'], sp, sp)
+            DOK_B[u] = q
+        elif r['variante'] == 'Bericht':
+            PUBLIZIERT[u] = (r['pay_ratio'], f"{r['bezug']}; {r['basis']}")
+            PUB_Q[u] = f'{q} S. {sp}'
 frauen = {(n, u) for n, u, *_ in FRAUEN}
 
 def ganzjaehrig(m):
@@ -113,7 +140,7 @@ for u in sorted(set(A) | set(B) | set(B_DIREKT)):
     if u in B:
         pa, n, basis, s1, s2 = B[u]
         t = (pa * 1000 - vorst_sum) / n
-        nenner.append(('B', t, basis, [f'{GB(u)} S. {s1} (Personalaufwand {pa:,} Mio. €)', f'{GB(u)} S. {s2} (Beschäftigte {n:,})'.replace(',', '.')],
+        nenner.append(('B', t, basis, [f'{DOK_B.get(u) or GB(u)} S. {s1} (Personalaufwand {pa:,} Mio. €)', f'{DOK_B.get(u) or GB(u)} S. {s2} (Beschäftigte {n:,})'.replace(',', '.')],
                        'Personalaufwand abzüglich Summe Vorstandsvergütung (alle Mitglieder des Jahres)'))
     if u in B_DIREKT:
         t, basis, doc, s = B_DIREKT[u]
@@ -130,7 +157,7 @@ for u in sorted(set(A) | set(B) | set(B_DIREKT)):
             add(u, var, f'Ø ganzjährige Vorstandsmitglieder (n={len(voll)})', mean(x['t'] for x in voll), t, basis, q + [f"{voll[0]['quelle']} S. {voll[0]['seite']}"], bem + zusatz)
 for u, (r, b) in PUBLIZIERT.items():
     rows.append(dict(unternehmen_id=u, gj=2025, variante='Unternehmen', bezug='ausgewiesen', zaehler_teur='', nenner_teur='', pay_ratio=r, nenner_basis=b,
-                     quellen=GB(u) if u in ('U000073', 'U000151') else VB(u), bemerkung='nur zum Abgleich, andere Definition'))
+                     quellen=PUB_Q.get(u) or (GB(u) if u in ('U000073', 'U000151') else VB(u)), bemerkung='nur zum Abgleich, andere Definition'))
 
 # Gender Pay Gap im Vorstand (unbereinigt) = (Ø Männer - Ø Frauen) / Ø Männer; nur ganzjährige Mitglieder
 gap = []
@@ -153,5 +180,6 @@ def w(f, rs):
     with open(f'{D}/berechnungen/{f}', 'w', newline='', encoding='utf-8-sig') as fh:
         wr = csv.DictWriter(fh, fieldnames=list(rs[0].keys())); wr.writeheader(); wr.writerows(rs)
 w('pay_ratio.csv', rows); w('gender_pay_gap_vorstand.csv', gap)
-w('geschlecht_belege.csv', [dict(name=n, unternehmen_id=u, geschlecht='weiblich', quelle_dokument=q, seite=s, beleg=b) for n, u, q, s, b in FRAUEN])
+w('geschlecht_belege.csv', [dict(name=n, unternehmen_id=u, geschlecht='weiblich', quelle_dokument=q, seite=s, beleg=b) for n, u, q, s, b in FRAUEN]
+  + [dict(name=g['name'], unternehmen_id=g['unternehmen_id'], geschlecht=g['geschlecht'], quelle_dokument=g['quelle_dokument'], seite=g['seite'], beleg=g['beleg']) for g in GESCHLECHT_SONST])
 print(len(rows), 'Pay-Ratio-Zeilen;', len(gap), 'Gap-Zeilen')

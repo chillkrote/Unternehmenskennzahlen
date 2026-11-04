@@ -1,113 +1,11 @@
 {
-"abruf": "2026-11-04T08:44Z",
+"abruf": "2026-11-04T09:39Z",
 "tage": 14,
 "fehler": [],
-"quelle": "Google News (Verweise auf Artikel; Titel unverändert)",
-"url": "https://news.google.com/",
+"quelle": "GDELT und Google News (Verweise auf Artikel; Titel unverändert)",
+"url": "https://www.gdeltproject.org/",
 "regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'",
 "meldungen": {
-"suez": [
-{
-"titel": "Maersk, Hapag-Lloyd Reroute India-Europe ME1 Service via Suez Canal",
-"url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMjBLaHZJaW5kQzJyb1JwTUxGWF9kNHFkMXZQa1VfaW5SYTJXaFNkMFZlUnptQXV0RVdnNDlOTkdBbExzcHpSN1c4MkltMFVBQ0xmdGs4a3RxV0hNS3dyYVh2SzRMRXpWbVVxTHMtWUxJV1BHc011TUp4cTYxZFRWTWV5YTlQcVNfck8xZjJkSVZNRlh5Y0tyNllLb1BsNjNB?oc=5",
-"quelle": "Maritime Gateway",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-03"
-},
-{
-"titel": "Saudi Arabia looks to Suez Canal to ease maritime disruption",
-"url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNU0FCa0hmY3ZHOXRxN1FMbThqM3g5ZE1BMXVqZl9DdWlaRkhXNnNNRkNLYTBiNE1Ocjk5Zzhid3pUU2JoVk84dlNHTnhaNWhtV01taS1mTFVkSnM1SlVrekt5MkxIeHhRNUpZQ3FsYlF4aXp0cFRlMlMwWHpXMkdSUWpEVThFc0xHWUFtZDJ6LURSTE9aX1RUb3FzT04zS3JFcFVHMW5uUVE?oc=5",
-"quelle": "Logistics Middle East",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-22"
-}
-],
-"babelmandeb": [
-{
-"titel": "Saudi Arabia condemns Houthi attacks, calls for security in Hormuz and Bab el-Mandeb",
-"url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBKTS1oYkdPbVotSklUYW02ZkxlcUNrNUlYVmhncV9Pb0hhZERFOTg3UHYtOVpPeldPaHRRSG1wNnpjd3lpTHVaQ2V0MWc3WGEzSXc?oc=5",
-"quelle": "Iran International",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-31"
-},
-{
-"titel": "Saudi Arabia and Yemen Warn of Iran-Backed Houthi Threat to Hormuz, Bab el-Mandeb Shipping",
-"url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNVDNOM0tQWmtCOFFQQVlPRGxNUUQ1dzkwOWxOdGFpLW9EX0Rta0stc195SjVwMlJsNHBTTTIxRFA4U0RPeHpCa3JOZDRRbG1LN05ZZ0hSdko3cFNUV2dRYlZMa1BnY0F0czFHUFByb0RZeS1sS2FMV2ZRUUR6NFNrT1NwZFN4RF8wQmRSWDNuQmE0YVRRd3lLZElMLVdKRzBqM3JfMENHRzEtc1VQYmhWd1B3VHFCcXNuREVIcWhvTzhtZGVqN1E?oc=5",
-"quelle": "Arab Times Kuwait News",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-31"
-},
-{
-"titel": "Kuwait urges end to attacks threatening navigation in Hormuz, Bab Al-Mandab",
-"url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcWRJOC04VHoyV1VGRHpnY0lSUFJ1dEo2TU12RUtlOGJWdkVEdEliRFVGWDZMdFduRDNYT1BMTEh5RjlGTlRxWlBpOGVBSUh4VXlIX0Z0QWo3eEItRkZBNUw3cU9QN0ZsWGM4UUpkQ1hNSkRGMXdBWjZrUldVMjk4ajhZYUF0ZEhPZXljbm0xZllzNXJrdVVRcUpSQ2hOaXNtekNNeXVGd0RubW1ETzdHRXc3OVVqTVpHVkxCTdIBwAFBVV95cUxNQjh4WEV5ZUFhSHd3UlNxSGMtU3RGd2lEMHY4VUR1YU95S0lxbEFFREZRTHpiOVJWMVJJNnBuZ2owMGNKdk40T0ZQNzFINkJoTGM1WnMwQWdoSkFNaWRjR2duTzEyNUdKNG9jSDhoVThQYVVaVGNldXZzTExpSm1KSTJkLVZwczN0aW5rUlpXZkFCRHNhcEdlbGRTTzNyZFMxRl9uVER1WUlhT0NRaGJhV3ZtVVpvNHBtczZJTXprRF8?oc=5",
-"quelle": "Kuwait Times",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-30"
-},
-{
-"titel": "French Frigate Shoots Down Missile Near Belgian Minehunter In Bab el-Mandeb Strait",
-"url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORURSaUxzb1FEbzVFZDVFNnpxckEzeFAwNEgxR3Jib25LaHJ4a2tITW9SSHQxR2ZIRXMwZjJYYkl2V3FFeW5RX04wNHh0eDhIdTZQcUFqTUk3M2JXUzNTTmZ6S2thSDMybldQMjl3aWxLN3lrMlFyaHZVd2E2NkxtRWlTeHlLWVdvVEFoNDhMT3gzWmg3eVpjMkFqTGd2aWVrUGhaMTM5eC1STWY5SDRoLXZQRQ?oc=5",
-"quelle": "Marine Insight",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-28"
-},
-{
-"titel": "Houthi Ballistic Missile Intercepted Near Belgian Minehunter in Bab el-Mandeb",
-"url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPamstRDlXZXJUUzNzdTJmUTdkcmtGd3NhT3N4bmNORWRBQ2NJSmU1REJ2SzV6WTRhWUEyZXppMnZYVjVmQ3YyTGxzM19PWFE5Q1FOYnlrZjlCd1RpbkxVTWNSU2VvMnoxVUZNSnFKRXlHdlNqdmE0NUs4bFROell5bFE5cFFuQUM0VXRSVTVyOXVZY0Z5RkE4bzB2WFdhQmMwdU5TRHBUM1F0ZlVab0lfVWFoMnZyQkxNekFFTzRYTFk?oc=5",
-"quelle": "Naval News",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-27"
-}
-],
-"hormus": [
-{
-"titel": "Iran Exempts India, China, Iraq, and Qatar from Strait of Hormuz Restrictions",
-"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeWZNMWN2Z2NuVjE2UHVCWFNCbEJYMlFBWGFtWFh2Q1VlU3RKRnJ3UTZJLUFPeVNxQWNFUXVDVW5EQU5xeFdpdzc2YUh3U3pOY1JrTHlBc2V1Wkt4cTZQNHRJdzhHaE16YmpjZ01qNlZ0TkVYWG82OV94RFV0RWVranI0TzlLV014UFhtd000RkNiQldDNGRnRW91M3NjSlZrVlpwSDRDaTVTNmRtbWU1Sw?oc=5",
-"quelle": "IranWire",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-04"
-},
-{
-"titel": "Iran exempts ships of four countries from Strait of Hormuz transit restrictions",
-"url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5zUVFQNUdMN2hnb2I0UjVwUHhfMi1NV1NoZFo5eDdndUZDZnhnNHltSDFzNlhEa1NHVGd6S29RbkRDUWQwNzYySVJ1T3JyVF9pNmJ6eQ?oc=5",
-"quelle": "AzerNews",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-04"
-},
-{
-"titel": "The Strait of Hormuz closure has cost Europe an extra $142 billion for the same energy it was already buying",
-"url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcUpnMUY0NURYRkpSdzMxYzZDMHRZR2V2dGxnc0loSjJJYVE0LXl5Ni1qT3k1MmtsQlhwYV9ZNThBSGJiSm1fLWdWa0tCSGdQVktjdG9DUWpHRUU2SnI1SVptcUpDX2w4Q1lkV3NLbUpobjM0TnkwNDBCd3Y2aEFQZlQ0ZkhEX0NEZ19iWk5B?oc=5",
-"quelle": "Fortune",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-03"
-},
-{
-"titel": "US said to strike Iranian island in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWTdYYkNwNDM4VUhlRy1IUmhUd3BiS3d2bTIyTTN3NDRyTDl5ekttOWdIbnBQdnQwcEVyMzRJZVJxMG9LR1RFMU9aR21xbjhLcTNFbjZXb3Q1cERyNUZWVmJBdWo5a1B5ZFlwdTM4ZGs0Nk5qcVlXTzdsakE5YzVpSmFnOUMwOGZGcHduSmtNeWFMMk91d2p0SVhUcGhLYkU?oc=5",
-"quelle": "The Times of Israel",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-03"
-},
-{
-"titel": "Indian Seafarer Killed in Strike in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWUxXT0FyOU82SFFuZ2NqU29scTVZME5GTTF0M0hkcHl2eTJTSnJDcmFQZW9Bbmo4ZDNfa2h2MXF1V2dKa09xSVcyRVVQX1ZfYzlRcHBBeElUNEs2WnZtNTNsUmpqalNkeHlQZng5SkkzV2JwTDQxSjFocVk4bHRjRDl0eVhwU1MzWmIzSmJ0MTFQc0FIcEE?oc=5",
-"quelle": "The Maritime Executive",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-03"
-}
-],
 "panama": [
 {
 "titel": "Panama Canal to cap ship transits due to El Nino drought",
@@ -184,10 +82,20 @@
 "datum": "2026-10-23"
 }
 ],
+"kiel": [
+{
+"titel": "Einsatz auf Hochbrücke Hochdonn: Bahnstrecke über Nord-Ostsee-Kanal wegen Suche nach Person gesperrt",
+"url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPX2dTdU1GVTJBQ0EzZmozcTZpUnVZcTdiZEoxT21MLWFwZTdlT3U4T2EyX0k3Vk5XYmh3eXAyY1c1cmNkelNrdDNRdTIwWWlTekJQbllqeGcxbVhRNWxRZUl0M1o2SzJmY1BGaXhRZTRrdXRiVUZmM01qODJvbU1kUTQzSHF6Sjl6RE1nRjF1WTZEd2tGa2dSaDhqNWcwUldGRmQ3UmZhNFltTGREeUt1VEJHdzF2Zw?oc=5",
+"quelle": "shz.de",
+"sprache": "German",
+"dienst": "Google News",
+"datum": "2026-10-22"
+}
+],
 "taiwan": [
 {
 "titel": "Japan to integrate missile command systems amid Taiwan Strait concerns",
-"url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBRRVJLRG9GLUE0RTJ0enVRdGEyMzJWR0VSOWVCQ21hekNpdVVfQi1VQUR3OTVTTWdSY1hOelhSZXNJRVVmWmlUZVdObE5FQjdzWmpmQm96dnI?oc=5",
+"url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5ISEZXN3JINWZhT0l2eU80bnFQdER0SUJuNS1fOWE5ZnQyTWlZMDdyVmZlOEdheGk4ZW5ENDBsSm95c2Z0ZkNsY3g3dXJSTXBwMHFxRQ?oc=5",
 "quelle": "Taiwan News",
 "sprache": "English",
 "dienst": "Google News",
@@ -238,14 +146,6 @@
 "datum": "2026-10-29"
 },
 {
-"titel": "Brenner Base Tunnel delayed until 2034, costs rise by €1.2 billion",
-"url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYURhc29sSVpXbmtJVjBfRWhOSDhfSHpNaHJMSnZtMkxzNXlrWndocHJ0Y2RRTHM1RGEwa1ZhVTVaZnM0RV9kV1VWeU8wWnVkTlpZMkZVdkVwM2xwQ1U2QmdHdW9Md1FEelB0QnpVUzRwUzJFYlVWLVAxdDh4aFZlTnlvRzJ1NXI2Rk8tQVBzWUs0dDJpa0pkV1ZBcm5kR0tKZGozRlhENjNNRU1lei1kTVJzSHN4N28?oc=5",
-"quelle": "RAILMARKET.com",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-22"
-},
-{
 "titel": "Brenner-Stau 2026: Wann Sie A13 meiden sollten!",
 "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBZWlBKWVdwOUxpQWpWbEN6YnpJZnhrYWdNa3JKblhqT0pwbTF6dm9VNnBjdjF5MnZMaEZlUGptU0NPek9VLTIxX2FSS2VYNmxBUERnMmRLeUNPdzJiVzZYMkxBdFd4VzlfTmRV?oc=5",
 "quelle": "ADAC",
@@ -286,6 +186,14 @@
 "sprache": "German",
 "dienst": "Google News",
 "datum": "2026-10-25"
+},
+{
+"titel": "Wegen Witterung: Gotthardstrasse zw. Airolo und Hospental gesperrt",
+"url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQ2NJQ0hwcTVPQ2VpYmNpOVc4Z19yN1JKUkpuUmRkOWYxU1Y2RVZkQlBGaUVkS3lZY1JjZF9sV1kwTHJ3M3lGNWkwYnV6TG9LbHk3MXVjeDVvSFAzc1U0a1JNOUVjMDBfZXBoX3RIckFrdDVxQWNhTnBYWDJkZDBxQm00S056dkdPYlJtcldyTlQyQ09nLWdwYkRVbW1ISW1hRkdfUnBB0gGuAUFVX3lxTE1sbW02QW9xVDdLQUN0bXVVZGRUZkcwRDZNdUFqM1RuWkN6LU9jajRCQlg0OEVjVjJyaE9kdV8tRnJxT3RoS0xyM00wVjVYdFFhWlFJaTltYk9mUjVTTXV1S1dZb2tqLWlWcGY2M3lydm9NNjlKZy0teFRjTUxHbEV1UG1OcXVPbUN2ZGNyVWptaUtuZ0o0Z2tKOHB2ZWwzUV9XQVVlX1BXUFR4c1p3Zw?oc=5",
+"quelle": "Unfallmeldungen.ch",
+"sprache": "German",
+"dienst": "Google News",
+"datum": "2026-10-23"
 }
 ],
 "laredo": [

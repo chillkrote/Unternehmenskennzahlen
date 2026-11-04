@@ -1,0 +1,731 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U004835",
+ "name": "NVIDIA",
+ "stand": "2026-11-04",
+ "berichtsjahr": 2026,
+ "hinweis": "Geschäftsjahr 2026 endete am 25.1.2026. NVIDIA fertigt nicht selbst: erfasst sind die im 10-K genannten Fertigungs- und Speicherpartner, die US-Fertigung laut NVIDIA-Ankündigung, Beteiligungen und Großaktionäre. Die beiden Direktkunden mit 22 % und 14 % des Umsatzes nennt NVIDIA nicht namentlich. Umsatz nach Ländern, Liefermengen je Lieferant und Standorte in China, Indien und Taiwan (laut 10-K vorhanden) fehlen. Die Intel-Beteiligung stützt sich auf Presseberichte zur Intel-Meldung und ist deshalb unsicher markiert.",
+ "quellen": {
+  "k10": {
+   "titel": "NVIDIA Form 10-K, Geschäftsjahr 2026 (bis 25.1.2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+   "herausgeber": "NVIDIA Corporation",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "proxy": {
+   "titel": "NVIDIA Proxy Statement 2026 (DEF 14A), Security Ownership",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000036/nvda-20260512.htm",
+   "herausgeber": "NVIDIA Corporation",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "us_fertigung": {
+   "titel": "NVIDIA to Manufacture American-Made AI Supercomputers in US for First Time",
+   "url": "https://blogs.nvidia.com/blog/nvidia-manufacture-american-made-ai-supercomputers-us/",
+   "herausgeber": "NVIDIA Corporation",
+   "jahr": 2025,
+   "art": "pressemitteilung"
+  },
+  "nokia": {
+   "titel": "Nokia partners with NVIDIA (Investition 1 Mrd. US-$)",
+   "url": "https://www.nokia.com/newsroom/nokia-partners-with-nvidia/",
+   "herausgeber": "Nokia Oyj",
+   "jahr": 2025,
+   "art": "pressemitteilung"
+  },
+  "intel": {
+   "titel": "Intel issues 214.8M shares to NVIDIA in $5B transaction",
+   "url": "https://convergedigest.com/intel-issues-214-8m-shares-to-nvidia-in-5b-transaction/",
+   "herausgeber": "Converge Digest",
+   "jahr": 2025,
+   "art": "presse"
+  },
+  "anthropic": {
+   "titel": "Microsoft, NVIDIA and Anthropic announce strategic partnerships (18.11.2025)",
+   "url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships",
+   "herausgeber": "Anthropic PBC",
+   "jahr": 2025,
+   "art": "pressemitteilung"
+  }
+ },
+ "standorte": [
+  {
+   "id": "santa_clara",
+   "name": "NVIDIA, Hauptsitz Santa Clara",
+   "gesellschaft": "NVIDIA Corporation",
+   "marke": "Konzern",
+   "unternehmen_id": "U004835",
+   "art": "hauptsitz",
+   "ort": "Santa Clara",
+   "land": "US",
+   "taetigkeit": "Sitz der NVIDIA Corporation mit rund 3 Mio. Quadratfuß eigener und gemieteter Büro- und Gebäudefläche sowie gemieteter Rechenzentrumsfläche. NVIDIA entwickelt GPUs, Netzwerk- und Rechenzentrumssysteme und lässt in Auftragsfertigung produzieren.",
+   "kennzahlen": [
+    {
+     "name": "Umsatz",
+     "wert": 215938,
+     "einheit": "Mio. US-$",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Compute & Networking",
+     "wert": 193479,
+     "einheit": "Mio. US-$",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Graphics",
+     "wert": 22459,
+     "einheit": "Mio. US-$",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 42000,
+     "einheit": "Personen (rund, in 38 Ländern)",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatzanteil größter Direktkunde",
+     "wert": 22,
+     "einheit": "%",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatzanteil zweitgrößter Direktkunde",
+     "wert": 14,
+     "einheit": "%",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatzanteil Kunden mit Sitz außerhalb der USA",
+     "wert": 31,
+     "einheit": "%",
+     "jahr": 2026,
+     "quelle": "k10"
+    },
+    {
+     "name": "Anteil Jensen Huang (CEO)",
+     "wert": 3.58,
+     "einheit": "% der Aktien",
+     "jahr": 2026,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "lat": 37.3541,
+   "lon": -121.9552,
+   "koordinate": "ort"
+  },
+  {
+   "id": "israel",
+   "name": "NVIDIA Israel",
+   "marke": "Konzern",
+   "art": "entwicklung",
+   "ort": "Yokneam Illit",
+   "land": "IL",
+   "taetigkeit": "Entwicklung, Vertriebsunterstützung und Fertigungsaktivitäten in Israel (rund 6.000 Beschäftigte laut 10-K).",
+   "kennzahlen": [
+    {
+     "name": "Beschäftigte",
+     "wert": 6000,
+     "einheit": "Personen (rund)",
+     "jahr": 2026,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "unsicher": true,
+   "hinweis": "Das 10-K nennt nur das Land; der Ort Yokneam ist der frühere Mellanox-Sitz und hier nur stellvertretend gesetzt.",
+   "lat": 32.6481,
+   "lon": 35.0944,
+   "koordinate": "ort"
+  },
+  {
+   "id": "tsmc",
+   "name": "TSMC (Halbleiterfertigung)",
+   "gesellschaft": "Taiwan Semiconductor Manufacturing Company Limited",
+   "marke": "Lieferanten",
+   "unternehmen_id": "U003766",
+   "art": "lieferant",
+   "ort": "Hsinchu",
+   "land": "TW",
+   "taetigkeit": "Fertigt die NVIDIA-Chips als Auftragsfertiger (Foundry), einschließlich CoWoS-Packaging.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 24.8066,
+   "lon": 120.9687,
+   "koordinate": "ort"
+  },
+  {
+   "id": "arizona",
+   "name": "Arizona: TSMC, Amkor und SPIL",
+   "marke": "Lieferanten",
+   "art": "lieferant",
+   "ort": "Phoenix",
+   "land": "US",
+   "taetigkeit": "Blackwell-Chips laufen in den TSMC-Werken in Phoenix vom Band; Amkor und SPIL übernehmen Packaging und Test in Arizona.",
+   "kennzahlen": [],
+   "quellen": [
+    "us_fertigung"
+   ],
+   "lat": 33.4484,
+   "lon": -112.0741,
+   "koordinate": "ort"
+  },
+  {
+   "id": "samsung",
+   "name": "Samsung Electronics",
+   "gesellschaft": "Samsung Electronics Co., Ltd.",
+   "marke": "Lieferanten",
+   "unternehmen_id": "U001410",
+   "art": "lieferant",
+   "ort": "Suwon",
+   "land": "KR",
+   "taetigkeit": "Foundry-Partner und Speicherlieferant.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.2633,
+   "lon": 127.0287,
+   "koordinate": "ort"
+  },
+  {
+   "id": "skhynix",
+   "name": "SK hynix",
+   "gesellschaft": "SK Hynix Inc.",
+   "marke": "Lieferanten",
+   "unternehmen_id": "U001411",
+   "art": "lieferant",
+   "ort": "Icheon",
+   "land": "KR",
+   "taetigkeit": "Speicherlieferant (u. a. HBM).",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.2809,
+   "lon": 127.4429,
+   "koordinate": "ort"
+  },
+  {
+   "id": "micron",
+   "name": "Micron Technology",
+   "gesellschaft": "Micron Technology, Inc.",
+   "marke": "Lieferanten",
+   "unternehmen_id": "U004804",
+   "art": "lieferant",
+   "ort": "Boise",
+   "land": "US",
+   "taetigkeit": "Speicherlieferant.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 43.6166,
+   "lon": -116.2009,
+   "koordinate": "ort"
+  },
+  {
+   "id": "foxconn",
+   "name": "Hon Hai Precision (Foxconn)",
+   "gesellschaft": "Hon Hai Precision Industry Co., Ltd.",
+   "marke": "Lieferanten",
+   "unternehmen_id": "U003758",
+   "art": "lieferant",
+   "ort": "New Taipei",
+   "land": "TW",
+   "taetigkeit": "Montage, Test und Packaging von NVIDIA-Systemen.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 25.012,
+   "lon": 121.4657,
+   "koordinate": "ort"
+  },
+  {
+   "id": "foxconn_houston",
+   "name": "Foxconn-Werk Houston (KI-Supercomputer)",
+   "marke": "Lieferanten",
+   "art": "lieferant",
+   "ort": "Houston",
+   "land": "US",
+   "taetigkeit": "Neues Werk für NVIDIA-Supercomputer in Texas (Massenproduktion laut Ankündigung binnen 12 bis 15 Monaten).",
+   "kennzahlen": [],
+   "quellen": [
+    "us_fertigung"
+   ],
+   "lat": 29.7589,
+   "lon": -95.3677,
+   "koordinate": "ort"
+  },
+  {
+   "id": "wistron",
+   "name": "Wistron",
+   "gesellschaft": "Wistron Corporation",
+   "marke": "Lieferanten",
+   "unternehmen_id": "U013913",
+   "art": "lieferant",
+   "ort": "Taipei",
+   "land": "TW",
+   "taetigkeit": "Montage, Test und Packaging von NVIDIA-Systemen.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 25.0375,
+   "lon": 121.5637,
+   "koordinate": "ort"
+  },
+  {
+   "id": "wistron_dallas",
+   "name": "Wistron-Werk im Raum Dallas",
+   "marke": "Lieferanten",
+   "art": "lieferant",
+   "ort": "Fort Worth",
+   "land": "US",
+   "taetigkeit": "Neues Werk für NVIDIA-Supercomputer in Texas.",
+   "kennzahlen": [],
+   "quellen": [
+    "us_fertigung"
+   ],
+   "unsicher": true,
+   "hinweis": "Die Quelle nennt den Raum Dallas; Fort Worth ist stellvertretend gesetzt.",
+   "lat": 32.7532,
+   "lon": -97.3327,
+   "koordinate": "ort"
+  },
+  {
+   "id": "intel",
+   "name": "Intel Corporation",
+   "gesellschaft": "Intel Corporation",
+   "marke": "Beteiligungen",
+   "unternehmen_id": "U004745",
+   "art": "beteiligung",
+   "ort": "Santa Clara",
+   "land": "US",
+   "taetigkeit": "NVIDIA kaufte Intel-Stammaktien für 5 Mrd. US-$ (Abschluss 26.12.2025, 214.776.632 Aktien zu 23,28 US-$); gemeinsame Entwicklung von x86-CPUs für NVIDIA-Rechenzentren und PC-Chips mit RTX-Grafik. Im 10-K als nicht realisierter Gewinn erwähnt.",
+   "kennzahlen": [
+    {
+     "name": "Kaufpreis",
+     "wert": 5000,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "intel",
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "intel",
+    "k10"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 37.3941,
+   "lon": -121.8952,
+   "koordinate": "ort"
+  },
+  {
+   "id": "nokia",
+   "name": "Nokia Oyj",
+   "gesellschaft": "Nokia Oyj",
+   "marke": "Beteiligungen",
+   "unternehmen_id": "U001086",
+   "art": "beteiligung",
+   "ort": "Espoo",
+   "land": "FI",
+   "taetigkeit": "Investition von 1 Mrd. US-$ zu 6,01 US-$ je Aktie; NVIDIA wird mit 2,90 % Aktionär. Partnerschaft für KI-RAN und 6G.",
+   "kennzahlen": [
+    {
+     "name": "Anteil NVIDIA",
+     "wert": 2.9,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "nokia"
+    }
+   ],
+   "quellen": [
+    "nokia"
+   ],
+   "lat": 60.205,
+   "lon": 24.656,
+   "koordinate": "ort"
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "gesellschaft": "Anthropic PBC",
+   "marke": "Kunden und Beteiligungen",
+   "art": "kunde",
+   "ort": "San Francisco",
+   "land": "US",
+   "taetigkeit": "NVIDIA sagt bis zu 10 Mrd. US-$ Investition zu; Anthropic nutzt zunächst bis zu 1 Gigawatt Rechenleistung mit NVIDIA Grace Blackwell und Vera Rubin (über Azure).",
+   "kennzahlen": [],
+   "quellen": [
+    "anthropic"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.7879,
+   "lon": -122.4075,
+   "koordinate": "ort"
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "gesellschaft": "OpenAI",
+   "marke": "Kunden und Beteiligungen",
+   "art": "partner",
+   "ort": "San Francisco",
+   "land": "US",
+   "taetigkeit": "NVIDIA verhandelt laut 10-K eine Investitions- und Partnerschaftsvereinbarung mit OpenAI (Abschluss offen, kein Betrag).",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "unsicher": true,
+   "hinweis": "Vereinbarung zum Berichtszeitpunkt nicht abgeschlossen.",
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 37.8279,
+   "lon": -122.3475,
+   "koordinate": "ort"
+  },
+  {
+   "id": "groq",
+   "name": "Groq",
+   "gesellschaft": "Groq, Inc.",
+   "marke": "Kunden und Beteiligungen",
+   "art": "partner",
+   "ort": "Mountain View",
+   "land": "US",
+   "taetigkeit": "Nicht exklusive Lizenzvereinbarung (Dezember 2025); Auszahlung laut Kapitalflussrechnung 13 Mrd. US-$.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.3894,
+   "lon": -122.0832,
+   "koordinate": "ort"
+  },
+  {
+   "id": "microsoft",
+   "name": "Microsoft (Partnerschaft mit Anthropic)",
+   "gesellschaft": "Microsoft Corporation",
+   "marke": "Kunden und Beteiligungen",
+   "unternehmen_id": "U000745",
+   "art": "partner",
+   "ort": "Redmond",
+   "land": "US",
+   "taetigkeit": "Strategische Partnerschaft Microsoft, NVIDIA und Anthropic vom 18.11.2025.",
+   "kennzahlen": [],
+   "quellen": [
+    "anthropic"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 47.6694,
+   "lon": -122.1239,
+   "koordinate": "ort"
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock, Inc.",
+   "gesellschaft": "BlackRock, Inc.",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "New York",
+   "land": "US",
+   "taetigkeit": "Großaktionär (laut Schedule 13G/A vom 26.1.2024).",
+   "kennzahlen": [
+    {
+     "name": "Anteil an NVIDIA",
+     "wert": 7.43,
+     "einheit": "%",
+     "jahr": 2026,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "proxy"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.7127,
+   "lon": -74.006,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vanguard",
+   "name": "Vanguard Capital Management",
+   "gesellschaft": "Vanguard Capital Management",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Malvern",
+   "land": "US",
+   "taetigkeit": "Großaktionär (laut Schedule 13G vom 28.4.2026, Stand 31.3.2026).",
+   "kennzahlen": [
+    {
+     "name": "Anteil an NVIDIA",
+     "wert": 7.31,
+     "einheit": "%",
+     "jahr": 2026,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "proxy"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.0362,
+   "lon": -75.5138,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "santa_clara",
+   "nach": "israel",
+   "art": "produktion",
+   "text": "Entwicklungs- und Fertigungsstandort Israel.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "tsmc",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "Fertigt die GPUs und Netzwerkchips; Mengen nicht veröffentlicht.",
+   "gut": "Wafer, Chips, CoWoS-Packaging",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "arizona",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "US-Fertigung von Blackwell-Chips, Packaging und Test in Arizona.",
+   "gut": "Blackwell-Chips",
+   "quellen": [
+    "us_fertigung"
+   ]
+  },
+  {
+   "von": "tsmc",
+   "nach": "arizona",
+   "art": "tochter",
+   "text": "TSMC betreibt die Werke in Phoenix.",
+   "quellen": [
+    "us_fertigung"
+   ]
+  },
+  {
+   "von": "samsung",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "Foundry und Speicher.",
+   "gut": "Chips, Speicher",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "skhynix",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "Speicher.",
+   "gut": "Speicher (HBM)",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "micron",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "Speicher.",
+   "gut": "Speicher",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "foxconn",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "Montage, Test und Packaging.",
+   "gut": "Systeme und Baugruppen",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "foxconn",
+   "nach": "foxconn_houston",
+   "art": "tochter",
+   "text": "Foxconn baut das Werk in Houston.",
+   "quellen": [
+    "us_fertigung"
+   ]
+  },
+  {
+   "von": "foxconn_houston",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "KI-Supercomputer aus US-Fertigung.",
+   "gut": "KI-Supercomputer",
+   "quellen": [
+    "us_fertigung"
+   ]
+  },
+  {
+   "von": "wistron",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "Montage, Test und Packaging.",
+   "gut": "Systeme und Baugruppen",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "wistron",
+   "nach": "wistron_dallas",
+   "art": "tochter",
+   "text": "Wistron baut das Werk im Raum Dallas.",
+   "quellen": [
+    "us_fertigung"
+   ]
+  },
+  {
+   "von": "wistron_dallas",
+   "nach": "santa_clara",
+   "art": "lieferant",
+   "text": "KI-Supercomputer aus US-Fertigung.",
+   "gut": "KI-Supercomputer",
+   "quellen": [
+    "us_fertigung"
+   ]
+  },
+  {
+   "von": "santa_clara",
+   "nach": "intel",
+   "art": "beteiligung",
+   "text": "Aktienkauf für 5 Mrd. US-$ (laut Presse rund 4 %).",
+   "menge": {
+    "wert": 5000,
+    "einheit": "Mio. US-$ Kaufpreis",
+    "jahr": 2025
+   },
+   "unsicher": true,
+   "quellen": [
+    "intel"
+   ]
+  },
+  {
+   "von": "santa_clara",
+   "nach": "nokia",
+   "art": "beteiligung",
+   "text": "Investition 1 Mrd. US-$, Anteil 2,90 %.",
+   "anteil": 2.9,
+   "jahr": 2025,
+   "quellen": [
+    "nokia"
+   ]
+  },
+  {
+   "von": "santa_clara",
+   "nach": "anthropic",
+   "art": "kunde",
+   "text": "Rechenleistung mit NVIDIA-Systemen bis zu 1 GW; dazu Investitionszusage bis 10 Mrd. US-$.",
+   "menge": {
+    "wert": 10000,
+    "einheit": "Mio. US-$ Investitionszusage (höchstens)",
+    "jahr": 2025
+   },
+   "gut": "Grace-Blackwell- und Vera-Rubin-Systeme",
+   "quellen": [
+    "anthropic"
+   ]
+  },
+  {
+   "von": "santa_clara",
+   "nach": "openai",
+   "art": "partner",
+   "text": "Investitions- und Partnerschaftsvereinbarung in Verhandlung.",
+   "unsicher": true,
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "santa_clara",
+   "nach": "groq",
+   "art": "partner",
+   "text": "Lizenz für Groq-Technologie.",
+   "menge": {
+    "wert": 13000,
+    "einheit": "Mio. US-$ Zahlung",
+    "jahr": 2026
+   },
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "microsoft",
+   "nach": "santa_clara",
+   "art": "partner",
+   "text": "Strategische Partnerschaft (mit Anthropic).",
+   "quellen": [
+    "anthropic"
+   ]
+  },
+  {
+   "von": "blackrock",
+   "nach": "santa_clara",
+   "art": "eigentuemer",
+   "text": "Hält 7,43 % der NVIDIA-Aktien.",
+   "anteil": 7.43,
+   "jahr": 2026,
+   "quellen": [
+    "proxy"
+   ]
+  },
+  {
+   "von": "vanguard",
+   "nach": "santa_clara",
+   "art": "eigentuemer",
+   "text": "Hält 7,31 % der NVIDIA-Aktien.",
+   "anteil": 7.31,
+   "jahr": 2026,
+   "quellen": [
+    "proxy"
+   ]
+  }
+ ]
+}

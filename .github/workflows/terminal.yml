@@ -62,6 +62,7 @@ jobs:
         run: |
           python3 stammdaten/beziehungen/beziehungen.py pruefen
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/netz-smoke.js app/dist/weltkugel.html
+          NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/netze-alle-smoke.js app/dist/weltkugel.html
       - uses: actions/upload-artifact@v4
         with:
           name: terminal

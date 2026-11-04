@@ -37,7 +37,7 @@ Grafiken im Bericht sind oft Vektorpfade ohne Text. Dann die Seite als Bild rend
 ## 3. Je Standort erfassen
 
 - [ ] Name, Gesellschaft, Marke, Ort, Land (ISO-2)
-- [ ] Art: `hauptsitz`, `hauptsitz_tochter`, `fahrzeugwerk`, `komponentenwerk`, `batterie`, `finanzen`, `vertrieb`, `entwicklung`, `joint_venture`, `beteiligung`, `partner`, `kunde`, `eigentuemer`, `lieferant`
+- [ ] Art: `hauptsitz`, `hauptsitz_tochter`, `fahrzeugwerk`, `komponentenwerk`, `werk` (Produktion außerhalb der Autoindustrie), `filiale` (Bank), `batterie`, `finanzen`, `vertrieb`, `entwicklung`, `joint_venture`, `beteiligung`, `partner`, `kunde`, `eigentuemer`, `lieferant`
 - [ ] Tätigkeit in einem Satz: was dort gebaut oder geleistet wird (Modelle, Komponenten, Funktionen)
 - [ ] Kennzahlen mit Wert, Einheit, Jahr und Quelle: Produktion (Stück), Beschäftigte, Anteil des Konzerns (%), Umsatz, Kapazität (nur als `geplante Kapazität`), Auslieferungen
 - [ ] Unternehmens-ID, falls der Standort eine eigene Gesellschaft mit ID ist (verknüpft die Suche auf der Weltkugel)
@@ -56,6 +56,7 @@ Grafiken im Bericht sind oft Vektorpfade ohne Text. Dann die Seite als Bild rend
 | `eigentuemer` | Großaktionär des Konzerns | Stimmrechte in % |
 | `kunde` | externer Abnehmer (Plattform, Komponenten, Dienste) | Umfang, wenn veröffentlicht |
 | `lieferant` / `partner` | wichtige Zulieferer, Technologiepartner | – |
+| `filiale` | Filiale oder Niederlassung (Banken) | – |
 
 - [ ] Richtung: `von` = Lieferant oder Mutter, `nach` = Empfänger oder Tochter
 - [ ] Gut (was fließt) und kurzer Text

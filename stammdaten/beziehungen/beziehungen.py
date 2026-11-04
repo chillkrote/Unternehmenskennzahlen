@@ -19,9 +19,9 @@ DATEN = HIER / "daten"
 CACHE = HIER / "koordinaten_cache.json"
 IDS = HIER.parent / "unternehmen_ids.csv"
 
-ARTEN_STANDORT = {"hauptsitz", "hauptsitz_tochter", "fahrzeugwerk", "komponentenwerk", "batterie", "finanzen", "vertrieb",
+ARTEN_STANDORT = {"hauptsitz", "hauptsitz_tochter", "fahrzeugwerk", "komponentenwerk", "werk", "filiale", "batterie", "finanzen", "vertrieb",
                   "entwicklung", "joint_venture", "beteiligung", "partner", "kunde", "eigentuemer", "lieferant"}
-ARTEN_BEZIEHUNG = {"tochter", "produktion", "lieferung", "logistik", "joint_venture", "beteiligung", "eigentuemer", "kunde", "lieferant", "partner"}
+ARTEN_BEZIEHUNG = {"tochter", "produktion", "lieferung", "logistik", "joint_venture", "beteiligung", "eigentuemer", "kunde", "lieferant", "partner", "filiale"}
 
 
 def dateien():

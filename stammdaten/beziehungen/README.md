@@ -8,6 +8,9 @@ Filter, Standortdetail und Quellen.
 
 Erstes Beispiel: `daten/U000712_volkswagen.json` (Volkswagen Konzern, Berichtsjahr 2025).
 Was in Berichten und weiteren Quellen zu suchen ist: `CHECKLISTE.md`.
+Weitere Netze (Stand 04.11.2026): BASF, Bayer, Commerzbank, Apple, Microsoft, NVIDIA. Was sich nicht beschaffen ließ, steht in
+`OFFENE_PUNKTE.md`. Standortart `werk` (Produktionsstandort außerhalb der Autoindustrie) und `filiale` (Standort und Beziehungsart für Bankfilialen) kamen dabei hinzu.
+Test für alle Netze: `node app/tests/netze-alle-smoke.js app/dist/weltkugel.html`.
 
 ## Neues Unternehmen anlegen
 
@@ -33,7 +36,7 @@ Was in Berichten und weiteren Quellen zu suchen ist: `CHECKLISTE.md`.
   "standorte": [{
     "id": "wob", "name": "Wolfsburg (Stammwerk)", "gesellschaft": "Volkswagen AG", "marke": "Volkswagen Pkw",
     "unternehmen_id": "U000712",         // optional: verknüpft Tochterfirmen mit der Weltkugel-Suche
-    "art": "hauptsitz",                  // hauptsitz | hauptsitz_tochter | fahrzeugwerk | komponentenwerk | batterie | finanzen
+    "art": "hauptsitz",                  // hauptsitz | hauptsitz_tochter | fahrzeugwerk | komponentenwerk | werk | batterie | finanzen | filiale
                                          // vertrieb | entwicklung | joint_venture | beteiligung | partner | kunde | eigentuemer | lieferant
     "ort": "Wolfsburg", "land": "DE", "taetigkeit": "Was dort passiert",
     "kennzahlen": [{ "name": "Fahrzeugproduktion", "wert": 0, "einheit": "Fahrzeuge", "jahr": 2025, "quelle": "<schlüssel>", "unsicher": true }],   // Beispielwerte
@@ -45,7 +48,7 @@ Was in Berichten und weiteren Quellen zu suchen ist: `CHECKLISTE.md`.
   "beziehungen": [{
     "von": "gyoer", "nach": "wob",
     "art": "lieferung",                  // tochter | produktion | lieferung | logistik | joint_venture | beteiligung
-                                         // eigentuemer | kunde | lieferant | partner
+                                         // eigentuemer | kunde | lieferant | partner | filiale
     "text": "Audi Hungaria liefert Antriebe an Konzernwerke …", "gut": "Antriebe (Motoren und E-Antriebe)",
     "menge": { "wert": 1585290, "einheit": "Antriebe", "jahr": 2025 },   // optional, nur veröffentlichte Werte
     "anteil": 50,                        // optional, Kapitalanteil in Prozent

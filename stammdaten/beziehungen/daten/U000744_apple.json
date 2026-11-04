@@ -1,0 +1,735 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U000744",
+ "name": "Apple",
+ "stand": "2026-11-04",
+ "berichtsjahr": 2025,
+ "hinweis": "Geschäftsjahr 2025 endete am 27.9.2025. Erfasst sind die Tochtergesellschaften aus Anlage 21 des 10-K, die US-Fertigung und die namentlich genannten Partner des American Manufacturing Program sowie die Großaktionäre. Die Hauptfertigung in Asien (Auftragsfertiger in China, Indien, Vietnam) nennt Apple im 10-K nicht namentlich; die Apple-Lieferantenliste ist noch nicht ausgewertet. Liefermengen und Euro-Volumina veröffentlicht Apple nicht. Orte von Tochtergesellschaften stehen im 10-K nur als Land und sind als bekannter Sitz gesetzt.",
+ "quellen": {
+  "k10": {
+   "titel": "Apple Form 10-K, Geschäftsjahr 2025 (bis 27.9.2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+   "herausgeber": "Apple Inc.",
+   "jahr": 2025,
+   "art": "geschaeftsbericht"
+  },
+  "proxy": {
+   "titel": "Apple Proxy Statement 2026 (DEF 14A), Security Ownership",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+   "herausgeber": "Apple Inc.",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "amp": {
+   "titel": "Apple increases U.S. commitment to $600 billion, announces American Manufacturing Program (6.8.2025)",
+   "url": "https://www.apple.com/newsroom/2025/08/apple-increases-us-commitment-to-600-billion-usd-announces-ambitious-program/",
+   "herausgeber": "Apple Inc.",
+   "jahr": 2025,
+   "art": "pressemitteilung"
+  }
+ },
+ "standorte": [
+  {
+   "id": "cupertino",
+   "name": "Apple, Hauptsitz Cupertino",
+   "gesellschaft": "Apple Inc.",
+   "marke": "Konzern",
+   "unternehmen_id": "U000744",
+   "art": "hauptsitz",
+   "ort": "Cupertino",
+   "land": "US",
+   "taetigkeit": "Sitz der Apple Inc.; Entwicklung von iPhone, Mac, iPad, Wearables und Diensten. Die Hardware fertigen fast vollständig Auftragsfertiger, vor allem in China, Indien, Japan, Südkorea, Taiwan und Vietnam.",
+   "kennzahlen": [
+    {
+     "name": "Umsatz",
+     "wert": 416161,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz iPhone",
+     "wert": 209586,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Mac",
+     "wert": 33708,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz iPad",
+     "wert": 28023,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Wearables, Home und Zubehör",
+     "wert": 35686,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Dienste",
+     "wert": 109158,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Segment Amerika",
+     "wert": 178353,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Segment Europa (inkl. Indien, Nahost, Afrika)",
+     "wert": 111032,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Segment Großchina",
+     "wert": 64377,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Segment Japan",
+     "wert": 28703,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Segment übriges Asien-Pazifik",
+     "wert": 33696,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz USA",
+     "wert": 151790,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Beschäftigte (Vollzeitäquivalente)",
+     "wert": 166000,
+     "einheit": "Personen (rund)",
+     "jahr": 2025,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "lat": 37.3229,
+   "lon": -122.0323,
+   "koordinate": "ort"
+  },
+  {
+   "id": "cork",
+   "name": "Apple Operations International / Apple Distribution International",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Cork",
+   "land": "IE",
+   "taetigkeit": "Irische Tochtergesellschaften (Anlage 21 des 10-K): Apple Operations International Limited, Apple Operations Limited und Apple Distribution International Limited. 2024 wurden 15,8 Mrd. US-$ aus dem EU-Beihilfeverfahren an Irland freigegeben.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 51.8985,
+   "lon": -8.4726,
+   "koordinate": "ort"
+  },
+  {
+   "id": "singapur",
+   "name": "Apple South Asia / Apple Services, Singapur",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Singapur",
+   "land": "SG",
+   "taetigkeit": "Tochtergesellschaften Apple South Asia Pte. Ltd. und Apple Services Pte. Ltd.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "lat": 1.2899,
+   "lon": 103.8519,
+   "koordinate": "ort"
+  },
+  {
+   "id": "shanghai",
+   "name": "Apple Computer Trading (Shanghai)",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Shanghai",
+   "land": "CN",
+   "taetigkeit": "Tochtergesellschaft in China (Segment Großchina: China, Hongkong, Taiwan).",
+   "kennzahlen": [
+    {
+     "name": "Umsatz Segment Großchina",
+     "wert": 64377,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "lat": 31.2313,
+   "lon": 121.47,
+   "koordinate": "ort"
+  },
+  {
+   "id": "hongkong",
+   "name": "Apple Asia Limited",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Hongkong",
+   "land": "HK",
+   "taetigkeit": "Tochtergesellschaft in Hongkong.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "lat": 22.2793,
+   "lon": 114.1628,
+   "koordinate": "ort"
+  },
+  {
+   "id": "tokio",
+   "name": "Apple Japan, Inc.",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Tokio",
+   "land": "JP",
+   "taetigkeit": "Tochtergesellschaft in Japan (Segment Japan).",
+   "kennzahlen": [
+    {
+     "name": "Umsatz Segment Japan",
+     "wert": 28703,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "lat": 35.6769,
+   "lon": 139.7639,
+   "koordinate": "ort"
+  },
+  {
+   "id": "reno",
+   "name": "Braeburn Capital",
+   "gesellschaft": "Braeburn Capital, Inc.",
+   "marke": "Tochtergesellschaften",
+   "art": "finanzen",
+   "ort": "Reno",
+   "land": "US",
+   "taetigkeit": "Tochter in Nevada (Vermögensverwaltung der Konzernliquidität).",
+   "kennzahlen": [],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 39.5262,
+   "lon": -119.8127,
+   "koordinate": "ort"
+  },
+  {
+   "id": "houston",
+   "name": "Apple-Serverfabrik Houston",
+   "marke": "US-Fertigung",
+   "art": "werk",
+   "ort": "Houston",
+   "land": "US",
+   "taetigkeit": "Fabrik für Server für Apple Intelligence und Private Cloud Compute (bisher außerhalb der USA gefertigt); rund 250.000 Quadratfuß, erste Testeinheit im Juli 2025, Massenproduktion ab 2026 geplant.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 29.7589,
+   "lon": -95.3677,
+   "koordinate": "ort"
+  },
+  {
+   "id": "tsmc_az",
+   "name": "TSMC Arizona",
+   "gesellschaft": "TSMC Arizona",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "unternehmen_id": "U003766",
+   "art": "lieferant",
+   "ort": "Phoenix",
+   "land": "US",
+   "taetigkeit": "Fertigt in Arizona „zig Millionen Chips“ für Apple; Apple ist erster und größter Kunde des Werks.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 33.4484,
+   "lon": -112.0741,
+   "koordinate": "ort"
+  },
+  {
+   "id": "amkor",
+   "name": "Amkor (Packaging und Test)",
+   "gesellschaft": "Amkor Technology, Inc.",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "unternehmen_id": "U005445",
+   "art": "lieferant",
+   "ort": "Peoria",
+   "land": "US",
+   "taetigkeit": "Baut in Arizona eine Anlage für Packaging und Test, die Apple-Chips aus dem nahen TSMC-Werk verarbeitet; Apple erster und größter Kunde.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "unsicher": true,
+   "hinweis": "Die Quelle nennt nur Arizona; Peoria ist stellvertretend gesetzt.",
+   "lat": 33.5806,
+   "lon": -112.2374,
+   "koordinate": "ort"
+  },
+  {
+   "id": "corning",
+   "name": "Corning, Harrodsburg",
+   "gesellschaft": "Corning Incorporated",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "unternehmen_id": "U004631",
+   "art": "lieferant",
+   "ort": "Harrodsburg",
+   "land": "US",
+   "taetigkeit": "Deckglas für jedes weltweit verkaufte iPhone und jede Apple Watch kommt künftig aus Kentucky; dazu ein Apple-Corning-Innovationszentrum.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 37.7623,
+   "lon": -84.8433,
+   "koordinate": "ort"
+  },
+  {
+   "id": "coherent",
+   "name": "Coherent, Sherman",
+   "gesellschaft": "Coherent Corp.",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "art": "lieferant",
+   "ort": "Sherman",
+   "land": "US",
+   "taetigkeit": "VCSEL-Laser (u. a. für Face ID), mehrjähriger Vertrag.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 33.6357,
+   "lon": -96.6089,
+   "koordinate": "ort"
+  },
+  {
+   "id": "globalwafers",
+   "name": "GlobalWafers America, Sherman",
+   "gesellschaft": "GlobalWafers America",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "art": "lieferant",
+   "ort": "Sherman",
+   "land": "US",
+   "taetigkeit": "300-mm-Wafer, erstmals in den USA, für TSMC Phoenix und Texas Instruments Sherman.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 33.6757,
+   "lon": -96.5489,
+   "koordinate": "ort"
+  },
+  {
+   "id": "ti",
+   "name": "Texas Instruments, Sherman und Lehi",
+   "gesellschaft": "Texas Instruments Incorporated",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "unternehmen_id": "U004926",
+   "art": "lieferant",
+   "ort": "Sherman",
+   "land": "US",
+   "taetigkeit": "Grundlegende Halbleiter für Apple-Produkte einschließlich iPhone; neue Fabrik in Sherman, weitere Anlagen in Lehi (Utah).",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "versatz": [
+    -0.06,
+    0.04
+   ],
+   "lat": 33.6757,
+   "lon": -96.6689,
+   "koordinate": "ort"
+  },
+  {
+   "id": "samsung_austin",
+   "name": "Samsung-Fab Austin",
+   "gesellschaft": "Samsung",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "unternehmen_id": "U001410",
+   "art": "lieferant",
+   "ort": "Austin",
+   "land": "US",
+   "taetigkeit": "Neue Chip-Fertigungstechnik für Chips zur Leistungs- und Energieoptimierung.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 30.2649,
+   "lon": -97.7474,
+   "koordinate": "ort"
+  },
+  {
+   "id": "applied",
+   "name": "Applied Materials, Austin",
+   "gesellschaft": "Applied Materials, Inc.",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "art": "lieferant",
+   "ort": "Austin",
+   "land": "US",
+   "taetigkeit": "Ausbau der US-Produktion von Anlagen für die Halbleiterfertigung.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 30.3049,
+   "lon": -97.6874,
+   "koordinate": "ort"
+  },
+  {
+   "id": "globalfoundries",
+   "name": "GlobalFoundries, Malta",
+   "gesellschaft": "GlobalFoundries Inc.",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "unternehmen_id": "U006489",
+   "art": "lieferant",
+   "ort": "Malta",
+   "land": "US",
+   "taetigkeit": "Funk- und Power-Management-Halbleiter; mit Broadcom 5G-Komponenten.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 42.9712,
+   "lon": -73.7929,
+   "koordinate": "ort"
+  },
+  {
+   "id": "mp",
+   "name": "MP Materials, Fort Worth",
+   "gesellschaft": "MP Materials Corp.",
+   "marke": "Lieferanten (American Manufacturing Program)",
+   "art": "lieferant",
+   "ort": "Fort Worth",
+   "land": "US",
+   "taetigkeit": "Seltenerdmagneten aus dem Werk Independence (Ausbau) und Recyclinglinie in Mountain Pass, Kalifornien; Vertrag vom Juli 2025.",
+   "kennzahlen": [],
+   "quellen": [
+    "amp"
+   ],
+   "lat": 32.7532,
+   "lon": -97.3327,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vanguard",
+   "name": "The Vanguard Group",
+   "gesellschaft": "The Vanguard Group",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Malvern",
+   "land": "US",
+   "taetigkeit": "Großaktionär (Schedule 13G/A vom 29.7.2025, Stand 30.6.2025).",
+   "kennzahlen": [
+    {
+     "name": "Anteil an Apple",
+     "wert": 9.63,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "proxy"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.0362,
+   "lon": -75.5138,
+   "koordinate": "ort"
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock, Inc.",
+   "gesellschaft": "BlackRock, Inc.",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "New York",
+   "land": "US",
+   "taetigkeit": "Großaktionär (Schedule 13G/A vom 12.2.2024, Stand 31.12.2023).",
+   "kennzahlen": [
+    {
+     "name": "Anteil an Apple",
+     "wert": 7.1,
+     "einheit": "%",
+     "jahr": 2023,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "proxy"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.7127,
+   "lon": -74.006,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "cupertino",
+   "nach": "cork",
+   "art": "tochter",
+   "text": "Irische Betriebs- und Vertriebsgesellschaften.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "cupertino",
+   "nach": "singapur",
+   "art": "tochter",
+   "text": "Tochtergesellschaften in Singapur.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "cupertino",
+   "nach": "shanghai",
+   "art": "tochter",
+   "text": "Tochtergesellschaft in China.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "cupertino",
+   "nach": "hongkong",
+   "art": "tochter",
+   "text": "Tochtergesellschaft in Hongkong.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "cupertino",
+   "nach": "tokio",
+   "art": "tochter",
+   "text": "Tochtergesellschaft in Japan.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "cupertino",
+   "nach": "reno",
+   "art": "tochter",
+   "text": "Finanztochter.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "cupertino",
+   "nach": "houston",
+   "art": "produktion",
+   "text": "Eigene Serverfertigung in den USA.",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "houston",
+   "nach": "cupertino",
+   "art": "lieferung",
+   "text": "Server für Apple-Rechenzentren (Private Cloud Compute).",
+   "gut": "Server",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "tsmc_az",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Chips aus Arizona; Mengen nur als „zig Millionen“ angegeben.",
+   "gut": "Apple-Chips",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "tsmc_az",
+   "nach": "amkor",
+   "art": "lieferung",
+   "text": "Amkor verpackt und testet Apple-Chips aus dem nahen TSMC-Werk.",
+   "gut": "Wafer zum Packaging",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "amkor",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Packaging und Test von Apple-Chips.",
+   "gut": "Chips (verpackt und getestet)",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "globalwafers",
+   "nach": "tsmc_az",
+   "art": "lieferung",
+   "text": "Wafer für TSMC Phoenix.",
+   "gut": "300-mm-Wafer",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "globalwafers",
+   "nach": "ti",
+   "art": "lieferung",
+   "text": "Wafer für Texas Instruments Sherman.",
+   "gut": "300-mm-Wafer",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "corning",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Apple-Programm für US-Fertigung (600 Mrd. US-$ über vier Jahre).",
+   "gut": "Deckglas für iPhone und Apple Watch",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "coherent",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Apple-Programm für US-Fertigung (600 Mrd. US-$ über vier Jahre).",
+   "gut": "VCSEL-Laser",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "ti",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Apple-Programm für US-Fertigung (600 Mrd. US-$ über vier Jahre).",
+   "gut": "Halbleiter",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "samsung_austin",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Apple-Programm für US-Fertigung (600 Mrd. US-$ über vier Jahre).",
+   "gut": "Chips",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "applied",
+   "nach": "samsung_austin",
+   "art": "lieferung",
+   "text": "Fertigungsanlagen für Halbleiterwerke (Empfänger stellvertretend).",
+   "gut": "Anlagen",
+   "ziel_sammel": true,
+   "unsicher": true,
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "globalfoundries",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Apple-Programm für US-Fertigung (600 Mrd. US-$ über vier Jahre).",
+   "gut": "Funk- und Power-Chips",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "mp",
+   "nach": "cupertino",
+   "art": "lieferant",
+   "text": "Apple-Programm für US-Fertigung (600 Mrd. US-$ über vier Jahre).",
+   "gut": "Seltenerdmagneten",
+   "quellen": [
+    "amp"
+   ]
+  },
+  {
+   "von": "vanguard",
+   "nach": "cupertino",
+   "art": "eigentuemer",
+   "text": "Hält 9,63 % der Apple-Aktien.",
+   "anteil": 9.63,
+   "jahr": 2025,
+   "quellen": [
+    "proxy"
+   ]
+  },
+  {
+   "von": "blackrock",
+   "nach": "cupertino",
+   "art": "eigentuemer",
+   "text": "Hält 7,10 % der Apple-Aktien (Meldestand Ende 2023).",
+   "anteil": 7.1,
+   "jahr": 2023,
+   "quellen": [
+    "proxy"
+   ]
+  }
+ ]
+}

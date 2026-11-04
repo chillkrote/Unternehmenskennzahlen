@@ -874,15 +874,63 @@ def vereinfachen(pkte, tol):
 
 # Regionalstaaten mit passenden Natural-Earth-Umrissen (FR, IT, ES, NO: Départements, Provinzen bzw. alte Kreise statt der heutigen Regionen)
 KARTE_REGIONAL = ["SE", "DK", "NL"]
+# Natural Earth führt hier Départements, Provinzen bzw. Kreise vor 2020: sie werden zu den heutigen Regionen vereinigt (Zuordnung über Wikidata P131, Norwegen von Hand)
+ZUSAMMENFASSEN = ["FR", "IT", "ES", "NO"]
+NO_KREISE = {"NO-19": "NO-55", "NO-20": "NO-56", "NO-17": "NO-50", "NO-16": "NO-50", "NO-04": "NO-34", "NO-05": "NO-34", "NO-02": "NO-32", "NO-01": "NO-31",
+             "NO-03": "NO-03", "NO-06": "NO-33", "NO-07": "NO-39", "NO-08": "NO-40", "NO-09": "NO-42", "NO-10": "NO-42", "NO-11": "NO-11", "NO-12": "NO-46",
+             "NO-14": "NO-46", "NO-15": "NO-15", "NO-18": "NO-18", "NO-21": "NO-21"}
 KLEIN = {"SE": .02, "DK": .01, "NL": .005, "AT": .01, "CH": .008, "DE": .008, "BE": .008, "BA": .01, "KM": .005, "AE": .01, "FM": .005}
+
+
+def regionen_vereinigen(rohe):
+    """Départements (FR), Provinzen (IT, ES) und alte Kreise (NO) aus Natural Earth zu den heutigen Regionen vereinigen.
+    Braucht shapely (nur für diesen Schritt, pip install shapely); ohne shapely bleiben diese Länder ohne Umrisse."""
+    try:
+        from shapely.geometry import shape, mapping
+        from shapely.ops import unary_union
+    except ImportError:
+        print("shapely fehlt: Umrisse für FR, IT, ES, NO entfallen (pip install shapely)", file=sys.stderr)
+        return []
+    out = []
+    for iso, fl in rohe.items():
+        if iso == "NO":
+            zu = {f["properties"]["iso_3166_2"]: NO_KREISE.get(f["properties"]["iso_3166_2"]) for f in fl}
+        else:
+            q = [f["properties"]["wikidataid"] for f in fl if f["properties"].get("wikidataid")]
+            abfrage = ("SELECT ?d ?code WHERE { VALUES ?d { %s } { ?d wdt:P131 ?r . ?r wdt:P300 ?code } UNION { ?d wdt:P300 ?code } "
+                       "UNION { ?d wdt:P131/wdt:P131 ?r . ?r wdt:P300 ?code } FILTER(STRSTARTS(?code, \"%s-\")) }") % (" ".join("wd:" + i for i in q), iso)
+            codes = {}
+            for r in sparql(abfrage):
+                codes.setdefault(qid(r, "d"), []).append(w(r, "code"))
+            zu = {}
+            for f in fl:
+                c = codes.get(f["properties"].get("wikidataid"), [])
+                # bevorzugt der Code, der nicht der eigene ist (Département -> Region)
+                eigen = f["properties"]["iso_3166_2"]
+                zu[eigen] = next((x for x in c if x != eigen), c[0] if c else None)
+        gruppen = {}
+        for f in fl:
+            c = zu.get(f["properties"]["iso_3166_2"])
+            if c:
+                gruppen.setdefault(c, []).append(shape(f["geometry"]))
+        for c, teile in sorted(gruppen.items()):
+            g = unary_union([t.buffer(0) for t in teile]).simplify(.015 if iso != "NO" else .02, preserve_topology=True)
+            polys = [list(g.geoms) if g.geom_type == "MultiPolygon" else [g]][0]
+            koord = [[[[round(x, 3), round(y, 3)] for x, y in p.exterior.coords]] + [[[round(x, 3), round(y, 3)] for x, y in r.coords] for r in p.interiors] for p in polys]
+            out.append({"type": "Feature", "properties": {"code": c, "iso": iso, "name": c, "wikidata": None}, "geometry": {"type": "MultiPolygon", "coordinates": koord}})
+        print(f"  {iso}: {len(fl)} Einheiten -> {len(gruppen)} Regionen", file=sys.stderr)
+    return out
 
 
 def geo():
     d = json.loads(holen(NE_A1, roh=True))
-    feats = []
+    feats, rohe = [], {}
     for f in d["features"]:
         pr = f["properties"]
         iso = pr.get("iso_a2")
+        if iso in ZUSAMMENFASSEN:
+            rohe.setdefault(iso, []).append(f)
+            continue
         if iso not in FOEDERAL + KARTE_REGIONAL or not pr.get("iso_3166_2"):
             continue
         tol = KLEIN.get(iso, .04 if iso not in ("RU", "CA", "US", "AU", "BR") else .06)
@@ -894,7 +942,8 @@ def geo():
             continue
         feats.append({"type": "Feature", "properties": {"code": pr["iso_3166_2"], "iso": iso, "name": pr.get("name_de") or pr["name"], "wikidata": pr.get("wikidataid")},
                       "geometry": {"type": "MultiPolygon", "coordinates": neu}})
-    GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Natural Earth 1:10 Mio., Admin 1 (gemeinfrei), vereinfacht",
+    feats += regionen_vereinigen(rohe)
+    GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Natural Earth 1:10 Mio., Admin 1 (gemeinfrei), vereinfacht; FR, IT, ES, NO zu Regionen vereinigt",
                                "features": sorted(feats, key=lambda f: f["properties"]["code"])}, ensure_ascii=False, separators=(",", ":")))
     print(f"{GEO}: {len(feats)} Gliedstaaten, {GEO.stat().st_size // 1024} KB", file=sys.stderr)
 

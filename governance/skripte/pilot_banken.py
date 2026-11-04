@@ -97,7 +97,6 @@ K(CB,'mitbestimmung_ar','paritätisch (10 von 20 Arbeitnehmervertreter)','',57,'
 K(CB,'vorstand_mitglieder_zahl',7,'Personen',57,'Stand 31.12.2025')
 K(CB,'vorstand_frauen_zahl','','Personen',57,'im Jahresabschluss nicht angegeben; Corporate-Governance-Erklärung/Geschäftsbericht ausstehend')
 K(CB,'ar_frauen_zahl','','Personen',57,'im Jahresabschluss nicht angegeben; Corporate-Governance-Erklärung/Geschäftsbericht ausstehend')
-K(CB,'pay_ratio','','',36,'im Jahresabschluss nicht angegeben; Vergütungsbericht (§ 162 AktG) ausstehend')
 K(CB,'mitarbeiter_jahresdurchschnitt',25835,'Personen',36,'davon weiblich 12.143 (47,0 %); inkl. Ausland, ohne Auszubildende')
 for gj, v, a in [(2025,17457,3993),(2024,10936,3780)]:
     verg.append(dict(unternehmen_id=CB[1], gj=gj, gremium='Vorstand', person_id='', name='Gesamt (alle Mitglieder)', betrag_tsd_eur=v, art='Gesamtbezüge § 285 Nr. 9a HGB (DRS 17)', quelle_dokument=CB[0], seite=36,

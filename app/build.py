@@ -64,7 +64,12 @@ def main():
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))
              .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__BOERSE_JS__", (HIER / "src/boerse.js").read_text())
              .replace("__BOERSE__", boerse.replace("</", "<\\/")).replace("__VWL__", vroh.replace("</", "<\\/"))
-             .replace("__KURSE__", kurse.replace("</", "<\\/")).replace("__KORRELATION_JS__", (HIER / "src/korrelation.js").read_text()))
+             .replace("__KURSE__", kurse.replace("</", "<\\/")).replace("__KORRELATION_JS__", (HIER / "src/korrelation.js").read_text())
+             .replace("__HANDEL_JS__", (HIER / "src/handel.js").read_text()))
+    # Handel und Weltdaten (Bereich HDL und Weltkugel): fehlt eine Datei, bleibt der Teil leer
+    for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__NEWS__", "news_routen.json")):
+        f = HIER / "data" / datei
+        seite = seite.replace(platz, f.read_text().replace("</", "<\\/") if f.exists() else "null", 1)
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (HIER / "dist/bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

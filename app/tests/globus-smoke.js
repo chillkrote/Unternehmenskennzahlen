@@ -9,6 +9,13 @@ const path = require('node:path');
   page.on('pageerror', e => errors.push(e.stack || e.message));
   await page.goto('file://' + path.resolve(process.argv[2] || 'app/dist/weltkugel.html'));
   await page.waitForSelector('#gk-seite h2');
+  // Fünf Darstellungsformen: alle als Reiter vorhanden; Handel zeigt Zollsatz und Partner, Stufe 3 der Volkswirtschaft vereint alles
+  if (await page.locator('[data-gkform]').count() !== 5) throw Error('Erwartet fünf Darstellungsformen');
+  await page.click('[data-gkform="handel"]');
+  await page.evaluate(() => GLOBUS.landWaehlen('DE')); await page.waitForTimeout(200);
+  if (!(await page.locator('#gk-seite').innerText()).toLowerCase().includes('zollsatz')) throw Error('Zollsatz fehlt in der Darstellung Handel');
+  await page.evaluate(() => GLOBUS.landWaehlen(null));
+  await page.click('[data-gkform="vwl"]');
   await page.fill('#gk-suchfeld', 'Deutschland'); await page.press('#gk-suchfeld', 'Enter');
   await page.waitForFunction(() => document.querySelector('#gk-seite h2').textContent === 'Deutschland');
   // Stufen: Unternehmen und Nachbarländer erscheinen in der Seitenleiste erst in Stufe 3 (ab Zoom 5)
@@ -43,5 +50,5 @@ const path = require('node:path');
   if (await page.locator('#globus').isHidden()) throw Error('Zurück zur Weltkugel geht nicht');
   await browser.close();
   if (errors.length) throw Error(errors.join('\n'));
-  console.log(`Weltkugel: Land, ${kacheln} Kerndaten, 2 Unternehmensfenster, Vergleich,${stamm ? ' Stammdaten-Fenster,' : ''} Wechsel zum klassischen Terminal; keine JavaScript-Fehler`);
+  console.log(`Weltkugel: fünf Formen, Land, ${kacheln} Kerndaten, 2 Unternehmensfenster, Vergleich,${stamm ? ' Stammdaten-Fenster,' : ''} Wechsel zum klassischen Terminal; keine JavaScript-Fehler`);
 })().catch(e => { console.error(e); process.exit(1); });

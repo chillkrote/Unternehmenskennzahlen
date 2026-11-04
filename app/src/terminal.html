@@ -201,6 +201,9 @@ a.brand { color: inherit; text-decoration: none; }
 .startkachel .los { color: var(--amber); font-size: 13px; font-weight: 500; }
 .startkachel .code { justify-self: start; background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-dim); border-radius: 4px; padding: 1px 7px; font: 600 11px var(--mono); letter-spacing: .08em; }
 .startkachel.aus { opacity: .5; }
+.startkachel .weltlink { margin-left: 10px; color: var(--amber); cursor: pointer; }
+.startkachel .weltlink:hover { text-decoration: underline; }
+.hliste { margin: 0; padding-left: 18px; display: grid; gap: 8px; font: 13px/1.45 var(--sans); }
 [hidden] { display: none !important; }
 @media (max-width: 600px) { .tape .stats strong { font-size: 13px; } .meta { display: none; } .key { padding-inline: 10px; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -222,6 +225,17 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#v-prog" data-v="v-prog"><b>F5</b>Prognosen</a>
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
       <a class="key" href="#u-abschluesse" data-v="u-abschluesse"><b>F7</b>Bilanz &amp; GuV</a>
+    </nav>
+    <nav class="keys" id="keys-h" aria-label="Handel" hidden>
+      <a class="key" href="#h-ueb" data-v="h-ueb"><b>F1</b>Überblick</a>
+      <a class="key" href="#h-laender" data-v="h-laender"><b>F2</b>Länder</a>
+      <a class="key" href="#h-routen" data-v="h-routen"><b>F3</b>Routen &amp; Engstellen</a>
+      <a class="key" href="#h-strom" data-v="h-strom"><b>F4</b>Strom</a>
+      <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
+    </nav>
+    <nav class="keys" id="keys-p" aria-label="Politik und Wahlen" hidden>
+      <a class="key" href="#p-ueb" data-v="p-ueb"><b>F1</b>Überblick</a>
+      <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
     </nav>
     <nav class="keys" id="keys-b" aria-label="Börsendaten" hidden>
       <a class="key" href="#b-ueb" data-v="b-ueb"><b>F1</b>Überblick</a>
@@ -261,12 +275,17 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="register" type="application/json">__REGISTER__</script>
 <script id="vwl" type="application/json">__VWL__</script>
 <script id="boerse" type="application/json">__BOERSE__</script>
+<script id="handel-daten" type="application/json">__HANDEL__</script>
+<script id="welt-daten" type="application/json">__WELT__</script>
+<script id="routen-daten" type="application/json">__ROUTEN__</script>
+<script id="news-daten" type="application/json">__NEWS__</script>
 <script>
 __UNTERNEHMEN_JS__
 </script>
 <script>
 __VWL_JS__
 __BOERSE_JS__
+__HANDEL_JS__
 __KORRELATION_JS__
 </script>
 <script>
@@ -996,7 +1015,8 @@ function tape() {
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
   "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(),
-  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr() };
+  "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr(),
+  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
 let globalLand = 'alle', alleBanken = [], alleMarktdaten = null;
@@ -1031,10 +1051,13 @@ function landAuswahlInit() {
 function viewStart() {
   const u = UNT.da() ? UNT.meta() : "", v = VWL.da() ? VWL.meta() : "";
   const kachel = (href, code, titel, text, zeile, aus) => `<a class="startkachel${aus ? " aus" : ""}" href="${aus ? "#start" : href}"><span class="code">${code}</span><h2>${titel}</h2><p>${text}</p><div class="zeile">${zeile}</div><span class="los">Öffnen →</span></a>`;
-  return `<div class="start"><h1>Terminal</h1><p class="lead">Kennzahlen, Daten und Berichte in einer Oberfläche. Wähle einen Bereich.</p><div class="startraster">
-    ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u), !UNT.da())}
-    ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Stimmungsindikatoren und Zinsen für alle OECD-Länder, dazu Prognosen von Zentralbanken, Instituten und Konsensumfragen (Deutschland am ausführlichsten, dazu Euroraum, USA, UK, Spanien, Kanada, Japan und die Zentralbanken des Euroraums) und der ifo-Index.", esc(v), !VWL.da())}
-    ${kachel("#b-ueb", "BÖR", "Börsendaten", "Kurse und Kennzahlen aller wichtigen Aktienindizes (Welt, OECD, Schwellen- und Entwicklungsländer) und der großen Unternehmen weltweit, mit Verlauf über bis zu zehn Jahre.", esc(BOE.da() ? BOE.meta() : ""), !BOE.da())}
+  const welt = f => typeof GLOBUS !== "undefined" ? `<span class="weltlink" data-weltform="${f}">◉ Weltkugel</span>` : "";
+  return `<div class="start"><h1>Terminal</h1><p class="lead">Kennzahlen, Daten und Berichte in einer Oberfläche. Wähle einen Bereich; dieselben fünf Bereiche gibt es als Darstellungsformen auf der Weltkugel.</p><div class="startraster">
+    ${kachel("#h-ueb", "HDL", "Handel", "Warenströme aller Länder, Handelssalden und Zollsätze, Haupthandelsrouten auf See, Schiene, Straße und in der Luft mit Engstellen und aktuellen Störungsmeldungen, Stromhandel in Europa.", esc(HDL.meta()) + welt("handel"), !HDL.da())}
+    ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Stimmungsindikatoren und Zinsen für alle OECD-Länder, dazu Prognosen von Zentralbanken, Instituten und Konsensumfragen (Deutschland am ausführlichsten, dazu Euroraum, USA, UK, Spanien, Kanada, Japan und die Zentralbanken des Euroraums) und der ifo-Index.", esc(v) + welt("vwl"), !VWL.da())}
+    ${kachel("#b-ueb", "BÖR", "Börsen- &amp; Finanzdaten", "Kurse und Kennzahlen aller wichtigen Aktienindizes (Welt, OECD, Schwellen- und Entwicklungsländer) und der großen Unternehmen weltweit, mit Verlauf über bis zu zehn Jahre.", esc(BOE.da() ? BOE.meta() : "") + welt("boerse"), !BOE.da())}
+    ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u) + welt("unternehmen"), !UNT.da())}
+    ${kachel("#p-ueb", "POL", "Politik &amp; Wahlen", "Regierungen, Wahltermine und Wahlergebnisse, Bündnisse und politische Indizes. In Vorbereitung: die Darstellung liegt als Entwurf zur Freigabe vor.", "in Vorbereitung" + welt("politik"), false)}
     ${kachel("#korr", "KOR", "Korrelationen &amp; Zusammenhänge", "Pearson und Spearman zwischen Indizes, Unternehmen, Branchen, Kursen und volkswirtschaftlichen Reihen, mit Verzögerung, Streudiagramm und Matrix.", esc(KOR.meta()), !UNT.da() && !VWL.da())}
   </div></div>`;
 }
@@ -1042,8 +1065,8 @@ function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
   else { aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }
-  const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), bo = aktuell.startsWith("b-"), st = aktuell === "start";
-  const bereichNeu = bo ? "b" : vw ? "v" : "u";
+  const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), bo = aktuell.startsWith("b-"), hd = aktuell.startsWith("h-"), po = aktuell.startsWith("p-"), st = aktuell === "start";
+  const bereichNeu = bo ? "b" : vw ? "v" : hd ? "h" : po ? "p" : "u";
   if (!st && bereichNeu !== bereich) {
     bereich = bereichNeu;
     document.getElementById("firmenliste").innerHTML = bereich === "u" ? UNT.datalist() : bereich === "b" ? BOE.datalist() : "";
@@ -1054,7 +1077,9 @@ function render() {
   }
   document.querySelector(".cmdline").hidden = st;
   document.querySelector(".top .meta").hidden = st;
-  document.getElementById("keys-u").hidden = st || vw || bo;
+  document.getElementById("keys-u").hidden = st || vw || bo || hd || po;
+  document.getElementById("keys-h").hidden = st || !hd;
+  document.getElementById("keys-p").hidden = st || !po;
   document.getElementById("keys-b").hidden = st || !bo;
   document.getElementById("keys-v").hidden = st || !vw;
   document.getElementById("subkeys").hidden = !bank;
@@ -1097,7 +1122,7 @@ function bankDazu(name) {
 }
 document.addEventListener("click", e => {
   const t = e.target;
-  if (VWL.klick(t) || BOE.klick(t) || UNT.klick(t) || KOR.klick(t)) return;
+  if (VWL.klick(t) || BOE.klick(t) || UNT.klick(t) || KOR.klick(t) || HDL.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }
   else if (t.closest("[data-sy]")) { streuY = t.closest("[data-sy]").dataset.sy; render(); }
@@ -1123,6 +1148,11 @@ document.getElementById("cmd").addEventListener("keydown", e => {
     if (a) gehe(a); else if (k) { BOE.waehle(k); gehe("b-verlauf"); }
     return;
   }
+  if (bereich === "h" || bereich === "p") {
+    const a = { ueb: bereich + "-ueb", laender: "h-laender", länder: "h-laender", routen: "h-routen", engstellen: "h-routen", strom: "h-strom", korr: "korr", start: "start" }[c];
+    if (a) gehe(a);
+    return;
+  }
   if (bereich === "v") {
     const a = { ueb: "v-ueb", reihe: "v-reihe", zeitreihen: "v-reihe", laender: "v-laender", länder: "v-laender", quellen: "v-quellen", berichte: "v-quellen", prog: "v-prog", prognosen: "v-prog", korr: "korr", korrelation: "korr", start: "start" }[c], s = VWL.finden(v);
     if (a) gehe(a); else if (s) { VWL.waehle(s.serie_id); gehe("v-reihe"); } else if (c === "unt") gehe("u-ueb");
@@ -1136,7 +1166,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const z = UNT.ziel(v); if (z) gehe(z); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
+  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F6: "korr" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });
@@ -1161,6 +1191,7 @@ async function start() {
   let bd = null;
   try { bd = JSON.parse(document.getElementById("boerse").textContent); } catch { bd = null; }
   BOE.init(bd);
+  HDL.init();
   landAuswahlInit();
 }
 start();

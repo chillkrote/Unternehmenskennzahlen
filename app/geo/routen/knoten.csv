@@ -1,0 +1,65 @@
+id,name,art,traeger,stufe,lon,lat,passage,suche,rolle
+suez,Suezkanal,engstelle,see,1,32.35,30.6,suez,"""Suez Canal""",Asien–Europa; Umleitung um Afrika seit Ende 2023
+babelmandeb,Bab-el-Mandeb,engstelle,see,1,43.4,12.6,babalmandab,"""Bab el-Mandeb"" OR ""Bab al-Mandab"" OR ""Red Sea shipping""",Zugang zum Roten Meer
+hormus,Straße von Hormus,engstelle,see,1,56.4,26.55,ormuz,"""Strait of Hormuz""",Öl und Flüssiggas vom Golf
+malakka,Straße von Malakka,engstelle,see,1,100.9,2.6,malacca,"""Strait of Malacca"" OR ""Malacca Strait""",Indischer Ozean–Südchinesisches Meer
+panama,Panamakanal,engstelle,see,1,-79.7,9.1,panama,"""Panama Canal""",Atlantik–Pazifik; Wasserstand begrenzt die Durchfahrten
+gibraltar,Straße von Gibraltar,engstelle,see,1,-5.6,35.95,gibraltar,"""Strait of Gibraltar""",Atlantik–Mittelmeer
+bosporus,Bosporus,engstelle,see,1,29.05,41.1,bosporus,"""Bosphorus"" OR ""Turkish Straits""",Schwarzes Meer (Getreide und Öl)
+dardanellen,Dardanellen,engstelle,see,2,26.4,40.2,dardanelles,"""Dardanelles""",Schwarzes Meer–Ägäis
+kap,Kap der Guten Hoffnung,engstelle,see,1,18.5,-34.4,south_africa,"""Cape of Good Hope""",Umleitung statt Suez
+dover,Straße von Dover,engstelle,see,2,1.45,51.0,,"(""Dover Strait"" OR ""English Channel"") shipping",dichtester Schiffsverkehr der Welt
+daenisch,Dänische Meerengen,engstelle,see,2,11.0,55.4,,"""Great Belt"" OR ""Danish straits"" OR ""Oresund""",Zugang zur Ostsee
+kiel,Nord-Ostsee-Kanal,engstelle,see,3,9.6,54.2,,"""Kiel Canal"" OR ""Nord-Ostsee-Kanal""",Abkürzung Nordsee–Ostsee
+taiwan,Taiwanstraße,engstelle,see,1,119.5,24.5,,"""Taiwan Strait""",Ostasiatische Küstenschifffahrt
+korea,Koreastraße,engstelle,see,2,129.3,34.5,,"""Korea Strait"" OR ""Tsushima Strait""",Japan–Korea–China
+luzon,Luzonstraße,engstelle,see,3,121.0,20.5,,"""Luzon Strait""",Westpazifik–Südchinesisches Meer
+lombok,Lombokstraße,engstelle,see,3,115.7,-8.6,,"""Lombok Strait""",Ausweichroute zu Malakka für große Schiffe
+sunda,Sundastraße,engstelle,see,3,105.8,-6.0,sunda,"""Sunda Strait""",Ausweichroute zu Malakka
+magellan,Magellanstraße,engstelle,see,3,-70.5,-53.5,chili,"""Strait of Magellan""",Ausweichroute zu Panama
+kertsch,Straße von Kertsch,engstelle,see,3,36.55,45.3,,"""Kerch Strait""",Asowsches Meer
+bering,Beringstraße,engstelle,see,3,-169.0,65.8,bering,"""Bering Strait"" shipping",Nordostpassage
+mosambik,Straße von Mosambik,engstelle,see,3,40.5,-17.0,,"""Mozambique Channel""",Ostafrika–Kap
+rhein,Rhein bei Kaub,engstelle,binnen,2,7.76,50.08,,"""Rhine"" (""low water"" OR ""Niedrigwasser"" OR barge)",Pegel Kaub bestimmt die Ladung der Rheinschiffe
+malaszewicze,Małaszewicze / Brest,engstelle,bahn,2,23.6,52.05,,"""Malaszewicze"" OR ""Małaszewicze""",Umspurung an der EU-Außengrenze (Landbrücke China–Europa)
+dostyk,Dostyk / Alashankou,engstelle,bahn,2,82.6,45.2,,"""Alashankou"" OR ""Dostyk""",Grenzbahnhof China–Kasachstan (Umspurung)
+khorgos,Khorgos,engstelle,bahn,2,80.3,44.2,,"""Khorgos"" OR ""Horgos""",Grenzbahnhof und Trockenhafen China–Kasachstan
+zabaikalsk,Manzhouli / Sabaikalsk,engstelle,bahn,2,117.4,49.6,,"""Manzhouli"" OR ""Zabaikalsk""",Grenzbahnhof China–Russland
+kaspi,Kaspische Fähre Aktau–Baku,engstelle,bahn,2,50.5,41.5,,"""Middle Corridor"" OR ""Trans-Caspian""",Mittlerer Korridor über das Kaspische Meer
+brenner,Brenner,engstelle,strasse,2,11.5,47.0,,"""Brenner"" (traffic OR lorry OR truck OR Lkw OR closure)",Alpenquerung Nord–Süd
+gotthard,Gotthard,engstelle,strasse,3,8.6,46.6,,"""Gotthard"" (tunnel OR closure OR traffic)",Alpenquerung Nord–Süd (Straße und Bahn)
+kapikule,Kapıkule,engstelle,strasse,3,26.6,41.7,,"""Kapikule""",Grenzübergang Türkei–EU
+laredo,Laredo,engstelle,strasse,2,-99.5,27.5,,"""Laredo"" (border OR trucks OR crossing)",größter Grenzübergang USA–Mexiko für Lkw
+ambassador,Detroit–Windsor,engstelle,strasse,3,-83.07,42.31,,"""Ambassador Bridge"" OR ""Gordie Howe""",größter Grenzübergang USA–Kanada
+shanghai,Shanghai,hafen,see,1,121.9,30.6,,,Containerhafen
+singapur,Singapur,hafen,see,1,103.8,1.26,,,Containerhafen und Umschlagplatz
+ningbo,Ningbo-Zhoushan,hafen,see,2,121.9,29.9,,,Containerhafen und Erz
+shenzhen,Shenzhen,hafen,see,2,114.27,22.57,,,Containerhafen
+qingdao,Qingdao,hafen,see,2,120.3,36.0,,,Containerhafen und Erz
+busan,Busan,hafen,see,2,129.04,35.1,,,Containerhafen
+hongkong,Hongkong,hafen,see,2,114.12,22.32,,,Containerhafen
+jebelali,Jebel Ali,hafen,see,2,55.03,25.0,,,Containerhafen
+portklang,Port Klang,hafen,see,2,101.3,3.0,,,Containerhafen
+rotterdam,Rotterdam,hafen,see,1,4.05,51.95,,,größter Hafen Europas
+antwerpen,Antwerpen-Brügge,hafen,see,2,4.3,51.28,,,Containerhafen und Chemie
+hamburg,Hamburg,hafen,see,2,9.95,53.53,,,Containerhafen
+losangeles,Los Angeles / Long Beach,hafen,see,1,-118.25,33.74,,,Containerhafen
+newyork,New York / New Jersey,hafen,see,2,-74.1,40.67,,,Containerhafen
+tangermed,Tanger Med,hafen,see,2,-5.5,35.88,,,Umschlaghafen
+santos,Santos,hafen,see,2,-46.3,-23.96,,,Containerhafen und Agrarrohstoffe
+colombo,Colombo,hafen,see,3,79.85,6.95,,,Umschlaghafen
+piraeus,Piräus,hafen,see,3,23.6,37.94,,,Umschlaghafen
+savannah,Savannah,hafen,see,3,-81.1,32.08,,,Containerhafen
+durban,Durban,hafen,see,3,31.03,-29.87,,,Containerhafen
+mundra,Mundra,hafen,see,3,69.7,22.75,,,Containerhafen
+rastanura,Ras Tanura,hafen,see,2,50.16,26.64,,,Ölverladung
+raslaffan,Ras Laffan,hafen,see,2,51.55,25.92,,,Flüssiggas-Verladung
+porthedland,Port Hedland,hafen,see,2,118.6,-20.3,,,Eisenerz
+sabinepass,Sabine Pass,hafen,see,3,-93.87,29.73,,,Flüssiggas-Verladung
+odesa,Odesa,hafen,see,3,30.75,46.5,,,Getreide
+duisburg,Duisburg,bahnknoten,bahn,2,6.76,51.43,,,größter Binnenhafen Europas; Endpunkt China-Züge
+chongqing,Chongqing,bahnknoten,bahn,2,106.55,29.56,,,Ausgangspunkt China–Europa-Züge
+xian,Xi'an,bahnknoten,bahn,2,108.94,34.34,,,Ausgangspunkt China–Europa-Züge
+lodz,Łódź,bahnknoten,bahn,3,19.46,51.76,,,Terminal China–Europa-Züge
+chicago,Chicago,bahnknoten,bahn,2,-87.63,41.88,,,Drehkreuz der nordamerikanischen Güterbahnen
+kansascity,Kansas City,bahnknoten,bahn,3,-94.58,39.1,,,Drehkreuz der nordamerikanischen Güterbahnen

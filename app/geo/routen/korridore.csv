@@ -1,0 +1,34 @@
+id,name,traeger,stufe,punkte,meiden,suche,hinweis
+asien_europa_suez,Asien–Europa über Suez,see,1,shanghai singapur rotterdam,,,"Hauptachse des Containerverkehrs; seit Ende 2023 großteils um Afrika umgeleitet"
+asien_europa_kap,Asien–Europa um das Kap,see,1,shanghai singapur rotterdam,suez babalmandab,,Umleitung bei gesperrtem Roten Meer
+transpazifik,Transpazifik,see,1,shanghai losangeles,,,Ostasien–Westküste Nordamerika
+transatlantik,Transatlantik,see,1,rotterdam newyork,,,Nordeuropa–Ostküste Nordamerika
+asien_usost,Asien–US-Ostküste über Panama,see,1,shanghai newyork,suez babalmandab,,"über Panama, alternativ Suez"
+golf_ostasien,Golf–Ostasien (Öl),see,1,rastanura singapur ningbo,,,Rohöl und Flüssiggas über Hormus und Malakka
+golf_europa,Golf–Europa (Öl und Gas),see,1,raslaffan rotterdam,,,über Hormus und Suez bzw. um Afrika
+brasilien_china,Brasilien–China (Erz und Soja),see,1,santos qingdao,,,um das Kap der Guten Hoffnung
+australien_china,Australien–China (Erz),see,1,porthedland qingdao,,,Eisenerz und Kohle
+intra_asien,Innerasiatischer Verkehr,see,2,singapur hongkong busan,,,
+usgolf_europa,US-Golf–Europa (Flüssiggas),see,2,sabinepass rotterdam,,,
+schwarzes_meer,Schwarzes Meer–Mittelmeer (Getreide),see,2,odesa piraeus,,,über Bosporus und Dardanellen
+europa_mittelmeer,Nordeuropa–Mittelmeer,see,2,rotterdam tangermed piraeus,,,
+china_europa_nord,China–Europa (Nordroute über Russland),bahn,2,chongqing xian @82.6/45.2 @71.43/51.13 @61.4/55.16 @37.6/55.75 @27.56/53.9 @23.6/52.05 @21.0/52.23 duisburg,,,"schematisch: Stationen verbunden, nicht der Gleisverlauf"
+transsib,China–Europa über Manzhouli (Transsib),bahn,2,xian @116.4/39.9 @117.4/49.6 @104.3/52.3 @82.9/55.0 @60.6/56.8 @37.6/55.75,,,schematisch
+mittlerer_korridor,Mittlerer Korridor (Transkaspische Route),bahn,2,xian @80.3/44.2 @76.9/43.24 @51.2/43.65 @49.87/40.4 @44.8/41.7 @43.1/40.6 @28.98/41.0,,,"schematisch; Fähre über das Kaspische Meer"
+rhein_alpen,Rhein–Alpen (Rotterdam–Genua),bahn,2,rotterdam duisburg @7.59/47.56 @8.6/46.6 @9.19/45.46 @8.93/44.41,,,"schematisch; TEN-T-Kernnetzkorridor"
+skandinavien_mittelmeer,Skandinavien–Mittelmeer,bahn,3,@13.0/55.6 hamburg @11.58/48.14 @11.5/47.0 @10.99/45.44,,,"schematisch; TEN-T-Kernnetzkorridor über den Brenner"
+nordamerika_ost_west,Nordamerika West–Ost,bahn,2,losangeles kansascity chicago newyork,,,schematisch; Landbrücke Westküste–Mittlerer Westen–Ostküste
+usa_mexiko,USA–Mexiko (I-35),strasse,2,@-99.13/19.43 @-100.3/25.67 @-99.5/27.5 @-96.8/32.78 kansascity,,,schematisch
+usa_kanada,USA–Kanada (Detroit–Windsor),strasse,2,@-79.38/43.65 @-83.07/42.31 chicago,,,schematisch
+tuerkei_europa,Türkei–Mitteleuropa,strasse,2,@28.98/41.0 @26.6/41.7 @23.32/42.7 @20.46/44.8 @19.04/47.5 @16.37/48.2 @11.58/48.14,,,schematisch
+eu_ost_west,EU Ost–West,strasse,3,@21.0/52.23 @13.4/52.52 @9.73/52.37 @7.47/51.51 rotterdam,,,schematisch
+nordkorridor_afrika,Nördlicher Korridor (Mombasa–Kampala),strasse,3,@39.67/-4.04 @36.82/-1.29 @32.58/0.35,,,schematisch
+beitbridge,Nord–Süd-Korridor (Johannesburg–Lusaka),strasse,3,@28.05/-26.2 @30.0/-22.22 @31.05/-17.83 @28.3/-15.4,,,schematisch
+luft_transpazifik,Luftfracht Transpazifik,luft,2,HKG ANC MEM,,,Großkreis zwischen Frachtdrehkreuzen; schematisch
+luft_pvg_lax,Luftfracht Shanghai–Los Angeles,luft,2,PVG LAX,,,schematisch
+luft_icn_ord,Luftfracht Seoul–Chicago,luft,3,ICN ANC ORD,,,schematisch
+luft_nordatlantik,Luftfracht Nordatlantik,luft,2,FRA ORD,,,schematisch
+luft_asien_golf,Luftfracht Asien–Golf–Europa,luft,2,HKG DXB LEJ,,,schematisch; Golf-Drehkreuze als Brücke
+luft_asien_europa,Luftfracht Asien–Europa direkt,luft,2,PVG FRA,,,schematisch
+luft_doha,Luftfracht Golf–Europa,luft,3,DOH LGG,,,schematisch
+luft_lateinamerika,Luftfracht USA–Südamerika,luft,3,MIA BOG GRU,,,schematisch

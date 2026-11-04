@@ -107,12 +107,16 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
     Stufe 3 Finanzplatz: börsennotierte Unternehmen nach Kursentwicklung gefärbt, Indexmitglieder, Banken (Deutschland).
   * **Unternehmen:** Stufe 1 Kreis je Land nach Zahl oder Börsenwert, Branchenmix je Wirtschaftsraum. Stufe 2 Sitze mit Filtern
     (Branche, Index, börsennotiert, Kennzahlen); Shift+Klick nimmt Unternehmen in den Vergleich. Stufe 3 Netz, Profil, Nachbarländer.
-  * **Politik & Wahlen:** Stufe 1 Länder nach Ausrichtung der Regierung, W = Wahl in den nächsten zwölf Monaten, Bündnisse wählbar.
-    Stufe 2 Regierungschef, Partei und nächste Wahl je Land. Stufe 3 Bundesländer mit Regierungschef, Bundestagswahl je Land und
-    Landtagsumfrage, dazu Handel und Unternehmen. Im Terminal Reiter POL (Regierungen, Wahlkalender, Deutschland) und BÖR F7.
+  * **Politik & Wahlen:** Stufe 1 Länder nach Ausrichtung der Regierung, W = Wahl in den nächsten zwölf Monaten, N = gerade gewählt
+    (letzte 30 Tage), Bündnisse wählbar. Stufe 2 Regierungschef, Partei und nächste Wahl je Land; Land anklicken zeigt jede
+    Parlamentskammer (Einkammer, Unterhaus, Oberhaus) mit Sitzverteilung als Halbkreis, Regierungslager, Stimmenanteilen der letzten
+    Wahl und Wahlterminen. Stufe 3 Gliedstaaten der 26 Bundesstaaten (USA, Kanada, Australien, Indien, Brasilien, Schweiz, Österreich,
+    Deutschland …) mit Regierungschef und Parlament, dazu Handel und Unternehmen; in Deutschland zusätzlich Bundestagswahl je Land und
+    Landtagsumfrage. Im Terminal Reiter POL (F1 Regierungen, F2 Wahlkalender, F3 Deutschland, F4 Parlamente, F5 Gliedstaaten) und BÖR F7.
   Daten: `welt_daten.py` (Weltbank, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> `data/welt.json`), `routen.py`
   (`data/routen.json`), `news_routen.py` (`data/news_routen.json`), `boerse_welt.py` (`data/boerse_welt.json`), `politik_daten.py`
-  (`data/politik.json`, `geo/de_laender.geojson`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
+  (`data/politik.json`, `geo/de_laender.geojson`), `parlamente_daten.py` (IPU Parline, Wikipedia, Wikidata -> `data/parlamente.json`,
+  `geo/gliedstaaten.geojson`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
   `OFFENE_DATENFELDER.md`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
   Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,

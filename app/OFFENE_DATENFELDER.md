@@ -49,10 +49,15 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 |---|---|---|---|
 | Ausrichtung der Regierung | Wikidata-Angabe der Partei (196 Staaten, 77 ohne Zuordnung) | Wikidata lückenhaft, Parteien ohne Angabe (z. B. PT Brasilien) | ParlGov (EU/OECD, CC BY-SA) oder V-Dem prüfen |
 | Wahltermine | nationale Wahlen aus Wikipedia (42 Länder in 12 Monaten) | Landtags- und Regionalwahlen fehlen | Wikipedia-Listen je Land oder Wikidata, wenn die Abfrage schneller wird |
-| Kabinett und Sitzverteilung außerhalb Deutschlands | fehlt | Keine freie gemeinsame Quelle | Wikidata (Mitglieder der Regierung) prüfen |
-| Ergebnis der letzten Landtagswahl und Koalition je Bundesland | fehlt (Bundestagswahl 2025 je Land ist da) | Landeswahlleitungen ohne gemeinsames offenes Format | Landeswahlleitungen einzeln anbinden |
+| Kabinettsmitglieder | fehlt (nur Regierungschef und Staatsoberhaupt) | Wikidata führt Kabinette uneinheitlich | Wikidata „Mitglied von“ Kabinett prüfen |
+| Heutige Sitzverteilung nationaler Kammern | 187 von 281 Kammern aus der Wikipedia-Infobox, 47 nur mit dem Ergebnis der letzten Wahl (IPU Parline), 47 ohne Sitzverteilung (Stand Abruf 04.11.2026) | Infoboxen von UK, Kanada, Australien u. a. bestehen aus Vorlagen ({{… political groups}}), Irland aus Wikidata-Abfragen; ernannte Kammern (House of Lords, Bundesrat, Senat Kanada) und Staaten ohne gewähltes Parlament (Afghanistan, Militärregierungen in Westafrika) haben bei IPU kein Wahlergebnis | Vorlagen über die Wikipedia-API auflösen, wenn sie aus der Cloud nicht mehr drosselt (429); ernannte Kammern von Hand pflegen |
+| Regierungslager je Kammer | nur, wo die Infobox Regierung/Opposition (oder Mehrheit/Minderheit) trennt, sonst Regierungsparteien laut IPU als Text | keine einheitliche Quelle | ParlGov (EU/OECD) prüfen |
+| Stimmenanteile der letzten Wahl | 142 nationale Kammern, Gliedstaaten teilweise; nur die größten Parteien der Infobox | Infobox des Wahlartikels zeigt nur die Hauptparteien | amtliche Ergebnisse je Land (Wahlbehörden) schrittweise |
+| Ergebnis kurz nach einer Wahl | IPU trägt Ergebnisse mit Tagen bis Wochen Verzug nach; Wikipedia vorläufig | Quellen hinken nach | Hinweis „gerade gewählt“ sagt, ob das Ergebnis schon in der Quelle steht (Schwelle 30 Tage) |
+| Gliedstaaten | 499 Gliedstaaten in 26 Bundesstaaten; 439 von 683 Kammern (national und Gliedstaaten) mit heutiger Sitzverteilung | Ohne auswertbare Infobox: Brasilien (21 von 27), Kanada (7 von 13), Mexiko (24 von 28), Schweiz (14 von 21), Nigeria fast alle, Venezuela, Malaysia (14 von 16), Äthiopien, Irak, Nepal, Somalia, Sudan, Südsudan, Komoren, Mikronesien, VAE (keine Parlamentsartikel in Wikidata) | Wikidata P194 der Gliedstaaten ergänzen, Infoboxen in den Landessprachen (pt/es/de-Wikipedia) auswerten |
+| Regierungschefs der Gliedstaaten | fehlen u. a. für Schweiz (Kantone mit Kollegialregierung), Irak, Nepal, Somalia, Sudan | Wikidata P6 nicht gesetzt oder Kollegialorgan | von Hand oder über de-Wikipedia |
+| Wahlen in Regionalstaaten (Spanien, Italien, Frankreich, Vereinigtes Königreich) | fehlen | nur Bundesstaaten erfasst (Liste FOEDERAL) | Liste in app/parlamente_daten.py erweitern |
 | Umfragen außerhalb Deutschlands | fehlt | Keine freie Quelle mit klarer Lizenz | je Land prüfen |
-| Regionen außerhalb Deutschlands | fehlt | Regionalregierungen und -wahlen nicht gesammelt | nach Deutschland weitere Länder |
 | Sanktionen, Konflikte (Variante 1C) | nicht gebaut | eigener Schritt laut Freigabe | EU-Sanktionsliste, OFAC, UCDP |
 
 ## Schon eingebunden (zum Vergleich)
@@ -65,3 +70,4 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 - Meldungen zu Störungen (GDELT, sonst Google News RSS; nur Titel, Quelle, Datum, Link): app/news_routen.py -> app/data/news_routen.json
 - Leitzinsen (BIS), 10-j. Renditen (OECD, CC BY 4.0), EZB-Kurse, Rohstoffe (FRED), Börsenplätze von Hand: app/boerse_welt.py -> app/data/boerse_welt.json
 - Regierungen (Wikidata, CC0), Wahlkalender (Wikipedia, CC BY-SA 4.0), Bundestagswahl 2025 je Land (Bundeswahlleiterin, DL-DE 2.0), Umfragen (DAWUM, ODbL), Bundesländer (Natural Earth), Bündnisse von Hand: app/politik_daten.py -> app/data/politik.json
+- Parlamente aller Staaten und Gliedstaaten: IPU Parline (CC BY-NC-SA 4.0, nicht kommerziell), Wikipedia-Infoboxen (CC BY-SA 4.0), Wikidata (CC0), Umrisse Natural Earth: app/parlamente_daten.py -> app/data/parlamente.json, app/geo/gliedstaaten.geojson

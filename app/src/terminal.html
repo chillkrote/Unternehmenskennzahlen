@@ -237,6 +237,8 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#p-ueb" data-v="p-ueb"><b>F1</b>Regierungen</a>
       <a class="key" href="#p-wahlen" data-v="p-wahlen"><b>F2</b>Wahlkalender</a>
       <a class="key" href="#p-de" data-v="p-de"><b>F3</b>Deutschland</a>
+      <a class="key" href="#p-parl" data-v="p-parl"><b>F4</b>Parlamente</a>
+      <a class="key" href="#p-glied" data-v="p-glied"><b>F5</b>Gliedstaaten</a>
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
     </nav>
     <nav class="keys" id="keys-b" aria-label="Börsendaten" hidden>
@@ -285,6 +287,8 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="boerse-welt-daten" type="application/json">__BOERSE_WELT__</script>
 <script id="politik-daten" type="application/json">__POLITIK__</script>
 <script id="de-laender-geo" type="application/json">__DE_LAENDER__</script>
+<script id="parlamente-daten" type="application/json">__PARLAMENTE__</script>
+<script id="gliedstaaten-geo" type="application/json">__GLIEDSTAATEN__</script>
 <script>
 __UNTERNEHMEN_JS__
 </script>
@@ -1022,7 +1026,7 @@ const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt:
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
   "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr(),
-  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "b-zins": () => FIN.view() };
+  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "b-zins": () => FIN.view() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
 let globalLand = 'alle', alleBanken = [], alleMarktdaten = null;
@@ -1063,7 +1067,7 @@ function viewStart() {
     ${kachel("#v-ueb", "VWL", "Volkswirtschaftliche Kennzahlen, Daten und Berichte", "BIP, Inflation, Arbeitsmarkt, Stimmungsindikatoren und Zinsen für alle OECD-Länder, dazu Prognosen von Zentralbanken, Instituten und Konsensumfragen (Deutschland am ausführlichsten, dazu Euroraum, USA, UK, Spanien, Kanada, Japan und die Zentralbanken des Euroraums) und der ifo-Index.", esc(v) + welt("vwl"), !VWL.da())}
     ${kachel("#b-ueb", "BÖR", "Börsen- &amp; Finanzdaten", "Kurse und Kennzahlen aller wichtigen Aktienindizes (Welt, OECD, Schwellen- und Entwicklungsländer) und der großen Unternehmen weltweit, mit Verlauf über bis zu zehn Jahre.", esc(BOE.da() ? BOE.meta() : "") + welt("boerse"), !BOE.da())}
     ${kachel("#u-ueb", "UNT", "Unternehmenskennzahlen, Daten &amp; Berichte", "Branchen, Einzelunternehmen, Bilanzen, Börsendaten, Gremien und Vergütung, alle Dokumente je Unternehmen.", esc(u) + welt("unternehmen"), !UNT.da())}
-    ${kachel("#p-ueb", "POL", "Politik &amp; Wahlen", "Regierungen und ihre Ausrichtung weltweit, nationale Wahlen der nächsten zwölf Monate, Bundestag, Umfragen und Landesregierungen in Deutschland.", "Wikidata · Wikipedia · Bundeswahlleiterin · DAWUM" + welt("politik"), false)}
+    ${kachel("#p-ueb", "POL", "Politik &amp; Wahlen", "Regierungen und ihre Ausrichtung weltweit, Parlamente aller Staaten mit Sitzverteilung je Kammer, Gliedstaaten der Bundesstaaten, gerade abgehaltene und kommende Wahlen, Bundestag und Umfragen in Deutschland.", "Wikidata · Wikipedia · IPU Parline · Bundeswahlleiterin · DAWUM" + welt("politik"), false)}
     ${kachel("#korr", "KOR", "Korrelationen &amp; Zusammenhänge", "Pearson und Spearman zwischen Indizes, Unternehmen, Branchen, Kursen und volkswirtschaftlichen Reihen, mit Verzögerung, Streudiagramm und Matrix.", esc(KOR.meta()), !UNT.da() && !VWL.da())}
   </div></div>`;
 }
@@ -1128,7 +1132,7 @@ function bankDazu(name) {
 }
 document.addEventListener("click", e => {
   const t = e.target;
-  if (VWL.klick(t) || BOE.klick(t) || UNT.klick(t) || KOR.klick(t) || HDL.klick(t)) return;
+  if (VWL.klick(t) || BOE.klick(t) || UNT.klick(t) || KOR.klick(t) || HDL.klick(t) || POL.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }
   else if (t.closest("[data-sy]")) { streuY = t.closest("[data-sy]").dataset.sy; render(); }
@@ -1172,7 +1176,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const z = UNT.ziel(v); if (z) gehe(z); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F6: "korr" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
+  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });

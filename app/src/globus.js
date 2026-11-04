@@ -1129,21 +1129,34 @@ const GLOBUS = (() => {
   function chefZeile(c) {
     return c ? `<p style="margin:4px 0">Regierungschef: <b>${esc(c.name)}</b>${c.partei ? ` <span class="pct">${esc(c.partei)}</span>` : ""}</p>` : `<p class="gk-leer">Regierungschef in Wikidata nicht eingetragen.</p>`;
   }
-  function gliedBlock(iso) {
+  function glRegierung(sel, iso) {
+    const c = sel.regierungschef, kam = sel.kammern.find(k => sitzeVon(k)), s = kam && sitzeVon(kam), rolle = PA && PA.rolle && PA.rolle[iso];
+    const lager = (sel.koalition || []).length ? sel.koalition : (s ? s.l.filter(g => g.r).map(g => g.p) : []);
+    const reg = s ? s.l.filter(g => g.r).reduce((a, g) => a + g.n, 0) : 0, summe = s ? s.l.reduce((a, g) => a + g.n, 0) : 0;
+    const zeilen = [c ? `<tr><td>Regierungschef</td><td style="font-family:var(--sans);text-align:left;white-space:normal"><b>${esc(c.name)}</b>${c.partei ? `<br><span class="pct"><span class="gk-punkt" style="background:${esc(c.farbe || "#8b95a3")}"></span>${esc(c.partei)}</span>` : ""}</td></tr>` : "",
+      c && c.seit ? `<tr><td>im Amt seit</td><td>${esc(datumWahl(c.seit))}</td></tr>` : "",
+      rolle ? `<tr><td>Amt in dieser Ebene</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${esc(rolle)}</td></tr>` : "",
+      lager.length ? `<tr><td>Regierungslager</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${esc(lager.join(", "))}${reg ? `<br><span class="pct">${f0.format(reg)} von ${f0.format(summe)} Sitzen (${f0.format(reg / summe * 100)} %)</span>` : ""}</td></tr>` : ""].join("");
+    return `<div class="gk-block"><h3>Regierung</h3>${zeilen ? `<table class="gk-tab"><tbody>${zeilen}</tbody></table>` : `<p class="gk-leer">Regierungschef in Wikidata nicht eingetragen.</p>`}
+      <p class="gk-quelle" style="margin-top:6px">Wikidata (CC0)${sel.wikidata ? `, <a class="gk-link" href="https://www.wikidata.org/wiki/${esc(sel.wikidata)}" target="_blank" rel="noopener">${esc(sel.wikidata)}</a>` : ""}, Abruf ${esc(datumWahl(PA.abruf))}; Regierungslager laut Infobox des Parlaments (Wikipedia).</p></div>`;
+  }
+  function gliedBlock(iso, teil) {   // teil "det": nur der gewählte Gliedstaat (kommt in der Seitenspalte nach oben), sonst nur die Liste
     const g = gliedVon(iso);
-    if (!g) return `<div class="gk-block"><h3>Regionen</h3><p class="gk-leer">${esc(landName(iso))} ist kein Bundesstaat. Regionalparlamente sind bisher für die ${f0.format(PA ? (PA.foederal || []).length : 0)} Bundesstaaten erfasst (Liste in app/parlamente_daten.py).</p></div>`;
+    if (teil === "det" && !g) return "";
+    if (!g) return `<div class="gk-block"><h3>Regionen</h3><p class="gk-leer">${esc(landName(iso))} hat keine erfasste Regionalebene. Regionen und Gliedstaaten gibt es bisher für ${f0.format(PA ? (PA.foederal || []).length + (PA.regional || []).length : 0)} Staaten (Listen FOEDERAL und REGIONAL in app/parlamente_daten.py).</p></div>`;
     const sel = S.region && S.region.startsWith(iso + "-") ? g[S.region] : null;
-    const det = sel ? `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(sel.name_de || sel.name)}</h3>${chefZeile(sel.regierungschef)}
-        <p class="gk-quelle">Wikidata (CC0)${sel.wikidata ? `, <a class="gk-link" href="https://www.wikidata.org/wiki/${esc(sel.wikidata)}" target="_blank" rel="noopener">${esc(sel.wikidata)}</a>` : ""}, Abruf ${esc(datumWahl(PA.abruf))}.</p></div>
+    const det = sel ? `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(sel.name_de || sel.name)} <span class="pct">${esc(landName(iso))}</span></h3><div class="gk-chips"><button type="button" data-gkregion="${esc(S.region)}">Auswahl aufheben</button></div></div>
+      ${glRegierung(sel, iso)}
       ${sel.kammern.length ? sel.kammern.map(kammerBlock).join("") : `<div class="gk-block"><p class="gk-leer">Kein Parlament mit Wikipedia-Infobox gefunden.</p></div>`}` : "";
     const zeilen = Object.entries(g).sort((a, b) => (a[1].name_de || a[1].name).localeCompare(b[1].name_de || b[1].name, "de")).map(([c, x]) => {
       const k = x.kammern[0], st = staerkste(k), neu = x.kammern.some(q => q.juengst), ch = x.regierungschef;
       return `<tr><td><button type="button" class="gk-link" data-gkregion="${esc(c)}">${esc(x.name_de || x.name)}</button>${neu ? ` <span class="gk-neu-chip">neu gewählt</span>` : ""}</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${esc(ch ? ch.name : "–")}${ch && (ch.partei_kurz || ch.partei) ? ` <span class="pct">${esc(ch.partei_kurz || ch.partei)}</span>` : ""}</td>
         <td style="text-align:left">${st ? `<span class="gk-punkt" style="background:${esc(st.f || "#8b95a3")}"></span>${esc(st.p)} ${f0.format(st.n)}` : "–"}</td><td class="pct">${k && k.letzte_wahl ? esc(datumWahl(k.letzte_wahl.datum)) : "–"}</td></tr>`; }).join("");
-    return det + `<div class="gk-block"><h3>Gliedstaaten (${f0.format(Object.keys(g).length)})</h3><table class="gk-tab"><thead><tr><th>Gliedstaat</th><th style="text-align:left">Regierungschef</th><th style="text-align:left">stärkste Fraktion</th><th>letzte Wahl</th></tr></thead><tbody>${zeilen}</tbody></table>
+    if (teil === "det") return det;
+    return `<div class="gk-block"><h3>Gliedstaaten und Regionen (${f0.format(Object.keys(g).length)})</h3><table class="gk-tab"><thead><tr><th>Gliedstaat</th><th style="text-align:left">Regierungschef</th><th style="text-align:left">stärkste Fraktion</th><th>letzte Wahl</th></tr></thead><tbody>${zeilen}</tbody></table>
       <p class="gk-quelle" style="margin-top:6px">Regierungschefs laut Wikidata (CC0), Parlamente laut Wikipedia-Infobox (CC BY-SA 4.0), Abruf ${esc(datumWahl(PA.abruf))}. Karte: Fläche in der Farbe der Partei des Regierungschefs (Wikidata), orange umrandet = in den letzten ${SCHWELLE} Tagen gewählt. Gliedstaat anklicken für Parlament und Wahl.</p></div>`;
   }
-  function deutschlandBlock(stufe) {
+  function deutschlandBlock(stufe, teil) {
     const de = PD && PD.deutschland; if (!de) return "";
     const bt = de.bundestag, u = de.umfragen && de.umfragen.parlamente && de.umfragen.parlamente.Bundestag, btw = de.btw25 || {};
     const bund = {}; let summe = 0; Object.values(btw).forEach(l => Object.entries(l).forEach(([p, v]) => { bund[p] = (bund[p] || 0) + v; })); summe = Object.keys(btw).length;
@@ -1151,16 +1164,17 @@ const GLOBUS = (() => {
     let region = "";
     if (reg) {
       const name = reg.properties.name, l = lr[S.region] || {}, w = btw[name] || btw[Object.keys(btw).find(k => k.startsWith(name.slice(0, 6)))] || {}, um = de.umfragen.parlamente[name] || de.umfragen.parlamente[Object.keys(de.umfragen.parlamente).find(k => k.startsWith(name.slice(0, 6)))];
-      region = `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(name)}</h3><p style="margin:4px 0">Regierungschef: <b>${esc(l.regierungschef || "–")}</b>${l.parteien && l.parteien.length ? ` (${esc(l.parteien.map(p => parteiInfo(p).kurz).join(", "))})` : ""}</p>
+      region = `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(name)}</h3><p style="margin:4px 0">Regierungschef: <b>${esc(l.regierungschef || "–")}</b>${l.parteien && l.parteien.length ? ` (${esc(l.parteien.map(p => parteiInfo(p).kurz).join(", "))})` : ""}</p>${(() => { const gs = gliedstaat(S.region), c = gs && gs.regierungschef; return (c && c.seit ? `<p class="pct" style="margin:2px 0">im Amt seit ${esc(datumWahl(c.seit))}</p>` : "") + (gs && (gs.koalition || []).length ? `<p class="pct" style="margin:2px 0">Regierungslager: ${esc(gs.koalition.join(", "))}</p>` : ""); })()}
         <h3 style="margin-top:8px">Bundestagswahl 2025 in ${esc(name)} (Zweitstimmen %)</h3>${balken(Object.entries(w), Math.max(...Object.values(w), 1))}
         ${um ? `<h3 style="margin-top:8px">Jüngste Landtagsumfrage (${esc(um.institut)}, ${esc(datumWahl(um.datum))})</h3>${balken(um.werte, Math.max(...um.werte.map(x => x[1]), 1))}` : `<p class="gk-leer">Keine Landtagsumfrage bei DAWUM.</p>`}
-        <p class="gk-quelle" style="margin-top:6px">Bundestagswahl: Bundeswahlleiterin; Umfrage: DAWUM. Landtag, letzte Landtagswahl und Koalition folgen (Wikipedia, Wikidata).</p></div>${(gliedstaat(S.region) || { kammern: [] }).kammern.map(kammerBlock).join("")}`;
+        <p class="gk-quelle" style="margin-top:6px">Bundestagswahl: Bundeswahlleiterin; Umfrage: DAWUM. Landtag, letzte Landtagswahl und Regierungslager laut Wikipedia und Wikidata.</p></div>${(gliedstaat(S.region) || { kammern: [] }).kammern.map(kammerBlock).join("")}`;
     }
     const laender = stufe >= 3 && DE_GEO ? `<div class="gk-block"><h3>Bundesländer</h3><table class="gk-tab"><tbody>${DE_GEO.features.map(f => { const l = lr[f.properties.code] || {}, pi = parteiInfo((l.parteien || [])[0]);
       const g = gliedstaat(f.properties.code), k = g && g.kammern[0], neu = k && k.juengst;
       return `<tr><td><button type="button" class="gk-link" data-gkregion="${esc(f.properties.code)}">${esc(f.properties.name)}</button>${neu ? ` <span class="gk-neu-chip">neu gewählt</span>` : ""}</td><td style="font-family:var(--sans);text-align:left">${esc(l.regierungschef || "–")}</td><td><span class="gk-punkt" style="background:${pi.farbe}"></span>${esc(pi.kurz)}</td><td class="pct">${k && k.letzte_wahl ? esc(datumWahl(k.letzte_wahl.datum)) : ""}</td></tr>`; }).join("")}</tbody></table>
       <p class="gk-quelle" style="margin-top:6px">Ministerpräsidentinnen und -präsidenten laut Wikidata, Abruf ${esc(PD.abruf)}; rechts Datum der letzten Landtagswahl (Wikipedia). Auf der Karte Fläche in Parteifarbe; Land anklicken für Landtag, Wahl und Umfrage.</p></div>` : "";
-    return `${region}<div class="gk-block"><h3>Bundestag</h3>${halbkreis(bt.sitze)}<p class="gk-quelle" style="margin-top:6px">${esc(bt.stand)}, <a class="gk-link" href="${esc(bt.quelle)}" target="_blank" rel="noopener">Bundeswahlleiterin</a>. Regierung: ${esc(bt.regierung.join(", "))}.</p></div>
+    if (teil === "region") return region;
+    return `<div class="gk-block"><h3>Bundestag</h3>${halbkreis(bt.sitze)}<p class="gk-quelle" style="margin-top:6px">${esc(bt.stand)}, <a class="gk-link" href="${esc(bt.quelle)}" target="_blank" rel="noopener">Bundeswahlleiterin</a>. Regierung: ${esc(bt.regierung.join(", "))}.</p></div>
       ${u ? `<div class="gk-block"><h3>Jüngste Umfrage Bundestag</h3>${balken(u.werte, Math.max(...u.werte.map(x => x[1]), 1))}<p class="gk-quelle" style="margin-top:6px">${esc(u.institut)}, ${esc(datumWahl(u.datum))}, ${esc(u.befragte || "")} Befragte · <a class="gk-link" href="${esc(u.url)}" target="_blank" rel="noopener">DAWUM</a> (${esc(de.umfragen.lizenz)})</p></div>` : ""}
       ${laender}`;
   }
@@ -1180,9 +1194,11 @@ const GLOBUS = (() => {
         <tr><td>Ausrichtung</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${a ? `<span class="gk-punkt" style="background:${a[2]}"></span>${esc(a[1])} <span class="pct">(nach Partei des ${r.ausrichtung_nach === "regierungschef" ? "Regierungschefs" : "Staatsoberhaupts"})</span>` : "ohne Zuordnung"}</td></tr></tbody></table>
         <p class="gk-quelle" style="margin-top:6px">Wikidata (CC0), Abruf ${esc(PD.abruf)}. Kabinettsmitglieder sind noch offen.</p></div>
       ${juengstBlock(iso)}<div class="gk-block"><h3>Nationale Wahlen, nächste zwölf Monate</h3>${wahlListe(wahlenVon(iso), false)}</div>`;
-    const regionen = iso === "DE" ? deutschlandBlock(stufe) + parlamentBlock(iso) : parlamentBlock(iso) + (stufe >= 3 ? gliedBlock(iso) : gliedVon(iso) ? `<div class="gk-block"><h3>Gliedstaaten</h3><p class="gk-leer">${esc(landName(iso))} ist ein Bundesstaat mit ${f0.format(Object.keys(gliedVon(iso)).length)} Gliedstaaten. Näher heranzoomen (Stufe 3), dann erscheinen ihre Regierungen und Parlamente.</p><div class="gk-chips" style="margin-top:8px"><button type="button" data-gkstufe="3">Zu Stufe 3</button></div></div>` : "");
+    const regionen = iso === "DE" ? deutschlandBlock(stufe) + parlamentBlock(iso) : parlamentBlock(iso) + (stufe >= 3 ? gliedBlock(iso) : gliedVon(iso) ? `<div class="gk-block"><h3>Gliedstaaten</h3><p class="gk-leer">${esc(landName(iso))} gliedert sich in ${f0.format(Object.keys(gliedVon(iso)).length)} Gliedstaaten bzw. Regionen. Näher heranzoomen (Stufe 3), dann erscheinen ihre Regierungen und Parlamente.</p><div class="gk-chips" style="margin-top:8px"><button type="button" data-gkstufe="3">Zu Stufe 3</button></div></div>` : "");
     const verbund = stufe >= 3 ? handelBlock(iso) + firmenBlock(iso) : "";
-    return kopf + regionen + verbund;
+    // ausgewählter Gliedstaat bzw. Bundesland (Regierung, Parlament, Wahl) steht oben, darunter die Staatsebene
+    const oben = stufe >= 3 && S.region && S.region.startsWith(iso + "-") ? (iso === "DE" ? deutschlandBlock(stufe, "region") : gliedBlock(iso, "det")) : "";
+    return oben + kopf + regionen + verbund;
   }
   function karteForm(iso) {
     if (S.form === "boerse") return finanzKacheln(iso);

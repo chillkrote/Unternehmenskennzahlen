@@ -1,6 +1,6 @@
 # Offene Datenfelder der Weltkugel
 
-Stand 04.11.2026. Hier steht, welche Daten die fünf Darstellungsformen der Weltkugel (Handel, Volkswirtschaft, Börse & Finanzen, Unternehmen, Politik & Wahlen) noch nicht haben und warum. Regel des Projekts: nur kostenlose Quellen ohne Bezahlschranke. Ein Feld bleibt offen, solange es keine solche Quelle gibt oder die Quelle einen (kostenlosen) Schlüssel braucht, den wir noch nicht eingerichtet haben.
+Stand 04.11.2026 (nach dem Bau von Börse, Unternehmen und Politik). Hier steht, welche Daten die fünf Darstellungsformen der Weltkugel (Handel, Volkswirtschaft, Börse & Finanzen, Unternehmen, Politik & Wahlen) noch nicht haben und warum. Regel des Projekts: nur kostenlose Quellen ohne Bezahlschranke. Ein Feld bleibt offen, solange es keine solche Quelle gibt oder die Quelle einen (kostenlosen) Schlüssel braucht, den wir noch nicht eingerichtet haben.
 
 Spalte "Weg" sagt, was zum Schließen nötig wäre.
 
@@ -22,28 +22,38 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 | Staatsschulden für Länder ohne Weltbank-Wert (z. B. Nigeria) | Weltbank GC.DOD.TOTL.GD.ZS, Lücken | Reihe der Zentralregierung fehlt für viele Länder | IMF Global Debt Database prüfen (Lizenz) |
 | Monatswerte außerhalb Europas und der OECD | Jahreswerte der Weltbank | Keine gemeinsame freie Monatsquelle | Nationale Statistikämter einzeln anbinden |
 
-## Börse & Finanzen (Entwurf zur Freigabe)
+## Börse & Finanzen
 
 | Feld | Stand jetzt | Warum offen | Weg |
 |---|---|---|---|
-| Rendite zehnjähriger Staatsanleihen außerhalb der OECD | OECD-Länder | Keine freie gemeinsame Quelle | Zentralbanken einzeln |
-| Leitzinsen aller Länder | noch nicht eingebunden | BIS-Statistik (Leitzinsen) ist frei, Nutzung noch zu prüfen | BIS Data Portal anbinden |
+| Rendite zehnjähriger Staatsanleihen außerhalb der OECD | 47 Länder (OECD, monatlich) | Keine freie gemeinsame Quelle | Zentralbanken einzeln |
+| Leitzinsen | 40 Zentralbanken (BIS) | BIS deckt nicht alle Länder ab | Zentralbanken einzeln |
+| Goldpreis | fehlt | LBMA-Preise ohne Schlüssel nicht frei; FRED führt die Reihe nicht mehr | Quelle mit freier Lizenz suchen |
+| Kursentwicklung je Unternehmen außerhalb des Terminals | nur Unternehmen mit Wochenkursen im Terminal (Stufe 3 farbig) | Kurse für die übrigen rund 30.000 Unternehmen fehlen | Kursabruf schrittweise erweitern |
+| Banken mit Bilanzsumme und Kernkapitalquote außerhalb Deutschlands | nur deutsche Banken (Bankenvergleich) | Pillar-3-Daten anderer Länder nicht erhoben | EBA-Transparenzübung (EU) prüfen |
+| Lage der Börsenplätze | Stadtmitte, von Hand (app/geo/boersenplaetze.csv) | Wikidata hat nicht für alle Börsen Koordinaten | Wikidata ergänzen |
 | Kreditausfallprämien (CDS) | nicht vorgesehen | nur kostenpflichtig | entfällt |
 
-## Unternehmen (Entwurf zur Freigabe)
+## Unternehmen
 
 | Feld | Stand jetzt | Warum offen | Weg |
 |---|---|---|---|
-| Koordinaten der Firmensitze | 1.230 Unternehmen mit Sitz auf der Karte | Rund 31.000 Unternehmen ohne Koordinaten (Entscheidung 03.11.2026: später) | Geokodierung über Wikidata bzw. OpenStreetMap Nominatim (frei, langsam) |
+| Koordinaten der Firmensitze | rund 9.200 Unternehmen mit Ort auf der Karte | Rund 22.600 Unternehmen nur mit Land (Entscheidung 03.11.2026: später) | Geokodierung über Wikidata bzw. OpenStreetMap Nominatim (frei, langsam) |
+| Größenfilter (Umsatz, Mitarbeiter) | nur Filter „mit Kennzahlen“ | Umsatz nur für Unternehmen mit Kennzahlen im Terminal | Kennzahlen schrittweise erweitern |
+| Börsenwert je Land | nur die 232 großen Unternehmen des Bereichs BÖR | Börsenwert der übrigen fehlt | mit dem Kursabruf erweitern |
 | Lieferketten und Beteiligungen | Beispiel Volkswagen (stammdaten/beziehungen) | Keine freie strukturierte Quelle; Geschäftsberichte von Hand | Schrittweise je Unternehmen erfassen |
 
-## Politik & Wahlen (Entwurf zur Freigabe)
+## Politik & Wahlen
 
 | Feld | Stand jetzt | Warum offen | Weg |
 |---|---|---|---|
-| Wahltermine weltweit | Deutschland | Keine freie maschinenlesbare Gesamtliste | Wikidata-Abfrage (Wahlen mit Datum) prüfen |
-| Umfragen | Deutschland | Außerhalb Deutschlands keine freie Quelle mit klarer Lizenz | je Land prüfen |
-| Ausrichtung der Regierungsparteien | EU und OECD (ParlGov) | Außerhalb nicht abgedeckt | V-Dem bzw. Manifesto Project prüfen (Lizenz) |
+| Ausrichtung der Regierung | Wikidata-Angabe der Partei (196 Staaten, 77 ohne Zuordnung) | Wikidata lückenhaft, Parteien ohne Angabe (z. B. PT Brasilien) | ParlGov (EU/OECD, CC BY-SA) oder V-Dem prüfen |
+| Wahltermine | nationale Wahlen aus Wikipedia (42 Länder in 12 Monaten) | Landtags- und Regionalwahlen fehlen | Wikipedia-Listen je Land oder Wikidata, wenn die Abfrage schneller wird |
+| Kabinett und Sitzverteilung außerhalb Deutschlands | fehlt | Keine freie gemeinsame Quelle | Wikidata (Mitglieder der Regierung) prüfen |
+| Ergebnis der letzten Landtagswahl und Koalition je Bundesland | fehlt (Bundestagswahl 2025 je Land ist da) | Landeswahlleitungen ohne gemeinsames offenes Format | Landeswahlleitungen einzeln anbinden |
+| Umfragen außerhalb Deutschlands | fehlt | Keine freie Quelle mit klarer Lizenz | je Land prüfen |
+| Regionen außerhalb Deutschlands | fehlt | Regionalregierungen und -wahlen nicht gesammelt | nach Deutschland weitere Länder |
+| Sanktionen, Konflikte (Variante 1C) | nicht gebaut | eigener Schritt laut Freigabe | EU-Sanktionsliste, OFAC, UCDP |
 
 ## Schon eingebunden (zum Vergleich)
 
@@ -53,3 +63,5 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 - Wirtschaftsräume von Hand mit Quelle je Raum: app/geo/wirtschaftsraeume.csv
 - Seewege searoute/marnet (Apache-2.0), Flughäfen OurAirports (gemeinfrei): app/routen.py -> app/data/routen.json
 - Meldungen zu Störungen (GDELT, sonst Google News RSS; nur Titel, Quelle, Datum, Link): app/news_routen.py -> app/data/news_routen.json
+- Leitzinsen (BIS), 10-j. Renditen (OECD, CC BY 4.0), EZB-Kurse, Rohstoffe (FRED), Börsenplätze von Hand: app/boerse_welt.py -> app/data/boerse_welt.json
+- Regierungen (Wikidata, CC0), Wahlkalender (Wikipedia, CC BY-SA 4.0), Bundestagswahl 2025 je Land (Bundeswahlleiterin, DL-DE 2.0), Umfragen (DAWUM, ODbL), Bundesländer (Natural Earth), Bündnisse von Hand: app/politik_daten.py -> app/data/politik.json

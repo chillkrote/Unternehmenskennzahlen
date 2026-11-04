@@ -1,0 +1,50 @@
+id,name,stadt,iso,lon,lat,leitindex,quelle
+nyse,New York Stock Exchange / Nasdaq,New York,US,-74.01,40.71,S&P 500,Lage: Stadtmitte (von Hand); Index: Bereich BÖR (Yahoo Finance)
+tsx,Toronto Stock Exchange,Toronto,CA,-79.38,43.65,S&P/TSX Composite,Lage: Stadtmitte (von Hand)
+bmv,Bolsa Mexicana de Valores,Mexiko-Stadt,MX,-99.13,19.43,S&P/BMV IPC,Lage: Stadtmitte (von Hand)
+b3,B3,São Paulo,BR,-46.63,-23.55,Ibovespa,Lage: Stadtmitte (von Hand)
+byma,Bolsas y Mercados Argentinos,Buenos Aires,AR,-58.37,-34.60,MERVAL,Lage: Wikidata Q105094172
+bcs,Bolsa de Santiago,Santiago de Chile,CL,-70.65,-33.44,Chile (ETF iShares MSCI Chile),Lage: Stadtmitte (von Hand)
+bvl,Bolsa de Valores de Lima,Lima,PE,-77.03,-12.05,Peru (ETF iShares MSCI Peru),Lage: Stadtmitte (von Hand)
+lse,London Stock Exchange,London,GB,-0.10,51.52,FTSE 100,Lage: Wikidata Q171240
+fwb,Frankfurter Wertpapierbörse,Frankfurt am Main,DE,8.68,50.11,DAX,Lage: Stadtmitte (von Hand)
+epa,Euronext Paris,Paris,FR,2.34,48.87,CAC 40,Lage: Stadtmitte (von Hand)
+eams,Euronext Amsterdam,Amsterdam,NL,4.89,52.37,AEX,Lage: Stadtmitte (von Hand)
+ebr,Euronext Brüssel,Brüssel,BE,4.35,50.85,BEL 20,Lage: Stadtmitte (von Hand)
+emi,Euronext Mailand (Borsa Italiana),Mailand,IT,9.19,45.46,FTSE MIB,Lage: Stadtmitte (von Hand)
+bme,Bolsa de Madrid,Madrid,ES,-3.70,40.42,IBEX 35,Lage: Stadtmitte (von Hand)
+elis,Euronext Lissabon,Lissabon,PT,-9.15,38.72,PSI,Lage: Wikidata Q2415561
+edub,Euronext Dublin,Dublin,IE,-6.26,53.35,ISEQ Overall,Lage: Stadtmitte (von Hand)
+six,SIX Swiss Exchange,Zürich,CH,8.53,47.37,SMI,Lage: Wikidata Q661834
+wbag,Wiener Börse,Wien,AT,16.37,48.21,ATX,Lage: Stadtmitte (von Hand)
+sto,Nasdaq Stockholm,Stockholm,SE,18.07,59.33,OMX Stockholm 30,Lage: Stadtmitte (von Hand)
+cph,Nasdaq Kopenhagen,Kopenhagen,DK,12.57,55.68,OMX Copenhagen 25,Lage: Stadtmitte (von Hand)
+hel,Nasdaq Helsinki,Helsinki,FI,24.95,60.17,OMX Helsinki 25,Lage: Wikidata Q581755
+osl,Euronext Oslo Børs,Oslo,NO,10.75,59.91,Oslo Børs Benchmark (OSEBX),Lage: Wikidata Q909158
+wse,Warschauer Wertpapierbörse,Warschau,PL,21.01,52.23,Polen (ETF iShares MSCI Poland),Lage: Stadtmitte (von Hand)
+athex,Athener Börse,Athen,GR,23.73,37.99,Athex Composite,Lage: Wikidata Q755341
+tal,Nasdaq Tallinn,Tallinn,EE,24.75,59.44,OMX Tallinn,Lage: Stadtmitte (von Hand)
+rig,Nasdaq Riga,Riga,LV,24.11,56.95,OMX Riga,Lage: Stadtmitte (von Hand)
+vil,Nasdaq Vilnius,Vilnius,LT,25.28,54.69,OMX Vilnius,Lage: Stadtmitte (von Hand)
+bist,Borsa Istanbul,Istanbul,TR,29.04,41.11,BIST 100,Lage: Wikidata Q1407995
+tase,Tel Aviv Stock Exchange,Tel Aviv,IL,34.77,32.06,TA-125,Lage: Wikidata Q1507974
+tadawul,Saudi Exchange (Tadawul),Riad,SA,46.72,24.69,Saudi-Arabien (ETF iShares MSCI Saudi Arabia),Lage: Stadtmitte (von Hand)
+qse,Qatar Stock Exchange,Doha,QA,51.53,25.29,Katar (ETF iShares MSCI Qatar),Lage: Stadtmitte (von Hand)
+bk,Boursa Kuwait,Kuwait-Stadt,KW,47.98,29.37,Kuwait (ETF iShares MSCI Kuwait),Lage: Stadtmitte (von Hand)
+adx,Abu Dhabi Securities Exchange,Abu Dhabi,AE,54.35,24.49,Vereinigte Arabische Emirate (ETF iShares MSCI UAE),Lage: Wikidata Q4119825
+jse,Johannesburg Stock Exchange,Johannesburg,ZA,28.05,-26.11,FTSE/JSE All Share,Lage: Stadtmitte (von Hand)
+bse,BSE / NSE,Mumbai,IN,72.83,18.93,Nifty 50,Lage: Stadtmitte (von Hand)
+sse,Shanghai Stock Exchange,Shanghai,CN,121.50,31.24,SSE Composite (Shanghai),Lage: Stadtmitte (von Hand)
+szse,Shenzhen Stock Exchange,Shenzhen,CN,114.06,22.54,SZSE Component (Shenzhen),Lage: Stadtmitte (von Hand)
+hkex,Hong Kong Exchanges,Hongkong,HK,114.16,22.28,Hang Seng,Lage: Stadtmitte (von Hand)
+twse,Taiwan Stock Exchange,Taipeh,TW,121.56,25.04,TAIEX,Lage: Stadtmitte (von Hand)
+tse,Tokyo Stock Exchange,Tokio,JP,139.78,35.68,Nikkei 225,Lage: Wikidata Q217475
+krx,Korea Exchange,Seoul,KR,126.98,37.57,KOSPI,Lage: Stadtmitte (von Hand)
+sgx,Singapore Exchange,Singapur,SG,103.85,1.28,Straits Times,Lage: Stadtmitte (von Hand)
+bursa,Bursa Malaysia,Kuala Lumpur,MY,101.70,3.15,FTSE Bursa Malaysia KLCI,Lage: Wikidata Q43335
+set,Stock Exchange of Thailand,Bangkok,TH,100.57,13.76,Thailand (ETF iShares MSCI Thailand),Lage: Wikidata Q1330208
+idx,Indonesia Stock Exchange,Jakarta,ID,106.81,-6.22,IDX Composite,Lage: Stadtmitte (von Hand)
+pse,Philippine Stock Exchange,Manila (Taguig),PH,121.05,14.55,Philippinen (ETF iShares MSCI Philippines),Lage: Stadtmitte (von Hand)
+hose,Ho Chi Minh Stock Exchange,Ho-Chi-Minh-Stadt,VN,106.70,10.78,Vietnam (ETF VanEck Vietnam),Lage: Stadtmitte (von Hand)
+asx,Australian Securities Exchange,Sydney,AU,151.21,-33.87,S&P/ASX 200,Lage: Stadtmitte (von Hand)
+nzx,NZX,Wellington,NZ,174.78,-41.29,S&P/NZX 50,Lage: Stadtmitte (von Hand)

@@ -67,7 +67,8 @@ def main():
              .replace("__KURSE__", kurse.replace("</", "<\\/")).replace("__KORRELATION_JS__", (HIER / "src/korrelation.js").read_text())
              .replace("__HANDEL_JS__", (HIER / "src/handel.js").read_text()))
     # Handel und Weltdaten (Bereich HDL und Weltkugel): fehlt eine Datei, bleibt der Teil leer
-    for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__NEWS__", "news_routen.json")):
+    for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__NEWS__", "news_routen.json"),
+                        ("__BOERSE_WELT__", "boerse_welt.json"), ("__POLITIK__", "politik.json"), ("__DE_LAENDER__", "../geo/de_laender.geojson")):
         f = HIER / "data" / datei
         seite = seite.replace(platz, f.read_text().replace("</", "<\\/") if f.exists() else "null", 1)
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)

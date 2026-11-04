@@ -102,9 +102,17 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   * **Volkswirtschaft:** Stufe 1 Wirtschaftsräume (`geo/wirtschaftsraeume.csv`) mit BIP-Wachstum und Inflation auf der Karte, übrige
     Werte rechts. Stufe 2 dieselben Werte je Land, Klick zeigt alles, Shift+Klick vergleicht. Stufe 3 Land im Detail (Volkswirtschaft,
     Handel, Strom, Unternehmen, Börse).
-  * **Börse & Finanzen, Unternehmen, Politik & Wahlen:** Entwürfe zur Freigabe; bis dahin die bisherige Darstellung.
+  * **Börse & Finanzen:** Stufe 1 Börsenplätze mit Leitindex seit Jahresbeginn (grün/rot), Wirtschaftsraum wählbar, Kacheln mit
+    Indizes nach Region, Rohstoffen, Leitwährungen, Leitzinsen und Renditen. Stufe 2 je Land Leitindex und 10-jährige Rendite.
+    Stufe 3 Finanzplatz: börsennotierte Unternehmen nach Kursentwicklung gefärbt, Indexmitglieder, Banken (Deutschland).
+  * **Unternehmen:** Stufe 1 Kreis je Land nach Zahl oder Börsenwert, Branchenmix je Wirtschaftsraum. Stufe 2 Sitze mit Filtern
+    (Branche, Index, börsennotiert, Kennzahlen); Shift+Klick nimmt Unternehmen in den Vergleich. Stufe 3 Netz, Profil, Nachbarländer.
+  * **Politik & Wahlen:** Stufe 1 Länder nach Ausrichtung der Regierung, W = Wahl in den nächsten zwölf Monaten, Bündnisse wählbar.
+    Stufe 2 Regierungschef, Partei und nächste Wahl je Land. Stufe 3 Bundesländer mit Regierungschef, Bundestagswahl je Land und
+    Landtagsumfrage, dazu Handel und Unternehmen. Im Terminal Reiter POL (Regierungen, Wahlkalender, Deutschland) und BÖR F7.
   Daten: `welt_daten.py` (Weltbank, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> `data/welt.json`), `routen.py`
-  (`data/routen.json`), `news_routen.py` (`data/news_routen.json`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
+  (`data/routen.json`), `news_routen.py` (`data/news_routen.json`), `boerse_welt.py` (`data/boerse_welt.json`), `politik_daten.py`
+  (`data/politik.json`, `geo/de_laender.geojson`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
   `OFFENE_DATENFELDER.md`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
   Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,

@@ -1,5 +1,6 @@
 """Reichert die Unternehmenstabelle in Zehnerblöcken an (Reihenfolge wie in der Tabelle), Stand je Block in anreicherung/stand.csv.
-Aufruf: python3 batch_anreichern.py [anzahl=10]
+Aufruf: python3 batch_anreichern.py [anzahl=10] [bloecke=1]
+Reihenfolge: zuerst börsennotierte Unternehmen mit Ticker (dort liefert Yahoo am meisten), jeweils in Tabellenreihenfolge, danach alle übrigen.
 Je Unternehmen:
  1. Stammdaten (nur leere Felder, mit Vermerk "bitte prüfen"): LEI/Sitz/Handelsregisternummer aus GLEIF (per ISIN, sonst Name+Land), Rechtsform aus dem Firmennamen.
  2. Kennzahlen (Bilanz, GuV, Cashflow, je Aktie) aus Yahoo Finance (fundamentals-timeseries, frei, Sekundärquelle) nach import/daten/<ID>.json im Format der Importvorlage.
@@ -172,6 +173,7 @@ def verarbeite(r, uid, urls):
     return ergaenzt, len(eintraege), f'{quelle}; GJ {jahre[0]}-{jahre[-1]}', notiz
 def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 10
+    bloecke = int(sys.argv[2]) if len(sys.argv) > 2 else 1
     stand = list(csv.DictReader(open(STAND, encoding='utf-8'))) if STAND.exists() else []
     fertig = {s['unternehmen_id'] for s in stand}; charge = max([int(s['charge']) for s in stand] or [0]) + 1
     wb = openpyxl.load_workbook(T / 'Unternehmen_Tabelle.xlsx'); ws = wb['Unternehmen']
@@ -181,13 +183,16 @@ def main():
     docs = {}
     for d in wb['Quellen-Dokumente'].iter_rows(min_row=2, values_only=True):
         if d[0] and d[4] and '.pdf' in str(d[4]).lower(): docs.setdefault(d[0], []).append(str(d[4]))
-    todo = [i for i in range(len(rows)) if ids[i] and ids[i] not in fertig][:n]
+    offen = [i for i in range(len(rows)) if ids[i] and ids[i] not in fertig]
+    offen.sort(key=lambda i: (0 if (str(rows[i][7]).lower() == 'ja' and rows[i][5]) else 1, i))
+    todo = offen[:n * bloecke]
     neu = []
-    for i in todo:
+    for pos, i in enumerate(todo):
+        charge_i = charge + pos // n
         r, uid = rows[i], ids[i]
         try: erg, k, qu, notiz = verarbeite(r, uid, docs.get(r[0], [])[:3] or finde_berichte([r[16], r[13]]))
         except Exception as ex: erg, k, qu, notiz = [], 0, '', [f'Fehler: {ex}']
-        neu.append(dict(unternehmen_id=uid, name=r[0], charge=charge, stammdaten_ergaenzt='; '.join(erg), kennzahlen=k, quelle=qu, notiz=' | '.join(notiz)))
+        neu.append(dict(unternehmen_id=uid, name=r[0], charge=charge_i, stammdaten_ergaenzt='; '.join(erg), kennzahlen=k, quelle=qu, notiz=' | '.join(notiz)))
         print(uid, r[0], '->', k, 'Kennzahlen;', qu, ';', erg, ';', notiz, flush=True)
     ws.delete_rows(2, ws.max_row)
     for r in rows: ws.append(r)

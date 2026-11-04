@@ -1,0 +1,89 @@
+name: Anreicherung Kennzahlen
+
+# Täglich N Blöcke à 10 Unternehmen (börsennotierte mit Ticker zuerst): GLEIF-Stammdaten, Yahoo-Kennzahlen,
+# Abgleich mit Geschäftsberichten. Ergebnis: ein Entwurfs-PR gegen main (import/daten/, Tabelle, anreicherung/stand.csv).
+# Solange ein PR mit dem Label "anreicherung" offen ist, läuft nichts (kein Stapel von PRs, keine Konflikte).
+# Voraussetzung: Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests".
+# Kosten: keine, Schätzung in .github/workflows/README.md
+on:
+  schedule:
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+    inputs:
+      bloecke:
+        description: "Anzahl Blöcke (je 10 Unternehmen)"
+        default: "15"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: daten-schreiben
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  anreichern:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BLOECKE: ${{ inputs.bloecke || '15' }}
+    steps:
+      - name: Offenen Anreicherungs-PR suchen
+        id: offen
+        run: |
+          n=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --label anreicherung --json number --jq length)
+          echo "offen=$n" >> "$GITHUB_OUTPUT"
+          [ "$n" = "0" ] || echo "::notice::Offener Anreicherungs-PR vorhanden, Lauf übersprungen"
+      - uses: actions/checkout@v5
+        if: steps.offen.outputs.offen == '0'
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v6
+        if: steps.offen.outputs.offen == '0'
+        with:
+          python-version: "3.12"
+      - name: Werkzeuge
+        if: steps.offen.outputs.offen == '0'
+        run: |
+          pip install openpyxl
+          sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Blöcke abarbeiten
+        if: steps.offen.outputs.offen == '0'
+        run: python3 unternehmen-tabelle/skripte/batch_anreichern.py 10 "$BLOECKE" | tee /tmp/anreicherung.log
+      - name: IDs prüfen
+        if: steps.offen.outputs.offen == '0'
+        run: python3 stammdaten/pruefe_ids.py
+      - name: Commit und Entwurfs-PR
+        if: steps.offen.outputs.offen == '0'
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Keine Änderungen"; exit 0; fi
+          zweig="anreicherung/$(date -u +%Y-%m-%d)-$GITHUB_RUN_NUMBER"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$zweig"
+          git add -A import/daten unternehmen-tabelle
+          git commit -m "Anreicherung: $BLOECKE Blöcke ($(date -u +%Y-%m-%d))"
+          git push -u origin "$zweig"
+          gh label create anreicherung --repo "$GITHUB_REPOSITORY" --color 0e8a16 2>/dev/null || true
+          {
+            echo "Automatischer Lauf: $BLOECKE Blöcke à 10 Unternehmen (börsennotierte mit Ticker zuerst)."
+            echo
+            echo "Jede Zeile in \`unternehmen-tabelle/anreicherung/stand.csv\` nennt Quelle (Geschäftsbericht oder Yahoo) und Hinweise."
+            echo "Nach dem Mergen startet der nächste Lauf wieder."
+          } > /tmp/pr.md
+          gh pr create --repo "$GITHUB_REPOSITORY" --draft --base main --head "$zweig" \
+            --title "Anreicherung: $BLOECKE Blöcke ($(date -u +%Y-%m-%d))" --label anreicherung --body-file /tmp/pr.md \
+            || echo "::warning::PR nicht angelegt (Repo-Einstellung für Actions-PRs prüfen). Zweig: $zweig"

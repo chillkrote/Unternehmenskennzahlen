@@ -26,6 +26,7 @@ A = {
  'U000535': (116.0, 'Belegschaft Deutschland (ohne Siemens Healthineers), FTE', VB('U000535'), 38),
  'U000515': (146.0, 'Mitarbeitende des SAP-Konzerns, Vollzeitkräfte (Konzern, nicht nur Deutschland)', VB('U000515'), 35),
  'U000124': (108.0, 'Arbeitnehmer Commerzbank AG auf VZK-Basis (Brutto-Personalaufwand)', VB('U000124'), 50),
+ 'U000148': (120.974, 'Beschäftigte Deutsche Bank Konzern weltweit auf Vollzeitbasis (nicht nur Deutschland)', GB('U000148'), 755),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte

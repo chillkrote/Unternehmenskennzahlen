@@ -6,6 +6,7 @@
 | `termine.yml` „Berichtstermine“ | Termine erfassen, fällige Berichte laden, montags Finanzkalender lesen | täglich 05:17, Mo–Fr 16:47 (UTC; GitHub startet Zeitpläne oft Stunden später) | ca. 3–4 min, montags +6 min |
 | `prognosen.yml` „Prognosen“ | Konjunkturprognosen aller Prognosegeber (`volkswirtschaft/prognosen_international.csv`); montags zusätzlich OECD Economic Outlook, Istwerte, Prognosefehler | Mo–Fr 06:43 | ca. 5 min (Mo ca. 8 min) |
 | `terminal.yml` „Terminal bauen“ | baut `bankterminal.html` und legt sie als Artifact und auf den Branch `terminal-dist` | nur auf Anforderung | ca. 0,5 min |
+| `anreicherung.yml` „Anreicherung Kennzahlen“ | täglich bis zu 15 Blöcke à 10 Unternehmen (GLEIF, Yahoo, Geschäftsbericht-Abgleich), Entwurfs-PR mit Label `anreicherung`; läuft nur, wenn kein solcher PR offen ist | täglich 03:23 | ca. 20–30 min (ca. 600–900 min/Monat, wenn täglich gemergt wird) |
 | `desktop-macos.yml` | macOS-App (.dmg) | von Hand, Tag `desktop-v*`, PR an `desktop/` | ca. 2 min, macOS zählt zehnfach |
 
 ## Aufbau

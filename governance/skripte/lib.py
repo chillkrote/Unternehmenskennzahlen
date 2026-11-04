@@ -44,7 +44,16 @@ def w(name, rows, cols):
         wr = csv.DictWriter(f, fieldnames=cols); wr.writeheader()
         for r in rows: wr.writerow({c: r.get(c, '') for c in cols})
 
+def lade_handeingabe():
+    """Zeilen aus governance/handeingabe/*.json (Import der Excel-Vorlage, governance/vorlage/importieren.py) übernehmen."""
+    import json, glob
+    for f in sorted(glob.glob(os.path.join(OUT, 'handeingabe', '*.json'))):
+        d = json.load(open(f, encoding='utf-8'))
+        mitglieder.extend(d.get('mitglieder', [])); mandate.extend(d.get('mandate', []))
+        werdegang.extend(d.get('werdegang', [])); verg.extend(d.get('verguetung', [])); kenn.extend(d.get('kennzahlen', []))
+
 def write_all():
+    lade_handeingabe()
     reg = ids.lade(neu=True)
     unbekannt = set()
     for rows in (mitglieder, mandate, verg, kenn):

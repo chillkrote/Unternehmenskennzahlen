@@ -3,7 +3,9 @@ name: Weltkugel-Daten
 # Daten-Update für die Weltkugel, kein Terminal-Bau (den übernimmt terminal.yml, nur wenn sich Daten geändert haben).
 #  - täglich 06:17 UTC: Meldungen zu Störungen an Engstellen der Handelsrouten -> app/data/news_routen.json
 #    (GDELT, bei Drosselung Google News RSS; beide kostenlos, ohne Schlüssel)
+#    und Zinsen, Devisen, Rohstoffe, Börsenplätze (BIS, OECD, EZB, FRED) -> app/data/boerse_welt.json
 #  - Mo 04:23 UTC: Weltbank-Kennzahlen, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> app/data/welt.json
+#    und Regierungen, Wahlkalender, Bundesländer, Umfragen (Wikidata, Wikipedia, Bundeswahlleiterin, DAWUM) -> app/data/politik.json
 # Fällt eine Quelle aus, bleibt der letzte gute Stand liegen.
 # Kosten: keine. Meldungen rund 15 Minuten (Abstände wegen der Abfragegrenzen), Weltdaten rund 3 Minuten.
 on:
@@ -52,10 +54,14 @@ jobs:
           python-version: "3.12"
       - name: Meldungen zu Routenstörungen
         if: env.WAS == 'meldungen' || env.WAS == 'beides'
-        run: python3 app/news_routen.py 2>&1 | tee /tmp/news.log
+        run: |
+          python3 app/news_routen.py 2>&1 | tee /tmp/news.log
+          python3 app/boerse_welt.py 2>&1 | tee -a /tmp/news.log
       - name: Weltbank, Strom, Zölle, Wirtschaftsräume
         if: env.WAS == 'weltdaten' || env.WAS == 'beides'
-        run: python3 app/welt_daten.py 2>&1 | tee /tmp/welt.log
+        run: |
+          python3 app/welt_daten.py 2>&1 | tee /tmp/welt.log
+          python3 app/politik_daten.py 2>&1 | tee -a /tmp/welt.log
       - name: Zusammenfassung
         if: always()
         continue-on-error: true
@@ -71,7 +77,7 @@ jobs:
       - name: Änderungen pushen
         id: push
         if: github.ref == 'refs/heads/main'
-        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json
+        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/politik.json
       - name: Terminal neu bauen lassen
         if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"

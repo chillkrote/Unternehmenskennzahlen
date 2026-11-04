@@ -127,11 +127,70 @@ const HDL = (() => {
   return { init, da, meta, viewUeb, viewLaender, viewRouten, viewStrom, klick, zoll, saldo, name, daten: () => ({ H, W, R, N }) };
 })();
 
-/* ---------- Politik & Wahlen: Bereich des Terminals (Reiter POL); Darstellung liegt als Entwurf zur Freigabe vor ---------- */
+/* ---------- Politik & Wahlen: Bereich des Terminals (Reiter POL) ----------
+   Daten: politik-daten = data/politik.json (politik_daten.py: Wikidata, Wikipedia-Wahlkalender, Bundeswahlleiterin, DAWUM).
+   Ansichten: p-ueb (Regierungen), p-wahlen (Wahlkalender), p-de (Deutschland: Bundestag, Umfragen, Länder). */
 const POL = (() => {
-  const viewUeb = () => `<div class="grid">${panel({ code: "POL", titel: "Politik & Wahlen", sub: "in Vorbereitung", body: `
-    <p>Dieser Bereich ist angelegt; die Darstellung (Regierungen und Wahlkalender, Wer regiert und wann wird gewählt, Regionen) liegt als Entwurf mit Varianten zur Freigabe vor und wird danach gebaut.</p>
-    <p class="n">Geplante freie Quellen: Wikidata (Staats- und Regierungschefs, Parteien), ParlGov (Ausrichtung der Parteien), V-Dem und Weltbank-Governance-Indikatoren, Bundeswahlleiterin, DAWUM (Umfragen Deutschland). Offene Datenfelder stehen in <code>app/OFFENE_DATENFELDER.md</code>.</p>
-    ${typeof GLOBUS !== "undefined" ? `<p><a class="flink" href="#globus-politik">◉ Weltkugel, Darstellung Politik &amp; Wahlen</a></p>` : ""}` })}</div>`;
-  return { viewUeb };
+  let P = null;
+  const lade = () => { if (P === null) { try { P = JSON.parse(document.getElementById("politik-daten").textContent); } catch { P = false; } } return P; };
+  const AUSR = { links: ["links", "#d9534f"], "mitte-links": ["Mitte-links", "#e8968f"], mitte: ["Mitte", "#d8c27a"], "mitte-rechts": ["Mitte-rechts", "#8fb3e0"], rechts: ["rechts", "#3d6fb6"] };
+  const name = iso => HDL.name(iso);
+  const datum = d => /^\d{4}-\d{2}-\d{2}$/.test(d) ? d.split("-").reverse().join(".") : /^\d{4}-\d{2}$/.test(d) ? `${d.slice(5)}/${d.slice(0, 4)}` : d;
+  const jahr = String(new Date().getFullYear());
+  const welt = f => typeof GLOBUS !== "undefined" ? `<p><a class="flink" href="#globus-${f}">◉ Auf der Weltkugel zeigen</a></p>` : "";
+  const leer = () => `<div class="grid">${panel({ code: "POL", titel: "Politik & Wahlen", sub: "keine Daten", body: `<p class="n">Keine Politikdaten im Build (app/politik_daten.py).</p>` })}</div>`;
+  const ausr = r => { const a = r && AUSR[r.ausrichtung]; return a ? `<span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:${a[1]};margin-right:5px"></span>${a[0]}` : `<span class="n">ohne Zuordnung</span>`; };
+  function viewUeb() {
+    const d = lade(); if (!d) return leer();
+    const bip = iso => { const W = HDL.daten().W, l = W && W.laender[iso] && W.laender[iso].bip_usd; return l && l.length ? l[l.length - 1][1] : 0; };
+    const laender = Object.keys(d.regierungen).sort((a, b) => bip(b) - bip(a)).slice(0, 40);
+    const zaehl = {}; Object.values(d.regierungen).forEach(r => { const k = r.ausrichtung || "ohne"; zaehl[k] = (zaehl[k] || 0) + 1; });
+    const zeile = iso => { const r = d.regierungen[iso], h = r.regierungschef || r.staatsoberhaupt, w = (d.wahlen[iso] || []).filter(x => x.datum !== jahr)[0];
+      return `<tr><td style="text-align:left">${esc(name(iso))}</td><td style="text-align:left;font-family:var(--sans)">${esc(h ? h.name : "–")}</td><td style="text-align:left" class="n">${esc(h ? h.partei_kurz || h.partei : "")}</td><td style="text-align:left">${ausr(r)}</td><td class="n">${w ? esc(datum(w.datum)) : "–"}</td></tr>`; };
+    return `<div class="grid">${panel({ code: "REG", titel: "Regierungen der 40 größten Volkswirtschaften", sub: `Wikidata, Abruf ${esc(d.abruf)}`, breite: "w8", body: `<table class="tab"><thead><tr><th style="text-align:left">Land</th><th style="text-align:left">Regierungschef</th><th style="text-align:left">Partei</th><th style="text-align:left">Ausrichtung</th><th>nächste Wahl</th></tr></thead><tbody>${laender.map(zeile).join("")}</tbody></table>`,
+        fuss: "Ausrichtung: Mittelwert der Wikidata-Angaben „politische Ausrichtung“ (P1387) der Partei des Regierungschefs, ohne Partei die des Staatsoberhaupts. Monarchien, Einparteienstaaten und Parteilose bleiben ohne Zuordnung. Nach BIP (Weltbank) geordnet." })}
+      ${panel({ code: "AUS", titel: "Ausrichtung weltweit", sub: `${Object.keys(d.regierungen).length} Staaten`, breite: "w4", body: `<table class="tab"><tbody>${Object.keys(AUSR).map(k => `<tr><td style="text-align:left">${ausr({ ausrichtung: k })}</td><td>${f0.format(zaehl[k] || 0)}</td></tr>`).join("")}<tr><td style="text-align:left" class="n">ohne Zuordnung</td><td>${f0.format(zaehl.ohne || 0)}</td></tr></tbody></table>${welt("politik")}`,
+        fuss: "Quelle Wikidata (CC0), von Freiwilligen gepflegt; Stand und Abweichungen bitte an der Quelle prüfen." })}</div>`;
+  }
+  function viewWahlen() {
+    const d = lade(); if (!d) return leer();
+    const alle = Object.entries(d.wahlen).flatMap(([iso, l]) => l.filter(w => w.datum !== jahr).map(w => ({ ...w, iso }))).sort((a, b) => a.datum.localeCompare(b.datum));
+    return `<div class="grid">${panel({ code: "WAH", titel: "Nationale Wahlen der nächsten zwölf Monate", sub: `${alle.length} Termine in ${new Set(alle.map(w => w.iso)).size} Ländern`, breite: "w12",
+      body: `<table class="tab"><thead><tr><th style="text-align:left">Datum</th><th style="text-align:left">Land</th><th style="text-align:left">Wahl</th><th style="text-align:left">Regierung jetzt</th></tr></thead><tbody>${alle.map(w => `<tr><td style="text-align:left" class="n">${esc(datum(w.datum))}</td><td style="text-align:left">${esc(name(w.iso))}</td><td style="text-align:left;font-family:var(--sans)">${w.url ? `<a class="flink" href="${esc(sicherUrl(w.url))}" target="_blank" rel="noopener">${esc(w.was)}</a>` : esc(w.was)}</td><td style="text-align:left">${ausr(d.regierungen[w.iso])}</td></tr>`).join("")}</tbody></table>${welt("politik")}`,
+      fuss: "Wikipedia, „national electoral calendar“ (CC BY-SA 4.0). Monat statt Tag, wo der Termin noch nicht feststeht. Nachwahlen sind nicht enthalten." })}</div>`;
+  }
+  function viewDe() {
+    const d = lade(); if (!d || !d.deutschland) return leer();
+    const de = d.deutschland, bt = de.bundestag, um = (de.umfragen || {}).parlamente || {}, lr = de.landesregierungen || {}, btw = de.btw25 || {};
+    const balken = l => l.map(([p, v]) => `<tr><td style="text-align:left">${esc(p)}</td><td>${f1.format(v)} %</td></tr>`).join("");
+    const laender = Object.entries(lr).sort((a, b) => a[0].localeCompare(b[0]));
+    const nameVon = code => ({ "DE-BW": "Baden-Württemberg", "DE-BY": "Bayern", "DE-BE": "Berlin", "DE-BB": "Brandenburg", "DE-HB": "Bremen", "DE-HH": "Hamburg", "DE-HE": "Hessen", "DE-MV": "Mecklenburg-Vorpommern", "DE-NI": "Niedersachsen", "DE-NW": "Nordrhein-Westfalen", "DE-RP": "Rheinland-Pfalz", "DE-SL": "Saarland", "DE-SN": "Sachsen", "DE-ST": "Sachsen-Anhalt", "DE-SH": "Schleswig-Holstein", "DE-TH": "Thüringen" })[code] || code;
+    const sitze = bt.sitze.reduce((a, s) => a + s[1], 0);
+    return `<div class="grid">${panel({ code: "BT", titel: "Bundestag", sub: esc(bt.stand), breite: "w4", body: `<table class="tab"><tbody>${bt.sitze.map(([p, k]) => `<tr><td style="text-align:left">${esc(p)}${bt.regierung.includes(p) ? " <span class=\"n\">Regierung</span>" : ""}</td><td>${k}</td></tr>`).join("")}<tr><td style="text-align:left"><b>Summe</b></td><td><b>${sitze}</b></td></tr></tbody></table>`,
+        fuss: `Sitzverteilung nach der Wahl, Quelle <a class="flink" href="${esc(bt.quelle)}" target="_blank" rel="noopener">Bundeswahlleiterin</a>.` })}
+      ${um.Bundestag ? panel({ code: "UMF", titel: "Jüngste Umfrage Bundestag", sub: `${esc(um.Bundestag.institut)}, ${esc(datum(um.Bundestag.datum))}`, breite: "w4", body: `<table class="tab"><tbody>${balken(um.Bundestag.werte)}</tbody></table>`, fuss: `DAWUM (${esc(de.umfragen.lizenz)}), ${esc(um.Bundestag.befragte || "")} Befragte.` }) : ""}
+      ${panel({ code: "LDR", titel: "Länder", sub: "Regierungschef, jüngste Landtagsumfrage", breite: "w12", body: `<table class="tab"><thead><tr><th style="text-align:left">Land</th><th style="text-align:left">Regierungschef</th><th style="text-align:left">Partei</th><th style="text-align:left">BTW 2025 stärkste Partei</th><th style="text-align:left">jüngste Landtagsumfrage</th></tr></thead><tbody>
+        ${laender.map(([c, l]) => { const n = nameVon(c), w = btw[n] || {}, s = Object.entries(w)[0], u = um[n]; return `<tr><td style="text-align:left">${esc(n)}</td><td style="text-align:left;font-family:var(--sans)">${esc(l.regierungschef)}</td><td style="text-align:left" class="n">${esc((l.parteien || []).join(", "))}</td><td style="text-align:left">${s ? `${esc(s[0])} ${f1.format(s[1])} %` : "–"}</td><td style="text-align:left">${u ? `${u.werte.slice(0, 3).map(([p, v]) => `${esc(p)} ${f0.format(v)}`).join(" · ")} <span class="n">${esc(u.institut)}, ${esc(datum(u.datum))}</span>` : "–"}</td></tr>`; }).join("")}</tbody></table>${welt("politik")}`,
+        fuss: "Regierungschefs laut Wikidata; Bundestagswahl 2025 nach Ländern (Zweitstimmen, Bundeswahlleiterin, Datenlizenz Deutschland 2.0); Umfragen DAWUM (ODbL). Ergebnisse der letzten Landtagswahlen und Koalitionen sind noch offen." })}</div>`;
+  }
+  return { viewUeb, viewWahlen, viewDe };
+})();
+
+/* ---------- Börse: Zinsen, Devisen, Rohstoffe (Reiter BÖR, F6) aus data/boerse_welt.json (boerse_welt.py) ---------- */
+const FIN = (() => {
+  let B = null;
+  const lade = () => { if (B === null) { try { B = JSON.parse(document.getElementById("boerse-welt-daten").textContent); } catch { B = false; } } return B; };
+  const vz = v => v == null ? "–" : `<span class="${v >= 0 ? "pos" : "neg"}">${v > 0 ? "+" : ""}${f1.format(v * 100)} %</span>`;
+  function view() {
+    const d = lade(); if (!d) return `<div class="grid">${panel({ code: "ZIN", titel: "Zinsen, Devisen, Rohstoffe", sub: "keine Daten", body: `<p class="n">Keine Daten im Build (app/boerse_welt.py).</p>` })}</div>`;
+    const nm = i => i === "XM" ? "Euroraum" : HDL.name(i);
+    const letzt = l => l[l.length - 1];
+    const tab = (o, titel) => `<table class="tab"><thead><tr><th style="text-align:left">Land</th><th>${titel}</th><th>vor 1 J.</th><th>Stand</th></tr></thead><tbody>${Object.entries(o).sort((a, b) => letzt(b[1])[1] - letzt(a[1])[1]).map(([i, l]) => `<tr><td style="text-align:left">${esc(nm(i))}</td><td>${f2.format(letzt(l)[1])} %</td><td class="n">${l.length > 12 ? f2.format(l[l.length - 13][1]) + " %" : "–"}</td><td class="n">${esc(letzt(l)[0])}</td></tr>`).join("")}</tbody></table>`;
+    return `<div class="grid">${panel({ code: "LZI", titel: "Leitzinsen", sub: `${Object.keys(d.leitzins).length} Zentralbanken`, breite: "w4", body: tab(d.leitzins, "Leitzins"), fuss: `<a class="flink" href="${esc(d.quellen.leitzins.url)}" target="_blank" rel="noopener">${esc(d.quellen.leitzins.name)}</a>` })}
+      ${panel({ code: "R10", titel: "Rendite 10-jähriger Staatsanleihen", sub: `${Object.keys(d.rendite10).length} Länder`, breite: "w4", body: tab(d.rendite10, "Rendite"), fuss: esc(d.quellen.rendite10.name) })}
+      ${panel({ code: "DEV", titel: "Devisen und Rohstoffe", sub: `Abruf ${esc(d.abruf)}`, breite: "w4", body: `<table class="tab"><thead><tr><th style="text-align:left">1 EUR =</th><th>Kurs</th><th>zum USD lfd. J.</th></tr></thead><tbody>${Object.entries(d.devisen).map(([w, x]) => `<tr><td style="text-align:left">${esc(w)}</td><td>${f2.format(x.je_eur)}</td><td>${w === "USD" ? `EUR ${vz(-x.eur_ytd)}` : vz(x.usd_ytd)}</td></tr>`).join("")}</tbody></table>
+        <table class="tab" style="margin-top:10px"><thead><tr><th style="text-align:left">Rohstoff</th><th>Preis</th><th>lfd. J.</th><th>1 J.</th></tr></thead><tbody>${(d.rohstoffe || []).map(r => `<tr><td style="text-align:left">${esc(r.name)} <span class="n">${esc(r.einheit)}</span></td><td>${f2.format(r.wert)}</td><td>${vz(r.ytd)}</td><td>${vz(r.r1j)}</td></tr>`).join("")}</tbody></table>${typeof GLOBUS !== "undefined" ? `<p><a class="flink" href="#globus-boerse">◉ Auf der Weltkugel zeigen</a></p>` : ""}`,
+        fuss: "EZB-Referenzkurse; Rohstoffe über FRED (EIA, IMF). Gold ohne Schlüssel nicht frei verfügbar." })}</div>`;
+  }
+  return { view };
 })();

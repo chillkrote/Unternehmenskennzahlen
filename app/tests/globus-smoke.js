@@ -14,6 +14,11 @@ const path = require('node:path');
   await page.click('[data-gkform="handel"]');
   await page.evaluate(() => GLOBUS.landWaehlen('DE')); await page.waitForTimeout(200);
   if (!(await page.locator('#gk-seite').innerText()).toLowerCase().includes('zollsatz')) throw Error('Zollsatz fehlt in der Darstellung Handel');
+  // Börse, Unternehmen, Politik: Deutschland zeigt Finanzdaten, Unternehmen bzw. Regierung
+  for (const [f, wort] of [['boerse', 'leitzins'], ['unternehmen', 'unternehmen'], ['politik', 'regierungschef']]) {
+    await page.click(`[data-gkform="${f}"]`); await page.evaluate(() => GLOBUS.landWaehlen('DE')); await page.waitForTimeout(200);
+    if (!(await page.locator('#gk-seite').innerText()).toLowerCase().includes(wort)) throw Error(`${wort} fehlt in der Darstellung ${f}`);
+  }
   await page.evaluate(() => GLOBUS.landWaehlen(null));
   await page.click('[data-gkform="vwl"]');
   await page.fill('#gk-suchfeld', 'Deutschland'); await page.press('#gk-suchfeld', 'Enter');

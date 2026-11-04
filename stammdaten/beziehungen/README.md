@@ -7,6 +7,7 @@ Tochter) ausgewählt wird: Bögen vom Hauptsitz zu den Standorten, Pfeile in Lie
 Filter, Standortdetail und Quellen.
 
 Erstes Beispiel: `daten/U000712_volkswagen.json` (Volkswagen Konzern, Berichtsjahr 2025).
+Was in Berichten und weiteren Quellen zu suchen ist: `CHECKLISTE.md`.
 
 ## Neues Unternehmen anlegen
 

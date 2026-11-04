@@ -163,11 +163,7 @@ MDB = [('Alexander Wynaendts','Air France-KLM Group S.A.','Member Board of Direc
 for n,g,f,gl in MDB: X(DB,n,'b' if 'Board of Directors' in f else 'a',g,'',f,gl,57 if n in('Florian Haggenmiller','Timo Heider','John Alexander Thain','Jürgen Tögel','Michele Trogni','Dr. Dagmar Valcárcel','Dr. Theodor Weimer','Frank Witter') else (58 if 'Winkeljohann' in n else 56))
 K(DB,'ar_gewerkschaftsvertreter_zahl',3,'Personen',57,'Duscheck, Haggenmiller (ver.di) und Szukalski (DBV) lt. Funktionsbezeichnung')
 K(DB,'ar_betriebsraete_zahl',6,'Personen',57,'Staff Council Members (Schulze, Bleidt, Eifert, Fieber, Heider, Tögel)')
-K(DB,'ar_arbeitnehmervertreter_zahl','','Personen',57,'im Jahresabschluss nicht ausgewiesen (Mitbestimmung nach MitbestG üblich: Hälfte der Sitze); Corporate-Governance-Erklärung ausstehend')
 K(DB,'vorstand_mitglieder_zahl',12,'Personen',53,'im GJ2025 tätig gewesen (inkl. 2 Ausgeschiedene); Stand 31.12.2025: 10 Mitglieder (Akram seit 1.1.2026)')
-K(DB,'vorstand_frauen_zahl','','Personen',53,'im Jahresabschluss nicht angegeben; Corporate-Governance-Bericht ausstehend')
-K(DB,'ar_frauen_zahl','','Personen',56,'im Jahresabschluss nicht angegeben; Corporate-Governance-Bericht ausstehend')
-K(DB,'pay_ratio','','',51,'im Jahresabschluss nicht angegeben; Vergütungsbericht ausstehend')
 verg += [dict(unternehmen_id=DB[1], gj=2025, gremium='Vorstand', person_id='', name='Gesamt (alle Mitglieder)', betrag_tsd_eur=56173.105, art='Gesamtvergütung (€ 56.173.105)', quelle_dokument=DB[0], seite=51, bemerkung='Vorjahr 50.394.830 €'),
  dict(unternehmen_id=DB[1], gj=2025, gremium='Vorstand', person_id='', name='Zahlungen an ehemalige Mitglieder', betrag_tsd_eur=100496.514, art='Zahlungen ehemalige Mitglieder (€ 100.496.514)', quelle_dokument=DB[0], seite=51, bemerkung='Vorjahr 35.841.194 €'),
  dict(unternehmen_id=DB[1], gj=2025, gremium='Aufsichtsrat', person_id='', name='Gesamt (alle Mitglieder)', betrag_tsd_eur=7712.5, art='Gesamtvergütung (€ 7.712.500)', quelle_dokument=DB[0], seite=51, bemerkung='Vorjahr 7.775.000 €')]

@@ -1,0 +1,1127 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U000065",
+ "name": "Bayer-Konzern",
+ "stand": "2026-11-04",
+ "berichtsjahr": 2025,
+ "hinweis": "Erfasst sind die im Geschäftsbericht 2025 genannten ausgewählten Standorte (Verwaltung, F&E, Produktion je Division), die Standorte der wesentlichen Investitionsprojekte, die Plattformgesellschaften und die wichtigsten Kooperationspartner mit Produktumsatz, nicht alle 272 Gesellschaften und 485 Produktionsstandorte. Lieferströme zwischen Standorten veröffentlicht Bayer nicht. Kein Einzelkunde erreicht 10 % des Umsatzes; Großaktionäre nennt der Bericht nicht (die Aufstellung Bayer-Shareownership war für automatische Abrufe gesperrt). Der Bericht wurde aus einer textgleichen PDF-Kopie gelesen, weil bayer.com automatische Downloads ablehnt; verlinkt ist die offizielle Berichtsseite. Partner-Mengen sind der Bayer-Umsatz mit dem jeweiligen Produkt.",
+ "quellen": {
+  "gb_standorte": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 31: Ausgewählte Standorte 2025",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_plattform": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 34 und 45: Plattformgesellschaften BlueRock, AskBio, Vividion",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_koop_cs": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 44: Wichtige Kooperationen Crop Science",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_koop_ph": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 54: Wichtige Kooperationen Pharmaceuticals",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_invest": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 77: Wesentliche Investitionen in Sachanlagen",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_personal": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 202: Beschäftigte nach Altersgruppe und Region",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_regionen": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 291: Informationen nach Regionen (Konzernanhang)",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_umsatz": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 292: Umsatz nach Geschäftseinheiten und Produkten",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_konsolidierung": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 31 und 295: Konsolidierungskreis, Erwerb Bayer Zydus",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  }
+ },
+ "standorte": [
+  {
+   "id": "lev",
+   "name": "Bayer AG, Konzernzentrale Leverkusen",
+   "gesellschaft": "Bayer AG",
+   "marke": "Konzern",
+   "unternehmen_id": "U000065",
+   "art": "hauptsitz",
+   "ort": "Leverkusen",
+   "land": "DE",
+   "taetigkeit": "Sitz der Bayer AG (Holding) und Pharma-Produktionsstandort: Neubau einer Anlage für feste Darreichungsformen neuer Präparate, Integration der Herstellung von Prüfpräparaten, Modernisierung der Produktion.",
+   "kennzahlen": [
+    {
+     "name": "Umsatz Konzern",
+     "wert": 45575,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Beschäftigte Konzern",
+     "wert": 89237,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "gb_personal"
+    },
+    {
+     "name": "Konsolidierte Gesellschaften",
+     "wert": 272,
+     "einheit": "Gesellschaften in rund 80 Ländern",
+     "jahr": 2025,
+     "quelle": "gb_standorte"
+    },
+    {
+     "name": "Umsatz Crop Science",
+     "wert": 21622,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_umsatz"
+    },
+    {
+     "name": "Umsatz Pharmaceuticals",
+     "wert": 17829,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_umsatz"
+    },
+    {
+     "name": "Umsatz Consumer Health",
+     "wert": 5802,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_umsatz"
+    },
+    {
+     "name": "Umsatz Europa/Nahost/Afrika",
+     "wert": 13501,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz darunter Deutschland",
+     "wert": 2584,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz Nordamerika",
+     "wert": 16725,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz darunter USA",
+     "wert": 15098,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz Asien/Pazifik",
+     "wert": 7518,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz darunter China",
+     "wert": 3468,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz Lateinamerika",
+     "wert": 7831,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz darunter Brasilien",
+     "wert": 4376,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Beschäftigte Europa/Nahost/Afrika",
+     "wert": 39258,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "gb_personal"
+    },
+    {
+     "name": "Beschäftigte Nordamerika",
+     "wert": 18710,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "gb_personal"
+    },
+    {
+     "name": "Beschäftigte Lateinamerika",
+     "wert": 12004,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "gb_personal"
+    },
+    {
+     "name": "Beschäftigte Asien/Pazifik",
+     "wert": 19265,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "gb_personal"
+    }
+   ],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 51.0325,
+   "lon": 6.9881,
+   "koordinate": "ort"
+  },
+  {
+   "id": "monheim",
+   "name": "Crop Science, Monheim am Rhein",
+   "marke": "Crop Science",
+   "art": "hauptsitz_tochter",
+   "ort": "Monheim am Rhein",
+   "land": "DE",
+   "taetigkeit": "Verwaltungs- sowie Forschungs- und Entwicklungsstandort der Division Crop Science; Ausbau der F&E-Einrichtungen läuft.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 51.0909,
+   "lon": 6.8812,
+   "koordinate": "ort"
+  },
+  {
+   "id": "stlouis",
+   "name": "Crop Science, St. Louis (Monsanto)",
+   "gesellschaft": "Monsanto Company",
+   "marke": "Crop Science",
+   "art": "hauptsitz_tochter",
+   "ort": "St. Louis",
+   "land": "US",
+   "taetigkeit": "Verwaltungsstandort in den USA; Sitz der Tochter Monsanto Company (Glyphosat-Klagen). Der Campus Creve Coeur wird zusammengelegt, der Betrieb geht an den Campus Chesterfield über.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 38.6254,
+   "lon": -90.19,
+   "koordinate": "ort"
+  },
+  {
+   "id": "berlin",
+   "name": "Pharmaceuticals, Berlin",
+   "marke": "Pharmaceuticals",
+   "art": "hauptsitz_tochter",
+   "ort": "Berlin",
+   "land": "DE",
+   "taetigkeit": "Verwaltungs-, F&E- und Produktionsstandort der Division Pharmaceuticals; Modernisierung der Produktion mit Schwerpunkt Radiologie und andere Parenteralia.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 52.5174,
+   "lon": 13.3951,
+   "koordinate": "ort"
+  },
+  {
+   "id": "basel",
+   "name": "Consumer Health, Basel",
+   "marke": "Consumer Health",
+   "art": "hauptsitz_tochter",
+   "ort": "Basel",
+   "land": "CH",
+   "taetigkeit": "Verwaltungs- sowie F&E-Standort; Consumer Health (rezeptfreie Präparate) hat hier seinen Schwerpunkt.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 47.5581,
+   "lon": 7.5878,
+   "koordinate": "ort"
+  },
+  {
+   "id": "chesterfield",
+   "name": "F&E Crop Science, Chesterfield",
+   "marke": "Crop Science",
+   "art": "entwicklung",
+   "ort": "Chesterfield",
+   "land": "US",
+   "taetigkeit": "Forschungs- und Entwicklungscampus Crop Science bei St. Louis; übernimmt den Betrieb vom Campus Creve Coeur.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 38.6631,
+   "lon": -90.5771,
+   "koordinate": "ort"
+  },
+  {
+   "id": "lyon",
+   "name": "F&E Crop Science, Lyon",
+   "marke": "Crop Science",
+   "art": "entwicklung",
+   "ort": "Lyon",
+   "land": "FR",
+   "taetigkeit": "Forschungs- und Entwicklungsstandort Crop Science.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 45.7578,
+   "lon": 4.832,
+   "koordinate": "ort"
+  },
+  {
+   "id": "whippany",
+   "name": "F&E Pharmaceuticals und Consumer Health, Whippany",
+   "marke": "Pharmaceuticals",
+   "art": "entwicklung",
+   "ort": "Whippany",
+   "land": "US",
+   "taetigkeit": "Forschungs- und Entwicklungsstandort für Pharmaceuticals und Consumer Health in den USA.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 40.8233,
+   "lon": -74.4138,
+   "koordinate": "ort"
+  },
+  {
+   "id": "wuppertal",
+   "name": "F&E Pharmaceuticals, Wuppertal",
+   "marke": "Pharmaceuticals",
+   "art": "entwicklung",
+   "ort": "Wuppertal",
+   "land": "DE",
+   "taetigkeit": "Forschungs- und Entwicklungsstandort Pharmaceuticals.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 51.264,
+   "lon": 7.178,
+   "koordinate": "ort"
+  },
+  {
+   "id": "gaillard",
+   "name": "F&E Consumer Health, Gaillard",
+   "marke": "Consumer Health",
+   "art": "entwicklung",
+   "ort": "Gaillard",
+   "land": "FR",
+   "taetigkeit": "Forschungs- und Entwicklungsstandort Consumer Health.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 46.1838,
+   "lon": 6.2112,
+   "koordinate": "ort"
+  },
+  {
+   "id": "dormagen",
+   "name": "Produktion Crop Science, Dormagen",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Dormagen",
+   "land": "DE",
+   "taetigkeit": "Wirkstoffproduktion für Pflanzenschutz; Ausbau der Fungizid-Kapazitäten läuft.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 51.0934,
+   "lon": 6.8416,
+   "koordinate": "ort"
+  },
+  {
+   "id": "luling",
+   "name": "Produktion Crop Science, Luling",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Luling",
+   "land": "US",
+   "taetigkeit": "Pflanzenschutz-Produktion in Louisiana; neues Verwaltungsgebäude im Bau.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 29.9321,
+   "lon": -90.3665,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vapi",
+   "name": "Produktion Crop Science, Vapi",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Vapi",
+   "land": "IN",
+   "taetigkeit": "Pflanzenschutz-Produktion in Indien.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 20.3735,
+   "lon": 72.9084,
+   "koordinate": "ort"
+  },
+  {
+   "id": "soda_springs",
+   "name": "Crop Science, Soda Springs",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Soda Springs",
+   "land": "US",
+   "taetigkeit": "Gewinnung eines Rohstoffs für die Glyphosat-Herstellung (laufendes Investitionsprojekt); Nachhaltigkeitsmaßnahmen 2025 abgeschlossen.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": 42.6546,
+   "lon": -111.6038,
+   "koordinate": "ort"
+  },
+  {
+   "id": "hangzhou",
+   "name": "Crop Science, Hangzhou",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Hangzhou",
+   "land": "CN",
+   "taetigkeit": "Verlagerung eines Produktionsstandorts 2025 abgeschlossen.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": 30.249,
+   "lon": 120.2052,
+   "koordinate": "ort"
+  },
+  {
+   "id": "lusaka",
+   "name": "Saatgutproduktion, Lusaka",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Lusaka",
+   "land": "ZM",
+   "taetigkeit": "Neuer Standort für mehr Saatgutkapazität, 2025 fertiggestellt.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": -15.4163,
+   "lon": 28.2818,
+   "koordinate": "ort"
+  },
+  {
+   "id": "pochuyki",
+   "name": "Maissaatgut, Pochuiky",
+   "marke": "Crop Science",
+   "art": "werk",
+   "ort": "Pochuiky",
+   "land": "UA",
+   "taetigkeit": "Ausbau der Maissaatgut-Produktion, 2025 abgeschlossen.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": 49.9408,
+   "lon": 29.6329,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bergkamen",
+   "name": "Produktion Pharmaceuticals, Bergkamen",
+   "marke": "Pharmaceuticals",
+   "art": "werk",
+   "ort": "Bergkamen",
+   "land": "DE",
+   "taetigkeit": "Wirkstoffproduktion der Division Pharmaceuticals.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 51.6149,
+   "lon": 7.6363,
+   "koordinate": "ort"
+  },
+  {
+   "id": "weimar",
+   "name": "Produktion Pharmaceuticals, Weimar",
+   "marke": "Pharmaceuticals",
+   "art": "werk",
+   "ort": "Weimar",
+   "land": "DE",
+   "taetigkeit": "Pharma-Produktion; Modernisierung im Produktionsnetz.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": 50.9793,
+   "lon": 11.3298,
+   "koordinate": "ort"
+  },
+  {
+   "id": "turku",
+   "name": "Produktion Pharmaceuticals, Turku",
+   "marke": "Pharmaceuticals",
+   "art": "werk",
+   "ort": "Turku",
+   "land": "FI",
+   "taetigkeit": "Pharma-Produktion; Modernisierung im Produktionsnetz.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": 60.4516,
+   "lon": 22.267,
+   "koordinate": "ort"
+  },
+  {
+   "id": "grenzach",
+   "name": "Produktion Consumer Health, Grenzach",
+   "marke": "Consumer Health",
+   "art": "werk",
+   "ort": "Grenzach-Wyhlen",
+   "land": "DE",
+   "taetigkeit": "Produktion rezeptfreier Präparate.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 47.5529,
+   "lon": 7.6738,
+   "koordinate": "ort"
+  },
+  {
+   "id": "lerma",
+   "name": "Produktion Consumer Health, Lerma",
+   "marke": "Consumer Health",
+   "art": "werk",
+   "ort": "Lerma",
+   "land": "MX",
+   "taetigkeit": "Produktion rezeptfreier Präparate; Kapazitätsausbau läuft.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ],
+   "lat": 19.3264,
+   "lon": -99.4601,
+   "koordinate": "ort"
+  },
+  {
+   "id": "myerstown",
+   "name": "Produktion Consumer Health, Myerstown",
+   "marke": "Consumer Health",
+   "art": "werk",
+   "ort": "Myerstown",
+   "land": "US",
+   "taetigkeit": "Produktion rezeptfreier Präparate in den USA.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_standorte"
+   ],
+   "lat": 40.3753,
+   "lon": -76.3035,
+   "koordinate": "ort"
+  },
+  {
+   "id": "qidong",
+   "name": "Consumer Health, Qidong",
+   "marke": "Consumer Health",
+   "art": "werk",
+   "ort": "Qidong",
+   "land": "CN",
+   "taetigkeit": "Verlagerung bestehender Produktion an einen neuen Standort in Qidong läuft.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_invest"
+   ],
+   "lat": 31.7951,
+   "lon": 121.6509,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bluerock",
+   "name": "BlueRock Therapeutics",
+   "gesellschaft": "BlueRock Therapeutics LP",
+   "marke": "Pharmaceuticals",
+   "art": "hauptsitz_tochter",
+   "ort": "Cambridge",
+   "land": "US",
+   "taetigkeit": "Tochter für Zelltherapien (übernommen 2019).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_plattform"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 42.3656,
+   "lon": -71.104,
+   "koordinate": "ort"
+  },
+  {
+   "id": "askbio",
+   "name": "Asklepios BioPharmaceutical (AskBio)",
+   "gesellschaft": "Asklepios BioPharmaceutical, Inc.",
+   "marke": "Pharmaceuticals",
+   "art": "hauptsitz_tochter",
+   "ort": "Research Triangle Park",
+   "land": "US",
+   "taetigkeit": "Tochter für Gentherapien (übernommen 2020).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_plattform"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 35.8924,
+   "lon": -78.8659,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vividion",
+   "name": "Vividion Therapeutics",
+   "gesellschaft": "Vividion Therapeutics, Inc.",
+   "marke": "Pharmaceuticals",
+   "art": "hauptsitz_tochter",
+   "ort": "San Diego",
+   "land": "US",
+   "taetigkeit": "Tochter für präzise niedermolekulare Wirkstoffe (Chemoproteomik, übernommen 2021).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_plattform"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 32.7157,
+   "lon": -117.1638,
+   "koordinate": "ort"
+  },
+  {
+   "id": "regeneron",
+   "name": "Regeneron Pharmaceuticals",
+   "gesellschaft": "Regeneron Pharmaceuticals, Inc.",
+   "marke": "Partner",
+   "unternehmen_id": "U004884",
+   "art": "partner",
+   "ort": "Tarrytown",
+   "land": "US",
+   "taetigkeit": "Kooperations- und Lizenzvertrag: gemeinsame Entwicklung und Vermarktung von Eylea 2 mg und 8 mg (Bayer vermarktet außerhalb der USA).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 41.0762,
+   "lon": -73.8587,
+   "koordinate": "ort"
+  },
+  {
+   "id": "janssen",
+   "name": "Janssen Research & Development (Johnson & Johnson)",
+   "gesellschaft": "Janssen Research & Development, LLC",
+   "marke": "Partner",
+   "unternehmen_id": "U000748",
+   "art": "partner",
+   "ort": "New Brunswick",
+   "land": "US",
+   "taetigkeit": "Entwicklung und Vermarktung von Xarelto (Rivaroxaban).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.4936,
+   "lon": -74.4436,
+   "koordinate": "ort"
+  },
+  {
+   "id": "orion",
+   "name": "Orion Corporation",
+   "gesellschaft": "Orion Corporation",
+   "marke": "Partner",
+   "unternehmen_id": "U002743",
+   "art": "partner",
+   "ort": "Espoo",
+   "land": "FI",
+   "taetigkeit": "Entwicklung und Vermarktung von Darolutamid (Nubeqa) gegen Prostatakrebs.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 60.205,
+   "lon": 24.656,
+   "koordinate": "ort"
+  },
+  {
+   "id": "merck",
+   "name": "Merck & Co.",
+   "gesellschaft": "Merck & Co., Inc.",
+   "marke": "Partner",
+   "unternehmen_id": "U004798",
+   "art": "partner",
+   "ort": "Rahway",
+   "land": "US",
+   "taetigkeit": "Entwicklungs- und Vermarktungskooperation zu sGC-Modulatoren (u. a. Adempas).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.6082,
+   "lon": -74.2776,
+   "koordinate": "ort"
+  },
+  {
+   "id": "microsoft",
+   "name": "Microsoft (Cloud-Werkzeuge Landwirtschaft)",
+   "gesellschaft": "Microsoft Corporation",
+   "marke": "Partner",
+   "unternehmen_id": "U000745",
+   "art": "partner",
+   "ort": "Redmond",
+   "land": "US",
+   "taetigkeit": "Strategische Partnerschaft: neue cloudbasierte B2B-Werkzeuge und Dienste für Landwirtschaft und angrenzende Branchen.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_cs"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 47.6694,
+   "lon": -122.1239,
+   "koordinate": "ort"
+  },
+  {
+   "id": "basf",
+   "name": "BASF SE (Forschungskooperation Mais)",
+   "gesellschaft": "BASF SE",
+   "marke": "Partner",
+   "unternehmen_id": "U000061",
+   "art": "partner",
+   "ort": "Ludwigshafen am Rhein",
+   "land": "DE",
+   "taetigkeit": "Gemeinsam finanzierte Kooperation zur Entwicklung transgener Maissorten mit stabilerem Ertrag.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_cs"
+   ],
+   "lat": 49.4704,
+   "lon": 8.4382,
+   "koordinate": "ort"
+  },
+  {
+   "id": "ginkgo",
+   "name": "Ginkgo Bioworks",
+   "gesellschaft": "Ginkgo Bioworks, Inc.",
+   "marke": "Partner",
+   "art": "partner",
+   "ort": "Boston",
+   "land": "US",
+   "taetigkeit": "Mehrjährige Zusammenarbeit als Ankerpartner der erweiterten Plattform für biologische Pflanzenmittel (Stickstofffixierung), im Oktober 2025 verlängert.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_koop_cs"
+   ],
+   "hinweis": "Firmensitz im Bericht nur als Land genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 42.3588,
+   "lon": -71.0578,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "lev",
+   "nach": "monheim",
+   "art": "tochter",
+   "text": "Division Crop Science (Verwaltung und F&E).",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "lev",
+   "nach": "stlouis",
+   "art": "tochter",
+   "text": "Crop Science in den USA, Tochter Monsanto Company.",
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "lev",
+   "nach": "berlin",
+   "art": "tochter",
+   "text": "Division Pharmaceuticals (Verwaltung, F&E, Produktion).",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "lev",
+   "nach": "basel",
+   "art": "tochter",
+   "text": "Division Consumer Health (Verwaltung, F&E).",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "stlouis",
+   "nach": "chesterfield",
+   "art": "produktion",
+   "text": "F&E-Campus Crop Science.",
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "monheim",
+   "nach": "lyon",
+   "art": "produktion",
+   "text": "F&E-Standort Crop Science.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "whippany",
+   "art": "produktion",
+   "text": "F&E-Standort Pharmaceuticals und Consumer Health.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "wuppertal",
+   "art": "produktion",
+   "text": "F&E-Standort Pharmaceuticals.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "basel",
+   "nach": "gaillard",
+   "art": "produktion",
+   "text": "F&E-Standort Consumer Health.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "monheim",
+   "nach": "dormagen",
+   "art": "produktion",
+   "text": "Produktionsstandort Crop Science.",
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "stlouis",
+   "nach": "luling",
+   "art": "produktion",
+   "text": "Produktionsstandort Crop Science.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "monheim",
+   "nach": "vapi",
+   "art": "produktion",
+   "text": "Produktionsstandort Crop Science.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "stlouis",
+   "nach": "soda_springs",
+   "art": "produktion",
+   "text": "Rohstoff für Glyphosat (Investitionsprojekt).",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "monheim",
+   "nach": "hangzhou",
+   "art": "produktion",
+   "text": "Verlagerter Produktionsstandort Crop Science.",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "monheim",
+   "nach": "lusaka",
+   "art": "produktion",
+   "text": "Neuer Saatgutstandort.",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "monheim",
+   "nach": "pochuyki",
+   "art": "produktion",
+   "text": "Maissaatgut-Produktion.",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "bergkamen",
+   "art": "produktion",
+   "text": "Wirkstoffproduktion Pharmaceuticals.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "lev",
+   "art": "produktion",
+   "text": "Pharma-Produktion in Leverkusen (neue Anlage für feste Darreichungsformen).",
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "weimar",
+   "art": "produktion",
+   "text": "Pharma-Produktion, Modernisierung.",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "turku",
+   "art": "produktion",
+   "text": "Pharma-Produktion, Modernisierung.",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "basel",
+   "nach": "grenzach",
+   "art": "produktion",
+   "text": "Produktion Consumer Health.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "basel",
+   "nach": "lerma",
+   "art": "produktion",
+   "text": "Produktion Consumer Health, Kapazitätsausbau.",
+   "quellen": [
+    "gb_standorte",
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "basel",
+   "nach": "myerstown",
+   "art": "produktion",
+   "text": "Produktion Consumer Health.",
+   "quellen": [
+    "gb_standorte"
+   ]
+  },
+  {
+   "von": "basel",
+   "nach": "qidong",
+   "art": "produktion",
+   "text": "Neuer Produktionsstandort Consumer Health (Verlagerung läuft).",
+   "quellen": [
+    "gb_invest"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "bluerock",
+   "art": "tochter",
+   "text": "Plattformgesellschaft Zelltherapie.",
+   "quellen": [
+    "gb_plattform"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "askbio",
+   "art": "tochter",
+   "text": "Plattformgesellschaft Gentherapie.",
+   "quellen": [
+    "gb_plattform"
+   ]
+  },
+  {
+   "von": "berlin",
+   "nach": "vividion",
+   "art": "tochter",
+   "text": "Plattformgesellschaft niedermolekulare Wirkstoffe.",
+   "quellen": [
+    "gb_plattform"
+   ]
+  },
+  {
+   "von": "regeneron",
+   "nach": "berlin",
+   "art": "partner",
+   "text": "Eylea: Bayer-Umsatz (außerhalb der USA) 2025.",
+   "menge": {
+    "wert": 3110,
+    "einheit": "Mio. € Bayer-Umsatz",
+    "jahr": 2025
+   },
+   "gut": "Lizenz Eylea (Aflibercept)",
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ]
+  },
+  {
+   "von": "janssen",
+   "nach": "berlin",
+   "art": "partner",
+   "text": "Xarelto: Bayer-Umsatz 2025.",
+   "menge": {
+    "wert": 2344,
+    "einheit": "Mio. € Bayer-Umsatz",
+    "jahr": 2025
+   },
+   "gut": "Xarelto (Rivaroxaban)",
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ]
+  },
+  {
+   "von": "orion",
+   "nach": "berlin",
+   "art": "partner",
+   "text": "Nubeqa: Bayer-Umsatz 2025.",
+   "menge": {
+    "wert": 2385,
+    "einheit": "Mio. € Bayer-Umsatz",
+    "jahr": 2025
+   },
+   "gut": "Nubeqa (Darolutamid)",
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ]
+  },
+  {
+   "von": "merck",
+   "nach": "berlin",
+   "art": "partner",
+   "text": "sGC-Kooperation; Adempas-Umsatz Bayer 2025.",
+   "menge": {
+    "wert": 745,
+    "einheit": "Mio. € Bayer-Umsatz",
+    "jahr": 2025
+   },
+   "gut": "Adempas (Riociguat)",
+   "quellen": [
+    "gb_koop_ph",
+    "gb_umsatz"
+   ]
+  },
+  {
+   "von": "microsoft",
+   "nach": "monheim",
+   "art": "partner",
+   "text": "Cloud-Werkzeuge für die Landwirtschaft.",
+   "quellen": [
+    "gb_koop_cs"
+   ]
+  },
+  {
+   "von": "basf",
+   "nach": "monheim",
+   "art": "partner",
+   "text": "Forschungskooperation transgener Mais (gemeinsam finanziert).",
+   "quellen": [
+    "gb_koop_cs"
+   ]
+  },
+  {
+   "von": "ginkgo",
+   "nach": "monheim",
+   "art": "partner",
+   "text": "Biologische Pflanzenmittel (Stickstofffixierung).",
+   "quellen": [
+    "gb_koop_cs"
+   ]
+  }
+ ]
+}

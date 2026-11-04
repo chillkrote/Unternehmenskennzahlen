@@ -1,0 +1,540 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U000745",
+ "name": "Microsoft",
+ "stand": "2026-11-04",
+ "berichtsjahr": 2025,
+ "hinweis": "Geschäftsjahr 2025 endete am 30.6.2025. Erfasst sind Hauptsitz, die wesentlichen Tochtergesellschaften aus Anlage 21 des 10-K, die Beteiligungen an OpenAI und Anthropic, Partner und Großaktionäre. Die Standorte der über 400 Rechenzentren veröffentlicht Microsoft im 10-K nicht einzeln; größere eigene Auslandsflächen liegen laut 10-K in China, Indien, Irland und den Niederlanden (ohne Orte). Kein Kunde erreicht 10 % des Umsatzes; Gerätefertiger werden nicht namentlich genannt.",
+ "quellen": {
+  "k10": {
+   "titel": "Microsoft Form 10-K, Geschäftsjahr 2025 (bis 30.6.2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+   "herausgeber": "Microsoft Corporation",
+   "jahr": 2025,
+   "art": "geschaeftsbericht"
+  },
+  "ar": {
+   "titel": "Microsoft Annual Report 2025 (Aktionärsbrief)",
+   "url": "https://www.microsoft.com/investor/reports/ar25/index.html",
+   "herausgeber": "Microsoft Corporation",
+   "jahr": 2025,
+   "art": "geschaeftsbericht"
+  },
+  "proxy": {
+   "titel": "Microsoft Proxy Statement 2025 (DEF 14A), Principal Shareholders",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "herausgeber": "Microsoft Corporation",
+   "jahr": 2025,
+   "art": "geschaeftsbericht"
+  },
+  "openai": {
+   "titel": "The next chapter of the Microsoft–OpenAI partnership (28.10.2025)",
+   "url": "https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/",
+   "herausgeber": "Microsoft Corporation",
+   "jahr": 2025,
+   "art": "pressemitteilung"
+  },
+  "anthropic": {
+   "titel": "Microsoft, NVIDIA and Anthropic announce strategic partnerships (18.11.2025)",
+   "url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships",
+   "herausgeber": "Anthropic PBC",
+   "jahr": 2025,
+   "art": "pressemitteilung"
+  },
+  "bayer_gb": {
+   "titel": "Bayer Geschäftsbericht 2025, S. 44: Wichtige Kooperationen Crop Science",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  }
+ },
+ "standorte": [
+  {
+   "id": "redmond",
+   "name": "Microsoft, Hauptsitz Redmond",
+   "gesellschaft": "Microsoft Corporation",
+   "marke": "Konzern",
+   "unternehmen_id": "U000745",
+   "art": "hauptsitz",
+   "ort": "Redmond",
+   "land": "US",
+   "taetigkeit": "Sitz der Microsoft Corporation: rund 15 Mio. Quadratfuß im King County, davon rund 12 Mio. eigene Fläche auf rund 530 Acre Campus. Microsoft betreibt laut Aktionärsbrief mehr als 400 Rechenzentren in 70 Regionen.",
+   "kennzahlen": [
+    {
+     "name": "Umsatz",
+     "wert": 281724,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Productivity and Business Processes",
+     "wert": 120810,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Intelligent Cloud",
+     "wert": 106265,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz More Personal Computing",
+     "wert": 54649,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Microsoft Cloud",
+     "wert": 168900,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz Server und Cloud-Dienste (inkl. Azure)",
+     "wert": 98435,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz USA",
+     "wert": 144546,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Umsatz übrige Länder",
+     "wert": 137178,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Beschäftigte",
+     "wert": 228000,
+     "einheit": "Personen (rund)",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "davon in den USA",
+     "wert": 125000,
+     "einheit": "Personen (rund)",
+     "jahr": 2025,
+     "quelle": "k10"
+    },
+    {
+     "name": "Rechenzentren",
+     "wert": 400,
+     "einheit": "Rechenzentren (mehr als, in 70 Regionen)",
+     "jahr": 2025,
+     "quelle": "ar"
+    }
+   ],
+   "quellen": [
+    "k10",
+    "ar"
+   ],
+   "lat": 47.6694,
+   "lon": -122.1239,
+   "koordinate": "ort"
+  },
+  {
+   "id": "dublin",
+   "name": "Microsoft Ireland Operations (regionales Betriebszentrum)",
+   "gesellschaft": "Microsoft Ireland Operations Limited",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Dublin",
+   "land": "IE",
+   "taetigkeit": "Ausländisches regionales Betriebszentrum für Produktion und Vertrieb; erzielte 81 % des ausländischen Vorsteuergewinns. Weitere irische Töchter: Microsoft Ireland Research, Microsoft Global Finance.",
+   "kennzahlen": [
+    {
+     "name": "Anteil am ausländischen Vorsteuergewinn",
+     "wert": 81,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 53.3494,
+   "lon": -6.2606,
+   "koordinate": "ort"
+  },
+  {
+   "id": "linkedin",
+   "name": "LinkedIn",
+   "gesellschaft": "LinkedIn Corporation",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Sunnyvale",
+   "land": "US",
+   "taetigkeit": "Berufsnetzwerk (1,2 Mrd. Mitglieder laut Aktionärsbrief); Tochter LinkedIn Corporation, dazu LinkedIn Ireland.",
+   "kennzahlen": [
+    {
+     "name": "Umsatz LinkedIn",
+     "wert": 17812,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10",
+    "ar"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.3688,
+   "lon": -122.0363,
+   "koordinate": "ort"
+  },
+  {
+   "id": "activision",
+   "name": "Activision Blizzard",
+   "gesellschaft": "Activision Blizzard, Inc.",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Santa Monica",
+   "land": "US",
+   "taetigkeit": "Spielehersteller, übernommen am 13.10.2023 für 75,4 Mrd. US-$; Teil des Segments More Personal Computing.",
+   "kennzahlen": [
+    {
+     "name": "Umsatz Gaming (Microsoft gesamt)",
+     "wert": 23455,
+     "einheit": "Mio. US-$",
+     "jahr": 2025,
+     "quelle": "k10"
+    }
+   ],
+   "quellen": [
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 34.0195,
+   "lon": -118.4912,
+   "koordinate": "ort"
+  },
+  {
+   "id": "github",
+   "name": "GitHub",
+   "gesellschaft": "GitHub, Inc.",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "San Francisco",
+   "land": "US",
+   "taetigkeit": "Entwicklerplattform; GitHub Copilot hat laut Aktionärsbrief mehr als 20 Mio. Nutzer. Umsatz in „Azure und andere Cloud-Dienste“ enthalten.",
+   "kennzahlen": [],
+   "quellen": [
+    "k10",
+    "ar"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.7879,
+   "lon": -122.4075,
+   "koordinate": "ort"
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI Group PBC",
+   "gesellschaft": "OpenAI Group PBC",
+   "marke": "Beteiligungen und Kunden",
+   "art": "beteiligung",
+   "ort": "San Francisco",
+   "land": "US",
+   "taetigkeit": "Microsoft hält nach der Umstrukturierung rund 27 % (verwässert, Wert rund 135 Mrd. US-$); OpenAI kauft zusätzlich Azure-Dienste für 250 Mrd. US-$; Rechte am geistigen Eigentum bis 2032. Im 10-K: Finanzierungszusagen von insgesamt 13 Mrd. US-$, Bilanzierung at equity.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Microsoft (verwässert)",
+     "wert": 27,
+     "einheit": "% (rund)",
+     "jahr": 2025,
+     "quelle": "openai"
+    },
+    {
+     "name": "Wert der Beteiligung",
+     "wert": 135000,
+     "einheit": "Mio. US-$ (rund)",
+     "jahr": 2025,
+     "quelle": "openai"
+    }
+   ],
+   "quellen": [
+    "openai",
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 37.8279,
+   "lon": -122.3475,
+   "koordinate": "ort"
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "gesellschaft": "Anthropic PBC",
+   "marke": "Beteiligungen und Kunden",
+   "art": "kunde",
+   "ort": "San Francisco",
+   "land": "US",
+   "taetigkeit": "Kauft Azure-Rechenleistung für 30 Mrd. US-$; Microsoft sagt bis zu 5 Mrd. US-$ Investition zu.",
+   "kennzahlen": [],
+   "quellen": [
+    "anthropic"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "versatz": [
+    -0.06,
+    0.04
+   ],
+   "lat": 37.8279,
+   "lon": -122.4675,
+   "koordinate": "ort"
+  },
+  {
+   "id": "nvidia",
+   "name": "NVIDIA (Partnerschaft)",
+   "gesellschaft": "NVIDIA Corporation",
+   "marke": "Partner",
+   "unternehmen_id": "U004835",
+   "art": "partner",
+   "ort": "Santa Clara",
+   "land": "US",
+   "taetigkeit": "Strategische Partnerschaft mit Microsoft und Anthropic vom 18.11.2025; Rechenzentren hängen laut 10-K von GPUs ab.",
+   "kennzahlen": [],
+   "quellen": [
+    "anthropic",
+    "k10"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 37.3541,
+   "lon": -121.9552,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bayer",
+   "name": "Bayer Crop Science (Cloud-Werkzeuge Landwirtschaft)",
+   "gesellschaft": "Bayer AG",
+   "marke": "Beteiligungen und Kunden",
+   "unternehmen_id": "U000065",
+   "art": "kunde",
+   "ort": "Monheim am Rhein",
+   "land": "DE",
+   "taetigkeit": "Strategische Partnerschaft für cloudbasierte B2B-Werkzeuge in der Landwirtschaft (laut Bayer-Geschäftsbericht 2025).",
+   "kennzahlen": [],
+   "quellen": [
+    "bayer_gb"
+   ],
+   "lat": 51.0909,
+   "lon": 6.8812,
+   "koordinate": "ort"
+  },
+  {
+   "id": "vanguard",
+   "name": "The Vanguard Group",
+   "gesellschaft": "The Vanguard Group, Inc.",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Malvern",
+   "land": "US",
+   "taetigkeit": "Großaktionär (Schedule 13G/A vom 13.2.2024).",
+   "kennzahlen": [
+    {
+     "name": "Anteil an Microsoft",
+     "wert": 8.95,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "proxy"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.0362,
+   "lon": -75.5138,
+   "koordinate": "ort"
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock, Inc.",
+   "gesellschaft": "BlackRock, Inc.",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "New York",
+   "land": "US",
+   "taetigkeit": "Großaktionär (Schedule 13G/A vom 13.2.2024).",
+   "kennzahlen": [
+    {
+     "name": "Anteil an Microsoft",
+     "wert": 7.3,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "proxy"
+    }
+   ],
+   "quellen": [
+    "proxy"
+   ],
+   "hinweis": "Firmensitz nicht in der Quelle genannt; Ort ist der öffentlich bekannte Sitz der Gesellschaft.",
+   "lat": 40.7127,
+   "lon": -74.006,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "redmond",
+   "nach": "dublin",
+   "art": "tochter",
+   "text": "Regionales Betriebszentrum für Produktion und Vertrieb außerhalb der USA.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "redmond",
+   "nach": "linkedin",
+   "art": "tochter",
+   "text": "Tochter LinkedIn Corporation.",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "redmond",
+   "nach": "activision",
+   "art": "tochter",
+   "text": "Übernahme 2023 für 75,4 Mrd. US-$.",
+   "menge": {
+    "wert": 75400,
+    "einheit": "Mio. US-$ Kaufpreis",
+    "jahr": 2023
+   },
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "redmond",
+   "nach": "github",
+   "art": "tochter",
+   "text": "Tochter GitHub (Cloud-Dienste).",
+   "quellen": [
+    "k10"
+   ]
+  },
+  {
+   "von": "redmond",
+   "nach": "openai",
+   "art": "beteiligung",
+   "text": "Rund 27 % an OpenAI Group PBC (verwässert).",
+   "anteil": 27,
+   "jahr": 2025,
+   "quellen": [
+    "openai"
+   ]
+  },
+  {
+   "von": "openai",
+   "nach": "redmond",
+   "art": "kunde",
+   "text": "OpenAI kauft zusätzlich Azure-Dienste für 250 Mrd. US-$; die OpenAI-API läuft exklusiv auf Azure.",
+   "menge": {
+    "wert": 250000,
+    "einheit": "Mio. US-$ zusätzliche Azure-Abnahme (Vertrag)",
+    "jahr": 2025
+   },
+   "gut": "Azure-Rechenleistung",
+   "quellen": [
+    "openai",
+    "k10"
+   ]
+  },
+  {
+   "von": "anthropic",
+   "nach": "redmond",
+   "art": "kunde",
+   "text": "Anthropic kauft Azure-Rechenleistung für 30 Mrd. US-$.",
+   "menge": {
+    "wert": 30000,
+    "einheit": "Mio. US-$ Azure-Abnahme (Zusage)",
+    "jahr": 2025
+   },
+   "gut": "Azure-Rechenleistung",
+   "quellen": [
+    "anthropic"
+   ]
+  },
+  {
+   "von": "redmond",
+   "nach": "anthropic",
+   "art": "beteiligung",
+   "text": "Investitionszusage bis 5 Mrd. US-$.",
+   "menge": {
+    "wert": 5000,
+    "einheit": "Mio. US-$ Investitionszusage (höchstens)",
+    "jahr": 2025
+   },
+   "quellen": [
+    "anthropic"
+   ]
+  },
+  {
+   "von": "nvidia",
+   "nach": "redmond",
+   "art": "partner",
+   "text": "Strategische Partnerschaft; GPUs für Rechenzentren.",
+   "gut": "GPU-Systeme",
+   "quellen": [
+    "anthropic",
+    "k10"
+   ]
+  },
+  {
+   "von": "redmond",
+   "nach": "bayer",
+   "art": "kunde",
+   "text": "Cloud-Werkzeuge für die Landwirtschaft mit Bayer.",
+   "quellen": [
+    "bayer_gb"
+   ]
+  },
+  {
+   "von": "vanguard",
+   "nach": "redmond",
+   "art": "eigentuemer",
+   "text": "Hält 8,95 % der Microsoft-Aktien.",
+   "anteil": 8.95,
+   "jahr": 2025,
+   "quellen": [
+    "proxy"
+   ]
+  },
+  {
+   "von": "blackrock",
+   "nach": "redmond",
+   "art": "eigentuemer",
+   "text": "Hält 7,30 % der Microsoft-Aktien.",
+   "anteil": 7.3,
+   "jahr": 2025,
+   "quellen": [
+    "proxy"
+   ]
+  }
+ ]
+}

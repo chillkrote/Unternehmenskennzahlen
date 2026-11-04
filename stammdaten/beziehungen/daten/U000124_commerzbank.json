@@ -1,0 +1,1125 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U000124",
+ "name": "Commerzbank-Konzern",
+ "stand": "2026-11-04",
+ "berichtsjahr": 2025,
+ "hinweis": "Erfasst sind die wesentlichen Tochtergesellschaften und Beteiligungen über 15 % aus dem Anteilsbesitz der Commerzbank AG (Jahresabschluss 2025), die operativen Auslandsfilialen laut „Commerzbank worldwide“ (Stand 2026) und die meldepflichtigen Aktionäre zum 31.12.2025. Repräsentanzen (z. B. Istanbul, Mumbai, Johannesburg) und viele kleinere Gesellschaften fehlen. Banken veröffentlichen keine Ströme zwischen Standorten; die Mengen sind Erträge, Anteile und Stimmrechte. Der Konzern-Geschäftsbericht 2025 war nicht frei abrufbar (nur der Einzelabschluss der AG und die Ergebnis-Pressemitteilung). Die Bruttoerträge nach Märkten beziehen sich auf die AG nach HGB, nicht auf den Konzern.",
+ "quellen": {
+  "ja": {
+   "titel": "Commerzbank AG, Jahresabschluss 2025 (HGB): Anhang (6) Erträge nach Märkten, (33) Stimmrechtsanteile, (37) Mitarbeiter, (42) Anteilsbesitz",
+   "url": "https://ir-api.eqs.com//media/document/e6a17caf-b3d9-4bc8-b1ce-790de9ec7dd0/assets/Commerzbank_AG_Jahresabschluss_2025.pdf",
+   "herausgeber": "Commerzbank AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "pm": {
+   "titel": "Pressemitteilung: Wachstumsziel für 2025 übertroffen – Commerzbank mit operativem Rekordergebnis (11.2.2026)",
+   "url": "https://www.commerzbank.de/konzern/newsroom/pressemitteilungen/2026/20260211-pm-q4-2025.pdf",
+   "herausgeber": "Commerzbank AG",
+   "jahr": 2026,
+   "art": "pressemitteilung"
+  },
+  "fakten": {
+   "titel": "Faktenblatt Commerzbank (Stand August 2026)",
+   "url": "https://www.commerzbank.de/konzern/newsroom/publikationen/commerzbank-faktenblatt.pdf",
+   "herausgeber": "Commerzbank AG",
+   "jahr": 2026,
+   "art": "unternehmensseite"
+  },
+  "welt": {
+   "titel": "Commerzbank worldwide: Filialen und Repräsentanzen (Stand 2026)",
+   "url": "https://commerzbank.com/ms/documents/en/commerzbank-worlwide-pdf.pdf",
+   "herausgeber": "Commerzbank AG",
+   "jahr": 2026,
+   "art": "unternehmensseite"
+  }
+ },
+ "standorte": [
+  {
+   "id": "ffm",
+   "name": "Commerzbank AG, Zentrale Frankfurt am Main",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Konzern",
+   "unternehmen_id": "U000124",
+   "art": "hauptsitz",
+   "ort": "Frankfurt am Main",
+   "land": "DE",
+   "taetigkeit": "Universalbank mit den Segmenten Firmenkunden sowie Privat- und Unternehmerkunden; rund 400 Standorte in Deutschland, Marke comdirect als Digitalbank. Partnerin von rund 24.000 Firmenkundenverbünden, begleitet rund 30 % des deutschen Außenhandels; Präsenz in mehr als 40 Ländern.",
+   "kennzahlen": [
+    {
+     "name": "Erträge Konzern",
+     "wert": 12171,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Operatives Ergebnis Konzern",
+     "wert": 4509,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "fakten"
+    },
+    {
+     "name": "Konzernergebnis (den Aktionären zurechenbar)",
+     "wert": 2625,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "fakten"
+    },
+    {
+     "name": "Erträge Segment Firmenkunden",
+     "wert": 4865,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Operatives Ergebnis Firmenkunden",
+     "wert": 2151,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Erträge Privat- und Unternehmerkunden Deutschland",
+     "wert": 4607,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Kreditvolumen Firmenkunden (Ø Q4)",
+     "wert": 115,
+     "einheit": "Mrd. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Wertpapiervolumen Privat- und Unternehmerkunden",
+     "wert": 266,
+     "einheit": "Mrd. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Mitarbeiter Commerzbank AG (Jahresdurchschnitt)",
+     "wert": 25835,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "davon in Deutschland",
+     "wert": 21624,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "davon außerhalb Deutschlands",
+     "wert": 4211,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "Bruttoerträge AG: Deutschland",
+     "wert": 16952,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "Bruttoerträge AG: Europa ohne Deutschland",
+     "wert": 1498,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "Bruttoerträge AG: Amerika",
+     "wert": 1217,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "Bruttoerträge AG: Asien",
+     "wert": 557,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "Firmenkundenverbünde",
+     "wert": 24000,
+     "einheit": "Verbünde (rund)",
+     "jahr": 2025,
+     "quelle": "fakten"
+    }
+   ],
+   "quellen": [
+    "fakten",
+    "pm",
+    "ja"
+   ],
+   "lat": 50.1106,
+   "lon": 8.6821,
+   "koordinate": "ort"
+  },
+  {
+   "id": "mbank",
+   "name": "mBank S.A.",
+   "gesellschaft": "mBank S.A.",
+   "marke": "Tochtergesellschaften",
+   "unternehmen_id": "U001061",
+   "art": "hauptsitz_tochter",
+   "ort": "Warschau",
+   "land": "PL",
+   "taetigkeit": "Polnische Digitalbank mit rund 5,9 Mio. Privat- und Firmenkunden in Polen, Tschechien und der Slowakei; eigene Töchter u. a. mBank Hipoteczny, mLeasing, mFaktoring, mFinanse (Prag, Bratislava).",
+   "kennzahlen": [
+    {
+     "name": "Erträge mBank",
+     "wert": 2329,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Vorsorge Rechtsrisiken Fremdwährungskredite",
+     "wert": 483,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "pm"
+    },
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 69.0,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja",
+    "pm"
+   ],
+   "lat": 52.2334,
+   "lon": 21.0711,
+   "koordinate": "ort"
+  },
+  {
+   "id": "commerz_real",
+   "name": "Commerz Real AG",
+   "gesellschaft": "Commerz Real AG",
+   "marke": "Tochtergesellschaften",
+   "art": "finanzen",
+   "ort": "Wiesbaden",
+   "land": "DE",
+   "taetigkeit": "Vermögensverwalter für Sachwerte (Immobilienfonds, Leasing; weitere Gesellschaften in Düsseldorf und Luxemburg).",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 50.082,
+   "lon": 8.2417,
+   "koordinate": "ort"
+  },
+  {
+   "id": "cfcb",
+   "name": "Commerzbank Finance & Covered Bond S.A.",
+   "gesellschaft": "Commerzbank Finance & Covered Bond S.A.",
+   "marke": "Tochtergesellschaften",
+   "art": "finanzen",
+   "ort": "Luxemburg",
+   "land": "LU",
+   "taetigkeit": "Tochter für Pfandbrief- und Staatsfinanzierung in Luxemburg.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 49.8159,
+   "lon": 6.1297,
+   "koordinate": "ort"
+  },
+  {
+   "id": "commerz_markets",
+   "name": "Commerz Markets LLC",
+   "gesellschaft": "Commerz Markets LLC",
+   "marke": "Tochtergesellschaften",
+   "art": "finanzen",
+   "ort": "New York",
+   "land": "US",
+   "taetigkeit": "US-Wertpapierhandelstochter (gegründet in Delaware, Sitz New York).",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 40.7127,
+   "lon": -74.006,
+   "koordinate": "ort"
+  },
+  {
+   "id": "eurasija",
+   "name": "Commerzbank (Eurasija) AO",
+   "gesellschaft": "Commerzbank (Eurasija) AO",
+   "marke": "Tochtergesellschaften",
+   "art": "hauptsitz_tochter",
+   "ort": "Moskau",
+   "land": "RU",
+   "taetigkeit": "Russische Tochterbank.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 55.7558,
+   "lon": 37.6173,
+   "koordinate": "ort"
+  },
+  {
+   "id": "lodz",
+   "name": "CERI International, Łódź",
+   "gesellschaft": "CERI International Sp. z o.o.",
+   "marke": "Tochtergesellschaften",
+   "art": "entwicklung",
+   "ort": "Łódź",
+   "land": "PL",
+   "taetigkeit": "Dienstleistungs- und IT-Zentrum der Commerzbank in Polen.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 51.7728,
+   "lon": 19.4785,
+   "koordinate": "ort"
+  },
+  {
+   "id": "kl",
+   "name": "Commerz Global Service Solutions, Kuala Lumpur",
+   "gesellschaft": "Commerz Global Service Solutions Sdn. Bhd.",
+   "marke": "Tochtergesellschaften",
+   "art": "entwicklung",
+   "ort": "Kuala Lumpur",
+   "land": "MY",
+   "taetigkeit": "Dienstleistungszentrum der Commerzbank in Malaysia.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 3.1517,
+   "lon": 101.6942,
+   "koordinate": "ort"
+  },
+  {
+   "id": "factoring",
+   "name": "CommerzFactoring GmbH",
+   "gesellschaft": "CommerzFactoring GmbH",
+   "marke": "Tochtergesellschaften",
+   "art": "finanzen",
+   "ort": "Mainz",
+   "land": "DE",
+   "taetigkeit": "Factoring-Gesellschaft.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 50.1,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 49.9995,
+   "lon": 8.2736,
+   "koordinate": "ort"
+  },
+  {
+   "id": "aquila",
+   "name": "Aquila Capital Investmentgesellschaft",
+   "gesellschaft": "Aquila Capital Investmentgesellschaft mbH",
+   "marke": "Tochtergesellschaften",
+   "art": "finanzen",
+   "ort": "Hamburg",
+   "land": "DE",
+   "taetigkeit": "Investmentgesellschaft (Sachwerte, erneuerbare Energien).",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 74.9,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 53.5502,
+   "lon": 10.0013,
+   "koordinate": "ort"
+  },
+  {
+   "id": "aka",
+   "name": "AKA Ausfuhrkredit-Gesellschaft",
+   "gesellschaft": "AKA Ausfuhrkredit-Gesellschaft mbH",
+   "marke": "Beteiligungen",
+   "art": "beteiligung",
+   "ort": "Frankfurt am Main",
+   "land": "DE",
+   "taetigkeit": "Exportfinanzierer deutscher Banken.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 31.6,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 50.1506,
+   "lon": 8.7421,
+   "koordinate": "ort"
+  },
+  {
+   "id": "schufa",
+   "name": "SCHUFA Holding AG",
+   "gesellschaft": "SCHUFA Holding AG",
+   "marke": "Beteiligungen",
+   "art": "beteiligung",
+   "ort": "Wiesbaden",
+   "land": "DE",
+   "taetigkeit": "Auskunftei.",
+   "kennzahlen": [
+    {
+     "name": "Anteil Commerzbank",
+     "wert": 18.6,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 50.122,
+   "lon": 8.3017,
+   "koordinate": "ort"
+  },
+  {
+   "id": "dbc",
+   "name": "Deutsche Börse Commodities GmbH",
+   "gesellschaft": "Deutsche Börse Commodities GmbH",
+   "marke": "Beteiligungen",
+   "art": "beteiligung",
+   "ort": "Frankfurt am Main",
+   "land": "DE",
+   "taetigkeit": "Emittentin börsengehandelter Rohstoffprodukte (Xetra-Gold).",
+   "kennzahlen": [
+    {
+     "name": "Kapitalanteil Commerzbank",
+     "wert": 16.2,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "versatz": [
+    -0.06,
+    0.04
+   ],
+   "lat": 50.1506,
+   "lon": 8.6221,
+   "koordinate": "ort"
+  },
+  {
+   "id": "unicredit",
+   "name": "UniCredit S.p.A.",
+   "gesellschaft": "UniCredit S.p.A.",
+   "marke": "Eigentümer",
+   "unternehmen_id": "U000677",
+   "art": "eigentuemer",
+   "ort": "Mailand",
+   "land": "IT",
+   "taetigkeit": "Größte Aktionärin: 26,04 % der Stimmrechte laut Meldung vom 26.8.2025. Laut Faktenblatt (Stand 5.8.2026) hält UniCredit mehr als 25 %, weitere 17,6 % der Aktien sind zum Umtausch angedient.",
+   "kennzahlen": [
+    {
+     "name": "Stimmrechte an der Commerzbank",
+     "wert": 26.04,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    },
+    {
+     "name": "zum Umtausch angediente Aktien",
+     "wert": 17.6,
+     "einheit": "%",
+     "jahr": 2026,
+     "quelle": "fakten"
+    }
+   ],
+   "quellen": [
+    "ja",
+    "fakten"
+   ],
+   "lat": 45.4642,
+   "lon": 9.1896,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bund",
+   "name": "Bundesrepublik Deutschland",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Berlin",
+   "land": "DE",
+   "taetigkeit": "Hält 12,11 % der Stimmrechte (Meldung vom 11.9.2024; nach dem Aktienrückkauf rechnerisch 12,72 %).",
+   "kennzahlen": [
+    {
+     "name": "Stimmrechte an der Commerzbank",
+     "wert": 12.11,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 52.5174,
+   "lon": 13.3951,
+   "koordinate": "ort"
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock, Inc.",
+   "gesellschaft": "BlackRock, Inc.",
+   "marke": "Eigentümer",
+   "art": "eigentuemer",
+   "ort": "Wilmington",
+   "land": "US",
+   "taetigkeit": "Hält 5,54 % der Stimmrechte (Meldung vom 24.12.2025; am 20.2.2026 5,5 %).",
+   "kennzahlen": [
+    {
+     "name": "Stimmrechte an der Commerzbank",
+     "wert": 5.54,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "ja"
+    }
+   ],
+   "quellen": [
+    "ja"
+   ],
+   "lat": 39.7383,
+   "lon": -75.5527,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_london",
+   "name": "Filiale London",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "London",
+   "land": "GB",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_newyork",
+   "name": "Filiale New York",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "New York",
+   "land": "US",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 40.7527,
+   "lon": -73.946,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_paris",
+   "name": "Filiale Paris",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Paris",
+   "land": "FR",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 48.8535,
+   "lon": 2.3484,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_mailand",
+   "name": "Filiale Mailand",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Mailand",
+   "land": "IT",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 45.5042,
+   "lon": 9.2496,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_madrid",
+   "name": "Filiale Madrid",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Madrid",
+   "land": "ES",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 40.4168,
+   "lon": -3.7035,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_zuerich",
+   "name": "Filiale Zürich",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Zürich",
+   "land": "CH",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 47.3744,
+   "lon": 8.541,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_wien",
+   "name": "Filiale Wien",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Wien",
+   "land": "AT",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 48.2084,
+   "lon": 16.3725,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_prag",
+   "name": "Filiale Prag",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Prag",
+   "land": "CZ",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 50.0875,
+   "lon": 14.4213,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_amsterdam",
+   "name": "Filiale Amsterdam",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Amsterdam",
+   "land": "NL",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft) für den Benelux-Raum.",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 52.3731,
+   "lon": 4.8925,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_dubai",
+   "name": "Filiale Dubai",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Dubai",
+   "land": "AE",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 25.0743,
+   "lon": 55.1886,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_peking",
+   "name": "Filiale Peking",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Peking",
+   "land": "CN",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 39.9057,
+   "lon": 116.3913,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_shanghai",
+   "name": "Filiale Shanghai",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Shanghai",
+   "land": "CN",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 31.2313,
+   "lon": 121.47,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_tokio",
+   "name": "Filiale Tokio",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Tokio",
+   "land": "JP",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 35.6769,
+   "lon": 139.7639,
+   "koordinate": "ort"
+  },
+  {
+   "id": "fil_singapur",
+   "name": "Filiale Singapur",
+   "gesellschaft": "Commerzbank AG",
+   "marke": "Auslandsfilialen",
+   "art": "filiale",
+   "ort": "Singapur",
+   "land": "SG",
+   "taetigkeit": "Operative Auslandsfiliale der Commerzbank AG (Firmenkundengeschäft).",
+   "kennzahlen": [],
+   "quellen": [
+    "welt"
+   ],
+   "lat": 1.2899,
+   "lon": 103.8519,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "ffm",
+   "nach": "mbank",
+   "art": "tochter",
+   "text": "Commerzbank hält 69,0 % an der mBank; Erträge 2025 2.329 Mio. € (+37 %).",
+   "anteil": 69.0,
+   "jahr": 2025,
+   "quellen": [
+    "ja",
+    "pm"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "commerz_real",
+   "art": "tochter",
+   "text": "100 %, Beherrschungs- und/oder Ergebnisabführungsvertrag.",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "cfcb",
+   "art": "tochter",
+   "text": "100 %-Tochter in Luxemburg.",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "commerz_markets",
+   "art": "tochter",
+   "text": "100 %-Tochter in den USA.",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "eurasija",
+   "art": "tochter",
+   "text": "100 %-Tochter in Russland.",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "lodz",
+   "art": "tochter",
+   "text": "100 %-Tochter (Dienstleistungszentrum).",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "kl",
+   "art": "tochter",
+   "text": "100 %-Tochter (Dienstleistungszentrum).",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "factoring",
+   "art": "tochter",
+   "text": "50,1 % an CommerzFactoring.",
+   "anteil": 50.1,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "aquila",
+   "art": "tochter",
+   "text": "74,9 % an Aquila Capital Investmentgesellschaft.",
+   "anteil": 74.9,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "aka",
+   "art": "beteiligung",
+   "text": "31,6 % an der AKA.",
+   "anteil": 31.6,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "schufa",
+   "art": "beteiligung",
+   "text": "18,6 % an der SCHUFA Holding.",
+   "anteil": 18.6,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "dbc",
+   "art": "beteiligung",
+   "text": "16,2 % Kapital (14,5 % Stimmrechte) an Deutsche Börse Commodities.",
+   "anteil": 16.2,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "unicredit",
+   "nach": "ffm",
+   "art": "eigentuemer",
+   "text": "26,04 % der Stimmrechte (31.12.2025); Umtauschangebot 2026, laut Faktenblatt 17,6 % angedient.",
+   "anteil": 26.04,
+   "jahr": 2025,
+   "quellen": [
+    "ja",
+    "fakten"
+   ]
+  },
+  {
+   "von": "bund",
+   "nach": "ffm",
+   "art": "eigentuemer",
+   "text": "12,11 % der Stimmrechte.",
+   "anteil": 12.11,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "blackrock",
+   "nach": "ffm",
+   "art": "eigentuemer",
+   "text": "5,54 % der Stimmrechte.",
+   "anteil": 5.54,
+   "jahr": 2025,
+   "quellen": [
+    "ja"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_london",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_newyork",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_paris",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_mailand",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_madrid",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_zuerich",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_wien",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_prag",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_amsterdam",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_dubai",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_peking",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_shanghai",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_tokio",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  },
+  {
+   "von": "ffm",
+   "nach": "fil_singapur",
+   "art": "filiale",
+   "text": "Operative Auslandsfiliale der Commerzbank AG.",
+   "quellen": [
+    "welt"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1139 @@
+{
+ "schema": 1,
+ "unternehmen_id": "U000061",
+ "name": "BASF-Gruppe",
+ "stand": "2026-11-04",
+ "berichtsjahr": 2025,
+ "hinweis": "Erfasst sind die sieben Verbundstandorte (mit Ludwigshafen), die Tochtergesellschaften mit Minderheitspartnern, die At-Equity-Beteiligungen und die großen Portfoliomaßnahmen aus dem BASF-Bericht 2025, nicht alle 234 Produktionsstandorte. Lieferströme zwischen den Standorten (Mengen oder Euro) veröffentlicht BASF nicht; der Bogen Port Arthur → Freeport ist deshalb als unsicher markiert. Großaktionäre nennt der BASF-Bericht nicht (keine Stimmrechtsanteile über den Meldeschwellen im Bericht), deshalb fehlen Eigentümer. Kunden werden nicht namentlich genannt (rund 75.000 Kunden). Anlagenzahlen der Verbundstandorte stammen von der BASF-Website (Stand 2026), alle übrigen Werte aus dem Bericht 2025.",
+ "quellen": {
+  "gb_standorte": {
+   "titel": "BASF-Bericht 2025: Standorte und Geschäftsumfeld",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/fundamentals-of-the-group/basf-group/sites-and-business-environment.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_organisation": {
+   "titel": "BASF-Bericht 2025: Organisation der BASF-Gruppe (Segmente)",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/fundamentals-of-the-group/basf-group/organization-of-the-basf-group.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_investitionen": {
+   "titel": "BASF-Bericht 2025: Wesentliche Investitionen",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/fundamentals-of-the-group/strategy/material-investments-and-portfolio-measures/material-investments.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_portfolio": {
+   "titel": "BASF-Bericht 2025: Portfoliomaßnahmen",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/fundamentals-of-the-group/strategy/material-investments-and-portfolio-measures/portfolio-measures.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_equity": {
+   "titel": "BASF-Bericht 2025, Anhang 10: At-Equity-bilanzierte Beteiligungen",
+   "url": "https://report.basf.com/2025/en/financial-statements/notes/equity-accounted-companies.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_minderheiten": {
+   "titel": "BASF-Bericht 2025, Anhang 13: Nicht beherrschende Anteile",
+   "url": "https://report.basf.com/2025/en/financial-statements/notes/noncontrolling-interests.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_erwerbe": {
+   "titel": "BASF-Bericht 2025, Anhang 3: Akquisitionen und Devestitionen",
+   "url": "https://report.basf.com/2025/en/financial-statements/notes/acquisitions-and-divestitures.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_regionen": {
+   "titel": "BASF-Bericht 2025, Anhang: Segment- und Regionenberichterstattung",
+   "url": "https://report.basf.com/2025/en/financial-statements/notes/reporting-by-segment-and-region.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "gb_aktie": {
+   "titel": "BASF-Bericht 2025: Übernahmerechtliche Angaben (Grundkapital, Aktien)",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/corporate-governance/disclosures-required-by-takeover-law.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "seg_chemicals": {
+   "titel": "BASF-Bericht 2025: Segment Chemicals",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/chemicals.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "seg_materials": {
+   "titel": "BASF-Bericht 2025: Segment Materials",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/materials.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "seg_industrial": {
+   "titel": "BASF-Bericht 2025: Segment Industrial Solutions",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/industrial-solutions.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "seg_nutrition": {
+   "titel": "BASF-Bericht 2025: Segment Nutrition & Care",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/nutrition-care.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "seg_surface": {
+   "titel": "BASF-Bericht 2025: Segment Surface Technologies",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/surface-technologies.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "seg_agri": {
+   "titel": "BASF-Bericht 2025: Segment Agricultural Solutions",
+   "url": "https://report.basf.com/2025/en/combined-managements-report/basf-groups-business-year/segments/agricultural-solutions.html",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  },
+  "verbund": {
+   "titel": "BASF: Verbundstandorte weltweit (Zahlen und Fakten)",
+   "url": "https://www.basf.com/global/en/who-we-are/about-us/verbund/verbund-sites",
+   "herausgeber": "BASF SE",
+   "jahr": 2026,
+   "art": "unternehmensseite"
+  },
+  "bayer_gb": {
+   "titel": "Bayer Geschäftsbericht 2025: Kooperationen Crop Science (Tabelle der wichtigsten Kooperationen)",
+   "url": "https://www.bayer.com/en/investors/integrated-annual-reports",
+   "herausgeber": "Bayer AG",
+   "jahr": 2026,
+   "art": "geschaeftsbericht"
+  }
+ },
+ "standorte": [
+  {
+   "id": "lu",
+   "name": "BASF SE, Konzernzentrale und Verbundstandort Ludwigshafen",
+   "gesellschaft": "BASF SE",
+   "marke": "Konzern",
+   "unternehmen_id": "U000061",
+   "art": "hauptsitz",
+   "ort": "Ludwigshafen am Rhein",
+   "land": "DE",
+   "taetigkeit": "Sitz der BASF SE und größter Verbundstandort der Gruppe (laut BASF größtes zusammenhängendes Chemieareal der Welt): rund 125 Produktionsbetriebe mit rund 200 Anlagen auf 10 km², rund 2.850 km Rohrleitungen, gegründet 1865. Im Bau: Anlagen für Schwefelsäure und Ammoniumhydroxid in Halbleiterqualität (Start 2027), Neopor-Kapazität (2027), Alkoholat-Anlage (2027).",
+   "kennzahlen": [
+    {
+     "name": "Beschäftigte Konzern",
+     "wert": 108251,
+     "einheit": "Personen",
+     "jahr": 2025,
+     "quelle": "gb_standorte"
+    },
+    {
+     "name": "Produktionsstandorte Konzern",
+     "wert": 234,
+     "einheit": "Standorte in 93 Ländern",
+     "jahr": 2025,
+     "quelle": "gb_standorte"
+    },
+    {
+     "name": "Umsatz Konzern",
+     "wert": 59657,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz nach Sitz der Kunden: Europa",
+     "wert": 23019,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz nach Sitz der Kunden: darunter Deutschland",
+     "wert": 5774,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz nach Sitz der Kunden: Nordamerika",
+     "wert": 15667,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz nach Sitz der Kunden: Asien-Pazifik",
+     "wert": 15068,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz nach Sitz der Kunden: Südamerika, Afrika, Naher Osten",
+     "wert": 5903,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_regionen"
+    },
+    {
+     "name": "Umsatz Segment Chemicals",
+     "wert": 10055,
+     "einheit": "Mio. € Umsatz mit Dritten",
+     "jahr": 2025,
+     "quelle": "seg_chemicals"
+    },
+    {
+     "name": "Umsatz Segment Materials",
+     "wert": 12742,
+     "einheit": "Mio. € Umsatz mit Dritten",
+     "jahr": 2025,
+     "quelle": "seg_materials"
+    },
+    {
+     "name": "Umsatz Segment Industrial Solutions",
+     "wert": 8594,
+     "einheit": "Mio. € Umsatz mit Dritten",
+     "jahr": 2025,
+     "quelle": "seg_industrial"
+    },
+    {
+     "name": "Umsatz Segment Nutrition & Care",
+     "wert": 6509,
+     "einheit": "Mio. € Umsatz mit Dritten",
+     "jahr": 2025,
+     "quelle": "seg_nutrition"
+    },
+    {
+     "name": "Umsatz Segment Surface Technologies",
+     "wert": 8967,
+     "einheit": "Mio. € Umsatz mit Dritten",
+     "jahr": 2025,
+     "quelle": "seg_surface"
+    },
+    {
+     "name": "Umsatz Segment Agricultural Solutions",
+     "wert": 9587,
+     "einheit": "Mio. € Umsatz mit Dritten",
+     "jahr": 2025,
+     "quelle": "seg_agri"
+    },
+    {
+     "name": "Kunden (externe Vertragspartner mit Umsatz)",
+     "wert": 75000,
+     "einheit": "Kunden (rund)",
+     "jahr": 2025,
+     "quelle": "gb_standorte"
+    },
+    {
+     "name": "Direkte Lieferanten (Tier 1)",
+     "wert": 70000,
+     "einheit": "Lieferanten (mehr als)",
+     "jahr": 2025,
+     "quelle": "gb_standorte"
+    },
+    {
+     "name": "Aktien (Stückaktien)",
+     "wert": 892522164,
+     "einheit": "Aktien",
+     "jahr": 2025,
+     "quelle": "gb_aktie"
+    }
+   ],
+   "quellen": [
+    "gb_standorte",
+    "verbund",
+    "gb_investitionen",
+    "gb_organisation"
+   ],
+   "lat": 49.4704,
+   "lon": 8.4382,
+   "koordinate": "ort"
+  },
+  {
+   "id": "antwerpen",
+   "name": "Verbundstandort Antwerpen",
+   "gesellschaft": "BASF Antwerpen N.V.",
+   "marke": "Verbundstandorte",
+   "art": "werk",
+   "ort": "Antwerpen",
+   "land": "BE",
+   "taetigkeit": "Zweitgrößter Verbundstandort der BASF: 16 Anlagencluster mit 31 Anlagen auf 6 km², 580 km Rohrleitungen, gegründet 1964.",
+   "kennzahlen": [
+    {
+     "name": "Produktionsanlagen",
+     "wert": 31,
+     "einheit": "Anlagen",
+     "jahr": 2026,
+     "quelle": "verbund"
+    }
+   ],
+   "quellen": [
+    "verbund",
+    "gb_standorte"
+   ],
+   "lat": 51.2211,
+   "lon": 4.3997,
+   "koordinate": "ort"
+  },
+  {
+   "id": "freeport",
+   "name": "Verbundstandort Freeport, Texas",
+   "marke": "Verbundstandorte",
+   "art": "werk",
+   "ort": "Freeport",
+   "land": "US",
+   "taetigkeit": "Verbundstandort in Nordamerika: 26 Produktionsanlagen auf 1,93 km², 290 km Rohrleitungen, gegründet 1958.",
+   "kennzahlen": [
+    {
+     "name": "Produktionsanlagen",
+     "wert": 26,
+     "einheit": "Anlagen",
+     "jahr": 2026,
+     "quelle": "verbund"
+    }
+   ],
+   "quellen": [
+    "verbund",
+    "gb_standorte"
+   ],
+   "lat": 28.9541,
+   "lon": -95.3597,
+   "koordinate": "ort"
+  },
+  {
+   "id": "geismar",
+   "name": "Verbundstandort Geismar, Louisiana",
+   "marke": "Verbundstandorte",
+   "art": "werk",
+   "ort": "Geismar",
+   "land": "US",
+   "taetigkeit": "Verbundstandort in Nordamerika: 32 Produktionsanlagen auf 9,27 km², gegründet 1958. Ausbau der MDI-Anlagen (Isocyanate), größte Einzelinvestition der BASF in Nordamerika, Start 2026.",
+   "kennzahlen": [
+    {
+     "name": "Produktionsanlagen",
+     "wert": 32,
+     "einheit": "Anlagen",
+     "jahr": 2026,
+     "quelle": "verbund"
+    },
+    {
+     "name": "MDI-Kapazität Nordamerika vor dem Ausbau",
+     "wert": 380000,
+     "einheit": "t pro Jahr",
+     "jahr": 2025,
+     "quelle": "gb_investitionen"
+    },
+    {
+     "name": "geplante MDI-Kapazität Nordamerika nach dem Ausbau",
+     "wert": 600000,
+     "einheit": "t pro Jahr (rund)",
+     "jahr": 2026,
+     "quelle": "gb_investitionen",
+     "unsicher": true
+    }
+   ],
+   "quellen": [
+    "verbund",
+    "gb_investitionen"
+   ],
+   "lat": 30.2044,
+   "lon": -91.0226,
+   "koordinate": "ort"
+  },
+  {
+   "id": "kuantan",
+   "name": "Verbundstandort Kuantan (BASF PETRONAS Chemicals)",
+   "gesellschaft": "BASF PETRONAS Chemicals Sdn. Bhd.",
+   "marke": "Verbundstandorte",
+   "art": "werk",
+   "ort": "Kuantan",
+   "land": "MY",
+   "taetigkeit": "Verbundstandort in Malaysia: 16 Produktionsanlagen auf rund 1,5 km², gegründet 1997. Betrieben über BASF PETRONAS Chemicals Sdn. Bhd. (Sitz Kuala Lumpur), an der PETRONAS Chemicals 40 % hält.",
+   "kennzahlen": [
+    {
+     "name": "Produktionsanlagen",
+     "wert": 16,
+     "einheit": "Anlagen",
+     "jahr": 2026,
+     "quelle": "verbund"
+    },
+    {
+     "name": "Anteil BASF",
+     "wert": 60,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_minderheiten"
+    }
+   ],
+   "quellen": [
+    "verbund",
+    "gb_minderheiten"
+   ],
+   "lat": 3.7974,
+   "lon": 103.3219,
+   "koordinate": "ort"
+  },
+  {
+   "id": "nanjing",
+   "name": "Verbundstandort Nanjing (BASF-YPC)",
+   "gesellschaft": "BASF-YPC Company Ltd.",
+   "marke": "Gemeinschaftsunternehmen",
+   "art": "joint_venture",
+   "ort": "Nanjing",
+   "land": "CN",
+   "taetigkeit": "Verbundstandort, betrieben vom Gemeinschaftsunternehmen BASF-YPC Company Ltd. (BASF und Sinopec je 50 %): 33 Produktionsanlagen auf 2,42 km², gegründet 2005. Einzige wesentliche integrale At-Equity-Beteiligung der BASF; Kapazitätserweiterung Additive (2025).",
+   "kennzahlen": [
+    {
+     "name": "Umsatz BASF-YPC (100 %)",
+     "wert": 2014,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_equity"
+    },
+    {
+     "name": "Ergebnis nach Steuern BASF-YPC (100 %)",
+     "wert": -48,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_equity"
+    },
+    {
+     "name": "Produktionsanlagen",
+     "wert": 33,
+     "einheit": "Anlagen",
+     "jahr": 2026,
+     "quelle": "verbund"
+    }
+   ],
+   "quellen": [
+    "gb_equity",
+    "verbund",
+    "gb_investitionen"
+   ],
+   "lat": 32.0438,
+   "lon": 118.7789,
+   "koordinate": "ort"
+  },
+  {
+   "id": "zhanjiang",
+   "name": "Verbundstandort Zhanjiang",
+   "marke": "Verbundstandorte",
+   "art": "werk",
+   "ort": "Zhanjiang",
+   "land": "CN",
+   "taetigkeit": "Neuer, laut BASF drittgrößter Verbundstandort: Steamcracker sowie Anlagen für Ethylenoxid, Synthesegas, Monoethylenglykol, Polyethylen, C4-Oxo-Alkohole, Acrylmonomere und Neopentylglykol (2025–2026). Erste Produkte im November 2025, Inbetriebnahme des Crackers ab Ende Dezember 2025, offizielle Eröffnung März 2026; 18 Produktionsanlagen auf rund 4 km².",
+   "kennzahlen": [
+    {
+     "name": "Produktionsanlagen",
+     "wert": 18,
+     "einheit": "Anlagen",
+     "jahr": 2026,
+     "quelle": "verbund"
+    }
+   ],
+   "quellen": [
+    "gb_standorte",
+    "gb_investitionen",
+    "verbund"
+   ],
+   "lat": 21.2737,
+   "lon": 110.3548,
+   "koordinate": "ort"
+  },
+  {
+   "id": "port_arthur",
+   "name": "Steamcracker Port Arthur (BASF TotalEnergies Petrochemicals)",
+   "gesellschaft": "BASF TotalEnergies Petrochemicals LLC",
+   "marke": "Verbundstandorte",
+   "art": "werk",
+   "ort": "Port Arthur",
+   "land": "US",
+   "taetigkeit": "Steamcracker in Texas, der laut BASF die nordamerikanischen Verbundstandorte Freeport und Geismar stärkt. Gesellschaft: BASF TotalEnergies Petrochemicals LLC (Sitz Houston), an der TotalEnergies 40 % hält; größter Anteil am Minderheitengewinn der BASF-Gruppe.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 60,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_minderheiten"
+    }
+   ],
+   "quellen": [
+    "verbund",
+    "gb_minderheiten"
+   ],
+   "lat": 29.8717,
+   "lon": -93.9332,
+   "koordinate": "ort"
+  },
+  {
+   "id": "chalampe",
+   "name": "Alsachimie, Chalampé",
+   "gesellschaft": "Alsachimie S.A.S.",
+   "marke": "Materials",
+   "art": "werk",
+   "ort": "Chalampé",
+   "land": "FR",
+   "taetigkeit": "Produktion von Vorprodukten für Polyamid 6.6 (Adipinsäure, AH-Salz). Seit 1. Juli 2025 nach Kauf des 49-%-Anteils von DOMO Chemicals vollständig im Besitz der BASF.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 100,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_portfolio"
+    }
+   ],
+   "quellen": [
+    "gb_portfolio",
+    "gb_erwerbe"
+   ],
+   "lat": 47.8209,
+   "lon": 7.541,
+   "koordinate": "ort"
+  },
+  {
+   "id": "shanghai_pu",
+   "name": "Shanghai BASF Polyurethane",
+   "gesellschaft": "Shanghai BASF Polyurethane Company Ltd.",
+   "marke": "Materials",
+   "art": "werk",
+   "ort": "Shanghai",
+   "land": "CN",
+   "taetigkeit": "Polyurethan-Produktion in Shanghai; Partner Shanghai Huayi Holdings und SINOPEC Shanghai Gaoqiao Petrochemical halten zusammen 30 %. In Shanghai entsteht außerdem eine neue Cellasto-Anlage (Start 2027).",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 70,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_minderheiten"
+    }
+   ],
+   "quellen": [
+    "gb_minderheiten",
+    "gb_investitionen"
+   ],
+   "lat": 31.2313,
+   "lon": 121.47,
+   "koordinate": "ort"
+  },
+  {
+   "id": "changsha",
+   "name": "BASF Shanshan Battery Materials, Changsha",
+   "gesellschaft": "BASF Shanshan Battery Materials Co., Ltd.",
+   "marke": "Surface Technologies",
+   "art": "batterie",
+   "ort": "Changsha",
+   "land": "CN",
+   "taetigkeit": "Kathodenmaterialien für Batterien (Segment Surface Technologies); Partner Ningbo Yongxiang Investment hält 49 %.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 51,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_minderheiten"
+    }
+   ],
+   "quellen": [
+    "gb_minderheiten"
+   ],
+   "lat": 28.1451,
+   "lon": 113.2384,
+   "koordinate": "ort"
+  },
+  {
+   "id": "yamaguchi",
+   "name": "BASF TODA Battery Materials, Yamaguchi",
+   "gesellschaft": "BASF TODA Battery Materials LLC",
+   "marke": "Surface Technologies",
+   "art": "batterie",
+   "ort": "Yamaguchi",
+   "land": "JP",
+   "taetigkeit": "Batteriematerialien in Japan; Partner TODA KOGYO (Hiroshima) hält 34 %.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 66,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_minderheiten"
+    }
+   ],
+   "quellen": [
+    "gb_minderheiten"
+   ],
+   "lat": 34.238,
+   "lon": 131.5874,
+   "koordinate": "ort"
+  },
+  {
+   "id": "mumbai",
+   "name": "BASF India Limited",
+   "gesellschaft": "BASF India Limited",
+   "marke": "Tochtergesellschaften",
+   "unternehmen_id": "U015895",
+   "art": "hauptsitz_tochter",
+   "ort": "Mumbai",
+   "land": "IN",
+   "taetigkeit": "Börsennotierte indische Tochter; 26,67 % im Streubesitz. In Dahej (Indien) baut BASF eine neue Cellasto-Anlage (Start 2026).",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 73.33,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_minderheiten"
+    }
+   ],
+   "quellen": [
+    "gb_minderheiten",
+    "gb_investitionen"
+   ],
+   "lat": 19.055,
+   "lon": 72.8692,
+   "koordinate": "ort"
+  },
+  {
+   "id": "lampertheim",
+   "name": "Lampertheim (Additive)",
+   "marke": "Industrial Solutions",
+   "art": "werk",
+   "ort": "Lampertheim",
+   "land": "DE",
+   "taetigkeit": "Kapazitätserweiterung für Lichtschutzmittel (HALS) in Lampertheim und Pontecchio Marconi (Italien), Start 2026.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_investitionen"
+   ],
+   "lat": 49.6239,
+   "lon": 8.4093,
+   "koordinate": "ort"
+  },
+  {
+   "id": "wintershall",
+   "name": "Wintershall Dea GmbH",
+   "gesellschaft": "Wintershall Dea GmbH",
+   "marke": "Beteiligungen",
+   "art": "beteiligung",
+   "ort": "Kassel",
+   "land": "DE",
+   "taetigkeit": "Nicht integrale At-Equity-Beteiligung; nach dem Verkauf des Explorations- und Produktionsgeschäfts an Harbour Energy (2024) verbleiben vor allem Ansprüche aus den Bundesgarantien für die Russland-Beteiligungen. Der Firmenwert von 389 Mio. € im Buchwert wurde 2025 voll abgeschrieben.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF am Eigenkapital",
+     "wert": 72.7,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_equity"
+    }
+   ],
+   "quellen": [
+    "gb_equity"
+   ],
+   "lat": 51.3158,
+   "lon": 9.4978,
+   "koordinate": "ort"
+  },
+  {
+   "id": "harbour",
+   "name": "Harbour Energy plc",
+   "gesellschaft": "Harbour Energy plc",
+   "marke": "Beteiligungen",
+   "unternehmen_id": "U002331",
+   "art": "beteiligung",
+   "ort": "London",
+   "land": "GB",
+   "taetigkeit": "Öl- und Gasförderer; BASF erhielt die Beteiligung beim Verkauf des E&P-Geschäfts von Wintershall Dea (2024). Marktwert des BASF-Anteils zum 31.12.2025 1.481 Mio. €, Buchwert rund 1.941 Mio. €; Werthaltigkeitstest ohne Abschreibung.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF am Eigenkapital",
+     "wert": 39.59,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_equity"
+    },
+    {
+     "name": "Marktwert des BASF-Anteils",
+     "wert": 1481,
+     "einheit": "Mio. €",
+     "jahr": 2025,
+     "quelle": "gb_equity"
+    }
+   ],
+   "quellen": [
+    "gb_equity"
+   ],
+   "lat": 51.5074,
+   "lon": -0.1278,
+   "koordinate": "ort"
+  },
+  {
+   "id": "mingyang",
+   "name": "Mingyang BASF New Energy (Zhanjiang)",
+   "gesellschaft": "Mingyang BASF New Energy (Zhanjiang) Co., Ltd.",
+   "marke": "Beteiligungen",
+   "art": "beteiligung",
+   "ort": "Xuwen",
+   "land": "CN",
+   "taetigkeit": "Assoziiertes Unternehmen (BASF 10 %, maßgeblicher Einfluss durch Mitspracherechte), 2025 erstmals at equity einbezogen.",
+   "kennzahlen": [
+    {
+     "name": "Anteil BASF",
+     "wert": 10,
+     "einheit": "%",
+     "jahr": 2025,
+     "quelle": "gb_equity"
+    }
+   ],
+   "quellen": [
+    "gb_equity"
+   ],
+   "lat": 20.4407,
+   "lon": 110.2226,
+   "koordinate": "ort"
+  },
+  {
+   "id": "heesung",
+   "name": "Heesung Catalysts Corporation",
+   "gesellschaft": "Heesung Catalysts Corporation",
+   "marke": "Gemeinschaftsunternehmen",
+   "art": "joint_venture",
+   "ort": "Seoul",
+   "land": "KR",
+   "taetigkeit": "Gemeinschaftsunternehmen (Katalysatoren), zahlte 2025 Dividenden an BASF.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_equity"
+   ],
+   "lat": 37.5667,
+   "lon": 126.9783,
+   "koordinate": "ort"
+  },
+  {
+   "id": "ne_chemcat",
+   "name": "N.E. Chemcat Corporation",
+   "gesellschaft": "N.E. Chemcat Corporation",
+   "marke": "Gemeinschaftsunternehmen",
+   "art": "joint_venture",
+   "ort": "Tokio",
+   "land": "JP",
+   "taetigkeit": "Gemeinschaftsunternehmen (Katalysatoren), zahlte 2025 Dividenden an BASF.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_equity"
+   ],
+   "lat": 35.6769,
+   "lon": 139.7639,
+   "koordinate": "ort"
+  },
+  {
+   "id": "yara_freeport",
+   "name": "Yara Freeport LLC",
+   "gesellschaft": "Yara Freeport LLC",
+   "marke": "Beteiligungen",
+   "art": "beteiligung",
+   "ort": "Freeport",
+   "land": "US",
+   "taetigkeit": "Assoziiertes Unternehmen am Standort Freeport (Kapitalherabsetzungen 2024 und 2025).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_equity"
+   ],
+   "versatz": [
+    0.06,
+    0.04
+   ],
+   "lat": 28.9941,
+   "lon": -95.2997,
+   "koordinate": "ort"
+  },
+  {
+   "id": "sinopec",
+   "name": "Sinopec (China Petroleum & Chemical Corporation)",
+   "gesellschaft": "China Petroleum & Chemical Corporation",
+   "marke": "Partner",
+   "unternehmen_id": "U003339",
+   "art": "partner",
+   "ort": "Peking",
+   "land": "CN",
+   "taetigkeit": "Partner der BASF im Gemeinschaftsunternehmen BASF-YPC in Nanjing (je 50 %).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_equity"
+   ],
+   "lat": 39.9057,
+   "lon": 116.3913,
+   "koordinate": "ort"
+  },
+  {
+   "id": "petronas",
+   "name": "PETRONAS Chemicals Group Berhad",
+   "gesellschaft": "PETRONAS Chemicals Group Berhad",
+   "marke": "Partner",
+   "unternehmen_id": "U014179",
+   "art": "partner",
+   "ort": "Kuala Lumpur",
+   "land": "MY",
+   "taetigkeit": "Hält 40 % an BASF PETRONAS Chemicals (Verbundstandort Kuantan).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_minderheiten"
+   ],
+   "lat": 3.1517,
+   "lon": 101.6942,
+   "koordinate": "ort"
+  },
+  {
+   "id": "totalenergies",
+   "name": "TotalEnergies Petrochemicals & Refining USA",
+   "gesellschaft": "TotalEnergies Petrochemicals & Refining USA, Inc.",
+   "marke": "Partner",
+   "unternehmen_id": "U001235",
+   "art": "partner",
+   "ort": "Houston",
+   "land": "US",
+   "taetigkeit": "Hält 40 % an BASF TotalEnergies Petrochemicals (Steamcracker Port Arthur).",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_minderheiten"
+   ],
+   "lat": 29.7589,
+   "lon": -95.3677,
+   "koordinate": "ort"
+  },
+  {
+   "id": "carlyle",
+   "name": "Carlyle (Käufer des Lackgeschäfts)",
+   "gesellschaft": "The Carlyle Group",
+   "marke": "Partner",
+   "art": "partner",
+   "ort": "Washington",
+   "land": "US",
+   "taetigkeit": "Am 10.10.2025 vereinbarter Verkauf der Bereiche Autoserienlacke, Autoreparaturlacke und Oberflächenbehandlung (Umsatz 2025 rund 3,7 Mrd. €) an Carlyle; Unternehmenswert 7,7 Mrd. €, BASF erhält rund 5,8 Mrd. € vor Steuern und 40 % an der neuen Lackgesellschaft. Abschluss im 2. Quartal 2026 erwartet.",
+   "kennzahlen": [],
+   "quellen": [
+    "gb_portfolio",
+    "gb_organisation"
+   ],
+   "unsicher": true,
+   "hinweis": "Transaktion zum Berichtsstichtag noch nicht vollzogen; der künftige 40-%-Anteil ist eine Planangabe.",
+   "lat": 38.8951,
+   "lon": -77.0364,
+   "koordinate": "ort"
+  },
+  {
+   "id": "bayer",
+   "name": "Bayer AG (Forschungskooperation Mais)",
+   "gesellschaft": "Bayer AG",
+   "marke": "Partner",
+   "unternehmen_id": "U000065",
+   "art": "partner",
+   "ort": "Leverkusen",
+   "land": "DE",
+   "taetigkeit": "Gemeinsam finanzierte Kooperation zur Entwicklung transgener Maissorten mit stabilerem Ertrag (laut Bayer-Geschäftsbericht 2025).",
+   "kennzahlen": [],
+   "quellen": [
+    "bayer_gb"
+   ],
+   "lat": 51.0325,
+   "lon": 6.9881,
+   "koordinate": "ort"
+  }
+ ],
+ "beziehungen": [
+  {
+   "von": "lu",
+   "nach": "antwerpen",
+   "art": "produktion",
+   "text": "Verbundstandort der BASF in Europa.",
+   "quellen": [
+    "verbund"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "freeport",
+   "art": "produktion",
+   "text": "Verbundstandort der BASF in Nordamerika.",
+   "quellen": [
+    "verbund"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "geismar",
+   "art": "produktion",
+   "text": "Verbundstandort der BASF in Nordamerika; MDI-Ausbau läuft.",
+   "quellen": [
+    "verbund",
+    "gb_investitionen"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "zhanjiang",
+   "art": "produktion",
+   "text": "Neuer Verbundstandort in China, Bau 2025 weitgehend abgeschlossen; Investitionen 2025 deutlich unter dem Rekord von 2024.",
+   "quellen": [
+    "gb_investitionen",
+    "verbund"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "kuantan",
+   "art": "tochter",
+   "text": "BASF hält 60 % an BASF PETRONAS Chemicals (Verbundstandort Kuantan).",
+   "anteil": 60,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "port_arthur",
+   "art": "tochter",
+   "text": "BASF hält 60 % an BASF TotalEnergies Petrochemicals (Steamcracker Port Arthur).",
+   "anteil": 60,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "nanjing",
+   "art": "joint_venture",
+   "text": "Gemeinschaftsunternehmen BASF-YPC mit Sinopec, Anteil 50 %; 2025 erhaltene Dividende 16 Mio. €.",
+   "menge": {
+    "wert": 16,
+    "einheit": "Mio. € Dividende an BASF",
+    "jahr": 2025
+   },
+   "anteil": 50,
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "sinopec",
+   "nach": "nanjing",
+   "art": "joint_venture",
+   "text": "Sinopec hält die anderen 50 % an BASF-YPC.",
+   "anteil": 50,
+   "jahr": 2025,
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "petronas",
+   "nach": "kuantan",
+   "art": "partner",
+   "text": "PETRONAS Chemicals hält 40 % an BASF PETRONAS Chemicals.",
+   "anteil": 40,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "totalenergies",
+   "nach": "port_arthur",
+   "art": "partner",
+   "text": "TotalEnergies hält 40 % an BASF TotalEnergies Petrochemicals.",
+   "anteil": 40,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "port_arthur",
+   "nach": "freeport",
+   "art": "lieferung",
+   "text": "Der Steamcracker Port Arthur stärkt laut BASF die Verbundstandorte Freeport und Geismar; Mengen nicht veröffentlicht.",
+   "gut": "Crackerprodukte (Grundchemikalien)",
+   "ziel_sammel": true,
+   "unsicher": true,
+   "quellen": [
+    "verbund"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "chalampe",
+   "art": "tochter",
+   "text": "Seit 1.7.2025 alleinige Eigentümerin (zuvor 51 %, DOMO Chemicals 49 %); sichert Vorprodukte für die Polyamid-6.6-Kette.",
+   "anteil": 100,
+   "jahr": 2025,
+   "quellen": [
+    "gb_portfolio",
+    "gb_erwerbe"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "shanghai_pu",
+   "art": "tochter",
+   "text": "BASF hält 70 % an Shanghai BASF Polyurethane.",
+   "anteil": 70,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "changsha",
+   "art": "tochter",
+   "text": "BASF hält 51 % an BASF Shanshan Battery Materials.",
+   "anteil": 51,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "yamaguchi",
+   "art": "tochter",
+   "text": "BASF hält 66 % an BASF TODA Battery Materials.",
+   "anteil": 66,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "mumbai",
+   "art": "tochter",
+   "text": "BASF hält 73,33 % an BASF India (Rest Streubesitz).",
+   "anteil": 73.33,
+   "jahr": 2025,
+   "quellen": [
+    "gb_minderheiten"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "lampertheim",
+   "art": "produktion",
+   "text": "Produktionsstandort Segment Industrial Solutions mit Kapazitätsausbau (Start 2026).",
+   "quellen": [
+    "gb_investitionen"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "wintershall",
+   "art": "beteiligung",
+   "text": "BASF hält 72,7 % am Eigenkapital von Wintershall Dea (at equity, nicht integral).",
+   "anteil": 72.7,
+   "jahr": 2025,
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "harbour",
+   "art": "beteiligung",
+   "text": "BASF hält 39,59 % an Harbour Energy (at equity, nicht integral); Marktwert 1.481 Mio. € zum 31.12.2025.",
+   "anteil": 39.59,
+   "jahr": 2025,
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "wintershall",
+   "nach": "harbour",
+   "art": "partner",
+   "text": "Wintershall Dea verkaufte 2024 ihr E&P-Geschäft an Harbour Energy; BASF erhielt dafür Aktien.",
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "mingyang",
+   "art": "beteiligung",
+   "text": "BASF hält 10 % an Mingyang BASF New Energy (Zhanjiang).",
+   "anteil": 10,
+   "jahr": 2025,
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "heesung",
+   "art": "joint_venture",
+   "text": "Gemeinschaftsunternehmen (at equity); Dividendenzahlung 2025.",
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "ne_chemcat",
+   "art": "joint_venture",
+   "text": "Gemeinschaftsunternehmen (at equity); Dividendenzahlung 2025.",
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "yara_freeport",
+   "art": "beteiligung",
+   "text": "Assoziiertes Unternehmen (at equity).",
+   "quellen": [
+    "gb_equity"
+   ]
+  },
+  {
+   "von": "lu",
+   "nach": "carlyle",
+   "art": "partner",
+   "text": "Vereinbarter Verkauf des Lackgeschäfts für 7,7 Mrd. € Unternehmenswert; BASF behält nach Abschluss 40 % der neuen Gesellschaft (geplant).",
+   "unsicher": true,
+   "quellen": [
+    "gb_portfolio"
+   ]
+  },
+  {
+   "von": "bayer",
+   "nach": "lu",
+   "art": "partner",
+   "text": "Gemeinsam finanzierte Forschungskooperation zu transgenem Mais mit Bayer Crop Science.",
+   "quellen": [
+    "bayer_gb"
+   ]
+  }
+ ]
+}

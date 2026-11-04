@@ -34,12 +34,13 @@ const NETZ = (() => {
     kunde:         { name: "Kunde", farbe: "#f2e04a", dash: [3, 1.6, 1, 1.6], css: "6 3 2 3" },
     lieferant:     { name: "Lieferant", farbe: "#d9a21b", dash: [5, 1.5], css: "10 3" },
     partner:       { name: "Partner", farbe: "#ff7ac8", dash: [1, 1.2], css: "2 3" },
+    filiale:       { name: "Filiale / Niederlassung", farbe: "#6fd0e8", dash: [3, 3], css: "6 6" },
   };
   const swatch = (a, b = 36) => `<svg class="nz-sw" width="${b}" height="8" aria-hidden="true"><line x1="1" y1="4" x2="${b - 1}" y2="4" stroke="${a.farbe}" stroke-width="2.6"${a.css ? ` stroke-dasharray="${a.css}"` : ' stroke-linecap="round"'}/></svg>`;
   /* Standortarten: Farbe der Punkte */
   const ORT = {
     hauptsitz: ["Konzernzentrale", "#ffa828"], hauptsitz_tochter: ["Sitz einer Tochter", "#ffc56b"], fahrzeugwerk: ["Fahrzeugwerk", "#2ec4d6"],
-    komponentenwerk: ["Komponentenwerk", "#4da3ff"], batterie: ["Batteriewerk", "#9ad7f2"], finanzen: ["Finanzdienstleistungen", "#d9a21b"],
+    komponentenwerk: ["Komponentenwerk", "#4da3ff"], werk: ["Produktionsstandort", "#2ec4d6"], filiale: ["Filiale / Niederlassung", "#d9a21b"], batterie: ["Batteriewerk", "#9ad7f2"], finanzen: ["Finanzdienstleistungen", "#d9a21b"],
     vertrieb: ["Vertrieb / Auslieferung", "#8b95a3"], entwicklung: ["Entwicklung", "#8b95a3"], joint_venture: ["Gemeinschaftsunternehmen", "#b57bff"],
     beteiligung: ["Beteiligung", "#ff7ac8"], partner: ["Partner", "#ff7ac8"], kunde: ["Kunde", "#f2e04a"], eigentuemer: ["Eigentümer", "#e8ecf1"], lieferant: ["Lieferant", "#d9a21b"],
   };

@@ -49,6 +49,17 @@ def yahoo(symbol):
                 if p and p.get('reportedValue') and p['reportedValue'].get('raw') is not None:
                     out.setdefault(p['asOfDate'], {})[key[6:]] = (p['reportedValue']['raw'], p.get('currencyCode'))
     return out
+def yahoo_suche(name, land):
+    """Findet das Yahoo-Kürzel über die freie Suche, nur bei gleichem Namen (ohne Rechtsform) und passender Börse."""
+    d = get('https://query2.finance.yahoo.com/v1/finance/search?quotesCount=8&newsCount=0&q=' + urllib.parse.quote(name))
+    def nz(x): return re.sub(r'\b(inc|corp|corporation|plc|ag|se|nv|sa|as|a/s|ab|asa|oyj|ltd|limited|group|holding|holdings|co|the|company|spa)\b', ' ', re.sub(r'[^a-z0-9/ ]', ' ', (x or '').lower().replace('&', ' and '))).split()
+    treffer = []
+    for q in (d or {}).get('quotes') or []:
+        if q.get('quoteType') != 'EQUITY': continue
+        sym = q.get('symbol', ''); suff = '.' + sym.split('.')[-1] if '.' in sym else ''
+        if land in LAND_SUFFIX and suff not in LAND_SUFFIX[land]: continue
+        if nz(q.get('longname') or q.get('shortname')) == nz(name): treffer.append(sym)
+    return treffer[0] if len(set(treffer)) == 1 else None
 def gleif(isin, name, land):
     B = 'https://api.gleif.org/api/v1/lei-records'; h = {'Accept': 'application/vnd.api+json'}
     c = []
@@ -121,10 +132,16 @@ def verarbeite(r, uid, urls):
     # Kennzahlen
     sy = None; daten = {}
     if tk:
-        cands = [tk] if '.' in str(tk) else [str(tk) + s for s in (SUFFIX.get(bse) or LAND_SUFFIX.get(land) or [''])]
+        t2 = str(tk).strip().replace(' ', '-')
+        cands = [t2] if '.' in t2 else [t2 + s for s in (SUFFIX.get(bse) or LAND_SUFFIX.get(land) or [''])]
         for c in cands:
             daten = yahoo(c)
             if daten: sy = c; break
+    if not daten:
+        sym = yahoo_suche(name, land)
+        if sym:
+            daten = yahoo(sym)
+            if daten: sy = sym; notiz.append(f'Yahoo-Kürzel {sym} über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht')
     if not daten:
         notiz.append('keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten' + (f' (Ticker {tk})' if tk else ' (kein Ticker)'))
         return ergaenzt, 0, '', notiz

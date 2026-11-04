@@ -174,3 +174,5 @@
 .gk-balken b { font-family: var(--mono); font-weight: 400; text-align: right; color: var(--ink, #e8ecf1); }
 .gk-leg { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-2); margin-right: 8px; }
 .gk-leg i, .gk-punkt { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 5px; }
+.gk-neu { color: #ffa828; font-size: 12px; line-height: 1.4; margin: 4px 0 6px; }
+.gk-neu-chip { display: inline-block; font-size: 10px; line-height: 1; padding: 2px 5px; border-radius: 3px; background: rgba(255,168,40,.18); color: #ffa828; vertical-align: middle; }

@@ -128,11 +128,12 @@ MONATE = {m: i + 1 for i, m in enumerate(["January", "February", "March", "April
                                            "October", "November", "December"])}
 
 
-def wahlen(name_iso):
+def wahlen(name_iso, juengst=None):
+    """Nationale Wahlen der nächsten zwölf Monate; mit `juengst` (dict) zusätzlich die Wahlen der letzten 30 Tage."""
     heute = date.today()
     ende = heute + timedelta(days=366)
     out = {}
-    for jahr in sorted({heute.year, ende.year}):
+    for jahr in sorted({heute.year, ende.year, (heute - timedelta(days=30)).year}):
         try:
             t = holen(WIKI.format(jahr))
         except Exception as e:  # noqa: BLE001
@@ -162,6 +163,9 @@ def wahlen(name_iso):
             artikel = re.search(r"\[\[(\d{4} [^|\]]*)", rest[land.end():])
             if mon:
                 d = date(jahr, mon, int(tag)) if tag else date(jahr, mon, 1)
+                if juengst is not None and tag and heute - timedelta(days=30) <= d < heute:
+                    juengst.setdefault(iso, []).append({"datum": d.isoformat(), "was": was[:140],
+                                                        "url": "https://en.wikipedia.org/wiki/" + urllib.parse.quote(artikel.group(1).replace(" ", "_")) if artikel else ""})
                 if d < heute.replace(day=1) or d > ende or (tag and d < heute):
                     continue
                 datum = d.isoformat() if tag else f"{jahr}-{mon:02d}"
@@ -305,7 +309,8 @@ def main():
                        "btw": {"name": "Die Bundeswahlleiterin, Bundestagswahl 2025, Zweitstimmen je Land (Datenlizenz Deutschland 2.0)",
                                "url": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata.html"},
                        "umfragen": {"name": "DAWUM (ODbL), jüngste Umfrage je Parlament", "url": "https://dawum.de/"}}}
-    schritte = [("regierungen", regierungen), ("wahlen", lambda: wahlen(name_iso))]
+    juengst = {}
+    schritte = [("regierungen", regierungen), ("wahlen", lambda: wahlen(name_iso, juengst)), ("wahlen_juengst", lambda: juengst)]
     for kurz, f in schritte:
         try:
             out[kurz] = f()

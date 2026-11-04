@@ -129,7 +129,8 @@ const HDL = (() => {
 
 /* ---------- Politik & Wahlen: Bereich des Terminals (Reiter POL) ----------
    Daten: politik-daten = data/politik.json (politik_daten.py: Wikidata, Wikipedia-Wahlkalender, Bundeswahlleiterin, DAWUM).
-   Ansichten: p-ueb (Regierungen), p-wahlen (Wahlkalender), p-de (Deutschland: Bundestag, Umfragen, Länder). */
+   Ansichten: p-ueb (Regierungen), p-wahlen (Wahlkalender), p-de (Deutschland: Bundestag, Umfragen, Länder),
+   p-parl (Parlamente aller Staaten, gerade gewählt), p-glied (Gliedstaaten der Bundesstaaten). */
 const POL = (() => {
   let P = null;
   const lade = () => { if (P === null) { try { P = JSON.parse(document.getElementById("politik-daten").textContent); } catch { P = false; } } return P; };
@@ -173,7 +174,63 @@ const POL = (() => {
         ${laender.map(([c, l]) => { const n = nameVon(c), w = btw[n] || {}, s = Object.entries(w)[0], u = um[n]; return `<tr><td style="text-align:left">${esc(n)}</td><td style="text-align:left;font-family:var(--sans)">${esc(l.regierungschef)}</td><td style="text-align:left" class="n">${esc((l.parteien || []).join(", "))}</td><td style="text-align:left">${s ? `${esc(s[0])} ${f1.format(s[1])} %` : "–"}</td><td style="text-align:left">${u ? `${u.werte.slice(0, 3).map(([p, v]) => `${esc(p)} ${f0.format(v)}`).join(" · ")} <span class="n">${esc(u.institut)}, ${esc(datum(u.datum))}</span>` : "–"}</td></tr>`; }).join("")}</tbody></table>${welt("politik")}`,
         fuss: "Regierungschefs laut Wikidata; Bundestagswahl 2025 nach Ländern (Zweitstimmen, Bundeswahlleiterin, Datenlizenz Deutschland 2.0); Umfragen DAWUM (ODbL). Ergebnisse der letzten Landtagswahlen und Koalitionen sind noch offen." })}</div>`;
   }
-  return { viewUeb, viewWahlen, viewDe };
+  /* Parlamente aller Staaten (parlamente-daten = data/parlamente.json aus parlamente_daten.py) */
+  let PA = null;
+  const ladePA = () => { if (PA === null) { try { PA = JSON.parse(document.getElementById("parlamente-daten").textContent); } catch { PA = false; } } return PA; };
+  const TYP = { einkammer: "Einkammer", unterhaus: "Unterhaus", oberhaus: "Oberhaus", kammer: "Kammer" };
+  const sitze = k => k.aktuell && k.aktuell.sitze && k.aktuell.sitze.length ? { l: k.aktuell.sitze.map(g => [g.partei, g.sitze, g.farbe, g.regierung]), q: "Wikipedia" }
+    : k.wahl && k.wahl.sitze && k.wahl.sitze.length ? { l: k.wahl.sitze.filter(x => x[1] != null).map(x => [x[0], x[1], x[2], null]), q: "IPU" } : null;
+  const balkenSitze = s => { const n = s.l.reduce((a, g) => a + g[1], 0) || 1;
+    return `<span style="display:inline-flex;width:120px;height:9px;border-radius:2px;overflow:hidden;vertical-align:middle;background:#2a313b">${s.l.map(g => `<i title="${esc(g[0])} ${g[1]}" style="display:block;width:${(g[1] / n * 100).toFixed(2)}%;background:${esc(g[2] || "#8b95a3")}"></i>`).join("")}</span>`; };
+  const neuChip = j => j ? ` <span style="color:#ffa828" title="Wahl am ${esc(datum(j.datum))}, Ergebnis ${esc(j.ergebnis)}">● neu gewählt</span>` : "";
+  const leerPA = () => `<div class="grid">${panel({ code: "PARL", titel: "Parlamente", sub: "keine Daten", body: `<p class="n">Keine Parlamentsdaten im Build (app/parlamente_daten.py).</p>` })}</div>`;
+  function kammerZeile(iso, k, region) {
+    const s = sitze(k), gr = s ? [...s.l].filter(g => g[0] !== "vakant").sort((a, b) => b[1] - a[1])[0] : null, n = s ? s.l.reduce((a, g) => a + g[1], 0) : 0, reg = s ? s.l.filter(g => g[3]).reduce((a, g) => a + g[1], 0) : 0;
+    const st = k.stimmen && k.stimmen.parteien ? k.stimmen.parteien.filter(p => p.prozent != null)[0] : null;
+    return `<tr><td style="text-align:left">${region ? esc(region) : esc(name(iso))}${neuChip(k.juengst)}</td><td style="text-align:left;font-family:var(--sans)">${esc(k.name || "")} <span class="n">${esc(TYP[k.typ] || "")}</span></td><td>${k.sitze_soll ? f0.format(k.sitze_soll) : n ? f0.format(n) : "–"}</td>
+      <td style="text-align:left">${s ? balkenSitze(s) : "–"}</td><td style="text-align:left">${gr ? `${esc(gr[0])} ${f0.format(gr[1])}` : "–"}</td><td>${reg && n ? f0.format(reg / n * 100) + " %" : "–"}</td>
+      <td style="text-align:left" class="n">${st ? `${esc(st.partei)} ${f1.format(st.prozent)} %` : "–"}</td><td class="n">${k.letzte_wahl ? esc(datum(k.letzte_wahl.datum)) : "–"}</td><td class="n">${k.naechste_wahl ? esc(datum(k.naechste_wahl.datum)) : "–"}</td><td class="n">${s ? s.q : ""}</td></tr>`;
+  }
+  const KOPF = `<thead><tr><th style="text-align:left">Land</th><th style="text-align:left">Kammer</th><th>Sitze</th><th style="text-align:left">Verteilung</th><th style="text-align:left">stärkste Fraktion</th><th>Regierungslager</th><th style="text-align:left">größte Partei, Stimmen</th><th>letzte Wahl</th><th>nächste Wahl</th><th>Quelle</th></tr></thead>`;
+  function juengstPanel(a) {
+    const d = lade() || {}, kal = Object.entries(d.wahlen_juengst || {}).flatMap(([iso, l]) => l.map(w => ({ ...w, iso })));
+    const nah = (x, y) => Math.abs(Date.parse(x) - Date.parse(y)) <= 3 * 864e5;
+    const l = [...kal.map(w => ({ datum: w.datum, wo: name(w.iso), was: w.was, url: w.url, st: ((a.juengst || []).find(j => j.iso === w.iso && !j.region && nah(j.datum, w.datum)) || {}).ergebnis || "" })),
+      ...(a.juengst || []).filter(j => j.region || !kal.some(w => w.iso === j.iso && nah(w.datum, j.datum))).map(j => ({ datum: j.datum, wo: j.region ? `${name(j.iso)}, ${j.region_name}` : name(j.iso), was: j.kammer, url: j.url, st: j.ergebnis }))]
+      .sort((x, y) => y.datum.localeCompare(x.datum));
+    return panel({ code: "NEU", titel: `Gerade gewählt (letzte ${a.schwelle_tage} Tage)`, sub: `${l.length} Wahlen`, breite: "w12",
+      body: l.length ? `<table class="tab"><thead><tr><th style="text-align:left">Datum</th><th style="text-align:left">Wo</th><th style="text-align:left">Wahl</th><th style="text-align:left">Ergebnis in der Quelle</th></tr></thead><tbody>${l.map(w => `<tr><td style="text-align:left" class="n">${esc(datum(w.datum))}</td><td style="text-align:left">${esc(w.wo)}</td><td style="text-align:left;font-family:var(--sans)">${w.url ? `<a class="flink" href="${esc(sicherUrl(w.url))}" target="_blank" rel="noopener">${esc(w.was)}</a>` : esc(w.was)}</td><td style="text-align:left;color:${w.st === "liegt vor" ? "#7cc4ff" : "#ffa828"}">${esc(w.st || "–")}</td></tr>`).join("")}</tbody></table>` : `<p class="n">Keine Wahlen in den letzten ${a.schwelle_tage} Tagen.</p>`,
+      fuss: `Schwelle ${a.schwelle_tage} Tage: so lange dauern in den meisten Staaten amtliches Endergebnis und konstituierende Sitzung (Deutschland: Art. 39 GG). Nationaler Wahlkalender (Wikipedia) und Kammern (IPU Parline, Wikipedia-Infoboxen der Parlamente und Gliedstaaten).` });
+  }
+  function viewParl() {
+    const a = ladePA(); if (!a) return leerPA();
+    const bip = iso => { const W = HDL.daten().W, l = W && W.laender[iso] && W.laender[iso].bip_usd; return l && l.length ? l[l.length - 1][1] : 0; };
+    const laender = Object.keys(a.staaten).sort((x, y) => bip(y) - bip(x) || name(x).localeCompare(name(y)));
+    const n = laender.reduce((s, i) => s + a.staaten[i].kammern.length, 0), mit = laender.reduce((s, i) => s + a.staaten[i].kammern.filter(k => sitze(k)).length, 0);
+    return `<div class="grid">${juengstPanel(a)}${panel({ code: "PARL", titel: "Nationale Parlamente", sub: `${laender.length} Staaten, ${n} Kammern, ${mit} mit Sitzverteilung · Abruf ${esc(datum(a.abruf))}`, breite: "w12",
+      body: `<table class="tab">${KOPF}<tbody>${laender.map(i => a.staaten[i].kammern.map(k => kammerZeile(i, k)).join("")).join("")}</tbody></table>${welt("politik")}`,
+      fuss: `Sitzverteilung: heutige Zusammensetzung laut Infobox des Wikipedia-Artikels der Kammer (CC BY-SA 4.0); fehlt sie, Sitze nach der letzten Wahl laut IPU Parline (${esc(((a.quellen || {}).ipu || {}).name || "")}). Regierungslager nur, wo die Infobox Regierung und Opposition trennt. Stimmenanteil laut Infobox des Wahlartikels. Nach BIP (Weltbank) geordnet.` })}</div>`;
+  }
+  let GL_LAND = "US";
+  function viewGlied() {
+    const a = ladePA(); if (!a) return leerPA();
+    const laender = Object.keys(a.gliedstaaten || {}).sort((x, y) => name(x).localeCompare(name(y)));
+    if (!laender.length) return leerPA();
+    if (!laender.includes(GL_LAND)) GL_LAND = laender[0];
+    const g = (a.gliedstaaten || {})[GL_LAND] || {};
+    const chips = laender.map(i => `<button type="button" class="key" data-pglland="${esc(i)}" aria-pressed="${i === GL_LAND}" style="margin:0 4px 4px 0">${esc(name(i))} <span class="n">${Object.keys(a.gliedstaaten[i]).length}</span></button>`).join("");
+    const zeilen = Object.entries(g).sort((x, y) => (x[1].name_de || x[1].name).localeCompare(y[1].name_de || y[1].name, "de")).map(([c, x]) => {
+      const ch = x.regierungschef, kopf = `<tr><td style="text-align:left" colspan="10" class="n" style="padding-top:6px">${esc(x.name_de || x.name)} · Regierungschef ${esc(ch ? ch.name : "–")}${ch && (ch.partei_kurz || ch.partei) ? ` (${esc(ch.partei_kurz || ch.partei)})` : ""}</td></tr>`;
+      return kopf + (x.kammern.length ? x.kammern.map(k => kammerZeile(GL_LAND, k, x.name_de || x.name)).join("") : `<tr><td colspan="10" class="n" style="text-align:left">kein Parlament mit Wikipedia-Infobox gefunden</td></tr>`); }).join("");
+    return `<div class="grid">${panel({ code: "GLD", titel: "Gliedstaaten der Bundesstaaten", sub: `${laender.length} Bundesstaaten · ${Object.keys(g).length} Gliedstaaten in ${esc(name(GL_LAND))}`, breite: "w12",
+      body: `<div style="margin-bottom:8px">${chips}</div><table class="tab">${KOPF}<tbody>${zeilen}</tbody></table>${welt("politik")}`,
+      fuss: "Gliedstaaten und Regierungschefs laut Wikidata (CC0, P150/P300/P6/P102); Parlamente und Wahltermine laut Infobox des Wikipedia-Artikels (CC BY-SA 4.0). Gliedstaaten ohne gepflegte Infobox bleiben leer (siehe app/OFFENE_DATENFELDER.md)." })}</div>`;
+  }
+  function klick(t) {
+    const e = t.closest && t.closest("[data-pglland]"); if (!e) return false;
+    GL_LAND = e.getAttribute("data-pglland"); render(); return true;
+  }
+  return { viewUeb, viewWahlen, viewDe, viewParl, viewGlied, klick };
 })();
 
 /* ---------- Börse: Zinsen, Devisen, Rohstoffe (Reiter BÖR, F6) aus data/boerse_welt.json (boerse_welt.py) ---------- */

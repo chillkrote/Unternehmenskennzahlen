@@ -93,6 +93,19 @@ für reine Änderungen an der Oberfläche reicht `python3 app/build.py --nur-sei
 teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei nicht nach main committet, sondern vom Workflow
 „Terminal bauen“ auf den Branch `terminal-dist` und als Workflow-Artifact abgelegt.
 
+* **Darstellungsformen:** Reiter oben auf der Karte, je mit eigenem Reiter im Terminal (HDL, VWL, BÖR, UNT, POL; dazu KOR):
+  * **Handel:** Stufe 1 die 15 größten Volkswirtschaften (oder Kontinente) mit ihren Strömen, Haupthandelsrouten aller Verkehrsträger
+    mit Engstellen und Knoten, „!“ bei aktuellen Störungsmeldungen. Stufe 2 die fünf größten Export- (grün, durchgezogen) und
+    Importpartner (rot, gestrichelt) der gewählten Länder (Shift+Klick wählt mehrere; Kacheln rechts und links), unter jedem Land
+    Zollsatz und Handelssaldo, Strom zwischen Wirtschaftsräumen, Vorschauen echter Meldungen. Stufe 3 Handel mit allen Nachbarn und
+    fünf weiteren größten Partnern, Strom je Nachbar.
+  * **Volkswirtschaft:** Stufe 1 Wirtschaftsräume (`geo/wirtschaftsraeume.csv`) mit BIP-Wachstum und Inflation auf der Karte, übrige
+    Werte rechts. Stufe 2 dieselben Werte je Land, Klick zeigt alles, Shift+Klick vergleicht. Stufe 3 Land im Detail (Volkswirtschaft,
+    Handel, Strom, Unternehmen, Börse).
+  * **Börse & Finanzen, Unternehmen, Politik & Wahlen:** Entwürfe zur Freigabe; bis dahin die bisherige Darstellung.
+  Daten: `welt_daten.py` (Weltbank, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> `data/welt.json`), `routen.py`
+  (`data/routen.json`), `news_routen.py` (`data/news_routen.json`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
+  `OFFENE_DATENFELDER.md`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
   Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,
   die Unternehmen des Landes und die Börsenindizes aus dem Bereich BÖR. Quelle wie im VWL-Bereich: Eurostat, wo vorhanden, sonst OECD.

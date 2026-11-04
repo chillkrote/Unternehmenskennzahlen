@@ -1,0 +1,2 @@
+# Frachtflughäfen (IATA), Koordinaten aus OurAirports (gemeinfrei); Auswahl von Hand, ohne Mengenangabe
+HKG MEM PVG ANC ICN SDF TPE DXB DOH NRT MIA LAX FRA LEJ LGG CDG ORD CAN AMS IST GRU BOG

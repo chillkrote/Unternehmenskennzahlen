@@ -1,0 +1,80 @@
+name: Weltkugel-Daten
+
+# Daten-Update für die Weltkugel, kein Terminal-Bau (den übernimmt terminal.yml, nur wenn sich Daten geändert haben).
+#  - täglich 06:17 UTC: Meldungen zu Störungen an Engstellen der Handelsrouten -> app/data/news_routen.json
+#    (GDELT, bei Drosselung Google News RSS; beide kostenlos, ohne Schlüssel)
+#  - Mo 04:23 UTC: Weltbank-Kennzahlen, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> app/data/welt.json
+# Fällt eine Quelle aus, bleibt der letzte gute Stand liegen.
+# Kosten: keine. Meldungen rund 15 Minuten (Abstände wegen der Abfragegrenzen), Weltdaten rund 3 Minuten.
+on:
+  schedule:
+    - cron: "17 6 * * *"
+    - cron: "23 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      was:
+        description: "Was abrufen?"
+        type: choice
+        options: [meldungen, weltdaten, beides]
+        default: meldungen
+
+permissions:
+  contents: write
+  actions: write
+
+# gemeinsame Sperre mit den anderen Daten-Workflows: nie zwei Läufe gleichzeitig am Daten-Branch
+concurrency:
+  group: daten-schreiben
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  abruf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      WAS: ${{ github.event_name == 'schedule' && (github.event.schedule == '23 4 * * 1' && 'weltdaten' || 'meldungen') || inputs.was }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Meldungen zu Routenstörungen
+        if: env.WAS == 'meldungen' || env.WAS == 'beides'
+        run: python3 app/news_routen.py 2>&1 | tee /tmp/news.log
+      - name: Weltbank, Strom, Zölle, Wirtschaftsräume
+        if: env.WAS == 'weltdaten' || env.WAS == 'beides'
+        run: python3 app/welt_daten.py 2>&1 | tee /tmp/welt.log
+      - name: Zusammenfassung
+        if: always()
+        continue-on-error: true
+        run: |
+          {
+            echo "### Weltkugel-Daten ($WAS)"
+            for f in /tmp/news.log /tmp/welt.log; do
+              [ -f "$f" ] || continue
+              echo '```'; tail -n 3 "$f"; echo '```'
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+      # Schreiben nur auf main: ein Start von einem anderen Branch ist ein Trockenlauf
+      - name: Änderungen pushen
+        id: push
+        if: github.ref == 'refs/heads/main'
+        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json
+      - name: Terminal neu bauen lassen
+        if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
+        run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}

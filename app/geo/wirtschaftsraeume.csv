@@ -1,0 +1,28 @@
+id,name,kurz,art,farbe,mitglieder,stand,quelle,hinweis
+EU,Europäische Union,EU,primaer,#5b8def,AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE,2026-11,https://european-union.europa.eu/principles-countries-history/eu-countries_de,Binnenmarkt und Zollunion
+EFTA,Europäische Freihandelsassoziation,EFTA,primaer,#8fb3f5,IS LI NO CH,2026-11,https://www.efta.int/about-efta/efta-member-states,"mit der EU im EWR (außer Schweiz, dort bilaterale Verträge)"
+GB,Vereinigtes Königreich,UK,einzel,#9aa7ff,GB,2026-11,https://www.gov.uk/government/collections/the-uks-trade-agreements,"seit 2021 außerhalb des EU-Binnenmarkts, Handels- und Kooperationsabkommen mit der EU"
+TR,Türkei,TR,einzel,#d9a6c5,TR,2026-11,https://trade.ec.europa.eu/access-to-markets/en/content/eu-turkey-customs-union,Zollunion mit der EU für Industriewaren
+USMCA,"Abkommen USA, Mexiko, Kanada",USMCA,primaer,#5fb88a,US CA MX,2026-11,https://ustr.gov/trade-agreements/free-trade-agreements/united-states-mexico-canada-agreement,Freihandelszone; Überprüfung des Abkommens 2026
+SICA,Zentralamerikanisches Integrationssystem,SICA,primaer,#7cc6a6,GT SV HN NI CR PA BZ DO,2026-11,https://www.sica.int/sica/vista_paises,Belize zugleich CARICOM
+CARICOM,Karibische Gemeinschaft,CARICOM,primaer,#4cb8c4,AG BS BB DM GD GY HT JM KN LC VC SR TT,2026-11,https://caricom.org/member-states-and-associate-members/,Belize hier nicht doppelt gezählt (bei SICA)
+MERCOSUR,Gemeinsamer Markt Südamerikas,Mercosur,primaer,#b07fd6,AR BR PY UY BO,2026-11,https://www.mercosur.int/quienes-somos/paises-del-mercosur/,"Bolivien seit 2024 Vollmitglied; Venezuela suspendiert"
+CAN,Andengemeinschaft,CAN,primaer,#c99be6,CO EC PE,2026-11,https://www.comunidadandina.org/quienes-somos/,Bolivien zugleich Mercosur (dort gezählt)
+EAEU,Eurasische Wirtschaftsunion,EAWU,primaer,#c76f5a,RU BY KZ KG AM,2026-11,https://eec.eaeunion.org/en/,Zollunion
+GCC,Golf-Kooperationsrat,GCC,primaer,#e0a458,SA AE QA KW BH OM,2026-11,https://www.gcc-sg.org/,Zollunion und gemeinsamer Markt
+AMU,Union des Arabischen Maghreb,UMA,primaer,#d4b483,DZ LY MR MA TN,2026-11,https://maghrebarabe.org/,weitgehend ruhend; als Raum zur Gruppierung
+ECOWAS,Westafrikanische Wirtschaftsgemeinschaft,ECOWAS,primaer,#d08c60,BJ CV CI GM GH GN GW LR NG SN SL TG,2026-11,https://ecowas.int/member-states/,"Mali, Burkina Faso und Niger seit Januar 2025 ausgetreten"
+AES,Allianz der Sahelstaaten,AES,primaer,#b8875c,ML BF NE,2026-11,https://en.wikipedia.org/wiki/Alliance_of_Sahel_States,Konföderation seit 2024
+CEMAC,Zentralafrikanische Wirtschafts- und Währungsgemeinschaft,CEMAC,primaer,#a67c52,CM CF TD CG GQ GA,2026-11,https://www.cemac.int/,gemeinsame Währung CFA-Franc BEAC
+EAC,Ostafrikanische Gemeinschaft,EAC,primaer,#c9a45c,KE TZ UG RW BI SS CD SO,2026-11,https://www.eac.int/eac-partner-states,Tansania und DR Kongo zugleich SADC (hier bei EAC)
+SADC,Entwicklungsgemeinschaft des südlichen Afrika,SADC,primaer,#e3c27a,AO BW KM LS MG MW MU MZ NA SC ZA SZ ZM ZW,2026-11,https://www.sadc.int/member-states,ohne Tansania und DR Kongo (bei EAC gezählt)
+SAARC,Südasiatische Freihandelszone (SAFTA),SAFTA,primaer,#e48f6a,AF BD BT IN MV NP PK LK,2026-11,https://www.saarc-sec.org/,Abkommen kaum umgesetzt; als Raum zur Gruppierung
+ASEAN,Verband Südostasiatischer Nationen,ASEAN,primaer,#4fa3a5,BN KH ID LA MY MM PH SG TH VN TL,2026-11,https://asean.org/member-states/,Timor-Leste seit Oktober 2025 Mitglied
+CN,China,CN,einzel,#e07a7a,CN,2026-11,https://www.mofcom.gov.cn/,
+JP,Japan,JP,einzel,#e6a0a0,JP,2026-11,https://www.mofa.go.jp/,
+KR,Südkorea,KR,einzel,#d68fa8,KR,2026-11,https://www.motie.go.kr/,
+CER,Australien und Neuseeland (CER),CER,primaer,#6fc0d8,AU NZ,2026-11,https://www.dfat.gov.au/trade/agreements/in-force/anzcerta/australia-new-zealand-closer-economic-relations-trade-agreement,
+EURO,Euroraum,Euro,uebergreifend,#3d6fd6,AT BE BG HR CY EE FI FR DE GR IE IT LV LT LU MT NL PT SK SI ES,2026-11,https://www.ecb.europa.eu/euro/intro/html/index.de.html,Bulgarien seit 1. Januar 2026
+EWR,Europäischer Wirtschaftsraum,EWR,uebergreifend,#6d8fe0,AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO,2026-11,https://www.efta.int/eea,EU und drei EFTA-Staaten
+RCEP,Regionale umfassende Wirtschaftspartnerschaft,RCEP,uebergreifend,#3fa7a0,AU BN KH CN ID JP KR LA MY MM NZ PH SG TH VN,2026-11,https://rcepsec.org/,größte Freihandelszone nach BIP
+CPTPP,Umfassendes und fortschrittliches Transpazifisches Partnerschaftsabkommen,CPTPP,uebergreifend,#57b3c9,AU BN CA CL JP MY MX NZ PE SG VN GB,2026-11,https://www.mfat.govt.nz/en/trade/free-trade-agreements/free-trade-agreements-in-force/cptpp,Vereinigtes Königreich seit Dezember 2024

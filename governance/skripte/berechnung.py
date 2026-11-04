@@ -24,6 +24,8 @@ A = {
  'U000036': (95.0, 'Beschäftigte Deutschland, Vollzeitäquivalente (Ø-Vergütung lt. vergleichender Darstellung)', GB('U000036'), 333),
  'U000067': (101.227, 'Beschäftigte BMW AG, Vollzeitäquivalente (Ø-Vergütung lt. vergleichender Darstellung)', VB('U000067'), 40),
  'U000535': (116.0, 'Belegschaft Deutschland (ohne Siemens Healthineers), FTE', VB('U000535'), 38),
+ 'U000515': (146.0, 'Mitarbeitende des SAP-Konzerns, Vollzeitkräfte (Konzern, nicht nur Deutschland)', VB('U000515'), 35),
+ 'U000124': (108.0, 'Arbeitnehmer Commerzbank AG auf VZK-Basis (Brutto-Personalaufwand)', VB('U000124'), 50),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
@@ -53,6 +55,7 @@ B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
  ('Ilka Horstmeier', 'U000067', VB('U000067'), 28, 'Bezeichnung "Arbeitsdirektorin"'),
+ ('Dr. Bettina Orlopp', 'U000124', VB('U000124'), 24, 'Bezeichnung "Vorstandsvorsitzende"'),
  ('Hauke Stars', 'U000712', GB('U000712'), 53, 'Anrede "Frau Stars" im Vergütungsbericht; Frauenquote Vorstand 12,5 % (S. 226)'),
  ('Dr. Astrid Arndt', 'U000742', VB('U000742'), 32, 'Possessivpronomen "ihrem Anstellungsvertrag"; Frauenanteil Vorstand 40 % im Vorjahr (Arndt, Dembeck)'),
  ('Dr. Sandra Dembeck', 'U000742', VB('U000742'), 32, 'Possessivpronomen "ihr Anstellungsvertrag"; Frauenanteil Vorstand GB S. 108'),

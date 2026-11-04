@@ -1,11 +1,53 @@
 {
-"abruf": "2026-11-04T09:39Z",
+"abruf": "2026-11-04T10:04Z",
 "tage": 14,
 "fehler": [],
 "quelle": "GDELT und Google News (Verweise auf Artikel; Titel unverändert)",
 "url": "https://www.gdeltproject.org/",
 "regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'",
 "meldungen": {
+"hormus": [
+{
+"titel": "Iran Exempts India, China, Iraq, and Qatar from Strait of Hormuz Restrictions",
+"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeWZNMWN2Z2NuVjE2UHVCWFNCbEJYMlFBWGFtWFh2Q1VlU3RKRnJ3UTZJLUFPeVNxQWNFUXVDVW5EQU5xeFdpdzc2YUh3U3pOY1JrTHlBc2V1Wkt4cTZQNHRJdzhHaE16YmpjZ01qNlZ0TkVYWG82OV94RFV0RWVranI0TzlLV014UFhtd000RkNiQldDNGRnRW91M3NjSlZrVlpwSDRDaTVTNmRtbWU1Sw?oc=5",
+"quelle": "IranWire",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-04"
+},
+{
+"titel": "The New York Times.. The U.S. hit an island in the Strait of Hormuz on Monday in what American officials described as a small-scale defensive measure against Iranians accused of planning missile strikes against U.S. assets. It was the first U.S. attack inside Ir",
+"url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPeHRfSk16cEJlWVBVTFNGcWd6MWtpMDZwNjVNcmVSaFd6NnBOdHdLTjNrYWh4dnRGOU5CS3kzcmpQeEltWFRkcWRlSEJFOVMtb3E5cGxYZEVFQUxCQTAyQ2dNRzhIRjMxdjJ5NzNKeEwxS3JGNmNQZ3BxYXgzRHN3QkRzbm13czJHQVFyQ0hhVDUtRGZCNjltLVI5bG04aXhWcjdIbDZ6a2FJN2piaU0zX2lZaHk2X3pwbjRuclVkcEVzbmM5QlRudEc5eVJvYWUyMmNfMQ?oc=5",
+"quelle": "Facebook",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-03"
+},
+{
+"titel": "The Strait of Hormuz closure has cost Europe an extra $142 billion for the same energy it was already buying",
+"url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOcUpnMUY0NURYRkpSdzMxYzZDMHRZR2V2dGxnc0loSjJJYVE0LXl5Ni1qT3k1MmtsQlhwYV9ZNThBSGJiSm1fLWdWa0tCSGdQVktjdG9DUWpHRUU2SnI1SVptcUpDX2w4Q1lkV3NLbUpobjM0TnkwNDBCd3Y2aEFQZlQ0ZkhEX0NEZ19iWk5B?oc=5",
+"quelle": "Fortune",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-03"
+},
+{
+"titel": "Iran exempts ships from four countries from Strait of Hormuz transit restrictions",
+"url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWDJfYjA2RzlndWhqVG5SU0Fhdl9NRmtIdll0dUFYYjYzSmVycXhQZUMwbWVwYzlOZDlLQ0xZLVoyR1BaYUVRUTZWUGtQWTV2YmJaUHUyX1dWVlh0OXFlZ19veFR0d19iRE5KMXFKUWc0aEV1WjJYdW9YcFhJUkZmSUNpZUZXcmh4WnlFQUJReUkxNzNESWxjQWdtXzNsT0dXeDBSVw?oc=5",
+"quelle": "Middle East Online",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-03"
+},
+{
+"titel": "US said to strike Iranian island in Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWTdYYkNwNDM4VUhlRy1IUmhUd3BiS3d2bTIyTTN3NDRyTDl5ekttOWdIbnBQdnQwcEVyMzRJZVJxMG9LR1RFMU9aR21xbjhLcTNFbjZXb3Q1cERyNUZWVmJBdWo5a1B5ZFlwdTM4ZGs0Nk5qcVlXTzdsakE5YzVpSmFnOUMwOGZGcHduSmtNeWFMMk91d2p0SVhUcGhLYkU?oc=5",
+"quelle": "The Times of Israel",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-03"
+}
+],
 "panama": [
 {
 "titel": "Panama Canal to cap ship transits due to El Nino drought",
@@ -82,16 +124,6 @@
 "datum": "2026-10-23"
 }
 ],
-"kiel": [
-{
-"titel": "Einsatz auf Hochbrücke Hochdonn: Bahnstrecke über Nord-Ostsee-Kanal wegen Suche nach Person gesperrt",
-"url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPX2dTdU1GVTJBQ0EzZmozcTZpUnVZcTdiZEoxT21MLWFwZTdlT3U4T2EyX0k3Vk5XYmh3eXAyY1c1cmNkelNrdDNRdTIwWWlTekJQbllqeGcxbVhRNWxRZUl0M1o2SzJmY1BGaXhRZTRrdXRiVUZmM01qODJvbU1kUTQzSHF6Sjl6RE1nRjF1WTZEd2tGa2dSaDhqNWcwUldGRmQ3UmZhNFltTGREeUt1VEJHdzF2Zw?oc=5",
-"quelle": "shz.de",
-"sprache": "German",
-"dienst": "Google News",
-"datum": "2026-10-22"
-}
-],
 "taiwan": [
 {
 "titel": "Japan to integrate missile command systems amid Taiwan Strait concerns",
@@ -146,6 +178,14 @@
 "datum": "2026-10-29"
 },
 {
+"titel": "Brenner Base Tunnel delayed until 2034, costs rise by €1.2 billion",
+"url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNYURhc29sSVpXbmtJVjBfRWhOSDhfSHpNaHJMSnZtMkxzNXlrWndocHJ0Y2RRTHM1RGEwa1ZhVTVaZnM0RV9kV1VWeU8wWnVkTlpZMkZVdkVwM2xwQ1U2QmdHdW9Md1FEelB0QnpVUzRwUzJFYlVWLVAxdDh4aFZlTnlvRzJ1NXI2Rk8tQVBzWUs0dDJpa0pkV1ZBcm5kR0tKZGozRlhENjNNRU1lei1kTVJzSHN4N28?oc=5",
+"quelle": "RAILMARKET.com",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-10-22"
+},
+{
 "titel": "Brenner-Stau 2026: Wann Sie A13 meiden sollten!",
 "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBZWlBKWVdwOUxpQWpWbEN6YnpJZnhrYWdNa3JKblhqT0pwbTF6dm9VNnBjdjF5MnZMaEZlUGptU0NPek9VLTIxX2FSS2VYNmxBUERnMmRLeUNPdzJiVzZYMkxBdFd4VzlfTmRV?oc=5",
 "quelle": "ADAC",
@@ -194,24 +234,6 @@
 "sprache": "German",
 "dienst": "Google News",
 "datum": "2026-10-23"
-}
-],
-"laredo": [
-{
-"titel": "Head-on crash closes Exit 4A on northbound I-35 in Laredo",
-"url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUHAzYjVDQUQxWUlPWUFsbE9QUWlnWFZNOVBSdzFydWdIeHF1OUlCcGNrd0pyRmhUSEdnZ3laaHNINC1ETU4tNkxJVjl5cm02X0ZGYVRWMzkySjNXczl2MnA4eTQ1NWpXUGl5OW5WRGRpekZsLWJsZ0JKQjBHSWY3T1Y1SkpzZ0JtS1p2d3FZcFh2WUhmZGluZHJ5UWxlWVnSAZ8BQVVfeXFMTlBwM2I1Q0FEMVlJT1lBbGxPUFFpZ1hWTTlQUncxcnVnSHhxdTlJQnBja3dKckZoVEhHZ2d5WmhzSDQtRE1OLTZMSVY5eXJtNl9GRmFUVjM5MkozV3M5djJwOHk0NTVqV1BpeTluVkRkaXpGbC1ibGdCSkIwR0lmN09WNUpKc2dCbUtadndxWXBYdllIZmRpbmRyeVFsZVlZ?oc=5",
-"quelle": "KGNS",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-02"
-},
-{
-"titel": "$290,000 worth of cocaine seized at Laredo Port of entry",
-"url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOc0tQeVJPRHB6dHNod1VyX05LeldGYzVVTzFvVTdVNXFMckh3cmdpZzA4c1JSV0hGdmZMWWFyaEI2WXJDQkVaZk40eU5wM0pWb09kalJKMGNPMzM2QUpIM2cxYkhubkJ0WTZrZ09CZWd2Sml4MjA1RnJmNVk1RUZHYlRYLXZZT2lNMTBnZXJtZHkxUXJPM2UxNA?oc=5",
-"quelle": "WOAI",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-29"
 }
 ],
 "ambassador": [

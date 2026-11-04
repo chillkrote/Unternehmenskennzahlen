@@ -220,11 +220,11 @@ const POL = (() => {
     const g = (a.gliedstaaten || {})[GL_LAND] || {};
     const chips = laender.map(i => `<button type="button" class="key" data-pglland="${esc(i)}" aria-pressed="${i === GL_LAND}" style="margin:0 4px 4px 0">${esc(name(i))} <span class="n">${Object.keys(a.gliedstaaten[i]).length}</span></button>`).join("");
     const zeilen = Object.entries(g).sort((x, y) => (x[1].name_de || x[1].name).localeCompare(y[1].name_de || y[1].name, "de")).map(([c, x]) => {
-      const ch = x.regierungschef, kopf = `<tr><td style="text-align:left" colspan="10" class="n" style="padding-top:6px">${esc(x.name_de || x.name)} · Regierungschef ${esc(ch ? ch.name : "–")}${ch && (ch.partei_kurz || ch.partei) ? ` (${esc(ch.partei_kurz || ch.partei)})` : ""}</td></tr>`;
+      const ch = x.regierungschef, koal = (x.koalition || []).length ? ` · Regierungslager ${esc(x.koalition.join(", "))}` : "", seit = ch && ch.seit ? ` · im Amt seit ${esc(ch.seit.split("-").reverse().join("."))}` : "", kopf = `<tr><td style="text-align:left" colspan="10" class="n" style="padding-top:6px">${esc(x.name_de || x.name)} · Regierungschef ${esc(ch ? ch.name : "–")}${ch && (ch.partei_kurz || ch.partei) ? ` (${esc(ch.partei_kurz || ch.partei)})` : ""}${seit}${koal}</td></tr>`;
       return kopf + (x.kammern.length ? x.kammern.map(k => kammerZeile(GL_LAND, k, x.name_de || x.name)).join("") : `<tr><td colspan="10" class="n" style="text-align:left">kein Parlament mit Wikipedia-Infobox gefunden</td></tr>`); }).join("");
-    return `<div class="grid">${panel({ code: "GLD", titel: "Gliedstaaten der Bundesstaaten", sub: `${laender.length} Bundesstaaten · ${Object.keys(g).length} Gliedstaaten in ${esc(name(GL_LAND))}`, breite: "w12",
-      body: `<div style="margin-bottom:8px">${chips}</div><table class="tab">${KOPF}<tbody>${zeilen}</tbody></table>${welt("politik")}`,
-      fuss: "Gliedstaaten und Regierungschefs laut Wikidata (CC0, P150/P300/P6/P102); Parlamente und Wahltermine laut Infobox des Wikipedia-Artikels (CC BY-SA 4.0). Gliedstaaten ohne gepflegte Infobox bleiben leer (siehe app/OFFENE_DATENFELDER.md)." })}</div>`;
+    return `<div class="grid">${panel({ code: "GLD", titel: "Gliedstaaten und Regionen", sub: `${laender.length} Staaten · ${Object.keys(g).length} Gliedstaaten in ${esc(name(GL_LAND))}`, breite: "w12",
+      body: `<div style="margin-bottom:8px">${chips}</div>${(a.rolle || {})[GL_LAND] ? `<p class="n" style="margin:0 0 6px">Amt „Regierungschef“ in dieser Ebene: ${esc(a.rolle[GL_LAND])}</p>` : ""}<table class="tab">${KOPF}<tbody>${zeilen}</tbody></table>${welt("politik")}`,
+      fuss: "Gliedstaaten, Regionen und Regierungschefs mit Amtsantritt laut Wikidata (CC0, P150/P300/P6/P580/P102); Regierungslager laut Infobox (Regierung/Opposition); Parlamente und Wahltermine laut Infobox des Wikipedia-Artikels (CC BY-SA 4.0). Gliedstaaten ohne gepflegte Infobox bleiben leer (siehe app/OFFENE_DATENFELDER.md)." })}</div>`;
   }
   function klick(t) {
     const e = t.closest && t.closest("[data-pglland]"); if (!e) return false;

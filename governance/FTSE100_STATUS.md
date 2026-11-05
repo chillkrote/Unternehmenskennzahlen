@@ -13,3 +13,12 @@ Je Unternehmen wird der Annual Report mit Directors' Remuneration Report (DRR) g
 | Alliance Witan | nicht begonnen (Investment Trust, evtl. ohne Pay Ratio) |
 | Anglo American | Integrated Annual Report 2025 nur über JS-Seite, PDF-Link nicht gefunden → Upload nötig |
 | Antofagasta, AstraZeneca (403), Autotrader … | offen |
+
+## Update 05.11.2026 (zweiter Durchgang)
+| Unternehmen | Stand |
+|---|---|
+| Babcock International | fertig (FY bis 31.03.2026; boerse_babcock.py) |
+| Barclays | fertig, NED- und Executive-Tabellen, Pay Ratio 248:1 (boerse_barclays.py); Gender Pay Gap noch nicht erfasst |
+| BAE Systems | Bericht nur hinter Bot-Schutz (Incapsula) → Upload nötig |
+| BP | bp.com 403 → Upload nötig |
+| Antofagasta, Autotrader, Aviva, British American Tobacco | Bericht existiert, direkter PDF-Link noch nicht gefunden |

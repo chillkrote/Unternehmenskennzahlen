@@ -82,6 +82,8 @@ FRAUEN = [
  ('Inge Hofkens', 'U000053', GB('U000053'), 102, 'Bezeichnung "Vorständin"'),
  ('Dr. Stephanie Coßmann', 'U000640', VB('U000640'), 8, 'Bezeichnung "Arbeitsdirektorin"'),
  ('Dr. Astrid Fontaine', 'U000518', VB('U000518'), 26, 'Bezeichnung "Arbeitsdirektorin"'),
+ ('Karen Florschütz', 'U000028', GB('U000028'), 33, 'Bericht: "zwei von sechs Aufsichtsratsmitgliedern Frauen, nämlich Karen Florschütz und Prof. Dr. Anna Weber"'),
+ ('Prof. Dr. Anna Weber', 'U000028', GB('U000028'), 33, 'Bericht: "zwei von sechs Aufsichtsratsmitgliedern Frauen, nämlich Karen Florschütz und Prof. Dr. Anna Weber"'),
  ('Frederique van Baarle', 'U000363', VB('U000363'), 15, 'Bericht: "Arbeitsdirektorin Frau Frederique van Baarle"'),
  ('Karin Rådström', 'U000133', VB('U000133'), 16, 'Bezeichnung "Vorstandsvorsitzende"'),
  ('Darleen Caron', 'U000538', VB('U000538'), 28, 'Bezeichnung "Personalvorständin"'),

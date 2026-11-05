@@ -9,6 +9,12 @@ U000017,2025,mitbestimmung_ar,"paritätisch (MitbestG), 8 von 16 Arbeitnehmerver
 U000017,2025,pay_ratio,,,governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf,4,kein Verhältniswert; nur Vertikalvergleich (Entwicklung)
 U000026,2025,vorstand_mitglieder_zahl,1,Personen,governance/dokumente/airbus-se/jahresabschluss-2025.pdf,51,CEO ist einziges geschäftsführendes Board-Mitglied; Executive Committee getrennt
 U000026,2025,pay_ratio,,,governance/dokumente/airbus-se/jahresabschluss-2025.pdf,51,Im Jahresabschluss nicht enthalten; Report of the Board of Directors (Abschnitt 2.3.2) nicht abgerufen (Airbus-Website mit Bot-Schutz)
+U000028,2025,vorstand_mitglieder_zahl,2,Personen,governance/dokumente/aixtron-se/geschaeftsbericht-2025.pdf,32,"Vorstand zweiköpfig, Frauenanteil 0 %"
+U000028,2025,ar_mitglieder_zahl,6,Personen,governance/dokumente/aixtron-se/geschaeftsbericht-2025.pdf,32,"sechs Mitglieder zum 31.12.2025, davon zwei Frauen (33 %)"
+U000028,2025,ar_arbeitnehmervertreter_zahl,0,Personen,governance/dokumente/aixtron-se/geschaeftsbericht-2025.pdf,69,SE ohne Arbeitnehmervertreter im Aufsichtsrat ausgewiesen
+U000028,2025,ar_frauen_zahl,2,Personen,governance/dokumente/aixtron-se/geschaeftsbericht-2025.pdf,33,Karen Florschütz und Prof. Dr. Anna Weber (33 %); Zielgröße 33 % bis 2030
+U000028,2025,vorstand_frauen_zahl,0,Personen,governance/dokumente/aixtron-se/geschaeftsbericht-2025.pdf,32,"Frauenanteil Vorstand 0 %, Zielgröße 0 %"
+U000028,2025,pay_ratio,,,governance/dokumente/aixtron-se/geschaeftsbericht-2025.pdf,65,"Keine absolute Ø-Vergütung ausgewiesen (nur Veränderung Mitarbeiter AIXTRON SE +2 %, FTE)"
 U000036,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""Number of executive members: 9"""
 U000036,2025,vorstand_frauen_zahl,4,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""four female members, accounting for 44.4 %"" (Corporate Governance Statement); nach § 16 Abs. 2 SEAG mindestens eine Frau"
 U000036,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"sechs Anteilseigner-, sechs Arbeitnehmervertreter"
@@ -156,6 +162,12 @@ U000420,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/muen
 U000420,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,"Beier und Grundler (ver.di), Mücke (Vorsitzende Neue Assekuranz Gewerkschaft) lt. Berufsangabe; weitere Gewerkschaftszugehörigkeit nicht ausgewiesen"
 U000420,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter",,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,
 U000420,2025,pay_ratio,,,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/verguetungsbericht-2025.pdf,39,"Kein Verhältnis ausgewiesen; Vergleich nur als Veränderung (Ø-Vergütung Deutschland FTE 2025: -0,2 %), keine Absolutwerte -> Berechnung nach Böckler Variante A nicht möglich"
+U000442,2025,vorstand_mitglieder_zahl,2,Personen,governance/dokumente/nordex-se/geschaeftsbericht-2025.pdf,248,zwei aktive Mitglieder zum 31.12.2025
+U000442,2025,ar_mitglieder_zahl,6,Personen,governance/dokumente/nordex-se/geschaeftsbericht-2025.pdf,251,sechs vergütete Mitglieder
+U000442,2025,ar_arbeitnehmervertreter_zahl,0,Personen,governance/dokumente/nordex-se/geschaeftsbericht-2025.pdf,251,"Im Bericht keine Arbeitnehmervertreter im Aufsichtsrat ausgewiesen (SE, nur sechs Mitglieder)"
+U000442,2025,gender_pay_gap_gesamt,-12.3,Prozent,governance/dokumente/nordex-se/geschaeftsbericht-2025.pdf,203,"Unbereinigt, alle Arbeitnehmenden (ESRS S1-16); negativ = Frauen verdienen im Mittel mehr. Management +19,8 %, White-Collar +7,2 %, Blue-Collar +3,2 % zugunsten der Männer"
+U000442,2025,pay_ratio_hoechstbezahlte_median,41.6,Verhältnis,governance/dokumente/nordex-se/geschaeftsbericht-2025.pdf,204,"ESRS S1-16: höchstbezahlte Einzelperson zum Median aller Arbeitnehmenden (ohne diese Person), 2024: 37,0 — nicht Böckler-/CEO-Methode"
+U000442,2025,pay_ratio,,,governance/dokumente/nordex-se/geschaeftsbericht-2025.pdf,251,"Keine absolute Ø-Vergütung ausgewiesen (nur Veränderung +9,4 % für Deutschland); kein CEO-Verhältnis nach § 162 AktG"
 U000479,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,56,vier im GJ 2025 aktive Mitglieder
 U000479,2025,ar_mitglieder_zahl,10,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,68,zehn Mitglieder (Porsche SE ist nicht mitbestimmt)
 U000479,2025,pay_ratio,,,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,69,Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (nur prozentuale Veränderung der Ø-Vergütung der Arbeitnehmer); Variante A nicht berechenbar

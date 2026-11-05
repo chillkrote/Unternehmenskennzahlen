@@ -28,6 +28,9 @@ A = {
  'U000515': (146.0, 'Mitarbeitende des SAP-Konzerns, Vollzeitkräfte (Konzern, nicht nur Deutschland)', VB('U000515'), 35),
  'U000124': (108.0, 'Arbeitnehmer Commerzbank AG auf VZK-Basis (Brutto-Personalaufwand)', VB('U000124'), 50),
  'U000148': (120.974, 'Beschäftigte Deutsche Bank Konzern weltweit auf Vollzeitbasis (nicht nur Deutschland)', GB('U000148'), 755),
+ 'U000716': (75.1, 'Gesamtbelegschaft Immobilienwirtschaft konzernweit, Vollzeitäquivalente (Ø-Gesamtvergütung lt. vergleichender Darstellung)', VB('U000716'), 32),
+ 'U000274': (85.0, 'Gesamtbelegschaft Heidelberg Materials AG (nur Muttergesellschaft) inkl. Top-/Senior-Management ohne Vorstand, Vollzeitbasis, Direktvergütung', VB('U000274'), 32),
+ 'U000234': (53.0, 'Konzern weltweit, Ø Löhne und Gehälter je FTE (nicht nur Deutschland)', GB('U000234'), 78),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte

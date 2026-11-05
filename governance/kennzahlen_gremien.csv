@@ -66,6 +66,11 @@ U000161,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/deutsche-teleko
 U000161,2025,ar_frauen_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,221,Anteil nicht in den ausgewerteten Seiten beziffert
 U000161,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,31,Hinweis: Gewerkschaftsmitglieder unter den Arbeitnehmervertretern führen Vergütung nach DGB-Richtlinien ab; Zahl nicht genannt
 U000161,2025,pay_ratio,,,governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf,23,im Vergütungsbericht 2025 nicht ausgewiesen (nur gesetzlicher Vergleich der Entwicklung nach § 162 AktG)
+U000234,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/fresenius-se-und-co-kgaa/geschaeftsbericht-2025.pdf,74,fünf Mitglieder mit Vergütung 2025
+U000234,2025,pay_ratio,,,governance/dokumente/fresenius-se-und-co-kgaa/geschaeftsbericht-2025.pdf,78,"Kein Verhältnis ausgewiesen; durchschnittliche Arbeitnehmervergütung Konzern (FTE, Löhne und Gehälter) 2025: 53 T€; Berechnung siehe berechnungen/pay_ratio.csv"
+U000274,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/heidelberg-materials-ag/verguetungsbericht-2025.pdf,27,neun aktive Mitglieder mit Vergütung 2025
+U000274,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/heidelberg-materials-ag/verguetungsbericht-2025.pdf,31,zwölf Mitglieder mit Vergütung 2025
+U000274,2025,pay_ratio,,,governance/dokumente/heidelberg-materials-ag/verguetungsbericht-2025.pdf,32,"Kein Verhältnis ausgewiesen; Ø-Direktvergütung Gesamtbelegschaft Heidelberg Materials AG (ohne Vorstand, FTE) 2025: 85 T€; Berechnung siehe berechnungen/pay_ratio.csv"
 U000279,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"Vorstand der Henkel Management AG, 4 Männer und 1 Frau"
 U000279,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,20 %; Sylvie Nicol (w) lt. Vergütungsbericht S. 15
 U000279,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,"8 Anteilseigner, 8 Arbeitnehmer"
@@ -130,6 +135,8 @@ U000712,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/volk
 U000712,2025,ar_gewerkschaftsvertreter_zahl,7,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"""sieben dieser Arbeitnehmervertreter sind von Gewerkschaften gewählte Gewerkschaftsvertreter"""
 U000712,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter, davon 7 Gewerkschaftsvertreter",,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,
 U000712,2025,pay_ratio,,,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,72,"kein Verhältniswert; Vergleich der Veränderung mit bereinigtem Personalaufwand je FTE der Volkswagen AG, absolute Beträge nicht ausgewiesen"
+U000716,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/vonovia-se/verguetungsbericht-2025.pdf,32,fünf Mitglieder mit Vergütung 2025
+U000716,2025,pay_ratio,,,governance/dokumente/vonovia-se/verguetungsbericht-2025.pdf,32,"Vonovia weist kein Verhältnis aus; Ø-Gesamtvergütung Gesamtbelegschaft Immobilienwirtschaft (FTE) 2025: 75,1 T€; Berechnung siehe berechnungen/pay_ratio.csv"
 U000742,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,zum 31.12.2025 (ohne Dembeck); ab 1.1.2026 fünf mit Dimitrova
 U000742,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,Frauenanteil 25 % zum 31.12.2025 (Vorjahr 40 %); ab 1.1.2026 wieder 40 %
 U000742,2025,ar_mitglieder_zahl,9,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,"sechs Anteilseigner-, drei Arbeitnehmervertreter"

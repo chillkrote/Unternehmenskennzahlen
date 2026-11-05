@@ -23,6 +23,11 @@ U000036,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/allia
 U000036,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"""including one trade union representative"" (ver.di); Person im Dokument nicht namentlich ausgewiesen"
 U000036,2025,mitbestimmung_ar,"SE-Beteiligungsvereinbarung (SEBG), 6 von 12 Arbeitnehmervertreter",,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,MitbestG gilt wegen der Rechtsform SE nicht; paritätische Besetzung lt. Vereinbarung
 U000036,2025,pay_ratio,,,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,333,"Allianz weist kein Verhältnis aus, nur Entwicklung Vorstand/Ø-Vergütung (95 T€ Deutschland, FTE); Berechnung siehe berechnungen/pay_ratio.csv"
+U000052,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/aumovio-se/geschaeftsbericht-2025.pdf,64,sechs Mitglieder (Eintritte 2025 im Zuge der Abspaltung)
+U000052,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/aumovio-se/geschaeftsbericht-2025.pdf,27,acht Anteilseigner- und acht Arbeitnehmervertreter
+U000052,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/aumovio-se/geschaeftsbericht-2025.pdf,27,Namentlich benannt S. 27
+U000052,2025,ar_frauen_zahl,6,Personen,governance/dokumente/aumovio-se/geschaeftsbericht-2025.pdf,34,"Jeschke, Mayer, Windt, Benner, Löffler, Bader (37,5 %)"
+U000052,2025,pay_ratio,,,governance/dokumente/aumovio-se/geschaeftsbericht-2025.pdf,64,"Ø Arbeitnehmer Deutschland (Vollzeit) 98 T€; Vorstandsvergütung nur anteilig ab Abspaltung, daher keine Pay Ratio gerechnet"
 U000053,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,102,vier aktive Mitglieder im GJ 2024/25
 U000053,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,106,sechs Anteilseigner- und sechs Arbeitnehmervertreter
 U000053,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,106,"Tabelle ""Vertreter der Arbeitnehmer"""

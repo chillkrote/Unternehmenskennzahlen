@@ -1,13 +1,14 @@
 ﻿unternehmen_id,gj,n_frauen,n_maenner,ø_frauen_teur,ø_maenner_teur,gender_pay_gap_pct,nicht_einbezogen,bemerkung
 U000017,2025,1,3,2372.3,3984.0,40.5,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000028,2025,0,2,,,,,nicht berechenbar: keine ganzjährige Frau bzw. kein ganzjähriger Mann im Vorstand
+U000052,2025,0,0,,,,"Philipp von Hirschheydt, Dr. Jutta A. Dönges, Ingo Holstein, Dr. Boris Mergell, Dr. Ismail Dagli, Jean-François Tarabbia",nicht berechenbar: keine ganzjährige Frau bzw. kein ganzjähriger Mann im Vorstand
 U000053,2025,1,3,1009.4,1116.1,9.6,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000061,2025,1,5,1925.0,2935.0,34.4,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000067,2025,1,5,3205.8,3460.1,7.3,"Nicolai Martin, Frank Weber","unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000073,2025,3,3,2192.0,1552.0,-41.2,Patrick Rasquinet,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000124,2025,1,5,2964.0,1531.0,-93.6,Carsten Schmitt,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000133,2025,1,6,2939.3,1594.0,-84.4,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
-U000143,2025,1,2,498.4,550.8,9.5,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
+U000143,2025,0,2,,,,Marie-Anne Popp,nicht berechenbar: keine ganzjährige Frau bzw. kein ganzjähriger Mann im Vorstand
 U000264,2025,0,6,,,,"Jean-Jacques Henchoz, Dr. Christian Hermelingmeier, Brona Magee",nicht berechenbar: keine ganzjährige Frau bzw. kein ganzjähriger Mann im Vorstand
 U000279,2025,1,4,3454.4,3643.3,5.2,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"
 U000363,2025,1,3,1047.0,1952.0,46.4,,"unbereinigt, sehr kleine Fallzahl; Funktionen und Ressorts nicht kontrolliert; Geschlecht nur aus dokumentierten Angaben"

@@ -103,3 +103,9 @@ Stand 02.11.2026. Diese Liste wird bei jedem Block fortgeschrieben. Sie ist so g
 - Talanx (U000645): 7 aktive + Henchoz, 16 AR (8 AN belegt, Meister ver.di); Ø 108 T€ Deutschland → Pay Ratio berechnet (Methode A, Personalaufwand-Basis). Geschlecht der Vorstände nicht belegt.
 - DWS (U000177): Geschäftsführung der DWS Management GmbH (7 aktiv, 10 ehemalige mit Zuflüssen 2025), AR 12; Pay Ratio mit Ø 146 T€ weltweit. Arbeitnehmervertreter im Bericht nicht gekennzeichnet (Anzahl leer); Geschlechter nicht belegt.
 - Delivery Hero (U000143): 3 Vorstände 2025 (Popp als Frau belegt), Bruder erst ab 1.1.2026; AR 10 (4 AN belegt, Skogen Lund Vorsitzende = Frau). Vorstandsvergütung nur Grundgehalt (variabel 0), keine absolute Ø-Vergütung.
+- Siltronic (U000539): 3 Vorstände, 12 AR; 5 Arbeitnehmer-/Gewerkschaftsvertreter laut Fußnote + 1 leitender Angestellter; Pay Ratio mit Ø 74 T€ Deutschland berechnet. Geschlechter nicht belegt.
+- TAG Immobilien (U000643): 2 Co-CEOs, 6 AR ohne Arbeitnehmervertreter; veröffentlicht Gender Pay Gap 7,3 % und Höchstbezahlte/Median 25,2 (nur Kennzahlen). Keine Ø-Vergütung.
+- Aumovio (U000052): Rumpfjahr nach Abspaltung (Vorstand ab 15.8./17.9.2025, AR ab 3.9.2025), Beträge anteilig; 8 AN + 8 Anteilseigner im AR, 6 Frauen im AR belegt; Ø 98 T€ Deutschland ausgewiesen, aber keine Pay Ratio (Vorstand nicht ganzjährig).
+- Krones (U000349): Geschäftsbericht (englisch) enthält keinen Vergütungsbericht, nur Verweis → separat zu suchen (Block „ohne Vergütungsbericht“).
+- Delivery Hero: Popp mit Jahresmarker „2025“ als Eintritt (Datum nicht genannt), damit kein Gender Gap im Vorstand gerechnet wird.
+- MDAX mit Bericht im Geschäftsbericht damit abgearbeitet; offen bleiben die Unternehmen ohne Vergütungsbericht im Repo (Liste Block 9, plus Krones).

@@ -80,6 +80,7 @@ FRAUEN = [
  ('Helene von Roeder', 'U000396', VB('U000396'), 9, 'Bericht: "her move to the Executive Board of Merck KGaA"'),
  ('Inge Hofkens', 'U000053', GB('U000053'), 102, 'Bezeichnung "Vorständin"'),
  ('Dr. Stephanie Coßmann', 'U000640', VB('U000640'), 8, 'Bezeichnung "Arbeitsdirektorin"'),
+ ('Dr. Astrid Fontaine', 'U000518', VB('U000518'), 26, 'Bezeichnung "Arbeitsdirektorin"'),
  ('Karin Rådström', 'U000133', VB('U000133'), 16, 'Bezeichnung "Vorstandsvorsitzende"'),
  ('Darleen Caron', 'U000538', VB('U000538'), 28, 'Bezeichnung "Personalvorständin"'),
  ('Britta Seeger', 'U000395', 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt', 236, 'Bezeichnung "Arbeitsdirektorin"; "Zum 31. Dezember 2025 ist dies Britta Seeger" (Frau im Vorstand)'),

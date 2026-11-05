@@ -66,6 +66,7 @@ PUBLIZIERT = {
  'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
  'U000502': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
  'U000242': (85.2, 'CEO-Vergütung zur Ø-Vergütung aller Mitarbeitenden des GEA-Konzerns in Deutschland (lt. Vergütungsbericht, Geschäftsbericht S. 302)'),
+ 'U000491': (87.0, 'CEO pay ratio lt. Remuneration Report (Dutch Corporate Governance Code; Beträge in USD, Ø aller Beschäftigten weltweit 111 T USD)'),
  'U000233': (106.1, 'CEO pay ratio lt. Vergütungsbericht (Tab. 3.36, CEO im Amt zum Jahresende zu Ø aller Beschäftigten weltweit)'),
  'U000395': (135.0, 'ESRS: höchstbezahlte Einzelperson zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 184)'),
 }
@@ -103,7 +104,7 @@ FRAUEN = [
 
 # Handeingaben aus der Excel-Importvorlage (governance/vorlage/importieren.py --schreiben): gleiche Struktur, nur GJ 2025
 import glob, json
-PUB_Q = {'U000233': 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf S. 238', 'U000242': 'governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf S. 302', 'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
+PUB_Q = {'U000491': 'governance/dokumente/qiagen-n-v/verguetungsbericht-2025.pdf S. 15', 'U000233': 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf S. 238', 'U000242': 'governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf S. 302', 'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
 GESCHLECHT_SONST = []
 for _f in sorted(glob.glob(f'{D}/handeingabe/*.json')):
     _d = json.load(open(_f, encoding='utf-8'))

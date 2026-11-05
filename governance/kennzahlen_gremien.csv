@@ -7,6 +7,8 @@ U000017,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/adida
 U000017,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,21,"Biermann (IGBCE-Hauptvorstand), Sikorski (IGBCE Landesbezirksleiter)"
 U000017,2025,mitbestimmung_ar,"paritätisch (MitbestG), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,44,
 U000017,2025,pay_ratio,,,governance/dokumente/adidas-ag/verguetungsbericht-2025.pdf,4,kein Verhältniswert; nur Vertikalvergleich (Entwicklung)
+U000026,2025,vorstand_mitglieder_zahl,1,Personen,governance/dokumente/airbus-se/jahresabschluss-2025.pdf,51,CEO ist einziges geschäftsführendes Board-Mitglied; Executive Committee getrennt
+U000026,2025,pay_ratio,,,governance/dokumente/airbus-se/jahresabschluss-2025.pdf,51,Im Jahresabschluss nicht enthalten; Report of the Board of Directors (Abschnitt 2.3.2) nicht abgerufen (Airbus-Website mit Bot-Schutz)
 U000036,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""Number of executive members: 9"""
 U000036,2025,vorstand_frauen_zahl,4,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,121,"""four female members, accounting for 44.4 %"" (Corporate Governance Statement); nach § 16 Abs. 2 SEAG mindestens eine Frau"
 U000036,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"sechs Anteilseigner-, sechs Arbeitnehmervertreter"
@@ -152,6 +154,8 @@ U000420,2025,pay_ratio,,,governance/dokumente/muenchener-rueckversicherungs-gese
 U000479,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,56,vier im GJ 2025 aktive Mitglieder
 U000479,2025,ar_mitglieder_zahl,10,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,68,zehn Mitglieder (Porsche SE ist nicht mitbestimmt)
 U000479,2025,pay_ratio,,,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,69,Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (nur prozentuale Veränderung der Ø-Vergütung der Arbeitnehmer); Variante A nicht berechenbar
+U000491,2025,vorstand_mitglieder_zahl,2,Personen,governance/dokumente/qiagen-n-v/verguetungsbericht-2025.pdf,8,Managing Board mit zwei Mitgliedern
+U000491,2025,pay_ratio,87,Verhältnis,governance/dokumente/qiagen-n-v/verguetungsbericht-2025.pdf,15,"CEO pay ratio (Gesamtjahresvergütung CEO zur Ø-Vergütung aller Beschäftigten weltweit) nach Dutch Corporate Governance Code, 87:1 (2024: 90:1); Ø Beschäftigte 111 T USD. Nicht nach § 162 AktG, keine Währungsumrechnung"
 U000494,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rational-aktiengesellschaft/geschaeftsbericht-2025.pdf,177,vier aktive Mitglieder 2025
 U000494,2025,pay_ratio,,,governance/dokumente/rational-aktiengesellschaft/geschaeftsbericht-2025.pdf,181,Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (Veränderung Ø je FTE 2025 -2 %)
 U000502,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,Stand Jahresende 2025 (Vorjahr 3)

@@ -64,6 +64,10 @@ U000125,2025,pay_ratio,,,governance/dokumente/continental-aktiengesellschaft/ver
 U000133,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/daimler-truck-holding-ag/verguetungsbericht-2025.pdf,16,sieben Mitglieder mit Vergütung 2025
 U000133,2025,ar_mitglieder_zahl,23,Personen,governance/dokumente/daimler-truck-holding-ag/verguetungsbericht-2025.pdf,19,23 Mitglieder mit Vergütung 2025 (inkl. fünf unterjährige Wechsel)
 U000133,2025,pay_ratio,,,governance/dokumente/daimler-truck-holding-ag/verguetungsbericht-2025.pdf,21,"Kein Verhältnis ausgewiesen; Ø-Vergütung Beschäftigte (Personalaufwand lt. GuV je FTE) 2025: 89,3 T€; Berechnung siehe berechnungen/pay_ratio.csv"
+U000143,2025,vorstand_mitglieder_zahl,3,Personen,governance/dokumente/delivery-hero-se/geschaeftsbericht-2025.pdf,65,drei vergütete Mitglieder 2025; vierter (Bruder) ab 1.1.2026
+U000143,2025,ar_mitglieder_zahl,10,Personen,governance/dokumente/delivery-hero-se/geschaeftsbericht-2025.pdf,68,zehn vergütete Mitglieder 2025 (inkl. unterjährig Ausgeschiedener/Neuer)
+U000143,2025,ar_arbeitnehmervertreter_zahl,4,Personen,governance/dokumente/delivery-hero-se/geschaeftsbericht-2025.pdf,68,"Poscherstnikov, Ardbo, Engvall, Tsaousis (Fußnote)"
+U000143,2025,pay_ratio,,,governance/dokumente/delivery-hero-se/geschaeftsbericht-2025.pdf,69,Keine absolute Ø-Vergütung ausgewiesen (nur Änderung Belegschaft Deutschland +8 %)
 U000148,2025,ar_frauen_zahl,7,Personen,governance/dokumente/deutsche-bank-aktiengesellschaft/geschaeftsbericht-2025.pdf,418,"""sieben von zwanzig Mitgliedern beziehungsweise 35 %""; Arbeitnehmerseite 4 Frauen/6 Männer, Anteilseignerseite 3 Frauen/7 Männer (PDF S. 797)"
 U000148,2025,vorstand_frauen_zahl,2,Personen,governance/dokumente/deutsche-bank-aktiengesellschaft/geschaeftsbericht-2025.pdf,418,"""zwei von neun Mitgliedern beziehungsweise 22 %"" zum Jahresende 2025; Personen im Dokument nicht namentlich ausgewiesen"
 U000148,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/deutsche-bank-aktiengesellschaft/geschaeftsbericht-2025.pdf,797,Arbeitnehmerseite 4 Frauen und 6 Männer = 10 von 20
@@ -92,6 +96,10 @@ U000163,2025,pay_ratio,,,governance/dokumente/deutz-aktiengesellschaft/geschaeft
 U000165,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,36,neun Mitglieder mit Vergütung 2025 (zwei unterjährige Wechsel)
 U000165,2025,ar_mitglieder_zahl,22,Personen,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,35,22 Mitglieder mit Vergütung 2025
 U000165,2025,pay_ratio,,,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,37,"Kein Verhältnis ausgewiesen; Ø-Gesamtvergütung Gesamtbelegschaft DHL Group (Personalaufwand / Beschäftigte) 2025: 50,539 T€; Berechnung siehe berechnungen/pay_ratio.csv"
+U000177,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/dws-group-gmbh-und-co-kgaa/geschaeftsbericht-2025.pdf,263,sieben aktive Mitglieder der Geschäftsführung (Vedda seit 1.8.2025)
+U000177,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/dws-group-gmbh-und-co-kgaa/geschaeftsbericht-2025.pdf,261,zwölf aktive Mitglieder lt. Vergütungstabelle; Arbeitnehmervertreter im Bericht nicht einzeln gekennzeichnet (Mitbestimmung lt. S. 274 vorhanden)
+U000177,2025,ar_arbeitnehmervertreter_zahl,,,governance/dokumente/dws-group-gmbh-und-co-kgaa/geschaeftsbericht-2025.pdf,261,"Nicht belegt: Kennzeichnung im Vergütungsbericht fehlt (Metzler und Stengele mit reiner Grundvergütung 100 T€, aber ohne Beleg)"
+U000177,2025,pay_ratio,,,governance/dokumente/dws-group-gmbh-und-co-kgaa/geschaeftsbericht-2025.pdf,263,Ø Vergütung Arbeitnehmer weltweit (Vollzeit) 146 T€ (2024: 157 T€); Berechnung als Methode A mit weltweiter Basis
 U000195,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/e-on-se/verguetungsbericht-2025.pdf,30,fünf aktive Mitglieder
 U000195,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/e-on-se/verguetungsbericht-2025.pdf,29,16 Mitglieder mit Vergütung 2025
 U000195,2025,pay_ratio,,,governance/dokumente/e-on-se/verguetungsbericht-2025.pdf,30,"Kein Verhältnis ausgewiesen; Ø-Vergütung Arbeitnehmer in Deutschland (regelmäßige Zielvergütung zum Jahresende, auf 100 % hochgerechnet) 2025: 84 T€ (40.513 Arbeitnehmer); Berechnung siehe berechnungen/pay_ratio.csv"

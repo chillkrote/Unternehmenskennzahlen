@@ -1,4 +1,7 @@
 ﻿unternehmen_id,gj,feld,wert,einheit,quelle_dokument,seite,bemerkung
+U000812,2025,vorstand_mitglieder_zahl,2,Personen,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,129,zwei Executive Directors
+U000812,2025,pay_ratio,126,Verhältnis,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,135,"CEO pay ratio Median 126:1 (Option B; Q1 137:1, Q3 104:1; 2024: 218:1); GB-Belegschaft, nicht § 162 AktG"
+U000812,2025,gender_pay_gap_gesamt,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,136,"UK Gender Pay Gap (Stand 5.4.2025): mean/median getrennt nach Food bzw. Primark ausgewiesen (Primark Median Frauen 17,8 % unter Männern bzw. 7,3 % darüber in zweiter Spalte) – kein Konzernwert"
 U000017,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,43,
 U000017,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,43,"Michelle Robertson (Vorstandsmitglied), laut Diversitätsangabe mind. eine Frau"
 U000017,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,44,"8 Anteilseigner, 8 Arbeitnehmer"

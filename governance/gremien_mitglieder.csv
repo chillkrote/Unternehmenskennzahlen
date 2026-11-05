@@ -1,4 +1,14 @@
 ﻿unternehmen_id,gj,organ,person_id,name,funktion,vertreter_art,seit,bis,beruf_laut_dokument,quelle_dokument,seite,bemerkung
+U000812,2025,Vorstand,george-weston,George Weston,Chief Executive (Vorsitz),,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,129,Executive Director
+U000812,2025,Vorstand,eoin-tonge,Eoin Tonge,Finance Director (ab 04/2025 interim CEO Primark),,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,129,Executive Director
+U000812,2025,Aufsichtsrat,michael-mclintock,Michael McLintock,Chairman,,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,richard-reid,Richard Reid,Non-Executive Director (ausgeschieden im Jahr),,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,emma-adamo,Emma Adamo,Non-Executive Director,,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,graham-allan,Graham Allan,Non-Executive Director (Chair Remuneration Committee),,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,heather-rabbatts,Heather Rabbatts,Senior Independent Director,,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,annie-murphy,Annie Murphy,Non-Executive Director,,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,kumsal-bayazit-besson,Kumsal Bayazit Besson,Non-Executive Director,,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
+U000812,2025,Aufsichtsrat,loraine-woodhouse,Loraine Woodhouse,Non-Executive Director,,,,,governance/dokumente/associated-british-foods-plc/annual-report-2025.pdf,139,Board (monistisch): Non-Executive Directors
 U000017,2025,Vorstand,bjorn-gulden,Bjørn Gulden,Vorsitzender (CEO),,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,12,Funktion lt. Vergütungsbericht S. 12
 U000017,2025,Vorstand,harm-ohlmeyer,Harm Ohlmeyer,Finanzen (CFO),,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,12,Funktion lt. Vergütungsbericht S. 12
 U000017,2025,Vorstand,michelle-robertson,Michelle Robertson,"Global Human Resources, People and Culture",,,,,governance/dokumente/adidas-ag/geschaeftsbericht-2025.pdf,13,Funktion lt. Vergütungsbericht S. 13

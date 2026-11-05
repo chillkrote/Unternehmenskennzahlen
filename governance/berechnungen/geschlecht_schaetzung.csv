@@ -1,4 +1,14 @@
 ﻿unternehmen_id,organ,name,geschlecht,konfidenz,methode,beleg
+U000812,Vorstand,George Weston,männlich,hoch,Schätzung (Vorname/Recherche),Vorname George männlich (nicht als weiblich eingestuft)
+U000812,Vorstand,Eoin Tonge,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Eoin männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Michael McLintock,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Michael männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Richard Reid,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Richard männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Emma Adamo,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Emma weiblich
+U000812,Aufsichtsrat,Graham Allan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Graham männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Heather Rabbatts,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Heather weiblich
+U000812,Aufsichtsrat,Annie Murphy,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Annie weiblich
+U000812,Aufsichtsrat,Kumsal Bayazit Besson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Kumsal weiblich
+U000812,Aufsichtsrat,Loraine Woodhouse,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Loraine weiblich
 U000017,Vorstand,Bjørn Gulden,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Bjørn männlich (nicht als weiblich eingestuft)
 U000017,Vorstand,Harm Ohlmeyer,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Harm männlich (nicht als weiblich eingestuft)
 U000017,Vorstand,Michelle Robertson,weiblich,dokumentiert,Bericht,"Erfüllung § 76 Abs. 3a AktG (mind. eine Frau) ""mit Michelle Robertson"""
@@ -803,7 +813,7 @@ U000395,Aufsichtsrat,Michael Bettag,männlich,hoch,Schätzung (Vorname/Recherche
 U000395,Aufsichtsrat,Ben van Beurden,männlich,hoch,Schätzung (Vorname/Recherche),öffentlich bekannt (ex Shell-CEO)
 U000395,Aufsichtsrat,Nadine Boguslawski,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Nadine weiblich
 U000395,Aufsichtsrat,Liz Centoni,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Liz weiblich
-U000395,Aufsichtsrat,Dame Veronica Anne (»Polly«) Courtice,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Dame männlich (nicht als weiblich eingestuft)
+U000395,Aufsichtsrat,Dame Veronica Anne (»Polly«) Courtice,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dame weiblich
 U000395,Aufsichtsrat,Sebastian Fay,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sebastian männlich (nicht als weiblich eingestuft)
 U000395,Aufsichtsrat,Marco Gobbetti,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Marco männlich (nicht als weiblich eingestuft)
 U000395,Aufsichtsrat,Michael Häberle,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Michael männlich (nicht als weiblich eingestuft)

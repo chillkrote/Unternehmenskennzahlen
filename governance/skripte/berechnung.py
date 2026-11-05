@@ -41,6 +41,7 @@ A = {
  'U000331': (99.0, 'Belegschaft Knorr-Bremse Konzern in Deutschland, Vollzeitäquivalente (Zufluss), gerundet lt. Bericht', 'governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf', 305),
  'U000157': (93.114, 'Gesamtbelegschaft Deutschland (Lufthansa-Tarifkreis ohne CityLine), Vollzeitäquivalente, T220', 'governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf', 386),
  'U000100': (129.0, 'Beschäftigte der Brenntag SE (Konzernzentrale, FTE; ohne Konzerngesellschaften), Tab. 4.23', VB('U000100'), 24),
+ 'U000233': (60.7, 'Alle Beschäftigten Fresenius Medical Care weltweit, FTE (Tab. 3.36)', 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf', 238),
  'U000165': (50.539, 'Gesamtbelegschaft DHL Group weltweit: Personalaufwand geteilt durch Beschäftigte (Ø-Gesamtvergütung lt. Bericht)', VB('U000165'), 37),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
@@ -65,6 +66,7 @@ PUBLIZIERT = {
  'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
  'U000502': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
  'U000242': (85.2, 'CEO-Vergütung zur Ø-Vergütung aller Mitarbeitenden des GEA-Konzerns in Deutschland (lt. Vergütungsbericht, Geschäftsbericht S. 302)'),
+ 'U000233': (106.1, 'CEO pay ratio lt. Vergütungsbericht (Tab. 3.36, CEO im Amt zum Jahresende zu Ø aller Beschäftigten weltweit)'),
  'U000395': (135.0, 'ESRS: höchstbezahlte Einzelperson zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 184)'),
 }
 # Rheinmetall weist Personalaufwand je FTE direkt aus (GB S. 56): 97 T€
@@ -101,7 +103,7 @@ FRAUEN = [
 
 # Handeingaben aus der Excel-Importvorlage (governance/vorlage/importieren.py --schreiben): gleiche Struktur, nur GJ 2025
 import glob, json
-PUB_Q = {'U000242': 'governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf S. 302', 'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
+PUB_Q = {'U000233': 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf S. 238', 'U000242': 'governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf S. 302', 'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
 GESCHLECHT_SONST = []
 for _f in sorted(glob.glob(f'{D}/handeingabe/*.json')):
     _d = json.load(open(_f, encoding='utf-8'))

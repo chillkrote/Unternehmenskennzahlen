@@ -40,6 +40,7 @@ A = {
  'U000396': (106.5, 'Konzern weltweit: Ø Personalaufwand ohne Pensionsaufwand je Vollzeitbeschäftigtem (Ø 62.636 Beschäftigte), keine Ist-Vergütung Deutschland', VB('U000396'), 36),
  'U000331': (99.0, 'Belegschaft Knorr-Bremse Konzern in Deutschland, Vollzeitäquivalente (Zufluss), gerundet lt. Bericht', 'governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf', 305),
  'U000157': (93.114, 'Gesamtbelegschaft Deutschland (Lufthansa-Tarifkreis ohne CityLine), Vollzeitäquivalente, T220', 'governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf', 386),
+ 'U000100': (129.0, 'Beschäftigte der Brenntag SE (Konzernzentrale, FTE; ohne Konzerngesellschaften), Tab. 4.23', VB('U000100'), 24),
  'U000165': (50.539, 'Gesamtbelegschaft DHL Group weltweit: Personalaufwand geteilt durch Beschäftigte (Ø-Gesamtvergütung lt. Bericht)', VB('U000165'), 37),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
@@ -75,6 +76,7 @@ DOK_B = {}  # Quelle der Variante-B-Eingaben aus Handeingaben (sonst Geschäftsb
 FRAUEN = [
  ('Helene von Roeder', 'U000396', VB('U000396'), 9, 'Bericht: "her move to the Executive Board of Merck KGaA"'),
  ('Inge Hofkens', 'U000053', GB('U000053'), 102, 'Bezeichnung "Vorständin"'),
+ ('Dr. Stephanie Coßmann', 'U000640', VB('U000640'), 8, 'Bezeichnung "Arbeitsdirektorin"'),
  ('Karin Rådström', 'U000133', VB('U000133'), 16, 'Bezeichnung "Vorstandsvorsitzende"'),
  ('Darleen Caron', 'U000538', VB('U000538'), 28, 'Bezeichnung "Personalvorständin"'),
  ('Britta Seeger', 'U000395', 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt', 236, 'Bezeichnung "Arbeitsdirektorin"; "Zum 31. Dezember 2025 ist dies Britta Seeger" (Frau im Vorstand)'),

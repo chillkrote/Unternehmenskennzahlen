@@ -42,6 +42,8 @@ U000067,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/bayerische
 U000067,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/bayerische-motoren-werke-aktiengesellschaft/verguetungsbericht-2025.pdf,38,20 zum 31.12.2025 amtierende Mitglieder lt. Vergütungstabelle
 U000067,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/bayerische-motoren-werke-aktiengesellschaft/verguetungsbericht-2025.pdf,38,im Vergütungsbericht nicht gesamt ausgewiesen; acht Mitglieder mit Böckler-Abführung (nur Teilmenge der Arbeitnehmervertreter); Mitbestimmung nach MitbestG nicht im VB belegt
 U000067,2025,pay_ratio,,,governance/dokumente/bayerische-motoren-werke-aktiengesellschaft/verguetungsbericht-2025.pdf,40,BMW weist kein Verhältnis aus; Ø-Vergütung BMW AG 101.227 € (FTE); Berechnung siehe berechnungen/pay_ratio.csv
+U000100,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/brenntag-se/verguetungsbericht-2025.pdf,19,sechs im GJ 2025 tätige Mitglieder (Wechsel im Jahresverlauf)
+U000100,2025,pay_ratio,,,governance/dokumente/brenntag-se/verguetungsbericht-2025.pdf,24,"Kein Verhältnis ausgewiesen; Ø-Vergütung Beschäftigte Brenntag SE (Zentrale, FTE) 129 T€"
 U000124,2025,pay_ratio,,,governance/dokumente/commerzbank-ag/verguetungsbericht-2025.pdf,50,Commerzbank weist kein Verhältnis aus; Ø-Arbeitnehmervergütung auf VZK-Basis 2025: 108 T€; Berechnung siehe berechnungen/pay_ratio.csv
 U000125,2025,vorstand_mitglieder_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet; 8 Personen im Berichtsjahr tätig (Wechsel durch Aumovio-Abspaltung)
 U000125,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
@@ -186,6 +188,10 @@ U000537,2025,mitbestimmung_ar,"paritätisch nach MitbestG, 10 von 20 Arbeitnehme
 U000537,2025,pay_ratio,,,governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf,4,kein Zahlenwert: vertikaler Vergleich wird vom Aufsichtsrat intern ermittelt (Vergütungsbericht S. 4)
 U000538,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/siemens-healthineers-ag/verguetungsbericht-2025.pdf,28,vier im GJ 2025 amtierende Mitglieder
 U000538,2025,pay_ratio,,,governance/dokumente/siemens-healthineers-ag/verguetungsbericht-2025.pdf,34,Kein Verhältnis ausgewiesen; Ø-Vergütung Belegschaft der Siemens Healthineers Gruppe in Deutschland (FTE) GJ 2025: 113 T€; Berechnung siehe berechnungen/pay_ratio.csv
+U000640,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,4,fünf Mitglieder im GJ 2025 (Friede seit 1.12.2025)
+U000640,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,4,sechs Anteilseigner- und sechs Arbeitnehmervertreter
+U000640,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,4,"Feist, Chiarlitti, Kirchhoff, Ley, Püttcher, Lückert (mit ** gekennzeichnet)"
+U000640,2025,pay_ratio,,,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,22,"Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (Belegschaft Symrise AG Deutschland, 2.713 FTE, 2025 +4,1 % ggü. Vorjahr)"
 U000712,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"Frauenquote im Vorstand 12,5 % = 1 von 8 (nach Ausscheiden Kilian)"
 U000712,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"12,5 %; Hauke Stars (Frau lt. Bericht S. 53)"
 U000712,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"zehn Anteilseigner-, zehn Arbeitnehmervertreter; Land Niedersachsen entsendet zwei Anteilseignervertreter"

@@ -34,6 +34,16 @@ A = {
  'U000264': (126.2, 'Mitarbeiter Hannover Rück SE in Deutschland, Vollzeitäquivalente (Ø-Vergütung lt. vergleichender Darstellung)', VB('U000264'), 21),
  'U000195': (84.0, 'Arbeitnehmer in Deutschland, regelmäßige Zielvergütung zum Jahresende auf 100 % Beschäftigungsgrad hochgerechnet (keine gewährte Ist-Vergütung)', VB('U000195'), 30),
  'U000065': (122.0, 'Beschäftigte Deutschland (Tarif- und Gesamtbelegschaft ausgewählter Gesellschaften), Vollzeitäquivalente', VB('U000065'), 46),
+ 'U000538': (113.0, 'Belegschaft Siemens Healthineers Gruppe in Deutschland, Vollzeitäquivalente (GJ Okt 2024-Sep 2025)', VB('U000538'), 34),
+ 'U000133': (89.3, 'Beschäftigte Konzern: Personalaufwand lt. GuV je Vollzeitäquivalent (keine Ist-Vergütung der Belegschaft)', VB('U000133'), 21),
+ 'U000524': (99.6, 'Arbeitnehmervergleichsgruppe 2 = Belegschaft der Scout24 SE (ohne oberen Führungskreis), Ø-Gesamtvergütung', VB('U000524'), 34),
+ 'U000396': (106.5, 'Konzern weltweit: Ø Personalaufwand ohne Pensionsaufwand je Vollzeitbeschäftigtem (Ø 62.636 Beschäftigte), keine Ist-Vergütung Deutschland', VB('U000396'), 36),
+ 'U000331': (99.0, 'Belegschaft Knorr-Bremse Konzern in Deutschland, Vollzeitäquivalente (Zufluss), gerundet lt. Bericht', 'governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf', 305),
+ 'U000157': (93.114, 'Gesamtbelegschaft Deutschland (Lufthansa-Tarifkreis ohne CityLine), Vollzeitäquivalente, T220', 'governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf', 386),
+ 'U000100': (129.0, 'Beschäftigte der Brenntag SE (Konzernzentrale, FTE; ohne Konzerngesellschaften), Tab. 4.23', VB('U000100'), 24),
+ 'U000233': (60.7, 'Alle Beschäftigten Fresenius Medical Care weltweit, FTE (Tab. 3.36)', 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf', 238),
+ 'U000363': (82.0, 'Beschäftigte in Deutschland ohne Vorstand, Vollzeitäquivalente (inkl. oberer Führungsebene), Vergleichstabelle', VB('U000363'), 20),
+ 'U000165': (50.539, 'Gesamtbelegschaft DHL Group weltweit: Personalaufwand geteilt durch Beschäftigte (Ø-Gesamtvergütung lt. Bericht)', VB('U000165'), 37),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
@@ -56,6 +66,9 @@ PUBLIZIERT = {
  'U000151': (97.0, 'ESRS S1-16: höchstbezahlte Person (CEO) zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 111)'),
  'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
  'U000502': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
+ 'U000242': (85.2, 'CEO-Vergütung zur Ø-Vergütung aller Mitarbeitenden des GEA-Konzerns in Deutschland (lt. Vergütungsbericht, Geschäftsbericht S. 302)'),
+ 'U000491': (87.0, 'CEO pay ratio lt. Remuneration Report (Dutch Corporate Governance Code; Beträge in USD, Ø aller Beschäftigten weltweit 111 T USD)'),
+ 'U000233': (106.1, 'CEO pay ratio lt. Vergütungsbericht (Tab. 3.36, CEO im Amt zum Jahresende zu Ø aller Beschäftigten weltweit)'),
  'U000395': (135.0, 'ESRS: höchstbezahlte Einzelperson zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 184)'),
 }
 # Rheinmetall weist Personalaufwand je FTE direkt aus (GB S. 56): 97 T€
@@ -65,6 +78,15 @@ DOK_B = {}  # Quelle der Variante-B-Eingaben aus Handeingaben (sonst Geschäftsb
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
+ ('Helene von Roeder', 'U000396', VB('U000396'), 9, 'Bericht: "her move to the Executive Board of Merck KGaA"'),
+ ('Inge Hofkens', 'U000053', GB('U000053'), 102, 'Bezeichnung "Vorständin"'),
+ ('Dr. Stephanie Coßmann', 'U000640', VB('U000640'), 8, 'Bezeichnung "Arbeitsdirektorin"'),
+ ('Dr. Astrid Fontaine', 'U000518', VB('U000518'), 26, 'Bezeichnung "Arbeitsdirektorin"'),
+ ('Karen Florschütz', 'U000028', GB('U000028'), 33, 'Bericht: "zwei von sechs Aufsichtsratsmitgliedern Frauen, nämlich Karen Florschütz und Prof. Dr. Anna Weber"'),
+ ('Prof. Dr. Anna Weber', 'U000028', GB('U000028'), 33, 'Bericht: "zwei von sechs Aufsichtsratsmitgliedern Frauen, nämlich Karen Florschütz und Prof. Dr. Anna Weber"'),
+ ('Frederique van Baarle', 'U000363', VB('U000363'), 15, 'Bericht: "Arbeitsdirektorin Frau Frederique van Baarle"'),
+ ('Karin Rådström', 'U000133', VB('U000133'), 16, 'Bezeichnung "Vorstandsvorsitzende"'),
+ ('Darleen Caron', 'U000538', VB('U000538'), 28, 'Bezeichnung "Personalvorständin"'),
  ('Britta Seeger', 'U000395', 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt', 236, 'Bezeichnung "Arbeitsdirektorin"; "Zum 31. Dezember 2025 ist dies Britta Seeger" (Frau im Vorstand)'),
  ('Brona Magee', 'U000264', VB('U000264'), 18, 'Fußnote: "Eintritt von Frau Magee als Vorstandsmitglied"'),
  ('Ilka Horstmeier', 'U000067', VB('U000067'), 28, 'Bezeichnung "Arbeitsdirektorin"'),
@@ -87,7 +109,7 @@ FRAUEN = [
 
 # Handeingaben aus der Excel-Importvorlage (governance/vorlage/importieren.py --schreiben): gleiche Struktur, nur GJ 2025
 import glob, json
-PUB_Q = {'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
+PUB_Q = {'U000491': 'governance/dokumente/qiagen-n-v/verguetungsbericht-2025.pdf S. 15', 'U000233': 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf S. 238', 'U000242': 'governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf S. 302', 'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
 GESCHLECHT_SONST = []
 for _f in sorted(glob.glob(f'{D}/handeingabe/*.json')):
     _d = json.load(open(_f, encoding='utf-8'))

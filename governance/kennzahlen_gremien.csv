@@ -112,6 +112,8 @@ U000395,2025,vorstand_frauen_quote,12.5,%,governance/dokumente/mercedes-benz-gro
 U000395,2025,pay_ratio,135,Verhältnis,governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt,184,"Vergütung der höchstbezahlten Einzelperson zum Median der jährlichen Gesamtvergütung aller Beschäftigten (x:1), 2025; 2024: 175"
 U000395,2025,gender_pay_gap_konzern,3.9,%,governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt,184,"unbereinigter Verdienstunterschied weiblich/männlich konzernweit, 2025 (2024: 4,8)"
 U000395,2025,pay_ratio_hinweis,,,governance/dokumente/mercedes-benz-group-ag/verguetungsbericht-2025.pdf,44,"Vergütungsbericht nennt keine absolute Ø-Mitarbeitervergütung (nur relative Veränderung); Variante A nicht berechenbar, publizierte Pay Ratio 135 aus Geschäftsbericht"
+U000396,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/merck-kgaa/verguetungsbericht-2025.pdf,36,im GJ 2025 aktiv lt. Vergleichstabelle (inkl. Guenter und Heinzel bis 31.5.2025)
+U000396,2025,aufsichtsrat_mitglieder_zahl,17,Personen,governance/dokumente/merck-kgaa/verguetungsbericht-2025.pdf,36,in der Vergleichstabelle aufgeführt (inkl. unterjährig ausgeschiedener/eingetretener)
 U000415,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,3,"Stand nach Wechseln 2025: Bussmann, Garcia Vila, Maurer, Schreyögg (Pfänder ab 1.1.2026) - Zahl aus Namen im Vergütungsbericht, nicht ausdrücklich genannt"
 U000415,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,236,je sechs Vertreter der Anteilseigner und der Arbeitnehmer
 U000415,2025,ar_frauen_zahl,4,Personen,governance/dokumente/mtu-aero-engines-ag/geschaeftsbericht-2025.pdf,239,"Bortenlänger, Heimerl, Sowa-Frank, Wolf = 33,3 %; zwei Arbeitnehmerseite, zwei Anteilseignerseite"
@@ -153,6 +155,7 @@ U000515,2025,pay_ratio,,,governance/dokumente/sap-se/verguetungsbericht-2025.pdf
 U000516,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/sartorius-aktiengesellschaft/geschaeftsbericht-2025.pdf,253,vier aktive Mitglieder zum Jahresende plus Dr. Kreuzburg (bis 30.6.2025)
 U000516,2025,ar_mitglieder_zahl,14,Personen,governance/dokumente/sartorius-aktiengesellschaft/geschaeftsbericht-2025.pdf,262,14 Mitglieder mit Vergütung 2025 (inkl. unterjährig Ein-/Ausgetretener)
 U000516,2025,pay_ratio,,,governance/dokumente/sartorius-aktiengesellschaft/geschaeftsbericht-2025.pdf,262,"Bericht weist keine absolute Ø-Mitarbeitervergütung aus (nur Index 2025 = 100, Veränderung +3 %); Variante A nicht berechenbar, Variante B offen"
+U000524,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/scout24-se/verguetungsbericht-2025.pdf,34,"im GJ 2025 aktiv: Weitz, Schmelzer, Crockford, Hartmann (bis 2/2025)"
 U000535,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/siemens-aktiengesellschaft/verguetungsbericht-2025.pdf,32,am 30.9.2025 im Amt
 U000535,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/siemens-aktiengesellschaft/verguetungsbericht-2025.pdf,36,20 am 30.9.2025 im Amt
 U000535,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/siemens-aktiengesellschaft/verguetungsbericht-2025.pdf,36,neun Mitglieder mit Abführungs-Fußnote (Arbeitnehmer- und Gewerkschaftsvertreter); Gesamtzahl im VB nicht ausgewiesen

@@ -36,6 +36,8 @@ A = {
  'U000065': (122.0, 'Beschäftigte Deutschland (Tarif- und Gesamtbelegschaft ausgewählter Gesellschaften), Vollzeitäquivalente', VB('U000065'), 46),
  'U000538': (113.0, 'Belegschaft Siemens Healthineers Gruppe in Deutschland, Vollzeitäquivalente (GJ Okt 2024-Sep 2025)', VB('U000538'), 34),
  'U000133': (89.3, 'Beschäftigte Konzern: Personalaufwand lt. GuV je Vollzeitäquivalent (keine Ist-Vergütung der Belegschaft)', VB('U000133'), 21),
+ 'U000524': (99.6, 'Arbeitnehmervergleichsgruppe 2 = Belegschaft der Scout24 SE (ohne oberen Führungskreis), Ø-Gesamtvergütung', VB('U000524'), 34),
+ 'U000396': (106.5, 'Konzern weltweit: Ø Personalaufwand ohne Pensionsaufwand je Vollzeitbeschäftigtem (Ø 62.636 Beschäftigte), keine Ist-Vergütung Deutschland', VB('U000396'), 36),
  'U000165': (50.539, 'Gesamtbelegschaft DHL Group weltweit: Personalaufwand geteilt durch Beschäftigte (Ø-Gesamtvergütung lt. Bericht)', VB('U000165'), 37),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
@@ -69,6 +71,7 @@ DOK_B = {}  # Quelle der Variante-B-Eingaben aus Handeingaben (sonst Geschäftsb
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
+ ('Helene von Roeder', 'U000396', VB('U000396'), 9, 'Bericht: "her move to the Executive Board of Merck KGaA"'),
  ('Karin Rådström', 'U000133', VB('U000133'), 16, 'Bezeichnung "Vorstandsvorsitzende"'),
  ('Darleen Caron', 'U000538', VB('U000538'), 28, 'Bezeichnung "Personalvorständin"'),
  ('Britta Seeger', 'U000395', 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt', 236, 'Bezeichnung "Arbeitsdirektorin"; "Zum 31. Dezember 2025 ist dies Britta Seeger" (Frau im Vorstand)'),

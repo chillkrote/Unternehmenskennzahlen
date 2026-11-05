@@ -42,6 +42,7 @@ A = {
  'U000157': (93.114, 'Gesamtbelegschaft Deutschland (Lufthansa-Tarifkreis ohne CityLine), Vollzeitäquivalente, T220', 'governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf', 386),
  'U000100': (129.0, 'Beschäftigte der Brenntag SE (Konzernzentrale, FTE; ohne Konzerngesellschaften), Tab. 4.23', VB('U000100'), 24),
  'U000233': (60.7, 'Alle Beschäftigten Fresenius Medical Care weltweit, FTE (Tab. 3.36)', 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf', 238),
+ 'U000280': (101.077, 'Belegschaft HENSOLDT AG und deutsche Tochtergesellschaften (Steuerbrutto auf VZÄ-Basis, ohne Azubis/Trainees)', VB('U000280'), 15),
  'U000349': (87.0, 'Gesamtbelegschaft der Krones AG (tarifliche und außertarifliche Beschäftigte), tatsächlich gezahltes Brutto plus Rückstellung variable Vergütung', VB('U000349'), 15),
  'U000071': (66.0, 'Arbeitnehmer der Bechtle-Konzernunternehmen in Deutschland, Personalaufwand je Vollzeitäquivalent, Vergleichstabelle', VB('U000071'), 22),
  'U000539': (74.0, 'Arbeitnehmer der Siltronic AG in Deutschland (Vollzeitäquivalent, inkl. variabler Bestandteile), Mehrjahresübersicht', GB('U000539'), 172),

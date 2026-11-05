@@ -55,6 +55,9 @@ U000073,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/beier
 U000073,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,298,"Jan Koltze, Regional Head IG BCE"
 U000073,2025,mitbestimmung_ar,paritätisch (6 von 12 Arbeitnehmervertreter),,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,50,Rechtsgrundlage (MitbestG) nicht wörtlich im Dokument; aus Besetzung abgeleitet
 U000073,2025,pay_ratio,125.83,Verhältnis,governance/dokumente/beiersdorf-aktiengesellschaft/geschaeftsbericht-2025.pdf,137,"Jahreszielvergütung der höchstbezahlten Person zum Median aller Beschäftigten (nicht CEO-Bezug); Segmente: Consumer 132,54, tesa 108,55"
+U000086,2025,vorstand_mitglieder_zahl,2,Personen,governance/dokumente/bilfinger-se/verguetungsbericht-2025.pdf,7,zwei Mitglieder
+U000086,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/bilfinger-se/verguetungsbericht-2025.pdf,23,zwölf Mitglieder
+U000086,2025,pay_ratio,,,governance/dokumente/bilfinger-se/verguetungsbericht-2025.pdf,21,"Keine absolute Ø-Vergütung ausgewiesen (nur Veränderung Arbeitnehmer Deutschland +4,5 %)"
 U000067,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/bayerische-motoren-werke-aktiengesellschaft/verguetungsbericht-2025.pdf,26,"sieben im Dezember 2025 amtierende Mitglieder (Zipse, Goller, Horstmeier, Martin, Mertl, Nedeljković, Post); Weber bis 31.5.2025"
 U000067,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/bayerische-motoren-werke-aktiengesellschaft/verguetungsbericht-2025.pdf,38,20 zum 31.12.2025 amtierende Mitglieder lt. Vergütungstabelle
 U000067,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/bayerische-motoren-werke-aktiengesellschaft/verguetungsbericht-2025.pdf,38,im Vergütungsbericht nicht gesamt ausgewiesen; acht Mitglieder mit Böckler-Abführung (nur Teilmenge der Arbeitnehmervertreter); Mitbestimmung nach MitbestG nicht im VB belegt
@@ -140,6 +143,10 @@ U000279,2025,ar_gewerkschaftsvertreter_zahl,2,Personen,governance/dokumente/henk
 U000279,2025,mitbestimmung_ar,"paritätisch (MitbestG 1976), 8 von 16 Arbeitnehmervertreter",,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,61,
 U000279,2025,gesellschafterausschuss_mitglieder_zahl,10,Personen,governance/dokumente/henkel-ag-und-co-kgaa/geschaeftsbericht-2025.pdf,56,Henkel AG & Co. KGaA: Gesellschafterausschuss ersetzt teilweise Hauptversammlungsrechte
 U000279,2025,pay_ratio,,,governance/dokumente/henkel-ag-und-co-kgaa/verguetungsbericht-2025.pdf,56,kein Verhältniswert; Ø-Vergütung Gesamtbelegschaft Deutschland 105.283 € (2025) in vergleichender Darstellung
+U000280,2025,vorstand_mitglieder_zahl,3,Personen,governance/dokumente/hensoldt-ag/verguetungsbericht-2025.pdf,9,drei zum 31.12.2025 amtierende Mitglieder
+U000280,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/hensoldt-ag/verguetungsbericht-2025.pdf,13,zwölf Mitglieder
+U000280,2025,ar_arbeitnehmervertreter_zahl,5,Personen,governance/dokumente/hensoldt-ag/verguetungsbericht-2025.pdf,13,Fußnote 1; davon vier zugleich Angestellte des Konzerns (Fußnote 2)
+U000280,2025,pay_ratio,,,governance/dokumente/hensoldt-ag/verguetungsbericht-2025.pdf,15,"Ø Belegschaftsvergütung 101.077 € (HENSOLDT AG und dt. Töchter, Steuerbrutto VZÄ), 2024: 96.724 €"
 U000290,2025,vorstand_mitglieder_zahl,3,Personen,governance/dokumente/hugo-boss-ag/geschaeftsbericht-2025.pdf,204,drei aktive Mitglieder zum 31.12.2025
 U000290,2025,pay_ratio,,,governance/dokumente/hugo-boss-ag/geschaeftsbericht-2025.pdf,210,"Kein Verhältnis und keine absolute Ø-Vergütung 2025 ausgewiesen (nur +2 % ggü. Vorjahr; Ø 2024: 53 T€, konzernweit, FTE)"
 U000301,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/infineon-technologies-ag/verguetungsbericht-2025.pdf,22,fünf Mitglieder mit Vergütung im GJ 2025

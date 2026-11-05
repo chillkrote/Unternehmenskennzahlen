@@ -1,7 +1,7 @@
 ﻿unternehmen_id,organ,n_gesamt,n_frauen,n_maenner,n_unklar,frauenanteil_pct,n_nur_geschaetzt,bemerkung
 U000017,Vorstand,4,1,3,0,25.0,3,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000017,Aufsichtsrat,16,4,12,0,25.0,16,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
-U000026,Aufsichtsrat,12,5,6,1,45.5,11,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
+U000026,Aufsichtsrat,12,6,6,0,50.0,12,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000028,Vorstand,2,0,2,0,0.0,2,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000028,Aufsichtsrat,7,2,5,0,28.6,5,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000036,Vorstand,9,4,5,0,44.4,9,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
@@ -15,11 +15,11 @@ U000061,Aufsichtsrat,12,4,8,0,33.3,12,Mitglieder lt. gremien_mitglieder.csv (ink
 U000065,Vorstand,6,1,5,0,16.7,6,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000065,Aufsichtsrat,20,11,9,0,55.0,20,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000067,Vorstand,8,1,7,0,12.5,7,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
-U000067,Aufsichtsrat,21,5,15,1,25.0,20,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
+U000067,Aufsichtsrat,21,6,15,0,28.6,21,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000071,Vorstand,5,1,4,0,20.0,5,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000071,Aufsichtsrat,16,6,10,0,37.5,16,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000073,Vorstand,7,3,4,0,42.9,4,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
-U000073,Aufsichtsrat,12,6,5,1,54.5,11,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
+U000073,Aufsichtsrat,12,7,5,0,58.3,12,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000086,Vorstand,2,0,2,0,0.0,2,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000086,Aufsichtsrat,12,4,8,0,33.3,12,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000100,Vorstand,6,1,5,0,16.7,6,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
@@ -69,7 +69,7 @@ U000290,Aufsichtsrat,17,7,10,0,41.2,17,Mitglieder lt. gremien_mitglieder.csv (in
 U000301,Vorstand,5,1,4,0,20.0,5,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000301,Aufsichtsrat,17,7,10,0,41.2,17,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000328,Vorstand,6,1,5,0,16.7,6,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
-U000328,Aufsichtsrat,20,6,13,1,31.6,19,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
+U000328,Aufsichtsrat,20,7,13,0,35.0,20,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000331,Vorstand,5,1,4,0,20.0,5,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000331,Aufsichtsrat,13,5,8,0,38.5,13,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt
 U000349,Vorstand,5,1,4,0,20.0,4,Mitglieder lt. gremien_mitglieder.csv (inkl. im Jahr Ausgeschiedene); Geschlecht teils geschätzt

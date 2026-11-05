@@ -72,10 +72,10 @@ Stand 02.11.2026. Diese Liste wird bei jedem Block fortgeschrieben. Sie ist so g
 - Siemens Healthineers (U000538): GJ Okt-Sep; Pay Ratio Variante A (113 T€ Belegschaft Deutschland). AR: neun Mitglieder mit Böckler-Fußnote als Arbeitnehmer-/Gewerkschaftsvertreter gekennzeichnet, Gesamtzahl der Arbeitnehmerseite nicht ausgewiesen. Frau Caron dokumentiert (Personalvorständin).
 - Daimler Truck (U000133): Ø 89,3 T€ ist Personalaufwand je FTE (keine Ist-Vergütung). Frau Rådström dokumentiert (Vorsitzende). AR-Seiten (Anteilseigner/Arbeitnehmer) nicht in der Tabelle.
 - DHL (U000165): Ø 50,5 T€ weltweit (Personalaufwand/Beschäftigte, nicht Deutschland). CEO Meyer 2025 gewährt 3.865 T€. Scharwath inkl. 3,4 Mio. € Abgeltung.
-- Fresenius Medical Care (U000233): Bericht im Geschäftsbericht (Seiten 215-237), Layout nicht maschinell lesbar; Einzeltabellen manuell nachzulesen. Offen.
+- Fresenius Medical Care (U000233): jetzt erfasst (Block 8, Tabellen als Bild gelesen). Pay Ratio 106:1 publiziert; Arbeitnehmerseite im AR nicht ausgewiesen.
 - Scout24 (U000524, Block 6): alle sieben AR-Mitglieder von der Hauptversammlung gewählt, keine Arbeitnehmervertreter. Ø 99,6 T€ = Belegschaft der Scout24 SE (nicht Konzern). Weitz war erst ab 1.3.2025 CEO (Summe enthält CPTO-Zeit), daher Pay Ratio nur eingeschränkt vergleichbar. Frauenzahlen offen.
 - Merck KGaA (U000396, Block 6): Bericht englisch; Ø 106,5 T€ ist weltweiter Personalaufwand ohne Pensionen je Beschäftigtem. Von Roeder als Frau belegt ("her"). Arbeitnehmerseite im AR nicht ausgewiesen.
-- Brenntag (U000100), Symrise (U000640): Vergütungsbericht nicht als PDF beschafft (Symrise nur HTML-Seite, Brenntag nur im Geschäftsbericht). Qiagen (U000491, niederländisch), Airbus (U000026, niederländisch/§ 162 nicht anwendbar): Vergütungsberichte noch nicht beschafft.
+- Brenntag (U000100) und Symrise (U000640): jetzt erfasst (Block 8). Brenntag: Ø 129 T€ nur Zentrale; keine Arbeitnehmerseite im AR ausgewiesen; Geschlecht keiner AR-Person dokumentiert. Symrise: nur prozentuale Veränderung der Ø-Vergütung, keine Pay Ratio; 6 Arbeitnehmervertreter belegt; Frau Coßmann (Arbeitsdirektorin) belegt. Qiagen (U000491, niederländisch), Airbus (U000026, niederländisch/§ 162 nicht anwendbar): Vergütungsberichte noch nicht beschafft.
 
 ## Block 7 (MDAX: Knorr-Bremse, Hugo Boss, Lufthansa, Rational, Aurubis) – 05.11.2026
 - Knorr-Bremse (U000331): Ø 99 T€ Konzern Deutschland (gerundet); 6 Arbeitnehmervertreter belegt (Fußnote). Frauen offen.
@@ -85,3 +85,8 @@ Stand 02.11.2026. Diese Liste wird bei jedem Block fortgeschrieben. Sie ist so g
 - Aurubis (U000053): GJ Okt-Sep; sechs Arbeitnehmervertreter; Ø-Vergütung Belegschaft in der Vergleichstabelle nicht sauber lesbar, Pay Ratio offen. Frau Hofkens (Vorständin) belegt.
 - MDAX noch nicht erfasst, Vergütungsbericht liegt als eigenes Dokument vor (muss beschafft werden): Schaeffler, Hensoldt, Traton, Bilfinger, KION, Fuchs, Lanxess, Salzgitter, Wacker, Bechtle, IONOS, Nemetschek, Elmos, RTL, United Internet, AUTO1, PUMA, Fraport, Aroundtown, flatexDEGIRO, Aumovio, Hella, Jenoptik, thyssenkrupp, TKMS, Evonik, K+S, SUSS, CTS Eventim, freenet.
 - MDAX mit Bericht im Geschäftsbericht, noch zu erfassen: Deutz, Renk, Nordex, Aixtron, TUI, DWS, Talanx, Delivery Hero, Siltronic, TAG Immobilien, Krones, Aumovio.
+
+## Block 8 (Brenntag, Symrise, FME, Qiagen, Airbus) – 05.11.2026
+- Qiagen (U000491): Bericht nach niederländischem Recht, Beträge in USD (Spalte betrag_tsd_eur bewusst leer, Beträge in Art/Bemerkung). Pay Ratio 87:1 publiziert (Dutch Corporate Governance Code, nicht ESRS/§ 162). Managing Board nur zwei Personen; LTI nur als Stückzahl.
+- Airbus (U000026): nur Jahresabschluss (Note 33) vorhanden. CEO-Name steht nicht im Dokument, Eintrag anonym. Beträge sind IFRS-Aufwand, nicht gewährt/geschuldet. Report of the Board of Directors (Abschnitt 2.3.2/2.3.3, dort Pay Ratio) liegt auf airbus.com hinter Bot-Schutz: nicht abgerufen; Robin kann das PDF hochladen.
+- Quellen gefunden: Schaeffler (schaeffler.com/.../2025_schaeffler_remuneration_report_de_20nyhn.pdf, aus der Umgebung 403) und Lanxess (lanxess.com/-/media/project/lanxess/corporate-internet/investors/reporting/2025/q4/2025-gb-vergutungsbericht-lxs-web.pdf) stehen für die MDAX-Runde bereit.

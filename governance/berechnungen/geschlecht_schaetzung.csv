@@ -1,4 +1,14 @@
 ﻿unternehmen_id,organ,name,geschlecht,konfidenz,methode,beleg
+U000812,Vorstand,George Weston,männlich,hoch,Schätzung (Vorname/Recherche),Vorname George männlich (nicht als weiblich eingestuft)
+U000812,Vorstand,Eoin Tonge,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Eoin männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Michael McLintock,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Michael männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Richard Reid,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Richard männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Emma Adamo,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Emma weiblich
+U000812,Aufsichtsrat,Graham Allan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Graham männlich (nicht als weiblich eingestuft)
+U000812,Aufsichtsrat,Heather Rabbatts,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Heather weiblich
+U000812,Aufsichtsrat,Annie Murphy,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Annie weiblich
+U000812,Aufsichtsrat,Kumsal Bayazit Besson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Kumsal weiblich
+U000812,Aufsichtsrat,Loraine Woodhouse,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Loraine weiblich
 U000017,Vorstand,Bjørn Gulden,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Bjørn männlich (nicht als weiblich eingestuft)
 U000017,Vorstand,Harm Ohlmeyer,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Harm männlich (nicht als weiblich eingestuft)
 U000017,Vorstand,Michelle Robertson,weiblich,dokumentiert,Bericht,"Erfüllung § 76 Abs. 3a AktG (mind. eine Frau) ""mit Michelle Robertson"""
@@ -30,7 +40,7 @@ U000026,Aufsichtsrat,Amparo Moraleda,weiblich,hoch,Schätzung (Vorname/Recherche
 U000026,Aufsichtsrat,Claudia Nemat,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Claudia weiblich
 U000026,Aufsichtsrat,Irene Rummelhoff,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Irene weiblich
 U000026,Aufsichtsrat,Antony Wood,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Antony männlich (nicht als weiblich eingestuft)
-U000026,Aufsichtsrat,Dr Fei Yu Xu,,unsicher,Schätzung (Vorname/Recherche),"Vorname geschlechtsneutral, keine Recherche-Treffer ausgewertet"
+U000026,Aufsichtsrat,Dr Fei Yu Xu,weiblich,hoch,Schätzung (Vorname/Recherche),"Angabe von Robin (eigene Recherche, 05.11.2026)"
 U000028,Vorstand,Dr. Felix Grawert,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Felix männlich (nicht als weiblich eingestuft)
 U000028,Vorstand,Dr. Christian Danninger,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Christian männlich (nicht als weiblich eingestuft)
 U000028,Aufsichtsrat,Alexander Everke,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Alexander männlich (nicht als weiblich eingestuft)
@@ -177,7 +187,7 @@ U000073,Aufsichtsrat,Frédéric Pflanz,männlich,hoch,Schätzung (Vorname/Recher
 U000073,Aufsichtsrat,Barbara Wentzel,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Barbara weiblich
 U000073,Aufsichtsrat,Donya-Florence Amer,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Donya-Florence weiblich
 U000073,Aufsichtsrat,Hilde Cambier,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Hilde weiblich
-U000073,Aufsichtsrat,Hong Chow,,unsicher,Schätzung (Vorname/Recherche),"Vorname geschlechtsneutral, keine Recherche-Treffer ausgewertet"
+U000073,Aufsichtsrat,Hong Chow,weiblich,hoch,Schätzung (Vorname/Recherche),"Angabe von Robin (eigene Recherche, 05.11.2026)"
 U000073,Aufsichtsrat,Wolfgang Herz,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Wolfgang männlich (nicht als weiblich eingestuft)
 U000073,Aufsichtsrat,Uta Kemmerich-Keil,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Uta weiblich
 U000073,Aufsichtsrat,Jan Koltze,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jan männlich (nicht als weiblich eingestuft)
@@ -218,7 +228,7 @@ U000067,Aufsichtsrat,Heinrich Hiesinger,männlich,hoch,Schätzung (Vorname/Reche
 U000067,Aufsichtsrat,Susanne Klatten,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Susanne weiblich
 U000067,Aufsichtsrat,Jens Köhler,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jens männlich (nicht als weiblich eingestuft)
 U000067,Aufsichtsrat,André Mandl,männlich,hoch,Schätzung (Vorname/Recherche),Vorname André männlich (nicht als weiblich eingestuft)
-U000067,Aufsichtsrat,Dominique Mohabeer,,unsicher,Schätzung (Vorname/Recherche),"Websuche ohne eindeutige Angabe (MarketScreener-Code ""M"" nur Datenbankfeld)"
+U000067,Aufsichtsrat,Dominique Mohabeer,weiblich,hoch,Schätzung (Vorname/Recherche),"Angabe von Robin (eigene Recherche, 05.11.2026)"
 U000067,Aufsichtsrat,Michael Nikolaides,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Michael männlich (nicht als weiblich eingestuft)
 U000067,Aufsichtsrat,Horst Ott,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Horst männlich (nicht als weiblich eingestuft)
 U000067,Aufsichtsrat,Anke Schäferkordt,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Anke weiblich
@@ -703,7 +713,7 @@ U000328,Aufsichtsrat,Dr. Christina Reuter,weiblich,hoch,Schätzung (Vorname/Rech
 U000328,Aufsichtsrat,Alexandra Schädler,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Alexandra weiblich
 U000328,Aufsichtsrat,Dr. Shaojun Sun,männlich,mittel,Schätzung (Vorname/Recherche),Vorname Shaojun überwiegend männlich
 U000328,Aufsichtsrat,Claudia Wenzel,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Claudia weiblich
-U000328,Aufsichtsrat,Ping Xu,,unsicher,Schätzung (Vorname/Recherche),"Vorname geschlechtsneutral, keine Recherche-Treffer ausgewertet"
+U000328,Aufsichtsrat,Ping Xu,weiblich,hoch,Schätzung (Vorname/Recherche),"Angabe von Robin (eigene Recherche, 05.11.2026)"
 U000328,Aufsichtsrat,Xiaomei Zhang,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Xiaomei weiblich
 U000331,Vorstand,Marc Llistosella,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Marc männlich (nicht als weiblich eingestuft)
 U000331,Vorstand,Frank Markus Weber,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Frank männlich (nicht als weiblich eingestuft)
@@ -803,7 +813,7 @@ U000395,Aufsichtsrat,Michael Bettag,männlich,hoch,Schätzung (Vorname/Recherche
 U000395,Aufsichtsrat,Ben van Beurden,männlich,hoch,Schätzung (Vorname/Recherche),öffentlich bekannt (ex Shell-CEO)
 U000395,Aufsichtsrat,Nadine Boguslawski,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Nadine weiblich
 U000395,Aufsichtsrat,Liz Centoni,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Liz weiblich
-U000395,Aufsichtsrat,Dame Veronica Anne (»Polly«) Courtice,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Dame männlich (nicht als weiblich eingestuft)
+U000395,Aufsichtsrat,Dame Veronica Anne (»Polly«) Courtice,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dame weiblich
 U000395,Aufsichtsrat,Sebastian Fay,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sebastian männlich (nicht als weiblich eingestuft)
 U000395,Aufsichtsrat,Marco Gobbetti,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Marco männlich (nicht als weiblich eingestuft)
 U000395,Aufsichtsrat,Michael Häberle,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Michael männlich (nicht als weiblich eingestuft)

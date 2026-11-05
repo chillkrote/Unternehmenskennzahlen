@@ -1,5 +1,6 @@
 import csv,re
 F=set("""Adela Agnieszka Aicha Alena Alessandra Alexandra Alice Amparo Anette Angela Angelika Anika Anita Anja Anja-Isabel Anke Ann-Kristin Ann-Sophie Anna Anne Anne-Laure Annemarie Annette Antje Ariane Astrid Ayten Barbara Beate Beatrix Belén Bettina Birgit Brigitte Britta Brona Carinne Carla Carmen Caroline Catherine Celia Christiane Christina Christine Claire-Marie Clara-Christina Clarissa Clarisse Claudia Coline Colleen Cornelia Dagmar Daniela Darleen Deborah Diana Doreen Doris Dorothea Donya-Florence Elaine Elisabeth Elizabeth Elke Eva Ertharin Esma Fiona Frauke Frederique Friederike Gabriela Gabriella Geisha Georgiana Gerlinde Gertrude Gesa Gina Grazia Grit Grita Hanna Heike Helen Helena Helene Helga Helle Hilde Hildegard Hiltrud Holly Ilka Inge Ingeborg Ingrid Ingrid-Helen Irene Iris Isabel Isabelle Jamila Janina Jeannette Jennifer Johanna Judith Julia Jutta Karen Karin Katarzyna Katharina Katherina Kathrin Katja Katrin Kerstin Khadija Kimberly Kirstin Kirsty Kristin Laura Lina Linda Lisa Liz Lori Louise Luise Maggie Maja Mandy Manja Manuela Margret Mari-Lizette Maria Maria-Regina Marianne Marie Marie-Anne Mariella Marion Martina María Maya Mayree Melanie Michelle Monika Nadia Nadine Nadège Nancy Natalie Nathalie Nicole Nina Nora Olga Pamela Pascale Patricia Petra Pia Rachel Raffaella Rashmy Rebecca Regina Renata Renate Rose Ruth Sabina Sabine Sabrina Sandra Sara Sarena Saskia Sharon Sherry Sibylle Sieglinde Sigrid Silke Silvia Sohaila Sonia Sonja Sophie Sopna Stefanie Stephanie Sujatha Susanne Sybille Sylvie Szilvia Tamara Tania Tanja Tatjana Ulrike Ursula Uta Ute Valeria Vanessa Vera Verena Veronica Veronika Victoria Yasmin Yvonne Zvezdana Xiaomei Saori Ferdije Jade """.split())
+F |= set("""Emma Heather Annie Loraine Kumsal Alison Amanda Amy Angela Anna Anne Ann Barbara Beth Bridget Carol Caroline Catherine Charlotte Cheryl Clare Claire Deirdre Diane Donna Dorothy Elaine Eleanor Elizabeth Ellen Emily Fiona Frances Gail Gillian Gwen Hannah Harriet Helen Hilary Holly Imogen Jane Janet Jennifer Jenny Jessica Jill Joanna Joanne Josephine Joy Judy Julia Julie June Karen Kate Katherine Kathleen Kathryn Kirsty Laura Lesley Linda Lindsay Lisa Lorna Louise Lucy Lynn Margaret Marianne Marjorie Mary Maureen Meg Melanie Michelle Nicole Pam Pamela Patricia Paula Penelope Philippa Rachel Rebecca Rosemary Ruth Sally Sandra Sarah Sharon Sheila Shirley Sian Sophie Stephanie Susan Suzanne Tamsin Tracey Tracy Ursula Valerie Vanessa Victoria Wendy Zoe Zoë Kathy Leila Liz Mairead Moya Orla Siobhan Aisling Ngozi Funke Priya Sunita Anjali Meera Noor Fatima Layla Yasmin Tsega Cynthia Sue Lindsey Dame Baroness""".split())
 AMBIG=set("Alexis Chris Robin Jackie Kelly Shannon Andrea Gabriele Simone Nicola Dominique Joan Laurence Kim Asoka Keryn Maxi Claude Ilke Dow Ferri Fei Feiyu Hong Ching Chong Jing Kui Liming Ping Qi Shaojun Xiaoqun Mimon Ola Deniz Michele Rainier Jean Nikola Yves Jos Lawrence Ben Elmar Hagen Jos CEO KR ma D. -Ing. h.".split())
 
 def fn(n):
@@ -16,10 +17,10 @@ OVR = {
  'Mimon Uhamou': ('m', 'mittel', 'Websuche: Siemens-Biografie (Betriebsrat), männliche Formulierung'),
  'Dominique Lembke': ('m', 'mittel', 'Websuche: KION/IG Metall, "Mr. Lembke"'),
  'Prof. Dr.-Ing. Tong Zhang': ('m', 'mittel', 'Websuche: Schaeffler-HV-Lebenslauf 2019, Professor Tongji University'),
- 'Dominique Mohabeer': ('', 'unsicher', 'Websuche ohne eindeutige Angabe (MarketScreener-Code "M" nur Datenbankfeld)'),
- 'Hong Chow': ('', 'unsicher', 'Vorname geschlechtsneutral, keine Recherche-Treffer ausgewertet'),
- 'Ping Xu': ('', 'unsicher', 'Vorname geschlechtsneutral, keine Recherche-Treffer ausgewertet'),
- 'Dr Fei Yu Xu': ('', 'unsicher', 'Vorname geschlechtsneutral, keine Recherche-Treffer ausgewertet'),
+ 'Dominique Mohabeer': ('w', 'hoch', 'Angabe von Robin (eigene Recherche, 05.11.2026)'),
+ 'Hong Chow': ('w', 'hoch', 'Angabe von Robin (eigene Recherche, 05.11.2026)'),
+ 'Ping Xu': ('w', 'hoch', 'Angabe von Robin (eigene Recherche, 05.11.2026)'),
+ 'Dr Fei Yu Xu': ('w', 'hoch', 'Angabe von Robin (eigene Recherche, 05.11.2026)'),
  'Kui Jiang': ('m', 'mittel', 'Vorname Kui überwiegend männlich (Weichai-Manager)'),
  'Chong Lee Tan': ('m', 'mittel', 'Namensbestandteile Chong Lee überwiegend männlich'),
  'Joan Trían Riu': ('m', 'mittel', 'Vorname Joan im Katalanischen männlich'),

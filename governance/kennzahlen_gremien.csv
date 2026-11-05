@@ -226,10 +226,20 @@ U000537,2025,mitbestimmung_ar,"paritätisch nach MitbestG, 10 von 20 Arbeitnehme
 U000537,2025,pay_ratio,,,governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf,4,kein Zahlenwert: vertikaler Vergleich wird vom Aufsichtsrat intern ermittelt (Vergütungsbericht S. 4)
 U000538,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/siemens-healthineers-ag/verguetungsbericht-2025.pdf,28,vier im GJ 2025 amtierende Mitglieder
 U000538,2025,pay_ratio,,,governance/dokumente/siemens-healthineers-ag/verguetungsbericht-2025.pdf,34,Kein Verhältnis ausgewiesen; Ø-Vergütung Belegschaft der Siemens Healthineers Gruppe in Deutschland (FTE) GJ 2025: 113 T€; Berechnung siehe berechnungen/pay_ratio.csv
+U000539,2025,vorstand_mitglieder_zahl,3,Personen,governance/dokumente/siltronic-ag/geschaeftsbericht-2025.pdf,169,drei aktive Mitglieder
+U000539,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/siltronic-ag/geschaeftsbericht-2025.pdf,171,"zwölf Mitglieder zum 31.12.2025 (Gerlinger bis 12.5., Pecher ab 12.5.2025)"
+U000539,2025,ar_arbeitnehmervertreter_zahl,5,Personen,governance/dokumente/siltronic-ag/geschaeftsbericht-2025.pdf,171,"Fußnote 2 ""Vertreter der Arbeitnehmer ... sowie Gewerkschaften"": Breyer, Zellner, Berer, Ohltmann, Stapfer; zusätzlich ein Vertreter der leitenden Angestellten (Estermaier)"
+U000539,2025,pay_ratio,,,governance/dokumente/siltronic-ag/geschaeftsbericht-2025.pdf,172,"Ø Vergütung Arbeitnehmer Deutschland 74 T€ (2024: 79), Konzern 63 T€; keine ausgewiesene Pay Ratio"
 U000640,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,4,fünf Mitglieder im GJ 2025 (Friede seit 1.12.2025)
 U000640,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,4,sechs Anteilseigner- und sechs Arbeitnehmervertreter
 U000640,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,4,"Feist, Chiarlitti, Kirchhoff, Ley, Püttcher, Lückert (mit ** gekennzeichnet)"
 U000640,2025,pay_ratio,,,governance/dokumente/symrise-ag/verguetungsbericht-2025.pdf,22,"Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (Belegschaft Symrise AG Deutschland, 2.713 FTE, 2025 +4,1 % ggü. Vorjahr)"
+U000643,2025,vorstand_mitglieder_zahl,2,Personen,governance/dokumente/tag-immobilien-ag/geschaeftsbericht-2025.pdf,210,zwei Co-CEOs
+U000643,2025,ar_mitglieder_zahl,6,Personen,governance/dokumente/tag-immobilien-ag/geschaeftsbericht-2025.pdf,196,sechs vergütete Mitglieder; keine Arbeitnehmervertreter (nicht mitbestimmt)
+U000643,2025,ar_arbeitnehmervertreter_zahl,0,Personen,governance/dokumente/tag-immobilien-ag/geschaeftsbericht-2025.pdf,196,Im Bericht keine Arbeitnehmervertreter ausgewiesen
+U000643,2025,gender_pay_gap_gesamt,7.3,Prozent,governance/dokumente/tag-immobilien-ag/geschaeftsbericht-2025.pdf,161,"ESRS S1-16: Bruttostundenverdienst Männer um 7,3 % über Frauen (Vorjahr 7,4 %), ohne Vorstand"
+U000643,2025,pay_ratio_hoechstbezahlte_median,25.2,Verhältnis,governance/dokumente/tag-immobilien-ag/geschaeftsbericht-2025.pdf,161,"ESRS S1-16: höchstbezahlte Einzelperson zum Median aller weiteren Beschäftigten (Vorjahr 25,2) — nicht Böckler-/CEO-Methode"
+U000643,2025,pay_ratio,,,governance/dokumente/tag-immobilien-ag/geschaeftsbericht-2025.pdf,161,Keine absolute Ø-Vergütung ausgewiesen; kein CEO-Verhältnis nach § 162 AktG
 U000645,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/talanx-ag/geschaeftsbericht-2025.pdf,42,sieben aktive Mitglieder zum 31.12.2025 (zusätzlich Henchoz bis 31.3.2025)
 U000645,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/talanx-ag/geschaeftsbericht-2025.pdf,12,acht Anteilseigner- und acht Arbeitnehmervertreter
 U000645,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/talanx-ag/geschaeftsbericht-2025.pdf,12,"Fußnote ""Arbeitnehmervertreter"": Hammer, Bani Ardalan, Bock-Wehr, Gascard, Meister, Rickel, Schubert, Seidel"

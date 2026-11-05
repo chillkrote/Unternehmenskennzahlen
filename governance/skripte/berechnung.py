@@ -38,6 +38,8 @@ A = {
  'U000133': (89.3, 'Beschäftigte Konzern: Personalaufwand lt. GuV je Vollzeitäquivalent (keine Ist-Vergütung der Belegschaft)', VB('U000133'), 21),
  'U000524': (99.6, 'Arbeitnehmervergleichsgruppe 2 = Belegschaft der Scout24 SE (ohne oberen Führungskreis), Ø-Gesamtvergütung', VB('U000524'), 34),
  'U000396': (106.5, 'Konzern weltweit: Ø Personalaufwand ohne Pensionsaufwand je Vollzeitbeschäftigtem (Ø 62.636 Beschäftigte), keine Ist-Vergütung Deutschland', VB('U000396'), 36),
+ 'U000331': (99.0, 'Belegschaft Knorr-Bremse Konzern in Deutschland, Vollzeitäquivalente (Zufluss), gerundet lt. Bericht', 'governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf', 305),
+ 'U000157': (93.114, 'Gesamtbelegschaft Deutschland (Lufthansa-Tarifkreis ohne CityLine), Vollzeitäquivalente, T220', 'governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf', 386),
  'U000165': (50.539, 'Gesamtbelegschaft DHL Group weltweit: Personalaufwand geteilt durch Beschäftigte (Ø-Gesamtvergütung lt. Bericht)', VB('U000165'), 37),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }

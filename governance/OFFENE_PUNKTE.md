@@ -76,3 +76,12 @@ Stand 02.11.2026. Diese Liste wird bei jedem Block fortgeschrieben. Sie ist so g
 - Scout24 (U000524, Block 6): alle sieben AR-Mitglieder von der Hauptversammlung gewählt, keine Arbeitnehmervertreter. Ø 99,6 T€ = Belegschaft der Scout24 SE (nicht Konzern). Weitz war erst ab 1.3.2025 CEO (Summe enthält CPTO-Zeit), daher Pay Ratio nur eingeschränkt vergleichbar. Frauenzahlen offen.
 - Merck KGaA (U000396, Block 6): Bericht englisch; Ø 106,5 T€ ist weltweiter Personalaufwand ohne Pensionen je Beschäftigtem. Von Roeder als Frau belegt ("her"). Arbeitnehmerseite im AR nicht ausgewiesen.
 - Brenntag (U000100), Symrise (U000640): Vergütungsbericht nicht als PDF beschafft (Symrise nur HTML-Seite, Brenntag nur im Geschäftsbericht). Qiagen (U000491, niederländisch), Airbus (U000026, niederländisch/§ 162 nicht anwendbar): Vergütungsberichte noch nicht beschafft.
+
+## Block 7 (MDAX: Knorr-Bremse, Hugo Boss, Lufthansa, Rational, Aurubis) – 05.11.2026
+- Knorr-Bremse (U000331): Ø 99 T€ Konzern Deutschland (gerundet); 6 Arbeitnehmervertreter belegt (Fußnote). Frauen offen.
+- Hugo Boss (U000290): Bericht englisch; absolute Ø-Vergütung 2025 nicht ausgewiesen (nur +2 %), daher keine Pay Ratio. Arbeitnehmerseite im AR nicht ausgewiesen.
+- Lufthansa (U000157): Ø 93,1 T€ Gesamtbelegschaft Deutschland; AR 10 Arbeitnehmervertreter laut Beschreibung, namentliche Zuordnung nicht in der Vergütungstabelle. ESRS-Kennzahlen (Gender Pay Gap, Ratio höchstbezahlte Person/Median) im Geschäftsbericht noch nicht übernommen.
+- Rational (U000494): nur Veränderung der Ø-Vergütung ausgewiesen, keine Pay Ratio. Arbeitnehmerseite nicht ausgewiesen.
+- Aurubis (U000053): GJ Okt-Sep; sechs Arbeitnehmervertreter; Ø-Vergütung Belegschaft in der Vergleichstabelle nicht sauber lesbar, Pay Ratio offen. Frau Hofkens (Vorständin) belegt.
+- MDAX noch nicht erfasst, Vergütungsbericht liegt als eigenes Dokument vor (muss beschafft werden): Schaeffler, Hensoldt, Traton, Bilfinger, KION, Fuchs, Lanxess, Salzgitter, Wacker, Bechtle, IONOS, Nemetschek, Elmos, RTL, United Internet, AUTO1, PUMA, Fraport, Aroundtown, flatexDEGIRO, Aumovio, Hella, Jenoptik, thyssenkrupp, TKMS, Evonik, K+S, SUSS, CTS Eventim, freenet.
+- MDAX mit Bericht im Geschäftsbericht, noch zu erfassen: Deutz, Renk, Nordex, Aixtron, TUI, DWS, Talanx, Delivery Hero, Siltronic, TAG Immobilien, Krones, Aumovio.

@@ -15,6 +15,10 @@ U000036,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/allia
 U000036,2025,ar_gewerkschaftsvertreter_zahl,1,Personen,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,"""including one trade union representative"" (ver.di); Person im Dokument nicht namentlich ausgewiesen"
 U000036,2025,mitbestimmung_ar,"SE-Beteiligungsvereinbarung (SEBG), 6 von 12 Arbeitnehmervertreter",,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,122,MitbestG gilt wegen der Rechtsform SE nicht; paritätische Besetzung lt. Vereinbarung
 U000036,2025,pay_ratio,,,governance/dokumente/allianz-se/geschaeftsbericht-2025.pdf,333,"Allianz weist kein Verhältnis aus, nur Entwicklung Vorstand/Ø-Vergütung (95 T€ Deutschland, FTE); Berechnung siehe berechnungen/pay_ratio.csv"
+U000053,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,102,vier aktive Mitglieder im GJ 2024/25
+U000053,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,106,sechs Anteilseigner- und sechs Arbeitnehmervertreter
+U000053,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,106,"Tabelle ""Vertreter der Arbeitnehmer"""
+U000053,2025,pay_ratio,,,governance/dokumente/aurubis-ag/geschaeftsbericht-2025.pdf,108,Kein Verhältnis ausgewiesen; Ø-Vergütung Belegschaft der Aurubis AG (FTE) in der Vergleichstabelle nicht eindeutig maschinell lesbar
 U000061,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,140,Stand 31.12.2025; Kurian und Tedeschi folgen ab 1.5.2026
 U000061,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,118,"Frauenanteil 16,7 %"
 U000061,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/basf-se/geschaeftsbericht-2025.pdf,141,
@@ -143,6 +147,8 @@ U000420,2025,pay_ratio,,,governance/dokumente/muenchener-rueckversicherungs-gese
 U000479,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,56,vier im GJ 2025 aktive Mitglieder
 U000479,2025,ar_mitglieder_zahl,10,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,68,zehn Mitglieder (Porsche SE ist nicht mitbestimmt)
 U000479,2025,pay_ratio,,,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,69,Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (nur prozentuale Veränderung der Ø-Vergütung der Arbeitnehmer); Variante A nicht berechenbar
+U000494,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rational-aktiengesellschaft/geschaeftsbericht-2025.pdf,177,vier aktive Mitglieder 2025
+U000494,2025,pay_ratio,,,governance/dokumente/rational-aktiengesellschaft/geschaeftsbericht-2025.pdf,181,Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (Veränderung Ø je FTE 2025 -2 %)
 U000502,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,Stand Jahresende 2025 (Vorjahr 3)
 U000502,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,"""drei Männern und einer Frau"" = 25 % (Vorjahr 66,7 %)"
 U000502,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,165,je acht Anteilseigner- und Arbeitnehmervertreter (§ 7 Abs. 1 Nr. 2 MitbestG)

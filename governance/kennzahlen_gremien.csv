@@ -117,6 +117,11 @@ U000233,2025,ar_mitglieder_zahl,12,Personen,governance/dokumente/fresenius-medic
 U000233,2025,pay_ratio,106.1,Verhältnis,governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf,238,"CEO pay ratio (CEO im Amt zum Jahresende zu Ø-Vergütung aller Beschäftigten, FTE, weltweit) 106:1 (2024: 61:1); Anstieg wegen Barauszahlung für aufgehobene Pensionszusage; Ø-Vergütung 60,7 T€"
 U000234,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/fresenius-se-und-co-kgaa/geschaeftsbericht-2025.pdf,74,fünf Mitglieder mit Vergütung 2025
 U000234,2025,pay_ratio,,,governance/dokumente/fresenius-se-und-co-kgaa/geschaeftsbericht-2025.pdf,78,"Kein Verhältnis ausgewiesen; durchschnittliche Arbeitnehmervergütung Konzern (FTE, Löhne und Gehälter) 2025: 53 T€; Berechnung siehe berechnungen/pay_ratio.csv"
+U000238,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/fuchs-se/verguetungsbericht-2025.pdf,13,sechs zum Jahresende (Wege ausgeschieden); sieben im Berichtsjahr
+U000238,2025,ar_arbeitnehmervertreter_zahl,,,governance/dokumente/fuchs-se/verguetungsbericht-2025.pdf,22,Nur Stahlschmidt und Barisik im Bericht als Arbeitnehmervertreterinnen genannt; Gesamtzahl nicht ausgewiesen
+U000238,2025,gender_pay_gap_gesamt,11,Prozent,governance/dokumente/fuchs-se/geschaeftsbericht-2025.pdf,191,"ESRS S1-16, Konzern; Definition: Differenz Durchschnittseinkommen Frauen/Männer in % der Männer"
+U000238,2025,pay_ratio_hoechstbezahlte_median,61,Verhältnis,governance/dokumente/fuchs-se/geschaeftsbericht-2025.pdf,191,ESRS S1-16: höchstbezahlte Einzelperson zum gewichteten Median aller Arbeitnehmer — nicht Böckler-/CEO-Methode
+U000238,2025,pay_ratio,,,governance/dokumente/fuchs-se/verguetungsbericht-2025.pdf,20,Keine absolute Ø-Vergütung ausgewiesen (nur Veränderung Mitarbeitende Konzern)
 U000242,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf,292,"vier im GJ 2025 aktive Mitglieder (Klebert, Kocherscheidt, Giloth, Brinker)"
 U000242,2025,pay_ratio,85.2,Verhältnis,governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf,302,"Vergütung des CEO im Verhältnis zur durchschnittlichen Vergütung aller Mitarbeitenden des GEA-Konzerns in Deutschland (2024: 68,6); Ø der Vorstandsmitglieder 42,6 (2024: 33,3). Absolute Ø-Vergütung nicht ausgewiesen"
 U000264,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/hannover-rueck-se/verguetungsbericht-2025.pdf,17,neun aktive Mitglieder mit Vergütung 2025
@@ -147,6 +152,10 @@ U000331,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/knorr-brem
 U000331,2025,ar_mitglieder_zahl,13,Personen,governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf,303,"13 Mitglieder mit Vergütung 2025 (Weimer bis 30.4., Sturm ab 30.4.2025)"
 U000331,2025,ar_arbeitnehmervertreter_zahl,6,Personen,governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf,303,"Fußnote 2: Birkeneder, Deseive, Mittmann, Nirschl, Ratzisberger, Sedlmair von den Mitarbeitenden gewählt"
 U000331,2025,pay_ratio,,,governance/dokumente/knorr-bremse-ag/geschaeftsbericht-2025.pdf,305,"Kein Verhältnis ausgewiesen; Ø-Gesamtvergütung Belegschaft Konzern Deutschland (FTE, Zufluss) 99 T€"
+U000349,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/krones-ag/verguetungsbericht-2025.pdf,13,fünf aktive Mitglieder
+U000349,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/krones-ag/verguetungsbericht-2025.pdf,16,acht Anteilseigner- und acht Arbeitnehmervertreter
+U000349,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/krones-ag/verguetungsbericht-2025.pdf,16,"Fußnote * ""Arbeitnehmervertreter"""
+U000349,2025,pay_ratio,,,governance/dokumente/krones-ag/verguetungsbericht-2025.pdf,15,"Ø Vergütung Gesamtbelegschaft Krones AG 87,0 T€ (2024: 86,8 T€)"
 U000363,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/lanxess-aktiengesellschaft/verguetungsbericht-2025.pdf,20,vier aktive Mitglieder
 U000363,2025,pay_ratio,,,governance/dokumente/lanxess-aktiengesellschaft/verguetungsbericht-2025.pdf,20,Kein Verhältnis ausgewiesen; Ø-Vergütung Beschäftigte in Deutschland ohne Vorstand 82 T€ (2024: 84 T€)
 U000157,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf,381,fünf aktive Mitglieder 2025
@@ -272,6 +281,10 @@ U000712,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmerve
 U000712,2025,pay_ratio,,,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,72,"kein Verhältniswert; Vergleich der Veränderung mit bereinigtem Personalaufwand je FTE der Volkswagen AG, absolute Beträge nicht ausgewiesen"
 U000716,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/vonovia-se/verguetungsbericht-2025.pdf,32,fünf Mitglieder mit Vergütung 2025
 U000716,2025,pay_ratio,,,governance/dokumente/vonovia-se/verguetungsbericht-2025.pdf,32,"Vonovia weist kein Verhältnis aus; Ø-Gesamtvergütung Gesamtbelegschaft Immobilienwirtschaft (FTE) 2025: 75,1 T€; Berechnung siehe berechnungen/pay_ratio.csv"
+U000727,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/wacker-chemie-ag/verguetungsbericht-2025.pdf,12,vier aktive Mitglieder
+U000727,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/wacker-chemie-ag/verguetungsbericht-2025.pdf,16,sechzehn vergütete Mitglieder
+U000727,2025,ar_arbeitnehmervertreter_zahl,,,governance/dokumente/wacker-chemie-ag/verguetungsbericht-2025.pdf,15,Im Bericht nicht gekennzeichnet; Arbeitnehmervertreter führen Vergütung nach DGB-/VAA-Regeln ab (S. 15)
+U000727,2025,pay_ratio,,,governance/dokumente/wacker-chemie-ag/verguetungsbericht-2025.pdf,18,Keine absolute Ø-Vergütung ausgewiesen (nur Veränderung Wacker Chemie AG Deutschland −4 %)
 U000742,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,zum 31.12.2025 (ohne Dembeck); ab 1.1.2026 fünf mit Dimitrova
 U000742,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,108,Frauenanteil 25 % zum 31.12.2025 (Vorjahr 40 %); ab 1.1.2026 wieder 40 %
 U000742,2025,ar_mitglieder_zahl,9,Personen,governance/dokumente/zalando-se/geschaeftsbericht-2025.pdf,110,"sechs Anteilseigner-, drei Arbeitnehmervertreter"

@@ -42,6 +42,7 @@ A = {
  'U000157': (93.114, 'Gesamtbelegschaft Deutschland (Lufthansa-Tarifkreis ohne CityLine), Vollzeitäquivalente, T220', 'governance/dokumente/deutsche-lufthansa-ag/geschaeftsbericht-2025.pdf', 386),
  'U000100': (129.0, 'Beschäftigte der Brenntag SE (Konzernzentrale, FTE; ohne Konzerngesellschaften), Tab. 4.23', VB('U000100'), 24),
  'U000233': (60.7, 'Alle Beschäftigten Fresenius Medical Care weltweit, FTE (Tab. 3.36)', 'governance/dokumente/fresenius-medical-care-ag/geschaeftsbericht-2025.pdf', 238),
+ 'U000071': (66.0, 'Arbeitnehmer der Bechtle-Konzernunternehmen in Deutschland, Personalaufwand je Vollzeitäquivalent, Vergleichstabelle', VB('U000071'), 22),
  'U000539': (74.0, 'Arbeitnehmer der Siltronic AG in Deutschland (Vollzeitäquivalent, inkl. variabler Bestandteile), Mehrjahresübersicht', GB('U000539'), 172),
  'U000177': (146.0, 'Arbeitnehmer des DWS-Konzerns weltweit, Vollzeitbasis, Vergleichstabelle (inkl. variabler Vergütung)', GB('U000177'), 263),
  'U000645': (108.0, 'Belegschaft Talanx Konzern in Deutschland (Personalaufwand ohne Vorstand je Arbeitnehmer), Vergleichstabelle', GB('U000645'), 46),

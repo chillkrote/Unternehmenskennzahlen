@@ -80,6 +80,9 @@ U000161,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/deutsche-teleko
 U000161,2025,ar_frauen_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,221,Anteil nicht in den ausgewerteten Seiten beziffert
 U000161,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,31,Hinweis: Gewerkschaftsmitglieder unter den Arbeitnehmervertretern führen Vergütung nach DGB-Richtlinien ab; Zahl nicht genannt
 U000161,2025,pay_ratio,,,governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf,23,im Vergütungsbericht 2025 nicht ausgewiesen (nur gesetzlicher Vergleich der Entwicklung nach § 162 AktG)
+U000163,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/deutz-aktiengesellschaft/geschaeftsbericht-2025.pdf,180,vier Mitglieder im GJ 2025 (Müller bis 31.1.2025)
+U000163,2025,ar_arbeitnehmervertreter_zahl,8,Personen,governance/dokumente/deutz-aktiengesellschaft/geschaeftsbericht-2025.pdf,184,acht Personen mit Kennzeichnung AN (inkl. unterjähriger Wechsel Dietrich/Eidt)
+U000163,2025,pay_ratio,,,governance/dokumente/deutz-aktiengesellschaft/geschaeftsbericht-2025.pdf,182,"Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (Belegschaft DEUTZ AG nur +7,0 % ggü. Vorjahr)"
 U000165,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,36,neun Mitglieder mit Vergütung 2025 (zwei unterjährige Wechsel)
 U000165,2025,ar_mitglieder_zahl,22,Personen,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,35,22 Mitglieder mit Vergütung 2025
 U000165,2025,pay_ratio,,,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,37,"Kein Verhältnis ausgewiesen; Ø-Gesamtvergütung Gesamtbelegschaft DHL Group (Personalaufwand / Beschäftigte) 2025: 50,539 T€; Berechnung siehe berechnungen/pay_ratio.csv"

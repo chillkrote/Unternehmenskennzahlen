@@ -47,6 +47,9 @@ U000125,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/contin
 U000125,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,,nicht ausgewertet
 U000125,2025,mitbestimmung_ar,paritätisch (MitbestG),,governance/dokumente/continental-aktiengesellschaft/geschaeftsbericht-2025.pdf,71,Verweis auf Mitbestimmungsgesetz im Abschnitt Aufsichtsrat; Zahl der Arbeitnehmervertreter nicht ausgewertet
 U000125,2025,pay_ratio,,,governance/dokumente/continental-aktiengesellschaft/verguetungsbericht-2025.pdf,31,kein Verhältniswert; vergleichende Darstellung nur mit Veränderungsraten (S. 28 und 31)
+U000133,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/daimler-truck-holding-ag/verguetungsbericht-2025.pdf,16,sieben Mitglieder mit Vergütung 2025
+U000133,2025,ar_mitglieder_zahl,23,Personen,governance/dokumente/daimler-truck-holding-ag/verguetungsbericht-2025.pdf,19,23 Mitglieder mit Vergütung 2025 (inkl. fünf unterjährige Wechsel)
+U000133,2025,pay_ratio,,,governance/dokumente/daimler-truck-holding-ag/verguetungsbericht-2025.pdf,21,"Kein Verhältnis ausgewiesen; Ø-Vergütung Beschäftigte (Personalaufwand lt. GuV je FTE) 2025: 89,3 T€; Berechnung siehe berechnungen/pay_ratio.csv"
 U000148,2025,ar_frauen_zahl,7,Personen,governance/dokumente/deutsche-bank-aktiengesellschaft/geschaeftsbericht-2025.pdf,418,"""sieben von zwanzig Mitgliedern beziehungsweise 35 %""; Arbeitnehmerseite 4 Frauen/6 Männer, Anteilseignerseite 3 Frauen/7 Männer (PDF S. 797)"
 U000148,2025,vorstand_frauen_zahl,2,Personen,governance/dokumente/deutsche-bank-aktiengesellschaft/geschaeftsbericht-2025.pdf,418,"""zwei von neun Mitgliedern beziehungsweise 22 %"" zum Jahresende 2025; Personen im Dokument nicht namentlich ausgewiesen"
 U000148,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/deutsche-bank-aktiengesellschaft/geschaeftsbericht-2025.pdf,797,Arbeitnehmerseite 4 Frauen und 6 Männer = 10 von 20
@@ -69,11 +72,16 @@ U000161,2025,vorstand_frauen_zahl,,Personen,governance/dokumente/deutsche-teleko
 U000161,2025,ar_frauen_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,221,Anteil nicht in den ausgewerteten Seiten beziffert
 U000161,2025,ar_gewerkschaftsvertreter_zahl,,Personen,governance/dokumente/deutsche-telekom-ag/geschaeftsbericht-2025.pdf,31,Hinweis: Gewerkschaftsmitglieder unter den Arbeitnehmervertretern führen Vergütung nach DGB-Richtlinien ab; Zahl nicht genannt
 U000161,2025,pay_ratio,,,governance/dokumente/deutsche-telekom-ag/verguetungsbericht-2025.pdf,23,im Vergütungsbericht 2025 nicht ausgewiesen (nur gesetzlicher Vergleich der Entwicklung nach § 162 AktG)
+U000165,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,36,neun Mitglieder mit Vergütung 2025 (zwei unterjährige Wechsel)
+U000165,2025,ar_mitglieder_zahl,22,Personen,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,35,22 Mitglieder mit Vergütung 2025
+U000165,2025,pay_ratio,,,governance/dokumente/dhl-ag/verguetungsbericht-2025.pdf,37,"Kein Verhältnis ausgewiesen; Ø-Gesamtvergütung Gesamtbelegschaft DHL Group (Personalaufwand / Beschäftigte) 2025: 50,539 T€; Berechnung siehe berechnungen/pay_ratio.csv"
 U000195,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/e-on-se/verguetungsbericht-2025.pdf,30,fünf aktive Mitglieder
 U000195,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/e-on-se/verguetungsbericht-2025.pdf,29,16 Mitglieder mit Vergütung 2025
 U000195,2025,pay_ratio,,,governance/dokumente/e-on-se/verguetungsbericht-2025.pdf,30,"Kein Verhältnis ausgewiesen; Ø-Vergütung Arbeitnehmer in Deutschland (regelmäßige Zielvergütung zum Jahresende, auf 100 % hochgerechnet) 2025: 84 T€ (40.513 Arbeitnehmer); Berechnung siehe berechnungen/pay_ratio.csv"
 U000234,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/fresenius-se-und-co-kgaa/geschaeftsbericht-2025.pdf,74,fünf Mitglieder mit Vergütung 2025
 U000234,2025,pay_ratio,,,governance/dokumente/fresenius-se-und-co-kgaa/geschaeftsbericht-2025.pdf,78,"Kein Verhältnis ausgewiesen; durchschnittliche Arbeitnehmervergütung Konzern (FTE, Löhne und Gehälter) 2025: 53 T€; Berechnung siehe berechnungen/pay_ratio.csv"
+U000242,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf,292,"vier im GJ 2025 aktive Mitglieder (Klebert, Kocherscheidt, Giloth, Brinker)"
+U000242,2025,pay_ratio,85.2,Verhältnis,governance/dokumente/gea-group-aktiengesellschaft/geschaeftsbericht-2025.pdf,302,"Vergütung des CEO im Verhältnis zur durchschnittlichen Vergütung aller Mitarbeitenden des GEA-Konzerns in Deutschland (2024: 68,6); Ø der Vorstandsmitglieder 42,6 (2024: 33,3). Absolute Ø-Vergütung nicht ausgewiesen"
 U000264,2025,vorstand_mitglieder_zahl,9,Personen,governance/dokumente/hannover-rueck-se/verguetungsbericht-2025.pdf,17,neun aktive Mitglieder mit Vergütung 2025
 U000264,2025,ar_mitglieder_zahl,9,Personen,governance/dokumente/hannover-rueck-se/verguetungsbericht-2025.pdf,20,neun Mitglieder mit Vergütung 2025
 U000264,2025,ar_arbeitnehmervertreter_zahl,3,Personen,governance/dokumente/hannover-rueck-se/verguetungsbericht-2025.pdf,20,"Fußnote 1 kennzeichnet drei aktive Arbeitnehmervertreter (Hundeshagen, Kaufmann, Kempff)"
@@ -120,6 +128,9 @@ U000420,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/muen
 U000420,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,"Beier und Grundler (ver.di), Mücke (Vorsitzende Neue Assekuranz Gewerkschaft) lt. Berufsangabe; weitere Gewerkschaftszugehörigkeit nicht ausgewiesen"
 U000420,2025,mitbestimmung_ar,"paritätisch (MitbestG), 10 von 20 Arbeitnehmervertreter",,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/geschaeftsbericht-2025.pdf,206,
 U000420,2025,pay_ratio,,,governance/dokumente/muenchener-rueckversicherungs-gesellschaft-aktiengesellschaf/verguetungsbericht-2025.pdf,39,"Kein Verhältnis ausgewiesen; Vergleich nur als Veränderung (Ø-Vergütung Deutschland FTE 2025: -0,2 %), keine Absolutwerte -> Berechnung nach Böckler Variante A nicht möglich"
+U000479,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,56,vier im GJ 2025 aktive Mitglieder
+U000479,2025,ar_mitglieder_zahl,10,Personen,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,68,zehn Mitglieder (Porsche SE ist nicht mitbestimmt)
+U000479,2025,pay_ratio,,,governance/dokumente/porsche-automobil-holding-se/geschaeftsbericht-2025.pdf,69,Kein Verhältnis und keine absolute Ø-Vergütung ausgewiesen (nur prozentuale Veränderung der Ø-Vergütung der Arbeitnehmer); Variante A nicht berechenbar
 U000502,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,Stand Jahresende 2025 (Vorjahr 3)
 U000502,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,94,"""drei Männern und einer Frau"" = 25 % (Vorjahr 66,7 %)"
 U000502,2025,ar_mitglieder_zahl,16,Personen,governance/dokumente/rheinmetall-ag/geschaeftsbericht-2025.pdf,165,je acht Anteilseigner- und Arbeitnehmervertreter (§ 7 Abs. 1 Nr. 2 MitbestG)
@@ -139,6 +150,9 @@ U000510,2025,pay_ratio,,,governance/dokumente/rwe-aktiengesellschaft/verguetungs
 U000515,2025,vorstand_mitglieder_zahl,6,Personen,governance/dokumente/sap-se/verguetungsbericht-2025.pdf,24,sechs Mitglieder mit Vergütung 2025 (Summe 32.720 T€)
 U000515,2025,ar_mitglieder_zahl,18,Personen,governance/dokumente/sap-se/verguetungsbericht-2025.pdf,32,18 Mitglieder mit Vergütung für das ganze Jahr 2025 im Bericht; Arbeitnehmerseite/MitbestG-Besetzung nicht ausgewiesen
 U000515,2025,pay_ratio,,,governance/dokumente/sap-se/verguetungsbericht-2025.pdf,35,SAP weist kein Verhältnis aus; Ø-Jahresvergütung der Mitarbeitenden des SAP-Konzerns 2025: 146 T€ (VZK); Berechnung siehe berechnungen/pay_ratio.csv
+U000516,2025,vorstand_mitglieder_zahl,5,Personen,governance/dokumente/sartorius-aktiengesellschaft/geschaeftsbericht-2025.pdf,253,vier aktive Mitglieder zum Jahresende plus Dr. Kreuzburg (bis 30.6.2025)
+U000516,2025,ar_mitglieder_zahl,14,Personen,governance/dokumente/sartorius-aktiengesellschaft/geschaeftsbericht-2025.pdf,262,14 Mitglieder mit Vergütung 2025 (inkl. unterjährig Ein-/Ausgetretener)
+U000516,2025,pay_ratio,,,governance/dokumente/sartorius-aktiengesellschaft/geschaeftsbericht-2025.pdf,262,"Bericht weist keine absolute Ø-Mitarbeitervergütung aus (nur Index 2025 = 100, Veränderung +3 %); Variante A nicht berechenbar, Variante B offen"
 U000535,2025,vorstand_mitglieder_zahl,7,Personen,governance/dokumente/siemens-aktiengesellschaft/verguetungsbericht-2025.pdf,32,am 30.9.2025 im Amt
 U000535,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/siemens-aktiengesellschaft/verguetungsbericht-2025.pdf,36,20 am 30.9.2025 im Amt
 U000535,2025,ar_arbeitnehmervertreter_zahl,,Personen,governance/dokumente/siemens-aktiengesellschaft/verguetungsbericht-2025.pdf,36,neun Mitglieder mit Abführungs-Fußnote (Arbeitnehmer- und Gewerkschaftsvertreter); Gesamtzahl im VB nicht ausgewiesen
@@ -151,6 +165,8 @@ U000537,2025,ar_arbeitnehmervertreter_zahl,10,Personen,governance/dokumente/siem
 U000537,2025,ar_gewerkschaftsvertreter_zahl,3,Personen,governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf,241,"Bloemers, Fehrmann (IG Metall-Sekretäre), Kerner (2. Vorsitzender IG Metall); Zuordnung aus Beruf"
 U000537,2025,mitbestimmung_ar,"paritätisch nach MitbestG, 10 von 20 Arbeitnehmervertreter",,governance/dokumente/siemens-energy-ag/geschaeftsbericht-2025.pdf,230,"""German Codetermination Act"""
 U000537,2025,pay_ratio,,,governance/dokumente/siemens-energy-ag/verguetungsbericht-2025.pdf,4,kein Zahlenwert: vertikaler Vergleich wird vom Aufsichtsrat intern ermittelt (Vergütungsbericht S. 4)
+U000538,2025,vorstand_mitglieder_zahl,4,Personen,governance/dokumente/siemens-healthineers-ag/verguetungsbericht-2025.pdf,28,vier im GJ 2025 amtierende Mitglieder
+U000538,2025,pay_ratio,,,governance/dokumente/siemens-healthineers-ag/verguetungsbericht-2025.pdf,34,Kein Verhältnis ausgewiesen; Ø-Vergütung Belegschaft der Siemens Healthineers Gruppe in Deutschland (FTE) GJ 2025: 113 T€; Berechnung siehe berechnungen/pay_ratio.csv
 U000712,2025,vorstand_mitglieder_zahl,8,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"Frauenquote im Vorstand 12,5 % = 1 von 8 (nach Ausscheiden Kilian)"
 U000712,2025,vorstand_frauen_zahl,1,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"12,5 %; Hauke Stars (Frau lt. Bericht S. 53)"
 U000712,2025,ar_mitglieder_zahl,20,Personen,governance/dokumente/volkswagen-ag/geschaeftsbericht-2025.pdf,226,"zehn Anteilseigner-, zehn Arbeitnehmervertreter; Land Niedersachsen entsendet zwei Anteilseignervertreter"

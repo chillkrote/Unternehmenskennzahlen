@@ -31,6 +31,9 @@ A = {
  'U000716': (75.1, 'Gesamtbelegschaft Immobilienwirtschaft konzernweit, Vollzeitäquivalente (Ø-Gesamtvergütung lt. vergleichender Darstellung)', VB('U000716'), 32),
  'U000274': (85.0, 'Gesamtbelegschaft Heidelberg Materials AG (nur Muttergesellschaft) inkl. Top-/Senior-Management ohne Vorstand, Vollzeitbasis, Direktvergütung', VB('U000274'), 32),
  'U000234': (53.0, 'Konzern weltweit, Ø Löhne und Gehälter je FTE (nicht nur Deutschland)', GB('U000234'), 78),
+ 'U000264': (126.2, 'Mitarbeiter Hannover Rück SE in Deutschland, Vollzeitäquivalente (Ø-Vergütung lt. vergleichender Darstellung)', VB('U000264'), 21),
+ 'U000195': (84.0, 'Arbeitnehmer in Deutschland, regelmäßige Zielvergütung zum Jahresende auf 100 % Beschäftigungsgrad hochgerechnet (keine gewährte Ist-Vergütung)', VB('U000195'), 30),
+ 'U000065': (122.0, 'Beschäftigte Deutschland (Tarif- und Gesamtbelegschaft ausgewählter Gesellschaften), Vollzeitäquivalente', VB('U000065'), 46),
  'U000537': (120.0, 'Workforce Deutschland inkl. Siemens Gamesa Deutschland, FTE (GJ Okt 2024-Sep 2025)', VB('U000537'), 19),
 }
 # Variante B (Böckler 2018): (Konzern-Personalaufwand - Vorstandsvergütung) / Konzernbeschäftigte
@@ -53,6 +56,7 @@ PUBLIZIERT = {
  'U000151': (97.0, 'ESRS S1-16: höchstbezahlte Person (CEO) zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 111)'),
  'U000073': (125.83, 'Verhältnis höchstbezahltes Vorstandsmitglied zu Median-Belegschaft, lt. Vergütungsbericht'),
  'U000502': (144.5, 'lt. Vergütungsbericht (Definition dort)'),
+ 'U000395': (135.0, 'ESRS: höchstbezahlte Einzelperson zu Median-Gesamtvergütung aller Beschäftigten (Geschäftsbericht S. 184)'),
 }
 # Rheinmetall weist Personalaufwand je FTE direkt aus (GB S. 56): 97 T€
 B_DIREKT = {'U000502': (97.0, 'Personalaufwand je Beschäftigtem (Kapazität FTE), Konzern', GB('U000502'), 56)}
@@ -61,6 +65,8 @@ DOK_B = {}  # Quelle der Variante-B-Eingaben aus Handeingaben (sonst Geschäftsb
 
 # Geschlecht nur aus dokumentierten Angaben (nie aus Vornamen): person_id-Name, Unternehmen, Beleg, Seite
 FRAUEN = [
+ ('Britta Seeger', 'U000395', 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt', 236, 'Bezeichnung "Arbeitsdirektorin"; "Zum 31. Dezember 2025 ist dies Britta Seeger" (Frau im Vorstand)'),
+ ('Brona Magee', 'U000264', VB('U000264'), 18, 'Fußnote: "Eintritt von Frau Magee als Vorstandsmitglied"'),
  ('Ilka Horstmeier', 'U000067', VB('U000067'), 28, 'Bezeichnung "Arbeitsdirektorin"'),
  ('Dr. Bettina Orlopp', 'U000124', VB('U000124'), 24, 'Bezeichnung "Vorstandsvorsitzende"'),
  ('Hauke Stars', 'U000712', GB('U000712'), 53, 'Anrede "Frau Stars" im Vergütungsbericht; Frauenquote Vorstand 12,5 % (S. 226)'),
@@ -81,7 +87,7 @@ FRAUEN = [
 
 # Handeingaben aus der Excel-Importvorlage (governance/vorlage/importieren.py --schreiben): gleiche Struktur, nur GJ 2025
 import glob, json
-PUB_Q = {}
+PUB_Q = {'U000395': 'governance/dokumente/mercedes-benz-group-ag/geschaeftsbericht-2025.txt S. 184'}
 GESCHLECHT_SONST = []
 for _f in sorted(glob.glob(f'{D}/handeingabe/*.json')):
     _d = json.load(open(_f, encoding='utf-8'))

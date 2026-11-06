@@ -253,7 +253,10 @@ const POL = (() => {
   function viewKom() {
     const k = ladeKO(); if (!k || !k.gebiete) return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen", sub: "keine Daten", body: `<p class="n">Keine Kommunaldaten im Build (app/kommunal_daten.py).</p>` })}</div>`;
     let g = k.gebiete.find(x => x.id === KO_ID) || k.gebiete[0]; KO_ID = g.id;
-    const chips = typ => k.gebiete.filter(x => x.typ === typ).sort((a, b) => a.name.localeCompare(b.name, "de")).map(x => `<button type="button" class="key" data-pkom="${esc(x.id)}" aria-pressed="${x.id === KO_ID}" style="margin:0 4px 4px 0">${esc(x.name.replace(/^Kreis /, ""))}</button>`).join("");
+    const kreisName = g.typ === "Gemeinde" ? g.kreis : g.typ === "Kreis" || g.typ === "Städteregion" ? g.name : "";
+    const chips = typ => k.gebiete.filter(x => x.typ === typ).sort((a, b) => a.name.localeCompare(b.name, "de")).map(x => `<button type="button" class="key" data-pkom="${esc(x.id)}" aria-pressed="${x.id === KO_ID || x.name === kreisName && x.typ !== "Gemeinde"}" style="margin:0 4px 4px 0">${esc(x.name.replace(/^Kreis /, ""))}</button>`).join("");
+    const gemChips = kreisName ? k.gebiete.filter(x => x.typ === "Gemeinde" && x.kreis === kreisName).sort((a, b) => a.name.localeCompare(b.name, "de")).map(x => `<button type="button" class="key" data-pkom="${esc(x.id)}" aria-pressed="${x.id === KO_ID}" style="margin:0 4px 4px 0">${esc(x.name)}</button>`).join("") : "";
+    const nGem = k.gebiete.filter(x => x.typ === "Gemeinde").length, nBV = k.gebiete.reduce((a, x) => a + x.bezirke.length, 0);
     const sitze = g.sitze.map(x => ({ partei: x.partei, sitze: x.gesamt })), sl = koSitze(k, g, sitze), n = g.sitze_gesamt, maj = Math.floor(n / 2) + 1;
     const gr = [...g.sitze].sort((a, b) => b.gesamt - a.gesamt)[0], frauen = g.sitze.reduce((a, x) => a + x.frauen, 0);
     const name20 = {}; g.sitze.forEach(x => name20[x.partei] = x.gesamt_2020);
@@ -265,20 +268,34 @@ const POL = (() => {
       body: `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px">${g.bezirke.map(b => { const bs = b.stimmen.map(x => ({ partei: x.partei, sitze: x.sitze })), bl = koSitze(k, g, bs), top = [...b.stimmen].sort((x, y) => y.sitze - x.sitze || y.stimmen - x.stimmen)[0];
         return `<div style="min-width:0"><div style="font-family:var(--sans);margin-bottom:2px"><b>${esc(b.name)}</b> <span class="n">${b.sitze_gesamt} Sitze · Beteiligung ${b.wahlberechtigte ? f1.format(b.waehler / b.wahlberechtigte * 100) + " %" : "–"}</span></div>${koHalbkreis(bl, 230)}${koLegende(bl.map(x => [x[0], x[1], x[2], x[0].replace(/^Wählergruppe (\d+)$/, "WGR $1").replace("T I E R S C H U T Z", "TIERSCHUTZ")]))}${top ? `<div class="n" style="text-align:center;margin-top:3px">meiste Stimmen: ${esc(top.partei)} ${f1.format(top.prozent)} %</div>` : ""}</div>`; }).join("")}</div>`,
       fuss: "Sitze je Bezirksvertretung nach der Wahl am 14.09.2025 (Tabelle 4 des Hefts). Die Bezirksvertretungen werden unabhängig vom Rat gewählt. Wählergruppen (WGR 1 …) sind je Stadt nummeriert, Namen siehe Rat." }) : "";
-    return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen Nordrhein-Westfalen", sub: `${k.gebiete.length} Räte und Kreistage, ${k.gebiete.reduce((a, x) => a + x.bezirke.length, 0)} Bezirksvertretungen`, breite: "w12",
-        body: `<p class="n" style="margin:0 0 4px">Kreisfreie Städte</p><div>${chips("kreisfreie Stadt")}</div><p class="n" style="margin:6px 0 4px">Kreise</p><div>${chips("Kreis")}${chips("Städteregion")}</div>`,
-        fuss: `Kommunalwahlen am ${esc(datum(k.wahltag))}, endgültige Ergebnisse. Quelle: <a class="flink" href="${esc(k.quelle.url)}" target="_blank" rel="noopener">${esc(k.quelle.name)}</a>, ${esc(k.quelle.lizenz)}. Bisher nur Nordrhein-Westfalen; weitere Länder folgen schrittweise.` })}
-      ${panel({ code: "RAT", titel: `${esc(g.gremium)} ${esc(g.typ === "kreisfreie Stadt" ? g.name : g.name)}`, sub: `${n} Sitze · Mehrheit ab ${maj} · Wahlbeteiligung ${f1.format(g.waehler / g.wahlberechtigte * 100)} %`, breite: "w5",
+    return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen Nordrhein-Westfalen", sub: `${k.gebiete.length - nGem} Räte und Kreistage, ${nGem} kreisangehörige Städte und Gemeinden, ${nBV} Bezirksvertretungen`, breite: "w12",
+        body: `<p class="n" style="margin:0 0 4px">Kreisfreie Städte</p><div>${chips("kreisfreie Stadt")}</div><p class="n" style="margin:6px 0 4px">Kreise</p><div>${chips("Kreis")}${chips("Städteregion")}</div>${gemChips ? `<p class="n" style="margin:6px 0 4px">Städte und Gemeinden im ${esc(kreisName)}</p><div>${gemChips}</div>` : ""}`,
+        fuss: `Kommunalwahlen am ${esc(datum(k.wahltag))}, endgültige Ergebnisse. Quelle: <a class="flink" href="${esc(k.quelle.url)}" target="_blank" rel="noopener">${esc(k.quelle.name)}</a>, ${esc(k.quelle.lizenz)}. Vergleichswahlen: Heft 1 derselben Reihe. Bisher nur Nordrhein-Westfalen; weitere Länder folgen schrittweise.` })}
+      ${panel({ code: "RAT", titel: `${esc(g.gremium)} ${esc(g.name)}`, sub: `${g.typ === "Gemeinde" ? g.art + ", " + g.kreis + " · " : ""}${n} Sitze · Mehrheit ab ${maj} · Wahlbeteiligung ${f1.format(g.waehler / g.wahlberechtigte * 100)} %`, breite: "w5",
         body: `${koHalbkreis(sl, 360)}${koLegende(sl)}<table class="tab" style="margin-top:10px"><tbody>
           <tr><td style="text-align:left">stärkste Fraktion</td><td>${esc(gr.partei)} ${gr.gesamt} Sitze (${f0.format(gr.gesamt / n * 100)} %)</td></tr>
-          ${bm ? `<tr><td style="text-align:left">${esc(bm.amt)} (${esc(bm.wahl)})</td><td>${esc(bm.name)}, ${esc(bm.partei)} · ${f1.format(bm.anteil)} %</td></tr>` : `<tr><td style="text-align:left">Landrat</td><td class="n">keine Wahl 2025</td></tr>`}
+          ${bm ? `<tr><td style="text-align:left">${esc(bm.amt)} (${esc(bm.wahl)})</td><td>${esc(bm.name)}, ${esc(bm.partei)} · ${f1.format(bm.anteil)} %</td></tr>` : `<tr><td style="text-align:left">${g.typ === "Gemeinde" ? "Bürgermeister" : "Landrat"}</td><td class="n">keine Wahl 2025</td></tr>`}
           <tr><td style="text-align:left">Frauenanteil</td><td>${frauen} von ${n} (${f0.format(frauen / n * 100)} %)</td></tr>
           <tr><td style="text-align:left">Wahlberechtigte</td><td>${f0.format(g.wahlberechtigte)}</td></tr></tbody></table>`,
         fuss: "Sitzverteilung nach der Wahl, Tabelle 2 des Hefts. Bündnisse und Koalitionen im Rat enthält das Heft nicht; die Mehrheitsmarke gilt für einfache Mehrheit der Sitze." })}
       ${panel({ code: "STM", titel: "Stimmen und Sitze im Vergleich zu 2020", sub: `${f0.format(g.gueltig)} gültige Stimmen`, breite: "w7",
         body: `<table class="tab"><thead><tr><th style="text-align:left">Liste</th><th>Stimmen</th><th>Anteil</th><th>2020</th><th>Δ Pkt.</th><th>Sitze</th><th>2020</th></tr></thead><tbody>${g.stimmen.filter(x => x.stimmen != null || x.stimmen_2020 != null).map(zeile).join("")}</tbody></table>`,
         fuss: "Tabelle 1 und 2 des Hefts. „Wählergruppen“ und Einzelbewerber sind je Gebiet einzeln aufgeführt, „Sonstige“ nur 2020. Δ nur, wo die Liste in beiden Wahlen antrat." })}
+      ${vergleichPanel(k, g)}
       ${bezirke}</div>`;
+  }
+  /* Anteile der großen Parteien bei Kommunal-, Landtags-, Europa- und Bundestagswahl im selben Gebiet (Heft 1) */
+  function vergleichPanel(k, g) {
+    const v = g.vergleich; if (!v) return panel({ code: "VGL", titel: "Andere Wahlen im Gebiet", sub: "keine Daten", breite: "w12", body: `<p class="n">Für dieses Gebiet liegen im Heft 1 keine Vergleichsergebnisse vor.</p>` });
+    const P = ["CDU", "SPD", "GRÜNE", "FDP", "AfD", "Die Linke"], low = t => t.toLowerCase();
+    const spalten = [["komm25", "Kommunal 2025"], ["komm20", "Kommunal 2020"], ["ltw22", "Landtag 2022"], ["euw24", "Europa 2024"], ["btw25", "Bundestag 2025"]];
+    const wert = (w, p) => { if (w === "komm25") { const x = g.stimmen.find(y => low(y.partei) === low(p)); return x ? x.prozent : null; } const x = (v.werte[w] || []).find(y => low(y[0]) === low(p)); return x ? x[1] : null; };
+    const bet = w => w === "komm25" ? (g.waehler / g.wahlberechtigte * 100) : v.beteiligung[w];
+    const zelle = (w, p) => { const x = wert(w, p); if (x == null) return `<td class="n">–</td>`; return `<td><span style="display:inline-block;width:${Math.min(60, x * 1.5).toFixed(0)}px;height:7px;background:${esc(koFarbe(k, p))};border-radius:2px;margin-right:6px;vertical-align:middle"></span>${f1.format(x)} %</td>`; };
+    return panel({ code: "VGL", titel: "Dieselben Parteien bei anderen Wahlen", sub: `${esc(g.name)}: Kommunal, Landtag, Europa, Bundestag`, breite: "w12",
+      body: `<table class="tab"><thead><tr><th style="text-align:left">Partei</th>${spalten.map(c => `<th>${c[1]}</th>`).join("")}</tr></thead><tbody>${P.map(p => `<tr><td style="text-align:left"><i style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${esc(koFarbe(k, p))};margin-right:6px"></i>${p}</td>${spalten.map(c => zelle(c[0], p)).join("")}</tr>`).join("")}
+        <tr><td style="text-align:left" class="n">Wahlbeteiligung</td>${spalten.map(c => `<td class="n">${bet(c[0]) == null ? "–" : f1.format(bet(c[0])) + " %"}</td>`).join("")}</tr></tbody></table>`,
+      fuss: "Heft 1 (Landtags-, Europa- und Bundestagswahl: Zweitstimmen) und Heft 4/3 (Kommunalwahl 2025). Kommunal 2020 enthält alle Wählergruppen unter „Wählergruppen/Einzelbewerber“; Anteile unter 0,5 % fehlen. Die Kommunalwahl hat andere Listen und eine andere Wählerschaft als Landtags- oder Bundestagswahlen, die Spalten sind deshalb nur grob vergleichbar." });
   }
   function klick(t) {
     const ko = t.closest && t.closest("[data-pkom]"); if (ko) { KO_ID = ko.getAttribute("data-pkom"); render(); return true; }

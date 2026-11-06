@@ -7,6 +7,8 @@ Der Volltext des Hefts liegt in kommunalwahlen/nrw_2025/*.txt (aus dem PDF extra
 
   Tabelle 1  Wahlberechtigte, Wähler, Stimmenverteilung je Rat/Kreistag (2025 und 2020)
   Tabelle 2  Sitzverteilung je Rat/Kreistag (2025 und 2020)
+  Heft 4     kreisangehörige Gemeinden (Stimmen, Sitze, Bürgermeister, Wählergruppen), gleiche Tabellenform
+  Heft 1     Vergleichsergebnisse Landtagswahl 2022, Europawahl 2024, Bundestagswahl 2025, Kommunalwahl 2020 je Gebiet
   Tabelle 3  Oberbürgermeister- und Landratswahlen (Gewählte/r)
   Tabelle 4  Bezirksvertretungen der kreisfreien Städte (Stimmen und Sitze)
   Wählergruppen-Verzeichnis (Namen der "Wählergruppe 1..n" je Gebiet)
@@ -132,15 +134,22 @@ def ist_gebietskopf(z):
     return bool(re.match(r"^(Krfr\. Stadt |Kreis |Rhein-|Städteregion|Paderborn, Kreis|Oberbergischer|Rheinisch-|Ennepe|Hochsauerland|Märkischer)", z)) and not re.search(r"\d [\d–]", z)
 
 
-def lesen_tabelle1(L, pruef):
-    """Rat/Kreistag: Wahlberechtigte, Wähler, Stimmen. Rückgabe: {Gebietsname: {...}}"""
+def norm(z):
+    return re.sub(r"\s*\d\)$", "", z).strip()
+
+
+def lesen_tabelle1(L, pruef, kreise=None):
+    """Rat/Kreistag/Gemeinderat: Wahlberechtigte, Wähler, Stimmen. Rückgabe: {"Kreis|Gebietsname": {...}}"""
     sec = abschnitt(L, "1. Wahlberechtigte, Wähler/-innen und Stimmenverteilung", "2. Sitzverteilung")
-    gebiete, g = {}, None
+    gebiete, g, kreis = {}, None, ""
     for k, z in enumerate(sec):
         nxt = sec[k + 1] if k + 1 < len(sec) else ""
+        if kreise and norm(z) in kreise:
+            kreis = norm(z)
+            continue
         if nxt.startswith("Wahlberechtigte ohne Sperrvermerk") and not z.startswith(("Wahlberechtigte", "Merkmal")):
             nm = re.sub(r"\s*\d\)$", "", z).strip()
-            g = gebiete.setdefault(nm, {"stimmen": []}) if nm and not nm.startswith(("Nordrhein", "Regierungsbezirk", "Kreisfreie", "Kreise")) else None
+            g = gebiete.setdefault(f"{kreis}|{nm}", {"stimmen": []}) if nm and not nm.startswith(("Nordrhein", "Regierungsbezirk", "Kreisfreie", "Kreise", "Kreisangehörige")) else None
             if g is not None and "stimmen" in g and g.get("_fertig"):
                 g = None
             continue
@@ -185,22 +194,22 @@ def lesen_tabelle1(L, pruef):
     return gebiete
 
 
-def lesen_tabelle2(L, pruef):
-    sec = abschnitt(L, "2. Sitzverteilung bei den Wahlen", "3. Ergebnisse der Oberbürger") if any(z.startswith("3. Ergebnisse der Oberbürger") for z in L) else None
-    if sec is None:
-        sec = abschnitt(L, "2. Sitzverteilung bei den Wahlen", "3.1 Ergebnisse der Oberbürgermeisterwahlen")
+def lesen_tabelle2(L, pruef, kreise=None, ende_marker="3.1 Ergebnisse der Oberbürgermeisterwahlen", alle=False):
     # zweites Vorkommen (das erste ist das Inhaltsverzeichnis)
     idx = [k for k, z in enumerate(L) if z.startswith("2. Sitzverteilung bei den Wahlen")]
     start = idx[-1]
-    ende = next(k for k, z in enumerate(L) if k > start and z.startswith("3.1 Ergebnisse der Oberbürgermeisterwahlen"))
+    ende = next(k for k, z in enumerate(L) if k > start and z.startswith(ende_marker))
     sec = L[start:ende]
-    gebiete, g = {}, None
+    gebiete, g, kreis = {}, None, ""
     for k, z in enumerate(sec):
         nxt = sec[k + 1] if k + 1 < len(sec) else ""
-        if nxt.startswith("Anzahl der Sitze im ") and (ist_gebietskopf(z) or z.startswith(("Krfr", "Kreis", "Städteregion", "Paderborn"))):
+        if kreise and norm(z) in kreise:
+            kreis = norm(z)
+            continue
+        if nxt.startswith("Anzahl der Sitze im ") and (alle or ist_gebietskopf(z) or z.startswith(("Krfr", "Kreis", "Städteregion", "Paderborn"))):
             nm = re.sub(r"\s*\d\)$", "", z).strip()
-            g = gebiete.setdefault(nm, {"sitze": []})
-            g["gremium"] = {"Rat": "Rat", "Kreistag": "Kreistag", "Städteregionstag": "Städteregionstag"}.get(nxt.replace("Anzahl der Sitze im ", "").strip(), nxt)
+            g = gebiete.setdefault(f"{kreis}|{nm}", {"sitze": []})
+            g["gremium"] = nxt.replace("Anzahl der Sitze im ", "").strip()
             continue
         if nxt.startswith("Anzahl der Sitze in den "):
             g = None
@@ -357,7 +366,188 @@ def lesen_buergermeister(L):
     return res
 
 
-def aufbauen(txt):
+KREIS_ALIAS = {"Paderborn, Kreis": ["Kreis Paderborn", "Paderborn, Kreis"]}
+
+
+def kreisnamen(t2):
+    """Rohnamen der Kreise aus Heft 3 (plus Schreibvarianten), um Gemeinden in Heft 1 und 4 den Kreisen zuzuordnen"""
+    out = set()
+    for key in t2:
+        nm = key.split("|", 1)[1]
+        if gebiet_typ(nm)[0] in ("Kreis", "Städteregion"):
+            out.add(nm)
+            out.update(KREIS_ALIAS.get(nm, []))
+    return out
+
+
+def gemeinde_name(roh):
+    """'Emmerich am Rhein, Stadt' -> ('Emmerich am Rhein', 'Stadt'); ohne Zusatz: Gemeinde"""
+    m = re.match(r"^(.*), ((?:[\w-]+ )*(?:Stadt|Gemeinde|Hansestadt))$", roh)
+    return (m.group(1).strip(), m.group(2)) if m else (roh.strip(), "Gemeinde")
+
+
+def lesen_wgr_gemeinden(L, kreise):
+    """Verzeichnis der Wählergruppen je Gemeinde (Heft 4, vor dem Tabellenteil): {Kreis|Gemeinde: {'Wählergruppe 1': Name}}"""
+    start = next(k for k, z in enumerate(L) if z.startswith("Wählergruppen (WGR) bei den Wahlen zu den Vertretungen"))
+    ende = next(k for k, z in enumerate(L) if k > start and z.startswith("Tabellenteil"))
+    out, kreis, key, letzt = {}, "", None, None
+    for z in L[start:ende]:
+        if z.startswith(("Wählergruppen (WGR)", "Noch: Wählergruppen", "der kreisangehörigen")):
+            continue
+        if norm(z) in kreise:
+            kreis, key, letzt = norm(z), None, None
+            continue
+        m = re.match(r"^(.+?) WGR (\d+) (.*)$", z)
+        if m:
+            key = f"{kreis}|{m.group(1).strip()}"
+            letzt = "Wählergruppe " + m.group(2)
+            out.setdefault(key, {})[letzt] = m.group(3).strip()
+            continue
+        m = re.match(r"^WGR (\d+) (.*)$", z)
+        if m and key:
+            letzt = "Wählergruppe " + m.group(1)
+            out[key][letzt] = m.group(2).strip()
+            continue
+        if key and letzt:
+            out[key][letzt] += " " + z.strip()
+    return out
+
+
+def lesen_buergermeister_gemeinden(L, kreise):
+    """Heft 4, Tabelle 3: gewählte Bürgermeister"""
+    start = [k for k, z in enumerate(L) if z.startswith("3. Ergebnisse der Bürgermeisterwahlen") and "...." not in z][-1]
+    ende = next((k for k, z in enumerate(L) if k > start and z.startswith("Alphabetisches Verzeichnis")), len(L))
+    sec = L[start:ende]
+    res, kreis, g = {}, "", None
+    for k, z in enumerate(sec):
+        nxt = sec[k + 1] if k + 1 < len(sec) else ""
+        if norm(z) in kreise:
+            kreis = norm(z)
+            continue
+        if nxt.startswith("Wahlberechtigte insgesamt") and not z.startswith(("Wahlberechtigte", "Merkmal")):
+            g = f"{kreis}|{norm(z)}"
+            continue
+        m = re.match(r"^Bei der (Stichwahl|Wahl) am ([\d.]+) als .* gewählt:$", z)
+        if m and g and m.group(2).endswith("2025") and k + 1 < len(sec) and g not in res:
+            mm = re.match(r"^(.*), ([^,]+) mit ([\d,]+)\s?% der gültigen Stimmen$", nxt)
+            if mm:
+                res[g] = {"amt": "Bürgermeister", "name": nachname_zuletzt(mm.group(1)), "partei": mm.group(2), "anteil": float(mm.group(3).replace(",", ".")),
+                          "wahl": ("Stichwahl " if m.group(1) == "Stichwahl" else "Wahl ") + m.group(2)}
+    return res
+
+
+def aufbauen_gemeinden(L4, kreise, pruef):
+    t1 = lesen_tabelle1(L4, pruef, kreise)
+    t2 = lesen_tabelle2(L4, pruef, kreise, ende_marker="3. Ergebnisse der Bürgermeisterwahlen", alle=True)
+    wgr = lesen_wgr_gemeinden(L4, kreise)
+    bm = lesen_buergermeister_gemeinden(L4, kreise)
+    out, ids = [], set()
+    for key, s in t2.items():
+        kreis, roh = key.split("|", 1)
+        name, art = gemeinde_name(roh)
+        d1 = t1.get(key) or {}
+        if not d1 or not kreis:
+            pruef.append(f"{key}: Tabelle 1 oder Kreis fehlt")
+        kk = gebiet_typ(kreis)[1] if kreis else ""
+        gid = slug(name)
+        if gid in ids or gid in ("bonn", "koeln"):
+            gid = slug(name + " " + kk)
+        ids.add(gid)
+        g = {"id": gid, "name": name, "typ": "Gemeinde", "art": art, "kreis": kk, "gremium": s.get("gremium"),
+             "wahlberechtigte": (d1.get("wahlberechtigte") or [None, None])[0], "waehler": (d1.get("waehler") or [None, None])[0],
+             "ungueltig": (d1.get("ungueltig") or [None, None])[0], "gueltig": (d1.get("gueltig") or [None, None])[0],
+             "wahlberechtigte_2020": (d1.get("wahlberechtigte") or [None, None])[1], "waehler_2020": (d1.get("waehler") or [None, None])[1],
+             "stimmen": d1.get("stimmen", []), "sitze": s["sitze"], "sitze_gesamt": s["insgesamt"][2], "sitze_gesamt_2020": s["insgesamt"][7],
+             "wgr": wgr.get(key, {}), "buergermeister": bm.get(key), "bezirke": [], "_key": key}
+        out.append(g)
+        if g["gueltig"] and g["stimmen"]:
+            ss = sum(x["stimmen"] or 0 for x in g["stimmen"])
+            if ss != g["gueltig"]:
+                pruef.append(f"{name} ({kk}): Stimmen {ss} <> gültig {g['gueltig']}")
+        if sum(x["gesamt"] for x in g["sitze"]) != g["sitze_gesamt"]:
+            pruef.append(f"{name} ({kk}): Sitze {sum(x['gesamt'] for x in g['sitze'])} <> {g['sitze_gesamt']}")
+    return out
+
+
+WAHLEN_VGL = [("komm20", "Kommunalwahl 13.09.2020"), ("ltw22", "Landtagswahl 15.05.2022"), ("euw24", "Europawahl 09.06.2024"), ("btw25", "Bundestagswahl 23.02.2025")]
+# Reihenfolge der Spalten im Heft 1: Kommunal 2020, Landtag 2022, Bundestag 2025, Europa 2024
+SPALTEN_VGL = ["komm20", "ltw22", "btw25", "euw24"]
+
+
+def lesen_vergleich(L1, kreise, gemeinden):
+    """Heft 1: Vergleichsergebnisse (Kommunal 2020, Landtag 2022, Bundestag 2025, Europawahl 2024) je Gebiet. {Schlüssel: {Wahl: {...}}}"""
+    starts = [k for k, z in enumerate(L1) if z.startswith("1. Vergleichsergebnisse aus früheren Wahlen") and "...." not in z]
+    s2 = [k for k, z in enumerate(L1) if z.startswith("2. Vergleichsergebnisse aus früheren Wahlen") and "...." not in z]
+    e3 = [k for k, z in enumerate(L1) if z.startswith("3. Ergebnisse der letzten") and "...." not in z and k > s2[0]]
+    out = {}
+    for (a, b, mitkreis) in ((starts[0], s2[0], False), (s2[0], e3[0], True)):
+        sec = L1[a:b]
+        kreis, g = "", None
+        for k, z in enumerate(sec):
+            nxt = sec[k + 1] if k + 1 < len(sec) else ""
+            if mitkreis and norm(z) in kreise:
+                kreis = norm(z)
+                continue
+            if nxt.startswith("Wahlberechtigte insgesamt") and not z.startswith(("Wahlberechtigte", "Merkmal")):
+                if z.startswith(("Nordrhein", "Regierungsbezirk", "Kreisfreie", "Kreise", "Kreisangehörige")):
+                    g = None
+                else:
+                    g = out.setdefault(f"{kreis}|{norm(z)}", {"_gueltig": None, "werte": {w: [] for w in SPALTEN_VGL}, "beteiligung": {}})
+                continue
+            if g is None or z == "davon" or z.startswith(("1)", "2)", "3)", "Noch", "Kommunal", "Landtag", "Bundestag", "Europa", "am ", "Verwaltung", "Merkmal", "Anzahl")):
+                continue
+            if z.startswith("Wahlberechtigte insgesamt"):
+                r = zeile(z, "ipipipip")
+                if r and r[1]:
+                    g["_wb"] = [zahl(r[1][0][i]) for i in (0, 2, 4, 6)]
+                continue
+            m = re.match(r"^(Wähler/-innen insgesamt|Ungültige Stimmen|Gültige Stimmen) ", z)
+            if m:
+                r = zeile(z, "ipipipip")
+                if not r or not r[1]:
+                    continue
+                wb = g.get("_wb") or [None] * 4
+
+                def pass_(v, ref):
+                    return all(prozent(v[2 * i + 1]) is None or not ref[i] or abs(zahl(v[2 * i]) / ref[i] * 100 - prozent(v[2 * i + 1])) <= .06 + (.05 if prozent(v[2 * i + 1]) == 0 else 0) for i in range(4))
+                if m.group(1).startswith("Wähler"):
+                    v = next((v for v in r[1] if pass_(v, wb)), r[1][0])
+                    g["_waehler"] = [zahl(v[2 * i]) for i in range(4)]
+                    g["beteiligung"] = {w: prozent(v[2 * i + 1]) for i, w in enumerate(SPALTEN_VGL)}
+                elif m.group(1) == "Ungültige Stimmen":
+                    v = next((v for v in r[1] if pass_(v, g.get("_waehler") or [None] * 4)), r[1][0])
+                    g["_ungueltig"] = [zahl(v[2 * i]) for i in range(4)]
+                else:
+                    ref = [(a - b) if a is not None and b is not None else None for a, b in zip(g.get("_waehler") or [None] * 4, g.get("_ungueltig") or [None] * 4)]
+                    v = next((v for v in r[1] if all(ref[i] is None or zahl(v[2 * i]) == ref[i] for i in range(4))), r[1][0])
+                    g["_gueltig"] = [zahl(v[2 * i]) for i in range(4)]
+                continue
+            if g["_gueltig"] is None or z.startswith("Wahlberechtigte"):
+                continue
+            r = zeile(z, "ipipipip")
+            if not r or not r[1]:
+                continue
+            name, opts = r
+            for v in opts:
+                ok = True
+                for i in range(4):
+                    a_, p_ = zahl(v[2 * i]), prozent(v[2 * i + 1])
+                    gv = g["_gueltig"][i]
+                    if p_ is not None and gv and abs(a_ / gv * 100 - p_) > .06 + (.05 if p_ == 0 else 0):
+                        ok = False
+                if ok:
+                    for i, w in enumerate(SPALTEN_VGL):
+                        p_ = prozent(v[2 * i + 1])
+                        if p_ is not None and p_ >= .5:
+                            g["werte"][w].append([name, p_])
+                    break
+    for g in out.values():
+        for k_ in ("_gueltig", "_wb", "_waehler", "_ungueltig"):
+            g.pop(k_, None)
+    return out
+
+
+def aufbauen(txt, txt4=None, txt1=None):
     L = seiten_sauber(txt.splitlines())
     pruef = []
     t1 = lesen_tabelle1(L, pruef)
@@ -367,8 +557,9 @@ def aufbauen(txt):
     bm = lesen_buergermeister(L)
     gebiete = []
     for nm, s in t2.items():
+        nm = nm.split("|", 1)[1]
         typ, kurz = gebiet_typ(nm)
-        d1 = t1.get(nm) or t1.get(nm + " 1)") or {}
+        d1 = t1.get(nm) or t1.get(nm + " 1)") or t1.get("|" + nm) or {}
         if not d1:
             pruef.append(f"{nm}: Tabelle 1 fehlt")
         rbz = ""
@@ -393,21 +584,36 @@ def aufbauen(txt):
             sg = sum(x["sitze"] for x in b["stimmen"])
             if b.get("sitze_gesamt") is not None and sg != b["sitze_gesamt"]:
                 pruef.append(f"{g['name']}/{b['name']}: Sitze {sg} <> {b['sitze_gesamt']}")
+    kr = kreisnamen(t2)
+    if txt4:
+        gebiete += aufbauen_gemeinden(seiten_sauber(txt4.splitlines()), kr, pruef)
+    if txt1:
+        v = lesen_vergleich(seiten_sauber(txt1.splitlines()), kr, None)
+        for g in gebiete:
+            key = g.get("_key") or "|" + g["_name_quelle"]
+            vg = v.get(key) or v.get("|" + g.get("_name_quelle", "")) or v.get(key.replace("Städteregion Aachen 1)", "Städteregion Aachen"))
+            if vg and any(vg["werte"].values()):
+                g["vergleich"] = vg
+            else:
+                pruef.append(f"{g['name']}: keine Vergleichsergebnisse aus Heft 1")
     return gebiete, pruef
 
 
 def main():
     src = Path(sys.argv[1]) if len(sys.argv) > 1 else QUELLE_TXT
-    gebiete, pruef = aufbauen(src.read_text(encoding="utf-8"))
+    ordner = src.parent
+    h4, h1 = next(ordner.glob("*Heft4*.txt"), None), next(ordner.glob("*Heft1*.txt"), None)
+    gebiete, pruef = aufbauen(src.read_text(encoding="utf-8"), h4.read_text(encoding="utf-8") if h4 else None, h1.read_text(encoding="utf-8") if h1 else None)
     for g in gebiete:
         g.pop("_name_quelle", None)
+        g.pop("_key", None)
     out = {"land": "Nordrhein-Westfalen", "wahltag": "2025-09-14", "vergleich": "2020-09-13", "farben": FARBE,
            "quelle": {"name": "IT.NRW / Ministerium des Innern NRW, Kommunalwahlen 2025, Heft 3: Endgültige Ergebnisse (Oktober 2025, aktualisiert 04.11.2025)",
                       "lizenz": "Datenlizenz Deutschland – Namensnennung 2.0", "url": "https://www.wahlergebnisse.nrw/kommunalwahlen/2025/"},
            "gebiete": gebiete, "pruefung": pruef}
     AUS.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")))
     nb = sum(len(g["bezirke"]) for g in gebiete)
-    print(f"{len(gebiete)} Gebiete, {nb} Bezirksvertretungen, {len(pruef)} Prüfhinweise")
+    print(f"{len(gebiete)} Gebiete ({sum(1 for g in gebiete if g['typ'] == 'Gemeinde')} kreisangehörige Gemeinden), {nb} Bezirksvertretungen, {len(pruef)} Prüfhinweise")
     for p in pruef[:40]:
         print("  ", p)
 

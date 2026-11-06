@@ -41,3 +41,11 @@ Pflichtfelder, Spaltenköpfe und Blätter, Listenwerte, Unternehmens-ID gegen `s
 - `berechnung.py` rechnet nur das Geschäftsjahr 2025; Pay-Ratio-Eingangsdaten für andere Jahre landen in `kennzahlen_gremien.csv`, werden aber nicht verrechnet.
 - Bestehende Zeilen werden nicht überschrieben; Korrekturen am Bestand erfolgen in den Erhebungsmodulen (`skripte/boerse_*.py`).
 - Neue Unternehmen müssen vorher über die Unternehmens-Importvorlage (`vorlagen/`) bzw. `stammdaten/ids.py` registriert sein.
+
+## Toleranter Import (`--tolerant`, 06.11.2026)
+`python3 governance/vorlage/importieren.py --tolerant Datei.xlsx [--schreiben]` für extern ausgefüllte Tabellen (z. B. UK/USA-Recherchen):
+- Seite darf leer sein (nicht verifizierte PDF-Seite); es wird nichts vorgetäuscht.
+- Vergütung ohne Betrag (T€) ist erlaubt, wenn der Originalbetrag in der Bemerkung steht (USD/GBP, keine Umrechnung).
+- Pay Ratio als „69:1“ wird gelesen, 0 ist bei Variante Bericht erlaubt (z. B. Tesla ohne CEO-Vergütung).
+- Doppelte Zeilen, Registerdubletten, bereits vorhandene Zeilen und unbekannte Geschlechts-Personen werden als Warnung übersprungen; Stand als Freitext landet in der Bemerkung.
+Die Original-Excel liegt unter `governance/handeingabe/eingaenge/`.

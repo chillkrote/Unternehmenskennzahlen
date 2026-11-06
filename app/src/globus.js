@@ -1241,7 +1241,7 @@ const GLOBUS = (() => {
         ${bm ? `<tr><td>${esc(bm.amt)}</td><td style="white-space:normal;text-align:right">${esc(bm.name)}, ${esc(bm.partei)}<br><span class="pct">${esc(bm.wahl)}, ${f1.format(bm.anteil)} %</span></td></tr>` : `<tr><td>${g.typ === "Gemeinde" ? "Bürgermeister" : "Landrat"}</td><td class="pct">keine Wahl 2025</td></tr>`}
         <tr><td>Wahlbeteiligung</td><td>${f1.format(g.waehler / g.wahlberechtigte * 100)} % <span class="pct">(2020: ${f1.format(g.waehler_2020 / g.wahlberechtigte_2020 * 100)} %)</span></td></tr></tbody></table>
       <h3 style="margin-top:8px">Stimmenanteil Kommunalwahl 14.09.2025, in %</h3>${balkenFarbig(stim.map(x => [wg[x.partei] ? `${koKurz(x.partei)} (${wg[x.partei].replace(/\s*\([^)]*\)$/, "").slice(0, 28)})` : koKurz(x.partei), x.prozent, koFarbe(x.partei)]), Math.max(...stim.map(x => x.prozent), 1))}
-      ${bez}<p class="gk-quelle" style="margin-top:6px">${esc(KO.quelle.name)}, ${esc(KO.quelle.lizenz)}. Lage der Punkte: Wikidata. Bündnisse im Rat enthält die amtliche Statistik nicht.</p>
+      ${bez}<p class="gk-quelle" style="margin-top:6px">${esc(KO.quelle.name)}, ${esc(KO.quelle.lizenz)}. Grenzen: Geobasis NRW (DVG2, dl-zero). Bündnisse im Rat enthält die amtliche Statistik nicht.</p>
       <div class="gk-chips" style="margin-top:6px"><button type="button" data-gkkomzu="1">Schließen</button></div></div>`;
   }
   function politikLand(iso, stufe) {

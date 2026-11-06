@@ -164,7 +164,7 @@ def vorstand(u):
         if m['unternehmen_id'] != u or m['organ'] != 'Vorstand':
             continue
         v = next((x for x in VG if x['unternehmen_id'] == u and x['gremium'] == 'Vorstand' and x['name'] == m['name']), None)
-        if not v:
+        if not v or not v['betrag_tsd_eur']:  # Fremdwährung: kein T€-Betrag
             continue
         voll = ganzjaehrig(m) or m['seit'] in GJ_BEGINN_AUSNAHME.get(u, ())
         out.append(dict(name=m['name'], funktion=m['funktion'], t=float(v['betrag_tsd_eur']), voll=voll, quelle=v['quelle_dokument'], seite=v['seite']))

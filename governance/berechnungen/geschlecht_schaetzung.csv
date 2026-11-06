@@ -127,7 +127,7 @@ U000832,Vorstand,Anna Cross,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname
 U000832,Aufsichtsrat,Nigel Higgins,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Nigel männlich (nicht als weiblich eingestuft)
 U000832,Aufsichtsrat,Robert Berry,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Robert männlich (nicht als weiblich eingestuft)
 U000832,Aufsichtsrat,Tim Breedon,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tim männlich (nicht als weiblich eingestuft)
-U000832,Aufsichtsrat,Dawn Fitzpatrick,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Dawn männlich (nicht als weiblich eingestuft)
+U000832,Aufsichtsrat,Dawn Fitzpatrick,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dawn weiblich
 U000832,Aufsichtsrat,Mary Francis,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Mary weiblich
 U000832,Aufsichtsrat,Brian Gilvary,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Brian männlich (nicht als weiblich eingestuft)
 U000832,Aufsichtsrat,Sir John Kingman,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sir männlich (nicht als weiblich eingestuft)
@@ -1461,3 +1461,266 @@ U000676,Aufsichtsrat,Oliver Skrbot,männlich,hoch,Schätzung (Vorname/Recherche)
 U000676,Aufsichtsrat,Christian Staack,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Christian männlich (nicht als weiblich eingestuft)
 U000676,Aufsichtsrat,Gregor Völkl,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Gregor männlich (nicht als weiblich eingestuft)
 U000676,Aufsichtsrat,Lisa Wolf,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Lisa weiblich
+U004835,Verwaltungsrat,Tench Coxe,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tench männlich (nicht als weiblich eingestuft)
+U004835,Verwaltungsrat,John O. Dabiri,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U004835,Verwaltungsrat,Jen-Hsun Huang,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jen-Hsun männlich (nicht als weiblich eingestuft)
+U004835,Verwaltungsrat,Dawn Hudson,weiblich,dokumentiert,Bericht,Ms. Hudson
+U004835,Verwaltungsrat,Harvey C. Jones,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Harvey männlich (nicht als weiblich eingestuft)
+U004835,Verwaltungsrat,Melissa B. Lora,weiblich,dokumentiert,Bericht,Ms. Lora
+U004835,Verwaltungsrat,Stephen C. Neal,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Stephen männlich (nicht als weiblich eingestuft)
+U004835,Verwaltungsrat,A. Brooke Seawell,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Brooke männlich (nicht als weiblich eingestuft)
+U004835,Verwaltungsrat,Aarti Shah,weiblich,dokumentiert,Bericht,Additionally she brings expertise in drug development
+U004835,Verwaltungsrat,Mark A. Stevens,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Mark männlich (nicht als weiblich eingestuft)
+U000744,Verwaltungsrat,Art Levinson,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Art männlich (nicht als weiblich eingestuft)
+U000744,Verwaltungsrat,Tim Cook,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tim männlich (nicht als weiblich eingestuft)
+U000744,Verwaltungsrat,Wanda Austin,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Wanda weiblich
+U000744,Verwaltungsrat,Alex Gorsky,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Alex männlich (nicht als weiblich eingestuft)
+U000744,Verwaltungsrat,Andrea Jung,weiblich,mittel,Schätzung (Vorname/Recherche),Vorname Andrea im deutschen Sprachraum überwiegend weiblich
+U000744,Verwaltungsrat,Monica Lozano,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Monica weiblich
+U000744,Verwaltungsrat,Ron Sugar,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ron männlich (nicht als weiblich eingestuft)
+U000744,Verwaltungsrat,Sue Wagner,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Sue weiblich
+U000745,Verwaltungsrat,Reid G. Hoffman,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Reid männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,Hugh F. Johnston,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Hugh männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,Teri L. List,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Teri weiblich
+U000745,Verwaltungsrat,Catherine MacGregor,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Catherine weiblich
+U000745,Verwaltungsrat,Mark A. L. Mason,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Mark männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,Satya Nadella,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Satya männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,Sandra E. Peterson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Sandra weiblich
+U000745,Verwaltungsrat,Penny S. Pritzker,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Penny weiblich
+U000745,Verwaltungsrat,John David Rainey,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,Charles W. Scharf,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Charles männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,John W. Stanton,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U000745,Verwaltungsrat,Emma N. Walmsley,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Emma weiblich
+U004530,Verwaltungsrat,Larry Page,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Larry männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,Sergey Brin,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sergey männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,Sundar Pichai,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sundar männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,John L. Hennessy,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,Frances H. Arnold,weiblich,dokumentiert,Bericht,She joined the California Institute of Technology in 1986
+U004530,Verwaltungsrat,R. Martin “Marty” Chávez,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Martin männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,L. John Doerr,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,Roger W. Ferguson Jr.,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Roger männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,K. Ram Shriram,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ram männlich (nicht als weiblich eingestuft)
+U004530,Verwaltungsrat,Robin L. Washington,weiblich,dokumentiert,Bericht,"where she oversaw Global Finance, Facilities and Operations"
+U004533,Verwaltungsrat,Jeffrey P. Bezos,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jeffrey männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Andrew R. Jassy,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andrew männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Edith W. Cooper,weiblich,dokumentiert,Bericht,Ms. Cooper
+U004533,Verwaltungsrat,Jamie S. Gorelick,weiblich,dokumentiert,Bericht,Ms. Gorelick
+U004533,Verwaltungsrat,Daniel P. Huttenlocher,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Daniel männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Andrew Y. Ng,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andrew männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Indra K. Nooyi,weiblich,dokumentiert,Bericht,Mrs. Nooyi
+U004533,Verwaltungsrat,Jonathan J. Rubinstein,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jonathan männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Brad D. Smith,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Brad männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Patricia Q. Stonesifer,weiblich,dokumentiert,Bericht,Ms. Stonesifer
+U004533,Verwaltungsrat,Wendell P. Weeks,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Wendell männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Peggy Alford,weiblich,dokumentiert,Bericht,Ms. Alford
+U007138,Verwaltungsrat,Marc L. Andreessen,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Marc männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,John Arnold,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Patrick Collison,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Patrick männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,John Elkann,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Andrew W. Houston,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andrew männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Nancy Killefer,weiblich,dokumentiert,Bericht,Ms. Killefer
+U007138,Verwaltungsrat,Robert M. Kimmitt,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Robert männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Charles Songhurst,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Charles männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Dana White,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Dana männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Tony Xu,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tony männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Mark Zuckerberg,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Mark männlich (nicht als weiblich eingestuft)
+U004584,Verwaltungsrat,Diane M. Bryant,weiblich,dokumentiert,Bericht,Ms. Bryant
+U004584,Verwaltungsrat,Gayla J. Delly,weiblich,dokumentiert,Bericht,Ms. Delly
+U004584,Verwaltungsrat,Kenneth Y. Hao,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kenneth männlich (nicht als weiblich eingestuft)
+U004584,Verwaltungsrat,Eddy W. Hartenstein,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Eddy männlich (nicht als weiblich eingestuft)
+U004584,Verwaltungsrat,Check Kian Low,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Check männlich (nicht als weiblich eingestuft)
+U004584,Verwaltungsrat,Justine F. Page,weiblich,dokumentiert,Bericht,Ms. Page
+U004584,Verwaltungsrat,Henry Samueli,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Henry männlich (nicht als weiblich eingestuft)
+U004584,Verwaltungsrat,Hock E. Tan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Hock männlich (nicht als weiblich eingestuft)
+U004584,Verwaltungsrat,Harry L. You,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Harry männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,Elon Musk,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Elon männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,Robyn Denholm,weiblich,dokumentiert,Bericht,Ms. Denholm
+U008244,Verwaltungsrat,Ira Ehrenpreis,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ira männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,Joe Gebbia,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Joe männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,Jack Hartung,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jack männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,James Murdoch,männlich,hoch,Schätzung (Vorname/Recherche),Vorname James männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,Kimbal Musk,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kimbal männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,JB Straubel,männlich,hoch,Schätzung (Vorname/Recherche),Vorname JB männlich (nicht als weiblich eingestuft)
+U008244,Verwaltungsrat,Kathleen Wilson-Thompson,weiblich,dokumentiert,Bericht,Ms. Wilson-Thompson
+U013576,Verwaltungsrat,Carolyn R. Bertozzi,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Carolyn weiblich
+U013576,Verwaltungsrat,William G. Kaelin Jr.,männlich,hoch,Schätzung (Vorname/Recherche),Vorname William männlich (nicht als weiblich eingestuft)
+U013576,Verwaltungsrat,Jon Moeller,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jon männlich (nicht als weiblich eingestuft)
+U013576,Verwaltungsrat,David A. Ricks,männlich,hoch,Schätzung (Vorname/Recherche),Vorname David männlich (nicht als weiblich eingestuft)
+U013576,Verwaltungsrat,Katherine Baicker,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Katherine weiblich
+U013576,Verwaltungsrat,J. Erik Fyrwald,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Erik männlich (nicht als weiblich eingestuft)
+U013576,Verwaltungsrat,Jamere Jackson,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jamere männlich (nicht als weiblich eingestuft)
+U013576,Verwaltungsrat,Gabrielle Sulzberger,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Gabrielle weiblich
+U013576,Verwaltungsrat,Ralph Alvarez,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ralph männlich (nicht als weiblich eingestuft)
+U013576,Verwaltungsrat,Mary Lynne Hedley,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Mary weiblich
+U013576,Verwaltungsrat,Kimberly Johnson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Kimberly weiblich
+U013576,Verwaltungsrat,Juan R. Luciano,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Juan männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Gregory E. Abel,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Gregory männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Howard G. Buffett,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Howard männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Susan A. Buffett,weiblich,dokumentiert,Bericht,Ms. Buffett
+U004573,Verwaltungsrat,Warren E. Buffett,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Warren männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Stephen B. Burke,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Stephen männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Kenneth I. Chenault,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kenneth männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Christopher C. Davis,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Christopher männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Susan L. Decker,weiblich,dokumentiert,Bericht,Ms. Decker
+U004573,Verwaltungsrat,Charlotte Guyman,weiblich,dokumentiert,Bericht,Ms. Guyman
+U004573,Verwaltungsrat,Ajit Jain,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ajit männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Thomas S. Murphy Jr.,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Thomas männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Wallace R. Weitz,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Wallace männlich (nicht als weiblich eingestuft)
+U004573,Verwaltungsrat,Meryl B. Witmer,weiblich,dokumentiert,Bericht,Ms. Witmer
+U000745,Verwaltungsrat,Carlos A. Rodriguez,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Carlos männlich (nicht als weiblich eingestuft)
+U000744,Vorstand,Deirdre O’Brien,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Deirdre weiblich
+U000744,Vorstand,Kate Adams,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Kate weiblich
+U000744,Vorstand,Kevan Parekh,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kevan männlich (nicht als weiblich eingestuft)
+U000744,Vorstand,Luca Maestri,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Luca männlich (nicht als weiblich eingestuft)
+U000744,Vorstand,Sabih Khan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sabih männlich (nicht als weiblich eingestuft)
+U000745,Vorstand,Amy E. Hood,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Amy weiblich
+U000745,Vorstand,Bradford L. Smith,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Bradford männlich (nicht als weiblich eingestuft)
+U000745,Vorstand,Judson B. Althoff,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Judson männlich (nicht als weiblich eingestuft)
+U000745,Vorstand,Takeshi Numoto,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Takeshi männlich (nicht als weiblich eingestuft)
+U004530,Vorstand,Anat Ashkenazi,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Anat weiblich
+U004530,Vorstand,Kent Walker,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kent männlich (nicht als weiblich eingestuft)
+U004530,Vorstand,Philipp Schindler,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Philipp männlich (nicht als weiblich eingestuft)
+U004530,Vorstand,Ruth M. Porat,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Ruth weiblich
+U004533,Vorstand,Brian T. Olsavsky,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Brian männlich (nicht als weiblich eingestuft)
+U004533,Vorstand,David A. Zapolsky,männlich,hoch,Schätzung (Vorname/Recherche),Vorname David männlich (nicht als weiblich eingestuft)
+U004533,Vorstand,Douglas J. Herrington,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Douglas männlich (nicht als weiblich eingestuft)
+U004533,Verwaltungsrat,Keith B. Alexander,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Keith männlich (nicht als weiblich eingestuft)
+U004533,Vorstand,Matthew S. Garman,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Matthew männlich (nicht als weiblich eingestuft)
+U004573,Vorstand,Marc D. Hamburg,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Marc männlich (nicht als weiblich eingestuft)
+U004584,Vorstand,Charlie B. Kawwas,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Charlie männlich (nicht als weiblich eingestuft)
+U004584,Vorstand,Kirsten M. Spears,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Kirsten weiblich
+U004584,Vorstand,Mark D. Brazeal,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Mark männlich (nicht als weiblich eingestuft)
+U004835,Vorstand,Ajay K. Puri,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ajay männlich (nicht als weiblich eingestuft)
+U004835,Vorstand,Colette M. Kress,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Colette weiblich
+U004835,Vorstand,Debora Shoquist,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Debora weiblich
+U004835,Verwaltungsrat,Ellen Ochoa,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Ellen weiblich
+U004835,Verwaltungsrat,Persis S. Drell,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Persis weiblich
+U004835,Verwaltungsrat,Robert K. Burgess,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Robert männlich (nicht als weiblich eingestuft)
+U004835,Vorstand,Timothy S. Teter,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Timothy männlich (nicht als weiblich eingestuft)
+U007138,Vorstand,Andrew Bosworth,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andrew männlich (nicht als weiblich eingestuft)
+U007138,Vorstand,Christopher K. Cox,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Christopher männlich (nicht als weiblich eingestuft)
+U007138,Verwaltungsrat,Dina Powell McCormick,weiblich,dokumentiert,Bericht,Ms. Powell McCormick
+U007138,Verwaltungsrat,Hock E. Tan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Hock männlich (nicht als weiblich eingestuft)
+U007138,Vorstand,Javier Olivan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Javier männlich (nicht als weiblich eingestuft)
+U007138,Vorstand,Susan Li,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Susan weiblich
+U007138,Verwaltungsrat,Tracey T. Travis,weiblich,dokumentiert,Bericht,Ms. Travis
+U008244,Vorstand,Tom Zhu,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tom männlich (nicht als weiblich eingestuft)
+U008244,Vorstand,Vaibhav Taneja,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Vaibhav männlich (nicht als weiblich eingestuft)
+U013576,Vorstand,Anat Hakim,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Anat weiblich
+U013576,Vorstand,Daniel M. Skovronsky,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Daniel männlich (nicht als weiblich eingestuft)
+U013576,Vorstand,Jake Van Naarden,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Jake männlich (nicht als weiblich eingestuft)
+U013576,Vorstand,Lucas Montarce,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Lucas männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Ian Meakins,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ian männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Fernando Fernandez,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Fernando männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Srinivas Phatak,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Srinivas männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Adrian Hennah,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Adrian männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Susan Kilsby,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Susan weiblich
+U001247,Verwaltungsrat,Ruby Lu,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Ruby weiblich
+U001247,Verwaltungsrat,Judith McKenna,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Judith weiblich
+U001247,Verwaltungsrat,Nelson Peltz,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Nelson männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Benoît Potier,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Benoît männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Zoe Yujnovich,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Zoe weiblich
+U001142,Verwaltungsrat,Dame Anita Frew,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dame weiblich
+U001142,Verwaltungsrat,Birgit Behrendt,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Birgit weiblich
+U001142,Verwaltungsrat,Stuart Bradie,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Stuart männlich (nicht als weiblich eingestuft)
+U001142,Verwaltungsrat,George Culmer,männlich,hoch,Schätzung (Vorname/Recherche),Vorname George männlich (nicht als weiblich eingestuft)
+U001142,Verwaltungsrat,Lord Jitesh Gadhia,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Lord männlich (nicht als weiblich eingestuft)
+U001142,Verwaltungsrat,Beverly Goulet,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Beverly weiblich
+U001142,Verwaltungsrat,Nick Luff,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Nick männlich (nicht als weiblich eingestuft)
+U001142,Verwaltungsrat,Wendy Mars,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Wendy weiblich
+U001142,Verwaltungsrat,Paulo Cesar Silva,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Paulo männlich (nicht als weiblich eingestuft)
+U001142,Verwaltungsrat,Dame Angela Strank,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dame weiblich
+U001142,Verwaltungsrat,Tufan Erginbilgic,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tufan männlich (nicht als weiblich eingestuft)
+U001142,Verwaltungsrat,Helen McCabe,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Helen weiblich
+U000859,Verwaltungsrat,Luc Jobin,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Luc männlich (nicht als weiblich eingestuft)
+U000859,Verwaltungsrat,Tadeu Marroco,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Tadeu männlich (nicht als weiblich eingestuft)
+U000859,Verwaltungsrat,Kandy Anand,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Kandy weiblich
+U000859,Verwaltungsrat,Karen Guerra,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Karen weiblich
+U000859,Verwaltungsrat,Holly Keller Koeppel,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Holly weiblich
+U000859,Verwaltungsrat,Uta Kemmerich-Keil,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Uta weiblich
+U000859,Verwaltungsrat,Véronique Laury,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Véronique weiblich
+U000859,Verwaltungsrat,Darrell Thomas,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Darrell männlich (nicht als weiblich eingestuft)
+U000859,Verwaltungsrat,Serpil Timuray,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Serpil weiblich
+U000859,Verwaltungsrat,Matthew Wright,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Matthew männlich (nicht als weiblich eingestuft)
+U000859,Verwaltungsrat,Soraya Benchikh,weiblich,dokumentiert,Bericht,Ms Benchikh
+U000859,Verwaltungsrat,Murray S. Kessler,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Murray männlich (nicht als weiblich eingestuft)
+U000965,Verwaltungsrat,Kalidas Madhavpeddi,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kalidas männlich (nicht als weiblich eingestuft)
+U000965,Verwaltungsrat,Gary Nagle,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Gary männlich (nicht als weiblich eingestuft)
+U000965,Verwaltungsrat,Gill Marcus,weiblich,dokumentiert,Bericht,Ms Marcus
+U000965,Verwaltungsrat,Cynthia Carroll,weiblich,dokumentiert,Bericht,Ms Carroll
+U000965,Verwaltungsrat,Martin Gilbert,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Martin männlich (nicht als weiblich eingestuft)
+U000965,Verwaltungsrat,Liz Hewitt,weiblich,dokumentiert,Bericht,Ms Hewitt
+U000965,Verwaltungsrat,John Wallington,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U000965,Verwaltungsrat,María Margarita Zuleta,weiblich,dokumentiert,Bericht,Ms Zuleta
+U001132,Verwaltungsrat,Erik Engstrom,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Erik männlich (nicht als weiblich eingestuft)
+U001132,Verwaltungsrat,Nick Luff,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Nick männlich (nicht als weiblich eingestuft)
+U001132,Verwaltungsrat,Paul Walker,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Paul männlich (nicht als weiblich eingestuft)
+U001132,Verwaltungsrat,Suzanne Wood,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Suzanne weiblich
+U001132,Verwaltungsrat,Alistair Cox,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Alistair männlich (nicht als weiblich eingestuft)
+U001132,Verwaltungsrat,June Felix,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname June weiblich
+U001132,Verwaltungsrat,Andy Halford,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andy männlich (nicht als weiblich eingestuft)
+U001132,Verwaltungsrat,Charlotte Hogg,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Charlotte weiblich
+U001132,Verwaltungsrat,Andrew Sukawaty,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andrew männlich (nicht als weiblich eingestuft)
+U001132,Verwaltungsrat,Bianca Tetteroo,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Bianca weiblich
+U001132,Verwaltungsrat,Robert MacLeod,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Robert männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Stuart Chambers,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Stuart männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Duncan Wanblad,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Duncan männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,John Heasley,männlich,hoch,Schätzung (Vorname/Recherche),Vorname John männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Ian Tyler,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ian männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Ian Ashby,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Ian männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Marcelo Bastos,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Marcelo männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Hilary Maxson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Hilary weiblich
+U000798,Verwaltungsrat,Nonkululeko Nyembezi,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Nonkululeko weiblich
+U000798,Verwaltungsrat,Anne Wade,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Anne weiblich
+U000798,Verwaltungsrat,Magali Anderson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Magali weiblich
+U001198,Verwaltungsrat,Maria Ramos,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Maria weiblich
+U001198,Verwaltungsrat,Bill Winters,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Bill männlich (nicht als weiblich eingestuft)
+U001198,Verwaltungsrat,Diego De Giorgi,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Diego männlich (nicht als weiblich eingestuft)
+U001198,Verwaltungsrat,Linda Yueh,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Linda weiblich
+U001198,Verwaltungsrat,Shirish Apte,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Shirish männlich (nicht als weiblich eingestuft)
+U001198,Verwaltungsrat,Lincoln Leong,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Lincoln männlich (nicht als weiblich eingestuft)
+U001198,Verwaltungsrat,Robin Lawther,weiblich,mittel,Schätzung (Vorname/Recherche),öffentlich bekannt (Standard Chartered); nicht gegen Bericht geprüft
+U001198,Verwaltungsrat,Diane Jurgens,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Diane weiblich
+U001198,Verwaltungsrat,Phil Rivett,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Phil männlich (nicht als weiblich eingestuft)
+U001198,Verwaltungsrat,Jackie Hunt,weiblich,mittel,Schätzung (Vorname/Recherche),"öffentlich bekannt (Standard Chartered, CFO); nicht gegen Bericht geprüft"
+U001198,Verwaltungsrat,David Tang,männlich,hoch,Schätzung (Vorname/Recherche),Vorname David männlich (nicht als weiblich eingestuft)
+U001128,Verwaltungsrat,Sir Jeremy Darroch,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sir männlich (nicht als weiblich eingestuft)
+U001128,Verwaltungsrat,Kris Licht,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Kris männlich (nicht als weiblich eingestuft)
+U001128,Verwaltungsrat,Shannon Eisenhardt,weiblich,mittel,Schätzung (Vorname/Recherche),"öffentlich bekannt (Reckitt, CFO); nicht gegen Bericht geprüft"
+U001128,Verwaltungsrat,Andrew Bonfield,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Andrew männlich (nicht als weiblich eingestuft)
+U001128,Verwaltungsrat,Fiona Dawson,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Fiona weiblich
+U001128,Verwaltungsrat,Patricia Verduin,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Patricia weiblich
+U001128,Verwaltungsrat,Margherita Della Valle,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Margherita weiblich
+U001128,Verwaltungsrat,Tamara Ingram,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Tamara weiblich
+U001128,Verwaltungsrat,Elane Stock,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Elane weiblich
+U001128,Verwaltungsrat,Stefan Oschmann,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Stefan männlich (nicht als weiblich eingestuft)
+U001128,Verwaltungsrat,Marybeth Hays,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Marybeth weiblich
+U001128,Verwaltungsrat,Mahesh Madhavan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Mahesh männlich (nicht als weiblich eingestuft)
+U001128,Verwaltungsrat,Mary Harris,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Mary weiblich
+U001128,Verwaltungsrat,Mehmood Khan,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Mehmood männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,Simon Borrows,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Simon männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,James Hatchley,männlich,hoch,Schätzung (Vorname/Recherche),Vorname James männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,Jasi Halai,weiblich,dokumentiert,Bericht,Ms Halai
+U000756,Verwaltungsrat,David Hutchison,männlich,hoch,Schätzung (Vorname/Recherche),Vorname David männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,Stephen Daintith,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Stephen männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,Lesley Knox,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Lesley weiblich
+U000756,Verwaltungsrat,Coline McConville,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Coline weiblich
+U000756,Verwaltungsrat,Peter McKellar,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Peter männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,Hemant Patel,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Hemant männlich (nicht als weiblich eingestuft)
+U000756,Verwaltungsrat,Alexandra Schaapveld,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Alexandra weiblich
+U000968,Verwaltungsrat,Manvinder Singh (Vindi) Banga,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Manvinder männlich (nicht als weiblich eingestuft)
+U000968,Verwaltungsrat,Brian McNamara,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Brian männlich (nicht als weiblich eingestuft)
+U000968,Verwaltungsrat,Dawn Allen,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dawn weiblich
+U000968,Verwaltungsrat,Alan Stewart,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Alan männlich (nicht als weiblich eingestuft)
+U000968,Verwaltungsrat,Nancy Avila,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Nancy weiblich
+U000968,Verwaltungsrat,Marie-Anne Aymerich,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Marie-Anne weiblich
+U000968,Verwaltungsrat,Bláthnaid Bergin,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Bláthnaid weiblich
+U000968,Verwaltungsrat,Tracy Clarke,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Tracy weiblich
+U000968,Verwaltungsrat,Dame Vivienne Cox,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Dame weiblich
+U000968,Verwaltungsrat,Asmita Dubey,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Asmita weiblich
+U000968,Verwaltungsrat,Matthew Shattock,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Matthew männlich (nicht als weiblich eingestuft)
+U000968,Verwaltungsrat,Sir Dave Lewis,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Sir männlich (nicht als weiblich eingestuft)
+U001247,Verwaltungsrat,Andrea Jung,weiblich,mittel,Schätzung (Vorname/Recherche),Vorname Andrea im deutschen Sprachraum überwiegend weiblich
+U001247,Verwaltungsrat,Hein Schumacher,männlich,hoch,Schätzung (Vorname/Recherche),Vorname Hein männlich (nicht als weiblich eingestuft)
+U000798,Verwaltungsrat,Hixonia Nyasulu,weiblich,hoch,Schätzung (Vorname/Recherche),Vorname Hixonia weiblich
+U001198,Verwaltungsrat,Dr José Viñals,männlich,hoch,Schätzung (Vorname/Recherche),Vorname José männlich (nicht als weiblich eingestuft)

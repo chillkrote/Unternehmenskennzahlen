@@ -1,4 +1,4 @@
-// Weltkugel, Politik: Kommunen NRW erscheinen ab Zoom ~6 als Punkte; Klick öffnet die Sitzverteilung in der Seitenleiste.
+// Weltkugel, Politik: Kommunen NRW erscheinen ab Zoom ~5 als Flächen; Klick öffnet die Sitzverteilung in der Seitenleiste.
 const { chromium } = require('playwright');
 const path = require('node:path');
 (async () => {
@@ -12,9 +12,9 @@ const path = require('node:path');
   await page.evaluate(() => GLOBUS.landWaehlen('DE'));
   if (!(await page.evaluate(() => !!GLOBUS.karte()))) { console.log('ohne WebGL: Kartenteil übersprungen'); await browser.close(); return; }
   await page.evaluate(() => GLOBUS.karte().jumpTo({ center: [6.78, 51.23], zoom: 8.2 })); await page.waitForTimeout(1500);
-  const n = await page.evaluate(() => GLOBUS.karte().queryRenderedFeatures({ layers: ['po-kom-gross', 'po-kom-gem'] }).length);
+  const n = await page.evaluate(() => GLOBUS.karte().queryRenderedFeatures({ layers: ['po-kom-stadt', 'po-kom-gem'] }).length);
   if (n < 3) throw Error('Kommunenpunkte fehlen: ' + n);
-  const pt = await page.evaluate(() => { const m = GLOBUS.karte(); const f = m.queryRenderedFeatures({ layers: ['po-kom-gross'] }).find(x => x.properties.id === 'duesseldorf'); const p = m.project(f.geometry.coordinates); return { x: p.x, y: p.y }; });
+  const pt = await page.evaluate(() => { const m = GLOBUS.karte(); if (!m.queryRenderedFeatures({ layers: ['po-kom-stadt'] }).some(x => x.properties.id === 'duesseldorf')) throw Error('Fläche Düsseldorf fehlt'); const p = m.project([6.7767, 51.2256]); return { x: p.x, y: p.y }; });
   const box = await page.locator('#gk-karte, #karte, .maplibregl-map').first().boundingBox();
   await page.mouse.click(box.x + pt.x, box.y + pt.y); await page.waitForTimeout(500);
   const txt = (await page.locator('#gk-seite').innerText()).toLowerCase();

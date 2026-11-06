@@ -81,7 +81,7 @@ const GLOBUS = (() => {
      Börse, Unternehmen und Politik nach den freigegebenen Varianten 1A, 2A, 3A (Robin, 04.11.2026). */
   const FORMEN = [["handel", "Handel", "h-ueb"], ["vwl", "Volkswirtschaft", "v-ueb"], ["boerse", "Börse & Finanzen", "b-ueb"], ["unternehmen", "Unternehmen", "u-ueb"], ["politik", "Politik & Wahlen", "p-ueb"]];
   const ENTWURF = {};
-  const S = { form: "handel", auswahl: [], raum: null, buendnis: null, region: null, kommune: null, polEbene: "auto", wk: null, wkStimme: "z", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
+  const S = { form: "handel", auswahl: [], raum: null, buendnis: null, region: null, polAnsicht: "wahlen", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
   let map = null, klassisch = null, imGlobus = false, hinweisTimer = 0, osmFehler = 0, osmGeladen = false;
 
   /* ----- Unternehmen mit Sitz-Koordinaten -----
@@ -141,7 +141,8 @@ const GLOBUS = (() => {
   /* Handelsebenen treten zurück, solange ein Unternehmensnetz offen ist (sonst liegen Kontinent-/Länderbögen über den Netzbögen);
      der Schalter "Handel zusätzlich zeigen" in der Legende hebt das auf */
   const handelVerdraengt = id => (id === "kontinente" || id === "handel") && S.netzOffen && !S.handelMitNetz;
-  const ebeneAn = e => e.an && !handelVerdraengt(e.id) && (!e.formen || e.formen.includes(S.form));
+  // ansicht: Politik hat zwei Ansichten (Wahlen, src/wahlen.js; Regierungen, Ebene "politik"); eine Ebene mit ansicht erscheint nur in ihrer
+  const ebeneAn = e => e.an && !handelVerdraengt(e.id) && (!e.formen || e.formen.includes(S.form)) && (!e.ansicht || e.ansicht === S.polAnsicht);
   function sichtbar(e) { (map.getStyle().layers || []).filter(l => l.metadata && l.metadata.ebene === e.id).forEach(l => map.setLayoutProperty(l.id, "visibility", ebeneAn(e) ? "visible" : "none")); if (e.id === "handel") richtungAnwenden(); if (e.id === "kontinente") kontAnwenden(); }
   // bei offenem Unternehmensnetz: Punkte und Namen der Sitze zurücknehmen, damit sie die Netzpunkte nicht verdecken
   function ueberlagerung() {
@@ -817,50 +818,9 @@ const GLOBUS = (() => {
   // Parlamente aller Staaten und der Gliedstaaten (parlamente_daten.py: IPU Parline, Wikipedia, Wikidata) und deren Umrisse
   const PA = roh("parlamente-daten");
   const GL_GEO = roh("gliedstaaten-geo");
-  // Kommunen (kommunal_daten.py: IT.NRW-Hefte; Lage aus kommunal_lage.py/Wikidata): Räte, Kreistage, Gemeinderäte, Bezirksvertretungen
-  const KO = roh("kommunal-daten");
-  const KO_GEO = roh("kommunen-geo");     // Gebietsgrenzen (Geobasis NRW, DVG2), kommunal_flaechen.py
-  const KO_ORD = ["BSW", "Die Linke", "Die PARTEI", "SPD", "GRÜNE", "Volt", "PIRATEN", "T I E R S C H U T Z", "Tierschutzpartei", "ÖDP", "Wählergruppen", "FAMILIE", "FREIE WÄHLER", "FDP", "CDU", "AfD"];
-  const KO_WGR = ["#8f8ba8", "#a58fc7", "#7f9bc4", "#b79fb0", "#98b3a0", "#c4a77f", "#8fb0b8", "#b09090"];
-  const koFarbe = p => { const m = /^Wählergruppe (\d+)$/.exec(p); return m ? KO_WGR[(+m[1] - 1) % KO_WGR.length] : (KO.farben[p] || "#8b95a3"); };
-  const koRang = p => { const q = /^Wählergruppe/.test(p) ? "Wählergruppen" : p, i = KO_ORD.indexOf(q); return i < 0 ? 12.5 : i; };
-  const koKurz = p => p.replace("T I E R S C H U T Z", "TIERSCHUTZ");
-  const koGebiet = id => KO && KO.gebiete ? KO.gebiete.find(g => g.id === id) || null : null;
-  const koSitzeListe = (g, sitze, nurPositiv = true) => sitze.filter(x => x.n > 0 || !nurPositiv).map(x => [x.p, x.n, koFarbe(x.p)]).sort((a, b) => koRang(a[0]) - koRang(b[0]) || a[0].localeCompare(b[0], "de"));
-  // Bundestagswahlkreise 2025 (wahlkreise_daten.py: Bundeswahlleiterin, Grenzen und Ergebnisse je Wahlkreis)
+  // Grenzen für die Wahlansicht (src/wahlen.js): Kommunen NRW (kommunal_flaechen.py) und Bundestagswahlkreise (wahlkreise_daten.py)
+  const KO_GEO = roh("kommunen-geo");
   const WK = roh("wahlkreise-bund");
-  const wkFarbe = n => /^CDU/.test(n) ? "#58606d" : /^Einzelbewerber/.test(n) ? "#8b95a3" : parteiInfo(n).farbe;
-  const wkSumme = (l) => l.reduce((a, x) => a + x[1], 0);
-  const wkGebiet = nr => WK && WK.features.map(f => f.properties).find(p => p.nr === nr) || null;
-  function wkFlaechen() {
-    if (!WK) return wertFC([]);
-    return wertFC(WK.features.map(f => { const p = f.properties, l = p[S.wkStimme] || [], t = wkSumme(l), top = l[0];
-      return { type: "Feature", geometry: f.geometry, properties: { nr: p.nr, name: p.name, farbe: top ? wkFarbe(top[0]) : "#8b95a3", top: top ? `${parteiInfo(top[0]).kurz || top[0]} ${f1.format(top[1] / t * 100)} %` : "" } }; }));
-  }
-  function wkBlock(nr) {
-    const p = wkGebiet(nr); if (!p) return "";
-    const sv = S.wkStimme === "e" ? "Erststimmen" : "Zweitstimmen", l = p[S.wkStimme], t = wkSumme(l), werte = l.filter(x => x[1] / t >= .01).slice(0, 8).map(x => [x[0].replace(/^Einzelbewerber /, "EB "), x[1] / t * 100, wkFarbe(x[0])]);
-    const sieger = p.e[0];
-    return `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>Wahlkreis ${p.nr} ${esc(p.name)} <span class="pct">${esc(p.land)} · Bundestagswahl 23.02.2025</span></h3>
-      <div class="gk-chips" style="margin:4px 0 6px">${[["z", "Zweitstimmen"], ["e", "Erststimmen"]].map(([k, tx]) => `<button type="button" data-gkwkstimme="${k}" aria-pressed="${S.wkStimme === k}">${tx}</button>`).join("")}</div>
-      ${balkenFarbig(werte, Math.max(...werte.map(x => x[1]), 1))}
-      <table class="gk-tab" style="margin-top:6px"><tbody>
-        <tr><td>direkt gewählt (Erststimme)</td><td>${esc(sieger[0])} (${f1.format(sieger[1] / wkSumme(p.e) * 100)} %)</td></tr>
-        <tr><td>Wahlbeteiligung</td><td>${p.wb ? f1.format(p.w / p.wb * 100) : "–"} %</td></tr>
-        <tr><td>gültige ${sv}</td><td>${f0.format(t)}</td></tr></tbody></table>
-      <p class="gk-quelle" style="margin-top:6px">Die Bundeswahlleiterin, endgültiges Ergebnis, Datenlizenz Deutschland – Namensnennung 2.0. Parteien unter 1 % nicht aufgeführt.</p>
-      <div class="gk-chips" style="margin-top:6px"><button type="button" data-gkwkzu="1">Schließen</button></div></div>`;
-  }
-  function koFlaechen() {
-    if (!KO || !KO_GEO) return wertFC([]);
-    return wertFC(KO_GEO.features.map(f => { const g = koGebiet(f.properties.id); if (!g) return null; const gr = [...g.sitze].sort((a, b) => b.gesamt - a.gesamt)[0];
-      return { type: "Feature", geometry: f.geometry, properties: { id: g.id, name: f.properties.name, ebene: f.properties.ebene, typ: g.typ, sitze: g.sitze_gesamt, farbe: gr ? (gr.partei === "CDU" ? "#2a2e35" : koFarbe(gr.partei)) : "#8b95a3", top: gr ? `${koKurz(gr.partei)} ${gr.gesamt}/${g.sitze_gesamt}` : "" } }; }).filter(Boolean));
-  }
-  function koPunkte() {
-    if (!KO || !KO.lage) return wertFC([]);
-    return wertFC(KO.gebiete.filter(g => KO.lage[g.id]).map(g => { const gr = [...g.sitze].sort((a, b) => b.gesamt - a.gesamt)[0];
-      return { type: "Feature", geometry: { type: "Point", coordinates: KO.lage[g.id] }, properties: { id: g.id, name: g.name.replace(/^Kreis /, ""), gross: g.typ === "Gemeinde" ? 0 : 1, typ: g.typ, sitze: g.sitze_gesamt, farbe: gr ? koFarbe(gr.partei) : "#8b95a3", top: gr ? `${koKurz(gr.partei)} ${gr.gesamt}/${g.sitze_gesamt}` : "" } }; }));
-  }
   const TYP_NAME = { einkammer: "Einkammerparlament", unterhaus: "Unterhaus", oberhaus: "Oberhaus", kammer: "Kammer" };
   const kammernVon = iso => PA && PA.staaten && PA.staaten[iso] ? PA.staaten[iso].kammern : [];
   const gliedVon = iso => PA && PA.gliedstaaten ? PA.gliedstaaten[iso] || null : null;
@@ -947,9 +907,9 @@ const GLOBUS = (() => {
       let sx = 0, sy = 0; best.forEach(([x, y]) => { sx += x; sy += y; });
       return { type: "Feature", geometry: { type: "Point", coordinates: [sx / best.length, sy / best.length] }, properties: f.properties }; }));
   }
-  ebene({ id: "politik", name: "Regierungen, Wahlen, Parlamente, Bündnisse, Gliedstaaten", gruppe: "Politik & Wahlen", an: !!PD, geplant: !PD, formen: ["politik"],
+  ebene({ id: "politik", name: "Regierungen, Parlamente, Bündnisse, Gliedstaaten", gruppe: "Politik & Wahlen", an: !!PD, geplant: !PD, formen: ["politik"], ansicht: "regierungen",
     quellen: m => { m.addSource("po-land", { type: "geojson", data: polPunkte() }); m.addSource("po-de", { type: "geojson", data: deLaenderDaten() }); m.addSource("po-de-pkt", { type: "geojson", data: deLaenderPunkte() });
-      const gd = gliedDaten(); m.addSource("po-gl", { type: "geojson", data: gd }); m.addSource("po-gl-pkt", { type: "geojson", data: gliedPunkte(gd) }); m.addSource("po-kom", { type: "geojson", data: koPunkte() }); m.addSource("po-kom-fl", { type: "geojson", data: koFlaechen() }); m.addSource("po-wk", { type: "geojson", data: wkFlaechen() }); },
+      const gd = gliedDaten(); m.addSource("po-gl", { type: "geojson", data: gd }); m.addSource("po-gl-pkt", { type: "geojson", data: gliedPunkte(gd) }); },
     schichten: (m, vor) => {
       schicht("politik", { id: "po-flaeche", type: "fill", source: "laender", paint: { "fill-color": polFarbe(), "fill-opacity": polDeckkraft() } }, vor);
       schicht("politik", { id: "po-de-flaeche", type: "fill", source: "po-de", minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": ["interpolate", ["linear"], ["zoom"], ZG[1] - .4, 0, ZG[1], ["case", ["get", "gewaehlt"], .6, .38]] } }, vor);
@@ -974,60 +934,16 @@ const GLOBUS = (() => {
         "text-field": ["format", ["get", "name"], { "text-color": ["case", ["get", "gewaehlt"], "#ffa828", "#e8ecf1"], "font-scale": 1.12 }, "\n", {}, ["get", "chef"], { "text-color": "#c3cad3" }, "\n", {}, ["get", "neuTxt"], { "text-color": "#ffa828" }, ["case", ["==", ["get", "neu"], 1], "\n", ""], {}, ["get", "wahl"], { "text-color": "#9fd3ff" }],
         "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-line-height": 1.2, "text-padding": 2, "symbol-sort-key": ["-", 0, ["get", "gr"]] },
         paint: { "text-halo-color": "#07090c", "text-halo-width": 1.3, "text-opacity": ["interpolate", ["linear"], ["zoom"], ZG[0] - .2, 0, ZG[0] + .2, 1] } });
-      if (KO && KO.lage) {
-        // Sichtbarkeit und Filter setzt politikEbeneAnwenden() je nach Ebene (Bund, Land, Kreise, Gemeinden); Zoom nur als Untergrenze
-        schicht("politik", { id: "po-wk-fl", type: "fill", source: "po-wk", minzoom: 3, layout: { visibility: "none" }, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .62 } }, vor);
-        schicht("politik", { id: "po-wk-linie", type: "line", source: "po-wk", minzoom: 3, layout: { visibility: "none" }, paint: { "line-color": "#07090c", "line-opacity": .75, "line-width": .6 } }, vor);
-        schicht("politik", { id: "po-wk-wahl", type: "line", source: "po-wk", filter: ["==", ["get", "nr"], S.wk || -1], minzoom: 3, layout: { visibility: "none" }, paint: { "line-color": "#ffa828", "line-width": 3 } }, vor);
-        schicht("politik", { id: "po-kom-kreis", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "kreis"], minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .55 } }, vor);
-        schicht("politik", { id: "po-kom-stadt", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "stadt"], minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .6 } }, vor);
-        schicht("politik", { id: "po-kom-gem", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "gem"], minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .6 } }, vor);
-        schicht("politik", { id: "po-kom-linie", type: "line", source: "po-kom-fl", minzoom: ZG[1] - .4, paint: { "line-color": "#07090c", "line-opacity": .75, "line-width": ["case", ["==", ["get", "ebene"], "kreis"], 1.6, .6] } }, vor);
-        schicht("politik", { id: "po-kom-wahl", type: "line", source: "po-kom-fl", filter: ["==", ["get", "id"], S.kommune || ""], minzoom: ZG[1] - .4, paint: { "line-color": "#ffa828", "line-width": 3 } }, vor);
-        schicht("politik", { id: "po-kom-t", type: "symbol", source: "po-kom", minzoom: ZG[1] + .6, layout: { "text-field": ["format", ["get", "name"], { "font-scale": 1 }, "\n", {}, ["get", "top"], { "text-color": "#c3cad3", "font-scale": .85 }], "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-offset": [0, 1.1], "text-anchor": "top", "text-padding": 2, "text-max-width": 9, "symbol-sort-key": ["-", 0, ["get", "sitze"]] },
-          paint: { "text-color": "#e8ecf1", "text-halo-color": "#07090c", "text-halo-width": 1.3 } }, vor);
-      }
       schicht("politik", { id: "po-de-t", type: "symbol", source: "po-de-pkt", minzoom: ZG[1] - .2, layout: {
         "text-field": ["format", ["get", "name"], { "text-color": ["case", ["get", "gewaehlt"], "#ffa828", "#e8ecf1"], "font-scale": 1.08 }, "\n", {}, ["get", "mp"], { "text-color": "#c3cad3", "font-scale": .9 }, " ", {}, ["get", "partei"], { "text-color": "#8b95a3", "font-scale": .9 }],
         "text-font": ["Noto Sans Regular"], "text-size": 11, "text-line-height": 1.15, "text-padding": 2, "text-max-width": 9 },
         paint: { "text-halo-color": "#07090c", "text-halo-width": 1.3, "text-opacity": ["interpolate", ["linear"], ["zoom"], ZG[1] - .2, 0, ZG[1] + .2, 1] } });
     },
-    klick: (e, m) => { const wf = S.polEff === "bund" ? m.queryRenderedFeatures(e.point, { layers: ["po-wk-fl"].filter(i => m.getLayer(i)) }) : [];
-      if (wf.length) { const nr = wf[0].properties.nr; S.wk = S.wk === nr ? null : nr; if (S.land !== "DE") landWaehlen("DE"); politikAnwenden(); seiteZeichnen(); return true; }
-      const kf = m.queryRenderedFeatures(e.point, { layers: ["po-kom-gem", "po-kom-stadt", "po-kom-kreis"].filter(i => m.getLayer(i)) });
-      if (kf.length) { const id = kf[0].properties.id; S.kommune = S.kommune === id ? null : id; if (S.land !== "DE") landWaehlen("DE"); politikAnwenden(); seiteZeichnen(); return true; }
+    klick: (e, m) => {
       if (S.stufe < 3) return false;
       const f = m.queryRenderedFeatures(e.point, { layers: ["po-de-flaeche", "po-gl-flaeche"].filter(i => m.getLayer(i)) }); if (!f.length) return false;
       const code = f[0].properties.code, iso = code.slice(0, 2);
-      S.region = S.region === code ? null : code; S.kommune = null; if (S.land !== iso) landWaehlen(iso); politikAnwenden(); seiteZeichnen(); return true; } });
-  /* Ebenenmodell Politik: Bund (Staaten), Land (Bundesländer/Gliedstaaten), Kreise (Landkreise, kreisfreie Städte), Gemeinden.
-     Wählbar in der Seitenleiste; „Automatisch“ wechselt nach Zoom. Kommunen-Flächen ersetzen nur dort die Landesfläche, wo sie angezeigt werden (NRW). */
-  const POL_EBENEN = ["bund", "land", "kreis", "gem"];
-  function polEbeneWirksam() {
-    if (S.polEbene !== "auto") return S.polEbene;
-    const z = map ? map.getZoom() : 0;
-    return z < ZG[1] - .4 ? "bund" : z < ZG[1] + 1.2 || !(KO && KO.lage) ? "land" : z < ZG[1] + 2.4 ? "kreis" : "gem";
-  }
-  let polEff = null;
-  function politikEbeneAnwenden(erzwingen) {
-    if (!map) return;
-    const eff = polEbeneWirksam(); if (!erzwingen && eff === polEff) return; polEff = eff;
-    const vis = (id, an) => { if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", an ? "visible" : "none"); };
-    const kom = eff === "kreis" || eff === "gem", nrw = ["!=", ["get", "code"], "DE-NW"];
-    ["po-de-flaeche", "po-de-linie", "po-de-t", "po-gl-flaeche", "po-gl-linie", "po-gl-t"].forEach(i => vis(i, eff !== "bund"));
-    ["po-de-flaeche", "po-de-linie", "po-de-t"].forEach(i => { if (map.getLayer(i)) map.setFilter(i, kom ? nrw : null); });
-    ["po-wk-fl", "po-wk-linie", "po-wk-wahl"].forEach(i => vis(i, eff === "bund")); S.polEff = eff;
-    vis("po-kom-kreis", eff === "kreis"); vis("po-kom-stadt", kom); vis("po-kom-gem", eff === "gem"); vis("po-kom-linie", kom); vis("po-kom-wahl", kom); vis("po-kom-t", kom);
-    if (map.getLayer("po-kom-linie")) map.setFilter("po-kom-linie", eff === "kreis" ? ["!=", ["get", "ebene"], "gem"] : null);
-    if (map.getLayer("po-kom-t")) map.setFilter("po-kom-t", eff === "kreis" ? ["==", ["get", "gross"], 1] : null);
-  }
-  function polEbenenChips(iso) {
-    const de = iso === "DE" && KO && KO.lage, gl = iso === "DE" || gliedVon(iso);
-    if (!gl) return "";
-    const l = de ? [["auto", "Automatisch"], ["bund", "Bund (Wahlkreise)"], ["land", "Länder"], ["kreis", "Kreise & Städte"], ["gem", "Gemeinden"]] : [["auto", "Automatisch"], ["bund", "Staat"], ["land", "Gliedstaaten & Regionen"]];
-    return `<div class="gk-block"><h3>Ebene der Karte</h3><div class="gk-chips">${l.map(([k, t]) => `<button type="button" data-gkpolebene="${k}" aria-pressed="${S.polEbene === k}">${esc(t)}</button>`).join("")}</div>
-      <p class="gk-quelle" style="margin-top:6px">${de ? "Bund = Bundestagswahlkreise mit Ergebnis (Erst- und Zweitstimmen), Land = Bundesländer, Kreise & Städte = Landkreise und kreisfreie Städte, Gemeinden = kreisangehörige Städte und Gemeinden. Kommunen derzeit nur für Nordrhein-Westfalen; Bezirksvertretungen stehen im Block der kreisfreien Stadt. " : ""}„Automatisch“ wechselt mit dem Zoom.</p></div>`;
-  }
+      S.region = S.region === code ? null : code; if (S.land !== iso) landWaehlen(iso); politikAnwenden(); seiteZeichnen(); return true; } });
   function politikAnwenden() {
     if (!map) return;
     if (map.getSource("po-land")) map.getSource("po-land").setData(polPunkte());
@@ -1035,10 +951,6 @@ const GLOBUS = (() => {
     if (map.getSource("po-de-pkt")) map.getSource("po-de-pkt").setData(deLaenderPunkte());
     if (map.getSource("po-gl")) { const gd = gliedDaten(); map.getSource("po-gl").setData(gd); map.getSource("po-gl-pkt").setData(gliedPunkte(gd)); }
     if (map.getLayer("po-flaeche")) map.setPaintProperty("po-flaeche", "fill-opacity", polDeckkraft());
-    if (map.getSource("po-wk")) map.getSource("po-wk").setData(wkFlaechen());
-    if (map.getLayer("po-wk-wahl")) map.setFilter("po-wk-wahl", ["==", ["get", "nr"], S.wk || -1]);
-    if (map.getLayer("po-kom-wahl")) map.setFilter("po-kom-wahl", ["==", ["get", "id"], S.kommune || ""]);
-    polEff = null; politikEbeneAnwenden(true);
   }
   // Tooltips der drei Formen (Kreise der Börsenplätze und der Unternehmensdichte, Wahlsymbole, Bundesländer)
   const INFO_TIPS = {
@@ -1049,10 +961,6 @@ const GLOBUS = (() => {
     "po-de-flaeche": p => `<b>${esc(p.name)}</b><br>${esc(p.mp || "–")}${p.partei ? ` (${esc(p.partei)})` : ""}${p.neu ? `<br><span style="color:#ffa828">Landtag in den letzten ${SCHWELLE} Tagen gewählt</span>` : ""}<br><span class="pct">Regierungschef laut Wikidata · klicken für Landtag, Wahl und Umfrage</span>`,
     "po-gl-flaeche": p => { const g = gliedstaat(p.code), k = g && g.kammern[0], st = staerkste(k);
       return `<b>${esc(p.name)}</b> <span class="pct">${esc(landName(p.iso))}</span><br>${g ? `${esc(g.regierungschef ? g.regierungschef.name : "–")}${p.partei ? ` (${esc(p.partei)})` : ""}${st ? `<br>stärkste Fraktion: ${esc(st.p)} (${f0.format(st.n)})` : ""}` : "keine Daten"}${p.neu ? `<br><span style="color:#ffa828">Parlament in den letzten ${SCHWELLE} Tagen gewählt</span>` : ""}<br><span class="pct">Wikidata, Wikipedia · klicken für Parlament und Wahl</span>`; },
-    "po-wk-fl": p => `<b>Wahlkreis ${p.nr} ${esc(p.name)}</b><br>${S.wkStimme === "e" ? "Erststimmen" : "Zweitstimmen"}: ${esc(p.top)}<br><span class="pct">Bundestagswahl 2025 · Anklicken: Ergebnis</span>`,
-    "po-kom-kreis": p => `<b>${esc(p.name)}</b> <span class="pct">${esc(p.typ)}</span><br>stärkste Fraktion: ${esc(p.top)}<br><span class="pct">Anklicken: Sitzverteilung</span>`,
-    "po-kom-stadt": p => `<b>${esc(p.name)}</b> <span class="pct">${esc(p.typ)}</span><br>stärkste Fraktion: ${esc(p.top)}<br><span class="pct">Anklicken: Sitzverteilung</span>`,
-    "po-kom-gem": p => `<b>${esc(p.name)}</b> <span class="pct">${esc(p.typ)}</span><br>stärkste Fraktion: ${esc(p.top)}<br><span class="pct">Anklicken: Sitzverteilung</span>`,
     "po-neu": p => `<b>${esc(landName(p.iso))}: gerade gewählt</b><br>${juengstNational(p.iso).slice(0, 3).map(w => `${esc(datumWahl(w.datum))}: ${esc(w.was)}${w.status ? ` <span class="pct">(Ergebnis ${esc(w.status)})</span>` : ""}`).join("<br>")}<br><span class="pct">Wahlen der letzten ${SCHWELLE} Tage · Wikipedia-Wahlkalender, IPU Parline</span>`,
   };
 
@@ -1284,27 +1192,6 @@ const GLOBUS = (() => {
     return `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3 style="color:#ffa828">Gerade gewählt</h3><table class="gk-tab"><tbody>${l.map(w => `<tr><td class="pct" style="white-space:nowrap">${esc(datumWahl(w.datum))}</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${wpLink(w.url, w.was)}${w.status ? `<br><span class="pct">Ergebnis ${esc(w.status)}</span>` : ""}</td></tr>`).join("")}</tbody></table>
       <p class="gk-quelle" style="margin-top:6px">Wahlen der letzten ${SCHWELLE} Tage (Wikipedia-Wahlkalender, IPU Parline). Nach ${SCHWELLE} Tagen liegen in der Regel das amtliche Endergebnis und die konstituierende Sitzung vor.</p></div>`;
   }
-  /* Kommune (Rat, Kreistag, Gemeinderat) mit Sitzverteilung und, wo vorhanden, Bezirksvertretungen */
-  function komBlock(id) {
-    const g = koGebiet(id); if (!g) return "";
-    const sl = koSitzeListe(g, g.sitze.map(x => ({ p: x.partei, n: x.gesamt }))), n = g.sitze_gesamt, wg = g.wgr || {}, bm = g.buergermeister;
-    const gr = [...g.sitze].sort((a, b) => b.gesamt - a.gesamt)[0];
-    const sub = g.typ === "Gemeinde" ? `${esc(g.art)} im ${esc(g.kreis)}` : esc(g.typ);
-    const stim = [...g.stimmen].filter(x => x.prozent != null && x.prozent >= 1).sort((a, b) => b.prozent - a.prozent).slice(0, 7);
-    const bez = g.bezirke.length ? `<h3 style="margin-top:10px">Bezirksvertretungen</h3>${g.bezirke.map(b => { const bl = koSitzeListe(g, b.stimmen.map(x => ({ p: x.partei, n: x.sitze })));
-      return `<details style="margin:4px 0"><summary><b>${esc(b.name)}</b> <span class="pct">${b.sitze_gesamt} Sitze</span></summary>${halbkreis(bl, false)}</details>`; }).join("")}
-      <p class="gk-quelle">Bezirksvertretungen werden unabhängig vom Rat gewählt (IT.NRW, Tabelle 4).</p>` : "";
-    return `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(g.gremium)} ${esc(g.name)} <span class="pct">${sub} · ${n} Sitze</span></h3>
-      ${halbkreis(sl, false)}
-      <table class="gk-tab" style="margin-top:6px"><tbody>
-        <tr><td>stärkste Fraktion</td><td>${esc(koKurz(gr.partei))} ${gr.gesamt} (${f0.format(gr.gesamt / n * 100)} %)</td></tr>
-        <tr><td>Mehrheit ab</td><td>${Math.floor(n / 2) + 1} Sitze</td></tr>
-        ${bm ? `<tr><td>${esc(bm.amt)}</td><td style="white-space:normal;text-align:right">${esc(bm.name)}, ${esc(bm.partei)}<br><span class="pct">${esc(bm.wahl)}, ${f1.format(bm.anteil)} %</span></td></tr>` : `<tr><td>${g.typ === "Gemeinde" ? "Bürgermeister" : "Landrat"}</td><td class="pct">keine Wahl 2025</td></tr>`}
-        <tr><td>Wahlbeteiligung</td><td>${f1.format(g.waehler / g.wahlberechtigte * 100)} % <span class="pct">(2020: ${f1.format(g.waehler_2020 / g.wahlberechtigte_2020 * 100)} %)</span></td></tr></tbody></table>
-      <h3 style="margin-top:8px">Stimmenanteil Kommunalwahl 14.09.2025, in %</h3>${balkenFarbig(stim.map(x => [wg[x.partei] ? `${koKurz(x.partei)} (${wg[x.partei].replace(/\s*\([^)]*\)$/, "").slice(0, 28)})` : koKurz(x.partei), x.prozent, koFarbe(x.partei)]), Math.max(...stim.map(x => x.prozent), 1))}
-      ${bez}<p class="gk-quelle" style="margin-top:6px">${esc(KO.quelle.name)}, ${esc(KO.quelle.lizenz)}. Grenzen: ${esc(KO.geo_quelle ? KO.geo_quelle.name : "BKG VG250")}. Bündnisse im Rat enthält die amtliche Statistik nicht.</p>
-      <div class="gk-chips" style="margin-top:6px"><button type="button" data-gkkomzu="1">Schließen</button></div></div>`;
-  }
   function politikLand(iso, stufe) {
     if (!PD) return `<p class="gk-leer">Keine Politikdaten im Build.</p>`;
     const r = regVon(iso) || {}, a = AUSR.find(x => x[0] === r.ausrichtung);
@@ -1316,7 +1203,7 @@ const GLOBUS = (() => {
     const verbund = stufe >= 3 ? handelBlock(iso) + firmenBlock(iso) : "";
     // ausgewählter Gliedstaat bzw. Bundesland (Regierung, Parlament, Wahl) steht oben, darunter die Staatsebene
     const oben = stufe >= 3 && S.region && S.region.startsWith(iso + "-") ? (iso === "DE" ? deutschlandBlock(stufe, "region") : gliedBlock(iso, "det")) : "";
-    return polEbenenChips(iso) + (iso === "DE" && S.wk && S.polEff === "bund" ? wkBlock(S.wk) : "") + (S.kommune ? komBlock(S.kommune) : "") + oben + kopf + regionen + verbund;
+    return oben + kopf + regionen + verbund;
   }
   function karteForm(iso) {
     if (S.form === "boerse") return finanzKacheln(iso);
@@ -1488,7 +1375,7 @@ const GLOBUS = (() => {
     map.on("zoomend", zoomHinweis);
     map.on("moveend", vorschauen);
     map.on("movestart", e => { S.nutzer = !!e.originalEvent; });
-    map.on("zoom", stufeAktualisieren); map.on("zoom", () => { if (S.polEbene === "auto") politikEbeneAnwenden(); });
+    map.on("zoom", stufeAktualisieren);
     return map;
   }
 
@@ -1558,6 +1445,7 @@ const GLOBUS = (() => {
   function stufeChips() {
     const el = document.getElementById("gk-stufen"); if (!el) return;
     const namen = STUFEN_FORM[S.form];
+    el.hidden = S.form === "politik" && S.polAnsicht === "wahlen";      // dort führt die Ebenenleiter (src/wahlen.js)
     el.innerHTML = STUFEN_TEXT.map(([t], i) => `<button type="button" data-gkstufe="${i + 1}" aria-pressed="${S.stufe === i + 1}"><b>${i + 1}</b> ${esc(namen ? namen[i] : t)}</button>`).join("");
   }
   function stufeAktualisieren() {
@@ -1686,6 +1574,7 @@ const GLOBUS = (() => {
     if (an("politik")) teile.push(`<b>Regierung</b>${AUSR.map(([, t, c]) => `<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="${c}"/></svg>${esc(t)}</span>`).join("")}<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="#3a4655"/></svg>ohne Zuordnung</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#9fd3ff"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">W</text></svg>Wahl in den nächsten 12 Monaten</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#ffa828"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">N</text></svg>gerade gewählt (${SCHWELLE} Tage)</span>${S.stufe >= 3 ? "<small>Gliedstaaten in der Farbe der Partei des Regierungschefs, orange umrandet = gerade gewählt</small>" : ""}`);
+    if (an("wahlen") && typeof WAHLEN !== "undefined") teile.push(WAHLEN.legende());
     if (an("vwl")) teile.push(`<b>Werte</b><span><em style="color:#7cc4ff">BIP +</em> / <em style="color:#ff9f6b">BIP −</em></span><span>Inflation <em style="color:#ff9f6b">über 5 %</em>, <em style="color:#7cc4ff">unter 0 %</em></span>`);
     el.hidden = !teile.length;
     el.innerHTML = teile.join("");
@@ -1882,7 +1771,17 @@ const GLOBUS = (() => {
       <p class="gk-quelle" style="margin-top:6px">Summe der Flüsse zwischen Ländern verschiedener Räume, nur Flüsse mit europäischen Meldeländern (Eurostat). Für andere Weltregionen gibt es keine freie bilaterale Quelle ohne Schlüssel.</p></div>`;
   }
   const kopfForm = () => { const f = FORMEN.find(x => x[0] === S.form);
-    return `<div class="gk-formkopf"><span>${esc(f[1])}</span><a class="gk-link" href="#${f[2]}" title="Bereich im klassischen Terminal öffnen">Im Terminal ↗</a></div>${ENTWURF[S.form] ? `<p class="gk-entwurf">Entwurf zur Freigabe: die Darstellung ${esc(f[1])} wird nach Robins Wahl der Varianten gebaut. Bis dahin ${S.form === "unternehmen" ? "die bisherige Darstellung (Unternehmen nach Sitz, Profil, Netz)" : S.form === "boerse" ? "Leitindizes und Börsenwerte je Land aus dem Bereich BÖR" : "ein Platzhalter"}.</p>` : ""}`; };
+    return `<div class="gk-formkopf"><span>${esc(f[1])}</span><a class="gk-link" href="#${f[2]}" title="Bereich im klassischen Terminal öffnen">Im Terminal ↗</a></div>${S.form === "politik" ? ansichtReiter() : ""}${ENTWURF[S.form] ? `<p class="gk-entwurf">Entwurf zur Freigabe: die Darstellung ${esc(f[1])} wird nach Robins Wahl der Varianten gebaut. Bis dahin ${S.form === "unternehmen" ? "die bisherige Darstellung (Unternehmen nach Sitz, Profil, Netz)" : S.form === "boerse" ? "Leitindizes und Börsenwerte je Land aus dem Bereich BÖR" : "ein Platzhalter"}.</p>` : ""}`; };
+  // Politik: Ansicht Wahlen (Wahlergebnisse je Ebene, src/wahlen.js) oder Regierungen (Ausrichtung, Bündnisse, Regierungschefs, Parlamente heute)
+  const ansichtReiter = () => `<div class="gk-ansicht" role="tablist" aria-label="Ansicht">${[["wahlen", "Wahlen"], ["regierungen", "Regierungen"]].map(([k, t]) => `<button type="button" role="tab" data-gkpolansicht="${k}" aria-selected="${S.polAnsicht === k}">${t}</button>`).join("")}</div>`;
+  function politikAnsicht(v) {
+    if (v !== "wahlen" && v !== "regierungen") return;
+    S.polAnsicht = v;
+    try { localStorage.setItem("globus-politik", v); } catch { /* kein Speicher */ }
+    if (map && stilBereit) EBENEN.forEach(e => { if (e.quellen) sichtbar(e); });
+    stufeChips(); legendeKarte(); seiteZeichnen();
+    document.dispatchEvent(new CustomEvent("globus:politik", { detail: { ansicht: v } }));
+  }
   const zurueck = () => `<div class="gk-chips" style="margin-bottom:8px"><button type="button" data-gkland="">← Alle Länder</button></div>`;
   function karteLand(iso) {
     const h = HANDEL && HANDEL.laender[iso], a = aktuell(iso), s = saldoVon(iso), mrd = v => v == null ? "–" : f1.format(v / 1e9);
@@ -1980,7 +1879,7 @@ const GLOBUS = (() => {
     if (S.form === "handel") html = !HANDEL ? `<div><h2>Handel</h2><p class="gk-leer">Keine Handelsdaten im Build.</p></div>` : !iso && stufe === 1 ? kontSeite() : !iso ? handelStart() : landSeite(iso, stufe);
     else if (S.form === "vwl") html = !iso && stufe === 1 ? raumSeite() : !iso ? vwlStart() : landSeite(iso, stufe);
     else if (S.form === "boerse") html = iso ? landSeite(iso, stufe) : kopfForm() + boerseStart();
-    else if (S.form === "politik") html = iso ? landSeite(iso, stufe) : kopfForm() + politikStart();
+    else if (S.form === "politik") html = S.polAnsicht === "wahlen" && typeof WAHLEN !== "undefined" ? kopfForm() + WAHLEN.seite() : iso ? landSeite(iso, stufe) : kopfForm() + politikStart();
     else html = iso ? landSeite(iso, stufe) : kopfForm() + (stufe === 1 ? unternehmenWelt() : unternehmenStart());
     el.innerHTML = (S.form === "handel" || S.form === "vwl" ? kopfForm() : "") + html;
     el.scrollTop = 0;
@@ -2013,6 +1912,7 @@ const GLOBUS = (() => {
     stufeChips();
     if (f !== "politik") S.region = null;
     ebenenListe(); legendeKarte(); seiteZeichnen(); vorschauen();
+    document.dispatchEvent(new CustomEvent("globus:form", { detail: { form: f } }));
     if (ENTWURF[f]) hinweis(`${FORMEN.find(x => x[0] === f)[1]}: Entwurf zur Freigabe, bis dahin bisherige Darstellung`);
   }
 
@@ -2214,12 +2114,7 @@ const GLOBUS = (() => {
     if (g("data-gkhandelzeigen") != null) { const eb = EBENEN.find(x => x.id === "handel"); if (eb && !eb.an) { eb.an = true; if (map) sichtbar(eb); ebenenListe(); } const c = mitte(S.land); if (map && c) map.flyTo({ center: c, zoom: 3.6, duration: 1400 }); return true; }
     if ((v = g("data-gkkont")) != null) { const v2 = g("data-gkkont2"); if (t.closest("[data-gkkont2]")) kontWaehlen(v, v2); else kontWaehlen(v, null); return true; }
     if (g("data-gkip") != null) { ipKontinent(); return true; }
-    if ((v = g("data-gkpolebene")) != null) { S.polEbene = v; politikEbeneAnwenden(true);
-      if ((v === "kreis" || v === "gem") && map && S.land === "DE" && map.getZoom() < ZG[1] + (v === "gem" ? 2.4 : 1.2)) map.flyTo({ center: [7.5, 51.5], zoom: v === "gem" ? 7.6 : 6.4, duration: 1200 });
-      seiteZeichnen(); return true; }
-    if ((v = g("data-gkwkstimme")) != null) { S.wkStimme = v; politikAnwenden(); seiteZeichnen(); return true; }
-    if (g("data-gkwkzu") != null) { S.wk = null; politikAnwenden(); seiteZeichnen(); return true; }
-    if (g("data-gkkomzu") != null) { S.kommune = null; politikAnwenden(); seiteZeichnen(); return true; }
+    if ((v = g("data-gkpolansicht")) != null) { politikAnsicht(v); return true; }
     if ((v = g("data-gkstufe")) != null) {
       const [, z] = STUFEN_TEXT[+v - 1], c = +v === 1 ? ((KONT.find(x => x[0] === S.kont) || [])[3]) : mitte(S.land);
       if (map) { if (+v === 1 && S.land) landWaehlen(null); map.flyTo({ center: c || map.getCenter(), zoom: z, duration: 1400 }); } return true; }
@@ -2284,6 +2179,7 @@ const GLOBUS = (() => {
     punkteBauen();
     klassisch = render;
     try { const f = localStorage.getItem("globus-form"); if (f && FORMEN.some(x => x[0] === f)) S.form = f; } catch { /* kein Speicher */ }
+    try { const a = localStorage.getItem("globus-politik"); if (a === "wahlen" || a === "regierungen") S.polAnsicht = a; } catch { /* kein Speicher */ }
     render = renderGlobus;                            // Hash-Navigation des Terminals läuft ab jetzt über die Weltkugel
     if (!UNT.auswahl().length) UNT.setAuswahl([]);
     document.getElementById("gk-liste").innerHTML = LAENDER.features.map(f => `<option value="${esc(f.properties.name)}">`).join("") + UNT.unternehmenAlle().map(f => `<option value="${esc(f.name)}">`).join("");
@@ -2305,7 +2201,10 @@ const GLOBUS = (() => {
     if (imGlobus) wiederherstellen();
   }
   return { init, ebene, landWaehlen, firmaOeffnen, oeffnen, bogen, hinweis, sichtbar: id => { const eb = EBENEN.find(x => x.id === id); if (eb && map) sichtbar(eb); },
-    karte: () => map, ebenen: () => EBENEN, imGlobus: () => imGlobus };
+    karte: () => map, ebenen: () => EBENEN, imGlobus: () => imGlobus,
+    // für die Wahlansicht (src/wahlen.js)
+    zustand: () => S, seiteZeichnen, legendeKarte, politikAnsicht, halbkreis, balkenFarbig, landName, bbox, ZG,
+    geo: () => ({ LAENDER, DE_GEO, GL_GEO, KO_GEO, WK, KREISE: roh("kreise-de-geo") }) };
 })();
 // Daten des Terminals können (in der komprimierten Vorschau) erst nach dem Entpacken bereitstehen
 (function warte(n) { if (UNT.da() || n > 400) GLOBUS.init(); else setTimeout(() => warte(n + 1), 50); })(0);

@@ -74,6 +74,20 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 - Regierungen (Wikidata, CC0), Wahlkalender (Wikipedia, CC BY-SA 4.0), Bundestagswahl 2025 je Land (Bundeswahlleiterin, DL-DE 2.0), Umfragen (DAWUM, ODbL), Bundesländer (Natural Earth), Bündnisse von Hand: app/politik_daten.py -> app/data/politik.json
 - Parlamente aller Staaten und Gliedstaaten: IPU Parline (CC BY-NC-SA 4.0, nicht kommerziell), Wikipedia-Infoboxen (CC BY-SA 4.0), Wikidata (CC0), Umrisse Natural Earth: app/parlamente_daten.py -> app/data/parlamente.json, app/geo/gliedstaaten.geojson
 
+## Politik: Wahlen auf allen Ebenen (neu 06.11.2026)
+
+Wahlregister `app/data/wahlen.json` aus `app/wahlen_daten.py`: 961 Wahlen (E0 1, E1 202, E2 308, E3 54, E4 396).
+
+| Feld | Stand jetzt | Warum offen | Weg |
+|---|---|---|---|
+| Landtagswahlkreise | NRW 2022 nur nach Kreisen/Städten (Zählgebiet), andere Länder nur Gesamtergebnis | Wahlkreisergebnisse und -grenzen liefern die Landeswahlleiter einzeln | Schritt 2: Landeswahlleiter NRW (128 Wahlkreise, Shapefile), dann weitere Länder |
+| Zweitstimmendeckung (Bundestag 2025) | Ergebniskarte sagt „Erststimmen vorn“, nicht „Mandat erhalten“ | Flag steht nicht in der Wahlkreisdatei | Liste der gewählten Bewerber der Bundeswahlleiterin einlesen |
+| Wahlkreise UK, USA, Frankreich | nur Gesamtergebnis je Land | eigene Quellen (Electoral Commission, MIT Election Lab, Ministère de l'Intérieur) | Schritt 3 |
+| Stadtbezirksgrenzen (Bezirksvertretungen) | Ergebnisse je Bezirk in der Liste, ohne Fläche | VG250 hat keine Stadtbezirke | Geodaten der Städte (Open Data Köln, Düsseldorf, …) |
+| Sitze im Europäischen Parlament je Partei (DE) | nur Stimmen | Sitzzuteilung steht nicht in kerg2 | Ergebnisbekanntmachung oder EP-Seite |
+| Parteifamilien (einheitliche Farben weltweit) | Parteifarben je Land, sonst Ersatzfarben | Zuordnung fehlt | Schritt 4: ParlGov (CC BY-SA) |
+| Europawahl außerhalb Deutschlands | nur DE nach Kreisen | Ergebnisse je Mitgliedstaat einzeln | EP-Ergebnisse je Land, danach Regionen |
+
 ## Politik: Kommunen (neu 06.11.2026)
 
 | Feld | Stand jetzt | Warum offen | Weg |

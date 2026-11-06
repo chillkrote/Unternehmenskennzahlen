@@ -118,6 +118,19 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   (`data/politik.json`, `geo/de_laender.geojson`), `parlamente_daten.py` (IPU Parline, Wikipedia, Wikidata -> `data/parlamente.json`,
   `geo/gliedstaaten.geojson`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
   `OFFENE_DATENFELDER.md`.
+* **Politik & Wahlen, Ansicht „Wahlen“ (neu 06.11.2026, Konzept „Wahlergebnisse auf allen Ebenen“):** Die Karte zeigt immer genau eine
+  Wahl je Gebiet. Links die Ebenenleiter E0 Supranational, E1 Staat, E2 Region, E3 Kommune, E4 Gemeinde (Namen je Land, in Deutschland
+  Europa, Bund, Land, Kreis/Stadt, Gemeinde/Bezirk); die Ebene wechselt nur per Klick. Oben die Satzleiste („E1 · Bund · Bundestagswahl
+  2025 · Zweitstimmen · je Wahlkreis · gefärbt nach stärkster Partei“), jedes Wort ist ein Auswahlfeld. Zoomen ändert nur die
+  Auszählungseinheit derselben Wahl (Gesamt › Länder › Wahlkreise), mit Überblendung; das Feld „festgehalten“ hält sie fest. Rechts die
+  Ergebniskarte, für jede Wahl und jede Einheit gleich gebaut: Ebene und Pfad, gewählte Person, Sitzverteilung, Stimmen mit Veränderung,
+  Kennzahlen, sortierbare Liste der Einheiten, Sprung zur selben Stelle auf anderen Ebenen, Quelle. Durchgezogene Grenze = Wahlkreis
+  (Mandat), gestrichelt = nur Zählgebiet, schraffiert = keine Daten auf dieser Ebene. Die Ansicht „Regierungen“ enthält alles Bisherige
+  (Ausrichtung, Bündnisse, Regierungschefs, Gliedstaaten).
+  Daten: `wahlen_daten.py` fasst parlamente.json, die Bundestagswahlkreise, die Europawahl 2024 nach Kreisen
+  (`wahlen/quellen/ew24_kerg2.csv`, Bundeswahlleiterin) und kommunal.json in einem einheitlichen Format zusammen
+  (`data/wahlen.json`; Kreisgrenzen `geo/kreise_de.geojson` aus BKG VG1000, dl-de/by-2-0). Neue Wahldaten nur als Leser in dieser Datei.
+  Test: `tests/wahlen-smoke.js`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
   Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,
   die Unternehmen des Landes und die Börsenindizes aus dem Bereich BÖR. Quelle wie im VWL-Bereich: Eurostat, wo vorhanden, sonst OECD.

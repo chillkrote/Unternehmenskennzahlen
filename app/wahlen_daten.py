@@ -36,8 +36,13 @@ HIER = Path(__file__).resolve().parent
 QUELLEN = HIER.parent / "wahlen" / "quellen"
 OUT = HIER / "data" / "wahlen.json"
 KREISE_GEO = HIER / "geo" / "kreise_de.geojson"
+LWK_NW_GEO = HIER / "geo" / "landtagswahlkreise_nw.geojson"
 
 EW24_URL = "https://www.bundeswahlleiterin.de/europawahlen/2024/ergebnisse/opendata/ew24/csv/kerg2.csv"
+LTW_NW22 = "https://www.wahlergebnisse.nrw/landtagswahlen/2022/"
+LTW_NW22_DATEIEN = {"LW22_WK_insgesamt.txt": "nw_ltw22_wahlkreise.csv", "LW22_Ergebnisse_fr%C3%BCherer_Wahlen.csv": "nw_ltw22_fruehere_wahlen.csv",
+                    "LW22_Bewerber_WK.txt": "nw_ltw22_gewaehlte_wk.csv"}
+LTW_NW22_SHP = LTW_NW22 + "wahlkreiskarten/16_LW2022_NRW_Wahlkreise.zip"
 VG1000_URL = "https://daten.gdz.bkg.bund.de/produkte/vg/vg1000_ebenen_1231/aktuell/vg1000_12-31.utm32s.shape.ebenen.zip"
 
 # Ebenennamen je Land (None = Ebene gibt es dort nicht); "_" gilt für alle übrigen Länder
@@ -279,6 +284,128 @@ def kreise_flaechen(zip_pfad, namen):
     return len(feats)
 
 
+# ---------------------------------------------------------------- Landtagswahl NRW 2022 je Landtagswahlkreis
+def _nw_zeilen(pfad, wahl):
+    """Zeilen einer Ergebnisdatei der Landeswahlleiterin NRW (Kopfzeile beginnt mit "Wahl;"), nur die Zeilen der Wahl `wahl`."""
+    zeilen = pfad.read_text(encoding="utf-8-sig").splitlines()
+    i = next(n for n, z in enumerate(zeilen) if z.startswith("Wahl;"))
+    kopf = next(csv.reader([zeilen[i]], delimiter=";"))
+    return kopf, [z for z in csv.reader(zeilen[i + 1:], delimiter=";") if z and z[0] == wahl]
+
+
+def _nw_stimmen(kopf, z, st):
+    """[(partei, stimmen)] einer Zeile für Erst- (E) oder Zweitstimmen (Z); Einzelbewerber zusammengefasst, Sonstige und Gültig/Ungültig weg."""
+    out, eb = [], 0
+    for k, v in zip(kopf, z):
+        if not k.endswith(f" [{st}]") or k.startswith(("Ungültige", "Gültige", "Sonstige")):
+            continue
+        n = zahl(v) or 0
+        name = k[:-4].strip()
+        if name.startswith("Einzelbewerber"):
+            if name != "Einzelbewerber/-innen":      # Landeszeile fasst sie schon in einer Spalte zusammen
+                eb += n
+            else:
+                eb = max(eb, n)
+            continue
+        if n:
+            out.append((de_kurz(name), n))
+    if eb:
+        out.append(("Einzelbewerber", eb))
+    return out
+
+
+def _nw_kennzahlen(kopf, z):
+    d = dict(zip(kopf, z))
+    wb = zahl(d.get("Wahlberechtigte insgesamt"))
+    w = zahl(d.get("Wähler/-innen"))
+    gz = zahl(d.get("Gültige Stimmen [Z]"))
+    ge = zahl(d.get("Gültige Stimmen [E]"))
+    return wb, w, gz, ge
+
+
+def ltw_nw22(sitze_ergebnis):
+    """Landtagswahl NRW 15.05.2022: Gesamtergebnis und 128 Landtagswahlkreise mit Erst- und Zweitstimmen,
+    Veränderung zur Landtagswahl 2017 (von der Landeswahlleiterin auf die Wahlkreise 2022 umgerechnet)."""
+    wk_p, fr_p, gw_p = (QUELLEN / f for f in LTW_NW22_DATEIEN.values())
+    gewaehlt = {}                                  # direkt gewählte Abgeordnete je Wahlkreis
+    if gw_p.exists():
+        for z in csv.reader(gw_p.read_text(encoding="utf-8-sig").splitlines(), delimiter=";"):
+            if len(z) >= 4 and z[0].strip().isdigit():
+                nach, _, vor_n = z[3].partition(",")
+                gewaehlt[str(int(z[0]))] = {"name": f"{vor_n.strip()} {nach.strip()}".strip(), "partei": de_kurz(z[2])}
+    if not wk_p.exists():
+        return None
+    kopf, zeilen = _nw_zeilen(wk_p, "LW22")
+    vor = {}
+    if fr_p.exists():
+        k17, z17 = _nw_zeilen(fr_p, "LW17")
+        summe = {"wb": 0, "w": 0, "z": {}, "e": {}, "gz": 0, "ge": 0}    # Landesergebnis 2017 = Summe der Wahlkreise (die Datei hat keine Landeszeile)
+        for z in z17:
+            wb, w, gz, ge = _nw_kennzahlen(k17, z)
+            vor[z[1]] = {"bet": r1(w / wb * 100) if wb and w else None,
+                         **{st: {p: n / g * 100 for p, n in _nw_stimmen(k17, z, st.upper())} for st, g in (("z", gz), ("e", ge)) if g}}
+            summe["wb"] += wb or 0
+            summe["w"] += w or 0
+            summe["gz"] += gz or 0
+            summe["ge"] += ge or 0
+            for st in ("z", "e"):
+                for p, n in _nw_stimmen(k17, z, st.upper()):
+                    summe[st][p] = summe[st].get(p, 0) + n
+        if z17 and "000" not in vor:
+            vor["000"] = {"bet": r1(summe["w"] / summe["wb"] * 100) if summe["wb"] else None,
+                          **{st: {p: n / summe["g" + st] * 100 for p, n in summe[st].items()} for st in ("z", "e") if summe["g" + st]}}
+
+    def ergebnis(z):
+        wb, w, gz, ge = _nw_kennzahlen(kopf, z)
+        v = vor.get(z[1], {})
+        s = {}
+        for st, g in (("z", gz), ("e", ge)):
+            l = anteile(_nw_stimmen(kopf, z, st.upper()), g)
+            for x in l:
+                x[3] = r1(v.get(st, {}).get(x[0])) if v.get(st) else None
+            s[st] = l
+        return {"s": s, "wb": wb, "w": w, "bet": r1(w / wb * 100) if wb and w else None, "bet_vor": v.get("bet")}
+
+    land = next(z for z in zeilen if z[1] == "000")
+    werte = {}
+    for z in zeilen:
+        if z[1] == "000":
+            continue
+        e = ergebnis(z)
+        werte[str(int(z[1]))] = {"n": f"{int(z[1])} {z[2]}", "s": e["s"], "wb": e["wb"], "w": e["w"], "bet": e["bet"], "bet_vor": e["bet_vor"]}
+        if str(int(z[1])) in gewaehlt:
+            werte[str(int(z[1]))]["direkt"] = gewaehlt[str(int(z[1]))]
+    g = ergebnis(land)
+    g.update({k: v for k, v in (sitze_ergebnis or {}).items() if k.startswith("sitze")})
+    quelle = {"name": "Die Landeswahlleiterin NRW, endgültiges Ergebnis (LW22_WK_insgesamt), Grenzen: Wahlkreiskarten LTW 2022",
+              "url": LTW_NW22 + "index.shtml"}
+    return g, werte, quelle
+
+
+def lwk_nw_flaechen(zip_pfad):
+    """Shapefile der Landtagswahlkreise 2022 (DHDN Gauß-Krüger Zone 2) -> geo/landtagswahlkreise_nw.geojson, WGS84, vereinfacht."""
+    import shapefile
+    from pyproj import Transformer
+    from shapely.geometry import mapping, shape
+    from shapely.ops import transform
+    z = zipfile.ZipFile(zip_pfad)
+    pre = next(n[:-4] for n in z.namelist() if n.upper().endswith(".SHP"))
+    r = shapefile.Reader(shp=io.BytesIO(z.read(pre + ".shp")), dbf=io.BytesIO(z.read(pre + ".dbf")), encoding="utf-8")
+    tr = Transformer.from_crs("EPSG:31466", "EPSG:4326", always_xy=True).transform
+
+    def rund(c):
+        return [rund(x) for x in c] if isinstance(c[0], (list, tuple)) else [round(c[0], 4), round(c[1], 4)]
+    feats = []
+    for sr in r.iterShapeRecords():
+        nr, name = int(sr.record[0]), sr.record[1]
+        g = transform(tr, shape(sr.shape.__geo_interface__)).simplify(0.0015, preserve_topology=True)
+        feats.append({"type": "Feature", "properties": {"id": str(nr), "name": name}, "geometry": {"type": g.geom_type, "coordinates": rund(mapping(g)["coordinates"])}})
+    feats.sort(key=lambda f: int(f["properties"]["id"]))
+    LWK_NW_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Die Landeswahlleiterin NRW, Wahlkreiskarten Landtagswahl 2022", "features": feats},
+                                     ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return len(feats)
+
+
 # ---------------------------------------------------------------- Landtage, Gliedstaaten, Regionen
 def regional(pa, ko):
     out = []
@@ -299,17 +426,26 @@ def regional(pa, ko):
             w = {"id": f"{code}-parl-{datum[:4]}", "e": 2, "land": iso, "gebiet": code, "geo": "de-laender" if iso == "DE" else "gliedstaaten", "name": name,
                  "titel": titel, "gremium": gremium, "kammer": "unterhaus", "datum": datum, "status": status, "stimmarten": [["s", "Stimmen"]],
                  "g": ergebnis, "farben": farben, "quelle": quelle, "einheiten": []}
-            if code == "DE-NW" and ko and datum.startswith("2022"):
-                w["stimmarten"] = [["s", "Zweitstimmen"]]
-                w["system"] = "Verhältniswahl mit Erst- und Zweitstimme, 128 Landtagswahlkreise. Hier je Kreis und kreisfreier Stadt (Zählgebiete) die Zweitstimmen; die Landtagswahlkreise folgen."
-                werte = {}
-                for geb in ko["gebiete"]:
-                    v = ((geb.get("vergleich") or {}).get("werte") or {}).get("ltw22")
-                    if v and geb["typ"] != "Gemeinde":
-                        werte[geb["id"]] = {"n": geb["name"], "s": {"s": [[de_kurz(p), None, x, None] for p, x in sorted(v, key=lambda y: -y[1])]},
-                                            "bet": ((geb.get("vergleich") or {}).get("beteiligung") or {}).get("ltw22")}
-                w["einheiten"] = [{"id": "kreis", "name": "Kreise und kreisfreie Städte", "einzahl": "Kreis/Stadt", "art": "zaehlgebiet", "geo": "kommunen", "werte": werte,
-                                   "quelle": "IT.NRW, Kommunalwahlen 2025 Heft 1 (Ergebnisse früherer Wahlen), Zweitstimmen in %"}]
+            if code == "DE-NW" and datum.startswith("2022"):
+                nw = ltw_nw22(ergebnis)
+                w["stimmarten"] = [["z", "Zweitstimmen"], ["e", "Erststimmen"]]
+                w["system"] = ("Personalisierte Verhältniswahl mit Erst- und Zweitstimme, 128 Landtagswahlkreise; die Zweitstimmen bestimmen die Sitzverteilung "
+                               "(mindestens 181 Sitze, Überhang- und Ausgleichsmandate möglich).")
+                if nw:
+                    w["g"], wk_werte, w["quelle"] = nw
+                    w["status"] = "endgültig"
+                    w["vor"] = {"datum": "2017-05-14", "titel": "Landtagswahl 2017", "hinweis": "auf die Wahlkreise 2022 umgerechnet"}
+                if ko:
+                    werte = {}
+                    for geb in ko["gebiete"]:
+                        v = ((geb.get("vergleich") or {}).get("werte") or {}).get("ltw22")
+                        if v and geb["typ"] != "Gemeinde":
+                            werte[geb["id"]] = {"n": geb["name"], "s": {"z": [[de_kurz(p), None, x, None] for p, x in sorted(v, key=lambda y: -y[1])]},
+                                                "bet": ((geb.get("vergleich") or {}).get("beteiligung") or {}).get("ltw22")}
+                    w["einheiten"].append({"id": "kreis", "name": "Kreise und kreisfreie Städte", "einzahl": "Kreis/Stadt", "art": "zaehlgebiet", "geo": "kommunen", "werte": werte,
+                                           "quelle": "IT.NRW, Kommunalwahlen 2025 Heft 1 (Ergebnisse früherer Wahlen), Zweitstimmen in %"})
+                if nw:
+                    w["einheiten"].append({"id": "lwk", "name": "Landtagswahlkreise", "einzahl": "Landtagswahlkreis", "art": "wahlkreis", "geo": "landtagswahlkreise-nw", "werte": wk_werte})
             out.append(w)
     return out
 
@@ -384,6 +520,12 @@ def main():
         vg = Path(a.vg1000) if a.vg1000 else Path("/tmp/vg1000.zip")
         if laden(VG1000_URL, vg, not a.ohne_abruf):
             print("Kreise:", kreise_flaechen(vg, {k: v["n"] for k, v in ew["einheiten"][1]["werte"].items()}))
+    for quelle, ziel in LTW_NW22_DATEIEN.items():
+        laden(LTW_NW22 + quelle, QUELLEN / ziel, not a.ohne_abruf)
+    if not LWK_NW_GEO.exists():
+        lwk = Path("/tmp/lwk_nw22.zip")
+        if laden(LTW_NW22_SHP, lwk, not a.ohne_abruf):
+            print("Landtagswahlkreise NRW:", lwk_nw_flaechen(lwk))
     wahlen = [w for w in national(pa) if w["land"] != "DE" or w["kammer"] != "unterhaus"]
     wahlen.append(bundestag(pa, HIER / "geo/wahlkreise_bund.geojson", HIER / "geo/de_laender.geojson"))
     if ew:

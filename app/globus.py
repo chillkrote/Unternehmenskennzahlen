@@ -124,6 +124,8 @@ def seite(terminal_seite):
         # Wahlen (Politik & Wahlen, Ansicht Wahlen): einheitliches Wahlregister (wahlen_daten.py) und Kreisgrenzen für die Europawahl
         "<style>\n" + (HIER / "src/wahlen.css").read_text() + "\n</style>",
         '<script id="kreise-de-geo" type="application/json">' + (_js((HIER / "geo/kreise_de.geojson").read_text()) if (HIER / "geo/kreise_de.geojson").exists() else "null") + "</script>",
+        *['<script id="wa-geo-%s" type="application/json">%s</script>' % (art, _js((HIER / datei).read_text()))
+          for art, datei in (("landtagswahlkreise-nw", "geo/landtagswahlkreise_nw.geojson"),) if (HIER / datei).exists()],
         '<script id="wahlen-daten" type="application/json">' + (_js((HIER / "data/wahlen.json").read_text()) if (HIER / "data/wahlen.json").exists() else "null") + "</script>",
         "<script>\n" + (HIER / "src/wahlen.js").read_text() + "\n</script>",
         # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein

@@ -73,3 +73,13 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 - Leitzinsen (BIS), 10-j. Renditen (OECD, CC BY 4.0), EZB-Kurse, Rohstoffe (FRED), Börsenplätze von Hand: app/boerse_welt.py -> app/data/boerse_welt.json
 - Regierungen (Wikidata, CC0), Wahlkalender (Wikipedia, CC BY-SA 4.0), Bundestagswahl 2025 je Land (Bundeswahlleiterin, DL-DE 2.0), Umfragen (DAWUM, ODbL), Bundesländer (Natural Earth), Bündnisse von Hand: app/politik_daten.py -> app/data/politik.json
 - Parlamente aller Staaten und Gliedstaaten: IPU Parline (CC BY-NC-SA 4.0, nicht kommerziell), Wikipedia-Infoboxen (CC BY-SA 4.0), Wikidata (CC0), Umrisse Natural Earth: app/parlamente_daten.py -> app/data/parlamente.json, app/geo/gliedstaaten.geojson
+
+## Politik: Kommunen (neu 06.11.2026)
+
+| Feld | Stand jetzt | Warum offen | Weg |
+|---|---|---|---|
+| Kommunen außerhalb Nordrhein-Westfalens | nur NRW: 54 Räte/Kreistage, 373 kreisangehörige Städte und Gemeinden (Heft 4), Vergleichswahlen aus Heft 1 (22 kreisfreie Städte, Stadt Aachen, 30 Kreise, Städteregion Aachen) und 141 Bezirksvertretungen aus Heft 3 der Kommunalwahlen 2025 (IT.NRW) | Quelle ist das Heft; andere Länder haben eigene Landesämter | Je Land ein Leser in app/kommunal_daten.py, Ablage unter kommunalwahlen/<land>_<jahr>/ |
+| Vergleichsergebnisse Stadt Werne (Landtag/Europa/Bundestag) | fehlt | Im Textauszug von Heft 1 steht Werne in Tabelle 2 nicht | Seite im PDF prüfen |
+| Koalitionen/Mehrheitsbündnisse in den Räten | fehlen | Amtliche Statistik enthält keine Bündnisse | Ratsinformationssysteme einzeln (aufwendig) |
+| Gebietsgrenzen und Wahldaten außerhalb NRW | Grenzen: BKG VG250 (bundesweit, mit Gemeindeschlüssel) wird für NRW genutzt (app/kommunal_flaechen.py, Schalter LAENDER → geo/kommunen_nrw.geojson); Wahldaten nur NRW | Andere Länder liefern ihre Ergebnisse einzeln (Landeswahlleiter/Statistikämter) | Je Land ein Leser in kommunal_daten.py, dann LAENDER erweitern; Verknüpfung über den Gemeindeschlüssel (AGS) |
+| Regionalverband Ruhr (Verbandsversammlung, Tabelle 5) | nicht eingelesen | Eigene Tabellenform | Reader ergänzen |

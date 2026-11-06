@@ -240,6 +240,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#p-parl" data-v="p-parl"><b>F4</b>Parlamente</a>
       <a class="key" href="#p-glied" data-v="p-glied"><b>F5</b>Gliedstaaten</a>
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
+      <a class="key" href="#p-kom" data-v="p-kom"><b>F7</b>Kommunen</a>
     </nav>
     <nav class="keys" id="keys-b" aria-label="Börsendaten" hidden>
       <a class="key" href="#b-ueb" data-v="b-ueb"><b>F1</b>Überblick</a>
@@ -288,6 +289,8 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="politik-daten" type="application/json">__POLITIK__</script>
 <script id="de-laender-geo" type="application/json">__DE_LAENDER__</script>
 <script id="parlamente-daten" type="application/json">__PARLAMENTE__</script>
+<script id="kommunal-daten" type="application/json">__KOMMUNAL__</script>
+<script id="kommunen-geo" type="application/json">__KOMMUNEN_GEO__</script>
 <script id="gliedstaaten-geo" type="application/json">__GLIEDSTAATEN__</script>
 <script>
 __UNTERNEHMEN_JS__
@@ -1026,7 +1029,7 @@ const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt:
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
   "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr(),
-  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "b-zins": () => FIN.view() };
+  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "p-kom": () => POL.viewKom(), "b-zins": () => FIN.view() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
 let globalLand = 'alle', alleBanken = [], alleMarktdaten = null;
@@ -1176,7 +1179,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const z = UNT.ziel(v); if (z) gehe(z); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
+  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr", F7: "p-kom" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });

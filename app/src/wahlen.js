@@ -376,9 +376,11 @@ const WAHLEN = (() => {
       teile.push(`<div class="wa-amt">Erststimmen vorn: <b>${esc(e[0][0])}</b> mit ${pct(e[0][2])}, ${f1.format(v)} Punkte vor ${esc(e[1] ? e[1][0] : "–")}. <span class="pct">Ob der Sieger ein Mandat erhielt (Zweitstimmendeckung), steht noch nicht in den Daten.</span></div>`);
     }
     // Wahlkreis mit Direktmandat (relative Mehrheit der Erststimmen, z. B. Landtag NRW): gewählte Person, wenn die Quelle sie nennt
-    else if (u && u.art === "wahlkreis" && wert && wert.s && wert.s.e && wert.s.e.length) {
-      const e = [...wert.s.e].sort((p, q) => q[2] - p[2]), v = e[0][2] - (e[1] ? e[1][2] : 0), d = wert.direkt;
-      teile.push(`<div class="wa-amt">Direktmandat: <b>${d ? `${esc(d.name)} (${esc(d.partei)})` : esc(e[0][0])}</b> mit ${pct(e[0][2])} der Erststimmen, ${f1.format(v)} Punkte vor ${esc(e[1] ? e[1][0] : "–")}.</div>`);
+    // (Erststimmen, wo es zwei Stimmen gibt; bei reiner Mehrheitswahl wie im britischen Unterhaus die einzige Stimme)
+    else if (u && u.art === "wahlkreis" && wert && wert.s && (wert.s.e || wert.direkt)) {
+      const st = wert.s.e ? "e" : Object.keys(wert.s)[0], l = wert.s[st] || [];
+      const e = [...l].sort((p, q) => q[2] - p[2]), v = e.length ? e[0][2] - (e[1] ? e[1][2] : 0) : null, d = wert.direkt;
+      if (e.length || d) teile.push(`<div class="wa-amt">${st === "e" ? "Direktmandat" : "Gewählt"}: <b>${d ? `${esc(d.name)} (${esc(d.partei)})` : esc(e[0][0])}</b>${wert.runde ? ` im ${wert.runde}. Wahlgang` : ""}${e.length ? ` mit ${pct(e[0][2])}${st === "e" ? " der Erststimmen" : ""}${e[1] ? `, ${f1.format(v)} Punkte vor ${esc(e[1][0])}` : " (ohne Gegenkandidat)"}` : ""}.</div>`);
     }
     if (sitze && sitze.length) {
       const so = sitzeOrdnen(w, sitze.filter(s => s[1] > 0));

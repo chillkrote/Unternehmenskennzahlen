@@ -42,7 +42,7 @@ META = {"id": ("id", "unternehmen_id", "unternehmens-id"), "ticker": ("ticker", 
         "branche": ("branche", "sektor"), "gruppe": ("gruppe", "untergruppe", "unterbranche", "teilbranche", "subbranche"),
         "sitz": ("sitz", "ort"), "segment": ("segment", "index", "marktsegment"), "notiert": ("börsennotiert", "notiert", "notierung"),
         "rechtsform": ("rechtsform",)}
-SKIP_DIRS = {"banken", "app", "zeitreihen", ".git", ".github", "dokumente", "webseiten"}
+SKIP_DIRS = {"banken", "app", "zeitreihen", ".git", ".github", "dokumente", "webseiten", "governance"}
 DOK_ORDNER = {"dokumente", "webseiten", "berichte", "geschaeftsberichte", "documents"}
 # Kennzahlen im Langformat -> Schlüssel im Katalog
 LANG_KZ = {"bilanzsumme": "bilanzsumme", "eigenkapital": "ek", "jahresueberschuss": "jue", "umsatz": "umsatz",

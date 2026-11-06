@@ -80,7 +80,7 @@ Wahlregister `app/data/wahlen.json` aus `app/wahlen_daten.py`: 961 Wahlen (E0 1,
 
 | Feld | Stand jetzt | Warum offen | Weg |
 |---|---|---|---|
-| Landtagswahlkreise | NRW 2022 nur nach Kreisen/Städten (Zählgebiet), andere Länder nur Gesamtergebnis | Wahlkreisergebnisse und -grenzen liefern die Landeswahlleiter einzeln | Schritt 2: Landeswahlleiter NRW (128 Wahlkreise, Shapefile), dann weitere Länder |
+| Landtagswahlkreise | NRW 2022: 128 Landtagswahlkreise mit Erst- und Zweitstimmen, Veränderung zu 2017 (umgerechnet auf die Wahlkreise 2022) und direkt Gewählten, Grenzen aus dem Shapefile der Landeswahlleiterin (neu 06.11.2026); andere Länder nur Gesamtergebnis | Wahlkreisergebnisse und -grenzen liefern die Landeswahlleiter einzeln | je Land ein Leser in wahlen_daten.py nach dem Muster ltw_nw22, Grenzen als <script id="wa-geo-…"> in globus.py |
 | Zweitstimmendeckung (Bundestag 2025) | Ergebniskarte sagt „Erststimmen vorn“, nicht „Mandat erhalten“ | Flag steht nicht in der Wahlkreisdatei | Liste der gewählten Bewerber der Bundeswahlleiterin einlesen |
 | Wahlkreise UK, USA, Frankreich | nur Gesamtergebnis je Land | eigene Quellen (Electoral Commission, MIT Election Lab, Ministère de l'Intérieur) | Schritt 3 |
 | Stadtbezirksgrenzen (Bezirksvertretungen) | Ergebnisse je Bezirk in der Liste, ohne Fläche | VG250 hat keine Stadtbezirke | Geodaten der Städte (Open Data Köln, Düsseldorf, …) |

@@ -92,6 +92,8 @@ const WAHLEN = (() => {
     if (GEO) return GEO;
     const g = G.geo(), idx = (fc, key) => { const m = {}; (fc ? fc.features : []).forEach(f => { const k = String(f.properties[key]); (m[k] = m[k] || []).push(f); }); return m; };
     GEO = { laender: idx(g.LAENDER, "iso"), "de-laender": idx(g.DE_GEO, "code"), gliedstaaten: idx(g.GL_GEO, "code"), kommunen: idx(g.KO_GEO, "id"), "wahlkreise-bund": idx(g.WK, "nr"), "kreise-de": idx(g.KREISE, "id"), roh: g };
+    // weitere Wahlkreisgrenzen (globus.py bettet sie als <script id="wa-geo-<art>"> ein, Schlüssel properties.id), z. B. landtagswahlkreise-nw
+    document.querySelectorAll('script[id^="wa-geo-"]').forEach(el => { try { const fc = JSON.parse(el.textContent); if (fc) GEO[el.id.slice(7)] = idx(fc, "id"); } catch { /* fehlt */ } });
     return GEO;
   }
   const flaechen = (art, k) => art && geo()[art] ? geo()[art][String(k)] || [] : [];
@@ -372,6 +374,11 @@ const WAHLEN = (() => {
     if (u && u.art === "wahlkreis" && w.id === "DE-BT-2025" && wert && wert.s && wert.s.e) {
       const e = [...wert.s.e].sort((p, q) => q[2] - p[2]), v = e[0][2] - (e[1] ? e[1][2] : 0);
       teile.push(`<div class="wa-amt">Erststimmen vorn: <b>${esc(e[0][0])}</b> mit ${pct(e[0][2])}, ${f1.format(v)} Punkte vor ${esc(e[1] ? e[1][0] : "–")}. <span class="pct">Ob der Sieger ein Mandat erhielt (Zweitstimmendeckung), steht noch nicht in den Daten.</span></div>`);
+    }
+    // Wahlkreis mit Direktmandat (relative Mehrheit der Erststimmen, z. B. Landtag NRW): gewählte Person, wenn die Quelle sie nennt
+    else if (u && u.art === "wahlkreis" && wert && wert.s && wert.s.e && wert.s.e.length) {
+      const e = [...wert.s.e].sort((p, q) => q[2] - p[2]), v = e[0][2] - (e[1] ? e[1][2] : 0), d = wert.direkt;
+      teile.push(`<div class="wa-amt">Direktmandat: <b>${d ? `${esc(d.name)} (${esc(d.partei)})` : esc(e[0][0])}</b> mit ${pct(e[0][2])} der Erststimmen, ${f1.format(v)} Punkte vor ${esc(e[1] ? e[1][0] : "–")}.</div>`);
     }
     if (sitze && sitze.length) {
       const so = sitzeOrdnen(w, sitze.filter(s => s[1] > 0));

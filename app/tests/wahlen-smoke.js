@@ -46,6 +46,10 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   // E2 Landtag NRW
   await page.evaluate(() => WAHLEN.ebeneWaehlen(2)); await warte(1800);
   await bild('7-e2');
+  // Landtagswahlkreise NRW (Landeswahlleiterin): der Ortsanker wählt beim Ebenenwechsel den Landtagswahlkreis in Düsseldorf
+  t = await seite(); ok(/Landtagswahl/.test(t), 'Landtagswahl NRW fehlt');
+  ok(/Düsseldorf/.test(t) && /Direktmandat/.test(t) && /Landtagswahlkreis/.test(t), 'Landtagswahlkreis Düsseldorf fehlt:\n' + t.slice(0, 500));
+  await bild('7b-e2-lwk');
   await page.evaluate(() => WAHLEN.ebeneWaehlen(3)); await warte(1800);
   await bild('8-e3');
   await page.evaluate(() => WAHLEN.ebeneWaehlen(4)); await warte(1800);

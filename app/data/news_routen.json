@@ -1,19 +1,87 @@
 {
-"abruf": "2026-11-06T12:51Z",
+"abruf": "2026-11-06T14:29Z",
 "tage": 14,
 "fehler": [],
-"quelle": "GDELT und Google News (Verweise auf Artikel; Titel unverändert)",
-"url": "https://www.gdeltproject.org/",
+"quelle": "Google News (Verweise auf Artikel; Titel unverändert)",
+"url": "https://news.google.com/",
 "regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'",
 "meldungen": {
+"suez": [
+{
+"titel": "Maersk, Hapag-Lloyd Reroute India-Europe ME1 Service via Suez Canal",
+"url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMjBLaHZJaW5kQzJyb1JwTUxGWF9kNHFkMXZQa1VfaW5SYTJXaFNkMFZlUnptQXV0RVdnNDlOTkdBbExzcHpSN1c4MkltMFVBQ0xmdGs4a3RxV0hNS3dyYVh2SzRMRXpWbVVxTHMtWUxJV1BHc011TUp4cTYxZFRWTWV5YTlQcVNfck8xZjJkSVZNRlh5Y0tyNllLb1BsNjNB?oc=5",
+"quelle": "Maritime Gateway",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-03"
+}
+],
+"babelmandeb": [
+{
+"titel": "Kuwait urges end to attacks threatening navigation in Hormuz, Bab Al-Mandab",
+"url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcWRJOC04VHoyV1VGRHpnY0lSUFJ1dEo2TU12RUtlOGJWdkVEdEliRFVGWDZMdFduRDNYT1BMTEh5RjlGTlRxWlBpOGVBSUh4VXlIX0Z0QWo3eEItRkZBNUw3cU9QN0ZsWGM4UUpkQ1hNSkRGMXdBWjZrUldVMjk4ajhZYUF0ZEhPZXljbm0xZllzNXJrdVVRcUpSQ2hOaXNtekNNeXVGd0RubW1ETzdHRXc3OVVqTVpHVkxCTdIBwAFBVV95cUxNQjh4WEV5ZUFhSHd3UlNxSGMtU3RGd2lEMHY4VUR1YU95S0lxbEFFREZRTHpiOVJWMVJJNnBuZ2owMGNKdk40T0ZQNzFINkJoTGM1WnMwQWdoSkFNaWRjR2duTzEyNUdKNG9jSDhoVThQYVVaVGNldXZzTExpSm1KSTJkLVZwczN0aW5rUlpXZkFCRHNhcEdlbGRTTzNyZFMxRl9uVER1WUlhT0NRaGJhV3ZtVVpvNHBtczZJTXprRF8?oc=5",
+"quelle": "Kuwait Times",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-10-30"
+},
+{
+"titel": "French Frigate Shoots Down Missile Near Belgian Minehunter In Bab el-Mandeb Strait",
+"url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORURSaUxzb1FEbzVFZDVFNnpxckEzeFAwNEgxR3Jib25LaHJ4a2tITW9SSHQxR2ZIRXMwZjJYYkl2V3FFeW5RX04wNHh0eDhIdTZQcUFqTUk3M2JXUzNTTmZ6S2thSDMybldQMjl3aWxLN3lrMlFyaHZVd2E2NkxtRWlTeHlLWVdvVEFoNDhMT3gzWmg3eVpjMkFqTGd2aWVrUGhaMTM5eC1STWY5SDRoLXZQRQ?oc=5",
+"quelle": "Marine Insight",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-10-28"
+},
+{
+"titel": "Houthi Ballistic Missile Intercepted Near Belgian Minehunter in Bab el-Mandeb",
+"url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPamstRDlXZXJUUzNzdTJmUTdkcmtGd3NhT3N4bmNORWRBQ2NJSmU1REJ2SzV6WTRhWUEyZXppMnZYVjVmQ3YyTGxzM19PWFE5Q1FOYnlrZjlCd1RpbkxVTWNSU2VvMnoxVUZNSnFKRXlHdlNqdmE0NUs4bFROell5bFE5cFFuQUM0VXRSVTVyOXVZY0Z5RkE4bzB2WFdhQmMwdU5TRHBUM1F0ZlVab0lfVWFoMnZyQkxNekFFTzRYTFk?oc=5",
+"quelle": "Naval News",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-10-27"
+}
+],
 "hormus": [
 {
-"titel": "Crude oil price gain amid fresh tanker attacks in Strait of Hormuz",
-"url": "https://www.thehindubusinessline.com/markets/commodities/brent-crude-tops-100-wti-nears-92-amid-fresh-strait-of-hormuz-attacks/article71672815.ece",
-"quelle": "thehindubusinessline.com",
+"titel": "Explosion Reported Aboard Oil Tanker Near Oman’s Coast in Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdVJ1SGQ5Y1lRR2tGQlNuZVFjVl9wczM5dWtpUG9jZ2tCWjJVa2NzQXVNVlpDczE1azZVMHVsV0k1TFJsLXlQOHJtTGdPV0ZQWHlkYnk4REdPQ2FqMjJOc1ExS0w1ZmIzU0VEbm5wT0hJMndodkNxcXZveDQwSll5SlVmcmUwU0Z3allzb0Exd2p1N0QyWjZvWg?oc=5",
+"quelle": "WANA News Agency",
 "sprache": "English",
-"dienst": "GDELT",
+"dienst": "Google News",
 "datum": "2026-11-06"
+},
+{
+"titel": "October Sees Surge in Attacks on Ships in Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdGMwVXMwWHBEaVAxNWtrOUVWVGlYMEJaTDVVR0dpUDNDRC1iblVHaU1pMTA0Wm5BVVIwbTMwR2pST09sdTcwNkdqRm5vVjBIYUF4WDJUQ1VRTzdEbnh2TUR5TEk3cFotcThiSzFFb1FfdXNZMzIta0M1QXl2NW1vUGZPaW13ZVh0SUZyQ2g2VHI?oc=5",
+"quelle": "Caspian Post",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-05"
+},
+{
+"titel": "Iran exempts India, China, Iraq and Qatar from transit restrictions in Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNb0dTVGZzQVZHN2doa2N6ME81ZkVQR3d0SGlqOU4zVmN1d0t1UjVUM3lDM0theV9FSzZLRGFQTWtnR2FZZEpQYmUybHBYRDhkVVVvT1dKMS1DU2o5anZEZi01RmVENklOX283OTh5OFdESXhqa3Q0VHZhdFE1Tl9UYkJmYlNtRTRGU2J5STB0a1U2bjRnMkg4WHNTX1M3YkRndlRxWDdLaHpBZ2J4dC1odg?oc=5",
+"quelle": "Asia News Network",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-05"
+},
+{
+"titel": "Iran Opens Strait of Hormuz to China and India as U.S. Blockade Continues",
+"url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTlR3ZU5xVnZWZ2xSdnBvLTRERkxJRmNuTVhvSnFIMnRxNmpKMXp5Zm1oUlRNSFRqdEVudEFkVW1IYkxIM29VYkxoc25tdnUtT1N4Y1JMdExWeXJNQnllanBFT1A3enVVN0pVNWZra2hNbDV4MngtdGlsN3RiZEtoaDFoRHlGaGtFcEJWTGZyYzVsY2xRMWFNaUlod3BxVWs4aGpGbWxVSWxqZ3Z3UmV2NS05aEdNenpsUDBB0gHAAUFVX3lxTE5GekF3cUYtTndFTmlmcy1KZ2ZvR2JsZDRnb29yazZsNVhLQ1Y4UW9RdTM5R0RvbXk1MllFVnJvRFlnQ1lXcDNtT0dzS0tLYXZOSHFXSTNYNGpGRlIwV1Fqa0VNd1l5SHR0YkpZTEJCMDNuQzIzX1FuaUctZGROcHRPZmZ1Z0VlU1pPOEdkOGFIaFZ3am1keWVLZnhJaGhLaDRlaEVwS2tPczhLcjRkbENVS2FETlY0VEU3bElBNmM1Uw?oc=5",
+"quelle": "Crude Oil Prices Today | OilPrice.com",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-05"
+},
+{
+"titel": "Abbas Araghchi And Badr Albusaidi Discuss Strait Of Hormuz Peace Amid US Blockade: 8 outlets compared",
+"url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQSTZTalozM1BKOUduaTJWYmF4TllkbnpkTFh5enRvQWh4X3lDLUI1YmZlQV9oSTQ2WVBIemR3cmxPeEs0VU0xdDBkTXNmWUw2eUtJcEFBTi14dXU3aHBWdERSODkyVzdvVU03bVJZQmVBam9sZERVaWVwZXVJV3FMNWYyYnEwUWl1QWszMXpLMFdSa1NkYUV5ajV2SE9OLW94Zzg2cEpsdl82Y3M1Nk0zLXdFMkxRWUx5Mmo0ODRSNHFFMGJDUkpZclZxSGtNdnhoLXRYRUh4b0I0OExVNTBnMGc5bnZHZEtFV0E?oc=5",
+"quelle": "NewsCord",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-05"
 }
 ],
 "panama": [
@@ -157,14 +225,6 @@
 }
 ],
 "ambassador": [
-{
-"titel": "'Delays Are Possible': Gordie Howe International Bridge Pedestrian Path Closes For 48 Hours",
-"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcWtGS25MbjlWU056VTNXNXVXcUdLb1laU1dJMHZBakc1YmtIUXJrRFJoLXNjZEpsUTJZcjJlOFg2TFUtS2lVQURzRmlwaGptVHJKZzk5b3lOU1Zkb091Z0tVWWpVNjhmTnctMVlpNzFkVzVwX2d6R2JOZEhhY3pJNGxyaXc1U2dyRmo1WUN5TkhuRUN3SzY5eWlVT1NFSDNuU2Y2YlY5RHVhSzBBam43Ng?oc=5",
-"quelle": "TheTravel",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-29"
-},
 {
 "titel": "Gordie Howe bridge path closed Wednesday and Thursday",
 "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORU9RQmUyRjBRaThWMnJjMGRUaTBXcFNZLUlCTVdSRmR4Z0dGcWwwalEzd3ZBSkZ4UTd2WGF5YmFZeXFHRTZ4dkN5eS1NVU03UDZCUVgwcHViR184dDFYLXJpeGQyQzc0MkhObWpYaGhnWndvRWEtTlpLSkN1d2otNjFEM3lFRVpvOFFNYWhaWWQ?oc=5",

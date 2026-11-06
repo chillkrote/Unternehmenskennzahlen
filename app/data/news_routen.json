@@ -1,106 +1,30 @@
 {
-"abruf": "2026-11-05T14:52Z",
+"abruf": "2026-11-06T12:51Z",
 "tage": 14,
 "fehler": [],
-"quelle": "Google News (Verweise auf Artikel; Titel unverändert)",
-"url": "https://news.google.com/",
+"quelle": "GDELT und Google News (Verweise auf Artikel; Titel unverändert)",
+"url": "https://www.gdeltproject.org/",
 "regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'",
 "meldungen": {
-"suez": [
-{
-"titel": "Maersk, Hapag-Lloyd Reroute India-Europe ME1 Service via Suez Canal",
-"url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMjBLaHZJaW5kQzJyb1JwTUxGWF9kNHFkMXZQa1VfaW5SYTJXaFNkMFZlUnptQXV0RVdnNDlOTkdBbExzcHpSN1c4MkltMFVBQ0xmdGs4a3RxV0hNS3dyYVh2SzRMRXpWbVVxTHMtWUxJV1BHc011TUp4cTYxZFRWTWV5YTlQcVNfck8xZjJkSVZNRlh5Y0tyNllLb1BsNjNB?oc=5",
-"quelle": "Maritime Gateway",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-03"
-}
-],
-"babelmandeb": [
-{
-"titel": "Houthis launch drone war to control Red Sea shipping lane",
-"url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNa0lyVW9acEUyNmFrUTNkdURhRkNKYVlBTUlITGh4aG1KUURwZnJMTF9rTGp2RWg0b2MzMlhlVERQcEkzZkZMdXc5d3JjUHRxY2R0MnVTNlhiVFhLUHY0OVFuTmYxdjNaWGpPU3FiRjRTdDdrZ2MyNXJsbEFuaFdqX3Rn?oc=5",
-"quelle": "AOL.com",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05"
-},
-{
-"titel": "Kuwait urges end to attacks threatening navigation in Hormuz, Bab Al-Mandab",
-"url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcWRJOC04VHoyV1VGRHpnY0lSUFJ1dEo2TU12RUtlOGJWdkVEdEliRFVGWDZMdFduRDNYT1BMTEh5RjlGTlRxWlBpOGVBSUh4VXlIX0Z0QWo3eEItRkZBNUw3cU9QN0ZsWGM4UUpkQ1hNSkRGMXdBWjZrUldVMjk4ajhZYUF0ZEhPZXljbm0xZllzNXJrdVVRcUpSQ2hOaXNtekNNeXVGd0RubW1ETzdHRXc3OVVqTVpHVkxCTdIBwAFBVV95cUxNQjh4WEV5ZUFhSHd3UlNxSGMtU3RGd2lEMHY4VUR1YU95S0lxbEFFREZRTHpiOVJWMVJJNnBuZ2owMGNKdk40T0ZQNzFINkJoTGM1WnMwQWdoSkFNaWRjR2duTzEyNUdKNG9jSDhoVThQYVVaVGNldXZzTExpSm1KSTJkLVZwczN0aW5rUlpXZkFCRHNhcEdlbGRTTzNyZFMxRl9uVER1WUlhT0NRaGJhV3ZtVVpvNHBtczZJTXprRF8?oc=5",
-"quelle": "Kuwait Times",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-30"
-},
-{
-"titel": "French Frigate Shoots Down Missile Near Belgian Minehunter In Bab el-Mandeb Strait",
-"url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORURSaUxzb1FEbzVFZDVFNnpxckEzeFAwNEgxR3Jib25LaHJ4a2tITW9SSHQxR2ZIRXMwZjJYYkl2V3FFeW5RX04wNHh0eDhIdTZQcUFqTUk3M2JXUzNTTmZ6S2thSDMybldQMjl3aWxLN3lrMlFyaHZVd2E2NkxtRWlTeHlLWVdvVEFoNDhMT3gzWmg3eVpjMkFqTGd2aWVrUGhaMTM5eC1STWY5SDRoLXZQRQ?oc=5",
-"quelle": "Marine Insight",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-28"
-},
-{
-"titel": "Houthi Ballistic Missile Intercepted Near Belgian Minehunter in Bab el-Mandeb",
-"url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPamstRDlXZXJUUzNzdTJmUTdkcmtGd3NhT3N4bmNORWRBQ2NJSmU1REJ2SzV6WTRhWUEyZXppMnZYVjVmQ3YyTGxzM19PWFE5Q1FOYnlrZjlCd1RpbkxVTWNSU2VvMnoxVUZNSnFKRXlHdlNqdmE0NUs4bFROell5bFE5cFFuQUM0VXRSVTVyOXVZY0Z5RkE4bzB2WFdhQmMwdU5TRHBUM1F0ZlVab0lfVWFoMnZyQkxNekFFTzRYTFk?oc=5",
-"quelle": "Naval News",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-27"
-},
-{
-"titel": "14 Indians on boat attacked near Bab el-Mandeb? Houthis blame Saudi Arabia, claim rescue operation",
-"url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNdVR0UEdsdzZoa2pFWHo4NDNSUlpxMU55TTVVQlVHZUw3djRrcmJMV3BUVW5acTVJZDFTZjYxZzE0MXpxZ2twT1REdTRMVzl6OEh4emJ5eFFHV3lmMm1KYVczT3dOMUNLREFWeG9ySmdvZGRTQ0RYOFVzTDhXVVctVlB4ZHQzdWExU3ZacDF1ellzaDg4LXozallVVnV5b0RjUEo2d1RJVndEUXVYTXMycnEteE9lWTBuUk9UQ3ZUVWI4dVF2LUlGNmlYZzdNMGRmVGhCdHRnQldETVZ4T1RIbjVtNHB3OTjSAewBQVVfeXFMUHlpVklEeEQ1bDE4OGtNaTR2YXFXZVpEUTRZOFFFMEl3SkRGR1h1RVJGMmlLRUV3aXdQRlMteTI5SVhwbEZhY21Ib3lfVkpKUFg2RmRHZy1vMnZLNDhrTENUOWZMNzJGcFBDWlhXTzljRmFKYUY2Y0luOWhJTERvcS1neGk5YXp5WU5yWmZRWmNTaFJiaVNqNHFwanFON1FxdkdMOXRYMGt3YVVlX1ZzNkJxVzZqTGNSei1YQmpSMWRhQm5SNmJmZHN3dnFzTms5TVVYQnJMLUJra181YjlqRlFlM1EtMzBLa0ZjaHY?oc=5",
-"quelle": "Livemint",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-22"
-}
-],
 "hormus": [
 {
-"titel": "October Sees Surge in Attacks on Ships in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdGMwVXMwWHBEaVAxNWtrOUVWVGlYMEJaTDVVR0dpUDNDRC1iblVHaU1pMTA0Wm5BVVIwbTMwR2pST09sdTcwNkdqRm5vVjBIYUF4WDJUQ1VRTzdEbnh2TUR5TEk3cFotcThiSzFFb1FfdXNZMzIta0M1QXl2NW1vUGZPaW13ZVh0SUZyQ2g2VHI?oc=5",
-"quelle": "Caspian Post",
+"titel": "Crude oil price gain amid fresh tanker attacks in Strait of Hormuz",
+"url": "https://www.thehindubusinessline.com/markets/commodities/brent-crude-tops-100-wti-nears-92-amid-fresh-strait-of-hormuz-attacks/article71672815.ece",
+"quelle": "thehindubusinessline.com",
 "sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05"
-},
-{
-"titel": "Iran exempts India, China, Iraq and Qatar from transit restrictions in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNb0dTVGZzQVZHN2doa2N6ME81ZkVQR3d0SGlqOU4zVmN1d0t1UjVUM3lDM0theV9FSzZLRGFQTWtnR2FZZEpQYmUybHBYRDhkVVVvT1dKMS1DU2o5anZEZi01RmVENklOX283OTh5OFdESXhqa3Q0VHZhdFE1Tl9UYkJmYlNtRTRGU2J5STB0a1U2bjRnMkg4WHNTX1M3YkRndlRxWDdLaHpBZ2J4dC1odg?oc=5",
-"quelle": "Asia News Network",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05"
-},
-{
-"titel": "Abbas Araghchi And Badr Albusaidi Discuss Strait Of Hormuz Peace Amid US Blockade: 8 outlets compared",
-"url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQSTZTalozM1BKOUduaTJWYmF4TllkbnpkTFh5enRvQWh4X3lDLUI1YmZlQV9oSTQ2WVBIemR3cmxPeEs0VU0xdDBkTXNmWUw2eUtJcEFBTi14dXU3aHBWdERSODkyVzdvVU03bVJZQmVBam9sZERVaWVwZXVJV3FMNWYyYnEwUWl1QWszMXpLMFdSa1NkYUV5ajV2SE9OLW94Zzg2cEpsdl82Y3M1Nk0zLXdFMkxRWUx5Mmo0ODRSNHFFMGJDUkpZclZxSGtNdnhoLXRYRUh4b0I0OExVNTBnMGc5bnZHZEtFV0E?oc=5",
-"quelle": "NewsCord",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05"
-},
-{
-"titel": "Iran Exempts India, China, Iraq, and Qatar from Strait of Hormuz Restrictions",
-"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeWZNMWN2Z2NuVjE2UHVCWFNCbEJYMlFBWGFtWFh2Q1VlU3RKRnJ3UTZJLUFPeVNxQWNFUXVDVW5EQU5xeFdpdzc2YUh3U3pOY1JrTHlBc2V1Wkt4cTZQNHRJdzhHaE16YmpjZ01qNlZ0TkVYWG82OV94RFV0RWVranI0TzlLV014UFhtd000RkNiQldDNGRnRW91M3NjSlZrVlpwSDRDaTVTNmRtbWU1Sw?oc=5",
-"quelle": "IranWire",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-04"
-},
-{
-"titel": "Iran says Indian ships exempt from Strait of Hormuz transit restrictions",
-"url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQUhpS3hqRFBiNHlubFBMbXJqQXpyam0zN3MyQmZHTG9xaFphLTdyVFVCbXBnM18yV3NFNF81TGMxWHdlUUJLTEE0N0x0WHUtWHFRT25ycFpyZXN5TkRSLVdHdk5Mb1JYdGNoM3BuZ3lucXA3SDhHNVMwdHBMNV9JeXJPd21WTXA3NkZpTFFYWlZGMFBKRnduSmpzMjE?oc=5",
-"quelle": "safety4sea",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-04"
+"dienst": "GDELT",
+"datum": "2026-11-06"
 }
 ],
 "panama": [
+{
+"titel": "Panama Canal to cap ship transits due to El Nino drought",
+"url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE85WjRqRFlVblNta0YzX1VBNU9zTmpud2tHSjZnZnR4VnpFM3VZUWYxTThKR0c0aGtZN01QemI2eTVKSFpoSXEyYWlpZVI2amNuaWxaX2NXNGwyM2VDbUk2Mi13MA?oc=5",
+"quelle": "DW.com",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-05"
+},
 {
 "titel": "Panama Canal under strain from drought and Trump's threats",
 "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUmloME9OVUJJZVk1TS1NdHRkSkFqYUJRSFU4WTU0OXpFNWNKMUMwRkdZeWQ5UmI1TTdBanMxYktUR0dmVGdYN1pDdlVFRHhRQU0wSVJ0T2hwb3NQOGZIRmtDekVhaVdWSUt0MXVPUHBpUDFkcmhTU2c2dGFrZWp2NnF6NHA1dlpxZnNXRVozWmdYeFc4?oc=5",
@@ -134,14 +58,6 @@
 "sprache": "English",
 "dienst": "Google News",
 "datum": "2026-10-29"
-},
-{
-"titel": "The tanker that came under drone attack passed through the Bosphorus! The strait was closed to traffic.",
-"url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZUdYUU1tNlg5MGF2bkZ0cVgweFJLTDBCLUZBN1RQa2M5NHdVSGQ1b0pBWDFGM29TWGlpd0NNa2Z5eWljb0NUMkxoQ3NscENHN1ZyR2hJeWNBSU9UVEIya0RYUVE2WllqcHVXVi04TGhydlNsQnBfOFlYelU4Nk5OcUR4Z2oydw?oc=5",
-"quelle": "Haberler.com",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-23"
 }
 ],
 "taiwan": [
@@ -155,6 +71,14 @@
 }
 ],
 "rhein": [
+{
+"titel": "Rhine low water squeezes barge traffic, boosts fuel costs",
+"url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOY0hlR3ZaS3hGV0dCY1F2ZGxGcHlrNHRETnBOOE8ydk9veXI2RnBWbUs2OWh4dGNpaTJLN25KNHIwV3JoUm5LQzd0NWp3ellGbEhKTlI0THU4REVDLU4tQ2U1Ql9FVHhCdzl5a3oxX3dXWHo2RDNaYlM0T0lyenVWZVZEQmtaT3ltRTZuNGJLRGRWQQ?oc=5",
+"quelle": "Briefs Finance",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-05"
+},
 {
 "titel": "Rhine barge restrictions could last into mid-November, warn brokers",
 "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPanR6WWJXZ2hVS2l1UnpkXzNNOEl0WVNpMG5mSm9oNGZ5M3ZnZ3o1YnhEMVJGcEZFT3FIM3lNTl80ZFhscmhaakw0WVhpZXVtb1U4MFRmZS1GaUdIbU9Ud3djZ2FEOGRUVlZkSmp4aDdQcFJySWdTQmNaYzZmUHM1Nmg1bWxpSkhCWjRmTk44N1JYNzI1eFlIaVk4bjVJZThUbXI3U3RTWnBCWDhYaHc?oc=5",
@@ -178,14 +102,6 @@
 "sprache": "English",
 "dienst": "Google News",
 "datum": "2026-10-27"
-},
-{
-"titel": "Tauck's president on how its river line manages low water in Europe",
-"url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObHpxTDNCWlFXZFRCSk1EcFB2NFVSX2lqMkN2VnlrdlRiMmVZVzBnTVBiM0QxWW5KM0RCQng5Y2g1VFZSd2plcTBzaF9mRWZvYzR5di05U2FTc3A2bkpBS3dzRVhSMDdEX0hMaVBQV3gxNXZiV3N6WVlzUkdMbHJuNm9jSzl5VXFSekhoSHpPS05aOFVzRHozQ1lVRkc?oc=5",
-"quelle": "Travel Weekly",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-25"
 }
 ],
 "brenner": [
@@ -227,6 +143,14 @@
 "titel": "Stau vor dem Gotthard-Südportal hält bis am Abend an",
 "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObm9Lcy1hMzhpV2l6ekotbmhMdXlPVUxRRG9vUFJicHp0ZHNVdXgyY2o4cm5FakkzLTJmSHNWQXNlT3pXZzJzT1dDcVBYaFNNbFlvSlVRQXdpTElpaGVJTzBxNHkydzZ5TDlLb3loT3E4NEdVaUljQlc5LTRzMjBydDk3YmxfWWR5UkNSYVI5V1FTeW91VGVwZnQzbFdoZGNQ?oc=5",
 "quelle": "Watson",
+"sprache": "German",
+"dienst": "Google News",
+"datum": "2026-10-25"
+},
+{
+"titel": "10 Kilometer Stau vor dem Gotthard: 100 Minuten Wartezeit",
+"url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSHhXYU42czhQNmJSVWloa2F6dEl2Wm84THk4SkRyRExMYXZQeU1DS0V3MTZlNFpmTkxxOTR6eVdUazZuUTdTdGJjbEowd1FVS3QxTVF4aW1TOTNDWk5Sa2IyRURIaEs2U3U1ak9mWTQzRm91RXE5TkpNV3I0aEdRaWV6WQ?oc=5",
+"quelle": "imTicker",
 "sprache": "German",
 "dienst": "Google News",
 "datum": "2026-10-25"

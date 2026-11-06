@@ -607,7 +607,9 @@ def main():
     for g in gebiete:
         g.pop("_name_quelle", None)
         g.pop("_key", None)
-    out = {"land": "Nordrhein-Westfalen", "wahltag": "2025-09-14", "vergleich": "2020-09-13", "farben": FARBE,
+    lagef = HIER / "geo/kommunen_lage.json"      # von kommunal_lage.py (Wikidata)
+    lage = json.loads(lagef.read_text()) if lagef.exists() else {}
+    out = {"land": "Nordrhein-Westfalen", "lage": lage, "wahltag": "2025-09-14", "vergleich": "2020-09-13", "farben": FARBE,
            "quelle": {"name": "IT.NRW / Ministerium des Innern NRW, Kommunalwahlen 2025, Heft 3: Endgültige Ergebnisse (Oktober 2025, aktualisiert 04.11.2025)",
                       "lizenz": "Datenlizenz Deutschland – Namensnennung 2.0", "url": "https://www.wahlergebnisse.nrw/kommunalwahlen/2025/"},
            "gebiete": gebiete, "pruefung": pruef}

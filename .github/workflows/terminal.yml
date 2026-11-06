@@ -57,7 +57,9 @@ jobs:
           /tmp/terminal-tests/node_modules/.bin/playwright install --with-deps chromium --only-shell
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/country-smoke.js app/dist/bankterminal.html
       - name: Weltkugel prüfen
-        run: NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/globus-smoke.js app/dist/weltkugel.html
+        run: |
+          NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/globus-smoke.js app/dist/weltkugel.html
+          NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/kommunen-smoke.js app/dist/weltkugel.html
       - name: Unternehmensnetze prüfen
         run: |
           python3 stammdaten/beziehungen/beziehungen.py pruefen

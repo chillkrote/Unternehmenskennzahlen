@@ -81,7 +81,7 @@ const GLOBUS = (() => {
      Börse, Unternehmen und Politik nach den freigegebenen Varianten 1A, 2A, 3A (Robin, 04.11.2026). */
   const FORMEN = [["handel", "Handel", "h-ueb"], ["vwl", "Volkswirtschaft", "v-ueb"], ["boerse", "Börse & Finanzen", "b-ueb"], ["unternehmen", "Unternehmen", "u-ueb"], ["politik", "Politik & Wahlen", "p-ueb"]];
   const ENTWURF = {};
-  const S = { form: "handel", auswahl: [], raum: null, buendnis: null, region: null, kommune: null, u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
+  const S = { form: "handel", auswahl: [], raum: null, buendnis: null, region: null, kommune: null, polEbene: "auto", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
   let map = null, klassisch = null, imGlobus = false, hinweisTimer = 0, osmFehler = 0, osmGeladen = false;
 
   /* ----- Unternehmen mit Sitz-Koordinaten -----
@@ -951,13 +951,13 @@ const GLOBUS = (() => {
         "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-line-height": 1.2, "text-padding": 2, "symbol-sort-key": ["-", 0, ["get", "gr"]] },
         paint: { "text-halo-color": "#07090c", "text-halo-width": 1.3, "text-opacity": ["interpolate", ["linear"], ["zoom"], ZG[0] - .2, 0, ZG[0] + .2, 1] } });
       if (KO && KO.lage) {
-        const deck = (a, b) => ["interpolate", ["linear"], ["zoom"], ZG[1] + .2, a, ZG[1] + .8, b];
-        schicht("politik", { id: "po-kom-kreis", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "kreis"], minzoom: ZG[1] + .2, maxzoom: ZG[1] + 1.8, paint: { "fill-color": ["get", "farbe"], "fill-opacity": deck(0, .55) } }, vor);
-        schicht("politik", { id: "po-kom-stadt", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "stadt"], minzoom: ZG[1] + .2, paint: { "fill-color": ["get", "farbe"], "fill-opacity": deck(0, .6) } }, vor);
-        schicht("politik", { id: "po-kom-gem", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "gem"], minzoom: ZG[1] + 1.6, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .6 } }, vor);
-        schicht("politik", { id: "po-kom-linie", type: "line", source: "po-kom-fl", minzoom: ZG[1] + .2, paint: { "line-color": "#07090c", "line-opacity": .75, "line-width": ["case", ["==", ["get", "ebene"], "kreis"], 1.6, .6] } }, vor);
-        schicht("politik", { id: "po-kom-wahl", type: "line", source: "po-kom-fl", filter: ["==", ["get", "id"], S.kommune || ""], minzoom: ZG[1] + .2, paint: { "line-color": "#ffa828", "line-width": 3 } }, vor);
-        schicht("politik", { id: "po-kom-t", type: "symbol", source: "po-kom", minzoom: ZG[1] + 1.2, layout: { "text-field": ["format", ["get", "name"], { "font-scale": 1 }, "\n", {}, ["get", "top"], { "text-color": "#c3cad3", "font-scale": .85 }], "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-offset": [0, 1.1], "text-anchor": "top", "text-padding": 2, "text-max-width": 9, "symbol-sort-key": ["-", 0, ["get", "sitze"]] },
+        // Sichtbarkeit und Filter setzt politikEbeneAnwenden() je nach Ebene (Bund, Land, Kreise, Gemeinden); Zoom nur als Untergrenze
+        schicht("politik", { id: "po-kom-kreis", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "kreis"], minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .55 } }, vor);
+        schicht("politik", { id: "po-kom-stadt", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "stadt"], minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .6 } }, vor);
+        schicht("politik", { id: "po-kom-gem", type: "fill", source: "po-kom-fl", filter: ["==", ["get", "ebene"], "gem"], minzoom: ZG[1] - .4, paint: { "fill-color": ["get", "farbe"], "fill-opacity": .6 } }, vor);
+        schicht("politik", { id: "po-kom-linie", type: "line", source: "po-kom-fl", minzoom: ZG[1] - .4, paint: { "line-color": "#07090c", "line-opacity": .75, "line-width": ["case", ["==", ["get", "ebene"], "kreis"], 1.6, .6] } }, vor);
+        schicht("politik", { id: "po-kom-wahl", type: "line", source: "po-kom-fl", filter: ["==", ["get", "id"], S.kommune || ""], minzoom: ZG[1] - .4, paint: { "line-color": "#ffa828", "line-width": 3 } }, vor);
+        schicht("politik", { id: "po-kom-t", type: "symbol", source: "po-kom", minzoom: ZG[1] + .6, layout: { "text-field": ["format", ["get", "name"], { "font-scale": 1 }, "\n", {}, ["get", "top"], { "text-color": "#c3cad3", "font-scale": .85 }], "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-offset": [0, 1.1], "text-anchor": "top", "text-padding": 2, "text-max-width": 9, "symbol-sort-key": ["-", 0, ["get", "sitze"]] },
           paint: { "text-color": "#e8ecf1", "text-halo-color": "#07090c", "text-halo-width": 1.3 } }, vor);
       }
       schicht("politik", { id: "po-de-t", type: "symbol", source: "po-de-pkt", minzoom: ZG[1] - .2, layout: {
@@ -971,6 +971,33 @@ const GLOBUS = (() => {
       const f = m.queryRenderedFeatures(e.point, { layers: ["po-de-flaeche", "po-gl-flaeche"].filter(i => m.getLayer(i)) }); if (!f.length) return false;
       const code = f[0].properties.code, iso = code.slice(0, 2);
       S.region = S.region === code ? null : code; S.kommune = null; if (S.land !== iso) landWaehlen(iso); politikAnwenden(); seiteZeichnen(); return true; } });
+  /* Ebenenmodell Politik: Bund (Staaten), Land (Bundesländer/Gliedstaaten), Kreise (Landkreise, kreisfreie Städte), Gemeinden.
+     Wählbar in der Seitenleiste; „Automatisch“ wechselt nach Zoom. Kommunen-Flächen ersetzen nur dort die Landesfläche, wo sie angezeigt werden (NRW). */
+  const POL_EBENEN = ["bund", "land", "kreis", "gem"];
+  function polEbeneWirksam() {
+    if (S.polEbene !== "auto") return S.polEbene;
+    const z = map ? map.getZoom() : 0;
+    return z < ZG[1] - .4 ? "bund" : z < ZG[1] + 1.2 || !(KO && KO.lage) ? "land" : z < ZG[1] + 2.4 ? "kreis" : "gem";
+  }
+  let polEff = null;
+  function politikEbeneAnwenden(erzwingen) {
+    if (!map) return;
+    const eff = polEbeneWirksam(); if (!erzwingen && eff === polEff) return; polEff = eff;
+    const vis = (id, an) => { if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", an ? "visible" : "none"); };
+    const kom = eff === "kreis" || eff === "gem", nrw = ["!=", ["get", "code"], "DE-NW"];
+    ["po-de-flaeche", "po-de-linie", "po-de-t", "po-gl-flaeche", "po-gl-linie", "po-gl-t"].forEach(i => vis(i, eff !== "bund"));
+    ["po-de-flaeche", "po-de-linie", "po-de-t"].forEach(i => { if (map.getLayer(i)) map.setFilter(i, kom ? nrw : null); });
+    vis("po-kom-kreis", eff === "kreis"); vis("po-kom-stadt", kom); vis("po-kom-gem", eff === "gem"); vis("po-kom-linie", kom); vis("po-kom-wahl", kom); vis("po-kom-t", kom);
+    if (map.getLayer("po-kom-linie")) map.setFilter("po-kom-linie", eff === "kreis" ? ["!=", ["get", "ebene"], "gem"] : null);
+    if (map.getLayer("po-kom-t")) map.setFilter("po-kom-t", eff === "kreis" ? ["==", ["get", "gross"], 1] : null);
+  }
+  function polEbenenChips(iso) {
+    const de = iso === "DE" && KO && KO.lage, gl = iso === "DE" || gliedVon(iso);
+    if (!gl) return "";
+    const l = de ? [["auto", "Automatisch"], ["bund", "Bund"], ["land", "Länder"], ["kreis", "Kreise & Städte"], ["gem", "Gemeinden"]] : [["auto", "Automatisch"], ["bund", "Staat"], ["land", "Gliedstaaten & Regionen"]];
+    return `<div class="gk-block"><h3>Ebene der Karte</h3><div class="gk-chips">${l.map(([k, t]) => `<button type="button" data-gkpolebene="${k}" aria-pressed="${S.polEbene === k}">${esc(t)}</button>`).join("")}</div>
+      <p class="gk-quelle" style="margin-top:6px">${de ? "Bund = Staat, Land = Bundesländer, Kreise & Städte = Landkreise und kreisfreie Städte, Gemeinden = kreisangehörige Städte und Gemeinden. Kommunen derzeit nur für Nordrhein-Westfalen; Bezirksvertretungen stehen im Block der kreisfreien Stadt. " : ""}„Automatisch“ wechselt mit dem Zoom.</p></div>`;
+  }
   function politikAnwenden() {
     if (!map) return;
     if (map.getSource("po-land")) map.getSource("po-land").setData(polPunkte());
@@ -979,6 +1006,7 @@ const GLOBUS = (() => {
     if (map.getSource("po-gl")) { const gd = gliedDaten(); map.getSource("po-gl").setData(gd); map.getSource("po-gl-pkt").setData(gliedPunkte(gd)); }
     if (map.getLayer("po-flaeche")) map.setPaintProperty("po-flaeche", "fill-opacity", polDeckkraft());
     if (map.getLayer("po-kom-wahl")) map.setFilter("po-kom-wahl", ["==", ["get", "id"], S.kommune || ""]);
+    polEff = null; politikEbeneAnwenden(true);
   }
   // Tooltips der drei Formen (Kreise der Börsenplätze und der Unternehmensdichte, Wahlsymbole, Bundesländer)
   const INFO_TIPS = {
@@ -1255,7 +1283,7 @@ const GLOBUS = (() => {
     const verbund = stufe >= 3 ? handelBlock(iso) + firmenBlock(iso) : "";
     // ausgewählter Gliedstaat bzw. Bundesland (Regierung, Parlament, Wahl) steht oben, darunter die Staatsebene
     const oben = stufe >= 3 && S.region && S.region.startsWith(iso + "-") ? (iso === "DE" ? deutschlandBlock(stufe, "region") : gliedBlock(iso, "det")) : "";
-    return (S.kommune ? komBlock(S.kommune) : "") + oben + kopf + regionen + verbund;
+    return polEbenenChips(iso) + (S.kommune ? komBlock(S.kommune) : "") + oben + kopf + regionen + verbund;
   }
   function karteForm(iso) {
     if (S.form === "boerse") return finanzKacheln(iso);
@@ -1427,7 +1455,7 @@ const GLOBUS = (() => {
     map.on("zoomend", zoomHinweis);
     map.on("moveend", vorschauen);
     map.on("movestart", e => { S.nutzer = !!e.originalEvent; });
-    map.on("zoom", stufeAktualisieren);
+    map.on("zoom", stufeAktualisieren); map.on("zoom", () => { if (S.polEbene === "auto") politikEbeneAnwenden(); });
     return map;
   }
 
@@ -2153,6 +2181,9 @@ const GLOBUS = (() => {
     if (g("data-gkhandelzeigen") != null) { const eb = EBENEN.find(x => x.id === "handel"); if (eb && !eb.an) { eb.an = true; if (map) sichtbar(eb); ebenenListe(); } const c = mitte(S.land); if (map && c) map.flyTo({ center: c, zoom: 3.6, duration: 1400 }); return true; }
     if ((v = g("data-gkkont")) != null) { const v2 = g("data-gkkont2"); if (t.closest("[data-gkkont2]")) kontWaehlen(v, v2); else kontWaehlen(v, null); return true; }
     if (g("data-gkip") != null) { ipKontinent(); return true; }
+    if ((v = g("data-gkpolebene")) != null) { S.polEbene = v; politikEbeneAnwenden(true);
+      if ((v === "kreis" || v === "gem") && map && S.land === "DE" && map.getZoom() < ZG[1] + (v === "gem" ? 2.4 : 1.2)) map.flyTo({ center: [7.5, 51.5], zoom: v === "gem" ? 7.6 : 6.4, duration: 1200 });
+      seiteZeichnen(); return true; }
     if (g("data-gkkomzu") != null) { S.kommune = null; politikAnwenden(); seiteZeichnen(); return true; }
     if ((v = g("data-gkstufe")) != null) {
       const [, z] = STUFEN_TEXT[+v - 1], c = +v === 1 ? ((KONT.find(x => x[0] === S.kont) || [])[3]) : mitte(S.land);

@@ -49,3 +49,6 @@ Pflichtfelder, Spaltenköpfe und Blätter, Listenwerte, Unternehmens-ID gegen `s
 - Pay Ratio als „69:1“ wird gelesen, 0 ist bei Variante Bericht erlaubt (z. B. Tesla ohne CEO-Vergütung).
 - Doppelte Zeilen, Registerdubletten, bereits vorhandene Zeilen und unbekannte Geschlechts-Personen werden als Warnung übersprungen; Stand als Freitext landet in der Bemerkung.
 Die Original-Excel liegt unter `governance/handeingabe/eingaenge/`.
+
+## Fremdwährungsbeträge in verguetung.csv
+`verguetung.csv` hat zusätzlich `betrag_original_tsd` (Tausend der Originalwährung) und `waehrung` (ISO-Code). Sie werden beim Build aus dem Bemerkungstext gelesen (`lib.original_aus_text`), wenn `betrag_tsd_eur` leer ist. Keine Umrechnung nach EUR; Gesamtwerte und Komponenten nicht addieren.

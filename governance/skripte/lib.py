@@ -37,6 +37,33 @@ def V(src, gremium, name, betrag, art, seite, bem='', gj=2025):
 def W(src, name, station, organisation='', zeitraum='', art='', seite=''):
     werdegang.append(dict(person_id=slug(name), name=name, station=station, organisation=organisation, zeitraum=zeitraum, art=art, quelle_dokument=src[0], seite=seite))
 
+
+_ORIG = [
+    (re.compile(r'Originalbetrag:?\s*(GBP|USD|EUR|CHF)\s*([\d.,]+)\s*\((Tausend|Einheiten)'), None),
+    (re.compile(r'[Oo]riginal(?:betrag)?:?\s*(USD|GBP|CHF)\s*([\d.,]+)'), 'voll'),
+    (re.compile(r'[Oo]riginal(?:betrag)?:?\s*([\d.,]+)\s*(USD|GBP|CHF)'), 'voll_nw'),
+    (re.compile(r'^([\d.,]+)\s*T£'), 'T£'),
+    (re.compile(r'([\d.,]+)\s*T USD'), 'T$'),
+]
+def _num(x):
+    x = x.rstrip('.,').replace(',', '')
+    try: return float(x)
+    except ValueError: return None
+
+def original_aus_text(bem):
+    """(Betrag in Tausend der Originalwährung, Währung) aus der Bemerkung; leer, wenn nicht erkennbar. Keine Umrechnung."""
+    for rx, mode in _ORIG:
+        m = rx.search(bem or '')
+        if not m: continue
+        if mode is None: v, w, einh = _num(m.group(2)), m.group(1), m.group(3)
+        elif mode == 'voll': v, w, einh = _num(m.group(2)), m.group(1), 'Einheiten'
+        elif mode == 'voll_nw': v, w, einh = _num(m.group(1)), m.group(2), 'Einheiten'
+        elif mode == 'T£': v, w, einh = _num(m.group(1)), 'GBP', 'Tausend'
+        else: v, w, einh = _num(m.group(1)), 'USD', 'Tausend'
+        if v is None: continue
+        return (round(v / 1000 if einh == 'Einheiten' else v, 3), w)
+    return ('', '')
+
 def uni(name, uid): UNI[name] = uid
 
 def w(name, rows, cols):
@@ -71,6 +98,10 @@ def write_all():
     w('gremien_mitglieder.csv', mitglieder, ['unternehmen_id','gj','organ','person_id','name','funktion','vertreter_art','seit','bis','beruf_laut_dokument','quelle_dokument','seite','bemerkung'])
     w('mandate_extern.csv', mandate, ['person_id','name','typ','gesellschaft','gesellschaft_unternehmen_id','sitz','funktion','gueltig','ueber_unternehmen_id','gj','quelle_dokument','seite','bemerkung'])
     w('werdegang.csv', werdegang, ['person_id','name','station','organisation','zeitraum','art','quelle_dokument','seite'])
-    w('verguetung.csv', verg, ['unternehmen_id','gj','gremium','person_id','name','betrag_tsd_eur','art','quelle_dokument','seite','bemerkung'])
+    for r in verg:   # Fremdwährung: Originalbetrag (Tausend) und Währung aus dem Bemerkungstext, keine Umrechnung
+        if not r.get('betrag_tsd_eur') and not r.get('betrag_original_tsd'):
+            r['betrag_original_tsd'], r['waehrung'] = original_aus_text(r.get('bemerkung', ''))
+        r.setdefault('betrag_original_tsd', ''); r.setdefault('waehrung', '')
+    w('verguetung.csv', verg, ['unternehmen_id','gj','gremium','person_id','name','betrag_tsd_eur','betrag_original_tsd','waehrung','art','quelle_dokument','seite','bemerkung'])
     w('kennzahlen_gremien.csv', kenn, ['unternehmen_id','gj','feld','wert','einheit','quelle_dokument','seite','bemerkung'])
     print({k: len(v) for k, v in dict(personen=pers, mitglieder=mitglieder, mandate=mandate, werdegang=werdegang, verguetung=verg, kennzahlen=kenn).items()})

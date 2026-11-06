@@ -46,11 +46,19 @@ SEITE_RE = re.compile(r"^\d{1,4}([-–]\d{1,4})?(\s*,\s*\d{1,4}([-–]\d{1,4})?)
 ID_RE = re.compile(r"^U\d{6}$")
 
 
+TOLERANT = False  # --tolerant: unverifizierte Seiten / Fremdwährungsbeträge zulassen (siehe README)
+TOLERANT_WARNUNG = ("Doppelte Zeile in der Datei", "doppelt im Register", "steht bereits in", "mehrfach (auch im Blatt", "mehrere berichtete Pay Ratios",
+                    "unbekannt: weder", "nicht in der Liste.", "Seite fehlt")
+
+
 class Bericht:
     def __init__(self):
         self.fehler, self.warnungen, self.info = [], [], []
 
     def f(self, ort, text):
+        if TOLERANT and any(t in text for t in TOLERANT_WARNUNG):
+            self.warnungen.append(f"{ort}: (toleriert, Zeile übersprungen oder ungeprüft) {text}")
+            return
         self.fehler.append(f"{ort}: {text}")
 
     def w(self, ort, text):
@@ -207,6 +215,8 @@ def schluessel_mit(r):
 def pflicht(b, ort, d, namen):
     ok = True
     for n in namen:
+        if TOLERANT and n in ("Seite", "Betrag (TEUR)"):
+            continue
         if d.get(n) is None or str(d.get(n)).strip() == "":
             b.f(ort, f"Pflichtfeld '{n}' ist leer.")
             ok = False
@@ -246,7 +256,7 @@ class Quellenpruefung:
             self.b.w(ort, f"Datei '{q}' liegt (noch) nicht im Repo. Dokument mit dem Import zusammen ablegen.")
         elif q.startswith("http"):
             self.benutzt.add(q)
-        if seite_pflicht and not s:
+        if seite_pflicht and not s and not TOLERANT:
             self.b.f(ort, "Seite fehlt (PDF-Seite der Fundstelle).")
         elif s and not SEITE_RE.match(s.replace(".0", "")):
             self.b.f(ort, f"Seite '{s}' ungültig (Zahl, Bereich 12-13 oder Liste 12, 14).")
@@ -258,6 +268,9 @@ def bem_mit_stand(b, ort, bem, stand):
     if stand is None or stand == "":
         return bem
     d = datum(stand)
+    if not d and TOLERANT:
+        zusatz = f"Stand: {text(stand)}"
+        return f"{bem}; {zusatz}" if bem else zusatz
     if not d:
         b.f(ort, f"Stand '{text(stand)}' ist kein Datum (TT.MM.JJJJ).")
         return bem
@@ -371,10 +384,12 @@ def pruefe(daten, bestand, b):
         if grem not in S.GREMIEN_VERG:
             b.f(ort, f"Gremium '{grem}' nicht in der Liste.")
         betrag = zahl(d["Betrag (TEUR)"])
-        if betrag is None or betrag < 0:
+        if TOLERANT and betrag is None and text(d["Betrag (TEUR)"]) == "" and text(d.get("Bemerkung")):
+            betrag = None  # Fremdwährung: Originalbetrag steht in der Bemerkung, keine Umrechnung
+        elif betrag is None or betrag < 0:
             b.f(ort, f"Betrag '{text(d['Betrag (TEUR)'])}' ist keine Zahl >= 0 (T€).")
             continue
-        if betrag > 100000:
+        if betrag is not None and betrag > 100000:
             b.w(ort, f"Betrag {betrag:,.0f} T€ ist ungewöhnlich hoch (über 100 Mio. €). Einheit T€ richtig?")
         name = text(d["Name"])
         summe = name.startswith(SUMMEN_PRAEFIX)
@@ -384,7 +399,7 @@ def pruefe(daten, bestand, b):
         if not summe and uid and gj and (uid, str(gj), grem, pid) not in mit_organ:
             b.w(ort, f"{name} ist für {uid}/GJ {gj} nicht als Mitglied im Organ {grem} erfasst (Blatt Gremienmitglieder).")
         q, s = quelle(ort, d["Quelle"], d["Seite"])
-        row = dict(unternehmen_id=uid, gj=gj, gremium=grem, person_id=pid, name=name, betrag_tsd_eur=fmt_zahl(betrag), art=text(d["Art"]),
+        row = dict(unternehmen_id=uid, gj=gj, gremium=grem, person_id=pid, name=name, betrag_tsd_eur=fmt_zahl(betrag) if betrag is not None else "", art=text(d["Art"]),
                    quelle_dokument=q, seite=s, bemerkung=bem_mit_stand(b, ort, d.get("Bemerkung"), d.get("Stand")))
         if not (uid and gj):
             continue
@@ -397,6 +412,8 @@ def pruefe(daten, bestand, b):
             b.f(ort, f"{name} ({grem}, {uid}, GJ {gj}) mit dieser Art steht bereits in governance/verguetung.csv.")
             continue
         out["verguetung"].append(row)
+        if betrag is None:
+            continue
         if summe and name.startswith("Gesamt"):
             summen[(uid, str(gj), grem)] = (betrag, ort)
         elif not summe:
@@ -525,6 +542,8 @@ def pruefe(daten, bestand, b):
             b.f(ort, f"Variante '{var}' nicht in {S.VARIANTEN}.")
             continue
         basis = text(d["Beschäftigtenkreis / Basis"])
+        if TOLERANT and isinstance(d.get("Pay Ratio (berichtet)"), str) and re.fullmatch(r"\s*[\d.,]+\s*:\s*1\s*", d["Pay Ratio (berichtet)"]):
+            d["Pay Ratio (berichtet)"] = d["Pay Ratio (berichtet)"].split(":")[0].strip()  # "69:1" -> 69
         pr, av = zahl(d.get("Pay Ratio (berichtet)")), zahl(d.get("Ø-Vergütung Beschäftigte (TEUR)"))
         pa, bn = zahl(d.get("Personalaufwand Konzern (Mio. EUR)")), zahl(d.get("Beschäftigte (Anzahl)"))
         for n, v in (("Pay Ratio (berichtet)", d.get("Pay Ratio (berichtet)")), ("Ø-Vergütung Beschäftigte (TEUR)", d.get("Ø-Vergütung Beschäftigte (TEUR)")),
@@ -549,7 +568,7 @@ def pruefe(daten, bestand, b):
             if av or pr:
                 b.w(ort, "Variante B: Felder der Varianten A/Bericht werden ignoriert.")
         else:
-            if pr is None or pr <= 0:
+            if pr is None or pr < 0 or (pr == 0 and not TOLERANT):
                 b.f(ort, "Variante Bericht braucht die berichtete Pay Ratio > 0.")
                 continue
             if pr > 2000:
@@ -676,7 +695,10 @@ def hauptprogramm(argv=None):
     ap.add_argument("datei")
     ap.add_argument("--schreiben", action="store_true", help="JSON ablegen und build.py ausführen")
     ap.add_argument("--bericht", help="Prüfbericht als Markdown speichern")
+    ap.add_argument("--tolerant", action="store_true", help="Seite optional, Fremdwährungsbeträge ohne T€ zulassen, Duplikate überspringen")
     a = ap.parse_args(argv)
+    global TOLERANT
+    TOLERANT = a.tolerant
     stem = re.sub(r"[^A-Za-z0-9_-]+", "_", Path(a.datei).stem)
     b = Bericht()
     daten, fehler = lese(a.datei)

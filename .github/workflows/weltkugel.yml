@@ -6,6 +6,7 @@ name: Weltkugel-Daten
 #    und Zinsen, Devisen, Rohstoffe, Börsenplätze (BIS, OECD, EZB, FRED) -> app/data/boerse_welt.json
 #    und Regierungen, Wahlkalender (auch "gerade gewählt") -> app/data/politik.json,
 #    nationale Parlamente aller Staaten (IPU Parline, Wikipedia, Wikidata) -> app/data/parlamente.json (rund 6 Minuten)
+#    und daraus das einheitliche Wahlregister (alle Ebenen) -> app/data/wahlen.json
 #  - Mo 04:23 UTC: Weltbank-Kennzahlen, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> app/data/welt.json
 #    und Regierungen, Wahlkalender, Bundesländer, Umfragen (Wikidata, Wikipedia, Bundeswahlleiterin, DAWUM) -> app/data/politik.json
 #    und Parlamente samt Gliedstaaten der Bundesstaaten -> app/data/parlamente.json (rund 15 Minuten; Wahlartikel im Cache
@@ -66,12 +67,14 @@ jobs:
         run: |
           python3 app/politik_daten.py 2>&1 | tee /tmp/parl.log
           python3 app/parlamente_daten.py --nur-national 2>&1 | tee -a /tmp/parl.log
+          python3 app/wahlen_daten.py --ohne-abruf 2>&1 | tee -a /tmp/parl.log
       - name: Weltbank, Strom, Zölle, Wirtschaftsräume
         if: env.WAS == 'weltdaten' || env.WAS == 'beides'
         run: |
           python3 app/welt_daten.py 2>&1 | tee /tmp/welt.log
           python3 app/politik_daten.py 2>&1 | tee -a /tmp/welt.log
           python3 app/parlamente_daten.py 2>&1 | tee /tmp/parl.log
+          python3 app/wahlen_daten.py --ohne-abruf 2>&1 | tee -a /tmp/parl.log
       - name: Zusammenfassung
         if: always()
         continue-on-error: true
@@ -87,7 +90,7 @@ jobs:
       - name: Änderungen pushen
         id: push
         if: github.ref == 'refs/heads/main'
-        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/politik.json app/data/parlamente.json app/data/parlamente_wahlcache.json
+        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/politik.json app/data/parlamente.json app/data/parlamente_wahlcache.json app/data/wahlen.json
       - name: Terminal neu bauen lassen
         if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"

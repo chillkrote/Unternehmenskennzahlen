@@ -16,10 +16,13 @@ const path = require('node:path');
   if (!(await page.locator('#gk-seite').innerText()).toLowerCase().includes('zollsatz')) throw Error('Zollsatz fehlt in der Darstellung Handel');
   // Börse, Unternehmen, Politik: Deutschland zeigt Finanzdaten, Unternehmen bzw. Regierung
   for (const [f, wort] of [['boerse', 'leitzins'], ['unternehmen', 'unternehmen'], ['politik', 'regierungschef']]) {
-    await page.click(`[data-gkform="${f}"]`); await page.evaluate(() => GLOBUS.landWaehlen('DE')); await page.waitForTimeout(200);
+    await page.click(`[data-gkform="${f}"]`);
+    // Politik startet in der Ansicht „Wahlen“ (app/tests/wahlen-smoke.js); Regierungschefs stehen in der Ansicht „Regierungen“
+    if (f === 'politik') await page.evaluate(() => GLOBUS.politikAnsicht('regierungen'));
+    await page.evaluate(() => GLOBUS.landWaehlen('DE')); await page.waitForTimeout(200);
     if (!(await page.locator('#gk-seite').innerText()).toLowerCase().includes(wort)) throw Error(`${wort} fehlt in der Darstellung ${f}`);
   }
-  await page.evaluate(() => GLOBUS.landWaehlen(null));
+  await page.evaluate(() => { GLOBUS.politikAnsicht('wahlen'); GLOBUS.landWaehlen(null); });
   await page.click('[data-gkform="vwl"]');
   await page.fill('#gk-suchfeld', 'Deutschland'); await page.press('#gk-suchfeld', 'Enter');
   await page.waitForFunction(() => document.querySelector('#gk-seite h2').textContent === 'Deutschland');

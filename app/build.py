@@ -71,7 +71,14 @@ def main():
                         ("__BOERSE_WELT__", "boerse_welt.json"), ("__POLITIK__", "politik.json"), ("__DE_LAENDER__", "../geo/de_laender.geojson"),
                         ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
         f = HIER / "data" / datei
-        seite = seite.replace(platz, f.read_text().replace("</", "<\\/") if f.exists() else "null", 1)
+        inhalt = f.read_text() if f.exists() else "null"
+        if platz == "__WAHLKREISE_BUND__" and f.exists():
+            # Ergebnisse je Wahlkreis stehen im Wahlregister (data/wahlen.json); hier nur Grenzen, Nummer und Name
+            wk = json.loads(inhalt)
+            for ft in wk["features"]:
+                ft["properties"] = {k: ft["properties"][k] for k in ("nr", "name", "land")}
+            inhalt = json.dumps(wk, ensure_ascii=False, separators=(",", ":"))
+        seite = seite.replace(platz, inhalt.replace("</", "<\\/"), 1)
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (HIER / "dist/bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

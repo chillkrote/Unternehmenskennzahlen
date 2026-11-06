@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-COUNTRIES={'Germany':'DE','Deutschland':'DE','UK':'GB','United Kingdom':'GB','France':'FR','Netherlands':'NL','Belgium':'BE','Italy':'IT','Spain':'ES','Sweden':'SE','Switzerland':'CH','Finland':'FI','Denmark':'DK','Norway':'NO','Austria':'AT','Portugal':'PT','Poland':'PL','Greece':'GR','Ireland':'IE','Luxembourg':'LU','United States':'US','Canada':'CA','China':'CN','Czech Republic':'CZ','Czechia':'CZ','Malta':'MT','Cyprus':'CY','Bulgaria':'BG','Liechtenstein':'LI','Hong Kong':'HK','Australia':'AU','Japan':'JP'}
+COUNTRIES={'Germany':'DE','Deutschland':'DE','UK':'GB','United Kingdom':'GB','France':'FR','Netherlands':'NL','Belgium':'BE','Italy':'IT','Spain':'ES','Sweden':'SE','Switzerland':'CH','Finland':'FI','Denmark':'DK','Norway':'NO','Austria':'AT','Portugal':'PT','Poland':'PL','Greece':'GR','Ireland':'IE','Luxembourg':'LU','United States':'US','USA':'US','Canada':'CA','China':'CN','Czech Republic':'CZ','Czechia':'CZ','Malta':'MT','Cyprus':'CY','Bulgaria':'BG','Liechtenstein':'LI','Hong Kong':'HK','Australia':'AU','Japan':'JP'}
 MAP={'bilanzsumme':('bilanz','Total Assets'),'ek':('bilanz','Stockholders Equity'),'umsatz':('guv','Total Revenue'),'ebit':('guv','EBIT'),'ebitda':('guv','EBITDA'),'jue':('guv','Net Income')}
 
 def lade_abschluesse(root,uid,folders=('daten','ergaenzungen'),base='europa'):

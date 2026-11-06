@@ -73,3 +73,13 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 - Leitzinsen (BIS), 10-j. Renditen (OECD, CC BY 4.0), EZB-Kurse, Rohstoffe (FRED), Börsenplätze von Hand: app/boerse_welt.py -> app/data/boerse_welt.json
 - Regierungen (Wikidata, CC0), Wahlkalender (Wikipedia, CC BY-SA 4.0), Bundestagswahl 2025 je Land (Bundeswahlleiterin, DL-DE 2.0), Umfragen (DAWUM, ODbL), Bundesländer (Natural Earth), Bündnisse von Hand: app/politik_daten.py -> app/data/politik.json
 - Parlamente aller Staaten und Gliedstaaten: IPU Parline (CC BY-NC-SA 4.0, nicht kommerziell), Wikipedia-Infoboxen (CC BY-SA 4.0), Wikidata (CC0), Umrisse Natural Earth: app/parlamente_daten.py -> app/data/parlamente.json, app/geo/gliedstaaten.geojson
+
+## Politik: Kommunen (neu 06.11.2026)
+
+| Feld | Stand jetzt | Warum offen | Weg |
+|---|---|---|---|
+| Kommunen außerhalb Nordrhein-Westfalens | nur NRW: 54 Räte/Kreistage (22 kreisfreie Städte, Stadt Aachen, 30 Kreise, Städteregion Aachen) und 141 Bezirksvertretungen aus Heft 3 der Kommunalwahlen 2025 (IT.NRW) | Quelle ist das Heft; andere Länder haben eigene Landesämter | Je Land ein Leser in app/kommunal_daten.py, Ablage unter kommunalwahlen/<land>_<jahr>/ |
+| Kreisangehörige Gemeinden und Städte NRW (z. B. Moers, Ratingen) | fehlen | Heft 3 enthält nur kreisfreie Städte und Kreise; die Gemeinderäte stehen in Heft 2 und Heft 1 | Hefte 1 und 2 bei IT.NRW holen, gleiche Parser |
+| Koalitionen/Mehrheitsbündnisse in den Räten | fehlen | Amtliche Statistik enthält keine Bündnisse | Ratsinformationssysteme einzeln (aufwendig) |
+| Kommunen auf der Weltkugel | fehlen | Es gibt keine Gebietsgrenzen/Koordinaten der Kommunen im Projekt | Gebietsgrenzen (BKG VG250, Datenlizenz Deutschland) einbinden |
+| Regionalverband Ruhr (Verbandsversammlung, Tabelle 5) | nicht eingelesen | Eigene Tabellenform | Reader ergänzen |

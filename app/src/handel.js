@@ -130,7 +130,7 @@ const HDL = (() => {
 /* ---------- Politik & Wahlen: Bereich des Terminals (Reiter POL) ----------
    Daten: politik-daten = data/politik.json (politik_daten.py: Wikidata, Wikipedia-Wahlkalender, Bundeswahlleiterin, DAWUM).
    Ansichten: p-ueb (Regierungen), p-wahlen (Wahlkalender), p-de (Deutschland: Bundestag, Umfragen, Länder),
-   p-parl (Parlamente aller Staaten, gerade gewählt), p-glied (Gliedstaaten der Bundesstaaten). */
+   p-parl (Parlamente aller Staaten, gerade gewählt), p-glied (Gliedstaaten der Bundesstaaten), p-kom (Kommunen: Räte, Kreistage, Bezirksvertretungen). */
 const POL = (() => {
   let P = null;
   const lade = () => { if (P === null) { try { P = JSON.parse(document.getElementById("politik-daten").textContent); } catch { P = false; } } return P; };
@@ -226,11 +226,66 @@ const POL = (() => {
       body: `<div style="margin-bottom:8px">${chips}</div>${(a.rolle || {})[GL_LAND] ? `<p class="n" style="margin:0 0 6px">Amt „Regierungschef“ in dieser Ebene: ${esc(a.rolle[GL_LAND])}</p>` : ""}<table class="tab">${KOPF}<tbody>${zeilen}</tbody></table>${welt("politik")}`,
       fuss: "Gliedstaaten, Regionen und Regierungschefs mit Amtsantritt laut Wikidata (CC0, P150/P300/P6/P580/P102); Regierungslager laut Infobox (Regierung/Opposition); Parlamente und Wahltermine laut Infobox des Wikipedia-Artikels (CC BY-SA 4.0). Gliedstaaten ohne gepflegte Infobox bleiben leer (siehe app/OFFENE_DATENFELDER.md)." })}</div>`;
   }
+  /* Kommunen (kommunal-daten = data/kommunal.json aus kommunal_daten.py): Räte, Kreistage, Bezirksvertretungen */
+  let KO = null, KO_ID = "duesseldorf";
+  const ladeKO = () => { if (KO === null) { try { KO = JSON.parse(document.getElementById("kommunal-daten").textContent); } catch { KO = false; } } return KO; };
+  const KO_ORDNUNG = ["BSW", "Die Linke", "Die PARTEI", "SPD", "GRÜNE", "Volt", "PIRATEN", "T I E R S C H U T Z", "Tierschutzpartei", "ÖDP", "Wählergruppen", "FAMILIE", "FREIE WÄHLER", "FDP", "CDU", "AfD"];
+  const WGR_F = ["#8f8ba8", "#a58fc7", "#7f9bc4", "#b79fb0", "#98b3a0", "#c4a77f", "#8fb0b8", "#b09090"];
+  const koFarbe = (k, p) => { const m = /^Wählergruppe (\d+)$/.exec(p); return m ? WGR_F[(+m[1] - 1) % WGR_F.length] : (k.farben[p] || "#8b95a3"); };
+  const koRang = p => { const q = /^Wählergruppe/.test(p) ? "Wählergruppen" : p, i = KO_ORDNUNG.indexOf(q); return i < 0 ? 12.5 : i; };
+  /* Sitzverteilung als Halbkreis; liste = [[Partei, Sitze, Farbe]] von links nach rechts */
+  function koHalbkreis(liste, breite) {
+    const n = liste.reduce((a, g) => a + g[1], 0); if (!n) return "";
+    const reihen = Math.max(2, Math.min(14, Math.round(Math.sqrt(n * .3)))), r0 = reihen <= 3 ? 48 : 30, r1 = 96, radien = []; let ges = 0;
+    for (let i = 0; i < reihen; i++) { const r = r0 + (r1 - r0) * i / (reihen - 1); radien.push(r); ges += r; }
+    const pk = []; radien.forEach(r => { const k = Math.round(n * r / ges); for (let j = 0; j < k; j++) { const w = Math.PI * (1 - (k === 1 ? .5 : j / (k - 1))); pk.push([Math.cos(w) * r, -Math.sin(w) * r, w, r]); } });
+    pk.sort((a, b) => b[2] - a[2] || a[3] - b[3]);
+    const farbe = []; liste.forEach(([, k, c]) => { for (let i = 0; i < k; i++) farbe.push(c); });
+    const proReihe = Math.max(1, ...radien.map(r => Math.round(n * r / ges))), rad = Math.min(5.5, reihen > 1 ? (r1 - r0) / (reihen - 1) * .42 : 5.5, Math.PI * r1 / proReihe * .46).toFixed(2);
+    return `<svg viewBox="-102 -100 204 106" style="width:100%;max-width:${breite || 320}px;display:block;margin:0 auto" role="img" aria-label="Sitzverteilung">${pk.slice(0, farbe.length).map((q, i) => `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="${rad}" fill="${esc(farbe[i])}"/>`).join("")}<text x="0" y="-6" text-anchor="middle" font-size="${n > 99 ? 24 : 28}" fill="#e8ecf1" font-family="var(--mono)">${n}</text></svg>`;
+  }
+  const koLegende = liste => `<div style="display:flex;flex-wrap:wrap;gap:3px 10px;justify-content:center;margin-top:4px;font-size:11px">${[...liste].sort((a, b) => b[1] - a[1]).map(g => `<span><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${esc(g[2])};margin-right:4px"></i>${esc(g[3] || g[0])} <b>${g[1]}</b></span>`).join("")}</div>`;
+  function koSitze(k, g, sitze) {
+    const wg = g.wgr || {};
+    const l = sitze.filter(x => x.sitze > 0).map(x => [x.partei, x.sitze, koFarbe(k, x.partei), wg[x.partei] ? `${x.partei} (${wg[x.partei].replace(/\s*\([^)]*\)$/, "").slice(0, 40)})` : x.partei.replace(/^T I E R S C H U T Z$/, "TIERSCHUTZ")]);
+    return l.sort((a, b) => koRang(a[0]) - koRang(b[0]) || a[0].localeCompare(b[0], "de"));
+  }
+  function viewKom() {
+    const k = ladeKO(); if (!k || !k.gebiete) return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen", sub: "keine Daten", body: `<p class="n">Keine Kommunaldaten im Build (app/kommunal_daten.py).</p>` })}</div>`;
+    let g = k.gebiete.find(x => x.id === KO_ID) || k.gebiete[0]; KO_ID = g.id;
+    const chips = typ => k.gebiete.filter(x => x.typ === typ).sort((a, b) => a.name.localeCompare(b.name, "de")).map(x => `<button type="button" class="key" data-pkom="${esc(x.id)}" aria-pressed="${x.id === KO_ID}" style="margin:0 4px 4px 0">${esc(x.name.replace(/^Kreis /, ""))}</button>`).join("");
+    const sitze = g.sitze.map(x => ({ partei: x.partei, sitze: x.gesamt })), sl = koSitze(k, g, sitze), n = g.sitze_gesamt, maj = Math.floor(n / 2) + 1;
+    const gr = [...g.sitze].sort((a, b) => b.gesamt - a.gesamt)[0], frauen = g.sitze.reduce((a, x) => a + x.frauen, 0);
+    const name20 = {}; g.sitze.forEach(x => name20[x.partei] = x.gesamt_2020);
+    const wgrName = p => (g.wgr || {})[p] ? ` <span class="n">${esc(g.wgr[p].replace(/\s*\([^)]*\)$/, ""))}</span>` : "";
+    const bm = g.buergermeister;
+    const zeile = x => { const d = x.stimmen != null && x.stimmen_2020 != null && x.prozent != null && x.prozent_2020 != null ? x.prozent - x.prozent_2020 : null, si = g.sitze.find(y => y.partei === x.partei);
+      return `<tr><td style="text-align:left"><i style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${esc(koFarbe(k, x.partei))};margin-right:6px"></i>${esc(x.partei === "T I E R S C H U T Z" ? "TIERSCHUTZ" : x.partei)}${wgrName(x.partei)}</td><td>${x.stimmen == null ? "–" : f0.format(x.stimmen)}</td><td>${x.prozent == null ? "–" : f1.format(x.prozent) + " %"}</td><td class="n">${x.prozent_2020 == null ? "–" : f1.format(x.prozent_2020) + " %"}</td><td class="${d == null ? "n" : d >= 0 ? "pos" : "neg"}">${d == null ? "–" : (d > 0 ? "+" : "") + f1.format(d)}</td><td>${si ? si.gesamt : "–"}</td><td class="n">${si ? si.gesamt_2020 : "–"}</td></tr>`; };
+    const bezirke = g.bezirke.length ? panel({ code: "BV", titel: `Bezirksvertretungen ${esc(g.name)}`, sub: `${g.bezirke.length} Stadtbezirke, Wahl ${esc(datum(k.wahltag))}`, breite: "w12",
+      body: `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px">${g.bezirke.map(b => { const bs = b.stimmen.map(x => ({ partei: x.partei, sitze: x.sitze })), bl = koSitze(k, g, bs), top = [...b.stimmen].sort((x, y) => y.sitze - x.sitze || y.stimmen - x.stimmen)[0];
+        return `<div style="min-width:0"><div style="font-family:var(--sans);margin-bottom:2px"><b>${esc(b.name)}</b> <span class="n">${b.sitze_gesamt} Sitze · Beteiligung ${b.wahlberechtigte ? f1.format(b.waehler / b.wahlberechtigte * 100) + " %" : "–"}</span></div>${koHalbkreis(bl, 230)}${koLegende(bl.map(x => [x[0], x[1], x[2], x[0].replace(/^Wählergruppe (\d+)$/, "WGR $1").replace("T I E R S C H U T Z", "TIERSCHUTZ")]))}${top ? `<div class="n" style="text-align:center;margin-top:3px">meiste Stimmen: ${esc(top.partei)} ${f1.format(top.prozent)} %</div>` : ""}</div>`; }).join("")}</div>`,
+      fuss: "Sitze je Bezirksvertretung nach der Wahl am 14.09.2025 (Tabelle 4 des Hefts). Die Bezirksvertretungen werden unabhängig vom Rat gewählt. Wählergruppen (WGR 1 …) sind je Stadt nummeriert, Namen siehe Rat." }) : "";
+    return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen Nordrhein-Westfalen", sub: `${k.gebiete.length} Räte und Kreistage, ${k.gebiete.reduce((a, x) => a + x.bezirke.length, 0)} Bezirksvertretungen`, breite: "w12",
+        body: `<p class="n" style="margin:0 0 4px">Kreisfreie Städte</p><div>${chips("kreisfreie Stadt")}</div><p class="n" style="margin:6px 0 4px">Kreise</p><div>${chips("Kreis")}${chips("Städteregion")}</div>`,
+        fuss: `Kommunalwahlen am ${esc(datum(k.wahltag))}, endgültige Ergebnisse. Quelle: <a class="flink" href="${esc(k.quelle.url)}" target="_blank" rel="noopener">${esc(k.quelle.name)}</a>, ${esc(k.quelle.lizenz)}. Bisher nur Nordrhein-Westfalen; weitere Länder folgen schrittweise.` })}
+      ${panel({ code: "RAT", titel: `${esc(g.gremium)} ${esc(g.typ === "kreisfreie Stadt" ? g.name : g.name)}`, sub: `${n} Sitze · Mehrheit ab ${maj} · Wahlbeteiligung ${f1.format(g.waehler / g.wahlberechtigte * 100)} %`, breite: "w5",
+        body: `${koHalbkreis(sl, 360)}${koLegende(sl)}<table class="tab" style="margin-top:10px"><tbody>
+          <tr><td style="text-align:left">stärkste Fraktion</td><td>${esc(gr.partei)} ${gr.gesamt} Sitze (${f0.format(gr.gesamt / n * 100)} %)</td></tr>
+          ${bm ? `<tr><td style="text-align:left">${esc(bm.amt)} (${esc(bm.wahl)})</td><td>${esc(bm.name)}, ${esc(bm.partei)} · ${f1.format(bm.anteil)} %</td></tr>` : `<tr><td style="text-align:left">Landrat</td><td class="n">keine Wahl 2025</td></tr>`}
+          <tr><td style="text-align:left">Frauenanteil</td><td>${frauen} von ${n} (${f0.format(frauen / n * 100)} %)</td></tr>
+          <tr><td style="text-align:left">Wahlberechtigte</td><td>${f0.format(g.wahlberechtigte)}</td></tr></tbody></table>`,
+        fuss: "Sitzverteilung nach der Wahl, Tabelle 2 des Hefts. Bündnisse und Koalitionen im Rat enthält das Heft nicht; die Mehrheitsmarke gilt für einfache Mehrheit der Sitze." })}
+      ${panel({ code: "STM", titel: "Stimmen und Sitze im Vergleich zu 2020", sub: `${f0.format(g.gueltig)} gültige Stimmen`, breite: "w7",
+        body: `<table class="tab"><thead><tr><th style="text-align:left">Liste</th><th>Stimmen</th><th>Anteil</th><th>2020</th><th>Δ Pkt.</th><th>Sitze</th><th>2020</th></tr></thead><tbody>${g.stimmen.filter(x => x.stimmen != null || x.stimmen_2020 != null).map(zeile).join("")}</tbody></table>`,
+        fuss: "Tabelle 1 und 2 des Hefts. „Wählergruppen“ und Einzelbewerber sind je Gebiet einzeln aufgeführt, „Sonstige“ nur 2020. Δ nur, wo die Liste in beiden Wahlen antrat." })}
+      ${bezirke}</div>`;
+  }
   function klick(t) {
+    const ko = t.closest && t.closest("[data-pkom]"); if (ko) { KO_ID = ko.getAttribute("data-pkom"); render(); return true; }
     const e = t.closest && t.closest("[data-pglland]"); if (!e) return false;
     GL_LAND = e.getAttribute("data-pglland"); render(); return true;
   }
-  return { viewUeb, viewWahlen, viewDe, viewParl, viewGlied, klick };
+  return { viewUeb, viewWahlen, viewDe, viewParl, viewGlied, viewKom, klick };
 })();
 
 /* ---------- Börse: Zinsen, Devisen, Rohstoffe (Reiter BÖR, F6) aus data/boerse_welt.json (boerse_welt.py) ---------- */

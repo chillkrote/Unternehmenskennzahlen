@@ -386,6 +386,7 @@ def lade(wurzel=REPO, banken=None, markt=None, demo=HIER / "data/unternehmen_dem
         quellen.append("banken/bilanzvergleich-gj2025")
     nach_id = {f["id"]: f for f in firmen}
     stammdaten(wurzel, firmen, nach_id)
+    governance_firmen(wurzel, firmen, nach_id)
     from europa import ergaenzen, nichtbanken
     ergaenzen(wurzel, firmen, nach_id, stamm.lade())
     nichtbanken(wurzel, firmen)
@@ -516,6 +517,44 @@ def stammdaten(wurzel, firmen, nach_id):
         for k in ("gruppe", "rolle", "nachfolger_von"):
             if s.get(k) and not f.get(k):
                 f[k] = s[k]
+
+
+def governance_firmen(wurzel, firmen, nach_id):
+    """Unternehmen mit Governance-Daten, die sonst in keiner Kennzahlentabelle stehen (z. B. US-/UK-Konzerne), als Einträge aufnehmen.
+
+    Ohne diesen Schritt hängt governance() die Gremien und Vergütungen an niemanden: das Terminal legt für Registerzeilen ohne Eintrag nur
+    Stubs ohne Daten an. (Früher kamen alle 32.000 Registerfirmen unbeabsichtigt über das Blatt „ID-Liste“ der Governance-Importvorlage herein;
+    seit governance/ beim Einlesen übersprungen wird, fehlen sie.) Stammdaten aus unternehmen-tabelle/Unternehmen_Tabelle.csv, sonst aus dem ID-Register."""
+    ordner = Path(wurzel) / "governance"
+    ids = {r["unternehmen_id"] for n in ("gremien_mitglieder.csv", "kennzahlen_gremien.csv", "verguetung.csv") for r in _csv(ordner / n) if r.get("unternehmen_id")}
+    fehlen = {i for i in ids if i not in nach_id}
+    if not fehlen:
+        return
+    reg = stamm.lade()
+    zeilen = {}
+    for z in _tabelle(wurzel):
+        if z.get("unternehmen_id") in fehlen:
+            zeilen.setdefault(z["unternehmen_id"], z)
+    for uid in sorted(fehlen):
+        if uid not in reg.unternehmen:
+            continue
+        z = zeilen.get(uid, {})
+        f = {"id": uid, "name": z.get("Name *") or reg.name(uid), "werte": {},
+             "branche": branche_id(z.get("Branche *")) or slug(z.get("Branche *") or "sonstige"),
+             "notiert": (z.get("Börsennotiert *", "").lower() == "ja") if z else False}
+        for k, sp in (("ticker", "Ticker"), ("isin", "ISIN"), ("sitz", "Sitz"), ("rechtsform", "Rechtsform")):
+            if z.get(sp):
+                f[k] = z[sp]
+        firmen.append(f)
+        nach_id[uid] = f
+
+
+def _tabelle(wurzel):
+    pfad = Path(wurzel) / "unternehmen-tabelle" / "Unternehmen_Tabelle.csv"
+    if not pfad.exists():
+        return []
+    with open(pfad, encoding="utf-8-sig", newline="") as fh:
+        return list(csv.DictReader(fh, delimiter=";"))
 
 
 def beispieldaten(demo, firmen, nach_id, quellen):

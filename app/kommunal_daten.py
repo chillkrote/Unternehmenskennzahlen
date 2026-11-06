@@ -609,7 +609,13 @@ def main():
         g.pop("_key", None)
     lagef = HIER / "geo/kommunen_lage.json"      # von kommunal_lage.py (Wikidata)
     lage = json.loads(lagef.read_text()) if lagef.exists() else {}
-    out = {"land": "Nordrhein-Westfalen", "lage": lage, "wahltag": "2025-09-14", "vergleich": "2020-09-13", "farben": FARBE,
+    flf = HIER / "geo/kommunen_nrw.geojson"      # von kommunal_flaechen.py (BKG VG250): Amtlicher Gemeindeschlüssel je Gebiet
+    ags = {f["properties"]["id"]: f["properties"]["ags"] for f in json.loads(flf.read_text())["features"]} if flf.exists() else {}
+    for g in gebiete:
+        if g["id"] in ags:
+            g["ags"] = ags[g["id"]]
+    out = {"land": "Nordrhein-Westfalen", "lage": lage,
+           "geo_quelle": {"name": "© GeoBasis-DE / BKG (2025), Verwaltungsgebiete 1:250 000 (VG250), Stand 31.12.2025", "lizenz": "Datenlizenz Deutschland – Namensnennung – Version 2.0", "url": "https://gdz.bkg.bund.de/"}, "wahltag": "2025-09-14", "vergleich": "2020-09-13", "farben": FARBE,
            "quelle": {"name": "IT.NRW / Ministerium des Innern NRW, Kommunalwahlen 2025, Heft 3: Endgültige Ergebnisse (Oktober 2025, aktualisiert 04.11.2025)",
                       "lizenz": "Datenlizenz Deutschland – Namensnennung 2.0", "url": "https://www.wahlergebnisse.nrw/kommunalwahlen/2025/"},
            "gebiete": gebiete, "pruefung": pruef}

@@ -34,6 +34,15 @@ const path = require('node:path');
   if (!(await vis('po-kom-gem')) || (await vis('po-kom-kreis'))) throw Error('Ebene Gemeinden falsch');
   await page.evaluate(() => document.querySelector('[data-gkpolebene="bund"]').click()); await page.waitForTimeout(400);
   if (await vis('po-de-flaeche')) throw Error('Bund zeigt noch Länder');
+  // Bundestagswahlkreise: 299 Flächen, Klick auf Wahlkreis Düsseldorf I öffnet das Ergebnis
+  if (!(await vis('po-wk-fl'))) throw Error('Wahlkreise fehlen in der Ebene Bund');
+  await page.evaluate(() => GLOBUS.karte().jumpTo({ center: [6.78, 51.23], zoom: 7 })); await page.waitForTimeout(1200);
+  const wp = await page.evaluate(() => { const m = GLOBUS.karte(); if (!m.queryRenderedFeatures({ layers: ['po-wk-fl'] }).length) throw Error('keine Wahlkreisflächen im Bild'); const p = m.project([6.78, 51.23]); return { x: p.x, y: p.y }; });
+  await page.mouse.click(box.x + wp.x, box.y + wp.y); await page.waitForTimeout(500);
+  await page.screenshot({ path: '/tmp/claude-0/ebene-bund.png' });
+  const wt = await page.locator('#gk-seite').innerText();
+  if (!/Wahlkreis \d+ /i.test(wt) || !wt.includes('Zweitstimmen')) throw Error('Wahlkreis-Ergebnis fehlt');
+  await page.screenshot({ path: '/tmp/claude-0/ebene-bund.png' });
   if (errors.length) throw Error(errors.join('\n'));
   console.log('Kommunen-Smoke OK, Punkte im Bild:', n);
   await browser.close();

@@ -1242,6 +1242,87 @@ def us_house24():
                        "url": "https://clerk.house.gov/Members/ElectionInformation", "lizenz": "gemeinfrei (US-Bundesbehörden)"}}
 
 
+# ---------------------------------------------------------------- USA: Repräsentantenhaus 2022 und 2020 (MEDSL, Harvard Dataverse)
+US_HOUSE_MEDSL = QUELLEN / "us_house_1976_2024_medsl.csv"      # MEDSL "U.S. House 1976-2024" (doi:10.7910/DVN/IG0UN2), CC0 1.0, Gästebuch-Download
+US_HOUSE_ALT = {"2022": ("cd118", "CD118FP", "wahlkreise-us22", HIER / "geo" / "wahlkreise_us22.geojson", "2022-11-08", "118th"),
+                "2020": ("cd116", "CD116FP", "wahlkreise-us20", HIER / "geo" / "wahlkreise_us20.geojson", "2020-11-03", "116th")}
+
+
+def us_alt_laden(abruf, jahr):
+    """Wahlkreisgrenzen des jeweiligen Kongresses (Census Cartographic Boundary Files, gemeinfrei); die Wahlkreise von 2022 sind nicht die von 2024."""
+    cd, feld, _, ziel, _, ordnal = US_HOUSE_ALT[jahr]
+    if ziel.exists():
+        return
+    z = Path(f"/tmp/us_{cd}.zip")
+    if not laden(US_GRENZEN.replace("GENZ2024", f"GENZ{jahr}").replace("2024_us_cd119", f"{jahr}_us_{cd}"), z, abruf):
+        return
+    import shapefile
+    from shapely.geometry import mapping, shape
+    zf = zipfile.ZipFile(z)
+    name = next(n for n in zf.namelist() if n.endswith(".shp"))[:-4]
+    sf = shapefile.Reader(shp=io.BytesIO(zf.read(name + ".shp")), shx=io.BytesIO(zf.read(name + ".shx")), dbf=io.BytesIO(zf.read(name + ".dbf")))
+    feats = []
+    for rec, shp in zip(sf.records(), sf.shapes()):
+        d = rec.as_dict()
+        if d["STATEFP"] not in US_FIPS.values() or d[feld] in ("98", "ZZ"):
+            continue
+        g = shape(shp.__geo_interface__).buffer(0).simplify(0.004, preserve_topology=True)
+        feats.append({"type": "Feature", "properties": {"id": d["GEOID"]}, "geometry": mapping(g)})
+    ziel.write_text(json.dumps({"type": "FeatureCollection", "quelle": f"U.S. Census Bureau, Cartographic Boundary Files {jahr}, {ordnal} Congressional Districts",
+                                "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def us_house_alt(jahr):
+    """Hauswahl im November des Jahres je Wahlkreis aus dem MEDSL-Datensatz (Hauptwahl, ohne Nachwahlen; Write-in-Stimmen sind nicht enthalten)."""
+    if not US_HOUSE_MEDSL.exists():
+        return None
+    _, _, geo, _, datum, ordnal = US_HOUSE_ALT[jahr]
+    wk = {}
+    for z in csv.DictReader(US_HOUSE_MEDSL.open(encoding="utf-8")):
+        if z["year"] != jahr or z["stage"] != "GEN" or z["special"] == "TRUE" or z["runoff"] == "TRUE" or z["writein"] == "TRUE":
+            continue
+        if z["candidate"].upper() in ("WRITEIN", "BLANK VOTE/SCATTERING", "SCATTERING", "OTHER") or US_KEINE_STIMME.match(z["candidate"].strip()) or "EXHAUSTED" in z["candidate"].upper():
+            continue
+        fips, n = int(z["state_fips"]), int(z["district"] or 0)
+        if fips > 56 or fips == 11:
+            continue        # ohne Delegierte (DC und Außengebiete)
+        k = f"{fips:02d}{n:02d}"
+        W = wk.setdefault(k, {"n": z["state"].title() + (" (At Large)" if n == 0 else f" {n}"), "k": {}})
+        pa = (z["party"] or "").upper()
+        p = "Republikaner" if pa == "REPUBLICAN" else "Demokraten" if pa in ("DEMOCRAT", "DEMOCRATIC", "DEMOCRATIC-FARMER-LABOR") else "Libertäre" if pa == "LIBERTARIAN" \
+            else "Grüne" if "GREEN" in pa else "Unabhängige" if pa in ("INDEPENDENT", "UNAFFILIATED", "NO PARTY AFFILIATION", "NONPARTISAN") else "Sonstige"
+        c = W["k"].setdefault(z["candidate"], [0, p])
+        c[0] += int(float(z["candidatevotes"] or 0))
+        if p in ("Republikaner", "Demokraten"):
+            c[1] = p
+        elif "PELTOLA" in z["candidate"].upper():
+            c[1] = "Demokraten"        # Datensatz führt sie ohne Partei
+    if not wk:
+        return None
+    werte, sitze, ges = {}, {}, {}
+    for k, W in wk.items():
+        pt = {}
+        for st, p in W["k"].values():
+            pt[p] = pt.get(p, 0) + st
+        gueltig = sum(pt.values())
+        st, name, partei = max((v[0], c, v[1]) for c, v in W["k"].items())
+        werte[k] = {"n": W["n"], "s": {"s": anteile([x for x in pt.items() if x[1]], gueltig) if gueltig else []}, "w": gueltig or None,
+                    "direkt": {"name": name.title() if name.isupper() else name, "partei": partei}}
+        sitze[partei] = sitze.get(partei, 0) + 1
+        for p, n in pt.items():
+            ges[p] = ges.get(p, 0) + n
+    g = {"s": {"s": anteile(list(ges.items()), sum(ges.values()))}, "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])],
+         "sitze_n": sum(sitze.values()), "w": sum(ges.values()),
+         "sitze_hinweis": "Sitze = Wahlkreissieger der Hauptwahl; Nachwahlen und Stichwahlen sind nicht enthalten; Stimmen ohne Write-ins"}
+    return {"id": f"US-unterhaus-{jahr}", "e": 1, "land": "US", "gebiet": "US", "geo": "laender", "name": "", "titel": "Parlamentswahl",
+            "gremium": "House of Representatives", "kammer": "unterhaus", "datum": datum, "status": "endgültig", "g": g, "farben": US_FARBEN,
+            "stimmarten": [["s", "Stimmen"]],
+            "system": f"Relative Mehrheitswahl in Einerwahlkreisen nach den Grenzen des {ordnal} Kongresses (Louisiana mit offener Wahl, Alaska seit 2022 mit Rangfolgewahl, gezeigt sind die Erststimmen).",
+            "einheiten": [{"id": "wk", "name": "Kongresswahlkreise", "einzahl": "Wahlkreis", "art": "wahlkreis", "geo": geo, "werte": werte}],
+            "quelle": {"name": "MIT Election Data and Science Lab, U.S. House 1976-2024 (Harvard Dataverse); Grenzen: U.S. Census Bureau",
+                       "url": "https://dataverse.harvard.edu/dataverse/medsl", "lizenz": "CC0 1.0"}}
+
+
 # ---------------------------------------------------------------- USA: Senat 8. November 2022 je Bundesstaat (MIT Election Data + Science Lab)
 US_SENAT22 = QUELLEN / "us_senat22_medsl.tab"       # MEDSL "U.S. Senate Statewide/County Returns 2022", Harvard Dataverse (Gästebuch-Download von Hand), CC0 1.0
 US_SENAT_NAME = {"WYDEN RON": "Ron Wyden", "JD VANCE": "JD Vance", "PERKINS JO RAE": "Jo Rae Perkins"}
@@ -1659,11 +1740,13 @@ def main():
     ch_laden(not a.ohne_abruf)
     at_laden(not a.ohne_abruf)
     us_laden(not a.ohne_abruf)
+    for j in US_HOUSE_ALT:
+        us_alt_laden(not a.ohne_abruf, j)
     es_laden(not a.ohne_abruf)
     no_laden(not a.ohne_abruf)
     ne_wahlkreise(not a.ohne_abruf, "ES", WK_ES_GEO)
     ne_wahlkreise(not a.ohne_abruf, "NO", WK_NO_GEO)
-    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO, WK_CA_GEO, WK_AU_GEO, GEM_AT_GEO, WK_US_GEO, WK_ES_GEO, WK_NO_GEO, GEM_CH_GEO):
+    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO, WK_CA_GEO, WK_AU_GEO, GEM_AT_GEO, WK_US_GEO, WK_ES_GEO, WK_NO_GEO, GEM_CH_GEO, *(v[3] for v in US_HOUSE_ALT.values())):
         kompakt(geo)
     wahlen = [w for w in national(pa) if w["land"] != "DE" or w["kammer"] != "unterhaus"]
     wahlen.append(bundestag(pa, HIER / "geo/wahlkreise_bund.geojson", HIER / "geo/de_laender.geojson"))
@@ -1696,6 +1779,10 @@ def main():
             wahlen[alt[0]] = us
         else:
             wahlen.append(us)
+    for j in US_HOUSE_ALT:
+        h = us_house_alt(j)
+        if h:
+            wahlen.append(h)
     sen = us_senat22()
     if sen:
         wahlen.append(sen)

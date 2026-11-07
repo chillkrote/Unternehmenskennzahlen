@@ -67,3 +67,10 @@
 .wa-sprung button:hover, .wa-sprung button:focus-visible { border-color: var(--amber-dim); color: var(--ink); }
 .wa-sprung button b { font: 600 11px var(--mono); color: var(--amber); }
 .wa-legende-flaeche { display: inline-block; width: 14px; height: 10px; border-radius: 2px; }
+
+.wa-satz .wa-kammern { display: inline-flex; gap: 2px; }
+.wa-satz .wa-kammern button { all: unset; cursor: pointer; padding: 1px 8px; border: 1px solid var(--ink-3); color: var(--ink-2); font: 12px var(--sans); }
+.wa-satz .wa-kammern button:first-child { border-radius: 4px 0 0 4px; }
+.wa-satz .wa-kammern button:last-child { border-radius: 0 4px 4px 0; }
+.wa-satz .wa-kammern button[aria-pressed="true"] { color: #0e1116; background: var(--amber); border-color: var(--amber); }
+.wa-satz .wa-kammern button:focus-visible { outline: 2px solid var(--amber); outline-offset: 1px; }

@@ -1433,7 +1433,7 @@ def us_praesident(jahr):
     if kreise:
         einheiten.append({"id": "kreis", "name": "Countys", "einzahl": "County", "art": "zaehlgebiet", "geo": "kreise-us", "werte": kreise})
     return {"id": f"US-praesident-{jahr}", "e": 1, "land": "US", "gebiet": "US", "geo": "gliedstaaten", "name": "", "titel": "Präsidentschaftswahl", "gremium": "President",
-            "kammer": "unterhaus", "datum": US_PRAES_JAHRE[jahr], "status": "endgültig", "g": g, "farben": US_FARBEN, "stimmarten": [["s", "Stimmen"]],
+            "kammer": "praesident", "datum": US_PRAES_JAHRE[jahr], "status": "endgültig", "g": g, "farben": US_FARBEN, "stimmarten": [["s", "Stimmen"]],
             "system": "Indirekte Wahl: Die Wähler bestimmen in jedem Bundesstaat die Wahlleute (in Maine und Nebraska teilweise nach Wahlbezirken); gewählt ist, wer 270 von 538 Wahlleuten erhält. Die Countys sind nur Zählgebiete.",
             "einheiten": einheiten,
             "quelle": {"name": "MIT Election Data and Science Lab, U.S. President 1976-2024 und County Presidential Returns 2000-2024 (Harvard Dataverse); Grenzen: U.S. Census Bureau",

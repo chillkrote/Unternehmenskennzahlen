@@ -90,6 +90,7 @@ def main():
     # Weltkugel: dieselbe Seite mit Karte, Ländern und Firmensitzen (alternative Oberfläche)
     welt, n_sitze = globus.seite(seite)
     (HIER / "dist/weltkugel.fragment.html").write_text(welt)
+    globus.wahlgeo_schreiben(HIER / "dist")             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
     (HIER / "dist/weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
                                               '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">'
                                               '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'

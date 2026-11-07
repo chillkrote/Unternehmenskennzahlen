@@ -88,15 +88,25 @@ const WAHLEN = (() => {
 
   /* ----- Grenzen ----- */
   let GEO = null;
+  const idx = (fc, key) => { const m = {}; (fc ? fc.features : []).forEach(f => { const k = String(f.properties[key]); (m[k] = m[k] || []).push(f); }); return m; };
+  // Nachzuladende Grenzen (globus.py: WAHL_GEO -> dist/wahlgeo/<art>.json); geladen wird erst, wenn eine Einheit sie braucht
+  const NACH = (() => { try { return JSON.parse(document.getElementById("wa-geo-nachladen").textContent) || {}; } catch { return {}; } })();
+  const LAEDT = new Map();
+  function nachladen(art) {
+    if (LAEDT.has(art) || !NACH[art]) return;
+    LAEDT.set(art, fetch(NACH[art]).then(r => r.ok ? r.json() : Promise.reject(Error("HTTP " + r.status)))
+      .then(fc => { geo()[art] = idx(fc, "id"); PUNKT.clear(); if (aktiv()) anwenden(); })
+      .catch(e => { console.warn("Wahlkreisgrenzen nicht geladen:", art, e.message); }));
+  }
   function geo() {
     if (GEO) return GEO;
-    const g = G.geo(), idx = (fc, key) => { const m = {}; (fc ? fc.features : []).forEach(f => { const k = String(f.properties[key]); (m[k] = m[k] || []).push(f); }); return m; };
+    const g = G.geo();
     GEO = { laender: idx(g.LAENDER, "iso"), "de-laender": idx(g.DE_GEO, "code"), gliedstaaten: idx(g.GL_GEO, "code"), kommunen: idx(g.KO_GEO, "id"), "wahlkreise-bund": idx(g.WK, "nr"), "kreise-de": idx(g.KREISE, "id"), roh: g };
     // weitere Wahlkreisgrenzen (globus.py bettet sie als <script id="wa-geo-<art>"> ein, Schlüssel properties.id), z. B. landtagswahlkreise-nw
-    document.querySelectorAll('script[id^="wa-geo-"]').forEach(el => { try { const fc = JSON.parse(el.textContent); if (fc) GEO[el.id.slice(7)] = idx(fc, "id"); } catch { /* fehlt */ } });
+    document.querySelectorAll('script[id^="wa-geo-"]:not(#wa-geo-nachladen)').forEach(el => { try { const fc = JSON.parse(el.textContent); if (fc) GEO[el.id.slice(7)] = idx(fc, "id"); } catch { /* fehlt */ } });
     return GEO;
   }
-  const flaechen = (art, k) => art && geo()[art] ? geo()[art][String(k)] || [] : [];
+  const flaechen = (art, k) => { if (!art) return []; const m = geo()[art]; if (m) return m[String(k)] || []; nachladen(art); return []; };
   const ringFlaeche = r => { let s = 0; for (let i = 0; i < r.length - 1; i++) s += r[i][0] * r[i + 1][1] - r[i + 1][0] * r[i][1]; return Math.abs(s / 2); };
   const PUNKT = new Map();
   function mittelpunkt(f) {
@@ -380,7 +390,7 @@ const WAHLEN = (() => {
     else if (u && u.art === "wahlkreis" && wert && wert.s && (wert.s.e || wert.direkt)) {
       const st = wert.s.e ? "e" : Object.keys(wert.s)[0], l = wert.s[st] || [];
       const e = [...l].sort((p, q) => q[2] - p[2]), v = e.length ? e[0][2] - (e[1] ? e[1][2] : 0) : null, d = wert.direkt;
-      if (e.length || d) teile.push(`<div class="wa-amt">${st === "e" ? "Direktmandat" : "Gewählt"}: <b>${d ? `${esc(d.name)} (${esc(d.partei)})` : esc(e[0][0])}</b>${wert.runde ? ` im ${wert.runde}. Wahlgang` : ""}${e.length ? ` mit ${pct(e[0][2])}${st === "e" ? " der Erststimmen" : ""}${e[1] ? `, ${f1.format(v)} Punkte vor ${esc(e[1][0])}` : " (ohne Gegenkandidat)"}` : ""}.</div>`);
+      if (e.length || d) teile.push(`<div class="wa-amt">${st === "e" ? "Direktmandat" : "Gewählt"}: <b>${d ? `${esc(d.name)} (${esc(d.partei)})` : esc(e[0][0])}</b>${wert.runde ? ` im ${wert.runde}. Wahlgang` : ""}${e.length ? ` mit ${pct(e[0][2])}${st === "e" ? " der Erststimmen" : st === "zk" ? " nach Präferenzen" : ""}${e[1] ? `, ${f1.format(v)} Punkte vor ${esc(e[1][0])}` : " (ohne Gegenkandidat)"}` : ""}.</div>`);
     }
     if (sitze && sitze.length) {
       const so = sitzeOrdnen(w, sitze.filter(s => s[1] > 0));
@@ -509,7 +519,10 @@ const WAHLEN = (() => {
   }
   function einheitAmOrt(w, pt) {
     const i = einheitBei(w, tiefe()); if (i < 0) return;
-    const u = w.einheiten[i], k = Object.keys(u.werte).find(key => flaechen(u.geo, key).some(f => enthaelt(f, pt)));
+    const u = w.einheiten[i];
+    // Grenzen noch nicht geladen: nach dem Laden dieselbe Stelle noch einmal suchen, solange die Wahl im Fokus bleibt
+    if (u.geo && NACH[u.geo] && !geo()[u.geo]) { nachladen(u.geo); const p = LAEDT.get(u.geo); if (p) p.then(() => { if (W.fokus === w.id && !W.sel && geo()[u.geo]) { einheitAmOrt(w, pt); anwenden(); } }); return; }
+    const k = Object.keys(u.werte).find(key => flaechen(u.geo, key).some(f => enthaelt(f, pt)));
     if (k) W.sel = { u: i, k };
   }
   function wahlWaehlen(id, fliegen = true) {

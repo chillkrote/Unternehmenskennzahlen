@@ -130,8 +130,15 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   Daten: `wahlen_daten.py` fasst parlamente.json, die Bundestagswahlkreise, die Europawahl 2024 nach Kreisen
   (`wahlen/quellen/ew24_kerg2.csv`, Bundeswahlleiterin), die Landtagswahl NRW 2022 je Landtagswahlkreis (`wahlen/quellen/nw_ltw22_*.csv`,
   Grenzen `geo/landtagswahlkreise_nw.geojson`, Landeswahlleiterin NRW), die Unterhauswahl 2024 (UK Parliament, `geo/wahlkreise_gb.geojson`), die
-  Wahl zur Assemblée nationale 2024 (Innenministerium, `geo/wahlkreise_fr.geojson`) und kommunal.json in einem einheitlichen Format zusammen
-  (`data/wahlen.json`; Kreisgrenzen `geo/kreise_de.geojson` aus BKG VG1000, dl-de/by-2-0). Neue Wahldaten nur als Leser in dieser Datei.
+  Wahl zur Assemblée nationale 2024 (Innenministerium, `geo/wahlkreise_fr.geojson`), die Unterhauswahl Kanada 2025 (Elections Canada,
+  `geo/wahlkreise_ca.geojson`), die Wahl zum Repräsentantenhaus Australien 2025 (AEC, Erstpräferenzen und Ergebnis nach Präferenzen; Grenzen
+  ABS, `geo/wahlkreise_au.geojson`), die Nationalratswahl Schweiz 2023 je Kanton (BFS, `wahlen/quellen/ch_nrw23_*.json`), die Nationalratswahl
+  Österreich 2024 je Bundesland und Gemeinde (BMI, `wahlen/quellen/at_nrw*.csv`; Gemeindegrenzen Statistik Austria, `geo/gemeinden_at.geojson`)
+  und kommunal.json in einem einheitlichen Format zusammen (`data/wahlen.json`; Kreisgrenzen `geo/kreise_de.geojson` aus BKG VG1000,
+  dl-de/by-2-0). Neue Wahldaten nur als Leser in dieser Datei.
+  Grenzen nachladen: die Wahlkreisgrenzen aus `WAHL_GEO` in `globus.py` stecken nicht in der Seite, sondern liegen als `dist/wahlgeo/<art>.json`
+  daneben (`build.py` schreibt sie) und werden erst geladen, wenn eine Wahl sie braucht; so bleibt die Vorschau unter 16 MB. Beim Artifact
+  die Dateien `wahlgeo/*.json` mitveröffentlichen; der Test liefert die Seite über einen kleinen HTTP-Server aus (fetch geht nicht über file://).
   Test: `tests/wahlen-smoke.js`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
   Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,

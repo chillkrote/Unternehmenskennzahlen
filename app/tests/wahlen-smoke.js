@@ -10,7 +10,15 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   const errors = [];
   page.on('pageerror', e => errors.push(e.stack || e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
-  await page.goto('file://' + path.resolve(process.argv[2] || 'app/dist/weltkugel.html'));
+  // über HTTP ausliefern: die Wahlkreisgrenzen werden per fetch aus wahlgeo/ nachgeladen (file:// erlaubt das nicht)
+  const datei = path.resolve(process.argv[2] || 'app/dist/weltkugel.html'), wurzel = path.dirname(datei);
+  const server = require('node:http').createServer((q, a) => {
+    const f = path.join(wurzel, decodeURIComponent(q.url.split('?')[0]));
+    if (!f.startsWith(wurzel)) { a.writeHead(403); a.end(); return; }
+    require('node:fs').readFile(f, (e, d) => { if (e) { a.writeHead(404); a.end(); } else { a.writeHead(200, { 'content-type': f.endsWith('.json') ? 'application/json' : 'text/html; charset=utf-8' }); a.end(d); } });
+  });
+  await new Promise(r => server.listen(0, '127.0.0.1', r));
+  await page.goto(`http://127.0.0.1:${server.address().port}/${path.basename(datei)}`);
   await page.waitForSelector('#gk-seite h2');
   const ok = (b, t) => { if (!b) throw Error(t); };
   const seite = () => page.locator('#gk-seite').innerText();
@@ -21,7 +29,7 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   ok(await page.locator('#wa-satz').isVisible(), 'Satzleiste fehlt');
   ok(await page.locator('#wa-leiter').isVisible(), 'Ebenenleiter fehlt');
   const mitKarte = await page.evaluate(() => !!GLOBUS.karte());
-  if (!mitKarte) { console.log('ohne WebGL: Kartenteil übersprungen'); await browser.close(); return; }
+  if (!mitKarte) { console.log('ohne WebGL: Kartenteil übersprungen'); await browser.close(); server.close(); return; }
   await warte(1500); await bild('1-welt-e1');
   // Welt E1: Deutschland anklicken -> Bundestagswahl 2025
   await page.evaluate(() => WAHLEN.wahlWaehlen('DE-BT-2025')); await warte(2500);
@@ -70,6 +78,19 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   await page.mouse.click(box.x + pf.x, box.y + pf.y); await warte(700);
   t = await seite(); ok(/Gewählt:/.test(t) && /Wahlgang/.test(t) && /Paris/.test(t), 'Wahlkreis in Paris fehlt:\n' + t.slice(0, 500));
   await bild('9c-fr-wahlkreis');
+  // Kanada, Australien, Schweiz, Österreich: je ein Klick in einen Wahlkreis bzw. eine Gemeinde
+  const klick = async (id, mitte, zoom, pt, muster, name) => {
+    await page.evaluate(i => WAHLEN.wahlWaehlen(i, false), id);
+    await page.evaluate(([c, z]) => GLOBUS.karte().jumpTo({ center: c, zoom: z }), [mitte, zoom]); await warte(1800);
+    const q = await page.evaluate(x => { const r = GLOBUS.karte().project(x); return { x: r.x, y: r.y }; }, pt);
+    await page.mouse.click(box.x + q.x, box.y + q.y); await warte(700);
+    t = await seite(); ok(muster.every(m => m.test(t)), `${name} fehlt:\n` + t.slice(0, 500));
+    await bild('9d-' + id);
+  };
+  await klick('CA-unterhaus-2025', [-79.4, 43.7], 8, [-79.38, 43.65], [/Gewählt:/, /Liberale|Konservative|NDP/], 'Wahlkreis in Toronto');
+  await klick('AU-unterhaus-2025', [151.2, -33.87], 8, [151.21, -33.87], [/Gewählt:/, /nach Präferenzen/], 'Division in Sydney');
+  await klick('CH-unterhaus-2023', [8.5, 47.2], 6.5, [8.55, 47.4], [/Kanton Zürich/, /Sitzverteilung/i], 'Kanton Zürich');
+  await klick('AT-unterhaus-2024', [15.4, 47.07], 8, [15.44, 47.07], [/Graz/, /FPÖ|ÖVP|SPÖ/], 'Gemeinde Graz');
   // Ansicht Regierungen
   await page.evaluate(() => document.querySelector('[data-gkpolansicht="regierungen"]').click()); await warte(1200);
   ok(!(await page.locator('#wa-satz').isVisible()), 'Satzleiste in Regierungen sichtbar');
@@ -80,5 +101,5 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   await page.click('[data-gkform="laender"]').catch(() => {}); await warte(600);
   if (errors.length) throw Error(errors.join('\n'));
   console.log('Wahlen-Smoke OK');
-  await browser.close();
+  await browser.close(); server.close();
 })().catch(e => { console.error(e); process.exit(1); });

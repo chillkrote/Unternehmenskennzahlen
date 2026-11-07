@@ -134,11 +134,15 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   `geo/wahlkreise_ca.geojson`), die Wahl zum Repräsentantenhaus Australien 2025 (AEC, Erstpräferenzen und Ergebnis nach Präferenzen; Grenzen
   ABS, `geo/wahlkreise_au.geojson`), die Nationalratswahl Schweiz 2023 je Kanton (BFS, `wahlen/quellen/ch_nrw23_*.json`), die Nationalratswahl
   Österreich 2024 je Bundesland und Gemeinde (BMI, `wahlen/quellen/at_nrw*.csv`; Gemeindegrenzen Statistik Austria, `geo/gemeinden_at.geojson`)
+  das Repräsentantenhaus USA 2024 je Kongresswahlkreis (Statistik des Clerk of the House, PDF; Grenzen Census CD119), den Congreso Spanien 2023
+  je Provinz (Junta Electoral Central im BOE, PDF), das Storting Norwegen 2025 je Wahlkreis (Valgdirektoratet; Grenzen Spanien und Norwegen aus
+  Natural Earth), die Gemeinden der Schweiz (BFS; Grenzen swisstopo swissBOUNDARIES3D)
   und kommunal.json in einem einheitlichen Format zusammen (`data/wahlen.json`; Kreisgrenzen `geo/kreise_de.geojson` aus BKG VG1000,
   dl-de/by-2-0). Neue Wahldaten nur als Leser in dieser Datei.
   Grenzen nachladen: die Wahlkreisgrenzen aus `WAHL_GEO` in `globus.py` stecken nicht in der Seite, sondern liegen als `dist/wahlgeo/<art>.json`
   daneben (`build.py` schreibt sie) und werden erst geladen, wenn eine Wahl sie braucht; so bleibt die Vorschau unter 16 MB. Beim Artifact
-  die Dateien `wahlgeo/*.json` mitveröffentlichen; der Test liefert die Seite über einen kleinen HTTP-Server aus (fetch geht nicht über file://).
+  die Dateien `wahlgeo/*.json` mitveröffentlichen. Einheiten mit 800 und mehr Werten (Gemeinden AT, CH) stehen ebenfalls nicht in der Seite:
+  `globus.wahlen_aufteilen()` lagert ihre Werte nach `wahlgeo/werte-<wahl>-<einheit>.json` aus (Feld `nach`), `wahlen.js` lädt sie mit der Wahl; der Test liefert die Seite über einen kleinen HTTP-Server aus (fetch geht nicht über file://).
   Test: `tests/wahlen-smoke.js`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,
   Staatsschulden, Finanzierungssaldo, Leistungsbilanz, Zinsen, BIP je Einwohner, OECD-Frühindikator) mit Verlauf, die OECD-Projektion,

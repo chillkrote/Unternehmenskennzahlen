@@ -42,6 +42,12 @@ WK_FR_GEO = HIER / "geo" / "wahlkreise_fr.geojson"
 WK_CA_GEO = HIER / "geo" / "wahlkreise_ca.geojson"
 WK_AU_GEO = HIER / "geo" / "wahlkreise_au.geojson"
 GEM_AT_GEO = HIER / "geo" / "gemeinden_at.geojson"
+WK_US_GEO = HIER / "geo" / "wahlkreise_us.geojson"
+WK_ES_GEO = HIER / "geo" / "wahlkreise_es.geojson"
+GEM_CH_GEO = HIER / "geo" / "gemeinden_ch.geojson"
+CH_GRENZEN = "https://data.geo.admin.ch/ch.swisstopo.swissboundaries3d/swissboundaries3d_2024-01/swissboundaries3d_2024-01_2056_5728.shp.zip"  # swisstopo, OGD
+WK_NO_GEO = HIER / "geo" / "wahlkreise_no.geojson"
+NE_A1 = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson"   # gemeinfrei
 
 EW24_URL = "https://www.bundeswahlleiterin.de/europawahlen/2024/ergebnisse/opendata/ew24/csv/kerg2.csv"
 LTW_NW22 = "https://www.wahlergebnisse.nrw/landtagswahlen/2022/"
@@ -124,6 +130,34 @@ AT_FARBEN = {"FPÖ": "#1f5fbf", "ÖVP": "#63c3d0", "SPÖ": "#e4002b", "NEOS": "#
              "JETZT": "#a5a5a5", "BZÖ": "#f39a00", "MFG": "#5a3e8c", "Keine von denen": "#6b7280", "Wandel": "#7d3c98"}
 # Sitze im Nationalrat laut Mandatsspiegel der Bundeswahlbehörde (24.10.2024); 2019 zum Vergleich
 AT_SITZE = [["FPÖ", 57, 31], ["ÖVP", 51, 71], ["SPÖ", 41, 40], ["NEOS", 18, 15], ["Grüne", 16, 26]]
+US_HOUSE24 = "https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf"   # Clerk of the House, gemeinfrei (US-Bundesbehörde)
+US_GRENZEN = "https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cd119_5m.zip"         # Census Bureau, Cartographic Boundary Files, gemeinfrei
+US_FIPS = {"ALABAMA": "01", "ALASKA": "02", "ARIZONA": "04", "ARKANSAS": "05", "CALIFORNIA": "06", "COLORADO": "08", "CONNECTICUT": "09", "DELAWARE": "10",
+           "FLORIDA": "12", "GEORGIA": "13", "HAWAII": "15", "IDAHO": "16", "ILLINOIS": "17", "INDIANA": "18", "IOWA": "19", "KANSAS": "20", "KENTUCKY": "21",
+           "LOUISIANA": "22", "MAINE": "23", "MARYLAND": "24", "MASSACHUSETTS": "25", "MICHIGAN": "26", "MINNESOTA": "27", "MISSISSIPPI": "28", "MISSOURI": "29",
+           "MONTANA": "30", "NEBRASKA": "31", "NEVADA": "32", "NEW HAMPSHIRE": "33", "NEW JERSEY": "34", "NEW MEXICO": "35", "NEW YORK": "36",
+           "NORTH CAROLINA": "37", "NORTH DAKOTA": "38", "OHIO": "39", "OKLAHOMA": "40", "OREGON": "41", "PENNSYLVANIA": "42", "RHODE ISLAND": "44",
+           "SOUTH CAROLINA": "45", "SOUTH DAKOTA": "46", "TENNESSEE": "47", "TEXAS": "48", "UTAH": "49", "VERMONT": "50", "VIRGINIA": "51", "WASHINGTON": "53",
+           "WEST VIRGINIA": "54", "WISCONSIN": "55", "WYOMING": "56"}
+US_KEINE_STIMME = re.compile(r"^(Blanks?|Void|Scattering|Over ?Votes?|Under ?Votes?|Continuing Ballots|Exhausted Ballots)$", re.I)
+US_FARBEN = {"Republikaner": "#d7263d", "Demokraten": "#1f5bb5", "Libertäre": "#f2b705", "Grüne": "#2e9b45", "Unabhängige": "#9aa3ad", "Sonstige": "#8b95a3"}
+ES_CONG23 = "https://www.boe.es/boe/dias/2023/09/01/pdfs/BOE-A-2023-18907.pdf"   # Junta Electoral Central, Resumen de resultados (BOE, frei nutzbar)
+ES_PROV = {"Albacete": "ES-AB", "Alicante/Alacant": "ES-A", "Almería": "ES-AL", "Araba/Álava": "ES-VI", "Asturias": "ES-O", "Ávila": "ES-AV",
+           "Badajoz": "ES-BA", "Balears (Illes)": "ES-PM", "Barcelona": "ES-B", "Bizkaia": "ES-BI", "Burgos": "ES-BU", "Cáceres": "ES-CC", "Cádiz": "ES-CA",
+           "Cantabria": "ES-S", "Castellón/Castelló": "ES-CS", "Ciudad Real": "ES-CR", "Córdoba": "ES-CO", "Coruña (A)": "ES-C", "Cuenca": "ES-CU",
+           "Gipuzkoa": "ES-SS", "Girona": "ES-GI", "Granada": "ES-GR", "Guadalajara": "ES-GU", "Huelva": "ES-H", "Huesca": "ES-HU", "Jaén": "ES-J",
+           "León": "ES-LE", "Lleida": "ES-L", "Lugo": "ES-LU", "Madrid": "ES-M", "Málaga": "ES-MA", "Murcia": "ES-MU", "Navarra": "ES-NA", "Ourense": "ES-OR",
+           "Palencia": "ES-P", "Palmas (Las)": "ES-GC", "Pontevedra": "ES-PO", "Rioja (La)": "ES-LO", "Salamanca": "ES-SA", "Santa Cruz de Tenerife": "ES-TF",
+           "Segovia": "ES-SG", "Sevilla": "ES-SE", "Soria": "ES-SO", "Tarragona": "ES-T", "Teruel": "ES-TE", "Toledo": "ES-TO", "Valencia/València": "ES-V",
+           "Valladolid": "ES-VA", "Zamora": "ES-ZA", "Zaragoza": "ES-Z", "Ceuta": "ES-CE", "Melilla": "ES-ML"}
+ES_PARTEI = {"PSC": "PSOE", "VOX": "Vox", "SUMAR": "Sumar", "JUNTS": "Junts", "EAJ-PNV": "PNV", "CCa": "Coalición Canaria"}
+ES_FARBEN = {"PP": "#1d84ce", "PSOE": "#e30613", "Vox": "#63be21", "Sumar": "#e51c55", "ERC": "#ffb232", "Junts": "#20c0b2", "EH Bildu": "#00b2a9",
+             "PNV": "#2b8a3e", "BNG": "#76b3dd", "Coalición Canaria": "#ffd700", "UPN": "#2a52be", "PACMA": "#9bc53d", "CUP-PR": "#ffed00"}
+NO_ST25 = "https://valgresultat.no/api/2025/st"     # Valgdirektoratet, Stortingswahl 2025, NLOD
+NO_PARTEI = {"A": "Ap", "FRP": "FrP", "H": "Høyre", "SV": "SV", "SP": "Sp", "RØDT": "Rødt", "MDG": "MDG", "KRF": "KrF", "V": "Venstre"}
+NO_KREIS = {"31": "01", "32": "02", "33": "06", "39": "07", "40": "08", "55": "19", "56": "20"}   # neue Fylkesnummern der Wahlkreise -> alte (Grenzen)
+NO_FARBEN = {"Ap": "#e4202c", "FrP": "#1e5aa8", "Høyre": "#0065f1", "SV": "#eb4040", "Sp": "#00843d", "Rødt": "#a51e1e", "MDG": "#5f9c3b",
+             "KrF": "#ffbe00", "Venstre": "#00807b", "Sonstige": "#8b95a3"}
 VG1000_URL = "https://daten.gdz.bkg.bund.de/produkte/vg/vg1000_ebenen_1231/aktuell/vg1000_12-31.utm32s.shape.ebenen.zip"
 
 # Ebenennamen je Land (None = Ebene gibt es dort nicht); "_" gilt für alle übrigen Länder
@@ -872,8 +906,55 @@ def ch_laden(abruf):
         r = requests.get(CH_NRW23.format(art), timeout=300)
         r.raise_for_status()
         d = r.json()
-        d.pop("level_gemeinden", None)
+        _ch_gemeinden_schreiben(art, d.pop("level_gemeinden", None) or [])
         ziel.write_text(json.dumps(d, ensure_ascii=False, indent=0), encoding="utf-8")
+    if not GEM_CH_GEO.exists():
+        z = Path("/tmp/ch_swissboundaries3d.zip")
+        if laden(CH_GRENZEN, z, abruf):
+            ch_gemeindeflaechen(z)
+
+
+CH_GEM_SPALTEN = {"parteien": ["gemeinde_nummer", "gemeinde_bezeichnung", "kanton_nummer", "partei_id", "stimmen_partei", "partei_staerke", "letzte_wahl_partei_staerke"],
+                  "wahlbeteiligung": ["gemeinde_nummer", "gemeinde_bezeichnung", "kanton_nummer", "wahlberechtigte", "eingelegte_wahlzettel", "wahlbeteiligung",
+                                      "letzte_wahl_wahlbeteiligung"]}
+
+
+def _ch_gemeinden_schreiben(art, zeilen):
+    """Gemeindeebene des BFS als schlanke CSV (nur die Spalten, die die Karte braucht)."""
+    with (QUELLEN / f"ch_nrw23_gemeinden_{art}.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(CH_GEM_SPALTEN[art])
+        for z in zeilen:
+            w.writerow([("" if z.get(k) is None else (round(z[k], 3) if isinstance(z[k], float) else z[k])) for k in CH_GEM_SPALTEN[art]])
+
+
+def ch_gemeindeflaechen(zip_pfad):
+    """swissBOUNDARIES3D Hoheitsgebiete (Stand 01.2024) -> Gemeinden (BFS-Nummer), vereinfacht auf rund 100 m, WGS84."""
+    import shapefile
+    from pyproj import CRS, Transformer
+    from shapely.geometry import mapping, shape
+    from shapely.ops import transform, unary_union
+    zf = zipfile.ZipFile(zip_pfad)
+    name = next(n for n in zf.namelist() if n.endswith("HOHEITSGEBIET.shp"))[:-4]
+    sf = shapefile.Reader(shp=io.BytesIO(zf.read(name + ".shp")), shx=io.BytesIO(zf.read(name + ".shx")), dbf=io.BytesIO(zf.read(name + ".dbf")), encoding="utf-8")
+    tr = Transformer.from_crs(CRS.from_wkt(zf.read(name + ".prj").decode()), "EPSG:4326", always_xy=True)
+    teile, namen = {}, {}
+    for rec, shp in zip(sf.records(), sf.shapes()):
+        d = rec.as_dict()
+        if d["OBJEKTART"] != "Gemeindegebiet":
+            continue
+        g = shape(shp.__geo_interface__)
+        if g.has_z:
+            from shapely import force_2d
+            g = force_2d(g)
+        teile.setdefault(str(d["BFS_NUMMER"]), []).append(g.buffer(0))
+        namen[str(d["BFS_NUMMER"])] = d["NAME"]
+    feats = []
+    for k, gs in teile.items():
+        g = transform(tr.transform, unary_union(gs).simplify(100, preserve_topology=True))
+        feats.append({"type": "Feature", "properties": {"id": k, "name": namen[k]}, "geometry": mapping(g)})
+    GEM_CH_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "swisstopo, swissBOUNDARIES3D 2024-01 (Open Government Data)", "features": feats},
+                                     ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def ch_nrw23():
@@ -914,12 +995,29 @@ def ch_nrw23():
     g = {"s": {"s": l}, "sitze": sitze, "sitze_n": sum(y[1] for y in sitze), "wb": c["wahlberechtigte"], "w": c["eingelegte_wahlzettel"],
          "bet": r1(c["wahlbeteiligung"]), "bet_vor": r1(c["letzte_wahl_wahlbeteiligung"]),
          "sitze_hinweis": "Parteistärke landesweit aus „fiktiven Wählenden“ des BFS (Parteistimmen geteilt durch die Sitzzahl des Kantons)"}
+    einheiten = [{"id": "kanton", "name": "Kantone (Wahlkreise)", "einzahl": "Kanton", "art": "wahlkreis", "geo": "gliedstaaten", "werte": werte}]
+    gp, gb = QUELLEN / "ch_nrw23_gemeinden_parteien.csv", QUELLEN / "ch_nrw23_gemeinden_wahlbeteiligung.csv"
+    if gp.exists() and gb.exists():
+        gem = {}
+        for z in csv.DictReader(gb.open(encoding="utf-8")):
+            gem[z["gemeinde_nummer"]] = {"n": z["gemeinde_bezeichnung"].strip(), "s": {"s": []}, "wb": zahl(z["wahlberechtigte"]), "w": zahl(z["eingelegte_wahlzettel"]),
+                                         "bet": r1(float(z["wahlbeteiligung"])) if z["wahlbeteiligung"] else None,
+                                         "bet_vor": r1(float(z["letzte_wahl_wahlbeteiligung"])) if z["letzte_wahl_wahlbeteiligung"] else None}
+        for z in csv.DictReader(gp.open(encoding="utf-8")):
+            G = gem.get(z["gemeinde_nummer"])
+            if G is None or not z["partei_staerke"] or float(z["partei_staerke"]) <= 0:
+                continue
+            G["s"]["s"].append([name(int(z["partei_id"])), zahl(z["stimmen_partei"]), r1(float(z["partei_staerke"])),
+                                r1(float(z["letzte_wahl_partei_staerke"])) if z["letzte_wahl_partei_staerke"] else None])
+        for G in gem.values():
+            G["s"]["s"].sort(key=lambda y: -(y[2] or 0))
+        einheiten.append({"id": "gem", "name": "Gemeinden", "einzahl": "Gemeinde", "art": "zaehlgebiet", "geo": "gemeinden-ch", "werte": gem})
     return {"g": g, "farben": CH_FARBEN, "stimmarten": [["s", "Parteistärke"]], "status": "endgültig",
             "system": ("Verhältniswahl in 26 Kantonen (Wahlkreise) mit 1 bis 36 Sitzen; Listen, Panaschieren und Kumulieren. "
                        "In Kantonen mit einem Sitz ist gewählt, wer die meisten Stimmen hat."),
             "vor": {"datum": "2019-10-20", "titel": "Nationalratswahl 2019"},
-            "einheiten": [{"id": "kanton", "name": "Kantone (Wahlkreise)", "einzahl": "Kanton", "art": "wahlkreis", "geo": "gliedstaaten", "werte": werte}],
-            "quelle": {"name": "Bundesamt für Statistik, Eidgenössische Wahlen 2023 (opendata.swiss)", "url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/politik/wahlen.html",
+            "einheiten": einheiten,
+            "quelle": {"name": "Bundesamt für Statistik, Eidgenössische Wahlen 2023 (opendata.swiss); Gemeindegrenzen: swisstopo", "url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/politik/wahlen.html",
                        "lizenz": "opendata.swiss, freie Nutzung mit Quellenangabe"}}
 
 
@@ -1012,6 +1110,299 @@ def at_nrw24():
                           {"id": "gem", "name": "Gemeinden (ohne Wahlkarten)", "einzahl": "Gemeinde", "art": "zaehlgebiet", "geo": "gemeinden-at", "werte": gemeinden}],
             "quelle": {"name": "Bundesministerium für Inneres, Endgültiges Ergebnis (Bundeswahlbehörde 16.10.2024); Grenzen: Statistik Austria",
                        "url": "https://www.bmi.gv.at/412/Nationalratswahlen/Nationalratswahl_2024/start.aspx", "lizenz": "Amtliches Ergebnis; Grenzen CC BY 4.0"}}
+
+
+# ---------------------------------------------------------------- USA: Repräsentantenhaus 05.11.2024 je Kongresswahlkreis (Clerk of the House)
+def _us_pdf_lesen(pdf, ziel):
+    """Statistik des Clerk (PDF, mit pdftotext -layout) -> CSV Staat, Wahlkreis (0 = at large), Kandidat, Partei, Stimmen (leer = ohne Gegenkandidat
+    nicht auf dem Stimmzettel). Zeilen mit nur einer Partei unter einem Kandidaten (Fusion, z. B. New York) werden dem Kandidaten zugeschlagen."""
+    import subprocess
+    txt = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], capture_output=True, text=True, check=True).stdout.splitlines()
+    zeile = re.compile(r"^(\s*)(?:(\d+)\.\s+)?(\S.*?)\s*\.{3,}[\s.]*([\d,]+|\(\d+\))\s*$")
+    staat = abschnitt = wk = spalte = None
+    reihen, letzter = [], None
+    for l in txt:
+        st = l.strip()
+        k = re.sub(r"—Continued$", "", st)
+        if k in US_FIPS:
+            staat, abschnitt = k, None
+            continue
+        if st.startswith("FOR UNITED STATES REPRESENTATIVE"):
+            abschnitt = "rep"
+            continue
+        if st.startswith(("FOR ", "Recapitulation")):
+            abschnitt = None
+            continue
+        if abschnitt != "rep" or not staat:
+            continue
+        if st == "AT LARGE":
+            wk = 0
+            continue
+        m = zeile.match(l)
+        if not m:
+            continue
+        ind, nr, text, zahl_ = m.groups()
+        if nr:
+            wk, spalte = int(nr), l.index(text)
+        elif spalte is None:
+            spalte = len(ind)
+        stimmen = None if zahl_.startswith("(") else int(zahl_.replace(",", ""))
+        if l.index(text) > spalte + 2 and letzter and letzter[:2] == [staat, wk]:
+            letzter[4] = (letzter[4] or 0) + (stimmen or 0)
+            continue
+        name, _, partei = text.rpartition(",") if "," in text else (text, "", text)
+        if re.fullmatch(r"\s*(Jr\.|Sr\.|II|III|IV)", partei):
+            name, partei = text, ""
+        letzter = [staat, wk, name.strip(), partei.strip(), stimmen]
+        reihen.append(letzter)
+    with ziel.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["staat", "wahlkreis", "kandidat", "partei", "stimmen"])
+        w.writerows(reihen)
+
+
+def us_laden(abruf, grenzen_zip=None):
+    pdf, csv_ = QUELLEN / "us_house24_clerk.pdf", QUELLEN / "us_house24_kandidaten.csv"
+    if laden(US_HOUSE24, pdf, abruf) and not csv_.exists():
+        _us_pdf_lesen(pdf, csv_)
+    if WK_US_GEO.exists():
+        return
+    z = Path(grenzen_zip or "/tmp/us_cd119.zip")
+    if not laden(US_GRENZEN, z, abruf):
+        return
+    import shapefile
+    from shapely.geometry import mapping, shape
+    zf = zipfile.ZipFile(z)
+    name = next(n for n in zf.namelist() if n.endswith(".shp"))[:-4]
+    sf = shapefile.Reader(shp=io.BytesIO(zf.read(name + ".shp")), shx=io.BytesIO(zf.read(name + ".shx")), dbf=io.BytesIO(zf.read(name + ".dbf")))
+    feats = []
+    for rec, shp in zip(sf.records(), sf.shapes()):
+        d = rec.as_dict()
+        if d["STATEFP"] not in US_FIPS.values() or d["CD119FP"] in ("98", "ZZ"):
+            continue        # ohne DC, Puerto Rico und Außengebiete (Delegierte ohne Stimmrecht)
+        g = shape(shp.__geo_interface__).buffer(0).simplify(0.004, preserve_topology=True)
+        feats.append({"type": "Feature", "properties": {"id": d["GEOID"]}, "geometry": mapping(g)})
+    WK_US_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "U.S. Census Bureau, Cartographic Boundary Files 2024, 119th Congressional Districts",
+                                     "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _us_partei(p):
+    if p == "Republican":
+        return "Republikaner"
+    if p.startswith("Democrat"):
+        return "Demokraten"
+    if p.startswith("Libertarian"):
+        return "Libertäre"
+    if "Green" in p:
+        return "Grüne"
+    if re.match(r"(Independent|Unaffiliated|No Party|Nonpartisan|Unenrolled|No Political)", p):
+        return "Unabhängige"
+    return "Sonstige"
+
+
+def us_house24():
+    """Wahl zum Repräsentantenhaus 5. November 2024: 435 Einerwahlkreise, meist relative Mehrheit (Maine und Alaska mit Rangfolgewahl:
+    Maine 2 zeigt die letzte Runde; Louisiana: offene Wahl aller Parteien)."""
+    pfad = QUELLEN / "us_house24_kandidaten.csv"
+    if not pfad.exists():
+        return None
+    wk = {}
+    for z in csv.DictReader(pfad.open(encoding="utf-8")):
+        if US_KEINE_STIMME.match(z["kandidat"].strip()):
+            continue
+        n = int(z["wahlkreis"])
+        k = US_FIPS[z["staat"]] + f"{n:02d}"
+        W = wk.setdefault(k, {"n": z["staat"].title() + (" (At Large)" if n == 0 else f" {n}"), "p": {}, "k": []})
+        p, st = _us_partei(z["partei"]), int(z["stimmen"]) if z["stimmen"] else None
+        W["p"][p] = W["p"].get(p, 0) + (st or 0)
+        W["k"].append((st if st is not None else -1, z["kandidat"], p))
+    werte, sitze, ges = {}, {}, {}
+    for k, W in wk.items():
+        gueltig = sum(W["p"].values())
+        st, name, partei = max(W["k"])
+        werte[k] = {"n": W["n"], "s": {"s": anteile([x for x in W["p"].items() if x[1]], gueltig or None) if gueltig else []}, "w": gueltig or None,
+                    "direkt": {"name": name, "partei": partei}}
+        sitze[partei] = sitze.get(partei, 0) + 1
+        for p, n in W["p"].items():
+            ges[p] = ges.get(p, 0) + n
+    g = {"s": {"s": anteile(list(ges.items()), sum(ges.values()))}, "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])],
+         "sitze_n": sum(sitze.values()), "w": sum(ges.values()),
+         "sitze_hinweis": "Sitze = Wahlkreissieger; Stimmen ohne Wahlkreise mit nur einem Kandidaten, der nicht auf dem Stimmzettel stand"}
+    return {"id": "US-unterhaus-2024", "e": 1, "land": "US", "gebiet": "US", "geo": "laender", "name": "", "titel": "Parlamentswahl",
+            "gremium": "House of Representatives", "kammer": "unterhaus", "datum": "2024-11-05", "status": "endgültig", "g": g, "farben": US_FARBEN,
+            "stimmarten": [["s", "Stimmen"]],
+            "system": ("Relative Mehrheitswahl in 435 Einerwahlkreisen (Maine und Alaska mit Rangfolgewahl, Louisiana mit offener Wahl). "
+                       "Die Wahl vom 3. November 2026 ist noch nicht amtlich ausgezählt."),
+            "einheiten": [{"id": "wk", "name": "Kongresswahlkreise", "einzahl": "Wahlkreis", "art": "wahlkreis", "geo": "wahlkreise-us", "werte": werte}],
+            "quelle": {"name": "Clerk of the U.S. House of Representatives, Statistics of the Presidential and Congressional Election 2024; Grenzen: U.S. Census Bureau",
+                       "url": "https://clerk.house.gov/Members/ElectionInformation", "lizenz": "gemeinfrei (US-Bundesbehörden)"}}
+
+
+# ---------------------------------------------------------------- Wahlkreisgrenzen aus Natural Earth (Spanien: Provinzen, Norwegen: Fylker vor 2020)
+def ne_wahlkreise(abruf, iso, ziel, quelle_roh=None):
+    """Natural Earth Admin 1 (gemeinfrei): Provinzen Spaniens = Wahlkreise des Congreso; alte 19 Fylker Norwegens = Wahlkreise des Storting."""
+    if ziel.exists():
+        return
+    roh = Path(quelle_roh or "/tmp/ne_10m_admin_1.geojson")
+    if not laden(NE_A1, roh, abruf):
+        return
+    from shapely.geometry import mapping, shape
+    feats = []
+    for f in json.loads(roh.read_text())["features"]:
+        pr = f["properties"]
+        if pr["iso_a2"] != iso or not re.fullmatch(r"[A-Z]{2}-[A-Z0-9]{1,3}", pr["iso_3166_2"] or "") or pr["iso_3166_2"] == "NO-21":
+            continue        # ohne Svalbard und unbewohnte Inseln
+        g = shape(f["geometry"]).buffer(0).simplify(0.003, preserve_topology=True)
+        feats.append({"type": "Feature", "properties": {"id": pr["iso_3166_2"], "name": pr["name"]}, "geometry": mapping(g)})
+    ziel.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Natural Earth 1:10 Mio., Admin 1 (gemeinfrei)", "features": feats},
+                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+# ---------------------------------------------------------------- Spanien: Congreso 23.07.2023 je Provinz (Junta Electoral Central, BOE)
+def es_laden(abruf):
+    """BOE-Bekanntmachung der Junta Electoral Central (PDF) -> zwei CSV: Kennzahlen je Provinz (Cuadro I) und Stimmen/Sitze je Partei (Cuadro II und III)."""
+    pdf = QUELLEN / "es_cong23_boe.pdf"
+    zk, zp = QUELLEN / "es_cong23_resumen.csv", QUELLEN / "es_cong23_partidos.csv"
+    if not laden(ES_CONG23, pdf, abruf) or (zk.exists() and zp.exists()):
+        return
+    import subprocess
+    import pdfplumber
+    nr = lambda x: int(x.replace(".", "")) if x and re.fullmatch(r"[\d.]+", x.strip()) else None
+    txt = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], capture_output=True, text=True, check=True).stdout
+    teil = txt[txt.index("CUADRO I"): txt.index("CUADRO II")]
+    with zk.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "provincia", "electores", "votantes", "validos", "candidaturas", "blanco", "nulos"])
+        for l in teil.splitlines():
+            m = re.match(r"^\s*(\S.*?)\s{2,}([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*$", l)
+            if m and m.group(1).strip() in ES_PROV:
+                w.writerow([ES_PROV[m.group(1).strip()], m.group(1).strip()] + [nr(x) for x in m.groups()[1:]])
+    reihen = []
+    with pdfplumber.open(pdf) as doc:
+        for seite in doc.pages[2:30]:
+            for tb in seite.extract_tables():
+                if len(tb) < 3 or not any("Votos" in (c or "") for c in tb[1]):
+                    continue
+                spalten, partei = {}, None
+                for c in range(1, len(tb[0])):
+                    kopf = (tb[0][c] or "").replace("\n", " ").strip()
+                    if kopf and "Total" not in kopf:
+                        partei = kopf
+                    elif kopf:
+                        partei = None
+                    art = (tb[1][c] or "").strip()
+                    if partei and art in ("Votos", "Escaños"):
+                        spalten[c] = (partei, art)
+                for z in tb[2:]:
+                    prov = re.sub(r"\s+", " ", (z[0] or "").replace("\n", " ")).replace("/ ", "/").rstrip(".").strip()
+                    if prov not in ES_PROV:
+                        continue
+                    werte = {}
+                    for c, (partei, art) in spalten.items():
+                        v = nr(z[c] or "")
+                        if v is not None:
+                            werte.setdefault(partei, {})[art] = v
+                    for partei, v in werte.items():
+                        if v.get("Votos"):
+                            reihen.append([ES_PROV[prov], prov, partei, v["Votos"], v.get("Escaños", 0)])
+    with zp.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["codigo", "provincia", "partido", "votos", "escanos"])
+        w.writerows(reihen)
+
+
+def _es_kurz(partei):
+    m = re.findall(r"\(([^()]+)\)", partei)
+    k = m[-1].strip() if m else partei.rstrip(".")
+    return ES_PARTEI.get(k, k)
+
+
+def es_cong23():
+    """Congreso de los Diputados 23.07.2023: Verhältniswahl (D'Hondt, 3-%-Hürde je Provinz) in 52 Wahlkreisen (50 Provinzen, Ceuta, Melilla)."""
+    zk, zp = QUELLEN / "es_cong23_resumen.csv", QUELLEN / "es_cong23_partidos.csv"
+    if not (zk.exists() and zp.exists()):
+        return None
+    werte, ges, sitze = {}, {}, {}
+    kenn = {z["codigo"]: z for z in csv.DictReader(zk.open(encoding="utf-8"))}
+    st = {}
+    for z in csv.DictReader(zp.open(encoding="utf-8")):
+        p = _es_kurz(z["partido"])
+        d = st.setdefault(z["codigo"], {"p": {}, "s": {}})
+        d["p"][p] = d["p"].get(p, 0) + int(z["votos"])
+        d["s"][p] = d["s"].get(p, 0) + int(z["escanos"] or 0)
+    for k, K in kenn.items():
+        d = st.get(k, {"p": {}, "s": {}})
+        validos = int(K["validos"])                      # Bezug: gültige Stimmen einschließlich leerer Stimmzettel (wie im spanischen Recht)
+        werte[k] = {"n": K["provincia"], "s": {"s": anteile(list(d["p"].items()), validos)},
+                    "sitze": [[p, n, None] for p, n in sorted(d["s"].items(), key=lambda x: -x[1]) if n], "wb": int(K["electores"]), "w": int(K["votantes"]),
+                    "bet": r1(int(K["votantes"]) / int(K["electores"]) * 100)}
+        werte[k]["sitze_n"] = sum(x[1] for x in werte[k]["sitze"])
+        for p, n in d["p"].items():
+            ges[p] = ges.get(p, 0) + n
+        for p, n in d["s"].items():
+            sitze[p] = sitze.get(p, 0) + n
+    wb, w, validos = (sum(int(K[x]) for K in kenn.values()) for x in ("electores", "votantes", "validos"))
+    g = {"s": {"s": anteile(list(ges.items()), validos)}, "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1]) if n],
+         "sitze_n": sum(sitze.values()), "wb": wb, "w": w, "bet": r1(w / wb * 100),
+         "sitze_hinweis": "PSOE einschließlich PSC (Katalonien); Anteile an den gültigen Stimmen einschließlich leerer Stimmzettel"}
+    return {"g": g, "farben": ES_FARBEN, "stimmarten": [["s", "Stimmen"]], "status": "endgültig",
+            "system": "Verhältniswahl mit geschlossenen Listen in 52 Wahlkreisen (Provinzen, Ceuta, Melilla); Sitzverteilung nach D'Hondt je Provinz, 3-%-Hürde.",
+            "einheiten": [{"id": "prov", "name": "Provinzen (Wahlkreise)", "einzahl": "Provinz", "art": "wahlkreis", "geo": "wahlkreise-es", "werte": werte}],
+            "quelle": {"name": "Junta Electoral Central, Resumen de los resultados (BOE-A-2023-18907); Grenzen: Natural Earth", "url": ES_CONG23,
+                       "lizenz": "amtliche Bekanntmachung; Grenzen gemeinfrei"}}
+
+
+# ---------------------------------------------------------------- Norwegen: Storting 08.09.2025 je Wahlkreis (19 alte Fylker, Valgdirektoratet)
+def no_laden(abruf):
+    ziel = QUELLEN / "no_st25.json"
+    if ziel.exists() or not abruf:
+        return
+    import requests
+    land = requests.get(NO_ST25, timeout=120).json()
+    kreise = [requests.get("https://valgresultat.no/api" + r["href"], timeout=120).json() for r in land["_links"]["related"]]
+    knapp = lambda d: {k: d[k] for k in ("id", "antallsb", "mandater", "stemmer", "frammote", "partier")}
+    ziel.write_text(json.dumps({"land": knapp(land), "kreise": [knapp(k) for k in kreise]}, ensure_ascii=False, indent=0), encoding="utf-8")
+
+
+def no_st25():
+    """Stortingswahl 2025: Verhältniswahl (modifiziertes Sainte-Laguë) in 19 Wahlkreisen, 150 Sitze direkt, 19 Ausgleichsmandate (4-%-Hürde)."""
+    pfad = QUELLEN / "no_st25.json"
+    if not pfad.exists():
+        return None
+    d = json.loads(pfad.read_text())
+
+    def wert(x):
+        l, sitze = [], []
+        for p in x["partier"]:
+            n = NO_PARTEI.get(p["id"]["partikode"], "Sonstige")
+            r = p["stemmer"]["resultat"]
+            if p["id"]["partikode"] == "Andre" or not (r.get("antall") or {}).get("total") or r.get("prosent") is None:   # „Andre“ = Summe der übrigen
+                continue
+            alt = next((y for y in l if y[0] == n), None)
+            if alt:
+                alt[1] += r["antall"]["total"]
+                alt[2] = r1(alt[2] + r["prosent"])
+                alt[3] = None
+            else:
+                end = (r.get("endring") or {}).get("samme")
+                l.append([n, r["antall"]["total"], r1(r["prosent"]), r1(r["prosent"] - end) if end is not None else None])
+            m = (p.get("mandater") or {}).get("resultat") or {}
+            if m.get("antall") or m.get("endring"):
+                sitze.append([n, m.get("antall", 0), m.get("antall", 0) - (m.get("endring") or 0)])
+        o = {"s": {"s": sorted(l, key=lambda y: -y[1])}, "sitze": sorted(sitze, key=lambda y: -y[1]), "sitze_n": x["mandater"]["antall"],
+             "wb": x["antallsb"], "w": x["stemmer"]["total"], "bet": r1(x["frammote"]["prosent"])}
+        return o
+    werte = {}
+    for k in d["kreise"]:
+        werte["NO-" + NO_KREIS.get(k["id"]["nr"], k["id"]["nr"])] = {"n": k["id"]["navn"], **wert(k)}
+    g = wert(d["land"])
+    g["sitze_hinweis"] = "einschließlich 19 Ausgleichsmandate; Veränderung zur Wahl 2021"
+    return {"g": g, "farben": NO_FARBEN, "stimmarten": [["s", "Stimmen"]], "status": "endgültig",
+            "system": ("Verhältniswahl in 19 Wahlkreisen (die Fylker vor der Reform 2020); 150 Sitze in den Wahlkreisen nach modifiziertem Sainte-Laguë, "
+                       "dazu 19 Ausgleichsmandate für Parteien ab 4 % landesweit."),
+            "vor": {"datum": "2021-09-13", "titel": "Stortingswahl 2021"},
+            "einheiten": [{"id": "wk", "name": "Wahlkreise (Fylker vor 2020)", "einzahl": "Wahlkreis", "art": "wahlkreis", "geo": "wahlkreise-no", "werte": werte}],
+            "quelle": {"name": "Valgdirektoratet, valgresultat.no; Grenzen: Natural Earth", "url": "https://valgresultat.no/valg/2025/st", "lizenz": "NLOD 2.0; Grenzen gemeinfrei"}}
 
 
 # ---------------------------------------------------------------- Grenzen kompakt halten (Artifact-Grenze 16 MB)
@@ -1168,14 +1559,24 @@ def main():
     au_laden(not a.ohne_abruf)
     ch_laden(not a.ohne_abruf)
     at_laden(not a.ohne_abruf)
-    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO, WK_CA_GEO, WK_AU_GEO, GEM_AT_GEO):
+    us_laden(not a.ohne_abruf)
+    es_laden(not a.ohne_abruf)
+    no_laden(not a.ohne_abruf)
+    ne_wahlkreise(not a.ohne_abruf, "ES", WK_ES_GEO)
+    ne_wahlkreise(not a.ohne_abruf, "NO", WK_NO_GEO)
+    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO, WK_CA_GEO, WK_AU_GEO, GEM_AT_GEO, WK_US_GEO, WK_ES_GEO, WK_NO_GEO, GEM_CH_GEO):
         kompakt(geo)
     wahlen = [w for w in national(pa) if w["land"] != "DE" or w["kammer"] != "unterhaus"]
     wahlen.append(bundestag(pa, HIER / "geo/wahlkreise_bund.geojson", HIER / "geo/de_laender.geojson"))
     if ew:
         wahlen.append(ew)
-    gb, fr, ca, au, ch, at = gb_ge24(), fr_leg24(), ca_ge25(), au_ge25(), ch_nrw23(), at_nrw24()
+    gb, fr, ca, au, ch, at, es = gb_ge24(), fr_leg24(), ca_ge25(), au_ge25(), ch_nrw23(), at_nrw24(), es_cong23()
+    no = no_st25()
     for w in wahlen:
+        if no and w["id"] == "NO-unterhaus-2025":
+            w.update(no)
+        if es and w["id"] == "ES-unterhaus-2023":
+            w.update(es)
         if at and w["id"] == "AT-unterhaus-2024":
             w.update(at)
         if ch and w["id"] == "CH-unterhaus-2023":
@@ -1188,6 +1589,14 @@ def main():
             w.update(gb)
         if fr and w["id"] == "FR-unterhaus-2024":
             w.update(fr)
+    us = us_house24()
+    if us:
+        # Die Wahl 2026 ist noch nicht ausgezählt (nur heutige Zusammensetzung): bis dahin zeigt die Karte die Wahl 2024, damit sich keine zwei Wahlen überdecken
+        alt = [i for i, w in enumerate(wahlen) if w["land"] == "US" and w["kammer"] == "unterhaus" and not (w["g"].get("s") or {}).get("s")]
+        if alt:
+            wahlen[alt[0]] = us
+        else:
+            wahlen.append(us)
     wahlen += regional(pa, ko) + kommunal(ko)
     daten = {"stand": date.today().isoformat(), "ebenen": EBENEN_NAMEN, "eu": sorted(EU), "farben": {"DE": DE_FARBEN}, "ordnung": {"DE": DE_ORDNUNG}, "wahlen": wahlen}
     OUT.write_text(json.dumps(daten, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

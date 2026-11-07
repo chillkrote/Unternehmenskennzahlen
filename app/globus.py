@@ -104,18 +104,40 @@ def netze():
 # Schlüssel = "geo" der Einheit in data/wahlen.json, properties.id = Schlüssel der Werte.
 WAHL_GEO = [("landtagswahlkreise-nw", "geo/landtagswahlkreise_nw.geojson"), ("wahlkreise-gb", "geo/wahlkreise_gb.geojson"),
             ("wahlkreise-fr", "geo/wahlkreise_fr.geojson"), ("wahlkreise-ca", "geo/wahlkreise_ca.geojson"), ("wahlkreise-au", "geo/wahlkreise_au.geojson"),
-            ("gemeinden-at", "geo/gemeinden_at.geojson")]
+            ("gemeinden-at", "geo/gemeinden_at.geojson"), ("wahlkreise-us", "geo/wahlkreise_us.geojson"), ("wahlkreise-es", "geo/wahlkreise_es.geojson"),
+            ("wahlkreise-no", "geo/wahlkreise_no.geojson"), ("gemeinden-ch", "geo/gemeinden_ch.geojson")]
+
+
+WERTE_NACHLADEN_AB = 800      # Einheiten mit so vielen Werten (Gemeinden) stehen nicht in der Seite, sondern in wahlgeo/werte-<wahl>-<einheit>.json
+
+
+def wahlen_aufteilen():
+    """Wahlregister für die Seite: große Einheiten (Gemeinden) ohne Werte, dafür mit "nach" (Datei) und "anzahl"; zurück (Register, {Datei: Werte})."""
+    pfad = HIER / "data/wahlen.json"
+    if not pfad.exists():
+        return None, {}
+    d, dateien = json.loads(pfad.read_text()), {}
+    for w in d["wahlen"]:
+        for u in w.get("einheiten") or []:
+            if len(u.get("werte") or {}) >= WERTE_NACHLADEN_AB:
+                datei = f"wahlgeo/werte-{w['id']}-{u['id']}.json"
+                dateien[datei] = u["werte"]
+                u.update({"werte": {}, "nach": datei, "anzahl": len(dateien[datei])})
+    return d, dateien
 
 
 def wahlgeo_schreiben(ziel):
-    """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json und gibt die Liste der Dateien zurück."""
-    ziel = Path(ziel) / "wahlgeo"
-    ziel.mkdir(parents=True, exist_ok=True)
+    """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json, dazu die ausgelagerten Gemeindewerte; gibt die Dateien zurück."""
+    ziel = Path(ziel)
+    (ziel / "wahlgeo").mkdir(parents=True, exist_ok=True)
     out = []
     for art, datei in WAHL_GEO:
         if (HIER / datei).exists():
-            (ziel / f"{art}.json").write_text((HIER / datei).read_text(), encoding="utf-8")
-            out.append(ziel / f"{art}.json")
+            (ziel / "wahlgeo" / f"{art}.json").write_text((HIER / datei).read_text(), encoding="utf-8")
+            out.append(ziel / "wahlgeo" / f"{art}.json")
+    for datei, werte in wahlen_aufteilen()[1].items():
+        (ziel / datei).write_text(json.dumps(werte, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        out.append(ziel / datei)
     return out
 
 
@@ -145,7 +167,7 @@ def seite(terminal_seite):
         '<script id="kreise-de-geo" type="application/json">' + (_js((HIER / "geo/kreise_de.geojson").read_text()) if (HIER / "geo/kreise_de.geojson").exists() else "null") + "</script>",
         # Wahlkreisgrenzen einzelner Länder werden nicht eingebettet, sondern bei Bedarf nachgeladen (dist/wahlgeo/<art>.json, siehe wahlgeo_schreiben)
         '<script id="wa-geo-nachladen" type="application/json">' + json.dumps({art: f"wahlgeo/{art}.json" for art, datei in WAHL_GEO if (HIER / datei).exists()}) + "</script>",
-        '<script id="wahlen-daten" type="application/json">' + (_js((HIER / "data/wahlen.json").read_text()) if (HIER / "data/wahlen.json").exists() else "null") + "</script>",
+        '<script id="wahlen-daten" type="application/json">' + _js(json.dumps(wahlen_aufteilen()[0], ensure_ascii=False, separators=(",", ":"))) + "</script>",
         "<script>\n" + (HIER / "src/wahlen.js").read_text() + "\n</script>",
         # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein
         "<style>\n" + (HIER / "src/netz.css").read_text() + "\n</style>",

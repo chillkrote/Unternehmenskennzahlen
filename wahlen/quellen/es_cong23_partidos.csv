@@ -1,0 +1,551 @@
+codigo,provincia,partido,votos,escanos
+ES-AB,Albacete,Partido Popular (PP),88299,2
+ES-AB,Albacete,Partido Socialista Obrero Español (PSOE),76322,2
+ES-AB,Albacete,VOX (VOX),36750,0
+ES-AB,Albacete,Sumar (SUMAR),15834,0
+ES-A,Alicante/Alacant,Partido Popular (PP),330293,5
+ES-A,Alicante/Alacant,Partido Socialista Obrero Español (PSOE),287737,4
+ES-A,Alicante/Alacant,VOX (VOX),146133,2
+ES-A,Alicante/Alacant,Sumar (SUMAR),115787,1
+ES-AL,Almería,Partido Popular (PP),131524,3
+ES-AL,Almería,Partido Socialista Obrero Español (PSOE),93282,2
+ES-AL,Almería,VOX (VOX),68364,1
+ES-AL,Almería,Sumar (SUMAR),21485,0
+ES-VI,Araba/Álava,Partido Popular (PP),30212,1
+ES-VI,Araba/Álava,Partido Socialista Obrero Español (PSOE),46775,1
+ES-VI,Araba/Álava,VOX (VOX),6573,0
+ES-VI,Araba/Álava,Sumar (SUMAR),21561,0
+ES-O,Asturias,Partido Popular (PP),212816,3
+ES-O,Asturias,Partido Socialista Obrero Español (PSOE),205049,2
+ES-O,Asturias,VOX (VOX),74571,1
+ES-O,Asturias,Sumar (SUMAR),88630,1
+ES-AV,Ávila,Partido Popular (PP),42369,2
+ES-AV,Ávila,Partido Socialista Obrero Español (PSOE),26828,1
+ES-AV,Ávila,VOX (VOX),15068,0
+ES-AV,Ávila,Sumar (SUMAR),5027,0
+ES-BA,Badajoz,Partido Popular (PP),148068,2
+ES-BA,Badajoz,Partido Socialista Obrero Español (PSOE),153473,2
+ES-BA,Badajoz,VOX (VOX),53492,1
+ES-BA,Badajoz,Sumar (SUMAR),26778,0
+ES-PM,Balears (Illes),Partido Popular (PP),179303,3
+ES-PM,Balears (Illes),Partido Socialista Obrero Español (PSOE),151786,3
+ES-PM,Balears (Illes),VOX (VOX),76547,1
+ES-PM,Balears (Illes),Sumar (SUMAR),83487,1
+ES-B,Barcelona,Partido Popular (PP),367519,5
+ES-B,Barcelona,VOX (VOX),201775,2
+ES-B,Barcelona,Sumar (SUMAR),405993,5
+ES-B,Barcelona,Partit dels Socialistes de Catalunya (PSC- PSOE) (PSC),952347,13
+ES-BI,Bizkaia,Partido Popular (PP),70533,1
+ES-BI,Bizkaia,Partido Socialista Obrero Español (PSOE),157448,2
+ES-BI,Bizkaia,VOX (VOX),16069,0
+ES-BI,Bizkaia,Sumar (SUMAR),66592,1
+ES-BU,Burgos,Partido Popular (PP),82329,2
+ES-BU,Burgos,Partido Socialista Obrero Español (PSOE),69775,2
+ES-BU,Burgos,VOX (VOX),25858,0
+ES-BU,Burgos,Sumar (SUMAR),17508,0
+ES-CC,Cáceres,Partido Popular (PP),89633,2
+ES-CC,Cáceres,Partido Socialista Obrero Español (PSOE),91692,2
+ES-CC,Cáceres,VOX (VOX),32076,0
+ES-CC,Cáceres,Sumar (SUMAR),16354,0
+ES-CA,Cádiz,Partido Popular (PP),221703,4
+ES-CA,Cádiz,Partido Socialista Obrero Español (PSOE),211200,3
+ES-CA,Cádiz,VOX (VOX),96720,1
+ES-CA,Cádiz,Sumar (SUMAR),82115,1
+ES-S,Cantabria,Partido Popular (PP),147326,2
+ES-S,Cantabria,Partido Socialista Obrero Español (PSOE),116596,2
+ES-S,Cantabria,VOX (VOX),49243,1
+ES-S,Cantabria,Sumar (SUMAR),29713,0
+ES-CS,Castellón/Castelló,Partido Popular (PP),108302,2
+ES-CS,Castellón/Castelló,Partido Socialista Obrero Español (PSOE),100530,2
+ES-CS,Castellón/Castelló,VOX (VOX),48913,1
+ES-CS,Castellón/Castelló,Sumar (SUMAR),44187,0
+ES-CR,Ciudad Real,Partido Popular (PP),114709,2
+ES-CR,Ciudad Real,Partido Socialista Obrero Español (PSOE),100102,2
+ES-CR,Ciudad Real,VOX (VOX),46046,1
+ES-CR,Ciudad Real,Sumar (SUMAR),17405,0
+ES-CO,Córdoba,Partido Popular (PP),169976,2
+ES-CO,Córdoba,Partido Socialista Obrero Español (PSOE),144080,2
+ES-CO,Córdoba,VOX (VOX),62526,1
+ES-CO,Córdoba,Sumar (SUMAR),61594,1
+ES-C,Coruña (A),Partido Popular (PP),292272,4
+ES-C,Coruña (A),Partido Socialista Obrero Español (PSOE),190897,2
+ES-C,Coruña (A),VOX (VOX),34410,0
+ES-C,Coruña (A),Sumar (SUMAR),82618,1
+ES-CU,Cuenca,Partido Popular (PP),45255,2
+ES-CU,Cuenca,Partido Socialista Obrero Español (PSOE),42528,1
+ES-CU,Cuenca,VOX (VOX),17700,0
+ES-CU,Cuenca,Sumar (SUMAR),6325,0
+ES-SS,Gipuzkoa,Partido Popular (PP),32721,0
+ES-SS,Gipuzkoa,Partido Socialista Obrero Español (PSOE),87709,2
+ES-SS,Gipuzkoa,VOX (VOX),7877,0
+ES-SS,Gipuzkoa,Sumar (SUMAR),40081,0
+ES-GI,Girona,Partido Popular (PP),31341,0
+ES-GI,Girona,VOX (VOX),22706,0
+ES-GI,Girona,Sumar (SUMAR),35344,1
+ES-GI,Girona,Partit dels Socialistes de Catalunya (PSC- PSOE) (PSC),93448,2
+ES-GR,Granada,Partido Popular (PP),185996,3
+ES-GR,Granada,Partido Socialista Obrero Español (PSOE),165862,2
+ES-GR,Granada,VOX (VOX),81080,1
+ES-GR,Granada,Sumar (SUMAR),58567,1
+ES-GU,Guadalajara,Partido Popular (PP),51195,1
+ES-GU,Guadalajara,Partido Socialista Obrero Español (PSOE),46479,1
+ES-GU,Guadalajara,VOX (VOX),27126,1
+ES-GU,Guadalajara,Sumar (SUMAR),12907,0
+ES-H,Huelva,Partido Popular (PP),93565,2
+ES-H,Huelva,Partido Socialista Obrero Español (PSOE),92326,2
+ES-H,Huelva,VOX (VOX),37572,1
+ES-H,Huelva,Sumar (SUMAR),26752,0
+ES-HU,Huesca,Partido Popular (PP),45783,2
+ES-HU,Huesca,Partido Socialista Obrero Español (PSOE),40307,1
+ES-HU,Huesca,VOX (VOX),15155,0
+ES-HU,Huesca,Sumar (SUMAR),13774,0
+ES-J,Jaén,Partido Popular (PP),137617,2
+ES-J,Jaén,Partido Socialista Obrero Español (PSOE),133819,2
+ES-J,Jaén,VOX (VOX),54400,1
+ES-J,Jaén,Sumar (SUMAR),29461,0
+ES-LE,León,Partido Popular (PP),101605,2
+ES-LE,León,Partido Socialista Obrero Español (PSOE),92578,2
+ES-LE,León,VOX (VOX),35451,0
+ES-LE,León,Sumar (SUMAR),18577,0
+ES-L,Lleida,Partido Popular (PP),23699,0
+ES-L,Lleida,VOX (VOX),12560,0
+ES-L,Lleida,Sumar (SUMAR),14561,0
+ES-L,Lleida,Partit dels Socialistes de Catalunya (PSC- PSOE) (PSC),54414,2
+ES-LU,Lugo,Partido Popular (PP),99769,3
+ES-LU,Lugo,Partido Socialista Obrero Español (PSOE),60163,1
+ES-LU,Lugo,VOX (VOX),8643,0
+ES-LU,Lugo,Sumar (SUMAR),10287,0
+ES-M,Madrid,Partido Popular (PP),1463183,16
+ES-M,Madrid,Partido Socialista Obrero Español (PSOE),1004599,10
+ES-M,Madrid,VOX (VOX),506164,5
+ES-M,Madrid,Sumar (SUMAR),557780,6
+ES-MA,Málaga,Partido Popular (PP),302000,5
+ES-MA,Málaga,Partido Socialista Obrero Español (PSOE),239172,3
+ES-MA,Málaga,VOX (VOX),129758,2
+ES-MA,Málaga,Sumar (SUMAR),96652,1
+ES-MU,Murcia,Partido Popular (PP),307972,4
+ES-MU,Murcia,Partido Socialista Obrero Español (PSOE),189210,3
+ES-MU,Murcia,VOX (VOX),163124,2
+ES-MU,Murcia,Sumar (SUMAR),71578,1
+ES-NA,Navarra,Partido Popular (PP),57134,1
+ES-NA,Navarra,Partido Socialista Obrero Español (PSOE),93553,2
+ES-NA,Navarra,VOX (VOX),19491,0
+ES-NA,Navarra,Sumar (SUMAR),43922,0
+ES-OR,Ourense,Partido Popular (PP),93182,3
+ES-OR,Ourense,Partido Socialista Obrero Español (PSOE),56035,1
+ES-OR,Ourense,VOX (VOX),9080,0
+ES-OR,Ourense,Sumar (SUMAR),10171,0
+ES-P,Palencia,Partido Popular (PP),40709,2
+ES-P,Palencia,Partido Socialista Obrero Español (PSOE),33613,1
+ES-P,Palencia,VOX (VOX),12504,0
+ES-P,Palencia,Sumar (SUMAR),5877,0
+ES-GC,Palmas (Las),Partido Popular (PP),136857,3
+ES-GC,Palmas (Las),Partido Socialista Obrero Español (PSOE),175671,3
+ES-GC,Palmas (Las),VOX (VOX),77343,1
+ES-GC,Palmas (Las),Sumar (SUMAR),54369,1
+ES-PO,Pontevedra,Partido Popular (PP),227658,3
+ES-PO,Pontevedra,Partido Socialista Obrero Español (PSOE),179737,3
+ES-PO,Pontevedra,VOX (VOX),27539,0
+ES-PO,Pontevedra,Sumar (SUMAR),75615,1
+ES-LO,Rioja (La),Partido Popular (PP),79715,2
+ES-LO,Rioja (La),Partido Socialista Obrero Español (PSOE),62322,2
+ES-LO,Rioja (La),VOX (VOX),17056,0
+ES-LO,Rioja (La),Sumar (SUMAR),11470,0
+ES-SA,Salamanca,Partido Popular (PP),93318,3
+ES-SA,Salamanca,Partido Socialista Obrero Español (PSOE),60718,1
+ES-SA,Salamanca,VOX (VOX),29203,0
+ES-SA,Salamanca,Sumar (SUMAR),11012,0
+ES-TF,Santa Cruz de Tenerife,Partido Popular (PP),174770,3
+ES-TF,Santa Cruz de Tenerife,Partido Socialista Obrero Español (PSOE),165590,3
+ES-TF,Santa Cruz de Tenerife,Sumar (SUMAR),53632,0
+ES-SG,Segovia,Partido Popular (PP),39894,2
+ES-SG,Segovia,Partido Socialista Obrero Español (PSOE),27113,1
+ES-SG,Segovia,VOX (VOX),12510,0
+ES-SG,Segovia,Sumar (SUMAR),7137,0
+ES-SE,Sevilla,Partido Popular (PP),353663,4
+ES-SE,Sevilla,Partido Socialista Obrero Español (PSOE),387760,5
+ES-SE,Sevilla,VOX (VOX),141087,1
+ES-SE,Sevilla,Sumar (SUMAR),148745,2
+ES-SO,Soria,Partido Popular (PP),18895,1
+ES-SO,Soria,Partido Socialista Obrero Español (PSOE),14966,1
+ES-SO,Soria,VOX (VOX),4978,0
+ES-SO,Soria,Sumar (SUMAR),1711,0
+ES-T,Tarragona,Partido Popular (PP),51061,1
+ES-T,Tarragona,VOX (VOX),38039,0
+ES-T,Tarragona,Sumar (SUMAR),41719,1
+ES-T,Tarragona,Partit dels Socialistes de Catalunya (PSC- PSOE) (PSC),121126,2
+ES-TE,Teruel,Partido Popular (PP),26586,2
+ES-TE,Teruel,Partido Socialista Obrero Español (PSOE),22226,1
+ES-TE,Teruel,VOX (VOX),9932,0
+ES-TE,Teruel,Sumar (SUMAR),4126,0
+ES-TO,Toledo,Partido Popular (PP),146533,3
+ES-TO,Toledo,Partido Socialista Obrero Español (PSOE),126072,2
+ES-TO,Toledo,VOX (VOX),76044,1
+ES-TO,Toledo,Sumar (SUMAR),31876,0
+ES-V,Valencia/València,Partido Popular (PP),483469,6
+ES-V,Valencia/València,Partido Socialista Obrero Español (PSOE),461353,5
+ES-V,Valencia/València,VOX (VOX),218657,2
+ES-V,Valencia/València,Sumar (SUMAR),242839,3
+ES-VA,Valladolid,Partido Popular (PP),129170,2
+ES-VA,Valladolid,Partido Socialista Obrero Español (PSOE),103596,2
+ES-VA,Valladolid,VOX (VOX),47948,1
+ES-VA,Valladolid,Sumar (SUMAR),28049,0
+ES-ZA,Zamora,Partido Popular (PP),46196,2
+ES-ZA,Zamora,Partido Socialista Obrero Español (PSOE),33601,1
+ES-ZA,Zamora,VOX (VOX),13652,0
+ES-ZA,Zamora,Sumar (SUMAR),5839,0
+ES-Z,Zaragoza,Partido Popular (PP),186776,3
+ES-Z,Zaragoza,Partido Socialista Obrero Español (PSOE),159858,2
+ES-Z,Zaragoza,VOX (VOX),79376,1
+ES-Z,Zaragoza,Sumar (SUMAR),69925,1
+ES-CE,Ceuta,Partido Popular (PP),12918,1
+ES-CE,Ceuta,Partido Socialista Obrero Español (PSOE),11332,0
+ES-CE,Ceuta,VOX (VOX),7752,0
+ES-CE,Ceuta,Sumar (SUMAR),821,0
+ES-ML,Melilla,Partido Popular (PP),13446,1
+ES-ML,Melilla,Partido Socialista Obrero Español (PSOE),6943,0
+ES-ML,Melilla,VOX (VOX),4359,0
+ES-ML,Melilla,Sumar (SUMAR),827,0
+ES-VI,Araba/Álava,Euskal Herria Bildu (EH Bildu),32987,1
+ES-VI,Araba/Álava,Euzko Alderdi Jeltzalea-Partido Nacionalista Vasco (EAJ-PNV),28075,1
+ES-B,Barcelona,Esquerra Republicana de Catalunya (ERC),328697,4
+ES-B,Barcelona,Junts (JUNTS),258159,3
+ES-BI,Bizkaia,Euskal Herria Bildu (EH Bildu),125867,2
+ES-BI,Bizkaia,Euzko Alderdi Jeltzalea-Partido Nacionalista Vasco (EAJ-PNV),164188,2
+ES-C,Coruña (A),Bloque Nacionalista Galego (BNG),67653,1
+ES-SS,Gipuzkoa,Euskal Herria Bildu (EH Bildu),117321,2
+ES-SS,Gipuzkoa,Euzko Alderdi Jeltzalea-Partido Nacionalista Vasco (EAJ-PNV),85026,2
+ES-GI,Girona,Esquerra Republicana de Catalunya (ERC),47531,1
+ES-GI,Girona,Junts (JUNTS),63251,2
+ES-L,Lleida,Esquerra Republicana de Catalunya (ERC),34331,1
+ES-L,Lleida,Junts (JUNTS),33228,1
+ES-LU,Lugo,Bloque Nacionalista Galego (BNG),17197,0
+ES-NA,Navarra,Euskal Herria Bildu (EH Bildu),58954,1
+ES-OR,Ourense,Bloque Nacionalista Galego (BNG),15317,0
+ES-PO,Pontevedra,Bloque Nacionalista Galego (BNG),53828,0
+ES-T,Tarragona,Esquerra Republicana de Catalunya (ERC),55461,1
+ES-T,Tarragona,Junts (JUNTS),40791,1
+ES-NA,Navarra,Unión del Pueblo Navarro (UPN),52188,1
+ES-GC,Palmas (Las),Coalición Canaria (CCa),33558,0
+ES-TF,Santa Cruz de Tenerife,Coalición Canaria (CCa),82805,1
+ES-AB,Albacete,Partido Animalista con el Medio Ambiente (PACMA),1261,0
+ES-AB,Albacete,Frente Obrero (FO),381,0
+ES-A,Alicante/Alacant,Partido Animalista con el Medio Ambiente (PACMA),7335,0
+ES-A,Alicante/Alacant,Frente Obrero (FO),1724,0
+ES-AL,Almería,Partido Animalista con el Medio Ambiente (PACMA),1962,0
+ES-AL,Almería,Frente Obrero (FO),500,0
+ES-VI,Araba/Álava,Partido Animalista con el Medio Ambiente (PACMA),773,0
+ES-VI,Araba/Álava,Frente Obrero (FO),354,0
+ES-O,Asturias,Partido Animalista con el Medio Ambiente (PACMA),3167,0
+ES-O,Asturias,Frente Obrero (FO),1176,0
+ES-AV,Ávila,Partido Animalista con el Medio Ambiente (PACMA),275,0
+ES-AV,Ávila,Frente Obrero (FO),100,0
+ES-BA,Badajoz,Partido Animalista con el Medio Ambiente (PACMA),1395,0
+ES-BA,Badajoz,Frente Obrero (FO),477,0
+ES-PM,Balears (Illes),Partido Animalista con el Medio Ambiente (PACMA),4969,0
+ES-PM,Balears (Illes),Frente Obrero (FO),1039,0
+ES-B,Barcelona,Partido Animalista con el Medio Ambiente (PACMA),28201,0
+ES-B,Barcelona,Candidatura D'Unitat Popular-Per La Ruptura (CUP-PR),67266,0
+ES-B,Barcelona,Frente Obrero (FO),6048,0
+ES-B,Barcelona,Partit Demòcrata Europeu Català-Espai CIU (PDeCAT-E-CiU),24452,0
+ES-BI,Bizkaia,Partido Animalista con el Medio Ambiente (PACMA),2729,0
+ES-BI,Bizkaia,Frente Obrero (FO),929,0
+ES-BU,Burgos,Partido Animalista con el Medio Ambiente (PACMA),943,0
+ES-BU,Burgos,Frente Obrero (FO),490,0
+ES-CC,Cáceres,Partido Animalista con el Medio Ambiente (PACMA),814,0
+ES-CC,Cáceres,Frente Obrero (FO),316,0
+ES-CA,Cádiz,Partido Animalista con el Medio Ambiente (PACMA),5937,0
+ES-CA,Cádiz,Frente Obrero (FO),1225,0
+ES-S,Cantabria,Partido Animalista con el Medio Ambiente (PACMA),2089,0
+ES-S,Cantabria,Frente Obrero (FO),790,0
+ES-CS,Castellón/Castelló,Partido Animalista con el Medio Ambiente (PACMA),1968,0
+ES-CS,Castellón/Castelló,Frente Obrero (FO),721,0
+ES-CR,Ciudad Real,Partido Animalista con el Medio Ambiente (PACMA),1319,0
+ES-CR,Ciudad Real,Frente Obrero (FO),447,0
+ES-CO,Córdoba,Partido Animalista con el Medio Ambiente (PACMA),2699,0
+ES-CO,Córdoba,Frente Obrero (FO),701,0
+ES-C,Coruña (A),Partido Animalista con el Medio Ambiente (PACMA),3096,0
+ES-C,Coruña (A),Frente Obrero (FO),1011,0
+ES-CU,Cuenca,Partido Animalista con el Medio Ambiente (PACMA),387,0
+ES-CU,Cuenca,Frente Obrero (FO),207,0
+ES-SS,Gipuzkoa,Partido Animalista con el Medio Ambiente (PACMA),1568,0
+ES-SS,Gipuzkoa,Frente Obrero (FO),530,0
+ES-GI,Girona,Partido Animalista con el Medio Ambiente (PACMA),3531,0
+ES-GI,Girona,Candidatura D'Unitat Popular-Per La Ruptura (CUP-PR),18229,0
+ES-GI,Girona,Frente Obrero (FO),570,0
+ES-GI,Girona,Partit Demòcrata Europeu Català-Espai CIU (PDeCAT-E-CiU),3388,0
+ES-GR,Granada,Partido Animalista con el Medio Ambiente (PACMA),3143,0
+ES-GR,Granada,Frente Obrero (FO),658,0
+ES-GU,Guadalajara,Partido Animalista con el Medio Ambiente (PACMA),1039,0
+ES-GU,Guadalajara,Frente Obrero (FO),304,0
+ES-H,Huelva,Partido Animalista con el Medio Ambiente (PACMA),1663,0
+ES-HU,Huesca,Partido Animalista con el Medio Ambiente (PACMA),498,0
+ES-HU,Huesca,Frente Obrero (FO),258,0
+ES-J,Jaén,Partido Animalista con el Medio Ambiente (PACMA),1671,0
+ES-J,Jaén,Frente Obrero (FO),410,0
+ES-LE,León,Partido Animalista con el Medio Ambiente (PACMA),895,0
+ES-LE,León,Frente Obrero (FO),541,0
+ES-L,Lleida,Partido Animalista con el Medio Ambiente (PACMA),1352,0
+ES-L,Lleida,Candidatura D'Unitat Popular-Per La Ruptura (CUP-PR),5449,0
+ES-L,Lleida,Frente Obrero (FO),247,0
+ES-L,Lleida,Partit Demòcrata Europeu Català-Espai CIU (PDeCAT-E-CiU),1865,0
+ES-LU,Lugo,Partido Animalista con el Medio Ambiente (PACMA),645,0
+ES-LU,Lugo,Frente Obrero (FO),233,0
+ES-M,Madrid,Partido Animalista con el Medio Ambiente (PACMA),21742,0
+ES-M,Madrid,Frente Obrero (FO),7652,0
+ES-MA,Málaga,Partido Animalista con el Medio Ambiente (PACMA),8487,0
+ES-MA,Málaga,Frente Obrero (FO),1662,0
+ES-MU,Murcia,Partido Animalista con el Medio Ambiente (PACMA),5063,0
+ES-MU,Murcia,Frente Obrero (FO),1201,0
+ES-NA,Navarra,Partido Animalista con el Medio Ambiente (PACMA),1530,0
+ES-NA,Navarra,Frente Obrero (FO),679,0
+ES-OR,Ourense,Partido Animalista con el Medio Ambiente (PACMA),700,0
+ES-OR,Ourense,Frente Obrero (FO),182,0
+ES-P,Palencia,Partido Animalista con el Medio Ambiente (PACMA),295,0
+ES-P,Palencia,Frente Obrero (FO),139,0
+ES-GC,Palmas (Las),Partido Animalista con el Medio Ambiente (PACMA),3570,0
+ES-GC,Palmas (Las),Frente Obrero (FO),635,0
+ES-GC,Palmas (Las),Nueva Canarias- Bloque Canarista (NC- bc),42430,0
+ES-PO,Pontevedra,Partido Animalista con el Medio Ambiente (PACMA),3003,0
+ES-PO,Pontevedra,Frente Obrero (FO),884,0
+ES-LO,Rioja (La),Partido Animalista con el Medio Ambiente (PACMA),723,0
+ES-LO,Rioja (La),Frente Obrero (FO),295,0
+ES-SA,Salamanca,Partido Animalista con el Medio Ambiente (PACMA),631,0
+ES-SA,Salamanca,Frente Obrero (FO),278,0
+ES-TF,Santa Cruz de Tenerife,Partido Animalista con el Medio Ambiente (PACMA),6147,0
+ES-TF,Santa Cruz de Tenerife,Frente Obrero (FO),1619,0
+ES-TF,Santa Cruz de Tenerife,Nueva Canarias- Bloque Canarista (NC- bc),3165,0
+ES-SG,Segovia,Partido Animalista con el Medio Ambiente (PACMA),307,0
+ES-SG,Segovia,Frente Obrero (FO),183,0
+ES-SE,Sevilla,Partido Animalista con el Medio Ambiente (PACMA),9288,0
+ES-SE,Sevilla,Frente Obrero (FO),1950,0
+ES-SO,Soria,Partido Animalista con el Medio Ambiente (PACMA),94,0
+ES-SO,Soria,Frente Obrero (FO),68,0
+ES-T,Tarragona,Partido Animalista con el Medio Ambiente (PACMA),3797,0
+ES-T,Tarragona,Candidatura D'Unitat Popular-Per La Ruptura (CUP-PR),8700,0
+ES-T,Tarragona,Frente Obrero (FO),661,0
+ES-T,Tarragona,Partit Demòcrata Europeu Català-Espai CIU (PDeCAT-E-CiU),2311,0
+ES-TE,Teruel,Partido Animalista con el Medio Ambiente (PACMA),172,0
+ES-TE,Teruel,Frente Obrero (FO),94,0
+ES-TO,Toledo,Partido Animalista con el Medio Ambiente (PACMA),2024,0
+ES-TO,Toledo,Frente Obrero (FO),985,0
+ES-V,Valencia/València,Partido Animalista con el Medio Ambiente (PACMA),10334,0
+ES-V,Valencia/València,Frente Obrero (FO),2919,0
+ES-VA,Valladolid,Partido Animalista con el Medio Ambiente (PACMA),1105,0
+ES-VA,Valladolid,Frente Obrero (FO),601,0
+ES-ZA,Zamora,Partido Animalista con el Medio Ambiente (PACMA),313,0
+ES-ZA,Zamora,Frente Obrero (FO),121,0
+ES-Z,Zaragoza,Partido Animalista con el Medio Ambiente (PACMA),2428,0
+ES-Z,Zaragoza,Frente Obrero (FO),1026,0
+ES-CE,Ceuta,Frente Obrero (FO),53,0
+ES-ML,Melilla,Partido Animalista con el Medio Ambiente (PACMA),160,0
+ES-AB,Albacete,Recortes Cero (RECORTES CERO),185,0
+ES-AB,Albacete,Por un Mundo más Justo (PUM+J),325,0
+ES-A,Alicante/Alacant,Recortes Cero (RECORTES CERO),1135,0
+ES-AL,Almería,Recortes Cero (RECORTES CERO),206,0
+ES-AL,Almería,Por un Mundo más Justo (PUM+J),371,0
+ES-VI,Araba/Álava,Recortes Cero (RECORTES CERO),185,0
+ES-VI,Araba/Álava,Por un Mundo más Justo (PUM+J),106,0
+ES-VI,Araba/Álava,Partido Comunista de los Trabajadores de España (PCTE),165,0
+ES-O,Asturias,Recortes Cero (RECORTES CERO),590,0
+ES-O,Asturias,Por un Mundo más Justo (PUM+J),773,0
+ES-O,Asturias,Partido Comunista de los Trabajadores de España (PCTE),1598,0
+ES-AV,Ávila,Recortes Cero (RECORTES CERO),42,0
+ES-AV,Ávila,Por un Mundo más Justo (PUM+J),91,0
+ES-AV,Ávila,Partido Comunista de los Trabajadores de España (PCTE),85,0
+ES-BA,Badajoz,Recortes Cero (RECORTES CERO),204,0
+ES-BA,Badajoz,Por un Mundo más Justo (PUM+J),464,0
+ES-PM,Balears (Illes),Recortes Cero (RECORTES CERO),726,0
+ES-PM,Balears (Illes),Partido Comunista de los Trabajadores de España (PCTE),719,0
+ES-B,Barcelona,Recortes Cero (RECORTES CERO),3104,0
+ES-B,Barcelona,Partido Comunista de los Trabajadores de España (PCTE),2858,0
+ES-BI,Bizkaia,Recortes Cero (RECORTES CERO),525,0
+ES-BI,Bizkaia,Por un Mundo más Justo (PUM+J),804,0
+ES-BI,Bizkaia,Partido Comunista de los Trabajadores de España (PCTE),618,0
+ES-BU,Burgos,Recortes Cero (RECORTES CERO),154,0
+ES-BU,Burgos,Por un Mundo más Justo (PUM+J),354,0
+ES-BU,Burgos,Partido Comunista de los Trabajadores de España (PCTE),349,0
+ES-CC,Cáceres,Recortes Cero (RECORTES CERO),111,0
+ES-CC,Cáceres,Por un Mundo más Justo (PUM+J),249,0
+ES-CA,Cádiz,Recortes Cero (RECORTES CERO),486,0
+ES-CA,Cádiz,Por un Mundo más Justo (PUM+J),673,0
+ES-S,Cantabria,Recortes Cero (RECORTES CERO),533,0
+ES-S,Cantabria,Partido Comunista de los Trabajadores de España (PCTE),598,0
+ES-CS,Castellón/Castelló,Recortes Cero (RECORTES CERO),493,0
+ES-CR,Ciudad Real,Recortes Cero (RECORTES CERO),233,0
+ES-CR,Ciudad Real,Por un Mundo más Justo (PUM+J),365,0
+ES-CO,Córdoba,Recortes Cero (RECORTES CERO),392,0
+ES-CO,Córdoba,Por un Mundo más Justo (PUM+J),598,0
+ES-CO,Córdoba,Partido Comunista de los Trabajadores de España (PCTE),746,0
+ES-C,Coruña (A),Recortes Cero (RECORTES CERO),548,0
+ES-CU,Cuenca,Recortes Cero (RECORTES CERO),58,0
+ES-CU,Cuenca,Por un Mundo más Justo (PUM+J),111,0
+ES-CU,Cuenca,Partido Comunista de los Trabajadores de España (PCTE),100,0
+ES-SS,Gipuzkoa,Recortes Cero (RECORTES CERO),442,0
+ES-SS,Gipuzkoa,Por un Mundo más Justo (PUM+J),149,0
+ES-SS,Gipuzkoa,Partido Comunista de los Trabajadores de España (PCTE),259,0
+ES-GI,Girona,Recortes Cero (RECORTES CERO),248,0
+ES-GI,Girona,Partido Comunista de los Trabajadores de España (PCTE),420,0
+ES-GR,Granada,Recortes Cero (RECORTES CERO),343,0
+ES-GR,Granada,Por un Mundo más Justo (PUM+J),765,0
+ES-GR,Granada,Partido Comunista de los Trabajadores de España (PCTE),695,0
+ES-GU,Guadalajara,Recortes Cero (RECORTES CERO),162,0
+ES-GU,Guadalajara,Por un Mundo más Justo (PUM+J),249,0
+ES-GU,Guadalajara,Partido Comunista de los Trabajadores de España (PCTE),191,0
+ES-H,Huelva,Recortes Cero (RECORTES CERO),217,0
+ES-H,Huelva,Por un Mundo más Justo (PUM+J),368,0
+ES-HU,Huesca,Recortes Cero (RECORTES CERO),64,0
+ES-HU,Huesca,Por un Mundo más Justo (PUM+J),114,0
+ES-HU,Huesca,Coalición Existe (EXISTE),1312,0
+ES-HU,Huesca,Partido Comunista de los Trabajadores de España (PCTE),137,0
+ES-J,Jaén,Recortes Cero (RECORTES CERO),203,0
+ES-J,Jaén,Por un Mundo más Justo (PUM+J),360,0
+ES-LE,León,Recortes Cero (RECORTES CERO),72,0
+ES-LE,León,Por un Mundo más Justo (PUM+J),155,0
+ES-LE,León,Unión del Pueblo Leones (UPL),22675,0
+ES-LE,León,Partido Comunista de los Trabajadores de España (PCTE),319,0
+ES-L,Lleida,Recortes Cero (RECORTES CERO),120,0
+ES-L,Lleida,Partido Comunista de los Trabajadores de España (PCTE),192,0
+ES-LU,Lugo,Recortes Cero (RECORTES CERO),113,0
+ES-LU,Lugo,Por un Mundo más Justo (PUM+J),149,0
+ES-LU,Lugo,Partido Comunista de los Trabajadores de España (PCTE),116,0
+ES-M,Madrid,Recortes Cero (RECORTES CERO),3784,0
+ES-M,Madrid,Por un Mundo más Justo (PUM+J),6749,0
+ES-M,Madrid,Partido Comunista de los Trabajadores de España (PCTE),3407,0
+ES-MA,Málaga,Recortes Cero (RECORTES CERO),888,0
+ES-MA,Málaga,Por un Mundo más Justo (PUM+J),1519,0
+ES-MU,Murcia,Recortes Cero (RECORTES CERO),546,0
+ES-NA,Navarra,Recortes Cero (RECORTES CERO),252,0
+ES-NA,Navarra,Por un Mundo más Justo (PUM+J),1002,0
+ES-NA,Navarra,Partido Comunista de los Trabajadores de España (PCTE),311,0
+ES-OR,Ourense,Recortes Cero (RECORTES CERO),97,0
+ES-OR,Ourense,Por un Mundo más Justo (PUM+J),144,0
+ES-OR,Ourense,Partido Comunista de los Trabajadores de España (PCTE),101,0
+ES-P,Palencia,Recortes Cero (RECORTES CERO),42,0
+ES-P,Palencia,Por un Mundo más Justo (PUM+J),99,0
+ES-P,Palencia,Partido Comunista de los Trabajadores de España (PCTE),80,0
+ES-GC,Palmas (Las),Recortes Cero (RECORTES CERO),396,0
+ES-GC,Palmas (Las),Por un Mundo más Justo (PUM+J),563,0
+ES-PO,Pontevedra,Recortes Cero (RECORTES CERO),510,0
+ES-PO,Pontevedra,Partido Comunista de los Trabajadores de España (PCTE),485,0
+ES-LO,Rioja (La),Recortes Cero (RECORTES CERO),124,0
+ES-LO,Rioja (La),Por un Mundo más Justo (PUM+J),232,0
+ES-LO,Rioja (La),Partido Comunista de los Trabajadores de España (PCTE),224,0
+ES-SA,Salamanca,Recortes Cero (RECORTES CERO),80,0
+ES-SA,Salamanca,Por un Mundo más Justo (PUM+J),205,0
+ES-SA,Salamanca,Partido Comunista de los Trabajadores de España (PCTE),325,0
+ES-TF,Santa Cruz de Tenerife,Recortes Cero (RECORTES CERO),766,0
+ES-SG,Segovia,Recortes Cero (RECORTES CERO),64,0
+ES-SG,Segovia,Por un Mundo más Justo (PUM+J),136,0
+ES-SG,Segovia,Partido Comunista de los Trabajadores de España (PCTE),94,0
+ES-SE,Sevilla,Recortes Cero (RECORTES CERO),1034,0
+ES-SE,Sevilla,Por un Mundo más Justo (PUM+J),1765,0
+ES-SE,Sevilla,Partido Comunista de los Trabajadores de España (PCTE),1522,0
+ES-SO,Soria,Recortes Cero (RECORTES CERO),9,0
+ES-SO,Soria,Por un Mundo más Justo (PUM+J),23,0
+ES-SO,Soria,Partido Comunista de los Trabajadores de España (PCTE),43,0
+ES-T,Tarragona,Recortes Cero (RECORTES CERO),267,0
+ES-T,Tarragona,Partido Comunista de los Trabajadores de España (PCTE),405,0
+ES-TE,Teruel,Recortes Cero (RECORTES CERO),49,0
+ES-TE,Teruel,Por un Mundo más Justo (PUM+J),36,0
+ES-TE,Teruel,Coalición Existe (EXISTE),11348,0
+ES-TE,Teruel,Partido Comunista de los Trabajadores de España (PCTE),60,0
+ES-TO,Toledo,Recortes Cero (RECORTES CERO),275,0
+ES-TO,Toledo,Por un Mundo más Justo (PUM+J),499,0
+ES-V,Valencia/València,Recortes Cero (RECORTES CERO),1773,0
+ES-V,Valencia/València,Por un Mundo más Justo (PUM+J),1778,0
+ES-VA,Valladolid,Recortes Cero (RECORTES CERO),159,0
+ES-VA,Valladolid,Por un Mundo más Justo (PUM+J),376,0
+ES-VA,Valladolid,Partido Comunista de los Trabajadores de España (PCTE),335,0
+ES-ZA,Zamora,Recortes Cero (RECORTES CERO),50,0
+ES-ZA,Zamora,Por un Mundo más Justo (PUM+J),81,0
+ES-ZA,Zamora,Unión del Pueblo Leones (UPL),526,0
+ES-ZA,Zamora,Partido Comunista de los Trabajadores de España (PCTE),100,0
+ES-Z,Zaragoza,Recortes Cero (RECORTES CERO),306,0
+ES-Z,Zaragoza,Por un Mundo más Justo (PUM+J),419,0
+ES-Z,Zaragoza,Coalición Existe (EXISTE),7780,0
+ES-Z,Zaragoza,Partido Comunista de los Trabajadores de España (PCTE),561,0
+ES-CE,Ceuta,Recortes Cero (RECORTES CERO),33,0
+ES-CE,Ceuta,Por un Mundo más Justo (PUM+J),31,0
+ES-ML,Melilla,Recortes Cero (RECORTES CERO),23,0
+ES-ML,Melilla,Por un Mundo más Justo (PUM+J),40,0
+ES-VI,Araba/Álava,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),619,0
+ES-CA,Cádiz,Adelante Andalucía (ADELANTE ANDALUCÍA),9191,0
+ES-CO,Córdoba,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),942,0
+ES-CU,Cuenca,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),168,0
+ES-SS,Gipuzkoa,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),933,0
+ES-HU,Huesca,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),475,0
+ES-J,Jaén,Jaén Merece Más (JM +),8293,0
+ES-L,Lleida,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),462,0
+ES-MU,Murcia,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),1377,0
+ES-NA,Navarra,Geroa Bai (GBAI).,9938,0
+ES-LO,Rioja (La),Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),608,0
+ES-SO,Soria,Soria ¡Ya! (SY),9697,0
+ES-TE,Teruel,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),135,0
+ES-VA,Valladolid,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),583,0
+ES-Z,Zaragoza,Escaños en Blanco para dejar Escaños Vacíos (ESCAÑOS EN BLANCO),2146,0
+ES-A,Alicante/Alacant,Caminando Juntos (CJ),1027,0
+ES-O,Asturias,España Vaciada (ESPAÑA VACIADA),2314,0
+ES-AV,Ávila,Por Ávila (XAV),7362,0
+ES-AV,Ávila,Falange Española de las JONS (FE de las JONS),77,0
+ES-BA,Badajoz,Bloque Extremeño (BQEX),3885,0
+ES-CC,Cáceres,Bloque Extremeño (BQEX),1922,0
+ES-CA,Cádiz,Caminando Juntos (CJ),745,0
+ES-CS,Castellón/Castelló,Falange Española de las JONS (FE de las JONS),161,0
+ES-GR,Granada,Caminando Juntos (CJ),461,0
+ES-GU,Guadalajara,Falange Española de las JONS (FE de las JONS),118,0
+ES-LE,León,España Vaciada (ESPAÑA VACIADA),486,0
+ES-M,Madrid,Falange Española de las JONS (FE de las JONS),1751,0
+ES-MA,Málaga,Caminando Juntos (CJ),691,0
+ES-MU,Murcia,Caminando Juntos (CJ),453,0
+ES-MU,Murcia,Falange Española de las JONS (FE de las JONS),376,0
+ES-P,Palencia,Caminando Juntos (CJ),33,0
+ES-P,Palencia,España Vaciada (ESPAÑA VACIADA),384,0
+ES-P,Palencia,Falange Española de las JONS (FE de las JONS),71,0
+ES-SA,Salamanca,Caminando Juntos (CJ),140,0
+ES-SA,Salamanca,España Vaciada (ESPAÑA VACIADA),1062,0
+ES-SG,Segovia,Caminando Juntos (CJ),102,0
+ES-SE,Sevilla,Caminando Juntos (CJ),912,0
+ES-SE,Sevilla,Falange Española de las JONS (FE de las JONS),681,0
+ES-TO,Toledo,Falange Española de las JONS (FE de las JONS),281,0
+ES-V,Valencia/València,Caminando Juntos (CJ),1056,0
+ES-V,Valencia/València,Falange Española de las JONS (FE de las JONS),731,0
+ES-VA,Valladolid,España Vaciada (ESPAÑA VACIADA),1226,0
+ES-VA,Valladolid,Falange Española de las JONS (FE de las JONS),164,0
+ES-Z,Zaragoza,Falange Española de las JONS (FE de las JONS),272,0
+ES-H,Huelva,Por Huelva (XH),1931,0
+ES-HU,Huesca,Partido Aragonés (PAR),717,0
+ES-M,Madrid,Partido Humanista (PH),2902,0
+ES-P,Palencia,Vamos Palencia (VP),1917,0
+ES-TE,Teruel,Partido Aragonés (PAR),711,0
+ES-ZA,Zamora,Zamora Sí (Zsi),1843,0
+ES-Z,Zaragoza,Partido Aragonés (PAR),2745,0
+ES-A,Alicante/Alacant,Partido Autónomos (PARTIDO AUTÓNOMOS),1446,0
+ES-BU,Burgos,Vía Burgalesa (VB),1774,0
+ES-MU,Murcia,Por Mi Región (POR MI REGIÓN),1698,0
+ES-GC,Palmas (Las),Ahora Canarias- Partido Comunista del Pueblo Canario (AHORA CANARIAS- PCPC),883,0
+ES-TF,Santa Cruz de Tenerife,Ahora Canarias- Partido Comunista del Pueblo Canario (AHORA CANARIAS- PCPC),791,0
+ES-V,Valencia/València,Estat Valencià del Benestar (EVB),1442,0
+ES-BU,Burgos,España Vaciada- Partido Castellano- Tierra Comunera (EV- PCAS-TC),1184,0
+ES-CC,Cáceres,Somos Cáceres (Somos Cc),963,0
+ES-GR,Granada,Juntos por Granada (JxG),1218,0
+ES-LE,León,Partido Regionalista del País Leonés (PREPAL),309,0
+ES-SA,Salamanca,Partido Regionalista del País Leonés (PREPAL),489,0
+ES-ZA,Zamora,Partido Regionalista del País Leonés (PREPAL),166,0
+ES-ML,Melilla,Coalición por Melilla (CpM),1298,0
+ES-AL,Almería,Almerienses- Regionalistas Pro Almería (ALM),874,0
+ES-HU,Huesca,Federación de los Independientes de Aragón (FIA),84,0
+ES-P,Palencia,Grupo Independiente Palencia Tierra Viva (GITV),366,0
+ES-LO,Rioja (La),Tercera Edad en Acción (3e),286,0
+ES-SG,Segovia,Tercera Edad en Acción (3e),198,0
+ES-TE,Teruel,Federación de los Independientes de Aragón (FIA),28,0
+ES-VA,Valladolid,Unidad Castellana (Ud.Ca),463,0
+ES-Z,Zaragoza,Federación de los Independientes de Aragón (FIA),394,0
+ES-AL,Almería,Libres (LB),210,0
+ES-O,Asturias,Partido Unionista Estado de España (PUEDE),269,0
+ES-MU,Murcia,Referéndum Sistema Dinero (+RDS+),165,0
+ES-T,Tarragona,Entre Veïns Catalunya (EVR),265,0
+ES-T,Tarragona,Unidos por la Solidaridad Internacional (UNIDOS SI),253,0
+ES-CE,Ceuta,Libres (LB),53,0
+ES-OR,Ourense,Coalición de Centro Democrático (CCD),153,0
+ES-VA,Valladolid,Fuerza Cívica (FUERZA CÍVICA),115,0

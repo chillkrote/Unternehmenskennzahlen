@@ -98,6 +98,15 @@ const WAHLEN = (() => {
       .then(fc => { geo()[art] = idx(fc, "id"); PUNKT.clear(); if (aktiv()) anwenden(); })
       .catch(e => { console.warn("Wahlkreisgrenzen nicht geladen:", art, e.message); }));
   }
+  // Ausgelagerte Werte großer Einheiten (Gemeinden; globus.py: wahlen_aufteilen) -> u.werte, sobald die Wahl auf der Karte ist
+  const WLAEDT = new Map();
+  function werteNachladen(u) {
+    if (!u.nach || u.geladen) return Promise.resolve();
+    if (!WLAEDT.has(u.nach)) WLAEDT.set(u.nach, fetch(u.nach).then(r => r.ok ? r.json() : Promise.reject(Error("HTTP " + r.status)))
+      .then(werte => { u.werte = werte; u.geladen = true; PUNKT.clear(); if (aktiv()) anwenden(); })
+      .catch(e => { console.warn("Werte nicht geladen:", u.nach, e.message); }));
+    return WLAEDT.get(u.nach);
+  }
   function geo() {
     if (GEO) return GEO;
     const g = G.geo();
@@ -142,6 +151,7 @@ const WAHLEN = (() => {
         g.push({ type: "Feature", geometry: f.geometry, properties: { w: w.id, u: -1, k: w.gebiet, farbe: b.farbe, deck: b.deck * (alt(w) ? .6 : 1), fein: ue.length ? 1 : 0, summe: w.g && w.g.summe ? 1 : 0 } });
         if (i === 0) gp.push({ type: "Feature", geometry: { type: "Point", coordinates: mittelpunkt(f) }, properties: { fein: ue.length ? 1 : 0, t: latin1(name), top: b.txt, r: w.g && w.g.wb ? w.g.wb : 0 } });
       });
+      ue.forEach(u => { if (u.nach && !u.geladen) werteNachladen(u); });
       ue.slice(0, 2).forEach((u, ui) => {
         const ziel = ui === 0 ? u1 : u2, pz = ui === 0 ? p1 : p2, fein = ui === 0 && ue[1] ? 1 : 0;
         for (const [k, wert] of Object.entries(u.werte)) {
@@ -198,7 +208,7 @@ const WAHLEN = (() => {
   function einheitText(w, t = tiefe()) {
     const i = einheitBei(w, t);
     if (i < 0) return w.einheiten && w.einheiten.some(u => !u.geo) ? `Gesamt (${w.einheiten.find(u => !u.geo).name} in der Seitenleiste)` : "Gesamtergebnis";
-    const u = w.einheiten[i]; return `je ${u.einzahl} (${f0.format(Object.keys(u.werte).length)})${u.art === "zaehlgebiet" ? ", Zählgebiet" : ""}`;
+    const u = w.einheiten[i]; return `je ${u.einzahl} (${f0.format(u.anzahl || Object.keys(u.werte).length)})${u.art === "zaehlgebiet" ? ", Zählgebiet" : ""}`;
   }
 
   /* ----- Ebene auf der Karte ----- */
@@ -342,7 +352,7 @@ const WAHLEN = (() => {
     if (w && (w.stimmarten || []).length > 1) teile.push(`<span class="wa-teil"><span class="wa-trenn">·</span> <select data-wa="stimmart" aria-label="Stimmart">${w.stimmarten.map(([k, t]) => opt(k, t, stimmart(w) === k)).join("")}</select></span>`);
     // Einheit: automatisch nach Zoom oder festgehalten
     const bsp = w || l.find(x => einheitenMitGrenzen(x).length) || l[0];
-    const tname = t => { if (!bsp) return t ? "Untergliederung" : "Gesamt"; const i = einheitBei(bsp, t); return i < 0 ? "Gesamtergebnis je Gebiet" : `je ${bsp.einheiten[i].einzahl}${w ? ` (${f0.format(Object.keys(bsp.einheiten[i].werte).length)})` : ""}`; };
+    const tname = t => { if (!bsp) return t ? "Untergliederung" : "Gesamt"; const i = einheitBei(bsp, t); return i < 0 ? "Gesamtergebnis je Gebiet" : `je ${bsp.einheiten[i].einzahl}${w ? ` (${f0.format(bsp.einheiten[i].anzahl || Object.keys(bsp.einheiten[i].werte).length)})` : ""}`; };
     const tiefen = [0, 1, 2].filter(t => t === 0 || (bsp && einheitenMitGrenzen(bsp).length >= t));
     teile.push(`<span class="wa-teil"><span class="wa-trenn">·</span> <select data-wa="einheit" aria-label="Auszählungseinheit">${opt("auto", `${w ? einheitText(w) : tname(tiefe())} · automatisch nach Zoom`, W.fest == null)}${tiefen.map(t => opt(String(t), `${tname(t)} · festgehalten`, W.fest === t)).join("")}</select></span>`);
     // Färbung
@@ -521,6 +531,7 @@ const WAHLEN = (() => {
     const i = einheitBei(w, tiefe()); if (i < 0) return;
     const u = w.einheiten[i];
     // Grenzen noch nicht geladen: nach dem Laden dieselbe Stelle noch einmal suchen, solange die Wahl im Fokus bleibt
+    if (u.nach && !u.geladen) { werteNachladen(u).then(() => { if (W.fokus === w.id && !W.sel && u.geladen) { einheitAmOrt(w, pt); anwenden(); } }); return; }
     if (u.geo && NACH[u.geo] && !geo()[u.geo]) { nachladen(u.geo); const p = LAEDT.get(u.geo); if (p) p.then(() => { if (W.fokus === w.id && !W.sel && geo()[u.geo]) { einheitAmOrt(w, pt); anwenden(); } }); return; }
     const k = Object.keys(u.werte).find(key => flaechen(u.geo, key).some(f => enthaelt(f, pt)));
     if (k) W.sel = { u: i, k };

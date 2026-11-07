@@ -89,8 +89,12 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   };
   await klick('CA-unterhaus-2025', [-79.4, 43.7], 8, [-79.38, 43.65], [/Gewählt:/, /Liberale|Konservative|NDP/], 'Wahlkreis in Toronto');
   await klick('AU-unterhaus-2025', [151.2, -33.87], 8, [151.21, -33.87], [/Gewählt:/, /nach Präferenzen/], 'Division in Sydney');
-  await klick('CH-unterhaus-2023', [8.5, 47.2], 6.5, [8.55, 47.4], [/Kanton Zürich/, /Sitzverteilung/i], 'Kanton Zürich');
+  await klick('CH-unterhaus-2023', [8.5, 47.2], 4.8, [8.55, 47.4], [/Kanton Zürich/, /Sitzverteilung/i], 'Kanton Zürich');
   await klick('AT-unterhaus-2024', [15.4, 47.07], 8, [15.44, 47.07], [/Graz/, /FPÖ|ÖVP|SPÖ/], 'Gemeinde Graz');
+  await klick('US-unterhaus-2024', [-73.98, 40.75], 8, [-73.97, 40.78], [/New York \d+/, /Gewählt:/, /Demokraten|Republikaner/], 'Kongresswahlkreis in New York');
+  await klick('ES-unterhaus-2023', [-3.7, 40.4], 6, [-3.7, 40.42], [/Madrid/, /Sitzverteilung/i, /PP/], 'Provinz Madrid');
+  await klick('NO-unterhaus-2025', [10.75, 59.95], 7, [10.75, 59.92], [/Oslo/, /Sitzverteilung/i, /Ap/], 'Wahlkreis Oslo');
+  await klick('CH-unterhaus-2023', [8.54, 47.37], 9, [8.54, 47.375], [/Zürich/, /SP|SVP/], 'Gemeinde Zürich');
   // Ansicht Regierungen
   await page.evaluate(() => document.querySelector('[data-gkpolansicht="regierungen"]').click()); await warte(1200);
   ok(!(await page.locator('#wa-satz').isVisible()), 'Satzleiste in Regierungen sichtbar');

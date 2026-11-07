@@ -54,6 +54,22 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   await bild('8-e3');
   await page.evaluate(() => WAHLEN.ebeneWaehlen(4)); await warte(1800);
   await bild('9-e4');
+  // Vereinigtes Königreich: Unterhauswahl 2024 mit 650 Wahlkreisen; Klick in Westminster zeigt die gewählte Person
+  await page.evaluate(() => WAHLEN.wahlWaehlen('GB-unterhaus-2024', false));
+  await page.evaluate(() => GLOBUS.karte().jumpTo({ center: [-0.13, 51.5], zoom: 8 })); await warte(1800);
+  t = await seite(); ok(/House of Commons/.test(t) && /650/.test(t), 'Unterhauswahl 2024 fehlt');
+  const pl = await page.evaluate(() => { const q = GLOBUS.karte().project([-0.127, 51.4995]); return { x: q.x, y: q.y }; });
+  await page.mouse.click(box.x + pl.x, box.y + pl.y); await warte(700);
+  t = await seite(); ok(/Gewählt:/.test(t) && /Labour|Conservatives|Lib Dems/.test(t), 'Wahlkreis in London fehlt:\n' + t.slice(0, 500));
+  await bild('9b-gb-wahlkreis');
+  // Frankreich: Assemblée nationale 2024, 577 Wahlkreise mit zwei Wahlgängen; Klick in Paris
+  await page.evaluate(() => WAHLEN.wahlWaehlen('FR-unterhaus-2024', false));
+  await page.evaluate(() => GLOBUS.karte().jumpTo({ center: [2.35, 48.86], zoom: 8 })); await warte(1800);
+  t = await seite(); ok(/Assemblée nationale/.test(t) && /577/.test(t), 'Assemblée nationale 2024 fehlt');
+  const pf = await page.evaluate(() => { const q = GLOBUS.karte().project([2.3, 48.87]); return { x: q.x, y: q.y }; });
+  await page.mouse.click(box.x + pf.x, box.y + pf.y); await warte(700);
+  t = await seite(); ok(/Gewählt:/.test(t) && /Wahlgang/.test(t) && /Paris/.test(t), 'Wahlkreis in Paris fehlt:\n' + t.slice(0, 500));
+  await bild('9c-fr-wahlkreis');
   // Ansicht Regierungen
   await page.evaluate(() => document.querySelector('[data-gkpolansicht="regierungen"]').click()); await warte(1200);
   ok(!(await page.locator('#wa-satz').isVisible()), 'Satzleiste in Regierungen sichtbar');

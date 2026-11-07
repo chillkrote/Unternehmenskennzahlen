@@ -129,7 +129,8 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   (Ausrichtung, Bündnisse, Regierungschefs, Gliedstaaten).
   Daten: `wahlen_daten.py` fasst parlamente.json, die Bundestagswahlkreise, die Europawahl 2024 nach Kreisen
   (`wahlen/quellen/ew24_kerg2.csv`, Bundeswahlleiterin), die Landtagswahl NRW 2022 je Landtagswahlkreis (`wahlen/quellen/nw_ltw22_*.csv`,
-  Grenzen `geo/landtagswahlkreise_nw.geojson`, Landeswahlleiterin NRW) und kommunal.json in einem einheitlichen Format zusammen
+  Grenzen `geo/landtagswahlkreise_nw.geojson`, Landeswahlleiterin NRW), die Unterhauswahl 2024 (UK Parliament, `geo/wahlkreise_gb.geojson`), die
+  Wahl zur Assemblée nationale 2024 (Innenministerium, `geo/wahlkreise_fr.geojson`) und kommunal.json in einem einheitlichen Format zusammen
   (`data/wahlen.json`; Kreisgrenzen `geo/kreise_de.geojson` aus BKG VG1000, dl-de/by-2-0). Neue Wahldaten nur als Leser in dieser Datei.
   Test: `tests/wahlen-smoke.js`.
 * **Länder:** anklicken oder suchen; das Land wird markiert, rechts stehen die Kerndaten (BIP, Inflation, Kerninflation, Arbeitslosenquote,

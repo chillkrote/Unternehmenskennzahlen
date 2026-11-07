@@ -37,12 +37,40 @@ QUELLEN = HIER.parent / "wahlen" / "quellen"
 OUT = HIER / "data" / "wahlen.json"
 KREISE_GEO = HIER / "geo" / "kreise_de.geojson"
 LWK_NW_GEO = HIER / "geo" / "landtagswahlkreise_nw.geojson"
+WK_GB_GEO = HIER / "geo" / "wahlkreise_gb.geojson"
+WK_FR_GEO = HIER / "geo" / "wahlkreise_fr.geojson"
 
 EW24_URL = "https://www.bundeswahlleiterin.de/europawahlen/2024/ergebnisse/opendata/ew24/csv/kerg2.csv"
 LTW_NW22 = "https://www.wahlergebnisse.nrw/landtagswahlen/2022/"
 LTW_NW22_DATEIEN = {"LW22_WK_insgesamt.txt": "nw_ltw22_wahlkreise.csv", "LW22_Ergebnisse_fr%C3%BCherer_Wahlen.csv": "nw_ltw22_fruehere_wahlen.csv",
                     "LW22_Bewerber_WK.txt": "nw_ltw22_gewaehlte_wk.csv"}
 LTW_NW22_SHP = LTW_NW22 + "wahlkreiskarten/16_LW2022_NRW_Wahlkreise.zip"
+GB_ERG = "https://electionresults.parliament.uk/general-elections/{}/candidacies.csv"    # UK Parliament, Open Parliament Licence v3.0
+GB_GE = {"2024": (6, "gb_ge24_kandidaturen.csv"), "2019n": (5, "gb_ge19_fiktiv_kandidaturen.csv")}   # 5 = Wahl 2019 umgerechnet auf die Grenzen 2024
+GB_GRENZEN = ("https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/"
+              "Westminster_Parliamentary_Constituencies_July_2024_Boundaries_UK_BUC/FeatureServer/0/query")   # ONS, OGL v3.0
+GB_SPALTEN = ["Country name", "Constituency name", "Constituency geographic code", "Electorate", "Election valid vote count", "Election invalid vote count",
+              "Candidate given name", "Candidate family name", "Main party abbreviation", "Main party name", "Candidate is standing as Commons Speaker",
+              "Candidate is standing as independent", "Candidate vote count", "Candidate result position"]
+GB_PARTEI = {"Lab": "Labour", "Con": "Conservatives", "RUK": "Reform UK", "BRX": "Reform UK", "LD": "Lib Dems", "Green": "Grüne", "SNP": "SNP",
+             "SF": "Sinn Féin", "WPB": "Workers Party", "PC": "Plaid Cymru", "DUP": "DUP", "APNI": "Alliance", "UUP": "UUP", "SDLP": "SDLP", "TUV": "TUV"}
+GB_FARBEN = {"Labour": "#e4003b", "Conservatives": "#0087dc", "Reform UK": "#12b6cf", "Lib Dems": "#faa61a", "Grüne": "#02a95b", "SNP": "#fdf38e",
+             "Sinn Féin": "#326760", "Workers Party": "#9b2335", "Plaid Cymru": "#005b54", "DUP": "#d46a4c", "Alliance": "#f6cb2f", "UUP": "#48a5ee",
+             "SDLP": "#2aa82c", "TUV": "#0c3a6a", "Unabhängige": "#9aa3ad", "Speaker": "#6b7280"}
+FR_LEG24 = {"t1": ("https://static.data.gouv.fr/resources/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour/"
+                    "20240710-171413/resultats-definitifs-par-circonscriptions-legislatives.csv", "fr_leg24_t1.csv"),
+            "t2": ("https://static.data.gouv.fr/resources/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-2nd-tour/"
+                   "20240710-170728/resultats-definitifs-par-circonscription.csv", "fr_leg24_t2.csv")}       # Ministère de l'Intérieur, Licence Ouverte 2.0
+FR_GRENZEN = ("https://static.data.gouv.fr/resources/contours-geographiques-des-circonscriptions-legislatives/"
+              "20240613-191520/circonscriptions-legislatives-p10.geojson")                                      # data.gouv.fr, Licence Ouverte 2.0
+FR_UEBERSEE = {"971": "ZA", "972": "ZB", "973": "ZC", "974": "ZD", "975": "ZS", "976": "ZM"}             # Départements in den Ergebnissen -> Kürzel in den Grenzen
+FR_NUANCE = {"UG": "NFP", "RN": "RN", "ENS": "Ensemble", "LR": "LR", "UXD": "LR-RN (Ciotti)", "DVG": "Divers gauche", "DVD": "Divers droite",
+             "DVC": "Divers centre", "HOR": "Horizons", "REG": "Regionalisten", "ECO": "Écologistes", "DIV": "Divers", "REC": "Reconquête", "EXG": "Extrême gauche",
+             "EXD": "Extrême droite", "DSV": "Souverainistes", "UDI": "UDI", "FI": "LFI", "SOC": "PS", "COM": "PCF", "VEC": "Les Écologistes", "RDG": "PRG"}
+FR_FARBEN = {"NFP": "#e4032e", "RN": "#0d378a", "Ensemble": "#ffc400", "LR": "#0066cc", "LR-RN (Ciotti)": "#3c4a7a", "Divers gauche": "#f29ab0",
+             "Divers droite": "#74b9c9", "Divers centre": "#f5c98b", "Horizons": "#4f6fd6", "Regionalisten": "#c9a27a", "Écologistes": "#57b45d", "Divers": "#9aa3ad",
+             "Reconquête": "#333a4d", "Extrême gauche": "#9b0d1b", "Extrême droite": "#4a4f5a", "Souverainistes": "#7d4cb0", "UDI": "#4ac3d6", "LFI": "#c9462c",
+             "PS": "#e75480", "PCF": "#a80000", "Les Écologistes": "#2e9b45", "PRG": "#f0a0a0"}
 VG1000_URL = "https://daten.gdz.bkg.bund.de/produkte/vg/vg1000_ebenen_1231/aktuell/vg1000_12-31.utm32s.shape.ebenen.zip"
 
 # Ebenennamen je Land (None = Ebene gibt es dort nicht); "_" gilt für alle übrigen Länder
@@ -406,6 +434,214 @@ def lwk_nw_flaechen(zip_pfad):
     return len(feats)
 
 
+# ---------------------------------------------------------------- Vereinigtes Königreich: Unterhauswahl 2024 je Wahlkreis
+def gb_laden(abruf):
+    """Kandidaturen der Unterhauswahlen 2024 und 2019 (fiktiv, Grenzen 2024) vom UK Parliament, gekürzt auf die nötigen Spalten."""
+    import requests
+    for nr, datei in GB_GE.values():
+        ziel = QUELLEN / datei
+        if ziel.exists() or not abruf:
+            continue
+        r = requests.get(GB_ERG.format(nr), timeout=300)
+        r.raise_for_status()
+        zeilen = list(csv.DictReader(io.StringIO(r.content.decode("utf-8-sig"))))
+        with ziel.open("w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, GB_SPALTEN, extrasaction="ignore")
+            w.writeheader()
+            w.writerows(zeilen)
+    if not WK_GB_GEO.exists() and abruf:
+        r = requests.get(GB_GRENZEN, params={"where": "1=1", "outFields": "PCON24CD,PCON24NM", "outSR": 4326, "f": "geojson", "resultRecordCount": 2000}, timeout=300)
+        r.raise_for_status()
+        fc = r.json()
+
+        def rund(c):
+            return [rund(x) for x in c] if isinstance(c[0], (list, tuple)) else [round(c[0], 4), round(c[1], 4)]
+        feats = [{"type": "Feature", "properties": {"id": f["properties"]["PCON24CD"], "name": f["properties"]["PCON24NM"]},
+                  "geometry": {"type": f["geometry"]["type"], "coordinates": rund(f["geometry"]["coordinates"])}} for f in fc["features"] if f.get("geometry")]
+        WK_GB_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Office for National Statistics, Westminster Parliamentary Constituencies (July 2024) BUC, OGL v3.0",
+                                         "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _gb_partei(z):
+    if z["Candidate is standing as Commons Speaker"] == "true":
+        return "Speaker"
+    if z["Candidate is standing as independent"] == "true" or not z["Main party abbreviation"]:
+        return "Unabhängige"
+    return GB_PARTEI.get(z["Main party abbreviation"], z["Main party name"] or z["Main party abbreviation"])
+
+
+def _gb_wahlkreise(pfad):
+    wk = {}
+    for z in csv.DictReader(pfad.open(encoding="utf-8")):
+        k = z["Constituency geographic code"]
+        W = wk.setdefault(k, {"n": z["Constituency name"], "land": z["Country name"], "wb": zahl(z["Electorate"]),
+                              "gueltig": zahl(z["Election valid vote count"]) or 0, "ungueltig": zahl(z["Election invalid vote count"]) or 0, "p": {}, "sieger": None})
+        p = _gb_partei(z)
+        W["p"][p] = W["p"].get(p, 0) + (zahl(z["Candidate vote count"]) or 0)
+        if z["Candidate result position"] == "1":
+            W["sieger"] = {"name": f"{z['Candidate given name']} {z['Candidate family name']}".strip(), "partei": p}
+    return wk
+
+
+def gb_ge24():
+    """Unterhauswahl 4. Juli 2024: Gesamtergebnis, Sitze (Wahlkreissieger) und 650 Wahlkreise; Veränderung zur Wahl 2019, umgerechnet auf die Grenzen 2024."""
+    p24, p19 = (QUELLEN / GB_GE[k][1] for k in ("2024", "2019n"))
+    if not p24.exists():
+        return None
+    wk, vor = _gb_wahlkreise(p24), (_gb_wahlkreise(p19) if p19.exists() else {})
+
+    def stimmen(W, V):
+        l = anteile(list(W["p"].items()), W["gueltig"] or None)
+        if V and V["gueltig"]:
+            for x in l:
+                x[3] = r1(V["p"].get(x[0], 0) / V["gueltig"] * 100) if x[0] in V["p"] else None
+        return l
+    werte, ges, ges_v, sitze = {}, {"p": {}, "gueltig": 0}, {"p": {}, "gueltig": 0}, {}
+    wb = w = 0
+    for k, W in wk.items():
+        V = vor.get(k)
+        werte[k] = {"n": W["n"], "s": {"s": stimmen(W, V)}, "wb": W["wb"], "w": W["gueltig"] + W["ungueltig"],
+                    "bet": r1((W["gueltig"] + W["ungueltig"]) / W["wb"] * 100) if W["wb"] else None}
+        if W["sieger"]:
+            werte[k]["direkt"] = W["sieger"]
+            sitze[W["sieger"]["partei"]] = sitze.get(W["sieger"]["partei"], 0) + 1
+        wb += W["wb"] or 0
+        w += W["gueltig"] + W["ungueltig"]
+        for G, Q in ((ges, W), (ges_v, V)):
+            if Q:
+                G["gueltig"] += Q["gueltig"]
+                for p, n in Q["p"].items():
+                    G["p"][p] = G["p"].get(p, 0) + n
+    sitze_v = {}
+    for V in vor.values():
+        if V["sieger"]:
+            sitze_v[V["sieger"]["partei"]] = sitze_v.get(V["sieger"]["partei"], 0) + 1
+    wb_v = sum(V["wb"] or 0 for V in vor.values())
+    w_v = sum(V["gueltig"] + V["ungueltig"] for V in vor.values())
+    g = {"s": {"s": stimmen(ges, ges_v if vor else None)}, "sitze": [[p, n, sitze_v.get(p, 0) if vor else None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])],
+         "sitze_n": sum(sitze.values()), "sitze_hinweis": "Sitze = gewonnene Wahlkreise (relative Mehrheit); Vergleich: Wahl 2019 auf den Grenzen 2024",
+         "wb": wb, "w": w, "bet": r1(w / wb * 100) if wb else None, "bet_vor": r1(w_v / wb_v * 100) if wb_v else None}
+    return {"g": g, "farben": GB_FARBEN, "stimmarten": [["s", "Stimmen"]], "status": "endgültig",
+            "system": "Relative Mehrheitswahl in 650 Einerwahlkreisen: wer in einem Wahlkreis die meisten Stimmen hat, gewinnt den Sitz.",
+            "vor": {"datum": "2019-12-12", "titel": "Unterhauswahl 2019", "hinweis": "umgerechnet auf die Wahlkreise 2024"},
+            "einheiten": [{"id": "wk", "name": "Wahlkreise", "einzahl": "Wahlkreis", "art": "wahlkreis", "geo": "wahlkreise-gb", "werte": werte}],
+            "quelle": {"name": "UK Parliament, Election results (House of Commons Library); Grenzen: ONS", "url": "https://electionresults.parliament.uk/general-elections/6",
+                       "lizenz": "Open Parliament Licence v3.0, Open Government Licence v3.0"}}
+
+
+# ---------------------------------------------------------------- Frankreich: Assemblée nationale 2024 je Wahlkreis (zwei Wahlgänge)
+def fr_laden(abruf, grenzen_roh=None):
+    for url, datei in FR_LEG24.values():
+        laden(url, QUELLEN / datei, abruf)
+    if WK_FR_GEO.exists():
+        return
+    roh = Path(grenzen_roh or "/tmp/fr_circ_p10.geojson")
+    if not laden(FR_GRENZEN, roh, abruf):
+        return
+    from shapely.geometry import mapping, shape
+    fc = json.loads(roh.read_text())
+
+    def rund(c):
+        return [rund(x) for x in c] if isinstance(c[0], (list, tuple)) else [round(c[0], 4), round(c[1], 4)]
+    feats = []
+    for f in fc["features"]:
+        pr = f["properties"]
+        g = shape(f["geometry"]).simplify(0.004, preserve_topology=True)
+        feats.append({"type": "Feature", "properties": {"id": pr["codeCirconscription"], "name": f"{pr['nomDepartement']}, {pr['nomCirconscription']}"},
+                      "geometry": {"type": g.geom_type, "coordinates": rund(mapping(g)["coordinates"])}})
+    WK_FR_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "data.gouv.fr, Contours géographiques des circonscriptions législatives, Licence Ouverte 2.0",
+                                     "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _fr_runde(pfad):
+    """Ergebnis eines Wahlgangs je Wahlkreis: Schlüssel wie in den Grenzen (Département zweistellig bzw. ZA… + Nummer)."""
+    out = {}
+    if not pfad.exists():
+        return out
+    r = list(csv.reader(pfad.read_text(encoding="utf-8-sig").splitlines(), delimiter=";"))
+    kopf = r[0]
+    for z in r[1:]:
+        d = dict(zip(kopf, z))
+        dep = d["Code département"]
+        k = FR_UEBERSEE.get(dep, dep.zfill(2)) + d["Code circonscription législative"][-2:]
+        p, gewaehlt = {}, None
+        for i in range(1, 40):
+            if not d.get(f"Nuance candidat {i}"):
+                continue
+            partei = FR_NUANCE.get(d[f"Nuance candidat {i}"], d[f"Nuance candidat {i}"])
+            p[partei] = p.get(partei, 0) + (zahl(d[f"Voix {i}"]) or 0)
+            if d.get(f"Elu {i}", "").lower().startswith("élu"):
+                gewaehlt = {"name": f"{d[f'Prénom candidat {i}']} {d[f'Nom candidat {i}'].title()}", "partei": partei}
+        out[k] = {"n": f"{d['Libellé département']} {int(d['Code circonscription législative'][-2:])}", "wb": zahl(d["Inscrits"]), "w": zahl(d["Votants"]),
+                  "gueltig": zahl(d["Exprimés"]) or 0, "p": p, "gewaehlt": gewaehlt}
+    return out
+
+
+def fr_leg24():
+    """Wahl zur Assemblée nationale 30.06./07.07.2024: 577 Wahlkreise, absolute Mehrheit im 1. Wahlgang oder relative im 2.
+    Stimmart „entscheidender Wahlgang“ = 2. Wahlgang, wo es einen gab, sonst der 1.; daneben der 1. Wahlgang überall."""
+    t1, t2 = (_fr_runde(QUELLEN / FR_LEG24[k][1]) for k in ("t1", "t2"))
+    if not t1:
+        return None
+    werte, sitze, ges = {}, {}, {"t1": [{}, 0], "ent": [{}, 0]}
+    wb = w = 0
+    for k, R1 in t1.items():
+        R2 = t2.get(k)
+        ent = R2 or R1
+        el = (R2 or {}).get("gewaehlt") or R1["gewaehlt"]
+        werte[k] = {"n": R1["n"], "s": {"ent": anteile(list(ent["p"].items()), ent["gueltig"] or None), "t1": anteile(list(R1["p"].items()), R1["gueltig"] or None)},
+                    "wb": ent["wb"], "w": ent["w"], "bet": r1(ent["w"] / ent["wb"] * 100) if ent["wb"] else None,
+                    "runde": 2 if R2 else 1}
+        if el:
+            werte[k]["direkt"] = el
+            sitze[el["partei"]] = sitze.get(el["partei"], 0) + 1
+        wb += R1["wb"] or 0
+        w += R1["w"] or 0
+        for st, R in (("t1", R1), ("ent", ent)):
+            ges[st][1] += R["gueltig"]
+            for p, n in R["p"].items():
+                ges[st][0][p] = ges[st][0].get(p, 0) + n
+    g = {"s": {st: anteile(list(ges[st][0].items()), ges[st][1]) for st in ("ent", "t1")},
+         "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])], "sitze_n": sum(sitze.values()),
+         "sitze_hinweis": "Sitze = gewählte Abgeordnete nach Nuance des Innenministeriums am Wahltag (nicht die späteren Fraktionen)",
+         "wb": wb, "w": w, "bet": r1(w / wb * 100) if wb else None}
+    return {"g": g, "farben": FR_FARBEN, "stimmarten": [["ent", "Entscheidender Wahlgang"], ["t1", "1. Wahlgang"]], "status": "endgültig",
+            "datum": "2024-07-07",
+            "system": ("Absolute Mehrheitswahl in 577 Einerwahlkreisen mit zwei Wahlgängen: gewählt ist im 1. Wahlgang, wer mehr als die Hälfte der Stimmen "
+                       "und ein Viertel der Eingeschriebenen erreicht; sonst entscheidet am 7. Juli die relative Mehrheit. Wahlbeteiligung: 1. Wahlgang."),
+            "einheiten": [{"id": "wk", "name": "Wahlkreise (Circonscriptions)", "einzahl": "Wahlkreis", "art": "wahlkreis", "geo": "wahlkreise-fr", "werte": werte}],
+            "quelle": {"name": "Ministère de l'Intérieur, Résultats définitifs (1er et 2nd tour); Grenzen: data.gouv.fr", "url": "https://www.data.gouv.fr/fr/datasets/668b4092826ddcf70e9e62cd/",
+                       "lizenz": "Licence Ouverte 2.0"}}
+
+
+# ---------------------------------------------------------------- Grenzen kompakt halten (Artifact-Grenze 16 MB)
+def kompakt(pfad, stellen=3):
+    """Koordinaten auf `stellen` Nachkommastellen (3 = rund 100 m), doppelte Folgepunkte und zu kleine Ringe weg. Idempotent."""
+    if not pfad.exists():
+        return
+    fc = json.loads(pfad.read_text())
+
+    def ring(r):
+        out = []
+        for x, y in r:
+            q = [round(x, stellen), round(y, stellen)]
+            if not out or out[-1] != q:
+                out.append(q)
+        return out if len(out) >= 4 else None
+
+    def poly(rs):
+        rs = [ring(r) for r in rs]
+        return [r for r in rs if r] if rs and rs[0] else None
+    for f in fc["features"]:
+        g = f["geometry"]
+        if g["type"] == "Polygon":
+            g["coordinates"] = poly(g["coordinates"]) or g["coordinates"]
+        elif g["type"] == "MultiPolygon":
+            ps = [p for p in (poly(p) for p in g["coordinates"]) if p]
+            g["coordinates"] = ps or g["coordinates"]
+    pfad.write_text(json.dumps(fc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 # ---------------------------------------------------------------- Landtage, Gliedstaaten, Regionen
 def regional(pa, ko):
     out = []
@@ -526,10 +762,20 @@ def main():
         lwk = Path("/tmp/lwk_nw22.zip")
         if laden(LTW_NW22_SHP, lwk, not a.ohne_abruf):
             print("Landtagswahlkreise NRW:", lwk_nw_flaechen(lwk))
+    gb_laden(not a.ohne_abruf)
+    fr_laden(not a.ohne_abruf)
+    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO):
+        kompakt(geo)
     wahlen = [w for w in national(pa) if w["land"] != "DE" or w["kammer"] != "unterhaus"]
     wahlen.append(bundestag(pa, HIER / "geo/wahlkreise_bund.geojson", HIER / "geo/de_laender.geojson"))
     if ew:
         wahlen.append(ew)
+    gb, fr = gb_ge24(), fr_leg24()
+    for w in wahlen:
+        if gb and w["id"] == "GB-unterhaus-2024":
+            w.update(gb)
+        if fr and w["id"] == "FR-unterhaus-2024":
+            w.update(fr)
     wahlen += regional(pa, ko) + kommunal(ko)
     daten = {"stand": date.today().isoformat(), "ebenen": EBENEN_NAMEN, "eu": sorted(EU), "farben": {"DE": DE_FARBEN}, "ordnung": {"DE": DE_ORDNUNG}, "wahlen": wahlen}
     OUT.write_text(json.dumps(daten, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

@@ -139,6 +139,10 @@ US_FIPS = {"ALABAMA": "01", "ALASKA": "02", "ARIZONA": "04", "ARKANSAS": "05", "
            "NORTH CAROLINA": "37", "NORTH DAKOTA": "38", "OHIO": "39", "OKLAHOMA": "40", "OREGON": "41", "PENNSYLVANIA": "42", "RHODE ISLAND": "44",
            "SOUTH CAROLINA": "45", "SOUTH DAKOTA": "46", "TENNESSEE": "47", "TEXAS": "48", "UTAH": "49", "VERMONT": "50", "VIRGINIA": "51", "WASHINGTON": "53",
            "WEST VIRGINIA": "54", "WISCONSIN": "55", "WYOMING": "56"}
+US_PO = {"ALABAMA": "AL", "ALASKA": "AK", "ARIZONA": "AZ", "ARKANSAS": "AR", "CALIFORNIA": "CA", "COLORADO": "CO", "FLORIDA": "FL", "GEORGIA": "GA",
+         "HAWAII": "HI", "IDAHO": "ID", "ILLINOIS": "IL", "INDIANA": "IN", "IOWA": "IA", "KANSAS": "KS", "KENTUCKY": "KY", "LOUISIANA": "LA", "MARYLAND": "MD",
+         "MISSOURI": "MO", "NEVADA": "NV", "NEW HAMPSHIRE": "NH", "NEW YORK": "NY", "NORTH CAROLINA": "NC", "NORTH DAKOTA": "ND", "OHIO": "OH", "OKLAHOMA": "OK",
+         "OREGON": "OR", "PENNSYLVANIA": "PA", "SOUTH CAROLINA": "SC", "SOUTH DAKOTA": "SD", "UTAH": "UT", "VERMONT": "VT", "WASHINGTON": "WA", "WISCONSIN": "WI"}
 US_KEINE_STIMME = re.compile(r"^(Blanks?|Void|Scattering|Over ?Votes?|Under ?Votes?|Continuing Ballots|Exhausted Ballots)$", re.I)
 US_FARBEN = {"Republikaner": "#d7263d", "Demokraten": "#1f5bb5", "Libertäre": "#f2b705", "Grüne": "#2e9b45", "Unabhängige": "#9aa3ad", "Sonstige": "#8b95a3"}
 ES_CONG23 = "https://www.boe.es/boe/dias/2023/09/01/pdfs/BOE-A-2023-18907.pdf"   # Junta Electoral Central, Resumen de resultados (BOE, frei nutzbar)
@@ -1238,6 +1242,101 @@ def us_house24():
                        "url": "https://clerk.house.gov/Members/ElectionInformation", "lizenz": "gemeinfrei (US-Bundesbehörden)"}}
 
 
+# ---------------------------------------------------------------- USA: Senat 8. November 2022 je Bundesstaat (MIT Election Data + Science Lab)
+US_SENAT22 = QUELLEN / "us_senat22_medsl.tab"       # MEDSL "U.S. Senate Statewide/County Returns 2022", Harvard Dataverse (Gästebuch-Download von Hand), CC0 1.0
+US_SENAT_NAME = {"WYDEN RON": "Ron Wyden", "JD VANCE": "JD Vance", "PERKINS JO RAE": "Jo Rae Perkins"}
+US_SENAT_PARTEI = {"CHESBRO, PATRICIA R.": "Demokraten", "MURKOWSKI, LISA": "Republikaner", "TSHIBAKA, KELLY C.": "Republikaner", "MCMULLIN, EVAN": "Unabhängige", "EVAN MCMULLIN": "Unabhängige"}
+
+
+def _us_senat_partei(kandidat, detail, einfach):
+    if kandidat in US_SENAT_PARTEI:
+        return US_SENAT_PARTEI[kandidat]
+    d = (detail or "").upper()
+    if einfach == "REPUBLICAN":
+        return "Republikaner"
+    if einfach == "DEMOCRAT" or d == "DEMOCRATIC":
+        return "Demokraten"
+    if einfach == "LIBERTARIAN" or d.startswith("LIBERTARIAN"):
+        return "Libertäre"
+    if "GREEN" in d:
+        return "Grüne"
+    if d in ("INDEPENDENT", "NON PARTISAN", "NONPARTISAN", "NO PARTY AFFILIATION", "UNAFFILIATED"):
+        return "Unabhängige"
+    return "Sonstige"
+
+
+def _us_senat_name(n):
+    n = US_SENAT_NAME.get(n.upper(), n)
+    if "," in n and not re.search(r",\s*(JR|SR|III|II)\.?$", n, re.I):
+        a, b = n.split(",", 1)
+        n = f"{b.strip()} {a.strip()}"
+    return n.title() if n.isupper() else n
+
+
+def us_senat22():
+    """Senatswahl 2022 je Bundesstaat (34 Sitze plus die Nachwahl in Oklahoma). Quelle liefert County-Zeilen: je Rennen werden die Gesamtzeilen (mode TOTAL)
+    summiert, sonst alle Stimmarten. Georgia zählt die Stichwahl vom 6. Dezember. Connecticut fehlt in der Quelle."""
+    if not US_SENAT22.exists():
+        return None
+    rennen = {}
+    for z in csv.DictReader(US_SENAT22.open(encoding="utf-8"), delimiter="\t"):
+        z = {k: (v or "").strip('"').strip() for k, v in z.items()}
+        if z["office"] != "US SENATE" or z["candidate"].upper() in ("TOTAL", "") or US_KEINE_STIMME.match(z["candidate"]) or z["candidate"].upper() == "SCATTERING":
+            continue
+        if z["candidate"].upper() in ("OVER VOTES", "OVERVOTES") or z["writein"] == "True":
+            continue
+        R = rennen.setdefault((z["state"], z["special"] == "True", z["stage"]), {"modi": {}, "k": {}})
+        R["modi"].setdefault(z["mode"], {}).setdefault(z["candidate"], [0, z["party_detailed"], z["party_simplified"]])[0] += float(z["candidatevotes"] or 0)
+    wahl = {}
+    for (staat, special, stufe), R in rennen.items():
+        modi = R["modi"].get("TOTAL") or {}
+        if not modi:
+            for m in R["modi"].values():
+                for k, v in m.items():
+                    modi.setdefault(k, [0, v[1], v[2]])[0] += v[0]
+        wahl.setdefault(staat, []).append((stufe == "GEN RUNOFF", special, modi))
+    werte, sitze, ges, fertig = {}, {}, {}, set()
+    for staat, liste in wahl.items():
+        for lauf in sorted(liste, key=lambda x: (x[1], not x[0])):
+            runoff, special, modi = lauf
+            if (staat, special) in fertig:
+                continue        # Georgia: Stichwahl hat Vorrang
+            fertig.add((staat, special))
+            k = "US-" + US_PO[staat]
+            p = {}
+            kand = []
+            for name, (n, det, einf) in modi.items():
+                pa = _us_senat_partei(name, det, einf)
+                p[pa] = p.get(pa, 0) + n
+                kand.append((n, _us_senat_name(name), pa))
+            gueltig = sum(p.values())
+            if not gueltig:
+                continue
+            n, name, partei = max(kand)
+            if special:
+                sitze[partei] = sitze.get(partei, 0) + 1
+                for pa, v in p.items():
+                    ges[pa] = ges.get(pa, 0) + v
+                werte[k + "-nachwahl"] = None
+                continue
+            werte[k] = {"n": staat.title() + (" (Stichwahl)" if runoff else ""), "s": {"s": anteile([x for x in p.items() if x[1]], gueltig)}, "w": int(gueltig),
+                        "direkt": {"name": name, "partei": partei}}
+            sitze[partei] = sitze.get(partei, 0) + 1
+            for pa, v in p.items():
+                ges[pa] = ges.get(pa, 0) + v
+    werte = {k: v for k, v in werte.items() if v}
+    g = {"s": {"s": anteile(list(ges.items()), sum(ges.values()))}, "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])],
+         "sitze_n": sum(sitze.values()), "w": int(sum(ges.values())),
+         "sitze_hinweis": "Sitze = Sieger der 2022 zur Wahl stehenden Sitze (ein Drittel des Senats); Connecticut fehlt in der Quelle, Oklahoma zählt zwei Sitze"}
+    return {"id": "US-oberhaus-2022", "e": 1, "land": "US", "gebiet": "US", "geo": "gliedstaaten", "name": "", "titel": "Wahl zum Senat", "gremium": "Senate",
+            "kammer": "oberhaus", "datum": "2022-11-08", "status": "endgültig", "g": g, "farben": US_FARBEN, "stimmarten": [["s", "Stimmen"]],
+            "system": ("Jeder Bundesstaat wählt zwei Senatoren, alle zwei Jahre ein Drittel der Sitze. Relative Mehrheitswahl; Georgia und Louisiana verlangen eine absolute Mehrheit "
+                       "(Georgia: Stichwahl am 6. Dezember 2022). Alaska wählte erstmals mit Rangfolgewahl, gezeigt sind die Erststimmen."),
+            "einheiten": [{"id": "staat", "name": "Bundesstaaten", "einzahl": "Bundesstaat", "art": "wahlkreis", "geo": "gliedstaaten", "werte": werte}],
+            "quelle": {"name": "MIT Election Data and Science Lab, U.S. Senate County Returns 2022 (Harvard Dataverse)", "url": "https://dataverse.harvard.edu/dataverse/medsl",
+                       "lizenz": "CC0 1.0"}}
+
+
 # ---------------------------------------------------------------- Wahlkreisgrenzen aus Natural Earth (Spanien: Provinzen, Norwegen: Fylker vor 2020)
 def ne_wahlkreise(abruf, iso, ziel, quelle_roh=None):
     """Natural Earth Admin 1 (gemeinfrei): Provinzen Spaniens = Wahlkreise des Congreso; alte 19 Fylker Norwegens = Wahlkreise des Storting."""
@@ -1597,6 +1696,9 @@ def main():
             wahlen[alt[0]] = us
         else:
             wahlen.append(us)
+    sen = us_senat22()
+    if sen:
+        wahlen.append(sen)
     wahlen += regional(pa, ko) + kommunal(ko)
     daten = {"stand": date.today().isoformat(), "ebenen": EBENEN_NAMEN, "eu": sorted(EU), "farben": {"DE": DE_FARBEN}, "ordnung": {"DE": DE_ORDNUNG}, "wahlen": wahlen}
     OUT.write_text(json.dumps(daten, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

@@ -1,0 +1,29 @@
+2025 Federal Election House of Representatives First Preferences By Party [Event:31496 Phase:FinalResults Generated:2025-06-16T10:38:40 Cycle:194a421d-c559-4a18-a78a-90c7cf2acb4e Created:2025-06-16T10:36:42 Environment:PROD Site:CANBERRA Server:Internal Version:10.11.386.0]
+PartyAb,PartyNm,OrderOfAppearance,Contested,Nominations,Elected,OrdinaryVotes,OrdinaryPercentage,AbsentVotes,AbsentPercentage,ProvisionalVotes,ProvisionalPercentage,PrePollVotes,PrePollPercentage,PostalVotes,PostalPercentage,TotalVotes,TotalPercentage,TotalSwing
+ALP,Australian Labor Party,1,150,150,94,4281714,34.75,162532,32.33,9180,35.79,173337,32.55,727375,34.53,5354138,34.56,1.98
+LP,Liberal,2,106,106,18,2507250,20.35,89203,17.74,3808,14.85,100714,18.92,504241,23.94,3205216,20.69,-3.2
+LNP,Liberal National Party of Queensland,3,30,30,16,830291,6.74,23944,4.76,1752,6.83,38023,7.14,205613,9.76,1099623,7.1,-0.9
+NP,The Nationals,4,19,19,9,511824,4.15,8118,1.61,310,1.21,15320,2.88,53206,2.53,588778,3.8,0.2
+CLP,Country Liberal Party (NT),5,2,2,0,31212,0.25,467,0.09,63,0.25,1930,0.36,2113,0.1,35785,0.23,0.03
+GRN,The Greens,6,150,150,1,1504078,12.21,97306,19.35,4448,17.34,82967,15.58,201178,9.55,1889977,12.2,-0.05
+XEN,Centre Alliance,7,1,1,1,30675,0.25,697,0.14,111,0.43,938,0.18,5032,0.24,37453,0.24,-0.01
+KAP,Katter's Australian Party (KAP),8,3,3,1,43997,0.36,1240,0.25,141,0.55,1602,0.3,4795,0.23,51775,0.33,-0.05
+IND,Independent,9,88,128,10,941305,7.64,26797,5.33,1736,6.77,33285,6.25,122928,5.84,1126051,7.27,1.98
+ON,Pauline Hanson's One Nation,10,147,147,0,767652,6.23,38900,7.74,1697,6.62,40799,7.66,142766,6.78,991814,6.4,1.44
+CYA,Trumpet of Patriots,11,100,100,0,230037,1.87,13443,2.67,726,2.83,12069,2.27,39801,1.89,296076,1.91,1.52
+FFP,Family First Party Australia,12,92,92,0,214777,1.74,12546,2.5,693,2.7,10482,1.97,35183,1.67,273681,1.77,1.77
+LTP,Libertarian Party,13,46,46,0,67951,0.55,3510,0.7,112,0.44,3230,0.61,8671,0.41,83474,0.54,0.54
+HMP,Legalise Cannabis Australia,14,42,42,0,145227,1.18,12529,2.49,260,1.01,7678,1.44,20641,0.98,186335,1.2,1.16
+CEC,Australian Citizens Party,15,19,19,0,16739,0.14,886,0.18,28,0.11,752,0.14,2365,0.11,20770,0.13,0.1
+GRPF,Gerard Rennick People First,16,19,19,0,57179,0.46,2636,0.52,198,0.77,2956,0.56,8923,0.42,71892,0.46,0.46
+AJP,Animal Justice Party,17,18,18,0,26099,0.21,1724,0.34,141,0.55,1195,0.22,6153,0.29,35312,0.23,-0.37
+SOPA,FUSION | Planet Rescue | Whistleblower Protection | Innovation,18,13,13,0,10511,0.09,788,0.16,26,0.1,648,0.12,2401,0.11,14374,0.09,0
+AUC,Australian Christians,19,10,10,0,25253,0.2,1609,0.32,45,0.18,1144,0.21,3314,0.16,31365,0.2,0.06
+ASP,"Shooters, Fishers and Farmers Party",20,8,8,0,22140,0.18,1011,0.2,37,0.14,1099,0.21,2681,0.13,26968,0.17,0.04
+SAL,Socialist Alliance,21,6,6,0,15184,0.12,871,0.17,32,0.12,617,0.12,1949,0.09,18653,0.12,0.04
+IMO,Health Environment Accountability Rights Transparency (HEART),22,4,4,0,4362,0.04,135,0.03,12,0.05,151,0.03,478,0.02,5138,0.03,-0.15
+VNS,Victorian Socialists,23,4,4,0,19762,0.16,872,0.17,64,0.25,662,0.12,2292,0.11,23652,0.15,-0.04
+IAP,Indigenous - Aboriginal Party of Australia,24,3,3,0,5340,0.04,348,0.07,11,0.04,368,0.07,239,0.01,6306,0.04,-0.01
+AUD,Australian Democrats,25,1,1,0,564,0,30,0.01,1,0,19,0,74,0,688,0,0
+GAP,The Great Australian Party,26,1,1,0,1174,0.01,100,0.02,4,0.02,54,0.01,177,0.01,1509,0.01,-0.2
+NAFD,Non Affiliated,27,4,4,0,10447,0.08,503,0.1,13,0.05,410,0.08,2060,0.1,13433,0.09,0.08

@@ -39,6 +39,9 @@ KREISE_GEO = HIER / "geo" / "kreise_de.geojson"
 LWK_NW_GEO = HIER / "geo" / "landtagswahlkreise_nw.geojson"
 WK_GB_GEO = HIER / "geo" / "wahlkreise_gb.geojson"
 WK_FR_GEO = HIER / "geo" / "wahlkreise_fr.geojson"
+WK_CA_GEO = HIER / "geo" / "wahlkreise_ca.geojson"
+WK_AU_GEO = HIER / "geo" / "wahlkreise_au.geojson"
+GEM_AT_GEO = HIER / "geo" / "gemeinden_at.geojson"
 
 EW24_URL = "https://www.bundeswahlleiterin.de/europawahlen/2024/ergebnisse/opendata/ew24/csv/kerg2.csv"
 LTW_NW22 = "https://www.wahlergebnisse.nrw/landtagswahlen/2022/"
@@ -71,6 +74,56 @@ FR_FARBEN = {"NFP": "#e4032e", "RN": "#0d378a", "Ensemble": "#ffc400", "LR": "#0
              "Divers droite": "#74b9c9", "Divers centre": "#f5c98b", "Horizons": "#4f6fd6", "Regionalisten": "#c9a27a", "Écologistes": "#57b45d", "Divers": "#9aa3ad",
              "Reconquête": "#333a4d", "Extrême gauche": "#9b0d1b", "Extrême droite": "#4a4f5a", "Souverainistes": "#7d4cb0", "UDI": "#4ac3d6", "LFI": "#c9462c",
              "PS": "#e75480", "PCF": "#a80000", "Les Écologistes": "#2e9b45", "PRG": "#f0a0a0"}
+CA_GE25 = {"kandidaten": ("https://www.elections.ca/res/rep/off/ovrGE45/62/data_donnees/table_tableau12.csv", "ca_ge25_kandidaten.csv"),
+           "wahlkreise": ("https://www.elections.ca/res/rep/off/ovrGE45/62/data_donnees/table_tableau11.csv", "ca_ge25_wahlkreise.csv"),
+           "vor": (("https://open.canada.ca/data/dataset/08c4ffbc-c513-41a4-b741-d35b41b50c22/resource/463aa010-d9c1-470e-b6e3-d18a1c7a6a4a/"
+                    "download/transposition_343_fed_vote_count.csv"),
+                   "ca_ge21_umgerechnet.csv")}   # Elections Canada, Open Government Licence – Canada
+CA_GRENZEN = "https://www.elections.ca/res/cir/mapsCorner/edb/FederalElectoralDistricts_SHP.zip"
+# Partei im Kandidatenfeld „Vorname Name EnglischePartei/FranzösischePartei“: französischer Teil -> (englischer Teil, Anzeige)
+CA_PARTEI = {"Libéral": ("Liberal", "Liberale"), "Conservateur": ("Conservative", "Konservative"), "NPD-Nouveau Parti démocratique": ("NDP-New Democratic Party", "NDP"),
+             "Bloc Québécois": ("Bloc Québécois", "Bloc Québécois"), "Parti Vert": ("Green Party", "Grüne"), "Parti populaire - PPC": ("People's Party - PPC", "PPC"),
+             "Indépendant(e)": ("Independent", "Unabhängige"), "Aucune appartenance": ("No Affiliation", "Unabhängige"),
+             "Parti Rhinocéros Party": ("Parti Rhinocéros Party", "Rhinocéros"), "Parti Protection Animaux": ("Animal Protection Party", "Tierschutz"),
+             "Communiste": ("Communist", "Kommunisten"), "Libertarien": ("Libertarian", "Libertäre"), "Parti Avenir Canadien": ("Canadian Future Party", "Canadian Future"),
+             "Marxiste-Léniniste": ("Marxist-Leninist", "Marxisten-Leninisten"), "Centriste": ("Centrist", "Zentristen"),
+             "Parti de l'Héritage Chrétien": ("Christian Heritage Party", "Christian Heritage"), "Parti Uni du Canada (UP)": ("United Party of Canada (UP)", "United Party"),
+             "Parti Marijuana": ("Marijuana Party", "Marijuana")}
+CA_LANG = [(r"^Liberal Party", "Liberale"), (r"^Conservative Party", "Konservative"), (r"^New Democratic", "NDP"), (r"^Bloc", "Bloc Québécois"),
+           (r"^Green Party", "Grüne"), (r"^People's Party", "PPC"), (r"^(Independent|No Affiliation)", "Unabhängige"), (r"Rhinocéros", "Rhinocéros"),
+           (r"^Animal Protection", "Tierschutz"), (r"^Communist", "Kommunisten"), (r"^Libertarian", "Libertäre"), (r"^Marxist", "Marxisten-Leninisten"),
+           (r"^Centrist", "Zentristen"), (r"^Christian Heritage", "Christian Heritage"), (r"^Marijuana", "Marijuana")]
+CA_FARBEN = {"Liberale": "#d71920", "Konservative": "#1a4782", "NDP": "#f37021", "Bloc Québécois": "#33b2cc", "Grüne": "#3d9b35", "PPC": "#4e2a84",
+             "Unabhängige": "#9aa3ad", "Sonstige": "#8b95a3"}
+AU_ERG = "https://results.aec.gov.au/31496/Website/Downloads/{}-31496.csv"     # AEC Tally Room, Wahl 3. Mai 2025 (Event 31496), CC BY 4.0
+AU_GE25 = {"HouseFirstPrefsByCandidateByVoteTypeDownload": "au_ge25_erstpraeferenzen.csv", "HouseTcpByCandidateByVoteTypeDownload": "au_ge25_zwei_kandidaten.csv",
+           "HouseTurnoutByDivisionDownload": "au_ge25_beteiligung.csv", "HouseFirstPrefsByPartyDownload": "au_ge25_parteien.csv",
+           "HouseTppByDivisionDownload": "au_ge25_labor_koalition.csv"}
+AU_GRENZEN = ("https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/"
+              "access-and-downloads/digital-boundary-files/CED_2025_AUST_GDA2020.zip")   # ABS, Commonwealth Electoral Divisions 2025, CC BY 4.0
+AU_PARTEI = {"ALP": "Labor", "LP": "Liberale", "LNP": "LNP", "NP": "Nationals", "CLP": "CLP", "GRN": "Grüne", "IND": "Unabhängige", "NAFD": "Unabhängige",
+             "ON": "One Nation", "KAP": "Katter", "XEN": "Centre Alliance", "CYA": "Trumpet of Patriots", "FFP": "Family First", "LTP": "Libertarian",
+             "HMP": "Legalise Cannabis", "AJP": "Animal Justice", "GRPF": "People First"}
+AU_FARBEN = {"Labor": "#de3533", "Liberale": "#1c4f9c", "LNP": "#3a7bd5", "Nationals": "#0b7a4b", "CLP": "#f08a24", "Grüne": "#10c25b", "Unabhängige": "#9aa3ad",
+             "One Nation": "#f36c21", "Katter": "#b50204", "Centre Alliance": "#ff6300", "Koalition": "#1c4f9c", "Trumpet of Patriots": "#e8c400",
+             "Family First": "#5b2a86", "Legalise Cannabis": "#4c9a2a", "Sonstige": "#8b95a3"}
+CH_NRW23 = "https://ogd-static.voteinfo-app.ch/v1/ogd/sd-t-17.02-NRW2023-{}.json"   # BFS, Eidgenössische Wahlen 2023, opendata.swiss (Nutzung frei, Quellenangabe)
+CH_KANTON = ["ZH", "BE", "LU", "UR", "SZ", "OW", "NW", "GL", "ZG", "FR", "SO", "BS", "BL", "SH", "AR", "AI", "SG", "GR", "AG", "TG", "TI", "VD", "VS", "NE", "GE", "JU"]
+CH_PARTEI = {1: "FDP", 3: "SP", 4: "SVP", 5: "LDP", 7: "EVP", 8: "CSP", 9: "PdA/Sol.", 12: "AL", 13: "Grüne", 14: "SD", 16: "EDU", 18: "Lega",
+             31: "GLP", 33: "MCG", 34: "Mitte", 35: "Übrige"}
+CH_FARBEN = {"SVP": "#2f7a33", "SP": "#e3000f", "Mitte": "#f39200", "FDP": "#1f63b5", "Grüne": "#84c341", "GLP": "#d4e157", "EVP": "#e6c700",
+             "EDU": "#8c5a2b", "Lega": "#4d5c9a", "MCG": "#f4d03f", "PdA/Sol.": "#b3122e", "AL": "#9b2242", "LDP": "#5d8ad6", "CSP": "#3aa6a0",
+             "SD": "#7d6b4a", "Übrige": "#8b95a3"}
+AT_NRW = {"2024": ("https://www.bmi.gv.at/412/nationalratswahlen/nationalratswahl_2024/files/endgueltiges_ergebnis_beschluss_bundeswahlbehoerde_16102024.xlsx",
+                    "at_nrw24.csv"),
+          "2019": ("https://www.bmi.gv.at/412/Nationalratswahlen/Nationalratswahl_2019/files/endgultiges_gesamtergebnis_nrw19_16102019.xlsx", "at_nrw19.csv")}  # BMI
+AT_GRENZEN = ("https://www.statistik.gv.at/gs-open/GEODATA/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=GEODATA:STATISTIK_AUSTRIA_GEM_20240101"
+              "&outputFormat=SHAPE-ZIP&format_options=CHARSET:UTF-8")   # Statistik Austria, Gemeinden 01.01.2024, CC BY 4.0
+AT_PARTEI = {"GRÜNE": "Grüne", "KEINE": "Keine von denen", "BIER": "Bierpartei", "JETZT": "JETZT", "WANDL": "Wandel", "GAZA": "Liste Gaza", "LMP": "Liste Madeleine Petrovic"}
+AT_FARBEN = {"FPÖ": "#1f5fbf", "ÖVP": "#63c3d0", "SPÖ": "#e4002b", "NEOS": "#e84188", "Grüne": "#88b626", "KPÖ": "#a3201c", "Bierpartei": "#e7b416",
+             "JETZT": "#a5a5a5", "BZÖ": "#f39a00", "MFG": "#5a3e8c", "Keine von denen": "#6b7280", "Wandel": "#7d3c98"}
+# Sitze im Nationalrat laut Mandatsspiegel der Bundeswahlbehörde (24.10.2024); 2019 zum Vergleich
+AT_SITZE = [["FPÖ", 57, 31], ["ÖVP", 51, 71], ["SPÖ", 41, 40], ["NEOS", 18, 15], ["Grüne", 16, 26]]
 VG1000_URL = "https://daten.gdz.bkg.bund.de/produkte/vg/vg1000_ebenen_1231/aktuell/vg1000_12-31.utm32s.shape.ebenen.zip"
 
 # Ebenennamen je Land (None = Ebene gibt es dort nicht); "_" gilt für alle übrigen Länder
@@ -614,6 +667,353 @@ def fr_leg24():
                        "lizenz": "Licence Ouverte 2.0"}}
 
 
+# ---------------------------------------------------------------- Kanada: Unterhauswahl 28.04.2025 je Wahlkreis (Elections Canada)
+def ca_laden(abruf, grenzen_zip=None):
+    for url, datei in CA_GE25.values():
+        laden(url, QUELLEN / datei, abruf)
+    if WK_CA_GEO.exists():
+        return
+    z = Path(grenzen_zip or "/tmp/ca_fed_shp.zip")
+    if not laden(CA_GRENZEN, z, abruf):
+        return
+    import shapefile
+    from pyproj import CRS, Transformer
+    from shapely.geometry import mapping, shape
+    from shapely.ops import transform
+    zf = zipfile.ZipFile(z)
+    name = next(n for n in zf.namelist() if n.endswith(".shp"))[:-4]
+    sf = shapefile.Reader(shp=io.BytesIO(zf.read(name + ".shp")), shx=io.BytesIO(zf.read(name + ".shx")), dbf=io.BytesIO(zf.read(name + ".dbf")), encoding="utf-8")
+    tr = Transformer.from_crs(CRS.from_wkt(zf.read(name + ".prj").decode()), "EPSG:4326", always_xy=True)
+    feats = []
+    for rec, shp in zip(sf.records(), sf.shapes()):
+        d = rec.as_dict()
+        g = transform(tr.transform, shape(shp.__geo_interface__).buffer(0).simplify(300, preserve_topology=True))   # 300 m in der Lambert-Projektion
+        feats.append({"type": "Feature", "properties": {"id": str(d["ED_CF_NUM"]), "name": d["ED_NAMEE"]}, "geometry": mapping(g)})
+    WK_CA_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Elections Canada, Federal Electoral Districts (Representation Order 2023), Open Government Licence – Canada",
+                                     "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _ca_kandidat(feld):
+    links, _, fr = feld.replace("**", " ").rpartition("/")
+    en, partei = CA_PARTEI.get(fr.strip(), ("", fr.strip() or "Sonstige"))
+    links = " ".join(links.split())
+    name = links[: -len(en)].strip() if en and links.endswith(en) else links
+    return name, partei
+
+
+def ca_ge25():
+    """Unterhauswahl 28. April 2025: 343 Wahlkreise, relative Mehrheitswahl; Vergleich: Wahl 2021 umgerechnet auf die Grenzen 2023 (Elections Canada)."""
+    pk, pw, pv = (QUELLEN / CA_GE25[k][1] for k in ("kandidaten", "wahlkreise", "vor"))
+    if not (pk.exists() and pw.exists()):
+        return None
+    wk = {}
+    for z in csv.reader(pw.read_text(encoding="utf-8-sig").splitlines()[1:]):
+        wk[z[2]] = {"n": z[1].replace("--", "–"), "wb": zahl(z[4]), "gueltig": zahl(z[6]) or 0, "w": zahl(z[10]) or 0, "p": {}, "sieger": None}
+    for z in csv.reader(pk.read_text(encoding="utf-8-sig").splitlines()[1:]):
+        W = wk.get(z[2])
+        if not W:
+            continue
+        name, partei = _ca_kandidat(z[3])
+        W["p"][partei] = W["p"].get(partei, 0) + (zahl(z[6]) or 0)
+        if z[8].strip():
+            W["sieger"] = {"name": name, "partei": partei}
+    vor = {}
+    if pv.exists():
+        r = list(csv.reader(pv.read_text(encoding="utf-8-sig").splitlines()))
+        kopf = r[0]
+        spalten = []
+        for i, k in enumerate(kopf[5:-4], 5):
+            en = k.split("/")[0]
+            spalten.append((i, next((a for m, a in CA_LANG if re.search(m, en)), en)))
+        for z in r[1:]:
+            p = {}
+            for i, a in spalten:
+                if z[i] not in ("", "NA"):
+                    p[a] = p.get(a, 0) + int(float(z[i]))
+            vor[z[2]] = {"p": p, "gueltig": sum(p.values()), "w": int(float(z[-3])) if z[-3] not in ("", "NA") else 0,
+                         "wb": int(float(z[-2])) if z[-2] not in ("", "NA") else 0}
+
+    def stimmen(W, V):
+        l = anteile(list(W["p"].items()), W["gueltig"] or None)
+        if V and V["gueltig"]:
+            for x in l:
+                x[3] = r1(V["p"][x[0]] / V["gueltig"] * 100) if x[0] in V["p"] else None
+        return l
+    werte, sitze, ges, ges_v = {}, {}, {"p": {}, "gueltig": 0}, {"p": {}, "gueltig": 0}
+    for k, W in wk.items():
+        V = vor.get(k)
+        werte[k] = {"n": W["n"], "s": {"s": stimmen(W, V)}, "wb": W["wb"], "w": W["w"], "bet": r1(W["w"] / W["wb"] * 100) if W["wb"] else None}
+        if V and V["wb"]:
+            werte[k]["bet_vor"] = r1(V["w"] / V["wb"] * 100)
+        if W["sieger"]:
+            werte[k]["direkt"] = W["sieger"]
+            sitze[W["sieger"]["partei"]] = sitze.get(W["sieger"]["partei"], 0) + 1
+        for G, Q in ((ges, W), (ges_v, V)):
+            if Q:
+                G["gueltig"] += Q["gueltig"]
+                for p, n in Q["p"].items():
+                    G["p"][p] = G["p"].get(p, 0) + n
+    wb, w = sum(W["wb"] or 0 for W in wk.values()), sum(W["w"] for W in wk.values())
+    wb_v, w_v = sum(V["wb"] for V in vor.values()), sum(V["w"] for V in vor.values())
+    g = {"s": {"s": stimmen(ges, ges_v if vor else None)}, "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])],
+         "sitze_n": sum(sitze.values()), "sitze_hinweis": "Sitze = gewonnene Wahlkreise am Wahlabend (nach Nachzählungen)",
+         "wb": wb, "w": w, "bet": r1(w / wb * 100) if wb else None, "bet_vor": r1(w_v / wb_v * 100) if wb_v else None}
+    return {"g": g, "farben": CA_FARBEN, "stimmarten": [["s", "Stimmen"]], "status": "endgültig", "datum": "2025-04-28",
+            "system": "Relative Mehrheitswahl in 343 Einerwahlkreisen: wer in einem Wahlkreis die meisten Stimmen hat, gewinnt den Sitz.",
+            "vor": {"datum": "2021-09-20", "titel": "Unterhauswahl 2021", "hinweis": "umgerechnet auf die Wahlkreise 2023 (Elections Canada)"},
+            "einheiten": [{"id": "wk", "name": "Wahlkreise (Ridings)", "einzahl": "Wahlkreis", "art": "wahlkreis", "geo": "wahlkreise-ca", "werte": werte}],
+            "quelle": {"name": "Elections Canada, Official Voting Results 45th General Election; Grenzen: Elections Canada",
+                       "url": "https://www.elections.ca/content.aspx?section=res&dir=rep/off/45gedata&document=index&lang=e",
+                       "lizenz": "Open Government Licence – Canada"}}
+
+
+# ---------------------------------------------------------------- Australien: Repräsentantenhaus 03.05.2025 je Division (AEC)
+def _au_zeilen(datei):
+    """AEC-Dateien: erste Zeile ist eine Beschreibung, danach CSV mit Kopf."""
+    pfad = QUELLEN / datei
+    return list(csv.DictReader(pfad.read_text(encoding="utf-8-sig").splitlines()[1:])) if pfad.exists() else []
+
+
+def _au_partei(z):
+    return AU_PARTEI.get(z["PartyAb"], z["PartyNm"] or "Sonstige")
+
+
+def au_laden(abruf, grenzen_zip=None):
+    for quelle, datei in AU_GE25.items():
+        laden(AU_ERG.format(quelle), QUELLEN / datei, abruf)
+    if WK_AU_GEO.exists():
+        return
+    ids = {z["DivisionNm"]: z["DivisionID"] for z in _au_zeilen(AU_GE25["HouseTurnoutByDivisionDownload"])}
+    z = Path(grenzen_zip or "/tmp/au_ced25.zip")
+    if not ids or not laden(AU_GRENZEN, z, abruf):
+        return
+    import shapefile
+    from shapely.geometry import mapping, shape
+    zf = zipfile.ZipFile(z)
+    name = next(n for n in zf.namelist() if n.lower().endswith(".shp"))[:-4]
+    sf = shapefile.Reader(shp=io.BytesIO(zf.read(name + ".shp")), shx=io.BytesIO(zf.read(name + ".shx")), dbf=io.BytesIO(zf.read(name + ".dbf")), encoding="utf-8")
+    feats = []
+    for rec, shp in zip(sf.records(), sf.shapes()):
+        d = rec.as_dict()
+        if d["CED_NAME25"] not in ids or not shp.points:
+            continue        # ohne „Migratory“, „No usual address“, „Outside Australia“
+        g = shape(shp.__geo_interface__).buffer(0).simplify(0.003, preserve_topology=True)
+        feats.append({"type": "Feature", "properties": {"id": ids[d["CED_NAME25"]], "name": d["CED_NAME25"]}, "geometry": mapping(g)})
+    WK_AU_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Australian Bureau of Statistics, Commonwealth Electoral Divisions (ASGS Ed. 3) 2025, CC BY 4.0",
+                                     "features": feats}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def au_ge25():
+    """Wahl zum Repräsentantenhaus 3. Mai 2025: 150 Divisionen, Präferenzwahl (Instant-Runoff). Zwei Stimmarten: Ergebnis nach Verteilung der
+    Präferenzen auf die letzten zwei Kandidaten (entscheidet den Sitz) und Erstpräferenzen. Veränderung: AEC-Swing zur Wahl 2022 (fiktiv auf neuen Grenzen)."""
+    ep, zk, bet, pa, tpp = (_au_zeilen(AU_GE25[k]) for k in AU_GE25)
+    if not ep:
+        return None
+    div = {}
+    for z in bet:
+        div[z["DivisionID"]] = {"n": z["DivisionNm"], "wb": zahl(z["Enrolment"]), "w": zahl(z["Turnout"]), "bet": r1(float(z["TurnoutPercentage"])),
+                                "bet_vor": r1(float(z["TurnoutPercentage"]) - float(z["TurnoutSwing"])), "ep": {}, "zk": {}, "sieger": None}
+
+    def sammeln(zeilen, art):
+        for z in zeilen:
+            D = div.get(z["DivisionID"])
+            if not D or z["Surname"] == "Informal":
+                continue
+            p, n = _au_partei(z), zahl(z["TotalVotes"]) or 0
+            alt = D[art].get(p)
+            # Swing der AEC gilt je Kandidat; bei mehreren Kandidaten derselben Gruppe (Unabhängige) kein Vergleich
+            D[art][p] = [n + (alt[0] if alt else 0), None if alt else (float(z["Swing"]) if z["Swing"] not in ("", None) else None)]
+            if art == "zk" and z["Elected"] == "Y":
+                D["sieger"] = {"name": f"{z['GivenNm']} {z['Surname'].title()}", "partei": p}
+    sammeln(ep, "ep")
+    sammeln(zk, "zk")
+
+    def liste(d):
+        s = sum(v[0] for v in d.values()) or 1
+        return sorted([[p, n, r1(n / s * 100), r1(n / s * 100 - sw) if sw is not None and abs(sw) < 100 and n / s * 100 - sw >= 0.05 else None]
+                       for p, (n, sw) in d.items()], key=lambda x: -x[1])
+    werte, sitze = {}, {}
+    for k, D in div.items():
+        werte[k] = {"n": D["n"], "s": {"zk": liste(D["zk"]), "ep": liste(D["ep"])}, "wb": D["wb"], "w": D["w"], "bet": D["bet"], "bet_vor": D["bet_vor"]}
+        if D["sieger"]:
+            werte[k]["direkt"] = D["sieger"]
+            sitze[D["sieger"]["partei"]] = sitze.get(D["sieger"]["partei"], 0) + 1
+    ges = {}
+    for z in pa:
+        p = AU_PARTEI.get(z["PartyAb"], z["PartyNm"] or "Sonstige")
+        alt = ges.get(p)
+        ges[p] = [zahl(z["TotalVotes"]) + (alt[0] if alt else 0), float(z["TotalSwing"]) + (alt[1] if alt else 0)]
+    s = sum(v[0] for v in ges.values()) or 1
+    g_ep = sorted([[p, n, r1(n / s * 100), r1(n / s * 100 - sw)] for p, (n, sw) in ges.items()], key=lambda x: -x[1])
+    alp = sum(zahl(z["Australian Labor Party Votes"]) or 0 for z in tpp)
+    koa = sum(zahl(z["Liberal/National Coalition Votes"]) or 0 for z in tpp)
+    g_zk = [["Labor", alp, r1(alp / (alp + koa) * 100), 52.1], ["Koalition", koa, r1(koa / (alp + koa) * 100), 47.9]] if alp + koa else []
+    wb, w = sum(D["wb"] or 0 for D in div.values()), sum(D["w"] or 0 for D in div.values())
+    g = {"s": {"zk": g_zk, "ep": g_ep}, "sitze": [[p, n, None] for p, n in sorted(sitze.items(), key=lambda x: -x[1])], "sitze_n": sum(sitze.values()),
+         "sitze_hinweis": "Sitze = gewonnene Divisionen; landesweit „nach Präferenzen“ = Labor gegen Koalition (two-party preferred, Vergleich 2022: 52,1 zu 47,9)",
+         "wb": wb, "w": w, "bet": r1(w / wb * 100) if wb else None}
+    return {"g": g, "farben": AU_FARBEN, "stimmarten": [["zk", "Nach Präferenzen"], ["ep", "Erstpräferenzen"]], "status": "endgültig", "datum": "2025-05-03",
+            "system": ("Präferenzwahl in 150 Einerwahlkreisen (Divisionen): Wähler nummerieren alle Kandidaten; wer keine absolute Mehrheit der Erstpräferenzen hat, "
+                       "fällt nacheinander aus, seine Stimmen gehen an die nächste Präferenz, bis zwei übrig sind. Wahlpflicht."),
+            "vor": {"datum": "2022-05-21", "titel": "Wahl 2022", "hinweis": "Swing der AEC, umgerechnet auf die neuen Grenzen"},
+            "einheiten": [{"id": "wk", "name": "Wahlkreise (Divisionen)", "einzahl": "Division", "art": "wahlkreis", "geo": "wahlkreise-au", "werte": werte}],
+            "quelle": {"name": "Australian Electoral Commission, Tally Room 2025 Federal Election; Grenzen: ABS (Commonwealth Electoral Divisions 2025)",
+                       "url": "https://results.aec.gov.au/31496/Website/HouseDefault-31496.htm", "lizenz": "CC BY 4.0"}}
+
+
+# ---------------------------------------------------------------- Schweiz: Nationalrat 22.10.2023, Wahlkreis = Kanton (BFS)
+def ch_laden(abruf):
+    """Parteiergebnisse und Wahlbeteiligung des BFS; gespeichert nur Ebene Schweiz und Kantone (die Gemeindeebene hätte 8 MB)."""
+    import requests
+    for art, datei in (("parteien", "ch_nrw23_parteien.json"), ("wahlbeteiligung", "ch_nrw23_beteiligung.json")):
+        ziel = QUELLEN / datei
+        if ziel.exists() or not abruf:
+            continue
+        r = requests.get(CH_NRW23.format(art), timeout=300)
+        r.raise_for_status()
+        d = r.json()
+        d.pop("level_gemeinden", None)
+        ziel.write_text(json.dumps(d, ensure_ascii=False, indent=0), encoding="utf-8")
+
+
+def ch_nrw23():
+    """Nationalratswahl 2023: Proporz in 26 Kantonen (Wahlkreise), Sitze je Kanton nach Bevölkerung (1 bis 36). Kantone mit einem Sitz wählen faktisch nach Mehrheit."""
+    pp, pb = QUELLEN / "ch_nrw23_parteien.json", QUELLEN / "ch_nrw23_beteiligung.json"
+    if not (pp.exists() and pb.exists()):
+        return None
+    P, B = json.loads(pp.read_text()), json.loads(pb.read_text())
+    gewaehlte = {}
+    pg = QUELLEN / "ch_nrw23_gewaehlte.json"
+    for x in (json.loads(pg.read_text()) if pg.exists() else []):
+        gewaehlte.setdefault(x["kanton_nummer"], []).append(x)
+    name = lambda i: CH_PARTEI.get(i, "Übrige")
+    werte = {}
+    for b in B["level_kantone"]:
+        k = "CH-" + CH_KANTON[b["kanton_nummer"] - 1]
+        werte[k] = {"n": "Kanton " + b["kanton_bezeichnung"], "s": {"s": []}, "sitze": [], "wb": b["wahlberechtigte"], "w": b["eingelegte_wahlzettel"],
+                    "bet": r1(b["wahlbeteiligung"]), "bet_vor": r1(b["letzte_wahl_wahlbeteiligung"]) if b.get("letzte_wahl_wahlbeteiligung") is not None else None}
+        el = gewaehlte.get(b["kanton_nummer"], [])
+        if len(el) == 1:                      # Ein-Sitz-Kanton: die gewählte Person
+            werte[k]["direkt"] = {"name": f"{el[0]['vorname']} {el[0]['name']}", "partei": name(el[0]["kandidat_partei_id"])}
+    for x in P["level_kantone"]:
+        W = werte["CH-" + CH_KANTON[x["kanton_nummer"] - 1]]
+        if x["partei_staerke"] is None:
+            continue
+        W["s"]["s"].append([name(x["partei_id"]), x["stimmen_partei"], r1(x["partei_staerke"]),
+                            r1(x["letzte_wahl_partei_staerke"]) if x.get("letzte_wahl_partei_staerke") is not None else None])
+        if x["anzahl_gewaehlte"] or x.get("letzte_wahl_anzahl_gewaehlte"):
+            W["sitze"].append([name(x["partei_id"]), x["anzahl_gewaehlte"], x.get("letzte_wahl_anzahl_gewaehlte")])
+    for W in werte.values():
+        W["s"]["s"].sort(key=lambda y: -(y[2] or 0))
+        W["sitze_n"] = sum(y[1] for y in W["sitze"])
+    l = sorted([[name(x["partei_id"]), x["fiktive_waehlende"], r1(x["partei_staerke"]), r1(x["letzte_wahl_partei_staerke"]) if x.get("letzte_wahl_partei_staerke") is not None else None]
+                for x in P["level_ch"]], key=lambda y: -(y[2] or 0))
+    sitze = sorted([[name(x["partei_id"]), x["anzahl_gewaehlte"], x["letzte_wahl_anzahl_gewaehlte"]] for x in P["level_ch"] if x["anzahl_gewaehlte"] or x["letzte_wahl_anzahl_gewaehlte"]],
+                   key=lambda y: -y[1])
+    c = B["level_ch"]
+    g = {"s": {"s": l}, "sitze": sitze, "sitze_n": sum(y[1] for y in sitze), "wb": c["wahlberechtigte"], "w": c["eingelegte_wahlzettel"],
+         "bet": r1(c["wahlbeteiligung"]), "bet_vor": r1(c["letzte_wahl_wahlbeteiligung"]),
+         "sitze_hinweis": "Parteistärke landesweit aus „fiktiven Wählenden“ des BFS (Parteistimmen geteilt durch die Sitzzahl des Kantons)"}
+    return {"g": g, "farben": CH_FARBEN, "stimmarten": [["s", "Parteistärke"]], "status": "endgültig",
+            "system": ("Verhältniswahl in 26 Kantonen (Wahlkreise) mit 1 bis 36 Sitzen; Listen, Panaschieren und Kumulieren. "
+                       "In Kantonen mit einem Sitz ist gewählt, wer die meisten Stimmen hat."),
+            "vor": {"datum": "2019-10-20", "titel": "Nationalratswahl 2019"},
+            "einheiten": [{"id": "kanton", "name": "Kantone (Wahlkreise)", "einzahl": "Kanton", "art": "wahlkreis", "geo": "gliedstaaten", "werte": werte}],
+            "quelle": {"name": "Bundesamt für Statistik, Eidgenössische Wahlen 2023 (opendata.swiss)", "url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/politik/wahlen.html",
+                       "lizenz": "opendata.swiss, freie Nutzung mit Quellenangabe"}}
+
+
+# ---------------------------------------------------------------- Österreich: Nationalrat 29.09.2024 je Bundesland und Gemeinde (BMI)
+def at_laden(abruf, grenzen_zip=None):
+    """BMI-Ergebnisdateien (xlsx) -> CSV mit Stimmen (ohne Prozentspalten); Gemeindegrenzen der Statistik Austria."""
+    import tempfile
+    for url, datei in AT_NRW.values():
+        ziel = QUELLEN / datei
+        if ziel.exists():
+            continue
+        x = Path(tempfile.gettempdir()) / (datei + ".xlsx")
+        if not laden(url, x, abruf):
+            continue
+        import openpyxl
+        rows = list(openpyxl.load_workbook(x, read_only=True).worksheets[0].iter_rows(values_only=True))
+        kopf = ["GKZ", "Gebiet", "Wahlberechtigte", "Abgegebene", "Ungültige", "Gültige"] + [k for k in rows[0][6::2] if k]
+        with ziel.open("w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(kopf)
+            for r in rows:
+                if r[0] and str(r[0]).startswith("G") and str(r[0]) != "GKZ":
+                    w.writerow(list(r[:6]) + [("" if v is None else v) for v in r[6::2][: len(kopf) - 6]])
+    if GEM_AT_GEO.exists():
+        return
+    z = Path(grenzen_zip or "/tmp/at_gem24.zip")
+    if not laden(AT_GRENZEN, z, abruf):
+        return
+    import shapefile
+    from pyproj import CRS, Transformer
+    from shapely.geometry import mapping, shape
+    from shapely.ops import transform
+    zf = zipfile.ZipFile(z)
+    name = next(n for n in zf.namelist() if n.endswith(".shp"))[:-4]
+    sf = shapefile.Reader(shp=io.BytesIO(zf.read(name + ".shp")), shx=io.BytesIO(zf.read(name + ".shx")), dbf=io.BytesIO(zf.read(name + ".dbf")), encoding="utf-8")
+    tr = Transformer.from_crs(CRS.from_wkt(zf.read(name + ".prj").decode()), "EPSG:4326", always_xy=True)
+    feats = []
+    for rec, shp in zip(sf.records(), sf.shapes()):
+        d = rec.as_dict()
+        g = transform(tr.transform, shape(shp.__geo_interface__).buffer(0).simplify(120, preserve_topology=True))     # 120 m in MGI Lambert
+        feats.append({"type": "Feature", "properties": {"id": d["g_id"], "name": d["g_name"]}, "geometry": mapping(g)})
+    GEM_AT_GEO.write_text(json.dumps({"type": "FeatureCollection", "quelle": "Statistik Austria, Gemeinden 01.01.2024, CC BY 4.0", "features": feats},
+                                     ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _at_zeilen(datei):
+    pfad = QUELLEN / datei
+    if not pfad.exists():
+        return {}
+    out = {}
+    for z in csv.DictReader(pfad.open(encoding="utf-8")):
+        p = {AT_PARTEI.get(k, k): int(float(v)) for k, v in list(z.items())[6:] if v not in ("", None) and float(v) > 0}
+        out[z["GKZ"][1:]] = {"n": z["Gebiet"].strip(), "wb": zahl(z["Wahlberechtigte"]), "w": zahl(z["Abgegebene"]), "gueltig": zahl(z["Gültige"]) or 0, "p": p}
+    return out
+
+
+def at_nrw24():
+    """Nationalratswahl 2024: Verhältniswahl in drei Ermittlungsverfahren (39 Regional-, 9 Landeswahlkreise, Bund), 4-%-Hürde oder Grundmandat.
+    Wahlkreise hier = Landeswahlkreise (Bundesländer); Zählgebiete = Gemeinden (Urnenstimmen; Wahlkarten zählt der Bezirk)."""
+    A, V = _at_zeilen(AT_NRW["2024"][1]), _at_zeilen(AT_NRW["2019"][1])
+    if not A:
+        return None
+
+    def wert(k, X, mit_bet=True):
+        x, v = X[k], V.get(k)
+        l = anteile(list(x["p"].items()), x["gueltig"] or None)
+        if v and v["gueltig"]:
+            for y in l:
+                y[3] = r1(v["p"][y[0]] / v["gueltig"] * 100) if y[0] in v["p"] else None
+        o = {"n": x["n"], "s": {"s": l}, "wb": x["wb"]}
+        if mit_bet:                           # Gemeinden: ohne Wahlkarten wären Wählende und Beteiligung zu niedrig
+            o["w"] = x["w"]
+        if mit_bet and x["wb"]:
+            o["bet"] = r1(x["w"] / x["wb"] * 100)
+            if v and v["wb"]:
+                o["bet_vor"] = r1(v["w"] / v["wb"] * 100)
+        return o
+    laender = {f"AT-{k[0]}": wert(k, A) for k in A if re.fullmatch(r"[1-9]0000", k)}
+    gemeinden = {k: wert(k, A, False) for k in A if re.fullmatch(r"\d{5}", k) and not k.endswith(("00", "99"))}
+    for k, x in gemeinden.items():
+        x["n"] = re.sub(r"^Wien-", "Wien, ", x["n"])
+    g = wert("00000", A)
+    g.pop("n")
+    g.update({"sitze": AT_SITZE, "sitze_n": 183, "sitze_hinweis": "Sitze laut Mandatsspiegel der Bundeswahlbehörde"})
+    return {"g": g, "farben": AT_FARBEN, "stimmarten": [["s", "Stimmen"]], "status": "endgültig",
+            "system": ("Verhältniswahl mit Vorzugsstimmen in drei Ermittlungsverfahren: Regionalwahlkreise, Landeswahlkreise (Bundesländer), Bund. "
+                       "In den Nationalrat kommt, wer landesweit 4 % oder ein Grundmandat in einem Regionalwahlkreis erreicht."),
+            "vor": {"datum": "2019-09-29", "titel": "Nationalratswahl 2019"},
+            "einheiten": [{"id": "land", "name": "Landeswahlkreise (Bundesländer)", "einzahl": "Landeswahlkreis", "art": "wahlkreis", "geo": "gliedstaaten", "werte": laender},
+                          {"id": "gem", "name": "Gemeinden (ohne Wahlkarten)", "einzahl": "Gemeinde", "art": "zaehlgebiet", "geo": "gemeinden-at", "werte": gemeinden}],
+            "quelle": {"name": "Bundesministerium für Inneres, Endgültiges Ergebnis (Bundeswahlbehörde 16.10.2024); Grenzen: Statistik Austria",
+                       "url": "https://www.bmi.gv.at/412/Nationalratswahlen/Nationalratswahl_2024/start.aspx", "lizenz": "Amtliches Ergebnis; Grenzen CC BY 4.0"}}
+
+
 # ---------------------------------------------------------------- Grenzen kompakt halten (Artifact-Grenze 16 MB)
 def kompakt(pfad, stellen=3):
     """Koordinaten auf `stellen` Nachkommastellen (3 = rund 100 m), doppelte Folgepunkte und zu kleine Ringe weg. Idempotent."""
@@ -764,14 +1164,26 @@ def main():
             print("Landtagswahlkreise NRW:", lwk_nw_flaechen(lwk))
     gb_laden(not a.ohne_abruf)
     fr_laden(not a.ohne_abruf)
-    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO):
+    ca_laden(not a.ohne_abruf)
+    au_laden(not a.ohne_abruf)
+    ch_laden(not a.ohne_abruf)
+    at_laden(not a.ohne_abruf)
+    for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO, WK_CA_GEO, WK_AU_GEO, GEM_AT_GEO):
         kompakt(geo)
     wahlen = [w for w in national(pa) if w["land"] != "DE" or w["kammer"] != "unterhaus"]
     wahlen.append(bundestag(pa, HIER / "geo/wahlkreise_bund.geojson", HIER / "geo/de_laender.geojson"))
     if ew:
         wahlen.append(ew)
-    gb, fr = gb_ge24(), fr_leg24()
+    gb, fr, ca, au, ch, at = gb_ge24(), fr_leg24(), ca_ge25(), au_ge25(), ch_nrw23(), at_nrw24()
     for w in wahlen:
+        if at and w["id"] == "AT-unterhaus-2024":
+            w.update(at)
+        if ch and w["id"] == "CH-unterhaus-2023":
+            w.update(ch)
+        if au and w["id"] == "AU-unterhaus-2025":
+            w.update(au)
+        if ca and w["id"] == "CA-unterhaus-2025":
+            w.update(ca)
         if gb and w["id"] == "GB-unterhaus-2024":
             w.update(gb)
         if fr and w["id"] == "FR-unterhaus-2024":

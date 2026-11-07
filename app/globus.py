@@ -100,6 +100,25 @@ def netze():
     return beziehungen.laden()
 
 
+# Wahlkreisgrenzen, die wahlen.js erst lädt, wenn eine Wahl mit dieser Einheit auf der Karte ist (hält die Seite klein, Artifact-Grenze 16 MB).
+# Schlüssel = "geo" der Einheit in data/wahlen.json, properties.id = Schlüssel der Werte.
+WAHL_GEO = [("landtagswahlkreise-nw", "geo/landtagswahlkreise_nw.geojson"), ("wahlkreise-gb", "geo/wahlkreise_gb.geojson"),
+            ("wahlkreise-fr", "geo/wahlkreise_fr.geojson"), ("wahlkreise-ca", "geo/wahlkreise_ca.geojson"), ("wahlkreise-au", "geo/wahlkreise_au.geojson"),
+            ("gemeinden-at", "geo/gemeinden_at.geojson")]
+
+
+def wahlgeo_schreiben(ziel):
+    """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json und gibt die Liste der Dateien zurück."""
+    ziel = Path(ziel) / "wahlgeo"
+    ziel.mkdir(parents=True, exist_ok=True)
+    out = []
+    for art, datei in WAHL_GEO:
+        if (HIER / datei).exists():
+            (ziel / f"{art}.json").write_text((HIER / datei).read_text(), encoding="utf-8")
+            out.append(ziel / f"{art}.json")
+    return out
+
+
 def seite(terminal_seite):
     """Terminal-Seite (Fragment ohne Dokumentgerüst) -> Weltkugel-Fragment."""
     v = HIER / "vendor/maplibre-gl"
@@ -124,8 +143,8 @@ def seite(terminal_seite):
         # Wahlen (Politik & Wahlen, Ansicht Wahlen): einheitliches Wahlregister (wahlen_daten.py) und Kreisgrenzen für die Europawahl
         "<style>\n" + (HIER / "src/wahlen.css").read_text() + "\n</style>",
         '<script id="kreise-de-geo" type="application/json">' + (_js((HIER / "geo/kreise_de.geojson").read_text()) if (HIER / "geo/kreise_de.geojson").exists() else "null") + "</script>",
-        *['<script id="wa-geo-%s" type="application/json">%s</script>' % (art, _js((HIER / datei).read_text()))
-          for art, datei in (("landtagswahlkreise-nw", "geo/landtagswahlkreise_nw.geojson"), ("wahlkreise-gb", "geo/wahlkreise_gb.geojson"), ("wahlkreise-fr", "geo/wahlkreise_fr.geojson")) if (HIER / datei).exists()],
+        # Wahlkreisgrenzen einzelner Länder werden nicht eingebettet, sondern bei Bedarf nachgeladen (dist/wahlgeo/<art>.json, siehe wahlgeo_schreiben)
+        '<script id="wa-geo-nachladen" type="application/json">' + json.dumps({art: f"wahlgeo/{art}.json" for art, datei in WAHL_GEO if (HIER / datei).exists()}) + "</script>",
         '<script id="wahlen-daten" type="application/json">' + (_js((HIER / "data/wahlen.json").read_text()) if (HIER / "data/wahlen.json").exists() else "null") + "</script>",
         "<script>\n" + (HIER / "src/wahlen.js").read_text() + "\n</script>",
         # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein

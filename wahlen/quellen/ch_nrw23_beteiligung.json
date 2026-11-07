@@ -1,0 +1,507 @@
+{
+"timestamp": "2024-04-24T17:41:21",
+"wahl_jahr": 2023,
+"spatial_reference": [
+{
+"spatial_unit": "kant",
+"spatial_date": "1979-01-01"
+},
+{
+"spatial_unit": "bezk",
+"spatial_date": "2018-01-01"
+},
+{
+"spatial_unit": "voge",
+"spatial_date": "2023-07-01"
+}
+],
+"stand": {
+"wahl_abgeschlossen": true,
+"kantone_total": 26,
+"kantone_abgeschlossen": 26,
+"gemeinden_total": 2143,
+"gemeinden_abgeschlossen": 2143
+},
+"stand_kantone": [
+{
+"kanton_nummer": 1,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 161,
+"gemeinden_abgeschlossen": 161
+},
+{
+"kanton_nummer": 2,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 332,
+"gemeinden_abgeschlossen": 332
+},
+{
+"kanton_nummer": 3,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 81,
+"gemeinden_abgeschlossen": 81
+},
+{
+"kanton_nummer": 4,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 20,
+"gemeinden_abgeschlossen": 20
+},
+{
+"kanton_nummer": 5,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 30,
+"gemeinden_abgeschlossen": 30
+},
+{
+"kanton_nummer": 6,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 7,
+"gemeinden_abgeschlossen": 7
+},
+{
+"kanton_nummer": 7,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 11,
+"gemeinden_abgeschlossen": 11
+},
+{
+"kanton_nummer": 8,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 3,
+"gemeinden_abgeschlossen": 3
+},
+{
+"kanton_nummer": 9,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 11,
+"gemeinden_abgeschlossen": 11
+},
+{
+"kanton_nummer": 10,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 127,
+"gemeinden_abgeschlossen": 127
+},
+{
+"kanton_nummer": 11,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 107,
+"gemeinden_abgeschlossen": 107
+},
+{
+"kanton_nummer": 12,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 4,
+"gemeinden_abgeschlossen": 4
+},
+{
+"kanton_nummer": 13,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 86,
+"gemeinden_abgeschlossen": 86
+},
+{
+"kanton_nummer": 14,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 26,
+"gemeinden_abgeschlossen": 26
+},
+{
+"kanton_nummer": 15,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 20,
+"gemeinden_abgeschlossen": 20
+},
+{
+"kanton_nummer": 16,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 6,
+"gemeinden_abgeschlossen": 6
+},
+{
+"kanton_nummer": 17,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 76,
+"gemeinden_abgeschlossen": 76
+},
+{
+"kanton_nummer": 18,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 101,
+"gemeinden_abgeschlossen": 101
+},
+{
+"kanton_nummer": 19,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 199,
+"gemeinden_abgeschlossen": 199
+},
+{
+"kanton_nummer": 20,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 81,
+"gemeinden_abgeschlossen": 81
+},
+{
+"kanton_nummer": 21,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 106,
+"gemeinden_abgeschlossen": 106
+},
+{
+"kanton_nummer": 22,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 301,
+"gemeinden_abgeschlossen": 301
+},
+{
+"kanton_nummer": 23,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 123,
+"gemeinden_abgeschlossen": 123
+},
+{
+"kanton_nummer": 24,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 27,
+"gemeinden_abgeschlossen": 27
+},
+{
+"kanton_nummer": 25,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 46,
+"gemeinden_abgeschlossen": 46
+},
+{
+"kanton_nummer": 26,
+"kanton_abgeschlossen": true,
+"gemeinden_total": 51,
+"gemeinden_abgeschlossen": 51
+}
+],
+"level_ch": {
+"wahlberechtigte": 5583221,
+"eingelegte_wahlzettel": 2604984,
+"leere_wahlzettel": 9523,
+"ungueltige_wahlzettel": 40979,
+"gueltige_wahlzettel": 2554482,
+"wahlbeteiligung": 46.657368569,
+"letzte_wahl_wahlbeteiligung": 45.109775796,
+"differenz_wahlbeteiligung": 1.547592773
+},
+"level_kantone": [
+{
+"kanton_nummer": 1,
+"kanton_bezeichnung": "Zürich",
+"wahlberechtigte": 967140,
+"eingelegte_wahlzettel": 454092,
+"leere_wahlzettel": 188,
+"ungueltige_wahlzettel": 6672,
+"gueltige_wahlzettel": 447232,
+"wahlbeteiligung": 46.952044171,
+"letzte_wahl_wahlbeteiligung": 44.439305012,
+"differenz_wahlbeteiligung": 2.512739159
+},
+{
+"kanton_nummer": 2,
+"kanton_bezeichnung": "Bern / Berne",
+"wahlberechtigte": 747385,
+"eingelegte_wahlzettel": 371818,
+"leere_wahlzettel": 430,
+"ungueltige_wahlzettel": 4208,
+"gueltige_wahlzettel": 367180,
+"wahlbeteiligung": 49.749192183,
+"letzte_wahl_wahlbeteiligung": 47.376696425,
+"differenz_wahlbeteiligung": 2.372495759
+},
+{
+"kanton_nummer": 3,
+"kanton_bezeichnung": "Luzern",
+"wahlberechtigte": 285582,
+"eingelegte_wahlzettel": 143512,
+"leere_wahlzettel": 239,
+"ungueltige_wahlzettel": 3367,
+"gueltige_wahlzettel": 139906,
+"wahlbeteiligung": 50.252466892,
+"letzte_wahl_wahlbeteiligung": 48.387027461,
+"differenz_wahlbeteiligung": 1.865439432
+},
+{
+"kanton_nummer": 4,
+"kanton_bezeichnung": "Uri",
+"wahlberechtigte": 27069,
+"eingelegte_wahlzettel": 13667,
+"leere_wahlzettel": 286,
+"ungueltige_wahlzettel": 99,
+"gueltige_wahlzettel": 13282,
+"wahlbeteiligung": 50.489489822,
+"letzte_wahl_wahlbeteiligung": 45.860871513,
+"differenz_wahlbeteiligung": 4.628618309
+},
+{
+"kanton_nummer": 5,
+"kanton_bezeichnung": "Schwyz",
+"wahlberechtigte": 107651,
+"eingelegte_wahlzettel": 58790,
+"leere_wahlzettel": 59,
+"ungueltige_wahlzettel": 506,
+"gueltige_wahlzettel": 58225,
+"wahlbeteiligung": 54.611661759,
+"letzte_wahl_wahlbeteiligung": 48.647804102,
+"differenz_wahlbeteiligung": 5.963857657
+},
+{
+"kanton_nummer": 6,
+"kanton_bezeichnung": "Obwalden",
+"wahlberechtigte": 27576,
+"eingelegte_wahlzettel": 16201,
+"leere_wahlzettel": 265,
+"ungueltige_wahlzettel": 225,
+"gueltige_wahlzettel": 15711,
+"wahlbeteiligung": 58.750362634,
+"letzte_wahl_wahlbeteiligung": 55.077706818,
+"differenz_wahlbeteiligung": 3.672655816
+},
+{
+"kanton_nummer": 7,
+"kanton_bezeichnung": "Nidwalden",
+"wahlberechtigte": 31942,
+"eingelegte_wahlzettel": 17953,
+"leere_wahlzettel": 165,
+"ungueltige_wahlzettel": 87,
+"gueltige_wahlzettel": 17701,
+"wahlbeteiligung": 56.204996556,
+"letzte_wahl_wahlbeteiligung": 50.384161699,
+"differenz_wahlbeteiligung": 5.820834858
+},
+{
+"kanton_nummer": 8,
+"kanton_bezeichnung": "Glarus",
+"wahlberechtigte": 26731,
+"eingelegte_wahlzettel": 12825,
+"leere_wahlzettel": 91,
+"ungueltige_wahlzettel": 84,
+"gueltige_wahlzettel": 12650,
+"wahlbeteiligung": 47.978003068,
+"letzte_wahl_wahlbeteiligung": 39.886877828,
+"differenz_wahlbeteiligung": 8.09112524
+},
+{
+"kanton_nummer": 9,
+"kanton_bezeichnung": "Zug",
+"wahlberechtigte": 78624,
+"eingelegte_wahlzettel": 41753,
+"leere_wahlzettel": 51,
+"ungueltige_wahlzettel": 908,
+"gueltige_wahlzettel": 40794,
+"wahlbeteiligung": 53.10464998,
+"letzte_wahl_wahlbeteiligung": 52.115657674,
+"differenz_wahlbeteiligung": 0.988992306
+},
+{
+"kanton_nummer": 10,
+"kanton_bezeichnung": "Fribourg / Freiburg",
+"wahlberechtigte": 215165,
+"eingelegte_wahlzettel": 97692,
+"leere_wahlzettel": 554,
+"ungueltige_wahlzettel": 592,
+"gueltige_wahlzettel": 96546,
+"wahlbeteiligung": 45.403295146,
+"letzte_wahl_wahlbeteiligung": 43.023419488,
+"differenz_wahlbeteiligung": 2.379875658
+},
+{
+"kanton_nummer": 11,
+"kanton_bezeichnung": "Solothurn",
+"wahlberechtigte": 183265,
+"eingelegte_wahlzettel": 87712,
+"leere_wahlzettel": 239,
+"ungueltige_wahlzettel": 1920,
+"gueltige_wahlzettel": 85553,
+"wahlbeteiligung": 47.860748097,
+"letzte_wahl_wahlbeteiligung": 44.803394876,
+"differenz_wahlbeteiligung": 3.057353221
+},
+{
+"kanton_nummer": 12,
+"kanton_bezeichnung": "Basel-Stadt",
+"wahlberechtigte": 114036,
+"eingelegte_wahlzettel": 56705,
+"leere_wahlzettel": 96,
+"ungueltige_wahlzettel": 374,
+"gueltige_wahlzettel": 56235,
+"wahlbeteiligung": 49.725525273,
+"letzte_wahl_wahlbeteiligung": 47.735655648,
+"differenz_wahlbeteiligung": 1.989869625
+},
+{
+"kanton_nummer": 13,
+"kanton_bezeichnung": "Basel-Landschaft",
+"wahlberechtigte": 191075,
+"eingelegte_wahlzettel": 86194,
+"leere_wahlzettel": 176,
+"ungueltige_wahlzettel": 999,
+"gueltige_wahlzettel": 85019,
+"wahlbeteiligung": 45.110035326,
+"letzte_wahl_wahlbeteiligung": 42.527683527,
+"differenz_wahlbeteiligung": 2.5823518
+},
+{
+"kanton_nummer": 14,
+"kanton_bezeichnung": "Schaffhausen",
+"wahlberechtigte": 53960,
+"eingelegte_wahlzettel": 33254,
+"leere_wahlzettel": 502,
+"ungueltige_wahlzettel": 179,
+"gueltige_wahlzettel": 32573,
+"wahlbeteiligung": 61.627131208,
+"letzte_wahl_wahlbeteiligung": 59.648318919,
+"differenz_wahlbeteiligung": 1.97881229
+},
+{
+"kanton_nummer": 15,
+"kanton_bezeichnung": "Appenzell Ausserrhoden",
+"wahlberechtigte": 39182,
+"eingelegte_wahlzettel": 18245,
+"leere_wahlzettel": 286,
+"ungueltige_wahlzettel": 118,
+"gueltige_wahlzettel": 17841,
+"wahlbeteiligung": 46.564749119,
+"letzte_wahl_wahlbeteiligung": 41.28203159,
+"differenz_wahlbeteiligung": 5.282717529
+},
+{
+"kanton_nummer": 16,
+"kanton_bezeichnung": "Appenzell Innerrhoden",
+"wahlberechtigte": 12243,
+"eingelegte_wahlzettel": 3000,
+"leere_wahlzettel": 142,
+"ungueltige_wahlzettel": 62,
+"gueltige_wahlzettel": 2796,
+"wahlbeteiligung": 24.503798089,
+"letzte_wahl_wahlbeteiligung": 48.735555183,
+"differenz_wahlbeteiligung": -24.23175709
+},
+{
+"kanton_nummer": 17,
+"kanton_bezeichnung": "St. Gallen",
+"wahlberechtigte": 331680,
+"eingelegte_wahlzettel": 147902,
+"leere_wahlzettel": 210,
+"ungueltige_wahlzettel": 2010,
+"gueltige_wahlzettel": 145682,
+"wahlbeteiligung": 44.591775205,
+"letzte_wahl_wahlbeteiligung": 41.927574268,
+"differenz_wahlbeteiligung": 2.664200937
+},
+{
+"kanton_nummer": 18,
+"kanton_bezeichnung": "Graubünden / Grigioni / Grischun",
+"wahlberechtigte": 141714,
+"eingelegte_wahlzettel": 61047,
+"leere_wahlzettel": 253,
+"ungueltige_wahlzettel": 1273,
+"gueltige_wahlzettel": 59521,
+"wahlbeteiligung": 43.077607011,
+"letzte_wahl_wahlbeteiligung": 42.923890411,
+"differenz_wahlbeteiligung": 0.1537166
+},
+{
+"kanton_nummer": 19,
+"kanton_bezeichnung": "Aargau",
+"wahlberechtigte": 442881,
+"eingelegte_wahlzettel": 206180,
+"leere_wahlzettel": 221,
+"ungueltige_wahlzettel": 3013,
+"gueltige_wahlzettel": 202946,
+"wahlbeteiligung": 46.55426627,
+"letzte_wahl_wahlbeteiligung": 44.730114827,
+"differenz_wahlbeteiligung": 1.824151443
+},
+{
+"kanton_nummer": 20,
+"kanton_bezeichnung": "Thurgau",
+"wahlberechtigte": 179191,
+"eingelegte_wahlzettel": 83575,
+"leere_wahlzettel": 113,
+"ungueltige_wahlzettel": 1997,
+"gueltige_wahlzettel": 81465,
+"wahlbeteiligung": 46.640177241,
+"letzte_wahl_wahlbeteiligung": 42.411536277,
+"differenz_wahlbeteiligung": 4.228640964
+},
+{
+"kanton_nummer": 21,
+"kanton_bezeichnung": "Ticino",
+"wahlberechtigte": 225843,
+"eingelegte_wahlzettel": 108329,
+"leere_wahlzettel": 1798,
+"ungueltige_wahlzettel": 1514,
+"gueltige_wahlzettel": 105017,
+"wahlbeteiligung": 47.966507707,
+"letzte_wahl_wahlbeteiligung": 49.614593924,
+"differenz_wahlbeteiligung": -1.648086217
+},
+{
+"kanton_nummer": 22,
+"kanton_bezeichnung": "Vaud",
+"wahlberechtigte": 474496,
+"eingelegte_wahlzettel": 190908,
+"leere_wahlzettel": 1391,
+"ungueltige_wahlzettel": 2970,
+"gueltige_wahlzettel": 186547,
+"wahlbeteiligung": 40.233848125,
+"letzte_wahl_wahlbeteiligung": 41.39692905,
+"differenz_wahlbeteiligung": -1.163080925
+},
+{
+"kanton_nummer": 23,
+"kanton_bezeichnung": "Valais / Wallis",
+"wahlberechtigte": 233007,
+"eingelegte_wahlzettel": 113455,
+"leere_wahlzettel": 885,
+"ungueltige_wahlzettel": 2885,
+"gueltige_wahlzettel": 109685,
+"wahlbeteiligung": 48.691670207,
+"letzte_wahl_wahlbeteiligung": 54.058436538,
+"differenz_wahlbeteiligung": -5.36676633
+},
+{
+"kanton_nummer": 24,
+"kanton_bezeichnung": "Neuchâtel",
+"wahlberechtigte": 114014,
+"eingelegte_wahlzettel": 45892,
+"leere_wahlzettel": 217,
+"ungueltige_wahlzettel": 607,
+"gueltige_wahlzettel": 45068,
+"wahlbeteiligung": 40.251197221,
+"letzte_wahl_wahlbeteiligung": 40.171599943,
+"differenz_wahlbeteiligung": 0.079597278
+},
+{
+"kanton_nummer": 25,
+"kanton_bezeichnung": "Genève",
+"wahlberechtigte": 277228,
+"eingelegte_wahlzettel": 110478,
+"leere_wahlzettel": 423,
+"ungueltige_wahlzettel": 4211,
+"gueltige_wahlzettel": 105844,
+"wahlbeteiligung": 39.850953006,
+"letzte_wahl_wahlbeteiligung": 38.196745138,
+"differenz_wahlbeteiligung": 1.654207869
+},
+{
+"kanton_nummer": 26,
+"kanton_bezeichnung": "Jura",
+"wahlberechtigte": 54541,
+"eingelegte_wahlzettel": 23805,
+"leere_wahlzettel": 243,
+"ungueltige_wahlzettel": 99,
+"gueltige_wahlzettel": 23463,
+"wahlbeteiligung": 43.646064429,
+"letzte_wahl_wahlbeteiligung": 42.552595194,
+"differenz_wahlbeteiligung": 1.093469234
+}
+]
+}

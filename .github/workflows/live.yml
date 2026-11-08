@@ -1,0 +1,65 @@
+name: Live-Kurse
+
+# Kurzfristwerte (Marktpuls, Leitindizes, Rohstoffe, Bitcoin; Yahoo Finance, ca. 15 Minuten verzögert) -> app/data/live.json.
+# Die Datei landet NICHT auf main, sondern als einziger Commit auf dem Zweig "daten-live" (jedes Mal überschrieben), damit die
+# Versionsgeschichte von main nicht mit Hunderten Kurs-Commits pro Woche gefüllt wird. Terminal und Weltkugel auf GitHub Pages lesen
+# https://raw.githubusercontent.com/<Repo>/daten-live/live.json alle 90 Sekunden (raw.githubusercontent.com erlaubt Abrufe von anderen Seiten).
+#  - Mo-Fr alle 30 Minuten von 00 bis 22 Uhr UTC (Asien, Europa, USA)
+#  - Sa und So stündlich (Bitcoin und Ether handeln durchgehend)
+# GitHub führt geplante Läufe nur nach bestem Bemühen aus: bei hoher Last kommen sie mit Minuten bis zu einer halben Stunde Verspätung
+# oder fallen einzeln aus. Die Seite zeigt deshalb immer den Zeitstempel des Abrufs an.
+# Kosten: keine (öffentliches Repo), rund eine Minute je Lauf.
+on:
+  schedule:
+    - cron: "*/30 0-22 * * 1-5"
+    - cron: "17 * * * 0,6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# ein Lauf zur Zeit; ein neuer ersetzt einen noch laufenden
+concurrency:
+  group: live
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  abruf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            app/live_abruf.py
+            app/requirements.txt
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: app/requirements.txt
+      - run: pip install yfinance
+      - name: Kurse abrufen
+        run: python3 app/live_abruf.py
+      - name: Auf Zweig daten-live legen (ein Commit, überschrieben)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          d=$(mktemp -d)
+          cp app/data/live.json "$d/live.json"
+          cd "$d"
+          git init -q -b daten-live
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add live.json
+          git commit -q -m "Live-Kurse $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q --force "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" daten-live
+          echo "### Live-Kurse" >> "$GITHUB_STEP_SUMMARY"
+          echo "$(python3 -c "import json;print(len(json.load(open('live.json'))['werte']))") Werte, $(date -u +%H:%M) UTC" >> "$GITHUB_STEP_SUMMARY"

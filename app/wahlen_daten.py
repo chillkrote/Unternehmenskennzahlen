@@ -1498,6 +1498,51 @@ def _us_pr_mit_vor(w, vorkand):
     return w
 
 
+US_VEP80 = QUELLEN / "us_beteiligung_vep_1980_2022_ufl.csv"      # University of Florida Election Lab / Michael McDonald, Turnout 1980-2022 v1.2 (frei nutzbar mit Quellenangabe)
+US_VEP24 = QUELLEN / "us_beteiligung_vep_2024_ufl.csv"          # dasselbe, 2024 General Election v0.4
+_US_VEP = {}
+
+
+def _vep_zahl(x):
+    x = (x or "").replace(",", "").replace("%", "").strip()
+    try:
+        return float(x)
+    except ValueError:
+        return None
+
+
+def us_vep():
+    """Wahlbeteiligung bezogen auf die Wahlberechtigten (VEP: Bevölkerung ab 18 ohne Nicht-Staatsbürger und Straffällige je Landesrecht): {(Jahr, Kürzel): (VEP, Stimmzettel, Prozent)}.
+    Fehlt die veröffentlichte Rate (vor 1988), wird sie aus den Stimmen für das höchste Amt und der VEP berechnet."""
+    if _US_VEP:
+        return _US_VEP
+    if US_VEP80.exists():
+        for z in csv.DictReader(US_VEP80.open(encoding="utf-8")):
+            po = z["STATE_ABV"] or "US"
+            vep, ballots, hoch, rate = _vep_zahl(z["VEP"]), _vep_zahl(z["TOTAL_BALLOTS_COUNTED"]), _vep_zahl(z["VOTE_FOR_HIGHEST_OFFICE"]), _vep_zahl(z["VEP_TURNOUT_RATE"])
+            if rate is None and vep and hoch:
+                rate, ballots = hoch / vep * 100, ballots or hoch
+            if vep and rate:
+                _US_VEP[(z["YEAR"], po)] = (int(vep), int(ballots) if ballots else None, r1(rate))
+    if US_VEP24.exists():
+        for z in csv.DictReader(US_VEP24.open(encoding="utf-8")):
+            vep, ballots, rate = _vep_zahl(z["VEP"]), _vep_zahl(z["TOTAL_BALLOTS_COUNTED"]), _vep_zahl(z["VEP_TURNOUT_RATE"])
+            if vep and rate:
+                _US_VEP[("2024", z["STATE_ABV"])] = (int(vep), int(ballots) if ballots else None, r1(rate))
+    return _US_VEP
+
+
+def _us_pr_bet(w, jahr, po):
+    """Wahlberechtigte (VEP), Stimmzettel und Beteiligung samt Vorwahl in den Wert eintragen."""
+    v, vv = us_vep().get((jahr, po)), us_vep().get((str(int(jahr) - 4), po))
+    if v and w:
+        w["wb"], w["bet"] = v[0], v[2]
+        if v[1]:
+            w["w"] = v[1]
+        if vv:
+            w["bet_vor"] = vv[2]
+
+
 def us_praesident(jahr):
     """Präsidentschaftswahl: Wert je Bundesstaat mit Wahlleuten (Mehrheitsprinzip; Maine und Nebraska teilen nach Wahlbezirken) und je County (Zählgebiet, ab 2000),
     jeweils mit Veränderung der Stimmenanteile zur vorigen Wahl; landesweit Wahlleute mit 270er-Mehrheit."""
@@ -1514,6 +1559,7 @@ def us_praesident(jahr):
         if not w:
             continue
         _us_pr_mit_vor(w, (st_v.get(po) or {}).get("k"))
+        _us_pr_bet(w, jahr, po)
         sieg = w["direkt"]["partei"]
         n = ev.get((jahr, po))
         if n:
@@ -1558,6 +1604,15 @@ def us_praesident(jahr):
     g = {"s": {"s": gs}, "w": sum(ges.values()),
          "sitze": [[p, c, sitze_v.get(p) if sitze_v else None] for p, c in sorted(sitze.items(), key=lambda x: -x[1])], "sitze_n": sum(sitze.values()),
          "sitze_hinweis": "Sitze = Wahlleute (Mehrheit 270 von 538); Stimmenanteile = Summe der Staatsergebnisse; abweichende Stimmabgabe einzelner Wahlleute nicht berücksichtigt"}
+    ge = us_vep().get((jahr, "US"))
+    if ge:
+        g["wb"], g["bet"] = ge[0], ge[2]
+        if ge[1]:
+            g["w"] = ge[1]
+        gv = us_vep().get((vj, "US"))
+        if gv:
+            g["bet_vor"] = gv[2]
+        g["bet_hinweis"] = "Beteiligung = Stimmzettel je Wahlberechtigtem (VEP, University of Florida Election Lab); vor 1988 aus den Stimmen für das höchste Amt berechnet"
     einheiten = [{"id": "staat", "name": "Bundesstaaten (Wahlleute)", "einzahl": "Bundesstaat", "art": "wahlkreis", "geo": "gliedstaaten", "werte": staaten}]
     if kreise:
         einheiten.append({"id": "kreis", "name": "Countys", "einzahl": "County", "art": "zaehlgebiet", "geo": "kreise-us", "werte": kreise})

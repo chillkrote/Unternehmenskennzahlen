@@ -36,12 +36,21 @@ const WAHLEN = (() => {
   }
   const ebeneName = (e, land) => ebenenNamen(land === undefined ? bezugsland() : land)[e] || ebenenNamen(null)[e];
   const marke = (e, land) => `<span class="wa-marke"><b>E${e}</b>${esc(ebeneName(e, land))}</span>`;
-  const KAMMERN = [["unterhaus", "Parlament (Unterhaus oder Einkammer)"], ["oberhaus", "Oberhaus, soweit direkt gewählt"]];
-  const passtKammer = w => w.e !== 1 || (W.kammer === "oberhaus" ? w.kammer === "oberhaus" : w.kammer !== "oberhaus");
+  const KAMMERN = [["unterhaus", "Parlament (Unterhaus oder Einkammer)"], ["oberhaus", "Oberhaus, soweit direkt gewählt"], ["praesident", "Präsidentschaftswahlen (direkt gewählt)"]];
+  const kammerVon = w => w.kammer === "oberhaus" || w.kammer === "praesident" ? w.kammer : "unterhaus";
+  const passtKammer = w => w.e !== 1 || kammerVon(w) === W.kammer;
+  // Bundeswahlen eines Landes (E1) nach Gremium: Parlament, Oberhaus, Präsident; je Art die jüngste Wahl
+  const KAMMER_REIHE = ["unterhaus", "oberhaus", "praesident"];
+  function kammernVon(land) {
+    const m = {};
+    ALLE.filter(w => w.e === 1 && w.land === land).forEach(w => { const k = kammerVon(w); if (!m[k] || (w.datum || "") > (m[k].datum || "")) m[k] = w; });
+    return KAMMER_REIHE.filter(k => m[k]).map(k => [k, m[k]]);
+  }
   const wahlenEbene = (e = W.e) => ALLE.filter(w => w.e === e && (e !== 1 || passtKammer(w)));
   const GRUPPE = ["Europawahl", "Nationale Parlamente", "Landtage und Regionalparlamente", "Kreistage und Räte kreisfreier Städte", "Gemeinderäte und Bezirksvertretungen"];
   function gruppenName(e = W.e) {
     if (e === 1 && W.kammer === "oberhaus") return "Oberhäuser (direkt gewählt)";
+    if (e === 1 && W.kammer === "praesident") return "Präsidentschaftswahlen";
     if (e === 2 && bezugsland() === "DE") return "Landtage";
     return GRUPPE[e];
   }
@@ -339,14 +348,18 @@ const WAHLEN = (() => {
     s.hidden = !aktiv() || !D; if (s.hidden) return;
     const w = W.fokus && NACH_ID[W.fokus], l = wahlenEbene(), land = bezugsland();
     const teile = [marke(W.e, land)];
+    // Mehrere Bundeswahlen im selben Land (z. B. USA: Repräsentantenhaus, Senat, Präsident): eigene Schaltflächen
+    const km = W.e === 1 && land ? kammernVon(land) : [];
+    if (km.length > 1) teile.push(`<span class="wa-kammern" role="group" aria-label="Bundeswahl">${km.map(([k, x]) => `<button type="button" data-wa-kammer="${k}" aria-pressed="${W.kammer === k}">${esc(x.gremium || k)}</button>`).join("")}</span>`);
     // Wahl: im Fokus die Wahl selbst (andere Wahlen derselben Ebene und desselben Landes wählbar), sonst die Gruppe
     if (w) {
-      const andere = ALLE.filter(x => x.e === w.e && x.land === w.land && (w.e === 1 || x.gebiet === w.gebiet));
+      const andere = ALLE.filter(x => x.e === w.e && x.land === w.land && (w.e === 1 ? kammerVon(x) === kammerVon(w) : x.gebiet === w.gebiet));
       teile.push(`<select data-wa="wahl" aria-label="Wahl">${opt("", `${gruppenName()} (alle)`, false)}${andere.map(x => opt(x.id, `${x.titel} ${datum(x.datum)}${x.e === 1 ? " · " + x.gremium : ""}`, x.id === w.id)).join("")}</select>`);
       teile.push(`<span class="wa-fix">${esc(w.geo === "laender" ? G.landName(w.gebiet) : w.name)}</span>`);
     } else {
       const jahre = l.map(x => (x.datum || "").slice(0, 4)).filter(Boolean).sort(), sp = jahre.length ? (jahre[0] === jahre.at(-1) ? jahre[0] : `${jahre[0]}–${jahre.at(-1)}`) : "";
-      teile.push(W.e === 1 ? `<select data-wa="kammer" aria-label="Gremium">${KAMMERN.map(([k, t]) => opt(k, k === "oberhaus" ? "Nationale Oberhäuser (direkt gewählt)" : "Nationale Parlamente (Unterhaus/Einkammer)", W.kammer === k)).join("")}</select>` : `<span>${esc(gruppenName())}</span>`);
+      if (W.e !== 1) teile.push(`<span>${esc(gruppenName())}</span>`);
+      else if (km.length < 2) teile.push(`<select data-wa="kammer" aria-label="Gremium">${KAMMERN.map(([k, t]) => opt(k, k === "oberhaus" ? "Nationale Oberhäuser (direkt gewählt)" : k === "praesident" ? "Präsidentschaftswahlen (direkt gewählt)" : "Nationale Parlamente (Unterhaus/Einkammer)", W.kammer === k)).join("")}</select>`);
       teile.push(`<span class="wa-fix">${l.length > 1 ? `jeweils letzte Wahl${sp ? ", " + sp : ""}` : sp}</span>`);
     }
     if (w && (w.stimmarten || []).length > 1) teile.push(`<span class="wa-teil"><span class="wa-trenn">·</span> <select data-wa="stimmart" aria-label="Stimmart">${w.stimmarten.map(([k, t]) => opt(k, t, stimmart(w) === k)).join("")}</select></span>`);
@@ -538,7 +551,7 @@ const WAHLEN = (() => {
   }
   function wahlWaehlen(id, fliegen = true) {
     const w = NACH_ID[id]; if (!w) { W.fokus = null; W.sel = null; anwenden(); return; }
-    W.e = w.e; if (w.e === 1) W.kammer = w.kammer === "oberhaus" ? "oberhaus" : "unterhaus";
+    W.e = w.e; if (w.e === 1) W.kammer = kammerVon(w);
     W.fokus = id; W.sel = null; W.leer = null; W.filter = ""; W.ort = null;
     if (w.land !== G.zustand().land) G.landWaehlen(w.land);
     anwenden();
@@ -549,6 +562,11 @@ const WAHLEN = (() => {
     const t = ev.target, a = n => { const x = t.closest && t.closest("[" + n + "]"); return x ? x.getAttribute(n) : null; };
     let v;
     if ((v = a("data-wa-ebene")) != null) { ebeneWaehlen(+v); return; }
+    if ((v = a("data-wa-kammer")) != null) {
+      const land = bezugsland(), neu = (kammernVon(land).find(x => x[0] === v) || [])[1];
+      if (neu && W.fokus) wahlWaehlen(neu.id, false); else { W.kammer = v; W.fokus = null; W.sel = null; umblenden(); }
+      return;
+    }
     if ((v = a("data-wa-wahl")) != null) { wahlWaehlen(v); return; }
     if ((v = a("data-wa-sprung")) != null) { const w = NACH_ID[v]; if (!w) return; const pt = W.fokus ? ortPunkt(NACH_ID[W.fokus]) : W.ort; W.e = w.e; W.fokus = w.id; W.sel = null; W.filter = ""; if (pt) { W.ort = pt; einheitAmOrt(w, pt); } if (w.land !== G.zustand().land) G.landWaehlen(w.land); anwenden(); return; }
     if ((v = a("data-wa-einheit")) != null) { const [ui, ...k] = v.split(":"), key = k.join(":"), w = NACH_ID[W.fokus]; if (!w) return; W.sel = { u: +ui, k: key }; W.ort = null; anwenden(); const u = w.einheiten[+ui]; if (u.geo) zeigen(u.geo, key, 9.5); return; }

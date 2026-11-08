@@ -13,7 +13,11 @@
 "quelle": "Maritime Gateway",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-03"
+"datum": "2026-11-03",
+"typ": "stau",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "babelmandeb": [
@@ -23,7 +27,11 @@
 "quelle": "Kuwait Times",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-30"
+"datum": "2026-10-30",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "French Frigate Shoots Down Missile Near Belgian Minehunter In Bab el-Mandeb Strait",
@@ -31,7 +39,11 @@
 "quelle": "Marine Insight",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-28"
+"datum": "2026-10-28",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Houthi Ballistic Missile Intercepted Near Belgian Minehunter in Bab el-Mandeb",
@@ -39,7 +51,11 @@
 "quelle": "Naval News",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-27"
+"datum": "2026-10-27",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "hormus": [
@@ -49,7 +65,11 @@
 "quelle": "WANA News Agency",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-06"
+"datum": "2026-11-06",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "October Sees Surge in Attacks on Ships in Strait of Hormuz",
@@ -57,7 +77,11 @@
 "quelle": "Caspian Post",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Iran exempts India, China, Iraq and Qatar from transit restrictions in Strait of Hormuz",
@@ -65,7 +89,11 @@
 "quelle": "Asia News Network",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "sonst",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Iran Opens Strait of Hormuz to China and India as U.S. Blockade Continues",
@@ -73,7 +101,11 @@
 "quelle": "Crude Oil Prices Today | OilPrice.com",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Abbas Araghchi And Badr Albusaidi Discuss Strait Of Hormuz Peace Amid US Blockade: 8 outlets compared",
@@ -81,7 +113,11 @@
 "quelle": "NewsCord",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "panama": [
@@ -91,7 +127,11 @@
 "quelle": "DW.com",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Panama Canal under strain from drought and Trump's threats",
@@ -99,7 +139,11 @@
 "quelle": "Yahoo",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-29"
+"datum": "2026-10-29",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "bosporus": [
@@ -109,7 +153,11 @@
 "quelle": "Fana News -",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "sonst",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Since August, more than 60 Russian oil tankers cross the Bosphorus under metal cages and tire anti-drone shields",
@@ -117,7 +165,11 @@
 "quelle": "Capmad",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-02"
+"datum": "2026-11-02",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "A cargo ship broke down in the Bosphorus! Bosphorus traffic has been suspended in both directions.",
@@ -125,7 +177,11 @@
 "quelle": "Haberler.com",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-29"
+"datum": "2026-10-29",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "taiwan": [
@@ -135,7 +191,11 @@
 "quelle": "Taiwan News",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-04"
+"datum": "2026-11-04",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "rhein": [
@@ -145,7 +205,11 @@
 "quelle": "Briefs Finance",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05"
+"datum": "2026-11-05",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Rhine barge restrictions could last into mid-November, warn brokers",
@@ -153,7 +217,11 @@
 "quelle": "Quantum Commodity Intelligence",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-02"
+"datum": "2026-11-02",
+"typ": "sonst",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Rhine River Water Levels Plunge to 21cm as Cruise Operators Face Restrictions",
@@ -161,7 +229,11 @@
 "quelle": "Rus Tourism News",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-02"
+"datum": "2026-11-02",
+"typ": "sonst",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Sandbanks emerge along Germany’s Rhine after months of low water",
@@ -169,7 +241,11 @@
 "quelle": "https://eu-space.europa.eu/",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-27"
+"datum": "2026-10-27",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "brenner": [
@@ -179,7 +255,11 @@
 "quelle": "TZ",
 "sprache": "German",
 "dienst": "Google News",
-"datum": "2026-10-29"
+"datum": "2026-10-29",
+"typ": "stau",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "gotthard": [
@@ -189,7 +269,11 @@
 "quelle": "Nau",
 "sprache": "German",
 "dienst": "Google News",
-"datum": "2026-10-26"
+"datum": "2026-10-26",
+"typ": "stau",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Traffic jam at the southern portal of the Gotthard Tunnel stretches ten kilometers",
@@ -197,7 +281,11 @@
 "quelle": "blue News",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-25"
+"datum": "2026-10-25",
+"typ": "sonst",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Stau am Gotthard-Südportal wird zehn Kilometer lang",
@@ -205,7 +293,11 @@
 "quelle": "Nau",
 "sprache": "German",
 "dienst": "Google News",
-"datum": "2026-10-25"
+"datum": "2026-10-25",
+"typ": "stau",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Stau vor dem Gotthard-Südportal hält bis am Abend an",
@@ -213,7 +305,11 @@
 "quelle": "Watson",
 "sprache": "German",
 "dienst": "Google News",
-"datum": "2026-10-25"
+"datum": "2026-10-25",
+"typ": "stau",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "10 Kilometer Stau vor dem Gotthard: 100 Minuten Wartezeit",
@@ -221,7 +317,11 @@
 "quelle": "imTicker",
 "sprache": "German",
 "dienst": "Google News",
-"datum": "2026-10-25"
+"datum": "2026-10-25",
+"typ": "stau",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ],
 "ambassador": [
@@ -231,7 +331,11 @@
 "quelle": "CBC",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-28"
+"datum": "2026-10-28",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 },
 {
 "titel": "Gordie Howe Bridge Multi-Use Path Closed Wednesday And Thursday",
@@ -239,8 +343,13 @@
 "quelle": "windsoriteDOTca News",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-10-28"
+"datum": "2026-10-28",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-06",
+"zuletzt_gesehen": "2026-11-06"
 }
 ]
-}
+},
+"version": 2
 }

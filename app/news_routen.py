@@ -28,10 +28,19 @@ ZIEL = HIER / "data/news_routen.json"
 API = "https://api.gdeltproject.org/api/v2/doc/doc?"
 STOER_EN = ["closure", "closed", "closes", "attack", "attacked", "attacks", "blocked", "blockade", "disruption", "disrupted", "disrupts",
             "suspended", "suspends", "delays", "delayed", "congestion", "strike", "low water", "collision", "grounded", "diverted",
-            "divert", "drought", "halt", "halted", "seized", "seizure", "missile", "drone", "explosion", "backlog", "queue", "jam",
-            "restrictions", "shut", "outage", "threat", "threatens", "reroute", "rerouting"]
+            "divert", "drought", "halt", "halted", "seized", "seizure", "missile", "drone", "explosion", "backlog",
+            "shut", "outage", "reroute", "rerouting"]
 STOER_DE = ["störung", "gesperrt", "sperrung", "angriff", "stau", "niedrigwasser", "blockade", "blockiert", "streik", "unterbrochen",
             "umleitung", "wartezeit", "beschuss", "eingeschränkt", "kollision", "havarie"]
+# Meldungstyp (ein Symbol je Typ in der Oberfläche, app/src/meldungen.js); die erste passende Gruppe gilt
+TYPEN = [("angriff", ["attack", "attacked", "attacks", "missile", "drone", "explosion", "seized", "seizure", "angriff", "beschuss"]),
+         ("unfall", ["collision", "grounded", "kollision", "havarie"]),
+         ("streik", ["strike", "streik"]),
+         ("wetter", ["low water", "drought", "niedrigwasser"]),
+         ("sperrung", ["closure", "closed", "closes", "blocked", "blockade", "suspended", "suspends", "shut", "halt", "halted", "outage",
+                       "gesperrt", "sperrung", "blockiert", "unterbrochen", "eingeschränkt"]),
+         ("stau", ["delays", "delayed", "congestion", "backlog", "diverted", "divert", "reroute", "rerouting", "stau", "umleitung", "wartezeit"])]
+MAX_ALTER_UNSICHER = 3     # Tage: so lange bleibt ein Eintrag nach einem Abruffehler stehen (als unsicher gekennzeichnet)
 # Titel mit diesen Wörtern betreffen nicht den Warenverkehr (Ausflugsbahn am Kap, Staumelder-Sammelseiten, Polizeimeldungen)
 AUSSCHLUSS = ["funicular", "staumelder", "border patrol agent", "tourist", "touristen"]
 # GDELT begrenzt die Länge der Abfrage; die feinere Prüfung macht titel_passt()
@@ -41,6 +50,22 @@ ABFRAGE_STOER = "(closure OR attack OR blocked OR disruption OR suspended OR del
 def begriffe(suche):
     """Ortsbegriffe für die Titelprüfung: die Phrasen in Anführungszeichen."""
     return [b.lower() for b in re.findall(r'"([^"]+)"', suche)]
+
+
+def meldungstyp(titel):
+    t = " " + re.sub(r"\s+", " ", titel.lower()) + " "
+    for typ, woerter in TYPEN:
+        if any(re.search(r"\b" + re.escape(w) + r"\b", t) for w in woerter):
+            return typ
+    return "sonst"
+
+
+def tage_her(datum, heute):
+    """Alter in Tagen für 'JJJJ-MM-TT'; 9999, wenn das Datum fehlt (dann gilt der Eintrag als abgelaufen)."""
+    try:
+        return (heute - datetime.strptime(datum[:10], "%Y-%m-%d").date()).days
+    except ValueError:
+        return 9999
 
 
 def titel_passt(titel, orte):
@@ -107,6 +132,10 @@ def main():
     p.add_argument("--quelle", choices=("auto", "gdelt", "googlenews"), default="auto")
     a = p.parse_args()
     alt = json.loads(ZIEL.read_text()) if ZIEL.exists() else {"meldungen": {}}
+    heute = datetime.now(timezone.utc).date()
+    heute_s = heute.isoformat()
+    # frühere Funde je Adresse: das Datum des ersten Fundes bleibt erhalten
+    erst = {x["url"]: x.get("erstmals_gesehen") for l in alt.get("meldungen", {}).values() for x in l if x.get("url")}
     meldungen, fehler = {}, []
     quelle = a.quelle      # auto: GDELT, nach der ersten gescheiterten Abfrage für den Rest Google News
     genutzt = set()
@@ -128,8 +157,14 @@ def main():
                 genutzt.add("Google News")
         if arts is None:
             fehler.append(r["id"])
-            if r["id"] in alt.get("meldungen", {}):
-                meldungen[r["id"]] = alt["meldungen"][r["id"]]   # alter Stand bleibt, statt still zu verschwinden
+            # Quelle nicht erreichbar: alter Stand bleibt nur kurz und gekennzeichnet (unsicher), nie unbegrenzt und nie älter als --tage
+            behalten = []
+            for x in alt.get("meldungen", {}).get(r["id"], []):
+                gesehen = x.get("zuletzt_gesehen") or alt.get("abruf", "")[:10]
+                if tage_her(x.get("datum", ""), heute) <= a.tage and tage_her(gesehen, heute) <= MAX_ALTER_UNSICHER:
+                    behalten.append({**x, "unsicher": True})
+            if behalten:
+                meldungen[r["id"]] = behalten
             continue
         orte, gesehen, liste = begriffe(r["suche"]), set(), []
         for x in arts:
@@ -141,17 +176,21 @@ def main():
                 continue
             gesehen.add(k)
             d = x.get("seendate", "")
+            datum = f"{d[:4]}-{d[4:6]}-{d[6:8]}" if len(d) >= 8 else ""
+            if tage_her(datum, heute) > a.tage:      # ohne Datum oder zu alt: nie anzeigen
+                continue
             liste.append({"titel": titel, "url": x["url"], "quelle": x.get("domain", ""), "sprache": x.get("language", ""), "dienst": "Google News" if "news.google.com" in x["url"] else "GDELT",
-                          "datum": f"{d[:4]}-{d[4:6]}-{d[6:8]}" if len(d) >= 8 else ""})
+                          "datum": datum, "typ": meldungstyp(titel), "bereich": "route",
+                          "erstmals_gesehen": erst.get(x["url"]) or heute_s, "zuletzt_gesehen": heute_s})
             if len(liste) >= 5:
                 break
         if liste:
             meldungen[r["id"]] = liste
         print(f"  {r['id']}: {len(arts)} Artikel, {len(liste)} passend", file=sys.stderr)
-    out = {"abruf": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "tage": a.tage, "fehler": fehler,
+    out = {"version": 2, "abruf": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "tage": a.tage, "fehler": fehler,
            "quelle": " und ".join(sorted(genutzt)) + " (Verweise auf Artikel; Titel unverändert)" if genutzt else "keine Quelle erreichbar",
            "url": "https://news.google.com/" if genutzt == {"Google News"} else "https://www.gdeltproject.org/",
-           "regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'",
+           "regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'; ältere Einträge werden nie geführt, nach einem Abruffehler nur höchstens 3 Tage und als unsicher",
            "meldungen": meldungen}
     ZIEL.write_text(json.dumps(out, ensure_ascii=False, indent=0))
     print(f"{ZIEL}: Meldungen zu {len(meldungen)} Engstellen, Fehler bei {fehler}", file=sys.stderr)

@@ -462,6 +462,7 @@ const GLOBUS = (() => {
 
   /* ===== Haupthandelsrouten, Engstellen, Meldungen (Formen Handel und Volkswirtschaft) ===== */
   const MELD = NEWS ? NEWS.meldungen : {};
+  const meld = id => MLD.sichtbar(MELD[id]);      // nur Meldungen im gewählten Fenster (3, 7 oder 14 Tage), neueste zuerst
   const TRAEGER = { see: ["Schiff", "#7fb2e5"], binnen: ["Binnenschiff", "#7fb2e5"], bahn: ["Bahn", "#c39bd3"], strasse: ["Straße", "#e6c07b"], luft: ["Luftfracht", "#d7dee8"] };
   const STROM = "#f2c94c";
   const knotenVon = id => ROUTEN && ROUTEN.knoten.find(k => k.id === id);
@@ -469,14 +470,16 @@ const GLOBUS = (() => {
   function routenDaten() {
     if (!ROUTEN) return leerFC;
     return wertFC(ROUTEN.korridore.filter(k => k.stufe <= Math.max(S.stufe, 1)).map(k => ({ type: "Feature", geometry: { type: "LineString", coordinates: k.linie },
-      properties: { id: k.id, name: k.name, traeger: k.traeger, stoer: k.engstellen.some(e => MELD[e]) ? 1 : 0, schematisch: k.schematisch ? 1 : 0 } })));
+      properties: { id: k.id, name: k.name, traeger: k.traeger, stoer: k.engstellen.some(e => meld(e).length) ? 1 : 0, schematisch: k.schematisch ? 1 : 0 } })));
   }
   function knotenDaten() {
     if (!ROUTEN) return leerFC;
     return wertFC(ROUTEN.knoten.filter(k => k.stufe <= Math.max(S.stufe, 1)).map(k => ({ type: "Feature", geometry: { type: "Point", coordinates: [k.lon, k.lat] },
-      properties: { id: k.id, name: k.name, art: k.art, traeger: k.traeger, stufe: k.stufe, news: MELD[k.id] ? MELD[k.id].length : 0 } })));
+      properties: { id: k.id, name: k.name, art: k.art, traeger: k.traeger, stufe: k.stufe, news: meld(k.id).length } })));
   }
-  const newsDaten = () => wertFC(ROUTEN ? ROUTEN.knoten.filter(k => MELD[k.id]).map(k => ({ type: "Feature", geometry: { type: "Point", coordinates: [k.lon, k.lat] }, properties: { id: k.id, name: k.name, n: MELD[k.id].length } })) : []);
+  const newsDaten = () => wertFC(ROUTEN ? ROUTEN.knoten.filter(k => meld(k.id).length).map(k => { const m = meld(k.id)[0]; return { type: "Feature", geometry: { type: "Point", coordinates: [k.lon, k.lat] },
+    properties: { id: k.id, name: k.name, n: meld(k.id).length, icon: MLD.bildName(MLD.typ(m), MLD.stand(MLD.alter(m.datum))) } }; }) : []);
+  let meldBilderOffen = new WeakSet();
   const bildRaute = m => {
     if (m.hasImage("rt-raute")) return;
     const n = 20, data = new Uint8Array(n * n * 4);
@@ -501,25 +504,26 @@ const GLOBUS = (() => {
           "text-opacity": ["interpolate", ["linear"], ["zoom"], 2, 0, 2.6, 1] } });
       schicht("routen", { id: "rt-hub-name", type: "symbol", source: "rt-knoten", filter: ["!=", ["get", "art"], "engstelle"], minzoom: 3.6, layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Regular"], "text-size": 10, "text-offset": [0, .9], "text-anchor": "top", "text-optional": true },
         paint: { "text-color": "#8b95a3", "text-halo-color": "#07090c", "text-halo-width": 1.1 } });
-      // Meldungssymbol: kleiner Kreis mit "!" rechts oberhalb der Engstelle
-      schicht("routen", { id: "rt-news", type: "circle", source: "rt-news", paint: { "circle-radius": 8, "circle-color": "#ffb020", "circle-stroke-color": "#07090c", "circle-stroke-width": 1.5, "circle-translate": [11, -11] } });
-      schicht("routen", { id: "rt-news-t", type: "symbol", source: "rt-news", layout: { "text-field": "!", "text-font": ["Noto Sans Bold"], "text-size": 12, "text-allow-overlap": true, "text-ignore-placement": true }, paint: { "text-color": "#07090c", "text-translate": [11, -11] } });
+      // Meldungssymbol: eine Form je Typ (Angriff, Sperrung, Wetter, Streik, Stau, Unfall), Farbe nach Alter, rechts oberhalb der Engstelle
+      if (!meldBilderOffen.has(m)) { meldBilderOffen.add(m); m.on("styleimagemissing", ev => { if (ev.id.startsWith("mld-")) MLD.bildLaden(m, ev.id); }); }
+      schicht("routen", { id: "rt-news", type: "symbol", source: "rt-news", layout: { "icon-image": ["get", "icon"], "icon-size": 0.62, "icon-offset": [18, -18], "icon-allow-overlap": true, "icon-ignore-placement": true } });
     },
     klick: (e, m) => { const f = m.queryRenderedFeatures(e.point, { layers: ["rt-news", "rt-eng"].filter(l => m.getLayer(l)) }); if (!f.length) return false; meldungPopup(f[0].properties.id, e.lngLat); return true; } });
   function routenAktualisieren() {
     if (!map) return;
     if (map.getSource("rt-linien")) map.getSource("rt-linien").setData(routenDaten());
     if (map.getSource("rt-knoten")) map.getSource("rt-knoten").setData(knotenDaten());
+    if (map.getSource("rt-news")) map.getSource("rt-news").setData(newsDaten());
     vorschauen();
   }
   let meldPop = null;
   function meldungHtml(id, n = 5) {
-    const k = knotenVon(id), l = MELD[id] || [];
+    const k = knotenVon(id), l = meld(id);
     const wege = ROUTEN.korridore.filter(x => x.engstellen.includes(id)).map(x => x.name);
     return `<b>${esc(k.name)}</b> <span class="pct">${esc((TRAEGER[k.traeger] || [k.traeger])[0])}</span><br><span class="pct">${esc(k.rolle)}</span>
       ${wege.length ? `<br><span class="pct">Hauptrouten: ${esc(wege.join(", "))}</span>` : ""}
-      ${l.length ? `<ul class="gk-news">${l.slice(0, n).map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.titel)}</a><span class="pct">${esc(x.quelle)} · ${esc(datumKurz(x.datum))}</span></li>`).join("")}</ul>
-        <span class="pct">Originaltitel über ${esc(NEWS.quelle.split(" (")[0])}, Abruf ${esc(NEWS.abruf.replace("T", " "))}</span>` : `<br><span class="pct">Keine aktuellen Meldungen zu Störungen (letzte ${NEWS ? NEWS.tage : 14} Tage).</span>`}`;
+      ${l.length ? `<ul class="gk-news">${l.slice(0, n).map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${MLD.symbol(x, 13)} ${esc(x.titel)}</a><span class="pct">${esc(x.quelle)} · ${esc(MLD.alterText(x.datum))}${x.unsicher ? " · Stand unsicher" : ""}</span></li>`).join("")}</ul>
+        <span class="pct">Originaltitel über ${esc(NEWS.quelle.split(" (")[0])}, Abruf ${esc(NEWS.abruf.replace("T", " "))}</span>` : `<br><span class="pct">Keine Meldungen zu Störungen in den letzten ${MLD.S.fenster} Tagen.</span>`}`;
   }
   function meldungPopup(id, lngLat) {
     if (!knotenVon(id) || !map) return;
@@ -535,11 +539,11 @@ const GLOBUS = (() => {
     const c = map.getCenter(), w = map.getCanvas(), r = Math.PI / 180;
     const sichtbar = k => { const d = Math.acos(Math.min(1, Math.sin(c.lat * r) * Math.sin(k.lat * r) + Math.cos(c.lat * r) * Math.cos(k.lat * r) * Math.cos((k.lon - c.lng) * r))) / r;
       if (d > 75) return false; const p = map.project([k.lon, k.lat]); return p.x > 20 && p.y > 70 && p.x < w.clientWidth - 220 && p.y < w.clientHeight - 40; };
-    const l = ROUTEN.knoten.filter(k => MELD[k.id] && k.stufe <= S.stufe && sichtbar(k)).sort((a, b) => (MELD[b.id][0].datum || "").localeCompare(MELD[a.id][0].datum || "")).slice(0, 4);
+    const l = ROUTEN.knoten.filter(k => meld(k.id).length && k.stufe <= S.stufe && sichtbar(k)).sort((a, b) => (meld(b.id)[0].datum || "").localeCompare(meld(a.id)[0].datum || "")).slice(0, 3);
     for (const k of l) {
-      const m = MELD[k.id][0], el = document.createElement("button");
+      const m = meld(k.id)[0], el = document.createElement("button");
       el.type = "button"; el.className = "gk-newskarte"; el.dataset.gkmeldung = k.id;
-      el.innerHTML = `<b>⚠ ${esc(k.name)}</b><span class="t">${esc(m.titel)}</span><span class="q">${esc(m.quelle)} · ${esc(datumKurz(m.datum))}${MELD[k.id].length > 1 ? ` · +${MELD[k.id].length - 1}` : ""}</span>`;
+      el.innerHTML = `<b>${MLD.symbol(m, 13)} ${esc(k.name)}</b><span class="t">${esc(m.titel)}</span><span class="q">${esc(m.quelle)} · ${esc(MLD.alterText(m.datum))}${meld(k.id).length > 1 ? ` · +${meld(k.id).length - 1}` : ""}</span>`;
       vorschauMarker.push(new maplibregl.Marker({ element: el, anchor: "bottom-left", offset: [14, -14] }).setLngLat([k.lon, k.lat]).addTo(map));
     }
   }
@@ -1383,8 +1387,8 @@ const GLOBUS = (() => {
   let handelPop = null;
   function routenTip(e, f) {
     const p = f.properties, k = knotenVon(p.id); if (!k) return;
-    const m = MELD[k.id];
-    const t = `<b>${esc(k.name)}</b> <span class="pct">${esc(k.art === "engstelle" ? "Engstelle" : k.art === "hafen" ? "Hafen" : k.art === "flughafen" ? "Frachtflughafen" : "Bahnknoten")}</span><br><span class="pct">${esc(k.rolle)}</span>${m ? `<br>⚠ ${esc(m[0].titel)}<br><span class="pct">${esc(m[0].quelle)} · ${esc(datumKurz(m[0].datum))}${m.length > 1 ? ` · ${m.length - 1} weitere` : ""} · klicken</span>` : ""}`;
+    const m = meld(k.id).length ? meld(k.id) : null;
+    const t = `<b>${esc(k.name)}</b> <span class="pct">${esc(k.art === "engstelle" ? "Engstelle" : k.art === "hafen" ? "Hafen" : k.art === "flughafen" ? "Frachtflughafen" : "Bahnknoten")}</span><br><span class="pct">${esc(k.rolle)}</span>${m ? `<br>${MLD.symbol(m[0], 13)} ${esc(m[0].titel)}<br><span class="pct">${esc(m[0].quelle)} · ${esc(MLD.alterText(m[0].datum))}${m.length > 1 ? ` · ${m.length - 1} weitere` : ""} · klicken</span>` : ""}`;
     if (!handelPop) handelPop = new maplibregl.Popup({ closeButton: false, closeOnClick: false, className: "gk-pop", offset: 10, maxWidth: "320px" });
     handelPop.setLngLat(e.lngLat).setHTML(t).addTo(map);
   }
@@ -1568,7 +1572,7 @@ const GLOBUS = (() => {
         <small>Pfeil = Richtung · Breite nach Wert${S.form === "handel" ? " · unter dem Land: Zollsatz und Saldo" : ""}</small>${S.netzOffen ? `<button type="button" data-gkhandelnetz>${S.handelMitNetz ? "Handel ausblenden" : "Handel zusätzlich zeigen"}</button>` : ""}`);
     if (an("strom") && S.form === "handel") teile.push(`<span>${lin(STROM, "")}<em style="color:${STROM}">Strom</em> netto, TWh</span>`);
     if (an("routen")) teile.push(`<b>Routen</b><span>${lin(TRAEGER.see[1], "", false)}See</span><span>${lin(TRAEGER.bahn[1], "6 3", false)}Bahn</span><span>${lin(TRAEGER.strasse[1], "2 3", false)}Straße</span><span>${lin(TRAEGER.luft[1], "1 4", false)}Luft</span>
-        <span><svg width="14" height="14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7 Z" fill="#e8ecf1"/></svg>Engstelle</span><span><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#ffb020"/><text x="8" y="12" text-anchor="middle" font-size="11" font-weight="700" fill="#07090c">!</text></svg>aktuelle Meldung</span>`);
+        <span><svg width="14" height="14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7 Z" fill="#e8ecf1"/></svg>Engstelle</span><span>${MLD.svg("angriff", "neu", 14)}${MLD.svg("sperrung", "neu", 14)}${MLD.svg("wetter", "neu", 14)}${MLD.svg("streik", "neu", 14)}${MLD.svg("stau", "neu", 14)}${MLD.svg("unfall", "neu", 14)}Meldung (Form = Typ, Farbe = Alter: Bernstein neu, dunkler bis 3 Tage, grau älter)</span>`);
     if (an("boerse")) teile.push(`<b>Börse</b><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_EXP}"/></svg>Leitindex seit Jahresbeginn gestiegen</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_IMP}"/></svg>gefallen</span>${S.stufe >= 3 ? `<small>Punkte: börsennotierte Unternehmen nach Kursentwicklung seit Jahresbeginn (dunkelgrün über +20 %, dunkelrot unter −20 %, grau ohne Kurse)</small>` : `<small>Stufe 2: je Land Leitindex und 10-jährige Rendite</small>`}`);
     if (an("undichte") && S.stufe === 1) teile.push(`<b>Unternehmen</b><span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="rgba(255,168,40,.25)" stroke="#ffa828"/></svg>${S.u1 === "wert" ? "Börsenwert" : "Zahl der Unternehmen"} je Land</span>`);
     if (an("politik")) teile.push(`<b>Regierung</b>${AUSR.map(([, t, c]) => `<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="${c}"/></svg>${esc(t)}</span>`).join("")}<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="#3a4655"/></svg>ohne Zuordnung</span>
@@ -1760,9 +1764,9 @@ const GLOBUS = (() => {
   }
   function stoerungBlock(max = 6) {
     if (!ROUTEN) return "";
-    const l = ROUTEN.knoten.filter(k => MELD[k.id]).sort((a, b) => (MELD[b.id][0].datum || "").localeCompare(MELD[a.id][0].datum || ""));
-    return `<div class="gk-block"><h3>Störungen an Engstellen</h3>${l.length ? `<ul class="gk-liste">${l.slice(0, max).map(k => `<li><button type="button" data-gkmeldung="${esc(k.id)}">⚠ ${esc(k.name)}</button><span class="r">${esc(datumKurz(MELD[k.id][0].datum))} · ${MELD[k.id].length}</span></li>`).join("")}</ul>`
-      : `<p class="gk-leer">Zurzeit keine passenden Meldungen.</p>`}<p class="gk-quelle" style="margin-top:6px">Echte Artikel (Originaltitel, Quelle, Datum)${NEWS ? ` über ${esc(NEWS.quelle.split(" (")[0])}, Abruf ${esc(NEWS.abruf.replace("T", " "))}, letzte ${NEWS.tage} Tage` : ""}. Ein Symbol erscheint nur, wenn der Titel die Engstelle und eine Störung nennt.</p></div>`;
+    const l = ROUTEN.knoten.filter(k => meld(k.id).length).sort((a, b) => (meld(b.id)[0].datum || "").localeCompare(meld(a.id)[0].datum || ""));
+    return `<div class="gk-block"><h3>Meldungen: Störungen an Engstellen</h3>${NEWS ? MLD.banner(NEWS.abruf, NEWS.fehler) : ""}${MLD.reiter(l.reduce((a, k) => a + meld(k.id).length, 0))}${l.length ? `<ul class="gk-liste">${l.slice(0, max).map(k => `<li><button type="button" data-gkmeldung="${esc(k.id)}">${MLD.symbol(meld(k.id)[0], 13)} ${esc(k.name)}</button><span class="r">${esc(MLD.alterText(meld(k.id)[0].datum))} · ${meld(k.id).length}</span></li>`).join("")}</ul>`
+      : `<p class="gk-leer">Keine Meldungen in den letzten ${MLD.S.fenster} Tagen. Die Reiter 7 und 14 Tage zeigen ältere.</p>`}${MLD.legende()}<p class="gk-quelle" style="margin-top:6px">Echte Artikel (Originaltitel, Quelle, Datum)${NEWS ? ` über ${esc(NEWS.quelle.split(" (")[0])}, ${esc(MLD.stempel(NEWS.abruf))}` : ""}. Ein Symbol erscheint nur, wenn der Titel die Engstelle und eine Störung nennt; ältere als 14 Tage nie.</p></div>`;
   }
   function stromRaumBlock() {
     const f = stromRaumDaten().features; if (!f.length) return "";
@@ -2102,6 +2106,7 @@ const GLOBUS = (() => {
     if ((v = g("data-gku1")) != null) { S.u1 = v; unAnwenden(); legendeKarte(); seiteZeichnen(); return true; }
     if ((v = g("data-gkufk")) != null) { if (v) UF[v] = !UF[v]; else Object.assign(UF, { branche: "", index: "", notiert: false, kennzahlen: false }); punkteAktualisieren(); seiteZeichnen(); return true; }
     if ((v = g("data-gkk1")) != null) { S.k1 = v; kontAnwenden(); seiteZeichnen(); return true; }
+    if (MLD.klick(t)) { routenAktualisieren(); seiteZeichnen(); return true; }
     if ((v = g("data-gkmeldung")) != null) { const k = knotenVon(v); if (k && map) { meldungPopup(v); if (!t.closest(".gk-newskarte")) map.easeTo({ center: [k.lon, k.lat], duration: 900 }); } return true; }
     if ((v = g("data-gkweg")) != null) { landUmschalten(v); return true; }
     if ((v = g("data-gkland")) != null && e.shiftKey && v) { landUmschalten(v); return true; }

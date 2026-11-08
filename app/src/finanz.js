@@ -205,6 +205,102 @@ const FNZ = (() => {
       ${z ? panel({ code: "SMI", titel: `${esc(S.sektor)}: größte Unternehmen`, sub: "bis zu 25", body: mit }) : ""}</div>`;
   }
 
+
+  /* ===== Welle 2: Inflation, Realzins, Schulden, Börsenwert/BIP, Aufschläge, Bankensektor (data/finanz_makro.json) ===== */
+  let MK = null;
+  const makro = () => {
+    if (MK === null) { try { const d = JSON.parse(document.getElementById("finanz-makro-daten").textContent); MK = d && d.inflation ? d : false; } catch { MK = false; } }
+    return MK;
+  };
+  const nm = i => i === "XM" ? "Euroraum" : i === "SSM" ? "Euroraum (SSM-Gesamt)" : (typeof HDL !== "undefined" && HDL.name ? HDL.name(i) : i);
+  const zeitDe2 = z => /^\d{4}-\d{2}$/.test(z || "") ? `${z.slice(5)}/${z.slice(0, 4)}` : (z || "").replace("-Q", " Q");
+  const pz = (v, d = 1) => v == null ? "–" : (d === 2 ? f2 : f1).format(v) + " %";
+  const EUROL = new Set(["AT", "BE", "BG", "CY", "DE", "EE", "ES", "FI", "FR", "GR", "HR", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PT", "SI", "SK"]);
+  /* Messgrößen für die Länderfärbung der Weltkugel: Wert je Land, Farbe (diverg = negativ rot, positiv grün; sonst Amber nach Höhe) */
+  const MESS = [
+    { id: "inflation", name: "Inflation", einheit: "% z. Vorj.", skala: [0, 8], hol: (m, i) => m.inflation[i] && { v: m.inflation[i].v, zeit: m.inflation[i].zeit } },
+    { id: "real", name: "Realzins (Leitzins minus Inflation)", einheit: "Punkte", diverg: 3, hol: (m, i) => m.realzins[i] && m.realzins[i].real != null && { v: m.realzins[i].real, zeit: m.realzins[i].zeit_infl } },
+    { id: "real10", name: "Realrendite 10 Jahre", einheit: "Punkte", diverg: 4, hol: (m, i) => m.realzins[i] && m.realzins[i].real10 != null && { v: m.realzins[i].real10, zeit: m.realzins[i].zeit_infl } },
+    { id: "schulden", name: "Schuldenquote Zentralstaat", einheit: "% BIP", skala: [0, 150], hol: (m, i) => m.schulden[i] && { v: m.schulden[i].v, zeit: m.schulden[i].jahr } },
+    { id: "defizit", name: "Finanzierungssaldo Zentralstaat", einheit: "% BIP", diverg: 8, hol: (m, i) => m.defizit[i] && { v: m.defizit[i].v, zeit: m.defizit[i].jahr } },
+    { id: "bwbip", name: "Börsenwert im Verhältnis zum BIP", einheit: "% BIP", skala: [0, 250], hol: (m, i) => m.boersenwert_bip[i] && { v: m.boersenwert_bip[i].v, zeit: m.boersenwert_bip[i].jahr } },
+    { id: "aufschlag", name: "Renditeaufschlag auf Bundesanleihen", einheit: "Punkte", skala: [0, 4], hol: (m, i) => m.aufschlag[i] && { v: m.aufschlag[i].v, zeit: m.aufschlag[i].zeit } },
+    { id: "cet1", name: "CET1-Quote des Bankensektors", einheit: "%", skala: [10, 24], hol: (m, i) => m.bankensektor[i] && m.bankensektor[i].cet1 && { v: m.bankensektor[i].cet1.v, zeit: m.bankensektor[i].cet1.zeit } }
+  ];
+  const messDef = id => MESS.find(x => x.id === id);
+  /* Wert eines Landes; Euro-Länder ohne eigene Inflationsreihe fallen auf den Euroraum zurück (nur Leitzins und Rendite) */
+  function messWerte(id) {
+    const m = makro(), d = messDef(id); if (!m || !d) return {};
+    const out = {};
+    const laender = new Set([...Object.keys(m.inflation), ...Object.keys(m.schulden), ...Object.keys(m.defizit), ...Object.keys(m.boersenwert_bip), ...Object.keys(m.aufschlag), ...Object.keys(m.bankensektor)]);
+    laender.forEach(i => { if (i === "XM" || i === "SSM") return; const w = d.hol(m, i); if (w && w.v != null) out[i] = w; });
+    return out;
+  }
+  const messFarbe = (id, v) => {
+    const d = messDef(id); if (v == null || !d) return null;
+    if (d.diverg) { const q = Math.min(1, Math.abs(v) / d.diverg); return v >= 0 ? `rgba(62,207,110,${(.15 + .6 * q).toFixed(2)})` : `rgba(255,82,72,${(.15 + .6 * q).toFixed(2)})`; }
+    const q = Math.max(0, Math.min(1, (v - d.skala[0]) / (d.skala[1] - d.skala[0])));
+    return `rgba(255,168,40,${(.12 + .65 * q).toFixed(2)})`;
+  };
+  const messText = (id, w) => { const d = messDef(id); return !w ? "" : `${(d.einheit.includes("Punkte") ? (w.v > 0 ? "+" : "") : "") + f1.format(w.v)}${d.einheit.startsWith("%") && d.einheit !== "% z. Vorj." && d.einheit !== "% BIP" ? " %" : d.einheit === "% z. Vorj." || d.einheit === "% BIP" ? " %" : d.einheit === "Punkte" ? " Pkt." : ""}`; };
+  const hzel = (v, lo, hi) => v == null ? "" : `background:rgba(255,168,40,${(.08 + .5 * Math.max(0, Math.min(1, (v - lo) / (hi - lo)))).toFixed(2)})`;
+  const hdiv = (v, w) => v == null ? "" : `background:rgba(${v >= 0 ? "62,207,110" : "255,82,72"},${Math.min(.5, Math.abs(v) / w * .5 + .05).toFixed(2)})`;
+  const kleinTab = (zeilen, kopf) => `<table class="tab"><thead><tr>${kopf.map((k, i) => `<th${i === 0 ? ' style="text-align:left"' : ""}>${k}</th>`).join("")}</tr></thead><tbody>${zeilen.join("")}</tbody></table>`;
+  const keineMk = (code, titel) => `<div class="grid">${panel({ code, titel, body: `<p class="n">Keine Daten im Build. <code>python3 app/finanz_makro.py</code> schreibt <code>app/data/finanz_makro.json</code> (Workflow „Weltkugel-Daten“, montags).</p>` })}</div>`;
+
+  /* ----- Reiter Makro: Inflation, Realzins, Staatsfinanzen, Aufschläge ----- */
+  function viewMakro() {
+    const m = makro(); if (!m) return keineMk("MAK", "Makro und Geld");
+    const bw = document.getElementById("boerse-welt-daten") ? JSON.parse(document.getElementById("boerse-welt-daten").textContent) : null;
+    const zl = Object.entries(m.realzins).sort((a, b) => (b[1].infl || 0) - (a[1].infl || 0));
+    const real = kleinTab(zl.map(([i, e]) => `<tr><td style="text-align:left;font-family:var(--sans)">${esc(nm(i))}</td><td style="${hzel(e.infl, 0, 8)}">${pz(e.infl)}</td><td>${e.leit != null ? pz(e.leit, 2) : "–"}</td><td style="${hdiv(e.real, 3)}" class="${pos(e.real)}">${e.real != null ? (e.real > 0 ? "+" : "") + f1.format(e.real) : "–"}</td><td>${e.rend != null ? pz(e.rend, 2) : "–"}</td><td style="${hdiv(e.real10, 4)}" class="${pos(e.real10)}">${e.real10 != null ? (e.real10 > 0 ? "+" : "") + f1.format(e.real10) : "–"}</td><td>${spark(m.inflation[i].l.map(x => [x[0], x[1]]), "var(--amber)", 24)}</td><td class="n">${zeitDe2(e.zeit_infl)}</td></tr>`),
+      ["Land", "Inflation", "Leitzins", "Realzins", "Rendite 10 J.", "Realrendite", "Inflation, 2 J.", "Stand"]);
+    const ids = [...new Set([...Object.keys(m.schulden), ...Object.keys(m.defizit), ...Object.keys(m.boersenwert_bip)])].sort((a, b) => ((m.schulden[b] || {}).v ?? -1) - ((m.schulden[a] || {}).v ?? -1));
+    const staat = kleinTab(ids.map(i => { const a = m.schulden[i], b = m.defizit[i], c = m.boersenwert_bip[i]; return `<tr><td style="text-align:left;font-family:var(--sans)">${esc(nm(i))}</td><td style="${hzel(a && a.v, 0, 150)}">${a ? pz(a.v) : "–"} <span class="n">${a ? a.jahr : ""}</span></td><td style="${hdiv(b && b.v, 8)}" class="${pos(b && b.v)}">${b ? pz(b.v) : "–"} <span class="n">${b ? b.jahr : ""}</span></td><td style="${hzel(c && c.v, 0, 250)}">${c ? pz(c.v, 0) : "–"} <span class="n">${c ? c.jahr : ""}</span></td></tr>`; }), ["Land", "Schulden (Zentralstaat)", "Finanzierungssaldo", "Börsenwert/BIP"]);
+    const au = Object.entries(m.aufschlag).sort((a, b) => b[1].v - a[1].v).slice(0, 30);
+    const aufs = kleinTab(au.map(([i, e]) => `<tr><td style="text-align:left;font-family:var(--sans)">${esc(nm(i))}</td><td>${pz(e.rend, 2)}</td><td style="${hzel(e.v, 0, 4)}">${e.v > 0 ? "+" : ""}${f2.format(e.v)}</td><td>${e.l ? spark(e.l, "var(--amber)", 60, 90) : ""}</td><td class="n">${zeitDe2(e.zeit)}</td></tr>`), ["Land", "Rendite 10 J.", "Aufschlag auf Bund (Pkt.)", "fünf Jahre", "Stand"]);
+    const q = k => `<a class="flink" href="${esc(m.quellen[k].url)}" target="_blank" rel="noopener">${esc(m.quellen[k].name)}</a>`;
+    return `<div class="grid">
+      ${panel({ code: "REA", titel: "Inflation und Realzins", sub: `${zl.length} Länder und Euroraum`, breite: "w7", body: `<div style="max-height:560px;overflow:auto">${real}</div>`, fuss: `Realzins = Leitzins (BIS) minus jüngste Inflationsrate (OECD, Verbraucherpreise zum Vorjahr); Realrendite entsprechend mit der 10-jährigen Rendite. Stände können um einen Monat auseinanderliegen. ${q("inflation")}.` })}
+      ${panel({ code: "STA", titel: "Staatsfinanzen und Börsenwert", sub: "letzter Jahreswert je Land", breite: "w5", body: `<div style="max-height:560px;overflow:auto">${staat}</div>`, fuss: `Weltbank, Zentralstaat; die Reihen sind lückenhaft und hinken ein bis zwei Jahre, Werte über sieben Jahre alt fehlen. ${q("schulden")}` })}
+      ${panel({ code: "SPR", titel: "Renditeaufschläge auf Bundesanleihen", sub: "Ersatz für CDS-Prämien, die nicht kostenlos verfügbar sind", body: `<div style="max-height:460px;overflow:auto">${aufs}</div>`, fuss: `Rendite 10 Jahre minus Rendite Deutschland (OECD, Monatswerte). Das ist kein CDS-Kurs: Der Aufschlag spiegelt Ausfall-, Liquiditäts- und Währungsrisiko zusammen. ${q("aufschlag")}` })}</div>`;
+  }
+
+  /* ----- Reiter Bankensektor (EZB-Länder) ----- */
+  const BK = [["cet1", "CET1-Quote", 10, 24, 1], ["roe", "Eigenkapitalrendite", 0, 16, 1], ["cir", "Aufwand-Ertrags-Quote", 80, 40, 1], ["npl", "Notleidende Kredite", 6, 0, 1], ["lcr", "Liquiditätsdeckung", 120, 220, 1], ["lev", "Verschuldungsquote", 4, 9, 1]];
+  function viewBank() {
+    const m = makro(); if (!m || !Object.keys(m.bankensektor).length) return keineMk("BNK", "Bankensektor");
+    const zl = Object.entries(m.bankensektor).sort((a, b) => (a[0] === "SSM" ? -1 : b[0] === "SSM" ? 1 : ((b[1].cet1 || {}).v ?? -1) - ((a[1].cet1 || {}).v ?? -1)));
+    const tab = kleinTab(zl.map(([i, e]) => `<tr><td style="text-align:left;font-family:var(--sans)">${i === "SSM" ? "<b>" : ""}${esc(nm(i))}${i === "SSM" ? "</b>" : ""}</td>${BK.map(([k, , lo, hi]) => `<td style="${hzel(e[k] && e[k].v, Math.min(lo, hi), Math.max(lo, hi))}">${e[k] ? f1.format(e[k].v) + " %" : "–"}</td>`).join("")}<td>${e.cet1 ? spark(e.cet1.l, "var(--amber)", 8, 70) : ""}</td><td class="n">${e.cet1 ? zeitDe2(e.cet1.zeit) : ""}</td></tr>`),
+      ["Land", ...BK.map(b => b[1]), "CET1, 2 Jahre", "Stand"]);
+    const de = (typeof BANKEN !== "undefined" && BANKEN) ? BANKEN.filter(b => b.cet1_quote != null) : [];
+    const med = l => { const a = l.slice().sort((x, y) => x - y); return a.length ? a[Math.floor(a.length / 2)] : null; };
+    const dek = de.length ? `<p class="n" style="margin-top:8px">Eigener Bestand (Offenlegung 31.12.2025): ${de.length} deutsche Banken mit CET1-Quote, Median ${f1.format(med(de.map(b => b.cet1_quote)) * 100)} % gegen ${m.bankensektor.DE && m.bankensektor.DE.cet1 ? f1.format(m.bankensektor.DE.cet1.v) + " % der bedeutenden Institute (EZB)" : "–"}. Die EZB-Zahl betrifft nur die großen, direkt beaufsichtigten Banken.</p>` : "";
+    const q = m.quellen.bankensektor;
+    return `<div class="grid">${panel({ code: "BNK", titel: "Bankensektor im Länderbild", sub: "bedeutende Institute je Land, EZB-Bankenaufsicht, vierteljährlich", body: `<div style="overflow-x:auto">${tab}</div>${dek}`, fuss: `Färbung je Spalte von ungünstig (hell) bis günstig (dunkel), bei Aufwand-Ertrags-Quote und notleidenden Krediten umgekehrt. <a class="flink" href="${esc(q.url)}" target="_blank" rel="noopener">${esc(q.name)}</a>. Nur Länder des Einheitlichen Aufsichtsmechanismus.` })}</div>`;
+  }
+
+  /* ----- Länderseite der Weltkugel (Stufe 2): Blöcke zu Inflation, Staat, Bankensektor ----- */
+  function landBloecke(iso) {
+    const m = makro(); if (!m) return "";
+    const eu = EUROL.has(iso);
+    const rz = m.realzins[iso] || (eu && m.realzins.XM) || null;
+    const i = m.inflation[iso] || (eu && m.inflation.XM) || null;
+    const zeile = (t, v, z) => v == null ? "" : `<tr><td>${esc(t)}</td><td style="text-align:right">${v}</td><td class="pct">${esc(z || "")}</td></tr>`;
+    const a = m.aufschlag[iso], s = m.schulden[iso], d = m.defizit[iso], b = m.boersenwert_bip[iso], k = m.bankensektor[iso];
+    const rows = [
+      i ? zeile(`Inflation${m.inflation[iso] ? "" : " (Euroraum)"}`, pz(i.v), zeitDe2(i.zeit)) : "",
+      rz && rz.real != null ? zeile("Realzins (Leitzins minus Inflation)", `${rz.real > 0 ? "+" : ""}${f1.format(rz.real)} Pkt.`, zeitDe2(rz.zeit_infl)) : "",
+      rz && rz.real10 != null ? zeile("Realrendite 10 Jahre", `${rz.real10 > 0 ? "+" : ""}${f1.format(rz.real10)} Pkt.`, zeitDe2(rz.zeit_infl)) : "",
+      a ? zeile("Rendite-Aufschlag auf Bund", `${a.v > 0 ? "+" : ""}${f2.format(a.v)} Pkt.`, zeitDe2(a.zeit)) : "",
+      s ? zeile("Schulden des Zentralstaats", pz(s.v) + " BIP", s.jahr) : "", d ? zeile("Finanzierungssaldo Zentralstaat", pz(d.v) + " BIP", d.jahr) : "", b ? zeile("Börsenwert", pz(b.v, 0) + " BIP", b.jahr) : ""].join("");
+    const bank = k ? `<div class="gk-block"><h3>Bankensektor (EZB-Aufsicht)</h3><table class="gk-tab"><tbody>${BK.map(([kk, n]) => k[kk] ? `<tr><td>${esc(n)}</td><td style="text-align:right">${f1.format(k[kk].v)} %</td><td class="pct">${esc(zeitDe2(k[kk].zeit))}</td></tr>` : "").join("")}</tbody></table>
+      <p class="gk-quelle" style="margin-top:6px">Bedeutende Institute des Landes, EZB Supervisory Banking Statistics.</p></div>` : "";
+    return (rows ? `<div class="gk-block"><h3>Preise, Realzins und Staat</h3><table class="gk-tab"><tbody>${rows}</tbody></table>
+      <p class="gk-quelle" style="margin-top:6px">OECD (Inflation), BIS (Leitzins), Weltbank (Staat und Börsenwert, letzter Jahreswert), Aufschlag aus OECD-Renditen; kein CDS.</p></div>` : "") + bank;
+  }
+  const makroDa = () => !!makro();
+
   const keine = (code, titel) => `<div class="grid">${panel({ code, titel, body: `<p class="n">Keine Daten im Build. <code>python3 app/finanz_abruf.py</code> schreibt <code>app/data/finanz.json</code> (Workflow „Börsendaten Terminal“).</p>` })}</div>`;
 
   function klick(t) {
@@ -220,5 +316,5 @@ const FNZ = (() => {
     if (e) e.addEventListener("change", () => { S.land = e.value; S.sektor = "alle"; render(); });
   }
   const meta = () => lade() ? `${FZ.puls.length} Marktgrößen · ${Object.keys(FZ.kurven).length} Zinskurven · ${Object.keys(FZ.waehrungen || {}).length} Währungen · Stand ${datumDe(FZ.abruf)}` : "";
-  return { da, leiste, leisteFuss, viewPuls, viewKurven, viewWaehr, viewSektoren, klick, nachRender, meta, kurve: () => lade() && FZ.kurven, puls: holen };
+  return { da, leiste, leisteFuss, viewPuls, viewKurven, viewWaehr, viewSektoren, viewMakro, viewBank, makroDa, mess: () => MESS, messDef, messWerte, messFarbe, messText, landBloecke, klick, nachRender, meta, kurve: () => lade() && FZ.kurven, puls: holen };
 })();

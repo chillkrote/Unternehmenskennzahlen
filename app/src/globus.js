@@ -81,7 +81,7 @@ const GLOBUS = (() => {
      Börse, Unternehmen und Politik nach den freigegebenen Varianten 1A, 2A, 3A (Robin, 04.11.2026). */
   const FORMEN = [["handel", "Handel", "h-ueb"], ["vwl", "Volkswirtschaft", "v-ueb"], ["boerse", "Börse & Finanzen", "b-ueb"], ["unternehmen", "Unternehmen", "u-ueb"], ["politik", "Politik & Wahlen", "p-ueb"]];
   const ENTWURF = {};
-  const S = { form: "handel", auswahl: [], raum: null, buendnis: null, region: null, polAnsicht: "wahlen", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
+  const S = { bm: "index", form: "handel", auswahl: [], raum: null, buendnis: null, region: null, polAnsicht: "wahlen", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
   let map = null, klassisch = null, imGlobus = false, hinweisTimer = 0, osmFehler = 0, osmGeladen = false;
 
   /* ----- Unternehmen mit Sitz-Koordinaten -----
@@ -678,6 +678,8 @@ const GLOBUS = (() => {
   }
   function boLandPunkte() {
     return wertFC(LAENDER_PUNKTE.features.map(f => { const iso = f.properties.iso, x = leitindex(iso), r = rendite10(iso);
+      const mw = bmAktiv() ? FNZ.messWerte(S.bm)[iso] : null;
+      if (bmAktiv()) return mw ? { type: "Feature", geometry: f.geometry, properties: { iso, name: landKurz(iso), idx: FNZ.mess().find(m => m.id === S.bm).name.replace(/ \(.*$/, ""), ytd: FNZ.messText(S.bm, mw), ytdv: 1, r10: "", gr: bipUsd(iso), gewaehlt: S.auswahl.includes(iso) } } : null;
       if (!x && !r) return null;
       return { type: "Feature", geometry: f.geometry, properties: { iso, name: landKurz(iso), idx: x ? x.name.replace(/ \(ETF.*$/, "").replace(/^.*\(ETF iShares MSCI (.*)\)$/, "MSCI $1") : "", ytd: x && x.ytd != null ? pctVz(x.ytd) : "", ytdv: x && x.ytd != null ? x.ytd : 0,
         r10: r ? "10J " + f2.format(r.v) + " %" : "", gr: bipUsd(iso), gewaehlt: S.auswahl.includes(iso) } }; }).filter(Boolean));
@@ -703,8 +705,19 @@ const GLOBUS = (() => {
     },
     klick: (e, m) => { const f = m.queryRenderedFeatures(e.point, { layers: ["bo-kreis"].filter(i => m.getLayer(i)) }); if (!f.length) return false;
       const iso = f[0].properties.iso; if (e.originalEvent && e.originalEvent.shiftKey) landUmschalten(iso); else landWaehlen(iso, { fliegen: S.stufe < 2 }); return true; } });
+  const bmAktiv = () => S.bm !== "index" && typeof FNZ !== "undefined" && FNZ.makroDa();
+  /* Messgröße: Länder nach dem gewählten Wert einfärben, sonst Wirtschaftsraum-Farben */
+  function bmFarbe() {
+    if (!bmAktiv()) return raumFuellFarbe();
+    const w = FNZ.messWerte(S.bm), e = ["match", ["get", "iso"]];
+    Object.entries(w).forEach(([i, x]) => { e.push(i, FNZ.messFarbe(S.bm, x.v)); });
+    if (e.length === 2) return raumFuellFarbe();
+    e.push("rgba(0,0,0,0)");
+    return e;
+  }
   function boerseAnwenden() {
     if (!map) return;
+    if (map.getLayer("bo-flaeche")) { map.setPaintProperty("bo-flaeche", "fill-color", bmFarbe()); map.setPaintProperty("bo-flaeche", "fill-opacity", bmAktiv() ? ["interpolate", ["linear"], ["zoom"], 2.2, .85, 4.5, .5] : ["interpolate", ["linear"], ["zoom"], 2.2, raumDeckkraft(), 2.7, 0]); }
     if (map.getSource("bo-platz")) map.getSource("bo-platz").setData(platzPunkte());
     if (map.getSource("bo-land")) map.getSource("bo-land").setData(boLandPunkte());
   }
@@ -1002,6 +1015,13 @@ const GLOBUS = (() => {
         <table class="gk-tab"><tbody>${r10.map(([i, z]) => `<tr><td><button type="button" class="gk-link" data-gkland="${esc(i)}">${esc(nm(i))}</button></td><td>${f2.format(z.v)}</td></tr>`).join("")}</tbody></table></div>
         <p class="gk-quelle" style="margin-top:6px">Links Leitzins (BIS, Monatsende ${esc(zins.length ? zeitDe(zins[0][1].zeit) : "")}), rechts Rendite langfristiger Staatsanleihen (OECD, ${esc(r10.length ? zeitDe(r10[0][1].zeit) : "")}). Außerhalb der OECD offen.</p></div>`;
   }
+  function bmChips() {
+    if (typeof FNZ === "undefined" || !FNZ.makroDa()) return "";
+    const l = [["index", "Leitindex lfd. Jahr"]].concat(FNZ.mess().map(m => [m.id, m.name.replace(/ \(.*$/, "")]));
+    const d = S.bm !== "index" ? FNZ.mess().find(m => m.id === S.bm) : null, w = d ? Object.keys(FNZ.messWerte(S.bm)).length : 0;
+    return `<div class="gk-block"><h3>Karte einfärben nach</h3><div class="gk-chips">${l.map(([id, n]) => `<button type="button" data-gkbm="${esc(id)}" aria-pressed="${S.bm === id}">${esc(n)}</button>`).join("")}</div>
+      ${d ? `<p class="gk-quelle" style="margin-top:6px">${esc(d.name)} (${esc(d.einheit)}), ${w} Länder; neuester verfügbarer Wert, Stand je Land im Tooltip der Länderseite. Grau = keine Daten.</p>` : ""}</div>`;
+  }
   function boerseStart() {
     const r = raumVon(S.raum);
     const chip = x => `<button type="button" data-gkraum="${esc(x.id)}" aria-pressed="${x.id === S.raum}" style="border-left:3px solid ${esc(x.farbe)}">${esc(x.kurz)}</button>`;
@@ -1013,7 +1033,7 @@ const GLOBUS = (() => {
         ${mit.map(i => { const x = leitindex(i), y = rendite10(i), z = leitzins(i); return `<tr><td><button type="button" class="gk-link" data-gkland="${esc(i)}">${esc(landName(i))}</button><br><span class="pct">${esc(x ? x.name : "")}</span></td><td style="color:${farbVz(x && x.ytd)}">${x ? pctVz(x.ytd) : "–"}</td><td>${y ? f2.format(y.v) : "–"}</td><td>${z ? f2.format(z.v) : "–"}</td></tr>`; }).join("") || `<tr><td colspan="4" class="gk-leer">Keine Börsendaten für die Mitglieder.</td></tr>`}</tbody></table></div>${raeume}`;
     }
     const puls = typeof FNZ !== "undefined" && FNZ.da() ? `<div class="gk-block"><h3>Marktpuls</h3>${FNZ.leiste()}<p class="gk-quelle" style="margin-top:6px">${esc(FNZ.leisteFuss())} <a class="gk-link" href="#b-puls">Zinskurven, Währungen, Sektoren im Terminal ↗</a></p></div>` : "";
-    return `<div><h2>Börsen und Finanzmärkte</h2><p class="unter" style="margin-top:4px">${S.stufe === 1 ? "Kreise an den Börsenplätzen: Leitindex seit Jahresbeginn (grün gestiegen, rot gefallen) · Land anklicken wählt den Wirtschaftsraum · hineinzoomen für Werte je Land" : "Je Land Leitindex seit Jahresbeginn und 10-jährige Rendite · Land anklicken für alles · Shift+Klick für mehrere Länder"}</p></div>${puls}${boerseWelt()}${S.stufe === 1 ? raeume : ""}`;
+    return `<div><h2>Börsen und Finanzmärkte</h2><p class="unter" style="margin-top:4px">${S.stufe === 1 ? "Kreise an den Börsenplätzen: Leitindex seit Jahresbeginn (grün gestiegen, rot gefallen) · Land anklicken wählt den Wirtschaftsraum · hineinzoomen für Werte je Land" : "Je Land Leitindex seit Jahresbeginn und 10-jährige Rendite · Land anklicken für alles · Shift+Klick für mehrere Länder"}</p></div>${bmChips()}${puls}${boerseWelt()}${S.stufe === 1 ? raeume : ""}`;
   }
   function bankenBlock(iso) {
     if (iso !== "DE" || typeof BANKEN === "undefined" || !BANKEN) return `<div class="gk-block"><h3>Banken</h3><p class="gk-leer">Bankdaten (Bilanzsumme, Kernkapitalquote) gibt es bisher nur für deutsche Banken (Bankenvergleich).</p></div>`;
@@ -1039,7 +1059,7 @@ const GLOBUS = (() => {
       <p class="gk-quelle" style="margin-top:6px">BIS (Leitzinsen, Monatsende), OECD (langfristige Zinsen, CC BY 4.0).</p></div>` : "";
     const stufe3 = stufe >= 3 ? indexZusammensetzung(iso) + bankenBlock(iso)
       : `<div class="gk-block"><h3>Finanzplatz</h3><p class="gk-leer">Näher heranzoomen (Stufe 3): börsennotierte Unternehmen am Sitz, gefärbt nach Kursentwicklung, Indexmitglieder und Banken.</p><div class="gk-chips" style="margin-top:8px"><button type="button" data-gkstufe="3">Zu Stufe 3</button></div></div>`;
-    return `<div class="gk-block"><h3>Finanzdaten</h3>${finanzKacheln(iso)}</div>${zinsen}${indizes(iso)}${stufe3}`;
+    return `<div class="gk-block"><h3>Finanzdaten</h3>${finanzKacheln(iso)}</div>${zinsen}${typeof FNZ !== "undefined" ? FNZ.landBloecke(iso) : ""}${indizes(iso)}${stufe3}`;
   }
   function unternehmenWelt() {
     const d = unLandBauen(), r = raumVon(S.raum);
@@ -1574,7 +1594,8 @@ const GLOBUS = (() => {
     if (an("strom") && S.form === "handel") teile.push(`<span>${lin(STROM, "")}<em style="color:${STROM}">Strom</em> netto, TWh</span>`);
     if (an("routen")) teile.push(`<b>Routen</b><span>${lin(TRAEGER.see[1], "", false)}See</span><span>${lin(TRAEGER.bahn[1], "6 3", false)}Bahn</span><span>${lin(TRAEGER.strasse[1], "2 3", false)}Straße</span><span>${lin(TRAEGER.luft[1], "1 4", false)}Luft</span>
         <span><svg width="14" height="14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7 Z" fill="#e8ecf1"/></svg>Engstelle</span><span>${MLD.svg("angriff", "neu", 14)}${MLD.svg("sperrung", "neu", 14)}${MLD.svg("wetter", "neu", 14)}${MLD.svg("streik", "neu", 14)}${MLD.svg("stau", "neu", 14)}${MLD.svg("unfall", "neu", 14)}Meldung (Form = Typ, Farbe = Alter: Bernstein neu, dunkler bis 3 Tage, grau älter)</span>`);
-    if (an("boerse")) teile.push(`<b>Börse</b><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_EXP}"/></svg>Leitindex seit Jahresbeginn gestiegen</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_IMP}"/></svg>gefallen</span>${S.stufe >= 3 ? `<small>Punkte: börsennotierte Unternehmen nach Kursentwicklung seit Jahresbeginn (dunkelgrün über +20 %, dunkelrot unter −20 %, grau ohne Kurse)</small>` : `<small>Stufe 2: je Land Leitindex und 10-jährige Rendite</small>`}`);
+    if (an("boerse") && bmAktiv()) { const d = FNZ.mess().find(m => m.id === S.bm); teile.push(`<b>${esc(d.name)}</b><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${d.diverg ? "rgba(62,207,110,.7)" : "rgba(255,168,40,.75)"}"/></svg>${d.diverg ? "positiv" : "hoch"}</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${d.diverg ? "rgba(255,82,72,.7)" : "rgba(255,168,40,.2)"}"/></svg>${d.diverg ? "negativ" : "niedrig"}</span><small>${esc(d.einheit)}; Länder ohne Daten bleiben unmarkiert</small>`); }
+    else if (an("boerse")) teile.push(`<b>Börse</b><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_EXP}"/></svg>Leitindex seit Jahresbeginn gestiegen</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_IMP}"/></svg>gefallen</span>${S.stufe >= 3 ? `<small>Punkte: börsennotierte Unternehmen nach Kursentwicklung seit Jahresbeginn (dunkelgrün über +20 %, dunkelrot unter −20 %, grau ohne Kurse)</small>` : `<small>Stufe 2: je Land Leitindex und 10-jährige Rendite</small>`}`);
     if (an("undichte") && S.stufe === 1) teile.push(`<b>Unternehmen</b><span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="rgba(255,168,40,.25)" stroke="#ffa828"/></svg>${S.u1 === "wert" ? "Börsenwert" : "Zahl der Unternehmen"} je Land</span>`);
     if (an("politik")) teile.push(`<b>Regierung</b>${AUSR.map(([, t, c]) => `<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="${c}"/></svg>${esc(t)}</span>`).join("")}<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="#3a4655"/></svg>ohne Zuordnung</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#9fd3ff"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">W</text></svg>Wahl in den nächsten 12 Monaten</span>
@@ -2104,6 +2125,7 @@ const GLOBUS = (() => {
     if ((v = g("data-gkraum")) != null) { raumWaehlen(v); return true; }
     if ((v = g("data-gkbund")) != null) { S.buendnis = S.buendnis === v ? null : v; politikAnwenden(); seiteZeichnen(); return true; }
     if ((v = g("data-gkregion")) != null) { S.region = S.region === v ? null : v; politikAnwenden(); seiteZeichnen(); return true; }
+    if ((v = g("data-gkbm")) != null) { S.bm = v; boerseAnwenden(); legendeKarte(); seiteZeichnen(); return true; }
     if ((v = g("data-gku1")) != null) { S.u1 = v; unAnwenden(); legendeKarte(); seiteZeichnen(); return true; }
     if ((v = g("data-gkufk")) != null) { if (v) UF[v] = !UF[v]; else Object.assign(UF, { branche: "", index: "", notiert: false, kennzahlen: false }); punkteAktualisieren(); seiteZeichnen(); return true; }
     if ((v = g("data-gkk1")) != null) { S.k1 = v; kontAnwenden(); seiteZeichnen(); return true; }

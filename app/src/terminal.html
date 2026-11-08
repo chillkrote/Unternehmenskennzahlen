@@ -264,6 +264,8 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#b-kurven" data-v="b-kurven"><b>F9</b>Zinskurven</a>
       <a class="key" href="#b-waehr" data-v="b-waehr"><b>F10</b>Währungen</a>
       <a class="key" href="#b-sektoren" data-v="b-sektoren"><b>F11</b>Sektoren</a>
+      <a class="key" href="#b-makro" data-v="b-makro"><b>–</b>Makro</a>
+      <a class="key" href="#b-bank" data-v="b-bank"><b>–</b>Bankensektor</a>
     </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchenvergleich</a>
@@ -302,6 +304,7 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="news-daten" type="application/json">__NEWS__</script>
 <script id="boerse-welt-daten" type="application/json">__BOERSE_WELT__</script>
 <script id="finanz-daten" type="application/json">__FINANZ__</script>
+<script id="finanz-makro-daten" type="application/json">__FINANZ_MAKRO__</script>
 <script id="politik-daten" type="application/json">__POLITIK__</script>
 <script id="de-laender-geo" type="application/json">__DE_LAENDER__</script>
 <script id="parlamente-daten" type="application/json">__PARLAMENTE__</script>
@@ -1046,7 +1049,7 @@ function tape() {
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
-  "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(), "b-puls": () => FNZ.viewPuls(), "b-kurven": () => FNZ.viewKurven(), "b-waehr": () => FNZ.viewWaehr(), "b-sektoren": () => FNZ.viewSektoren(),
+  "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(), "b-puls": () => FNZ.viewPuls(), "b-kurven": () => FNZ.viewKurven(), "b-waehr": () => FNZ.viewWaehr(), "b-sektoren": () => FNZ.viewSektoren(), "b-makro": () => FNZ.viewMakro(), "b-bank": () => FNZ.viewBank(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr(),
   "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "p-kom": () => POL.viewKom(), "b-zins": () => FIN.view() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
@@ -1176,7 +1179,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
   if (bereich === "b") {
-    const a = { ueb: "b-ueb", indizes: "b-indizes", index: "b-indizes", unt: "b-unternehmen", unternehmen: "b-unternehmen", verlauf: "b-verlauf", quellen: "b-quellen", puls: "b-puls", kurven: "b-kurven", waehrung: "b-waehr", sektoren: "b-sektoren", start: "start", korr: "korr" }[c], k = BOE.finden(v);
+    const a = { ueb: "b-ueb", indizes: "b-indizes", index: "b-indizes", unt: "b-unternehmen", unternehmen: "b-unternehmen", verlauf: "b-verlauf", quellen: "b-quellen", puls: "b-puls", kurven: "b-kurven", waehrung: "b-waehr", sektoren: "b-sektoren", makro: "b-makro", bank: "b-bank", start: "start", korr: "korr" }[c], k = BOE.finden(v);
     if (a) gehe(a); else if (k) { BOE.waehle(k); gehe("b-verlauf"); }
     return;
   }

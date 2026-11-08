@@ -22,6 +22,9 @@ const path = require('node:path');
   await ansicht('#b-sektoren', 'technologie');
   await page.click('[data-fsektor="Technologie"]'); await page.waitForTimeout(150);
   if (!(await page.locator('main').innerText()).includes('größte Unternehmen')) throw Error('Sektorauswahl zeigt keine Unternehmen');
+  await ansicht('#b-makro', 'realzins', 3);
+  await ansicht('#b-makro', 'renditeaufschläge');
+  await ansicht('#b-bank', 'bankensektor im länderbild');
   await ansicht('#b-ueb', 'marktpuls');
   // Weltkugel: Leiste in der Darstellung Börse
   const wk = await browser.newPage({ viewport: { width: 1440, height: 900 } });
@@ -30,6 +33,11 @@ const path = require('node:path');
   await wk.waitForSelector('#gk-seite h2');
   await wk.click('[data-gkform="boerse"]'); await wk.waitForTimeout(200);
   if (!(await wk.locator('#gk-seite').innerText()).toLowerCase().includes('marktpuls')) throw Error('Marktpuls-Leiste fehlt auf der Weltkugel');
+  // Messgröße: Karte nach Inflation einfärben, Länderseite zeigt Realzins und Bankensektor
+  await wk.click('[data-gkbm="inflation"]'); await wk.waitForTimeout(200);
+  await wk.evaluate(() => GLOBUS.landWaehlen('DE')); await wk.waitForTimeout(200);
+  const lt = (await wk.locator('#gk-seite').innerText()).toLowerCase();
+  if (!lt.includes('realzins') || !lt.includes('bankensektor')) throw Error('Länderseite Börse zeigt Realzins oder Bankensektor nicht');
   await browser.close();
   if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
   console.log('Finanz-Ansichten ok');

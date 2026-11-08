@@ -13,6 +13,8 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 | Stromhandel außerhalb Europas | Eurostat bilateral (europäische Meldeländer), sonst Nettosaldo je Land (Ember) | ENTSO-E braucht ein Token, EIA (USA/Kanada/Mexiko) einen Schlüssel, für Asien, Afrika, Südamerika keine freie bilaterale Quelle | EIA-Schlüssel und ENTSO-E-Token (beide kostenlos) beantragen |
 | Verkehrsmengen auf den Routen (Schiffe je Tag, TEU, Bahncontainer) | Routen und Engstellen ohne Mengen | IMF PortWatch erlaubt die Weiterverwendung nur mit Genehmigung; Bahn- und Lkw-Mengen nirgends offen | Bei IMF PortWatch die Nutzung anfragen |
 | Meldungen zu Routenstörungen in anderen Sprachen | Englisch und Deutsch | Bewusst begrenzt, damit die Titelprüfung (Ort + Störungswort) verlässlich bleibt | Störungswörter je Sprache in app/news_routen.py ergänzen |
+| Exporte je Gut | **Neu 08.11.2026:** 22 Gütergruppen (Rohöl, Mineralölprodukte, Erdgas/LNG, Kohle, Weizen, Mais, Reis, Sojabohnen, Kaffee, Dünger, Eisenerz, Kupfer, Aluminium, Gold, Stahl, Pkw, Maschinen, Chips, Flugzeuge, Arzneimittel, Kunststoffe, Bekleidung) je Land 2015–2024, Länder nach Wert eingefärbt (CEPII BACI, Etalab 2.0; app/gueter_baci.py) | Nur Wert in US-Dollar (Menge in Tonnen steht in BACI, noch nicht übernommen); Gruppen auf HS2 bis HS4 verdichtet, keine Einzelprodukte; Taiwan = BACI „Other Asia, nes“; jüngstes Jahr 2024 | Weitere Gruppen in `GRUPPEN` von app/gueter_baci.py ergänzen; Zip (rund 1,3 GB) nach https://www.cepii.fr/DATA_DOWNLOAD/baci/data/ laden und `--zip` angeben |
+| Größte See- und Flughäfen | **Neu 08.11.2026:** 58 Seehäfen (Container 2025, Umschlag 2022) und 53 Flughäfen (Passagiere, Fracht 2025), app/verkehrsknoten.py | Mengen stammen aus Wikipedia-Listen (CC BY-SA) nach Lloyd's List, SISI und ACI, Fracht nur Top 10; Lage der Häfen über UN/LOCODE, 20 Häfen mit von Hand gesetzter Lage (HAFEN_LAGE); Jahre je Liste verschieden | Offene Hafenstatistiken (World Port Index der NGA war aus der Cloud nicht erreichbar), Zeitreihen je Hafen |
 
 ## Volkswirtschaft
 
@@ -64,6 +66,7 @@ Spalte "Weg" sagt, was zum Schließen nötig wäre.
 
 ## Schon eingebunden (zum Vergleich)
 
+- CEPII BACI (Etalab 2.0): app/gueter_baci.py -> app/data/gueter.json; Wikipedia-Rangfolgen (CC BY-SA 4.0), UN/LOCODE, OurAirports (gemeinfrei): app/verkehrsknoten.py -> app/data/verkehrsknoten.json
 - Weltbank World Development Indicators (CC BY 4.0): app/welt_daten.py -> app/data/welt.json
 - Eurostat nrg_ti_eh / nrg_te_eh, bilateraler Strom (CC BY 4.0): app/welt_daten.py
 - FRED (BEA-Zolleinnahmen, Census-Warenimporte, gemeinfrei): app/welt_daten.py

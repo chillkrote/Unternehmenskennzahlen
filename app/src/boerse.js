@@ -91,7 +91,7 @@ const BOE = (() => {
     if (!BD) return keineDaten();
     const wi = BD.indizes.filter(x => x.gruppe === "Welt" && x.kurs != null && !/VIX|ETF/.test(x.name)).slice(0, 4);
     const lei = ["^GDAXI", "^GSPC", "^N225", "^HSI", "^FTSE", "^FCHI", "^BSESN", "^BVSP"].map(id => IND[id]).filter(Boolean);
-    const puls = typeof FNZ !== "undefined" && FNZ.da() ? panel({ code: "PLS", titel: "Marktpuls", sub: "Angst, Zinsabstand, Gold, Öl, Euro, Bitcoin", body: FNZ.leiste(), fuss: FNZ.leisteFuss() + " Mehr unter F8 bis F11." }) : "";
+    const puls = typeof FNZ !== "undefined" && FNZ.da() ? panel({ code: "PLS", titel: "Marktpuls", sub: "Angst, Zinsabstand, Gold, Öl, Euro, Bitcoin", body: FNZ.leiste(), fuss: FNZ.leisteFuss() + " " + FNZ.leisteLive() + " Mehr unter F8 bis F11." }) : "";
     return `<div class="grid">
       ${puls}
       ${panel({ code: "BÖR", titel: "Leitindizes", sub: "Stand, Tagesveränderung und Verlauf des letzten Jahres", body: `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px">${wi.concat(lei).map(x => kachel(x, "i")).join("")}</div>`, fuss: `Klick auf eine Kachel übernimmt den Index in den Verlauf (F4). Quelle Yahoo Finance, Stand ${datumDe((BD.abruf || "").slice(0, 10))}; Kurse verzögert und ohne Gewähr.` })}
@@ -253,5 +253,14 @@ const BOE = (() => {
   const datalist = () => BD ? BD.indizes.map(x => `<option value="${esc(x.name)}">`).join("") + BD.unternehmen.map(x => `<option value="${esc(x.name)}">`).join("") : "";
   /* für die Korrelation: Wochenkurse von Indizes und Unternehmen */
   const korr = () => BD && { wochen: BD.wochen, indizes: BD.indizes, unternehmen: BD.unternehmen };
-  return { init, da, meta, viewUeb, viewInd, viewUnt, viewVerlauf, viewQuellen, klick, nachRender, finden, waehle, datalist, korr };
+  /* Live-Kurse (siehe finanz.js): Kurs und Tagesänderung der Indizes überschreiben; die Veränderung seit Jahresbeginn wird auf den neuen Kurs umgerechnet */
+  function live(w) {
+    for (const x of (BD ? BD.indizes : [])) {
+      const l = w[x.symbol] || w[x.id];
+      if (!l || l.k == null || x.kurs == null) continue;
+      if (x.ytd != null) x.ytd = l.k / (x.kurs / (1 + x.ytd)) - 1;
+      x.kurs = l.k; x.datum = (l.z || "").slice(0, 10) || x.datum; if (l.v) x.r1t = l.k / l.v - 1;
+    }
+  }
+  return { init, da, meta, live, viewUeb, viewInd, viewUnt, viewVerlauf, viewQuellen, klick, nachRender, finden, waehle, datalist, korr };
 })();

@@ -49,7 +49,7 @@ const FNZ = (() => {
   const LEISTE = ["vix", "move", "ciss", "abst_usa", "gold", "brent", "eurusd", "btc"];
   const kachel = p => {
     const a = ampel(p), tr = p.diff ? (p.verlauf.length ? p.wert - p.verlauf[Math.max(0, p.verlauf.length - 22)][1] : 0) : p.r1m;
-    return `<div title="${esc(p.name)} · ${esc(p.quelle)} · Stand ${datumDe(p.datum)}${a ? " · " + a[1] : ""}" style="display:grid;gap:2px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2)">
+    return `<div data-lv="${esc(p.id)}" title="${esc(p.name)} · ${esc(p.quelle)}${p.live ? " (live, ca. 15 Min. verzögert)" : ""} · Stand ${datumDe(p.datum)}${a ? " · " + a[1] : ""}" style="display:grid;gap:2px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2)">
       <span class="n" style="font-size:11px">${punkt(a)}${esc(p.name.replace(/ \(.*$/, ""))}</span>
       <b style="font:600 17px var(--mono)">${wertText(p)}</b>
       <span class="n" style="font-size:11px;color:${neutral(p) ? "var(--ink-3)" : farbe(p.r1t != null ? p.r1t : p.ytd)}">${esc(aendText(p))}</span>
@@ -62,6 +62,7 @@ const FNZ = (() => {
     return l.length ? `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px">${l.map(kachel).join("")}</div>` : "";
   }
   const leisteFuss = () => lade() ? `Ampel: grün ruhig, gelb erhöht, rot Stress (Schwellen im Tooltip). Yahoo Finance, EZB, US-Finanzministerium, Stand ${datumDe(lade().abruf)}; ohne Gewähr.` : "";
+  const leisteLive = () => `<span data-lvfuss>${esc(lvText())}</span>`;
 
   /* ----- Realisierte Volatilität aus den Wochenkursen ----- */
   function vol(t, n) {
@@ -96,7 +97,7 @@ const FNZ = (() => {
       <td>${wertText(p)}</td><td class="${p.diff ? "" : pos(p.r1m)}">${p.diff ? (p.r1m == null ? "–" : (p.r1m > 0 ? "+" : "") + f2.format(p.r1m) + " Pkt.") : pct(p.r1m)}</td><td class="${pos(p.ytd)}">${pct(p.ytd)}</td>
       <td class="${p.diff ? "" : pos(p.r1j)}">${p.diff ? (p.r1j == null ? "–" : (p.r1j > 0 ? "+" : "") + f2.format(p.r1j) + " Pkt.") : pct(p.r1j)}</td><td>${spark(p.verlauf, neutral(p) ? "var(--amber)" : farbe(p.ytd ?? p.r1m), 130)}</td></tr>`).join("")}</tbody></table></div>`;
     return `<div class="grid">
-      ${panel({ code: "PLS", titel: "Marktpuls", sub: "acht Größen auf einen Blick", body: leiste(), fuss: leisteFuss() })}
+      ${panel({ code: "PLS", titel: "Marktpuls", sub: "acht Größen auf einen Blick", body: leiste(), fuss: leisteFuss() + " " + leisteLive() })}
       ${panel({ code: "RSK", titel: "Angst- und Stressindikatoren", sub: "implizite Schwankung der Optionsmärkte und EZB-Stressindex", breite: "w6", body: tab(angst.concat(rest.filter(p => p.id === "ciss"))), fuss: "VIX, VXN, OVX, GVZ und MOVE stammen von Yahoo Finance, der Stressindex CISS von der EZB. VSTOXX und VDAX sind bei Yahoo nicht frei verfügbar. Hohe Werte bedeuten Unruhe, nicht zwingend fallende Kurse." })}
       ${panel({ code: "MKT", titel: "Zinsabstand, Währung, Rohstoffe, Krypto", sub: "Stand und Veränderung", breite: "w6", body: tab(rest.filter(p => p.id !== "ciss")), fuss: "Zinsabstand = Rendite 10 Jahre minus 2 Jahre; negativ heißt invertierte Kurve (siehe Zinskurven). Gold ist damit nicht mehr offen." })}
       ${panel({ code: "VOL", titel: "Realisierte Volatilität der Indizes", sub: "annualisiert, aus Wochenschlusskursen (13, 26 und 52 Wochen)", body: volTabelle(), fuss: "Standardabweichung der logarithmierten Wochenrenditen mal Wurzel 52. Farbe: je dunkler, desto unruhiger. Die Spalte rechts vergleicht die letzten 13 Wochen mit dem Jahr." })}</div>`;
@@ -315,6 +316,48 @@ const FNZ = (() => {
     const e = document.getElementById("fland");
     if (e) e.addEventListener("change", () => { S.land = e.value; S.sektor = "alle"; render(); });
   }
+
+  /* ----- Live-Kurse: Auf der Website (GitHub Pages) lädt die Seite alle zwei Minuten live.json vom Zweig daten-live nach (live_abruf.py, Workflow
+     live.yml, Yahoo Finance, ca. 15 Minuten verzögert) und aktualisiert die Marktpuls-Kacheln an Ort und Stelle sowie die Kurse der Leitindizes.
+     Im Artifact, lokal oder bei Fehlern passiert nichts: die Seite zeigt dann den Stand des Builds. ----- */
+  const LIVE_URL = "https://raw.githubusercontent.com/chillkrote/Unternehmenskennzahlen/daten-live/live.json";
+  const LV = { stand: null, fehler: false };
+  const uhr = iso => { const t = new Date(iso); return isNaN(t) ? "" : t.toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); };
+  const lvText = () => LV.stand ? `Live-Kurse: Abruf ${uhr(LV.stand)} Uhr (Yahoo Finance, ca. 15 Min. verzögert).` : "";
+  function liveSetzen(d) {
+    if (!lade() || !d || !d.werte) return false;
+    for (const p of FZ.puls) {
+      const w = d.werte[p.id];
+      if (!w || p.diff || w.k == null) continue;
+      p.wert = Math.round(w.k * 100) / 100;
+      p.datum = (w.z || d.abruf || "").slice(0, 10) || p.datum;
+      if (w.v) p.r1t = w.k / w.v - 1;
+      p.live = true;
+      const ende = p.verlauf && p.verlauf[p.verlauf.length - 1];
+      if (ende) { if (ende[0] === p.datum) ende[1] = p.wert; else p.verlauf.push([p.datum, p.wert]); }
+    }
+    if (typeof BOE !== "undefined" && BOE.live) BOE.live(d.werte);
+    LV.stand = d.abruf; LV.fehler = false;
+    document.querySelectorAll("[data-lv]").forEach(e => { const p = holen(e.getAttribute("data-lv")); if (p) e.outerHTML = kachel(p); });
+    document.querySelectorAll("[data-lvfuss]").forEach(e => { e.textContent = lvText(); });
+    return true;
+  }
+  async function liveHolen(url) {
+    try {
+      const r = await fetch(url || LIVE_URL, { cache: "no-store" });
+      if (!r.ok) throw new Error(r.status);
+      return liveSetzen(await r.json());
+    } catch { LV.fehler = true; return false; }
+  }
+  function liveStart() {
+    // nur auf der veröffentlichten Website (github.io) oder mit ?live=<Adresse> zum Testen
+    const q = new URLSearchParams(location.search).get("live");
+    if (!q && !/\.github\.io$/.test(location.hostname)) return;
+    const hol = () => { if (!document.hidden) liveHolen(q || LIVE_URL); };
+    hol(); setInterval(hol, 120000);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) hol(); });
+  }
+  setTimeout(liveStart, 1500);
   const meta = () => lade() ? `${FZ.puls.length} Marktgrößen · ${Object.keys(FZ.kurven).length} Zinskurven · ${Object.keys(FZ.waehrungen || {}).length} Währungen · Stand ${datumDe(FZ.abruf)}` : "";
-  return { da, leiste, leisteFuss, viewPuls, viewKurven, viewWaehr, viewSektoren, viewMakro, viewBank, makroDa, mess: () => MESS, messDef, messWerte, messFarbe, messText, landBloecke, klick, nachRender, meta, kurve: () => lade() && FZ.kurven, puls: holen };
+  return { da, leiste, leisteFuss, leisteLive, viewPuls, viewKurven, viewWaehr, viewSektoren, viewMakro, viewBank, makroDa, mess: () => MESS, messDef, messWerte, messFarbe, messText, landBloecke, klick, nachRender, meta, liveSetzen, liveHolen, kurve: () => lade() && FZ.kurven, puls: holen };
 })();

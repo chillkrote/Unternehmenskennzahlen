@@ -26,6 +26,17 @@ const path = require('node:path');
   await ansicht('#b-makro', 'renditeaufschläge');
   await ansicht('#b-bank', 'bankensektor im länderbild');
   await ansicht('#b-ueb', 'marktpuls');
+  // Live-Kurse: live.json (hier abgefangen) überschreibt Kacheln und Indexkurse an Ort und Stelle
+  await page.evaluate(() => { location.hash = '#b-puls'; }); await page.waitForTimeout(150);
+  const fake = { abruf: '2026-11-09T10:00:00Z', werte: { vix: { k: 77.7, v: 70, z: '2026-11-09T09:45:00Z' }, gold: { k: 5000, v: 4000, z: '2026-11-09T09:45:00Z' }, '^GDAXI': { k: 30000, v: 29000, z: '2026-11-09T09:45:00Z' } } };
+  await page.route('https://example.test/live.json', r => r.fulfill({ contentType: 'application/json', body: JSON.stringify(fake) }));
+  if (!(await page.evaluate(() => FNZ.liveHolen('https://example.test/live.json')))) throw Error('live.json wurde nicht übernommen');
+  const vix = await page.locator('[data-lv="vix"]').first().innerText();
+  const gold = await page.locator('[data-lv="gold"]').first().innerText();
+  if (!vix.includes('77,7') || !gold.includes('+25,0 %')) throw Error('Live-Kacheln nicht aktualisiert: ' + vix + ' | ' + gold);
+  if (!(await page.locator('[data-lvfuss]').first().innerText()).includes('Live-Kurse')) throw Error('Live-Hinweis fehlt');
+  if (await page.evaluate(() => BOE.korr().indizes.find(x => x.id === '^GDAXI').kurs) !== 30000) throw Error('Indexkurs nicht live');
+  if (await page.evaluate(() => FNZ.liveHolen('https://example.test/gibt-es-nicht.json'))) throw Error('Fehler beim Laden muss still bleiben');
   // Weltkugel: Leiste in der Darstellung Börse
   const wk = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   wk.on('pageerror', e => errors.push(e.stack || e.message));

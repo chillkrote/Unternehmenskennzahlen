@@ -27,12 +27,16 @@ const FNZ = (() => {
       move: v < 90 ? ["gruen", "ruhig (unter 90)"] : v < 120 ? ["gelb", "erhöht (90 bis 120)"] : ["rot", "Stress (über 120)"],
       ciss: v < .15 ? ["gruen", "ruhig (unter 0,15)"] : v < .35 ? ["gelb", "erhöht (0,15 bis 0,35)"] : ["rot", "Stress (über 0,35)"],
       abst_usa: v < 0 ? ["rot", "invertiert (kurz über lang)"] : v < .5 ? ["gelb", "flach (unter 0,5 Punkte)"] : ["gruen", "normal"],
+      baa10y: v < 2 ? ["gruen", "ruhig (unter 2 Punkte)"] : v < 3 ? ["gelb", "erhöht (2 bis 3 Punkte)"] : ["rot", "Stress (über 3 Punkte)"],
+      aaa10y: v < 1 ? ["gruen", "ruhig (unter 1 Punkt)"] : v < 1.5 ? ["gelb", "erhöht (1 bis 1,5 Punkte)"] : ["rot", "Stress (über 1,5 Punkte)"],
+      nfci_kredit: v < 0 ? ["gruen", "lockerer als im Schnitt (unter 0)"] : v < .5 ? ["gelb", "strenger als im Schnitt (0 bis 0,5)"] : ["rot", "deutlich strenger (über 0,5)"],
+      stlfsi: v < 0 ? ["gruen", "unter dem Schnitt (unter 0)"] : v < 1 ? ["gelb", "erhöht (0 bis 1)"] : ["rot", "Stress (über 1)"],
       abst_euro: v < 0 ? ["rot", "invertiert (kurz über lang)"] : v < .5 ? ["gelb", "flach (unter 0,5 Punkte)"] : ["gruen", "normal"]
     }[p.id];
     return r || null;
   }
   const punkt = a => a ? `<span title="${esc(a[1])}" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:${AMPEL[a[0]]};margin-right:5px;vertical-align:baseline"></span>` : "";
-  const wertText = p => p.diff ? `${f2.format(p.wert)} <small>Pkt.</small>` : p.id === "ciss" ? f2.format(p.wert) : zahl(p.wert, Math.abs(p.wert) < 10 ? 2 : 1);
+  const wertText = p => p.diff ? `${f2.format(p.wert)} <small>Pkt.</small>` : p.id === "ciss" || p.gruppe === "spread" ? f2.format(p.wert) : zahl(p.wert, Math.abs(p.wert) < 10 ? 2 : 1);
   const aendText = p => {
     if (p.diff) return p.r1m == null ? "" : `1 M ${p.r1m > 0 ? "+" : ""}${f2.format(p.r1m)} Pkt.`;
     return p.r1t != null ? `Tag ${pct(p.r1t)}` : p.ytd != null ? `lfd. J. ${pct(p.ytd)}` : "";
@@ -44,9 +48,9 @@ const FNZ = (() => {
     const p = w.map((v, i) => (i ? "L" : "M") + (i / (w.length - 1) * W).toFixed(1) + " " + (H - 2 - (v - lo) / (hi - lo || 1) * (H - 4)).toFixed(1)).join("");
     return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="width:${W}px;height:${H}px" aria-hidden="true"><path d="${p}" fill="none" stroke="${farb}" stroke-width="1.4" stroke-linejoin="round"/></svg>`;
   };
-  const neutral = p => p.gruppe === "angst" || p.diff;   // steigende Angst ist nicht „gut“: keine Grün/Rot-Wertung
+  const neutral = p => p.gruppe === "angst" || p.gruppe === "spread" || p.diff;   // steigende Angst ist nicht „gut“: keine Grün/Rot-Wertung
   const holen = id => (lade().puls || []).find(x => x.id === id);
-  const LEISTE = ["vix", "move", "ciss", "abst_usa", "gold", "brent", "eurusd", "btc"];
+  const LEISTE = ["vix", "move", "ciss", "baa10y", "abst_usa", "gold", "brent", "eurusd", "btc"];
   const kachel = p => {
     const a = ampel(p), tr = p.diff ? (p.verlauf.length ? p.wert - p.verlauf[Math.max(0, p.verlauf.length - 22)][1] : 0) : p.r1m;
     return `<div data-lv="${esc(p.id)}" title="${esc(p.name)} · ${esc(p.quelle)}${p.live ? " (live, ca. 15 Min. verzögert)" : ""} · Stand ${datumDe(p.datum)}${a ? " · " + a[1] : ""}" style="display:grid;gap:2px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--panel-2)">
@@ -92,13 +96,15 @@ const FNZ = (() => {
   function viewPuls() {
     if (!lade()) return keine("PLS", "Marktpuls");
     const angst = FZ.puls.filter(p => p.gruppe === "angst");
-    const rest = FZ.puls.filter(p => p.gruppe !== "angst");
+    const rest = FZ.puls.filter(p => p.gruppe !== "angst" && p.gruppe !== "spread");
+    const spr = FZ.puls.filter(p => p.gruppe === "spread");
     const tab = l => `<div style="overflow-x:auto"><table class="tab"><thead><tr><th style="text-align:left">Größe</th><th>Stand</th><th>1 M</th><th>lfd. Jahr</th><th>1 J</th><th>Verlauf</th></tr></thead><tbody>${l.map(p => `<tr><td style="text-align:left;font-family:var(--sans)">${punkt(ampel(p))}<a class="flink" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span class="n">${datumDe(p.datum)}</span></td>
       <td>${wertText(p)}</td><td class="${p.diff ? "" : pos(p.r1m)}">${p.diff ? (p.r1m == null ? "–" : (p.r1m > 0 ? "+" : "") + f2.format(p.r1m) + " Pkt.") : pct(p.r1m)}</td><td class="${pos(p.ytd)}">${pct(p.ytd)}</td>
       <td class="${p.diff ? "" : pos(p.r1j)}">${p.diff ? (p.r1j == null ? "–" : (p.r1j > 0 ? "+" : "") + f2.format(p.r1j) + " Pkt.") : pct(p.r1j)}</td><td>${spark(p.verlauf, neutral(p) ? "var(--amber)" : farbe(p.ytd ?? p.r1m), 130)}</td></tr>`).join("")}</tbody></table></div>`;
     return `<div class="grid">
-      ${panel({ code: "PLS", titel: "Marktpuls", sub: "acht Größen auf einen Blick", body: leiste(), fuss: leisteFuss() + " " + leisteLive() })}
+      ${panel({ code: "PLS", titel: "Marktpuls", sub: "die wichtigsten Größen auf einen Blick", body: leiste(), fuss: leisteFuss() + " " + leisteLive() })}
       ${panel({ code: "RSK", titel: "Angst- und Stressindikatoren", sub: "implizite Schwankung der Optionsmärkte und EZB-Stressindex", breite: "w6", body: tab(angst.concat(rest.filter(p => p.id === "ciss"))), fuss: "VIX, VXN, OVX, GVZ und MOVE stammen von Yahoo Finance, der Stressindex CISS von der EZB. VSTOXX und VDAX sind bei Yahoo nicht frei verfügbar. Hohe Werte bedeuten Unruhe, nicht zwingend fallende Kurse." })}
+      ${spr.length ? panel({ code: "SPR", titel: "Kreditspreads und Finanzbedingungen", sub: "Aufschlag von Unternehmensanleihen und Stress-Indizes der US-Notenbanken", breite: "w6", body: tab(spr) + `<p class="n" style="margin-top:8px">${spr.map(p => `${esc(p.name)}: ${esc(p.beschreibung || "")}`).join("<br>")}</p>`, fuss: "Quellenangabe: Moody's, Federal Reserve Bank of Chicago und of St. Louis, über FRED (Federal Reserve Bank of St. Louis). Die ICE-BofA-Spreads (High Yield, Euro) fehlen bewusst, ihre Weitergabe ist ohne Erlaubnis von ICE untersagt. Echte CDS-Kurse sind nicht kostenlos zu bekommen." }) : ""}
       ${panel({ code: "MKT", titel: "Zinsabstand, Währung, Rohstoffe, Krypto", sub: "Stand und Veränderung", breite: "w6", body: tab(rest.filter(p => p.id !== "ciss")), fuss: "Zinsabstand = Rendite 10 Jahre minus 2 Jahre; negativ heißt invertierte Kurve (siehe Zinskurven). Gold ist damit nicht mehr offen." })}
       ${panel({ code: "VOL", titel: "Realisierte Volatilität der Indizes", sub: "annualisiert, aus Wochenschlusskursen (13, 26 und 52 Wochen)", body: volTabelle(), fuss: "Standardabweichung der logarithmierten Wochenrenditen mal Wurzel 52. Farbe: je dunkler, desto unruhiger. Die Spalte rechts vergleicht die letzten 13 Wochen mit dem Jahr." })}</div>`;
   }

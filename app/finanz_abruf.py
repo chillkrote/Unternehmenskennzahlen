@@ -1,6 +1,7 @@
 """Börse & Finanzen, Marktpuls, Zinsstrukturkurven und Währungen: erzeugt data/finanz.json.
 
 Alles kostenlos und ohne Schlüssel:
+ - Kreditspreads: Baa- und Aaa-Spread (Moody's), Kreditbedingungen (Chicago Fed) und Finanzstress (St. Louis Fed) über FRED, nur mit Quellenangabe.
  - puls: Stimmungs- und Preisgrößen (VIX, VXN, OVX, GVZ, MOVE, Gold, Silber, Brent, Dollar-Index, Bitcoin, Ether) über
    Yahoo Finance (yfinance, wie Bereich BÖR), dazu EUR/USD (EZB), Zinsabstand 2J/10J der USA (US-Treasury),
    Zinsabstand 2J/10J im Euroraum und EZB-Stressindex CISS.
@@ -41,6 +42,13 @@ NAMEN = {"USD": "US-Dollar", "JPY": "Japanischer Yen", "BGN": "Bulgarischer Lew"
          "ILS": "Israelischer Schekel", "INR": "Indische Rupie", "KRW": "Südkoreanischer Won", "MXN": "Mexikanischer Peso", "MYR": "Malaysischer Ringgit",
          "NZD": "Neuseeland-Dollar", "PHP": "Philippinischer Peso", "SGD": "Singapur-Dollar", "THB": "Thailändischer Baht", "ZAR": "Südafrikanischer Rand",
          "HRK": "Kroatische Kuna"}
+# Kreditspreads und Finanzbedingungen über FRED (nur Reihen mit dem Vermerk "copyrighted: citation required", also mit Quellenangabe nutzbar).
+# Die ICE-BofA-Reihen (High Yield, Investment Grade, Euro) sind bewusst nicht dabei: Ihre Weitergabe ist ohne Erlaubnis von ICE untersagt.
+FRED = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={}&cosd={}-01-01"
+FRED_SPREADS = [("baa10y", "Kreditspread Baa (Moody's)", "BAA10Y", "Rendite Baa-Unternehmensanleihen (Moody's) minus 10-jährige US-Treasury-Rendite", "Moody's über FRED"),
+                ("aaa10y", "Kreditspread Aaa (Moody's)", "AAA10Y", "Rendite Aaa-Unternehmensanleihen (Moody's) minus 10-jährige US-Treasury-Rendite", "Moody's über FRED"),
+                ("nfci_kredit", "Kreditbedingungen USA (Chicago Fed)", "NFCICREDIT", "Kredit-Teilindex des Chicago Fed National Financial Conditions Index, wöchentlich; über 0 = strenger als im Schnitt", "Federal Reserve Bank of Chicago über FRED"),
+                ("stlfsi", "Finanzstress USA (St. Louis Fed)", "STLFSI4", "St. Louis Fed Financial Stress Index, wöchentlich; über 0 = Stress über dem Schnitt", "Federal Reserve Bank of St. Louis über FRED")]
 EZB_LZ = [("SR_3M", .25, "3 M"), ("SR_6M", .5, "6 M"), ("SR_1Y", 1, "1 J"), ("SR_2Y", 2, "2 J"), ("SR_3Y", 3, "3 J"), ("SR_5Y", 5, "5 J"),
           ("SR_7Y", 7, "7 J"), ("SR_10Y", 10, "10 J"), ("SR_15Y", 15, "15 J"), ("SR_20Y", 20, "20 J"), ("SR_30Y", 30, "30 J")]
 US_LZ = [("3 Mo", .25, "3 M"), ("6 Mo", .5, "6 M"), ("1 Yr", 1, "1 J"), ("2 Yr", 2, "2 J"), ("3 Yr", 3, "3 J"), ("5 Yr", 5, "5 J"),
@@ -117,6 +125,29 @@ def yahoo(alt):
                     "r1m": aend(reihe, 30), "ytd": ytd(reihe), "r1j": aend(reihe, 365), "verlauf": kurzreihe(reihe[-260:]),
                     "quelle": "Yahoo Finance", "url": f"https://finance.yahoo.com/quote/{sym}"})
         time.sleep(.5)
+    return out
+
+
+def fred_spreads(alt):
+    out = []
+    alt = {x["id"]: x for x in alt}
+    for sid, name, fid, beschr, quelle in FRED_SPREADS:
+        try:
+            z = [l.split(",") for l in text(FRED.format(fid, date.today().year - 5)).strip().splitlines()[1:]]
+            reihe = [(d, float(v)) for d, v in z if v not in ("", ".")]
+            if len(reihe) < 20:
+                raise ValueError("zu wenige Werte")
+        except Exception as e:  # noqa: BLE001
+            print("  FRED", fid, e, "- alter Stand bleibt" if sid in alt else "", file=sys.stderr)
+            if sid in alt:
+                out.append(alt[sid])
+            continue
+        d, v = reihe[-1]
+        a1, a2 = bis(reihe, vor(d, 30)), bis(reihe, vor(d, 365))
+        out.append({"id": sid, "name": name, "beschreibung": beschr, "gruppe": "spread", "einheit": "Prozentpunkte" if sid in ("baa10y", "aaa10y") else "Index", "wert": round(v, 3),
+                    "datum": d, "r1t": None, "r1m": round(v - a1[1], 3) if a1 else None, "ytd": None, "r1j": round(v - a2[1], 3) if a2 else None, "diff": True,
+                    "verlauf": kurzreihe(reihe[-1300:]), "quelle": f"{quelle}, Quellenangabe erforderlich", "url": f"https://fred.stlouisfed.org/series/{fid}"})
+        time.sleep(1)
     return out
 
 
@@ -230,13 +261,16 @@ def main():
     alt = json.loads(ZIEL.read_text()) if ZIEL.exists() else {}
     out = {"abruf": date.today().isoformat(), "puls": [], "kurven": {}, "waehrungen": {}}
     for kurz, f, leer in (("puls", lambda: yahoo(alt.get("puls", [])), []), ("euro", ezb_kurve, None), ("usa", us_kurve, None),
-                          ("ciss", ciss, None), ("waehrungen", waehrungen, {})):
+                          ("ciss", ciss, None), ("spreads", lambda: fred_spreads([x for x in alt.get("puls", []) if x.get("gruppe") == "spread"]), None),
+                          ("waehrungen", waehrungen, {})):
         try:
             erg = f()
             if kurz == "euro" or kurz == "usa":
                 out["kurven"][kurz] = erg
             elif kurz == "ciss":
                 out["puls"].append(erg)
+            elif kurz == "spreads":
+                out["puls"] += erg
             elif kurz == "puls":
                 out["puls"] = erg + out["puls"]
             else:
@@ -249,6 +283,8 @@ def main():
                     out["kurven"][kurz] = alt["kurven"][kurz]
             elif kurz == "ciss":
                 out["puls"] += [x for x in alt.get("puls", []) if x["id"] == "ciss"]
+            elif kurz == "spreads":
+                out["puls"] += [x for x in alt.get("puls", []) if x.get("gruppe") == "spread"]
             elif kurz == "puls":
                 out["puls"] = alt.get("puls", []) + out["puls"]
             else:
@@ -271,7 +307,7 @@ def main():
                             "r1j": round(1 / (1 + usd["r1j"]) - 1, 5) if usd["r1j"] is not None else None, "verlauf": m[-60:],
                             "quelle": "EZB-Referenzkurs", "url": "https://data.ecb.europa.eu/data/datasets/EXR"})
     out["quellen"] = {"puls": "Yahoo Finance (inoffizielle Schnittstelle, ohne Gewähr), EZB, US-Finanzministerium",
-                      "nicht_frei": "VSTOXX und VDAX sind bei Yahoo nicht frei verfügbar; Credit Spreads (ICE BofA über FRED) siehe Konzept."}
+                      "nicht_frei": "VSTOXX und VDAX sind bei Yahoo nicht frei verfügbar; die ICE-BofA-Spreads (High Yield, Investment Grade, Euro) dürfen ohne Erlaubnis von ICE nicht weitergegeben werden und fehlen deshalb."}
     ZIEL.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")))
     print(f"{ZIEL}: {len(out['puls'])} Marktgrößen, {len(out['kurven'])} Kurven, {len(out['waehrungen'])} Währungen", file=sys.stderr)
 

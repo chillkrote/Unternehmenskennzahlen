@@ -29,13 +29,13 @@ OECD = ("https://sdmx.oecd.org/public/rest/data/OECD.SDD.STES,DSD_STES@DF_FINMAR
         "&dimensionAtObservation=AllDimensions&format=csvfile")
 EZB = "https://data-api.ecb.europa.eu/service/data/EXR/D.{}.EUR.SP00.A?startPeriod={}&format=csvdata"
 WAEHRUNGEN = ["USD", "GBP", "JPY", "CNY", "CHF", "INR", "BRL", "KRW", "AUD", "CAD", "SEK", "NOK", "PLN", "TRY", "ZAR", "MXN", "HKD", "SGD"]
-FRED = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={}"
+FRED = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={}&cosd={}"
 ROHSTOFFE = [("DCOILBRENTEU", "Rohöl Brent", "USD je Barrel"), ("DCOILWTICO", "Rohöl WTI", "USD je Barrel"),
              ("DHHNGSP", "Erdgas Henry Hub", "USD je MMBtu"), ("PCOPPUSDM", "Kupfer", "USD je Tonne"),
              ("PWHEAMTUSDM", "Weizen", "USD je Tonne")]
 
 
-def text(url, versuche=4):
+def text(url, versuche=5):
     for i in range(versuche):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
@@ -44,7 +44,7 @@ def text(url, versuche=4):
             if i == versuche - 1:
                 raise
             print("  Wiederholung", url[:90], e, file=sys.stderr)
-            time.sleep(5 * (i + 1))
+            time.sleep(5 * 2 ** i)  # Backoff 5, 10, 20, 40 s
 
 
 def zeilen(url):
@@ -101,13 +101,18 @@ def devisen(start):
     return out
 
 
-def rohstoffe():
+def rohstoffe(alt=()):
+    """Eine Reihe, die nicht abrufbar ist, behält ihren alten Stand, statt zu fehlen."""
     out = []
+    alt = {x["id"]: x for x in alt}
+    seit = f"{date.today().year - 6}-01-01"
     for sid, name, einheit in ROHSTOFFE:
         try:
-            z = [l.split(",") for l in text(FRED.format(sid)).strip().splitlines()[1:]]
+            z = [l.split(",") for l in text(FRED.format(sid, seit)).strip().splitlines()[1:]]
         except Exception as e:  # noqa: BLE001
-            print("  FRED", sid, e, file=sys.stderr)
+            print("  FRED", sid, e, "- alter Stand bleibt" if sid in alt else "", file=sys.stderr)
+            if sid in alt:
+                out.append(alt[sid])
             continue
         w = [(d, float(v)) for d, v in z if v not in ("", ".")]
         if not w:
@@ -136,9 +141,12 @@ def main():
                "devisen": {"name": "EZB, Euro-Referenzkurse", "url": "https://data.ecb.europa.eu/data/datasets/EXR"},
                "rohstoffe": {"name": "FRED (EIA-Ölpreise und Erdgas, IMF-Rohstoffpreise)", "url": "https://fred.stlouisfed.org/"}}}
     for kurz, f in (("leitzins", lambda: leitzinsen(start + "-01")), ("rendite10", lambda: renditen(start + "-01", a3)),
-                    ("devisen", lambda: devisen(f"{date.today().year - 1}-01-01")), ("rohstoffe", rohstoffe)):
+                    ("devisen", lambda: devisen(f"{date.today().year - 1}-01-01")), ("rohstoffe", lambda: rohstoffe(alt.get("rohstoffe", [])))):
         try:
             out[kurz] = f()
+            if not out[kurz] and alt.get(kurz):
+                print(f"{kurz} leer, alter Stand bleibt", file=sys.stderr)
+                out[kurz] = alt[kurz]
             print(f"  {kurz}: {len(out[kurz])}", file=sys.stderr)
         except Exception as e:  # noqa: BLE001
             print(f"{kurz} nicht abrufbar, alter Stand bleibt:", e, file=sys.stderr)

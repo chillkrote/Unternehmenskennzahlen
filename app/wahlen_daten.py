@@ -19,7 +19,7 @@ Format je Wahl (Listen statt Objekten, damit die Datei klein bleibt):
     vor: { datum }, einheiten: [{ id, name, einzahl, art, geo, werte: { schlüssel: { n, s: {stimmart: [[partei, stimmen, prozent, vor]]}, wb, w, bet } } }],
     quelle: { name, url, lizenz } }
 
-Aufruf:  pip install pyshp shapely pyproj requests
+Aufruf:  pip install pyshp shapely pyproj
          python3 app/wahlen_daten.py                 (lädt ew24 kerg2.csv und VG1000-Kreise, falls nicht vorhanden)
          python3 app/wahlen_daten.py --ohne-abruf    (nur vorhandene Dateien)
 """
@@ -29,8 +29,37 @@ import io
 import json
 import re
 import zipfile
+import time
+import urllib.parse
+import urllib.request
 from datetime import date
 from pathlib import Path
+
+
+class _Antwort:
+    def __init__(self, content):
+        self.content = content
+
+    def raise_for_status(self):
+        pass  # urllib wirft bei HTTP-Fehlern selbst
+
+    def json(self):
+        return json.loads(self.content.decode("utf-8-sig"))
+
+
+def _http_get(url, params=None, timeout=300, versuche=4):
+    """Ersatz für requests.get (nur urllib, im Workflow ist requests nicht installiert), mit Wiederholung und Backoff."""
+    if params:
+        url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
+    for i in range(versuche):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Unternehmenskennzahlen/1.0"}), timeout=timeout) as r:
+                return _Antwort(r.read())
+        except Exception:  # noqa: BLE001
+            if i == versuche - 1:
+                raise
+            time.sleep(5 * 2 ** i)
+
 
 HIER = Path(__file__).resolve().parent
 QUELLEN = HIER.parent / "wahlen" / "quellen"
@@ -524,12 +553,11 @@ def lwk_nw_flaechen(zip_pfad):
 # ---------------------------------------------------------------- Vereinigtes Königreich: Unterhauswahl 2024 je Wahlkreis
 def gb_laden(abruf):
     """Kandidaturen der Unterhauswahlen 2024 und 2019 (fiktiv, Grenzen 2024) vom UK Parliament, gekürzt auf die nötigen Spalten."""
-    import requests
     for nr, datei in GB_GE.values():
         ziel = QUELLEN / datei
         if ziel.exists() or not abruf:
             continue
-        r = requests.get(GB_ERG.format(nr), timeout=300)
+        r = _http_get(GB_ERG.format(nr), timeout=300)
         r.raise_for_status()
         zeilen = list(csv.DictReader(io.StringIO(r.content.decode("utf-8-sig"))))
         with ziel.open("w", newline="", encoding="utf-8") as f:
@@ -537,7 +565,7 @@ def gb_laden(abruf):
             w.writeheader()
             w.writerows(zeilen)
     if not WK_GB_GEO.exists() and abruf:
-        r = requests.get(GB_GRENZEN, params={"where": "1=1", "outFields": "PCON24CD,PCON24NM", "outSR": 4326, "f": "geojson", "resultRecordCount": 2000}, timeout=300)
+        r = _http_get(GB_GRENZEN, params={"where": "1=1", "outFields": "PCON24CD,PCON24NM", "outSR": 4326, "f": "geojson", "resultRecordCount": 2000}, timeout=300)
         r.raise_for_status()
         fc = r.json()
 
@@ -898,12 +926,11 @@ def au_ge25():
 # ---------------------------------------------------------------- Schweiz: Nationalrat 22.10.2023, Wahlkreis = Kanton (BFS)
 def ch_laden(abruf):
     """Parteiergebnisse und Wahlbeteiligung des BFS; gespeichert nur Ebene Schweiz und Kantone (die Gemeindeebene hätte 8 MB)."""
-    import requests
     for art, datei in (("parteien", "ch_nrw23_parteien.json"), ("wahlbeteiligung", "ch_nrw23_beteiligung.json")):
         ziel = QUELLEN / datei
         if ziel.exists() or not abruf:
             continue
-        r = requests.get(CH_NRW23.format(art), timeout=300)
+        r = _http_get(CH_NRW23.format(art), timeout=300)
         r.raise_for_status()
         d = r.json()
         _ch_gemeinden_schreiben(art, d.pop("level_gemeinden", None) or [])
@@ -1357,9 +1384,8 @@ def no_laden(abruf):
     ziel = QUELLEN / "no_st25.json"
     if ziel.exists() or not abruf:
         return
-    import requests
-    land = requests.get(NO_ST25, timeout=120).json()
-    kreise = [requests.get("https://valgresultat.no/api" + r["href"], timeout=120).json() for r in land["_links"]["related"]]
+    land = _http_get(NO_ST25, timeout=120).json()
+    kreise = [_http_get("https://valgresultat.no/api" + r["href"], timeout=120).json() for r in land["_links"]["related"]]
     knapp = lambda d: {k: d[k] for k in ("id", "antallsb", "mandater", "stemmer", "frammote", "partier")}
     ziel.write_text(json.dumps({"land": knapp(land), "kreise": [knapp(k) for k in kreise]}, ensure_ascii=False, indent=0), encoding="utf-8")
 
@@ -1524,9 +1550,8 @@ def kommunal(ko):
 def laden(url, pfad, abruf):
     if pfad.exists() or not abruf:
         return pfad.exists()
-    import requests
     pfad.parent.mkdir(parents=True, exist_ok=True)
-    r = requests.get(url, timeout=300)
+    r = _http_get(url, timeout=300)
     r.raise_for_status()
     pfad.write_bytes(r.content)
     return True

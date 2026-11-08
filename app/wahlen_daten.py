@@ -1355,7 +1355,8 @@ US_PRAES_STAAT = QUELLEN / "us_praesident_staaten_1976_2024_medsl.csv"      # ME
 US_PRAES_KREIS = QUELLEN / "us_praesident_kreise_2000_2024_medsl.csv"       # MEDSL "County Presidential Returns 2000-2024" (doi:10.7910/DVN/VOQCHQ), CC0 1.0, Gästebuch-Download
 US_KREISE_GEO = HIER / "geo" / "kreise_us.geojson"
 US_KREISE = "https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_county_5m.zip"    # Census Bureau, gemeinfrei; Connecticut noch mit den alten Countys wie in den Wahldaten
-US_PRAES_JAHRE = {"2024": "2024-11-05", "2020": "2020-11-03", "2016": "2016-11-08"}
+US_PRAES_JAHRE = {"2024": "2024-11-05", "2020": "2020-11-03", "2016": "2016-11-08", "2012": "2012-11-06", "2008": "2008-11-04", "2004": "2004-11-02",
+                  "2000": "2000-11-07", "1996": "1996-11-05", "1992": "1992-11-03", "1988": "1988-11-08", "1984": "1984-11-06", "1980": "1980-11-04", "1976": "1976-11-02"}
 
 
 def us_kreise_laden(abruf):
@@ -1412,59 +1413,163 @@ def _us_pr_wert(name, kand):
     return {"n": name, "s": {"s": anteile([x for x in pt.items() if x[1]], gueltig)}, "w": gueltig, "direkt": {"name": _us_pr_name(nm), "partei": partei}}
 
 
-def us_praesident(jahr):
-    """Präsidentschaftswahl: Wert je Bundesstaat (Wahlleute werden je Staat nach dem Mehrheitsprinzip vergeben, Maine und Nebraska teilen) und je County (Zählgebiet)."""
-    if not US_PRAES_STAAT.exists():
-        return None
-    staaten, kreise, ges = {}, {}, {}
+US_HOUSE_ALLE = QUELLEN / "us_house_1976_2024_medsl.csv"
+US_EV_ERA = [(1976, 1980), (1984, 1988), (1992, 1996, 2000), (2004, 2008), (2012, 2016, 2020), (2024,)]      # Zuteilung der Sitze nach der Volkszählung
+# Maine und Nebraska vergeben je einen Wahlmann pro Kongresswahlbezirk; abweichende Bezirke laut Ergebnis der Staaten (Bundesregister der Wahlleute)
+US_EV_GETEILT = {("NE", "2008"): [("NE-02", "Demokraten")], ("ME", "2016"): [("ME-02", "Republikaner")], ("ME", "2020"): [("ME-02", "Republikaner")],
+                 ("NE", "2020"): [("NE-02", "Demokraten")], ("ME", "2024"): [("ME-02", "Republikaner")], ("NE", "2024"): [("NE-02", "Demokraten")],
+                 ("ME", "2012"): [], ("NE", "2012"): []}
+_US_EV_CACHE = {}
+
+
+def us_wahlleute():
+    """Wahlleute je Staat und Wahljahr = Zahl der Kongresswahlbezirke + 2 (Senatoren); Washington D.C. immer 3.
+    Quelle: MEDSL House 1976-2024; fehlen in einem Jahr Bezirke (1996), gilt die Zahl des Jahres derselben Zuteilung."""
+    if _US_EV_CACHE or not US_HOUSE_ALLE.exists():
+        return _US_EV_CACHE
+    d = {}
+    for z in csv.DictReader(US_HOUSE_ALLE.open(encoding="utf-8")):
+        if z["stage"] == "GEN" and z["state_po"] != "DC":
+            d.setdefault((int(z["year"]), z["state_po"]), set()).add(z["district"])
+    for era in US_EV_ERA:
+        ok = [j for j in era if sum(len(v) for (y, _), v in d.items() if y == j) == 435]
+        if not ok:
+            continue
+        for j in era:
+            for (y, po), v in list(d.items()):
+                if y == ok[0]:
+                    _US_EV_CACHE[(str(j), po)] = len(v) + 2
+            _US_EV_CACHE[(str(j), "DC")] = 3
+    return _US_EV_CACHE
+
+
+def _us_pr_roh(jahr):
+    """Staatsergebnisse eines Jahres: {Kürzel: {n, k: {Kandidat: [Stimmen, Partei]}}}"""
     st_k = {}
     for z in csv.DictReader(US_PRAES_STAAT.open(encoding="utf-8")):
-        if z["year"] != jahr or z["writein"] == "True":
+        if z["year"] != jahr or (z["writein"] == "True" and z["party_simplified"] not in ("DEMOCRAT", "REPUBLICAN", "LIBERTARIAN")):      # D.C. 2020 trägt die Kennzeichnung fälschlich auch bei Biden/Trump
             continue
         k = st_k.setdefault(z["state_po"], {"n": z["state"].title(), "k": {}})
         c = k["k"].setdefault(z["candidate"], [0, _us_pr_partei(z["party_simplified"])])
         c[0] += _zahl_na(z["candidatevotes"])
         if z["party_simplified"] in ("DEMOCRAT", "REPUBLICAN"):
             c[1] = _us_pr_partei(z["party_simplified"])        # Fusionslisten (z. B. Working Families) zählen zur großen Partei des Kandidaten
-    siege = {}
+    return st_k
+
+
+def _us_pr_kreis_roh(jahr):
+    roh = {}
+    for z in csv.DictReader(US_PRAES_KREIS.open(encoding="utf-8")):
+        if z["year"] != jahr or not z["county_fips"].isdigit() or z["state_po"] in ("AK",):
+            continue
+        fips = z["county_fips"].zfill(5)
+        R = roh.setdefault(fips, {"n": z["county_name"].title() + ", " + z["state_po"], "modi": {}})
+        c = R["modi"].setdefault(z["mode"], {}).setdefault(z["candidate"], [0, _us_pr_partei(z["party"])])
+        c[0] += _zahl_na(z["candidatevotes"])
+        if z["party"] in ("DEMOCRAT", "REPUBLICAN"):
+            c[1] = _us_pr_partei(z["party"])
+    out = {}
+    for fips, R in roh.items():
+        modi = R["modi"].get("TOTAL") or R["modi"].get("") or {}
+        if not modi:
+            for m in R["modi"].values():
+                for kk, v in m.items():
+                    modi.setdefault(kk, [0, v[1]])[0] += v[0]
+        out[fips] = {"n": R["n"], "k": modi}
+    return out
+
+
+def _us_pr_parteien(kand):
+    pt = {}
+    for st, p in kand.values():
+        pt[p] = pt.get(p, 0) + st
+    return pt
+
+
+def _us_pr_mit_vor(w, vorkand):
+    """Veränderung der Stimmenanteile (Swing) gegenüber der vorigen Wahl im selben Gebiet eintragen."""
+    if not w or not vorkand:
+        return w
+    pv = _us_pr_parteien(vorkand)
+    t = sum(pv.values())
+    if t:
+        for x in w["s"]["s"]:
+            x[3] = r1(pv[x[0]] / t * 100) if x[0] in pv else None
+    return w
+
+
+def us_praesident(jahr):
+    """Präsidentschaftswahl: Wert je Bundesstaat mit Wahlleuten (Mehrheitsprinzip; Maine und Nebraska teilen nach Wahlbezirken) und je County (Zählgebiet, ab 2000),
+    jeweils mit Veränderung der Stimmenanteile zur vorigen Wahl; landesweit Wahlleute mit 270er-Mehrheit."""
+    if not US_PRAES_STAAT.exists():
+        return None
+    vj = str(int(jahr) - 4)
+    st_k = _us_pr_roh(jahr)
+    st_v = _us_pr_roh(vj) if int(jahr) > 1976 else {}
+    ev, ev_v = us_wahlleute(), {}
+    staaten, kreise, ges, ges_v = {}, {}, {}, {}
+    sitze, sitze_v = {}, {}
     for po, k in st_k.items():
         w = _us_pr_wert(k["n"], k["k"])
-        if w:
-            staaten["US-" + po] = w
-            siege[w["direkt"]["partei"]] = siege.get(w["direkt"]["partei"], 0) + 1
-            for p, a in ((x[0], x[1]) for x in w["s"]["s"]):
-                ges[p] = ges.get(p, 0) + a
-    if US_PRAES_KREIS.exists():
-        roh = {}
-        for z in csv.DictReader(US_PRAES_KREIS.open(encoding="utf-8")):
-            if z["year"] != jahr or not z["county_fips"].isdigit() or z["state_po"] in ("AK",):
-                continue
-            fips = z["county_fips"].zfill(5)
-            R = roh.setdefault(fips, {"n": z["county_name"].title() + ", " + z["state_po"], "modi": {}})
-            c = R["modi"].setdefault(z["mode"], {}).setdefault(z["candidate"], [0, _us_pr_partei(z["party"])])
-            c[0] += _zahl_na(z["candidatevotes"])
-            if z["party"] in ("DEMOCRAT", "REPUBLICAN"):
-                c[1] = _us_pr_partei(z["party"])
-        for fips, R in roh.items():
-            modi = R["modi"].get("TOTAL") or R["modi"].get("") or {}
-            if not modi:
-                for m in R["modi"].values():
-                    for kk, v in m.items():
-                        modi.setdefault(kk, [0, v[1]])[0] += v[0]
-            w = _us_pr_wert(R["n"], modi)
+        if not w:
+            continue
+        _us_pr_mit_vor(w, (st_v.get(po) or {}).get("k"))
+        sieg = w["direkt"]["partei"]
+        n = ev.get((jahr, po))
+        if n:
+            teile = {sieg: n}
+            for _bez, par in US_EV_GETEILT.get((po, jahr), []):
+                teile[sieg] -= 1
+                teile[par] = teile.get(par, 0) + 1
+            w["sitze"] = [[p, c, None] for p, c in sorted(teile.items(), key=lambda x: -x[1]) if c]
+            w["sitze_n"] = n
+            for p, c in teile.items():
+                sitze[p] = sitze.get(p, 0) + c
+        # Wahlleute der vorigen Wahl im Gebiet, soweit das Sieger-Land gleich ist (für die Bilanz der Verschiebung)
+        vk = (st_v.get(po) or {}).get("k")
+        nv = ev.get((vj, po))
+        if vk and nv:
+            vw = _us_pr_wert("", vk)
+            if vw:
+                sieg_v = vw["direkt"]["partei"]
+                teile_v = {sieg_v: nv}
+                for _bez, par in US_EV_GETEILT.get((po, vj), []):
+                    teile_v[sieg_v] -= 1
+                    teile_v[par] = teile_v.get(par, 0) + 1
+                for p, c in teile_v.items():
+                    sitze_v[p] = sitze_v.get(p, 0) + c
+        staaten["US-" + po] = w
+        for p, a in ((x[0], x[1]) for x in w["s"]["s"]):
+            ges[p] = ges.get(p, 0) + a
+    for po, k in st_v.items():
+        for p, a in _us_pr_parteien(k["k"]).items():
+            ges_v[p] = ges_v.get(p, 0) + a
+    if US_PRAES_KREIS.exists() and int(jahr) >= 2000:
+        kv = _us_pr_kreis_roh(vj) if int(jahr) > 2000 else {}
+        for fips, R in _us_pr_kreis_roh(jahr).items():
+            w = _us_pr_wert(R["n"], R["k"])
             if w:
-                kreise[fips] = w
-    g = {"s": {"s": anteile(list(ges.items()), sum(ges.values()))}, "w": sum(ges.values()),
-         "sitze_hinweis": "Landesweit = Summe der Staatsergebnisse; entschieden wird über die Wahlleute der Bundesstaaten"}
+                kreise[fips] = _us_pr_mit_vor(w, (kv.get(fips) or {}).get("k"))
+    gs = anteile(list(ges.items()), sum(ges.values()))
+    if ges_v:
+        tv = sum(ges_v.values())
+        for x in gs:
+            x[3] = r1(ges_v[x[0]] / tv * 100) if x[0] in ges_v else None
+    g = {"s": {"s": gs}, "w": sum(ges.values()),
+         "sitze": [[p, c, sitze_v.get(p) if sitze_v else None] for p, c in sorted(sitze.items(), key=lambda x: -x[1])], "sitze_n": sum(sitze.values()),
+         "sitze_hinweis": "Sitze = Wahlleute (Mehrheit 270 von 538); Stimmenanteile = Summe der Staatsergebnisse; abweichende Stimmabgabe einzelner Wahlleute nicht berücksichtigt"}
     einheiten = [{"id": "staat", "name": "Bundesstaaten (Wahlleute)", "einzahl": "Bundesstaat", "art": "wahlkreis", "geo": "gliedstaaten", "werte": staaten}]
     if kreise:
         einheiten.append({"id": "kreis", "name": "Countys", "einzahl": "County", "art": "zaehlgebiet", "geo": "kreise-us", "werte": kreise})
-    return {"id": f"US-praesident-{jahr}", "e": 1, "land": "US", "gebiet": "US", "geo": "gliedstaaten", "name": "", "titel": "Präsidentschaftswahl", "gremium": "President",
-            "kammer": "praesident", "datum": US_PRAES_JAHRE[jahr], "status": "endgültig", "g": g, "farben": US_FARBEN, "stimmarten": [["s", "Stimmen"]],
-            "system": "Indirekte Wahl: Die Wähler bestimmen in jedem Bundesstaat die Wahlleute (in Maine und Nebraska teilweise nach Wahlbezirken); gewählt ist, wer 270 von 538 Wahlleuten erhält. Die Countys sind nur Zählgebiete.",
-            "einheiten": einheiten,
-            "quelle": {"name": "MIT Election Data and Science Lab, U.S. President 1976-2024 und County Presidential Returns 2000-2024 (Harvard Dataverse); Grenzen: U.S. Census Bureau",
-                       "url": "https://dataverse.harvard.edu/dataverse/medsl", "lizenz": "CC0 1.0"}}
+    out = {"id": f"US-praesident-{jahr}", "e": 1, "land": "US", "gebiet": "US", "geo": "gliedstaaten", "name": "", "titel": "Präsidentschaftswahl", "gremium": "President",
+           "kammer": "praesident", "datum": US_PRAES_JAHRE[jahr], "status": "endgültig", "g": g, "farben": US_FARBEN, "stimmarten": [["s", "Stimmen"]],
+           "system": "Indirekte Wahl: Die Wähler bestimmen in jedem Bundesstaat die Wahlleute (in Maine und Nebraska teilweise nach Wahlbezirken); gewählt ist, wer 270 von 538 Wahlleuten erhält. Die Countys sind nur Zählgebiete.",
+           "einheiten": einheiten,
+           "quelle": {"name": "MIT Election Data and Science Lab, U.S. President 1976-2024, County Presidential Returns 2000-2024 und U.S. House 1976-2024 (Wahlleute = Wahlbezirke + 2), Harvard Dataverse; Grenzen: U.S. Census Bureau",
+                      "url": "https://dataverse.harvard.edu/dataverse/medsl", "lizenz": "CC0 1.0"}}
+    if int(jahr) > 1976:
+        out["vor"] = {"datum": US_PRAES_JAHRE[vj], "titel": f"Präsidentschaftswahl {vj}"}
+    return out
 
 
 # ---------------------------------------------------------------- USA: Senat 8. November 2022 je Bundesstaat (MIT Election Data + Science Lab)

@@ -62,16 +62,18 @@ jobs:
         run: python3 app/kurse_historie.py | tee /tmp/woche.log
       - name: Indizes und Weltunternehmen (BÖR)
         if: env.WAS == 'boerse' || env.WAS == 'beides'
-        run: python3 app/boersen_abruf.py | tee /tmp/boerse.log
+        run: |
+          python3 app/boersen_abruf.py | tee /tmp/boerse.log
+          python3 app/finanz_abruf.py 2>&1 | tee /tmp/finanz.log
       - name: Zusammenfassung
         if: always()
         continue-on-error: true
         run: |
           {
             echo "### Börsendaten ($WAS)"
-            for f in /tmp/markt.log /tmp/woche.log /tmp/boerse.log; do
+            for f in /tmp/markt.log /tmp/woche.log /tmp/boerse.log /tmp/finanz.log; do
               [ -f "$f" ] || continue
-              echo '```'; grep -E "Banken mit Kursen|Ticker,|Indizes,|::warning::|Fehler" "$f" | head -5 || true; echo '```'
+              echo '```'; grep -E "Banken mit Kursen|Ticker,|Indizes,|Marktgrößen|::warning::|Fehler" "$f" | head -5 || true; echo '```'
               echo "<details><summary>Ausfälle</summary>"; echo; echo '```'; grep -E "^   " "$f" | head -60 || true; echo '```'; echo "</details>"
             done
           } >> "$GITHUB_STEP_SUMMARY"
@@ -79,7 +81,7 @@ jobs:
       - name: Änderungen pushen
         id: push
         if: github.ref == 'refs/heads/main'
-        run: .github/scripts/daten_pushen.sh "Börsendaten $(date -u +%Y-%m-%d) ($WAS)" app/data/markt.json app/data/kurse_woche.json app/data/boerse.json
+        run: .github/scripts/daten_pushen.sh "Börsendaten $(date -u +%Y-%m-%d) ($WAS)" app/data/markt.json app/data/kurse_woche.json app/data/boerse.json app/data/finanz.json
       - name: Terminal neu bauen lassen
         if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"

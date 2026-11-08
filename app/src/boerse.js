@@ -91,7 +91,9 @@ const BOE = (() => {
     if (!BD) return keineDaten();
     const wi = BD.indizes.filter(x => x.gruppe === "Welt" && x.kurs != null && !/VIX|ETF/.test(x.name)).slice(0, 4);
     const lei = ["^GDAXI", "^GSPC", "^N225", "^HSI", "^FTSE", "^FCHI", "^BSESN", "^BVSP"].map(id => IND[id]).filter(Boolean);
+    const puls = typeof FNZ !== "undefined" && FNZ.da() ? panel({ code: "PLS", titel: "Marktpuls", sub: "Angst, Zinsabstand, Gold, Öl, Euro, Bitcoin", body: FNZ.leiste(), fuss: FNZ.leisteFuss() + " Mehr unter F8 bis F11." }) : "";
     return `<div class="grid">
+      ${puls}
       ${panel({ code: "BÖR", titel: "Leitindizes", sub: "Stand, Tagesveränderung und Verlauf des letzten Jahres", body: `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px">${wi.concat(lei).map(x => kachel(x, "i")).join("")}</div>`, fuss: `Klick auf eine Kachel übernimmt den Index in den Verlauf (F4). Quelle Yahoo Finance, Stand ${datumDe((BD.abruf || "").slice(0, 10))}; Kurse verzögert und ohne Gewähr.` })}
       ${panel({ code: "LND", titel: "Länder seit Jahresbeginn", sub: "Leitindex je Land, Farbe = Veränderung seit Jahresbeginn in Landeswährung", body: laenderKacheln() })}
       ${panel({ code: "TOP", titel: "Indizes: Gewinner und Verlierer", sub: "seit Jahresbeginn", breite: "w6", body: extrem(BD.indizes, "i", "ytd", 6) })}

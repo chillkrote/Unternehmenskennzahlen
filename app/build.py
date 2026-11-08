@@ -62,14 +62,14 @@ def main():
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))
-             .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__BOERSE_JS__", (HIER / "src/boerse.js").read_text())
+             .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__BOERSE_JS__", (HIER / "src/boerse.js").read_text()).replace("__FINANZ_JS__", (HIER / "src/finanz.js").read_text())
              .replace("__BOERSE__", boerse.replace("</", "<\\/")).replace("__VWL__", vroh.replace("</", "<\\/"))
              .replace("__KURSE__", kurse.replace("</", "<\\/")).replace("__KORRELATION_JS__", (HIER / "src/korrelation.js").read_text())
              .replace("__MELDUNGEN_JS__", (HIER / "src/meldungen.js").read_text())
              .replace("__HANDEL_JS__", (HIER / "src/handel.js").read_text()))
     # Handel und Weltdaten (Bereich HDL und Weltkugel): fehlt eine Datei, bleibt der Teil leer
     for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__NEWS__", "news_routen.json"),
-                        ("__BOERSE_WELT__", "boerse_welt.json"), ("__POLITIK__", "politik.json"), ("__DE_LAENDER__", "../geo/de_laender.geojson"),
+                        ("__BOERSE_WELT__", "boerse_welt.json"), ("__FINANZ__", "finanz.json"), ("__POLITIK__", "politik.json"), ("__DE_LAENDER__", "../geo/de_laender.geojson"),
                         ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
         f = HIER / "data" / datei
         inhalt = f.read_text() if f.exists() else "null"

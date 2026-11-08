@@ -25,6 +25,8 @@ Andere Excel-Datei: `python3 app/build.py --excel pfad/zur/datei.xlsx`.
 | `boersen_katalog.json` | Katalog: `indizes` (Name, Land, Gruppe Welt/OECD/Nicht-OECD, Region, Yahoo-Symbole als Kandidaten, `etf` wo nur ein ETF als Stellvertreter frei verfügbar ist) und `unternehmen` (Name, Symbol, Land, Sektor). Neue Einträge nur hier ergänzen |
 | `vwl.py` (Prognosen) | liest `prognosen_institute.csv` (Deutschland), `prognosen_oecd.csv` und `prognosen_international.csv` (Konsensumfragen und Zentralbanken, 21 Länder und Euroraum) in dieselbe Liste; fehlt bei einer Zeile das Datum, gilt der Monat der Runde. Im Terminal (F5) wählt eine Länderliste das Land, Basis und Abgrenzung stehen im Hinweis je Zeile |
 | `src/boerse.js` | Oberfläche des Bereichs BÖR |
+| `finanz_abruf.py` | Marktpuls (VIX, VXN, OVX, GVZ, MOVE, Gold, Silber, Brent, Dollar-Index, Bitcoin, Ether über Yahoo; EZB-Stressindex CISS), Zinsstrukturkurven Euroraum (EZB) und USA (US-Finanzministerium) für heute, vor einem Monat und vor einem Jahr, alle EZB-Währungen über zehn Jahre -> `data/finanz.json`; Workflow „Börsendaten Terminal“ (Lauf `boerse`). Fällt eine Quelle aus, bleibt ihr alter Stand |
+| `src/finanz.js` | Reiter BÖR F8 Marktpuls (Ampel, realisierte Volatilität der Indizes), F9 Zinskurven, F10 Währungen (Kreuzkurse), F11 Sektoren (aus dem Feld `sektor` der Großunternehmen, nach Börsenwert gewichtet); die Marktpuls-Leiste steht auch auf der Weltkugel (Börse) |
 | `src/terminal.html` | Oberfläche (HTML/CSS/JS ohne Bibliotheken, Diagramme als SVG) |
 | `data/banken.json` | erzeugter Datensatz |
 | `dist/bankterminal.html` | erzeugte, eigenständige Seite (lokal öffnen); `bankterminal.fragment.html` ist die Fassung ohne Dokumentgerüst für das Artifact |

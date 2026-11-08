@@ -260,6 +260,10 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#b-verlauf" data-v="b-verlauf"><b>F4</b>Verlauf</a>
       <a class="key" href="#b-quellen" data-v="b-quellen"><b>F5</b>Quellen</a>
       <a class="key" href="#b-zins" data-v="b-zins"><b>F7</b>Zinsen &amp; Devisen</a>
+      <a class="key" href="#b-puls" data-v="b-puls"><b>F8</b>Marktpuls</a>
+      <a class="key" href="#b-kurven" data-v="b-kurven"><b>F9</b>Zinskurven</a>
+      <a class="key" href="#b-waehr" data-v="b-waehr"><b>F10</b>Währungen</a>
+      <a class="key" href="#b-sektoren" data-v="b-sektoren"><b>F11</b>Sektoren</a>
     </nav>
     <nav class="keys" id="keys-u" aria-label="Funktionen">
       <a class="key" href="#u-ueb" data-v="u-ueb"><b>F1</b>Branchenvergleich</a>
@@ -297,6 +301,7 @@ a.brand { color: inherit; text-decoration: none; }
 <script id="routen-daten" type="application/json">__ROUTEN__</script>
 <script id="news-daten" type="application/json">__NEWS__</script>
 <script id="boerse-welt-daten" type="application/json">__BOERSE_WELT__</script>
+<script id="finanz-daten" type="application/json">__FINANZ__</script>
 <script id="politik-daten" type="application/json">__POLITIK__</script>
 <script id="de-laender-geo" type="application/json">__DE_LAENDER__</script>
 <script id="parlamente-daten" type="application/json">__PARLAMENTE__</script>
@@ -310,6 +315,7 @@ __UNTERNEHMEN_JS__
 <script>
 __VWL_JS__
 __BOERSE_JS__
+__FINANZ_JS__
 __MELDUNGEN_JS__
 __HANDEL_JS__
 __KORRELATION_JS__
@@ -1040,7 +1046,7 @@ function tape() {
 /* ---------- Routing & Ereignisse ---------- */
 const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt: viewMkt, ts: viewTs,
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
-  "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(),
+  "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(), "b-puls": () => FNZ.viewPuls(), "b-kurven": () => FNZ.viewKurven(), "b-waehr": () => FNZ.viewWaehr(), "b-sektoren": () => FNZ.viewSektoren(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr(),
   "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "p-kom": () => POL.viewKom(), "b-zins": () => FIN.view() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
@@ -1118,7 +1124,7 @@ function render() {
   if (add) add.addEventListener("change", () => { bankDazu(add.value); });
   UNT.nachRender();
   VWL.nachRender();
-  BOE.nachRender();
+  BOE.nachRender(); FNZ.nachRender();
   KOR.nachRender();
   csvKnoepfe();
   fkInit();
@@ -1148,7 +1154,7 @@ function bankDazu(name) {
 }
 document.addEventListener("click", e => {
   const t = e.target;
-  if (VWL.klick(t) || BOE.klick(t) || UNT.klick(t) || KOR.klick(t) || HDL.klick(t) || POL.klick(t)) return;
+  if (VWL.klick(t) || BOE.klick(t) || FNZ.klick(t) || UNT.klick(t) || KOR.klick(t) || HDL.klick(t) || POL.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }
   else if (t.closest("[data-sy]")) { streuY = t.closest("[data-sy]").dataset.sy; render(); }
@@ -1170,7 +1176,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   const v = e.target.value.trim(), c = v.toLowerCase().replace(/\s*<?go>?$/, "");
   e.target.value = "";
   if (bereich === "b") {
-    const a = { ueb: "b-ueb", indizes: "b-indizes", index: "b-indizes", unt: "b-unternehmen", unternehmen: "b-unternehmen", verlauf: "b-verlauf", quellen: "b-quellen", start: "start", korr: "korr" }[c], k = BOE.finden(v);
+    const a = { ueb: "b-ueb", indizes: "b-indizes", index: "b-indizes", unt: "b-unternehmen", unternehmen: "b-unternehmen", verlauf: "b-verlauf", quellen: "b-quellen", puls: "b-puls", kurven: "b-kurven", waehrung: "b-waehr", sektoren: "b-sektoren", start: "start", korr: "korr" }[c], k = BOE.finden(v);
     if (a) gehe(a); else if (k) { BOE.waehle(k); gehe("b-verlauf"); }
     return;
   }
@@ -1192,7 +1198,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const z = UNT.ziel(v); if (z) gehe(z); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr", F7: "p-kom" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
+  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr", F7: "p-kom" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins", F8: "b-puls", F9: "b-kurven", F10: "b-waehr", F11: "b-sektoren" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });

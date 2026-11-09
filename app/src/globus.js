@@ -81,7 +81,7 @@ const GLOBUS = (() => {
      Börse, Unternehmen und Politik nach den freigegebenen Varianten 1A, 2A, 3A (Robin, 04.11.2026). */
   const FORMEN = [["handel", "Handel", "h-ueb"], ["vwl", "Volkswirtschaft", "v-ueb"], ["boerse", "Börse & Finanzen", "b-ueb"], ["unternehmen", "Unternehmen", "u-ueb"], ["politik", "Politik & Wahlen", "p-ueb"]];
   const ENTWURF = {};
-  const S = { bm: "index", form: "handel", auswahl: [], raum: null, buendnis: null, region: null, polAnsicht: "wahlen", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
+  const S = { bm: "index", gut: null, form: "handel", auswahl: [], raum: null, buendnis: null, region: null, polAnsicht: "wahlen", u1: "anzahl", k1: "top15", netzOffen: false, handelMitNetz: false, stufe: 1, kont: null, kont2: null, nutzer: false, land: null, handel: "beide", nurLand: true, grund: null, offen: [], aktiv: null, z: 10, hover: null, ebenenOffen: false };
   let map = null, klassisch = null, imGlobus = false, hinweisTimer = 0, osmFehler = 0, osmGeladen = false;
 
   /* ----- Unternehmen mit Sitz-Koordinaten -----
@@ -608,6 +608,132 @@ const GLOBUS = (() => {
   function stromAktualisieren() {
     if (!map) return;
     [["st-raum", stromRaumDaten], ["st-x", () => stromNbDaten("export")], ["st-m", () => stromNbDaten("import")]].forEach(([q, f]) => { if (map.getSource(q)) map.getSource(q).setData(f()); });
+  }
+
+  /* ===== Handel: Exporte je Gut (CEPII BACI, gueter_baci.py) und die größten See- und Flughäfen (verkehrsknoten.py) ===== */
+  const GUETER = (d => d && d.laender ? d : null)(roh("gueter-daten"));
+  const VERKEHR = (d => d && d.haefen ? d : null)(roh("verkehr-daten"));
+  const GUT_RAMPE = ["#2a2147", "#4b3a8f", "#7a5bd0", "#b08cf0", "#e6d3ff"];     // violett: Güter-Exportmenge (Grün/Rot bleiben Export/Import vorbehalten)
+  const gutVon = id => GUETER ? GUETER.gruppen.find(g => g.id === id) : null;
+  const gutJahr = () => GUETER ? GUETER.jahre.length - 1 : 0;
+  const gutWert = (iso, id) => { const e = GUETER && GUETER.laender[iso] && GUETER.laender[iso][id]; return e ? e.v[gutJahr()] : null; };
+  const gutMrd = v => v == null ? "–" : v >= 1000 ? f1.format(v / 1000) + " Mrd." : f0.format(v) + " Mio.";
+  function gutRangliste(id) {
+    if (!GUETER) return [];
+    return Object.keys(GUETER.laender).map(iso => [iso, gutWert(iso, id)]).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+  }
+  // Farbe nach Wurzel des Exportwerts (sonst bleibt alles außer den Spitzenreitern dunkel)
+  function gutFarben(id) {
+    const l = gutRangliste(id).filter(([iso]) => NACH_ISO[iso]); if (!l.length) return "rgba(0,0,0,0)";
+    const mx = Math.sqrt(l[0][1]), ex = ["match", ["get", "iso"]];
+    for (const [iso, v] of l) ex.push(iso, GUT_RAMPE[Math.min(4, Math.floor(Math.sqrt(v) / mx * 4.999))]);
+    ex.push("rgba(0,0,0,0)");
+    return ex;
+  }
+  function gutPunkte() {
+    if (!GUETER || !S.gut) return leerFC;
+    const l = gutRangliste(S.gut), welt = (GUETER.welt[S.gut] || {})[GUETER.jahre[gutJahr()]] || 0;
+    return wertFC(l.slice(0, 40).map(([iso, v], i) => { const c = LAENDER_PUNKTE.features.find(f => f.properties.iso === iso); if (!c) return null;
+      return { type: "Feature", geometry: c.geometry, properties: { iso, t: `${landKurz(iso)}\n${gutMrd(v)} USD`, rang: i + 1, anteil: welt ? v / welt : 0 } }; }).filter(Boolean));
+  }
+  ebene({ id: "gueter", name: "Exporte je Gut (Länder eingefärbt)", gruppe: "Handel", an: !!GUETER, geplant: !GUETER, formen: ["handel"],
+    quellen: m => m.addSource("gu-punkte", { type: "geojson", data: gutPunkte() }),
+    schichten: (m, vor) => {
+      schicht("gueter", { id: "gu-flaeche", type: "fill", source: "laender", paint: { "fill-color": S.gut ? gutFarben(S.gut) : "rgba(0,0,0,0)",
+        "fill-opacity": S.gut ? ["interpolate", ["linear"], ["zoom"], 3, .82, 5.5, .3, 7, .08] : 0 } }, vor);
+      schicht("gueter", { id: "gu-text", type: "symbol", source: "gu-punkte", maxzoom: 5.5, layout: { "text-field": ["get", "t"], "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-line-height": 1.15,
+        "text-padding": 3, "symbol-sort-key": ["get", "rang"], "text-optional": true }, paint: { "text-color": "#f1e8ff", "text-halo-color": "#1c1433", "text-halo-width": 1.4 } });
+    } });
+  function gutAnwenden() {
+    if (!map || !map.getLayer("gu-flaeche")) return;
+    map.setPaintProperty("gu-flaeche", "fill-color", S.gut ? gutFarben(S.gut) : "rgba(0,0,0,0)");
+    map.setPaintProperty("gu-flaeche", "fill-opacity", S.gut ? ["interpolate", ["linear"], ["zoom"], 3, .82, 5.5, .3, 7, .08] : 0);
+    if (map.getSource("gu-punkte")) map.getSource("gu-punkte").setData(gutPunkte());
+  }
+  function gutWaehlen(id) { S.gut = S.gut === id ? null : id; gutAnwenden(); seiteZeichnen(); }
+  function gutBlock() {
+    if (!GUETER) return "";
+    const bereiche = [...new Set(GUETER.gruppen.map(g => g.bereich))];
+    const chips = bereiche.map(b => `<div class="gk-chips" style="margin-top:6px"><span class="pct" style="min-width:92px">${esc(b)}</span>${GUETER.gruppen.filter(g => g.bereich === b).map(g => `<button type="button" data-gkgut="${esc(g.id)}" aria-pressed="${S.gut === g.id}">${esc(g.name)}</button>`).join("")}</div>`).join("");
+    let rang = "";
+    if (S.gut) {
+      const g = gutVon(S.gut), l = gutRangliste(S.gut), welt = (GUETER.welt[S.gut] || {})[GUETER.jahre[gutJahr()]] || 0, rest = l.slice(0, 10);
+      rang = `<h3 style="margin-top:12px">${esc(g.name)}: größte Exportländer ${esc(GUETER.jahre[gutJahr()])}</h3>
+        <div class="gk-leg" aria-hidden="true" style="display:flex;height:8px;border-radius:4px;overflow:hidden;margin:6px 0 2px">${GUT_RAMPE.map(c => `<i style="flex:1;background:${c}"></i>`).join("")}</div>
+        <p class="gk-quelle" style="display:flex;justify-content:space-between;margin:0 0 6px"><span>wenig</span><span>Farbe nach Wurzel des Exportwerts</span><span>viel</span></p>
+        <table class="gk-tab"><thead><tr><th>Land</th><th style="text-align:right">Mio. USD</th><th style="text-align:right">Anteil</th></tr></thead><tbody>${rest.map(([iso, v]) => `<tr><td><button type="button" class="gk-link" data-gkland="${esc(iso)}">${esc(landName(iso))}</button></td><td>${f0.format(v)}</td><td>${welt ? f1.format(v / welt * 100) + " %" : "–"}</td></tr>`).join("")}</tbody></table>
+        <p class="gk-quelle" style="margin-top:6px">Weltweit ${gutMrd(welt)} USD (${esc(g.hs.map(h => "HS " + h).join(", "))}). Exportwert laut Meldung der Handelspartner, bereinigt (BACI); Taiwan enthält „Other Asia, nes“.</p>`;
+    }
+    return `<div class="gk-block"><h3>Exporte nach Gut</h3><p class="unter" style="margin:2px 0 4px">Gut wählen: die Länder werden nach ihrer Exportmenge eingefärbt</p>${chips}${rang}
+      <p class="gk-quelle" style="margin-top:8px">Quelle: <a href="${esc(GUETER.url)}" target="_blank" rel="noopener">CEPII BACI</a> (Etalab 2.0), Daten aus UN Comtrade; Version 202601, Zeitreihe ${esc(GUETER.jahre[0])}–${esc(GUETER.jahre[gutJahr()])}.</p></div>`;
+  }
+  function gutLandBlock(iso) {
+    if (!GUETER || !GUETER.laender[iso]) return "";
+    const z = Object.entries(GUETER.laender[iso]).map(([id, e]) => ({ id, v: e.v[gutJahr()], v0: e.v[0], p: e.partner || [] })).filter(x => x.v > 0).sort((a, b) => b.v - a.v).slice(0, 8);
+    if (!z.length) return "";
+    const rang = id => 1 + gutRangliste(id).findIndex(([i]) => i === iso);
+    return `<div class="gk-block"><h3>Exportgüter ${esc(GUETER.jahre[gutJahr()])} (ausgewählte Gütergruppen)</h3>
+      <table class="gk-tab"><thead><tr><th>Gut</th><th style="text-align:right">Mio. USD</th><th style="text-align:right">Rang Welt</th><th>Hauptabnehmer</th></tr></thead><tbody>${z.map(x => `<tr><td><button type="button" class="gk-link" data-gkgut="${esc(x.id)}">${esc(gutVon(x.id).name)}</button></td><td>${f0.format(x.v)}</td><td>${rang(x.id)}</td><td style="font-family:var(--sans)">${x.p.slice(0, 3).map(([p]) => esc(landKurz(p))).join(", ")}</td></tr>`).join("")}</tbody></table>
+      <p class="gk-quelle" style="margin-top:6px">${GUETER.gruppen.length} Gütergruppen (Energie, Landwirtschaft, Metalle, Industrie); Gut anklicken färbt die Karte. CEPII BACI.</p></div>`;
+  }
+
+  const haefenPunkte = () => !VERKEHR ? leerFC : wertFC(VERKEHR.haefen.map((h, i) => ({ type: "Feature", geometry: { type: "Point", coordinates: [h.lon, h.lat] },
+    properties: { id: "h" + i, name: h.name, w: Math.sqrt(Math.max(h.teu_tsd || 0, (h.kt || 0) / 12)), rang: Math.min(h.teu_rang || 99, (h.ton_rang || 99) + 5) } })));
+  const flughafenPunkte = () => !VERKEHR ? leerFC : wertFC(VERKEHR.flughaefen.map((f, i) => ({ type: "Feature", geometry: { type: "Point", coordinates: [f.lon, f.lat] },
+    properties: { id: "f" + i, name: f.iata + " " + f.name.replace(/ (International )?Airport$/, ""), w: Math.sqrt(Math.max((f.pax || 0) / 1e5, (f.fracht || 0) / 4000)), rang: Math.min(f.pax_rang || 99, (f.fracht_rang || 99) + 5) } })));
+  const KNOTEN_RADIUS = (k, mx) => ["interpolate", ["linear"], ["zoom"], 1.5, ["*", k, ["/", ["get", "w"], mx]], 6, ["*", k * 2.1, ["/", ["get", "w"], mx]]];
+  function haefenHtml(h) {
+    const z = [h.teu_tsd ? `Container ${f0.format(h.teu_tsd)} Tsd. TEU (${h.teu_jahr || 2025}), Rang ${h.teu_rang}` : "", h.kt ? `Umschlag ${f1.format(h.kt / 1000)} Mio. t (2022), Rang ${h.ton_rang}` : ""].filter(Boolean);
+    return `<b>${esc(h.name)}</b> <span class="pct">Seehafen · ${esc(landName(h.land || ""))}</span><br>${z.map(esc).join("<br>")}
+      <br><span class="pct">Quellen: Wikipedia (CC BY-SA) nach Lloyd's List / SISI, Lage UN/LOCODE</span>`;
+  }
+  function flughafenHtml(f) {
+    const z = [f.pax ? `Passagiere ${f1.format(f.pax / 1e6)} Mio. (2025), Rang ${f.pax_rang}` : "", f.fracht ? `Fracht ${f1.format(f.fracht / 1e6)} Mio. t (2025), Rang ${f.fracht_rang}` : ""].filter(Boolean);
+    return `<b>${esc(f.name)}</b> <span class="pct">Flughafen ${esc(f.iata)} · ${esc(landName(f.land || ""))}</span><br>${z.map(esc).join("<br>")}
+      <br><span class="pct">Quellen: Wikipedia (CC BY-SA) nach ACI, Lage OurAirports</span>`;
+  }
+  let knotenPop = null;
+  function knotenOeffnen(art, i, fliegen) {
+    const k = (art === "h" ? VERKEHR.haefen : VERKEHR.flughaefen)[i]; if (!k || !map) return;
+    if (knotenPop) knotenPop.remove();
+    if (fliegen) map.flyTo({ center: [k.lon, k.lat], zoom: Math.max(map.getZoom(), 4.2), duration: 1100 });
+    knotenPop = new maplibregl.Popup({ className: "gk-pop", offset: 12, maxWidth: "320px" }).setLngLat([k.lon, k.lat]).setHTML(art === "h" ? haefenHtml(k) : flughafenHtml(k)).addTo(map);
+  }
+  const knotenKlick = (layer, art) => (e, m) => { const f = m.queryRenderedFeatures(e.point, { layers: [layer].filter(l => m.getLayer(l)) }); if (!f.length) return false; knotenOeffnen(art, +f[0].properties.id.slice(1), false); return true; };
+  const KN_FARBE_H = "#4fd1c5", KN_FARBE_F = "#f6ad55";
+  ebene({ id: "haefen", name: "Größte Seehäfen (Container, Umschlag)", gruppe: "Handel", an: !!VERKEHR, geplant: !VERKEHR, formen: ["handel", "vwl"], vorrang: true,
+    quellen: m => m.addSource("vk-haefen", { type: "geojson", data: haefenPunkte() }),
+    schichten: m => {
+      const mx = Math.max(...haefenPunkte().features.map(f => f.properties.w), 1);
+      schicht("haefen", { id: "vk-haefen", type: "circle", source: "vk-haefen", layout: { "circle-sort-key": ["-", 0, ["get", "w"]] }, paint: { "circle-radius": KNOTEN_RADIUS(9, mx), "circle-color": KN_FARBE_H, "circle-opacity": .78, "circle-stroke-color": "#07090c", "circle-stroke-width": 1 } });
+      schicht("haefen", { id: "vk-haefen-t", type: "symbol", source: "vk-haefen", minzoom: 2.4, layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-offset": [0, 1.1], "text-anchor": "top", "text-optional": true, "text-padding": 3, "symbol-sort-key": ["get", "rang"] },
+        paint: { "text-color": KN_FARBE_H, "text-halo-color": "#07090c", "text-halo-width": 1.3 } });
+    }, klick: knotenKlick("vk-haefen", "h") });
+  ebene({ id: "flughaefen", name: "Größte Flughäfen (Passagiere, Fracht)", gruppe: "Handel", an: !!VERKEHR, geplant: !VERKEHR, formen: ["handel", "vwl"], vorrang: true,
+    quellen: m => m.addSource("vk-flug", { type: "geojson", data: flughafenPunkte() }),
+    schichten: m => {
+      const mx = Math.max(...flughafenPunkte().features.map(f => f.properties.w), 1);
+      schicht("flughaefen", { id: "vk-flug", type: "circle", source: "vk-flug", layout: { "circle-sort-key": ["-", 0, ["get", "w"]] }, paint: { "circle-radius": KNOTEN_RADIUS(8, mx), "circle-color": "rgba(246,173,85,.18)", "circle-stroke-color": KN_FARBE_F, "circle-stroke-width": 2 } });
+      schicht("flughaefen", { id: "vk-flug-t", type: "symbol", source: "vk-flug", minzoom: 3, layout: { "text-field": ["get", "name"], "text-font": ["Noto Sans Regular"], "text-size": 10.5, "text-offset": [0, 1.1], "text-anchor": "top", "text-optional": true, "text-padding": 3, "symbol-sort-key": ["get", "rang"] },
+        paint: { "text-color": KN_FARBE_F, "text-halo-color": "#07090c", "text-halo-width": 1.3 } });
+    }, klick: knotenKlick("vk-flug", "f") });
+  function verkehrBlock() {
+    if (!VERKEHR) return "";
+    const h = VERKEHR.haefen.map((x, i) => [x, i]).filter(([x]) => x.teu_rang).sort((a, b) => a[0].teu_rang - b[0].teu_rang).slice(0, 10);
+    const f = VERKEHR.flughaefen.map((x, i) => [x, i]).filter(([x]) => x.pax_rang).sort((a, b) => a[0].pax_rang - b[0].pax_rang).slice(0, 10);
+    const q = VERKEHR.quellen;
+    return `<div class="gk-block"><h3>Größte Seehäfen und Flughäfen</h3>
+      <p class="unter" style="margin:2px 0 4px"><span style="color:${KN_FARBE_H}">●</span> Seehäfen (Fläche nach Container- bzw. Gesamtumschlag) · <span style="color:${KN_FARBE_F}">◯</span> Flughäfen (Größe nach Passagieren bzw. Fracht) · anklicken für Zahlen</p>
+      <table class="gk-tab"><thead><tr><th>Seehafen (Container)</th><th style="text-align:right">Mio. TEU</th></tr></thead><tbody>${h.map(([x, i]) => `<tr><td><button type="button" class="gk-link" data-gkverkehr="h${i}">${x.teu_rang}. ${esc(x.name)}</button></td><td>${f1.format(x.teu_tsd / 1000)}</td></tr>`).join("")}</tbody></table>
+      <table class="gk-tab" style="margin-top:8px"><thead><tr><th>Flughafen (Passagiere)</th><th style="text-align:right">Mio.</th></tr></thead><tbody>${f.map(([x, i]) => `<tr><td><button type="button" class="gk-link" data-gkverkehr="f${i}">${x.pax_rang}. ${esc(x.iata)} ${esc(x.name.replace(/ (International )?Airport$/, ""))}</button></td><td>${f0.format(x.pax / 1e6)}</td></tr>`).join("")}</tbody></table>
+      <p class="gk-quelle" style="margin-top:6px">Rangfolgen: ${VERKEHR.haefen.length} Seehäfen (Container 2025, Umschlag 2022) und ${VERKEHR.flughaefen.length} Flughäfen (Passagiere und Fracht 2025). Quellen: ${q.map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name.split(" (")[0].replace("Wikipedia: ", "Wikipedia "))}</a>`).join(", ")}; Abruf ${esc(VERKEHR.abruf)}.</p></div>`;
+  }
+  function verkehrLandBlock(iso) {
+    if (!VERKEHR) return "";
+    const h = VERKEHR.haefen.map((x, i) => [x, i]).filter(([x]) => x.land === iso), f = VERKEHR.flughaefen.map((x, i) => [x, i]).filter(([x]) => x.land === iso);
+    if (!h.length && !f.length) return "";
+    return `<div class="gk-block"><h3>Große Häfen und Flughäfen</h3><ul class="gk-liste">${h.map(([x, i]) => `<li><button type="button" data-gkverkehr="h${i}">⚓ ${esc(x.name)}</button><span class="r">${x.teu_tsd ? f1.format(x.teu_tsd / 1000) + " Mio. TEU" : f1.format((x.kt || 0) / 1000) + " Mio. t"}</span></li>`).join("")}
+      ${f.map(([x, i]) => `<li><button type="button" data-gkverkehr="f${i}">✈ ${esc(x.iata)} ${esc(x.name.replace(/ (International )?Airport$/, ""))}</button><span class="r">${x.pax ? f0.format(x.pax / 1e6) + " Mio. Pass." : f1.format(x.fracht / 1e6) + " Mio. t"}</span></li>`).join("")}</ul></div>`;
   }
 
   /* ===== Volkswirtschaft: Wirtschaftsräume (Stufe 1) und Werte aller Länder (Stufe 2/3) ===== */
@@ -1513,7 +1639,7 @@ const GLOBUS = (() => {
     const k15 = S.k1 !== "top15" ? "" : `<div class="gk-block"><h3>Größte Ströme ${S.kont2 ? `${esc(kk[1])} ↔ ${esc(KONT_NAME[S.kont2])}` : `mit ${esc(kk[1])}`}</h3><table class="gk-tab"><thead><tr><th>Exportland → Importland</th><th style="text-align:right">Mrd. USD</th></tr></thead><tbody>
       ${st.slice(0, 15).map(x => `<tr><td><span style="color:${x.richtung === "export" ? HEX_EXP : HEX_IMP}">${x.richtung === "export" ? "▲" : "▼"}</span> ${esc(landName(x.x))} → ${esc(landName(x.y))}</td><td>${f1.format(x.v / 1e9)}</td></tr>`).join("")}</tbody></table>
       <p class="gk-quelle" style="margin-top:6px">Zwischen den 15 größten Volkswirtschaften nach BIP (Weltbank: ${esc(TOP15.map(landName).join(", "))})${k15Knoten().size > TOP15.length ? `, ergänzt um die drei größten Volkswirtschaften von ${esc(kk[1])}` : ""}. Grün: Exporte aus ${esc(kk[1])}, rot: Importe nach ${esc(kk[1])}. Die 24 größten Ströme auf der Karte.</p></div>`;
-    return `<div><h2>Welthandel: ${S.k1 === "top15" ? "die 15 größten Volkswirtschaften" : "Kontinente"}</h2><p class="unter" style="margin-top:4px">Ganz herausgezoomt: Kontinent anklicken, dann einen zweiten für den Vergleich · hineinzoomen für Länder</p><div style="margin-top:8px">${modus}</div></div>${k15}
+    return `<div><h2>Welthandel: ${S.k1 === "top15" ? "die 15 größten Volkswirtschaften" : "Kontinente"}</h2><p class="unter" style="margin-top:4px">Ganz herausgezoomt: Kontinent anklicken, dann einen zweiten für den Vergleich · hineinzoomen für Länder</p><div style="margin-top:8px">${modus}</div></div>${gutBlock()}${k15}
       <div class="gk-block"><h3>${esc(kk[1])}</h3><div class="gk-kz" style="grid-template-columns:1fr 1fr 1fr">
         <div><div class="t" style="min-height:0">Exporte</div><div class="v" style="font-size:15px">${f0.format(summe(k, true) / 1e9)}</div><div class="z">Mrd. USD</div></div>
         <div><div class="t" style="min-height:0">Importe</div><div class="v" style="font-size:15px">${f0.format(summe(k, false) / 1e9)}</div><div class="z">Mrd. USD</div></div>
@@ -1523,6 +1649,7 @@ const GLOBUS = (() => {
       ${paar}
       <div class="gk-block"><h3>Alle Kontinente, Mrd. USD</h3><table class="gk-tab gk-matrix"><thead>${kopf}</thead><tbody>${matrix}</tbody></table>
         <p class="gk-quelle" style="margin-top:6px">Zeile = Exporteur, Spalte = Importeur; Zelle anklicken wählt das Paar. Summe der bilateralen Länderströme (UN Comtrade, Warenhandel, ${esc(HANDEL_JAHRE)}): je Länderpaar die Meldung des Exportlandes, fehlt sie, die Spiegelmeldung des Importlandes. Je Land liegen nur die 15 größten Partner vor, daher fehlen kleinere Ströme (erfasst sind für ${KONT.filter(x => KABD[x[0]] != null).map(x => esc(x[1]) + " " + Math.round(KABD[x[0]] * 100) + " %").join(", ")} der gemeldeten Exporte). Werte sind Untergrenzen. Quelle: <a href="${esc(HANDEL.url)}" target="_blank" rel="noopener">UN Comtrade</a>.</p></div>
+      ${verkehrBlock()}
       <div class="gk-block"><p class="gk-quelle">Voreinstellung: Kontinent laut Zeitzone und Browsersprache. Die IP-Abfrage geht nur auf Knopfdruck an einen freien Dienst (geojs.io) und schickt dabei Ihre IP-Adresse dorthin.</p></div>`;
   }
   async function ipKontinent() {
@@ -1840,7 +1967,7 @@ const GLOBUS = (() => {
     const top = Object.entries(HANDEL.laender).filter(([i, h]) => h.export_welt && NACH_ISO[i]).sort((a, b) => b[1].export_welt - a[1].export_welt).slice(0, 12);
     return `<div><h2>Welthandel nach Ländern</h2><p class="unter" style="margin-top:4px">Land anklicken: die fünf größten Export- und Importpartner · Shift+Klick für mehrere Länder · unter jedem Land Zollsatz und Handelssaldo · hineinzoomen für Nachbarländer und Strom</p></div>
       <div class="gk-block"><h3>Größte Exportländer</h3><ul class="gk-liste">${top.map(([i, h]) => `<li><button type="button" data-gkland="${esc(i)}">${esc(landName(i))}</button><span class="r">${f0.format(h.export_welt / 1e9)} Mrd. USD</span></li>`).join("")}</ul>
-        <p class="gk-quelle" style="margin-top:6px">UN Comtrade, Abruf ${esc(HANDEL.abruf)}.</p></div>${stoerungBlock()}${stromRaumBlock()}`;
+        <p class="gk-quelle" style="margin-top:6px">UN Comtrade, Abruf ${esc(HANDEL.abruf)}.</p></div>${gutBlock()}${verkehrBlock()}${stoerungBlock()}${stromRaumBlock()}`;
   }
   function raumSeite() {
     const r = raumVon(S.raum);
@@ -1886,7 +2013,7 @@ const GLOBUS = (() => {
     const kern = k.length ? `<div class="gk-block"><h3>Kerndaten (aktuell)</h3><div class="gk-kz">${k.join("")}</div>
         <p class="gk-quelle" style="margin-top:6px">Jüngster veröffentlichter Wert; Linie = Verlauf (5 Jahre bzw. 10 Jahre bei Jahreswerten), gestrichelt = OECD-Projektion. Eurostat, wo vorhanden, sonst OECD. Stand des Abrufs ${esc((vwlDaten() || {}).stand || "")}.</p></div>` : "";
     const stufe3 = (inhalt, was) => stufe >= 3 ? inhalt : `<div class="gk-block"><h3>${esc(was)}</h3><p class="gk-leer">Näher heranzoomen (Stufe 3), dann erscheinen ${esc(was)}.</p><div class="gk-chips" style="margin-top:8px"><button type="button" data-gkstufe="3">Zu Stufe 3</button></div></div>`;
-    if (S.form === "handel") return kopf + handelBlock(iso) + zollBlock(iso) + stufe3(nachbarBlock(iso) + stromBilateralBlock(iso), "Nachbarländer, weitere Partner und Strom") + stoerungBlock(4);
+    if (S.form === "handel") return kopf + handelBlock(iso) + gutLandBlock(iso) + verkehrLandBlock(iso) + zollBlock(iso) + stufe3(nachbarBlock(iso) + stromBilateralBlock(iso), "Nachbarländer, weitere Partner und Strom") + stoerungBlock(4);
     if (S.form === "unternehmen") return kopfForm() + kopf + (stufe < 3 ? ufBlock() : "") + firmenBlock(iso) + (stufe >= 3 ? nachbarFirmenBlock(iso) : "") + basis;
     if (S.form === "boerse") return kopfForm() + kopf + boerseLand(iso, stufe);
     if (S.form === "politik") return kopfForm() + kopf + politikLand(iso, stufe);
@@ -2131,6 +2258,8 @@ const GLOBUS = (() => {
     if ((v = g("data-gkk1")) != null) { S.k1 = v; kontAnwenden(); seiteZeichnen(); return true; }
     if (MLD.klick(t)) { routenAktualisieren(); seiteZeichnen(); return true; }
     if ((v = g("data-gkmeldung")) != null) { const k = knotenVon(v); if (k && map) { meldungPopup(v); if (!t.closest(".gk-newskarte")) map.easeTo({ center: [k.lon, k.lat], duration: 900 }); } return true; }
+    if ((v = g("data-gkgut")) != null) { gutWaehlen(v); return true; }
+    if ((v = g("data-gkverkehr")) != null) { knotenOeffnen(v[0], +v.slice(1), true); return true; }
     if ((v = g("data-gkweg")) != null) { landUmschalten(v); return true; }
     if ((v = g("data-gkland")) != null && e.shiftKey && v) { landUmschalten(v); return true; }
     if ((v = g("data-gkliste")) != null) { listeOeffnen(v); return true; }

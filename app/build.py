@@ -125,7 +125,7 @@ def main():
                     + seite + "\n</body></html>\n")
     print(f"{len(banken)} Banken -> {ziel}")
     # Weltkugel: dieselbe Seite mit Karte, Ländern und Firmensitzen (alternative Oberfläche)
-    welt, n_sitze = globus.seite(seite)
+    welt, n_sitze = globus.seite(seite, api=bool(a.api))
     (ziel_ordner / "weltkugel.fragment.html").write_text(welt)
     globus.wahlgeo_schreiben(ziel_ordner)             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
     (ziel_ordner / "weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'

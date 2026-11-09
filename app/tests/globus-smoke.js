@@ -7,7 +7,8 @@ const path = require('node:path');
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const errors = [];
   page.on('pageerror', e => errors.push(e.stack || e.message));
-  await page.goto('file://' + path.resolve(process.argv[2] || 'app/dist/weltkugel.html'));
+  const ziel = process.argv[2] || 'app/dist/weltkugel.html';      // Datei oder http(s)-Adresse (API-Fassung im Compose-Stack)
+  await page.goto(/^https?:/.test(ziel) ? ziel : 'file://' + path.resolve(ziel));
   await page.waitForSelector('#gk-seite h2');
   // Fünf Darstellungsformen: alle als Reiter vorhanden; Handel zeigt Zollsatz und Partner, Stufe 3 der Volkswirtschaft vereint alles
   if (await page.locator('[data-gkform]').count() !== 5) throw Error('Erwartet fünf Darstellungsformen');
@@ -51,6 +52,11 @@ const path = require('node:path');
     const vorher = await page.locator('.gf').count();
     await page.fill('#gk-suchfeld', stamm); await page.press('#gk-suchfeld', 'Enter'); await page.waitForTimeout(150);
     if (await page.locator('.gf').count() !== vorher + 1) throw Error('Kein Fenster für ' + stamm);
+    // API-Fassung über http: Details (Rechtsform, Website, Beschreibung, Quelle) kommen aus /companies/{id}
+    if (/^https?:/.test(ziel) && await page.evaluate(() => !!document.querySelector('meta[name="sphaerae-api"]'))) {
+      await page.waitForFunction(() => { const f = [...document.querySelectorAll('.gf')].pop(); return f && !/werden geladen/.test(f.textContent) && /Quelle/.test(f.textContent); }, null, { timeout: 15000 });
+      if (/nicht geladen/.test(await page.locator('.gf').last().innerText())) throw Error('Stammdaten-Details über die API fehlgeschlagen');
+    }
   }
   await page.evaluate(() => { location.hash = 'u-ueb'; }); await page.waitForTimeout(150);
   if (!(await page.locator('#globus').isHidden()) || !(await page.locator('#view').innerText()).length) throw Error('Klassische Ansicht nicht erreichbar');

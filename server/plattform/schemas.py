@@ -168,3 +168,72 @@ class Gesundheit(BaseModel):
     database: str
     schema_revision: Optional[str] = None
     version: str
+
+
+class ProfilKennzahl(BaseModel):
+    code: str
+    name: str
+    unit: Optional[str] = None
+    fmt: Optional[str] = None
+    group: Optional[str] = None
+    higher_is_better: Optional[bool] = None
+    help: Optional[str] = None
+    aliases: list[str] = []
+
+
+class ProfilWert(BaseModel):
+    metric: str
+    value: float
+    sector_n: int = Field(description="Unternehmen der Branche mit Wert (Vergleichsmenge)")
+    sector_median: Optional[float] = None
+    group_median: Optional[float] = Field(None, description="Median der Gruppe, nur bei mehr als zwei Unternehmen in der Gruppe")
+    percentile: Optional[float] = Field(None, description="Anteil der Branchenwerte unter diesem Wert (0–1), ab drei Werten")
+
+
+class Abschluss(BaseModel):
+    fiscal_year: int
+    period_end: date
+    currency: str
+    source: Optional[str] = None
+    source_url: Optional[str] = None
+    fetched: Optional[str] = None
+    status: Optional[str] = None
+    part_sources: dict[str, Any] = {}
+    bilanz: dict[str, Optional[float]] = Field({}, description="Originalposten in gelieferter Reihenfolge, unskaliert")
+    guv: dict[str, Optional[float]] = {}
+
+
+class Profil(BaseModel):
+    id: str
+    name: str
+    sector: str
+    peer_group: Optional[str] = None
+    listed: bool
+    sector_n: int = Field(description="Unternehmen der Branche (Vergleichsmenge der Mediane)")
+    group_n: int = 0
+    attributes: dict[str, Any] = Field({}, description="Kopfangaben wie im Terminal (Sitz, Segment, Indizes, Rolle, Mutter, Archiv …)")
+    values: list[ProfilWert] = []
+    series: dict[str, Any] = {}
+    statements: list[Abschluss] = []
+    governance: Optional[dict[str, Any]] = None
+    documents: list[dict[str, Any]] = []
+    report_dates: list[dict[str, Any]] = []
+    links: dict[str, str] = {}
+
+
+class BranchenWert(BaseModel):
+    metric: str
+    n: int
+    median: Optional[float] = None
+    p25: Optional[float] = None
+    p75: Optional[float] = None
+    min: Optional[float] = None
+    max: Optional[float] = None
+
+
+class BranchenStatistik(BaseModel):
+    sector: str
+    group: Optional[str] = None
+    country: Optional[str] = None
+    companies: int
+    metrics: list[BranchenWert]

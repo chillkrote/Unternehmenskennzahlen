@@ -184,7 +184,7 @@ def test_updates_und_health(client):
     a = {x["adapter"]: x for x in client.get("/api/v1/updates").json()["data"]}
     assert a["import-unternehmenstabelle"]["status"] == "ok" and a["import-unternehmenstabelle"]["last_success_at"]
     h = client.get("/api/v1/health").json()
-    assert h["status"] == "ok" and h["schema_revision"] == "0002"
+    assert h["status"] == "ok" and h["schema_revision"] == "0003"
 
 
 def test_etag_und_cache(client):

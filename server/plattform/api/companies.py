@@ -25,7 +25,8 @@ SORTIERUNG = {
 BASIS = """
   SELECT r.entity_id AS id, r.name, r.domicile AS country, r.country_name, r.seat, r.sector, r.listed, r.is_bank,
          r.isin, r.ticker, r.exchange, r.lei,
-         COALESCE((SELECT count(*) FROM international.fact x WHERE x.entity_id = r.entity_id), 0) AS fakten
+         (SELECT count(*) FROM international.fact x WHERE x.entity_id = r.entity_id)
+         + (SELECT count(*) FROM international.company_profile_value x WHERE x.entity_id = r.entity_id) AS fakten
     FROM international.company_register r
    WHERE r.active AND r.entity_id IS NOT NULL
 """
@@ -54,7 +55,8 @@ def _filter(q, country, sector, listed, has_metrics, ids):
         bed.append("r.listed = :listed")
         par["listed"] = listed
     if has_metrics is not None:
-        bed.append(("" if has_metrics else "NOT ") + "EXISTS (SELECT 1 FROM international.fact x WHERE x.entity_id = r.entity_id)")
+        bed.append(("" if has_metrics else "NOT ") + "(EXISTS (SELECT 1 FROM international.fact x WHERE x.entity_id = r.entity_id)"
+                   " OR EXISTS (SELECT 1 FROM international.company_profile_value x WHERE x.entity_id = r.entity_id))")
     if ids:
         bed.append("r.entity_id = ANY(:ids)")
         par["ids"] = ids
@@ -112,7 +114,9 @@ def company(request: Request, company_id: str, conn=DB):
     if not re.match(ID_MUSTER, cid):
         raise HTTPException(422, detail={"code": "id_format", "message": "Unternehmens-ID im Format U000123 erwartet"})
     r = conn.execute(text("""
-        SELECT r.*, (SELECT count(*) FROM international.fact x WHERE x.entity_id = r.entity_id) AS fakten
+        SELECT r.*, (SELECT count(*) FROM international.fact x WHERE x.entity_id = r.entity_id)
+                    + (SELECT count(*) FROM international.company_profile_value x WHERE x.entity_id = r.entity_id) AS fakten,
+               EXISTS (SELECT 1 FROM international.company_profile x WHERE x.entity_id = r.entity_id) AS hat_profil
           FROM international.company_register r WHERE r.entity_id = :id"""), {"id": cid}).mappings().first()
     if not r:
         raise HTTPException(404, detail={"code": "nicht_gefunden", "message": f"Kein Unternehmen mit der ID {cid}"})
@@ -130,7 +134,8 @@ def company(request: Request, company_id: str, conn=DB):
          "facts": r["fakten"], "legal_form": r["legal_form"], "nace": r["nace"], "register_no": r["register_no"], "website": r["website"],
          "indices": r["indices"], "description": r["description"], "source_url": r["source_url"], "identifiers": kennungen, "aliases": aliase,
          "review_flags": marken, "metrics": kz,
-         "links": {"self": f"/api/v1/companies/{cid}", "metrics": f"/api/v1/companies/{cid}/metrics", "terminal": f"#firma-{cid}"}}
+         "links": {"self": f"/api/v1/companies/{cid}", "metrics": f"/api/v1/companies/{cid}/metrics", "terminal": f"#firma-{cid}",
+                   **({"profile": f"/api/v1/companies/{cid}/profile"} if r["hat_profil"] else {})}}
     datei, stand = register_stand(conn)
     notes = [] if r["active"] else ["Zeile ist in der zuletzt importierten Unternehmenstabelle nicht mehr enthalten (active=false)"]
     m = meta(request, source=datei, data_as_of=stand)

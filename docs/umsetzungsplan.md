@@ -12,7 +12,7 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | P1.3 | Backup/Restore-Skripte, Probe-Wiederherstellung | P1.1 | Restore-Zählung | 0,25 | erledigt |
 | P2.1 | Verzeichnis F4 und Registerprofile über die API, Datenadapter `api.js`, Build `--api` | P1.2 | `api-smoke.js` | 0,5 | erledigt |
 | P2.2 | CI: pytest gegen PostgreSQL, Build der API-Fassung, API-Smoke gegen Compose im Workflow | P2.1 | Workflow grün | 0,5 | Workflow für pytest angelegt, Compose-Smoke offen |
-| P2.3 | **Kennzahlen aller Unternehmen (`unternehmen.json`, 22,5 MB) in die Datenbank**: Import der Werte mit Quelle, `/companies/{id}` liefert Profilwerte, Branchenmediane serverseitig; Profilseite lädt per API | P1.2 | Abgleich jeder Kennzahl mit `unternehmen.json` (Referenztest) | 2 | geplant |
+| P2.3 | **Kennzahlen aller Unternehmen (`unternehmen.json`, 22,5 MB) in die Datenbank**: Import der Werte mit Quelle, `/companies/{id}` liefert Profilwerte, Branchenmediane serverseitig; Profilseite lädt per API | P1.2 | Abgleich jeder Kennzahl mit `unternehmen.json` (Referenztest) | 2 | erledigt (Abschlüsse, Gremien, Dokumente ausgelagert; Kennzahlen bleiben für F1–F3 bis P2.4 eingebettet) |
 | P2.4 | Branchenansichten F1–F3 serverseitig (Listen, Mediane, Filter), danach `unternehmen`-Block nicht mehr einbetten | P2.3 | Smoke F1–F3, Werte gleich alt/neu | 1,5 | geplant |
 | P2.5 | Weltkugel-Unternehmenspunkte (`geo-tabelle`, 10,3 MB) über Viewport-Abfrage bzw. vorberechnete Vektorkachel (PMTiles) | P1.2 | `globus-smoke.js` | 1,5 | geplant |
 | P2.6 | VWL-Reihen (`vwl`, 5,3 MB) als `series`/`observation` mit Vintage, VWL-Ansichten laden je Land/Reihe | P1.1 | Abgleich mit CSV | 2 | geplant |
@@ -28,4 +28,4 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | B2 | Lizenzprüfung je Quelle vor öffentlicher Weiterverbreitung (Kurse, Nachrichten) | – | `datenquellen.md` | 1 | geplant |
 
 Kritischer Pfad bis zur Abnahme „erste HTML-Antwort ohne vollständigen Datenbestand“: P2.3 → P2.4 → P2.5 → P2.6 → P2.7.
-Danach ist die Seite voraussichtlich unter 5 MB (heute 58,6 MB in der API-Fassung, 69,1 MB in der Pages-Fassung).
+Danach ist die Seite voraussichtlich unter 5 MB (nach P2.3: 37,5 MB Weltkugel bzw. 19,9 MB Terminal in der API-Fassung, 69,1 MB in der Pages-Fassung).

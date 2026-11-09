@@ -8,12 +8,14 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | Baustein | Status | Nachweis |
 |---|---|---|
 | Bestandsaufnahme, Architektur, Plan | Implementiert | `docs/bestandsaufnahme.md`, `architektur.md`, `umsetzungsplan.md` |
-| Alembic über dem Kernmodell (0001), Suche/Indizes/Ländernamen (0002) | Getestet | `server/tests/test_migrationen.py` (beide Reihenfolgen, Wiederholung, Downgrade 0002) |
+| Alembic über dem Kernmodell (0001), Suche/Indizes/Ländernamen (0002), Unternehmensprofile (0003) | Getestet | `server/tests/test_migrationen.py` (beide Reihenfolgen, Wiederholung, Downgrade 0002 und 0003) |
 | Import Register + Zeitreihen (`server/etl/laden.py`) | Getestet | 32.581 Zeilen, 32.663 Entitäten, 4.802 Werte; IDs = CSV (`test_alle_ids_unveraendert_uebernommen`) |
 | API `/api/v1` (10 Endpunkte, OpenAPI) | Getestet | `server/tests/test_api.py`, `test_einheiten.py` (44 Tests) |
 | Sicherheit: nur lesend, Leserolle, Ratenbegrenzung, CORS, Header | Getestet | Tests `nur_lesend`, `read-only`, `cors`, `ratenbegrenzung`; Compose mit Rolle `sphaerae_api` |
 | Docker Compose (db, api, web/Caddy, etl, backup) | Getestet (lokal) | Compose-Lauf 09.11.2026, `curl /api/v1/health` über Caddy |
 | Backup und Wiederherstellung | Getestet (lokal) | Probe-Wiederherstellung 09.11.2026: 32.581 / 4.802 / Revision 0002 |
+| Unternehmensprofile in der Datenbank (Revision 0003, `server/etl/profile.py`) | Getestet | 1.284 Profile, 23.280 Werte, 4.664 Abschlüsse mit 412.107 Posten; `test_profile.py` vergleicht jeden Wert und jeden Posten mit `unternehmen.json`, Mediane und Rang für alle 1.284 Profile ohne Abweichung |
+| API `/companies/{id}/profile`, `/sectors/{id}/statistics`, `/profile-metrics` | Getestet | `test_profile.py` (Rechenregeln wie `unternehmen.js`, Länderauswahl, Fehlerfälle) |
 | Datenadapter `app/src/api.js` (Zeitlimit, Wiederholung, Cache, Fehler) | Getestet | `app/tests/api-smoke.js` (Ausfall + „Erneut versuchen“) |
 | Build-Schalter `--api`, `--ziel` | Getestet | Pages-Fassung unverändert (Smoke-Tests), API-Fassung ohne Register |
 | CI-Workflow `server.yml` (pytest gegen PostgreSQL 16) | Implementiert | läuft im PR |
@@ -28,8 +30,9 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 |---|---|---|---|
 | Weltkugel (fünf Formen, Länder, Fenster) | unverändert | unverändert | `globus-smoke.js` auf beiden Fassungen grün |
 | Länderansichten | unverändert | unverändert | eingebettet |
-| Unternehmensverzeichnis (F4) | unverändert | **verbessert**: Suche, Filter, Seiten auf dem Server, auch Aliase und IDs | `api-smoke.js`; „Nur mit Kennzahlen“ zählt Datenbankwerte (bekannte Einschränkung bis P2.3) |
-| Unternehmensprofile mit Kennzahlen | unverändert | unverändert | noch eingebettet (`unternehmen`), P2.3 |
+| Unternehmensverzeichnis (F4) | unverändert | **verbessert**: Suche, Filter, Seiten auf dem Server, auch Aliase und IDs | `api-smoke.js`; „Nur mit Kennzahlen“ zählt Zeitreihen und Profilkennzahlen der Datenbank |
+| Unternehmensprofile mit Kennzahlen | unverändert | **verbessert**: Kennzahlen, Mediane, Zeitreihen sofort; Bilanz/GuV, Gremien, Vergütung und Dokumente laden über `/companies/{id}/profile` (Ladehinweis, „Erneut versuchen“) | `api-smoke.js`; Kennzahlen bleiben für F1–F3 eingebettet bis P2.4 |
+| Bilanz- und GuV-Abdeckung (F7) | unverändert | unverändert, Postenzahlen aus eingebetteter Kurzfassung | `api-smoke.js` |
 | Registerprofile (Unternehmen ohne Kennzahlen) | unverändert | **verbessert**: Daten über `/companies/{id}`, zusätzlich Aliase, Prüfhinweise | Deep Link `#firma-U…` funktioniert |
 | Branchenvergleiche (F1–F3) | unverändert | **bekannte Einschränkung**: nur Unternehmen mit Kennzahlen, keine Register-Stubs | P2.4 |
 | Unternehmensvergleiche | unverändert | unverändert | |
@@ -49,7 +52,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 
 | Kriterium | Stand |
 |---|---|
-| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB) ausgelagert; Kennzahlen, VWL, Wahlen, Handel noch eingebettet |
+| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB) und Abschlussposten/Gremien/Dokumente (21 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL, Wahlen, Handel noch eingebettet. Weltkugel der API-Fassung 37,5 MB (vorher 58,6 MB), Terminal 19,9 MB |
 | Daten nach Bedarf geladen | für Verzeichnis und Registerprofile ja |
 | Öffentliche Endpunkte dokumentiert und begrenzt | ja (`docs/api.md`, OpenAPI, Grenzen) |
 | Unternehmens-IDs erhalten | ja, getestet |

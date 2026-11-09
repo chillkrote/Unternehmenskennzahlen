@@ -67,6 +67,7 @@ const API = (() => {
     get aktiv() { return !!basis; }, basis, ApiFehler, get,
     unternehmen: (filter, opt) => get("/companies", filter, opt),
     unternehmenEins: (id, opt) => get("/companies/" + encodeURIComponent(id), null, opt),
+    profil: (id, opt) => get("/companies/" + encodeURIComponent(id) + "/profile", null, opt),
     kennzahlen: (id, filter, opt) => get("/companies/" + encodeURIComponent(id) + "/metrics", filter, opt),
     suche: (q, opt) => get("/search", { q, limit: 8 }, opt),
     laender: () => get("/countries"), branchen: () => get("/sectors"),

@@ -91,6 +91,22 @@ def tabelle():
     return {"spalten": spalten, "listen": listen, "zeilen": zeilen}
 
 
+# API-Fassung (build.py --api): Spalten nur für das Stammdaten-Fenster bleiben auf dem Server (/companies/{id}); rund 7 MB weniger.
+# k ist in jeder Zeile gleich id (Schlüssel der Unternehmenstabelle) und wird in der Seite aus id gesetzt.
+NUR_SERVER = ("k", "rf", "boerse", "lei", "hr", "web", "bank", "text", "quelle")
+
+
+def tabelle_schlank(tab):
+    if not tab:
+        return tab
+    if any(z[0] != z[1] for z in tab["zeilen"]):
+        raise SystemExit("geo-tabelle: Zeile ohne Unternehmens-ID; die API-Fassung braucht k == id")
+    behalten = [j for j, s in enumerate(tab["spalten"]) if s not in NUR_SERVER]
+    return {"spalten": [tab["spalten"][j] for j in behalten], "schlank": True,
+            "listen": {k: v for k, v in tab["listen"].items() if k not in NUR_SERVER},
+            "zeilen": [[z[j] for j in behalten] for z in tab["zeilen"]]}
+
+
 def netze():
     """Unternehmensnetze (Standorte und Beziehungen je Konzern) aus stammdaten/beziehungen/daten, geprüft."""
     if not (NETZE / "beziehungen.py").exists():
@@ -141,15 +157,15 @@ def wahlgeo_schreiben(ziel):
     return out
 
 
-def seite(terminal_seite):
-    """Terminal-Seite (Fragment ohne Dokumentgerüst) -> Weltkugel-Fragment."""
+def seite(terminal_seite, api=False):
+    """Terminal-Seite (Fragment ohne Dokumentgerüst) -> Weltkugel-Fragment. api=True: Stammdaten-Details nicht einbetten."""
     v = HIER / "vendor/maplibre-gl"
     mlcss = (v / "maplibre-gl.css").read_text()
     mljs = "\n".join(z for z in (v / "maplibre-gl.js").read_text().splitlines() if not z.startswith("//# sourceMappingURL"))
     glyphen = {p.name.rsplit("-0-255", 1)[0]: base64.b64encode(p.read_bytes()).decode() for p in sorted((HIER / "geo/glyphs").glob("*-0-255.pbf"))}
     laender = (HIER / "geo/laender.geojson").read_text()
     s = sitze()
-    tab = tabelle()
+    tab = tabelle_schlank(tabelle()) if api else tabelle()
     teile = [
         terminal_seite.replace("<title>Terminal</title>", "<title>Weltkugel-Terminal</title>", 1),
         "<style>\n" + mlcss + "\n</style>",

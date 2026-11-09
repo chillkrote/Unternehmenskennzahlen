@@ -28,7 +28,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 
 | Funktion | Pages | Server | Anmerkung |
 |---|---|---|---|
-| Weltkugel (fünf Formen, Länder, Fenster) | unverändert | unverändert | `globus-smoke.js` auf beiden Fassungen grün |
+| Weltkugel (fünf Formen, Länder, Fenster) | unverändert | unverändert; Stammdaten-Fenster lädt Beschreibung, Quelle, Website, LEI, Handelsregister über `/companies/{id}` (Ladehinweis, „Erneut versuchen“) | `globus-smoke.js` auf beiden Fassungen grün, API-Fassung auch über http |
 | Länderansichten | unverändert | unverändert | eingebettet |
 | Unternehmensverzeichnis (F4) | unverändert | **verbessert**: Suche, Filter, Seiten auf dem Server, auch Aliase und IDs | `api-smoke.js`; „Nur mit Kennzahlen“ zählt Zeitreihen und Profilkennzahlen der Datenbank |
 | Unternehmensprofile mit Kennzahlen | unverändert | **verbessert**: Kennzahlen, Mediane, Zeitreihen sofort; Bilanz/GuV, Gremien, Vergütung und Dokumente laden über `/companies/{id}/profile` (Ladehinweis, „Erneut versuchen“) | `api-smoke.js`; Kennzahlen bleiben für F1–F3 eingebettet bis P2.4 |
@@ -52,7 +52,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 
 | Kriterium | Stand |
 |---|---|
-| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB) und Abschlussposten/Gremien/Dokumente (21 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL, Wahlen, Handel noch eingebettet. Weltkugel der API-Fassung 37,5 MB (vorher 58,6 MB), Terminal 19,9 MB |
+| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB) und Abschlussposten/Gremien/Dokumente (21 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL, Wahlen, Handel noch eingebettet. Weltkugel-Stammdatendetails (7 MB) ausgelagert. Weltkugel der API-Fassung 30,3 MB (vorher 58,6 MB), Terminal 19,9 MB |
 | Daten nach Bedarf geladen | für Verzeichnis und Registerprofile ja |
 | Öffentliche Endpunkte dokumentiert und begrenzt | ja (`docs/api.md`, OpenAPI, Grenzen) |
 | Unternehmens-IDs erhalten | ja, getestet |

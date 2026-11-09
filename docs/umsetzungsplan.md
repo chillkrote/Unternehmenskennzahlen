@@ -13,8 +13,9 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | P2.1 | Verzeichnis F4 und Registerprofile über die API, Datenadapter `api.js`, Build `--api` | P1.2 | `api-smoke.js` | 0,5 | erledigt |
 | P2.2 | CI: pytest gegen PostgreSQL, Build der API-Fassung, API-Smoke gegen Compose im Workflow | P2.1 | Workflow grün | 0,5 | Workflow für pytest angelegt, Compose-Smoke offen |
 | P2.3 | **Kennzahlen aller Unternehmen (`unternehmen.json`, 22,5 MB) in die Datenbank**: Import der Werte mit Quelle, `/companies/{id}` liefert Profilwerte, Branchenmediane serverseitig; Profilseite lädt per API | P1.2 | Abgleich jeder Kennzahl mit `unternehmen.json` (Referenztest) | 2 | erledigt (Abschlüsse, Gremien, Dokumente ausgelagert; Kennzahlen bleiben für F1–F3 bis P2.4 eingebettet) |
-| P2.4 | Branchenansichten F1–F3 serverseitig (Listen, Mediane, Filter), danach `unternehmen`-Block nicht mehr einbetten | P2.3 | Smoke F1–F3, Werte gleich alt/neu | 1,5 | geplant |
-| P2.5 | Weltkugel-Unternehmenspunkte (`geo-tabelle`, 10,3 MB) über Viewport-Abfrage bzw. vorberechnete Vektorkachel (PMTiles) | P1.2 | `globus-smoke.js` | 1,5 | geplant |
+| P2.4 | Branchenansichten F1–F3 serverseitig (Listen, Mediane, Filter), danach `unternehmen`-Block nicht mehr einbetten | P2.3 | Smoke F1–F3, Werte gleich alt/neu | 1,5 | zurückgestellt: nach P2.3 ist der Block nur noch 1,4 MB, wird aber von Weltkugel, Korrelation, Terminen und Vergleich genutzt; Mediane liefert die API schon (`/sectors/{id}/statistics`). Erst nach P2.6 |
+| P2.5a | Weltkugel: Stammdaten-Details (Beschreibung, Quelle, Website, LEI, Handelsregister, Rechtsform, Börse) nicht einbetten, Fenster lädt sie über `/companies/{id}` | P2.1 | `globus-smoke.js` über http | 0,25 | erledigt (−7,1 MB) |
+| P2.5 | Weltkugel-Unternehmenspunkte (`geo-tabelle`, übrig 3,1 MB) über Viewport-Abfrage bzw. vorberechnete Vektorkachel (PMTiles) | P1.2 | `globus-smoke.js` | 1,5 | geplant |
 | P2.6 | VWL-Reihen (`vwl`, 5,3 MB) als `series`/`observation` mit Vintage, VWL-Ansichten laden je Land/Reihe | P1.1 | Abgleich mit CSV | 2 | geplant |
 | P2.7 | Wahlen und Geometrien: PostGIS, vereinfachte Geometrien je Zoomstufe, Wahldaten je Wahl laden | P2.5 | `wahlen-smoke.js` | 2 | geplant |
 | P3.1 | Datenkatalog `data_source` + `/data-catalog` aus vorhandenen Quellenangaben (`volkswirtschaft/serien.csv`, `PROGNOSEGEBER.md`, Adapter) | P2.6 | Katalog vollständig für importierte Reihen | 1 | geplant |
@@ -27,5 +28,6 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | B1 | Server bei netcup einrichten, HTTPS, Timer, Offsite-Backup | Robins Freigabe | Smoke nach Deployment | 1 | **blockiert** (Account) |
 | B2 | Lizenzprüfung je Quelle vor öffentlicher Weiterverbreitung (Kurse, Nachrichten) | – | `datenquellen.md` | 1 | geplant |
 
-Kritischer Pfad bis zur Abnahme „erste HTML-Antwort ohne vollständigen Datenbestand“: P2.3 → P2.4 → P2.5 → P2.6 → P2.7.
-Danach ist die Seite voraussichtlich unter 5 MB (nach P2.3: 37,5 MB Weltkugel bzw. 19,9 MB Terminal in der API-Fassung, 69,1 MB in der Pages-Fassung).
+Kritischer Pfad bis zur Abnahme „erste HTML-Antwort ohne vollständigen Datenbestand“, nach Größe der eingebetteten Blöcke geordnet:
+P2.3 → P2.5a → P2.6 (VWL 5,3 MB) → P2.7 (Wahlen und Geometrien, zusammen rund 8 MB) → P2.5 → P2.4.
+Danach ist die Seite voraussichtlich unter 5 MB (nach P2.5a: 30,3 MB Weltkugel bzw. 19,9 MB Terminal in der API-Fassung, 69,1 MB in der Pages-Fassung).

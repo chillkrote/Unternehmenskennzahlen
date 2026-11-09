@@ -92,7 +92,9 @@ const GLOBUS = (() => {
   const STAMM = {};      // Unternehmens-ID bzw. Schlüssel -> Zeile der Tabelle, für alle Unternehmen ohne Kennzahlen im Terminal
   const NUR_LAND = {};   // ISO -> [{ id, name, branche, art }] Unternehmen, deren Sitz nur auf Landesebene bekannt ist
   function tabZeile(z) {
-    const o = {}; TABELLE.spalten.forEach((s, j) => { o[s] = TABELLE.listen[s] ? TABELLE.listen[s][z[j]] : z[j]; }); return o;
+    const o = {}; TABELLE.spalten.forEach((s, j) => { o[s] = TABELLE.listen[s] ? TABELLE.listen[s][z[j]] : z[j]; });
+    if (TABELLE.schlank) o.k = o.id;          // API-Fassung: Schlüssel = ID, Details kommen beim Öffnen aus /companies/{id}
+    return o;
   }
   function punkteBauen() {
     const sp = SITZE.spalten, i = n => sp.indexOf(n);
@@ -2115,8 +2117,24 @@ const GLOBUS = (() => {
       <div class="gk-listeninhalt">${listeEintraege(x)}</div></div>`;
   }
   const QUELLE_GEO = { tabelle: "Spalte Sitz der Unternehmenstabelle", gleif: "Anschrift laut GLEIF (LEI-Register)", wikidata: "Hauptsitz laut Wikidata" };
+  // API-Fassung: Rechtsform, Börse, LEI, Handelsregister, Website, Beschreibung und Quelle über die Plattform-API nachladen
+  const stammLaeuft = {};
+  async function stammNachladen(k) {
+    const r = STAMM[k];
+    try {
+      const d = (await API.unternehmenEins(r.id)).data;
+      Object.assign(r, { rf: d.legal_form || "", boerse: d.exchange || "", lei: d.lei || "", hr: d.register_no || "", web: d.website || "",
+        bank: d.is_bank ? "ja" : "nein", text: d.description || "", quelle: d.source_url || "", _voll: true });
+    } catch (e) { r._fehler = e.message || "Laden fehlgeschlagen"; }
+    delete stammLaeuft[k];
+    S.offen.filter(x => x.art === "stamm" && x.id === k).forEach(fensterInhalt);
+  }
   function stammAnsicht(k) {
     const r = STAMM[k]; if (!r) return `<p class="n">Unbekannt.</p>`;
+    if (TABELLE && TABELLE.schlank && !r._voll && !r._fehler && typeof API !== "undefined" && API.aktiv && !stammLaeuft[k]) stammLaeuft[k] = stammNachladen(k);
+    const laedt = TABELLE && TABELLE.schlank && !r._voll
+      ? (r._fehler ? `<p class="n">Weitere Stammdaten nicht geladen: ${esc(r._fehler)} <button type="button" class="chip" data-gstammretry="${esc(k)}">Erneut versuchen</button></p>`
+        : `<p class="n" role="status">Weitere Stammdaten werden geladen …</p>`) : "";
     const link = u => /^https?:\/\//.test(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>` : esc(u);
     const zeile = (t, v, roh) => v ? `<tr><td>${t}</td><td style="font-family:var(--sans);text-align:left">${roh ? v : esc(v)}</td></tr>` : "";
     const sitz = r.genau ? `${esc(r.ort || r.sitz)} <span class="pct">(${esc(QUELLE_GEO[r.q] || r.q || "")})</span>` : `<span class="pct">nicht bekannt, daher kein eigener Punkt auf der Karte (im Ring „ohne Ort“ in der Mitte von ${esc(landName(r.land))})</span>`;
@@ -2126,7 +2144,7 @@ const GLOBUS = (() => {
       ${zeile("Branche", r.branche)}${zeile("Bank", r.bank)}${zeile("Börsennotiert", r.notiert)}${zeile("Börse", r.boerse)}${zeile("Kürzel", r.ticker)}${zeile("ISIN", r.isin)}
       ${zeile("LEI", r.lei ? `<a href="https://search.gleif.org/#/record/${esc(r.lei)}" target="_blank" rel="noopener">${esc(r.lei)}</a>` : "", true)}${zeile("Handelsregister", r.hr)}
       ${zeile("Index", r.index)}${zeile("Website", r.web ? link(r.web) : "", true)}${zeile("Beschreibung", r.text)}
-      ${zeile("Quelle", r.quelle ? link(r.quelle) : "", true)}${zeile("Unternehmens-ID", r.id)}</tbody></table></div>`;
+      ${zeile("Quelle", r.quelle ? link(r.quelle) : "", true)}${zeile("Unternehmens-ID", r.id)}</tbody></table>${laedt}</div>`;
   }
   function vergleichOeffnen() {
     const da = S.offen.find(x => x.art === "vergleich");
@@ -2285,6 +2303,7 @@ const GLOBUS = (() => {
     if (g("data-gkneben") != null) { nebeneinander(); return true; }
     if (g("data-gkvgl") != null) { vergleichOeffnen(); return true; }
     if (g("data-gkallezu") != null) { [...S.offen].forEach(schliessen); return true; }
+    if ((v = g("data-gstammretry")) != null) { if (STAMM[v]) { delete STAMM[v]._fehler; S.offen.filter(x => x.art === "stamm" && x.id === v).forEach(fensterInhalt); } return true; }
     if ((v = g("data-gfvgl")) != null) { const a = UNT.auswahl(); UNT.setAuswahl(a.includes(v) ? a.filter(x => x !== v) : [...a, v]); alleZeichnen(); return true; }
     if (g("data-gfzu") != null) { const x = fx(); if (x) schliessen(x); return true; }
     if (g("data-gfmax") != null) { const x = fx(); if (x) x.el.classList.toggle("max"); return true; }

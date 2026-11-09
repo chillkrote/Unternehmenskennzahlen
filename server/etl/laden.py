@@ -7,6 +7,7 @@ Verwendet die bestehenden, getesteten Importe aus international/ (keine zweite I
   4. Sitzland je Zeile mit derselben Zuordnung wie die Oberfläche (app/register.py: land_codes)
   5. import_de.importieren                       Zeitreihen deutscher Unternehmen -> fact (mit Quelle und Vintage)
   6. etl.profile.importieren                     Unternehmensprofile aus app/data/unternehmen.json (Kennzahlen, Abschlüsse, Gremien …)
+  7. etl.vwl.importieren                         VWL-Reihen aus volkswirtschaft/ (series, observation mit Vintage)
 
 Jeder Import läuft in einer eigenen Transaktion mit Laufprotokoll (international.ingestion_run): schlägt ein Schritt fehl,
 bleibt der letzte gültige Stand dieses Schritts unverändert. Die Unternehmens-IDs (U000123) kommen unverändert aus
@@ -99,6 +100,7 @@ def main(argv=None):
     ap.add_argument("--ohne-kennzahlen", action="store_true", help="nur Stammdaten, ohne zeitreihen/zeitreihe_lang.csv")
     ap.add_argument("--ohne-profile", action="store_true", help="ohne Unternehmensprofile (app/data/unternehmen.json)")
     ap.add_argument("--profile-erzwingen", action="store_true", help="Profile neu laden, auch wenn unternehmen.json unverändert ist")
+    ap.add_argument("--ohne-vwl", action="store_true", help="ohne VWL-Reihen (volkswirtschaft/)")
     ap.add_argument("--dry-run", action="store_true", help="Importe ausführen und zurückrollen (Schema wird trotzdem migriert)")
     a = ap.parse_args(argv)
     url = os.environ.get("DATABASE_URL")
@@ -121,6 +123,10 @@ def main(argv=None):
             from etl import profile
             for k, v in sorted(profile.importieren(conn, dry_run=a.dry_run, erzwingen=a.profile_erzwingen).items()):
                 print(f"  profile.{k}: {v}")
+        if not a.ohne_vwl:
+            from etl import vwl
+            for k, v in sorted(vwl.importieren(conn, dry_run=a.dry_run).items()):
+                print(f"  vwl.{k}: {v}")
         conn.execute("ANALYZE international.company_register")
         print("Leserechte API-Rolle:", "vergeben" if rechte_vergeben(conn) else "Rolle fehlt (nur lokal ohne Compose)")
 

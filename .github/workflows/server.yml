@@ -4,7 +4,7 @@ name: Server (API-Tests)
 on:
   pull_request:
     paths: ["server/**", "international/**", "stammdaten/**", "unternehmen-tabelle/**", "zeitreihen/*.csv", "app/register.py",
-            "app/geo/laender.geojson", "app/data/unternehmen.json", ".github/workflows/server.yml"]
+            "app/geo/laender.geojson", "app/data/unternehmen.json", "app/vwl.py", "volkswirtschaft/*.csv", ".github/workflows/server.yml"]
   workflow_dispatch:
 
 permissions:

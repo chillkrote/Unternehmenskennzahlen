@@ -14,6 +14,7 @@ COPY international/*.py /srv/sphaerae/international/
 COPY international/migrations /srv/sphaerae/international/migrations
 COPY international/oecd_mitglieder.csv /srv/sphaerae/international/
 COPY app/register.py /srv/sphaerae/app/register.py
+COPY app/vwl.py /srv/sphaerae/app/vwl.py
 COPY app/geo/laender.geojson /srv/sphaerae/app/geo/laender.geojson
 COPY server /srv/sphaerae/server
 USER sphaerae

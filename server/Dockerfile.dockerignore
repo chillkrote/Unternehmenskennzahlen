@@ -5,6 +5,7 @@
 !international/migrations/
 !international/oecd_mitglieder.csv
 !app/register.py
+!app/vwl.py
 !app/geo/laender.geojson
 server/tests/
 server/**/__pycache__/

@@ -32,6 +32,9 @@ aufsichtsrechtliche Kennzahlen nur mit `consolidation = 'regulatory'`; eine ISIN
 Eigenkapitalquote nach HGB und IFRS bleiben über `accounting_standard` getrennt, Eigenkapital mit und ohne Minderheiten sind
 eigene Kennzahlen (`equity`, `equity_incl_nci`).
 
+| `series` (0004) | VWL-Reihen aus `volkswirtschaft/serien.csv`: Thema, Einheit, Format, Art, Frequenz, Quelle, Datensatz, Filter, Abruf, Projektion ab | `id` |
+| `observation` (0004) | VWL-Werte je Reihe, Gebiet (Code der Quelle) und Zeitraum mit `valid_from`/`valid_to` (Vintage): ein geänderter oder entfallener Wert endet, die neue Fassung kommt dazu | aktuell eindeutig je (`series_id`, `geo`, `period`) |
+
 Profilstand und Fakten sind getrennt: `fact` hält Werte mit Periode, Rechnungslegung und Vintage (bisher deutsche Zeitreihen),
 `company_profile_value` den Kennzahlenstand, den das Terminal anzeigt (Build aus Branchenmappen, Bilanzvergleich und Börsendaten).
 Ein Profilimport ersetzt den vorigen Stand vollständig in einer Transaktion; die Überführung der Profilwerte in `fact` mit Periode

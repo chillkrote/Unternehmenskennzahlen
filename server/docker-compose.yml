@@ -72,6 +72,7 @@ services:
       - ../stammdaten:/srv/sphaerae/stammdaten:ro
       - ../zeitreihen:/srv/sphaerae/zeitreihen:ro
       - ../app/data/unternehmen.json:/srv/sphaerae/app/data/unternehmen.json:ro   # Unternehmensprofile (etl/profile.py)
+      - ../volkswirtschaft:/srv/sphaerae/volkswirtschaft:ro                       # VWL-Reihen (etl/vwl.py)
     depends_on:
       db:
         condition: service_healthy

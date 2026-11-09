@@ -25,6 +25,9 @@ const VWL = (() => {
     VD = d && d.serien && d.serien.length ? d : null;
     if (!VD) return false;
     ALLE_DATEN = VD;
+    if (VD._api && VD.abdeckung) {     // API-Fassung: Werte fehlen, Gerüst {reihe: {gebiet: []}} aus der Abdeckung; bedarf() füllt es
+      VD.daten = Object.fromEntries(Object.entries(VD.abdeckung).map(([id, geos]) => [id, Object.fromEntries(geos.map(g => [g, []]))]));
+    }
     SER = Object.fromEntries(VD.serien.map(s => [s.serie_id, s]));
     LAND = Object.fromEntries(VD.laender.map(l => [l.geo, l.name]));
     OECD = Object.fromEntries(VD.laender.map(l => [l.geo, l.oecd === "1"]));
@@ -43,6 +46,37 @@ const VWL = (() => {
       prognosen: ALLE_DATEN.prognosen.filter(x=>!x.geo || x.geo===code)};
     S.land = code; S.geos = [code]; S.pland = code; S.pgeber = code;
   }
+
+  /* ----- Laden bei Bedarf (API-Fassung, build.py --api) -----
+     bedarf(id) ist true, wenn die Werte der Reihe da sind; sonst wird sie vorgemerkt und gesammelt über /observations geladen
+     (bis 60 Reihen je Anfrage). Die Arrays des Gerüsts werden an Ort und Stelle gefüllt, damit auch die nach Land gefilterte Sicht
+     (setLand) sie sieht. Danach meldet das Ereignis „sphaerae:vwl“ den Ansichten, dass sie neu zeichnen können. */
+  const GELADEN = new Set(), LAEUFT = new Set(), WARTET = new Set();
+  let ladeTimer = 0, ladeFehler = null;
+  function bedarf(id) {
+    if (!ALLE_DATEN || !ALLE_DATEN._api || GELADEN.has(id) || !ALLE_DATEN.daten[id]) return true;
+    if (!LAEUFT.has(id) && !ladeFehler) { WARTET.add(id); if (!ladeTimer) ladeTimer = setTimeout(nachladen, 0); }
+    return false;
+  }
+  async function nachladen() {
+    ladeTimer = 0;
+    const ids = [...WARTET]; WARTET.clear();
+    for (let i = 0; i < ids.length; i += 60) {
+      const teil = ids.slice(i, i + 60); teil.forEach(x => LAEUFT.add(x));
+      try {
+        const d = (await API.get("/observations", { series: teil.join(",") })).data;
+        for (const id of teil) for (const [g, p] of Object.entries(d[id] || {})) {
+          const ziel = ALLE_DATEN.daten[id][g] || (ALLE_DATEN.daten[id][g] = []);
+          ziel.length = 0; p.forEach(x => ziel.push(x));
+        }
+        teil.forEach(x => GELADEN.add(x));
+      } catch (e) { ladeFehler = e; }
+      teil.forEach(x => LAEUFT.delete(x));
+    }
+    dispatchEvent(new CustomEvent("sphaerae:vwl", { detail: { fehler: ladeFehler } }));
+  }
+  const ladeStatus = () => ladeFehler ? { fehler: ladeFehler.message || "Laden fehlgeschlagen" } : (LAEUFT.size || WARTET.size) ? { laedt: true } : {};
+  function erneut() { ladeFehler = null; dispatchEvent(new CustomEvent("sphaerae:vwl", { detail: {} })); }
 
   /* ----- Zeit und Zahlen ----- */
   const MONATE = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
@@ -70,7 +104,7 @@ const VWL = (() => {
     }
   }
   const dlt = (s, v) => v == null ? "" : (v > 0 ? "+" : v < 0 ? "−" : "") + (s.art === "niveau" || s.art === "index" ? f1.format(Math.abs(v)) + " %" : f1.format(Math.abs(v)) + " Pkt.");
-  const pts = (id, g) => (VD.daten[id] && VD.daten[id][g]) || [];
+  const pts = (id, g) => { bedarf(id); return (VD.daten[id] && VD.daten[id][g]) || []; };
   const istPunkt = (s, q) => !s.prognose_ab || q[0] < s.prognose_ab;
   const istPts = (s, g) => pts(s.serie_id, g).filter(q => istPunkt(s, q));
   const projPts = (s, g) => s.prognose_ab ? pts(s.serie_id, g).filter(q => !istPunkt(s, q)) : [];
@@ -449,6 +483,6 @@ const VWL = (() => {
   const finden = q => { q = (q || "").trim().toLowerCase(); return q && VD ? VD.serien.find(s => s.serie_id === q || s.name.toLowerCase().includes(q)) : null; };
   const waehle = id => { S.serie = id; S.ljahr = "ist"; };
   const datalist = () => VD ? VD.serien.map(s => `<option value="${esc(s.name)}">`).join("") : "";
-  return { init, da, setLand, alleDaten: () => ALLE_DATEN, laender: () => ALLE_DATEN ? ALLE_DATEN.laender.map(l=>l.geo) : [], korr: () => VD && { serien: VD.serien, laender: VD.laender, themen: VD.themen, daten: VD.daten }, viewUeb, viewReihe, viewLaender, viewProg, viewQuellen, klick, nachRender, meta, finden, waehle, datalist };
+  return { init, da, setLand, bedarf, ladeStatus, erneut, alleDaten: () => ALLE_DATEN, laender: () => ALLE_DATEN ? ALLE_DATEN.laender.map(l=>l.geo) : [], korr: () => VD && { serien: VD.serien, laender: VD.laender, themen: VD.themen, daten: VD.daten }, viewUeb, viewReihe, viewLaender, viewProg, viewQuellen, klick, nachRender, meta, finden, waehle, datalist };
 })();
 

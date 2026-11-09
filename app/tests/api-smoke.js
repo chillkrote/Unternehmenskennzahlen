@@ -79,6 +79,17 @@ const { chromium } = require("playwright");
   await p.waitForTimeout(500);
   const abs = await p.textContent("#view");
   pruefe(/Bilanz- und GuV-Abdeckung/.test(abs) && /\d+ \/ \d+ \(EUR\)/.test(abs), "Abdeckungstabelle mit Postenzahlen");
+  // VWL: Reihenwerte nicht eingebettet, Ansichten laden sie über /observations nach
+  const vblock = (html.match(/<script id="vwl" type="application\/json">([\s\S]*?)<\/script>/) || [, ""])[1];
+  pruefe(vblock.length > 1000 && !/"daten":\{/.test(vblock) && /"abdeckung":/.test(vblock), `VWL-Werte nicht eingebettet (VWL-Block ${(vblock.length / 1e6).toFixed(1)} MB)`);
+  for (const [hash, text] of [["v-ueb", "BIP"], ["v-reihe", "Zeitreihe"], ["v-laender", "Länder"], ["korr", "Korrelation"]]) {
+    await p.evaluate(h => { location.hash = h; }, hash);
+    await p.waitForFunction(() => !document.getElementById("vwl-laedt"), null, { timeout: 20000 });
+    await p.waitForTimeout(300);
+    const t = await p.textContent("#view");
+    pruefe(t.includes(text) && /\d,\d/.test(t) && !/konnten nicht geladen/.test(t), `VWL-Ansicht #${hash} mit Werten über die API`);
+  }
+  pruefe(api.some(u => u.includes("/api/v1/observations?series=")), "Reihen über /api/v1/observations");
   console.log(`${api.length} API-Anfragen, ${fehler.length} Fehler`, fehler.slice(0, 5));
   await b.close();
   process.exit(fehler.length ? 1 : 0);

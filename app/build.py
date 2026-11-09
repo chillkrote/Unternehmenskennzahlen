@@ -1,5 +1,6 @@
 """Baut das Terminal (Unternehmen und Volkswirtschaft): Excel -> data/banken.json -> dist/bankterminal.html (eine Datei, Daten eingebettet)."""
 import argparse
+import html
 import json
 import sys
 from pathlib import Path
@@ -20,7 +21,12 @@ def main():
     p.add_argument("--nur-seite", action="store_true",
                    help="data/banken.json und data/unternehmen.json nicht neu erzeugen, sondern den vorhandenen Stand einbetten "
                         "(für Änderungen an der Oberfläche, auch im teilweisen Checkout ohne Dokumentordner)")
+    p.add_argument("--api", metavar="URL", default=None,
+                   help="API-Modus (Server, server/): das Gesamtregister wird nicht eingebettet, Verzeichnis und Registerprofile laden "
+                        "über diese API-Basisadresse, z. B. /api/v1 (gleiche Domain) oder http://127.0.0.1:8000/api/v1")
+    p.add_argument("--ziel", default="dist", help="Ausgabeordner unter app/ (Standard dist; für den Server dist-api)")
     a = p.parse_args()
+    ziel_ordner = HIER / a.ziel
     if a.nur_seite:
         roh = (HIER / "data/banken.json").read_text()
         banken = json.loads(roh)["banken"]
@@ -35,8 +41,8 @@ def main():
     # Fußleiste (Impressum, Kontakt, About): Texte aus app/seiten/*.md, Oberfläche aus src/seiten.js/.css
     vorlage = (vorlage.replace("__SEITEN_JS__", (HIER / "src/seiten.js").read_text()).replace("__SEITEN_CSS__", (HIER / "src/seiten.css").read_text())
                .replace("__SEITEN__", seiten.json_text().replace("</", "<\\/")))
-    (HIER / "dist").mkdir(exist_ok=True)
-    ziel = HIER / "dist/bankterminal.html"
+    ziel_ordner.mkdir(exist_ok=True)
+    ziel = ziel_ordner / "bankterminal.html"
     # Börsendaten liegen getrennt (marktdaten.py, täglich); fehlen sie, zeigt das Terminal MKT leer
     markt_datei = HIER / "data/markt.json"
     markt = markt_datei.read_text() if markt_datei.exists() else "null"
@@ -63,8 +69,11 @@ def main():
             print("Länder ohne ISO-Code im Register:", unbekannt)
     vd = vwl.lade()
     vroh = json.dumps(vd, ensure_ascii=False, separators=(",", ":")) if vd else "null"
+    if a.api:
+        # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
+        reg = "null"
     js = (HIER / "src/unternehmen.js").read_text()
-    seite = (vorlage.replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
+    seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))
              .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__BOERSE_JS__", (HIER / "src/boerse.js").read_text()).replace("__FINANZ_JS__", (HIER / "src/finanz.js").read_text())
              .replace("__BOERSE__", boerse.replace("</", "<\\/")).replace("__VWL__", vroh.replace("</", "<\\/"))
@@ -84,23 +93,28 @@ def main():
                 ft["properties"] = {k: ft["properties"][k] for k in ("nr", "name", "land")}
             inhalt = json.dumps(wk, ensure_ascii=False, separators=(",", ":"))
         seite = seite.replace(platz, inhalt.replace("</", "<\\/"), 1)
+    # API-Basisadresse für src/api.js (nur im API-Modus; ohne sie arbeitet die Seite wie bisher mit eingebetteten Daten)
+    kopf_api = f'<meta name="sphaerae-api" content="{html.escape(a.api, quote=True)}">' if a.api else ""
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
-    (HIER / "dist/bankterminal.fragment.html").write_text(seite)
+    (ziel_ordner / "bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen
     ziel.write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
-                    '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">'
+                    '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' + kopf_api +
                     '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'
                     + seite + "\n</body></html>\n")
     print(f"{len(banken)} Banken -> {ziel}")
     # Weltkugel: dieselbe Seite mit Karte, Ländern und Firmensitzen (alternative Oberfläche)
     welt, n_sitze = globus.seite(seite)
-    (HIER / "dist/weltkugel.fragment.html").write_text(welt)
-    globus.wahlgeo_schreiben(HIER / "dist")             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
-    (HIER / "dist/weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
-                                              '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">'
+    (ziel_ordner / "weltkugel.fragment.html").write_text(welt)
+    globus.wahlgeo_schreiben(ziel_ordner)             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
+    (ziel_ordner / "weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
+                                              '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' + kopf_api +
                                               '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'
                                               + welt + "\n</body></html>\n")
-    print(f"Weltkugel: {n_sitze} Firmensitze -> {HIER / 'dist/weltkugel.html'}")
+    print(f"Weltkugel: {n_sitze} Firmensitze -> {ziel_ordner / 'weltkugel.html'}")
+    if a.api:
+        # Startseite des Servers: Weltkugel wie auf GitHub Pages (Deep Links #globus, #firma-… bleiben gültig)
+        (ziel_ordner / "index.html").write_text((ziel_ordner / "weltkugel.html").read_text())
     # Kontrolle der zentralen Unternehmens-IDs (u. a.: jede ISIN nur bei einer ID); ein Verstoß lässt den Bau fehlschlagen,
     # damit die Workflows (marktdaten, termine) nichts Fehlerhaftes committen
     sys.path.insert(0, str(HIER.parent / "stammdaten"))

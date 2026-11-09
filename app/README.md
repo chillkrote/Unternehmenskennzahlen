@@ -35,6 +35,15 @@ Andere Excel-Datei: `python3 app/build.py --excel pfad/zur/datei.xlsx`.
 
 Nach jeder Änderung an der Excel (z. B. durch `rohdaten/skripte/build.py`) einfach `app/build.py` neu laufen lassen.
 
+## Server-Fassung (API-Modus)
+
+`python3 app/build.py --nur-seite --api /api/v1 --ziel dist-api` baut dieselbe Oberfläche für den eigenen Server (`server/`,
+Docker Compose): das Gesamtregister (rund 10 MB) wird nicht eingebettet, Verzeichnis (F4), Registerprofile (`#firma-U…` ohne
+Kennzahlen) und die Befehlszeile fragen die Plattform-API ab (`src/api.js`: Zeitlimit, begrenzte Wiederholung, Zwischenspeicher,
+Lade- und Fehlerzustände). Ohne `--api` entsteht die bisherige Fassung unverändert (GitHub Pages, Artifact, Desktop-App).
+Die API-Adresse lässt sich zum Testen mit `?api=<url>` überschreiben. Test: `node app/tests/api-smoke.js http://localhost/bankterminal.html`.
+Stand und Funktionsmatrix: [`docs/umsetzungsstand.md`](../docs/umsetzungsstand.md).
+
 ## Fußleiste: Impressum, Kontakt, About Sphaerae
 
 Unten mittig (Terminal und Weltkugel) stehen drei Schaltflächen, die ein Textfenster öffnen. Die Texte liegen als Markdown in `app/seiten/` (`impressum.md`, `kontakt.md`, `about.md`) und werden beim Bau über `seiten.py` eingebettet; Oberfläche in `src/seiten.js`/`seiten.css`. Platzhalter `[[…]]` erscheinen gelb markiert. Anleitung: `app/seiten/README.md`. Test: `app/tests/seiten-smoke.js`.

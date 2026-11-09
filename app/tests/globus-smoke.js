@@ -46,7 +46,7 @@ const path = require('node:path');
   // Unternehmen ohne Kennzahlen (nur Stammdaten aus der Unternehmenstabelle): Fenster über die Suche
   const stamm = await page.evaluate(() => { const r = document.getElementById('geo-tabelle'); const t = r && JSON.parse(r.textContent); if (!t) return null;
     const j = t.spalten.indexOf('id'), n = t.spalten.indexOf('name');
-    const z = t.zeilen.find(z => !z[j] || (UNT.nachId(z[j]) || {}).stub); return z && z[n]; });
+    const z = t.zeilen.find(z => !z[j] || !UNT.nachId(z[j]) || UNT.nachId(z[j]).stub); return z && z[n]; });   // ohne eingebettetes Register (API-Fassung) gibt es keine Platzhalter
   if (stamm) {
     const vorher = await page.locator('.gf').count();
     await page.fill('#gk-suchfeld', stamm); await page.press('#gk-suchfeld', 'Enter'); await page.waitForTimeout(150);

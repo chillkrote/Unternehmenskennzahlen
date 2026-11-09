@@ -237,3 +237,26 @@ class BranchenStatistik(BaseModel):
     country: Optional[str] = None
     companies: int
     metrics: list[BranchenWert]
+
+
+class Reihe(BaseModel):
+    id: str
+    topic: Optional[str] = None
+    name: str
+    unit: Optional[str] = None
+    fmt: Optional[str] = None
+    kind: Optional[str] = None
+    frequency: Optional[str] = None
+    core: bool = False
+    provider: Optional[str] = None
+    dataset: Optional[str] = None
+    filter: Optional[str] = None
+    url: Optional[str] = None
+    fetched: Optional[str] = None
+    forecast_from: Optional[str] = Field(None, description="ab diesem Zeitraum Projektion, keine Beobachtung")
+    note: Optional[str] = None
+    geos: list[str] = Field([], description="Gebiete mit Werten (Codes der Quelle)")
+    first_period: Optional[str] = None
+    last_period: Optional[str] = None
+    observations: int = 0
+    meta: dict[str, Any] = {}

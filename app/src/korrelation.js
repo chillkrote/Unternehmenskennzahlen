@@ -166,7 +166,8 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
     f._kz = o; return o;
   }
   function seriesVWL(a, geo) {
-    const s = V.nameVon[a], d = V.daten[a] && V.daten[a][geo]; if (!s || !d) return null;
+    if (VWL.bedarf) VWL.bedarf(a);           // API-Fassung: Reihe nachladen, die Ansicht zeichnet danach neu
+    const s = V.nameVon[a], d = V.daten[a] && V.daten[a][geo]; if (!s || !d || !d.length) return null;
     const pa = s.prognose_ab, pts = d.filter(p => !(pa && String(p[0]) >= pa)).map(p => [String(p[0]), p[1]]);   // Projektionen sind keine Beobachtungen
     if (!pts.length) return null;
     return { label: `${s.name} · ${V.land[geo] || geo}`, kurz: `${s.name.replace(/ \(.*?\)/, "")} ${geo}`, freq: s.frequenz, pts, art: s.art === "rate" ? "rate" : s.art === "saldo" ? "saldo" : s.art === "index" ? "index" : "niveau",

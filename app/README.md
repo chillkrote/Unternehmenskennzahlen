@@ -43,8 +43,10 @@ Kennzahlen) und die Befehlszeile fragen die Plattform-API ab (`src/api.js`: Zeit
 Lade- und Fehlerzustände). Abschlussposten, Gremien, Vergütung und Dokumente (rund 21 MB) fehlen ebenfalls im eingebetteten
 Unternehmensblock (`build.py: firmen_fuer_api`); das Profil lädt sie über `/companies/{id}/profile` nach, die Kennzahlen bleiben
 für die Branchenansichten eingebettet. Auf der Weltkugel fehlen Beschreibung, Quelle, Website, LEI, Handelsregister, Rechtsform und Börse in der eingebetteten
-Unternehmenstabelle (`globus.py: tabelle_schlank`); das Stammdaten-Fenster lädt sie über `/companies/{id}`. Nach einer Änderung an
-`data/unternehmen.json` den Server-ETL laufen lassen. Ohne `--api` entsteht die bisherige Fassung unverändert (GitHub Pages, Artifact, Desktop-App).
+Unternehmenstabelle (`globus.py: tabelle_schlank`); das Stammdaten-Fenster lädt sie über `/companies/{id}`. Die VWL-Reihenwerte (4,4 MB) sind ebenfalls nicht
+eingebettet, nur die Abdeckung je Reihe; `src/vwl.js` (`bedarf`) lädt sie gesammelt über `/observations` nach, VWL-Ansichten, Korrelation und Weltkugel
+zeichnen danach neu (Ereignis `sphaerae:vwl`). Nach einer Änderung an `data/unternehmen.json` oder `volkswirtschaft/` den Server-ETL laufen lassen.
+Ohne `--api` entsteht die bisherige Fassung unverändert (GitHub Pages, Artifact, Desktop-App).
 Die API-Adresse lässt sich zum Testen mit `?api=<url>` überschreiben. Test: `node app/tests/api-smoke.js http://localhost/bankterminal.html`.
 Stand und Funktionsmatrix: [`docs/umsetzungsstand.md`](../docs/umsetzungsstand.md).
 

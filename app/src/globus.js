@@ -434,6 +434,7 @@ const GLOBUS = (() => {
   }
   /* Aktuellster Wert je Land: Monats-/Quartalswert aus dem VWL-Datensatz (Eurostat, OECD), sonst Jahreswert der Weltbank */
   const WERT = {};
+  let VWL_UNVOLLST = false;      // API-Fassung: solange Reihen nachladen, Länderwerte nicht zwischenspeichern
   function aktuell(iso) {
     if (WERT[iso]) return WERT[iso];
     const geo = VWL_GEO(iso), d = vwlDaten();
@@ -443,7 +444,7 @@ const GLOBUS = (() => {
     const frischer = (a, b) => a && (!b || a.jahr >= b.jahr) ? a : b;
     const w = { bip: frischer(ausVwl(["bip_yoy", "oecd_bip_yoy"]), ausWb("bip_wachstum")), inf: frischer(ausVwl(["hicp_gesamt", "oecd_inflation"]), ausWb("inflation")),
       al: frischer(ausVwl(["arbeitslosenquote", "oecd_arbeitslosenquote"]), ausWb("arbeitslos")) };
-    if (d) WERT[iso] = w;
+    if (d && !VWL_UNVOLLST) WERT[iso] = w;
     return w;
   }
   const vz = (v, n = 1) => v == null ? "–" : (v > 0 ? "+" : "") + (n ? f1 : f0).format(v);
@@ -1758,9 +1759,16 @@ const GLOBUS = (() => {
   const PROG = [["BIP real", ["oecd_eo_bip"]], ["Inflation", ["oecd_eo_inflation", "oecd_eo_inflation_hvpi"]], ["Arbeitslosenquote", ["oecd_eo_arbeitslosenquote"]],
     ["Finanzierungssaldo", ["oecd_eo_finanzierungssaldo"]], ["Staatsschulden", ["oecd_eo_schuldenquote"]]];
   let VD = null, SER = {};
+  addEventListener("sphaerae:vwl", () => {        // nachgeladene Reihen: Länderwerte neu, Karte und Seitenleiste neu zeichnen
+    VWL_UNVOLLST = false; for (const k of Object.keys(WERT)) delete WERT[k];
+    if (map) [["vw-wert", wertPunkte], ["vw-raum", raumPunkte]].forEach(([q, f]) => { if (map.getSource(q)) map.getSource(q).setData(f()); });
+    const g = document.getElementById("globus"); if (g && !g.hidden) seiteZeichnen();
+  });
   function vwlDaten() { if (!VD && typeof VWL !== "undefined" && VWL.alleDaten) { VD = VWL.alleDaten(); SER = VD ? Object.fromEntries(VD.serien.map(s => [s.serie_id, s])) : {}; } return VD; }
   function reihe(ids, geo) {
     const d = vwlDaten(); if (!d) return null;
+    const da = ids.map(id => VWL.bedarf ? VWL.bedarf(id) : true).every(Boolean);   // API-Fassung: fehlende Reihen nachladen
+    if (!da) VWL_UNVOLLST = true;
     for (const id of ids) { const p = d.daten[id] && d.daten[id][geo]; if (p && p.length) return { id, s: SER[id] || {}, p }; }
     return null;
   }

@@ -16,6 +16,8 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | Backup und Wiederherstellung | Getestet (lokal) | Probe-Wiederherstellung 09.11.2026: 32.581 / 4.802 / Revision 0002 |
 | Unternehmensprofile in der Datenbank (Revision 0003, `server/etl/profile.py`) | Getestet | 1.284 Profile, 23.280 Werte, 4.664 Abschlüsse mit 412.107 Posten; `test_profile.py` vergleicht jeden Wert und jeden Posten mit `unternehmen.json`, Mediane und Rang für alle 1.284 Profile ohne Abweichung |
 | API `/companies/{id}/profile`, `/sectors/{id}/statistics`, `/profile-metrics` | Getestet | `test_profile.py` (Rechenregeln wie `unternehmen.js`, Länderauswahl, Fehlerfälle) |
+| VWL-Reihen in der Datenbank (Revision 0004, `server/etl/vwl.py`) mit Vintage | Getestet | 56 Reihen, 210.160 Werte; `test_vwl.py`: jede Zahl gleich der eingebetteten Seite, Revision und Wegfall mit Stand „bekannt zum“ |
+| API `/series`, `/series/{id}`, `/observations` | Getestet | `test_vwl.py` (Filter, Eingabeprüfung, `as_of`) |
 | Datenadapter `app/src/api.js` (Zeitlimit, Wiederholung, Cache, Fehler) | Getestet | `app/tests/api-smoke.js` (Ausfall + „Erneut versuchen“) |
 | Build-Schalter `--api`, `--ziel` | Getestet | Pages-Fassung unverändert (Smoke-Tests), API-Fassung ohne Register |
 | CI-Workflow `server.yml` (pytest gegen PostgreSQL 16) | Implementiert | läuft im PR |
@@ -37,8 +39,8 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | Branchenvergleiche (F1–F3) | unverändert | **bekannte Einschränkung**: nur Unternehmen mit Kennzahlen, keine Register-Stubs | P2.4 |
 | Unternehmensvergleiche | unverändert | unverändert | |
 | Börsenansichten (BÖR, MKT) | unverändert | unverändert | eingebettet |
-| Volkswirtschaftliche Daten (VWL) | unverändert | unverändert | eingebettet, P2.6 |
-| Korrelationsanalysen (KOR) | unverändert | unverändert | eingebettet |
+| Volkswirtschaftliche Daten (VWL) | unverändert | **verbessert**: Reihenwerte laden bei Bedarf über `/observations` (Ladehinweis, „Erneut versuchen“); Texte aller VWL-Ansichten gleich der Pages-Fassung | `api-smoke.js`; Prognosen und Abgleich (1,4 MB) noch eingebettet |
+| Korrelationsanalysen (KOR) | unverändert | unverändert, VWL-Reihen über die API | `api-smoke.js` (Ansicht gleich der Pages-Fassung) |
 | Handelsdaten, Handelsrouten | unverändert | unverändert | eingebettet |
 | Politik und Wahlen | unverändert | unverändert | `wahlen-smoke.js` |
 | Dokumentenlinks | unverändert | unverändert | Links auf github.com/raw |
@@ -52,7 +54,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 
 | Kriterium | Stand |
 |---|---|
-| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB) und Abschlussposten/Gremien/Dokumente (21 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL, Wahlen, Handel noch eingebettet. Weltkugel-Stammdatendetails (7 MB) ausgelagert. Weltkugel der API-Fassung 30,3 MB (vorher 58,6 MB), Terminal 19,9 MB |
+| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB), Abschlussposten/Gremien/Dokumente (21 MB), Weltkugel-Stammdatendetails (7 MB) und VWL-Reihenwerte (4,4 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL-Prognosen, Wahlen, Handel noch eingebettet. Weltkugel der API-Fassung 26,4 MB (vorher 58,6 MB), Terminal 16,0 MB |
 | Daten nach Bedarf geladen | für Verzeichnis und Registerprofile ja |
 | Öffentliche Endpunkte dokumentiert und begrenzt | ja (`docs/api.md`, OpenAPI, Grenzen) |
 | Unternehmens-IDs erhalten | ja, getestet |

@@ -1131,6 +1131,10 @@ function render() {
   document.getElementById("meta").textContent = st ? "" : bo ? BOE.meta() : vw ? VWL.meta() : bank ? metaBanken : UNT.meta();
   const aktiv = bank ? "u-branche" : aktuell.startsWith("firma-") ? "u-verzeichnis" : aktuell;
   document.querySelectorAll(".key, .subkeys a").forEach(k => (k.dataset.v === aktuell || (k.classList.contains("key") && k.dataset.v === aktiv)) ? k.setAttribute("aria-current", "page") : k.removeAttribute("aria-current"));
+  // API-Fassung: VWL-Reihen kommen bei Bedarf über die API (vwl.js: bedarf); Hinweis, solange sie laden oder wenn das scheitert
+  const vst = (vw || aktuell === "korr") && VWL.ladeStatus ? VWL.ladeStatus() : {};
+  if (vst.laedt) html = `<p class="n" role="status" id="vwl-laedt" style="margin:0 0 8px">Reihen werden über die Plattform-API geladen …</p>` + html;
+  else if (vst.fehler) html = `<p class="n" role="alert" style="margin:0 0 8px">Reihen konnten nicht geladen werden: ${esc(vst.fehler)} <button type="button" class="chip" data-vwlretry>Erneut versuchen</button></p>` + html;
   document.getElementById("view").innerHTML = html;
   const add = document.getElementById("cmpadd");
   if (add) add.addEventListener("change", () => { bankDazu(add.value); });
@@ -1164,8 +1168,13 @@ function bankDazu(name) {
   if (!auswahl.includes(b.bank)) { auswahl.push(b.bank); if (auswahl.length > 6) auswahl.shift(); }
   gehe(aktuell === "ts" ? "ts" : "cmp");
 }
+addEventListener("sphaerae:vwl", () => {      // nachgeladene VWL-Reihen: betroffene Ansicht neu zeichnen (nicht unter der Weltkugel)
+  const g = document.getElementById("globus");
+  if ((!g || g.hidden) && (aktuell.startsWith("v-") || aktuell === "korr" || aktuell === "start")) render();
+});
 document.addEventListener("click", e => {
   const t = e.target;
+  if (t.closest && t.closest("[data-vwlretry]")) { VWL.erneut(); return; }
   if (VWL.klick(t) || BOE.klick(t) || FNZ.klick(t) || UNT.klick(t) || KOR.klick(t) || HDL.klick(t) || POL.klick(t)) return;
   if (t.closest("[data-strip]")) { quotKz = t.closest("[data-strip]").dataset.strip; render(); }
   else if (t.closest("[data-sx]")) { streuX = t.closest("[data-sx]").dataset.sx; render(); }

@@ -35,6 +35,16 @@ def firmen_fuer_api(firmen_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
+def vwl_fuer_api(vwl_json):
+    """VWL ohne Reihenwerte (4,4 MB): nur Abdeckung je Reihe (Gebiete); die Seite lädt Werte über /observations (vwl.js: bedarf)."""
+    if vwl_json == "null":
+        return vwl_json
+    d = json.loads(vwl_json)
+    d["abdeckung"] = {k: list(v) for k, v in d.pop("daten").items()}
+    d["_api"] = 1
+    return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--excel", default=datenschicht.STANDARD_EXCEL)
@@ -93,6 +103,7 @@ def main():
         # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
         reg = "null"
         firmen = firmen_fuer_api(firmen)
+        vroh = vwl_fuer_api(vroh)
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))

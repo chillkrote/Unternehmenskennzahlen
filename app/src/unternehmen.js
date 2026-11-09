@@ -505,6 +505,7 @@ const UNT = (() => {
     const f = NACH_ID[id];
     if (f && !FIRMEN.includes(f)) return `<div class="grid">${panel({code:'LAND',titel:'Unternehmen außerhalb der Länderauswahl',body:'<p>Wähle das Land des Unternehmens oder „Alle Länder“, um dieses Profil zu öffnen.</p>'})}</div>`;
     if ((!f || f.stub) && REG && REGK[id]) return viewReg(id);
+    if ((!f || f.stub) && apiModus() && /^U\d{6}$/i.test(id)) return viewRegApi(id.toUpperCase());
     if (!f) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Unternehmen mit der Kennung <code>${esc(id)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
     S.profil = id;
     const b = BR[f.branche], peers = inBranche(f.branche), gp = f.gruppe ? peers.filter(x => x.gruppe === f.gruppe) : [];
@@ -646,7 +647,14 @@ const UNT = (() => {
     const z = document.getElementById("uzahl"); if (z) z.textContent = `${regListe.length.toLocaleString("de-DE")} Treffer · Seite ${regSeite + 1} von ${seiten}`;
     ["upv", "unx"].forEach(i => { const e = document.getElementById(i); if (e) e.disabled = i === "upv" ? regSeite === 0 : regSeite >= seiten - 1; });
   }
-  function verzFilter() {
+  function verzFilter(ev) {
+    if (apiModus()) {                 // Filter laufen auf dem Server; Texteingabe kurz entprellen
+      const v = id => (document.getElementById(id) || {}).value || "";
+      regF = { q: v("usuche"), br: v("ubr"), land: v("uland"), nt: v("unot"), kz: v("ukz") };
+      regSeite = 0; clearTimeout(apiTimer);
+      apiTimer = setTimeout(apiVerzLaden, ev && ev.target && ev.target.id === "usuche" ? 250 : 0);
+      return;
+    }
     if (!REG) {                       // ohne Register: nur die Unternehmen mit Kennzahlen, Filter über die Zeilen
       const q = (document.getElementById("usuche") || {}).value, br = (document.getElementById("ubr") || {}).value, nt = (document.getElementById("unot") || {}).value, nurM = nt === "m";
       let n = 0;
@@ -658,9 +666,102 @@ const UNT = (() => {
     regF = { q: v("usuche"), br: v("ubr"), land: v("uland"), nt: v("unot"), kz: v("ukz") };
     regSeite = 0; regFiltern(); regZeichnen();
   }
-  function verzSeite(d) { regSeite = Math.max(0, regSeite + d); regZeichnen(); }
+  function verzSeite(d) {
+    if (apiModus()) { regSeite = Math.min(Math.max(0, regSeite + d), Math.max(0, (apiStand.pages || 1) - 1)); apiVerzLaden(); return; }
+    regSeite = Math.max(0, regSeite + d); regZeichnen();
+  }
+
+  /* ----- Verzeichnis und Registerprofil über die Plattform-API (src/api.js) -----
+     Aktiv, wenn eine API konfiguriert ist und kein Register in der Seite steckt (Build mit --api). Filter, Suche und Seiten
+     rechnet der Server (/api/v1/companies); die Seite lädt je Aufruf nur 100 Zeilen statt 32.000. Ohne API bleibt alles wie bisher. */
+  const apiModus = () => typeof API !== "undefined" && API.aktiv && !REG;
+  let apiListen = null, apiAbbruch = null, apiStand = { total: 0, pages: 1 }, apiTimer = null;
+  function apiAuswahlHtml() {
+    const l = (apiListen && apiListen.laender) || [], b = (apiListen && apiListen.branchen) || [];
+    return {
+      land: `<option value="">Alle Länder</option>${l.map(x => `<option value="${esc(x.code)}"${regF.land === x.code ? " selected" : ""}>${esc(x.name_de || x.name)}</option>`).join("")}<option value="ZZ"${regF.land === "ZZ" ? " selected" : ""}>Sonstige / unbekannt</option>`,
+      br: `<option value="">Alle Branchen</option>${b.map(x => `<option value="${esc(x.id)}"${regF.br === x.id ? " selected" : ""}>${esc(x.name)}</option>`).join("")}`,
+    };
+  }
+  function apiListenLaden() {
+    if (apiListen) return;
+    apiListen = { laden: true };
+    Promise.all([API.laender(), API.branchen()]).then(([l, b]) => {
+      apiListen = { laender: l.data.filter(x => x.companies > 0).sort((x, y) => (x.name_de || x.name).localeCompare(y.name_de || y.name, "de")), branchen: b.data.filter(x => x.companies > 0) };
+      const h = apiAuswahlHtml(), ul = document.getElementById("uland"), ub = document.getElementById("ubr");
+      if (ul) ul.innerHTML = h.land; if (ub) ub.innerHTML = h.br;
+    }).catch(() => { apiListen = null; });          // beim nächsten Öffnen erneut versuchen; Liste lädt trotzdem
+  }
+  function apiZeile(r) {
+    const lokal = NACH_ID[r.id], kz = !!(lokal && !lokal.stub && Object.keys(lokal.werte || {}).length) || r.facts > 0;
+    return `<tr><td><a class="flink" href="#firma-${esc(r.id)}">${esc(r.name)}</a></td><td>${r.listed ? '<span class="dot" data-tip="börsennotiert">●</span>' : ""}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(landLabel(r.country || "ZZ"))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(regBr(r.sector))}</td><td class="n" style="text-align:left">${esc(r.ticker || "")}${r.exchange ? ` <span class="pct">${esc(r.exchange)}</span>` : ""}</td><td class="n" style="text-align:left">${esc(r.isin || "")}</td><td class="${kz ? "" : "n"}">${kz ? "ja" : "–"}</td></tr>`;
+  }
+  async function apiVerzLaden() {
+    const tb = document.getElementById("uverz"); if (!tb) return;
+    if (apiAbbruch) apiAbbruch.abort();
+    const ctrl = apiAbbruch = new AbortController(), z = document.getElementById("uzahl");
+    const knopf = (an) => ["upv", "unx"].forEach(i => { const e = document.getElementById(i); if (e) e.disabled = an === "aus" || (i === "upv" ? regSeite === 0 : regSeite >= (apiStand.pages || 1) - 1); });
+    if (z) z.textContent = "lädt …"; tb.setAttribute("aria-busy", "true"); knopf("aus");
+    if (!tb.children.length) tb.innerHTML = `<tr><td colspan="7" class="n">Lädt …</td></tr>`;
+    const land = regF.land || (curLand !== "alle" ? curLand : "");
+    const p = { q: regF.q.trim() || undefined, country: land, sector: regF.br, page: regSeite + 1, page_size: REG_SEITE,
+      listed: regF.nt === "1" ? "true" : regF.nt === "0" ? "false" : undefined, has_metrics: regF.kz === "1" ? "true" : regF.kz === "0" ? "false" : undefined,
+      fields: "id,name,country,sector,listed,isin,ticker,exchange,facts" };
+    if (regF.nt === "m") {
+      p.ids = [...merkListe()].filter(x => /^U\d{6}$/.test(x)).slice(0, 500);
+      if (!p.ids.length) { tb.innerHTML = `<tr><td colspan="7" class="n">Die Merkliste ist leer.</td></tr>`; if (z) z.textContent = "0 Treffer"; tb.removeAttribute("aria-busy"); return; }
+    }
+    try {
+      const r = await API.unternehmen(p, { signal: ctrl.signal });
+      if (ctrl !== apiAbbruch) return;
+      apiStand = r.meta.pagination;
+      tb.innerHTML = r.data.map(apiZeile).join("") || `<tr><td colspan="7" class="n">Kein Unternehmen gefunden.</td></tr>`;
+      const stand = r.meta.data_as_of ? ` · Datenstand ${new Date(r.meta.data_as_of).toLocaleDateString("de-DE")}` : "";
+      if (z) z.textContent = `${apiStand.total.toLocaleString("de-DE")} Treffer · Seite ${apiStand.page} von ${apiStand.pages}${stand}`;
+      knopf();
+    } catch (e) {
+      if (e.code === "abgebrochen" || ctrl !== apiAbbruch) return;
+      tb.innerHTML = `<tr><td colspan="7" class="n">Laden fehlgeschlagen: ${esc(e.message)} <button type="button" class="chip" id="uretry">Erneut versuchen</button></td></tr>`;
+      const b = document.getElementById("uretry"); if (b) b.addEventListener("click", apiVerzLaden);
+      if (z) z.textContent = "";
+    } finally { if (ctrl === apiAbbruch) tb.removeAttribute("aria-busy"); }
+  }
+  function viewVerzApi() {
+    apiListenLaden();
+    const h = apiAuswahlHtml(), sel = (id, w) => `<select id="${id}">${w}</select>`;
+    return `<div class="grid">${panel({ code: "VERZ", titel: "Verzeichnis", sub: "Gesamtregister über die Plattform-API · Suche nach Name, Alias, Ticker, ISIN, LEI oder Unternehmens-ID", body:
+      `<div class="picks" style="margin-bottom:12px"><input id="usuche" placeholder="Suchen …" autocomplete="off" style="width:320px" value="${esc(regF.q)}" aria-label="Unternehmen suchen">
+        ${sel("uland", h.land)}${sel("ubr", h.br)}
+        ${sel("unot", `<option value="">Notiert und nicht notiert</option><option value="1"${regF.nt === "1" ? " selected" : ""}>Börsennotiert</option><option value="0"${regF.nt === "0" ? " selected" : ""}>Nicht börsennotiert</option><option value="m"${regF.nt === "m" ? " selected" : ""}>Nur Merkliste ★</option>`)}
+        ${sel("ukz", `<option value="">Mit und ohne Kennzahlen</option><option value="1"${regF.kz === "1" ? " selected" : ""}>Nur mit Kennzahlen (Datenbank)</option><option value="0"${regF.kz === "0" ? " selected" : ""}>Nur Stammdaten</option>`)}
+        <button type="button" class="chip" id="upv">‹ zurück</button><button type="button" class="chip" id="unx">weiter ›</button><span class="n" id="uzahl" role="status" aria-live="polite"></span></div>
+      <div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th><th style="text-align:left">Land</th><th style="text-align:left">Branche</th><th style="text-align:left">Ticker · Börse</th><th style="text-align:left">ISIN</th><th>Kennzahlen</th></tr></thead><tbody id="uverz"></tbody></table></div>`,
+      fuss: "Quelle: Plattform-API /api/v1/companies (Unternehmenstabelle unternehmen-tabelle/Unternehmen_Tabelle.csv in PostgreSQL). Unternehmen mit Kennzahlen stehen zuerst; „Nur mit Kennzahlen“ zählt die Werte in der Datenbank (bisher Zeitreihen deutscher Unternehmen)." })}</div>`;
+  }
+  /* Registerprofil über die API: zuerst Platzhalter, dann Stammdaten, weitere Namen und Prüfmarken */
+  function viewRegApi(id) {
+    setTimeout(() => apiProfilLaden(id), 0);
+    return `<div class="grid" id="uregapi" data-id="${esc(id)}">${panel({ code: "UNT", titel: esc(id), sub: "lädt …", body: `<p class="n" role="status">Stammdaten werden geladen …</p>` })}</div>`;
+  }
+  async function apiProfilLaden(id) {
+    const el = () => { const e = document.getElementById("uregapi"); return e && e.dataset.id === id ? e : null; };
+    try {
+      const d = (await API.unternehmenEins(id)).data;
+      const e = el(); if (!e) return;
+      const r = { k: d.id, name: d.name, form: d.legal_form || "", land: d.country || "ZZ", sitz: d.seat || "", br: d.sector, n: d.listed ? 1 : 0, boerse: d.exchange || "",
+        ticker: d.ticker || "", isin: d.isin || "", lei: d.lei || "", index: d.indices || "", web: d.website || "", quelle: d.source_url || "", hinweis: d.description || "" };
+      const extra = (d.aliases.length ? `<p class="n">Weitere Namen: ${d.aliases.map(esc).join(" · ")}</p>` : "")
+        + (d.review_flags.length ? `<p class="n">Offene Prüfhinweise: ${[...new Set(d.review_flags.map(m => m.code))].map(esc).join(", ")}</p>` : "")
+        + (d.metrics.length ? `<p class="n">Kennzahlen in der Datenbank: ${d.metrics.map(esc).join(", ")} (${d.facts} Werte, API /companies/${esc(d.id)}/metrics)</p>` : "");
+      e.outerHTML = regProfilHtml(r, extra, "Stammdaten über die Plattform-API (/api/v1/companies/" + d.id + ").");
+    } catch (err) {
+      const e = el(); if (!e) return;
+      e.innerHTML = panel({ code: "UNT", titel: err.status === 404 ? "Unternehmen nicht gefunden" : "Laden fehlgeschlagen", body: `<p>${err.status === 404 ? `Kein Unternehmen mit der ID <code>${esc(id)}</code>.` : esc(err.message)} <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` });
+    }
+  }
   /* ----- Verzeichnis aller Unternehmen ----- */
   function viewVerz() {
+    if (apiModus()) return viewVerzApi();
     if (REG) {
       regFiltern();
       const laender = [...new Set(REG.filter(r => curLand === "alle" || r.land === curLand).map(r => r.land))].sort((a, b) => landLabel(a).localeCompare(landLabel(b), "de"));
@@ -690,16 +791,20 @@ const UNT = (() => {
     const r = REG && REGK[k];
     if (!r) return `<div class="grid">${panel({ code: "UNT", titel: "Unternehmen nicht gefunden", body: `<p>Kein Registereintrag mit dem Schlüssel <code>${esc(k)}</code>. <a class="flink" href="#u-verzeichnis">Zum Verzeichnis</a></p>` })}</div>`;
     if (NACH_ID[r.k] && !NACH_ID[r.k].stub) return viewProfil(r.k);
+    return regProfilHtml(r, "", "Stammdaten aus unternehmen-tabelle/Unternehmen_Tabelle.csv.");
+  }
+  function regProfilHtml(r, extra, quelle) {
     const zeile = (n, v) => v ? `<tr><td>${n}</td><td style="text-align:left;font-family:var(--sans)">${v}</td></tr>` : "";
     const web = /^https?:\/\//.test(r.web) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(r.web)}">${esc(r.web)}</a>` : esc(r.web);
     const qu = /^https?:\/\//.test(r.quelle) ? `<a class="flink" target="_blank" rel="noopener" href="${esc(r.quelle)}">${esc(r.quelle)}</a>` : esc(r.quelle);
     const tab = `<table class="kzt"><tbody>${zeile("Name", esc(r.name))}${zeile("Rechtsform", esc(r.form))}${zeile("Land", esc(landLabel(r.land)))}${zeile("Sitz", esc(r.sitz))}${zeile("Branche", esc(regBr(r.br)))}${zeile("Börsennotiert", r.n ? "ja" : "nein")}${zeile("Börse", esc(r.boerse))}${zeile("Ticker", esc(r.ticker))}${zeile("ISIN", esc(r.isin))}${zeile("LEI", esc(r.lei))}${zeile("Index", esc(r.index))}${zeile("Website", web)}${zeile("Quelle Stammdaten", qu)}${zeile("Hinweise zur Herkunft", esc(r.hinweis))}</tbody></table>`;
     return `<div class="grid">${panel({ code: "UNT", titel: r.name, sub: `${landLabel(r.land)} · ${regBr(r.br)} · ${r.n ? "börsennotiert" : "nicht börsennotiert"}`, body: `<div class="picks" style="margin-bottom:10px"><a class="flink" href="#u-verzeichnis">‹ Verzeichnis</a>${r.isin ? `<span class="chip" style="cursor:default">${esc(r.isin)}</span>` : ""}</div>
-      <p class="n">Für dieses Unternehmen liegen im Terminal noch keine Kennzahlen vor. Es steht im Gesamtregister (Unternehmenstabelle) mit den Stammdaten unten; Kennzahlen kommen hinzu, sobald Abschlüsse oder Börsendaten erhoben sind.</p>${tab}`, fuss: "Stammdaten aus unternehmen-tabelle/Unternehmen_Tabelle.csv. Unternehmen ohne ID im Register haben bewusst noch keine Unternehmens-ID (Vergabe nur über stammdaten/ids.py). Angaben mit „bitte prüfen“ in den Hinweisen sind automatisch ergänzt." })}</div>`;
+      <p class="n">Für dieses Unternehmen liegen im Terminal noch keine Kennzahlen vor. Es steht im Gesamtregister (Unternehmenstabelle) mit den Stammdaten unten; Kennzahlen kommen hinzu, sobald Abschlüsse oder Börsendaten erhoben sind.</p>${tab}${extra}`, fuss: quelle + " Unternehmen ohne ID im Register haben bewusst noch keine Unternehmens-ID (Vergabe nur über stammdaten/ids.py). Angaben mit „bitte prüfen“ in den Hinweisen sind automatisch ergänzt." })}</div>`;
   }
   /* Ziel für Eingabe in der Befehlszeile: Unternehmen mit Kennzahlen zuerst, sonst Registereintrag */
   function ziel(q) {
     const f = finden(q); if (f) return "firma-" + f.id;
+    if (apiModus() && (q || "").trim()) { regF = { ...regF, q: q.trim() }; regSeite = 0; return "u-verzeichnis"; }
     q = (q || "").trim().toLowerCase(); if (!q || !REG) return null;
     const r = REG.find(x => x.name.toLowerCase() === q || x.ticker.toLowerCase() === q || x.isin.toLowerCase() === q) || REG.find(x => x.name.toLowerCase().includes(q));
     return r ? "firma-" + r.k : null;
@@ -766,7 +871,7 @@ const UNT = (() => {
     ["usuche", "uland", "ubr", "unot", "ukz"].forEach(i => { const e = document.getElementById(i); if (e) e.addEventListener("input", verzFilter); });
     const pv = document.getElementById("upv"), nx = document.getElementById("unx");
     if (pv) pv.addEventListener("click", () => verzSeite(-1)); if (nx) nx.addEventListener("click", () => verzSeite(1));
-    if (document.getElementById("uverz")) { if (REG) regZeichnen(); else verzFilter(); }
+    if (document.getElementById("uverz")) { if (REG) regZeichnen(); else if (apiModus()) apiVerzLaden(); else verzFilter(); }
     document.querySelectorAll(".uscat").forEach(scatterInit);
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.filter(f => !f.stub).map(f => `<option value="${esc(f.name)}">`).join("") : "";

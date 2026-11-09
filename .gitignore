@@ -2,3 +2,9 @@ __pycache__/
 app/dist/weltkugel.html
 app/dist/weltkugel.fragment.html
 app/data/live.json
+
+# Plattform-Server (server/)
+server/.env
+server/backup/
+app/dist-api/
+app/dist/wahlgeo/

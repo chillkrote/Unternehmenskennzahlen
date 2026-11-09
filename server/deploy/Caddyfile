@@ -1,0 +1,34 @@
+# Webserver: liefert die Oberfläche (statische Dateien) und leitet /api/* an die API weiter.
+# SITE_ADDRESS=":80" lokal; "sphaerae.de" auf dem Server -> automatisches HTTPS (Let's Encrypt), HTTP leitet auf HTTPS um.
+{$SITE_ADDRESS::80} {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		Permissions-Policy "geolocation=(), camera=(), microphone=()"
+		-Server
+	}
+
+	handle /api/* {
+		# keine aktive Gesundheitsprüfung hier: die API meldet Fehler selbst als JSON; überwacht wird /api/v1/health (docs/betrieb.md)
+		reverse_proxy api:8000
+	}
+
+	handle {
+		root * /srv/web
+		# HTML nie lange cachen (neue Fassungen sofort sichtbar), Datendateien kurz, ausgelagerte Geometrien länger
+		@html path *.html /
+		header @html Cache-Control "no-cache"
+		@daten path /wahlgeo/* /data/*
+		header @daten Cache-Control "public, max-age=3600"
+		try_files {path} /index.html
+		file_server
+	}
+
+	log {
+		output stdout
+		format console
+	}
+}

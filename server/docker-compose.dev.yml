@@ -1,0 +1,7 @@
+# Nur lokal: Datenbank auf 127.0.0.1:5433 erreichbar (psql, Tests), API direkt auf 127.0.0.1:8000.
+#   docker compose -f server/docker-compose.yml -f server/docker-compose.dev.yml up -d --build
+services:
+  db:
+    ports: ["127.0.0.1:5433:5432"]
+  api:
+    ports: ["127.0.0.1:8000:8000"]

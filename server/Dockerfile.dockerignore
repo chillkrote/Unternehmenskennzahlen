@@ -1,0 +1,11 @@
+# Alles ausschließen, dann nur das Nötige zulassen (das Repo enthält mehrere GB PDFs)
+*
+!server/
+!international/*.py
+!international/migrations/
+!international/oecd_mitglieder.csv
+!app/register.py
+!app/geo/laender.geojson
+server/tests/
+server/**/__pycache__/
+server/.env

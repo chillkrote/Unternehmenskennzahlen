@@ -443,6 +443,7 @@ const UNT = (() => {
     return s + "</svg>";
   }
 
+  const dokN = f => f.dokumente ? f.dokumente.length : (f.dok_n || 0);
   const dokUrl = (pfad, art) => `https://github.com/${UD.repo}/${art}/${UD.zweig}/${pfad.split("/").map(encodeURIComponent).join("/")}`;
   function dokumentePanel(f) {
     const d = f.dokumente || [];
@@ -535,12 +536,38 @@ const UNT = (() => {
         fuss: `${f.abschluss ? esc(f.abschluss) + ". " : ""}${f.demo ? "Beispieldaten aus Yahoo Finance. " : ""}Beträge in Mio. €; P99 = höchster Wert der Branche.` })}
       <div class="col w5">${ad ? panel({ code: "UNT 2", titel: "Kursentwicklung", sub: `${esc(f.ticker)} · Beginn des Zeitraums = 100`, body: ctrl + indexChart([ad]) }) : panel({ code: "UNT 2", titel: "Börse", body: `<p class="n">${f.notiert ? "Keine Kurse im Datensatz." : "Nicht börsennotiert: keine Kurs- und Bewertungskennzahlen."}</p>` })}</div>
       ${reihen.length ? panel({ code: "UNT 3", titel: "Zeitreihen", sub: "je Kennzahl über die erhobenen Stichtage, Amber = jüngster Wert", body: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">${reihen.map(([k, r]) => `<div><div class="sub-h">${esc(kzName(k))} <span class="pct">${esc(r.basis)}</span></div>${reiheSvg(k, r)}</div>`).join("")}</div>`, fuss: "Rechnungslegung und Konsolidierungsebene stehen je Reihe; Reihen verschiedener Basis werden nicht vermischt." }) : ""}
-      ${abschlussPanel(f)}
-      ${gremienPanel(f)}
-      ${verguetungPanel(f)}
+      ${nachgeladen(f, 0, "Bilanz, GuV, Gremien und Vergütung")}
       ${termineProfil(f)}
-      ${dokumentePanel(f)}
+      ${nachgeladen(f, 1, "Dokumente")}
     </div>`;
+  }
+  /* API-Fassung: Abschlussposten, Gremien und Dokumente sind nicht eingebettet (build.py --api), sondern kommen aus
+     /companies/{id}/profile. Bis dahin Platzhalter; danach ersetzt sich jeder Platzhalter durch die fertigen Tafeln. */
+  const profilLaeuft = {};
+  const profilTeile = f => [abschlussPanel(f) + gremienPanel(f) + verguetungPanel(f), dokumentePanel(f)];
+  function nachgeladen(f, teil, was) {
+    if (!f._api || f._voll) return profilTeile(f)[teil];
+    if (!profilLaeuft[f.id]) profilLaeuft[f.id] = profilNachladen(f);
+    return `<div style="display:contents" data-unach="${esc(f.id)}" data-uteil="${teil}">${panel({ code: "API", titel: was, body: `<p class="n" role="status">${esc(was)} werden geladen …</p>` })}</div>`;
+  }
+  async function profilNachladen(f) {
+    try {
+      const d = (await API.profil(f.id)).data;
+      f.abschluesse = d.statements.map(a => ({ ende: a.period_end, jahr: a.fiscal_year, waehrung: a.currency, quelle: a.source, quelle_url: a.source_url,
+        abruf: a.fetched, status: a.status, quellen: a.part_sources, bilanz: a.bilanz, guv: a.guv }));
+      f.gov = d.governance || undefined;
+      f.dokumente = d.documents;
+      f._voll = true;
+    } catch (err) {
+      delete profilLaeuft[f.id];
+      document.querySelectorAll(`[data-unach="${CSS.escape(f.id)}"]`).forEach(e => { e.innerHTML = panel({ code: "API", titel: "Laden fehlgeschlagen",
+        body: `<p>${esc(err.message)} <button type="button" class="chip" data-uprofretry="${esc(f.id)}">Erneut versuchen</button></p>` }); });
+      return;
+    }
+    delete profilLaeuft[f.id];
+    // Platzhalter ersetzen, wo das Profil gerade offen ist (Hauptansicht und Fenster der Weltkugel)
+    const teile = profilTeile(f);
+    document.querySelectorAll(`[data-unach="${CSS.escape(f.id)}"]`).forEach(e => { e.outerHTML = teile[+e.dataset.uteil] || ""; });
   }
 
 
@@ -602,9 +629,12 @@ const UNT = (() => {
     const notes=[...new Set(a.flatMap(x=>Object.values(x.quellen||{}).map(q=>q.hinweis).filter(Boolean)))];
     return panel({code:'ABS',titel:'Bilanz und Gewinn- und Verlustrechnung',sub:'Gelieferte Jahresposten und dokumentierte Berichtsergänzungen · Beträge unskaliert in Berichtswährung; EPS je Aktie, Aktienanzahlen in Stück',body:`<p>${archiv}</p>${notes.map(n=>`<p class="n">${esc(n)}</p>`).join('')}${section('bilanz','Bilanz')}${section('guv','Gewinn- und Verlustrechnung')}`,fuss:'Quellen- und Prüfstatus je Jahr und Tabelle über den Quellenlink. Sekundärdaten bleiben am Original ungeprüft, soweit nicht anders vermerkt. Geschäftsjahr nach Abschlussstichtag. Fehlende Posten sind keine Nullwerte; keine Garantie sämtlicher Originalberichtsposten.'});
   }
+  // Jahr, Währung und Zahl der Posten je Abschluss; in der API-Fassung aus der eingebetteten Kurzfassung (abs_kurz)
+  const absKurz = f => f.abschluesse ? f.abschluesse.map(a => ({ jahr: a.jahr, waehrung: a.waehrung, nb: Object.keys(a.bilanz || {}).length, ng: Object.keys(a.guv || {}).length }))
+    : (f.abs_kurz || []).map(([jahr, waehrung, nb, ng]) => ({ jahr, waehrung, nb, ng }));
   function viewAbschluesse() {
     const companies = FIRMEN.filter(f=>f.im_tabellenuniversum);
-    return `<div class="grid">${panel({code:'ABS',titel:'Bilanz- und GuV-Abdeckung',sub:`${companies.length} Tabellenunternehmen in der Länderauswahl · Klick auf den Namen öffnet sämtliche gelieferten Posten`,body:`<div class="scroll"><table class="kzt"><thead><tr><th>Unternehmen</th><th>Land</th><th>2025 Bilanz / GuV</th><th>2024 Bilanz / GuV</th><th>Weitere Jahre</th><th>Status</th></tr></thead><tbody>${companies.map(f=>{const aa=f.abschluesse||[],count=y=>{const yy=aa.filter(a=>a.jahr===y);return yy.length?yy.map(a=>`${Object.keys(a.bilanz).length} / ${Object.keys(a.guv).length} (${esc(a.waehrung)})`).join('<br>'):'offen';};return `<tr><td>${profilLink(f,f.name)}</td><td>${esc(f.land||'Unbekannt')}</td><td>${count(2025)}</td><td>${count(2024)}</td><td>${[...new Set(aa.filter(a=>a.jahr<2024).map(a=>a.jahr))].join(', ')||'–'}</td><td>${aa.length?'Quellen-/Prüfstatus im Profil':'Noch nicht importiert'}</td></tr>`;}).join('')}</tbody></table></div>`,fuss:'Zahlen = Anzahl der gelieferten Bilanz-/GuV-Posten, kein Vollständigkeitsnachweis des Originalberichts. Fehlende Unternehmensjahre bleiben sichtbar. Archiv- und Jahresgrenzen aus der Recherche sind im Profil verfügbar.'})}</div>`;
+    return `<div class="grid">${panel({code:'ABS',titel:'Bilanz- und GuV-Abdeckung',sub:`${companies.length} Tabellenunternehmen in der Länderauswahl · Klick auf den Namen öffnet sämtliche gelieferten Posten`,body:`<div class="scroll"><table class="kzt"><thead><tr><th>Unternehmen</th><th>Land</th><th>2025 Bilanz / GuV</th><th>2024 Bilanz / GuV</th><th>Weitere Jahre</th><th>Status</th></tr></thead><tbody>${companies.map(f=>{const aa=absKurz(f),count=y=>{const yy=aa.filter(a=>a.jahr===y);return yy.length?yy.map(a=>`${a.nb} / ${a.ng} (${esc(a.waehrung)})`).join('<br>'):'offen';};return `<tr><td>${profilLink(f,f.name)}</td><td>${esc(f.land||'Unbekannt')}</td><td>${count(2025)}</td><td>${count(2024)}</td><td>${[...new Set(aa.filter(a=>a.jahr<2024).map(a=>a.jahr))].join(', ')||'–'}</td><td>${aa.length?'Quellen-/Prüfstatus im Profil':'Noch nicht importiert'}</td></tr>`;}).join('')}</tbody></table></div>`,fuss:'Zahlen = Anzahl der gelieferten Bilanz-/GuV-Posten, kein Vollständigkeitsnachweis des Originalberichts. Fehlende Unternehmensjahre bleiben sichtbar. Archiv- und Jahresgrenzen aus der Recherche sind im Profil verfügbar.'})}</div>`;
   }
 
   /* ----- Gesamtregister (alle Zeilen der Unternehmenstabelle, data/register.json, register.py) ----- */
@@ -784,7 +814,7 @@ const UNT = (() => {
         <select id="unot"><option value="">Notiert und nicht notiert</option><option value="1">Börsennotiert</option><option value="0">Nicht börsennotiert</option><option value="m">Nur Merkliste ★</option></select><span class="n" id="uzahl"></span></div>
       <div class="tblwrap"><table class="kzt"><thead><tr><th>Unternehmen</th><th></th><th style="text-align:left">Branche</th><th style="text-align:left">Gruppe</th><th>Dokumente</th><th>Jahre</th></tr></thead><tbody id="uverz">${zeilen.map(f => {
         const jahre = Math.max(0, ...Object.values(f.reihen || {}).map(r => r.punkte.length));
-        return `<tr data-w="${esc(f.id)}" data-q="${esc((f.name + " " + (f.ticker || "") + " " + (f.gruppe || "") + " " + (f.isin || "")).toLowerCase())}" data-b="${esc(f.branche)}" data-n="${f.notiert ? 1 : 0}"><td>${profilLink(f, f.name)}</td><td>${punkt(f)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(brName(f.branche))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(f.gruppe || "")}</td><td class="${(f.dokumente || []).length ? "" : "n"}">${(f.dokumente || []).length || "–"}</td><td class="n">${jahre || "–"}</td></tr>`; }).join("")}</tbody></table></div>` })}</div>`;
+        return `<tr data-w="${esc(f.id)}" data-q="${esc((f.name + " " + (f.ticker || "") + " " + (f.gruppe || "") + " " + (f.isin || "")).toLowerCase())}" data-b="${esc(f.branche)}" data-n="${f.notiert ? 1 : 0}"><td>${profilLink(f, f.name)}</td><td>${punkt(f)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(brName(f.branche))}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(f.gruppe || "")}</td><td class="${dokN(f) ? "" : "n"}">${dokN(f) || "–"}</td><td class="n">${jahre || "–"}</td></tr>`; }).join("")}</tbody></table></div>` })}</div>`;
   }
   /* Profil eines Registereintrags ohne Kennzahlen (#firma-<ID>): Stammdaten und Quelle */
   function viewReg(k) {
@@ -839,6 +869,15 @@ const UNT = (() => {
   function hinzu(id) { if (!S.auswahl) viewVgl(); if (!S.auswahl.includes(id)) { S.auswahl.push(id); if (S.auswahl.length > 6) S.auswahl.shift(); } }
   function finden(q) { q = (q || "").trim().toLowerCase(); if (!q || !UD) return null; return FIRMEN.find(f => f.name.toLowerCase() === q || f.id === q) || FIRMEN.find(f => (f.ticker || "").toLowerCase() === q || (f.isin || "").toLowerCase() === q) || FIRMEN.find(f => f.name.toLowerCase().includes(q)); }
   function klick(t) {
+    const nochmal = t.closest && t.closest("[data-uprofretry]");
+    if (nochmal) {
+      const f = NACH_ID[nochmal.dataset.uprofretry];
+      if (f && !profilLaeuft[f.id]) {
+        document.querySelectorAll(`[data-unach="${CSS.escape(f.id)}"]`).forEach(e => { e.innerHTML = `<p class="n" role="status">Wird erneut geladen …</p>`; });
+        profilLaeuft[f.id] = profilNachladen(f);
+      }
+      return true;
+    }
     const g = a => { const e = t.closest && t.closest("[" + a + "]"); return e ? e.getAttribute(a) : null; };
     let v;
     if ((v = g("data-uwatch")) != null) { merkUmschalten(v); render(); return true; }

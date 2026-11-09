@@ -6,12 +6,13 @@ Verwendet die bestehenden, getesteten Importe aus international/ (keine zweite I
   3. import_unternehmen.importieren             Unternehmenstabelle -> company_register, entity, Aliase, Prüfmarken
   4. Sitzland je Zeile mit derselben Zuordnung wie die Oberfläche (app/register.py: land_codes)
   5. import_de.importieren                       Zeitreihen deutscher Unternehmen -> fact (mit Quelle und Vintage)
+  6. etl.profile.importieren                     Unternehmensprofile aus app/data/unternehmen.json (Kennzahlen, Abschlüsse, Gremien …)
 
 Jeder Import läuft in einer eigenen Transaktion mit Laufprotokoll (international.ingestion_run): schlägt ein Schritt fehl,
 bleibt der letzte gültige Stand dieses Schritts unverändert. Die Unternehmens-IDs (U000123) kommen unverändert aus
 stammdaten/ und unternehmen-tabelle/; dieses Skript vergibt keine IDs.
 
-Aufruf (aus server/):  DATABASE_URL=postgresql://… python3 -m etl.laden [--ohne-kennzahlen] [--dry-run]
+Aufruf (aus server/):  DATABASE_URL=postgresql://… python3 -m etl.laden [--ohne-kennzahlen] [--ohne-profile] [--dry-run]
 """
 import argparse
 import json
@@ -96,6 +97,8 @@ def rechte_vergeben(conn, rolle="sphaerae_api"):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--ohne-kennzahlen", action="store_true", help="nur Stammdaten, ohne zeitreihen/zeitreihe_lang.csv")
+    ap.add_argument("--ohne-profile", action="store_true", help="ohne Unternehmensprofile (app/data/unternehmen.json)")
+    ap.add_argument("--profile-erzwingen", action="store_true", help="Profile neu laden, auch wenn unternehmen.json unverändert ist")
     ap.add_argument("--dry-run", action="store_true", help="Importe ausführen und zurückrollen (Schema wird trotzdem migriert)")
     a = ap.parse_args(argv)
     url = os.environ.get("DATABASE_URL")
@@ -114,6 +117,10 @@ def main(argv=None):
         if not a.ohne_kennzahlen:
             for k, v in sorted(import_de.importieren(conn, dry_run=a.dry_run).items()):
                 print(f"  kennzahlen.{k}: {v}")
+        if not a.ohne_profile:
+            from etl import profile
+            for k, v in sorted(profile.importieren(conn, dry_run=a.dry_run, erzwingen=a.profile_erzwingen).items()):
+                print(f"  profile.{k}: {v}")
         conn.execute("ANALYZE international.company_register")
         print("Leserechte API-Rolle:", "vergeben" if rechte_vergeben(conn) else "Rolle fehlt (nur lokal ohne Compose)")
 

@@ -71,6 +71,7 @@ services:
       - ../unternehmen-tabelle:/srv/sphaerae/unternehmen-tabelle:ro
       - ../stammdaten:/srv/sphaerae/stammdaten:ro
       - ../zeitreihen:/srv/sphaerae/zeitreihen:ro
+      - ../app/data/unternehmen.json:/srv/sphaerae/app/data/unternehmen.json:ro   # Unternehmensprofile (etl/profile.py)
     depends_on:
       db:
         condition: service_healthy

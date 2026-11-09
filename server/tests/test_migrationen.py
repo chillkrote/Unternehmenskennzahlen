@@ -25,10 +25,11 @@ def _tabellen(url):
 def test_upgrade_auf_leerer_db_und_wiederholung(leere_db):
     command.upgrade(_cfg(leere_db), "head")
     t = _tabellen(leere_db)
-    assert {"entity", "fact", "company_register", "company_alias", "country", "ingestion_run"} <= t
+    assert {"entity", "fact", "company_register", "company_alias", "country", "ingestion_run",
+            "company_profile", "company_profile_value", "financial_statement", "financial_statement_line", "profile_metric"} <= t
     command.upgrade(_cfg(leere_db), "head")                       # zweiter Lauf ändert nichts
     with psycopg.connect(leere_db) as c:
-        assert c.execute("SELECT version_num FROM public.alembic_version").fetchone()[0] == "0002"
+        assert c.execute("SELECT version_num FROM public.alembic_version").fetchone()[0] == "0003"
         assert c.execute("SELECT count(*) FROM public.international_migrations").fetchone()[0] == 4
         assert c.execute("SELECT 1 FROM pg_extension WHERE extname='pg_trgm'").fetchone()
 
@@ -55,3 +56,11 @@ def test_downgrade_der_plattform_revision(leere_db):
     with psycopg.connect(leere_db) as c:
         assert not c.execute("SELECT 1 FROM information_schema.columns WHERE table_name='country' AND column_name='name_de'").fetchone()
     command.upgrade(_cfg(leere_db), "head")
+
+
+def test_downgrade_der_profiltabellen(leere_db):
+    command.upgrade(_cfg(leere_db), "head")
+    command.downgrade(_cfg(leere_db), "0002")
+    assert not {"company_profile", "financial_statement_line", "profile_snapshot"} & _tabellen(leere_db)
+    command.upgrade(_cfg(leere_db), "head")
+    assert "company_profile" in _tabellen(leere_db)

@@ -56,10 +56,29 @@ const { chromium } = require("playwright");
   await p.evaluate(() => { location.hash = "firma-U999999"; });
   await p.waitForFunction(() => document.body.textContent.includes("Unternehmen nicht gefunden"), null, { timeout: 15000 });
   pruefe(true, "unbekannte ID: „nicht gefunden“");
-  // Unternehmen mit Kennzahlen öffnet weiter das bisherige Profil (eingebettete Kennzahlen)
+  // Unternehmen mit Kennzahlen: Kennzahlen eingebettet, Abschlussposten, Gremien und Dokumente aus /companies/{id}/profile
+  const ublock = (html.match(/<script id="unternehmen" type="application\/json">([\s\S]*?)<\/script>/) || [, ""])[1];
+  pruefe(ublock.length > 100000 && !/"abschluesse":|"gov":\{|"dokumente":/.test(ublock), `Abschlussposten, Gremien, Dokumente nicht eingebettet (Unternehmensblock ${(ublock.length / 1e6).toFixed(1)} MB)`);
   await p.evaluate(() => { location.hash = "firma-U000148"; });
-  await p.waitForFunction(() => document.getElementById("view").textContent.includes("Deutsche Bank AG"), null, { timeout: 15000 });
-  pruefe(!(await p.textContent("#view")).includes("noch keine Kennzahlen"), "Profil mit Kennzahlen unverändert (Deutsche Bank)");
+  await p.waitForFunction(() => document.getElementById("view").textContent.includes("Deutsche Bank AG") && !document.querySelector("[data-unach]"), null, { timeout: 15000 });
+  const db = await p.textContent("#view");
+  pruefe(!db.includes("noch keine Kennzahlen") && db.includes("Median Branche"), "Profil mit Kennzahlen und Branchenmedian (Deutsche Bank)");
+  pruefe(db.includes("Bilanz und Gewinn- und Verlustrechnung") && db.includes("Gremien") && /\d+ Dateien? im Repo/.test(db), "Abschluss, Gremien und Dokumente nachgeladen");
+  pruefe(api.some(u => u.endsWith("/companies/U000148/profile")), "Profil über /api/v1/companies/U000148/profile");
+  // Ausfall beim Nachladen: Hinweis mit „Erneut versuchen“, danach vollständig
+  await p.route("**/api/v1/companies/*/profile", r => r.abort());
+  await p.evaluate(() => { location.hash = "firma-U000052"; });
+  await p.waitForSelector("[data-uprofretry]", { timeout: 20000 });
+  pruefe((await p.textContent("#view")).includes("Median Branche"), "bei Ausfall bleiben die Kennzahlen sichtbar");
+  await p.unroute("**/api/v1/companies/*/profile");
+  await p.click("[data-uprofretry]");
+  await p.waitForFunction(() => !document.querySelector("[data-unach]") && document.getElementById("view").textContent.includes("Gremien"), null, { timeout: 15000 });
+  pruefe(true, "nach erneutem Versuch Abschluss und Gremien da (Aumovio)");
+  // Abdeckungstabelle (Kurzfassung abs_kurz) zählt Posten ohne eingebettete Abschlüsse
+  await p.evaluate(() => { location.hash = "u-abschluesse"; });
+  await p.waitForTimeout(500);
+  const abs = await p.textContent("#view");
+  pruefe(/Bilanz- und GuV-Abdeckung/.test(abs) && /\d+ \/ \d+ \(EUR\)/.test(abs), "Abdeckungstabelle mit Postenzahlen");
   console.log(`${api.length} API-Anfragen, ${fehler.length} Fehler`, fehler.slice(0, 5));
   await b.close();
   process.exit(fehler.length ? 1 : 0);

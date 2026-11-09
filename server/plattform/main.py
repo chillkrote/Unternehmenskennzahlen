@@ -17,7 +17,7 @@ from fastapi.responses import JSONResponse, Response
 from sqlalchemy.exc import DBAPIError, OperationalError
 
 from . import __version__
-from .api import companies, misc, search
+from .api import companies, misc, profiles, search
 from .config import Einstellungen
 
 log = logging.getLogger("sphaerae.api")
@@ -137,7 +137,7 @@ def erstellen(einstellungen: Einstellungen | None = None) -> FastAPI:
         log.exception("Unerwarteter Fehler")
         return _fehler(500, "intern", "Interner Fehler")
 
-    for r in (companies.router, search.router, misc.router):
+    for r in (companies.router, profiles.router, search.router, misc.router):
         app.include_router(r, prefix="/api/v1")
     return app
 

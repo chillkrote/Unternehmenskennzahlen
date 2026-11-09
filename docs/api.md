@@ -22,6 +22,9 @@ Lesende, öffentliche API unter `/api/v1`. Maschinenlesbare Beschreibung: `/api/
 | `GET /companies` | Unternehmensliste mit Suche, Filtern, Seiten | `q`, `country`, `sector`, `listed`, `has_metrics`, `ids` (bis 500), `sort` (`default` = mit Kennzahlen zuerst, `name`, `-name`, `id`, `country`), `page`, `page_size`, `fields` |
 | `GET /companies/{id}` | Profil: Stammdaten, Kennungen, Aliase, Prüfmarken, vorhandene Kennzahlen, Links | — |
 | `GET /companies/{id}/metrics` | Kennzahlenwerte mit Einheit, Rechnungslegung, Konsolidierung, Quelle, Herkunft, Veröffentlichungs- und Erfassungszeit | `metric`, `as_of` (Stand „bekannt zum“), `from`, `to` |
+| `GET /companies/{id}/profile` | vollständiges Profil eines Unternehmens mit Kennzahlen: Werte mit Branchen- und Gruppenmedian und Rang (Rechenregeln wie im Terminal), Zeitreihen, Abschlussposten je Stichtag mit Quelle, Gremien, Vergütung, Dokumente, Berichtstermine | `country` (Vergleichsmenge nur dieses Sitzland) |
+| `GET /sectors/{id}/statistics` | Branchenkennzahlen: Anzahl, Median, Quartile, Minimum, Maximum je Kennzahl | `group` (z. B. `Sparkassen`), `country` |
+| `GET /profile-metrics` | Kennzahlenkatalog der Profile (Name, Einheit, Format, Gruppe, „höher ist besser“, Hilfe) | — |
 | `GET /search` | eine Suche über Unternehmen, Länder, Branchen, Kennzahlen; erkennt Länder und Branchen in den Suchwörtern | `q`, `types`, `limit` |
 | `GET /countries` | alle Länder mit deutschem Namen, Region, OECD-Mitgliedschaft, Zahl der Unternehmen | — |
 | `GET /countries/{code}` | ein Land mit Unternehmen je Branche | — |
@@ -36,6 +39,8 @@ Lesende, öffentliche API unter `/api/v1`. Maschinenlesbare Beschreibung: `/api/
 GET /api/v1/companies?country=DE&sector=automobil&listed=true&fields=id,name,isin
 GET /api/v1/companies?q=AT0000BAWAG2
 GET /api/v1/companies/U000148/metrics?metric=assets&as_of=2026-06-30
+GET /api/v1/companies/U000148/profile              (Deutsche Bank: 60 Kennzahlen mit Branchenmedian, Abschlüsse, Gremien)
+GET /api/v1/sectors/banken/statistics?group=Sparkassen
 GET /api/v1/search?q=Deutschland%20Automobile
   -> interpreted: {countries: ["DE"], sectors: ["automobil"]}, Gruppen country, sector, company
 GET /api/v1/search?q=Siemns              (fehlertolerant -> Siemens AG)

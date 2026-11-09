@@ -15,6 +15,26 @@ import vwl
 HIER = Path(__file__).resolve().parent
 
 
+# In der API-Fassung nicht eingebettet: kommen je Profil aus /companies/{id}/profile (server/etl/profile.py)
+AUSGELAGERT = ("abschluesse", "gov", "dokumente")
+
+
+def firmen_fuer_api(firmen_json):
+    """unternehmen.json ohne Abschlussposten, Gremien und Dokumente (rund 22 MB weniger). Übrig bleiben Kennzahlen, Zeitreihen und
+    Termine (Branchenansichten, Korrelation, Terminübersicht) sowie Kurzfassungen für die Abdeckungstabelle und die Dokumentzahl."""
+    d = json.loads(firmen_json)
+    for f in d.get("unternehmen") or []:
+        ab = f.get("abschluesse") or []
+        if ab:
+            f["abs_kurz"] = [[a["jahr"], a.get("waehrung") or "", len(a.get("bilanz") or {}), len(a.get("guv") or {})] for a in ab]
+        if f.get("dokumente"):
+            f["dok_n"] = len(f["dokumente"])
+        for k in AUSGELAGERT:
+            f.pop(k, None)
+        f["_api"] = 1
+    return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--excel", default=datenschicht.STANDARD_EXCEL)
@@ -72,6 +92,7 @@ def main():
     if a.api:
         # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
         reg = "null"
+        firmen = firmen_fuer_api(firmen)
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))

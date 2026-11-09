@@ -1,0 +1,96 @@
+# Plattform lokal oder auf dem netcup-Server: Datenbank, API, Webserver (Caddy, HTTPS). Keine Bezahldienste.
+#   cp server/.env.example server/.env   # Passwörter setzen
+#   docker compose -f server/docker-compose.yml up -d --build
+#   docker compose -f server/docker-compose.yml --profile werkzeuge run --rm etl      # Daten aus dem Repo laden
+#   docker compose -f server/docker-compose.yml --profile werkzeuge run --rm backup   # Sicherung nach server/backup/
+# Website: http://localhost/ (lokal) bzw. https://sphaerae.de/ ; API: /api/v1/ ; Doku: /api/v1/docs
+name: sphaerae
+
+x-db-env: &db-env
+  POSTGRES_HOST: db
+  POSTGRES_DB: sphaerae
+
+services:
+  db:
+    image: postgis/postgis:16-3.5          # PostgreSQL 16 mit PostGIS (für spätere Geodaten); Debian-Basis, gleiche Kollation lokal und auf dem Server
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD in server/.env setzen}
+      POSTGRES_DB: sphaerae
+      SPHAERAE_API_PASSWORD: ${SPHAERAE_API_PASSWORD:?SPHAERAE_API_PASSWORD in server/.env setzen}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./deploy/initdb:/docker-entrypoint-initdb.d:ro
+    command: ["postgres", "-c", "shared_buffers=256MB", "-c", "work_mem=8MB", "-c", "max_connections=40", "-c", "log_min_duration_statement=1000"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sphaerae"]
+      interval: 5s
+      retries: 20
+    # kein veröffentlichter Port: nur API und Werkzeuge im internen Netz erreichen die Datenbank (lokal: docker-compose.dev.yml)
+
+  api:
+    image: sphaerae-api:lokal
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://sphaerae_api:${SPHAERAE_API_PASSWORD}@db:5432/sphaerae
+      API_CORS_ORIGINS: ${API_CORS_ORIGINS:-}
+      API_RATE_LIMIT_PER_MINUTE: ${API_RATE_LIMIT_PER_MINUTE:-240}
+      PLATTFORM_UMGEBUNG: ${PLATTFORM_UMGEBUNG:-entwicklung}
+    depends_on:
+      db:
+        condition: service_healthy
+    read_only: true
+    tmpfs: [/tmp]
+
+  web:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      - "${WEB_PORT_HTTP:-80}:80"
+      - "${WEB_PORT_HTTPS:-443}:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../app/dist-api:/srv/web:ro          # Oberfläche im API-Modus (python3 app/build.py --api /api/v1 --ziel dist-api)
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [api]
+
+  # ---- Werkzeuge (nur auf Anforderung: --profile werkzeuge) ----
+  etl:
+    profiles: [werkzeuge]
+    image: sphaerae-api:lokal                # dasselbe Abbild wie die API (docker compose build api)
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@db:5432/sphaerae
+    command: ["python", "-m", "etl.laden"]
+    volumes:                                 # Daten aus dem Repo-Checkout, nur lesend
+      - ../unternehmen-tabelle:/srv/sphaerae/unternehmen-tabelle:ro
+      - ../stammdaten:/srv/sphaerae/stammdaten:ro
+      - ../zeitreihen:/srv/sphaerae/zeitreihen:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  backup:
+    profiles: [werkzeuge]
+    image: postgis/postgis:16-3.5
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@db:5432/sphaerae
+      BACKUP_DIR: /backup
+      BACKUP_BEHALTEN_TAGE: ${BACKUP_BEHALTEN_TAGE:-14}
+    entrypoint: ["/bin/sh", "/deploy/backup.sh"]
+    volumes:
+      - ./deploy:/deploy:ro
+      - ${BACKUP_HOST_DIR:-./backup}:/backup
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

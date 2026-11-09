@@ -35,6 +35,10 @@ Andere Excel-Datei: `python3 app/build.py --excel pfad/zur/datei.xlsx`.
 
 Nach jeder Änderung an der Excel (z. B. durch `rohdaten/skripte/build.py`) einfach `app/build.py` neu laufen lassen.
 
+## Fußleiste: Impressum, Kontakt, About Sphaerae
+
+Unten mittig (Terminal und Weltkugel) stehen drei Schaltflächen, die ein Textfenster öffnen. Die Texte liegen als Markdown in `app/seiten/` (`impressum.md`, `kontakt.md`, `about.md`) und werden beim Bau über `seiten.py` eingebettet; Oberfläche in `src/seiten.js`/`seiten.css`. Platzhalter `[[…]]` erscheinen gelb markiert. Anleitung: `app/seiten/README.md`. Test: `app/tests/seiten-smoke.js`.
+
 ## Bankenansichten (über Branche Banken erreichbar, jetzt ohne F-Tasten)
 
 | Kürzel | Inhalt |

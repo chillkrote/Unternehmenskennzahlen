@@ -7,6 +7,7 @@ from pathlib import Path
 import datenschicht
 import globus
 import register
+import seiten
 import unternehmen
 import vwl
 
@@ -31,6 +32,9 @@ def main():
         (HIER / "data").mkdir(exist_ok=True)
         (HIER / "data/banken.json").write_text(roh)
     vorlage = (HIER / "src/terminal.html").read_text()
+    # Fußleiste (Impressum, Kontakt, About): Texte aus app/seiten/*.md, Oberfläche aus src/seiten.js/.css
+    vorlage = (vorlage.replace("__SEITEN_JS__", (HIER / "src/seiten.js").read_text()).replace("__SEITEN_CSS__", (HIER / "src/seiten.css").read_text())
+               .replace("__SEITEN__", seiten.json_text().replace("</", "<\\/")))
     (HIER / "dist").mkdir(exist_ok=True)
     ziel = HIER / "dist/bankterminal.html"
     # Börsendaten liegen getrennt (marktdaten.py, täglich); fehlen sie, zeigt das Terminal MKT leer

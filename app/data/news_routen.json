@@ -1,138 +1,75 @@
 {
-"abruf": "2026-11-06T14:29Z",
+"version": 2,
+"abruf": "2026-11-09T16:40Z",
 "tage": 14,
 "fehler": [],
-"quelle": "Google News (Verweise auf Artikel; Titel unverändert)",
-"url": "https://news.google.com/",
-"regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'",
+"quelle": "GDELT und Google News (Verweise auf Artikel; Titel unverändert)",
+"url": "https://www.gdeltproject.org/",
+"regel": "Titel nennt den Ort und ein Störungswort; Sprache Englisch oder Deutsch; letzte Tage laut 'tage'; ältere Einträge werden nie geführt, nach einem Abruffehler nur höchstens 3 Tage und als unsicher",
 "meldungen": {
-"suez": [
-{
-"titel": "Maersk, Hapag-Lloyd Reroute India-Europe ME1 Service via Suez Canal",
-"url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMjBLaHZJaW5kQzJyb1JwTUxGWF9kNHFkMXZQa1VfaW5SYTJXaFNkMFZlUnptQXV0RVdnNDlOTkdBbExzcHpSN1c4MkltMFVBQ0xmdGs4a3RxV0hNS3dyYVh2SzRMRXpWbVVxTHMtWUxJV1BHc011TUp4cTYxZFRWTWV5YTlQcVNfck8xZjJkSVZNRlh5Y0tyNllLb1BsNjNB?oc=5",
-"quelle": "Maritime Gateway",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-03",
-"typ": "stau",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-}
-],
-"babelmandeb": [
-{
-"titel": "Kuwait urges end to attacks threatening navigation in Hormuz, Bab Al-Mandab",
-"url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcWRJOC04VHoyV1VGRHpnY0lSUFJ1dEo2TU12RUtlOGJWdkVEdEliRFVGWDZMdFduRDNYT1BMTEh5RjlGTlRxWlBpOGVBSUh4VXlIX0Z0QWo3eEItRkZBNUw3cU9QN0ZsWGM4UUpkQ1hNSkRGMXdBWjZrUldVMjk4ajhZYUF0ZEhPZXljbm0xZllzNXJrdVVRcUpSQ2hOaXNtekNNeXVGd0RubW1ETzdHRXc3OVVqTVpHVkxCTdIBwAFBVV95cUxNQjh4WEV5ZUFhSHd3UlNxSGMtU3RGd2lEMHY4VUR1YU95S0lxbEFFREZRTHpiOVJWMVJJNnBuZ2owMGNKdk40T0ZQNzFINkJoTGM1WnMwQWdoSkFNaWRjR2duTzEyNUdKNG9jSDhoVThQYVVaVGNldXZzTExpSm1KSTJkLVZwczN0aW5rUlpXZkFCRHNhcEdlbGRTTzNyZFMxRl9uVER1WUlhT0NRaGJhV3ZtVVpvNHBtczZJTXprRF8?oc=5",
-"quelle": "Kuwait Times",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-30",
-"typ": "angriff",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "French Frigate Shoots Down Missile Near Belgian Minehunter In Bab el-Mandeb Strait",
-"url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORURSaUxzb1FEbzVFZDVFNnpxckEzeFAwNEgxR3Jib25LaHJ4a2tITW9SSHQxR2ZIRXMwZjJYYkl2V3FFeW5RX04wNHh0eDhIdTZQcUFqTUk3M2JXUzNTTmZ6S2thSDMybldQMjl3aWxLN3lrMlFyaHZVd2E2NkxtRWlTeHlLWVdvVEFoNDhMT3gzWmg3eVpjMkFqTGd2aWVrUGhaMTM5eC1STWY5SDRoLXZQRQ?oc=5",
-"quelle": "Marine Insight",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-28",
-"typ": "angriff",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Houthi Ballistic Missile Intercepted Near Belgian Minehunter in Bab el-Mandeb",
-"url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPamstRDlXZXJUUzNzdTJmUTdkcmtGd3NhT3N4bmNORWRBQ2NJSmU1REJ2SzV6WTRhWUEyZXppMnZYVjVmQ3YyTGxzM19PWFE5Q1FOYnlrZjlCd1RpbkxVTWNSU2VvMnoxVUZNSnFKRXlHdlNqdmE0NUs4bFROell5bFE5cFFuQUM0VXRSVTVyOXVZY0Z5RkE4bzB2WFdhQmMwdU5TRHBUM1F0ZlVab0lfVWFoMnZyQkxNekFFTzRYTFk?oc=5",
-"quelle": "Naval News",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-27",
-"typ": "angriff",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-}
-],
 "hormus": [
 {
-"titel": "Explosion Reported Aboard Oil Tanker Near Oman’s Coast in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdVJ1SGQ5Y1lRR2tGQlNuZVFjVl9wczM5dWtpUG9jZ2tCWjJVa2NzQXVNVlpDczE1azZVMHVsV0k1TFJsLXlQOHJtTGdPV0ZQWHlkYnk4REdPQ2FqMjJOc1ExS0w1ZmIzU0VEbm5wT0hJMndodkNxcXZveDQwSll5SlVmcmUwU0Z3allzb0Exd2p1N0QyWjZvWg?oc=5",
-"quelle": "WANA News Agency",
+"titel": "IRGC Says Tanker Transit Halted in Southern Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOLVc5ZkJhM3Rzc0g0alJORmNNTThoVDNBNmI4ZjU4b25MWEJCck5tY3VYSDRuTDJOanhYQXZ4QW40U1AzNXFjaGU0akpwZkhXb1prV0R3N2xINS14cEhrY3d3ajIySjVZTmVBSnRDSkU2RE80cUQ0MzBqZHQ1QjQ1WHI1b0tld1dvLUREVUhMNG1RdldURmxLUEtQOFNoUQ?oc=5",
+"quelle": "IranWire",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-06",
-"typ": "angriff",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "October Sees Surge in Attacks on Ships in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdGMwVXMwWHBEaVAxNWtrOUVWVGlYMEJaTDVVR0dpUDNDRC1iblVHaU1pMTA0Wm5BVVIwbTMwR2pST09sdTcwNkdqRm5vVjBIYUF4WDJUQ1VRTzdEbnh2TUR5TEk3cFotcThiSzFFb1FfdXNZMzIta0M1QXl2NW1vUGZPaW13ZVh0SUZyQ2g2VHI?oc=5",
-"quelle": "Caspian Post",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05",
-"typ": "angriff",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Iran exempts India, China, Iraq and Qatar from transit restrictions in Strait of Hormuz",
-"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNb0dTVGZzQVZHN2doa2N6ME81ZkVQR3d0SGlqOU4zVmN1d0t1UjVUM3lDM0theV9FSzZLRGFQTWtnR2FZZEpQYmUybHBYRDhkVVVvT1dKMS1DU2o5anZEZi01RmVENklOX283OTh5OFdESXhqa3Q0VHZhdFE1Tl9UYkJmYlNtRTRGU2J5STB0a1U2bjRnMkg4WHNTX1M3YkRndlRxWDdLaHpBZ2J4dC1odg?oc=5",
-"quelle": "Asia News Network",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05",
-"typ": "sonst",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Iran Opens Strait of Hormuz to China and India as U.S. Blockade Continues",
-"url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTlR3ZU5xVnZWZ2xSdnBvLTRERkxJRmNuTVhvSnFIMnRxNmpKMXp5Zm1oUlRNSFRqdEVudEFkVW1IYkxIM29VYkxoc25tdnUtT1N4Y1JMdExWeXJNQnllanBFT1A3enVVN0pVNWZra2hNbDV4MngtdGlsN3RiZEtoaDFoRHlGaGtFcEJWTGZyYzVsY2xRMWFNaUlod3BxVWs4aGpGbWxVSWxqZ3Z3UmV2NS05aEdNenpsUDBB0gHAAUFVX3lxTE5GekF3cUYtTndFTmlmcy1KZ2ZvR2JsZDRnb29yazZsNVhLQ1Y4UW9RdTM5R0RvbXk1MllFVnJvRFlnQ1lXcDNtT0dzS0tLYXZOSHFXSTNYNGpGRlIwV1Fqa0VNd1l5SHR0YkpZTEJCMDNuQzIzX1FuaUctZGROcHRPZmZ1Z0VlU1pPOEdkOGFIaFZ3am1keWVLZnhJaGhLaDRlaEVwS2tPczhLcjRkbENVS2FETlY0VEU3bElBNmM1Uw?oc=5",
-"quelle": "Crude Oil Prices Today | OilPrice.com",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05",
+"datum": "2026-11-09",
 "typ": "sperrung",
 "bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
 },
 {
-"titel": "Abbas Araghchi And Badr Albusaidi Discuss Strait Of Hormuz Peace Amid US Blockade: 8 outlets compared",
-"url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQSTZTalozM1BKOUduaTJWYmF4TllkbnpkTFh5enRvQWh4X3lDLUI1YmZlQV9oSTQ2WVBIemR3cmxPeEs0VU0xdDBkTXNmWUw2eUtJcEFBTi14dXU3aHBWdERSODkyVzdvVU03bVJZQmVBam9sZERVaWVwZXVJV3FMNWYyYnEwUWl1QWszMXpLMFdSa1NkYUV5ajV2SE9OLW94Zzg2cEpsdl82Y3M1Nk0zLXdFMkxRWUx5Mmo0ODRSNHFFMGJDUkpZclZxSGtNdnhoLXRYRUh4b0I0OExVNTBnMGc5bnZHZEtFV0E?oc=5",
-"quelle": "NewsCord",
+"titel": "US disables bulk carrier as tanker attacks continue near Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdGk2cXk2a294aDl0Qk9OeUt0Y01XbHlGTjQtVV9GZjNqdnQ4MFpIdFhRZ1JJX01JVnBfQ2E4dDd0aVZnbUZfbV8xTm90WkEwVXU1UjYtYkpQa241UzM4R1Y5cVJwSy1xMU5MckR5bXMxZ3ZORVRCZUNDWGdTNDYyOUtxdDZlbUMtVi1JWG1nV0dvelRpNnZKcFVJRW8tZw?oc=5",
+"quelle": "safety4sea",
 "sprache": "English",
 "dienst": "Google News",
-"datum": "2026-11-05",
+"datum": "2026-11-09",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
+{
+"titel": "Brent crude settles near $118 as US-Iran military uncertainty and Strait of Hormuz tanker attacks push oil to a fourth consecutive monthly gain",
+"url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nSThoZjI4d3ZwOXhTU1FxMkxrNlJXN045YlR2bUI4aXdMM1k2SVZtVFRXMmxjTGs4SHA1RjBkUkhQWWhxWGEwYWU1RzBFOXFOQnQwT3U0MXdNZVBSS2xiUzZn?oc=5",
+"quelle": "Energies Media",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-09",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
+{
+"titel": "Tanker Burns After Strike in Strait of Hormuz",
+"url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPWF9NWndDNnhDVnU1N2lTTm9JY3BFbGFMUXRNZUI1eVgyempsb1V3QkhUandBRlpjY214RlhvMFlCQmVWc2VsdzNJVVk4Nmk2Si1UVExUS2lPcmhrSHZLaE81QWVWT2dTR3VRcklSbVgwcG5ZOXNnSHIzXzBNYXBpdmM5VEV5UjVlVGY5YQ?oc=5",
+"quelle": "The Maritime Executive",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-08",
+"typ": "streik",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
+{
+"titel": "US military says it fired on ship that visited Iranian port after it tried to breach Strait of Hormuz blockade",
+"url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeFJMUkowX0RacWVUd1RUWTl1bU82RkUyVXIzaTlKQU1uUWZBOV9yanItTWtHZ25qT0hUT0dCQ1ZrYzNCcGllWWVzYS1mNkdnalZsbDRkSllxa1lHcEFKY0J1RWp2RURBSWNMcld3SlJFQkdLTXR5MXRzWV83TFVqZnVGUXV6c0ROQ2dzM1Vyd0F0QnZQRTg2WnBXTGJiYW1yb1YyQWZtejdCdURuQ2hnVEFR?oc=5",
+"quelle": "The Independent",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-08",
 "typ": "sperrung",
 "bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "panama": [
-{
-"titel": "Panama Canal to cap ship transits due to El Nino drought",
-"url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE85WjRqRFlVblNta0YzX1VBNU9zTmpud2tHSjZnZnR4VnpFM3VZUWYxTThKR0c0aGtZN01QemI2eTVKSFpoSXEyYWlpZVI2amNuaWxaX2NXNGwyM2VDbUk2Mi13MA?oc=5",
-"quelle": "DW.com",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05",
-"typ": "wetter",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
 {
 "titel": "Panama Canal under strain from drought and Trump's threats",
 "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUmloME9OVUJJZVk1TS1NdHRkSkFqYUJRSFU4WTU0OXpFNWNKMUMwRkdZeWQ5UmI1TTdBanMxYktUR0dmVGdYN1pDdlVFRHhRQU0wSVJ0T2hwb3NQOGZIRmtDekVhaVdWSUt0MXVPUHBpUDFkcmhTU2c2dGFrZWp2NnF6NHA1dlpxZnNXRVozWmdYeFc4?oc=5",
@@ -143,22 +80,22 @@
 "typ": "wetter",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
+},
+{
+"titel": "BizDataDive: Panama Canal drought: What's the cost to global trade?",
+"url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNUdmTVBUOXV2UHk0S3Q3N1BIYnFjX0xWN2drWTlSQ2tfbDNGRHRxVkVPYlVIZW9vbVJfMXBHbWliTEdUOEN4Qk1lb3R4d01EV3MtbGVEVjRvTG0tTUFGZHVwQTBXVGV1Tkh6SDlGTU1nd3NBVnZDd3ZGOV9CQm1BZ3VITXBrTy1TeE5iakRYQ3UzSWNyclllcExqd2pxcVZPamlCSUlVRkhTWXJka0JQMy1zV2VaNkRNbXhGd3dZQQ?oc=5",
+"quelle": "CGTN",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-10-28",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "bosporus": [
-{
-"titel": "Senate President Warns Israeli Expansionism Threatens Global Stability at Bosphorus Summit",
-"url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPUm9kemxfVDdwZDlRSE1jSk5wT2dETVAtZFNkVWpVcVpubUFYSnJ1SUg5aEdFRjZGYUE3SXlSTl9JMzlyYk1QR2xhZXB6dWI2VTlRWk8ySlF4dVJZMlVWbTJIZlp1b3BORVB5YkFNbG85YVB3M0FOc3RTdW9iOHlrQmVSWm9FbHR2YzJSX0RqRE9hWHluTXJsTE0xVTNyNjVrdXJWQTk2SWJFSF9HSTRQNXZCTG9sMW5vU2lSd3lhbEhCZVhBQ3A4?oc=5",
-"quelle": "Fana News -",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-05",
-"typ": "sonst",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
 {
 "titel": "Since August, more than 60 Russian oil tankers cross the Bosphorus under metal cages and tire anti-drone shields",
 "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNYmVuZEpOVlI0WElkQm5lTC1yQ3oyNVozd0hoV2trNmQ2VGJUY1NwT2pNcFZRNWRkVHpuZUQxcHdqZk1DYkt4TXlsN2Yzb0Ywa2NLcWlzbHU3OGpuY0w4RmNoV3JDOFp1RWs2Wmw2Mlp6ejY4OVpiR000Mk15SUZ1SWVqNW1rQVQzcjg3RC10SXg1VE93eTJzNXdNTmoteUNMTHZ3MHhZV3pIMkhjeHNCd251SnlUVUpveE5jVzhST3RmS2pSc0ltWjFseHM4dEdQNHhjdF9B?oc=5",
@@ -169,7 +106,7 @@
 "typ": "angriff",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 },
 {
 "titel": "A cargo ship broke down in the Bosphorus! Bosphorus traffic has been suspended in both directions.",
@@ -181,7 +118,21 @@
 "typ": "sperrung",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
+}
+],
+"dover": [
+{
+"titel": "British drone tracks Russian warships over English Channel ᐉ News from Fakti.bg - World",
+"url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQQkpuVVViWlVPVzZJelp2UVJuY3h2S2xObUpZN2NsQVBXLXIzN21VdGgyZnFQcWJTTER5SXdFUEVMVW1JUHpFZExLaDR2UnRlVEdrUGMwXzFRWmRHeklNbEVXMkEyeDZiVFA1VTU3YllQTTUwMEg4ZHNGdzRCSFR2TktoNU5sbzNVXzFIOFM1U0s?oc=5",
+"quelle": "Fakti.bg",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-01",
+"typ": "angriff",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "taiwan": [
@@ -195,10 +146,34 @@
 "typ": "angriff",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "rhein": [
+{
+"titel": "Maersk reinstates EUR 175 Bonn surcharge amid renewed Rhine low water",
+"url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQMm8ycDdUYnJiUWJDakVZNFhrZUlDdzZsSGRyOS1WVmQxcExCSHhBd3M4dmxfZTExNHBYVnhuMGlZQTQwblEteVJjODluQTZtYVZaMWpmMm1xYllNenFLV0tMYjdrdk01aFZmOW03NEpETU1MQkplSFpzT3RyYjVrRU5mdm1nOTBNZlFPODRJbWhMQXVaZGUteUliNXNaSkFHbmJHX3J1RWJFTUV3cVVpMmRqVWtUWjFvV0MydlZ2V0FHdzdJaFYw?oc=5",
+"quelle": "Data Portuaria",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-09",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
+{
+"titel": "Maersk reinstates Andernach surcharge of EUR 625 amid Rhine low water",
+"url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQOW5ZT2lHOW1iQzh3aU9VRlVsSDFSUlRrSHlrUHFFeHc3SlVrb25TbHcyOUdZdXVud1BxNnhJa1Y0SWNrVXdnZ2RmX3kzY1E5N192cmZrRlpmZEs1Y2poNWZuS2x3SVBlcmNWcm9YMTRpQTJtMm95VVdWWTRRdjFCekZyQ0s0blU4NTFoUVBnR28wYzVoRDFoRjJCd09FdTY5MFNLdWNSaUF4YWczZlRqTUtZOTdwVzZPTE42YlpGN2pQYlJzZE9J?oc=5",
+"quelle": "Data Portuaria",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-09",
+"typ": "wetter",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
 {
 "titel": "Rhine low water squeezes barge traffic, boosts fuel costs",
 "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOY0hlR3ZaS3hGV0dCY1F2ZGxGcHlrNHRETnBOOE8ydk9veXI2RnBWbUs2OWh4dGNpaTJLN25KNHIwV3JoUm5LQzd0NWp3ellGbEhKTlI0THU4REVDLU4tQ2U1Ql9FVHhCdzl5a3oxX3dXWHo2RDNaYlM0T0lyenVWZVZEQmtaT3ltRTZuNGJLRGRWQQ?oc=5",
@@ -209,31 +184,7 @@
 "typ": "wetter",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Rhine barge restrictions could last into mid-November, warn brokers",
-"url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPanR6WWJXZ2hVS2l1UnpkXzNNOEl0WVNpMG5mSm9oNGZ5M3ZnZ3o1YnhEMVJGcEZFT3FIM3lNTl80ZFhscmhaakw0WVhpZXVtb1U4MFRmZS1GaUdIbU9Ud3djZ2FEOGRUVlZkSmp4aDdQcFJySWdTQmNaYzZmUHM1Nmg1bWxpSkhCWjRmTk44N1JYNzI1eFlIaVk4bjVJZThUbXI3U3RTWnBCWDhYaHc?oc=5",
-"quelle": "Quantum Commodity Intelligence",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-02",
-"typ": "sonst",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Rhine River Water Levels Plunge to 21cm as Cruise Operators Face Restrictions",
-"url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNSjZQcmdoR0NSUVAzbUVtQ1BkWWNPRWNMZWNTaFNTd2VCSFR1ZGU3WW1Ca09KYnZpXzlxandyRmpYMHFQNWstaVQ1VThzSU9RWHVadTNrWlVmdEFxanFUcmtHeU1HNTVZaDQ4Qy1LbWpSX1BNeWtEa2NJY0NYaWs5SXdfNWJtM1dsOTVYMXFHaHZqc1dmZFFiMGk4N3Q3VEExTWZOeU5iYmF6cjUtY241TWdBZ3lFNDNGQkRGeA?oc=5",
-"quelle": "Rus Tourism News",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-11-02",
-"typ": "sonst",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 },
 {
 "titel": "Sandbanks emerge along Germany’s Rhine after months of low water",
@@ -245,7 +196,7 @@
 "typ": "wetter",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "brenner": [
@@ -259,72 +210,48 @@
 "typ": "stau",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "gotthard": [
 {
-"titel": "Stau vor dem Gotthard-Südportal hielt bis am Abend an",
-"url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTmZITVNHVVVOZ1M5OU5maFNFZnk5ZE91VkZFTktqZEN3Mk9zcGk3Y0p5d3ZTSXctT0dqblBGM3VVblBvN1ZKbXl6QV95YnNqeTRpbzMxNllfMXBhemRVODJDYUFHUmVaWVhHMklGY05jSG9vcHFwRFhmV0lYVl9ZaEQwY0lNUHlJVFNPaHlONXA3c2hfRkpGdA?oc=5",
-"quelle": "Nau",
+"titel": "Unfall auf A2: Sonnenberg-Tunnel Richtung Gotthard gesperrt",
+"url": "https://news.google.com/rss/articles/CBMingFBVV95cUxORmpoSVBpSnJFanY2SEhMemtxeERaZEFtU2FVNlIwWHRQckJWRnNZNTJDMy1xZVJ1NjdLdGtTRkNNZURVWlZTOXh2dEk4Vi0xQ1kwcWJkNU5NLUREbkdYeGNld3ZxMklhVlcwQlhzU3RURTFmMzBKMEdvNURpRXNnaGZCdzBxVmlSbTFuMm5TWDBGR09WamJYdkRKcjBWUdIBpgFBVV95cUxNeTA3Um5vLUgzeEZUcl91U3ppd09qdHh4bFExbU84TUx0RWYzd2t3RzhXZExoanJvQWZZMjVXVEstdlE4SHJ6R0RUV3p5QmdfMVNiQUtqUi1iM2t1Y2VZM2ZLS1M4ZklIY3hoN2R1RjZubnBfUG1MZ3BWSV93N3RMRE5wb0tRWFpGRGk5NnlTNmN4OXpCLVFGamp5aDBhaXRPOGF1MV9B?oc=5",
+"quelle": "Unfallmeldungen.ch",
 "sprache": "German",
 "dienst": "Google News",
-"datum": "2026-10-26",
-"typ": "stau",
+"datum": "2026-11-08",
+"typ": "sperrung",
 "bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Traffic jam at the southern portal of the Gotthard Tunnel stretches ten kilometers",
-"url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT0NZd1ZYdmxpaVl4cTJjZl9tb29qTXdEXzZmZzEzV1NrR3lpUGpEbDVOZUVGZThzd3RCSU81ZzBYRUpmNEZYQzVFaWpReDVnUUVNSzZfQng1blVSdXFWMFFBQ0ZlcE5DcmpzaUV0dVV2Y01fUjRmV3o5VTBMSWIzdVMzTzZ3enNTWVBSWmduN01LckRNZ0hSRXRCajQ0Q3VKTEd6UUZPSFdNQmFHeUtCcHEyazI0NlNCVUdqOFJuSERXdw?oc=5",
-"quelle": "blue News",
-"sprache": "English",
-"dienst": "Google News",
-"datum": "2026-10-25",
-"typ": "sonst",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Stau am Gotthard-Südportal wird zehn Kilometer lang",
-"url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQaEx3WFZUUnNqNHppeXFrSU1SZXF0X3daQkVlVm1FSzJVLXdfdXBrUUIyYVNCM1E0dVoxN0NUVkNndkVZamZncjBKcTdWNVBvWUxBU2d5d2djaV9GYUFIX1g1cXc4dmVBOXNPUlZ1Z0tsUTYtRFdfM1JVZk9rcGtkcVNWOHVJS2h4TmxtblI0c1VXbXBUX3FB?oc=5",
-"quelle": "Nau",
-"sprache": "German",
-"dienst": "Google News",
-"datum": "2026-10-25",
-"typ": "stau",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "Stau vor dem Gotthard-Südportal hält bis am Abend an",
-"url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObm9Lcy1hMzhpV2l6ekotbmhMdXlPVUxRRG9vUFJicHp0ZHNVdXgyY2o4cm5FakkzLTJmSHNWQXNlT3pXZzJzT1dDcVBYaFNNbFlvSlVRQXdpTElpaGVJTzBxNHkydzZ5TDlLb3loT3E4NEdVaUljQlc5LTRzMjBydDk3YmxfWWR5UkNSYVI5V1FTeW91VGVwZnQzbFdoZGNQ?oc=5",
-"quelle": "Watson",
-"sprache": "German",
-"dienst": "Google News",
-"datum": "2026-10-25",
-"typ": "stau",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
-},
-{
-"titel": "10 Kilometer Stau vor dem Gotthard: 100 Minuten Wartezeit",
-"url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSHhXYU42czhQNmJSVWloa2F6dEl2Wm84THk4SkRyRExMYXZQeU1DS0V3MTZlNFpmTkxxOTR6eVdUazZuUTdTdGJjbEowd1FVS3QxTVF4aW1TOTNDWk5Sa2IyRURIaEs2U3U1ak9mWTQzRm91RXE5TkpNV3I0aEdRaWV6WQ?oc=5",
-"quelle": "imTicker",
-"sprache": "German",
-"dienst": "Google News",
-"datum": "2026-10-25",
-"typ": "stau",
-"bereich": "route",
-"erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
 }
 ],
 "ambassador": [
+{
+"titel": "Gordie Howe Bridge Sandwich Community Office Closes After 8 Years",
+"url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQlNmRTRjaHZkeVVsdGVTOG9GMnVMaHNXS2dDXzJXSnVkZmswY1dTMUNWQXpJbWUwNGhvLTU2bFluT0ZZWEtuNmtRRGFZaG1ZUUxpZHpDdk9XdGN5QTJCekNkdWhhd3gwRVZOdGJ3QVVsQ0UxTFVkUVMtMFZ5SDJhY3lVajBDT3c5ZHg2ejF2aFlITGF5cGJVZXlpdFRNOWlpZ01R?oc=5",
+"quelle": "Kingsville Times",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-11-09",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
+{
+"titel": "'Delays Are Possible': Gordie Howe International Bridge Pedestrian Path Closes For 48 Hours",
+"url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcWtGS25MbjlWU056VTNXNXVXcUdLb1laU1dJMHZBakc1YmtIUXJrRFJoLXNjZEpsUTJZcjJlOFg2TFUtS2lVQURzRmlwaGptVHJKZzk5b3lOU1Zkb091Z0tVWWpVNjhmTnctMVlpNzFkVzVwX2d6R2JOZEhhY3pJNGxyaXc1U2dyRmo1WUN5TkhuRUN3SzY5eWlVT1NFSDNuU2Y2YlY5RHVhSzBBam43Ng?oc=5",
+"quelle": "TheTravel",
+"sprache": "English",
+"dienst": "Google News",
+"datum": "2026-10-29",
+"typ": "sperrung",
+"bereich": "route",
+"erstmals_gesehen": "2026-11-09",
+"zuletzt_gesehen": "2026-11-09"
+},
 {
 "titel": "Gordie Howe bridge path closed Wednesday and Thursday",
 "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORU9RQmUyRjBRaThWMnJjMGRUaTBXcFNZLUlCTVdSRmR4Z0dGcWwwalEzd3ZBSkZ4UTd2WGF5YmFZeXFHRTZ4dkN5eS1NVU03UDZCUVgwcHViR184dDFYLXJpeGQyQzc0MkhObWpYaGhnWndvRWEtTlpLSkN1d2otNjFEM3lFRVpvOFFNYWhaWWQ?oc=5",
@@ -335,7 +262,7 @@
 "typ": "sperrung",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 },
 {
 "titel": "Gordie Howe Bridge Multi-Use Path Closed Wednesday And Thursday",
@@ -347,9 +274,8 @@
 "typ": "sperrung",
 "bereich": "route",
 "erstmals_gesehen": "2026-11-06",
-"zuletzt_gesehen": "2026-11-06"
+"zuletzt_gesehen": "2026-11-09"
 }
 ]
-},
-"version": 2
+}
 }

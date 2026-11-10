@@ -12,10 +12,13 @@
    Einbindung: Ebene "wahlen" (formen politik, ansicht wahlen); globus.js ruft WAHLEN.seite() und WAHLEN.legende(). */
 "use strict";
 const WAHLEN = (() => {
-  const D = (() => { try { return JSON.parse(document.getElementById("wahlen-daten").textContent); } catch { return null; } })();
+  // API-Fassung: Register als data/wahlen.json, gleich nach dem Start geladen (api.js: BLOCK; Ereignis sphaerae:block unten)
+  let D = BLOCK.jetzt("wahlen-daten") || null;
+  const D_NACH = !D && !!BLOCK.status("wahlen-daten").laedt;
   const G = GLOBUS;
-  const ALLE = D ? D.wahlen : [];
-  const NACH_ID = Object.fromEntries(ALLE.map(w => [w.id, w]));
+  let ALLE = D ? D.wahlen : [];
+  let NACH_ID = Object.fromEntries(ALLE.map(w => [w.id, w]));
+  let WARTET = null;            // Wahl, die vor dem Laden des Registers gewählt wurde
   const W = { e: 1, kammer: "unterhaus", fokus: null, sel: null, stimmart: {}, faerbung: "sieger", partei: "", fest: null, ort: null, sort: "rang", filter: "", leer: null };
   try { const v = JSON.parse(localStorage.getItem("globus-wahlen") || "{}"); if (v.e >= 0 && v.e <= 4) W.e = v.e; if (v.faerbung) W.faerbung = v.faerbung; } catch { /* kein Speicher */ }
   const merken = () => { try { localStorage.setItem("globus-wahlen", JSON.stringify({ e: W.e, faerbung: W.faerbung })); } catch { /* kein Speicher */ } };
@@ -130,6 +133,11 @@ const WAHLEN = (() => {
   }
   // Gliedstaaten-Grenzen (API-Fassung: data/gliedstaaten.json, globus.js lädt sie nach dem Start): Index neu, Karte neu
   addEventListener("sphaerae:block", e => {
+    if (e.detail.id === "wahlen-daten") {
+      D = BLOCK.jetzt("wahlen-daten") || null; ALLE = D ? D.wahlen : []; NACH_ID = Object.fromEntries(ALLE.map(w => [w.id, w]));
+      if (WARTET) { const [id, fl] = WARTET; WARTET = null; wahlWaehlen(id, fl); } else if (aktiv()) anwenden(); else G.seiteZeichnen();
+      return;
+    }
     if (e.detail.id !== "gliedstaaten-geo" || !GEO) return;
     const g = G.geo(); GEO.gliedstaaten = idx(g.GL_GEO, "code"); GEO.roh = g; PUNKT.clear(); if (aktiv()) anwenden();
   });
@@ -238,7 +246,7 @@ const WAHLEN = (() => {
     m.addImage("wa-schraffur", { width: n, height: n, data }); schraffurDa = true;
   }
   const LINIE = "#07090c";
-  G.ebene({ id: "wahlen", name: "Wahlergebnisse (eine Wahl je Ebene)", gruppe: "Politik & Wahlen", an: !!D, geplant: !D, formen: ["politik"], ansicht: "wahlen",
+  G.ebene({ id: "wahlen", name: "Wahlergebnisse (eine Wahl je Ebene)", gruppe: "Politik & Wahlen", an: !!D || D_NACH, geplant: !D && !D_NACH, formen: ["politik"], ansicht: "wahlen",
     quellen: m => { const d = kartenDaten(); ["g", "u1", "u2", "gp", "p1", "p2"].forEach(k => m.addSource("wa-" + k, { type: "geojson", data: fc(d[k]) }));
       m.addSource("wa-leer", { type: "geojson", data: leerDaten() }); m.addSource("wa-sel", { type: "geojson", data: auswahlFlaechen() }); },
     schichten: (m, vor) => {
@@ -519,7 +527,8 @@ const WAHLEN = (() => {
       <div class="gk-block"><p class="gk-quelle">Wahlregister (app/wahlen_daten.py), Stand ${esc(D.stand)}: ${f0.format(ALLE.length)} Wahlen. Quellen je Wahl in der Ergebniskarte. Nationale Ergebnisse: Wikipedia-Wahlartikel und IPU Parline; Deutschland: Die Bundeswahlleiterin, IT.NRW.</p></div>`;
   }
   function seite() {
-    if (!D) return `<div><h2>Wahlen</h2><p class="gk-leer">Kein Wahlregister im Build (app/wahlen_daten.py).</p></div>`;
+    if (!D) { const st = BLOCK.status("wahlen-daten");
+      return `<div><h2>Wahlen</h2><p class="gk-leer">${st.laedt ? "Wahlregister wird geladen …" : st.fehler ? `Wahlregister nicht geladen (${esc(st.fehler)}). <button type="button" data-wa-erneut>Erneut versuchen</button>` : "Kein Wahlregister im Build (app/wahlen_daten.py)."}</p></div>`; }
     const w = W.fokus && NACH_ID[W.fokus];
     return w ? wahlSeite(w) : ebenenSeite();
   }
@@ -559,6 +568,7 @@ const WAHLEN = (() => {
     if (k) W.sel = { u: i, k };
   }
   function wahlWaehlen(id, fliegen = true) {
+    if (!D && BLOCK.status("wahlen-daten").laedt) { WARTET = [id, fliegen]; return; }
     const w = NACH_ID[id]; if (!w) { W.fokus = null; W.sel = null; anwenden(); return; }
     W.e = w.e; if (w.e === 1) W.kammer = kammerVon(w);
     W.fokus = id; W.sel = null; W.leer = null; W.filter = ""; W.ort = null;
@@ -570,6 +580,7 @@ const WAHLEN = (() => {
     if (!G.imGlobus()) return;
     const t = ev.target, a = n => { const x = t.closest && t.closest("[" + n + "]"); return x ? x.getAttribute(n) : null; };
     let v;
+    if (a("data-wa-erneut") != null) { BLOCK.erneut("wahlen-daten"); G.seiteZeichnen(); return; }
     if ((v = a("data-wa-ebene")) != null) { ebeneWaehlen(+v); return; }
     if ((v = a("data-wa-kammer")) != null) {
       const land = bezugsland(), neu = (kammernVon(land).find(x => x[0] === v) || [])[1];

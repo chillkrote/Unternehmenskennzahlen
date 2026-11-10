@@ -21,6 +21,7 @@ class Meta(BaseModel):
     source: Optional[str] = Field(None, description="Herkunft der Daten (Datei bzw. Import)")
     data_as_of: Optional[datetime] = Field(None, description="Zeitpunkt des letzten erfolgreichen Imports dieser Daten")
     notes: list[str] = []
+    vintage: Optional[dict[str, Any]] = Field(None, description="Begriffe und Grenzen der Versionierung (nur bei Fassungen/as_of)")
 
 
 class Antwort(BaseModel, Generic[T]):
@@ -259,6 +260,9 @@ class Reihe(BaseModel):
     first_period: Optional[str] = None
     last_period: Optional[str] = None
     observations: int = 0
+    source_updated: Optional[str] = Field(None, description="Stand der Quelle laut letztem Abruf (Quellenversion)")
+    history_start: Optional[datetime] = Field(None, description="Beginn der gespeicherten Historie (erster Import); davor kein Datenbankstand")
+    superseded_versions: int = Field(0, description="abgelöste Fassungen (revidierte oder entfallene Werte) seit history_start")
     meta: dict[str, Any] = {}
 
 

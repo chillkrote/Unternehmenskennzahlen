@@ -60,6 +60,18 @@ und der lokale Betrieb bleiben, wie sie sind.
 
 Umsetzung E1: `python3 app/build.py --nur-seite --api /api/v1 --oeffentlich --ziel dist-api` baut die Server-Fassung ohne Yahoo-Daten (Marktdaten, Wochenkurse, Börsenbereich, Kurs- und Bewertungswerte der Unternehmen, Yahoo-Einträge im Finanzpuls; `build.py: YAHOO_WERTE`). **Entschieden (Robin, 10.11.2026): ausblenden.** Seit dann schaltet `--api` den Schalter immer ein (lokal abschaltbar mit `--mit-yahoo`), und der Import in die Server-Datenbank (`server/etl/profile.py`) übernimmt die Yahoo-Kennzahlen nicht (`server/plattform/lizenz.py`; für eine lokale Datenbank `SPHAERAE_MIT_YAHOO=1`).
 
+Schutz der fertigen Ausgabe: `python3 -m plattform.lizenz ../app/dist-api` (aus `server/`) durchsucht den Build nach Yahoo-Dateien,
+-Blöcken und -Werten und bricht bei einem Fund ab; der Workflow `server.yml` führt die Prüfung nach jedem Build aus. `--mit-yahoo`
+ist für Server-Ordner gesperrt, `SPHAERAE_MIT_YAHOO=1` bricht in Produktion (`PLATTFORM_UMGEBUNG=produktion`) ab.
+
+**E6 (neu, offen):** E1 sperrt Kurse und Bewertungswerte. Die Abschlusszahlen von Nichtbanken stammen aber ebenfalls aus Yahoo:
+4.457 von 4.664 Abschlüssen, 11.727 daraus gerechnete Kennzahlenwerte, Berichtstermine von 155 Unternehmen. Empfehlung: auf
+sphaerae.de ebenfalls sperren, bis die Zahlen aus Originalquellen (ESEF, SEC, DART) kommen. Schalter: Build
+`--ohne-yahoo-abschluesse`, ETL `SPHAERAE_OHNE_YAHOO_ABSCHLUESSE=1`, Prüfung `--streng`. Stand: aus, bis Robin entscheidet.
+
+ENTSO-E: Abruf über 36 Monate in Fenstern von höchstens einem Jahr; Monate mit weniger als 99,5 % der Stunden sind in
+`strom_entsoe.json` unter `abdeckung` vermerkt.
+
 ## Pflichtangaben (Namensnennung) für die Seite „Quellen“
 
 Wikipedia (CC BY-SA 4.0, mit Link zum Artikel), DAWUM (ODbL), BKG (dl-de/by-2-0, „© GeoBasis-DE / BKG“), AEC und Statistik

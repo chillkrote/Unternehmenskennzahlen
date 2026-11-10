@@ -77,7 +77,10 @@ const API = (() => {
 /* ---------- Datenblöcke als Dateien (API-Fassung) ----------
    build.py --api ersetzt große Blöcke (z. B. parlamente-daten) durch {"_nach": "data/<datei>.json"}. BLOCK.jetzt(id) liefert die Daten,
    null wenn der Block fehlt, oder undefined, solange die Datei lädt (der erste Aufruf startet das Laden). Danach meldet das Ereignis
-   „sphaerae:block“ (detail.id) den Ansichten, dass sie neu zeichnen können. In der Pages-Fassung sind die Blöcke eingebettet. */
+   „sphaerae:block“ (detail.id) den Ansichten, dass sie neu zeichnen können. In der Pages-Fassung sind die Blöcke eingebettet.
+   Aufgeschobene Blöcke (AUFGESCHOBEN, Audit 2026-11, 4.7): Daten, die nur eine Ansicht braucht (Politik, Wahlen, Güterhandel), laden
+   nicht mehr beim Start, sondern erst, wenn die Ansicht sie mit BLOCK.freigeben(id) anfordert. Bis dahin meldet status() „lädt“
+   und jetzt() undefined, wie bei einem laufenden Abruf; eingebettete Blöcke (Pages-Fassung) sind davon nicht berührt. */
 const BLOCK = (() => {
   const daten = {}, laeuft = {}, fehler = {};
   function roh(id) { try { return JSON.parse(document.getElementById(id).textContent); } catch (e) { return null; } }
@@ -87,19 +90,27 @@ const BLOCK = (() => {
       .then(d => { daten[id] = d; }).catch(e => { fehler[id] = e.message || String(e); })
       .then(() => { delete laeuft[id]; dispatchEvent(new CustomEvent("sphaerae:block", { detail: { id } })); });
   }
+  const AUFGESCHOBEN = ["gueter-daten", "parlamente-daten", "gliedstaaten-geo", "wahlen-daten"];
+  // erst beim Zugriff geprüft: manche Blöcke stehen im Dokument hinter diesem Skript (wahlen-daten der Weltkugel)
+  const frei = new Set();
+  const spaeter = { has: id => AUFGESCHOBEN.includes(id) && !frei.has(id) && !(id in daten) && !laeuft[id] && !fehler[id] && (d => !!d && typeof d._nach === "string")(roh(id)),
+                    delete: id => { const war = spaeter.has(id); frei.add(id); return war; } };
+  function freigeben(...ids) { ids.forEach(id => { if (spaeter.delete(id)) jetzt(id); }); }
   function jetzt(id) {
     if (id in daten) return daten[id];
+    if (spaeter.has(id)) return undefined;
     const d = roh(id);
     if (d && typeof d._nach === "string") { laden(id, d._nach); return undefined; }
     return (daten[id] = d);
   }
-  const status = id => fehler[id] ? { fehler: fehler[id] } : laeuft[id] ? { laedt: true } : {};
-  function erneut(id) { delete fehler[id]; jetzt(id); }
+  const status = id => fehler[id] ? { fehler: fehler[id] } : laeuft[id] ? { laedt: true } : spaeter.has(id) ? { laedt: true, aufgeschoben: true } : {};
+  function erneut(id) { delete fehler[id]; spaeter.delete(id); jetzt(id); }
   // als Promise: Daten, sobald da (eingebettet sofort); null, wenn der Block fehlt oder nicht geladen werden konnte
   function warte(id) {
+    freigeben(id);
     const d = jetzt(id);
     if (d !== undefined) return Promise.resolve(d);
     return laeuft[id].then(() => id in daten ? daten[id] : null);
   }
-  return { jetzt, status, erneut, warte };
+  return { jetzt, status, erneut, warte, freigeben, aufgeschoben: () => AUFGESCHOBEN.filter(id => spaeter.has(id)) };
 })();

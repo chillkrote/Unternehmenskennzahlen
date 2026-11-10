@@ -1,6 +1,6 @@
 # Umsetzungsstand
 
-Stand 09.11.2026. Status: **Geplant**, **In Bearbeitung**, **Implementiert** (Code vorhanden), **Getestet** (automatische Tests
+Stand 10.11.2026 (Audit: `audit-2026-11.md`). Status: **Geplant**, **In Bearbeitung**, **Implementiert** (Code vorhanden), **Getestet** (automatische Tests
 grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv ist noch nichts aus diesem Umbau: es gibt noch keinen Server.
 
 ## Bausteine
@@ -22,7 +22,15 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | Build-Schalter `--api`, `--ziel` | Getestet | Pages-Fassung unverändert (Smoke-Tests), API-Fassung ohne Register |
 | CI-Workflow `server.yml`: pytest gegen PostgreSQL 16 (Job `test`) und ganzer Compose-Stack mit ETL und Browser-Smoke-Tests über http (Job `compose`) | Implementiert | läuft im PR |
 | netcup-Server, HTTPS unter sphaerae.de, Timer, Offsite-Backup | **Blockiert** | wartet auf Freischaltung des netcup-Accounts und Robins Freigabe |
-| Lizenzprüfung je Quelle | Geplant | `docs/datenquellen.md` |
+| Lizenzprüfung je Quelle | Implementiert | `docs/datenquellen.md`; Entscheidungen E2 bis E6 offen |
+| Lizenzschutz E1 (Yahoo-Kurse): Build, ETL, Prüfung der fertigen Ausgabe (`plattform/lizenz.py`, `LIZENZ.json`) | Getestet | `test_lizenz.py` (9), Prüfschritt im Workflow `server.yml`; Schalter für Yahoo-Abschlusszahlen (E6) gebaut, aus |
+| ENTSO-E-Stromflüsse über 36 Monate mit Stundenabdeckung je Monat | Getestet, gegen Primärdaten geprüft | `app/tests/test_entsoe_abruf.py` (18); letzte 12 Monate gleich dem alten Stand |
+| Aktualität je Reihe und Gebiet, Abdeckung gegen erwartete Gebiete (`/data-quality`, `freshness`) | Getestet | `test_qualitaet.py`; nur API, keine Ansicht in der Oberfläche |
+| Importabhängigkeit je Land und Gut (Revision 0008, `/trade/import-dependencies`, HDL F5 Tafeln IMP und LIF) | Getestet, in der Oberfläche | `test_handel.py`, `handel-gueter-smoke.js` |
+| Fassungen der VWL-Werte: Stand der Quelle und Abruf (Revision 0007), `/series/{id}/revisions`, Hinweis bei `as_of` vor Beginn der Historie | Getestet | `test_vwl.py`; nur API |
+| Datenkatalog: strenge Prüfung der Tabellen beim Import | Getestet | `test_katalog.py` |
+| Aufgeschobenes Laden großer Blöcke (`BLOCK.freigeben`) | Getestet | Weltkugel-Start 15,6 auf 12,1 MB; Browser-Tests |
+| Datenabdeckung Wirtschaft und Wahlen | In Bearbeitung | `datenabdeckung-wirtschaft.md`, `datenabdeckung-wahlen.md` (folgen) |
 
 ## Funktionsmatrix (bestehende Kernfunktionen)
 

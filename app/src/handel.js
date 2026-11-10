@@ -4,15 +4,17 @@
      welt-daten    data/welt.json     Weltbank-Kennzahlen aller Länder inkl. Zollsätzen, Eurostat-Stromhandel, Wirtschaftsräume (welt_daten.py)
      routen-daten  data/routen.json   Haupthandelsrouten, Engstellen, Drehkreuze (routen.py)
      news-daten    data/news_routen.json  echte Meldungen zu Störungen an Engstellen (GDELT oder Google News, news_routen.py)
-     strom-entsoe-daten  data/strom_entsoe.json  physikalische Flüsse je Grenze und Monat, letzte zwölf Monate (ENTSO-E, entsoe_abruf.py)
+     strom-entsoe-daten  data/strom_entsoe.json  physikalische Flüsse je Grenze und Monat, bis zu 36 Monate (ENTSO-E, entsoe_abruf.py)
      gueter-daten  data/gueter.json  Exporte je Gut und Land (CEPII BACI, gueter_baci.py); API-Fassung lädt sie nach (api.js: BLOCK)
+     gueter-importe-daten  data/gueter_importe.json  Importseite je Importland und Gut aus der vollständigen bilateralen Matrix (gueter_baci.py);
+                           wird in der API-Fassung erst mit der Ansicht Abhängigkeit geladen
    Ansichten: h-ueb (Überblick), h-laender (alle Länder), h-routen (Routen und Engstellen), h-strom (Stromhandel),
    h-abh (Abhängigkeit: Konzentration der Exportländer je Gut, Alternativlieferländer; Regeln wie server/plattform/handel.py).
    Läuft vor dem Hauptskript; nutzt dessen Hilfsfunktionen (panel, esc, f0, f1, sicherUrl) erst zur Laufzeit. */
 "use strict";
 const HDL = (() => {
   let H = null, W = null, R = null, N = null, E = null;
-  const S = { sort: { k: "export_welt", ab: false }, kont: "alle", gut: null, ohne: [] };
+  const S = { sort: { k: "export_welt", ab: false }, kont: "alle", gut: null, ohne: [], imp: "DE", impGut: null, impLief: "" };
   const DN = (() => { try { return new Intl.DisplayNames(["de"], { type: "region" }); } catch { return null; } })();
   const name = iso => { if (iso === "XK") return "Kosovo"; try { return (DN && DN.of(iso)) || iso; } catch { return iso; } };
   const mrd = v => v == null ? "–" : f1.format(v / 1e9);
@@ -111,10 +113,12 @@ const HDL = (() => {
   /* Monatswerte (ENTSO-E): je Grenze beide Richtungen, Summe der letzten zwölf Monate, Saldo und Monatsverlauf als Balken */
   function stromMonate() {
     if (!E) return "";
-    const n = E.monate.length, sum = l => l.reduce((s, v) => s + (v || 0), 0), lueck = l => l.some(v => v == null);
+    /* Summen immer über die letzten zwölf Monate (die Datei kann 24 oder 36 Monate halten, entsoe_abruf.py --monate); der Verlauf zeigt alle */
+    const n = E.monate.length, ab = Math.max(0, n - 12), sum = l => l.slice(ab).reduce((s, v) => s + (v || 0), 0), lueck = l => l.slice(ab).some(v => v == null);
+    const teil = k => Object.keys((E.abdeckung || {})[k] || {}).filter(m => E.monate.indexOf(m) >= ab).length;
     const gr = {};
     Object.entries(E.paare).forEach(([k, l]) => { const [a, b] = k.split(">"), g = [a, b].sort().join("-"); (gr[g] = gr[g] || { x: [a, b].sort()[0], y: [a, b].sort()[1], hin: null, rueck: null })[a === gr[g].x ? "hin" : "rueck"] = l; });
-    const zeilen = Object.values(gr).map(g => ({ ...g, s1: g.hin ? sum(g.hin) : null, s2: g.rueck ? sum(g.rueck) : null, lueck: (g.hin && lueck(g.hin)) || (g.rueck && lueck(g.rueck)) }))
+    const zeilen = Object.values(gr).map(g => ({ ...g, s1: g.hin ? sum(g.hin) : null, s2: g.rueck ? sum(g.rueck) : null, lueck: (g.hin && lueck(g.hin)) || (g.rueck && lueck(g.rueck)), teil: teil(g.x + ">" + g.y) + teil(g.y + ">" + g.x) }))
       .map(g => ({ ...g, ges: (g.s1 || 0) + (g.s2 || 0), saldo: (g.s1 || 0) - (g.s2 || 0) })).sort((a, b) => b.ges - a.ges);
     const twh = v => v == null ? "–" : f1.format(v / 1000);
     const mo = m => m.slice(5, 7) + "/" + m.slice(2, 4);
@@ -122,9 +126,9 @@ const HDL = (() => {
       return `<svg width="${n * 6}" height="20" style="vertical-align:middle"><line x1="0" x2="${n * 6}" y1="10" y2="10" stroke="currentColor" stroke-opacity="0.3" stroke-width="0.5"/>${net.map((v, i) => { const h = Math.max(1, Math.round(Math.abs(v) / mx * 9));
         return `<rect x="${i * 6}" y="${v >= 0 ? 10 - h : 10}" width="4" height="${h}" fill="var(${v >= 0 ? "--up" : "--down"})"><title>${esc(mo(E.monate[i]))}: ${v >= 0 ? "+" : ""}${f0.format(v)} GWh</title></rect>`; }).join("")}</svg>`; };
     const tab = `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Grenze</th><th>A → B</th><th>B → A</th><th>Saldo A</th><th style="text-align:left">Saldo je Monat</th></tr></thead><tbody>${zeilen.map(g =>
-      `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(g.x))} – ${esc(name(g.y))}${g.lueck ? ' <span class="n">Lücken</span>' : ""}</td><td>${twh(g.s1)}</td><td>${twh(g.s2)}</td><td class="${g.saldo >= 0 ? "pos" : "neg"}">${g.saldo > 0 ? "+" : ""}${twh(g.saldo)}</td><td style="text-align:left">${balken(g)}</td></tr>`).join("")}</tbody></table></div>`;
-    return panel({ code: "STM", titel: "Physikalische Flüsse je Grenze, letzte zwölf Monate", sub: `${mo(E.monate[0])} bis ${mo(E.monate[n - 1])}, TWh; A und B alphabetisch nach Ländercode, Saldo positiv = A liefert netto`, breite: "w12", body: tab,
-      fuss: `Physikalische Flüsse (ENTSO-E 12.1.G), keine Handelsgeschäfte; Monate in UTC, Lücken nicht aufgefüllt. ${E.ohne_daten && E.ohne_daten.length ? `Ohne Daten: ${esc(E.ohne_daten.length + " Richtungen")}. ` : ""}Abruf ${esc(datumDe(E.abruf))}. Quelle: <a class="flink" href="${esc(E.url)}" target="_blank" rel="noopener">ENTSO-E Transparency Platform</a>` });
+      `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(g.x))} – ${esc(name(g.y))}${g.lueck ? ' <span class="n">Lücken</span>' : ""}${g.teil ? ` <span class="n" title="In ${g.teil} Monatswerten hat die Quelle nicht alle Stunden geliefert; die Summe ist eine Untergrenze">unvollständig</span>` : ""}</td><td>${twh(g.s1)}</td><td>${twh(g.s2)}</td><td class="${g.saldo >= 0 ? "pos" : "neg"}">${g.saldo > 0 ? "+" : ""}${twh(g.saldo)}</td><td style="text-align:left">${balken(g)}</td></tr>`).join("")}</tbody></table></div>`;
+    return panel({ code: "STM", titel: "Physikalische Flüsse je Grenze, letzte zwölf Monate", sub: `Summen ${mo(E.monate[ab])} bis ${mo(E.monate[n - 1])}, TWh${ab ? `; Verlauf ab ${mo(E.monate[0])}` : ""}; A und B alphabetisch nach Ländercode, Saldo positiv = A liefert netto`, breite: "w12", body: tab,
+      fuss: `Physikalische Flüsse (ENTSO-E 12.1.G), keine Handelsgeschäfte; Monate in UTC, Lücken nicht aufgefüllt${(E.uebernommen || []).length ? `; ${E.uebernommen.length} Richtungen aus dem vorherigen Abruf` : ""}. ${E.ohne_daten && E.ohne_daten.length ? `Ohne Daten: ${esc(E.ohne_daten.length + " Richtungen")}. ` : ""}Abruf ${esc(datumDe(E.abruf))}. Quelle: <a class="flink" href="${esc(E.url)}" target="_blank" rel="noopener">ENTSO-E Transparency Platform</a>` });
   }
   function viewStrom() {
     const s = W && W.strom;
@@ -150,7 +154,11 @@ const HDL = (() => {
       return Object.entries(rest).sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).slice(0, n)
         .map(([k, v]) => ({ geo: k, value: v, world_share: ges ? runde(v / ges, 4) : 0, share_without_excluded: runde(ar[k], 4) }));
     }
-    return { anteile, hhi, einstufung, cr, alternativen };
+    /* Importabhängigkeit: Importwert aus einem Lieferland / gesamter Importwert (server/plattform/handel.py: importanteil) */
+    const importanteil = (aus, ges) => ges > 0 && aus != null ? runde(aus / ges, 4) : null;
+    /* Untergrenze des HHI aus einer Teilmenge der Partner: Anteile am Gesamtwert, nicht an der Teilmenge (hhi_untergrenze) */
+    const hhiUntergrenze = (teil, ges) => ges > 0 ? runde(pos(teil).reduce((a, [, v]) => a + (v / ges * 100) ** 2, 0), 1) : 0;
+    return { anteile, hhi, einstufung, cr, alternativen, importanteil, hhiUntergrenze };
   })();
   const STUFE = { gering: "gering", maessig: "mäßig", hoch: "hoch" };
   /* Werte eines Gutes im letzten Jahr der Daten: {iso: Mio. USD} */
@@ -159,7 +167,46 @@ const HDL = (() => {
     Object.entries(G.laender).forEach(([iso, e]) => { const x = e[id]; if (x && x.v && x.v[j] != null) w[iso] = x.v[j]; });
     return w;
   }
+  /* Importabhängigkeit eines Landes (Audit 2026-11, 4.3): Lieferländer je Gut aus der vollständigen bilateralen Matrix.
+     Etwas anderes als die Konzentration der weltweiten Exporte oben: hier zählt, von wem dieses eine Land tatsächlich bezieht. */
+  function importPanels(G) {
+    const I = typeof BLOCK !== "undefined" ? BLOCK.jetzt("gueter-importe-daten") : roh("gueter-importe-daten");
+    if (I === undefined) { const st = BLOCK.status("gueter-importe-daten"); return panel({ code: "IMP", titel: "Importabhängigkeit eines Landes", breite: "w12", body: `<p class="n">${st.fehler ? "Importdaten nicht geladen: " + esc(st.fehler) : "Importdaten werden geladen …"}</p>` }); }
+    if (!I || !I.laender) return panel({ code: "IMP", titel: "Importabhängigkeit eines Landes", breite: "w12", body: `<p class="n">Keine Importdaten (<code>app/data/gueter_importe.json</code>). <code>python3 app/gueter_baci.py --zip …</code>, danach <code>python3 app/build.py</code>.</p>` });
+    const j = I.jahre.indexOf(I.jahr), mrd = v => v == null ? "–" : f1.format(v / 1000);
+    const laender = Object.keys(I.laender).sort((a, b) => name(a).localeCompare(name(b), "de"));
+    if (!I.laender[S.imp]) S.imp = I.laender.DE ? "DE" : laender[0];
+    const L = I.laender[S.imp], gname = Object.fromEntries(G.gruppen.map(g => [g.id, g.name]));
+    const zeilen = I.gruppen.filter(id => L[id] && L[id].v[j] != null).map(id => { const e = L[id], ges = e.v[j], top = e.top || [];
+      const lief = S.impLief ? top.find(x => x[0] === S.impLief) : null;
+      return { id, e, ges, n: e.n[j], h: e.hhi[j], t1: e.t1[j], u: e.u ? e.u[j] || 0 : 0, top,
+        ant: S.impLief ? (lief ? ABH.importanteil(lief[1], ges) : top.length >= I.top_n ? null : 0) : null,
+        unter: S.impLief && !lief && top.length >= I.top_n ? ABH.importanteil(top[top.length - 1][1], ges) : null }; })
+      .sort((a, b) => S.impLief ? (b.ant || 0) - (a.ant || 0) : (b.t1 ? b.t1[1] : 0) - (a.t1 ? a.t1[1] : 0));
+    if (!zeilen.length) return panel({ code: "IMP", titel: `Importabhängigkeit: ${name(S.imp)}`, breite: "w12", body: `<p class="n">Keine Importe in den erfassten Gütergruppen.</p>` });
+    if (!S.impGut || !zeilen.some(z => z.id === S.impGut)) S.impGut = zeilen[0].id;
+    const z = zeilen.find(x => x.id === S.impGut);
+    const lieferlaender = [...new Set(zeilen.flatMap(r => r.top.map(x => x[0])))].sort((a, b) => name(a).localeCompare(name(b), "de"));
+    const wahl = `<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px"><label class="n">Importland <select id="himp">${laender.map(i => `<option value="${esc(i)}"${i === S.imp ? " selected" : ""}>${esc(name(i))}</option>`).join("")}</select></label>
+      <label class="n">Abhängigkeit von <select id="himplief"><option value="">größtem Lieferland je Gut</option>${lieferlaender.map(i => `<option value="${esc(i)}"${i === S.impLief ? " selected" : ""}>${esc(name(i))}</option>`).join("")}</select></label></div>`;
+    const antTxt = r => S.impLief ? (r.ant != null ? pct(r.ant * 100) : `unter ${pct(r.unter * 100)}`) : (r.t1 ? `${esc(name(r.t1[0]))} ${pct(r.t1[1] * 100)}` : "–");
+    const tab = `${wahl}<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Gut</th><th>Import Mrd. USD</th><th style="text-align:left">${S.impLief ? "Anteil " + esc(name(S.impLief)) : "größtes Lieferland"}</th><th>Lieferländer</th><th title="HHI über alle Lieferländer dieses Importlands">HHI Lieferländer</th><th style="text-align:left">Konzentration</th></tr></thead><tbody>${zeilen.map(r =>
+      `<tr data-himpgut="${esc(r.id)}" style="cursor:pointer${r.id === S.impGut ? ";background:var(--sel, rgba(127,127,127,.15))" : ""}"><td style="text-align:left;font-family:var(--sans)">${esc(gname[r.id] || r.id)}</td><td>${mrd(r.ges)}</td><td style="text-align:left;font-family:var(--sans)">${antTxt(r)}</td><td>${f0.format(r.n)}</td><td>${r.h == null ? "–" : f0.format(r.h)}</td><td style="text-align:left">${r.h == null ? "–" : STUFE[ABH.einstufung(r.h)]}</td></tr>`).join("")}</tbody></table></div>`;
+    const kum = z.top.reduce((s, x) => s + x[1], 0);
+    const verlauf = I.jahre.map((jahr, k) => z.e.v[k] == null ? null : { jahr, h: z.e.hhi[k], t1: z.e.t1[k] }).filter(Boolean);
+    const dtab = `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Lieferland</th><th>Mrd. USD</th><th>Anteil am Import</th></tr></thead><tbody>${z.top.map(([iso, v]) =>
+      `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(iso))}</td><td>${mrd(v)}</td><td>${pct(ABH.importanteil(v, z.ges) * 100)}</td></tr>`).join("")}
+      ${z.n > z.top.length ? `<tr><td style="text-align:left;font-family:var(--sans)" class="n">${f0.format(z.n - z.top.length)} weitere Lieferländer</td><td>${mrd(Math.max(z.ges - kum - z.u, 0))}</td><td>${pct(Math.max(z.ges - kum - z.u, 0) / z.ges * 100)}</td></tr>` : ""}
+      ${z.u > 0 ? `<tr><td style="text-align:left;font-family:var(--sans)" class="n">nicht zuordenbar</td><td>${mrd(z.u)}</td><td>${pct(z.u / z.ges * 100)}</td></tr>` : ""}</tbody></table></div>
+      <p class="n" style="margin:8px 0 4px">Größtes Lieferland und HHI je Jahr</p><div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Jahr</th><th style="text-align:left">größtes Lieferland</th><th>Anteil</th><th>HHI</th></tr></thead><tbody>${verlauf.map(v =>
+      `<tr><td style="text-align:left">${v.jahr}</td><td style="text-align:left;font-family:var(--sans)">${v.t1 ? esc(name(v.t1[0])) : "–"}</td><td>${v.t1 ? pct(v.t1[1] * 100) : "–"}</td><td>${v.h == null ? "–" : f0.format(v.h)}</td></tr>`).join("")}</tbody></table></div>`;
+    return `${panel({ code: "IMP", titel: `Importabhängigkeit: ${name(S.imp)}`, sub: `${I.jahr}, Anteil eines Lieferlands am Import des Landes je Gut; Zeile anklicken für die Lieferländer`, breite: "w7", body: tab,
+      fuss: `Importabhängigkeit = Importwert aus dem Lieferland / gesamter Importwert des Landes für das Gut. HHI über alle Lieferländer des Importlands (nicht nur die aufgelisteten); die Bänder gering/mäßig/hoch stammen aus der Fusionskontrolle und sind kein Grenzwert für Versorgungssicherheit. Quelle: ${esc(I.quelle)}; abgeglichene Spiegelstatistik (FOB), weicht von nationalen Importstatistiken ab. Über die API: <code>/trade/import-dependencies?geo=${esc(S.imp)}</code>.` })}
+      ${panel({ code: "LIF", titel: `Lieferländer: ${gname[z.id] || z.id}`, sub: `${name(S.imp)}, ${I.jahr}: ${f0.format(z.n)} Lieferländer, die ${z.top.length} größten decken ${pct(kum / z.ges * 100)}`, breite: "w5", body: dtab,
+      fuss: "Belegte Lieferbeziehungen eines Jahres. Ob andere Länder zusätzliche Mengen liefern könnten (freie Kapazität), zeigen die Daten nicht." })}`;
+  }
   function viewAbh() {
+    if (typeof BLOCK !== "undefined") BLOCK.freigeben("gueter-daten");
     const G = typeof BLOCK !== "undefined" ? BLOCK.jetzt("gueter-daten") : roh("gueter-daten");
     if (G === undefined) { const st = BLOCK.status("gueter-daten"); return `<div class="grid">${panel({ code: "ABH", titel: "Abhängigkeit", body: `<p class="n">${st.fehler ? "Güterdaten nicht geladen: " + esc(st.fehler) : "Güterdaten werden geladen …"}</p>` })}</div>`; }
     if (!G || !G.gruppen) return `<div class="grid">${panel({ code: "ABH", titel: "Abhängigkeit", body: `<p class="n">Keine Güterdaten. <code>python3 app/gueter_baci.py</code>, danach <code>python3 app/build.py</code>.</p>` })}</div>`;
@@ -180,12 +227,19 @@ const HDL = (() => {
       <div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Lieferland</th><th>Mrd. USD</th><th>Weltmarkt</th><th>Anteil ohne Ausfall</th></tr></thead><tbody>${alt.map(r =>
       `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(r.geo))}</td><td>${mrd(r.value)}</td><td>${pct(r.world_share * 100)}</td><td>${pct(r.share_without_excluded * 100)}</td></tr>`).join("")}</tbody></table></div>`;
     return `<div class="grid">${panel({ code: "KON", titel: "Konzentration der Exportländer je Gut", sub: `${G.jahr}, ${G.gruppen.length} Gütergruppen, sortiert nach HHI; Zeile anklicken für Alternativen`, breite: "w7", body: tab,
-      fuss: `HHI = Summe der quadrierten Weltmarktanteile in Prozent (0 bis 10 000); unter 1 000 gering, bis 1 800 mäßig, darüber hoch konzentriert (Schwellen der US-Kartellbehörden 2023). Abgeleitet aus den Exporten aller Länder, keine Aussage über einzelne Lieferbeziehungen. Quelle: ${esc(G.quelle)}.` })}
+      fuss: `HHI = Summe der quadrierten Weltmarktanteile in Prozent (0 bis 10 000); unter 1 000 gering, bis 1 800 mäßig, darüber hoch konzentriert. Die Bänder stammen aus der Fusionskontrolle (US-Kartellbehörden 2023) und sind eine Lesehilfe, kein Grenzwert für Versorgungssicherheit. Konzentration der weltweiten Exporte, keine Aussage über die Lieferländer eines einzelnen Importlands (dafür unten: Importabhängigkeit). Quelle: ${esc(G.quelle)}.` })}
       ${panel({ code: "ALT", titel: `Alternativlieferländer: ${z.g.name}`, sub: S.ohne.length ? `ohne ${S.ohne.map(name).join(", ")} fallen ${pct(weg * 100)} des Weltmarkts weg` : "größte Exportländer; Ausfall oben wählen", breite: "w5", body: atab,
-      fuss: `„Anteil ohne Ausfall“: Anteil am verbleibenden Weltmarkt. Ob ein Land die Menge tatsächlich umlenken kann, zeigen die Daten nicht. Über die API: <code>/trade/goods/${esc(z.g.id)}/alternatives</code>.` })}</div>`;
+      fuss: `„Anteil ohne Ausfall“: Anteil am verbleibenden Weltmarkt. Ob ein Land die Menge tatsächlich umlenken kann, zeigen die Daten nicht. Über die API: <code>/trade/goods/${esc(z.g.id)}/alternatives</code>.` })}
+      ${importPanels(G)}</div>`;
   }
   const keineDaten = () => `<div class="grid">${panel({ code: "HDL", titel: "Handel", body: `<p class="n">Noch keine Handelsdaten. <code>python3 app/handel_abruf.py</code> und <code>python3 app/welt_daten.py</code>, danach <code>python3 app/build.py</code>.</p>` })}</div>`;
 
+  if (typeof document !== "undefined" && document.addEventListener) document.addEventListener("change", e => {      // Auswahlfelder der Importabhängigkeit
+    const t = e.target;
+    if (!t || (t.id !== "himp" && t.id !== "himplief")) return;
+    if (t.id === "himp") { S.imp = t.value; S.impLief = ""; S.impGut = null; } else S.impLief = t.value;
+    render();
+  });
   function klick(t) {
     const g = a => { const e = t.closest && t.closest("[" + a + "]"); return e ? e.getAttribute(a) : null; };
     let v;
@@ -194,6 +248,7 @@ const HDL = (() => {
     if ((v = g("data-hkont")) != null) { S.kont = v; render(); return true; }
     if ((v = g("data-hohne")) != null) { S.ohne = S.ohne.includes(v) ? S.ohne.filter(i => i !== v) : [...S.ohne, v]; render(); return true; }
     if ((v = g("data-habh")) != null) { if (S.gut !== v) { S.gut = v; S.ohne = []; } render(); return true; }
+    if ((v = g("data-himpgut")) != null) { S.impGut = v; render(); return true; }
     return false;
   }
   return { init, da, meta, viewUeb, viewLaender, viewRouten, viewStrom, viewAbh, ABH, klick, zoll, saldo, name, daten: () => ({ H, W, R, N }) };
@@ -249,7 +304,7 @@ const POL = (() => {
   /* Parlamente aller Staaten (parlamente-daten = data/parlamente.json aus parlamente_daten.py) */
   let PA = null;
   // API-Fassung: data/parlamente.json kommt mit der ersten Ansicht (BLOCK.jetzt ist dann undefined, bis die Datei da ist)
-  const ladePA = () => { if (PA === null) { const d = BLOCK.jetzt("parlamente-daten"); if (d === undefined) return undefined; PA = d || false; } return PA; };
+  const ladePA = () => { if (PA === null) { BLOCK.freigeben("parlamente-daten"); const d = BLOCK.jetzt("parlamente-daten"); if (d === undefined) return undefined; PA = d || false; } return PA; };
   const ladeHinweis = (code, titel, id) => { const st = BLOCK.status(id);
     return `<div class="grid">${panel({ code, titel, sub: "wird geladen", body: st.fehler ? `<p class="n" role="alert">Daten nicht geladen: ${esc(st.fehler)} <button type="button" class="chip" data-blockretry="${esc(id)}">Erneut versuchen</button></p>` : `<p class="n" role="status">Daten werden geladen …</p>` })}</div>`; };
   const TYP = { einkammer: "Einkammer", unterhaus: "Unterhaus", oberhaus: "Oberhaus", kammer: "Kammer" };

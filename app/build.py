@@ -54,6 +54,25 @@ def ohne_yahoo_firmen(firmen_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
+# Stufe „abschluesse“ (E6, offen; --ohne-yahoo-abschluesse): dieselben Regeln wie server/plattform/lizenz.py (firma_ohne_yahoo_abschluesse)
+NICHT_YAHOO_WERTE = ("x_anteil_stimmrechte", "x_anzahl_meldepflichtige")
+
+
+def ohne_yahoo_abschluesse(firmen_json):
+    """unternehmen.json ohne die Konzernabschlüsse aus Yahoo, die daraus abgeleiteten Kennzahlen der Nicht-Banken und Yahoo-Termine."""
+    yahoo = lambda t: "yahoo" in str(t or "").lower()
+    d = json.loads(firmen_json)
+    for f in d.get("unternehmen") or []:
+        if f.get("abschluesse"):
+            f["abschluesse"] = [a for a in f["abschluesse"] if not yahoo(a.get("quelle"))]
+        if f.get("termine"):
+            f["termine"] = [t for t in f["termine"] if not yahoo(t.get("quelle"))]
+        if not (f.get("bank") or f.get("gruppe")):
+            f["werte"] = {k: v for k, v in (f.get("werte") or {}).items() if k in NICHT_YAHOO_WERTE}
+    d["ohne_yahoo_abschluesse"] = 1
+    return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+
+
 def ohne_yahoo_finanz(finanz_json):
     """finanz.json ohne die Marktpuls-Reihen aus Yahoo Finance (VIX, Gold, Brent …); EZB-, Treasury- und FRED-Reihen bleiben."""
     d = json.loads(finanz_json)
@@ -61,8 +80,13 @@ def ohne_yahoo_finanz(finanz_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
+# Ordner, die der Server ausliefert (server/docker-compose.yml: ../app/dist-api); --mit-yahoo darf dorthin nicht schreiben
+SERVER_ORDNER = ("dist-api", "dist-oeffentlich")
+# Dateien, die nur Yahoo-Daten enthalten (wie server/plattform/lizenz.py: YAHOO_DATEIEN); eine öffentliche Fassung räumt sie aus dem Zielordner
+YAHOO_DATEIEN = ("markt.json", "kurse_woche.json", "boerse.json", "live.json")
+
 # API-Fassung: diese Blöcke stehen als data/<datei> neben der Seite statt eingebettet (Platzhalter in terminal.html)
-BLOCK_NACHLADEN = ("__PARLAMENTE__", "__KOMMUNAL__", "__GUETER__", "__GLIEDSTAATEN__")
+BLOCK_NACHLADEN = ("__PARLAMENTE__", "__KOMMUNAL__", "__GUETER__", "__GUETER_IMPORTE__", "__GLIEDSTAATEN__")
 VWL_PROGNOSEN_DATEI = "data/vwl_prognosen.json"
 
 
@@ -94,10 +118,20 @@ def main():
                         "Kurse, Indizes und Weltunternehmen (markt, kurse_woche, boerse), Kurs/Börsenwert in den Profilen, Marktpuls aus Yahoo")
     p.add_argument("--mit-yahoo", action="store_true",
                    help="nur für lokale Tests der API-Fassung: Yahoo-Daten trotz --api behalten (E1: auf dem Server nie)")
+    p.add_argument("--ohne-yahoo-abschluesse", action="store_true",
+                   help="öffentliche Fassung zusätzlich ohne die Konzernabschlüsse aus Yahoo, daraus abgeleitete Kennzahlen und Yahoo-Termine "
+                        "(Entscheidung E6 offen, docs/audit-2026-11.md)")
     p.add_argument("--ziel", default="dist", help="Ausgabeordner unter app/ (Standard dist; für den Server dist-api)")
     a = p.parse_args()
+    if a.mit_yahoo and a.oeffentlich:
+        raise SystemExit("--mit-yahoo und --oeffentlich schließen sich aus")
+    if a.mit_yahoo and Path(a.ziel).name in SERVER_ORDNER:
+        # der Compose-Stack liefert app/dist-api aus: dort darf nie eine Fassung mit Yahoo-Daten liegen (Audit 2026-11, 4.5)
+        raise SystemExit(f"--mit-yahoo schreibt nicht nach {a.ziel} (wird vom Server ausgeliefert); z. B. --ziel dist-lokal")
     if a.api and not a.mit_yahoo:
         a.oeffentlich = True          # E1 (Robin, 10.11.2026): die Server-Fassung (sphaerae.de) liefert keine Yahoo-Daten aus
+    if a.ohne_yahoo_abschluesse and not a.oeffentlich:
+        raise SystemExit("--ohne-yahoo-abschluesse gilt nur für die öffentliche Fassung (--oeffentlich oder --api)")
     ziel_ordner = HIER / a.ziel
     if a.nur_seite:
         roh = (HIER / "data/banken.json").read_text()
@@ -145,6 +179,10 @@ def main():
     if a.oeffentlich:
         markt = kurse = boerse = "null"          # Bereiche MKT und BÖR zeigen dann ihren Leerzustand
         firmen = ohne_yahoo_firmen(firmen)
+        if a.ohne_yahoo_abschluesse:
+            firmen = ohne_yahoo_abschluesse(firmen)
+        for alt in YAHOO_DATEIEN:                # Reste eines früheren Builds mit Yahoo-Daten im selben Ordner
+            (ziel_ordner / "data" / alt).unlink(missing_ok=True)
     if a.api:
         # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
         reg = "null"
@@ -170,7 +208,7 @@ def main():
              .replace("__MELDUNGEN_JS__", (HIER / "src/meldungen.js").read_text())
              .replace("__HANDEL_JS__", (HIER / "src/handel.js").read_text()))
     # Handel und Weltdaten (Bereich HDL und Weltkugel): fehlt eine Datei, bleibt der Teil leer
-    for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__GUETER__", "gueter.json"), ("__VERKEHR__", "verkehrsknoten.json"), ("__NEWS__", "news_routen.json"), ("__STROM_ENTSOE__", "strom_entsoe.json"),
+    for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__GUETER__", "gueter.json"), ("__GUETER_IMPORTE__", "gueter_importe.json"), ("__VERKEHR__", "verkehrsknoten.json"), ("__NEWS__", "news_routen.json"), ("__STROM_ENTSOE__", "strom_entsoe.json"),
                         ("__BOERSE_WELT__", "boerse_welt.json"), ("__FINANZ__", "finanz.json"), ("__FINANZ_MAKRO__", "finanz_makro.json"), ("__POLITIK__", "politik.json"), ("__DE_LAENDER__", "../geo/de_laender.geojson"),
                         ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
         f = HIER / "data" / datei
@@ -218,6 +256,11 @@ def main():
     if a.api:
         # Startseite des Servers: Weltkugel wie auf GitHub Pages (Deep Links #globus, #firma-… bleiben gültig)
         (ziel_ordner / "index.html").write_text((ziel_ordner / "weltkugel.html").read_text())
+    # Manifest der Lizenzstufe: server/plattform/lizenz.py (pruefe_ausgabe) verlangt es vor der Auslieferung
+    import datetime
+    (ziel_ordner / "LIZENZ.json").write_text(json.dumps({
+        "oeffentlich": bool(a.oeffentlich), "yahoo_kurse": not a.oeffentlich, "yahoo_abschluesse": not a.ohne_yahoo_abschluesse,
+        "api": a.api, "erzeugt": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")}, indent=1), encoding="utf-8")
     # Kontrolle der zentralen Unternehmens-IDs (u. a.: jede ISIN nur bei einer ID); ein Verstoß lässt den Bau fehlschlagen,
     # damit die Workflows (marktdaten, termine) nichts Fehlerhaftes committen
     sys.path.insert(0, str(HIER.parent / "stammdaten"))

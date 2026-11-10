@@ -102,3 +102,20 @@ def test_vintage_revision_und_stand(leere_db, tmp_path):
     assert g(ziel["geo"])[ziel["zeit"]] == float(ziel["wert"]) + 1
     assert g(ziel["geo"], as_of=gestern)[ziel["zeit"]] == float(ziel["wert"])
     assert weg["zeit"] not in g(weg["geo"]) and weg["zeit"] in g(weg["geo"], as_of=gestern)
+    # Audit 2026-11, 4.4: Fassungen mit Erfassungszeitpunkt und Quellenstand; as_of ist Datenbankstand, keine Rekonstruktion
+    rv = cl.get("/api/v1/series/bip_qoq/revisions", params={"geo": ziel["geo"], "period": ziel["zeit"]}).json()
+    fass = rv["data"]
+    assert [f["current"] for f in fass] == [False, True] and fass[0]["value"] == float(ziel["wert"]) and fass[1]["value"] != fass[0]["value"]
+    assert fass[0]["recorded_to"] == fass[1]["recorded_from"] and fass[1]["recorded_to"] is None
+    assert fass[1]["fetched"] and fass[1]["source_updated"] and fass[1]["status"] == "observation"
+    assert rv["meta"]["vintage"]["reconstruction"] is False and rv["meta"]["vintage"]["history_start"] and rv["meta"]["pagination"]["total"] == 2
+    alle = cl.get("/api/v1/series/bip_qoq/revisions").json()
+    assert {(f["geo"], f["period"]) for f in alle["data"]} == {(ziel["geo"], ziel["zeit"]), (weg["geo"], weg["zeit"])}
+    assert len(cl.get("/api/v1/series/bip_qoq/revisions", params={"only_revised": "false"}).json()["data"]) == len(klein) + 1
+    assert cl.get("/api/v1/series/gibt_es_nicht/revisions").status_code == 404
+    kat = cl.get("/api/v1/series/bip_qoq").json()["data"]
+    assert kat["superseded_versions"] == 2 and kat["history_start"] and kat["source_updated"]
+    alt = cl.get("/api/v1/observations", params={"series": "bip_qoq", "as_of": "2000-01-01"}).json()
+    assert alt["data"]["bip_qoq"] == {} and any("vor dem Beginn der Historie" in n for n in alt["meta"]["notes"])
+    assert alt["meta"]["vintage"]["reconstruction"] is False
+    assert "vintage" not in cl.get("/api/v1/observations", params={"series": "bip_qoq"}).json()["meta"]

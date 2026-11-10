@@ -260,3 +260,49 @@ class Reihe(BaseModel):
     last_period: Optional[str] = None
     observations: int = 0
     meta: dict[str, Any] = {}
+
+
+class Datenquelle(BaseModel):
+    id: str
+    name: str
+    area: str = Field(description="Bereich: unternehmen, markt, finanzen, volkswirtschaft, handel, politik, geodaten, nachrichten, dienst")
+    used_for: Optional[str] = None
+    access: Optional[str] = Field(None, description="Abruf (Skripte im Repo)")
+    credentials: Optional[str] = Field(None, description="Schlüssel nötig? Nur der Name, nie der Wert")
+    license: Optional[str] = Field(None, description="Lizenz / Weiterverbreitung laut docs/datenquellen.md")
+    assessment: Optional[str] = None
+    status: str = Field(description="geeignet, namensnennung, voraussichtlich, pruefen, eingeschraenkt, kritisch, erledigt")
+    cleared: bool = Field(description="für den öffentlichen Server freigegeben (geeignet, mit Namensnennung oder erledigt)")
+    decision: Optional[str] = Field(None, description="offene Entscheidung (E1 …) in docs/datenquellen.md")
+    attribution: Optional[str] = Field(None, description="Pflichtangabe für die Seite „Quellen“")
+    links: list[str] = []
+    aliases: list[str] = Field([], description="Kennungen in Importen (series.provider, source_document.provider, ingestion_run.adapter)")
+    series: int = Field(0, description="VWL-Reihen dieser Quelle (/series)")
+    datasets: list[str] = []
+    observations: int = 0
+    first_year: Optional[int] = Field(None, description="frühestes Jahr mit Werten (Reihen unterschiedlicher Frequenz)")
+    last_year: Optional[int] = None
+    fetched: Optional[str] = Field(None, description="letzter Abruf laut Reihenkatalog")
+    documents: int = Field(0, description="registrierte Quelldokumente")
+    last_run: Optional[datetime] = Field(None, description="letzter erfolgreicher Importlauf")
+    forecasters: int = Field(0, description="Prognosegeber (/forecasters)")
+
+
+class Prognosegeber(BaseModel):
+    id: int
+    geo: str
+    country: Optional[str] = None
+    publisher: str
+    type: Optional[str] = None
+    publication: Optional[str] = None
+    variables: Optional[str] = None
+    horizon: Optional[str] = None
+    rhythm: Optional[str] = None
+    url: Optional[str] = None
+    access: Optional[str] = None
+    data_url: Optional[str] = None
+    priority: Optional[int] = Field(None, description="1 wichtigster Geber des Landes, 2 ergänzend, 3 nachrangig")
+    note: Optional[str] = None
+    http_status_url: Optional[str] = None
+    http_status_data: Optional[str] = None
+    checked: Optional[str] = None

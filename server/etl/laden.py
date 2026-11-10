@@ -8,6 +8,7 @@ Verwendet die bestehenden, getesteten Importe aus international/ (keine zweite I
   5. import_de.importieren                       Zeitreihen deutscher Unternehmen -> fact (mit Quelle und Vintage)
   6. etl.profile.importieren                     Unternehmensprofile aus app/data/unternehmen.json (Kennzahlen, Abschlüsse, Gremien …)
   7. etl.vwl.importieren                         VWL-Reihen aus volkswirtschaft/ (series, observation mit Vintage)
+  8. etl.katalog.importieren                     Datenkatalog: Quellen (docs/datenquellen.md + server/katalog/) und Prognosegeber
 
 Jeder Import läuft in einer eigenen Transaktion mit Laufprotokoll (international.ingestion_run): schlägt ein Schritt fehl,
 bleibt der letzte gültige Stand dieses Schritts unverändert. Die Unternehmens-IDs (U000123) kommen unverändert aus
@@ -127,6 +128,9 @@ def main(argv=None):
             from etl import vwl
             for k, v in sorted(vwl.importieren(conn, dry_run=a.dry_run).items()):
                 print(f"  vwl.{k}: {v}")
+        from etl import katalog
+        for k, v in sorted(katalog.importieren(conn, dry_run=a.dry_run).items()):
+            print(f"  katalog.{k}: {v}")
         conn.execute("ANALYZE international.company_register")
         print("Leserechte API-Rolle:", "vergeben" if rechte_vergeben(conn) else "Rolle fehlt (nur lokal ohne Compose)")
 

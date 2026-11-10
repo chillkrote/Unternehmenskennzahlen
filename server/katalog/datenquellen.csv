@@ -1,0 +1,33 @@
+id,quelle,bereich,status,entscheidung,namensnennung,aliase
+unternehmensberichte,"Unternehmensberichte (HGB/IFRS, PDF), Bank-Websites, Lobbyregister",unternehmen,pruefen,E5,,repo-unternehmen|repo-zeitreihe|import-de|profile
+eba-pillar3,EBA Pillar-3-Hub,unternehmen,voraussichtlich,,Quelle: EBA Pillar 3 Data Hub,
+gleif,GLEIF,unternehmen,voraussichtlich,,,gleif
+sec-edgar,SEC EDGAR (Companyfacts),unternehmen,voraussichtlich,,,sec|sec-companyfacts
+esef,filings.xbrl.org (ESEF),unternehmen,geeignet,,Quelle: filings.xbrl.org (XBRL International),esef|filings.xbrl.org
+opendart,OpenDART (Südkorea),unternehmen,voraussichtlich,,Quelle: OpenDART (Financial Supervisory Service),dart|opendart
+yahoo,Yahoo Finance (yfinance),markt,kritisch,E1,,yahoo|yfinance
+ezb,EZB Data Portal,finanzen,voraussichtlich,,Quelle: EZB Data Portal,ezb|ecb
+us-treasury,US-Finanzministerium,finanzen,voraussichtlich,,,
+oecd,OECD SDMX / Data Explorer,volkswirtschaft,voraussichtlich,,OECD (CC BY 4.0),OECD|vwl|repo-vwl
+weltbank,Weltbank,volkswirtschaft,voraussichtlich,,Weltbank (CC BY 4.0),
+eurostat,Eurostat,volkswirtschaft,voraussichtlich,,Quelle: Eurostat,Eurostat|vwl|repo-vwl
+bis,BIS,finanzen,namensnennung,,BIS mit nationaler Zentralbank,
+fred,FRED (St. Louis Fed),volkswirtschaft,pruefen,,,
+prognosegeber,"Zentralbanken, Institute, Konsensumfragen (Prognosen)",volkswirtschaft,pruefen,,,ifo|vwl|repo-vwl
+baci,CEPII BACI,handel,voraussichtlich,E2,CEPII BACI (Etalab 2.0),
+comtrade,UN Comtrade,handel,kritisch,E2,,
+wto,WTO,handel,eingeschraenkt,,© WTO,
+wikipedia,Wikipedia,politik,namensnennung,,"Wikipedia (CC BY-SA 4.0, mit Link zum Artikel)",
+wikidata,Wikidata,politik,geeignet,,,
+ipu,IPU Parline,politik,eingeschraenkt,E3,"Inter-Parliamentary Union: dataset, Monat Jahr (CC BY-NC-SA 4.0)",
+wahlbehoerden,"Wahlbehörden (Bundeswahlleiterin, NRW, UK Parliament, Innenministerium FR, Elections Canada, AEC, BFS, BMI AT, Clerk of the House, BOE, Valgdirektoratet)",politik,pruefen,,AEC und Statistik Austria (CC BY 4.0),
+medsl,Harvard Dataverse (MEDSL),politik,voraussichtlich,,Zitierempfehlung des Datensatzes (MEDSL),
+dawum,DAWUM,politik,namensnennung,,Daten von dawum.de (Open Database License (ODbL)),
+natural-earth,Natural Earth,geodaten,geeignet,,,
+bkg,"BKG (VG1000, Wahlkreise)",geodaten,namensnennung,,© GeoBasis-DE / BKG (dl-de/by-2-0),
+osm,OpenFreeMap / OpenMapTiles / OSM,geodaten,namensnennung,,© OpenStreetMap-Mitwirkende (ODbL),
+ourairports,"OurAirports, UN/LOCODE",handel,geeignet,,,
+emodnet,EMODnet,handel,namensnennung,,EMODnet (CC BY),
+google-news,Google News RSS,nachrichten,kritisch,E4,,
+gdelt,GDELT (Original-Datensätze),nachrichten,namensnennung,,GDELT (Zitat und Link),
+geojs,get.geojs.io,dienst,erledigt,,,

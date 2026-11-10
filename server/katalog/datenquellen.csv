@@ -14,7 +14,7 @@ eurostat,Eurostat,volkswirtschaft,voraussichtlich,,Quelle: Eurostat,Eurostat|vwl
 bis,BIS,finanzen,namensnennung,,BIS mit nationaler Zentralbank,
 fred,FRED (St. Louis Fed),volkswirtschaft,pruefen,,,
 prognosegeber,"Zentralbanken, Institute, Konsensumfragen (Prognosen)",volkswirtschaft,pruefen,,,ifo|vwl|repo-vwl
-baci,CEPII BACI,handel,voraussichtlich,E2,CEPII BACI (Etalab 2.0),
+baci,CEPII BACI,handel,voraussichtlich,E2,CEPII BACI (Etalab 2.0),handel|repo-baci
 comtrade,UN Comtrade,handel,kritisch,E2,,
 wto,WTO,handel,eingeschraenkt,,© WTO,
 wikipedia,Wikipedia,politik,namensnennung,,"Wikipedia (CC BY-SA 4.0, mit Link zum Artikel)",

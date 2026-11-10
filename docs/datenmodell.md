@@ -35,6 +35,7 @@ eigene Kennzahlen (`equity`, `equity_incl_nci`).
 | `series` (0004) | VWL-Reihen aus `volkswirtschaft/serien.csv`: Thema, Einheit, Format, Art, Frequenz, Quelle, Datensatz, Filter, Abruf, Projektion ab | `id` |
 | `data_source` (0005) | Datenkatalog: eine Zeile je Quelle aus `docs/datenquellen.md` (Texte: genutzt für, Abruf, Schlüssel, Lizenz, Bewertung, Fundstellen) und `server/katalog/datenquellen.csv` (Kennung, Bereich, Status, Entscheidung E…, Pflichtangabe, Aliase); die Aliase verbinden die Quelle mit `series.provider`, `source_document.provider` und `ingestion_run.adapter` | `id` |
 | `forecaster` (0005) | Prognosegeber je Land aus `volkswirtschaft/prognosegeber_oecd.csv` (Herausgeber, Publikation, Größen, Horizont, Rhythmus, Zugang, Priorität, Erreichbarkeit) | `id` (Zeile der CSV) |
+| `trade_good`, `trade_export`, `trade_partner` (0006) | Handel aus CEPII BACI (`app/data/gueter.json`): Gütergruppen, Exportwert je Land, Gut und Jahr (Mio. US-Dollar; Summe = Weltwert), die fünf größten Abnehmer je Exportland im letzten Jahr (belegte Beziehungen). Weltmarktanteile, HHI und Alternativen rechnet die API daraus (abgeleitet) | (`good_id`, `year`, `geo`) |
 | `observation` (0004) | VWL-Werte je Reihe, Gebiet (Code der Quelle) und Zeitraum mit `valid_from`/`valid_to` (Vintage): ein geänderter oder entfallener Wert endet, die neue Fassung kommt dazu | aktuell eindeutig je (`series_id`, `geo`, `period`) |
 
 Profilstand und Fakten sind getrennt: `fact` hält Werte mit Periode, Rechnungslegung und Vintage (bisher deutsche Zeitreihen),
@@ -57,7 +58,6 @@ Zwischenstände.
 | `fact.value_kind` (`observed`, `preliminary`, `forecast`, `estimate`, `modelled`) und `fact.status`-Flags (revidiert, veraltet, Prüfung fehlgeschlagen) | Status nicht gegenseitig ausschließend abbilden | P3 |
 | `series` (Zeitreihen ohne Unternehmen: Land/Region × Indikator × Frequenz × Einheit × Quelle) und `observation` | VWL, Prognosen, Handel, Börsenindizes | P2/P4 |
 | `entity_relation` (Beteiligungen, Tochter, Fusion, Nachfolger mit Gültigkeit und Beleg) | Konzerne, Namenswechsel | P5 |
-| `trade_flow` (Berichtsland, Partner, HS-Code mit Version, Jahr, Wert, Menge, Quelle) | Handelsabhängigkeit | P5 |
 | `election`, `election_result`, Verwaltungseinheiten mit PostGIS-Geometrie | Wahlen, Karten | P4 |
 | `change_event` | Änderungsfeed, Atom | P6 |
 

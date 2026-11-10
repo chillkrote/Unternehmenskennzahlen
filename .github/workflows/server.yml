@@ -5,7 +5,7 @@ name: Server (API-Tests)
 on:
   pull_request:
     paths: ["server/**", "international/**", "stammdaten/**", "unternehmen-tabelle/**", "zeitreihen/*.csv", "app/register.py",
-            "app/geo/laender.geojson", "app/data/unternehmen.json", "app/vwl.py", "volkswirtschaft/*.csv", "docs/datenquellen.md", ".github/workflows/server.yml",
+            "app/geo/laender.geojson", "app/data/unternehmen.json", "app/data/gueter.json", "app/vwl.py", "volkswirtschaft/*.csv", "docs/datenquellen.md", ".github/workflows/server.yml",
             "app/src/**", "app/*.py", "app/tests/api-smoke.js", "app/tests/globus-smoke.js", "app/tests/wahlen-smoke.js", "app/tests/handel-gueter-smoke.js", "app/tests/suche-smoke.js"]
   workflow_dispatch:
 

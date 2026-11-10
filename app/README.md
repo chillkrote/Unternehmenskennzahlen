@@ -144,7 +144,7 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   (`data/routen.json`), `news_routen.py` (`data/news_routen.json`), `boerse_welt.py` (`data/boerse_welt.json`), `politik_daten.py`
   (`data/politik.json`, `geo/de_laender.geojson`), `parlamente_daten.py` (IPU Parline, Wikipedia, Wikidata -> `data/parlamente.json`,
   `geo/gliedstaaten.geojson`), `entsoe_abruf.py` (ENTSO-E, physikalische Stromflüsse je Grenze und Monat der letzten zwölf Monate
-  -> `data/strom_entsoe.json`, Reiter HDL F4 Tafel STM; braucht den Schlüssel in der Umgebungsvariable `entsoe_api`, der nie ins Repo,
+  -> `data/strom_entsoe.json`, Reiter HDL F4 Tafel STM; HDL F5 „Abhängigkeit“ rechnet aus `data/gueter.json` HHI und Alternativlieferländer je Gut; braucht den Schlüssel in der Umgebungsvariable `entsoe_api`, der nie ins Repo,
   in Logs oder Fehlermeldungen gelangt; dauert rund fünf Minuten); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
   `OFFENE_DATENFELDER.md`.
 * **Politik & Wahlen, Ansicht „Wahlen“ (neu 06.11.2026, Konzept „Wahlergebnisse auf allen Ebenen“):** Die Karte zeigt immer genau eine

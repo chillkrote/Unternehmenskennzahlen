@@ -5,12 +5,14 @@
      routen-daten  data/routen.json   Haupthandelsrouten, Engstellen, Drehkreuze (routen.py)
      news-daten    data/news_routen.json  echte Meldungen zu Störungen an Engstellen (GDELT oder Google News, news_routen.py)
      strom-entsoe-daten  data/strom_entsoe.json  physikalische Flüsse je Grenze und Monat, letzte zwölf Monate (ENTSO-E, entsoe_abruf.py)
-   Ansichten: h-ueb (Überblick), h-laender (alle Länder), h-routen (Routen und Engstellen), h-strom (Stromhandel).
+     gueter-daten  data/gueter.json  Exporte je Gut und Land (CEPII BACI, gueter_baci.py); API-Fassung lädt sie nach (api.js: BLOCK)
+   Ansichten: h-ueb (Überblick), h-laender (alle Länder), h-routen (Routen und Engstellen), h-strom (Stromhandel),
+   h-abh (Abhängigkeit: Konzentration der Exportländer je Gut, Alternativlieferländer; Regeln wie server/plattform/handel.py).
    Läuft vor dem Hauptskript; nutzt dessen Hilfsfunktionen (panel, esc, f0, f1, sicherUrl) erst zur Laufzeit. */
 "use strict";
 const HDL = (() => {
   let H = null, W = null, R = null, N = null, E = null;
-  const S = { sort: { k: "export_welt", ab: false }, kont: "alle" };
+  const S = { sort: { k: "export_welt", ab: false }, kont: "alle", gut: null, ohne: [] };
   const DN = (() => { try { return new Intl.DisplayNames(["de"], { type: "region" }); } catch { return null; } })();
   const name = iso => { if (iso === "XK") return "Kosovo"; try { return (DN && DN.of(iso)) || iso; } catch { return iso; } };
   const mrd = v => v == null ? "–" : f1.format(v / 1e9);
@@ -135,6 +137,53 @@ const HDL = (() => {
       `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(p.a))}</td><td style="text-align:left;font-family:var(--sans)">${esc(name(p.b))}</td><td>${twh(p.v)}${p.art === "spiegel" ? "*" : ""}</td></tr>`).join("")}</tbody></table></div>`, fuss: `* nur Einfuhrmeldung des Ziellandes. ${esc(s.quelle)}. <a class="flink" href="${esc(s.url)}" target="_blank" rel="noopener">Eurostat</a>` })}
       ${panel({ code: "NET", titel: "Nettosaldo je Land", sub: `${s.jahr}, TWh, positiv = Nettoexporteur (nur Flüsse mit europäischen Meldeländern)`, breite: "w6", body: `<div class="scroll"><table class="kzt"><tbody>${nl.map(([iso, v]) => `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(iso))}</td><td class="${v >= 0 ? "pos" : "neg"}">${v > 0 ? "+" : ""}${twh(v)}</td></tr>`).join("")}</tbody></table></div>`, fuss: `Außerhalb Europas gibt es keine freie bilaterale Quelle ohne Schlüssel; dort zeigt die Weltkugel nur den Nettosaldo (Ember). ${globusLink("handel")}` })}</div>`;
   }
+  /* ----- F5 Abhängigkeit (P5): gleiche Rechenregeln wie server/plattform/handel.py, geprüft in app/tests/test_handel_abh.py ----- */
+  const ABH = (() => {
+    const pos = w => Object.entries(w).filter(([, v]) => v != null && v > 0);
+    function anteile(w) { const p = pos(w), s = p.reduce((a, [, v]) => a + v, 0); return s > 0 ? Object.fromEntries(p.map(([k, v]) => [k, v / s])) : {}; }
+    const runde = (v, n) => Math.round(v * 10 ** n) / 10 ** n;
+    const hhi = w => runde(Object.values(anteile(w)).reduce((a, x) => a + (x * 100) ** 2, 0), 1);
+    const einstufung = h => h < 1000 ? "gering" : h < 1800 ? "maessig" : "hoch";
+    const cr = (w, n = 3) => runde(Object.values(anteile(w)).sort((a, b) => b - a).slice(0, n).reduce((a, x) => a + x, 0), 4);
+    function alternativen(w, ohne, n = 5) {
+      const o = new Set(ohne), rest = Object.fromEntries(pos(w).filter(([k]) => !o.has(k))), ges = pos(w).reduce((a, [, v]) => a + v, 0), ar = anteile(rest);
+      return Object.entries(rest).sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).slice(0, n)
+        .map(([k, v]) => ({ geo: k, value: v, world_share: ges ? runde(v / ges, 4) : 0, share_without_excluded: runde(ar[k], 4) }));
+    }
+    return { anteile, hhi, einstufung, cr, alternativen };
+  })();
+  const STUFE = { gering: "gering", maessig: "mäßig", hoch: "hoch" };
+  /* Werte eines Gutes im letzten Jahr der Daten: {iso: Mio. USD} */
+  function gutWerte(G, id) {
+    const j = G.jahre.indexOf(G.jahr), w = {};
+    Object.entries(G.laender).forEach(([iso, e]) => { const x = e[id]; if (x && x.v && x.v[j] != null) w[iso] = x.v[j]; });
+    return w;
+  }
+  function viewAbh() {
+    const G = typeof BLOCK !== "undefined" ? BLOCK.jetzt("gueter-daten") : roh("gueter-daten");
+    if (G === undefined) { const st = BLOCK.status("gueter-daten"); return `<div class="grid">${panel({ code: "ABH", titel: "Abhängigkeit", body: `<p class="n">${st.fehler ? "Güterdaten nicht geladen: " + esc(st.fehler) : "Güterdaten werden geladen …"}</p>` })}</div>`; }
+    if (!G || !G.gruppen) return `<div class="grid">${panel({ code: "ABH", titel: "Abhängigkeit", body: `<p class="n">Keine Güterdaten. <code>python3 app/gueter_baci.py</code>, danach <code>python3 app/build.py</code>.</p>` })}</div>`;
+    const mrd = v => f1.format(v / 1000);
+    const zeilen = G.gruppen.map(g => { const w = gutWerte(G, g.id), a = ABH.anteile(w), h = ABH.hhi(w);
+      return { g, w, h, st: ABH.einstufung(h), cr3: ABH.cr(w), welt: Object.values(w).reduce((s, v) => s + v, 0), top: Object.entries(a).sort((x, y) => y[1] - x[1]).slice(0, 3) }; })
+      .sort((a, b) => b.h - a.h);
+    if (!S.gut || !zeilen.some(z => z.g.id === S.gut)) S.gut = zeilen[0].g.id;
+    const z = zeilen.find(x => x.g.id === S.gut);
+    const tab = `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Gut</th><th>Welt Mrd. USD</th><th>HHI</th><th style="text-align:left">Konzentration</th><th>Top 3</th><th style="text-align:left">größte Exportländer</th></tr></thead><tbody>${zeilen.map(r =>
+      `<tr data-habh="${esc(r.g.id)}" style="cursor:pointer${r.g.id === S.gut ? ";background:var(--sel, rgba(127,127,127,.15))" : ""}"><td style="text-align:left;font-family:var(--sans)">${esc(r.g.name)}</td><td>${mrd(r.welt)}</td><td>${f0.format(r.h)}</td><td style="text-align:left" class="${r.st === "hoch" ? "neg" : r.st === "gering" ? "pos" : ""}">${STUFE[r.st]}</td><td>${pct(r.cr3 * 100, 0)}</td>
+        <td style="text-align:left;font-family:var(--sans)">${r.top.map(([iso, a]) => `${esc(name(iso))} ${pct(a * 100, 0)}`).join(", ")}</td></tr>`).join("")}</tbody></table></div>`;
+    const kandidaten = Object.entries(ABH.anteile(z.w)).sort((a, b) => b[1] - a[1]).slice(0, 8);
+    S.ohne = S.ohne.filter(i => kandidaten.some(([k]) => k === i));
+    const alt = ABH.alternativen(z.w, S.ohne, 10), weg = S.ohne.reduce((s, i) => s + (ABH.anteile(z.w)[i] || 0), 0);
+    const atab = `<p class="n" style="margin:0 0 6px">Ausfallende Lieferländer wählen:</p><div class="chips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">${kandidaten.map(([iso, a]) =>
+      `<button type="button" class="chip" data-hohne="${esc(iso)}" aria-pressed="${S.ohne.includes(iso)}">${esc(name(iso))} ${pct(a * 100, 0)}</button>`).join("")}</div>
+      <div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Lieferland</th><th>Mrd. USD</th><th>Weltmarkt</th><th>Anteil ohne Ausfall</th></tr></thead><tbody>${alt.map(r =>
+      `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(r.geo))}</td><td>${mrd(r.value)}</td><td>${pct(r.world_share * 100)}</td><td>${pct(r.share_without_excluded * 100)}</td></tr>`).join("")}</tbody></table></div>`;
+    return `<div class="grid">${panel({ code: "KON", titel: "Konzentration der Exportländer je Gut", sub: `${G.jahr}, ${G.gruppen.length} Gütergruppen, sortiert nach HHI; Zeile anklicken für Alternativen`, breite: "w7", body: tab,
+      fuss: `HHI = Summe der quadrierten Weltmarktanteile in Prozent (0 bis 10 000); unter 1 000 gering, bis 1 800 mäßig, darüber hoch konzentriert (Schwellen der US-Kartellbehörden 2023). Abgeleitet aus den Exporten aller Länder, keine Aussage über einzelne Lieferbeziehungen. Quelle: ${esc(G.quelle)}.` })}
+      ${panel({ code: "ALT", titel: `Alternativlieferländer: ${z.g.name}`, sub: S.ohne.length ? `ohne ${S.ohne.map(name).join(", ")} fallen ${pct(weg * 100)} des Weltmarkts weg` : "größte Exportländer; Ausfall oben wählen", breite: "w5", body: atab,
+      fuss: `„Anteil ohne Ausfall“: Anteil am verbleibenden Weltmarkt. Ob ein Land die Menge tatsächlich umlenken kann, zeigen die Daten nicht. Über die API: <code>/trade/goods/${esc(z.g.id)}/alternatives</code>.` })}</div>`;
+  }
   const keineDaten = () => `<div class="grid">${panel({ code: "HDL", titel: "Handel", body: `<p class="n">Noch keine Handelsdaten. <code>python3 app/handel_abruf.py</code> und <code>python3 app/welt_daten.py</code>, danach <code>python3 app/build.py</code>.</p>` })}</div>`;
 
   function klick(t) {
@@ -143,9 +192,11 @@ const HDL = (() => {
     if (MLD.klick(t)) { render(); return true; }
     if ((v = g("data-hsort")) != null) { S.sort = { k: v, ab: S.sort.k === v ? !S.sort.ab : v === "name" }; render(); return true; }
     if ((v = g("data-hkont")) != null) { S.kont = v; render(); return true; }
+    if ((v = g("data-hohne")) != null) { S.ohne = S.ohne.includes(v) ? S.ohne.filter(i => i !== v) : [...S.ohne, v]; render(); return true; }
+    if ((v = g("data-habh")) != null) { if (S.gut !== v) { S.gut = v; S.ohne = []; } render(); return true; }
     return false;
   }
-  return { init, da, meta, viewUeb, viewLaender, viewRouten, viewStrom, klick, zoll, saldo, name, daten: () => ({ H, W, R, N }) };
+  return { init, da, meta, viewUeb, viewLaender, viewRouten, viewStrom, viewAbh, ABH, klick, zoll, saldo, name, daten: () => ({ H, W, R, N }) };
 })();
 
 /* ---------- Politik & Wahlen: Bereich des Terminals (Reiter POL) ----------

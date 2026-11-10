@@ -166,6 +166,13 @@ def test_suche_exakte_kennung_zuerst(client):
     assert g[0]["label"] == "Siemens AG" and g[0]["link"].startswith("#firma-U")
 
 
+def test_suche_voller_name_vor_branchenfilter(client):
+    # „Bank“ ist auch eine Branche; der volle Name muss trotzdem zuerst kommen
+    d = client.get("/api/v1/search?q=Deutsche Bank&types=company,sector").json()["data"]
+    assert d["groups"]["company"][0]["label"].lower().startswith("deutsche bank")
+    assert d["groups"]["sector"][0]["id"] == "banken"
+
+
 def test_suche_ungueltiger_typ(client):
     assert client.get("/api/v1/search?q=x&types=passwort").status_code == 422
 

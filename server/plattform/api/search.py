@@ -141,6 +141,18 @@ def search(request: Request, conn=DB,
         else:
             sql = None
         rows = conn.execute(text(sql), par).mappings().all() if sql else []
+        if (laender or branchen) and len(woerter) > 1:
+            # Der ganze Text kann selbst ein Name sein („Deutsche Bank“: „Bank“ ist auch eine Branche). Namen, die mit dem
+            # vollen Suchtext beginnen oder ihm sehr ähnlich sind, stehen deshalb vor den gefilterten Treffern.
+            voll = conn.execute(text("""
+                SELECT r.entity_id, r.name, r.domicile, r.sector, r.listed, r.isin,
+                       similarity(lower(r.name), :q) + CASE WHEN lower(r.name) LIKE :p THEN 0.5 ELSE 0 END AS s
+                  FROM international.company_register r
+                 WHERE r.active AND r.entity_id IS NOT NULL AND (lower(r.name) LIKE :p OR lower(r.name) % :q)
+                 ORDER BY s DESC, length(r.name), r.name LIMIT :lim"""), {"q": roh.lower(), "p": roh.lower() + "%", "lim": limit}).mappings().all()
+            vorne = [r for r in voll if float(r["s"]) >= 0.9]
+            ids = {r["entity_id"] for r in vorne}
+            rows = (vorne + [r for r in rows if r["entity_id"] not in ids])[:limit]
         gruppen["company"] = [{"type": "company", "id": r["entity_id"], "label": r["name"],
                                "detail": " · ".join(x for x in (r["domicile"] or "?", BRANCHEN.get(r["sector"], r["sector"]),
                                                                   "börsennotiert" if r["listed"] else "nicht notiert", r["isin"] or "") if x),

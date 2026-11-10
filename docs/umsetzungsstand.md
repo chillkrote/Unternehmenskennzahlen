@@ -32,6 +32,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 |---|---|---|---|
 | Weltkugel (fünf Formen, Länder, Fenster) | unverändert | unverändert; Stammdaten-Fenster lädt Beschreibung, Quelle, Website, LEI, Handelsregister über `/companies/{id}` (Ladehinweis, „Erneut versuchen“) | `globus-smoke.js` auf beiden Fassungen grün, API-Fassung auch über http |
 | Länderansichten | unverändert | unverändert | eingebettet |
+| Universelle Suche (Befehlszeile, Suchfeld der Weltkugel) | unverändert (lokale Suche) | **neu**: Vorschläge über `/search` nach Unternehmen, Ländern, Branchen und „Branche · Land“, Pfeiltasten, Enter, Escape; Enter ohne Vorschlag bleibt Befehl | `suche-smoke.js` |
 | Unternehmensverzeichnis (F4) | unverändert | **verbessert**: Suche, Filter, Seiten auf dem Server, auch Aliase und IDs | `api-smoke.js`; „Nur mit Kennzahlen“ zählt Zeitreihen und Profilkennzahlen der Datenbank |
 | Unternehmensprofile mit Kennzahlen | unverändert | **verbessert**: Kennzahlen, Mediane, Zeitreihen sofort; Bilanz/GuV, Gremien, Vergütung und Dokumente laden über `/companies/{id}/profile` (Ladehinweis, „Erneut versuchen“) | `api-smoke.js`; Kennzahlen bleiben für F1–F3 eingebettet bis P2.4 |
 | Bilanz- und GuV-Abdeckung (F7) | unverändert | unverändert, Postenzahlen aus eingebetteter Kurzfassung | `api-smoke.js` |

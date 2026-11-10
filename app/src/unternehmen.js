@@ -832,6 +832,8 @@ const UNT = (() => {
       <p class="n">Für dieses Unternehmen liegen im Terminal noch keine Kennzahlen vor. Es steht im Gesamtregister (Unternehmenstabelle) mit den Stammdaten unten; Kennzahlen kommen hinzu, sobald Abschlüsse oder Börsendaten erhoben sind.</p>${tab}${extra}`, fuss: quelle + " Unternehmen ohne ID im Register haben bewusst noch keine Unternehmens-ID (Vergabe nur über stammdaten/ids.py). Angaben mit „bitte prüfen“ in den Hinweisen sind automatisch ergänzt." })}</div>`;
   }
   /* Ziel für Eingabe in der Befehlszeile: Unternehmen mit Kennzahlen zuerst, sonst Registereintrag */
+  // Verzeichnis mit Land und/oder Branche (universelle Suche, suche.js); gibt die Ansicht zurück
+  function verzeichnisFilter(f) { regF = { q: "", br: (f && f.br) || "", land: (f && f.land) || "", nt: "", kz: "" }; regSeite = 0; return "u-verzeichnis"; }
   function ziel(q) {
     const f = finden(q); if (f) return "firma-" + f.id;
     if (apiModus() && (q || "").trim()) { regF = { ...regF, q: q.trim() }; regSeite = 0; return "u-verzeichnis"; }
@@ -915,7 +917,7 @@ const UNT = (() => {
     document.querySelectorAll("#view th.sortable").forEach(th => th.tabIndex = 0);  }
   const datalist = () => UD ? FIRMEN.filter(f => !f.stub).map(f => `<option value="${esc(f.name)}">`).join("") : "";
   const meta = () => UD ? `${FIRMEN.length} Unternehmen · ${nNotiert(FIRMEN)} börsennotiert · ${UD.branchen.length} Branchen${UD.demo ? " · teils Beispieldaten" : ""}` : "";
-  return { init, initRegister, viewReg, ziel, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => OHNE_STUB.length ? OHNE_STUB : ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN.filter(f => !f.stub), branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
+  return { init, initRegister, viewReg, ziel, verzeichnisFilter, da, setLand, laender: () => [...new Set(ALLE_FIRMEN.map(f=>f.land_code||'ZZ'))], unternehmenAlle: () => OHNE_STUB.length ? OHNE_STUB : ALLE_FIRMEN, korr: () => UD && { firmen: FIRMEN.filter(f => !f.stub), branchen: UD.branchen, kz: KZU, kzName, brName, kurz: kurzU, kurse: kurseHist }, viewUeb, viewBra, viewVgl, viewProfil, viewVerz, viewTermine, viewAbschluesse, klick, nachRender, datalist, finden, hinzu, meta,
     // Weltkugel (globus.js): Vergleichsauswahl lesen/setzen, Unternehmen nach ID
     auswahl: () => S.auswahl || [], setAuswahl: ids => { S.auswahl = [...new Set(ids)].slice(-6); }, nachId: id => NACH_ID[id] || NACH_ID[(UD && UD.alt_ids || {})[id]], kurzName: n => kurzU(n), brName: id => brName(id), fmt: (k, v) => fmt(k, v), existiert: id => !!NACH_ID[id] || !!(UD.alt_ids || {})[id] };
 })();

@@ -2397,6 +2397,17 @@ const GLOBUS = (() => {
     if (!UNT.auswahl().length) UNT.setAuswahl([]);
     document.getElementById("gk-liste").innerHTML = LAENDER.features.map(f => `<option value="${esc(f.properties.name)}">`).join("") + UNT.unternehmenAlle().map(f => `<option value="${esc(f.name)}">`).join("");
     document.getElementById("gk-suchfeld").addEventListener("keydown", e => { if (e.key === "Enter") { suchen(e.target.value); e.target.value = ""; } });
+    // API-Fassung: Vorschläge über /search (suche.js); Länder und Unternehmen bleiben auf der Weltkugel, Branchen öffnen das Verzeichnis
+    SUCHE.anbinden(document.getElementById("gk-suchfeld"), t => {
+      if (t.type === "country") { landWaehlen(t.id, { fliegen: true }); return; }
+      if (t.type === "company") {
+        if (UNT.nachId(t.id)) { firmaOeffnen(t.id, { fliegen: true }); return; }
+        const k = STAMM[t.id] ? t.id : Object.keys(STAMM).find(x => STAMM[x].id === t.id);
+        if (k) stammOeffnen(k, { fliegen: true }); else location.hash = "firma-" + t.id;
+        return;
+      }
+      location.hash = UNT.verzeichnisFilter(t.type === "sector" ? { br: t.id } : { land: (t.countries || [])[0], br: (t.sectors || [])[0] });
+    });
     document.getElementById("gk-suchfeld").addEventListener("change", e => { if (e.target.value && LAENDER.features.some(f => f.properties.name === e.target.value)) { suchen(e.target.value); e.target.value = ""; } });
     document.addEventListener("click", e => { if (imGlobus || e.target.closest("#gk-zurueck") || e.target.closest("[data-weltform]")) { if (klick(e)) e.stopImmediatePropagation(); } }, true);
     addEventListener("resize", () => { if (map) map.resize(); });

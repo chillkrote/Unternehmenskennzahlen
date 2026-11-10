@@ -915,6 +915,7 @@ function indexChart(liste) {
 }
 
 function viewMkt() {
+  if (!MARKT && OEFFENTLICH) return `<div class="grid">${panel({ code: "MKT", titel: "Börsendaten", body: `<p class="n">Kurse und Börsendaten stammen aus Yahoo Finance und dürfen auf dieser öffentlichen Seite nicht weitergegeben werden (Lizenz, siehe Datenquellen). Zinsen, Wechselkurse und Renditen finden sich unter Börse &amp; Finanzen.</p>` })}</div>`;
   if (!MARKT) return `<div class="grid">${panel({ code: "MKT", titel: "Börsendaten", body: `<p>Keine Börsendaten geladen. <code>python3 app/marktdaten.py</code> und danach <code>python3 app/build.py</code> ausführen.</p>` })}</div>`;
   if (!MARKT.werte.length) return `<div class="grid">${panel({code:'MKT',titel:'Börsendaten',body:'<p class="n">Für die gewählte Länderauswahl sind keine Bankkurse vorhanden.</p>'})}</div>`;
   const tick = eindeutig(), sichtbar = tick.filter(w => mktMuetter || w.ebene === "Institut");
@@ -1110,6 +1111,7 @@ function viewStart() {
     ${kachel("#korr", "KOR", "Korrelationen &amp; Zusammenhänge", "Pearson und Spearman zwischen Indizes, Unternehmen, Branchen, Kursen und volkswirtschaftlichen Reihen, mit Verzögerung, Streudiagramm und Matrix.", esc(KOR.meta()), !UNT.da() && !VWL.da())}
   </div></div>`;
 }
+const OEFFENTLICH = !!document.querySelector('meta[name="sphaerae-oeffentlich"]');   // build.py --oeffentlich / --api: ohne Yahoo-Daten (E1)
 function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }

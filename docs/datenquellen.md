@@ -58,7 +58,7 @@ und der lokale Betrieb bleiben, wie sie sind.
 | E4 | Google News RSS | Störungsmeldungen an Engstellen | Nur Überschrift, Quelle, Datum und Link; keine Volltexte, nichts dauerhaft speichern |
 | E5 | Originaldokumente (Geschäftsberichte als PDF) | Dokumentlisten im Profil | Auf dem Server verlinken (Fundstelle beim Unternehmen bzw. Bundesanzeiger) statt die PDFs selbst auszuliefern |
 
-Umsetzung E1: `python3 app/build.py --nur-seite --api /api/v1 --oeffentlich --ziel dist-api` baut die Server-Fassung ohne Yahoo-Daten (Marktdaten, Wochenkurse, Börsenbereich, Kurs- und Bewertungswerte der Unternehmen, Yahoo-Einträge im Finanzpuls; `build.py: YAHOO_WERTE`). Standard ist aus, bis E1 entschieden ist.
+Umsetzung E1: `python3 app/build.py --nur-seite --api /api/v1 --oeffentlich --ziel dist-api` baut die Server-Fassung ohne Yahoo-Daten (Marktdaten, Wochenkurse, Börsenbereich, Kurs- und Bewertungswerte der Unternehmen, Yahoo-Einträge im Finanzpuls; `build.py: YAHOO_WERTE`). **Entschieden (Robin, 10.11.2026): ausblenden.** Seit dann schaltet `--api` den Schalter immer ein (lokal abschaltbar mit `--mit-yahoo`), und der Import in die Server-Datenbank (`server/etl/profile.py`) übernimmt die Yahoo-Kennzahlen nicht (`server/plattform/lizenz.py`; für eine lokale Datenbank `SPHAERAE_MIT_YAHOO=1`).
 
 ## Pflichtangaben (Namensnennung) für die Seite „Quellen“
 

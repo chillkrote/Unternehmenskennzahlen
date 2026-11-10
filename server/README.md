@@ -21,7 +21,7 @@ Architektur: [`docs/architektur.md`](../docs/architektur.md), API: [`docs/api.md
 
 ```bash
 cp server/.env.example server/.env                          # Passwörter setzen
-python3 app/build.py --nur-seite --api /api/v1 --ziel dist-api   # Oberfläche im API-Modus
+python3 app/build.py --nur-seite --api /api/v1 --ziel dist-api   # Oberfläche im API-Modus (immer ohne Yahoo-Daten, E1)
 docker compose -f server/docker-compose.yml up -d --build
 docker compose -f server/docker-compose.yml --profile werkzeuge run --rm etl      # Daten laden (rund 40 s)
 open http://localhost/                                       # Weltkugel; Verzeichnis: http://localhost/bankterminal.html#u-verzeichnis

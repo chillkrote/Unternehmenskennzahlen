@@ -108,12 +108,13 @@ const { chromium } = require("playwright");
     const t = await p.textContent("#view");
     pruefe(t.includes(text) && !/nicht geladen|keine Daten/.test(t), `Politik-Ansicht #${hash} mit nachgeladenen Daten`);
   }
-  // Börse: markt, kurse und boerse liegen als data/*.json neben der Seite und werden beim Start geladen
-  pruefe(["daten", "markt", "kurse", "boerse"].every(id => new RegExp(`<script id="${id}" type="application\\/json">\\{"_nach":`).test(html)), "Bank-, Markt-, Kurs- und Börsendaten nicht eingebettet");
-  for (const [hash, text] of [["mkt", "Notierte Banken"], ["b-indizes", "Indizes"], ["b-unternehmen", "Unternehmen"]]) {
+  // Börse (E1): die API-Fassung ist immer die öffentliche, ohne Yahoo-Daten; Bankdaten liegen als data/banken.json neben der Seite
+  pruefe(/<script id="daten" type="application\/json">\{"_nach":/.test(html), "Bankdaten nicht eingebettet");
+  pruefe(["markt", "kurse", "boerse"].every(id => new RegExp(`<script id="${id}" type="application\/json">null<`).test(html)), "keine Markt-, Kurs- und Börsendaten (Yahoo) in der Server-Fassung");
+  for (const hash of ["mkt", "b-indizes", "b-unternehmen"]) {
     await p.evaluate(h => { location.hash = h; }, hash); await p.waitForTimeout(500);
     const t = await p.textContent("#view");
-    pruefe(t.includes(text) && /\d,\d/.test(t) && !/Keine Börsendaten/.test(t), `Börsen-Ansicht #${hash} mit nachgeladenen Daten`);
+    pruefe(/Yahoo Finance/.test(t) && /Lizenz/.test(t) && !/python3/.test(t), `Börsen-Ansicht #${hash} nennt die Lizenz statt eines Abrufbefehls`);
   }
   console.log(`${api.length} API-Anfragen, ${fehler.length} Fehler`, fehler.slice(0, 5));
   await b.close();

@@ -206,7 +206,8 @@ const BOE = (() => {
       fuss: "Kurse sind verzögert und ohne Gewähr; Lizenzbedingungen von Yahoo Finance beachten. Weltindizes wie MSCI sind teils nur als ETF-Stellvertreter oder gar nicht frei verfügbar."
     })}</div>`;
   }
-  const keineDaten = () => `<div class="grid">${panel({ code: "BÖR", titel: "Börsendaten", body: `<p class="n">Noch keine Daten. <code>python3 app/boersen_abruf.py</code> schreibt <code>app/data/boerse.json</code>, danach <code>python3 app/build.py</code>.</p>` })}</div>`;
+  const keineDaten = () => document.querySelector('meta[name="sphaerae-oeffentlich"]') ? `<div class="grid">${panel({ code: "BÖR", titel: "Börsendaten", body: `<p class="n">Kurse und Börsendaten stammen aus Yahoo Finance und dürfen auf dieser öffentlichen Seite nicht weitergegeben werden (Lizenz, siehe Datenquellen). Zinsen, Wechselkurse und Renditen finden sich unter Börse &amp; Finanzen.</p>` })}</div>` :
+    `<div class="grid">${panel({ code: "BÖR", titel: "Börsendaten", body: `<p class="n">Noch keine Daten. <code>python3 app/boersen_abruf.py</code> schreibt <code>app/data/boerse.json</code>, danach <code>python3 app/build.py</code>.</p>` })}</div>`;
 
   /* ----- Bedienung ----- */
   function dazu(k) { if (gueltig(k) && !S.sel.includes(k)) { S.sel.push(k); if (S.sel.length > 10) S.sel.shift(); } }

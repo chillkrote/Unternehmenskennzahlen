@@ -1231,10 +1231,12 @@ addEventListener("hashchange", () => { render(); scrollTo(0, 0); });
 
 /* ---------- Start ---------- */
 async function start() {
+  // API-Fassung: Börsen- und Kursdaten liegen als Dateien neben der Seite; parallel laden, bevor die Module sie brauchen
+  const vorab = Object.fromEntries(["markt", "kurse", "boerse"].map(id => [id, BLOCK.warte(id)]));
   const el = document.getElementById("daten");
   try { DATA = JSON.parse(el.textContent); } catch { DATA = await (await fetch("../data/banken.json")).json(); }
-  try { MARKT = JSON.parse(document.getElementById("markt").textContent); } catch { try { MARKT = await (await fetch("../data/markt.json")).json(); } catch { MARKT = null; } }
-  try { KURSE = JSON.parse(document.getElementById("kurse").textContent); } catch { try { KURSE = await (await fetch("../data/kurse_woche.json")).json(); } catch { KURSE = null; } }
+  MARKT = await vorab.markt; if (MARKT == null && !document.getElementById("markt")) { try { MARKT = await (await fetch("../data/markt.json")).json(); } catch { MARKT = null; } }
+  KURSE = await vorab.kurse; if (KURSE == null && !document.getElementById("kurse")) { try { KURSE = await (await fetch("../data/kurse_woche.json")).json(); } catch { KURSE = null; } }
   BANKEN = DATA.banken.filter(b => G[b.gruppe]).map(abgeleitet);
   metaBanken = `${BANKEN.length} Institute · Stichtag ${DATA.meta.stichtag.split("-").reverse().join(".")} · Beträge Mio. €`;
   document.getElementById("banklist").innerHTML = BANKEN.map(b => `<option value="${esc(b.bank)}">`).join("");
@@ -1246,7 +1248,7 @@ async function start() {
   try { vd = JSON.parse(document.getElementById("vwl").textContent); } catch { vd = null; }
   VWL.init(vd);
   let bd = null;
-  try { bd = JSON.parse(document.getElementById("boerse").textContent); } catch { bd = null; }
+  bd = await vorab.boerse;
   BOE.init(bd);
   HDL.init();
   landAuswahlInit();

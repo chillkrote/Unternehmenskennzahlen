@@ -104,6 +104,13 @@ const { chromium } = require("playwright");
     const t = await p.textContent("#view");
     pruefe(t.includes(text) && !/nicht geladen|keine Daten/.test(t), `Politik-Ansicht #${hash} mit nachgeladenen Daten`);
   }
+  // Börse: markt, kurse und boerse liegen als data/*.json neben der Seite und werden beim Start geladen
+  pruefe(["markt", "kurse", "boerse"].every(id => new RegExp(`<script id="${id}" type="application\\/json">\\{"_nach":`).test(html)), "Markt-, Kurs- und Börsendaten nicht eingebettet");
+  for (const [hash, text] of [["mkt", "Notierte Banken"], ["b-indizes", "Indizes"], ["b-unternehmen", "Unternehmen"]]) {
+    await p.evaluate(h => { location.hash = h; }, hash); await p.waitForTimeout(500);
+    const t = await p.textContent("#view");
+    pruefe(t.includes(text) && /\d,\d/.test(t) && !/Keine Börsendaten/.test(t), `Börsen-Ansicht #${hash} mit nachgeladenen Daten`);
+  }
   console.log(`${api.length} API-Anfragen, ${fehler.length} Fehler`, fehler.slice(0, 5));
   await b.close();
   process.exit(fehler.length ? 1 : 0);

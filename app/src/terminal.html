@@ -1232,16 +1232,16 @@ addEventListener("hashchange", () => { render(); scrollTo(0, 0); });
 /* ---------- Start ---------- */
 async function start() {
   // API-Fassung: Börsen- und Kursdaten liegen als Dateien neben der Seite; parallel laden, bevor die Module sie brauchen
-  const vorab = Object.fromEntries(["markt", "kurse", "boerse"].map(id => [id, BLOCK.warte(id)]));
-  const el = document.getElementById("daten");
-  try { DATA = JSON.parse(el.textContent); } catch { DATA = await (await fetch("../data/banken.json")).json(); }
+  // (dazu Bankdaten und Unternehmenskennzahlen; in der Pages-Fassung ist alles eingebettet und sofort da)
+  const vorab = Object.fromEntries(["daten", "unternehmen", "markt", "kurse", "boerse"].map(id => [id, BLOCK.warte(id)]));
+  DATA = await vorab.daten; if (DATA == null) DATA = await (await fetch("../data/banken.json")).json();
   MARKT = await vorab.markt; if (MARKT == null && !document.getElementById("markt")) { try { MARKT = await (await fetch("../data/markt.json")).json(); } catch { MARKT = null; } }
   KURSE = await vorab.kurse; if (KURSE == null && !document.getElementById("kurse")) { try { KURSE = await (await fetch("../data/kurse_woche.json")).json(); } catch { KURSE = null; } }
   BANKEN = DATA.banken.filter(b => G[b.gruppe]).map(abgeleitet);
   metaBanken = `${BANKEN.length} Institute · Stichtag ${DATA.meta.stichtag.split("-").reverse().join(".")} · Beträge Mio. €`;
   document.getElementById("banklist").innerHTML = BANKEN.map(b => `<option value="${esc(b.bank)}">`).join("");
   let ud = null;
-  try { ud = JSON.parse(document.getElementById("unternehmen").textContent); } catch { try { ud = await (await fetch("../data/unternehmen.json")).json(); } catch { ud = null; } }
+  ud = await vorab.unternehmen; if (ud == null) { try { ud = await (await fetch("../data/unternehmen.json")).json(); } catch { ud = null; } }
   UNT.init(ud);
   try { UNT.initRegister(JSON.parse(document.getElementById("register").textContent)); } catch { try { UNT.initRegister(await (await fetch("../data/register.json")).json()); } catch { /* ohne Register: nur Unternehmen mit Kennzahlen */ } }
   let vd = null;

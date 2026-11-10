@@ -7,7 +7,8 @@ const path = require("path");
   const p = await b.newPage();
   const fehler = [];
   p.on("pageerror", e => fehler.push(e.message));
-  await p.goto("file://" + path.resolve(process.argv[2] || "app/dist/bankterminal.html"));
+  const ziel = process.argv[2] || "app/dist/bankterminal.html";      // Datei oder http(s)-Adresse (API-Fassung)
+  await p.goto(/^https?:/.test(ziel) ? ziel : "file://" + path.resolve(ziel));
   await p.waitForTimeout(1500);
   const ansichten = await p.evaluate(() => [...new Set([...document.querySelectorAll('a[href^="#"], [data-view], [data-tab]')].map(a => (a.getAttribute("href") || "").slice(1)).filter(h => h && !h.startsWith("firma-")))].slice(0, 40));
   for (const h of ansichten.concat(["u-ueb", "u-verzeichnis", "v-reihe"])) {

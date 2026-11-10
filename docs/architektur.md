@@ -6,7 +6,7 @@ einem netcup-Server (Domain sphaerae.de), GitHub bleibt Versionsverwaltung, CI u
 ```
 Browser ──HTTPS──> Caddy (TLS, gzip/zstd, Sicherheitsheader, statische Oberfläche)
                     ├── /            app/dist-api/ (Weltkugel + Terminal, Vanilla-JS, MapLibre)
-                    ├── /wahlgeo/*   nachzuladende Geometrien (später Vektorkacheln)
+                    ├── /wahlgeo/*, /geodaten/*   nachzuladende Geometrien und Unternehmenspunkte (später Vektorkacheln)
                     └── /api/*  ──> FastAPI (ein Prozess, lesend, Rolle sphaerae_api)
                                      └── PostgreSQL 16 + PostGIS (Schema international)
 systemd-Timer ──> Importe (etl.laden, international/*.py, Abrufskripte) ──> PostgreSQL (Rolle postgres/ETL)
@@ -23,7 +23,7 @@ Backup (pg_dump, täglich) ──> lokaler Ordner ──> Offsite-Kopie (restic,
 | Datenbank | PostgreSQL 16 mit PostGIS-Abbild; Schema `international` (bestehendes Kernmodell) | implementiert |
 | Migrationen | Alembic (`server/alembic`); Revision 0001 übernimmt die SQL-Dateien `international/migrations/001–004` | implementiert, getestet |
 | Import/ETL | `server/etl/laden.py` ruft die bestehenden Importe (`import_unternehmen`, `import_de`) auf; Laufprotokoll `ingestion_run` | implementiert für Register und Zeitreihen |
-| Geodaten | API-Fassung: Wahlgrenzen und Wahlwerte als statische Dateien unter `wahlgeo/` (P2.7a), Rest noch eingebettet; Ziel: PostGIS + vereinfachte Geometrien bzw. Vektorkacheln (PMTiles) | teilweise |
+| Geodaten | API-Fassung: Wahlgrenzen und Wahlwerte als statische Dateien unter `wahlgeo/` (P2.7a), Unternehmenspunkte unter `geodaten/unternehmen.json` (P2.5), Länder und Firmensitze des Terminals noch eingebettet; Ziel: PostGIS + vereinfachte Geometrien bzw. Vektorkacheln (PMTiles) | teilweise |
 | Datenqualität | Prüfmarken `review_flag`, `stammdaten/pruefe_ids.py`, Plausibilitätsregeln der Adapter; Ziel: Endpunkt `/data-quality` | teilweise |
 | Historische Stände | `fact.reported_at`, `recorded_at`, `fact_as_of(datum)`; API-Parameter `as_of` | implementiert für Kennzahlen |
 | Dokumente | weiter im Repo; Ziel: Dateisystem des Servers, ausgeliefert durch Caddy, Index in der Datenbank (`source_document`) | geplant |

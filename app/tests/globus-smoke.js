@@ -45,7 +45,11 @@ const path = require('node:path');
   const vgl = await page.evaluate(() => UNT.auswahl().length);
   if (vgl !== 2 || await page.locator('.gf').count() !== 3) throw Error('Vergleichsfenster fehlt oder Auswahl falsch: ' + vgl);
   // Unternehmen ohne Kennzahlen (nur Stammdaten aus der Unternehmenstabelle): Fenster über die Suche
-  const stamm = await page.evaluate(() => { const r = document.getElementById('geo-tabelle'); const t = r && JSON.parse(r.textContent); if (!t) return null;
+  // API-Fassung: die Tabelle kommt als Datei (geodaten/unternehmen.json) nach dem Start
+  if (await page.evaluate(() => GLOBUS.tabelleStatus() === 'laedt')) await page.waitForFunction(() => GLOBUS.tabelleStatus() !== 'laedt', null, { timeout: 20000 });
+  // als Datei geöffnet (file://) kann die API-Fassung nichts nachladen; das prüft nur der Lauf über http
+  if (/^https?:/.test(ziel) && await page.evaluate(() => GLOBUS.tabelleStatus())) throw Error('Unternehmenstabelle nicht geladen: ' + await page.evaluate(() => GLOBUS.tabelleStatus()));
+  const stamm = await page.evaluate(() => { const t = GLOBUS.tabelle(); if (!t) return null;
     const j = t.spalten.indexOf('id'), n = t.spalten.indexOf('name');
     const z = t.zeilen.find(z => !z[j] || !UNT.nachId(z[j]) || UNT.nachId(z[j]).stub); return z && z[n]; });   // ohne eingebettetes Register (API-Fassung) gibt es keine Platzhalter
   if (stamm) {

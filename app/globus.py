@@ -166,6 +166,20 @@ def wahlen_aufteilen(ab=WERTE_NACHLADEN_AB):
     return d, dateien
 
 
+TABELLE_DATEI = "geodaten/unternehmen.json"
+
+
+def tabelle_schreiben(ziel):
+    """API-Fassung: schlanke Unternehmenstabelle mit Punkt nach <ziel>/geodaten/unternehmen.json (statt eingebettet); gibt den Pfad zurück."""
+    tab = tabelle_schlank(tabelle())
+    if not tab:
+        return None
+    pfad = Path(ziel) / TABELLE_DATEI
+    pfad.parent.mkdir(parents=True, exist_ok=True)
+    pfad.write_text(json.dumps(tab, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return pfad
+
+
 def wahlgeo_schreiben(ziel, api=False):
     """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json, dazu die ausgelagerten Gemeindewerte; gibt die Dateien zurück.
     api=True: zusätzlich Kommunen, Bundestagswahlkreise und Kreise, Werte schon ab WERTE_NACHLADEN_AB_API."""
@@ -194,7 +208,8 @@ def seite(terminal_seite, api=False):
     glyphen = {p.name.rsplit("-0-255", 1)[0]: base64.b64encode(p.read_bytes()).decode() for p in sorted((HIER / "geo/glyphs").glob("*-0-255.pbf"))}
     laender = (HIER / "geo/laender.geojson").read_text()
     s = sitze()
-    tab = tabelle_schlank(tabelle()) if api else tabelle()
+    # API-Fassung: die schlanke Unternehmenstabelle (rund 3 MB) steht in geodaten/unternehmen.json (tabelle_schreiben) und wird nach dem Start geladen
+    tab = None if api else tabelle()
     teile = [
         terminal_seite.replace("<title>Terminal</title>", "<title>Weltkugel-Terminal</title>", 1),
         "<style>\n" + mlcss + "\n</style>",
@@ -203,6 +218,7 @@ def seite(terminal_seite, api=False):
         '<script id="geo-laender" type="application/json">' + _js(laender) + "</script>",
         '<script id="geo-sitze" type="application/json">' + _js(json.dumps(s, ensure_ascii=False, separators=(",", ":"))) + "</script>",
         '<script id="geo-tabelle" type="application/json">' + _js(json.dumps(tab, ensure_ascii=False, separators=(",", ":"))) + "</script>",
+        '<script id="geo-tabelle-nachladen" type="application/json">' + json.dumps(TABELLE_DATEI if api and TABELLE.exists() and TABELLE_GEO.exists() else None) + "</script>",
         '<script id="geo-glyphen" type="application/json">' + json.dumps(glyphen) + "</script>",
         '<script id="geo-stufen" type="application/json">' + (_js((HIER / "data/handel_stufen.json").read_text()) if (HIER / "data/handel_stufen.json").exists() else "null") + "</script>",
         "<script>\n" + mljs + "\n</script>",

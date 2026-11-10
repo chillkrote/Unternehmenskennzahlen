@@ -62,7 +62,8 @@ def observations(request: Request, conn=DB,
                  geo: Optional[str] = Query(None, max_length=600, description="kommagetrennte Gebiete (DE, EA20, UK …); ohne: alle"),
                  from_: Optional[str] = Query(None, alias="from", pattern=ZEITRAUM, description="Zeitraum ab (JJJJ, JJJJ-MM, JJJJ-Qn)"),
                  to: Optional[str] = Query(None, pattern=ZEITRAUM, description="Zeitraum bis"),
-                 as_of: Optional[Datum] = Query(None, description="Stand „bekannt zum“ Ende dieses Tages (UTC): frühere Fassungen revidierter Werte")):
+                 as_of: Optional[Datum] = Query(None, description="Stand „bekannt zum“ Ende dieses Tages (UTC): frühere Fassungen revidierter Werte"),
+                 format: str = Query("json", pattern="^(json|csv)$", description="csv: eine Zeile je Wert (reihe;gebiet;zeitraum;wert), Semikolon, UTF-8")):
     ids = _liste(series, r"^[a-z0-9_]{1,60}$", "series", MAX_REIHEN)
     geos = _liste(geo, r"^[A-Z0-9_]{2,12}$", "geo", 80)
     bekannt = {r[0] for r in conn.execute(text("SELECT id FROM international.series WHERE id = ANY(:ids)"), {"ids": ids})}
@@ -85,6 +86,9 @@ def observations(request: Request, conn=DB,
     for s, g, p, v in conn.execute(text(f"SELECT o.series_id, o.geo, o.period, o.value FROM international.observation o "
                                         f"WHERE {' AND '.join(bed)} ORDER BY o.series_id, o.geo, o.period COLLATE \"C\""), par):
         daten[s].setdefault(g, []).append([p, v])
+    if format == "csv":
+        from .analysis import _csv
+        return _csv([[s, g, p, v] for s, gs in daten.items() for g, pts in gs.items() for p, v in pts], ["reihe", "gebiet", "zeitraum", "wert"])
     m = meta(request, source="volkswirtschaft/zeitreihe_lang.csv", data_as_of=_stand(conn))
     m["notes"] = ["Format {reihe: {gebiet: [[zeitraum, wert], …]}}; Werte in der Einheit der Reihe (/series)."] + \
         ([f"Stand bekannt zum {as_of.isoformat()} (Ende des Tages, UTC)"] if as_of else [])

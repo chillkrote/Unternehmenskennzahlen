@@ -61,6 +61,7 @@ jobs:
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/globus-smoke.js app/dist/weltkugel.html
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/wahlen-smoke.js app/dist/weltkugel.html
           NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/finanz-smoke.js app/dist/bankterminal.html
+          NODE_PATH=/tmp/terminal-tests/node_modules node app/tests/korrelation-url-smoke.js app/dist/bankterminal.html
       - name: Unternehmensnetze prüfen
         run: |
           python3 stammdaten/beziehungen/beziehungen.py pruefen

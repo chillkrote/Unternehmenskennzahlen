@@ -560,13 +560,36 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
   }
 
   /* ======================= Ansicht und Ereignisse ======================= */
+  /* Teilbare Adresse der Paar-Auswertung: #korr?a=vwl~bip_yoy~DE&b=…&f=Q&ta=…&tb=…&agg=…&lag=1&von=2010&bis=2025&m=spearman */
+  const URL_FELDER = { f: "freq", ta: "trA", tb: "trB", agg: "agg", von: "von", bis: "bis", m: "methode" };
+  let urlZuletzt = "";
+  const spText = sp => sp ? [sp.typ, sp.a, sp.b].join("~") : "";
+  function spAus(t) { const [typ, a = "", b = ""] = String(t || "").split("~"); return TYPEN().some(x => x[0] === typ) ? { typ, a, b } : null; }
+  function ausUrl() {
+    const h = location.hash, i = h.indexOf("?"); if (!h.startsWith("#korr?") || h === urlZuletzt) return;
+    urlZuletzt = h;
+    const q = new URLSearchParams(h.slice(i + 1)), a = spAus(q.get("a")), b = spAus(q.get("b"));
+    if (a) S.A = a; if (b) S.B = b;
+    for (const [k, f] of Object.entries(URL_FELDER)) if (q.has(k)) S[f] = q.get(k);
+    S.lag = Number.isInteger(+q.get("lag")) ? +q.get("lag") : 0; S.modus = "paar";
+  }
+  function inUrl() {
+    if (S.modus !== "paar" || !location.hash.startsWith("#korr")) return;
+    const q = new URLSearchParams({ a: spText(S.A), b: spText(S.B) });
+    for (const [k, f] of Object.entries(URL_FELDER)) if (S[f] && S[f] !== "auto" && !(k === "m" && S[f] === "pearson")) q.set(k, S[f]);
+    if (S.lag) q.set("lag", S.lag);
+    const h = "#korr?" + q.toString();
+    if (h !== location.hash) history.replaceState(null, "", h);
+    urlZuletzt = h;
+  }
   function viewKorr() {
-    init();
+    init(); ausUrl();
     if (!V && !U) return panel({ code: "KOR", titel: "Korrelation", body: '<p style="margin:0;color:var(--ink-2)">Keine Daten geladen.</p>' });
     return S.modus === "matrix" ? viewMatrix() : S.modus === "quer" && U ? viewQuer() : viewPaar();
   }
   function slotRef(id) { return id === "A" ? "A" : id === "B" ? "B" : "mNeu"; }
   function nachRender() {
+    inUrl();
     const bind = (id, fn) => { const e = document.getElementById(id); if (e) e.addEventListener("change", () => fn(e.type === "checkbox" ? e.checked : e.value)); };
     bind("kfreq", v => { S.freq = v; render(); }); bind("ktrA", v => { S.trA = v; render(); }); bind("ktrB", v => { S.trB = v; render(); });
     bind("kagg", v => { S.agg = v; render(); }); bind("kvon", v => { S.von = v; render(); }); bind("kbis", v => { S.bis = v; render(); });
@@ -603,6 +626,7 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
   /* Einstieg von außen: zwei Reihen vorbelegen (z. B. aus einer Profilseite) */
   function setze(a, b) { init(); if (a) S.A = a; if (b) S.B = b; S.modus = "paar"; S.lag = 0; }
   const meta = () => { init(); return [V ? `${V.serien.length} VWL-Reihen` : "", U ? `${U.zr.length} Unternehmen mit Jahresreihen · ${U.kursFirmen.length} mit Kursen` : ""].filter(Boolean).join(" · "); };
-  return { resetLand: () => { bereit = false; cache.clear(); }, viewKorr, nachRender, klick, setze, meta, stat, pearson, spearman, pWert };
+  return { resetLand: () => { bereit = false; cache.clear(); }, viewKorr, nachRender, klick, setze, meta, stat, pearson, spearman, pWert,
+    rechnen: { aufFreq, transf, paare } };   // rechnen: für den Abgleich mit der API (server/tests/test_analyse.py)
 })();
 

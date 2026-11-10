@@ -57,8 +57,12 @@ const { chromium } = require("playwright");
   await p.waitForFunction(() => document.body.textContent.includes("Unternehmen nicht gefunden"), null, { timeout: 15000 });
   pruefe(true, "unbekannte ID: „nicht gefunden“");
   // Unternehmen mit Kennzahlen: Kennzahlen eingebettet, Abschlussposten, Gremien und Dokumente aus /companies/{id}/profile
-  const ublock = (html.match(/<script id="unternehmen" type="application\/json">([\s\S]*?)<\/script>/) || [, ""])[1];
-  pruefe(ublock.length > 100000 && !/"abschluesse":|"gov":\{|"dokumente":/.test(ublock), `Abschlussposten, Gremien, Dokumente nicht eingebettet (Unternehmensblock ${(ublock.length / 1e6).toFixed(1)} MB)`);
+  // (der Block selbst liegt als data/unternehmen.json neben der Seite und wird beim Start geladen)
+  let ublock = (html.match(/<script id="unternehmen" type="application\/json">([\s\S]*?)<\/script>/) || [, ""])[1];
+  const unach = (ublock.match(/^\{"_nach": ?"([^"]+)"\}$/) || [])[1];
+  pruefe(!!unach, "Unternehmenskennzahlen nicht eingebettet");
+  if (unach) ublock = await (await fetch(new URL(unach, url))).text();
+  pruefe(ublock.length > 100000 && !/"abschluesse":|"gov":\{|"dokumente":/.test(ublock), `Abschlussposten, Gremien, Dokumente nicht im Unternehmensblock (${(ublock.length / 1e6).toFixed(1)} MB)`);
   await p.evaluate(() => { location.hash = "firma-U000148"; });
   await p.waitForFunction(() => document.getElementById("view").textContent.includes("Deutsche Bank AG") && !document.querySelector("[data-unach]"), null, { timeout: 15000 });
   const db = await p.textContent("#view");
@@ -105,7 +109,7 @@ const { chromium } = require("playwright");
     pruefe(t.includes(text) && !/nicht geladen|keine Daten/.test(t), `Politik-Ansicht #${hash} mit nachgeladenen Daten`);
   }
   // Börse: markt, kurse und boerse liegen als data/*.json neben der Seite und werden beim Start geladen
-  pruefe(["markt", "kurse", "boerse"].every(id => new RegExp(`<script id="${id}" type="application\\/json">\\{"_nach":`).test(html)), "Markt-, Kurs- und Börsendaten nicht eingebettet");
+  pruefe(["daten", "markt", "kurse", "boerse"].every(id => new RegExp(`<script id="${id}" type="application\\/json">\\{"_nach":`).test(html)), "Bank-, Markt-, Kurs- und Börsendaten nicht eingebettet");
   for (const [hash, text] of [["mkt", "Notierte Banken"], ["b-indizes", "Indizes"], ["b-unternehmen", "Unternehmen"]]) {
     await p.evaluate(h => { location.hash = h; }, hash); await p.waitForTimeout(500);
     const t = await p.textContent("#view");

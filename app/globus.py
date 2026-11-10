@@ -8,6 +8,8 @@ import json
 import sys
 from pathlib import Path
 
+import landtagswahlen
+
 HIER = Path(__file__).resolve().parent
 SITZE = HIER.parent / "stammdaten/geo/sitz_geo.csv"
 TABELLE = HIER.parent / "unternehmen-tabelle/Unternehmen_Tabelle.csv"
@@ -122,6 +124,7 @@ WAHL_GEO = [("landtagswahlkreise-nw", "geo/landtagswahlkreise_nw.geojson"), ("wa
             ("wahlkreise-fr", "geo/wahlkreise_fr.geojson"), ("wahlkreise-ca", "geo/wahlkreise_ca.geojson"), ("wahlkreise-au", "geo/wahlkreise_au.geojson"),
             ("gemeinden-at", "geo/gemeinden_at.geojson"), ("wahlkreise-us", "geo/wahlkreise_us.geojson"), ("wahlkreise-es", "geo/wahlkreise_es.geojson"),
             ("wahlkreise-no", "geo/wahlkreise_no.geojson"), ("wahlkreise-us22", "geo/wahlkreise_us22.geojson"), ("kreise-us", "geo/kreise_us.geojson"), ("wahlkreise-us20", "geo/wahlkreise_us20.geojson"), ("gemeinden-ch", "geo/gemeinden_ch.geojson")]
+WAHL_GEO += landtagswahlen.WAHL_GEO      # Landtagswahlkreise der amtlich eingelesenen Landtagswahlen
 
 
 WERTE_NACHLADEN_AB = 800      # Einheiten mit so vielen Werten (Gemeinden) stehen nicht in der Seite, sondern in wahlgeo/werte-<wahl>-<einheit>.json

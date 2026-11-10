@@ -1,0 +1,745 @@
+{
+ "land": {
+  "bet": 60.3178995265326,
+  "e": {
+   "AfD": 21.84,
+   "CDU": 34.13,
+   "Die Linke": 12.76,
+   "Die PARTEI": 0.37,
+   "Einzelbewerber/innen": 0.3,
+   "FDP": 6.66,
+   "FREIE WÄHLER": 5.42,
+   "GRÜNE": 5.7,
+   "Gartenpartei": 0.3,
+   "HEIMAT": 0.02,
+   "SPD": 10.98,
+   "TIERSCHUTZALLIANZ": 0.43,
+   "Tierschutzpartei": 0.1
+  },
+  "z": {
+   "AfD": 20.82,
+   "CDU": 37.12,
+   "Die Linke": 10.99,
+   "Die PARTEI": 0.73,
+   "FDP": 6.42,
+   "FREIE WÄHLER": 3.13,
+   "GRÜNE": 5.94,
+   "Gartenpartei": 0.81,
+   "SPD": 8.41,
+   "TIERSCHUTZALLIANZ": 0.48,
+   "Tierschutzpartei": 1.44,
+   "dieBasis": 1.47
+  }
+ },
+ "quelle": "https://wahlergebnisse.sachsen-anhalt.de/wahlen/lt26/erg_land.html, sitze.html, gewinn_verlust_wkr.html",
+ "sitze": {
+  "AfD": 23,
+  "BSW": 0,
+  "CDU": 40,
+  "Die Linke": 12,
+  "FDP": 7,
+  "GRÜNE": 6,
+  "SPD": 9
+ },
+ "sitze_n": 97,
+ "wahl": "2021-06-06",
+ "wahlkreise": {
+  "1": {
+   "gueltig": 21191,
+   "z": {
+    "AfD": 3880,
+    "CDU": 7675,
+    "Die Linke": 2739,
+    "Die PARTEI": 128,
+    "FDP": 1182,
+    "FREIE WÄHLER": 1112,
+    "GRÜNE": 1247,
+    "Gartenpartei": 131,
+    "SPD": 1838,
+    "TIERSCHUTZALLIANZ": 66,
+    "Tierschutzpartei": 245,
+    "dieBasis": 560
+   }
+  },
+  "10": {
+   "gueltig": 23200,
+   "z": {
+    "AfD": 4348,
+    "CDU": 7221,
+    "Die Linke": 3010,
+    "Die PARTEI": 233,
+    "FDP": 1391,
+    "FREIE WÄHLER": 417,
+    "GRÜNE": 1939,
+    "Gartenpartei": 626,
+    "SPD": 2229,
+    "TIERSCHUTZALLIANZ": 407,
+    "Tierschutzpartei": 442,
+    "dieBasis": 281
+   }
+  },
+  "11": {
+   "gueltig": 34179,
+   "z": {
+    "AfD": 3762,
+    "CDU": 10441,
+    "Die Linke": 4598,
+    "Die PARTEI": 442,
+    "FDP": 2501,
+    "FREIE WÄHLER": 660,
+    "GRÜNE": 5284,
+    "Gartenpartei": 456,
+    "SPD": 3441,
+    "TIERSCHUTZALLIANZ": 490,
+    "Tierschutzpartei": 728,
+    "dieBasis": 482
+   }
+  },
+  "12": {
+   "gueltig": 27658,
+   "z": {
+    "AfD": 4310,
+    "CDU": 9797,
+    "Die Linke": 3167,
+    "Die PARTEI": 267,
+    "FDP": 1854,
+    "FREIE WÄHLER": 517,
+    "GRÜNE": 2430,
+    "Gartenpartei": 580,
+    "SPD": 2606,
+    "TIERSCHUTZALLIANZ": 201,
+    "Tierschutzpartei": 797,
+    "dieBasis": 400
+   }
+  },
+  "13": {
+   "gueltig": 31810,
+   "z": {
+    "AfD": 5263,
+    "CDU": 10952,
+    "Die Linke": 3949,
+    "Die PARTEI": 289,
+    "FDP": 2178,
+    "FREIE WÄHLER": 570,
+    "GRÜNE": 2927,
+    "Gartenpartei": 671,
+    "SPD": 2890,
+    "TIERSCHUTZALLIANZ": 417,
+    "Tierschutzpartei": 568,
+    "dieBasis": 417
+   }
+  },
+  "14": {
+   "gueltig": 22592,
+   "z": {
+    "AfD": 4725,
+    "CDU": 8468,
+    "Die Linke": 2950,
+    "Die PARTEI": 111,
+    "FDP": 1384,
+    "FREIE WÄHLER": 623,
+    "GRÜNE": 1061,
+    "Gartenpartei": 166,
+    "SPD": 1871,
+    "TIERSCHUTZALLIANZ": 68,
+    "Tierschutzpartei": 295,
+    "dieBasis": 453
+   }
+  },
+  "15": {
+   "gueltig": 24550,
+   "z": {
+    "AfD": 4609,
+    "CDU": 9541,
+    "Die Linke": 2428,
+    "Die PARTEI": 159,
+    "FDP": 1479,
+    "FREIE WÄHLER": 739,
+    "GRÜNE": 1153,
+    "Gartenpartei": 145,
+    "SPD": 2949,
+    "TIERSCHUTZALLIANZ": 101,
+    "Tierschutzpartei": 324,
+    "dieBasis": 439
+   }
+  },
+  "16": {
+   "gueltig": 25748,
+   "z": {
+    "AfD": 4565,
+    "CDU": 10039,
+    "Die Linke": 2567,
+    "Die PARTEI": 141,
+    "FDP": 1564,
+    "FREIE WÄHLER": 681,
+    "GRÜNE": 1466,
+    "Gartenpartei": 151,
+    "SPD": 3219,
+    "TIERSCHUTZALLIANZ": 85,
+    "Tierschutzpartei": 334,
+    "dieBasis": 455
+   }
+  },
+  "17": {
+   "gueltig": 28146,
+   "z": {
+    "AfD": 5539,
+    "CDU": 10704,
+    "Die Linke": 3032,
+    "Die PARTEI": 186,
+    "FDP": 1960,
+    "FREIE WÄHLER": 998,
+    "GRÜNE": 1592,
+    "Gartenpartei": 202,
+    "SPD": 2489,
+    "TIERSCHUTZALLIANZ": 81,
+    "Tierschutzpartei": 375,
+    "dieBasis": 453
+   }
+  },
+  "18": {
+   "gueltig": 21617,
+   "z": {
+    "AfD": 4801,
+    "CDU": 8148,
+    "Die Linke": 2535,
+    "Die PARTEI": 93,
+    "FDP": 1347,
+    "FREIE WÄHLER": 892,
+    "GRÜNE": 796,
+    "Gartenpartei": 134,
+    "SPD": 1786,
+    "TIERSCHUTZALLIANZ": 83,
+    "Tierschutzpartei": 277,
+    "dieBasis": 255
+   }
+  },
+  "19": {
+   "gueltig": 18885,
+   "z": {
+    "AfD": 5282,
+    "CDU": 6820,
+    "Die Linke": 2007,
+    "Die PARTEI": 91,
+    "FDP": 1457,
+    "FREIE WÄHLER": 421,
+    "GRÜNE": 485,
+    "Gartenpartei": 181,
+    "SPD": 1291,
+    "TIERSCHUTZALLIANZ": 65,
+    "Tierschutzpartei": 269,
+    "dieBasis": 162
+   }
+  },
+  "2": {
+   "gueltig": 26916,
+   "z": {
+    "AfD": 5104,
+    "CDU": 10439,
+    "Die Linke": 2932,
+    "Die PARTEI": 268,
+    "FDP": 1622,
+    "FREIE WÄHLER": 925,
+    "GRÜNE": 1103,
+    "Gartenpartei": 201,
+    "SPD": 2767,
+    "TIERSCHUTZALLIANZ": 70,
+    "Tierschutzpartei": 383,
+    "dieBasis": 428
+   }
+  },
+  "20": {
+   "gueltig": 24841,
+   "z": {
+    "AfD": 5457,
+    "CDU": 9957,
+    "Die Linke": 2621,
+    "Die PARTEI": 119,
+    "FDP": 1451,
+    "FREIE WÄHLER": 591,
+    "GRÜNE": 871,
+    "Gartenpartei": 250,
+    "SPD": 2245,
+    "TIERSCHUTZALLIANZ": 127,
+    "Tierschutzpartei": 393,
+    "dieBasis": 338
+   }
+  },
+  "21": {
+   "gueltig": 26184,
+   "z": {
+    "AfD": 6164,
+    "CDU": 9933,
+    "Die Linke": 3021,
+    "Die PARTEI": 107,
+    "FDP": 1931,
+    "FREIE WÄHLER": 679,
+    "GRÜNE": 952,
+    "Gartenpartei": 202,
+    "SPD": 1896,
+    "TIERSCHUTZALLIANZ": 96,
+    "Tierschutzpartei": 368,
+    "dieBasis": 281
+   }
+  },
+  "22": {
+   "gueltig": 28840,
+   "z": {
+    "AfD": 6973,
+    "CDU": 11097,
+    "Die Linke": 3690,
+    "Die PARTEI": 137,
+    "FDP": 1675,
+    "FREIE WÄHLER": 783,
+    "GRÜNE": 1004,
+    "Gartenpartei": 196,
+    "SPD": 1774,
+    "TIERSCHUTZALLIANZ": 99,
+    "Tierschutzpartei": 390,
+    "dieBasis": 355
+   }
+  },
+  "23": {
+   "gueltig": 24040,
+   "z": {
+    "AfD": 5381,
+    "CDU": 9420,
+    "Die Linke": 2655,
+    "Die PARTEI": 105,
+    "FDP": 1439,
+    "FREIE WÄHLER": 900,
+    "GRÜNE": 933,
+    "Gartenpartei": 159,
+    "SPD": 1885,
+    "TIERSCHUTZALLIANZ": 79,
+    "Tierschutzpartei": 299,
+    "dieBasis": 251
+   }
+  },
+  "24": {
+   "gueltig": 27093,
+   "z": {
+    "AfD": 4960,
+    "CDU": 11666,
+    "Die Linke": 2535,
+    "Die PARTEI": 171,
+    "FDP": 1406,
+    "FREIE WÄHLER": 1466,
+    "GRÜNE": 1331,
+    "Gartenpartei": 125,
+    "SPD": 2096,
+    "TIERSCHUTZALLIANZ": 74,
+    "Tierschutzpartei": 334,
+    "dieBasis": 357
+   }
+  },
+  "25": {
+   "gueltig": 26265,
+   "z": {
+    "AfD": 5871,
+    "CDU": 11560,
+    "Die Linke": 2356,
+    "Die PARTEI": 124,
+    "FDP": 1369,
+    "FREIE WÄHLER": 1118,
+    "GRÜNE": 826,
+    "Gartenpartei": 155,
+    "SPD": 1668,
+    "TIERSCHUTZALLIANZ": 61,
+    "Tierschutzpartei": 292,
+    "dieBasis": 350
+   }
+  },
+  "26": {
+   "gueltig": 24207,
+   "z": {
+    "AfD": 4382,
+    "CDU": 9847,
+    "Die Linke": 2710,
+    "Die PARTEI": 117,
+    "FDP": 1750,
+    "FREIE WÄHLER": 375,
+    "GRÜNE": 1781,
+    "Gartenpartei": 138,
+    "SPD": 1988,
+    "TIERSCHUTZALLIANZ": 68,
+    "Tierschutzpartei": 300,
+    "dieBasis": 295
+   }
+  },
+  "27": {
+   "gueltig": 23709,
+   "z": {
+    "AfD": 4983,
+    "CDU": 9299,
+    "Die Linke": 2281,
+    "Die PARTEI": 170,
+    "FDP": 1477,
+    "FREIE WÄHLER": 808,
+    "GRÜNE": 1507,
+    "Gartenpartei": 159,
+    "SPD": 1779,
+    "TIERSCHUTZALLIANZ": 80,
+    "Tierschutzpartei": 309,
+    "dieBasis": 319
+   }
+  },
+  "28": {
+   "gueltig": 29009,
+   "z": {
+    "AfD": 7145,
+    "CDU": 11274,
+    "Die Linke": 2846,
+    "Die PARTEI": 175,
+    "FDP": 1606,
+    "FREIE WÄHLER": 1050,
+    "GRÜNE": 1107,
+    "Gartenpartei": 198,
+    "SPD": 2055,
+    "TIERSCHUTZALLIANZ": 102,
+    "Tierschutzpartei": 469,
+    "dieBasis": 333
+   }
+  },
+  "29": {
+   "gueltig": 28922,
+   "z": {
+    "AfD": 6839,
+    "CDU": 11118,
+    "Die Linke": 2706,
+    "Die PARTEI": 162,
+    "FDP": 2248,
+    "FREIE WÄHLER": 760,
+    "GRÜNE": 1224,
+    "Gartenpartei": 138,
+    "SPD": 2136,
+    "TIERSCHUTZALLIANZ": 86,
+    "Tierschutzpartei": 346,
+    "dieBasis": 435
+   }
+  },
+  "3": {
+   "gueltig": 21781,
+   "z": {
+    "AfD": 4581,
+    "CDU": 7122,
+    "Die Linke": 2298,
+    "Die PARTEI": 98,
+    "FDP": 1074,
+    "FREIE WÄHLER": 3219,
+    "GRÜNE": 909,
+    "Gartenpartei": 109,
+    "SPD": 1578,
+    "TIERSCHUTZALLIANZ": 35,
+    "Tierschutzpartei": 177,
+    "dieBasis": 280
+   }
+  },
+  "30": {
+   "gueltig": 26292,
+   "z": {
+    "AfD": 6977,
+    "CDU": 9657,
+    "Die Linke": 3065,
+    "Die PARTEI": 203,
+    "FDP": 1554,
+    "FREIE WÄHLER": 318,
+    "GRÜNE": 659,
+    "Gartenpartei": 143,
+    "SPD": 2098,
+    "TIERSCHUTZALLIANZ": 91,
+    "Tierschutzpartei": 342,
+    "dieBasis": 302
+   }
+  },
+  "31": {
+   "gueltig": 26884,
+   "z": {
+    "AfD": 6600,
+    "CDU": 10416,
+    "Die Linke": 2931,
+    "Die PARTEI": 185,
+    "FDP": 1614,
+    "FREIE WÄHLER": 398,
+    "GRÜNE": 813,
+    "Gartenpartei": 173,
+    "SPD": 2115,
+    "TIERSCHUTZALLIANZ": 74,
+    "Tierschutzpartei": 304,
+    "dieBasis": 372
+   }
+  },
+  "32": {
+   "gueltig": 28173,
+   "z": {
+    "AfD": 7272,
+    "CDU": 10898,
+    "Die Linke": 2826,
+    "Die PARTEI": 144,
+    "FDP": 1828,
+    "FREIE WÄHLER": 538,
+    "GRÜNE": 817,
+    "Gartenpartei": 185,
+    "SPD": 1951,
+    "TIERSCHUTZALLIANZ": 314,
+    "Tierschutzpartei": 294,
+    "dieBasis": 482
+   }
+  },
+  "33": {
+   "gueltig": 22954,
+   "z": {
+    "AfD": 5626,
+    "CDU": 8477,
+    "Die Linke": 2406,
+    "Die PARTEI": 167,
+    "FDP": 1496,
+    "FREIE WÄHLER": 370,
+    "GRÜNE": 952,
+    "Gartenpartei": 139,
+    "SPD": 1826,
+    "TIERSCHUTZALLIANZ": 77,
+    "Tierschutzpartei": 318,
+    "dieBasis": 510
+   }
+  },
+  "34": {
+   "gueltig": 28608,
+   "z": {
+    "AfD": 6527,
+    "CDU": 10914,
+    "Die Linke": 2570,
+    "Die PARTEI": 171,
+    "FDP": 2192,
+    "FREIE WÄHLER": 945,
+    "GRÜNE": 1295,
+    "Gartenpartei": 182,
+    "SPD": 2044,
+    "TIERSCHUTZALLIANZ": 118,
+    "Tierschutzpartei": 409,
+    "dieBasis": 531
+   }
+  },
+  "35": {
+   "gueltig": 20780,
+   "z": {
+    "AfD": 4644,
+    "CDU": 7156,
+    "Die Linke": 2646,
+    "Die PARTEI": 200,
+    "FDP": 1317,
+    "FREIE WÄHLER": 542,
+    "GRÜNE": 1284,
+    "Gartenpartei": 128,
+    "SPD": 1693,
+    "TIERSCHUTZALLIANZ": 97,
+    "Tierschutzpartei": 321,
+    "dieBasis": 248
+   }
+  },
+  "36": {
+   "gueltig": 29912,
+   "z": {
+    "AfD": 3751,
+    "CDU": 9401,
+    "Die Linke": 4108,
+    "Die PARTEI": 450,
+    "FDP": 2257,
+    "FREIE WÄHLER": 682,
+    "GRÜNE": 4510,
+    "Gartenpartei": 133,
+    "SPD": 2748,
+    "TIERSCHUTZALLIANZ": 106,
+    "Tierschutzpartei": 557,
+    "dieBasis": 406
+   }
+  },
+  "37": {
+   "gueltig": 34678,
+   "z": {
+    "AfD": 3166,
+    "CDU": 9304,
+    "Die Linke": 4968,
+    "Die PARTEI": 531,
+    "FDP": 2499,
+    "FREIE WÄHLER": 552,
+    "GRÜNE": 8189,
+    "Gartenpartei": 116,
+    "SPD": 3215,
+    "TIERSCHUTZALLIANZ": 118,
+    "Tierschutzpartei": 493,
+    "dieBasis": 583
+   }
+  },
+  "38": {
+   "gueltig": 25874,
+   "z": {
+    "AfD": 5137,
+    "CDU": 9815,
+    "Die Linke": 2882,
+    "Die PARTEI": 219,
+    "FDP": 1971,
+    "FREIE WÄHLER": 613,
+    "GRÜNE": 1457,
+    "Gartenpartei": 181,
+    "SPD": 2150,
+    "TIERSCHUTZALLIANZ": 110,
+    "Tierschutzpartei": 390,
+    "dieBasis": 375
+   }
+  },
+  "39": {
+   "gueltig": 23595,
+   "z": {
+    "AfD": 5951,
+    "CDU": 8803,
+    "Die Linke": 2178,
+    "Die PARTEI": 257,
+    "FDP": 1377,
+    "FREIE WÄHLER": 543,
+    "GRÜNE": 770,
+    "Gartenpartei": 154,
+    "SPD": 2287,
+    "TIERSCHUTZALLIANZ": 69,
+    "Tierschutzpartei": 301,
+    "dieBasis": 411
+   }
+  },
+  "4": {
+   "gueltig": 21669,
+   "z": {
+    "AfD": 4735,
+    "CDU": 7324,
+    "Die Linke": 2208,
+    "Die PARTEI": 123,
+    "FDP": 1217,
+    "FREIE WÄHLER": 1771,
+    "GRÜNE": 1109,
+    "Gartenpartei": 133,
+    "SPD": 1945,
+    "TIERSCHUTZALLIANZ": 52,
+    "Tierschutzpartei": 295,
+    "dieBasis": 334
+   }
+  },
+  "40": {
+   "gueltig": 27024,
+   "z": {
+    "AfD": 6257,
+    "CDU": 11010,
+    "Die Linke": 2653,
+    "Die PARTEI": 312,
+    "FDP": 1742,
+    "FREIE WÄHLER": 467,
+    "GRÜNE": 1236,
+    "Gartenpartei": 148,
+    "SPD": 1831,
+    "TIERSCHUTZALLIANZ": 76,
+    "Tierschutzpartei": 299,
+    "dieBasis": 455
+   }
+  },
+  "41": {
+   "gueltig": 24538,
+   "z": {
+    "AfD": 6499,
+    "CDU": 9085,
+    "Die Linke": 2602,
+    "Die PARTEI": 180,
+    "FDP": 1578,
+    "FREIE WÄHLER": 822,
+    "GRÜNE": 772,
+    "Gartenpartei": 184,
+    "SPD": 1676,
+    "TIERSCHUTZALLIANZ": 59,
+    "Tierschutzpartei": 234,
+    "dieBasis": 299
+   }
+  },
+  "5": {
+   "gueltig": 23898,
+   "z": {
+    "AfD": 5835,
+    "CDU": 9210,
+    "Die Linke": 2288,
+    "Die PARTEI": 111,
+    "FDP": 1169,
+    "FREIE WÄHLER": 1119,
+    "GRÜNE": 847,
+    "Gartenpartei": 144,
+    "SPD": 2020,
+    "TIERSCHUTZALLIANZ": 79,
+    "Tierschutzpartei": 301,
+    "dieBasis": 304
+   }
+  },
+  "6": {
+   "gueltig": 26805,
+   "z": {
+    "AfD": 5464,
+    "CDU": 10670,
+    "Die Linke": 2805,
+    "Die PARTEI": 159,
+    "FDP": 1657,
+    "FREIE WÄHLER": 599,
+    "GRÜNE": 1256,
+    "Gartenpartei": 205,
+    "SPD": 2425,
+    "TIERSCHUTZALLIANZ": 129,
+    "Tierschutzpartei": 566,
+    "dieBasis": 344
+   }
+  },
+  "7": {
+   "gueltig": 26568,
+   "z": {
+    "AfD": 5862,
+    "CDU": 10122,
+    "Die Linke": 2769,
+    "Die PARTEI": 186,
+    "FDP": 1642,
+    "FREIE WÄHLER": 781,
+    "GRÜNE": 1098,
+    "Gartenpartei": 219,
+    "SPD": 2359,
+    "TIERSCHUTZALLIANZ": 129,
+    "Tierschutzpartei": 367,
+    "dieBasis": 460
+   }
+  },
+  "8": {
+   "gueltig": 28450,
+   "z": {
+    "AfD": 6293,
+    "CDU": 10416,
+    "Die Linke": 2987,
+    "Die PARTEI": 160,
+    "FDP": 2086,
+    "FREIE WÄHLER": 1002,
+    "GRÜNE": 1297,
+    "Gartenpartei": 283,
+    "SPD": 2212,
+    "TIERSCHUTZALLIANZ": 273,
+    "Tierschutzpartei": 397,
+    "dieBasis": 469
+   }
+  },
+  "9": {
+   "gueltig": 25612,
+   "z": {
+    "AfD": 5967,
+    "CDU": 9594,
+    "Die Linke": 2402,
+    "Die PARTEI": 117,
+    "FDP": 1736,
+    "FREIE WÄHLER": 925,
+    "GRÜNE": 856,
+    "Gartenpartei": 260,
+    "SPD": 2404,
+    "TIERSCHUTZALLIANZ": 97,
+    "Tierschutzpartei": 377,
+    "dieBasis": 359
+   }
+  }
+ }
+}

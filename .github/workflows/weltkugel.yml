@@ -71,6 +71,7 @@ jobs:
           python3 app/politik_daten.py 2>&1 | tee /tmp/parl.log
           python3 app/parlamente_daten.py --nur-national 2>&1 | tee -a /tmp/parl.log
           python3 app/wahlen_daten.py --ohne-abruf 2>&1 | tee -a /tmp/parl.log
+          python3 app/wahlabdeckung.py 2>&1 | tee -a /tmp/parl.log
       - name: Weltbank, Strom, Zölle, Wirtschaftsräume
         if: env.WAS == 'weltdaten' || env.WAS == 'beides'
         run: |
@@ -78,6 +79,7 @@ jobs:
           python3 app/politik_daten.py 2>&1 | tee -a /tmp/welt.log
           python3 app/parlamente_daten.py 2>&1 | tee /tmp/parl.log
           python3 app/wahlen_daten.py --ohne-abruf 2>&1 | tee -a /tmp/parl.log
+          python3 app/wahlabdeckung.py 2>&1 | tee -a /tmp/parl.log
       - name: Stromflüsse ENTSO-E (nur mit Secret ENTSOE_API_KEY)
         if: env.WAS == 'weltdaten' || env.WAS == 'beides'
         continue-on-error: true
@@ -101,7 +103,7 @@ jobs:
       - name: Änderungen pushen
         id: push
         if: github.ref == 'refs/heads/main'
-        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/finanz_makro.json app/data/politik.json app/data/parlamente.json app/data/parlamente_wahlcache.json app/data/wahlen.json app/data/strom_entsoe.json
+        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/finanz_makro.json app/data/politik.json app/data/parlamente.json app/data/parlamente_wahlcache.json app/data/wahlen.json wahlen/abdeckung.csv app/data/strom_entsoe.json
       - name: Terminal neu bauen lassen
         if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"

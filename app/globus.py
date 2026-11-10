@@ -167,6 +167,7 @@ def wahlen_aufteilen(ab=WERTE_NACHLADEN_AB):
 
 
 TABELLE_DATEI = "geodaten/unternehmen.json"
+WAHLEN_DATEI = "data/wahlen.json"          # API-Fassung: Wahlregister neben der Seite (wahlen.js lädt es über BLOCK)
 
 
 def tabelle_schreiben(ziel):
@@ -182,7 +183,7 @@ def tabelle_schreiben(ziel):
 
 def wahlgeo_schreiben(ziel, api=False):
     """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json, dazu die ausgelagerten Gemeindewerte; gibt die Dateien zurück.
-    api=True: zusätzlich Kommunen, Bundestagswahlkreise und Kreise, Werte schon ab WERTE_NACHLADEN_AB_API."""
+    api=True: zusätzlich Kommunen, Bundestagswahlkreise und Kreise, Werte schon ab WERTE_NACHLADEN_AB_API, und das Wahlregister (WAHLEN_DATEI)."""
     ziel = Path(ziel)
     (ziel / "wahlgeo").mkdir(parents=True, exist_ok=True)
     out = []
@@ -194,7 +195,12 @@ def wahlgeo_schreiben(ziel, api=False):
         for art, (inhalt, _) in geo_nach_api().items():
             (ziel / "wahlgeo" / f"{art}.json").write_text(inhalt, encoding="utf-8")
             out.append(ziel / "wahlgeo" / f"{art}.json")
-    for datei, werte in wahlen_aufteilen(WERTE_NACHLADEN_AB_API if api else WERTE_NACHLADEN_AB)[1].items():
+    register, ausgelagert = wahlen_aufteilen(WERTE_NACHLADEN_AB_API if api else WERTE_NACHLADEN_AB)
+    if api and register:
+        (ziel / WAHLEN_DATEI).parent.mkdir(parents=True, exist_ok=True)
+        (ziel / WAHLEN_DATEI).write_text(json.dumps(register, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        out.append(ziel / WAHLEN_DATEI)
+    for datei, werte in ausgelagert.items():
         (ziel / datei).write_text(json.dumps(werte, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         out.append(ziel / datei)
     return out
@@ -230,7 +236,8 @@ def seite(terminal_seite, api=False):
         '<script id="wa-geo-nachladen" type="application/json">' + json.dumps({**{art: f"wahlgeo/{art}.json" for art, datei in WAHL_GEO if (HIER / datei).exists()},
                                                                                 **({art: f"wahlgeo/{art}.json" for art in geo_nach_api()} if api else {})}) + "</script>",
         '<script id="wa-geo-schluessel" type="application/json">' + json.dumps({art: k for art, (_, k) in GEO_NACH_API.items()} if api else {}) + "</script>",
-        '<script id="wahlen-daten" type="application/json">' + _js(json.dumps(wahlen_aufteilen(WERTE_NACHLADEN_AB_API if api else WERTE_NACHLADEN_AB)[0], ensure_ascii=False, separators=(",", ":"))) + "</script>",
+        '<script id="wahlen-daten" type="application/json">' + (json.dumps({"_nach": WAHLEN_DATEI}) if api and (HIER / "data/wahlen.json").exists() else
+                                                                 _js(json.dumps(wahlen_aufteilen(WERTE_NACHLADEN_AB)[0], ensure_ascii=False, separators=(",", ":")))) + "</script>",
         "<script>\n" + (HIER / "src/wahlen.js").read_text() + "\n</script>",
         # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein
         "<style>\n" + (HIER / "src/netz.css").read_text() + "\n</style>",

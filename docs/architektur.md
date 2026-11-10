@@ -23,7 +23,7 @@ Backup (pg_dump, täglich) ──> lokaler Ordner ──> Offsite-Kopie (restic,
 | Datenbank | PostgreSQL 16 mit PostGIS-Abbild; Schema `international` (bestehendes Kernmodell) | implementiert |
 | Migrationen | Alembic (`server/alembic`); Revision 0001 übernimmt die SQL-Dateien `international/migrations/001–004` | implementiert, getestet |
 | Import/ETL | `server/etl/laden.py` ruft die bestehenden Importe (`import_unternehmen`, `import_de`) auf; Laufprotokoll `ingestion_run` | implementiert für Register und Zeitreihen |
-| Geodaten | heute GeoJSON eingebettet/nachgeladen; Ziel: PostGIS + vereinfachte Geometrien bzw. Vektorkacheln (PMTiles) | geplant |
+| Geodaten | API-Fassung: Wahlgrenzen und Wahlwerte als statische Dateien unter `wahlgeo/` (P2.7a), Rest noch eingebettet; Ziel: PostGIS + vereinfachte Geometrien bzw. Vektorkacheln (PMTiles) | teilweise |
 | Datenqualität | Prüfmarken `review_flag`, `stammdaten/pruefe_ids.py`, Plausibilitätsregeln der Adapter; Ziel: Endpunkt `/data-quality` | teilweise |
 | Historische Stände | `fact.reported_at`, `recorded_at`, `fact_as_of(datum)`; API-Parameter `as_of` | implementiert für Kennzahlen |
 | Dokumente | weiter im Repo; Ziel: Dateisystem des Servers, ausgeliefert durch Caddy, Index in der Datenbank (`source_document`) | geplant |

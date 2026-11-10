@@ -118,12 +118,11 @@ def main():
                         ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
         f = HIER / "data" / datei
         inhalt = f.read_text() if f.exists() else "null"
-        if platz == "__WAHLKREISE_BUND__" and f.exists():
+        if a.api and platz in ("__WAHLKREISE_BUND__", "__KOMMUNEN_GEO__"):
+            inhalt = "null"          # API-Fassung: als wahlgeo/<art>.json nachgeladen (globus.py: GEO_NACH_API)
+        elif platz == "__WAHLKREISE_BUND__" and f.exists():
             # Ergebnisse je Wahlkreis stehen im Wahlregister (data/wahlen.json); hier nur Grenzen, Nummer und Name
-            wk = json.loads(inhalt)
-            for ft in wk["features"]:
-                ft["properties"] = {k: ft["properties"][k] for k in ("nr", "name", "land")}
-            inhalt = json.dumps(wk, ensure_ascii=False, separators=(",", ":"))
+            inhalt = json.dumps(globus.wahlkreise_bund_schlank(json.loads(inhalt)), ensure_ascii=False, separators=(",", ":"))
         seite = seite.replace(platz, inhalt.replace("</", "<\\/"), 1)
     # API-Basisadresse für src/api.js (nur im API-Modus; ohne sie arbeitet die Seite wie bisher mit eingebetteten Daten)
     kopf_api = f'<meta name="sphaerae-api" content="{html.escape(a.api, quote=True)}">' if a.api else ""
@@ -138,7 +137,7 @@ def main():
     # Weltkugel: dieselbe Seite mit Karte, Ländern und Firmensitzen (alternative Oberfläche)
     welt, n_sitze = globus.seite(seite, api=bool(a.api))
     (ziel_ordner / "weltkugel.fragment.html").write_text(welt)
-    globus.wahlgeo_schreiben(ziel_ordner)             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
+    globus.wahlgeo_schreiben(ziel_ordner, api=bool(a.api))             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
     (ziel_ordner / "weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
                                               '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' + kopf_api +
                                               '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'

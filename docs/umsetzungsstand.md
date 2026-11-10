@@ -42,7 +42,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | Volkswirtschaftliche Daten (VWL) | unverändert | **verbessert**: Reihenwerte laden bei Bedarf über `/observations` (Ladehinweis, „Erneut versuchen“); Texte aller VWL-Ansichten gleich der Pages-Fassung | `api-smoke.js`; Prognosen und Abgleich (1,4 MB) noch eingebettet |
 | Korrelationsanalysen (KOR) | unverändert | unverändert, VWL-Reihen über die API | `api-smoke.js` (Ansicht gleich der Pages-Fassung) |
 | Handelsdaten, Handelsrouten | unverändert | unverändert | eingebettet |
-| Politik und Wahlen | unverändert | unverändert | `wahlen-smoke.js` |
+| Politik und Wahlen | unverändert | unverändert; Grenzen (Kommunen, Bundestagswahlkreise, Kreise) und Wahlwerte laden als Dateien, sobald eine Wahl auf der Karte ist | `wahlen-smoke.js` auf beiden Fassungen, API-Fassung über den Server |
 | Dokumentenlinks | unverändert | unverändert | Links auf github.com/raw |
 | Merkliste | unverändert | unverändert, Filter „Nur Merkliste“ über `ids=` | |
 | CSV-Export | unverändert | unverändert | |
@@ -54,7 +54,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 
 | Kriterium | Stand |
 |---|---|
-| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB), Abschlussposten/Gremien/Dokumente (21 MB), Weltkugel-Stammdatendetails (7 MB) und VWL-Reihenwerte (4,4 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL-Prognosen, Wahlen, Handel noch eingebettet. Weltkugel der API-Fassung 26,4 MB (vorher 58,6 MB), Terminal 16,0 MB |
+| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB), Abschlussposten/Gremien/Dokumente (21 MB), Weltkugel-Stammdatendetails (7 MB) und VWL-Reihenwerte (4,4 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL-Prognosen, Wahlen, Handel noch eingebettet. Wahlgrenzen und Wahlwerte (5,5 MB) als Dateien nachgeladen. Weltkugel der API-Fassung 21,2 MB (vorher 58,6 MB), Terminal 13,4 MB |
 | Daten nach Bedarf geladen | für Verzeichnis und Registerprofile ja |
 | Öffentliche Endpunkte dokumentiert und begrenzt | ja (`docs/api.md`, OpenAPI, Grenzen) |
 | Unternehmens-IDs erhalten | ja, getestet |

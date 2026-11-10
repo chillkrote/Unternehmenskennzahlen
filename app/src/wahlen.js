@@ -101,10 +101,12 @@ const WAHLEN = (() => {
   // Nachzuladende Grenzen (globus.py: WAHL_GEO -> dist/wahlgeo/<art>.json); geladen wird erst, wenn eine Einheit sie braucht
   const NACH = (() => { try { return JSON.parse(document.getElementById("wa-geo-nachladen").textContent) || {}; } catch { return {}; } })();
   const LAEDT = new Map();
+  // Schlüssel der Grenzen, die nur die API-Fassung nachlädt (globus.py: GEO_NACH_API; sonst properties.id)
+  const SCHL = (() => { try { return JSON.parse(document.getElementById("wa-geo-schluessel").textContent) || {}; } catch { return {}; } })();
   function nachladen(art) {
     if (LAEDT.has(art) || !NACH[art]) return;
     LAEDT.set(art, fetch(NACH[art]).then(r => r.ok ? r.json() : Promise.reject(Error("HTTP " + r.status)))
-      .then(fc => { geo()[art] = idx(fc, "id"); PUNKT.clear(); if (aktiv()) anwenden(); })
+      .then(fc => { geo()[art] = idx(fc, SCHL[art] || "id"); PUNKT.clear(); if (aktiv()) anwenden(); })
       .catch(e => { console.warn("Wahlkreisgrenzen nicht geladen:", art, e.message); }));
   }
   // Ausgelagerte Werte großer Einheiten (Gemeinden; globus.py: wahlen_aufteilen) -> u.werte, sobald die Wahl auf der Karte ist
@@ -120,6 +122,8 @@ const WAHLEN = (() => {
     if (GEO) return GEO;
     const g = G.geo();
     GEO = { laender: idx(g.LAENDER, "iso"), "de-laender": idx(g.DE_GEO, "code"), gliedstaaten: idx(g.GL_GEO, "code"), kommunen: idx(g.KO_GEO, "id"), "wahlkreise-bund": idx(g.WK, "nr"), "kreise-de": idx(g.KREISE, "id"), roh: g };
+    // nicht eingebettete Grenzen (API-Fassung) fehlen hier, damit flaechen() sie nachlädt
+    [["kommunen", g.KO_GEO], ["wahlkreise-bund", g.WK], ["kreise-de", g.KREISE]].forEach(([art, fc]) => { if (!fc && NACH[art]) delete GEO[art]; });
     // weitere Wahlkreisgrenzen (globus.py bettet sie als <script id="wa-geo-<art>"> ein, Schlüssel properties.id), z. B. landtagswahlkreise-nw
     document.querySelectorAll('script[id^="wa-geo-"]:not(#wa-geo-nachladen)').forEach(el => { try { const fc = JSON.parse(el.textContent); if (fc) GEO[el.id.slice(7)] = idx(fc, "id"); } catch { /* fehlt */ } });
     return GEO;

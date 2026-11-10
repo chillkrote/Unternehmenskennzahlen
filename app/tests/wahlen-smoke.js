@@ -11,14 +11,16 @@ require('node:fs').mkdirSync(BILD, { recursive: true });
   page.on('pageerror', e => errors.push(e.stack || e.message));
   page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
   // über HTTP ausliefern: die Wahlkreisgrenzen werden per fetch aus wahlgeo/ nachgeladen (file:// erlaubt das nicht)
-  const datei = path.resolve(process.argv[2] || 'app/dist/weltkugel.html'), wurzel = path.dirname(datei);
+  const datei = path.resolve(/^https?:/.test(process.argv[2] || '') ? 'app/dist/weltkugel.html' : (process.argv[2] || 'app/dist/weltkugel.html')), wurzel = path.dirname(datei);
   const server = require('node:http').createServer((q, a) => {
     const f = path.join(wurzel, decodeURIComponent(q.url.split('?')[0]));
     if (!f.startsWith(wurzel)) { a.writeHead(403); a.end(); return; }
     require('node:fs').readFile(f, (e, d) => { if (e) { a.writeHead(404); a.end(); } else { a.writeHead(200, { 'content-type': f.endsWith('.json') ? 'application/json' : 'text/html; charset=utf-8' }); a.end(d); } });
   });
   await new Promise(r => server.listen(0, '127.0.0.1', r));
-  await page.goto(`http://127.0.0.1:${server.address().port}/${path.basename(datei)}`);
+  // API-Fassung: direkt gegen den laufenden Server (Compose-Stack), der auch /api/v1 und wahlgeo/ ausliefert
+  const ziel = /^https?:/.test(process.argv[2] || '') ? process.argv[2] : `http://127.0.0.1:${server.address().port}/${path.basename(datei)}`;
+  await page.goto(ziel);
   await page.waitForSelector('#gk-seite h2');
   const ok = (b, t) => { if (!b) throw Error(t); };
   const seite = () => page.locator('#gk-seite').innerText();

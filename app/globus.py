@@ -125,9 +125,33 @@ WAHL_GEO = [("landtagswahlkreise-nw", "geo/landtagswahlkreise_nw.geojson"), ("wa
 
 
 WERTE_NACHLADEN_AB = 800      # Einheiten mit so vielen Werten (Gemeinden) stehen nicht in der Seite, sondern in wahlgeo/werte-<wahl>-<einheit>.json
+WERTE_NACHLADEN_AB_API = 10   # API-Fassung (eigener Server, keine Dateigrenze): schon ab 10 Werten je Einheit nachladen (rund 2,1 MB weniger)
+# API-Fassung: Grenzen, die sonst eingebettet sind, ebenfalls als Datei nachladen (wahlen.js: Schlüssel je Art); rund 3,4 MB weniger
+GEO_NACH_API = {"kommunen": ("geo/kommunen_nrw.geojson", "id"), "wahlkreise-bund": ("geo/wahlkreise_bund.geojson", "nr"),
+                "kreise-de": ("geo/kreise_de.geojson", "id")}
 
 
-def wahlen_aufteilen():
+def wahlkreise_bund_schlank(fc):
+    """Bundestagswahlkreise nur mit Grenze, Nummer, Name und Land (Ergebnisse stehen im Wahlregister)."""
+    for ft in fc["features"]:
+        ft["properties"] = {k: ft["properties"][k] for k in ("nr", "name", "land")}
+    return fc
+
+
+def geo_nach_api():
+    """{art: (Inhalt als JSON-Text, Schlüssel)} der in der API-Fassung ausgelagerten Grenzen."""
+    aus = {}
+    for art, (datei, schluessel) in GEO_NACH_API.items():
+        p = HIER / datei
+        if p.exists():
+            fc = json.loads(p.read_text())
+            if art == "wahlkreise-bund":
+                fc = wahlkreise_bund_schlank(fc)
+            aus[art] = (json.dumps(fc, ensure_ascii=False, separators=(",", ":")), schluessel)
+    return aus
+
+
+def wahlen_aufteilen(ab=WERTE_NACHLADEN_AB):
     """Wahlregister für die Seite: große Einheiten (Gemeinden) ohne Werte, dafür mit "nach" (Datei) und "anzahl"; zurück (Register, {Datei: Werte})."""
     pfad = HIER / "data/wahlen.json"
     if not pfad.exists():
@@ -135,15 +159,16 @@ def wahlen_aufteilen():
     d, dateien = json.loads(pfad.read_text()), {}
     for w in d["wahlen"]:
         for u in w.get("einheiten") or []:
-            if len(u.get("werte") or {}) >= WERTE_NACHLADEN_AB:
+            if len(u.get("werte") or {}) >= ab:
                 datei = f"wahlgeo/werte-{w['id']}-{u['id']}.json"
                 dateien[datei] = u["werte"]
                 u.update({"werte": {}, "nach": datei, "anzahl": len(dateien[datei])})
     return d, dateien
 
 
-def wahlgeo_schreiben(ziel):
-    """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json, dazu die ausgelagerten Gemeindewerte; gibt die Dateien zurück."""
+def wahlgeo_schreiben(ziel, api=False):
+    """Kopiert die nachzuladenden Wahlkreisgrenzen nach <ziel>/wahlgeo/<art>.json, dazu die ausgelagerten Gemeindewerte; gibt die Dateien zurück.
+    api=True: zusätzlich Kommunen, Bundestagswahlkreise und Kreise, Werte schon ab WERTE_NACHLADEN_AB_API."""
     ziel = Path(ziel)
     (ziel / "wahlgeo").mkdir(parents=True, exist_ok=True)
     out = []
@@ -151,7 +176,11 @@ def wahlgeo_schreiben(ziel):
         if (HIER / datei).exists():
             (ziel / "wahlgeo" / f"{art}.json").write_text((HIER / datei).read_text(), encoding="utf-8")
             out.append(ziel / "wahlgeo" / f"{art}.json")
-    for datei, werte in wahlen_aufteilen()[1].items():
+    if api:
+        for art, (inhalt, _) in geo_nach_api().items():
+            (ziel / "wahlgeo" / f"{art}.json").write_text(inhalt, encoding="utf-8")
+            out.append(ziel / "wahlgeo" / f"{art}.json")
+    for datei, werte in wahlen_aufteilen(WERTE_NACHLADEN_AB_API if api else WERTE_NACHLADEN_AB)[1].items():
         (ziel / datei).write_text(json.dumps(werte, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         out.append(ziel / datei)
     return out
@@ -180,10 +209,12 @@ def seite(terminal_seite, api=False):
         "<script>\n" + (HIER / "src/globus.js").read_text() + "\n</script>",
         # Wahlen (Politik & Wahlen, Ansicht Wahlen): einheitliches Wahlregister (wahlen_daten.py) und Kreisgrenzen für die Europawahl
         "<style>\n" + (HIER / "src/wahlen.css").read_text() + "\n</style>",
-        '<script id="kreise-de-geo" type="application/json">' + (_js((HIER / "geo/kreise_de.geojson").read_text()) if (HIER / "geo/kreise_de.geojson").exists() else "null") + "</script>",
+        '<script id="kreise-de-geo" type="application/json">' + (_js((HIER / "geo/kreise_de.geojson").read_text()) if (HIER / "geo/kreise_de.geojson").exists() and not api else "null") + "</script>",
         # Wahlkreisgrenzen einzelner Länder werden nicht eingebettet, sondern bei Bedarf nachgeladen (dist/wahlgeo/<art>.json, siehe wahlgeo_schreiben)
-        '<script id="wa-geo-nachladen" type="application/json">' + json.dumps({art: f"wahlgeo/{art}.json" for art, datei in WAHL_GEO if (HIER / datei).exists()}) + "</script>",
-        '<script id="wahlen-daten" type="application/json">' + _js(json.dumps(wahlen_aufteilen()[0], ensure_ascii=False, separators=(",", ":"))) + "</script>",
+        '<script id="wa-geo-nachladen" type="application/json">' + json.dumps({**{art: f"wahlgeo/{art}.json" for art, datei in WAHL_GEO if (HIER / datei).exists()},
+                                                                                **({art: f"wahlgeo/{art}.json" for art in geo_nach_api()} if api else {})}) + "</script>",
+        '<script id="wa-geo-schluessel" type="application/json">' + json.dumps({art: k for art, (_, k) in GEO_NACH_API.items()} if api else {}) + "</script>",
+        '<script id="wahlen-daten" type="application/json">' + _js(json.dumps(wahlen_aufteilen(WERTE_NACHLADEN_AB_API if api else WERTE_NACHLADEN_AB)[0], ensure_ascii=False, separators=(",", ":"))) + "</script>",
         "<script>\n" + (HIER / "src/wahlen.js").read_text() + "\n</script>",
         # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein
         "<style>\n" + (HIER / "src/netz.css").read_text() + "\n</style>",

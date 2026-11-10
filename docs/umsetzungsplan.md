@@ -28,7 +28,7 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | P6 | Revisionen/Vintages für VWL und Prognosen, Änderungsfeed + Atom, regelbasierte Berichte | P2.6, P3.2 | Feed-Test | 3 | geplant |
 | P7 | Szenariorechner | P4, P5 | — | später | geplant |
 | B1 | Server bei netcup einrichten, HTTPS, Timer, Offsite-Backup | Robins Freigabe | Smoke nach Deployment | 1 | **blockiert** (Account) |
-| B2 | Lizenzprüfung je Quelle vor öffentlicher Weiterverbreitung (Kurse, Nachrichten) | – | `datenquellen.md` | 1 | erste Prüfrunde 10.11.2026; Entscheidungen E1–E5 bei Robin, Quellenseite und Build-Schalter danach |
+| B2 | Lizenzprüfung je Quelle vor öffentlicher Weiterverbreitung (Kurse, Nachrichten) | – | `datenquellen.md`, Build-Schalter `--oeffentlich` (E1) | 1 | erste Prüfrunde 10.11.2026; Build-Schalter `--oeffentlich` vorhanden (Standard aus); Entscheidungen E1–E5 bei Robin, Quellenseite danach |
 
 Kritischer Pfad bis zur Abnahme „erste HTML-Antwort ohne vollständigen Datenbestand“, nach Größe der eingebetteten Blöcke geordnet:
 P2.3 → P2.5a → P2.6 (VWL 5,3 MB) → P2.7 (Wahlen und Geometrien, zusammen rund 8 MB) → P2.5 → P2.4.

@@ -22,7 +22,7 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | P2.7 | Wahlen und Geometrien: PostGIS, vereinfachte Geometrien je Zoomstufe, Wahldaten je Wahl über die API | P2.5 | `wahlen-smoke.js` | 2 | geplant; erst nötig, wenn Abfragen über Geometrien gebraucht werden (Dateien reichen für die Anzeige) |
 | P3.1 | Datenkatalog `data_source` + `/data-catalog` aus vorhandenen Quellenangaben (`volkswirtschaft/serien.csv`, `PROGNOSEGEBER.md`, Adapter) | P2.6 | Katalog vollständig für importierte Reihen | 1 | geplant |
 | P3.2 | Datenqualität: `/data-quality` (Prüfmarken, veraltete Quellen, Sprünge), Abdeckungsmatrix mit festem Nenner | P3.1 | Prüfbericht reproduzierbar | 1,5 | geplant |
-| P3.3 | Universelle Suche in der Oberfläche (Befehlszeile + Weltkugel-Suchfeld über `/search`, Gruppen, Tastatur) | P2.1 | Smoke | 1 | API fertig, Oberfläche geplant |
+| P3.3 | Universelle Suche in der Oberfläche (Befehlszeile + Weltkugel-Suchfeld über `/search`, Gruppen, Tastatur): `src/suche.js`, kombinierte Auswahl „Branche · Land“ öffnet das gefilterte Verzeichnis; `/search` stellt den vollen Namen vor den Branchenfilter („Deutsche Bank“) | P2.1 | `suche-smoke.js` (Compose-Job), `test_suche_voller_name_vor_branchenfilter` | 1 | erledigt |
 | P4 | Analyse-Arbeitsbereich (Korrelation erweitern: Reihen aus allen Bereichen, Transformationen, Referenzwerte), teilbare URLs, Export CSV/JSON | P2.6, P3.1 | Mathematik gegen Referenzwerte | 3 | geplant |
 | P5 | Handelsabhängigkeit (HHI, Weltmarktanteile, Alternativlieferländer), belegte vs. abgeleitete Beziehungen | P2.6 | Referenzrechnungen | 3 | geplant |
 | P6 | Revisionen/Vintages für VWL und Prognosen, Änderungsfeed + Atom, regelbasierte Berichte | P2.6, P3.2 | Feed-Test | 3 | geplant |

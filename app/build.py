@@ -126,7 +126,7 @@ def main():
         markt, kurse, boerse, roh, firmen = nach["markt.json"], nach["kurse_woche.json"], nach["boerse.json"], nach["banken.json"], nach["unternehmen.json"]
         vroh, vprog = vwl_fuer_api(vroh)
     js = (HIER / "src/unternehmen.js").read_text()
-    seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
+    seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__SUCHE_JS__", (HIER / "src/suche.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))
              .replace("__VWL_JS__", (HIER / "src/vwl.js").read_text()).replace("__BOERSE_JS__", (HIER / "src/boerse.js").read_text()).replace("__FINANZ_JS__", (HIER / "src/finanz.js").read_text())
              .replace("__BOERSE__", boerse.replace("</", "<\\/")).replace("__VWL__", vroh.replace("</", "<\\/"))

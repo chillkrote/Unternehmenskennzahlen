@@ -6,7 +6,7 @@ on:
   pull_request:
     paths: ["server/**", "international/**", "stammdaten/**", "unternehmen-tabelle/**", "zeitreihen/*.csv", "app/register.py",
             "app/geo/laender.geojson", "app/data/unternehmen.json", "app/vwl.py", "volkswirtschaft/*.csv", ".github/workflows/server.yml",
-            "app/src/**", "app/*.py", "app/tests/api-smoke.js", "app/tests/globus-smoke.js", "app/tests/wahlen-smoke.js", "app/tests/handel-gueter-smoke.js"]
+            "app/src/**", "app/*.py", "app/tests/api-smoke.js", "app/tests/globus-smoke.js", "app/tests/wahlen-smoke.js", "app/tests/handel-gueter-smoke.js", "app/tests/suche-smoke.js"]
   workflow_dispatch:
 
 permissions:
@@ -97,6 +97,7 @@ jobs:
           node app/tests/api-smoke.js http://localhost:8080/bankterminal.html
           node app/tests/globus-smoke.js http://localhost:8080/weltkugel.html
           node app/tests/handel-gueter-smoke.js http://localhost:8080/weltkugel.html
+          node app/tests/suche-smoke.js http://localhost:8080
           node app/tests/wahlen-smoke.js http://localhost:8080/weltkugel.html
       - name: Protokolle bei Fehler
         if: failure()

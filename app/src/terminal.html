@@ -322,6 +322,9 @@ __SEITEN_CSS__
 __API_JS__
 </script>
 <script>
+__SUCHE_JS__
+</script>
+<script>
 __UNTERNEHMEN_JS__
 </script>
 <script>
@@ -1252,6 +1255,13 @@ async function start() {
   BOE.init(bd);
   HDL.init();
   landAuswahlInit();
+  // API-Fassung: Vorschläge über /search an der Befehlszeile (suche.js); Enter ohne markierten Vorschlag bleibt Befehl
+  SUCHE.anbinden(document.getElementById("cmd"), t => {
+    if (t.type === "company") location.hash = "firma-" + t.id;
+    else if (t.type === "country") gehe(UNT.verzeichnisFilter({ land: t.id }));
+    else if (t.type === "sector") gehe(UNT.verzeichnisFilter({ br: t.id }));
+    else if (t.type === "filter") gehe(UNT.verzeichnisFilter({ land: (t.countries || [])[0], br: (t.sectors || [])[0] }));
+  });
 }
 start();
 </script>

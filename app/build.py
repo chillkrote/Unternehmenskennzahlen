@@ -35,6 +35,31 @@ def firmen_fuer_api(firmen_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
+# Öffentliche Fassung (--oeffentlich, docs/datenquellen.md E1): Werte aus Yahoo Finance haben kein Weitergaberecht
+# Kurse und alles, was daraus berechnet ist (Börsenwert, Bewertungskennzahlen), sowie Marktangaben der Branchentabellen aus Yahoo
+YAHOO_WERTE = ("kurs", "marktkap", "r_ytd", "r_1j", "kgv", "kbv", "kuv", "ev_ebitda", "div_rendite",
+               "x_enterprise_value", "x_ev_umsatz", "x_aussch_ttungsquote", "x_kurs_nderung_52w", "x_52w_hoch", "x_52w_tief",
+               "x_beta", "x_volumen_3m", "x_insider", "x_institutionen", "x_kgv_erwartet", "x_kgv")
+
+
+def ohne_yahoo_firmen(firmen_json):
+    """unternehmen.json ohne Kurse und kursabhängige Kennzahlen (YAHOO_WERTE); Abschlusszahlen bleiben."""
+    d = json.loads(firmen_json)
+    for f in d.get("unternehmen") or []:
+        for k in YAHOO_WERTE:
+            (f.get("werte") or {}).pop(k, None)
+    d["kennzahlen"] = [k for k in d.get("kennzahlen") or [] if k.get("key") not in YAHOO_WERTE]
+    d["ohne_kurse"] = 1
+    return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+
+
+def ohne_yahoo_finanz(finanz_json):
+    """finanz.json ohne die Marktpuls-Reihen aus Yahoo Finance (VIX, Gold, Brent …); EZB-, Treasury- und FRED-Reihen bleiben."""
+    d = json.loads(finanz_json)
+    d["puls"] = [x for x in d.get("puls") or [] if "yahoo" not in str(x.get("quelle", "")).lower()]
+    return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+
+
 # API-Fassung: diese Blöcke stehen als data/<datei> neben der Seite statt eingebettet (Platzhalter in terminal.html)
 BLOCK_NACHLADEN = ("__PARLAMENTE__", "__KOMMUNAL__", "__GUETER__", "__GLIEDSTAATEN__")
 VWL_PROGNOSEN_DATEI = "data/vwl_prognosen.json"
@@ -63,6 +88,9 @@ def main():
     p.add_argument("--api", metavar="URL", default=None,
                    help="API-Modus (Server, server/): das Gesamtregister wird nicht eingebettet, Verzeichnis und Registerprofile laden "
                         "über diese API-Basisadresse, z. B. /api/v1 (gleiche Domain) oder http://127.0.0.1:8000/api/v1")
+    p.add_argument("--oeffentlich", action="store_true",
+                   help="Fassung für den öffentlichen Server: ohne Daten ohne Weitergaberecht (docs/datenquellen.md, E1): "
+                        "Kurse, Indizes und Weltunternehmen (markt, kurse_woche, boerse), Kurs/Börsenwert in den Profilen, Marktpuls aus Yahoo")
     p.add_argument("--ziel", default="dist", help="Ausgabeordner unter app/ (Standard dist; für den Server dist-api)")
     a = p.parse_args()
     ziel_ordner = HIER / a.ziel
@@ -109,6 +137,9 @@ def main():
     vd = vwl.lade()
     vroh = json.dumps(vd, ensure_ascii=False, separators=(",", ":")) if vd else "null"
     vprog = None
+    if a.oeffentlich:
+        markt = kurse = boerse = "null"          # Bereiche MKT und BÖR zeigen dann ihren Leerzustand
+        firmen = ohne_yahoo_firmen(firmen)
     if a.api:
         # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
         reg = "null"
@@ -139,6 +170,8 @@ def main():
                         ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
         f = HIER / "data" / datei
         inhalt = f.read_text() if f.exists() else "null"
+        if a.oeffentlich and platz == "__FINANZ__" and inhalt != "null":
+            inhalt = ohne_yahoo_finanz(inhalt)
         if a.api and platz in ("__WAHLKREISE_BUND__", "__KOMMUNEN_GEO__"):
             inhalt = "null"          # API-Fassung: als wahlgeo/<art>.json nachgeladen (globus.py: GEO_NACH_API)
         elif a.api and platz in BLOCK_NACHLADEN and f.exists():

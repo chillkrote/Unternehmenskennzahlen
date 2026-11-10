@@ -1168,6 +1168,10 @@ function bankDazu(name) {
   if (!auswahl.includes(b.bank)) { auswahl.push(b.bank); if (auswahl.length > 6) auswahl.shift(); }
   gehe(aktuell === "ts" ? "ts" : "cmp");
 }
+addEventListener("sphaerae:block", () => {    // nachgeladener Datenblock (API-Fassung, BLOCK in api.js): Politik-Ansichten neu zeichnen
+  const g = document.getElementById("globus");
+  if ((!g || g.hidden) && aktuell.startsWith("p-")) render();
+});
 addEventListener("sphaerae:vwl", () => {      // nachgeladene VWL-Reihen: betroffene Ansicht neu zeichnen (nicht unter der Weltkugel)
   const g = document.getElementById("globus");
   if ((!g || g.hidden) && (aktuell.startsWith("v-") || aktuell === "korr" || aktuell === "start")) render();

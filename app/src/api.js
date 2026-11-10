@@ -73,3 +73,27 @@ const API = (() => {
     laender: () => get("/countries"), branchen: () => get("/sectors"),
   };
 })();
+
+/* ---------- Datenblöcke als Dateien (API-Fassung) ----------
+   build.py --api ersetzt große Blöcke (z. B. parlamente-daten) durch {"_nach": "data/<datei>.json"}. BLOCK.jetzt(id) liefert die Daten,
+   null wenn der Block fehlt, oder undefined, solange die Datei lädt (der erste Aufruf startet das Laden). Danach meldet das Ereignis
+   „sphaerae:block“ (detail.id) den Ansichten, dass sie neu zeichnen können. In der Pages-Fassung sind die Blöcke eingebettet. */
+const BLOCK = (() => {
+  const daten = {}, laeuft = {}, fehler = {};
+  function roh(id) { try { return JSON.parse(document.getElementById(id).textContent); } catch (e) { return null; } }
+  function laden(id, url) {
+    if (laeuft[id] || fehler[id]) return;
+    laeuft[id] = fetch(url).then(r => r.ok ? r.json() : Promise.reject(Error("HTTP " + r.status)))
+      .then(d => { daten[id] = d; }).catch(e => { fehler[id] = e.message || String(e); })
+      .then(() => { delete laeuft[id]; dispatchEvent(new CustomEvent("sphaerae:block", { detail: { id } })); });
+  }
+  function jetzt(id) {
+    if (id in daten) return daten[id];
+    const d = roh(id);
+    if (d && typeof d._nach === "string") { laden(id, d._nach); return undefined; }
+    return (daten[id] = d);
+  }
+  const status = id => fehler[id] ? { fehler: fehler[id] } : laeuft[id] ? { laedt: true } : {};
+  function erneut(id) { delete fehler[id]; jetzt(id); }
+  return { jetzt, status, erneut };
+})();

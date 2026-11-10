@@ -242,6 +242,7 @@ a.brand { color: inherit; text-decoration: none; }
       <a class="key" href="#h-laender" data-v="h-laender"><b>F2</b>Länder</a>
       <a class="key" href="#h-routen" data-v="h-routen"><b>F3</b>Routen &amp; Engstellen</a>
       <a class="key" href="#h-strom" data-v="h-strom"><b>F4</b>Strom</a>
+      <a class="key" href="#h-abh" data-v="h-abh"><b>F5</b>Abhängigkeit</a>
       <a class="key" href="#korr" data-v="korr"><b>F6</b>Korrelation</a>
     </nav>
     <nav class="keys" id="keys-p" aria-label="Politik und Wahlen" hidden>
@@ -1064,7 +1065,7 @@ const VIEWS = { grp: viewGrp, quot: viewQuot, cmp: viewCmp, rank: viewRank, mkt:
   start: viewStart, "v-ueb": () => VWL.viewUeb(), "v-reihe": () => VWL.viewReihe(), "v-laender": () => VWL.viewLaender(), "v-quellen": () => VWL.viewQuellen(), "v-prog": () => VWL.viewProg(),
   "b-ueb": () => BOE.viewUeb(), "b-indizes": () => BOE.viewInd(), "b-unternehmen": () => BOE.viewUnt(), "b-verlauf": () => BOE.viewVerlauf(), "b-quellen": () => BOE.viewQuellen(), "b-puls": () => FNZ.viewPuls(), "b-kurven": () => FNZ.viewKurven(), "b-waehr": () => FNZ.viewWaehr(), "b-sektoren": () => FNZ.viewSektoren(), "b-makro": () => FNZ.viewMakro(), "b-bank": () => FNZ.viewBank(),
   "u-ueb": () => UNT.viewUeb(), "u-branche": () => UNT.viewBra(), "u-vergleich": () => UNT.viewVgl(), "u-verzeichnis": () => UNT.viewVerz(), "u-termine": () => UNT.viewTermine(), "u-abschluesse": () => UNT.viewAbschluesse(), korr: () => KOR.viewKorr(),
-  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "p-kom": () => POL.viewKom(), "b-zins": () => FIN.view() };
+  "h-ueb": () => HDL.viewUeb(), "h-laender": () => HDL.viewLaender(), "h-routen": () => HDL.viewRouten(), "h-strom": () => HDL.viewStrom(), "h-abh": () => HDL.viewAbh(), "p-ueb": () => POL.viewUeb(), "p-wahlen": () => POL.viewWahlen(), "p-de": () => POL.viewDe(), "p-parl": () => POL.viewParl(), "p-glied": () => POL.viewGlied(), "p-kom": () => POL.viewKom(), "b-zins": () => FIN.view() };
 const BANKVIEWS = ["grp", "quot", "cmp", "rank", "mkt", "ts"];
 let aktuell = "start", metaBanken = "", bereich = "";
 let globalLand = 'alle', alleBanken = [], alleMarktdaten = null;
@@ -1174,7 +1175,7 @@ function bankDazu(name) {
 }
 addEventListener("sphaerae:block", () => {    // nachgeladener Datenblock (API-Fassung, BLOCK in api.js): Politik-Ansichten neu zeichnen
   const g = document.getElementById("globus");
-  if ((!g || g.hidden) && aktuell.startsWith("p-")) render();
+  if ((!g || g.hidden) && (aktuell.startsWith("p-") || aktuell === "h-abh")) render();
 });
 addEventListener("sphaerae:vwl", () => {      // nachgeladene VWL-Reihen: betroffene Ansicht neu zeichnen (nicht unter der Weltkugel)
   const g = document.getElementById("globus");
@@ -1210,7 +1211,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
     return;
   }
   if (bereich === "h" || bereich === "p") {
-    const a = { ueb: bereich + "-ueb", laender: "h-laender", länder: "h-laender", routen: "h-routen", engstellen: "h-routen", strom: "h-strom", korr: "korr", start: "start" }[c];
+    const a = { ueb: bereich + "-ueb", laender: "h-laender", länder: "h-laender", routen: "h-routen", engstellen: "h-routen", strom: "h-strom", abhaengigkeit: "h-abh", abhängigkeit: "h-abh", korr: "korr", start: "start" }[c];
     if (a) gehe(a);
     return;
   }
@@ -1227,7 +1228,7 @@ document.getElementById("cmd").addEventListener("keydown", e => {
   else { const z = UNT.ziel(v); if (z) gehe(z); else bankDazu(v); }
 });
 document.addEventListener("keydown", e => {
-  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr", F7: "p-kom" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins", F8: "b-puls", F9: "b-kurven", F10: "b-waehr", F11: "b-sektoren" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
+  const m = (bereich === "h" ? { F1: "h-ueb", F2: "h-laender", F3: "h-routen", F4: "h-strom", F5: "h-abh", F6: "korr" } : bereich === "p" ? { F1: "p-ueb", F2: "p-wahlen", F3: "p-de", F4: "p-parl", F5: "p-glied", F6: "korr", F7: "p-kom" } : bereich === "b" ? { F1: "b-ueb", F2: "b-indizes", F3: "b-unternehmen", F4: "b-verlauf", F5: "b-quellen", F7: "b-zins", F8: "b-puls", F9: "b-kurven", F10: "b-waehr", F11: "b-sektoren" } : bereich === "v" ? { F1: "v-ueb", F2: "v-reihe", F3: "v-laender", F4: "v-quellen", F5: "v-prog", F6: "korr" } : { F1: "u-ueb", F2: "u-branche", F3: "u-vergleich", F4: "u-verzeichnis", F5: "u-termine", F6: "korr" })[e.key];
   if (m && (aktuell === "start" || !bereich)) return;
   if (m) { e.preventDefault(); gehe(m); }
 });

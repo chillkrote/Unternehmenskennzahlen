@@ -26,10 +26,10 @@ def test_upgrade_auf_leerer_db_und_wiederholung(leere_db):
     command.upgrade(_cfg(leere_db), "head")
     t = _tabellen(leere_db)
     assert {"entity", "fact", "company_register", "company_alias", "country", "ingestion_run",
-            "company_profile", "company_profile_value", "financial_statement", "financial_statement_line", "profile_metric", "series", "observation", "data_source", "forecaster"} <= t
+            "company_profile", "company_profile_value", "financial_statement", "financial_statement_line", "profile_metric", "series", "observation", "data_source", "forecaster", "trade_good", "trade_export", "trade_partner"} <= t
     command.upgrade(_cfg(leere_db), "head")                       # zweiter Lauf ändert nichts
     with psycopg.connect(leere_db) as c:
-        assert c.execute("SELECT version_num FROM public.alembic_version").fetchone()[0] == "0005"
+        assert c.execute("SELECT version_num FROM public.alembic_version").fetchone()[0] == "0006"
         assert c.execute("SELECT count(*) FROM public.international_migrations").fetchone()[0] == 4
         assert c.execute("SELECT 1 FROM pg_extension WHERE extname='pg_trgm'").fetchone()
 

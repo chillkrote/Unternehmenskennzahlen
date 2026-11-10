@@ -27,6 +27,9 @@ Lesende, öffentliche API unter `/api/v1`. Maschinenlesbare Beschreibung: `/api/
 | `GET /profile-metrics` | Kennzahlenkatalog der Profile (Name, Einheit, Format, Gruppe, „höher ist besser“, Hilfe) | — |
 | `GET /series` | Katalog der VWL-Reihen (Thema, Einheit, Format, Art, Frequenz, Quelle, Datensatz, Abruf, Projektion ab) mit Gebieten, erstem/letztem Zeitraum, Anzahl | `topic` |
 | `GET /series/{id}` | eine VWL-Reihe mit Abdeckung | — |
+| `GET /data-catalog` | Datenkatalog: alle Quellen mit Lizenz, Bewertung, Status, `cleared` (öffentlich freigegeben), offener Entscheidung, Pflichtangabe, Zahl der Reihen und Werte, Jahresspanne, letztem Abruf und Importlauf, Zahl der Prognosegeber | `area`, `status`, `cleared`, `decision` |
+| `GET /data-catalog/{id}` | eine Quelle mit ihren VWL-Reihen (`series_list`) | — |
+| `GET /forecasters` | Prognosegeber je Land (Recherche, Werte noch nicht eingebunden) | `geo`, `priority` (höchstens) |
 | `GET /observations` | Werte mehrerer Reihen kompakt `{reihe: {gebiet: [[zeitraum, wert], …]}}` | `series` (bis 60), `geo`, `from`, `to`, `as_of` (Stand „bekannt zum“, frühere Fassungen revidierter Werte) |
 | `GET /search` | eine Suche über Unternehmen, Länder, Branchen, Kennzahlen; erkennt Länder und Branchen in den Suchwörtern | `q`, `types`, `limit` |
 | `GET /countries` | alle Länder mit deutschem Namen, Region, OECD-Mitgliedschaft, Zahl der Unternehmen | — |
@@ -44,6 +47,8 @@ GET /api/v1/companies?q=AT0000BAWAG2
 GET /api/v1/companies/U000148/metrics?metric=assets&as_of=2026-06-30
 GET /api/v1/companies/U000148/profile              (Deutsche Bank: 60 Kennzahlen mit Branchenmedian, Abschlüsse, Gremien)
 GET /api/v1/sectors/banken/statistics?group=Sparkassen
+GET /api/v1/data-catalog?decision=true   (Quellen mit offener Lizenzentscheidung)
+GET /api/v1/forecasters?geo=FR&priority=1
 GET /api/v1/observations?series=bip_qoq,hicp_gesamt&geo=DE,FR&from=2020-Q1
 GET /api/v1/observations?series=bip_qoq&geo=DE&as_of=2026-10-01   (Werte, wie sie am 1.10.2026 bekannt waren)
 GET /api/v1/search?q=Deutschland%20Automobile

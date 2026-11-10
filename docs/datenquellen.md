@@ -68,4 +68,4 @@ GDELT (Zitat und Link), CEPII BACI (Etalab 2.0). Die vorhandene Fußleiste (`app
 
 Für jede Quelle noch zu ergänzen: Aktualisierungstakt, Nutzungsgrenzen (Rate Limits), typische Fehler, nicht erhobene Felder;
 die mit „sekundär“ oder „allgemeine Kenntnis“ markierten Zeilen beim Herausgeber nachlesen, sobald die Seiten erreichbar sind.
-Dieser Katalog wird in Paket P3.1 als Tabelle `data_source` in die Datenbank übernommen und über `/api/v1/data-catalog` ausgeliefert.
+Dieser Katalog steht seit P3.1 als Tabelle `data_source` in der Datenbank und unter `/api/v1/data-catalog` (ETL `server/etl/katalog.py`). Die Texte der Tabelle oben sind die Quelle; `server/katalog/datenquellen.csv` ergänzt je Zeile Kennung, Bereich, Status, Entscheidung, Pflichtangabe und Aliase. Eine neue Zeile hier braucht eine Zeile dort (gleicher Name in der Spalte `quelle`), sonst bricht der Import ab.

@@ -61,6 +61,8 @@ def _http_get(url, params=None, timeout=300, versuche=4):
             time.sleep(5 * 2 ** i)
 
 
+import landtagswahlen  # noqa: E402  (amtliche Landtagswahlergebnisse, gleiche Struktur je Land)
+
 HIER = Path(__file__).resolve().parent
 QUELLEN = HIER.parent / "wahlen" / "quellen"
 OUT = HIER / "data" / "wahlen.json"
@@ -1926,7 +1928,10 @@ def regional(pa, ko):
                 continue
             k = kam[0]
             ergebnis, farben, datum, quelle, status = kammer_ergebnis(k, de=iso == "DE")
-            if not (ergebnis.get("s") or ergebnis.get("sitze")) or not datum:
+            amtlich = landtagswahlen.wahl(code, datum, de_kurz) if iso == "DE" else None      # amtliches Ergebnis der Landeswahlleitung (app/landtagswahlen.py)
+            if amtlich:
+                datum = amtlich[0]
+            elif not (ergebnis.get("s") or ergebnis.get("sitze")) or not datum:
                 continue
             name = g.get("name_de") or g.get("name") or code
             titel, gremium = ("Parlamentswahl", k.get("name") or "Parlament")
@@ -1956,6 +1961,9 @@ def regional(pa, ko):
                                            "quelle": "IT.NRW, Kommunalwahlen 2025 Heft 1 (Ergebnisse früherer Wahlen), Zweitstimmen in %"})
                 if nw:
                     w["einheiten"].append({"id": "lwk", "name": "Landtagswahlkreise", "einzahl": "Landtagswahlkreis", "art": "wahlkreis", "geo": "landtagswahlkreise-nw", "werte": wk_werte})
+            if amtlich:                              # ersetzt Stimmen, Sitze und Quelle des Wahlartikels
+                w.update(amtlich[1])
+                w["farben"] = {**farben, **{x[0]: DE_FARBEN[x[0]] for st in w["g"]["s"].values() for x in st if x[0] in DE_FARBEN}}
             out.append(w)
     return out
 
@@ -2049,6 +2057,8 @@ def main():
     no_laden(not a.ohne_abruf)
     ne_wahlkreise(not a.ohne_abruf, "ES", WK_ES_GEO)
     ne_wahlkreise(not a.ohne_abruf, "NO", WK_NO_GEO)
+    for f in landtagswahlen.LADEN:
+        f(not a.ohne_abruf)
     for geo in (KREISE_GEO, LWK_NW_GEO, WK_GB_GEO, WK_FR_GEO, WK_CA_GEO, WK_AU_GEO, GEM_AT_GEO, WK_US_GEO, WK_ES_GEO, WK_NO_GEO, GEM_CH_GEO, *(v[3] for v in US_HOUSE_ALT.values()), US_KREISE_GEO):
         kompakt(geo)
     wahlen = [w for w in national(pa) if w["land"] != "DE" or w["kammer"] != "unterhaus"]

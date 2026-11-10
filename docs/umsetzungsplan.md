@@ -16,7 +16,7 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | P2.4 | Branchenansichten F1–F3 serverseitig (Listen, Mediane, Filter), danach `unternehmen`-Block nicht mehr einbetten | P2.3 | Smoke F1–F3, Werte gleich alt/neu | 1,5 | zurückgestellt: nach P2.3 ist der Block nur noch 1,4 MB, wird aber von Weltkugel, Korrelation, Terminen und Vergleich genutzt; Mediane liefert die API schon (`/sectors/{id}/statistics`). Erst nach P2.6 |
 | P2.5a | Weltkugel: Stammdaten-Details (Beschreibung, Quelle, Website, LEI, Handelsregister, Rechtsform, Börse) nicht einbetten, Fenster lädt sie über `/companies/{id}` | P2.1 | `globus-smoke.js` über http | 0,25 | erledigt (−7,1 MB) |
 | P2.5 | Weltkugel-Unternehmenspunkte (`geo-tabelle`, 3,1 MB): API-Fassung lädt die schlanke Tabelle nach dem Start als `geodaten/unternehmen.json` (gzip 0,7 MB) und baut Punkte, Ringe „ohne Ort“ und Dichte je Land neu auf; Viewport-Abfrage bzw. PMTiles erst bei deutlich mehr Punkten | P1.2 | `globus-smoke.js` über den Server | 1,5 | erledigt (−3,1 MB) |
-| P2.6 | VWL-Reihen (`vwl`, 5,3 MB) als `series`/`observation` mit Vintage, VWL-Ansichten laden je Land/Reihe | P1.1 | Abgleich mit CSV | 2 | erledigt (Reihenwerte 4,4 MB; Prognosen und Abgleich 1,4 MB noch eingebettet) |
+| P2.6 | VWL-Reihen (`vwl`, 5,3 MB) als `series`/`observation` mit Vintage, VWL-Ansichten laden je Land/Reihe | P1.1 | Abgleich mit CSV | 2 | erledigt (Reihenwerte 4,4 MB über `/observations`; Prognosen und Abgleich 1,4 MB als Datei `data/vwl_prognosen.json`, geladen mit der Ansicht Prognosen) |
 | P2.7a | Wahlen und Geometrien nachladen: Grenzen der Kommunen, Bundestagswahlkreise und Kreise sowie Wahlwerte ab 10 Werten je Einheit als vorberechnete Dateien (`wahlgeo/`), geladen sobald eine Wahl auf der Karte ist | P2.1 | `wahlen-smoke.js` über den Server | 0,5 | erledigt (−5,5 MB) |
 | P2.7 | Wahlen und Geometrien: PostGIS, vereinfachte Geometrien je Zoomstufe, Wahldaten je Wahl über die API | P2.5 | `wahlen-smoke.js` | 2 | geplant; erst nötig, wenn Abfragen über Geometrien gebraucht werden (Dateien reichen für die Anzeige) |
 | P3.1 | Datenkatalog `data_source` + `/data-catalog` aus vorhandenen Quellenangaben (`volkswirtschaft/serien.csv`, `PROGNOSEGEBER.md`, Adapter) | P2.6 | Katalog vollständig für importierte Reihen | 1 | geplant |
@@ -31,4 +31,4 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 
 Kritischer Pfad bis zur Abnahme „erste HTML-Antwort ohne vollständigen Datenbestand“, nach Größe der eingebetteten Blöcke geordnet:
 P2.3 → P2.5a → P2.6 (VWL 5,3 MB) → P2.7 (Wahlen und Geometrien, zusammen rund 8 MB) → P2.5 → P2.4.
-Danach ist die Seite voraussichtlich unter 5 MB (nach P2.5: 18,1 MB Weltkugel bzw. 13,4 MB Terminal in der API-Fassung, 69,1 MB in der Pages-Fassung).
+Danach ist die Seite voraussichtlich unter 5 MB (nach P2.5 und den VWL-Prognosen: 16,7 MB Weltkugel bzw. 12,0 MB Terminal in der API-Fassung, 69,1 MB in der Pages-Fassung).

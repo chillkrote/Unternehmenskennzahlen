@@ -1703,8 +1703,24 @@ const VWL = (() => {
     }
     dispatchEvent(new CustomEvent("sphaerae:vwl", { detail: { fehler: ladeFehler } }));
   }
-  const ladeStatus = () => ladeFehler ? { fehler: ladeFehler.message || "Laden fehlgeschlagen" } : (LAEUFT.size || WARTET.size) ? { laedt: true } : {};
-  function erneut() { ladeFehler = null; dispatchEvent(new CustomEvent("sphaerae:vwl", { detail: {} })); }
+  /* Prognosen und Abgleich (API-Fassung: data/vwl_prognosen.json, rund 1,4 MB) erst mit der Ansicht Prognosen laden */
+  let progStand = "";       // "", "laedt", "da" oder Fehlermeldung
+  function progBedarf() {
+    if (!ALLE_DATEN || !ALLE_DATEN.prognosen_nach || progStand === "da") return true;
+    if (progStand) return false;
+    progStand = "laedt";
+    fetch(ALLE_DATEN.prognosen_nach).then(r => r.ok ? r.json() : Promise.reject(Error("HTTP " + r.status))).then(d => {
+      ALLE_DATEN.prognosen = d.prognosen || []; ALLE_DATEN.abgleich = d.abgleich || null;
+      if (VD !== ALLE_DATEN) { VD.prognosen = ALLE_DATEN.prognosen.filter(x => !x.geo || x.geo === S.land); VD.abgleich = ALLE_DATEN.abgleich; }
+      progStand = "da";
+    }).catch(e => { progStand = "Prognosen: " + (e.message || "Laden fehlgeschlagen"); })
+      .then(() => dispatchEvent(new CustomEvent("sphaerae:vwl", { detail: {} })));
+    return false;
+  }
+  const progFehler = () => progStand && progStand !== "laedt" && progStand !== "da" ? progStand : "";
+  const ladeStatus = () => ladeFehler ? { fehler: ladeFehler.message || "Laden fehlgeschlagen" } : progFehler() ? { fehler: progFehler() }
+    : (LAEUFT.size || WARTET.size || progStand === "laedt") ? { laedt: true } : {};
+  function erneut() { ladeFehler = null; if (progFehler()) progStand = ""; dispatchEvent(new CustomEvent("sphaerae:vwl", { detail: {} })); }
 
   /* ----- Zeit und Zahlen ----- */
   const MONATE = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
@@ -2052,6 +2068,8 @@ const VWL = (() => {
       fuss: "Rot: Prognose zu hoch, blau: zu niedrig (Sättigung bei 3 Prozentpunkten). Mittel über alle Ausgaben des Herausgebers für das Zieljahr im gewählten Horizont. Auswahl von Ist-Stand und Horizont wie in VWL 9." });
   }
   function viewProg() {
+    if (!progBedarf()) return `<div class="grid">${panel({ code: "VWL 6", titel: "Prognosen", sub: "Wirtschaftsforschungsinstitute, Zentralbanken, Konsens, OECD",
+      body: progFehler() ? `<p class="n" role="alert">${esc(progFehler())}</p>` : `<p class="n" role="status">Prognosen werden geladen …</p>` })}</div>`;
     const pgeos = new Set(VD.prognosen.map(p => p.geo));
     const pg = pgeos.has(S.pgeber) ? S.pgeber : "DE", pname = LAND[pg] || pg, de = pg === "DE";
     const hat = gr => VD.prognosen.some(p => p.geo === pg && (gr === "inflation" ? INFLATION : [gr]).includes(p.groesse));

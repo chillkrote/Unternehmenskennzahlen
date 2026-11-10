@@ -29,6 +29,7 @@ Lesende, öffentliche API unter `/api/v1`. Maschinenlesbare Beschreibung: `/api/
 | `GET /series/{id}` | eine VWL-Reihe mit Abdeckung | — |
 | `GET /data-catalog` | Datenkatalog: alle Quellen mit Lizenz, Bewertung, Status, `cleared` (öffentlich freigegeben), offener Entscheidung, Pflichtangabe, Zahl der Reihen und Werte, Jahresspanne, letztem Abruf und Importlauf, Zahl der Prognosegeber | `area`, `status`, `cleared`, `decision` |
 | `GET /data-catalog/{id}` | eine Quelle mit ihren VWL-Reihen (`series_list`) | — |
+| `GET /data-quality` | Prüfbericht: offene Prüfmarken der Unternehmenstabelle, Qualitätsstufen der Fakten, veraltete VWL-Reihen (Verzug je Frequenz), auffällige Sprünge der jüngsten Werte (robuste Abweichung, Schwelle 6), Abdeckung mit festem Nenner (VWL: alle Gebiete mit Werten; Profile: alle Unternehmen mit Profil), nicht freigegebene Quellen mit Daten. Gleicher Stichtag und Datenstand ergeben denselben Bericht; Regeln in `plattform/qualitaet.py` | `as_of` (Stichtag) |
 | `GET /forecasters` | Prognosegeber je Land (Recherche, Werte noch nicht eingebunden) | `geo`, `priority` (höchstens) |
 | `GET /observations` | Werte mehrerer Reihen kompakt `{reihe: {gebiet: [[zeitraum, wert], …]}}` | `series` (bis 60), `geo`, `from`, `to`, `as_of` (Stand „bekannt zum“, frühere Fassungen revidierter Werte) |
 | `GET /search` | eine Suche über Unternehmen, Länder, Branchen, Kennzahlen; erkennt Länder und Branchen in den Suchwörtern | `q`, `types`, `limit` |

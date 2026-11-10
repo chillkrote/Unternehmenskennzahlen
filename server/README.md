@@ -6,7 +6,7 @@ Architektur: [`docs/architektur.md`](../docs/architektur.md), API: [`docs/api.md
 
 | Pfad | Inhalt |
 |---|---|
-| `plattform/` | API: `main.py` (App, Middleware, Fehler), `api/companies.py`, `api/profiles.py`, `api/series.py`, `api/catalog.py`, `api/search.py`, `api/misc.py`, `schemas.py`, `db.py`, `config.py` |
+| `plattform/` | API: `main.py` (App, Middleware, Fehler), `api/companies.py`, `api/profiles.py`, `api/series.py`, `api/catalog.py`, `api/quality.py` (Regeln: `qualitaet.py`), `api/search.py`, `api/misc.py`, `schemas.py`, `db.py`, `config.py` |
 | `alembic/` | Migrationen; `0001` übernimmt `international/migrations/001–004`, `0002` Suche und Ländernamen, `0003` Unternehmensprofile, `0004` VWL-Reihen, `0005` Datenkatalog |
 | `etl/laden.py` | Schema migrieren, Länder, Unternehmenstabelle, Zeitreihen, Profile, Leserechte (nutzt `international/import_*.py`) |
 | `etl/vwl.py` | VWL-Reihen aus `volkswirtschaft/` mit Vintage (`series`, `observation`) |

@@ -1111,7 +1111,7 @@ function viewStart() {
 function render() {
   let h = location.hash.slice(1), html;
   if (h.startsWith("firma-")) { aktuell = h; html = UNT.viewProfil(h.slice(6)); }
-  else { aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }
+  else { h = h.split("?")[0]; aktuell = VIEWS[h] ? h : "start"; html = VIEWS[aktuell](); }   // "#korr?a=…": Parameter liest die Ansicht selbst
   const bank = BANKVIEWS.includes(aktuell), vw = aktuell.startsWith("v-"), bo = aktuell.startsWith("b-"), hd = aktuell.startsWith("h-"), po = aktuell.startsWith("p-"), st = aktuell === "start";
   const bereichNeu = bo ? "b" : vw ? "v" : hd ? "h" : po ? "p" : "u";
   if (!st && bereichNeu !== bereich) {

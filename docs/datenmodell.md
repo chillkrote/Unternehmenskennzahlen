@@ -37,6 +37,9 @@ eigene Kennzahlen (`equity`, `equity_incl_nci`).
 | `forecaster` (0005) | Prognosegeber je Land aus `volkswirtschaft/prognosegeber_oecd.csv` (Herausgeber, Publikation, Größen, Horizont, Rhythmus, Zugang, Priorität, Erreichbarkeit) | `id` (Zeile der CSV) |
 | `trade_good`, `trade_export`, `trade_partner` (0006) | Handel aus CEPII BACI (`app/data/gueter.json`): Gütergruppen, Exportwert je Land, Gut und Jahr (Mio. US-Dollar; Summe = Weltwert), die fünf größten Abnehmer je Exportland im letzten Jahr (belegte Beziehungen). Weltmarktanteile, HHI und Alternativen rechnet die API daraus (abgeleitet) | (`good_id`, `year`, `geo`) |
 | `observation` (0004) | VWL-Werte je Reihe, Gebiet (Code der Quelle) und Zeitraum mit `valid_from`/`valid_to` (Vintage): ein geänderter oder entfallener Wert endet, die neue Fassung kommt dazu | aktuell eindeutig je (`series_id`, `geo`, `period`) |
+| `observation.source_updated`, `observation.fetched` (0007) | Stand der Quelle und Abruf je Fassung, gefüllt für neue Fassungen; `valid_from` bleibt die Erfassungszeit in dieser Datenbank | — |
+| `trade_import`, `trade_import_supplier` (0008) | Importseite aus CEPII BACI (`app/data/gueter_importe.json`): je Importland, Gut und Jahr Wert, Zahl der Lieferländer, HHI über alle Lieferländer, Anteil des größten; die zehn größten Lieferländer im letzten Jahr | (`good_id`, `geo`, `year`); (`good_id`, `geo`, `year`, `rank`) |
+| `trade_export.partners`, `trade_export.partner_hhi` (0008) | Zahl aller Abnehmer und HHI über alle Abnehmer je Exportland und Gut | — |
 
 Profilstand und Fakten sind getrennt: `fact` hält Werte mit Periode, Rechnungslegung und Vintage (bisher deutsche Zeitreihen),
 `company_profile_value` den Kennzahlenstand, den das Terminal anzeigt (Build aus Branchenmappen, Bilanzvergleich und Börsendaten).

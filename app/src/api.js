@@ -91,7 +91,10 @@ const BLOCK = (() => {
       .then(() => { delete laeuft[id]; dispatchEvent(new CustomEvent("sphaerae:block", { detail: { id } })); });
   }
   const AUFGESCHOBEN = ["gueter-daten", "parlamente-daten", "gliedstaaten-geo", "wahlen-daten"];
-  const spaeter = new Set(AUFGESCHOBEN.filter(id => { const d = roh(id); return d && typeof d._nach === "string"; }));
+  // erst beim Zugriff geprüft: manche Blöcke stehen im Dokument hinter diesem Skript (wahlen-daten der Weltkugel)
+  const frei = new Set();
+  const spaeter = { has: id => AUFGESCHOBEN.includes(id) && !frei.has(id) && !(id in daten) && !laeuft[id] && !fehler[id] && (d => !!d && typeof d._nach === "string")(roh(id)),
+                    delete: id => { const war = spaeter.has(id); frei.add(id); return war; } };
   function freigeben(...ids) { ids.forEach(id => { if (spaeter.delete(id)) jetzt(id); }); }
   function jetzt(id) {
     if (id in daten) return daten[id];
@@ -109,5 +112,5 @@ const BLOCK = (() => {
     if (d !== undefined) return Promise.resolve(d);
     return laeuft[id].then(() => id in daten ? daten[id] : null);
   }
-  return { jetzt, status, erneut, warte, freigeben, aufgeschoben: () => [...spaeter] };
+  return { jetzt, status, erneut, warte, freigeben, aufgeschoben: () => AUFGESCHOBEN.filter(id => spaeter.has(id)) };
 })();

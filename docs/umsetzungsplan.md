@@ -1,6 +1,6 @@
 # Implementierungsplan
 
-Stand 09.11.2026. Kleine, einzeln testbare Pakete; jedes endet mit Tests, aktualisierter Funktionsmatrix und einem eigenen PR.
+Stand 10.11.2026. Kleine, einzeln testbare Pakete; jedes endet mit Tests, aktualisierter Funktionsmatrix und einem eigenen PR.
 Aufwand in Arbeitssitzungen (eine Sitzung ≈ ein Thread-Arbeitstag mit Tests). Reihenfolge folgt den Phasen des Auftrags, angepasst
 an die Abhängigkeiten aus der Bestandsaufnahme.
 
@@ -29,6 +29,13 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | P7 | Szenariorechner | P4, P5 | — | später | geplant |
 | B1 | Server bei netcup einrichten, HTTPS, Timer, Offsite-Backup | Robins Freigabe | Smoke nach Deployment | 1 | **blockiert** (Account) |
 | B2 | Lizenzprüfung je Quelle vor öffentlicher Weiterverbreitung (Kurse, Nachrichten) | – | `datenquellen.md`, Build-Schalter `--oeffentlich` (E1) | 1 | erste Prüfrunde 10.11.2026; Build-Schalter `--oeffentlich` vorhanden (Standard aus); Entscheidungen E1–E5 bei Robin, Quellenseite danach |
+| A0 | Audit November 2026: ENTSO-E-Zeitraum, Aktualität je Gebiet, Importabhängigkeit, Fassungen, Lizenzprüfung der Ausgabe, Katalogprüfung, Startdownloads | – | `audit-2026-11.md`, 158 pytest | 1 | erledigt |
+| A1 | Datenlücken-Matrix Wirtschaft und Wahlen | A0 | `datenabdeckung-wirtschaft.md`, `datenabdeckung-wahlen.md` | 0,5 | als Nächstes |
+| W1 | Eine Landtagswahl 2026 vollständig als Muster (Quelle, Import, Prüfung, Datei/API, Weltkugel, Tests, Vergleich zur Vorwahl) | A1 | `wahlen-smoke.js`, Summenprüfung gegen das amtliche Ergebnis | 1 | geplant |
+| W2 | Übrige Landtagswahlen 2026 (BW 08.03., RP 22.03., ST 06.09., MV 20.09., Berlin 20.09.) | W1 | wie W1 | 1,5 | geplant |
+| R1 | Regionale Wirtschaft: Eurostat `nama_10r_3gdp` (BIP je NUTS-3) als Pilot | A1 | Abgleich mit Eurostat | 1 | geplant |
+| D1 | Ansicht „Datenstand“ in der Oberfläche (Aktualität je Land, Fassungen) | A0 | Browser-Test | 0,5 | geplant |
+| W3 ff. | USA 2026, Neuseeland 2026, Europawahl 2024 für alle 27 Staaten, Energie (Ember), Arbeitsmarkt (ILOSTAT) | W2, R1 | je Paket | – | geplant |
 
 Kritischer Pfad bis zur Abnahme „erste HTML-Antwort ohne vollständigen Datenbestand“, nach Größe der eingebetteten Blöcke geordnet:
 P2.3 → P2.5a → P2.6 (VWL 5,3 MB) → P2.7 (Wahlen und Geometrien, zusammen rund 8 MB) → P2.5 → P2.4.

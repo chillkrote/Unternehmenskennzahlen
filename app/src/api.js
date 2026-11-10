@@ -95,5 +95,11 @@ const BLOCK = (() => {
   }
   const status = id => fehler[id] ? { fehler: fehler[id] } : laeuft[id] ? { laedt: true } : {};
   function erneut(id) { delete fehler[id]; jetzt(id); }
-  return { jetzt, status, erneut };
+  // als Promise: Daten, sobald da (eingebettet sofort); null, wenn der Block fehlt oder nicht geladen werden konnte
+  function warte(id) {
+    const d = jetzt(id);
+    if (d !== undefined) return Promise.resolve(d);
+    return laeuft[id].then(() => id in daten ? daten[id] : null);
+  }
+  return { jetzt, status, erneut, warte };
 })();

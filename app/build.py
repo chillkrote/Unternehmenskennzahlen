@@ -113,6 +113,16 @@ def main():
         # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
         reg = "null"
         firmen = firmen_fuer_api(firmen)
+        # Börsen- und Kursdaten (rund 4 MB) als Dateien neben der Seite; terminal.html lädt sie beim Start parallel (api.js: BLOCK.warte)
+        (ziel_ordner / "data").mkdir(parents=True, exist_ok=True)
+        nach = {}
+        for datei, inhalt in (("markt.json", markt), ("kurse_woche.json", kurse), ("boerse.json", boerse)):
+            if inhalt != "null":
+                (ziel_ordner / "data" / datei).write_text(inhalt, encoding="utf-8")
+                nach[datei] = json.dumps({"_nach": "data/" + datei})
+            else:
+                nach[datei] = inhalt
+        markt, kurse, boerse = nach["markt.json"], nach["kurse_woche.json"], nach["boerse.json"]
         vroh, vprog = vwl_fuer_api(vroh)
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))

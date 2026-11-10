@@ -128,6 +128,11 @@ const WAHLEN = (() => {
     document.querySelectorAll('script[id^="wa-geo-"]:not(#wa-geo-nachladen)').forEach(el => { try { const fc = JSON.parse(el.textContent); if (fc) GEO[el.id.slice(7)] = idx(fc, "id"); } catch { /* fehlt */ } });
     return GEO;
   }
+  // Gliedstaaten-Grenzen (API-Fassung: data/gliedstaaten.json, globus.js lädt sie nach dem Start): Index neu, Karte neu
+  addEventListener("sphaerae:block", e => {
+    if (e.detail.id !== "gliedstaaten-geo" || !GEO) return;
+    const g = G.geo(); GEO.gliedstaaten = idx(g.GL_GEO, "code"); GEO.roh = g; PUNKT.clear(); if (aktiv()) anwenden();
+  });
   const flaechen = (art, k) => { if (!art) return []; const m = geo()[art]; if (m) return m[String(k)] || []; nachladen(art); return []; };
   const ringFlaeche = r => { let s = 0; for (let i = 0; i < r.length - 1; i++) s += r[i][0] * r[i + 1][1] - r[i + 1][0] * r[i][1]; return Math.abs(s / 2); };
   const PUNKT = new Map();

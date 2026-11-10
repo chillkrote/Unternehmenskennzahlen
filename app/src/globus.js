@@ -616,7 +616,8 @@ const GLOBUS = (() => {
   }
 
   /* ===== Handel: Exporte je Gut (CEPII BACI, gueter_baci.py) und die größten See- und Flughäfen (verkehrsknoten.py) ===== */
-  const GUETER = (d => d && d.laender ? d : null)(roh("gueter-daten"));
+  let GUETER = (d => d && d.laender ? d : null)(BLOCK.jetzt("gueter-daten"));     // API-Fassung: data/gueter.json, gleich nach dem Start geladen
+  const GUETER_NACH = !GUETER && !!BLOCK.status("gueter-daten").laedt;
   const VERKEHR = (d => d && d.haefen ? d : null)(roh("verkehr-daten"));
   const GUT_RAMPE = ["#2a2147", "#4b3a8f", "#7a5bd0", "#b08cf0", "#e6d3ff"];     // violett: Güter-Exportmenge (Grün/Rot bleiben Export/Import vorbehalten)
   const gutVon = id => GUETER ? GUETER.gruppen.find(g => g.id === id) : null;
@@ -641,7 +642,7 @@ const GLOBUS = (() => {
     return wertFC(l.slice(0, 40).map(([iso, v], i) => { const c = LAENDER_PUNKTE.features.find(f => f.properties.iso === iso); if (!c) return null;
       return { type: "Feature", geometry: c.geometry, properties: { iso, t: `${landKurz(iso)}\n${gutMrd(v)} USD`, rang: i + 1, anteil: welt ? v / welt : 0 } }; }).filter(Boolean));
   }
-  ebene({ id: "gueter", name: "Exporte je Gut (Länder eingefärbt)", gruppe: "Handel", an: !!GUETER, geplant: !GUETER, formen: ["handel"],
+  ebene({ id: "gueter", name: "Exporte je Gut (Länder eingefärbt)", gruppe: "Handel", an: !!GUETER || GUETER_NACH, geplant: !GUETER && !GUETER_NACH, formen: ["handel"],
     quellen: m => m.addSource("gu-punkte", { type: "geojson", data: gutPunkte() }),
     schichten: (m, vor) => {
       schicht("gueter", { id: "gu-flaeche", type: "fill", source: "laender", paint: { "fill-color": S.gut ? gutFarben(S.gut) : "rgba(0,0,0,0)",
@@ -965,7 +966,7 @@ const GLOBUS = (() => {
   const DE_GEO = roh("de-laender-geo");
   // Parlamente aller Staaten und der Gliedstaaten (parlamente_daten.py: IPU Parline, Wikipedia, Wikidata) und deren Umrisse
   let PA = BLOCK.jetzt("parlamente-daten") || null;     // API-Fassung: data/parlamente.json, gleich nach dem Start geladen
-  const GL_GEO = roh("gliedstaaten-geo");
+  let GL_GEO = BLOCK.jetzt("gliedstaaten-geo") || null;    // API-Fassung: data/gliedstaaten.json (Grenzen), gleich nach dem Start geladen
   // Grenzen für die Wahlansicht (src/wahlen.js): Kommunen NRW (kommunal_flaechen.py) und Bundestagswahlkreise (wahlkreise_daten.py)
   const KO_GEO = roh("kommunen-geo");
   const WK = roh("wahlkreise-bund");
@@ -1761,10 +1762,12 @@ const GLOBUS = (() => {
   const PROG = [["BIP real", ["oecd_eo_bip"]], ["Inflation", ["oecd_eo_inflation", "oecd_eo_inflation_hvpi"]], ["Arbeitslosenquote", ["oecd_eo_arbeitslosenquote"]],
     ["Finanzierungssaldo", ["oecd_eo_finanzierungssaldo"]], ["Staatsschulden", ["oecd_eo_schuldenquote"]]];
   let VD = null, SER = {};
-  addEventListener("sphaerae:block", e => {     // Parlamente nachgeladen: Politik-Ebenen und Seitenleiste neu
-    if (e.detail.id !== "parlamente-daten") return;
-    PA = BLOCK.jetzt("parlamente-daten") || null; SCHWELLE = PA ? PA.schwelle_tage || 30 : 30;
-    politikAnwenden(); const g = document.getElementById("globus"); if (g && !g.hidden) seiteZeichnen();
+  addEventListener("sphaerae:block", e => {     // Güter, Gliedstaaten-Grenzen oder Parlamente nachgeladen: Ebenen und Seitenleiste neu
+    const id = e.detail.id;
+    if (id === "gueter-daten") { GUETER = (d => d && d.laender ? d : null)(BLOCK.jetzt(id)); gutAnwenden(); }
+    else if (id === "gliedstaaten-geo") { GL_GEO = BLOCK.jetzt(id) || null; politikAnwenden(); }
+    else if (id === "parlamente-daten") { PA = BLOCK.jetzt(id) || null; SCHWELLE = PA ? PA.schwelle_tage || 30 : 30; politikAnwenden(); }
+    else return; const g = document.getElementById("globus"); if (g && !g.hidden) seiteZeichnen();
   });
   addEventListener("sphaerae:vwl", () => {        // nachgeladene Reihen: Länderwerte neu, Karte und Seitenleiste neu zeichnen
     VWL_UNVOLLST = false; for (const k of Object.keys(WERT)) delete WERT[k];

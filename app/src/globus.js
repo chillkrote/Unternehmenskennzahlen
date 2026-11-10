@@ -964,7 +964,7 @@ const GLOBUS = (() => {
   const PD = roh("politik-daten");
   const DE_GEO = roh("de-laender-geo");
   // Parlamente aller Staaten und der Gliedstaaten (parlamente_daten.py: IPU Parline, Wikipedia, Wikidata) und deren Umrisse
-  const PA = roh("parlamente-daten");
+  let PA = BLOCK.jetzt("parlamente-daten") || null;     // API-Fassung: data/parlamente.json, gleich nach dem Start geladen
   const GL_GEO = roh("gliedstaaten-geo");
   // Grenzen für die Wahlansicht (src/wahlen.js): Kommunen NRW (kommunal_flaechen.py) und Bundestagswahlkreise (wahlkreise_daten.py)
   const KO_GEO = roh("kommunen-geo");
@@ -973,7 +973,7 @@ const GLOBUS = (() => {
   const kammernVon = iso => PA && PA.staaten && PA.staaten[iso] ? PA.staaten[iso].kammern : [];
   const gliedVon = iso => PA && PA.gliedstaaten ? PA.gliedstaaten[iso] || null : null;
   const gliedstaat = code => { const g = code && gliedVon(code.slice(0, 2)); return g ? g[code] || null : null; };
-  const SCHWELLE = PA ? PA.schwelle_tage || 30 : 30;
+  let SCHWELLE = PA ? PA.schwelle_tage || 30 : 30;
   // Sitze einer Kammer: heutige Zusammensetzung (Wikipedia-Infobox), sonst Ergebnis der letzten Wahl (IPU Parline)
   function sitzeVon(k) {
     if (!k) return null;
@@ -1761,6 +1761,11 @@ const GLOBUS = (() => {
   const PROG = [["BIP real", ["oecd_eo_bip"]], ["Inflation", ["oecd_eo_inflation", "oecd_eo_inflation_hvpi"]], ["Arbeitslosenquote", ["oecd_eo_arbeitslosenquote"]],
     ["Finanzierungssaldo", ["oecd_eo_finanzierungssaldo"]], ["Staatsschulden", ["oecd_eo_schuldenquote"]]];
   let VD = null, SER = {};
+  addEventListener("sphaerae:block", e => {     // Parlamente nachgeladen: Politik-Ebenen und Seitenleiste neu
+    if (e.detail.id !== "parlamente-daten") return;
+    PA = BLOCK.jetzt("parlamente-daten") || null; SCHWELLE = PA ? PA.schwelle_tage || 30 : 30;
+    politikAnwenden(); const g = document.getElementById("globus"); if (g && !g.hidden) seiteZeichnen();
+  });
   addEventListener("sphaerae:vwl", () => {        // nachgeladene Reihen: Länderwerte neu, Karte und Seitenleiste neu zeichnen
     VWL_UNVOLLST = false; for (const k of Object.keys(WERT)) delete WERT[k];
     if (map) [["vw-wert", wertPunkte], ["vw-raum", raumPunkte]].forEach(([q, f]) => { if (map.getSource(q)) map.getSource(q).setData(f()); });

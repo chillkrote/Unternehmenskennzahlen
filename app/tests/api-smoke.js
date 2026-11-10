@@ -96,6 +96,14 @@ const { chromium } = require("playwright");
   await p.waitForFunction(() => /Prognosen für/.test(document.getElementById("view").textContent), null, { timeout: 20000 });
   const pt = await p.textContent("#view");
   pruefe(/Treffsicherheit/.test(pt) && /\d,\d/.test(pt), "Ansicht Prognosen mit nachgeladenen Prognosen und Abgleich");
+  // Politik: Parlamente und Kommunalwahlen liegen als data/*.json neben der Seite (api.js: BLOCK) und kommen mit der Ansicht
+  pruefe(/<script id="parlamente-daten" type="application\/json">\{"_nach":/.test(html) && /<script id="kommunal-daten" type="application\/json">\{"_nach":/.test(html), "Parlamente und Kommunalwahlen nicht eingebettet");
+  for (const [hash, text] of [["p-parl", "Nationale Parlamente"], ["p-glied", "Gliedstaaten"], ["p-kom", "Kommunen"]]) {
+    await p.evaluate(h => { location.hash = h; }, hash);
+    await p.waitForFunction(() => !/Daten werden geladen/.test(document.getElementById("view").textContent), null, { timeout: 20000 });
+    const t = await p.textContent("#view");
+    pruefe(t.includes(text) && !/nicht geladen|keine Daten/.test(t), `Politik-Ansicht #${hash} mit nachgeladenen Daten`);
+  }
   console.log(`${api.length} API-Anfragen, ${fehler.length} Fehler`, fehler.slice(0, 5));
   await b.close();
   process.exit(fehler.length ? 1 : 0);

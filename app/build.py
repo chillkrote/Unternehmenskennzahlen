@@ -35,6 +35,8 @@ def firmen_fuer_api(firmen_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
+# API-Fassung: diese Blöcke stehen als data/<datei> neben der Seite statt eingebettet (Platzhalter in terminal.html)
+BLOCK_NACHLADEN = ("__PARLAMENTE__", "__KOMMUNAL__")
 VWL_PROGNOSEN_DATEI = "data/vwl_prognosen.json"
 
 
@@ -128,6 +130,11 @@ def main():
         inhalt = f.read_text() if f.exists() else "null"
         if a.api and platz in ("__WAHLKREISE_BUND__", "__KOMMUNEN_GEO__"):
             inhalt = "null"          # API-Fassung: als wahlgeo/<art>.json nachgeladen (globus.py: GEO_NACH_API)
+        elif a.api and platz in BLOCK_NACHLADEN and f.exists():
+            # API-Fassung: Block als Datei neben der Seite, die Seite lädt ihn mit der Ansicht (api.js: BLOCK)
+            (ziel_ordner / "data").mkdir(parents=True, exist_ok=True)
+            (ziel_ordner / "data" / datei).write_text(inhalt, encoding="utf-8")
+            inhalt = json.dumps({"_nach": "data/" + datei})
         elif platz == "__WAHLKREISE_BUND__" and f.exists():
             # Ergebnisse je Wahlkreis stehen im Wahlregister (data/wahlen.json); hier nur Grenzen, Nummer und Name
             inhalt = json.dumps(globus.wahlkreise_bund_schlank(json.loads(inhalt)), ensure_ascii=False, separators=(",", ":"))

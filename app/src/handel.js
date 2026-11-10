@@ -177,7 +177,10 @@ const POL = (() => {
   }
   /* Parlamente aller Staaten (parlamente-daten = data/parlamente.json aus parlamente_daten.py) */
   let PA = null;
-  const ladePA = () => { if (PA === null) { try { PA = JSON.parse(document.getElementById("parlamente-daten").textContent); } catch { PA = false; } } return PA; };
+  // API-Fassung: data/parlamente.json kommt mit der ersten Ansicht (BLOCK.jetzt ist dann undefined, bis die Datei da ist)
+  const ladePA = () => { if (PA === null) { const d = BLOCK.jetzt("parlamente-daten"); if (d === undefined) return undefined; PA = d || false; } return PA; };
+  const ladeHinweis = (code, titel, id) => { const st = BLOCK.status(id);
+    return `<div class="grid">${panel({ code, titel, sub: "wird geladen", body: st.fehler ? `<p class="n" role="alert">Daten nicht geladen: ${esc(st.fehler)} <button type="button" class="chip" data-blockretry="${esc(id)}">Erneut versuchen</button></p>` : `<p class="n" role="status">Daten werden geladen …</p>` })}</div>`; };
   const TYP = { einkammer: "Einkammer", unterhaus: "Unterhaus", oberhaus: "Oberhaus", kammer: "Kammer" };
   const sitze = k => k.aktuell && k.aktuell.sitze && k.aktuell.sitze.length ? { l: k.aktuell.sitze.map(g => [g.partei, g.sitze, g.farbe, g.regierung]), q: "Wikipedia" }
     : k.wahl && k.wahl.sitze && k.wahl.sitze.length ? { l: k.wahl.sitze.filter(x => x[1] != null).map(x => [x[0], x[1], x[2], null]), q: "IPU" } : null;
@@ -204,7 +207,7 @@ const POL = (() => {
       fuss: `Schwelle ${a.schwelle_tage} Tage: so lange dauern in den meisten Staaten amtliches Endergebnis und konstituierende Sitzung (Deutschland: Art. 39 GG). Nationaler Wahlkalender (Wikipedia) und Kammern (IPU Parline, Wikipedia-Infoboxen der Parlamente und Gliedstaaten).` });
   }
   function viewParl() {
-    const a = ladePA(); if (!a) return leerPA();
+    const a = ladePA(); if (a === undefined) return ladeHinweis("PARL", "Parlamente", "parlamente-daten"); if (!a) return leerPA();
     const bip = iso => { const W = HDL.daten().W, l = W && W.laender[iso] && W.laender[iso].bip_usd; return l && l.length ? l[l.length - 1][1] : 0; };
     const laender = Object.keys(a.staaten).sort((x, y) => bip(y) - bip(x) || name(x).localeCompare(name(y)));
     const n = laender.reduce((s, i) => s + a.staaten[i].kammern.length, 0), mit = laender.reduce((s, i) => s + a.staaten[i].kammern.filter(k => sitze(k)).length, 0);
@@ -214,7 +217,7 @@ const POL = (() => {
   }
   let GL_LAND = "US";
   function viewGlied() {
-    const a = ladePA(); if (!a) return leerPA();
+    const a = ladePA(); if (a === undefined) return ladeHinweis("PARL", "Parlamente", "parlamente-daten"); if (!a) return leerPA();
     const laender = Object.keys(a.gliedstaaten || {}).sort((x, y) => name(x).localeCompare(name(y)));
     if (!laender.length) return leerPA();
     if (!laender.includes(GL_LAND)) GL_LAND = laender[0];
@@ -229,7 +232,7 @@ const POL = (() => {
   }
   /* Kommunen (kommunal-daten = data/kommunal.json aus kommunal_daten.py): Räte, Kreistage, Bezirksvertretungen */
   let KO = null, KO_ID = "duesseldorf";
-  const ladeKO = () => { if (KO === null) { try { KO = JSON.parse(document.getElementById("kommunal-daten").textContent); } catch { KO = false; } } return KO; };
+  const ladeKO = () => { if (KO === null) { const d = BLOCK.jetzt("kommunal-daten"); if (d === undefined) return undefined; KO = d || false; } return KO; };
   const KO_ORDNUNG = ["BSW", "Die Linke", "Die PARTEI", "SPD", "GRÜNE", "Volt", "PIRATEN", "T I E R S C H U T Z", "Tierschutzpartei", "ÖDP", "Wählergruppen", "FAMILIE", "FREIE WÄHLER", "FDP", "CDU", "AfD"];
   const WGR_F = ["#8f8ba8", "#a58fc7", "#7f9bc4", "#b79fb0", "#98b3a0", "#c4a77f", "#8fb0b8", "#b09090"];
   const koFarbe = (k, p) => { const m = /^Wählergruppe (\d+)$/.exec(p); return m ? WGR_F[(+m[1] - 1) % WGR_F.length] : (k.farben[p] || "#8b95a3"); };
@@ -252,7 +255,7 @@ const POL = (() => {
     return l.sort((a, b) => koRang(a[0]) - koRang(b[0]) || a[0].localeCompare(b[0], "de"));
   }
   function viewKom() {
-    const k = ladeKO(); if (!k || !k.gebiete) return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen", sub: "keine Daten", body: `<p class="n">Keine Kommunaldaten im Build (app/kommunal_daten.py).</p>` })}</div>`;
+    const k = ladeKO(); if (k === undefined) return ladeHinweis("KOM", "Kommunen", "kommunal-daten"); if (!k || !k.gebiete) return `<div class="grid">${panel({ code: "KOM", titel: "Kommunen", sub: "keine Daten", body: `<p class="n">Keine Kommunaldaten im Build (app/kommunal_daten.py).</p>` })}</div>`;
     let g = k.gebiete.find(x => x.id === KO_ID) || k.gebiete[0]; KO_ID = g.id;
     const kreisName = g.typ === "Gemeinde" ? g.kreis : g.typ === "Kreis" || g.typ === "Städteregion" ? g.name : "";
     const chips = typ => k.gebiete.filter(x => x.typ === typ).sort((a, b) => a.name.localeCompare(b.name, "de")).map(x => `<button type="button" class="key" data-pkom="${esc(x.id)}" aria-pressed="${x.id === KO_ID || x.name === kreisName && x.typ !== "Gemeinde"}" style="margin:0 4px 4px 0">${esc(x.name.replace(/^Kreis /, ""))}</button>`).join("");
@@ -299,6 +302,7 @@ const POL = (() => {
       fuss: "Heft 1 (Landtags-, Europa- und Bundestagswahl: Zweitstimmen) und Heft 4/3 (Kommunalwahl 2025). Kommunal 2020 enthält alle Wählergruppen unter „Wählergruppen/Einzelbewerber“; Anteile unter 0,5 % fehlen. Die Kommunalwahl hat andere Listen und eine andere Wählerschaft als Landtags- oder Bundestagswahlen, die Spalten sind deshalb nur grob vergleichbar." });
   }
   function klick(t) {
+    const br = t.closest && t.closest("[data-blockretry]"); if (br) { BLOCK.erneut(br.getAttribute("data-blockretry")); render(); return true; }
     const ko = t.closest && t.closest("[data-pkom]"); if (ko) { KO_ID = ko.getAttribute("data-pkom"); render(); return true; }
     const e = t.closest && t.closest("[data-pglland]"); if (!e) return false;
     GL_LAND = e.getAttribute("data-pglland"); render(); return true;

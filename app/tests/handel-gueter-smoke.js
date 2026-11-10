@@ -6,10 +6,12 @@ const path = require('node:path');
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
   const errors = [];
   page.on('pageerror', e => errors.push(e.stack || e.message));
-  await page.goto('file://' + path.resolve(process.argv[2] || 'app/dist/weltkugel.html'));
+  const ziel = process.argv[2] || 'app/dist/weltkugel.html';      // Datei oder http(s)-Adresse (API-Fassung lädt data/gueter.json nach)
+  await page.goto(/^https?:/.test(ziel) ? ziel : 'file://' + path.resolve(ziel));
   await page.waitForSelector('#gk-seite h2');
   await page.click('[data-gkform="handel"]');
   const seite = async () => (await page.locator('#gk-seite').innerText()).toLowerCase();   // Überschriften sind per CSS in Großbuchstaben
+  await page.waitForFunction(() => document.querySelector('#gk-seite').innerText.toLowerCase().includes('exporte nach gut'), null, { timeout: 15000 });
   if (!(await seite()).includes('exporte nach gut')) throw Error('Güterauswahl fehlt in der Startseite Handel');
   if (!(await seite()).includes('seehäfen und flughäfen')) throw Error('Hafenblock fehlt');
   await page.click('[data-gkgut="oel"]');

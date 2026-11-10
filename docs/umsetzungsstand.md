@@ -20,7 +20,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | API `/series`, `/series/{id}`, `/observations` | Getestet | `test_vwl.py` (Filter, Eingabeprüfung, `as_of`) |
 | Datenadapter `app/src/api.js` (Zeitlimit, Wiederholung, Cache, Fehler) | Getestet | `app/tests/api-smoke.js` (Ausfall + „Erneut versuchen“) |
 | Build-Schalter `--api`, `--ziel` | Getestet | Pages-Fassung unverändert (Smoke-Tests), API-Fassung ohne Register |
-| CI-Workflow `server.yml` (pytest gegen PostgreSQL 16) | Implementiert | läuft im PR |
+| CI-Workflow `server.yml`: pytest gegen PostgreSQL 16 (Job `test`) und ganzer Compose-Stack mit ETL und Browser-Smoke-Tests über http (Job `compose`) | Implementiert | läuft im PR |
 | netcup-Server, HTTPS unter sphaerae.de, Timer, Offsite-Backup | **Blockiert** | wartet auf Freischaltung des netcup-Accounts und Robins Freigabe |
 | Lizenzprüfung je Quelle | Geplant | `docs/datenquellen.md` |
 

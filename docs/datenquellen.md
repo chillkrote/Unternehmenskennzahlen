@@ -1,43 +1,71 @@
 # Datenquellenverzeichnis (Arbeitsstand)
 
-Stand 09.11.2026. Erste Fassung aus dem Code (`app/*.py`, `international/*.py`, `volkswirtschaft/`, `termine/`) und den
-vorhandenen Notizen (`app/OFFENE_DATENFELDER.md`, `app/KONZEPT_Handelsrouten.md`, `international/LUECKEN.md`).
-**Die Spalte „Lizenz“ ist nicht am einzelnen Datensatz geprüft**, außer wo „Repo“ steht (dort im Projekt dokumentiert). Vor der
-öffentlichen Weiterverbreitung über den eigenen Server wird jede Zeile geprüft (Paket B2); bis dahin gilt keine Lizenz als geeignet.
+Stand 10.11.2026 (B2, erste Prüfrunde). Erste Fassung 09.11.2026 aus dem Code (`app/*.py`, `international/*.py`, `volkswirtschaft/`,
+`termine/`) und den Notizen (`app/OFFENE_DATENFELDER.md`, `app/KONZEPT_Handelsrouten.md`, `international/LUECKEN.md`).
+
+**Kennzeichnung der Lizenzspalte:** „geprüft 10.11.“ = Bedingungen beim Herausgeber nachgelesen (Fundstelle verlinkt);
+„sekundär 10.11.“ = nur über Dritte oder Suchauszüge belegt, die Originalseite war nicht abrufbar (403) oder nicht auffindbar;
+„Repo“ = im Projekt dokumentiert; „allgemeine Kenntnis“ = noch nicht nachgelesen. Das ist eine fachliche Vorprüfung, keine
+Rechtsberatung. Vor der öffentlichen Weiterverbreitung über den eigenen Server entscheidet Robin die offenen Punkte (Abschnitt
+„Entscheidungen“ unten); bis dahin gilt eine Quelle ohne „geeignet“ nicht als freigegeben.
 
 | Quelle | genutzt für | Abruf (Skript) | Schlüssel | Lizenz / Weiterverbreitung | Bewertung |
 |---|---|---|---|---|---|
 | Unternehmensberichte (HGB/IFRS, PDF), Bank-Websites, Lobbyregister | Bilanzvergleich, Zeitreihen, Dokumente | Handarbeit, Crawler (`banken/…/skripte`, `termine/`) | nein | Veröffentlichungspflicht; Weitergabe der Originaldokumente urheberrechtlich zu prüfen | prüfen |
-| EBA Pillar-3-Hub | Kapital, RWA (Banken) | Export über Browser (Repo-Notiz) | nein | ungeprüft | prüfen |
+| EBA Pillar-3-Hub | Kapital, RWA (Banken) | Export über Browser (Repo-Notiz) | nein | sekundär 10.11.: Ziel des Hubs ist ausdrücklich Zugang und Wiederverwendung der Offenlegungen ([EBA](https://www.eba.europa.eu/risk-and-data-analysis/pillar-3-data-hub)); eigene Lizenzklausel nicht gefunden. Inhalte sind Pflichtveröffentlichungen der Banken | voraussichtlich geeignet mit Quellenangabe; Rechtshinweis der EBA noch nachlesen |
 | GLEIF | LEI, Sitz, Register-Nr. | `api.gleif.org` (mehrere Skripte) | nein | allgemein bekannt CC0 | voraussichtlich geeignet |
 | SEC EDGAR (Companyfacts) | US-/FPI-Abschlüsse | `international/sec.py` | User-Agent mit Kontakt | US-Behördendaten | voraussichtlich geeignet |
-| filings.xbrl.org (ESEF) | EU-Abschlüsse | `international/esef.py` | nein | Repo: „Lizenz ungeprüft“ (`international/README.md`) | prüfen |
-| OpenDART (Südkorea) | KR-Abschlüsse | `international/dart.py` | `DART_API` (nur Server) | ungeprüft | prüfen |
-| Yahoo Finance (yfinance) | Kurse, Konzernkennzahlen, Live-Werte | `marktdaten.py`, `boersen_abruf.py`, `kurse_historie.py`, `finanz_abruf.py`, `live_abruf.py`, `termine/` | nein | Nutzungsbedingungen erlauben keine Weiterverbreitung ohne Vereinbarung (allgemeine Kenntnis) | **kritisch** für öffentlichen Server; Alternativen: Börsen-/Zentralbankdaten, EZB, eigene Berechnung aus frei lizenzierten Reihen |
+| filings.xbrl.org (ESEF) | EU-Abschlüsse | `international/esef.py` | nein | geprüft 10.11.: „At present, there are no restrictions on the ways that the data can be used“ ([About](https://filings.xbrl.org/about.html)); Quelle der Berichte sind die nationalen Sammelstellen (OAM) | geeignet, Quellenangabe empfohlen |
+| OpenDART (Südkorea) | KR-Abschlüsse | `international/dart.py` | `DART_API` (nur Server) | sekundär 10.11.: Nutzungsbedingungen ([terms](https://opendart.fss.or.kr/intro/terms.do)) verweisen für Ungeregeltes auf Urheberrechts- und Gesetz über öffentliche Daten; keine ausdrückliche Weitergabeklausel gefunden; FSS bittet um Quellenangabe | voraussichtlich geeignet mit Quellenangabe; Originaltext (Koreanisch) noch prüfen |
+| Yahoo Finance (yfinance) | Kurse, Konzernkennzahlen, Live-Werte | `marktdaten.py`, `boersen_abruf.py`, `kurse_historie.py`, `finanz_abruf.py`, `live_abruf.py`, `termine/` | nein | sekundär 10.11.: yfinance selbst: „intended for personal use only“, verweist auf Yahoos Bedingungen; Yahoo gewährt nur eine persönliche, nicht übertragbare Lizenz; Kursdaten stammen von Börsen mit eigenen Weitergaberechten | **kritisch**: keine Weiterverbreitung auf dem öffentlichen Server ohne Vereinbarung (Entscheidung E1) |
 | EZB Data Portal | Wechselkurse, Zinskurven, CISS, Bankensektor | `finanz_abruf.py`, `finanz_makro.py` | nein | Wiederverwendung mit Quellenangabe (allgemeine Kenntnis) | voraussichtlich geeignet |
 | US-Finanzministerium | US-Zinskurve | `finanz_abruf.py` | nein | US-Behördendaten | voraussichtlich geeignet |
 | OECD SDMX / Data Explorer | Prognosen, Inflation, Renditen | `vwl.py`-Zuträger, `finanz_makro.py`, `volkswirtschaft/skripte` | nein | seit 2024 überwiegend CC BY 4.0 (allgemeine Kenntnis); oecd.org-Seiten 403 | voraussichtlich geeignet |
 | Weltbank | BIP, Schulden, Börsenwert/BIP | `welt_daten.py`, `finanz_makro.py` | nein | CC BY 4.0 (allgemeine Kenntnis) | voraussichtlich geeignet |
 | Eurostat | Strom, Indikatoren | `welt_daten.py` | nein | Wiederverwendung mit Quellenangabe | voraussichtlich geeignet |
-| BIS | Leitzinsen | `finanz_makro.py` | nein | eigene Bedingungen | prüfen |
+| BIS | Leitzinsen | `finanz_makro.py` | nein | sekundär 10.11. ([Bedingungen](https://www.bis.org/terms_statistics.htm), Seite 403): Nutzung uneingeschränkt, wenn die BIS als Quelle genannt wird, keine Billigung/Zugehörigkeit vorgetäuscht und nichts als Anlageberatung dargestellt wird; Leitzinsen zusätzlich mit nationaler Quelle | geeignet mit Namensnennung „BIS“ und Zentralbank |
 | FRED (St. Louis Fed) | US-Reihen | `volkswirtschaft/skripte` | nein | je Reihe eigene Rechte Dritter | **prüfen je Reihe** |
 | Zentralbanken, Institute, Konsensumfragen (Prognosen) | Prognosegeber | `volkswirtschaft/` (`PROGNOSEGEBER.md`) | nein | je Herausgeber | prüfen |
 | CEPII BACI | Exporte je Gut | `gueter_baci.py` | nein | Repo: keine CC BY-NC-Quellen im Handelsbereich (Projektnotiz 09.11.2026); BACI unter Etalab-Lizenz (allgemeine Kenntnis) | voraussichtlich geeignet |
-| UN Comtrade | Handelsströme | `handel_abruf.py` | Free-Tier ohne Schlüssel | Nutzungsbedingungen beschränken Weitergabe von Massendaten (allgemeine Kenntnis) | **prüfen** |
-| WTO | Zölle | `handel_wto.py` | nein | ungeprüft | prüfen |
+| UN Comtrade | Handelsströme | `handel_abruf.py` | Free-Tier ohne Schlüssel | sekundär 10.11.: Nutzungsvereinbarung ([Lizenz](https://comtrade.un.org/licenseagreement.html)) beschränkt Kopie, automatischen Abruf, Weiterverbreitung und kommerzielle Nutzung; Weiterverbreitung unveränderter Daten setzt laut UN-Shop ein Premium-Pro-Abo voraus; Anfragen an comtrade@un.org | **kritisch**: auf dem öffentlichen Server nur abgeleitete Kennzahlen oder BACI (Entscheidung E2) |
+| WTO | Zölle | `handel_wto.py` | nein | sekundär 10.11. ([Terms of Use](https://ttd.wto.org/docs/Terms_of_Use_WTO_Tariff_and_Trade_Data.pdf)): Veröffentlichung von Daten und Auswertungen erlaubt, wenn das WTO-Urheberrecht genannt wird; ältere TAO-Bedingungen: keine Weitergabe „for profit or commercial advantage“; WTO-Logo nicht verwenden | geeignet bei nicht kommerziellem Betrieb mit Nennung „© WTO“; kommerziell klären |
 | Wikipedia | Häfen/Flughäfen-Rangfolgen, Parlamente | `verkehrsknoten.py`, `parlamente_daten.py` | nein | Repo: CC BY-SA 4.0 (Namensnennung, Weitergabe unter gleichen Bedingungen) | geeignet mit Namensnennung |
 | Wikidata | Regierungen, Parteien | `parlamente_daten.py`, `politik_daten.py` | nein | Repo: CC0 | geeignet |
-| IPU Parline | Parlamente, Sitzverteilung | `parlamente_daten.py` | nein | Repo: CC BY-NC-SA 4.0 (nicht kommerziell) | **eingeschränkt**: nur bei nicht kommerziellem Betrieb |
+| IPU Parline | Parlamente, Sitzverteilung | `parlamente_daten.py` | nein | sekundär 10.11.: CC BY-NC-SA 4.0 ([Terms of Use](https://www.ipu.org/terms-use), [About](https://data.ipu.org/about), Seiten 403); Zitierform „Inter-Parliamentary Union: dataset_name, month_year“; Weitergabe nur unter derselben Lizenz und kostenfrei | **eingeschränkt**: nur bei nicht kommerziellem Betrieb, Teile mit IPU-Daten unter CC BY-NC-SA (Entscheidung E3) |
 | Wahlbehörden (Bundeswahlleiterin, NRW, UK Parliament, Innenministerium FR, Elections Canada, AEC, BFS, BMI AT, Clerk of the House, BOE, Valgdirektoratet) | Wahlergebnisse | `wahlen_daten.py`, `wahlkreise_daten.py`, `kommunal_daten.py` | nein | Repo: teils angegeben (AEC CC BY 4.0, Statistik Austria CC BY 4.0, BKG dl-de/by-2-0) | je Behörde prüfen |
-| Harvard Dataverse (MEDSL) | US-Wahlen | `wahlen_daten.py` | Token `Harvard_Database` (nur Server) | je Datensatz | prüfen |
-| DAWUM | Umfragen | `politik_daten.py` | nein | ungeprüft | prüfen |
+| Harvard Dataverse (MEDSL) | US-Wahlen | `wahlen_daten.py` | Token `Harvard_Database` (nur Server) | sekundär 10.11.: MEDSL-Datensätze auf Dataverse unter CC0 1.0 (Datensatzseiten, über Aggregator); Datensätze mit Gästebuch je Datensatz prüfen | voraussichtlich geeignet (CC0), Zitierempfehlung übernehmen |
+| DAWUM | Umfragen | `politik_daten.py` | nein | geprüft 10.11.: ODC-ODbL ([API](https://dawum.de/API/)), Namensnennung „Daten von dawum.de (Open Database License (ODbL))“; abgeleitete veröffentlichte Datenbanken ebenfalls unter ODbL | geeignet mit Namensnennung; Weitergabe der Umfragetabelle unter ODbL |
 | Natural Earth | Ländergrenzen | `app/geo/` | nein | gemeinfrei | geeignet |
 | BKG (VG1000, Wahlkreise) | Kreise, Wahlkreise | `app/geo/` | nein | Repo: dl-de/by-2-0 | geeignet mit Namensnennung |
 | OpenFreeMap / OpenMapTiles / OSM | Kartenkacheln im Browser | `globus.js` | nein | OSM ODbL, Kacheln kostenlos | geeignet; bei Wachstum eigene PMTiles erwägen |
 | OurAirports, UN/LOCODE | Verkehrsknoten | `verkehrsknoten.py` | nein | Repo: OurAirports gemeinfrei | geeignet |
 | EMODnet | Schiffsdichte | Konzept Handelsrouten | nein | Repo: CC BY | geeignet mit Namensnennung |
-| Google News RSS, GDELT | Störungsmeldungen | `news_routen.py` | nein | Inhalte Dritter; nur Überschriften und Links | **kritisch**: nur verlinken, nicht speichern |
-| get.geojs.io | Land des Besuchers beim Start der Weltkugel (Browser) | `globus.js` | nein | Dritter erhält die IP des Besuchers | **ersetzen** auf dem eigenen Server (z. B. Sprache/Zeitzone des Browsers) |
+| Google News RSS | Störungsmeldungen | `news_routen.py` | nein | Inhalte Dritter (Verlage); Google-Nutzungsbedingungen | **kritisch**: nur Überschrift und Link anzeigen, keine Texte speichern (Entscheidung E4) |
+| GDELT (Original-Datensätze) | Störungsmeldungen | `news_routen.py` | nein | sekundär 10.11.: „unlimited and unrestricted use for any academic, commercial, or governmental use of any kind without fee“, Weitergabe mit Zitat und Link; GDELT Cloud hat abweichende Bedingungen | geeignet mit Zitat und Link (nicht GDELT Cloud); verlinkte Artikel bleiben Inhalte Dritter |
+| get.geojs.io | Land des Besuchers (Weltkugel, Knopf „per IP“) | `globus.js` | nein | Dritter erhält die IP des Besuchers | erledigt: Voreinstellung aus Zeitzone und Browsersprache; die IP-Abfrage läuft nur auf Knopfdruck und wird vorher erklärt |
 
-Für jede Quelle noch zu ergänzen (B2): Aktualisierungstakt, Nutzungsgrenzen (Rate Limits), typische Fehler, nicht erhobene Felder.
+## Entscheidungen vor dem öffentlichen Betrieb (Robin)
+
+Lizenzfragen sind laut Master-Auftrag zustimmungspflichtig. Bis zur Entscheidung läuft nichts davon öffentlich; GitHub Pages
+und der lokale Betrieb bleiben, wie sie sind.
+
+| Nr. | Frage | Betroffen | Vorschlag |
+|---|---|---|---|
+| E1 | Kurse und Konzernkennzahlen aus Yahoo auf sphaerae.de | MKT, Börse & Finanzen (Kurse, Verläufe, Indizes), Korrelation mit Kursen, Kurse in Profilen | Auf dem öffentlichen Server ausblenden (Schalter im Build, Hinweis „nur lokal“), bis eine freie Quelle oder Vereinbarung vorliegt; Zinsen, Wechselkurse, Renditen kommen schon aus EZB/OECD/BIS |
+| E2 | Handelsströme aus UN Comtrade | HDL F2/F3, Handel auf der Weltkugel | Rohdaten nicht ausliefern; Länderströme aus CEPII BACI (Etalab 2.0) berechnen, die schon für die Güter genutzt wird |
+| E3 | IPU Parline (CC BY-NC-SA) | Parlamente, Sitzverteilungen | Nutzen, solange sphaerae.de nicht kommerziell ist (keine Werbung, keine Bezahlfunktionen); Quellenvermerk mit Lizenz an der Ansicht; bei Kommerzialisierung durch Wikidata/Wahlbehörden ersetzen |
+| E4 | Google News RSS | Störungsmeldungen an Engstellen | Nur Überschrift, Quelle, Datum und Link; keine Volltexte, nichts dauerhaft speichern |
+| E5 | Originaldokumente (Geschäftsberichte als PDF) | Dokumentlisten im Profil | Auf dem Server verlinken (Fundstelle beim Unternehmen bzw. Bundesanzeiger) statt die PDFs selbst auszuliefern |
+
+Umsetzung E1: `python3 app/build.py --nur-seite --api /api/v1 --oeffentlich --ziel dist-api` baut die Server-Fassung ohne Yahoo-Daten (Marktdaten, Wochenkurse, Börsenbereich, Kurs- und Bewertungswerte der Unternehmen, Yahoo-Einträge im Finanzpuls; `build.py: YAHOO_WERTE`). Standard ist aus, bis E1 entschieden ist.
+
+## Pflichtangaben (Namensnennung) für die Seite „Quellen“
+
+Wikipedia (CC BY-SA 4.0, mit Link zum Artikel), DAWUM (ODbL), BKG (dl-de/by-2-0, „© GeoBasis-DE / BKG“), AEC und Statistik
+Austria (CC BY 4.0), EMODnet (CC BY), OpenStreetMap/OpenMapTiles (ODbL, „© OpenStreetMap-Mitwirkende“), Weltbank und OECD
+(CC BY 4.0), BIS mit nationaler Zentralbank, WTO („© WTO“), IPU („Inter-Parliamentary Union: dataset, Monat Jahr“, CC BY-NC-SA 4.0),
+GDELT (Zitat und Link), CEPII BACI (Etalab 2.0). Die vorhandene Fußleiste (`app/seiten/`) ist der Ort dafür.
+
+Für jede Quelle noch zu ergänzen: Aktualisierungstakt, Nutzungsgrenzen (Rate Limits), typische Fehler, nicht erhobene Felder;
+die mit „sekundär“ oder „allgemeine Kenntnis“ markierten Zeilen beim Herausgeber nachlesen, sobald die Seiten erreichbar sind.
 Dieser Katalog wird in Paket P3.1 als Tabelle `data_source` in die Datenbank übernommen und über `/api/v1/data-catalog` ausgeliefert.

@@ -1,10 +1,12 @@
 name: Server (API-Tests)
 
-# Backend der Plattform (server/): Migrationen und API gegen PostgreSQL 16 mit den echten Repo-Daten. Kein Netzwerkzugriff auf Datenanbieter.
+# Backend der Plattform (server/): Migrationen und API gegen PostgreSQL 16 mit den echten Repo-Daten (Job test) und der ganze
+# Compose-Stack wie auf dem Server mit der API-Fassung der Oberfläche und Browser-Smoke-Tests (Job compose). Kein Netzwerkzugriff auf Datenanbieter.
 on:
   pull_request:
     paths: ["server/**", "international/**", "stammdaten/**", "unternehmen-tabelle/**", "zeitreihen/*.csv", "app/register.py",
-            "app/geo/laender.geojson", "app/data/unternehmen.json", "app/vwl.py", "volkswirtschaft/*.csv", ".github/workflows/server.yml"]
+            "app/geo/laender.geojson", "app/data/unternehmen.json", "app/vwl.py", "volkswirtschaft/*.csv", ".github/workflows/server.yml",
+            "app/src/**", "app/*.py", "app/tests/api-smoke.js", "app/tests/globus-smoke.js", "app/tests/wahlen-smoke.js"]
   workflow_dispatch:
 
 permissions:
@@ -44,3 +46,60 @@ jobs:
       - run: pip install -r server/requirements-dev.txt
       - run: python3 -m pytest -q
         working-directory: server
+
+  # Ganzer Stack wie auf netcup (db, api, web/Caddy, ETL) mit der API-Fassung der Oberfläche; Browser-Smoke-Tests über http
+  compose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            /*
+            !*.pdf
+            !*.gz
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl
+      - name: Oberfläche im API-Modus bauen
+        run: python3 app/build.py --nur-seite --api /api/v1 --ziel dist-api
+      - name: Zugangsdaten nur für diesen Lauf
+        run: |
+          {
+            echo "POSTGRES_PASSWORD=$(openssl rand -hex 24)"
+            echo "SPHAERAE_API_PASSWORD=$(openssl rand -hex 24)"
+            echo "SITE_ADDRESS=:80"
+            echo "WEB_PORT_HTTP=8080"
+            echo "WEB_PORT_HTTPS=8443"
+            echo "API_RATE_LIMIT_PER_MINUTE=100000"
+            echo "PLATTFORM_UMGEBUNG=ci"
+          } > server/.env
+      # Reihenfolge: Abbild bauen, Datenbank, ETL, dann API und Web (die Gesundheitsprüfung der API braucht das Schema)
+      - name: Abbild bauen und Datenbank starten
+        run: |
+          docker compose -f server/docker-compose.yml build api
+          docker compose -f server/docker-compose.yml up -d --wait db
+      - name: Daten laden (ETL)
+        run: docker compose -f server/docker-compose.yml --profile werkzeuge run --rm etl
+      - name: API und Web starten
+        run: docker compose -f server/docker-compose.yml up -d --wait api web
+      - name: Gesundheit
+        run: curl -fsS http://localhost:8080/api/v1/health
+      - name: Browser-Smoke-Tests gegen den Stack
+        run: |
+          npm install --prefix /tmp/smoke --no-save playwright
+          /tmp/smoke/node_modules/.bin/playwright install --with-deps chromium --only-shell
+          export NODE_PATH=/tmp/smoke/node_modules
+          node app/tests/api-smoke.js http://localhost:8080/bankterminal.html
+          node app/tests/globus-smoke.js http://localhost:8080/weltkugel.html
+          node app/tests/wahlen-smoke.js http://localhost:8080/weltkugel.html
+      - name: Protokolle bei Fehler
+        if: failure()
+        run: docker compose -f server/docker-compose.yml logs --tail 200 api web db
+      - name: Aufräumen
+        if: always()
+        run: docker compose -f server/docker-compose.yml down -v

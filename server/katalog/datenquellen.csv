@@ -16,6 +16,7 @@ fred,FRED (St. Louis Fed),volkswirtschaft,pruefen,,,
 prognosegeber,"Zentralbanken, Institute, Konsensumfragen (Prognosen)",volkswirtschaft,pruefen,,,ifo|vwl|repo-vwl
 baci,CEPII BACI,handel,voraussichtlich,E2,CEPII BACI (Etalab 2.0),handel|repo-baci
 comtrade,UN Comtrade,handel,kritisch,E2,,
+entsoe,ENTSO-E Transparency Platform,handel,pruefen,,ENTSO-E Transparency Platform,strom-entsoe
 wto,WTO,handel,eingeschraenkt,,© WTO,
 wikipedia,Wikipedia,politik,namensnennung,,"Wikipedia (CC BY-SA 4.0, mit Link zum Artikel)",
 wikidata,Wikidata,politik,geeignet,,,

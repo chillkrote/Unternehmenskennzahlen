@@ -11,6 +11,8 @@ name: Weltkugel-Daten
 #    und Regierungen, Wahlkalender, Bundesländer, Umfragen (Wikidata, Wikipedia, Bundeswahlleiterin, DAWUM) -> app/data/politik.json
 #    und Parlamente samt Gliedstaaten der Bundesstaaten -> app/data/parlamente.json (rund 15 Minuten; Wahlartikel im Cache
 #    app/data/parlamente_wahlcache.json, der erste Lauf ohne Cache dauert rund 30 Minuten)
+#    und physikalische Stromflüsse je Grenze und Monat (ENTSO-E) -> app/data/strom_entsoe.json, nur wenn das Repository-Secret
+#    ENTSOE_API_KEY gesetzt ist (rund 5 Minuten; der Schlüssel steht nur im Secret, nie im Repo oder Log)
 # Fällt eine Quelle aus, bleibt der letzte gute Stand liegen.
 # Kosten: keine. Meldungen rund 15 Minuten (Abstände wegen der Abfragegrenzen), Weltdaten rund 3 Minuten.
 on:
@@ -76,6 +78,14 @@ jobs:
           python3 app/politik_daten.py 2>&1 | tee -a /tmp/welt.log
           python3 app/parlamente_daten.py 2>&1 | tee /tmp/parl.log
           python3 app/wahlen_daten.py --ohne-abruf 2>&1 | tee -a /tmp/parl.log
+      - name: Stromflüsse ENTSO-E (nur mit Secret ENTSOE_API_KEY)
+        if: env.WAS == 'weltdaten' || env.WAS == 'beides'
+        continue-on-error: true
+        env:
+          ENTSOE_API_KEY: ${{ secrets.ENTSOE_API_KEY }}
+        run: |
+          if [ -z "$ENTSOE_API_KEY" ]; then echo "Secret ENTSOE_API_KEY fehlt, Stromflüsse übersprungen" | tee -a /tmp/welt.log; exit 0; fi
+          python3 app/entsoe_abruf.py 2>&1 | tail -n 5 | tee -a /tmp/welt.log
       - name: Zusammenfassung
         if: always()
         continue-on-error: true
@@ -91,7 +101,7 @@ jobs:
       - name: Änderungen pushen
         id: push
         if: github.ref == 'refs/heads/main'
-        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/finanz_makro.json app/data/politik.json app/data/parlamente.json app/data/parlamente_wahlcache.json app/data/wahlen.json
+        run: .github/scripts/daten_pushen.sh "Weltkugel-Daten $(date -u +%Y-%m-%d) ($WAS)" app/data/news_routen.json app/data/welt.json app/data/boerse_welt.json app/data/finanz_makro.json app/data/politik.json app/data/parlamente.json app/data/parlamente_wahlcache.json app/data/wahlen.json app/data/strom_entsoe.json
       - name: Terminal neu bauen lassen
         if: github.ref == 'refs/heads/main' && steps.push.outputs.geaendert == 'true'
         run: gh workflow run terminal.yml --ref "$GITHUB_REF_NAME"

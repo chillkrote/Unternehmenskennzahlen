@@ -568,6 +568,7 @@ const WAHLEN = (() => {
     if (k) W.sel = { u: i, k };
   }
   function wahlWaehlen(id, fliegen = true) {
+    BLOCK.freigeben("wahlen-daten", "gliedstaaten-geo");      // Deep Link auf eine Wahl, ohne dass die Form Politik schon offen war
     if (!D && BLOCK.status("wahlen-daten").laedt) { WARTET = [id, fliegen]; return; }
     const w = NACH_ID[id]; if (!w) { W.fokus = null; W.sel = null; anwenden(); return; }
     W.e = w.e; if (w.e === 1) W.kammer = kammerVon(w);

@@ -357,6 +357,7 @@ const FNZ = (() => {
   }
   function liveStart() {
     // nur auf der veröffentlichten Website (github.io) oder mit ?live=<Adresse> zum Testen
+    if (document.querySelector('meta[name="sphaerae-oeffentlich"]')) return;      // E1: öffentliche Fassung lädt nie Yahoo-Live-Kurse, auch nicht mit ?live=
     const q = new URLSearchParams(location.search).get("live");
     if (!q && !/\.github\.io$/.test(location.hostname)) return;
     const hol = () => { if (!document.hidden) liveHolen(q || LIVE_URL); };

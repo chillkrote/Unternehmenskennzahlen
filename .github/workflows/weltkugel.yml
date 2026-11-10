@@ -85,7 +85,7 @@ jobs:
           ENTSOE_API_KEY: ${{ secrets.ENTSOE_API_KEY }}
         run: |
           if [ -z "$ENTSOE_API_KEY" ]; then echo "Secret ENTSOE_API_KEY fehlt, Stromflüsse übersprungen" | tee -a /tmp/welt.log; exit 0; fi
-          python3 app/entsoe_abruf.py 2>&1 | tail -n 5 | tee -a /tmp/welt.log
+          python3 app/entsoe_abruf.py --monate 36 2>&1 | tail -n 5 | tee -a /tmp/welt.log
       - name: Zusammenfassung
         if: always()
         continue-on-error: true

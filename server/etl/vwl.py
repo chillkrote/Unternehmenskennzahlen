@@ -6,6 +6,10 @@ serien.csv -> series, zeitreihe_lang.csv -> observation.
 Vintage: Ein Wert, der sich gegenüber dem aktuellen Stand ändert, bekommt eine neue Zeile; die alte endet mit valid_to = Zeitpunkt
 des Imports. Ein Wert, der in der Quelldatei fehlt, endet ebenso (wird nicht gelöscht). Unveränderte Werte bleiben unberührt.
 Alles in einer Transaktion (ingestion_run „vwl“); ist die Datei unverändert, passiert nichts.
+
+Was die Fassungen bedeuten (Audit 2026-11, 4.4): valid_from/valid_to sind Erfassungszeitpunkte dieses Imports (Datenbankstand).
+Die Historie beginnt mit dem ersten Import; frühere Veröffentlichungsstände der Quelle werden nicht rekonstruiert. Je neuer
+Fassung werden zusätzlich der Stand der Quelle (source_updated = stand_quelle) und das Abrufdatum (fetched) festgehalten.
 """
 import hashlib
 from collections import Counter
@@ -52,12 +56,17 @@ def importieren(conn, dry_run=False, erzwingen=False, ordner=ORDNER):
         rel = str(csv_z.resolve().relative_to(REPO))
     except ValueError:
         rel = str(csv_z)
+    import csv
+    with open(csv_s, newline="", encoding="utf-8-sig") as f:
+        stand_quelle = {z["serie_id"]: z.get("stand_quelle") for z in csv.DictReader(f)}
     with ingest.ingestion_lauf(conn, "vwl", dry_run=dry_run) as lauf:
         sid = ingest.quelle_registrieren(conn, "repo-vwl", rel + "@" + sha[:12], BLOB + rel, sha, rel,
                                          rights_status="je Reihe laut Spalte quelle (Eurostat, OECD …), siehe docs/datenquellen.md")
         for pos, s in enumerate(d["serien"]):
             werte = {neu: (s.get(alt) or None) for alt, neu in SPALTEN.items()}
             meta = {k: v for k, v in s.items() if k not in SPALTEN and k not in ("serie_id", "kern")}
+            if stand_quelle.get(s["serie_id"]):
+                meta["stand_quelle"] = stand_quelle[s["serie_id"]]      # Stand der Quelle laut Abruf (app/vwl.py reicht ihn nicht durch)
             conn.execute(
                 "INSERT INTO international.series (id, topic, name, unit, fmt, kind, frequency, core, provider, dataset, filter, url, fetched, "
                 "forecast_from, note, position, meta, run_id) VALUES (%(id)s,%(topic)s,%(name)s,%(unit)s,%(fmt)s,%(kind)s,%(frequency)s,%(core)s,"
@@ -85,8 +94,9 @@ def importieren(conn, dry_run=False, erzwingen=False, ordner=ORDNER):
              WHERE o.valid_to IS NULL AND o.series_id IN (SELECT DISTINCT series_id FROM vwl_neu)
                AND NOT EXISTS (SELECT 1 FROM vwl_neu n WHERE n.series_id = o.series_id AND n.geo = o.geo AND n.period = o.period)""").rowcount
         bericht["neu"] = conn.execute("""
-            INSERT INTO international.observation (series_id, geo, period, value, run_id, source_id)
-            SELECT n.series_id, n.geo, n.period, n.value, %s, %s FROM vwl_neu n
+            INSERT INTO international.observation (series_id, geo, period, value, run_id, source_id, source_updated, fetched)
+            SELECT n.series_id, n.geo, n.period, n.value, %s, %s, s.meta->>'stand_quelle', s.fetched
+              FROM vwl_neu n JOIN international.series s ON s.id = n.series_id
              WHERE NOT EXISTS (SELECT 1 FROM international.observation o WHERE o.valid_to IS NULL AND o.series_id = n.series_id
                                  AND o.geo = n.geo AND o.period = n.period)""", (lauf.run_id, sid)).rowcount
         lauf.anzahl = bericht["neu"]

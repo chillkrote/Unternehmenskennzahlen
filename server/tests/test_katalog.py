@@ -29,6 +29,45 @@ def test_fehlende_ergaenzung_bricht_ab(tmp_path):
         katalog.katalog(ergaenzung=erg)
 
 
+def _verzeichnis(tmp_path, aendern):
+    md = tmp_path / "d.md"
+    md.write_text(aendern(katalog.VERZEICHNIS.read_text(encoding="utf-8")), encoding="utf-8")
+    return md
+
+
+def test_maskierter_strich_bleibt_im_zelltext(tmp_path):
+    """Audit 2026-11, 4.6: ein senkrechter Strich im Text darf die Spalten nicht verschieben."""
+    md = _verzeichnis(tmp_path, lambda t: t.replace("| GLEIF | LEI, Sitz, Register-Nr. |", "| GLEIF | LEI \\| Sitz, Register-Nr. |"))
+    g = next(q for q in katalog.katalog(verzeichnis=md) if q["id"] == "gleif")
+    assert g["used_for"] == "LEI | Sitz, Register-Nr." and g["assessment"] == "voraussichtlich geeignet"
+
+
+def test_unmaskierter_strich_bricht_ab_statt_spalten_zu_verschieben(tmp_path):
+    md = _verzeichnis(tmp_path, lambda t: t.replace("| GLEIF | LEI, Sitz, Register-Nr. |", "| GLEIF | LEI | Sitz, Register-Nr. |"))
+    with pytest.raises(katalog.KatalogFehler, match="Zellen"):
+        katalog.katalog(verzeichnis=md)
+
+
+def test_doppelte_quelle_und_unbekannter_status_brechen_ab(tmp_path):
+    zeile = next(z for z in katalog.VERZEICHNIS.read_text(encoding="utf-8").splitlines() if z.startswith("| GLEIF |"))
+    with pytest.raises(katalog.KatalogFehler, match="doppelte Quellen"):
+        katalog.katalog(verzeichnis=_verzeichnis(tmp_path, lambda t: t.replace(zeile, zeile + "\n" + zeile)))
+    erg = tmp_path / "e.csv"
+    erg.write_text(katalog.ERGAENZUNG.read_text(encoding="utf-8").replace(",GLEIF,unternehmen,voraussichtlich,", ",GLEIF,unternehmen,vielleicht,"), encoding="utf-8")
+    with pytest.raises(katalog.KatalogFehler, match="unbekannte Status"):
+        katalog.katalog(ergaenzung=erg)
+
+
+def test_leerraum_im_quellnamen_ist_kein_unterschied(tmp_path):
+    md = _verzeichnis(tmp_path, lambda t: t.replace("| GLEIF |", "|  GLEIF\u00a0 |"))
+    assert any(q["id"] == "gleif" for q in katalog.katalog(verzeichnis=md))
+
+
+def test_spaltenkopf_muss_vollstaendig_sein(tmp_path):
+    with pytest.raises(katalog.KatalogFehler, match="Spalten"):
+        katalog.katalog(verzeichnis=_verzeichnis(tmp_path, lambda t: t.replace("| Lizenz / Weiterverbreitung |", "| Lizenz |")))
+
+
 def test_katalog_api_vollstaendig(client):
     r = client.get("/api/v1/data-catalog")
     assert r.status_code == 200

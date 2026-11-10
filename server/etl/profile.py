@@ -22,7 +22,7 @@ DATEI = REPO / "app" / "data" / "unternehmen.json"
 BLOB = "https://github.com/chillkrote/Unternehmenskennzahlen/blob/main/"
 
 # Felder, die eigene Spalten oder Tabellen haben; alles Übrige eines Unternehmens landet in attributes
-from plattform.lizenz import YAHOO_WERTE, mit_yahoo  # noqa: E402
+from plattform.lizenz import YAHOO_WERTE, firma_ohne_yahoo_abschluesse, mit_yahoo, ohne_yahoo_abschluesse  # noqa: E402
 
 EIGENE = {"id", "name", "branche", "gruppe", "notiert", "werte", "abschluesse", "reihen", "gov", "dokumente", "termine"}
 TEILE = ("bilanz", "guv")
@@ -63,6 +63,8 @@ def importieren(conn, dry_run=False, pfad=DATEI, erzwingen=False):
              d.get("gruppen") or [], json.dumps(d.get("alt_ids") or {}), bool(d.get("demo")))).fetchone()[0]
         # E1: Kurse und kursabhängige Kennzahlen aus Yahoo nicht in die Server-Datenbank (plattform/lizenz.py)
         gesperrt = set() if mit_yahoo() else set(YAHOO_WERTE)
+        # E6 (offen): mit SPHAERAE_OHNE_YAHOO_ABSCHLUESSE=1 auch keine Yahoo-Abschlüsse, daraus abgeleitete Kennzahlen und Yahoo-Termine
+        streng = ohne_yahoo_abschluesse() and not mit_yahoo()
         for i, k in enumerate(k for k in d.get("kennzahlen") or [] if k["key"] not in gesperrt):
             conn.execute(
                 "INSERT INTO international.profile_metric (code, name, unit, fmt, metric_group, higher_is_better, help, aliases, position) "
@@ -76,6 +78,12 @@ def importieren(conn, dry_run=False, pfad=DATEI, erzwingen=False):
             if f["id"] not in vorhanden:
                 bericht["ohne_entitaet"] += 1
                 continue
+            if streng:
+                vorher = (len(f.get("abschluesse") or []), len(f.get("werte") or {}), len(f.get("termine") or []))
+                f = firma_ohne_yahoo_abschluesse(f)
+                bericht["abschluesse_gesperrt"] += vorher[0] - len(f.get("abschluesse") or [])
+                bericht["werte_gesperrt"] += vorher[1] - len(f.get("werte") or {})
+                bericht["termine_gesperrt"] += vorher[2] - len(f.get("termine") or [])
             attrs = {k: v for k, v in f.items() if k not in EIGENE}
             conn.execute(
                 "INSERT INTO international.company_profile (entity_id, snapshot_id, name, sector, peer_group, listed, position, attributes, "

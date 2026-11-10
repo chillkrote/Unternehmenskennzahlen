@@ -2038,11 +2038,16 @@ const GLOBUS = (() => {
     if (S.form === "boerse") return kopfForm() + kopf + boerseLand(iso, stufe);
     if (S.form === "politik") return kopfForm() + kopf + politikLand(iso, stufe);
     // Volkswirtschaft; Stufe 3 = Kombination mit Handel, Strom, Unternehmen, Börse (Politik folgt nach Freigabe)
+    if (stufe >= 3) BLOCK.freigeben(...FORM_BLOECKE.politik);
     return kopf + kern + weltbankBlock(iso, k.length ? "Jahreswerte (Weltbank)" : "Kerndaten (Jahreswerte, Weltbank)") + prognosen(iso)
       + stufe3(handelBlock(iso) + zollBlock(iso) + nachbarBlock(iso) + stromBilateralBlock(iso) + firmenBlock(iso) + indizes(iso)
         + politikLand(iso, 2), "Handel, Nachbarländer, Strom, Unternehmen, Börse und Politik") + basis;
   }
+  /* Daten, die nur eine Form braucht, erst mit ihr laden (API-Fassung, api.js: BLOCK.freigeben); die Länderseite der Volkswirtschaft
+     zeigt ab Stufe 3 auch Politik und fordert sie dort an (landSeite). */
+  const FORM_BLOECKE = { handel: ["gueter-daten"], politik: ["parlamente-daten", "gliedstaaten-geo", "wahlen-daten"] };
   function seiteZeichnen() {
+    BLOCK.freigeben(...(FORM_BLOECKE[S.form] || []));
     const el = document.getElementById("gk-seite"), links = document.getElementById("gk-seite-links"); if (!el) return;
     formLeiste();
     if (links) { links.hidden = true; links.innerHTML = ""; }

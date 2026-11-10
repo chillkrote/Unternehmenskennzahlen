@@ -19,6 +19,9 @@ VERZEICHNIS = REPO / "docs" / "datenquellen.md"
 ERGAENZUNG = REPO / "server" / "katalog" / "datenquellen.csv"
 PROGNOSEGEBER = REPO / "volkswirtschaft" / "prognosegeber_oecd.csv"
 LINK = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+TRENNER = re.compile(r"(?<!\\)\|")          # Zellgrenze; ein maskierter Strich (\\|) gehört zum Zelltext
+STATUS = ("geeignet", "namensnennung", "voraussichtlich", "pruefen", "eingeschraenkt", "kritisch", "erledigt")
+KOPF = ("Quelle", "genutzt für", "Abruf (Skript)", "Schlüssel", "Lizenz / Weiterverbreitung", "Bewertung")
 
 
 class KatalogFehler(ValueError):
@@ -26,9 +29,16 @@ class KatalogFehler(ValueError):
 
 
 def _klartext(s):
-    """Markdown der Tabellenzelle -> Text (Links behalten ihren Text, Fettdruck und Code-Striche entfallen)."""
-    s = LINK.sub(r"\1", s)
-    return re.sub(r"\*\*|`", "", s).strip() or None
+    """Markdown der Tabellenzelle -> Text (Links behalten ihren Text, Fettdruck und Code-Striche entfallen, Leerraum wird vereinheitlicht)."""
+    s = LINK.sub(r"\1", s).replace("\\|", "|")
+    return re.sub(r"\s+", " ", re.sub(r"\*\*|`", "", s).replace("\u00a0", " ")).strip() or None
+
+
+def _zellen(zeile):
+    z = zeile.strip()
+    z = z[1:] if z.startswith("|") else z
+    z = z[:-1] if z.endswith("|") and not z.endswith("\\|") else z
+    return [c.strip() for c in TRENNER.split(z)]
 
 
 def verzeichnis_lesen(pfad=VERZEICHNIS):
@@ -39,13 +49,19 @@ def verzeichnis_lesen(pfad=VERZEICHNIS):
             if kopf and zeilen:
                 break
             continue
-        zellen = [c.strip() for c in z.strip().strip("|").split("|")]
+        zellen = _zellen(z)
         if kopf is None:
             if zellen and zellen[0] == "Quelle":
                 kopf = zellen
+                fehlt = [k for k in KOPF if k not in kopf]
+                if fehlt:
+                    raise KatalogFehler(f"{pfad}: Spalten {fehlt} fehlen in der Quellentabelle")
             continue
         if set("".join(zellen)) <= set("-: "):
             continue
+        if len(zellen) != len(kopf):
+            # z. B. ein unmaskierter senkrechter Strich im Zelltext: sonst rutschen Lizenz und Bewertung still in falsche Spalten
+            raise KatalogFehler(f"{pfad}: Zeile „{zellen[0][:60]}“ hat {len(zellen)} statt {len(kopf)} Zellen (senkrechten Strich im Text als \\| schreiben)")
         roh = dict(zip(kopf, zellen))
         links = [u for _, u in LINK.findall(" ".join(zellen))]
         zeilen.append({"quelle": _klartext(roh["Quelle"]), "genutzt_fuer": _klartext(roh.get("genutzt für", "")),
@@ -62,7 +78,15 @@ def katalog(verzeichnis=VERZEICHNIS, ergaenzung=ERGAENZUNG):
     text = verzeichnis_lesen(verzeichnis)
     with open(ergaenzung, newline="", encoding="utf-8") as f:
         erg = list(csv.DictReader(f))
+    for e in erg:
+        e["quelle"] = _klartext(e["quelle"]) or ""
     nach_name = {e["quelle"]: e for e in erg}
+    doppelt = sorted({t["quelle"] for t in text if sum(1 for x in text if x["quelle"] == t["quelle"]) > 1})
+    ids = [e["id"] for e in erg]
+    doppelt_id = sorted({i for i in ids if ids.count(i) > 1})
+    falsch = sorted({e["status"] for e in erg} - set(STATUS))
+    if doppelt or doppelt_id or falsch:
+        raise KatalogFehler(f"Quellenkatalog uneindeutig: doppelte Quellen {doppelt}, doppelte Kennungen {doppelt_id}, unbekannte Status {falsch}")
     fehlt = [t["quelle"] for t in text if t["quelle"] not in nach_name]
     zuviel = sorted(set(nach_name) - {t["quelle"] for t in text})
     if fehlt or zuviel or len(nach_name) != len(erg):

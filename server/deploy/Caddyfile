@@ -21,7 +21,7 @@
 		# HTML nie lange cachen (neue Fassungen sofort sichtbar), Datendateien kurz, ausgelagerte Geometrien länger
 		@html path *.html /
 		header @html Cache-Control "no-cache"
-		@daten path /wahlgeo/* /data/*
+		@daten path /wahlgeo/* /geodaten/* /data/*
 		header @daten Cache-Control "public, max-age=3600"
 		try_files {path} /index.html
 		file_server

@@ -90,6 +90,12 @@ const { chromium } = require("playwright");
     pruefe(t.includes(text) && /\d,\d/.test(t) && !/konnten nicht geladen/.test(t), `VWL-Ansicht #${hash} mit Werten über die API`);
   }
   pruefe(api.some(u => u.includes("/api/v1/observations?series=")), "Reihen über /api/v1/observations");
+  // Prognosen und Abgleich (1,4 MB) liegen als data/vwl_prognosen.json neben der Seite und kommen mit der Ansicht Prognosen
+  pruefe(/"prognosen":\[\]/.test(vblock) && !/"abgleich":\{/.test(vblock), "VWL-Prognosen nicht eingebettet");
+  await p.evaluate(() => { location.hash = "v-prog"; });
+  await p.waitForFunction(() => /Prognosen für/.test(document.getElementById("view").textContent), null, { timeout: 20000 });
+  const pt = await p.textContent("#view");
+  pruefe(/Treffsicherheit/.test(pt) && /\d,\d/.test(pt), "Ansicht Prognosen mit nachgeladenen Prognosen und Abgleich");
   console.log(`${api.length} API-Anfragen, ${fehler.length} Fehler`, fehler.slice(0, 5));
   await b.close();
   process.exit(fehler.length ? 1 : 0);

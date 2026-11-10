@@ -35,14 +35,21 @@ def firmen_fuer_api(firmen_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
+VWL_PROGNOSEN_DATEI = "data/vwl_prognosen.json"
+
+
 def vwl_fuer_api(vwl_json):
-    """VWL ohne Reihenwerte (4,4 MB): nur Abdeckung je Reihe (Gebiete); die Seite lädt Werte über /observations (vwl.js: bedarf)."""
+    """VWL ohne Reihenwerte (4,4 MB): nur Abdeckung je Reihe (Gebiete); die Seite lädt Werte über /observations (vwl.js: bedarf).
+    Prognosen und Abgleich (1,4 MB) kommen in eine eigene Datei (VWL_PROGNOSEN_DATEI), die vwl.js mit der Ansicht Prognosen lädt.
+    Gibt (JSON der Seite, Inhalt der Prognosedatei oder None) zurück."""
     if vwl_json == "null":
-        return vwl_json
+        return vwl_json, None
     d = json.loads(vwl_json)
     d["abdeckung"] = {k: list(v) for k, v in d.pop("daten").items()}
     d["_api"] = 1
-    return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
+    prog = {"prognosen": d.pop("prognosen", None) or [], "abgleich": d.pop("abgleich", None)}
+    d["prognosen"], d["prognosen_nach"] = [], VWL_PROGNOSEN_DATEI
+    return json.dumps(d, ensure_ascii=False, separators=(",", ":")), json.dumps(prog, ensure_ascii=False, separators=(",", ":"))
 
 
 def main():
@@ -99,11 +106,12 @@ def main():
             print("Länder ohne ISO-Code im Register:", unbekannt)
     vd = vwl.lade()
     vroh = json.dumps(vd, ensure_ascii=False, separators=(",", ":")) if vd else "null"
+    vprog = None
     if a.api:
         # Gesamtregister (rund 10 MB) bleibt auf dem Server; die Seite fragt es seitenweise über /companies ab
         reg = "null"
         firmen = firmen_fuer_api(firmen)
-        vroh = vwl_fuer_api(vroh)
+        vroh, vprog = vwl_fuer_api(vroh)
     js = (HIER / "src/unternehmen.js").read_text()
     seite = (vorlage.replace("__API_JS__", (HIER / "src/api.js").read_text()).replace("__UNTERNEHMEN_JS__", js).replace("__DATEN__", roh.replace("</", "<\\/"))
              .replace("__MARKT__", markt.replace("</", "<\\/")).replace("__UNTERNEHMEN__", firmen.replace("</", "<\\/")).replace("__REGISTER__", reg.replace("</", "<\\/"))
@@ -138,6 +146,11 @@ def main():
     welt, n_sitze = globus.seite(seite, api=bool(a.api))
     (ziel_ordner / "weltkugel.fragment.html").write_text(welt)
     globus.wahlgeo_schreiben(ziel_ordner, api=bool(a.api))             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
+    if a.api:
+        if vprog:                                                      # VWL-Prognosen und Abgleich (dist-api/data/vwl_prognosen.json)
+            (ziel_ordner / VWL_PROGNOSEN_DATEI).parent.mkdir(parents=True, exist_ok=True)
+            (ziel_ordner / VWL_PROGNOSEN_DATEI).write_text(vprog, encoding="utf-8")
+        globus.tabelle_schreiben(ziel_ordner)                          # Unternehmenspunkte der Weltkugel (dist-api/geodaten/unternehmen.json)
     (ziel_ordner / "weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
                                               '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' + kopf_api +
                                               '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'

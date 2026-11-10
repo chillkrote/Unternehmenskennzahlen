@@ -20,7 +20,8 @@ const GLOBUS = (() => {
   const WELT = (d => d && d.laender ? d : null)(roh("welt-daten"));       // Weltbank-Kennzahlen, Zölle, Stromhandel, Wirtschaftsräume
   const ROUTEN = (d => d && d.korridore ? d : null)(roh("routen-daten")); // Haupthandelsrouten, Engstellen, Drehkreuze
   const NEWS = (d => d && d.meldungen ? d : null)(roh("news-daten"));     // echte Meldungen zu Störungen an Engstellen (GDELT oder Google News)
-  const TABELLE = (d => d && d.zeilen ? d : null)(roh("geo-tabelle"));    // gesamte Unternehmenstabelle mit Punkt (tabelle_geo.csv)
+  let TABELLE = (d => d && d.zeilen ? d : null)(roh("geo-tabelle"));      // gesamte Unternehmenstabelle mit Punkt (tabelle_geo.csv)
+  const TAB_NACH = TABELLE ? null : roh("geo-tabelle-nachladen");          // API-Fassung: Tabelle als Datei (geodaten/unternehmen.json), nach dem Start geladen
   const STUFEN = roh("geo-stufen") || { nachbarn: {}, strom: {} };     // Nachbarländer und Nettostrom (handel_stufen.py)
   const DN = (() => { try { return new Intl.DisplayNames(["de"], { type: "region" }); } catch { return null; } })();
   // kurze Namen für Beschriftungen auf der Karte
@@ -99,6 +100,7 @@ const GLOBUS = (() => {
   function punkteBauen() {
     const sp = SITZE.spalten, i = n => sp.indexOf(n);
     PUNKTE = [];
+    [STAMM, NUR_LAND].forEach(o => Object.keys(o).forEach(k => { delete o[k]; }));
     const terminal = new Set(), punkt = (lon, lat, p) => PUNKTE.push({ type: "Feature", geometry: { type: "Point", coordinates: [lon, lat] }, properties: p });
     // art "t": Kennzahlen im Terminal; "s": nur Stammdaten (Platzhalter-Eintrag des Terminals oder nur in der Tabelle)
     const firmaProps = f => ({ id: f.id, name: UNT.kurzName(f.name).replace(/ Aktiengesellschaft$/, ""), branche: UNT.brName(f.branche), notiert: f.notiert ? 1 : 0, art: f.stub ? "s" : "t" });
@@ -898,7 +900,7 @@ const GLOBUS = (() => {
     return wertFC(Object.entries(d).filter(([iso, e]) => NACH_ISO[iso] && (wert ? e.wert : e.n)).map(([iso, e]) => ({ type: "Feature", geometry: { type: "Point", coordinates: mitte(iso) },
       properties: { iso, name: landKurz(iso), v: wert ? e.wert : e.n, t: wert ? f0.format(e.wert / 1000) + " Bio. $" : f0.format(e.n), raum: RAUM_VON[iso] || "", gewaehlt: S.auswahl.includes(iso) || (!!S.raum && RAUM_VON[iso] === S.raum) } })));
   }
-  ebene({ id: "undichte", name: "Unternehmen je Land (Zahl oder Börsenwert)", gruppe: "Unternehmen", an: !!TABELLE, geplant: !TABELLE, formen: ["unternehmen"],
+  ebene({ id: "undichte", name: "Unternehmen je Land (Zahl oder Börsenwert)", gruppe: "Unternehmen", an: !!(TABELLE || TAB_NACH), geplant: !(TABELLE || TAB_NACH), formen: ["unternehmen"],
     quellen: m => m.addSource("un-kreis", { type: "geojson", data: unKreisPunkte() }),
     schichten: (m, vor) => {
       schicht("undichte", { id: "un-flaeche", type: "fill", source: "laender", paint: { "fill-color": raumFuellFarbe(), "fill-opacity": ["interpolate", ["linear"], ["zoom"], 2.2, raumDeckkraft(), 2.7, 0] } }, vor);
@@ -2052,7 +2054,8 @@ const GLOBUS = (() => {
     const top = Object.entries(n).sort((a, b) => b[1] - a[1]).slice(0, 12);
     return `<div><h2>Unternehmen</h2><p class="unter" style="margin-top:4px">Unternehmen nach Sitz, Gruppen zerfallen beim Hineinzoomen · Unternehmen anklicken für das Profil · Shift+Klick nimmt es in den Vergleich · Land anklicken für seine Unternehmen</p></div>${ufBlock()}
       <div class="gk-block"><h3>Länder mit den meisten Unternehmen</h3><ul class="gk-liste">${top.map(([iso2, k]) => `<li><button type="button" data-gkland="${esc(iso2)}">${esc(landName(iso2))}</button><span class="r">${f0.format(k)}</span></li>`).join("")}</ul></div>
-      <div class="gk-block"><h3>Daten</h3><p class="gk-quelle">${f0.format(PUNKTE.length)} Unternehmen auf der Karte: ${f0.format(PUNKTE.filter(p => p.properties.art === "t").length)} mit Kennzahlen im Terminal, die übrigen mit Stammdaten aus der Unternehmenstabelle. Weitere ${f0.format(nurLandAnzahl())} Unternehmen, deren Sitz nur auf Landesebene bekannt ist, stehen in den grauen Ringen „ohne Ort“ in der Landesmitte.</p></div>`;
+      <div class="gk-block"><h3>Daten</h3><p class="gk-quelle">${f0.format(PUNKTE.length)} Unternehmen auf der Karte: ${f0.format(PUNKTE.filter(p => p.properties.art === "t").length)} mit Kennzahlen im Terminal, die übrigen mit Stammdaten aus der Unternehmenstabelle. Weitere ${f0.format(nurLandAnzahl())} Unternehmen, deren Sitz nur auf Landesebene bekannt ist, stehen in den grauen Ringen „ohne Ort“ in der Landesmitte.</p>
+        ${tabStatus === "laedt" ? `<p class="gk-quelle" role="status" data-gtabstatus>Unternehmen ohne Kennzahlen werden geladen …</p>` : tabStatus ? `<p class="gk-quelle" role="status" data-gtabstatus>Unternehmen ohne Kennzahlen nicht geladen (${esc(tabStatus.slice(8))}).</p>` : ""}</div>`;
   }
   /* Leiste der Darstellungsformen oben auf der Karte */
   function formLeiste() {
@@ -2358,9 +2361,27 @@ const GLOBUS = (() => {
     klassisch();
   }
 
+  /* API-Fassung: Unternehmenstabelle nach dem Start laden, danach Punkte, Ringe „ohne Ort“, Dichte je Land und Filter neu aufbauen.
+     Bis dahin zeigt die Karte die Unternehmen des Terminals (geo-sitze). */
+  let tabStatus = TAB_NACH ? "laedt" : "";
+  function tabelleNachladen() {
+    tabStatus = "laedt";
+    return fetch(TAB_NACH).then(r => r.ok ? r.json() : Promise.reject(Error("HTTP " + r.status))).then(d => {
+      if (!d || !d.zeilen) throw Error("leere Datei");
+      TABELLE = d; tabStatus = "";
+      Object.keys(UN_LAND).forEach(k => { delete UN_LAND[k]; }); IDX_VON = null;
+      const perf = !!PERF; PERF = null;
+      punkteBauen(); if (perf) perfBerechnen();
+      punkteAktualisieren(); unAnwenden(); seiteZeichnen();
+      document.dispatchEvent(new CustomEvent("sphaerae:geotabelle"));
+    }).catch(e => { tabStatus = "fehler: " + (e.message || e); console.warn("Unternehmenstabelle", e); seiteZeichnen();
+      hinweis("Unternehmen ohne Kennzahlen nicht geladen (" + (e.message || e) + "). Seite neu laden, um es erneut zu versuchen."); });
+  }
+
   function init() {
     if (!UNT.da()) { document.getElementById("gk-seite").innerHTML = "<p>Keine Unternehmensdaten im Terminal.</p>"; }
     punkteBauen();
+    if (TAB_NACH) tabelleNachladen();
     klassisch = render;
     try { const f = localStorage.getItem("globus-form"); if (f && FORMEN.some(x => x[0] === f)) S.form = f; } catch { /* kein Speicher */ }
     try { const a = localStorage.getItem("globus-politik"); if (a === "wahlen" || a === "regierungen") S.polAnsicht = a; } catch { /* kein Speicher */ }
@@ -2385,7 +2406,7 @@ const GLOBUS = (() => {
     if (imGlobus) wiederherstellen();
   }
   return { init, ebene, landWaehlen, firmaOeffnen, oeffnen, bogen, hinweis, sichtbar: id => { const eb = EBENEN.find(x => x.id === id); if (eb && map) sichtbar(eb); },
-    karte: () => map, ebenen: () => EBENEN, imGlobus: () => imGlobus,
+    karte: () => map, ebenen: () => EBENEN, imGlobus: () => imGlobus, tabelle: () => TABELLE, tabelleStatus: () => tabStatus,
     // für die Wahlansicht (src/wahlen.js)
     zustand: () => S, seiteZeichnen, legendeKarte, politikAnsicht, halbkreis, balkenFarbig, landName, bbox, ZG,
     geo: () => ({ LAENDER, DE_GEO, GL_GEO, KO_GEO, WK, KREISE: roh("kreise-de-geo") }) };

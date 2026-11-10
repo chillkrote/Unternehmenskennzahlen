@@ -7,4 +7,5 @@ app/data/live.json
 server/.env
 server/backup/
 app/dist-api/
+app/dist-klassik/
 app/dist/wahlgeo/

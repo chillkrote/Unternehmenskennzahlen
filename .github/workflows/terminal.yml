@@ -51,6 +51,7 @@ jobs:
       - run: pip install openpyxl
       - run: python3 app/build.py
       - run: python3 -m unittest discover -s europa -p 'test_*.py'
+      - run: python3 -m unittest discover -s app/tests -p 'test_*.py'
       - name: Länderauswahl in allen Reitern prüfen
         run: |
           npm install --prefix /tmp/terminal-tests --no-save playwright

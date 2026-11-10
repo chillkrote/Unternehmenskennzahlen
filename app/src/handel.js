@@ -4,11 +4,12 @@
      welt-daten    data/welt.json     Weltbank-Kennzahlen aller Länder inkl. Zollsätzen, Eurostat-Stromhandel, Wirtschaftsräume (welt_daten.py)
      routen-daten  data/routen.json   Haupthandelsrouten, Engstellen, Drehkreuze (routen.py)
      news-daten    data/news_routen.json  echte Meldungen zu Störungen an Engstellen (GDELT oder Google News, news_routen.py)
+     strom-entsoe-daten  data/strom_entsoe.json  physikalische Flüsse je Grenze und Monat, letzte zwölf Monate (ENTSO-E, entsoe_abruf.py)
    Ansichten: h-ueb (Überblick), h-laender (alle Länder), h-routen (Routen und Engstellen), h-strom (Stromhandel).
    Läuft vor dem Hauptskript; nutzt dessen Hilfsfunktionen (panel, esc, f0, f1, sicherUrl) erst zur Laufzeit. */
 "use strict";
 const HDL = (() => {
-  let H = null, W = null, R = null, N = null;
+  let H = null, W = null, R = null, N = null, E = null;
   const S = { sort: { k: "export_welt", ab: false }, kont: "alle" };
   const DN = (() => { try { return new Intl.DisplayNames(["de"], { type: "region" }); } catch { return null; } })();
   const name = iso => { if (iso === "XK") return "Kosovo"; try { return (DN && DN.of(iso)) || iso; } catch { return iso; } };
@@ -23,6 +24,7 @@ const HDL = (() => {
     W = (d => d && d.laender ? d : null)(roh("welt-daten"));
     R = (d => d && d.korridore ? d : null)(roh("routen-daten"));
     N = (d => d && d.meldungen ? d : null)(roh("news-daten"));
+    E = (d => d && d.paare && d.monate ? d : null)(roh("strom-entsoe-daten"));
     return !!H;
   }
   const da = () => !!H;
@@ -104,14 +106,32 @@ const HDL = (() => {
   }
 
   /* ----- F4 Stromhandel ----- */
+  /* Monatswerte (ENTSO-E): je Grenze beide Richtungen, Summe der letzten zwölf Monate, Saldo und Monatsverlauf als Balken */
+  function stromMonate() {
+    if (!E) return "";
+    const n = E.monate.length, sum = l => l.reduce((s, v) => s + (v || 0), 0), lueck = l => l.some(v => v == null);
+    const gr = {};
+    Object.entries(E.paare).forEach(([k, l]) => { const [a, b] = k.split(">"), g = [a, b].sort().join("-"); (gr[g] = gr[g] || { x: [a, b].sort()[0], y: [a, b].sort()[1], hin: null, rueck: null })[a === gr[g].x ? "hin" : "rueck"] = l; });
+    const zeilen = Object.values(gr).map(g => ({ ...g, s1: g.hin ? sum(g.hin) : null, s2: g.rueck ? sum(g.rueck) : null, lueck: (g.hin && lueck(g.hin)) || (g.rueck && lueck(g.rueck)) }))
+      .map(g => ({ ...g, ges: (g.s1 || 0) + (g.s2 || 0), saldo: (g.s1 || 0) - (g.s2 || 0) })).sort((a, b) => b.ges - a.ges);
+    const twh = v => v == null ? "–" : f1.format(v / 1000);
+    const mo = m => m.slice(5, 7) + "/" + m.slice(2, 4);
+    const balken = g => { const net = E.monate.map((_, i) => ((g.hin && g.hin[i]) || 0) - ((g.rueck && g.rueck[i]) || 0)), mx = Math.max(1, ...net.map(Math.abs));
+      return `<svg width="${n * 6}" height="20" style="vertical-align:middle"><line x1="0" x2="${n * 6}" y1="10" y2="10" stroke="currentColor" stroke-opacity="0.3" stroke-width="0.5"/>${net.map((v, i) => { const h = Math.max(1, Math.round(Math.abs(v) / mx * 9));
+        return `<rect x="${i * 6}" y="${v >= 0 ? 10 - h : 10}" width="4" height="${h}" fill="var(${v >= 0 ? "--up" : "--down"})"><title>${esc(mo(E.monate[i]))}: ${v >= 0 ? "+" : ""}${f0.format(v)} GWh</title></rect>`; }).join("")}</svg>`; };
+    const tab = `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">Grenze</th><th>A → B</th><th>B → A</th><th>Saldo A</th><th style="text-align:left">Saldo je Monat</th></tr></thead><tbody>${zeilen.map(g =>
+      `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(g.x))} – ${esc(name(g.y))}${g.lueck ? ' <span class="n">Lücken</span>' : ""}</td><td>${twh(g.s1)}</td><td>${twh(g.s2)}</td><td class="${g.saldo >= 0 ? "pos" : "neg"}">${g.saldo > 0 ? "+" : ""}${twh(g.saldo)}</td><td style="text-align:left">${balken(g)}</td></tr>`).join("")}</tbody></table></div>`;
+    return panel({ code: "STM", titel: "Physikalische Flüsse je Grenze, letzte zwölf Monate", sub: `${mo(E.monate[0])} bis ${mo(E.monate[n - 1])}, TWh; A und B alphabetisch nach Ländercode, Saldo positiv = A liefert netto`, breite: "w12", body: tab,
+      fuss: `Physikalische Flüsse (ENTSO-E 12.1.G), keine Handelsgeschäfte; Monate in UTC, Lücken nicht aufgefüllt. ${E.ohne_daten && E.ohne_daten.length ? `Ohne Daten: ${esc(E.ohne_daten.length + " Richtungen")}. ` : ""}Abruf ${esc(datumDe(E.abruf))}. Quelle: <a class="flink" href="${esc(E.url)}" target="_blank" rel="noopener">ENTSO-E Transparency Platform</a>` });
+  }
   function viewStrom() {
     const s = W && W.strom;
-    if (!s || !s.paare) return `<div class="grid">${panel({ code: "STR", titel: "Stromhandel", body: `<p class="n">Keine Stromdaten. <code>python3 app/welt_daten.py</code></p>` })}</div>`;
+    if (!s || !s.paare) return `<div class="grid">${stromMonate()}${panel({ code: "STR", titel: "Stromhandel", body: `<p class="n">Keine Jahresdaten. <code>python3 app/welt_daten.py</code></p>` })}</div>`;
     const paare = Object.entries(s.paare).map(([k, [v, art]]) => { const [a, b] = k.split(">"); return { a, b, v, art }; }).sort((x, y) => y.v - x.v);
     const netto = {}; paare.forEach(p => { netto[p.a] = (netto[p.a] || 0) + p.v; netto[p.b] = (netto[p.b] || 0) - p.v; });
     const nl = Object.entries(netto).sort((a, b) => b[1] - a[1]);
     const twh = v => f1.format(v / 1000);
-    return `<div class="grid">${panel({ code: "STR", titel: "Größte Stromflüsse zwischen Ländern", sub: `${s.jahr}, TWh, Richtung Ausfuhrland → Einfuhrland`, breite: "w6", body: `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">von</th><th style="text-align:left">nach</th><th>TWh</th></tr></thead><tbody>${paare.slice(0, 30).map(p =>
+    return `<div class="grid">${stromMonate()}${panel({ code: "STR", titel: "Größte Stromflüsse zwischen Ländern", sub: `${s.jahr}, TWh, Richtung Ausfuhrland → Einfuhrland`, breite: "w6", body: `<div class="scroll"><table class="kzt"><thead><tr><th style="text-align:left">von</th><th style="text-align:left">nach</th><th>TWh</th></tr></thead><tbody>${paare.slice(0, 30).map(p =>
       `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(p.a))}</td><td style="text-align:left;font-family:var(--sans)">${esc(name(p.b))}</td><td>${twh(p.v)}${p.art === "spiegel" ? "*" : ""}</td></tr>`).join("")}</tbody></table></div>`, fuss: `* nur Einfuhrmeldung des Ziellandes. ${esc(s.quelle)}. <a class="flink" href="${esc(s.url)}" target="_blank" rel="noopener">Eurostat</a>` })}
       ${panel({ code: "NET", titel: "Nettosaldo je Land", sub: `${s.jahr}, TWh, positiv = Nettoexporteur (nur Flüsse mit europäischen Meldeländern)`, breite: "w6", body: `<div class="scroll"><table class="kzt"><tbody>${nl.map(([iso, v]) => `<tr><td style="text-align:left;font-family:var(--sans)">${esc(name(iso))}</td><td class="${v >= 0 ? "pos" : "neg"}">${v > 0 ? "+" : ""}${twh(v)}</td></tr>`).join("")}</tbody></table></div>`, fuss: `Außerhalb Europas gibt es keine freie bilaterale Quelle ohne Schlüssel; dort zeigt die Weltkugel nur den Nettosaldo (Ember). ${globusLink("handel")}` })}</div>`;
   }

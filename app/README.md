@@ -143,7 +143,9 @@ teilweisen Checkout ohne Dokumentordner). Wie `bankterminal.html` wird die Datei
   Daten: `welt_daten.py` (Weltbank, Eurostat-Strom, US-Zollbelastung, Wirtschaftsräume -> `data/welt.json`), `routen.py`
   (`data/routen.json`), `news_routen.py` (`data/news_routen.json`), `boerse_welt.py` (`data/boerse_welt.json`), `politik_daten.py`
   (`data/politik.json`, `geo/de_laender.geojson`), `parlamente_daten.py` (IPU Parline, Wikipedia, Wikidata -> `data/parlamente.json`,
-  `geo/gliedstaaten.geojson`); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
+  `geo/gliedstaaten.geojson`), `entsoe_abruf.py` (ENTSO-E, physikalische Stromflüsse je Grenze und Monat der letzten zwölf Monate
+  -> `data/strom_entsoe.json`, Reiter HDL F4 Tafel STM; braucht den Schlüssel in der Umgebungsvariable `entsoe_api`, der nie ins Repo,
+  in Logs oder Fehlermeldungen gelangt; dauert rund fünf Minuten); Abruf im Workflow „Weltkugel-Daten“. Was noch fehlt:
   `OFFENE_DATENFELDER.md`.
 * **Politik & Wahlen, Ansicht „Wahlen“ (neu 06.11.2026, Konzept „Wahlergebnisse auf allen Ebenen“):** Die Karte zeigt immer genau eine
   Wahl je Gebiet. Links die Ebenenleiter E0 Supranational, E1 Staat, E2 Region, E3 Kommune, E4 Gemeinde (Namen je Land, in Deutschland

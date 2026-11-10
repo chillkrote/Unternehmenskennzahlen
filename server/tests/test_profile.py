@@ -8,7 +8,13 @@ import pytest
 
 from etl import profile
 
+from plattform.lizenz import YAHOO_WERTE, mit_yahoo
+
 DATEN = json.loads(profile.DATEI.read_text(encoding="utf-8"))
+if not mit_yahoo():          # E1: der Import lässt Yahoo-Kennzahlen weg; Sollwerte entsprechend ohne sie
+    DATEN["kennzahlen"] = [k for k in DATEN["kennzahlen"] if k["key"] not in YAHOO_WERTE]
+    for _f in DATEN["unternehmen"]:
+        _f["werte"] = {k: v for k, v in _f["werte"].items() if k not in YAHOO_WERTE}
 FIRMEN = DATEN["unternehmen"]
 NACH_ID = {f["id"]: f for f in FIRMEN}
 
@@ -155,6 +161,13 @@ def test_profilkatalog_und_verweis(client):
     d = client.get(f"/api/v1/companies/{uid}").json()["data"]
     assert d["links"]["profile"] == f"/api/v1/companies/{uid}/profile"
     assert d["facts"] >= len(FIRMEN[0]["werte"])
+
+
+def test_keine_yahoo_werte_in_der_datenbank(geladene_db):
+    with psycopg.connect(geladene_db) as c:
+        n = c.execute("SELECT count(*) FROM international.company_profile_value WHERE metric_code = ANY(%s)", (list(YAHOO_WERTE),)).fetchone()[0]
+        k = c.execute("SELECT count(*) FROM international.profile_metric WHERE code = ANY(%s)", (list(YAHOO_WERTE),)).fetchone()[0]
+    assert (n, k) == (0, 0)
 
 
 def test_profilimport_unveraendert_wird_uebersprungen(geladene_db):

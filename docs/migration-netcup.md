@@ -26,7 +26,7 @@ Ressourcen: PostgreSQL (256 MB shared_buffers), API (rund 80 MB), Caddy (rund 30
    Sparse-Checkout ohne PDFs (wie in den Workflows); Dokumente später getrennt nach `/srv/sphaerae/daten`.
 4. **Konfiguration:** `cp server/.env.example server/.env`, Passwörter erzeugen (`openssl rand -base64 30`),
    `SITE_ADDRESS=sphaerae.de`, `PLATTFORM_UMGEBUNG=produktion`, `API_CORS_ORIGINS` leer (gleiche Domain).
-5. **Oberfläche bauen:** `python3 app/build.py --nur-seite --api /api/v1 --ziel dist-api` (oder als Workflow-Artifact herunterladen).
+5. **Oberfläche bauen:** `python3 app/build.py --nur-seite --api /api/v1 --ziel dist-api` (oder als Workflow-Artifact herunterladen). Die API-Fassung enthält keine Yahoo-Daten (Entscheidung E1); die Datenbank übernimmt sie ebenfalls nicht.
 6. **Start:** `docker compose -f server/docker-compose.yml up -d --build`, dann
    `docker compose -f server/docker-compose.yml --profile werkzeuge run --rm etl`.
 7. **Prüfen (Smoke-Test nach Deployment):** `curl -fsS https://sphaerae.de/api/v1/health`, `node app/tests/api-smoke.js https://sphaerae.de/bankterminal.html`.

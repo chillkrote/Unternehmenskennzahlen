@@ -35,7 +35,8 @@ def firmen_fuer_api(firmen_json):
     return json.dumps(d, ensure_ascii=False, separators=(",", ":"))
 
 
-# Öffentliche Fassung (--oeffentlich, docs/datenquellen.md E1): Werte aus Yahoo Finance haben kein Weitergaberecht
+# Öffentliche Fassung (--oeffentlich, docs/datenquellen.md E1; mit --api immer an): Werte aus Yahoo Finance haben kein Weitergaberecht.
+# Dieselbe Liste steht in server/plattform/lizenz.py (Import in die Server-Datenbank); server/tests/test_lizenz.py prüft die Gleichheit.
 # Kurse und alles, was daraus berechnet ist (Börsenwert, Bewertungskennzahlen), sowie Marktangaben der Branchentabellen aus Yahoo
 YAHOO_WERTE = ("kurs", "marktkap", "r_ytd", "r_1j", "kgv", "kbv", "kuv", "ev_ebitda", "div_rendite",
                "x_enterprise_value", "x_ev_umsatz", "x_aussch_ttungsquote", "x_kurs_nderung_52w", "x_52w_hoch", "x_52w_tief",
@@ -91,8 +92,12 @@ def main():
     p.add_argument("--oeffentlich", action="store_true",
                    help="Fassung für den öffentlichen Server: ohne Daten ohne Weitergaberecht (docs/datenquellen.md, E1): "
                         "Kurse, Indizes und Weltunternehmen (markt, kurse_woche, boerse), Kurs/Börsenwert in den Profilen, Marktpuls aus Yahoo")
+    p.add_argument("--mit-yahoo", action="store_true",
+                   help="nur für lokale Tests der API-Fassung: Yahoo-Daten trotz --api behalten (E1: auf dem Server nie)")
     p.add_argument("--ziel", default="dist", help="Ausgabeordner unter app/ (Standard dist; für den Server dist-api)")
     a = p.parse_args()
+    if a.api and not a.mit_yahoo:
+        a.oeffentlich = True          # E1 (Robin, 10.11.2026): die Server-Fassung (sphaerae.de) liefert keine Yahoo-Daten aus
     ziel_ordner = HIER / a.ziel
     if a.nur_seite:
         roh = (HIER / "data/banken.json").read_text()
@@ -186,6 +191,8 @@ def main():
         seite = seite.replace(platz, inhalt.replace("</", "<\\/"), 1)
     # API-Basisadresse für src/api.js (nur im API-Modus; ohne sie arbeitet die Seite wie bisher mit eingebetteten Daten)
     kopf_api = f'<meta name="sphaerae-api" content="{html.escape(a.api, quote=True)}">' if a.api else ""
+    if a.oeffentlich:
+        kopf_api += '<meta name="sphaerae-oeffentlich" content="1">'      # Leerzustände nennen dann die Lizenz statt eines Abrufbefehls
     # Artifact-Fassung ohne Dokumentgerüst (wird beim Veröffentlichen ergänzt)
     (ziel_ordner / "bankterminal.fragment.html").write_text(seite)
     # lokale Fassung: im Browser öffnen

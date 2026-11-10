@@ -138,6 +138,8 @@ def main():
     welt, n_sitze = globus.seite(seite, api=bool(a.api))
     (ziel_ordner / "weltkugel.fragment.html").write_text(welt)
     globus.wahlgeo_schreiben(ziel_ordner, api=bool(a.api))             # Wahlkreisgrenzen zum Nachladen (dist/wahlgeo/*.json), beim Artifact als Zusatzdateien
+    if a.api:
+        globus.tabelle_schreiben(ziel_ordner)                          # Unternehmenspunkte der Weltkugel (dist-api/geodaten/unternehmen.json)
     (ziel_ordner / "weltkugel.html").write_text('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">'
                                               '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">' + kopf_api +
                                               '<style>body{margin:0}[hidden]{display:none!important}</style></head><body>\n'

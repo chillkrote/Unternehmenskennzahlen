@@ -46,7 +46,7 @@ für die Branchenansichten eingebettet. Auf der Weltkugel fehlen Beschreibung, Q
 Unternehmenstabelle (`globus.py: tabelle_schlank`); das Stammdaten-Fenster lädt sie über `/companies/{id}`. Die VWL-Reihenwerte (4,4 MB) sind ebenfalls nicht
 eingebettet, nur die Abdeckung je Reihe; `src/vwl.js` (`bedarf`) lädt sie gesammelt über `/observations` nach, VWL-Ansichten, Korrelation und Weltkugel
 zeichnen danach neu (Ereignis `sphaerae:vwl`). Grenzen der Kommunen, Bundestagswahlkreise und Kreise sowie Wahlwerte ab 10 Werten je
-Einheit liegen als Dateien unter `wahlgeo/` (`globus.py: GEO_NACH_API`, `WERTE_NACHLADEN_AB_API`) und kommen erst, wenn eine Wahl sie braucht. Nach einer Änderung an `data/unternehmen.json` oder `volkswirtschaft/` den Server-ETL laufen lassen.
+Einheit liegen als Dateien unter `wahlgeo/` (`globus.py: GEO_NACH_API`, `WERTE_NACHLADEN_AB_API`) und kommen erst, wenn eine Wahl sie braucht. Die Unternehmenstabelle der Weltkugel (Punkte, Ringe „ohne Ort“) steht als `geodaten/unternehmen.json` daneben (`globus.tabelle_schreiben`) und wird gleich nach dem Start geladen. Nach einer Änderung an `data/unternehmen.json` oder `volkswirtschaft/` den Server-ETL laufen lassen.
 Ohne `--api` entsteht die bisherige Fassung unverändert (GitHub Pages, Artifact, Desktop-App).
 Die API-Adresse lässt sich zum Testen mit `?api=<url>` überschreiben. Test: `node app/tests/api-smoke.js http://localhost/bankterminal.html`.
 Stand und Funktionsmatrix: [`docs/umsetzungsstand.md`](../docs/umsetzungsstand.md).

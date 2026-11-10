@@ -54,7 +54,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 
 | Kriterium | Stand |
 |---|---|
-| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB), Abschlussposten/Gremien/Dokumente (21 MB), Weltkugel-Stammdatendetails (7 MB) und VWL-Reihenwerte (4,4 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL-Prognosen, Wahlen, Handel noch eingebettet. Wahlgrenzen und Wahlwerte (5,5 MB) als Dateien nachgeladen. Weltkugel der API-Fassung 21,2 MB (vorher 58,6 MB), Terminal 13,4 MB |
+| Erste HTML-Antwort ohne vollständigen Unternehmens-, VWL-, Handels- und Wahlbestand | teilweise: Register (10,5 MB), Abschlussposten/Gremien/Dokumente (21 MB), Weltkugel-Stammdatendetails (7 MB) und VWL-Reihenwerte (4,4 MB) ausgelagert; Profilkennzahlen (für F1–F3), VWL-Prognosen, Wahlen, Handel noch eingebettet. Wahlgrenzen und Wahlwerte (5,5 MB) sowie die Unternehmenspunkte der Weltkugel (3,1 MB) als Dateien nachgeladen. Weltkugel der API-Fassung 18,1 MB (vorher 58,6 MB), Terminal 13,4 MB |
 | Daten nach Bedarf geladen | für Verzeichnis und Registerprofile ja |
 | Öffentliche Endpunkte dokumentiert und begrenzt | ja (`docs/api.md`, OpenAPI, Grenzen) |
 | Unternehmens-IDs erhalten | ja, getestet |

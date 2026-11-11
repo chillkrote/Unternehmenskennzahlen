@@ -25,7 +25,7 @@ geografischen Ebene gibt, wie weit sie reichen und wie weit sie eingebunden sind
 | Staaten | Prognosen (Institute, OECD, Konsens, Zentralbanken) mit Treffsicherheit | Herausgeber | 38 OECD-Länder | 2015 bis 2028 | ja | ja | ja (Primärdokumente, siehe `beleg`) | ja | Datei (`vwl_prognosen.json`) |
 | Staaten | Warenhandel bilateral | UN Comtrade (`handel.json`) | 167 Meldeländer | letztes Meldejahr | ja | ja | nein | ja | nein; Lizenz **kritisch** (E2) |
 | Staaten | Exporte und Importe je Gut, HHI, Abhängigkeiten | CEPII BACI | 22 Gütergruppen, 226 Länder | 2015 bis 2024 | ja | ja | nein | ja (HDL F5, Weltkugel) | ja (`/trade`) |
-| Grenzen | Physische Stromflüsse je Grenze und Richtung | ENTSO-E | 136 Richtungen, monatlich | 2023-11 bis 2026-10; 44 Monate teilweise | ja | ja | nein | ja (HDL F4, Weltkugel) | nein (Datei); Repo-Secret `ENTSOE_API_KEY` fehlt |
+| Grenzen | Physische Stromflüsse je Grenze und Richtung | ENTSO-E | 136 Richtungen, monatlich | 2023-11 bis 2026-10; 44 Monate teilweise | ja | ja | nein | ja (HDL F4, Weltkugel) | nein (Datei); Workflow „Weltkugel-Daten“ schreibt fort (Secret `ENTSOE_API_KEY`) |
 | Orte | Häfen und Flughäfen | Betreiber, OurAirports, EMODnet | 58 Seehäfen, 53 Flughäfen | letztes Jahr | ja | teilweise | nein | ja | nein |
 | **Kreise (NUTS-3, DE)** | **BIP, Wachstum, BIP je Einwohner/Erwerbstätigen/Arbeitsstunde, Einwohner, Erwerbstätige, Bruttowertschöpfung und Struktur** | **VGR der Länder** (Primärquelle), Eurostat (KKS-Index) | **12 Reihen (VGRdL) + KKS-Index (Eurostat), 400 Kreise** | **2000 bis 2024** | ja | ja | ja (Summe der Kreise = Bundes-BIP; Abgleich mit Eurostat) | ja (Weltkugel, Volkswirtschaft) | ja (`/regions`, `/series?level=nuts3`) |
 | Kreise (DE) | Verknüpfung mit Wahlergebnissen je Kreis | Wahlregister + VGRdL | Europawahl 2024 (400 Kreise), Landtagswahl Sachsen-Anhalt 2026 (14 Kreise) | | ja | ja (Browsertest) | ja (Statistik wie KOR.stat) | ja („Wirtschaft und Wahl“) | Wirtschaft ja, Wahlen nein |
@@ -51,4 +51,3 @@ Deshalb gilt für deutsche Kreise die VGRdL-Datei als Primärquelle; Eurostat li
    Bundeswahlleiterin einlesen).
 3. Arbeitslosenquote je Kreis (Bundesagentur für Arbeit, monatlich) und verfügbares Einkommen je Einwohner (VGRdL Reihe 2 Band 3).
 4. NUTS-3 der übrigen EU-Staaten (Eurostat; Grenzen GISCO, Lizenz prüfen).
-5. ENTSO-E: Repo-Secret `ENTSOE_API_KEY` anlegen, damit der Workflow die Stromflüsse fortschreibt.

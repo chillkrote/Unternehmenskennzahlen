@@ -50,6 +50,9 @@ services:
     restart: unless-stopped
     environment:
       SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+      SEITENSCHUTZ: ${SEITENSCHUTZ:-aus}      # "an" = Passwortabfrage vor der ganzen Seite (Einrichtung: deploy/einrichtung/seitenschutz.sh)
+      SCHUTZ_USER: ${SCHUTZ_USER:-besucher}
+      SCHUTZ_HASH: ${SCHUTZ_HASH:-$$2a$$14$$a.a9oLP5dYCfXSzNRMdhg.rdMAwY9iMCH0soG30Hzm1B6dFetVDji}
     ports:
       - "${WEB_PORT_HTTP:-80}:80"
       - "${WEB_PORT_HTTPS:-443}:443"

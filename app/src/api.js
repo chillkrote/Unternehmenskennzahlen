@@ -90,7 +90,7 @@ const BLOCK = (() => {
       .then(d => { daten[id] = d; }).catch(e => { fehler[id] = e.message || String(e); })
       .then(() => { delete laeuft[id]; dispatchEvent(new CustomEvent("sphaerae:block", { detail: { id } })); });
   }
-  const AUFGESCHOBEN = ["gueter-daten", "parlamente-daten", "gliedstaaten-geo", "wahlen-daten"];
+  const AUFGESCHOBEN = ["gueter-daten", "parlamente-daten", "gliedstaaten-geo", "wahlen-daten", "regional-daten"];
   // erst beim Zugriff geprüft: manche Blöcke stehen im Dokument hinter diesem Skript (wahlen-daten der Weltkugel)
   const frei = new Set();
   const spaeter = { has: id => AUFGESCHOBEN.includes(id) && !frei.has(id) && !(id in daten) && !laeuft[id] && !fehler[id] && (d => !!d && typeof d._nach === "string")(roh(id)),

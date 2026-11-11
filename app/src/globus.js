@@ -1734,6 +1734,7 @@ const GLOBUS = (() => {
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#9fd3ff"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">W</text></svg>Wahl in den nächsten 12 Monaten</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#ffa828"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">N</text></svg>gerade gewählt (${SCHWELLE} Tage)</span>${S.stufe >= 3 ? "<small>Gliedstaaten in der Farbe der Partei des Regierungschefs, orange umrandet = gerade gewählt</small>" : ""}`);
     if (an("wahlen") && typeof WAHLEN !== "undefined") teile.push(WAHLEN.legende());
+    if (an("regionen") && typeof REGIONEN !== "undefined" && S.stufe >= 2) teile.push(REGIONEN.legende());
     if (an("vwl")) teile.push(`<b>Werte</b><span><em style="color:#7cc4ff">BIP +</em> / <em style="color:#ff9f6b">BIP −</em></span><span>Inflation <em style="color:#ff9f6b">über 5 %</em>, <em style="color:#7cc4ff">unter 0 %</em></span>`);
     el.hidden = !teile.length;
     el.innerHTML = teile.join("");
@@ -2039,13 +2040,13 @@ const GLOBUS = (() => {
     if (S.form === "politik") return kopfForm() + kopf + politikLand(iso, stufe);
     // Volkswirtschaft; Stufe 3 = Kombination mit Handel, Strom, Unternehmen, Börse (Politik folgt nach Freigabe)
     if (stufe >= 3) BLOCK.freigeben(...FORM_BLOECKE.politik);
-    return kopf + kern + weltbankBlock(iso, k.length ? "Jahreswerte (Weltbank)" : "Kerndaten (Jahreswerte, Weltbank)") + prognosen(iso)
+    return kopf + kern + (iso === "DE" && typeof REGIONEN !== "undefined" ? REGIONEN.einstieg() : "") + weltbankBlock(iso, k.length ? "Jahreswerte (Weltbank)" : "Kerndaten (Jahreswerte, Weltbank)") + prognosen(iso)
       + stufe3(handelBlock(iso) + zollBlock(iso) + nachbarBlock(iso) + stromBilateralBlock(iso) + firmenBlock(iso) + indizes(iso)
         + politikLand(iso, 2), "Handel, Nachbarländer, Strom, Unternehmen, Börse und Politik") + basis;
   }
   /* Daten, die nur eine Form braucht, erst mit ihr laden (API-Fassung, api.js: BLOCK.freigeben); die Länderseite der Volkswirtschaft
      zeigt ab Stufe 3 auch Politik und fordert sie dort an (landSeite). */
-  const FORM_BLOECKE = { handel: ["gueter-daten"], politik: ["parlamente-daten", "gliedstaaten-geo", "wahlen-daten"] };
+  const FORM_BLOECKE = { handel: ["gueter-daten"], politik: ["parlamente-daten", "gliedstaaten-geo", "wahlen-daten"], vwl: ["regional-daten"] };
   function seiteZeichnen() {
     BLOCK.freigeben(...(FORM_BLOECKE[S.form] || []));
     const el = document.getElementById("gk-seite"), links = document.getElementById("gk-seite-links"); if (!el) return;
@@ -2055,7 +2056,7 @@ const GLOBUS = (() => {
     let html;
     if (S.auswahl.length > 1 && links) { seiteMehrfach(el, links); el.scrollTop = 0; return; }
     if (S.form === "handel") html = !HANDEL ? `<div><h2>Handel</h2><p class="gk-leer">Keine Handelsdaten im Build.</p></div>` : !iso && stufe === 1 ? kontSeite() : !iso ? handelStart() : landSeite(iso, stufe);
-    else if (S.form === "vwl") html = !iso && stufe === 1 ? raumSeite() : !iso ? vwlStart() : landSeite(iso, stufe);
+    else if (S.form === "vwl") html = typeof REGIONEN !== "undefined" && REGIONEN.offen() ? REGIONEN.seite() : !iso && stufe === 1 ? raumSeite() : !iso ? vwlStart() : landSeite(iso, stufe);
     else if (S.form === "boerse") html = iso ? landSeite(iso, stufe) : kopfForm() + boerseStart();
     else if (S.form === "politik") html = S.polAnsicht === "wahlen" && typeof WAHLEN !== "undefined" ? kopfForm() + WAHLEN.seite() : iso ? landSeite(iso, stufe) : kopfForm() + politikStart();
     else html = iso ? landSeite(iso, stufe) : kopfForm() + (stufe === 1 ? unternehmenWelt() : unternehmenStart());
@@ -2433,6 +2434,8 @@ const GLOBUS = (() => {
     karte: () => map, ebenen: () => EBENEN, imGlobus: () => imGlobus, tabelle: () => TABELLE, tabelleStatus: () => tabStatus,
     // für die Wahlansicht (src/wahlen.js)
     zustand: () => S, seiteZeichnen, legendeKarte, politikAnsicht, halbkreis, balkenFarbig, landName, bbox, ZG,
+    // Tooltip einer Schicht anderer Module (src/regionen.js): fn(properties) -> HTML
+    infoTip: (schicht, fn) => { INFO_TIPS[schicht] = fn; },
     geo: () => ({ LAENDER, DE_GEO, GL_GEO, KO_GEO, WK, KREISE: roh("kreise-de-geo") }) };
 })();
 // Daten des Terminals können (in der komprimierten Vorschau) erst nach dem Entpacken bereitstehen

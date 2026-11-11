@@ -242,6 +242,9 @@ def seite(terminal_seite, api=False):
         '<script id="wahlen-daten" type="application/json">' + (json.dumps({"_nach": WAHLEN_DATEI}) if api and (HIER / "data/wahlen.json").exists() else
                                                                  _js(json.dumps(wahlen_aufteilen(WERTE_NACHLADEN_AB)[0], ensure_ascii=False, separators=(",", ":")))) + "</script>",
         "<script>\n" + (HIER / "src/wahlen.js").read_text() + "\n</script>",
+        # Regionen (Volkswirtschaft, Kreisebene): Daten im Terminal-Block regional-daten (build.py), Grenzen wie die Europawahl (kreise-de)
+        "<style>\n" + (HIER / "src/regionen.css").read_text() + "\n</style>",
+        "<script>\n" + (HIER / "src/regionen.js").read_text() + "\n</script>",
         # Unternehmensnetz: eigene Ebene und eigenes Panel, hängt sich über GLOBUS.ebene und das Ereignis "globus:firma" ein
         "<style>\n" + (HIER / "src/netz.css").read_text() + "\n</style>",
         '<script id="geo-netze" type="application/json">' + _js(json.dumps(netze(), ensure_ascii=False, separators=(",", ":"))) + "</script>",

@@ -263,6 +263,7 @@ class Reihe(BaseModel):
     source_updated: Optional[str] = Field(None, description="Stand der Quelle laut letztem Abruf (Quellenversion)")
     history_start: Optional[datetime] = Field(None, description="Beginn der gespeicherten Historie (erster Import); davor kein Datenbankstand")
     superseded_versions: int = Field(0, description="abgelöste Fassungen (revidierte oder entfallene Werte) seit history_start")
+    level: str = Field("country", description="country = Staaten und Ländergruppen, nuts3 = Regionen (geo = NUTS-3-Code, /regions)")
     meta: dict[str, Any] = {}
 
 

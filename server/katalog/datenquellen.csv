@@ -11,6 +11,7 @@ us-treasury,US-Finanzministerium,finanzen,voraussichtlich,,,
 oecd,OECD SDMX / Data Explorer,volkswirtschaft,voraussichtlich,,OECD (CC BY 4.0),OECD|vwl|repo-vwl
 weltbank,Weltbank,volkswirtschaft,voraussichtlich,,Weltbank (CC BY 4.0),
 eurostat,Eurostat,volkswirtschaft,voraussichtlich,,Quelle: Eurostat,Eurostat|vwl|repo-vwl
+vgrdl,VGR der Länder (Statistische Ämter des Bundes und der Länder),volkswirtschaft,namensnennung,,"Arbeitskreis „Volkswirtschaftliche Gesamtrechnungen der Länder“, Statistische Ämter des Bundes und der Länder",VGR der Länder (Statistische Ämter des Bundes und der Länder)|vwl_regional|repo-vwl-regional|regionen
 bis,BIS,finanzen,namensnennung,,BIS mit nationaler Zentralbank,
 fred,FRED (St. Louis Fed),volkswirtschaft,pruefen,,,
 prognosegeber,"Zentralbanken, Institute, Konsensumfragen (Prognosen)",volkswirtschaft,pruefen,,,ifo|vwl|repo-vwl

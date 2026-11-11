@@ -8,6 +8,7 @@ Verwendet die bestehenden, getesteten Importe aus international/ (keine zweite I
   5. import_de.importieren                       Zeitreihen deutscher Unternehmen -> fact (mit Quelle und Vintage)
   6. etl.profile.importieren                     Unternehmensprofile aus app/data/unternehmen.json (Kennzahlen, Abschlüsse, Gremien …)
   7. etl.vwl.importieren                         VWL-Reihen aus volkswirtschaft/ (series, observation mit Vintage)
+     etl.vwl.importieren_regional               NUTS-3-Reihen aus volkswirtschaft/regional/ (Kreise, Eurostat)
   8. etl.handel.importieren                      Exporte je Gut aus app/data/gueter.json (CEPII BACI)
   9. etl.katalog.importieren                     Datenkatalog: Quellen (docs/datenquellen.md + server/katalog/) und Prognosegeber
 
@@ -129,6 +130,10 @@ def main(argv=None):
             from etl import vwl
             for k, v in sorted(vwl.importieren(conn, dry_run=a.dry_run).items()):
                 print(f"  vwl.{k}: {v}")
+            for k, v in sorted(vwl.regionen_importieren(conn, dry_run=a.dry_run).items()):
+                print(f"  regionen.{k}: {v}")
+            for k, v in sorted(vwl.importieren_regional(conn, dry_run=a.dry_run).items()):
+                print(f"  vwl_regional.{k}: {v}")
         from etl import handel
         for k, v in sorted(handel.importieren(conn, dry_run=a.dry_run).items()):
             print(f"  handel.{k}: {v}")

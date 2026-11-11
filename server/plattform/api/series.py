@@ -19,7 +19,7 @@ MAX_REIHEN = 60
 ZEITRAUM = r"^\d{4}(-(0[1-9]|1[0-2])|-Q[1-4])?$"
 KATALOG = """
   SELECT s.id, s.topic, s.name, s.unit, s.fmt, s.kind, s.frequency, s.core, s.provider, s.dataset, s.filter, s.url, s.fetched,
-         s.forecast_from, s.note, s.meta,
+         s.forecast_from, s.note, s.meta, COALESCE(s.meta->>'ebene', 'country') AS level,
          COALESCE(a.geos, '{}') AS geos, a.first_period, a.last_period, COALESCE(a.n, 0) AS observations,
          s.meta->>'stand_quelle' AS source_updated, h.history_start, COALESCE(h.superseded, 0) AS superseded_versions
     FROM international.series s
@@ -70,8 +70,10 @@ def _liste(wert, muster, name, grenze):
 
 
 @router.get("/series", response_model=Antwort[list[Reihe]], summary="Katalog der volkswirtschaftlichen Reihen mit Abdeckung")
-def series(request: Request, conn=DB, topic: Optional[str] = Query(None, max_length=40, description="nur dieses Thema (z. B. wachstum, preise)")):
-    zeilen = conn.execute(text(KATALOG + " WHERE (CAST(:t AS text) IS NULL OR s.topic = :t) ORDER BY s.position"), {"t": topic}).mappings().all()
+def series(request: Request, conn=DB, topic: Optional[str] = Query(None, max_length=40, description="nur dieses Thema (z. B. wachstum, preise)"),
+           level: Optional[str] = Query(None, pattern="^(country|nuts3)$", description="nur Länderreihen (country) oder Regionalreihen (nuts3)")):
+    zeilen = conn.execute(text(KATALOG + " WHERE (CAST(:t AS text) IS NULL OR s.topic = :t) AND (CAST(:l AS text) IS NULL OR "
+                                         "COALESCE(s.meta->>'ebene', 'country') = :l) ORDER BY s.position"), {"t": topic, "l": level}).mappings().all()
     m = meta(request, source="volkswirtschaft/serien.csv, zeitreihe_lang.csv", data_as_of=_stand(conn))
     return {"data": [dict(z) for z in zeilen], "meta": m}
 

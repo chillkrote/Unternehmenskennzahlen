@@ -17,7 +17,7 @@ DATEN = vwl_build.lade()
 
 
 def test_katalog_wie_seite(client):
-    r = client.get("/api/v1/series")
+    r = client.get("/api/v1/series", params={"level": "country"})
     assert r.status_code == 200
     kat = r.json()["data"]
     assert [s["id"] for s in kat] == [s["serie_id"] for s in DATEN["serien"]]

@@ -33,10 +33,10 @@ Frankreich 2024, Vereinigtes Königreich 2024, Norwegen 2025; USA: Repräsentant
 |---|---|---|---|---|
 | Sachsen-Anhalt | 06.09.2026 | **A** | Statistisches Landesamt, endgültiges Ergebnis: 41 Wahlkreise, 14 Kreise, Sitze, Vergleich 2021 | eingebunden (`app/landtagswahlen.py`) |
 | Nordrhein-Westfalen | 15.05.2022 | **A** | Landeswahlleiterin: 128 Wahlkreise, Vergleich 2017 | eingebunden (`app/wahlen_daten.py`) |
-| Baden-Württemberg | 08.03.2026 | C | Wahlartikel | gefunden: `wahlen.statistik-bw.de/ltw26/` (Ergebnisse und Gewählte als CSV, endgültig) |
+| Baden-Württemberg | 08.03.2026 | **A** | Statistisches Landesamt, endgültiges Ergebnis: 70 Wahlkreise, Sitze aus der Liste der Gewählten, Veränderung zu 2021 | eingebunden (`app/landtagswahlen.py`); Ergebnispräsentation, gegen `ltw26-ergebnisse.csv` abgeglichen |
 | Rheinland-Pfalz | 22.03.2026 | C | Wahlartikel | gefunden: `wahlen.rlp.de` (endgültiges Ergebnis je Wahlkreis, Kreis, Verbandsgemeinde als XLSX, Stimmbezirke als CSV; Dateien ab 2001) |
 | Mecklenburg-Vorpommern | 20.09.2026 | C | Wahlartikel | gefunden: `laiv-mv.de/Wahlen/Landtagswahlen/2026/` (endgültiges Ergebnis als Download) |
-| Berlin | 20.09.2026 | C | Wahlartikel | gefunden: `wahlen-berlin.de` (`DL_BE_AGHBVV2026.xlsx`) |
+| Berlin | 20.09.2026 | **A** | Landeswahlleitung, amtliches Endergebnis: 78 Wahlkreise, Sitze aus der Liste der Gewählten, Veränderung zu 2023 | eingebunden (`app/landtagswahlen.py`); Ergebnispräsentation |
 | Brandenburg, Sachsen, Thüringen (2024), Hamburg (2025), Bayern, Hessen, Bremen (2023), Niedersachsen, Schleswig-Holstein, Saarland (2022) | | C | Wahlartikel | noch nicht gesucht |
 
 Bei Stufe C fehlen einheitlich: absolute Stimmen, Vergleich zur Vorwahl, Wahlkreise auf der Karte, amtliche Quelle.
@@ -57,6 +57,11 @@ Sachsen-Anhalt 2026 ist das Muster, nach dem die übrigen Länder folgen:
    und Grenzen als Dateien aus `wahlgeo/` nach.
 5. **Weltkugel:** Politik & Wahlen, Ebene E2: Sitzverteilung mit Veränderung, Zweit- und Erststimmen mit Veränderung zur
    Vorwahl, Karte je Kreis und je Wahlkreis, Direktmandat im Wahlkreis.
+   Baden-Württemberg und Berlin nutzen dieselbe Ergebnispräsentation; für sie gibt es einen gemeinsamen Leser (`PRAES`, `praes_*`):
+   Ergebnistabelle des Landes und jedes Wahlkreises, Liste der Gewählten, Wahlkreiskarte. Auszug nach
+   `wahlen/quellen/<kürzel>_praesentation.json`. Baden-Württemberg wird zusätzlich Zahl für Zahl mit der amtlichen
+   Downloaddatei verglichen (`bw_abgleich`). Offen bei beiden: Sitze der Vorwahl (die Seiten nennen sie nicht), Ebene
+   Kreise (Baden-Württemberg) und Bezirke (Berlin).
 6. **Tests:** `app/tests/test_landtagswahlen.py` (Prüfregeln, Sollwerte des Endergebnisses, Stand im Wahlregister),
    `app/tests/landtagswahl-smoke.js` (Ergebniskarte und Klick in einen Wahlkreis, Pages- und Server-Fassung).
 
@@ -70,7 +75,8 @@ noch nicht eingebunden.
 | Nr. | Lücke | Umfang | Quelle | Stand |
 |---|---|---|---|---|
 | W1 | Landtagswahl Sachsen-Anhalt 2026 | 1 Wahl | Statistisches Landesamt | erledigt |
-| W2 | Landtagswahlen 2026 in Baden-Württemberg, Rheinland-Pfalz, Mecklenburg-Vorpommern, Berlin | 4 Wahlen | Landeswahlleitungen, Dateien gefunden | als Nächstes |
+| W2 | Landtagswahlen 2026 in Baden-Württemberg und Berlin | 2 Wahlen | Statistisches Landesamt, Landeswahlleitung | erledigt |
+| W2b | Landtagswahlen 2026 in Rheinland-Pfalz und Mecklenburg-Vorpommern | 2 Wahlen | Landeswahlleitungen, Dateien gefunden; Wahlkreisgrenzen noch zu klären | als Nächstes |
 | W3 | Landtagswahlen 2022 bis 2025 der übrigen zehn Länder | 10 Wahlen | Landeswahlleitungen | offen |
 | W4 | USA 2026 (Repräsentantenhaus, Senat) | 2 Wahlen | amtliche Ergebnisse der Bundesstaaten bzw. Clerk of the House, sobald veröffentlicht | offen; im Register steht für 2026 nur die heutige Zusammensetzung (Stufe D) |
 | W5 | Neuseeland 2026 | 1 Wahl | Electoral Commission (Seite mit Bot-Schutz, nicht umgehen) | offen, Quelle zu klären |

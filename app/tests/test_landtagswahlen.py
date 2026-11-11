@@ -113,6 +113,93 @@ class SachsenAnhalt2026(unittest.TestCase):
         self.assertIn("Statistisches Landesamt Sachsen-Anhalt", w["quelle"]["name"])
 
 
+class Ergebnispraesentation(unittest.TestCase):
+    """Baden-Württemberg und Berlin 2026: gleiche Ergebnispräsentation, ein Leser (praes_*)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.d = {c: json.loads((L.QUELLEN / f"{L.PRAES[c]['kuerzel']}_praesentation.json").read_text(encoding="utf-8")) for c in ("DE-BW", "DE-BE")}
+        cls.geo = {c: json.loads((APP / dict(L.WAHL_GEO)[L.PRAES[c]["geo"]]).read_text(encoding="utf-8")) for c in ("DE-BW", "DE-BE")}
+        cls.bw, cls.be = L.bw_ltw26(), L.be_agh26()
+
+    def test_auszuege_sind_in_sich_stimmig(self):
+        for c in ("DE-BW", "DE-BE"):
+            self.assertEqual(L.praes_pruefe(self.d[c], L.PRAES[c], self.geo[c]), [], c)
+
+    def test_bw_deckt_sich_mit_der_amtlichen_downloaddatei(self):
+        self.assertEqual(L.bw_abgleich(self.d["DE-BW"]), [])
+        d = copy.deepcopy(self.d["DE-BW"])
+        z = next(z for z in d["wahlkreise"]["57"]["zeilen"] if z[0] == "CDU")
+        z[5] = "21.049"
+        self.assertTrue(any("57 - Singen: F2 CDU Datei 21048, Präsentation 21049" in x for x in L.bw_abgleich(d)), L.bw_abgleich(d)[:3])
+
+    def test_sollwerte_baden_wuerttemberg(self):
+        g = self.bw["g"]
+        self.assertEqual((g["wb"], g["w"], g["bet"], g["bet_vor"]), (7764858, 5406737, 69.6, 63.8))
+        self.assertEqual(g["s"]["z"][:2], [["GRÜNE", 1623208, 30.2, 32.6], ["CDU", 1595929, 29.7, 24.1]])
+        self.assertEqual(g["s"]["e"][0], ["CDU", 1837689, 34.3, 24.1])
+        self.assertEqual({p: n for p, n, _ in g["sitze"]}, {"GRÜNE": 56, "CDU": 56, "AfD": 35, "SPD": 10})
+        self.assertEqual((g["sitze_n"], dict(g["sitze_direkt"])), (157, {"GRÜNE": 13, "CDU": 56, "AfD": 1}))
+        self.assertNotIn("Übrige", [p for p, *_ in g["s"]["z"] + g["s"]["e"]])
+        wk = self.bw["einheiten"][0]["werte"]
+        self.assertEqual(len(wk), 70)
+        self.assertEqual((wk["57"]["n"], wk["57"]["direkt"]), ("57 Singen", {"name": "Christoph Stetter", "partei": "CDU"}))
+        self.assertEqual((wk["57"]["s"]["e"][0], wk["57"]["s"]["z"][0]), (["CDU", 24259, 36.2, 21.5], ["CDU", 21048, 31.4, 21.6]))
+        self.assertEqual(sum(x["w"] for x in wk.values()), g["w"])
+        self.assertEqual((self.bw["status"], self.bw["vor"]["datum"]), ("endgültig", "2021-03-14"))
+
+    def test_sollwerte_berlin(self):
+        g = self.be["g"]
+        self.assertEqual((g["wb"], g["w"], g["bet"], g["bet_vor"]), (2487318, 1846344, 74.2, 62.9))
+        self.assertEqual(g["s"]["z"][:2], [["Die Linke", 468391, 25.7, 12.2], ["CDU", 342746, 18.8, 28.3]])
+        self.assertEqual({p: n for p, n, _ in g["sitze"]}, {"Die Linke": 45, "CDU": 33, "AfD": 29, "GRÜNE": 25, "SPD": 21})
+        self.assertEqual((g["sitze_n"], dict(g["sitze_direkt"])), (153, {"Die Linke": 28, "CDU": 26, "AfD": 13, "GRÜNE": 10, "SPD": 1}))
+        wk = self.be["einheiten"][0]["werte"]
+        self.assertEqual(len(wk), 78)
+        self.assertEqual((wk["0505"]["n"], wk["0505"]["direkt"]), ("Spandau 5", {"name": "Kai Wegner", "partei": "CDU"}))
+        self.assertEqual(wk["0505"]["s"]["e"][0], ["CDU", 7583, 31.8, 46.9])
+        self.assertEqual(sum(x["wb"] for x in wk.values()), g["wb"])
+
+    def test_grenzen_passen_zu_den_wahlkreisen(self):
+        rahmen = {"DE-BW": (7.4, 10.6, 47.4, 49.9), "DE-BE": (13.0, 13.8, 52.3, 52.7)}
+        for c, w in (("DE-BW", self.bw), ("DE-BE", self.be)):
+            self.assertEqual({f["properties"]["id"] for f in self.geo[c]["features"]}, set(w["einheiten"][0]["werte"]))
+            x0, x1, y0, y1 = rahmen[c]
+            for f in self.geo[c]["features"]:
+                ringe = f["geometry"]["coordinates"] if f["geometry"]["type"] == "Polygon" else [r for p in f["geometry"]["coordinates"] for r in p]
+                for r in ringe:
+                    self.assertEqual(r[0], r[-1])
+                    self.assertTrue(all(x0 < x < x1 and y0 < y < y1 for x, y in r), f["properties"])
+
+    def test_pruefung_findet_widersprueche(self):
+        d = copy.deepcopy(self.d["DE-BE"])
+        z = next(z for z in d["wahlkreise"]["0505"]["zeilen"] if z[0] == "CDU")
+        z[5] = "7.864"
+        f = L.praes_pruefe(d, L.PRAES["DE-BE"])
+        self.assertTrue(any("0505: Summe der Parteien (z)" in x for x in f) and any("Summe der Wahlkreise Zweitstimmen CDU" in x for x in f), f)
+        d = copy.deepcopy(self.d["DE-BE"])
+        next(z for z in d["gewaehlt"]["direkt"] if z[0].startswith("0505"))[2] = "SPD"
+        self.assertTrue(any("Wahlkreis 0505: gewählt" in x for x in L.praes_pruefe(d, L.PRAES["DE-BE"])))
+        d = copy.deepcopy(self.d["DE-BE"])
+        d["titel"] = d["titel"].replace("Amtliches Endergebnis", "Vorläufiges Ergebnis")
+        for w in d["wahlkreise"].values():
+            w["titel"] = w["titel"].replace("Amtliches Endergebnis", "Vorläufiges Ergebnis")
+        self.assertTrue(any("kein endgültiges Ergebnis" in x for x in L.praes_pruefe(d, L.PRAES["DE-BE"])))
+        del d["wahlkreise"]["0505"]
+        self.assertTrue(any("77 statt 78 Wahlkreise" in x for x in L.praes_pruefe(d, L.PRAES["DE-BE"])))
+        self.assertTrue(any("Grenzen" in x for x in L.praes_pruefe(self.d["DE-BW"], L.PRAES["DE-BW"], {"features": self.geo["DE-BW"]["features"][:-1]})))
+
+    def test_wahlregister_enthaelt_den_amtlichen_stand(self):
+        reg = {x["id"]: x for x in json.loads((APP / "data/wahlen.json").read_text(encoding="utf-8"))["wahlen"]}
+        for wid, datum, geo, n, erste in (("DE-BW-parl-2026", "2026-03-08", "landtagswahlkreise-bw", 70, ["GRÜNE", 1623208, 30.2, 32.6]),
+                                           ("DE-BE-parl-2026", "2026-09-20", "landtagswahlkreise-be", 78, ["Die Linke", 468391, 25.7, 12.2])):
+            w = reg[wid]
+            self.assertEqual((w["datum"], w["status"]), (datum, "endgültig"))
+            self.assertEqual(w["g"]["s"]["z"][0], erste)
+            self.assertEqual([(u["id"], u["geo"], len(u["werte"])) for u in w["einheiten"]], [("lwk", geo, n)])
+        self.assertEqual({c for c in L.WAHLEN}, {"DE-ST", "DE-BW", "DE-BE"})
+
+
 class Abdeckung(unittest.TestCase):
     def test_uebersicht_passt_zum_wahlregister(self):
         import wahlabdeckung
@@ -121,8 +208,11 @@ class Abdeckung(unittest.TestCase):
         st = z["DE-ST-parl-2026"]
         self.assertEqual((st["stufe"], st["stimmen_absolut"], st["vergleich_vorwahl"], st["sitze"], st["luecken"]), ("A", "ja", "ja", "ja", ""))
         self.assertIn("Landtagswahlkreise (41)", st["einheiten_mit_grenzen"])
-        self.assertEqual(z["DE-BW-parl-2026"]["stufe"], "C")
-        self.assertIn("keine amtliche Quelle", z["DE-BW-parl-2026"]["luecken"])
+        for wid, einheit in (("DE-BW-parl-2026", "Landtagswahlkreise (70)"), ("DE-BE-parl-2026", "Abgeordnetenhauswahlkreise (78)")):
+            self.assertEqual((z[wid]["stufe"], z[wid]["stimmen_absolut"], z[wid]["vergleich_vorwahl"]), ("A", "ja", "ja"))
+            self.assertIn(einheit, z[wid]["einheiten_mit_grenzen"])
+        self.assertEqual(z["DE-RP-parl-2026"]["stufe"], "C")
+        self.assertIn("keine amtliche Quelle", z["DE-RP-parl-2026"]["luecken"])
 
     def test_stufen(self):
         import wahlabdeckung

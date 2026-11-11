@@ -8,6 +8,10 @@ const fs = require('node:fs');
 const WAHLEN_SOLL = [
   { id: 'DE-ST-parl-2026', karte: [/Landtag Sachsen-Anhalt/, /Zweitstimmen/, /AfD/, /43,8/, /Landtagswahl 2021/, /77,8/, /endgültig/i, /Statistisches Landesamt Sachsen-Anhalt/],
     punkt: [11.97, 51.48], zoom: 9.5, kreis: [/Landtagswahlkreis/, /Halle/, /Direktmandat/] },
+  { id: 'DE-BW-parl-2026', karte: [/Landtag Baden-Württemberg/, /Zweitstimmen/, /GRÜNE/, /30,2/, /Landtagswahl 2021/, /69,6/, /endgültig/i, /Statistisches Landesamt Baden-Württemberg/],
+    punkt: [8.876, 47.814], zoom: 9.5, kreis: [/Landtagswahlkreis/, /Singen/, /Direktmandat/] },
+  { id: 'DE-BE-parl-2026', karte: [/Abgeordnetenhaus/, /Zweitstimmen/, /Die Linke/, /25,7/, /Wiederholungswahl 2023/, /74,2/, /endgültig/i, /Landeswahlleitung Berlin/],
+    punkt: [13.1666, 52.4937], zoom: 11, kreis: [/Wahlkreis/, /Spandau 5/, /Direktmandat/] },
 ];
 (async () => {
   const browser = await chromium.launch({ headless: true, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });

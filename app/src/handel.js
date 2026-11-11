@@ -311,8 +311,8 @@ const POL = (() => {
   const sitze = k => k.aktuell && k.aktuell.sitze && k.aktuell.sitze.length ? { l: k.aktuell.sitze.map(g => [g.partei, g.sitze, g.farbe, g.regierung]), q: "Wikipedia" }
     : k.wahl && k.wahl.sitze && k.wahl.sitze.length ? { l: k.wahl.sitze.filter(x => x[1] != null).map(x => [x[0], x[1], x[2], null]), q: "IPU" } : null;
   const balkenSitze = s => { const n = s.l.reduce((a, g) => a + g[1], 0) || 1;
-    return `<span style="display:inline-flex;width:120px;height:9px;border-radius:2px;overflow:hidden;vertical-align:middle;background:#2a313b">${s.l.map(g => `<i title="${esc(g[0])} ${g[1]}" style="display:block;width:${(g[1] / n * 100).toFixed(2)}%;background:${esc(g[2] || "#8b95a3")}"></i>`).join("")}</span>`; };
-  const neuChip = j => j ? ` <span style="color:#ffa828" title="Wahl am ${esc(datum(j.datum))}, Ergebnis ${esc(j.ergebnis)}">● neu gewählt</span>` : "";
+    return `<span style="display:inline-flex;width:120px;height:9px;border-radius:2px;overflow:hidden;vertical-align:middle;background:var(--line)">${s.l.map(g => `<i title="${esc(g[0])} ${g[1]}" style="display:block;width:${(g[1] / n * 100).toFixed(2)}%;background:${esc(g[2] || "#8b95a3")}"></i>`).join("")}</span>`; };
+  const neuChip = j => j ? ` <span style="color:var(--amber)" title="Wahl am ${esc(datum(j.datum))}, Ergebnis ${esc(j.ergebnis)}">● neu gewählt</span>` : "";
   const leerPA = () => `<div class="grid">${panel({ code: "PARL", titel: "Parlamente", sub: "keine Daten", body: `<p class="n">Keine Parlamentsdaten im Build (app/parlamente_daten.py).</p>` })}</div>`;
   function kammerZeile(iso, k, region) {
     const s = sitze(k), gr = s ? [...s.l].filter(g => g[0] !== "vakant").sort((a, b) => b[1] - a[1])[0] : null, n = s ? s.l.reduce((a, g) => a + g[1], 0) : 0, reg = s ? s.l.filter(g => g[3]).reduce((a, g) => a + g[1], 0) : 0;
@@ -372,7 +372,7 @@ const POL = (() => {
     pk.sort((a, b) => b[2] - a[2] || a[3] - b[3]);
     const farbe = []; liste.forEach(([, k, c]) => { for (let i = 0; i < k; i++) farbe.push(c); });
     const proReihe = Math.max(1, ...radien.map(r => Math.round(n * r / ges))), rad = Math.min(5.5, reihen > 1 ? (r1 - r0) / (reihen - 1) * .42 : 5.5, Math.PI * r1 / proReihe * .46).toFixed(2);
-    return `<svg viewBox="-102 -100 204 106" style="width:100%;max-width:${breite || 320}px;display:block;margin:0 auto" role="img" aria-label="Sitzverteilung">${pk.slice(0, farbe.length).map((q, i) => `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="${rad}" fill="${esc(farbe[i])}"/>`).join("")}<text x="0" y="-6" text-anchor="middle" font-size="${n > 99 ? 24 : 28}" fill="#e8ecf1" font-family="var(--mono)">${n}</text></svg>`;
+    return `<svg viewBox="-102 -100 204 106" style="width:100%;max-width:${breite || 320}px;display:block;margin:0 auto" role="img" aria-label="Sitzverteilung">${pk.slice(0, farbe.length).map((q, i) => `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="${rad}" fill="${esc(farbe[i])}"/>`).join("")}<text x="0" y="-6" text-anchor="middle" font-size="${n > 99 ? 24 : 28}" fill="var(--ink)" font-family="var(--mono)">${n}</text></svg>`;
   }
   const koLegende = liste => `<div style="display:flex;flex-wrap:wrap;gap:3px 10px;justify-content:center;margin-top:4px;font-size:11px">${[...liste].sort((a, b) => b[1] - a[1]).map(g => `<span><i style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${esc(g[2])};margin-right:4px"></i>${esc(g[3] || g[0])} <b>${g[1]}</b></span>`).join("")}</div>`;
   function koSitze(k, g, sitze) {

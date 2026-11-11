@@ -128,7 +128,7 @@ const BOE = (() => {
       <td style="text-align:left;font-family:var(--sans)"><a class="flink" href="#b-verlauf" data-bplus="u:${esc(x.symbol)}">${esc(x.name)}</a> <span class="n">${esc(x.symbol)}</span>${x.id ? ` <a class="flink" href="#firma-${esc(x.id)}" title="Profilseite mit Kennzahlen und Dokumenten">Profil</a>` : ""}</td>
       <td class="n" style="text-align:left;font-family:var(--sans)">${esc(x.land)}</td><td class="n" style="text-align:left;font-family:var(--sans)">${esc(x.sektor)}</td><td>${x.boerswert == null ? "–" : (x.boerswert >= 100 ? f0 : f1).format(x.boerswert)}</td>
       <td>${kursF(x.kurs)} <span class="n">${esc(x.waehrung || "")}</span></td>${rendZellen(x)}<td>${spanne(x)}</td><td>${sparkF(x)}</td><td>${plus("u:" + x.symbol)}</td></tr>`).join("")}</tbody></table></div>`;
-    const ctrl = `<div class="ctrl" style="margin-bottom:10px"><input id="bsuche" type="search" placeholder="Name oder Symbol …" value="${esc(S.suche)}" style="background:#000;border:1px solid var(--line);border-radius:8px;padding:4px 10px">
+    const ctrl = `<div class="ctrl" style="margin-bottom:10px"><input id="bsuche" type="search" placeholder="Name oder Symbol …" value="${esc(S.suche)}" style="background:var(--field);border:1px solid var(--line);border-radius:8px;padding:4px 10px">
       <select id="bland" aria-label="Land"><option value="alle">Alle Länder</option>${laender.map(x => `<option${x === S.land ? " selected" : ""}>${esc(x)}</option>`).join("")}</select>
       <select id="bsektor" aria-label="Sektor"><option value="alle">Alle Sektoren</option>${sektoren.map(x => `<option${x === S.sektor ? " selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
     return `<div class="grid">${panel({

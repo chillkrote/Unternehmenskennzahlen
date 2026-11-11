@@ -384,7 +384,7 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
       const geos = Object.keys(V.daten[sp.a] || {}); h += `<select data-kf="b" aria-label="Land">${geos.map(g => opt(g, V.land[g] || g, g === sp.b)).join("")}</select>`;
     } else if (sp.typ === "fkz" || sp.typ === "kurs") {
       const f = U.nach[sp.a], liste = sp.typ === "fkz" ? U.zr : U.kursFirmen;
-      h += `<input data-kf="firma" list="kor-l-${sp.typ}" value="${esc(f ? f.name : "")}" placeholder="Unternehmen wählen …" aria-label="Unternehmen" style="min-width:210px;background:#000;border:1px solid var(--line);border-radius:999px;padding:4px 12px">`;
+      h += `<input data-kf="firma" list="kor-l-${sp.typ}" value="${esc(f ? f.name : "")}" placeholder="Unternehmen wählen …" aria-label="Unternehmen" style="min-width:210px;background:var(--field);border:1px solid var(--line);border-radius:999px;padding:4px 12px">`;
       h += `<datalist id="kor-l-${sp.typ}">${liste.map(x => `<option value="${esc(x.name)}">`).join("")}</datalist>`;
       if (sp.typ === "fkz" && f) h += `<select data-kf="b" aria-label="Kennzahl">${Object.entries(fkz(f)).map(([k, s]) => opt(k, `${s.name} (${s.pts.length} J.)`, k === sp.b)).join("")}</select>`;
     } else if (sp.typ === "bkz" || sp.typ === "bkurs") {
@@ -425,8 +425,8 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
         ${lab("Umrechnung", sel("kagg", [["auto", "Mittel bei Raten, sonst letzter Wert"], ["mittel", "immer Mittelwert"], ["letzter", "immer letzter Wert"]], S.agg, "Aggregation"))}
       </div>
       <div class="ctrl">
-        ${lab("von Jahr", `<input id="kvon" type="number" min="1950" max="2100" value="${esc(S.von)}" placeholder="früheste" style="width:90px;background:#000;border:1px solid var(--line);border-radius:999px;padding:4px 10px">`)}
-        ${lab("bis Jahr", `<input id="kbis" type="number" min="1950" max="2100" value="${esc(S.bis)}" placeholder="späteste" style="width:90px;background:#000;border:1px solid var(--line);border-radius:999px;padding:4px 10px">`)}
+        ${lab("von Jahr", `<input id="kvon" type="number" min="1950" max="2100" value="${esc(S.von)}" placeholder="früheste" style="width:90px;background:var(--field);border:1px solid var(--line);border-radius:999px;padding:4px 10px">`)}
+        ${lab("bis Jahr", `<input id="kbis" type="number" min="1950" max="2100" value="${esc(S.bis)}" placeholder="späteste" style="width:90px;background:var(--field);border:1px solid var(--line);border-radius:999px;padding:4px 10px">`)}
         ${lab("Verzögerung (B gegenüber A)", sel("klag", Array.from({ length: 2 * lagMax(R.f || "M") + 1 }, (_, i) => i - lagMax(R.f || "M")).map(k => [k, (k > 0 ? "+" : "") + k + (k === 0 ? " (gleichzeitig)" : "")]), S.lag, "Verzögerung"))}
         ${lab("Verfahren", sel("kmeth", [["pearson", "Pearson r"], ["spearman", "Spearman ρ"]], S.methode, "Verfahren"))}
         <button type="button" class="mini" data-ktausch>A ↔ B tauschen</button>
@@ -451,7 +451,7 @@ const montag = (y, mo, d) => { const t = Date.UTC(y, mo - 1, d), w = new Date(t)
     if (ok) {
       const pts = R.rows.map((r, i) => ({ x: r.a, y: r.b, t: i, tip: `<b>${zl(r.k)}</b>${r.kb !== r.k ? " → " + zl(r.kb) : ""}\nA: ${fz(r.a)}\nB: ${fz(r.b)}` }));
       const nm = (z, w) => `${w.kurz}${z.t === "niveau" ? "" : " (" + TRANS[z.t].replace(" (%)", "") + (/%|Verän/.test(TRANS[z.t]) ? ", %" : "") + ")"}`;
-      out += `<div class="grid">${panel({ code: "KOR 3", titel: "Streudiagramm mit Regressionsgerade", breite: "w7", sub: "helle Punkte = jüngere Perioden", body: streu(pts, st, "A: " + nm(R.A, R.a), "B: " + nm(R.B, R.b)) })}
+      out += `<div class="grid">${panel({ code: "KOR 3", titel: "Streudiagramm mit Regressionsgerade", breite: "w7", sub: "kräftigere Punkte = jüngere Perioden", body: streu(pts, st, "A: " + nm(R.A, R.a), "B: " + nm(R.B, R.b)) })}
         ${panel({ code: "KOR 4", titel: "Kreuzkorrelation nach Verzögerung", breite: "w5", sub: `${S.methode === "spearman" ? "Spearman" : "Pearson"} · Klick auf Balken setzt die Verzögerung`, body: kreuz(R),
           fuss: `Positiver Lag k: B folgt A um k Perioden später (A eilt voraus), negativer Lag: A folgt B. Gestrichelte Linien: ±1,96/√n, Rauschband bei unabhängigen Reihen.` })}</div>`;
       out += panel({ code: "KOR 5", titel: "Verlauf beider Reihen (standardisiert)", sub: "z-Werte der ausgewerteten, transformierten Reihen, B ggf. mit gewählter Verzögerung", body: linien(R.rows, R.a.kurz, R.b.kurz) });

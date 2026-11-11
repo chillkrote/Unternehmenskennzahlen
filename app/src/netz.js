@@ -36,7 +36,7 @@ const NETZ = (() => {
     partner:       { name: "Partner", farbe: "#ff7ac8", dash: [1, 1.2], css: "2 3" },
     filiale:       { name: "Filiale / Niederlassung", farbe: "#6fd0e8", dash: [3, 3], css: "6 6" },
   };
-  const swatch = (a, b = 36) => `<svg class="nz-sw" width="${b}" height="8" aria-hidden="true"><line x1="1" y1="4" x2="${b - 1}" y2="4" stroke="${a.farbe}" stroke-width="2.6"${a.css ? ` stroke-dasharray="${a.css}"` : ' stroke-linecap="round"'}/></svg>`;
+  const swatch = (a, b = 36) => `<svg class="nz-sw" width="${b}" height="8" aria-hidden="true"><line x1="1" y1="4" x2="${b - 1}" y2="4" stroke="${THEMA.farbe(a.farbe, 'line-color')}" stroke-width="2.6"${a.css ? ` stroke-dasharray="${a.css}"` : ' stroke-linecap="round"'}/></svg>`;
   /* Standortarten: Farbe der Punkte */
   const ORT = {
     hauptsitz: ["Konzernzentrale", "#ffa828"], hauptsitz_tochter: ["Sitz einer Tochter", "#ffc56b"], fahrzeugwerk: ["Fahrzeugwerk", "#2ec4d6"],

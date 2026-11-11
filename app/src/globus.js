@@ -1107,9 +1107,9 @@ const GLOBUS = (() => {
       return `<b>${esc(p.name)}</b> <span class="pct">${esc(p.stadt)}</span><br>${esc(p.index)}: ${x ? `<span style="color:${farbVz(x.ytd)}">${pctVz(x.ytd)}</span> seit Jahresbeginn · 1 J. ${pctVz(x.r1j)}` : "keine Kurse"}<br><span class="pct">${x ? "Stand " + esc(x.datum) + " · Yahoo Finance · " : ""}klicken für das Land</span>`; },
     "un-kreis": p => { const e = UN_LAND[p.iso] || {}; return `<b>${esc(landName(p.iso))}</b><br>${f0.format(e.n || 0)} Unternehmen erfasst, ${f0.format(e.notiert || 0)} börsennotiert${e.wert ? `<br>Börsenwert der ${f0.format(e.wn)} großen Unternehmen im Bereich BÖR: ${f0.format(e.wert)} Mrd. USD` : ""}`; },
     "po-wahl": p => `<b>${esc(landName(p.iso))}</b><br>${wahlenVon(p.iso).slice(0, 3).map(w => `${esc(datumWahl(w.datum))}: ${esc(w.was)}`).join("<br>")}<br><span class="pct">Wikipedia, nationaler Wahlkalender</span>`,
-    "po-de-flaeche": p => `<b>${esc(p.name)}</b><br>${esc(p.mp || "–")}${p.partei ? ` (${esc(p.partei)})` : ""}${p.neu ? `<br><span style="color:#ffa828">Landtag in den letzten ${SCHWELLE} Tagen gewählt</span>` : ""}<br><span class="pct">Regierungschef laut Wikidata · klicken für Landtag, Wahl und Umfrage</span>`,
+    "po-de-flaeche": p => `<b>${esc(p.name)}</b><br>${esc(p.mp || "–")}${p.partei ? ` (${esc(p.partei)})` : ""}${p.neu ? `<br><span style="color:var(--amber)">Landtag in den letzten ${SCHWELLE} Tagen gewählt</span>` : ""}<br><span class="pct">Regierungschef laut Wikidata · klicken für Landtag, Wahl und Umfrage</span>`,
     "po-gl-flaeche": p => { const g = gliedstaat(p.code), k = g && g.kammern[0], st = staerkste(k);
-      return `<b>${esc(p.name)}</b> <span class="pct">${esc(landName(p.iso))}</span><br>${g ? `${esc(g.regierungschef ? g.regierungschef.name : "–")}${p.partei ? ` (${esc(p.partei)})` : ""}${st ? `<br>stärkste Fraktion: ${esc(st.p)} (${f0.format(st.n)})` : ""}` : "keine Daten"}${p.neu ? `<br><span style="color:#ffa828">Parlament in den letzten ${SCHWELLE} Tagen gewählt</span>` : ""}<br><span class="pct">Wikidata, Wikipedia · klicken für Parlament und Wahl</span>`; },
+      return `<b>${esc(p.name)}</b> <span class="pct">${esc(landName(p.iso))}</span><br>${g ? `${esc(g.regierungschef ? g.regierungschef.name : "–")}${p.partei ? ` (${esc(p.partei)})` : ""}${st ? `<br>stärkste Fraktion: ${esc(st.p)} (${f0.format(st.n)})` : ""}` : "keine Daten"}${p.neu ? `<br><span style="color:var(--amber)">Parlament in den letzten ${SCHWELLE} Tagen gewählt</span>` : ""}<br><span class="pct">Wikidata, Wikipedia · klicken für Parlament und Wahl</span>`; },
     "po-neu": p => `<b>${esc(landName(p.iso))}: gerade gewählt</b><br>${juengstNational(p.iso).slice(0, 3).map(w => `${esc(datumWahl(w.datum))}: ${esc(w.was)}${w.status ? ` <span class="pct">(Ergebnis ${esc(w.status)})</span>` : ""}`).join("<br>")}<br><span class="pct">Wahlen der letzten ${SCHWELLE} Tage · Wikipedia-Wahlkalender, IPU Parline</span>`,
   };
 
@@ -1124,7 +1124,7 @@ const GLOBUS = (() => {
       ${kzKlein("Währung", esc(w || "–"), w && w !== "USD" ? `${wTxt} zum USD lfd. J.` : "", "EZB-Referenzkurse; positiv = Währung hat zum US-Dollar gewonnen")}</div>`;
   }
   const spark2 = l => { if (!l || l.length < 2) return ""; const ys = l.map(x => x[1]), lo = Math.min(...ys), hi = Math.max(...ys), sp = hi - lo || 1;
-    return `<svg viewBox="0 0 100 22" preserveAspectRatio="none" style="width:80px;height:16px;vertical-align:middle" aria-hidden="true"><path d="${l.map((x, i) => `${i ? "L" : "M"}${(i / (l.length - 1) * 100).toFixed(1)},${(21 - (x[1] - lo) / sp * 20).toFixed(1)}`).join("")}" fill="none" stroke="#a3acb8" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>`; };
+    return `<svg viewBox="0 0 100 22" preserveAspectRatio="none" style="width:80px;height:16px;vertical-align:middle" aria-hidden="true"><path d="${l.map((x, i) => `${i ? "L" : "M"}${(i / (l.length - 1) * 100).toFixed(1)},${(21 - (x[1] - lo) / sp * 20).toFixed(1)}`).join("")}" fill="none" stroke="var(--ink-2)" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>`; };
   function boerseWelt() {
     const b = BD(); if (!b || !BW) return `<p class="gk-leer">Keine Börsendaten im Build.</p>`;
     const reg = {}; b.indizes.filter(x => x.kurs != null && x.region && !/ETF|VIX/.test(x.name)).forEach(x => { (reg[x.region] = reg[x.region] || []).push(x); });
@@ -1216,7 +1216,7 @@ const GLOBUS = (() => {
     if (!PD) return `<div><h2>Politik & Wahlen</h2><p class="gk-leer">Keine Politikdaten im Build.</p></div>`;
     const b = buendnis(S.buendnis);
     const chips = `<div class="gk-block"><h3>Bündnis wählen</h3><div class="gk-chips">${BUENDNISSE.map(x => `<button type="button" data-gkbund="${esc(x.id)}" aria-pressed="${x.id === S.buendnis}" style="border-left:3px solid ${esc(x.farbe)}">${esc(x.kurz)}</button>`).join("")}</div></div>`;
-    const leg = `<div class="gk-block"><h3>Ausrichtung der Regierung</h3><div class="gk-chips">${AUSR.map(([, t, c]) => `<span class="gk-leg"><i style="background:${c}"></i>${esc(t)}</span>`).join("")}<span class="gk-leg"><i style="background:#3a4655"></i>ohne Zuordnung</span></div>
+    const leg = `<div class="gk-block"><h3>Ausrichtung der Regierung</h3><div class="gk-chips">${AUSR.map(([, t, c]) => `<span class="gk-leg"><i style="background:${c}"></i>${esc(t)}</span>`).join("")}<span class="gk-leg"><i style="background:var(--keine-daten)"></i>ohne Zuordnung</span></div>
       <p class="gk-quelle" style="margin-top:6px">Mittelwert der Wikidata-Angaben „politische Ausrichtung“ der Partei des Regierungschefs (ohne Partei: des Staatsoberhaupts). Ohne Partei oder Angabe (z. B. Monarchien, Einparteienstaaten): ohne Zuordnung. Wikidata (CC0), Abruf ${esc(PD.abruf)}.</p></div>`;
     const alle = Object.keys(PD.wahlen || {}).flatMap(iso => wahlenVon(iso).map(w => ({ ...w, iso }))).filter(w => !b || b.mitglieder.includes(w.iso)).sort((x, y) => x.datum.localeCompare(y.datum));
     if (b) {
@@ -1230,7 +1230,7 @@ const GLOBUS = (() => {
     const zaehl = {}; Object.values(PD.regierungen || {}).forEach(r => { const k = r.ausrichtung || "ohne"; zaehl[k] = (zaehl[k] || 0) + 1; });
     const nat = [...new Set([...Object.keys(PD.wahlen_juengst || {}), ...(PA ? PA.juengst.filter(j => !j.region).map(j => j.iso) : [])])].flatMap(i => juengstNational(i).map(w => ({ ...w, iso: i }))).sort((x, y) => y.datum.localeCompare(x.datum));
     const reg = PA ? PA.juengst.filter(j => j.region) : [];
-    const neuBlock = nat.length || reg.length ? `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3 style="color:#ffa828">Gerade gewählt (letzte ${SCHWELLE} Tage)</h3>
+    const neuBlock = nat.length || reg.length ? `<div class="gk-block" style="border-left:3px solid var(--amber);padding-left:10px"><h3 style="color:var(--amber)">Gerade gewählt (letzte ${SCHWELLE} Tage)</h3>
       <table class="gk-tab"><tbody>${nat.map(w => `<tr><td class="pct" style="white-space:nowrap">${esc(datumWahl(w.datum))}</td><td style="font-family:var(--sans);text-align:left;white-space:normal"><button type="button" class="gk-link" data-gkland="${esc(w.iso)}">${esc(landName(w.iso))}</button>: ${wpLink(w.url, w.was)}${w.status ? ` <span class="pct">(Ergebnis ${esc(w.status)})</span>` : ""}</td></tr>`).join("")}
       ${reg.map(j => `<tr><td class="pct" style="white-space:nowrap">${esc(datumWahl(j.datum))}</td><td style="font-family:var(--sans);text-align:left;white-space:normal"><button type="button" class="gk-link" data-gkland="${esc(j.iso)}">${esc(landName(j.iso))}</button>, <button type="button" class="gk-link" data-gkregion="${esc(j.region)}">${esc(j.region_name)}</button>: ${wpLink(j.url, j.kammer || "Parlament")} <span class="pct">(Ergebnis ${esc(j.ergebnis)})</span></td></tr>`).join("")}</tbody></table>
       <p class="gk-quelle" style="margin-top:6px">Schwelle ${SCHWELLE} Tage: so lange dauern in den meisten Staaten amtliches Endergebnis und konstituierende Sitzung (Deutschland: Art. 39 GG). „Ergebnis noch nicht in der Quelle“ heißt, die Sitzverteilung ist dort noch die alte.</p></div>` : "";
@@ -1250,7 +1250,7 @@ const GLOBUS = (() => {
     const farbe = []; sorted.forEach(([, k, c]) => { for (let i = 0; i < k; i++) farbe.push(c === "#1a1a1a" ? "#6b6b6b" : c); });
     const proReihe = Math.max(1, ...radien.map(r => Math.round(n * r / gesamt))), rad = Math.min(4.2, reihen > 1 ? (r1 - r0) / (reihen - 1) * .42 : 4.2, Math.PI * r1 / proReihe * .45).toFixed(2);
     const legende = sorted.length > 12 ? [...sorted].sort((a, b) => b[1] - a[1]).slice(0, 11) : sorted, rest = sorted.length > 12 ? sorted.length - 11 : 0;
-    return `<svg viewBox="-100 -100 200 104" style="width:100%;max-width:300px;display:block;margin:0 auto" role="img" aria-label="Sitzverteilung">${punkte.slice(0, farbe.length).map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${rad}" fill="${esc(farbe[i])}"/>`).join("")}<text x="0" y="-4" text-anchor="middle" font-size="13" fill="#e8ecf1" font-family="var(--mono)">${n}</text></svg>
+    return `<svg viewBox="-100 -100 200 104" style="width:100%;max-width:300px;display:block;margin:0 auto" role="img" aria-label="Sitzverteilung">${punkte.slice(0, farbe.length).map((p, i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${rad}" fill="${esc(farbe[i])}"/>`).join("")}<text x="0" y="-4" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="var(--mono)">${n}</text></svg>
       <div class="gk-chips" style="justify-content:center;margin-top:4px">${legende.map(([p, k, c]) => `<span class="gk-leg"><i style="background:${esc(c === "#1a1a1a" ? "#6b6b6b" : c)}"></i>${esc(p)} ${k}</span>`).join("")}${rest ? `<span class="gk-leg">und ${rest} weitere</span>` : ""}</div>`;
   }
   function balken(werte, max) {
@@ -1280,7 +1280,7 @@ const GLOBUS = (() => {
     const zeilen = [lw ? `<tr><td>letzte Wahl</td><td>${esc(datumWahl(lw.datum))}${lw.beginn ? ` <span class="pct">(ab ${esc(datumWahl(lw.beginn))})</span>` : ""}</td></tr>` : "",
       nw ? `<tr><td>nächste Wahl</td><td>${esc(datumWahl(nw.datum))}${nw.erwartet ? ` <span class="pct">(erwartet)</span>` : ""}</td></tr>` : "",
       k.wahl && k.wahl.beteiligung && !(st && st.beteiligung) ? `<tr><td>Wahlbeteiligung</td><td>${f1.format(k.wahl.beteiligung)} %</td></tr>` : ""].join("");
-    return `<div class="gk-block"${j ? ' style="border-left:3px solid #ffa828;padding-left:10px"' : ""}>${titel}${neuHinweis(j, "Wahl")}${bild}${regTxt}${quelle ? `<p class="gk-quelle" style="margin-top:6px">${quelle}.</p>` : ""}${nachWahl}${stimmen}${zeilen ? `<table class="gk-tab" style="margin-top:6px"><tbody>${zeilen}</tbody></table>` : ""}</div>`;
+    return `<div class="gk-block"${j ? ' style="border-left:3px solid var(--amber);padding-left:10px"' : ""}>${titel}${neuHinweis(j, "Wahl")}${bild}${regTxt}${quelle ? `<p class="gk-quelle" style="margin-top:6px">${quelle}.</p>` : ""}${nachWahl}${stimmen}${zeilen ? `<table class="gk-tab" style="margin-top:6px"><tbody>${zeilen}</tbody></table>` : ""}</div>`;
   }
   function parlamentBlock(iso) {
     if (!PA) return "";
@@ -1307,7 +1307,7 @@ const GLOBUS = (() => {
     if (teil === "det" && !g) return "";
     if (!g) return `<div class="gk-block"><h3>Regionen</h3><p class="gk-leer">${esc(landName(iso))} hat keine erfasste Regionalebene. Regionen und Gliedstaaten gibt es bisher für ${f0.format(PA ? (PA.foederal || []).length + (PA.regional || []).length : 0)} Staaten (Listen FOEDERAL und REGIONAL in app/parlamente_daten.py).</p></div>`;
     const sel = S.region && S.region.startsWith(iso + "-") ? g[S.region] : null;
-    const det = sel ? `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(sel.name_de || sel.name)} <span class="pct">${esc(landName(iso))}</span></h3><div class="gk-chips"><button type="button" data-gkregion="${esc(S.region)}">Auswahl aufheben</button></div></div>
+    const det = sel ? `<div class="gk-block" style="border-left:3px solid var(--amber);padding-left:10px"><h3>${esc(sel.name_de || sel.name)} <span class="pct">${esc(landName(iso))}</span></h3><div class="gk-chips"><button type="button" data-gkregion="${esc(S.region)}">Auswahl aufheben</button></div></div>
       ${glRegierung(sel, iso)}
       ${sel.kammern.length ? sel.kammern.map(kammerBlock).join("") : `<div class="gk-block"><p class="gk-leer">Kein Parlament mit Wikipedia-Infobox gefunden.</p></div>`}` : "";
     const zeilen = Object.entries(g).sort((a, b) => (a[1].name_de || a[1].name).localeCompare(b[1].name_de || b[1].name, "de")).map(([c, x]) => {
@@ -1326,7 +1326,7 @@ const GLOBUS = (() => {
     let region = "";
     if (reg) {
       const name = reg.properties.name, l = lr[S.region] || {}, w = btw[name] || btw[Object.keys(btw).find(k => k.startsWith(name.slice(0, 6)))] || {}, um = de.umfragen.parlamente[name] || de.umfragen.parlamente[Object.keys(de.umfragen.parlamente).find(k => k.startsWith(name.slice(0, 6)))];
-      region = `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3>${esc(name)}</h3><p style="margin:4px 0">Regierungschef: <b>${esc(l.regierungschef || "–")}</b>${l.parteien && l.parteien.length ? ` (${esc(l.parteien.map(p => parteiInfo(p).kurz).join(", "))})` : ""}</p>${(() => { const gs = gliedstaat(S.region), c = gs && gs.regierungschef; return (c && c.seit ? `<p class="pct" style="margin:2px 0">im Amt seit ${esc(datumWahl(c.seit))}</p>` : "") + (gs && (gs.koalition || []).length ? `<p class="pct" style="margin:2px 0">Regierungslager: ${esc(gs.koalition.join(", "))}</p>` : ""); })()}
+      region = `<div class="gk-block" style="border-left:3px solid var(--amber);padding-left:10px"><h3>${esc(name)}</h3><p style="margin:4px 0">Regierungschef: <b>${esc(l.regierungschef || "–")}</b>${l.parteien && l.parteien.length ? ` (${esc(l.parteien.map(p => parteiInfo(p).kurz).join(", "))})` : ""}</p>${(() => { const gs = gliedstaat(S.region), c = gs && gs.regierungschef; return (c && c.seit ? `<p class="pct" style="margin:2px 0">im Amt seit ${esc(datumWahl(c.seit))}</p>` : "") + (gs && (gs.koalition || []).length ? `<p class="pct" style="margin:2px 0">Regierungslager: ${esc(gs.koalition.join(", "))}</p>` : ""); })()}
         <h3 style="margin-top:8px">Bundestagswahl 2025 in ${esc(name)} (Zweitstimmen %)</h3>${balken(Object.entries(w), Math.max(...Object.values(w), 1))}
         ${um ? `<h3 style="margin-top:8px">Jüngste Landtagsumfrage (${esc(um.institut)}, ${esc(datumWahl(um.datum))})</h3>${balken(um.werte, Math.max(...um.werte.map(x => x[1]), 1))}` : `<p class="gk-leer">Keine Landtagsumfrage bei DAWUM.</p>`}
         <p class="gk-quelle" style="margin-top:6px">Bundestagswahl: Bundeswahlleiterin; Umfrage: DAWUM. Landtag, letzte Landtagswahl und Regierungslager laut Wikipedia und Wikidata.</p></div>${(gliedstaat(S.region) || { kammern: [] }).kammern.map(kammerBlock).join("")}`;
@@ -1346,7 +1346,7 @@ const GLOBUS = (() => {
   }
   function juengstBlock(iso) {
     const l = juengstNational(iso); if (!l.length) return "";
-    return `<div class="gk-block" style="border-left:3px solid #ffa828;padding-left:10px"><h3 style="color:#ffa828">Gerade gewählt</h3><table class="gk-tab"><tbody>${l.map(w => `<tr><td class="pct" style="white-space:nowrap">${esc(datumWahl(w.datum))}</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${wpLink(w.url, w.was)}${w.status ? `<br><span class="pct">Ergebnis ${esc(w.status)}</span>` : ""}</td></tr>`).join("")}</tbody></table>
+    return `<div class="gk-block" style="border-left:3px solid var(--amber);padding-left:10px"><h3 style="color:var(--amber)">Gerade gewählt</h3><table class="gk-tab"><tbody>${l.map(w => `<tr><td class="pct" style="white-space:nowrap">${esc(datumWahl(w.datum))}</td><td style="font-family:var(--sans);text-align:left;white-space:normal">${wpLink(w.url, w.was)}${w.status ? `<br><span class="pct">Ergebnis ${esc(w.status)}</span>` : ""}</td></tr>`).join("")}</tbody></table>
       <p class="gk-quelle" style="margin-top:6px">Wahlen der letzten ${SCHWELLE} Tage (Wikipedia-Wahlkalender, IPU Parline). Nach ${SCHWELLE} Tagen liegen in der Regel das amtliche Endergebnis und die konstituierende Sitzung vor.</p></div>`;
   }
   function politikLand(iso, stufe) {
@@ -1464,9 +1464,10 @@ const GLOBUS = (() => {
     }
   }
   function karteNeu(start) {
-    const map = new maplibregl.Map({ container: "gk-karte", style: start === "osm" ? stilOSM() : stilEinfach(), center: [10.4, 48.5], zoom: 1.7, minZoom: .8, maxZoom: 16,
+    const map = new maplibregl.Map({ container: "gk-karte", style: THEMA.stil(start === "osm" ? stilOSM() : stilEinfach()), center: [10.4, 48.5], zoom: 1.7, minZoom: .8, maxZoom: 16,
       attributionControl: { compact: true, customAttribution: 'Grenzen: <a href="https://www.naturalearthdata.com" target="_blank" rel="noopener">Natural Earth</a> · Orte: <a href="https://www.geonames.org" target="_blank" rel="noopener">GeoNames</a> (CC BY 4.0)' },
       dragRotate: false, pitchWithRotate: false, boxZoom: false /* Shift+Klick wählt mehrere Länder */, renderWorldCopies: false, locale: { "NavigationControl.ZoomIn": "Hineinzoomen", "NavigationControl.ZoomOut": "Herauszoomen" } });
+    THEMA.karte(map);        // Farbmodus: Schichtfarben werden je Modus umgerechnet (thema.js)
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
     map.touchZoomRotate.disableRotation();
     map.once("style.load", stilGeladen);
@@ -1719,23 +1720,23 @@ const GLOBUS = (() => {
     let el = document.getElementById("gk-legkarte");
     if (!el) { el = document.createElement("div"); el.id = "gk-legkarte"; el.className = "gk-legkarte"; el.setAttribute("aria-label", "Legende der Karte"); host.appendChild(el); }
     const an = id => { const e = EBENEN.find(x => x.id === id); return !!e && ebeneAn(e); };
-    const lin = (farbe, strich, pfeil = true) => `<svg width="34" height="10" aria-hidden="true"><line x1="1" y1="5" x2="${pfeil ? 26 : 33}" y2="5" stroke="${farbe}" stroke-width="2.6" ${strich ? `stroke-dasharray="${strich}"` : 'stroke-linecap="round"'}/>${pfeil ? `<path d="M33 5 L25 1.5 L25 8.5 Z" fill="${farbe}"/>` : ""}</svg>`;
+    const lin = (f, strich, pfeil = true, farbe = THEMA.farbe(f, "line-color")) => `<svg width="34" height="10" aria-hidden="true"><line x1="1" y1="5" x2="${pfeil ? 26 : 33}" y2="5" stroke="${farbe}" stroke-width="2.6" ${strich ? `stroke-dasharray="${strich}"` : 'stroke-linecap="round"'}/>${pfeil ? `<path d="M33 5 L25 1.5 L25 8.5 Z" fill="${farbe}"/>` : ""}</svg>`;
     const teile = [];
     const handelSicht = (an("kontinente") || an("handel")) && HANDEL && (S.form !== "vwl" || S.stufe >= 3);
-    if (handelSicht) teile.push(`<b>Handel</b><span>${lin(HEX_EXP, "")}<em style="color:${HEX_EXP}">Export</em> durchgezogen</span><span>${lin(HEX_IMP, "5 3")}<em style="color:${HEX_IMP}">Import</em> gestrichelt</span>
+    if (handelSicht) teile.push(`<b>Handel</b><span>${lin(HEX_EXP, "")}<em style="color:${THEMA.farbe(HEX_EXP, "text-color")}">Export</em> durchgezogen</span><span>${lin(HEX_IMP, "5 3")}<em style="color:${THEMA.farbe(HEX_IMP, "text-color")}">Import</em> gestrichelt</span>
         <small>Pfeil = Richtung · Breite nach Wert${S.form === "handel" ? " · unter dem Land: Zollsatz und Saldo" : ""}</small>${S.netzOffen ? `<button type="button" data-gkhandelnetz>${S.handelMitNetz ? "Handel ausblenden" : "Handel zusätzlich zeigen"}</button>` : ""}`);
-    if (an("strom") && S.form === "handel") teile.push(`<span>${lin(STROM, "")}<em style="color:${STROM}">Strom</em> netto, TWh</span>`);
+    if (an("strom") && S.form === "handel") teile.push(`<span>${lin(STROM, "")}<em style="color:${THEMA.farbe(STROM, "text-color")}">Strom</em> netto, TWh</span>`);
     if (an("routen")) teile.push(`<b>Routen</b><span>${lin(TRAEGER.see[1], "", false)}See</span><span>${lin(TRAEGER.bahn[1], "6 3", false)}Bahn</span><span>${lin(TRAEGER.strasse[1], "2 3", false)}Straße</span><span>${lin(TRAEGER.luft[1], "1 4", false)}Luft</span>
-        <span><svg width="14" height="14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7 Z" fill="#e8ecf1"/></svg>Engstelle</span><span>${MLD.svg("angriff", "neu", 14)}${MLD.svg("sperrung", "neu", 14)}${MLD.svg("wetter", "neu", 14)}${MLD.svg("streik", "neu", 14)}${MLD.svg("stau", "neu", 14)}${MLD.svg("unfall", "neu", 14)}Meldung (Form = Typ, Farbe = Alter: Bernstein neu, dunkler bis 3 Tage, grau älter)</span>`);
+        <span><svg width="14" height="14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7 Z" fill="var(--ink)"/></svg>Engstelle</span><span>${MLD.svg("angriff", "neu", 14)}${MLD.svg("sperrung", "neu", 14)}${MLD.svg("wetter", "neu", 14)}${MLD.svg("streik", "neu", 14)}${MLD.svg("stau", "neu", 14)}${MLD.svg("unfall", "neu", 14)}Meldung (Form = Typ, Farbe = Alter: Bernstein neu, dunkler bis 3 Tage, grau älter)</span>`);
     if (an("boerse") && bmAktiv()) { const d = FNZ.mess().find(m => m.id === S.bm); teile.push(`<b>${esc(d.name)}</b><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${d.diverg ? "rgba(62,207,110,.7)" : "rgba(255,168,40,.75)"}"/></svg>${d.diverg ? "positiv" : "hoch"}</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${d.diverg ? "rgba(255,82,72,.7)" : "rgba(255,168,40,.2)"}"/></svg>${d.diverg ? "negativ" : "niedrig"}</span><small>${esc(d.einheit)}; Länder ohne Daten bleiben unmarkiert</small>`); }
     else if (an("boerse")) teile.push(`<b>Börse</b><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_EXP}"/></svg>Leitindex seit Jahresbeginn gestiegen</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="${HEX_IMP}"/></svg>gefallen</span>${S.stufe >= 3 ? `<small>Punkte: börsennotierte Unternehmen nach Kursentwicklung seit Jahresbeginn (dunkelgrün über +20 %, dunkelrot unter −20 %, grau ohne Kurse)</small>` : `<small>Stufe 2: je Land Leitindex und 10-jährige Rendite</small>`}`);
-    if (an("undichte") && S.stufe === 1) teile.push(`<b>Unternehmen</b><span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="rgba(255,168,40,.25)" stroke="#ffa828"/></svg>${S.u1 === "wert" ? "Börsenwert" : "Zahl der Unternehmen"} je Land</span>`);
-    if (an("politik")) teile.push(`<b>Regierung</b>${AUSR.map(([, t, c]) => `<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="${c}"/></svg>${esc(t)}</span>`).join("")}<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="#3a4655"/></svg>ohne Zuordnung</span>
+    if (an("undichte") && S.stufe === 1) teile.push(`<b>Unternehmen</b><span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="rgba(255,168,40,.25)" stroke="var(--amber)"/></svg>${S.u1 === "wert" ? "Börsenwert" : "Zahl der Unternehmen"} je Land</span>`);
+    if (an("politik")) teile.push(`<b>Regierung</b>${AUSR.map(([, t, c]) => `<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="${c}"/></svg>${esc(t)}</span>`).join("")}<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="var(--keine-daten)"/></svg>ohne Zuordnung</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#9fd3ff"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">W</text></svg>Wahl in den nächsten 12 Monaten</span>
         <span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#ffa828"/><text x="7" y="10.5" text-anchor="middle" font-size="9" font-weight="700" fill="#07090c">N</text></svg>gerade gewählt (${SCHWELLE} Tage)</span>${S.stufe >= 3 ? "<small>Gliedstaaten in der Farbe der Partei des Regierungschefs, orange umrandet = gerade gewählt</small>" : ""}`);
     if (an("wahlen") && typeof WAHLEN !== "undefined") teile.push(WAHLEN.legende());
     if (an("regionen") && typeof REGIONEN !== "undefined" && S.stufe >= 2) teile.push(REGIONEN.legende());
-    if (an("vwl")) teile.push(`<b>Werte</b><span><em style="color:#7cc4ff">BIP +</em> / <em style="color:#ff9f6b">BIP −</em></span><span>Inflation <em style="color:#ff9f6b">über 5 %</em>, <em style="color:#7cc4ff">unter 0 %</em></span>`);
+    if (an("vwl")) teile.push(`<b>Werte</b><span><em style="color:var(--blau-txt)">BIP +</em> / <em style="color:var(--orange-txt)">BIP −</em></span><span>Inflation <em style="color:var(--orange-txt)">über 5 %</em>, <em style="color:var(--blau-txt)">unter 0 %</em></span>`);
     el.hidden = !teile.length;
     el.innerHTML = teile.join("");
   }
@@ -1770,6 +1771,8 @@ const GLOBUS = (() => {
     else if (id === "parlamente-daten") { PA = BLOCK.jetzt(id) || null; SCHWELLE = PA ? PA.schwelle_tage || 30 : 30; politikAnwenden(); }
     else return; const g = document.getElementById("globus"); if (g && !g.hidden) seiteZeichnen();
   });
+  // Farbmodus gewechselt (thema.js): Kartenfarben rechnet THEMA selbst um; Legende und Seitenleiste mit Farben aus dem Code neu zeichnen
+  document.addEventListener("sphaerae:thema", () => { const g = document.getElementById("globus"); if (g && !g.hidden) { legendeKarte(); seiteZeichnen(); } });
   addEventListener("sphaerae:vwl", () => {        // nachgeladene Reihen: Länderwerte neu, Karte und Seitenleiste neu zeichnen
     VWL_UNVOLLST = false; for (const k of Object.keys(WERT)) delete WERT[k];
     if (map) [["vw-wert", wertPunkte], ["vw-raum", raumPunkte]].forEach(([q, f]) => { if (map.getSource(q)) map.getSource(q).setData(f()); });
@@ -1793,8 +1796,8 @@ const GLOBUS = (() => {
     const ys = alle.map(x => x[1]), lo = Math.min(...ys, 0 < Math.min(...ys) ? Math.min(...ys) : 0), hi = Math.max(...ys), sp = hi - lo || 1;
     const X = i => i / (alle.length - 1) * 100, Y = v => 24 - (v - lo) / sp * 22;
     const pfad = (arr, off) => arr.map((x, i) => `${i ? "L" : "M"}${X(i + off).toFixed(1)},${Y(x[1]).toFixed(1)}`).join("");
-    const null0 = lo < 0 && hi > 0 ? `<line x1="0" x2="100" y1="${Y(0)}" y2="${Y(0)}" stroke="#2a313b" stroke-width=".6"/>` : "";
-    return `<svg viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">${null0}<path d="${pfad(pkt, 0)}" fill="none" stroke="#a3acb8" stroke-width="1.2" vector-effect="non-scaling-stroke"/>${proj.length ? `<path d="${pfad([pkt[pkt.length - 1], ...proj], pkt.length - 1)}" fill="none" stroke="#ffa828" stroke-width="1.2" stroke-dasharray="3 2" vector-effect="non-scaling-stroke"/>` : ""}</svg>`;
+    const null0 = lo < 0 && hi > 0 ? `<line x1="0" x2="100" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)" stroke-width=".6"/>` : "";
+    return `<svg viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">${null0}<path d="${pfad(pkt, 0)}" fill="none" stroke="var(--ink-2)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>${proj.length ? `<path d="${pfad([pkt[pkt.length - 1], ...proj], pkt.length - 1)}" fill="none" stroke="var(--amber)" stroke-width="1.2" stroke-dasharray="3 2" vector-effect="non-scaling-stroke"/>` : ""}</svg>`;
   }
   function kerndaten(iso) {
     const geo = VWL_GEO(iso), kacheln = [];
@@ -2282,7 +2285,7 @@ const GLOBUS = (() => {
     const hier = EBENEN.filter(e => !e.formen || e.formen.includes(S.form)), gruppen = [...new Set(hier.map(e => e.gruppe))];
     el.innerHTML = `<h3>EBENEN · ${esc(FORMEN.find(x => x[0] === S.form)[1].toUpperCase())}</h3>${gruppen.map(g => `<div style="margin-top:4px"><div class="pct" style="font-size:11px">${esc(g)}</div>${hier.filter(e => e.gruppe === g).map(e => `<label class="${e.geplant ? "aus" : ""}"><input type="checkbox" data-gkebene="${esc(e.id)}" ${e.an ? "checked" : ""} ${e.geplant ? "disabled" : ""}> ${esc(e.name)}</label>`).join("")}</div>`).join("")}
       <h3 style="margin-top:8px">GRUNDKARTE</h3><div class="gk-chips"><button type="button" data-gkgrund="osm" aria-pressed="${S.grund === "osm"}">OpenStreetMap</button><button type="button" data-gkgrund="einfach" aria-pressed="${S.grund === "einfach"}">Einfach</button></div>
-      <div class="gk-legende"><span><i style="width:8px;height:8px"></i>börsennotiert</span><span><i style="width:8px;height:8px;background:#2f86dd"></i>nicht notiert</span><span><i style="width:5px;height:5px"></i>nur Stammdaten</span><span><i style="width:12px;height:12px;background:transparent;border:1.4px solid #8b95a3"></i>ohne Ort (nur Land)</span><span><i style="width:14px;height:14px;background:rgba(255,168,40,.28);border:1px solid #ffa828"></i>Gruppe</span></div>`;
+      <div class="gk-legende"><span><i style="width:8px;height:8px"></i>börsennotiert</span><span><i style="width:8px;height:8px;background:#2f86dd"></i>nicht notiert</span><span><i style="width:5px;height:5px"></i>nur Stammdaten</span><span><i style="width:12px;height:12px;background:transparent;border:1.4px solid var(--ink-3)"></i>ohne Ort (nur Land)</span><span><i style="width:14px;height:14px;background:rgba(255,168,40,.28);border:1px solid var(--amber)"></i>Gruppe</span></div>`;
   }
 
   /* ----- Bedienung ----- */

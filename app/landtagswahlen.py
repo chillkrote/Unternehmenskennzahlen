@@ -551,14 +551,14 @@ def be_agh26(kurz=lambda p: p):
 TAB = {
     "DE-RP": {"kuerzel": "rp_ltw26", "wahltag": "2026-03-22", "wahlkreise": 52, "geo": "landtagswahlkreise-rp", "e": "Wahlkreisstimmen", "z": "Landesstimmen",
               "herausgeber": "Landeswahlleiter Rheinland-Pfalz", "url": "https://www.wahlen.rlp.de/landtagswahl/ergebnisse",
-              "lizenz": "amtliches Endergebnis und Geodaten des Landeswahlleiters, Lizenz auf der Seite nicht ausgewiesen",
+              "lizenz": "amtliches Endergebnis des Landeswahlleiters; Grenzen aus BKG VG250 (dl-de/by-2-0) und Stadtbezirken Trier (dl-de/by-2-0)",
               "system": ("Personalisierte Verhältniswahl mit Wahlkreis- und Landesstimme, 52 Wahlkreise; die Landesstimmen bestimmen die Sitzverteilung "
                          "(mindestens 101 Sitze, Überhang- und Ausgleichsmandate möglich), Sperrklausel 5 %."),
               "vor": {"datum": "2021-03-14", "titel": "Landtagswahl 2021",
                       "hinweis": "Vergleich nur für das Land; die Wahlkreise wurden zur Wahl 2026 teils neu zugeschnitten"}},
     "DE-MV": {"kuerzel": "mv_ltw26", "wahltag": "2026-09-20", "wahlkreise": 36, "geo": "landtagswahlkreise-mv", "e": "Erststimmen", "z": "Zweitstimmen",
               "herausgeber": "Landeswahlleiter Mecklenburg-Vorpommern", "url": "https://www.laiv-mv.de/Wahlen/Landtagswahlen/2026/Ergebnisse/",
-              "lizenz": "amtliches Endergebnis, © Der Landeswahlleiter Mecklenburg-Vorpommern; Grenzen: Amt für Geoinformation, Vermessungs- und Katasterwesen, Download kostenfrei, Lizenz nicht ausgewiesen",
+              "lizenz": "amtliches Endergebnis, © Der Landeswahlleiter Mecklenburg-Vorpommern; Grenzen aus BKG VG250 (dl-de/by-2-0) und statistischen Bezirken Rostock (CC0 1.0)",
               "system": ("Personalisierte Verhältniswahl mit Erst- und Zweitstimme, 36 Wahlkreise; die Zweitstimmen bestimmen die Sitzverteilung "
                          "(71 Sitze, Überhang- und Ausgleichsmandate möglich), Sperrklausel 5 %."),
               "vor": {"datum": "2021-09-26", "titel": "Landtagswahl 2021", "hinweis": "Vergleichswerte laut Statistischem Amt Mecklenburg-Vorpommern"}},
@@ -587,6 +587,103 @@ def shape_geojson(zip_bytes, stamm, eigenschaften, toleranz=80):
         koord = [[[[round(x, 4), round(y, 4)] for x, y in ring] for ring in p] for p in polys]
         out.append({"type": "Feature", "properties": eigenschaften(sr.record.as_dict()), "geometry": {"type": "MultiPolygon", "coordinates": koord}})
     return {"type": "FeatureCollection", "features": sorted(out, key=lambda f: int(f["properties"]["id"]))}
+
+
+# ---------------------------------------------------------------- Wahlkreisgrenzen aus offenen Geodaten (E7, Rheinland-Pfalz und Mecklenburg-Vorpommern)
+# Die Landeswahlleitungen geben ihre Wahlkreis-Shapes ohne Lizenz heraus. Die Wahlkreise bestehen aber aus ganzen Gemeinden; nur
+# einige Städte sind auf mehrere Wahlkreise geteilt. Deshalb werden die Grenzen aus den Gemeinden der BKG-Verwaltungsgebiete
+# (VG250, dl-de/by-2-0) zusammengesetzt, geteilte Städte aus offenen Stadtteilgrenzen der Städte. Fehlen solche, steht die Stadt als
+# ein Gebiet auf der Karte (Schlüssel "S" + Gemeindeschlüssel) mit dem amtlichen Ergebnis der Stadt.
+# Zuordnungen: wahlen/quellen/<land>_ltw26_gemeinden_wahlkreise.csv (ags; gemeinde; wahlkreis, bei geteilten Städten "27|28|29")
+# und <land>_ltw26_stadtteile_wahlkreise.csv (ags; stadtteil; wahlkreis; anteil). Beide wurden am 11.11.2026 durch Verschneiden mit
+# der amtlichen Wahlkreiseinteilung ermittelt; "anteil" ist der Flächenanteil des Stadtteils im zugeordneten Wahlkreis.
+BKG_VG250 = "https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.shape.ebenen.zip"
+BKG_QUELLE = "© BKG (2026) dl-de/by-2-0 (Verwaltungsgebiete 1:250 000, Stand 01.01.2026)"
+STADTTEILE = {
+    "07211000": {"url": "https://www.geoportal.rlp.de/spatial-objects/470/collections/ms:grenze_stadtbezirke/items?f=json&limit=500",
+                 "name": "STADTBEZI1", "quelle": "Stadt Trier, Stadtbezirke (dl-de/by-2-0)"},
+    "13003000": {"url": "https://geo.sv.rostock.de/download/opendata/statistische_bezirke/statistische_bezirke.json",
+                 "name": "bezeichnung", "quelle": "Hanse- und Universitätsstadt Rostock, statistische Bezirke (CC0 1.0)"},
+}
+
+
+def _vg250_gemeinden(praefix):
+    """{AGS: [Name, Geometrie in ETRS89/UTM32]} der Gemeinden eines Landes aus VG250 (Zwischenspeicher ~/.cache/sphaerae)."""
+    import io
+    import os
+    import zipfile
+    import shapefile
+    from shapely.geometry import shape
+    cache = Path(os.environ.get("SPHAERAE_CACHE", Path.home() / ".cache" / "sphaerae")) / "vg250_ebenen_0101.zip"
+    if not cache.exists():
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_bytes(_hole(BKG_VG250))
+    z = zipfile.ZipFile(cache)
+    pre = next(n[:-4] for n in z.namelist() if n.endswith("VG250_GEM.shp"))
+    r = shapefile.Reader(shp=io.BytesIO(z.read(pre + ".shp")), dbf=io.BytesIO(z.read(pre + ".dbf")), shx=io.BytesIO(z.read(pre + ".shx")), encoding="utf-8")
+    return {sr.record["AGS"]: [sr.record["GEN"], shape(sr.shape.__geo_interface__).buffer(0)] for sr in r.iterShapeRecords()
+            if sr.record["GF"] == 4 and sr.record["AGS"].startswith(praefix)}
+
+
+def wk_zuordnung(kurz):
+    """Zuordnungen aus wahlen/quellen: ({AGS: [Name, [Wahlkreise]]}, {AGS: {Stadtteil: Wahlkreis}})."""
+    with open(QUELLEN / f"{kurz}_ltw26_gemeinden_wahlkreise.csv", encoding="utf-8", newline="") as f:
+        gem = {z["ags"]: [z["gemeinde"], z["wahlkreis"].split("|")] for z in csv.DictReader(f, delimiter=";")}
+    teile = {}
+    with open(QUELLEN / f"{kurz}_ltw26_stadtteile_wahlkreise.csv", encoding="utf-8", newline="") as f:
+        for z in csv.DictReader(f, delimiter=";"):
+            teile.setdefault(z["ags"], {})[z["stadtteil"]] = z["wahlkreis"]
+    return gem, teile
+
+
+def wk_staedte(kurz):
+    """Geteilte Städte ohne offene Stadtteilgrenzen: {"S" + AGS: [Name, [Wahlkreise]]} (auf der Karte ein Gebiet)."""
+    gem, teile = wk_zuordnung(kurz)
+    return {"S" + a: [n, wks] for a, (n, wks) in sorted(gem.items()) if len(wks) > 1 and a not in teile}
+
+
+def wk_aus_gemeinden(kurz, praefix, namen, toleranz=80):
+    """Wahlkreisgrenzen als GeoJSON: Gemeinden (VG250) je Wahlkreis vereinigt, geteilte Städte nach Stadtteilen oder als ein Gebiet.
+
+    `namen` = {Wahlkreis: Name}. Braucht pyshp, pyproj und shapely (nur beim Abruf der Grenzen)."""
+    from pyproj import Transformer
+    from shapely.geometry import mapping, shape
+    from shapely.ops import transform, unary_union
+    gem, teile = wk_zuordnung(kurz)
+    vg = _vg250_gemeinden(praefix)
+    if set(vg) != set(gem):
+        raise Pruefehler(f"{kurz}: Gemeinden der Zuordnung ({len(gem)}) und VG250 ({len(vg)}) weichen ab: {sorted(set(vg) ^ set(gem))[:5]}")
+    nach_utm = Transformer.from_crs("EPSG:4326", "EPSG:25832", always_xy=True).transform
+    flaechen, staedte = {}, {}
+    for ags, (name, wks) in gem.items():
+        g = vg[ags][1]
+        if len(wks) == 1:
+            flaechen.setdefault(wks[0], []).append(g)
+        elif ags in teile:
+            st = STADTTEILE[ags]
+            fc = json.loads(_hole(st["url"]))
+            gefunden = set()
+            for f in fc["features"]:
+                n = f["properties"][st["name"]]
+                if n not in teile[ags]:
+                    raise Pruefehler(f"{kurz}: Stadtteil {n} ({ags}) ohne Wahlkreis in der Zuordnung")
+                gefunden.add(n)
+                flaechen.setdefault(teile[ags][n], []).append(transform(nach_utm, shape(f["geometry"]).buffer(0)).intersection(g))
+            if gefunden != set(teile[ags]):
+                raise Pruefehler(f"{kurz}: Stadtteile {sorted(set(teile[ags]) - gefunden)} ({ags}) fehlen in der Quelle")
+        else:
+            staedte["S" + ags] = [name, wks, g]
+    zu_wgs = Transformer.from_crs("EPSG:25832", "EPSG:4326", always_xy=True).transform
+
+    def feature(eig, g):
+        g = transform(zu_wgs, g.buffer(0).simplify(toleranz, preserve_topology=True))
+        m = mapping(g)
+        polys = [m["coordinates"]] if m["type"] == "Polygon" else m["coordinates"]
+        return {"type": "Feature", "properties": eig,
+                "geometry": {"type": "MultiPolygon", "coordinates": [[[[round(x, 4), round(y, 4)] for x, y in ring] for ring in p] for p in polys]}}
+    out = [feature({"id": nr, "name": namen.get(nr, nr)}, unary_union(gs)) for nr, gs in sorted(flaechen.items(), key=lambda x: int(x[0]))]
+    out += [feature({"id": sid, "name": name, "teil": wks}, g) for sid, (name, wks, g) in sorted(staedte.items())]
+    return {"type": "FeatureCollection", "quelle": BKG_QUELLE + "; " + "; ".join(STADTTEILE[a]["quelle"] for a in sorted(teile)), "features": out}
 
 
 def tab_pruefe(d, spec, geo=None):
@@ -625,8 +722,21 @@ def tab_pruefe(d, spec, geo=None):
             f.append(f"Sitze {p}: {dm} Direktmandate, in den Wahlkreisen gewählt {direkt.get(p, 0)}")
         if dm > n:
             f.append(f"Sitze {p}: {dm} Direktmandate bei {n} Sitzen")
-    if geo is not None and sorted(x["properties"]["id"] for x in geo["features"]) != sorted(d["wahlkreise"]):
-        f.append("Grenzen: Wahlkreise der Karte passen nicht zu den Ergebnissen")
+    staedte = d.get("staedte") or {}
+    for sid, g in staedte.items():
+        if set(g["teil"]) - set(d["wahlkreise"]):
+            f.append(f"{g['name']}: Wahlkreise {g['teil']} nicht in den Ergebnissen")
+        for st in "ez":
+            if sum(g[st]["p"].values()) != g[st]["gueltig"] or g["w"] != g[st]["gueltig"] + g[st]["ungueltig"]:
+                f.append(f"{g['name']}: Stimmen ({st}) nicht stimmig")
+    if geo is not None:
+        ids = {x["properties"]["id"] for x in geo["features"]}
+        flaeche = ids - set(staedte)
+        if flaeche - set(d["wahlkreise"]) or {i for i in ids if i.startswith("S")} != set(staedte):
+            f.append("Grenzen: Wahlkreise der Karte passen nicht zu den Ergebnissen")
+        ohne = set(d["wahlkreise"]) - flaeche - {nr for g in staedte.values() for nr in g["teil"]}
+        if ohne:
+            f.append(f"Grenzen: Wahlkreise {sorted(ohne, key=int)} ohne Fläche auf der Karte")
     return f
 
 
@@ -654,8 +764,12 @@ def tab_wahl(code, d, kurz=lambda p: p):
                           + (f"; Vergleich: {vor_n} Sitze nach der Wahl {spec['vor']['datum'][:4]}" if vor_n else ""))
     wk = {nr: {"n": f"{nr} {w['name']}", **gebiet(w), "direkt": {"name": d["direkt"][nr][0], "partei": kurz(d["direkt"][nr][1])}}
           for nr, w in sorted(d["wahlkreise"].items(), key=lambda x: int(x[0]))}
-    quelle = {"name": f"{spec['herausgeber']}, endgültiges Ergebnis; Grenzen: amtliche Wahlkreisgeometrie", "url": spec["url"], "lizenz": spec["lizenz"]}
-    einheiten = [{"id": "lwk", "name": "Landtagswahlkreise", "einzahl": "Landtagswahlkreis", "art": "wahlkreis", "geo": spec["geo"], "werte": wk}] if geo else []
+    for sid, s in sorted((d.get("staedte") or {}).items()):
+        t = [str(x) for x in sorted(map(int, s["teil"]))]
+        wk[sid] = {"n": f"{s['name']} (Wahlkreise {', '.join(t[:-1])} und {t[-1]})", **gebiet(s), "stadt": True, "teil": t}
+    grenzen = (geo or {}).get("quelle") or "amtliche Wahlkreisgeometrie"
+    quelle = {"name": f"{spec['herausgeber']}, endgültiges Ergebnis; Grenzen: {grenzen}", "url": spec["url"], "lizenz": spec["lizenz"]}
+    einheiten = [{"id": "lwk", "name": "Landtagswahlkreise", "einzahl": "Landtagswahlkreis", "art": "wahlkreis", "geo": spec["geo"], "anzahl": len(d["wahlkreise"]), "werte": wk}] if geo else []
     return {"g": g, "einheiten": einheiten, "quelle": quelle, "status": "endgültig", "stimmarten": [["z", spec["z"]], ["e", spec["e"]]],
             "system": spec["system"], "vor": spec["vor"]}
 
@@ -738,11 +852,17 @@ def rp_laden(abruf=True):
     if not q["vergleich_2021.json"].exists() and abruf:
         v = rp_vergleich(_xlsx_zeilen(_hole(RP_DATEIEN + "Ergebnisdateien/2021/LW2021_Endgueltiges_Ergebnis.xlsx"), "Wahlkreisergebnisse"))
         q["vergleich_2021.json"].write_text(json.dumps(v, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    st = QUELLEN / "rp_ltw26_staedte.csv"
+    if not st.exists() and abruf:
+        kreise = {sid[3:6] for sid in wk_staedte("rp")}           # kreisfreie Städte: Kreisschlüssel 07xxx -> "xxx"
+        kopf, daten = rp_tabelle(_xlsx_zeilen(_hole(RP_DATEIEN + "Ergebnisdateien/2026/Endgueltiges_Ergebnis_LW_2026_LK_KS.xlsx")))
+        with open(st, "w", encoding="utf-8", newline="") as f:
+            csv.writer(f, delimiter=";", lineterminator="\n").writerows([kopf] + [z for z in daten if z[0] in kreise])
     gp = GEO / "landtagswahlkreise_rp.geojson"
-    if not gp.exists() and abruf:
-        fc = shape_geojson(_hole(RP_DATEIEN + "Shapefiles/Geodaten_LW2026_RP.zip"), "_WK_2_WK",
-                           lambda r: {"id": str(int(r["26_IDEN"][1:3])), "name": re.sub(r",? ?Wahlkreis$", "", r["26_NAM"])})
-        gp.write_text(json.dumps(fc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    if not gp.exists() and abruf and q["wahlkreise.csv"].exists():
+        with open(q["wahlkreise.csv"], encoding="utf-8", newline="") as f:
+            namen = {str(int(z["Schluessel"].split()[1])): re.sub(r",? ?WK$", "", z["Name"]) for z in csv.DictReader(f, delimiter=";")}
+        gp.write_text(json.dumps(wk_aus_gemeinden("rp", "07", namen), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def _rp_gebiet(z):
@@ -773,7 +893,16 @@ def rp_lesen():
         n[partei] = n.get(partei, 0) + 1
     for _, partei in gew["direkt"].values():
         dm[partei] = dm.get(partei, 0) + 1
-    return {"land": land, "wahlkreise": wk, "direkt": gew["direkt"], "sitze": sorted(([p, k, dm.get(p, 0), None] for p, k in n.items()), key=lambda x: -x[1])}
+    staedte = {}
+    sp = QUELLEN / "rp_ltw26_staedte.csv"
+    if sp.exists():
+        namen = wk_staedte("rp")
+        with open(sp, encoding="utf-8", newline="") as f:
+            for z in csv.DictReader(f, delimiter=";"):
+                sid = "S07" + z["Schluessel"] + "000"
+                staedte[sid] = {"name": namen[sid][0], "teil": namen[sid][1], **_rp_gebiet(z)}
+    return {"land": land, "wahlkreise": wk, "direkt": gew["direkt"], "sitze": sorted(([p, k, dm.get(p, 0), None] for p, k in n.items()), key=lambda x: -x[1]),
+            "staedte": staedte}
 
 
 def rp_ltw26(kurz=lambda p: p):
@@ -849,11 +978,17 @@ def mv_laden(abruf=True):
             ws.reset_dimensions()
             blaetter[ws.title] = [list(z) for z in ws.iter_rows(values_only=True)]
         q["vergleich_2021.json"].write_text(json.dumps(mv_vergleich(blaetter), ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    st = QUELLEN / "mv_ltw26_staedte.csv"
+    if not st.exists() and abruf:
+        roh = _hole(MV + "static/LAIV/Wahlen/2-Landtagswahlen/2026/Ergebnisse/l_gemeinden.csv").decode("cp1252").replace("\r\n", "\n")
+        vorspann, _, rest = roh.partition("\n\n")
+        kopf, *zeilen = rest.splitlines()
+        i, gem = kopf.split(";").index("Gemeinde"), {sid[1:] for sid in wk_staedte("mv")}
+        st.write_text(vorspann + "\n\n" + "\n".join([kopf] + [z for z in zeilen if z.split(";")[i] in gem and z.split(";")[1] == "A"]) + "\n", encoding="utf-8")
     gp = GEO / "landtagswahlkreise_mv.geojson"
-    if not gp.exists() and abruf:
-        fc = shape_geojson(_hole(MV + "static/LAIV/Geoinformation/Dateien/Karten/LTwahl_Wahlkreise.zip"), "LTwahl_Wahlkreise",
-                           lambda r: {"id": str(int(r["WkNr"])), "name": r["text"]})
-        gp.write_text(json.dumps(fc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    if not gp.exists() and abruf and q["wahlkreise.csv"].exists():
+        namen = {z["Wahlkreis"]: z["Wahlkreisname/Land"] for z in _mv_csv(q["wahlkreise.csv"]) if z["Ausgabe"] == "A"}
+        gp.write_text(json.dumps(wk_aus_gemeinden("mv", "13", namen), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def _mv_csv(pfad):
@@ -871,17 +1006,27 @@ def mv_lesen():
         return None
     fest = {"Berechnungsdatum", "Ausgabe", "Wahlkreis", "Wahlkreisname/Land", "Wahlbezirke insg.", "Erf. Wahlbezirke", "Wahlberechtigte", "Wähler",
             "Wahlbeteiligung", "Erst-/Zweitstimme", "Ungültige Stimmen", "Gültige Stimmen", "Sort", "Mandatstyp"}
+    fest |= {"Kreis", "Kreisname", "Amt", "Amtsname", "Gemeinde", "Gemeindename"}
     vgl = json.loads(q["vergleich_2021.json"].read_text(encoding="utf-8")) if q["vergleich_2021.json"].exists() else {}
-    gebiete = {}
-    for z in _mv_csv(q["wahlkreise.csv"]):
-        if z["Ausgabe"] != "A":
-            continue
-        if z["Wahlbezirke insg."] != z["Erf. Wahlbezirke"]:
-            raise Pruefehler(f"Mecklenburg-Vorpommern 2026, {z['Wahlkreisname/Land']}: {z['Erf. Wahlbezirke']} von {z['Wahlbezirke insg.']} Wahlbezirken erfasst")
-        g = gebiete.setdefault(z["Wahlkreis"], {"name": z["Wahlkreisname/Land"], "wb": int(z["Wahlberechtigte"]), "w": int(z["Wähler"])})
-        g["e" if z["Erst-/Zweitstimme"] == "1" else "z"] = {
-            "ungueltig": int(z["Ungültige Stimmen"]), "gueltig": int(z["Gültige Stimmen"]),
-            "p": {k: int(v) for k, v in z.items() if k not in fest and v not in ("x", "", None) and int(v)}}
+
+    def lesen(pfad, schluessel, name):
+        out = {}
+        for z in _mv_csv(pfad):
+            if z["Ausgabe"] != "A":
+                continue
+            if z["Wahlbezirke insg."] != z["Erf. Wahlbezirke"]:
+                raise Pruefehler(f"Mecklenburg-Vorpommern 2026, {z[name]}: {z['Erf. Wahlbezirke']} von {z['Wahlbezirke insg.']} Wahlbezirken erfasst")
+            g = out.setdefault(z[schluessel], {"name": z[name], "wb": int(z["Wahlberechtigte"]), "w": int(z["Wähler"])})
+            g["e" if z["Erst-/Zweitstimme"] == "1" else "z"] = {
+                "ungueltig": int(z["Ungültige Stimmen"]), "gueltig": int(z["Gültige Stimmen"]),
+                "p": {k: int(v) for k, v in z.items() if k not in fest and v not in ("x", "", None) and int(v)}}
+        return out
+    gebiete = lesen(q["wahlkreise.csv"], "Wahlkreis", "Wahlkreisname/Land")
+    staedte = {}
+    if (QUELLEN / "mv_ltw26_staedte.csv").exists():
+        namen = wk_staedte("mv")
+        staedte = {"S" + k: {**g, "name": namen["S" + k][0], "teil": namen["S" + k][1]}
+                   for k, g in lesen(QUELLEN / "mv_ltw26_staedte.csv", "Gemeinde", "Gemeindename").items()}
     land = gebiete.pop("99")
     land["vor"] = vgl.get("land") or {}
     for nr, g in gebiete.items():
@@ -894,7 +1039,7 @@ def mv_lesen():
             dm = mandate["Direktmandate"][p]
             sitze.append([p, int(n), int(dm) if dm not in ("x", "") else 0, vs.get(p)])
     return {"land": land, "wahlkreise": gebiete, "direkt": json.loads(q["gewaehlte.json"].read_text(encoding="utf-8")),
-            "sitze": sorted(sitze, key=lambda x: -x[1])}
+            "sitze": sorted(sitze, key=lambda x: -x[1]), "staedte": staedte}
 
 
 def mv_ltw26(kurz=lambda p: p):

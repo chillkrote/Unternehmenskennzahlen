@@ -80,7 +80,7 @@ noch nicht eingebunden.
 |---|---|---|---|---|
 | W1 | Landtagswahl Sachsen-Anhalt 2026 | 1 Wahl | Statistisches Landesamt | erledigt |
 | W2 | Landtagswahlen 2026 in Baden-Württemberg und Berlin | 2 Wahlen | Statistisches Landesamt, Landeswahlleitung | erledigt |
-| W2b | Landtagswahlen 2026 in Rheinland-Pfalz und Mecklenburg-Vorpommern | 2 Wahlen | Landeswahlleitungen | erledigt; Lizenz der Wahlkreisgrenzen nicht ausgewiesen (Entscheidung E7) |
+| W2b | Landtagswahlen 2026 in Rheinland-Pfalz und Mecklenburg-Vorpommern | 2 Wahlen | Landeswahlleitungen | erledigt; Grenzen aus BKG-Gemeinden und offenen Stadtteilen (E7 entschieden 11.11.2026) |
 | W3 | Landtagswahlen 2022 bis 2025 der übrigen zehn Länder | 10 Wahlen | Landeswahlleitungen | offen |
 | W4 | USA 2026 (Repräsentantenhaus, Senat) | 2 Wahlen | amtliche Ergebnisse der Bundesstaaten bzw. Clerk of the House, sobald veröffentlicht | offen; im Register steht für 2026 nur die heutige Zusammensetzung (Stufe D) |
 | W5 | Neuseeland 2026 | 1 Wahl | Electoral Commission (Seite mit Bot-Schutz, nicht umgehen) | offen, Quelle zu klären |

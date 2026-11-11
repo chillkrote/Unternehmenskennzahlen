@@ -13,9 +13,9 @@ const WAHLEN_SOLL = [
   { id: 'DE-BE-parl-2026', karte: [/Abgeordnetenhaus/, /Zweitstimmen/, /Die Linke/, /25,7/, /Wiederholungswahl 2023/, /74,2/, /endgültig/i, /Landeswahlleitung Berlin/],
     punkt: [13.1666, 52.4937], zoom: 11, kreis: [/Wahlkreis/, /Spandau 5/, /Direktmandat/] },
   { id: 'DE-RP-parl-2026', karte: [/Landtag Rheinland-Pfalz/, /Landesstimmen/, /CDU/, /31,0/, /Landtagswahl 2021/, /68,4/, /endgültig/i, /Landeswahlleiter Rheinland-Pfalz/],
-    punkt: [8.2505, 49.9994], zoom: 11, kreis: [/Landtagswahlkreis/, /Mainz I/, /Direktmandat/] },
+    punkt: [8.2505, 49.9994], zoom: 11, kreis: [/Landtagswahlkreis/, /Mainz \(Wahlkreise 27, 28 und 29\)/, /Ergebnis der ganzen Stadt/] },   // geteilte Stadt ohne offene Stadtteilgrenzen
   { id: 'DE-MV-parl-2026', karte: [/Landtag Mecklenburg-Vorpommern/, /Zweitstimmen/, /AfD/, /38,2/, /Landtagswahl 2021/, /78,0/, /endgültig/i, /Landeswahlleiter Mecklenburg-Vorpommern/],
-    punkt: [11.408, 53.647], zoom: 10.5, kreis: [/Landtagswahlkreis/, /Schwerin I/, /Direktmandat/] },
+    punkt: [12.135, 54.090], zoom: 10.5, kreis: [/Landtagswahlkreis/, /Rostock IV/, /Direktmandat/] },   // Rostock: Wahlkreise aus statistischen Bezirken
 ];
 (async () => {
   const browser = await chromium.launch({ headless: true, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });

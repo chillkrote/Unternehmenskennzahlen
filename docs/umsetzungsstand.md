@@ -22,7 +22,7 @@ grün), **Produktiv** (auf dem öffentlichen Server), **Blockiert**. Produktiv i
 | Build-Schalter `--api`, `--ziel` | Getestet | Pages-Fassung unverändert (Smoke-Tests), API-Fassung ohne Register |
 | CI-Workflow `server.yml`: pytest gegen PostgreSQL 16 (Job `test`) und ganzer Compose-Stack mit ETL und Browser-Smoke-Tests über http (Job `compose`) | Implementiert | läuft im PR |
 | netcup-Server, HTTPS unter sphaerae.de, Timer, Offsite-Backup | **Blockiert** | wartet auf Freischaltung des netcup-Accounts und Robins Freigabe |
-| Lizenzprüfung je Quelle | Implementiert | `docs/datenquellen.md`; Entscheidungen E2 bis E7 offen |
+| Lizenzprüfung je Quelle | Implementiert | `docs/datenquellen.md`; Entscheidungen E2 bis E5 offen, E6 später, E7 entschieden |
 | Lizenzschutz E1 (Yahoo-Kurse): Build, ETL, Prüfung der fertigen Ausgabe (`plattform/lizenz.py`, `LIZENZ.json`) | Getestet | `test_lizenz.py` (9), Prüfschritt im Workflow `server.yml`; Schalter für Yahoo-Abschlusszahlen (E6) gebaut, aus |
 | ENTSO-E-Stromflüsse über 36 Monate mit Stundenabdeckung je Monat | Getestet, gegen Primärdaten geprüft | `app/tests/test_entsoe_abruf.py` (18); letzte 12 Monate gleich dem alten Stand |
 | Aktualität je Reihe und Gebiet, Abdeckung gegen erwartete Gebiete (`/data-quality`, `freshness`) | Getestet | `test_qualitaet.py`; nur API, keine Ansicht in der Oberfläche |

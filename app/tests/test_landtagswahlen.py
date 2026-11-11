@@ -222,7 +222,9 @@ class Tabellenwahlen(unittest.TestCase):
         self.assertEqual({p: n for p, n, _ in g["sitze"]}, {"CDU": 39, "SPD": 32, "AfD": 24, "GRÜNE": 10})
         self.assertEqual((g["sitze_n"], dict(g["sitze_direkt"])), (105, {"CDU": 39, "SPD": 13}))
         wk = self.rp["einheiten"][0]["werte"]
-        self.assertEqual(len(wk), 52)
+        self.assertEqual((len(wk), self.rp["einheiten"][0]["anzahl"]), (56, 52))       # 52 Wahlkreise und 4 geteilte Städte als ein Gebiet
+        self.assertEqual((wk["S07315000"]["n"], wk["S07315000"]["wb"], wk["S07315000"]["teil"], wk["S07315000"]["stadt"]),
+                         ("Mainz (Wahlkreise 27, 28 und 29)", 148778, ["27", "28", "29"], True))
         self.assertEqual((wk["27"]["n"], wk["27"]["direkt"], wk["27"]["bet_vor"]), ("27 Mainz I", {"name": "Michael Ebling", "partei": "SPD"}, None))
         self.assertEqual(wk["27"]["s"]["e"][0], ["SPD", 12056, 28.2, None])           # Wahlkreise neu zugeschnitten: kein Vergleich
         self.assertEqual(self.rp["stimmarten"], [["z", "Landesstimmen"], ["e", "Wahlkreisstimmen"]])
@@ -234,19 +236,36 @@ class Tabellenwahlen(unittest.TestCase):
         self.assertEqual(g["sitze"], [["AfD", 32, 14], ["SPD", 29, 34], ["Die Linke", 5, 9], ["GRÜNE", 5, 5]])
         self.assertEqual((g["sitze_n"], dict(g["sitze_direkt"])), (71, {"AfD": 22, "SPD": 14}))
         wk = self.mv["einheiten"][0]["werte"]
-        self.assertEqual(len(wk), 36)
+        self.assertEqual((len(wk), self.mv["einheiten"][0]["anzahl"]), (39, 36))       # 36 Wahlkreise und 3 geteilte Städte
+        self.assertEqual((wk["S13004000"]["n"], wk["S13004000"]["wb"], wk["S13004000"]["s"]["z"][0]), ("Schwerin (Wahlkreise 8 und 9)", 76444, ["SPD", 22918, 38.7, None]))
         self.assertEqual((wk["8"]["n"], wk["8"]["direkt"], wk["8"]["bet_vor"]), ("8 Schwerin I", {"name": "Manuela Schwesig", "partei": "SPD"}, 75.2))
         self.assertEqual((wk["8"]["s"]["e"][0], wk["8"]["s"]["z"][0]), (["SPD", 21369, 54.4, 46.4], ["SPD", 14862, 37.8, 35.2]))
 
     def test_grenzen_passen_zu_den_wahlkreisen(self):
         rahmen = {"DE-RP": (6.0, 8.6, 48.9, 51.0), "DE-MV": (10.5, 14.5, 53.0, 54.8)}
         for c, w in (("DE-RP", self.rp), ("DE-MV", self.mv)):
-            self.assertEqual({f["properties"]["id"] for f in self.geo[c]["features"]}, set(w["einheiten"][0]["werte"]))
+            ids, werte = {f["properties"]["id"] for f in self.geo[c]["features"]}, w["einheiten"][0]["werte"]
+            in_staedten = {nr for x in werte.values() if x.get("stadt") for nr in x["teil"]}
+            self.assertTrue(ids <= set(werte) and set(werte) - ids <= in_staedten, c)      # Wahlkreise ohne Fläche liegen ganz in einer Stadt
+            self.assertIn("BKG", self.geo[c]["quelle"])                                     # E7: keine Shapes der Landeswahlleitungen mehr
             x0, x1, y0, y1 = rahmen[c]
             for f in self.geo[c]["features"]:
                 for r in (r for p in f["geometry"]["coordinates"] for r in p):
                     self.assertEqual(r[0], r[-1])
                     self.assertTrue(all(x0 < x < x1 and y0 < y < y1 for x, y in r), f["properties"])
+
+    def test_wahlkreise_aus_gemeinden(self):
+        """E7: Zuordnung Gemeinde -> Wahlkreis vollständig; geteilte Städte über offene Stadtteile (Trier, Rostock) oder als ein Gebiet."""
+        for kurz, land, n_gem in (("rp", "DE-RP", 2300), ("mv", "DE-MV", 724)):
+            gem, teile = L.wk_zuordnung(kurz)
+            self.assertEqual(len(gem), n_gem)
+            nummern = {nr for _, wks in gem.values() for nr in wks} | {nr for t in teile.values() for nr in t.values()}
+            self.assertEqual(nummern, {str(i) for i in range(1, L.TAB[land]["wahlkreise"] + 1)})
+            self.assertTrue(set(teile) <= set(L.STADTTEILE) and all(len(gem[a][1]) > 1 for a in teile))
+            for a, t in teile.items():
+                self.assertEqual(set(t.values()), set(gem[a][1]), a)                      # Stadtteile decken alle Wahlkreise der Stadt
+        self.assertEqual(sorted(n for n, _ in L.wk_staedte("rp").values()), ["Kaiserslautern", "Koblenz", "Ludwigshafen am Rhein", "Mainz"])
+        self.assertEqual(sorted(n for n, _ in L.wk_staedte("mv").values()), ["Neubrandenburg", "Schwerin", "Stralsund"])
 
     def test_pruefung_findet_widersprueche(self):
         d = copy.deepcopy(self.d["DE-MV"])
@@ -291,8 +310,9 @@ class Tabellenwahlen(unittest.TestCase):
 
     def test_wahlregister_enthaelt_den_amtlichen_stand(self):
         reg = {x["id"]: x for x in json.loads((APP / "data/wahlen.json").read_text(encoding="utf-8"))["wahlen"]}
-        for wid, datum, geo, n, erste in (("DE-RP-parl-2026", "2026-03-22", "landtagswahlkreise-rp", 52, ["CDU", 627954, 31.0, 27.7]),
-                                           ("DE-MV-parl-2026", "2026-09-20", "landtagswahlkreise-mv", 36, ["AfD", 388050, 38.2, 16.7])):
+        # n = Wahlkreise und geteilte Städte (als ein Gebiet mit dem Stadtergebnis)
+        for wid, datum, geo, n, erste in (("DE-RP-parl-2026", "2026-03-22", "landtagswahlkreise-rp", 56, ["CDU", 627954, 31.0, 27.7]),
+                                           ("DE-MV-parl-2026", "2026-09-20", "landtagswahlkreise-mv", 39, ["AfD", 388050, 38.2, 16.7])):
             w = reg[wid]
             self.assertEqual((w["datum"], w["status"]), (datum, "endgültig"))
             self.assertEqual(w["g"]["s"]["z"][0], erste)

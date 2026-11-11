@@ -7,7 +7,7 @@ const THEMA = (() => {
   const MODI = [
     { id: "dunkel", name: "Dunkel", text: "Standard, Terminal im Dunkeln", f: ["#07090c", "#0e1116", "#ffa828"] },
     { id: "hell", name: "Hell", text: "Heller Hintergrund, dunkle Schrift", f: ["#f4f5f7", "#ffffff", "#b86200"] },
-    { id: "dunkelblau", name: "Dunkelblau", text: "Nachtblau statt Schwarz", f: ["#081426", "#0d1c33", "#ffa828"] },
+    { id: "dunkelblau", name: "Dunkelblau", text: "Mitternachtsblau mit Goldakzent", f: ["#040a14", "#0d182b", "#d8b46a"] },
   ];
   const gueltig = t => MODI.some(m => m.id === t);
   let aktuell = "dunkel";
@@ -53,9 +53,11 @@ const THEMA = (() => {
       "#536072": "#9aa3b0", "#0d1724": "#d9e4f0", "#18273b": "#edf2f8", "#1c1433": "#f4f0fb", "#f1e8ff": "#3a2370",
     },
     dunkelblau: {
-      "#0a1320": "#06142b", "#161c24": "#12284a", "#19202a": "#14294a", "#18211f": "#132c45", "#1f2731": "#1d3354", "#1c222c": "#183052",
-      "#0f1b2c": "#0b1e3d", "#222a35": "#1c3557", "#2a3442": "#22406a", "#3a4554": "#2f4d78", "#0d1724": "#0b2045", "#18273b": "#1a3a66", "#07090c": "#050d1b",
+      "#0a1320": "#030914", "#161c24": "#0b182c", "#19202a": "#0c1a2f", "#18211f": "#0c1c2e", "#1f2731": "#13223a", "#1c222c": "#0f1e35",
+      "#0f1b2c": "#06101f", "#222a35": "#13223a", "#2a3442": "#1a2c48", "#3a4554": "#233a5c", "#0d1724": "#07142a", "#18273b": "#122a4c", "#07090c": "#03070f",
+      "#ffa828": "#d8b46a", "#ffe2b5": "#efdcb2", "#ffd08a": "#e8cf98", "#ffb020": "#e0b860",
     },
+
   };
   function farbe(c, prop = "", modus = aktuell) {
     if (modus === "dunkel" || typeof c !== "string") return c;
@@ -71,7 +73,7 @@ const THEMA = (() => {
       else if (neutral) { l = 1 - l; if (text) l = Math.min(l, .42); }
       else if (text && l > .45) l = .36;
     } else if (modus === "dunkelblau") {
-      if (neutral) { h = 214; s = l < .5 ? Math.max(s, .45) : Math.max(s, .2); }
+      if (neutral) { h = 216; s = l < .5 ? Math.max(s, .4) : Math.max(s, .16); if (l < .3) l *= .8; }
     }
     return schreiben(ausHsl(h, s, l), p.a);
   }

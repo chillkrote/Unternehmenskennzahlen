@@ -48,7 +48,7 @@ const path = require('path');
     await knopf.click();
     await page.click('#th-fenster input[value="dunkelblau"]');
     await page.waitForTimeout(500);
-    pruefe(await css('--bg') === '#081426', 'Dunkelblau: --bg nachtblau');
+    pruefe(await css('--bg') === '#040a14', 'Dunkelblau: --bg mitternachtsblau');
     const hBlau = await halo();
     await page.click('#th-fenster input[value="dunkel"]');
     await page.waitForTimeout(500);

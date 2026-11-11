@@ -22,7 +22,8 @@ Rechtsberatung. Vor der öffentlichen Weiterverbreitung über den eigenen Server
 | US-Finanzministerium | US-Zinskurve | `finanz_abruf.py` | nein | US-Behördendaten | voraussichtlich geeignet |
 | OECD SDMX / Data Explorer | Prognosen, Inflation, Renditen | `vwl.py`-Zuträger, `finanz_makro.py`, `volkswirtschaft/skripte` | nein | seit 2024 überwiegend CC BY 4.0 (allgemeine Kenntnis); oecd.org-Seiten 403 | voraussichtlich geeignet |
 | Weltbank | BIP, Schulden, Börsenwert/BIP | `welt_daten.py`, `finanz_makro.py` | nein | CC BY 4.0 (allgemeine Kenntnis) | voraussichtlich geeignet |
-| Eurostat | Strom, Indikatoren | `welt_daten.py` | nein | Wiederverwendung mit Quellenangabe | voraussichtlich geeignet |
+| Eurostat | Strom, Indikatoren, BIP je Einwohner in KKS je Kreis (NUTS-3) | `welt_daten.py`, `volkswirtschaft/skripte/abruf_regional.py` | nein | Wiederverwendung mit Quellenangabe | voraussichtlich geeignet |
+| VGR der Länder (Statistische Ämter des Bundes und der Länder) | Kreisergebnisse: BIP, Bruttowertschöpfung, Erwerbstätige, Einwohner, Produktivität (400 Kreise, 2000 bis 2024) | `volkswirtschaft/skripte/abruf_regional.py` | nein | geprüft 11.11.: Impressum der Datei (Reihe 2 Band 1, [statistikportal.de](https://www.statistikportal.de/de/vgrdl/ergebnisse-kreisebene/bruttoinlandsprodukt-bruttowertschoepfung-kreise)): „Vervielfältigung und Verbreitung, auch auszugsweise, mit Quellenangabe gestattet.“ Erwerbstätige und Einwohner nur mit einer Nachkommastelle (in Tausend) weitergeben (das Skript rundet so) | geeignet mit Quellenangabe |
 | BIS | Leitzinsen | `finanz_makro.py` | nein | sekundär 10.11. ([Bedingungen](https://www.bis.org/terms_statistics.htm), Seite 403): Nutzung uneingeschränkt, wenn die BIS als Quelle genannt wird, keine Billigung/Zugehörigkeit vorgetäuscht und nichts als Anlageberatung dargestellt wird; Leitzinsen zusätzlich mit nationaler Quelle | geeignet mit Namensnennung „BIS“ und Zentralbank |
 | FRED (St. Louis Fed) | US-Reihen | `volkswirtschaft/skripte` | nein | je Reihe eigene Rechte Dritter | **prüfen je Reihe** |
 | Zentralbanken, Institute, Konsensumfragen (Prognosen) | Prognosegeber | `volkswirtschaft/` (`PROGNOSEGEBER.md`) | nein | je Herausgeber | prüfen |
@@ -87,7 +88,7 @@ ENTSO-E: Abruf über 36 Monate in Fenstern von höchstens einem Jahr; Monate mit
 Wikipedia (CC BY-SA 4.0, mit Link zum Artikel), DAWUM (ODbL), BKG (dl-de/by-2-0, „© GeoBasis-DE / BKG“), AEC und Statistik
 Austria (CC BY 4.0), EMODnet (CC BY), OpenStreetMap/OpenMapTiles (ODbL, „© OpenStreetMap-Mitwirkende“), Weltbank und OECD
 (CC BY 4.0), BIS mit nationaler Zentralbank, WTO („© WTO“), IPU („Inter-Parliamentary Union: dataset, Monat Jahr“, CC BY-NC-SA 4.0),
-GDELT (Zitat und Link), CEPII BACI (Etalab 2.0). Die vorhandene Fußleiste (`app/seiten/`) ist der Ort dafür.
+GDELT (Zitat und Link), CEPII BACI (Etalab 2.0), VGR der Länder („Statistische Ämter des Bundes und der Länder, VGRdL“). Die vorhandene Fußleiste (`app/seiten/`) ist der Ort dafür.
 
 Für jede Quelle noch zu ergänzen: Aktualisierungstakt, Nutzungsgrenzen (Rate Limits), typische Fehler, nicht erhobene Felder;
 die mit „sekundär“ oder „allgemeine Kenntnis“ markierten Zeilen beim Herausgeber nachlesen, sobald die Seiten erreichbar sind.

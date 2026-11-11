@@ -63,3 +63,19 @@ python3 -I volkswirtschaft/skripte/abgleich_prognosen.py # Fehler und Treffsiche
 - „Erste Veröffentlichung“ ist der Stand der Frühjahrs-Gemeinschaftsdiagnose nach dem Jahr; Eurostat führt keine alten Datenstände. HVPI und ILO-Quote liegen deshalb nur als aktueller Stand vor. Das Jahr 2025 hat nur den aktuellen Stand.
 - IfW Kiel, IWH und DIW Berlin: Eckdaten-Tabellen der Konjunkturberichte, jeweils mit Link je Zeile. IfW: Kieler Konjunkturberichte ab 2019-Q3 aus dem PDF (Datum = „Abgeschlossen am“), davor nur BIP aus der Kurzfassung auf der Seite (Datum nur Monat). IWH: „Konjunktur aktuell“ ab Dezember 2014. DIW: Konjunkturprognosen Frühjahr 2015 bis Herbst 2026; ab 2023 ist nur der Monat aus der Wochenbericht-Nummer bekannt. Im Übersichtsverzeichnis des DIW fehlen Winter 2021, Sommer bis Winter 2022 und Frühjahr 2023; diese Ausgaben konnten nicht gefunden werden.
 - Lücken: ifo, RWI, IW, IMK, Bundesregierung, EU-Kommission und IWF vor 2025 fehlen noch (ifo.de und imf.org sperren automatisierte Abrufe); IfW vor Herbst 2019 nur BIP; Bundesbank Dezember 2015 bis Dezember 2018 und Dezember 2019/2020; OECD Economic Outlook vor Ausgabe 114 (nicht über die API). Pro Herausgeber und Horizont sind die Stichproben klein, im Terminal grau markiert unter vier Werten.
+
+## Regionaldaten (Kreise, NUTS-3)
+
+`regional/` hält die Werte der 400 Kreise und kreisfreien Städte getrennt vom Länderterminal (gleiche Spalten wie oben, `geo` =
+NUTS-3-Code, dazu `ebene` und `erwartet` in `serien.csv`). Primärquelle ist der Arbeitskreis „VGR der Länder“ (Kreisergebnisse
+Reihe 2 Band 1, Excel von statistikportal.de, 2000 bis 2024); Eurostat liefert nur das BIP je Einwohner in Kaufkraftstandards.
+`regional/regionen.csv` ordnet NUTS-3-Code und Kreisschlüssel einander zu (Eurostat LAU-NUTS 2024), `regional/abgleich_eurostat.csv`
+listet die Kreisjahre, in denen Eurostat um mehr als 1 % vom VGRdL-Wert abweicht.
+
+```
+python3 -I volkswirtschaft/skripte/abruf_regional.py   # VGRdL-Excel und Eurostat, schreibt regional/
+python3 app/build.py                                   # data/regional.json für die Weltkugel (Volkswirtschaft, Kreise)
+```
+
+Datenbank: `etl.laden` übernimmt `regional/` als eigenen Lauf `vwl_regional` (Reihen) und `regionen` (Tabelle `region`);
+API: `/api/v1/regions`, `/regions/{code}`, `/regions/values`, `/regions/cross-section`, `/series?level=nuts3`.

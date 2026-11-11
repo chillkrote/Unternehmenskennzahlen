@@ -37,6 +37,10 @@ Lesende, öffentliche API unter `/api/v1`. Maschinenlesbare Beschreibung: `/api/
 | `GET /trade/goods/{id}/alternatives` | Alternativlieferländer ohne die genannten Exportländer (vorhandene Exportkapazität, keine freie Kapazität) | `exclude` (z. B. `CN,TW`), `n`, `year` |
 | `GET /trade/countries/{geo}` | ein Exportland: je Gut Wert, Weltmarktanteil, Rang, Zahl aller Abnehmer (`partner_count`), HHI über alle Abnehmer (`partner_hhi`, `partner_hhi_complete`), sonst Untergrenze (`partner_hhi_lower_bound`), die fünf größten Abnehmer | `year` |
 | `GET /trade/import-dependencies` | Importseite eines Landes: je Gut Importwert, Zahl der Lieferländer, HHI über alle Lieferländer, Anteil des größten Lieferlands je Jahr, die zehn größten Lieferländer; mit `supplier` der Anteil eines bestimmten Lieferlands | `geo` (Pflicht), `supplier`, `good`, `year` |
+| `GET /regions` | Regionen (NUTS-3, in Deutschland die 400 Kreise) mit Kreisschlüssel, Name, Bundesland und Klassifikation | `country` (Standard DE), `parent` (z. B. `DE-BW`) |
+| `GET /regions/{code}` | eine Region (NUTS-Code `DE111` oder Kreisschlüssel `08111`) mit allen Regionalreihen: Verlauf, letzter Wert, Rang im Staat | |
+| `GET /regions/values` | Werte einer Regionalreihe für alle Regionen eines Jahres (Karte), mit Rang, Median und Abdeckung | `series` (Pflicht), `year`, `country`, `parent` |
+| `GET /regions/cross-section` | Zusammenhang zweier Regionalreihen über die Regionen eines Jahres: Pearson, Spearman, p-Wert, Konfidenzintervall, Regression, Punkte (Statistik aus `plattform/analyse.py`) | `a`, `b` (Pflicht), `year`, `country`, `parent` |
 | `GET /forecasters` | Prognosegeber je Land (Recherche, Werte noch nicht eingebunden) | `geo`, `priority` (höchstens) |
 | `GET /observations` | Werte mehrerer Reihen kompakt `{reihe: {gebiet: [[zeitraum, wert], …]}}`, mit `format=csv` als Tabelle (reihe;gebiet;zeitraum;wert) | `series` (bis 60), `geo`, `from`, `to`, `as_of` (Stand „bekannt zum“, frühere Fassungen revidierter Werte) |
 | `GET /search` | eine Suche über Unternehmen, Länder, Branchen, Kennzahlen; erkennt Länder und Branchen in den Suchwörtern | `q`, `types`, `limit` |
@@ -48,6 +52,13 @@ Lesende, öffentliche API unter `/api/v1`. Maschinenlesbare Beschreibung: `/api/
 | `GET /health` | API und Datenbank erreichbar, Schema-Revision (503 bei Ausfall, nie gecacht) | — |
 
 ## Beispiele
+
+```
+GET /api/v1/series?level=nuts3                                       # Katalog der Regionalreihen (Feld level: country | nuts3)
+GET /api/v1/regions/08111                                           # Stuttgart: alle Kreiswerte mit Rang
+GET /api/v1/regions/values?series=r3_bip_je_einwohner&year=2024
+GET /api/v1/regions/cross-section?a=r3_bip_je_einwohner&b=r3_anteil_industrie
+```
 
 ```
 GET /api/v1/companies?country=DE&sector=automobil&listed=true&fields=id,name,isin

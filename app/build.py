@@ -7,6 +7,7 @@ from pathlib import Path
 
 import datenschicht
 import globus
+import regional
 import register
 import seiten
 import unternehmen
@@ -86,7 +87,7 @@ SERVER_ORDNER = ("dist-api", "dist-oeffentlich")
 YAHOO_DATEIEN = ("markt.json", "kurse_woche.json", "boerse.json", "live.json")
 
 # API-Fassung: diese Blöcke stehen als data/<datei> neben der Seite statt eingebettet (Platzhalter in terminal.html)
-BLOCK_NACHLADEN = ("__PARLAMENTE__", "__KOMMUNAL__", "__GUETER__", "__GUETER_IMPORTE__", "__GLIEDSTAATEN__")
+BLOCK_NACHLADEN = ("__PARLAMENTE__", "__KOMMUNAL__", "__REGIONAL__", "__GUETER__", "__GUETER_IMPORTE__", "__GLIEDSTAATEN__")
 VWL_PROGNOSEN_DATEI = "data/vwl_prognosen.json"
 
 
@@ -173,6 +174,7 @@ def main():
         (HIER / "data/register.json").write_text(reg)
         if unbekannt:
             print("Länder ohne ISO-Code im Register:", unbekannt)
+    regional.schreiben()                  # Kreisdaten (volkswirtschaft/regional) -> data/regional.json für die Weltkugel
     vd = vwl.lade()
     vroh = json.dumps(vd, ensure_ascii=False, separators=(",", ":")) if vd else "null"
     vprog = None
@@ -210,7 +212,7 @@ def main():
     # Handel und Weltdaten (Bereich HDL und Weltkugel): fehlt eine Datei, bleibt der Teil leer
     for platz, datei in (("__HANDEL__", "handel.json"), ("__WELT__", "welt.json"), ("__ROUTEN__", "routen.json"), ("__GUETER__", "gueter.json"), ("__GUETER_IMPORTE__", "gueter_importe.json"), ("__VERKEHR__", "verkehrsknoten.json"), ("__NEWS__", "news_routen.json"), ("__STROM_ENTSOE__", "strom_entsoe.json"),
                         ("__BOERSE_WELT__", "boerse_welt.json"), ("__FINANZ__", "finanz.json"), ("__FINANZ_MAKRO__", "finanz_makro.json"), ("__POLITIK__", "politik.json"), ("__DE_LAENDER__", "../geo/de_laender.geojson"),
-                        ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
+                        ("__PARLAMENTE__", "parlamente.json"), ("__KOMMUNAL__", "kommunal.json"), ("__REGIONAL__", "regional.json"), ("__KOMMUNEN_GEO__", "../geo/kommunen_nrw.geojson"), ("__WAHLKREISE_BUND__", "../geo/wahlkreise_bund.geojson"), ("__GLIEDSTAATEN__", "../geo/gliedstaaten.geojson")):
         f = HIER / "data" / datei
         inhalt = f.read_text() if f.exists() else "null"
         if a.oeffentlich and platz == "__FINANZ__" and inhalt != "null":

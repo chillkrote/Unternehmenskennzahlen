@@ -41,7 +41,7 @@ def _bericht(conn, stichtag):
         gs = werte.get(r["id"], {})
         prog = r["forecast_from"]
         beob = {g: [p for p in pts if not prog or p[0] < prog] for g, pts in gs.items()}
-        erwartet = q.erwartete_gebiete(r["url"])
+        erwartet = (r["meta"] or {}).get("erwartete_gebiete") or q.erwartete_gebiete(r["url"])     # Regionalreihen: Liste im Katalog der Reihe
         akt = q.aktualitaet({g: pts[-1][0] for g, pts in beob.items() if pts}, r["frequency"], stichtag, erwartet, r["provider"])
         letzte = akt["source_last"]
         if letzte:

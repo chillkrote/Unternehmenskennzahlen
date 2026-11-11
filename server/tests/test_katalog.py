@@ -76,6 +76,8 @@ def test_katalog_api_vollstaendig(client):
     nach = {q["id"]: q for q in d}
     with open(REPO / "volkswirtschaft" / "serien.csv", newline="", encoding="utf-8") as f:
         reihen = list(csv.DictReader(f))
+    with open(REPO / "volkswirtschaft" / "regional" / "serien.csv", newline="", encoding="utf-8") as f:
+        reihen += list(csv.DictReader(f))                                    # Regionalreihen (NUTS-3) zählen zu Eurostat
     assert sum(q["series"] for q in d) == len(reihen)                     # jede Reihe genau einer Quelle zugeordnet
     assert nach["eurostat"]["series"] == sum(1 for s in reihen if s["quelle"] == "Eurostat") and nach["eurostat"]["observations"] > 0
     assert nach["yahoo"]["cleared"] is False and nach["wikidata"]["cleared"] is True

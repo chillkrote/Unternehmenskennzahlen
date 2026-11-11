@@ -421,7 +421,9 @@ const WAHLEN = (() => {
     const teile = [];
     const amt = !wert && w.g && w.g.amt;
     if (amt) teile.push(`<div class="wa-amt">Gewählt: <b>${esc(amt.amt)} ${esc(amt.name)}</b> (${esc(amt.partei)}), ${pct(amt.anteil)} · ${esc(amt.wahl)}</div>`);
-    if (u && u.art === "wahlkreis" && w.id === "DE-BT-2025" && wert && wert.s && wert.s.e) {
+    // Stadt mit mehreren Wahlkreisen, für die es keine offenen Stadtteilgrenzen gibt (landtagswahlen.py: wk_staedte): Ergebnis der ganzen Stadt
+    if (wert && wert.stadt) teile.push(`<div class="wa-amt">Ergebnis der ganzen Stadt. Sie ist auf die Wahlkreise ${esc((wert.teil || []).join(", "))} verteilt; deren Grenzen innerhalb der Stadt sind nicht als offene Geodaten verfügbar, die Direktmandate stehen bei den Wahlkreisen.</div>`);
+    else if (u && u.art === "wahlkreis" && w.id === "DE-BT-2025" && wert && wert.s && wert.s.e) {
       const e = [...wert.s.e].sort((p, q) => q[2] - p[2]), v = e[0][2] - (e[1] ? e[1][2] : 0);
       teile.push(`<div class="wa-amt">Erststimmen vorn: <b>${esc(e[0][0])}</b> mit ${pct(e[0][2])}, ${f1.format(v)} Punkte vor ${esc(e[1] ? e[1][0] : "–")}. <span class="pct">Ob der Sieger ein Mandat erhielt (Zweitstimmendeckung), steht noch nicht in den Daten.</span></div>`);
     }

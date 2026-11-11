@@ -1,0 +1,725 @@
+ags;gemeinde;wahlkreis
+13003000;Rostock;4|5|6|7
+13004000;Schwerin;8|9
+13071001;Alt Schwerin;20
+13071002;Altenhagen;14
+13071003;Altenhof;20
+13071004;Altentreptow;14
+13071005;Ankershagen;22
+13071006;Bartow;14
+13071007;Basedow;14
+13071008;Beggerow;13
+13071009;Beseritz;22
+13071010;Blankenhof;22
+13071011;Blankensee;21
+13071012;Blumenholz;21
+13071013;Bollewick;20
+13071014;Borrentin;13
+13071015;Bredenfelde;14
+13071016;Breesen;14
+13071018;Briggow;14
+13071019;Brunn;22
+13071020;Buchholz;20
+13071021;Burg Stargard;22
+13071022;Burow;14
+13071023;Bütow;20
+13071025;Carpin;21
+13071026;Cölpin;22
+13071027;Dargun;13
+13071028;Datzetal;22
+13071029;Demmin;13
+13071032;Faulenrost;14
+13071033;Feldberger Seenlandschaft;21
+13071034;Fincken;20
+13071035;Friedland;22
+13071036;Fünfseen;20
+13071037;Galenbeck;22
+13071039;Gielow;14
+13071041;Gnevkow;14
+13071042;Godendorf;21
+13071043;Göhren-Lebbin;20
+13071044;Golchen;14
+13071045;Gotthun;20
+13071047;Grabowhöfe;20
+13071048;Grammentin;14
+13071049;Grapzow;14
+13071050;Grischow;14
+13071053;Groß Kelle;20
+13071054;Groß Miltzow;22
+13071055;Groß Nemerow;22
+13071056;Groß Plasten;20
+13071057;Groß Teetzleben;14
+13071058;Grünow;21
+13071059;Gültz;14
+13071060;Gülzow;14
+13071063;Hohen Wangelin;20
+13071064;Hohenbollentin;13
+13071065;Hohenmocker;13
+13071066;Hohenzieritz;21
+13071067;Holldorf;22
+13071068;Ivenack;14
+13071069;Jabel;20
+13071070;Jürgenstorf;14
+13071071;Kargow;20
+13071072;Kentzlin;13
+13071073;Kieve;20
+13071074;Kittendorf;14
+13071075;Klein Vielen;21
+13071076;Kletzin;13
+13071077;Klink;20
+13071078;Klocksin;20
+13071079;Knorrendorf;14
+13071080;Kratzeburg;21
+13071081;Kriesow;14
+13071083;Kublank;22
+13071084;Kummerow;14
+13071087;Lärz;20
+13071088;Leizen;20
+13071089;Lindenberg;13
+13071090;Lindetal;22
+13071092;Malchin;14
+13071093;Malchow;20
+13071096;Meesiger;13
+13071097;Melz;20
+13071099;Mirow;21
+13071100;Möllenbeck;21
+13071101;Möllenhagen;22
+13071102;Mölln;14
+13071103;Moltzow;20
+13071104;Neddemin;22
+13071105;Neetzka;22
+13071107;Neubrandenburg;2|3
+13071108;Neuenkirchen;22
+13071109;Neukalen;14
+13071110;Neustrelitz;21
+13071111;Neverin;22
+13071112;Nossendorf;13
+13071113;Nossentiner Hütte;20
+13071115;Penzlin;22
+13071117;Pragsdorf;22
+13071118;Priborn;20
+13071119;Priepert;21
+13071120;Pripsleben;14
+13071122;Rechlin;20
+13071123;Ritzerow;14
+13071124;Röbel/Müritz;20
+13071125;Röckwitz;14
+13071127;Rosenow;14
+13071128;Sarow;13
+13071130;Schönbeck;22
+13071131;Schönfeld;13
+13071132;Schönhausen;22
+13071133;Schwarz;20
+13071135;Siedenbollentin;14
+13071136;Siedenbrünzow;13
+13071137;Sietow;20
+13071138;Silz;20
+13071139;Sommersdorf;13
+13071140;Sponholz;22
+13071141;Staven;22
+13071142;Stavenhagen;14
+13071143;Stuer;20
+13071144;Torgelow am See;20
+13071145;Trollenhagen;22
+13071146;Tützpatz;14
+13071147;Userin;21
+13071148;Utzedel;13
+13071150;Verchen;13
+13071153;Voigtsdorf;22
+13071154;Vollrathsruhe;20
+13071155;Walow;20
+13071156;Waren (Müritz);20
+13071157;Warrenzin;13
+13071158;Werder;14
+13071159;Wesenberg;21
+13071160;Wildberg;14
+13071161;Woggersin;22
+13071162;Wokuhl-Dabelow;21
+13071163;Wolde;14
+13071164;Woldegk;22
+13071166;Wulkenzin;22
+13071167;Wustrow;21
+13071169;Zettemin;14
+13071170;Zirzow;22
+13071171;Zislow;20
+13071172;Peenehagen;20
+13071173;Kuckssee;22
+13071174;Schloen-Dratow;20
+13071175;Eldetal;20
+13071176;Südmüritz;20
+13072001;Admannshagen-Bargeshagen;11
+13072002;Alt Bukow;11
+13072003;Alt Sührkow;15
+13072004;Altkalen;15
+13072005;Am Salzhaff;11
+13072006;Bad Doberan;11
+13072007;Bartenshagen-Parkentin;11
+13072008;Bastorf;11
+13072009;Baumgarten;16
+13072010;Behren-Lübchin;15
+13072011;Benitz;15
+13072012;Bentwisch;12
+13072013;Bernitt;16
+13072014;Biendorf;11
+13072015;Blankenhagen;12
+13072017;Börgerende-Rethwisch;11
+13072018;Bröbberow;15
+13072019;Broderstorf;12
+13072020;Bützow;16
+13072021;Cammin;12
+13072022;Carinerland;11
+13072023;Dahmen;15
+13072024;Dalkendorf;15
+13072026;Dobbin-Linstow;15
+13072027;Dolgen am See;15
+13072028;Dreetz;16
+13072029;Dummerstorf;12
+13072030;Elmenhorst/Lichtenhagen;12
+13072031;Finkenthal;15
+13072032;Gelbensande;12
+13072033;Glasewitz;16
+13072034;Gnewitz;12
+13072035;Gnoien;15
+13072036;Graal-Müritz;12
+13072037;Grammow;12
+13072038;Groß Roge;15
+13072039;Groß Schwiesow;16
+13072040;Groß Wokern;15
+13072041;Groß Wüstenfelde;15
+13072042;Gülzow-Prüzen;16
+13072043;Güstrow;16
+13072044;Gutow;16
+13072045;Hohen Demzin;15
+13072046;Hohen Sprenz;15
+13072047;Hohenfelde;11
+13072048;Hoppenrade;15
+13072049;Jördenstorf;15
+13072050;Jürgenshagen;16
+13072051;Kassow;15
+13072053;Klein Belitz;16
+13072055;Klein Upahl;16
+13072056;Krakow am See;15
+13072057;Kritzmow;12
+13072058;Kröpelin;11
+13072059;Kuchelmiß;15
+13072060;Kühlungsborn;11
+13072061;Kuhs;16
+13072062;Laage;15
+13072063;Lalendorf;15
+13072064;Lambrechtshagen;12
+13072066;Lelkendorf;15
+13072067;Lohmen;16
+13072069;Lüssow;16
+13072071;Mistorf;16
+13072072;Mönchhagen;12
+13072073;Mühl Rosin;16
+13072074;Neubukow;11
+13072075;Nienhagen;11
+13072076;Nustrow;12
+13072077;Papendorf;12
+13072078;Penzin;16
+13072079;Plaaz;16
+13072080;Pölchow;12
+13072081;Poppendorf;12
+13072082;Prebberede;15
+13072083;Reddelich;11
+13072084;Reimershagen;16
+13072085;Rerik;11
+13072086;Retschow;11
+13072087;Roggentin;12
+13072088;Rövershagen;12
+13072089;Rühn;16
+13072090;Rukieten;15
+13072091;Sanitz;12
+13072092;Sarmstorf;16
+13072093;Satow;11
+13072094;Schorssow;15
+13072095;Schwaan;15
+13072096;Schwasdorf;15
+13072097;Selpin;12
+13072098;Stäbelow;12
+13072099;Steffenshagen;11
+13072101;Steinhagen;16
+13072102;Stubbendorf;12
+13072103;Sukow-Levitzow;15
+13072104;Tarnow;16
+13072105;Tessin;12
+13072106;Teterow;15
+13072107;Thelkow;12
+13072108;Thulendorf;12
+13072109;Thürkow;15
+13072110;Vorbeck;15
+13072111;Walkendorf;15
+13072112;Wardow;15
+13072113;Warnkenhagen;15
+13072114;Warnow;16
+13072116;Wiendorf;15
+13072117;Wittenbeck;11
+13072118;Zarnewanz;12
+13072119;Zehna;16
+13072120;Zepelin;16
+13072121;Ziesendorf;12
+13073001;Ahrenshagen-Daskow;23
+13073002;Ahrenshoop;23
+13073003;Altefähr;33
+13073004;Altenkirchen;33
+13073005;Altenpleen;25
+13073006;Baabe;34
+13073007;Bad Sülze;23
+13073009;Barth;25
+13073010;Bergen auf Rügen;34
+13073011;Binz;34
+13073012;Born a.Darß;23
+13073013;Breege;33
+13073014;Buschvitz;34
+13073015;Dettmannsdorf;23
+13073016;Deyelsdorf;23
+13073017;Dierhagen;23
+13073018;Divitz-Spoldershagen;25
+13073019;Dranske;33
+13073020;Drechow;23
+13073021;Dreschvitz;33
+13073022;Eixen;23
+13073023;Elmenhorst;24
+13073024;Franzburg;24
+13073025;Fuhlendorf;25
+13073027;Garz/Rügen;33
+13073028;Gingst;33
+13073029;Glewitz;24
+13073030;Glowe;33
+13073031;Göhren;34
+13073032;Grammendorf;23
+13073033;Gransebieth;23
+13073034;Gremersdorf-Buchholz;24
+13073035;Grimmen;24
+13073036;Groß Kordshagen;25
+13073037;Groß Mohrdorf;25
+13073038;Gustow;33
+13073039;Hugoldsdorf;23
+13073040;Insel Hiddensee;33
+13073041;Jakobsdorf;25
+13073042;Karnin;25
+13073043;Kenz-Küstrow;25
+13073044;Klausdorf;25
+13073045;Kluis;33
+13073046;Kramerhof;25
+13073048;Lancken-Granitz;34
+13073049;Lietzow;34
+13073050;Lindholz;23
+13073051;Löbnitz;25
+13073052;Lohme;33
+13073053;Lüdershagen;25
+13073054;Lüssow;25
+13073055;Marlow;23
+13073057;Millienhagen-Oebelitz;24
+13073059;Neuenkirchen;33
+13073060;Niepars;25
+13073061;Pantelitz;25
+13073062;Papenhagen;24
+13073063;Parchtitz;34
+13073064;Patzig;34
+13073065;Poseritz;33
+13073066;Preetz;25
+13073067;Prerow;23
+13073068;Prohn;25
+13073069;Pruchten;25
+13073070;Putbus;34
+13073071;Putgarten;33
+13073072;Ralswiek;34
+13073073;Rambin;33
+13073074;Rappin;34
+13073075;Ribnitz-Damgarten;23
+13073076;Richtenberg;24
+13073077;Saal;25
+13073078;Sagard;33
+13073079;Samtens;33
+13073080;Sassnitz;33
+13073081;Schaprode;33
+13073082;Schlemmin;23
+13073083;Sehlen;34
+13073084;Sellin;34
+13073085;Semlow;23
+13073086;Splietsdorf;24
+13073087;Steinhagen;25
+13073088;Stralsund;24|25|26
+13073089;Süderholz;24
+13073090;Sundhagen;24
+13073092;Trent;33
+13073093;Tribsees;23
+13073094;Trinwillershagen;25
+13073095;Ummanz;33
+13073096;Velgast;24
+13073097;Weitenhagen;24
+13073098;Wendisch Baggendorf;24
+13073099;Wendorf;25
+13073100;Wieck a.Darß;23
+13073101;Wiek;33
+13073102;Wittenhagen;24
+13073103;Wustrow;23
+13073104;Zarrendorf;25
+13073105;Zingst;23
+13073106;Zirkow;34
+13073107;Mönchgut;34
+13074001;Alt Meteln;28
+13074002;Bad Kleinen;28
+13074003;Barnekow;28
+13074004;Benz;28
+13074005;Bernstorf;27
+13074006;Bibow;28
+13074007;Blowatz;28
+13074008;Bobitz;28
+13074009;Boiensdorf;28
+13074010;Boltenhagen;27
+13074012;Brüsewitz;28
+13074013;Carlow;27
+13074014;Cramonshagen;28
+13074015;Dalberg-Wendelstorf;28
+13074016;Damshagen;27
+13074017;Dassow;27
+13074018;Dechow;27
+13074019;Dorf Mecklenburg;28
+13074020;Dragun;28
+13074021;Gadebusch;28
+13074022;Gägelow;27
+13074023;Glasin;28
+13074024;Gottesgabe;28
+13074025;Grambow;28
+13074026;Grevesmühlen;27
+13074027;Grieben;27
+13074028;Groß Molzahn;27
+13074030;Groß Stieten;28
+13074031;Hohen Viecheln;28
+13074032;Hohenkirchen;27
+13074033;Holdorf;27
+13074034;Hornstorf;28
+13074035;Insel Poel;28
+13074036;Jesendorf;28
+13074037;Kalkhorst;27
+13074038;Klein Trebbow;28
+13074039;Klütz;27
+13074040;Kneese;28
+13074042;Königsfeld;27
+13074043;Krembz;28
+13074044;Krusenhagen;28
+13074046;Lübberstorf;28
+13074047;Lübow;28
+13074048;Lübstorf;28
+13074049;Lüdersdorf;27
+13074050;Lützow;28
+13074052;Menzendorf;27
+13074053;Metelsdorf;28
+13074054;Mühlen Eichsen;28
+13074056;Neuburg;28
+13074057;Neukloster;28
+13074060;Passee;28
+13074061;Perlin;28
+13074062;Pingelshagen;28
+13074064;Pokrent;28
+13074065;Rehna;27
+13074066;Rieps;27
+13074067;Roduchelstorf;27
+13074068;Roggendorf;28
+13074069;Roggenstorf;27
+13074070;Rögnitz;28
+13074071;Rüting;27
+13074072;Schildetal;28
+13074073;Schlagsdorf;27
+13074074;Schönberg;27
+13074075;Seehof;28
+13074076;Selmsdorf;27
+13074077;Testorf-Steinfort;27
+13074078;Thandorf;27
+13074079;Upahl;27
+13074080;Utecht;27
+13074081;Veelböken;28
+13074082;Ventschow;28
+13074084;Warin;28
+13074085;Warnow;27
+13074087;Wismar;10
+13074088;Zickhusen;28
+13074089;Zierow;27
+13074090;Zurow;28
+13074091;Züsow;28
+13074092;Wedendorfersee;27
+13074093;Stepenitztal;27
+13074094;Siemz-Niendorf;27
+13075001;Ahlbeck;35
+13075002;Alt Tellin;13
+13075003;Altwarp;35
+13075004;Altwigshagen;35
+13075005;Anklam;29
+13075006;Bandelin;29
+13075007;Bargischow;29
+13075008;Behrenhoff;29
+13075009;Bentzin;13
+13075010;Benz;30
+13075011;Bergholz;36
+13075012;Blankensee;36
+13075013;Blesewitz;29
+13075015;Boldekow;29
+13075016;Boock;36
+13075017;Brietzig;36
+13075018;Brünzow;30
+13075020;Bugewitz;29
+13075021;Buggenhagen;30
+13075022;Butzow;29
+13075023;Daberkow;13
+13075025;Dargelin;29
+13075026;Dargen;30
+13075027;Dersekow;29
+13075029;Ducherow;29
+13075031;Eggesin;35
+13075032;Fahrenwalde;36
+13075033;Ferdinandshof;35
+13075034;Garz;30
+13075035;Glasow;36
+13075036;Görmin;13
+13075037;Grambin;35
+13075038;Grambow;36
+13075039;Greifswald;1
+13075040;Gribow;29
+13075041;Groß Kiesow;29
+13075042;Groß Luckow;36
+13075043;Groß Polzin;29
+13075044;Gützkow;29
+13075045;Hammer a.d.Uecker;35
+13075046;Hanshagen;30
+13075048;Heinrichswalde;35
+13075049;Heringsdorf;30
+13075050;Hinrichshagen;29
+13075051;Hintersee;35
+13075053;Iven;29
+13075054;Jarmen;13
+13075055;Jatznick;36
+13075056;Kamminke;30
+13075058;Karlshagen;30
+13075059;Katzow;30
+13075060;Kemnitz;30
+13075061;Klein Bünzow;29
+13075063;Koblentz;36
+13075065;Korswandt;30
+13075066;Koserow;30
+13075067;Krackow;36
+13075068;Krien;29
+13075069;Kröslin;30
+13075070;Kruckow;13
+13075071;Krugsdorf;36
+13075072;Krummin;30
+13075073;Krusenfelde;29
+13075074;Lassan;30
+13075075;Leopoldshagen;35
+13075076;Levenhagen;29
+13075078;Liepgarten;35
+13075079;Löcknitz;36
+13075080;Loddin;30
+13075081;Loissin;30
+13075082;Loitz;13
+13075083;Lubmin;30
+13075084;Lübs;35
+13075085;Luckow;35
+13075087;Lütow;30
+13075088;Medow;29
+13075089;Meiersberg;35
+13075090;Mellenthin;30
+13075091;Mesekenhagen;29
+13075092;Mölschow;30
+13075093;Mönkebude;35
+13075094;Murchin;29
+13075095;Nadrensee;36
+13075097;Neu Boltenhagen;30
+13075098;Neu Kosenow;29
+13075101;Neuenkirchen;29
+13075102;Neuenkirchen;29
+13075103;Nieden;36
+13075104;Papendorf;36
+13075105;Pasewalk;36
+13075106;Peenemünde;30
+13075107;Penkun;36
+13075108;Plöwen;36
+13075109;Polzow;36
+13075110;Postlow;29
+13075111;Pudagla;30
+13075113;Ramin;36
+13075114;Rankwitz;30
+13075115;Rollwitz;36
+13075116;Rossin;29
+13075117;Rossow;36
+13075118;Rothemühl;35
+13075119;Rothenklempenow;36
+13075120;Rubenow;30
+13075121;Rubkow;29
+13075122;Sarnow;29
+13075123;Sassen-Trantow;13
+13075124;Sauzin;30
+13075125;Schmatzin;29
+13075126;Schönwalde;36
+13075127;Spantekow;29
+13075128;Stolpe an der Peene;29
+13075129;Stolpe auf Usedom;30
+13075130;Strasburg (Uckermark);36
+13075131;Torgelow;35
+13075133;Trassenheide;30
+13075134;Tutow;13
+13075135;Ückeritz;30
+13075136;Ueckermünde;35
+13075137;Usedom;30
+13075138;Viereck;36
+13075139;Vogelsang-Warsin;35
+13075140;Völschow;13
+13075141;Wackerow;29
+13075142;Weitenhagen;29
+13075143;Wilhelmsburg;35
+13075144;Wolgast;30
+13075145;Wrangelsburg;29
+13075146;Wusterhusen;30
+13075147;Zemitz;30
+13075148;Zempin;30
+13075149;Zerrenthin;36
+13075150;Ziethen;29
+13075151;Zinnowitz;30
+13075152;Zirchow;30
+13075154;Züssow;29
+13075155;Neetzow-Liepen;29
+13075156;Karlsburg;29
+13076001;Alt Krenzlin;19
+13076002;Alt Zachun;18
+13076003;Balow;19
+13076004;Bandenitz;18
+13076005;Banzkow;32
+13076006;Barkhagen;31
+13076007;Barnin;32
+13076008;Belsch;18
+13076009;Bengerstorf;17
+13076010;Besitz;17
+13076011;Blankenberg;32
+13076012;Blievenstorf;19
+13076013;Bobzin;18
+13076014;Boizenburg/Elbe;17
+13076015;Borkow;32
+13076016;Brahlstorf;17
+13076017;Brenz;19
+13076018;Bresegard bei Eldena;19
+13076019;Bresegard bei Picher;18
+13076020;Brüel;32
+13076021;Brunow;19
+13076023;Bülow;32
+13076024;Cambs;32
+13076025;Crivitz;32
+13076026;Dabel;32
+13076027;Dambeck;19
+13076029;Demen;32
+13076030;Dersenow;17
+13076032;Dobbertin;32
+13076033;Dobin am See;32
+13076034;Dömitz;17
+13076035;Domsühl;31
+13076036;Dümmer;18
+13076037;Eldena;19
+13076038;Friedrichsruhe;32
+13076039;Gallin;17
+13076040;Gallin-Kuppentin;31
+13076041;Gammelin;18
+13076044;Gneven;32
+13076046;Göhlen;19
+13076048;Goldberg;32
+13076049;Gorlosen;19
+13076050;Grabow;19
+13076051;Granzin;31
+13076053;Grebs-Niendorf;17
+13076054;Gresse;17
+13076055;Greven;17
+13076056;Groß Godems;31
+13076057;Groß Krams;18
+13076058;Groß Laasch;19
+13076060;Hagenow;18
+13076062;Hohen Pritz;32
+13076063;Holthusen;18
+13076064;Hoort;18
+13076065;Hülseburg;18
+13076067;Karenz;17
+13076068;Karrenzin;31
+13076069;Karstädt;19
+13076070;Kirch Jesar;18
+13076071;Klein Rogahn;18
+13076072;Kobrow;32
+13076073;Kogel;17
+13076075;Kreien;31
+13076076;Kremmin;19
+13076077;Kritzow;31
+13076078;Kuhlen-Wendorf;32
+13076079;Kuhstorf;18
+13076080;Langen Brütz;32
+13076082;Leezen;32
+13076085;Lewitzrand;31
+13076086;Lübesse;19
+13076087;Lüblow;19
+13076088;Lübtheen;17
+13076089;Lübz;31
+13076090;Ludwigslust;19
+13076092;Lüttow-Valluhn;17
+13076093;Malk Göhren;17
+13076094;Malliß;17
+13076096;Mestlin;32
+13076097;Milow;19
+13076098;Möllenbeck;19
+13076099;Moraas;18
+13076100;Muchow;19
+13076101;Mustin;32
+13076102;Neu Gülze;17
+13076103;Neu Kaliß;17
+13076104;Neu Poserin;32
+13076105;Neustadt-Glewe;19
+13076106;Nostorf;17
+13076107;Pampow;18
+13076108;Parchim;31
+13076109;Passow;31
+13076110;Pätow-Steegen;18
+13076111;Picher;18
+13076112;Pinnow;32
+13076113;Plate;32
+13076114;Plau am See;31
+13076115;Prislich;19
+13076116;Pritzier;18
+13076117;Raben Steinfeld;32
+13076118;Rastow;19
+13076119;Redefin;18
+13076120;Rom;31
+13076121;Schossin;18
+13076122;Schwanheide;17
+13076125;Siggelkow;31
+13076126;Spornitz;31
+13076128;Sternberg;32
+13076129;Stolpe;31
+13076130;Stralendorf;18
+13076131;Strohkirchen;18
+13076133;Sukow;32
+13076134;Sülstorf;19
+13076135;Techentin;32
+13076136;Teldau;17
+13076138;Tessin b.Boizenburg;17
+13076140;Tramm;32
+13076141;Uelitz;19
+13076142;Vellahn;17
+13076143;Vielank;17
+13076145;Warlitz;18
+13076146;Warlow;19
+13076147;Warsow;18
+13076148;Weitendorf;32
+13076151;Werder;31
+13076152;Wittenburg;18
+13076153;Wittendörp;18
+13076154;Wittenförden;18
+13076155;Witzin;32
+13076156;Wöbbelin;19
+13076158;Zapel;32
+13076159;Zarrentin am Schaalsee;17
+13076160;Ziegendorf;31
+13076161;Zierzow;19
+13076162;Zölkow;31
+13076163;Zülow;18
+13076164;Obere Warnow;31
+13076165;Gehlsbach;31
+13076166;Ganzlin;31
+13076167;Kloster Tempzin;32
+13076168;Ruhner Berge;31
+13076169;Toddin;18

@@ -1,7 +1,7 @@
 # Umzug auf netcup
 
-Stand 09.11.2026. **Noch kein Server vorhanden.** Robin meldet sich, sobald der netcup-Account freigeschaltet ist; erst dann wird
-bestellt und eingerichtet. DNS-Änderungen und das Umschalten der öffentlichen Website nur nach ausdrücklicher Freigabe.
+Stand 11.11.2026. **Server (nano, Domain sphaerae.de) ist bestellt.** Die Einsteiger-Anleitung steht in [server-einrichtung.md](server-einrichtung.md),
+die Skripte in `server/deploy/einrichtung/`. DNS-Änderungen und das Umschalten der öffentlichen Website nur nach ausdrücklicher Freigabe.
 Alles unten ist lokal mit Docker Compose getestet (gleiche Abbilder, gleiche Konfiguration).
 
 ## Annahmen (bis der Server da ist)

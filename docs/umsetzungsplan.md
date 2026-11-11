@@ -32,7 +32,7 @@ an die Abhängigkeiten aus der Bestandsaufnahme.
 | A0 | Audit November 2026: ENTSO-E-Zeitraum, Aktualität je Gebiet, Importabhängigkeit, Fassungen, Lizenzprüfung der Ausgabe, Katalogprüfung, Startdownloads | – | `audit-2026-11.md`, 158 pytest | 1 | erledigt |
 | A1 | Datenlücken-Matrix Wirtschaft und Wahlen | A0 | `datenabdeckung-wirtschaft.md`, `datenabdeckung-wahlen.md` | 0,5 | als Nächstes |
 | W1 | Eine Landtagswahl 2026 vollständig als Muster (Quelle, Import, Prüfung, Datei/API, Weltkugel, Tests, Vergleich zur Vorwahl) | A1 | `wahlen-smoke.js`, Summenprüfung gegen das amtliche Ergebnis | 1 | geplant |
-| W2 | Übrige Landtagswahlen 2026 (BW 08.03., RP 22.03., ST 06.09., MV 20.09., Berlin 20.09.) | W1 | wie W1 | 1,5 | BW, ST, Berlin erledigt; RP, MV offen |
+| W2 | Übrige Landtagswahlen 2026 (BW 08.03., RP 22.03., ST 06.09., MV 20.09., Berlin 20.09.) | W1 | wie W1 | 1,5 | erledigt (E7 offen: Lizenz der Wahlkreisgrenzen RP, MV) |
 | R1 | Regionale Wirtschaft: Eurostat `nama_10r_3gdp` (BIP je NUTS-3) als Pilot | A1 | Abgleich mit Eurostat | 1 | geplant |
 | D1 | Ansicht „Datenstand“ in der Oberfläche (Aktualität je Land, Fassungen) | A0 | Browser-Test | 0,5 | geplant |
 | W3 ff. | USA 2026, Neuseeland 2026, Europawahl 2024 für alle 27 Staaten, Energie (Ember), Arbeitsmarkt (ILOSTAT) | W2, R1 | je Paket | – | geplant |

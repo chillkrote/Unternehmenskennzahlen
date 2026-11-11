@@ -12,6 +12,10 @@ const WAHLEN_SOLL = [
     punkt: [8.876, 47.814], zoom: 9.5, kreis: [/Landtagswahlkreis/, /Singen/, /Direktmandat/] },
   { id: 'DE-BE-parl-2026', karte: [/Abgeordnetenhaus/, /Zweitstimmen/, /Die Linke/, /25,7/, /Wiederholungswahl 2023/, /74,2/, /endgültig/i, /Landeswahlleitung Berlin/],
     punkt: [13.1666, 52.4937], zoom: 11, kreis: [/Wahlkreis/, /Spandau 5/, /Direktmandat/] },
+  { id: 'DE-RP-parl-2026', karte: [/Landtag Rheinland-Pfalz/, /Landesstimmen/, /CDU/, /31,0/, /Landtagswahl 2021/, /68,4/, /endgültig/i, /Landeswahlleiter Rheinland-Pfalz/],
+    punkt: [8.2505, 49.9994], zoom: 11, kreis: [/Landtagswahlkreis/, /Mainz I/, /Direktmandat/] },
+  { id: 'DE-MV-parl-2026', karte: [/Landtag Mecklenburg-Vorpommern/, /Zweitstimmen/, /AfD/, /38,2/, /Landtagswahl 2021/, /78,0/, /endgültig/i, /Landeswahlleiter Mecklenburg-Vorpommern/],
+    punkt: [11.408, 53.647], zoom: 10.5, kreis: [/Landtagswahlkreis/, /Schwerin I/, /Direktmandat/] },
 ];
 (async () => {
   const browser = await chromium.launch({ headless: true, args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });

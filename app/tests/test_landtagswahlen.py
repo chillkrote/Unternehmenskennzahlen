@@ -197,7 +197,106 @@ class Ergebnispraesentation(unittest.TestCase):
             self.assertEqual((w["datum"], w["status"]), (datum, "endgültig"))
             self.assertEqual(w["g"]["s"]["z"][0], erste)
             self.assertEqual([(u["id"], u["geo"], len(u["werte"])) for u in w["einheiten"]], [("lwk", geo, n)])
-        self.assertEqual({c for c in L.WAHLEN}, {"DE-ST", "DE-BW", "DE-BE"})
+        self.assertEqual({c for c in L.WAHLEN}, {"DE-ST", "DE-BW", "DE-BE", "DE-RP", "DE-MV"})
+
+
+class Tabellenwahlen(unittest.TestCase):
+    """Rheinland-Pfalz und Mecklenburg-Vorpommern 2026: Tabellen der Landeswahlleitungen, gemeinsame Prüfung (tab_*)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.d = {"DE-RP": L.rp_lesen(), "DE-MV": L.mv_lesen()}
+        cls.geo = {c: json.loads((APP / dict(L.WAHL_GEO)[L.TAB[c]["geo"]]).read_text(encoding="utf-8")) for c in cls.d}
+        cls.rp, cls.mv = L.rp_ltw26(), L.mv_ltw26()
+
+    def test_tabellen_sind_in_sich_stimmig(self):
+        for c, d in self.d.items():
+            self.assertEqual(L.tab_pruefe(d, L.TAB[c], self.geo[c]), [], c)
+
+    def test_sollwerte_rheinland_pfalz(self):
+        g = self.rp["g"]
+        self.assertEqual((g["wb"], g["w"], g["bet"], g["bet_vor"]), (2990064, 2046542, 68.4, 64.3))
+        self.assertEqual(g["s"]["z"][:3], [["CDU", 627954, 31.0, 27.7], ["SPD", 525807, 25.9, 35.7], ["AfD", 394756, 19.5, 8.3]])
+        self.assertEqual(g["s"]["e"][0], ["CDU", 675037, 33.4, 31.4])
+        self.assertEqual(next(x for x in g["s"]["z"] if x[0] == "BSW")[3], None)          # 2021 nicht angetreten
+        self.assertEqual({p: n for p, n, _ in g["sitze"]}, {"CDU": 39, "SPD": 32, "AfD": 24, "GRÜNE": 10})
+        self.assertEqual((g["sitze_n"], dict(g["sitze_direkt"])), (105, {"CDU": 39, "SPD": 13}))
+        wk = self.rp["einheiten"][0]["werte"]
+        self.assertEqual(len(wk), 52)
+        self.assertEqual((wk["27"]["n"], wk["27"]["direkt"], wk["27"]["bet_vor"]), ("27 Mainz I", {"name": "Michael Ebling", "partei": "SPD"}, None))
+        self.assertEqual(wk["27"]["s"]["e"][0], ["SPD", 12056, 28.2, None])           # Wahlkreise neu zugeschnitten: kein Vergleich
+        self.assertEqual(self.rp["stimmarten"], [["z", "Landesstimmen"], ["e", "Wahlkreisstimmen"]])
+
+    def test_sollwerte_mecklenburg_vorpommern(self):
+        g = self.mv["g"]
+        self.assertEqual((g["wb"], g["w"], g["bet"], g["bet_vor"]), (1312565, 1024118, 78.0, 70.8))
+        self.assertEqual(g["s"]["z"][:2], [["AfD", 388050, 38.2, 16.7], ["SPD", 360396, 35.5, 39.6]])
+        self.assertEqual(g["sitze"], [["AfD", 32, 14], ["SPD", 29, 34], ["Die Linke", 5, 9], ["GRÜNE", 5, 5]])
+        self.assertEqual((g["sitze_n"], dict(g["sitze_direkt"])), (71, {"AfD": 22, "SPD": 14}))
+        wk = self.mv["einheiten"][0]["werte"]
+        self.assertEqual(len(wk), 36)
+        self.assertEqual((wk["8"]["n"], wk["8"]["direkt"], wk["8"]["bet_vor"]), ("8 Schwerin I", {"name": "Manuela Schwesig", "partei": "SPD"}, 75.2))
+        self.assertEqual((wk["8"]["s"]["e"][0], wk["8"]["s"]["z"][0]), (["SPD", 21369, 54.4, 46.4], ["SPD", 14862, 37.8, 35.2]))
+
+    def test_grenzen_passen_zu_den_wahlkreisen(self):
+        rahmen = {"DE-RP": (6.0, 8.6, 48.9, 51.0), "DE-MV": (10.5, 14.5, 53.0, 54.8)}
+        for c, w in (("DE-RP", self.rp), ("DE-MV", self.mv)):
+            self.assertEqual({f["properties"]["id"] for f in self.geo[c]["features"]}, set(w["einheiten"][0]["werte"]))
+            x0, x1, y0, y1 = rahmen[c]
+            for f in self.geo[c]["features"]:
+                for r in (r for p in f["geometry"]["coordinates"] for r in p):
+                    self.assertEqual(r[0], r[-1])
+                    self.assertTrue(all(x0 < x < x1 and y0 < y < y1 for x, y in r), f["properties"])
+
+    def test_pruefung_findet_widersprueche(self):
+        d = copy.deepcopy(self.d["DE-MV"])
+        d["wahlkreise"]["8"]["z"]["p"]["SPD"] += 1
+        f = L.tab_pruefe(d, L.TAB["DE-MV"])
+        self.assertTrue(any("8: Summe der Parteien (z)" in x for x in f) and any("Summe der Wahlkreise SPD (z)" in x for x in f), f)
+        d = copy.deepcopy(self.d["DE-MV"])
+        d["direkt"]["8"][1] = "AfD"
+        f = L.tab_pruefe(d, L.TAB["DE-MV"])
+        self.assertTrue(any("Wahlkreis 8: gewählt" in x for x in f) and any("Sitze AfD: 22 Direktmandate, in den Wahlkreisen gewählt 23" in x for x in f), f)
+        d = copy.deepcopy(self.d["DE-RP"])
+        d["land"]["wb"] += 1
+        del d["wahlkreise"]["52"]
+        f = L.tab_pruefe(d, L.TAB["DE-RP"], self.geo["DE-RP"])
+        self.assertTrue(any("51 statt 52 Wahlkreise" in x for x in f) and any("Summe der Wahlkreise Wahlberechtigte" in x for x in f) and any("Grenzen" in x for x in f), f)
+
+    def test_vorlaeufige_datei_wird_abgelehnt(self):
+        import tempfile
+        roh = (L.QUELLEN / "mv_ltw26_wahlkreise.csv").read_text(encoding="utf-8").replace("Endgültiges Ergebnis", "Vorläufiges Ergebnis", 1)
+        with tempfile.TemporaryDirectory() as t:
+            p = Path(t) / "x.csv"
+            p.write_text(roh, encoding="utf-8")
+            with self.assertRaises(L.Pruefehler):
+                L._mv_csv(p)
+
+    def test_lesefunktionen_der_quellen(self):
+        kopf = [[None] * 8, [None, None, None, None, None, None, "SPD", "Bastian Ruhl"], [None] * 8, [None, None, None, None, "A1", "A", "D1", "D13"]]
+        k, d = L.rp_tabelle(kopf + [["1 001 ", "G", "Betzdorf/Kirchen, WK", None, 5, 7, 3, None], ["x", "U", "Bezirk", None, 1, 1, 1, 1]])
+        self.assertEqual((k, d), (["Schluessel", "Name", "A", "D:SPD", "D:Bastian Ruhl"], [["1 001", "Betzdorf/Kirchen", 7, 3, ""]]))
+        seite = ("<table><tr><th>Wahlkreis</th><th>Name</th><th>Partei</th></tr><tr><td>01</td><td>A B</td><td>CDU</td></tr></table>"
+                 "<table><tr><th>Listenplatz</th><th>Name</th><th>Partei</th></tr><tr><td>2</td><td>C D</td><td>SPD</td></tr></table>")
+        self.assertEqual(L.rp_gewaehlte(seite), {"direkt": {"1": ["A B", "CDU"]}, "liste": [["C D", "SPD"]]})
+        zelle = '<div style="top: %dpx; left: %dpx; width:20px; " class="S7">%s</div>'
+        seite = zelle % (289, 130, "SPD") + zelle % (288, 458, "Pegel,&nbsp;Christian") + zelle % (289, 97, "1") + zelle % (288, 421, "39,4") + zelle % (250, 536, "Name, Vorname")
+        self.assertEqual(L.mv_gewaehlte(seite), {"1": ["Christian Pegel", "SPD"]})
+        b = {"Wahlbeteiligung MV": [["Mecklenburg-Vorpommern", None, 78, 1, 70.768], [1, "Greifswald", 76.8, 1, 72.05]],
+             "SPD": [["x"], ["Stimmenanteile der SPD 2026"], ["Mecklenburg-Vorpommern", None, 37.4, 34.4, 3, 35.5, 39.6], [1, "Greifswald", 39.4, 29.9, 9.5, 33.2, 33.5]],
+             "Endgültiges Ergebnis": [["Insgesamt", 71, 36, 35, 79], ["Die Linke 1)", 5, "-", 5, 9], ["BSW", "-", "-", "-", "x"]]}
+        v = L.mv_vergleich(b)
+        self.assertEqual(v["land"], {"bet": 70.77, "e": {"SPD": 34.4}, "z": {"SPD": 39.6}})
+        self.assertEqual((v["wahlkreise"]["1"], v["sitze"]), ({"bet": 72.05, "e": {"SPD": 29.9}, "z": {"SPD": 33.5}}, {"Die Linke": 9}))
+
+    def test_wahlregister_enthaelt_den_amtlichen_stand(self):
+        reg = {x["id"]: x for x in json.loads((APP / "data/wahlen.json").read_text(encoding="utf-8"))["wahlen"]}
+        for wid, datum, geo, n, erste in (("DE-RP-parl-2026", "2026-03-22", "landtagswahlkreise-rp", 52, ["CDU", 627954, 31.0, 27.7]),
+                                           ("DE-MV-parl-2026", "2026-09-20", "landtagswahlkreise-mv", 36, ["AfD", 388050, 38.2, 16.7])):
+            w = reg[wid]
+            self.assertEqual((w["datum"], w["status"]), (datum, "endgültig"))
+            self.assertEqual(w["g"]["s"]["z"][0], erste)
+            self.assertEqual([(u["id"], u["geo"], len(u["werte"])) for u in w["einheiten"]], [("lwk", geo, n)])
 
 
 class Abdeckung(unittest.TestCase):
@@ -208,11 +307,12 @@ class Abdeckung(unittest.TestCase):
         st = z["DE-ST-parl-2026"]
         self.assertEqual((st["stufe"], st["stimmen_absolut"], st["vergleich_vorwahl"], st["sitze"], st["luecken"]), ("A", "ja", "ja", "ja", ""))
         self.assertIn("Landtagswahlkreise (41)", st["einheiten_mit_grenzen"])
-        for wid, einheit in (("DE-BW-parl-2026", "Landtagswahlkreise (70)"), ("DE-BE-parl-2026", "Abgeordnetenhauswahlkreise (78)")):
+        for wid, einheit in (("DE-BW-parl-2026", "Landtagswahlkreise (70)"), ("DE-BE-parl-2026", "Abgeordnetenhauswahlkreise (78)"),
+                             ("DE-RP-parl-2026", "Landtagswahlkreise (52)"), ("DE-MV-parl-2026", "Landtagswahlkreise (36)")):
             self.assertEqual((z[wid]["stufe"], z[wid]["stimmen_absolut"], z[wid]["vergleich_vorwahl"]), ("A", "ja", "ja"))
             self.assertIn(einheit, z[wid]["einheiten_mit_grenzen"])
-        self.assertEqual(z["DE-RP-parl-2026"]["stufe"], "C")
-        self.assertIn("keine amtliche Quelle", z["DE-RP-parl-2026"]["luecken"])
+        self.assertEqual(z["DE-BY-parl-2023"]["stufe"], "C")
+        self.assertIn("keine amtliche Quelle", z["DE-BY-parl-2023"]["luecken"])
 
     def test_stufen(self):
         import wahlabdeckung

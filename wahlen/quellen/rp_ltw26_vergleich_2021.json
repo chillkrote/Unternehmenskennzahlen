@@ -1,0 +1,36 @@
+{
+ "bet": 64.34,
+ "e": {
+  "AfD": 7.56,
+  "Basisdemokratie": 0.01,
+  "CDU": 31.42,
+  "Die Linke": 2.82,
+  "Die PARTEI": 0.44,
+  "Dr. Moritz": 0.02,
+  "FDP": 6.01,
+  "FREIE WÄHLER": 7.49,
+  "GRÜNE": 10.92,
+  "Klimaliste": 0.49,
+  "PIRATEN": 0.09,
+  "SIGGI wählen": 0.07,
+  "SPD": 32.15,
+  "Volt": 0.08,
+  "ÖDP": 0.43
+ },
+ "wahl": "2021-03-14",
+ "z": {
+  "AfD": 8.28,
+  "CDU": 27.67,
+  "Die Linke": 2.49,
+  "Die PARTEI": 1.06,
+  "FDP": 5.52,
+  "FREIE WÄHLER": 5.36,
+  "GRÜNE": 9.3,
+  "Klimaliste": 0.71,
+  "PIRATEN": 0.54,
+  "SPD": 35.71,
+  "Tierschutzpartei": 1.68,
+  "Volt": 1.0,
+  "ÖDP": 0.69
+ }
+}

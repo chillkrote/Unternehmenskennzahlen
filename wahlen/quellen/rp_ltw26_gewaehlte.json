@@ -1,0 +1,426 @@
+{
+ "direkt": {
+  "1": [
+   "Johannes Behner",
+   "CDU"
+  ],
+  "2": [
+   "Dr. Matthias Reuber",
+   "CDU"
+  ],
+  "3": [
+   "Jürgen Schmied",
+   "CDU"
+  ],
+  "4": [
+   "Lana Horstmann",
+   "SPD"
+  ],
+  "5": [
+   "Janick Pape",
+   "CDU"
+  ],
+  "6": [
+   "Jenny Groß",
+   "CDU"
+  ],
+  "7": [
+   "Matthias Lammert",
+   "CDU"
+  ],
+  "8": [
+   "Andreas Birtel",
+   "CDU"
+  ],
+  "9": [
+   "Philip Rünz",
+   "CDU"
+  ],
+  "10": [
+   "Peter Moskopp",
+   "CDU"
+  ],
+  "11": [
+   "Anette Moesta",
+   "CDU"
+  ],
+  "12": [
+   "Torsten Welling",
+   "CDU"
+  ],
+  "13": [
+   "Petra Schneider",
+   "CDU"
+  ],
+  "14": [
+   "Guido Orthen",
+   "CDU"
+  ],
+  "15": [
+   "Jens Münster",
+   "CDU"
+  ],
+  "16": [
+   "Tobias Vogt",
+   "CDU"
+  ],
+  "17": [
+   "Dr. Helmut Martin",
+   "CDU"
+  ],
+  "18": [
+   "Dr. Denis Alt",
+   "SPD"
+  ],
+  "19": [
+   "Caroline Pehlke",
+   "SPD"
+  ],
+  "20": [
+   "Gordon Schnieder",
+   "CDU"
+  ],
+  "21": [
+   "Michael Ludwig",
+   "CDU"
+  ],
+  "22": [
+   "Dennis Junk",
+   "CDU"
+  ],
+  "23": [
+   "Karina Wächter",
+   "CDU"
+  ],
+  "24": [
+   "Lars Rieger",
+   "CDU"
+  ],
+  "25": [
+   "Sven Teuber",
+   "SPD"
+  ],
+  "26": [
+   "Johannes Kölling",
+   "CDU"
+  ],
+  "27": [
+   "Michael Ebling",
+   "SPD"
+  ],
+  "28": [
+   "Doris Ahnen",
+   "SPD"
+  ],
+  "29": [
+   "Johannes Schäfer",
+   "CDU"
+  ],
+  "30": [
+   "Michael König",
+   "CDU"
+  ],
+  "31": [
+   "Marie Wasem",
+   "CDU"
+  ],
+  "32": [
+   "Kathrin Anklam-Trapp",
+   "SPD"
+  ],
+  "33": [
+   "Dirk Beyer",
+   "SPD"
+  ],
+  "34": [
+   "Heiner Illing",
+   "SPD"
+  ],
+  "35": [
+   "Christian Baldauf",
+   "CDU"
+  ],
+  "36": [
+   "Raymond Höptner",
+   "CDU"
+  ],
+  "37": [
+   "Marion Schneid",
+   "CDU"
+  ],
+  "38": [
+   "Johannes Zehfuß",
+   "CDU"
+  ],
+  "39": [
+   "Michael Wagner",
+   "CDU"
+  ],
+  "40": [
+   "Jaqueline Rauschkolb",
+   "SPD"
+  ],
+  "41": [
+   "Otto Rubly",
+   "CDU"
+  ],
+  "42": [
+   "Markus Wolf",
+   "CDU"
+  ],
+  "43": [
+   "Dirk Herber",
+   "CDU"
+  ],
+  "44": [
+   "Andreas Rahm",
+   "SPD"
+  ],
+  "45": [
+   "Dr. Norbert Herhammer",
+   "CDU"
+  ],
+  "46": [
+   "Marcus Klein",
+   "CDU"
+  ],
+  "47": [
+   "Dr. Christoph Gensch",
+   "CDU"
+  ],
+  "48": [
+   "Christof Reichert",
+   "CDU"
+  ],
+  "49": [
+   "Alexander Schweitzer",
+   "SPD"
+  ],
+  "50": [
+   "Florian Maier",
+   "SPD"
+  ],
+  "51": [
+   "Tobias Baumgärtner",
+   "CDU"
+  ],
+  "52": [
+   "Florian Bellaire",
+   "CDU"
+  ]
+ },
+ "liste": [
+  [
+   "Sabine Bätzing-Lichtenthäler",
+   "SPD"
+  ],
+  [
+   "Hendrik Hering",
+   "SPD"
+  ],
+  [
+   "Daniel Schäffner",
+   "SPD"
+  ],
+  [
+   "Bettina Brück",
+   "SPD"
+  ],
+  [
+   "Dr. Katrin Rehak-Nitsche",
+   "SPD"
+  ],
+  [
+   "Clemens Hoch",
+   "SPD"
+  ],
+  [
+   "Gregory Scholz",
+   "SPD"
+  ],
+  [
+   "Dr. Anna Köbberling",
+   "SPD"
+  ],
+  [
+   "Benedikt Oster",
+   "SPD"
+  ],
+  [
+   "Susanne Müller",
+   "SPD"
+  ],
+  [
+   "Magali Leidig-Petermann",
+   "SPD"
+  ],
+  [
+   "Nina Klinkel",
+   "SPD"
+  ],
+  [
+   "Nico Steinbach",
+   "SPD"
+  ],
+  [
+   "Daniela Stauch",
+   "SPD"
+  ],
+  [
+   "Dr. Claudia Eider",
+   "SPD"
+  ],
+  [
+   "Lena Werner",
+   "SPD"
+  ],
+  [
+   "Dr. Oliver Kusch",
+   "SPD"
+  ],
+  [
+   "Ruth Greb",
+   "SPD"
+  ],
+  [
+   "Dr. Marlene Gottwald",
+   "SPD"
+  ],
+  [
+   "Katrin Eder",
+   "GRÜNE"
+  ],
+  [
+   "Pia Schellhammer",
+   "GRÜNE"
+  ],
+  [
+   "Katharina Binz",
+   "GRÜNE"
+  ],
+  [
+   "Carl-Bernhard von Heusinger",
+   "GRÜNE"
+  ],
+  [
+   "Dr. Lea Marie Heidbreder",
+   "GRÜNE"
+  ],
+  [
+   "Paul Bunjes",
+   "GRÜNE"
+  ],
+  [
+   "Lisett Stuppy",
+   "GRÜNE"
+  ],
+  [
+   "Joseph Philip Winkler",
+   "GRÜNE"
+  ],
+  [
+   "Natalie Cramme-Hill",
+   "GRÜNE"
+  ],
+  [
+   "Fabian Ehmann",
+   "GRÜNE"
+  ],
+  [
+   "Dr. Jan Andreas Bollinger",
+   "AfD"
+  ],
+  [
+   "Damian Lohr",
+   "AfD"
+  ],
+  [
+   "Eugen Ziegler",
+   "AfD"
+  ],
+  [
+   "Ralf Schönborn",
+   "AfD"
+  ],
+  [
+   "Catalina Monzon",
+   "AfD"
+  ],
+  [
+   "Joachim Paul",
+   "AfD"
+  ],
+  [
+   "Carsten Propp",
+   "AfD"
+  ],
+  [
+   "Benjamin Haupt",
+   "AfD"
+  ],
+  [
+   "Jürgen Klein",
+   "AfD"
+  ],
+  [
+   "Claudia von Bohr",
+   "AfD"
+  ],
+  [
+   "Robin Classen",
+   "AfD"
+  ],
+  [
+   "Stephan Stritter",
+   "AfD"
+  ],
+  [
+   "Dirk Bisanz",
+   "AfD"
+  ],
+  [
+   "Michael Büge",
+   "AfD"
+  ],
+  [
+   "Martin Kallweitt",
+   "AfD"
+  ],
+  [
+   "Frank Senger",
+   "AfD"
+  ],
+  [
+   "Albert Breininger",
+   "AfD"
+  ],
+  [
+   "Bernhard Cürten",
+   "AfD"
+  ],
+  [
+   "Ferdinand Weber",
+   "AfD"
+  ],
+  [
+   "Ulrike Beckmann",
+   "AfD"
+  ],
+  [
+   "Ralf Kelch",
+   "AfD"
+  ],
+  [
+   "Jürgen Wiedenhöfer",
+   "AfD"
+  ],
+  [
+   "Tom Kotzian",
+   "AfD"
+  ],
+  [
+   "Bailey Wollenweber",
+   "AfD"
+  ]
+ ]
+}

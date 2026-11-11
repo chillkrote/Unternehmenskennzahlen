@@ -11,6 +11,16 @@
 		-Server
 	}
 
+	# Seitenschutz (Passwortabfrage): nur wenn SEITENSCHUTZ=an in server/.env steht (docs/server-einrichtung.md, seitenschutz.sh).
+	# Ausgenommen bleibt /api/v1/health, damit Überwachung und Prüfskripte ohne Passwort arbeiten (liefert nur "ok" und die Schema-Revision).
+	@geschuetzt {
+		expression "{$SEITENSCHUTZ:aus}" == "an"
+		not path /api/v1/health
+	}
+	basic_auth @geschuetzt {
+		{$SCHUTZ_USER:besucher} {$SCHUTZ_HASH:$2a$14$a.a9oLP5dYCfXSzNRMdhg.rdMAwY9iMCH0soG30Hzm1B6dFetVDji}
+	}
+
 	handle /api/* {
 		# keine aktive Gesundheitsprüfung hier: die API meldet Fehler selbst als JSON; überwacht wird /api/v1/health (docs/betrieb.md)
 		reverse_proxy api:8000

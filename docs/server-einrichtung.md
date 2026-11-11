@@ -118,6 +118,21 @@ Passwortverwaltung kopieren, nicht in den Chat).
 Test: im Browser `https://neu.sphaerae.de` öffnen: Bank-Terminal, Weltkugel, Suche. Bei Fehlern kopierst du mir die Ausgabe
 des Skripts (nicht die `.env`) in den Chat.
 
+## Phase E2 – Passwortschutz vor der Test-Seite
+
+Solange die Seite nicht öffentlich sein soll, schaltest du eine Passwortabfrage davor (Browser-Fenster „Anmelden“, vom Webserver Caddy).
+Das Passwort denkst du dir selbst aus und tippst es nur auf dem Server ein; es wird nirgends gespeichert, in `server/.env` landet nur sein
+Hash (eine nicht umkehrbare Prüfsumme). Ausgenommen bleibt `/api/v1/health` (zeigt nur „ok“), damit die Überwachung ohne Passwort läuft.
+
+```
+cd /srv/sphaerae/repo && git fetch --depth 1 origin main && git reset --hard origin/main
+bash server/deploy/einrichtung/seitenschutz.sh an
+```
+Das Skript fragt nach Benutzername und Passwort (mindestens 12 Zeichen, die Eingabe bleibt unsichtbar), startet den Webserver neu und prüft:
+ohne Passwort muss die Startseite HTTP 401 zeigen. Ausschalten: `bash server/deploy/einrichtung/seitenschutz.sh aus`.
+Die tägliche Aktualisierung (`aktualisieren.sh`) lässt den Schutz unverändert und akzeptiert 401 als „in Ordnung“.
+**Wichtig vor dem Livegang:** Den Schutz dann bewusst ausschalten; sonst sieht die Öffentlichkeit nur die Passwortabfrage.
+
 ## Phase F – Automatik und Sicherung (ca. 15 Minuten)
 
 ```

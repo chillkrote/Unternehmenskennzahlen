@@ -1,10 +1,10 @@
 /* Wahlen auf der Weltkugel (src/wahlen.js): Satzleiste oben, Ebenenleiter links, Ergebniskarte in der Seitenleiste */
 .wa-satz { position: absolute; z-index: 2; top: calc(max(12px, env(safe-area-inset-top, 0px)) + 92px); left: 12px; max-width: calc(100% - 24px);
-  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; background: rgba(14, 17, 22, .95); border: 1px solid var(--amber-dim); border-radius: 8px;
-  padding: 5px 8px; font: 13px/1.3 var(--sans); color: var(--ink); box-shadow: 0 6px 18px rgba(0, 0, 0, .35); }
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; background: color-mix(in srgb, var(--panel) 95%, transparent); border: 1px solid var(--amber-dim); border-radius: 8px;
+  padding: 5px 8px; font: 13px/1.3 var(--sans); color: var(--ink); box-shadow: 0 6px 18px var(--schatten); }
 .wa-satz[hidden], .wa-leiter[hidden] { display: none; }
 .wa-marke { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--amber); color: var(--amber); border-radius: 5px; padding: 3px 6px; font: 600 11px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
-.wa-marke b { color: #0e1116; background: var(--amber); border-radius: 3px; padding: 1px 4px; font-weight: 700; }
+.wa-marke b { color: var(--on-amber); background: var(--amber); border-radius: 3px; padding: 1px 4px; font-weight: 700; }
 .wa-satz .wa-trenn { color: var(--ink-3); }
 .wa-satz .wa-teil { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
 .wa-satz select { appearance: none; -webkit-appearance: none; background: transparent; color: var(--ink); border: 0; border-bottom: 1px dashed var(--ink-3); border-radius: 0;
@@ -12,12 +12,12 @@
   background-image: linear-gradient(45deg, transparent 50%, var(--amber) 50%), linear-gradient(135deg, var(--amber) 50%, transparent 50%);
   background-position: calc(100% - 8px) 55%, calc(100% - 4px) 55%; background-size: 4px 4px; background-repeat: no-repeat; }
 .wa-satz select:hover, .wa-satz select:focus-visible { border-bottom-color: var(--amber); outline: none; }
-.wa-satz select option { background: #0e1116; color: var(--ink); }
+.wa-satz select option { background: var(--panel); color: var(--ink); }
 .wa-satz .wa-fix { color: var(--ink-3); font: 11px var(--mono); }
 .wa-satz .wa-fest { all: unset; cursor: pointer; color: var(--ink-3); font: 12px var(--sans); padding: 0 2px; }
 .wa-satz .wa-fest[aria-pressed="true"] { color: var(--amber); }
 
-.wa-leiter { position: absolute; z-index: 2; left: 12px; top: calc(max(12px, env(safe-area-inset-top, 0px)) + 172px); display: grid; gap: 4px; background: rgba(14, 17, 22, .94);
+.wa-leiter { position: absolute; z-index: 2; left: 12px; top: calc(max(12px, env(safe-area-inset-top, 0px)) + 172px); display: grid; gap: 4px; background: color-mix(in srgb, var(--panel) 94%, transparent);
   border: 1px solid var(--line); border-radius: 10px; padding: 6px; min-width: 132px; }
 .wa-leiter h4 { margin: 0 0 2px 4px; font: 600 10px/1.4 var(--mono); color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
 .wa-leiter button { display: grid; grid-template-columns: 24px 1fr auto; align-items: center; gap: 6px; background: transparent; border: 1px solid var(--line); border-radius: 7px;
@@ -33,7 +33,7 @@
 /* Ergebniskarte in der Seitenleiste */
 .gk-ansicht { display: flex; gap: 4px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 3px; margin-top: 8px; }
 .gk-ansicht button { flex: 1; background: transparent; border: 0; border-radius: 6px; color: var(--ink-2); font: 500 12.5px/1 var(--sans); padding: 8px 10px; cursor: pointer; }
-.gk-ansicht button[aria-selected="true"] { background: var(--amber); color: #0e1116; }
+.gk-ansicht button[aria-selected="true"] { background: var(--amber); color: var(--on-amber); }
 .wa-kopf { display: grid; gap: 6px; }
 .wa-kopf .wa-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .wa-status { font: 11px var(--mono); color: var(--ink-3); }
@@ -72,5 +72,5 @@
 .wa-satz .wa-kammern button { all: unset; cursor: pointer; padding: 1px 8px; border: 1px solid var(--ink-3); color: var(--ink-2); font: 12px var(--sans); }
 .wa-satz .wa-kammern button:first-child { border-radius: 4px 0 0 4px; }
 .wa-satz .wa-kammern button:last-child { border-radius: 0 4px 4px 0; }
-.wa-satz .wa-kammern button[aria-pressed="true"] { color: #0e1116; background: var(--amber); border-color: var(--amber); }
+.wa-satz .wa-kammern button[aria-pressed="true"] { color: var(--on-amber); background: var(--amber); border-color: var(--amber); }
 .wa-satz .wa-kammern button:focus-visible { outline: 2px solid var(--amber); outline-offset: 1px; }

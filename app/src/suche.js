@@ -14,7 +14,7 @@ const SUCHE = (() => {
     if (stil) return; stil = true;
     const s = document.createElement("style");
     s.textContent = `.su-anker{position:relative}
-.su-box{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;max-height:min(70vh,460px);overflow:auto;background:#0b0e12;border:1px solid var(--line,#2a3038);border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.55);padding:4px 0;font:13px/1.35 var(--sans,system-ui,sans-serif);text-transform:none;color:var(--ink,#e8ecf1)}
+.su-box{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;max-height:min(70vh,460px);overflow:auto;background:var(--panel);border:1px solid var(--line,#2a3038);border-radius:8px;box-shadow:0 10px 30px var(--schatten);padding:4px 0;font:13px/1.35 var(--sans,system-ui,sans-serif);text-transform:none;color:var(--ink,#e8ecf1)}
 .su-box h4{margin:6px 12px 2px;font:600 10.5px var(--mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3,#7d8794)}
 .su-box [role=option]{display:flex;gap:10px;align-items:baseline;padding:6px 12px;cursor:pointer}
 .su-box [role=option] b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60%}

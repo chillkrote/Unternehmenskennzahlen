@@ -544,10 +544,10 @@ const WAHLEN = (() => {
     const sw = c => `<i class="wa-legende-flaeche" style="background:${esc(c)}"></i>`;
     const farben = W.faerbung === "beteiligung" ? BET.map(([g, c], i) => `<span>${sw(c)}${i === 0 ? `unter ${g} %` : i === BET.length - 1 ? `ab ${BET[i - 1][0]} %` : `${BET[i - 1][0]}–${g} %`}</span>`).join("")
       : Object.entries(zaehl).sort((a, b) => b[1][0] - a[1][0]).slice(0, 8).map(([k, [n, c]]) => `<span>${sw(c)}${esc(k)} <em style="color:var(--ink-3);font-style:normal">${f0.format(n)}</em></span>`).join("");
-    const lin = (strich, farbe) => `<svg width="26" height="8" aria-hidden="true"><line x1="1" y1="4" x2="25" y2="4" stroke="${farbe}" stroke-width="1.6" ${strich ? `stroke-dasharray="${strich}"` : ""}/></svg>`;
+    const lin = (strich, f, farbe = THEMA.farbe(f, "line-color")) => `<svg width="26" height="8" aria-hidden="true"><line x1="1" y1="4" x2="25" y2="4" stroke="${farbe}" stroke-width="1.6" ${strich ? `stroke-dasharray="${strich}"` : ""}/></svg>`;
     return `<b>${esc(titel)}</b><small>${esc(unter)}</small>${farben}
       <span>${lin("", "#c3cad3")}Wahlkreis (Mandat)</span><span>${lin("4 3", "#c3cad3")}nur Zählgebiet</span>
-      <span><svg width="14" height="10" aria-hidden="true"><defs><pattern id="wa-sch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="4" stroke="#4a5665" stroke-width="2"/></pattern></defs><rect width="14" height="10" fill="url(#wa-sch)"/></svg>keine Daten auf dieser Ebene</span>
+      <span><svg width="14" height="10" aria-hidden="true"><defs><pattern id="wa-sch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="4" stroke="${THEMA.farbe("#4a5665", "line-color")}" stroke-width="2"/></pattern></defs><rect width="14" height="10" fill="url(#wa-sch)"/></svg>keine Daten auf dieser Ebene</span>
       <span>${lin("", "#ffa828")}Auswahl</span>`;
   }
 

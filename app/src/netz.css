@@ -1,6 +1,6 @@
 /* Unternehmensnetz: schwebendes Panel rechts über der Karte (auf dem Telefon unten), Farben wie die Bögen */
 .nz { position: absolute; z-index: 3; top: 62px; right: 12px; width: 340px; max-height: calc(100% - 120px); display: flex; flex-direction: column;
-  background: rgba(14, 17, 22, .96); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 14px 40px rgba(0, 0, 0, .55); color: var(--ink-2); font: 12px/1.45 var(--sans); }
+  background: color-mix(in srgb, var(--panel) 96%, transparent); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 14px 40px var(--schatten); color: var(--ink-2); font: 12px/1.45 var(--sans); }
 .nz[hidden] { display: none; }
 .nz header { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; padding: 10px 12px 8px; border-bottom: 1px solid var(--line); }
 .nz header small { display: block; font: 600 10px/1.4 var(--mono); color: var(--amber); letter-spacing: .06em; }
@@ -26,7 +26,7 @@
 .nz-meta { color: var(--ink-3); font-size: 11px; }
 .nz-art { display: inline-block; border: 1px solid var(--f); color: var(--f); border-radius: 999px; padding: 0 7px; font-size: 11px; margin-right: 4px; }
 .nz-hin { background: rgba(255, 168, 40, .08); border: 1px solid rgba(255, 168, 40, .25); border-radius: 6px; padding: 6px 8px; color: var(--ink-2); }
-.nz-u { color: #ffd27a; }
+.nz-u { color: var(--amber-hell); }
 .nz-tab { table-layout: auto; }
 .nz-tab td:nth-child(2), .nz-tab td:nth-child(3) { white-space: nowrap; }
 .nz-tab td:nth-child(3) { color: var(--ink-3); }
@@ -56,7 +56,7 @@
 }
 .nz-sw { flex: none; margin-right: 6px; vertical-align: middle; }
 .nz-leg { margin: 0; color: var(--ink-3); font-size: 11px; }
-.nz-leg b { color: #ffd27a; }
+.nz-leg b { color: var(--amber-hell); }
 .nz svg.nz-sw, .gk-legkarte svg { display: inline-block; width: auto; height: 10px; flex: none; overflow: visible; }
 .nz svg.nz-sw { width: 36px; height: 8px; }
 .gk-legkarte svg { width: 34px; }

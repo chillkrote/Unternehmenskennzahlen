@@ -134,7 +134,7 @@ const REGIONEN = (() => {
     if (pts.length < 2) return "";
     const ys = pts.map(x => x[1]), lo = Math.min(...ys), hi = Math.max(...ys), sp = hi - lo || 1;
     const X = i => i / (pts.length - 1) * 100, Y = v => 24 - (v - lo) / sp * 22;
-    return `<svg viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true"><path d="${pts.map((x, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(x[1]).toFixed(1)}`).join("")}" fill="none" stroke="#a3acb8" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>`;
+    return `<svg viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true"><path d="${pts.map((x, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(x[1]).toFixed(1)}`).join("")}" fill="none" stroke="var(--ink-2)" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>`;
   }
   function steuerung() {
     const s = reihe(R.serie), j = jahr();
@@ -203,7 +203,7 @@ const REGIONEN = (() => {
     if (pkt.length < 3) return `<p class="gk-leer">Zu wenige Kreise mit Werten.</p>`;
     const xs = pkt.map(x => x[1]), ys = pkt.map(x => x[2]), x0 = Math.min(...xs), x1 = Math.max(...xs), y1 = Math.max(...ys) * 1.05 || 1;
     const W = 300, H = 180, L = 34, B = 22, X = v => L + (v - x0) / ((x1 - x0) || 1) * (W - L - 6), Y = v => H - B - v / y1 * (H - B - 6);
-    const ticks = [0, y1 / 2, y1].map(v => `<text x="${L - 4}" y="${Y(v) + 3}" text-anchor="end">${f0.format(v)}</text><line x1="${L}" x2="${W - 6}" y1="${Y(v)}" y2="${Y(v)}" stroke="#1f252d"/>`).join("");
+    const ticks = [0, y1 / 2, y1].map(v => `<text x="${L - 4}" y="${Y(v) + 3}" text-anchor="end">${f0.format(v)}</text><line x1="${L}" x2="${W - 6}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/>`).join("");
     const pt = pkt.map(([a, x, y]) => `<circle cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="${a === R.kreis ? 4.5 : 2.4}" fill="${a === R.kreis ? "#ffa828" : "rgba(124,196,255,.55)"}" data-rg-kreis="${esc(a)}"><title>${esc(D.regionen[a][1])}: ${esc(format(s, x))}, ${f1.format(y)} %</title></circle>`).join("");
     return `<svg class="rg-streu" viewBox="0 0 ${W} ${H}" role="img" aria-label="Streudiagramm ${esc(s.name)} und Anteil ${esc(partei)}">${ticks}
       <text x="${L}" y="${H - 6}">${esc(format(s, x0))}</text><text x="${W - 6}" y="${H - 6}" text-anchor="end">${esc(format(s, x1))}</text>

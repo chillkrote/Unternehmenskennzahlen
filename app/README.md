@@ -57,6 +57,10 @@ Stand und Funktionsmatrix: [`docs/umsetzungsstand.md`](../docs/umsetzungsstand.m
 
 Unten mittig (Terminal und Weltkugel) stehen drei Schaltflächen, die ein Textfenster öffnen. Die Texte liegen als Markdown in `app/seiten/` (`impressum.md`, `kontakt.md`, `about.md`) und werden beim Bau über `seiten.py` eingebettet; Oberfläche in `src/seiten.js`/`seiten.css`. Platzhalter `[[…]]` erscheinen gelb markiert. Anleitung: `app/seiten/README.md`. Test: `app/tests/seiten-smoke.js`.
 
+## Farbmodi: Dunkel, Hell, Dunkelblau
+
+Oben rechts (Terminal-Kopf und Kartenkopf der Weltkugel) öffnet ein Zahnrad die Einstellungen; dort wechselt man zwischen Dunkel (Standard), Hell und Dunkelblau. Die Wahl steht in `localStorage` (`sphaerae-thema`) und als `data-thema` am `<html>`. Alle Farben der Oberfläche sind CSS-Variablen in `src/terminal.html` (`:root`, `:root[data-thema="hell"]`, `:root[data-thema="dunkelblau"]`); neue Farben bitte dort als Variable anlegen statt fest in CSS oder JS. Die Karte (MapLibre) kennt keine CSS-Variablen: `src/thema.js` (`THEMA.karte(map)`) hängt sich an `addLayer`, `setPaintProperty`, `setLayoutProperty`, `setStyle` und `setSky`, merkt sich die Farben des Dunkelmodus und rechnet sie je Modus um (Grundkarte über eine feste Gegenstück-Tabelle, Grautöne gespiegelt bzw. blau getönt, helle Schrift auf hellem Grund abgedunkelt; Datenfarben wie Parteien, Export/Import und Rampen bleiben). Für Farben, die im Code in HTML landen (Legenden), gibt es `THEMA.farbe(farbe, "line-color")`; nach einem Wechsel feuert `sphaerae:thema`, die Weltkugel zeichnet Legende und Seitenleiste neu. Test: `node app/tests/thema-smoke.js app/dist/weltkugel.html`.
+
 ## Bankenansichten (über Branche Banken erreichbar, jetzt ohne F-Tasten)
 
 | Kürzel | Inhalt |

@@ -147,6 +147,7 @@ def main():
     vorlage = (HIER / "src/terminal.html").read_text()
     # Fußleiste (Impressum, Kontakt, About): Texte aus app/seiten/*.md, Oberfläche aus src/seiten.js/.css
     vorlage = (vorlage.replace("__SEITEN_JS__", (HIER / "src/seiten.js").read_text()).replace("__SEITEN_CSS__", (HIER / "src/seiten.css").read_text())
+               .replace("__THEMA_JS__", (HIER / "src/thema.js").read_text()).replace("__THEMA_CSS__", (HIER / "src/thema.css").read_text())
                .replace("__SEITEN__", seiten.json_text().replace("</", "<\\/")))
     ziel_ordner.mkdir(exist_ok=True)
     ziel = ziel_ordner / "bankterminal.html"

@@ -260,11 +260,291 @@ def st_ltw26(kurz=lambda p: p):
             "vor": {"datum": "2021-06-06", "titel": "Landtagswahl 2021", "hinweis": "Vergleichswerte laut Statistischem Landesamt"}}
 
 
+# ---------------------------------------------------------------- Ergebnispräsentation (Baden-Württemberg, Berlin)
+# Beide Länder veröffentlichen mit derselben Software: eine Seite je Gebiet mit der „Ergebnistabelle“ (Erst- und Zweitstimmen,
+# Anzahl, Anteil, Gewinn und Verlust in Prozentpunkten), Tabellen der Gewählten und eine Kartendatei m_….json mit den Wahlkreisen.
+# Der Auszug (Tabellen unverändert als Text) liegt je Wahl in wahlen/quellen/<kürzel>_praesentation.json.
+PRAES = {
+    "DE-BW": {"kuerzel": "bw_ltw26", "basis": "https://wahlen.statistik-bw.de/ltw26/", "start": "ergebnispraesentation.html",
+              "wk": r"ergebnispraesentation_wahlkreis_(\d+)\.html", "wahltag": "2026-03-08", "wahlkreise": 70, "geo": "landtagswahlkreise-bw",
+              "herausgeber": "Statistisches Landesamt Baden-Württemberg", "einzahl": "Landtagswahlkreis", "einheit": "Landtagswahlkreise",
+              "lizenz": "Vervielfältigung und Verbreitung mit Quellenangabe gestattet (Impressum der Wahlpräsentation)",
+              "system": ("Personalisierte Verhältniswahl mit Erst- und Zweitstimme (erstmals 2026), 70 Landtagswahlkreise; die Zweitstimmen bestimmen "
+                         "die Sitzverteilung (mindestens 120 Sitze, Überhang- und Ausgleichsmandate möglich), Sperrklausel 5 %."),
+              "vor": {"datum": "2021-03-14", "titel": "Landtagswahl 2021", "hinweis": "2021 gab es nur eine Stimme; Veränderung laut Statistischem Landesamt"}},
+    "DE-BE": {"kuerzel": "be_agh26", "basis": "https://www.wahlen-berlin.de/wahlen/BE2026/AFSPRAES/agh/", "start": "ergebnisse.html",
+              "zwischen": r"ergebnisse_bezirk_(\d+)\.html", "wk": r"ergebnisse_wahlkreis_(\d+)\.html", "wahltag": "2026-09-20", "wahlkreise": 78, "gewaehlte": "gewaehlte.html",
+              "geo": "landtagswahlkreise-be", "herausgeber": "Landeswahlleitung Berlin / Amt für Statistik Berlin-Brandenburg",
+              "einzahl": "Wahlkreis", "einheit": "Abgeordnetenhauswahlkreise", "name_ohne_nummer": True, "lizenz": "Vervielfältigung und Verbreitung mit Quellenangabe gestattet (Impressum wahlen-berlin.de)",
+              "system": ("Personalisierte Verhältniswahl mit Erst- und Zweitstimme, 78 Wahlkreise in 12 Bezirken; die Zweitstimmen bestimmen die "
+                         "Sitzverteilung (mindestens 130 Sitze, Überhang- und Ausgleichsmandate möglich), Sperrklausel 5 %."),
+              "vor": {"datum": "2023-02-12", "titel": "Wiederholungswahl 2023", "hinweis": "Veränderung laut Landeswahlleitung"}},
+}
+PRAES_FEST = ("Wahlberechtigte", "Wählende", "Ungültige Stimmen", "Gültige Stimmen")
+
+
+def praes_tabellen(seite):
+    """[(Überschrift, [[Zelle, …], …])] aller Tabellen einer Seite, Zellen als Text."""
+    out = []
+    for t in re.findall(r"<table.*?</table>", seite, re.S):
+        cap = re.search(r"<caption.*?</caption>", t, re.S)
+        zeilen = [[_text(c) for c in re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", z, re.S)] for z in re.findall(r"<tr.*?</tr>", t, re.S)]
+        out.append((_text(cap.group(0)) if cap else "", zeilen))
+    return out
+
+
+def praes_ergebnistabelle(seite):
+    """(Überschrift, Zeilen [Merkmal, Bewerber, E Anzahl, E Anteil, E Veränderung, Z Anzahl, Z Anteil, Z Veränderung]) der Ergebnistabelle."""
+    cap, zeilen = next((c, z) for c, z in praes_tabellen(seite) if c.startswith("Ergebnistabelle"))
+    out = []
+    for z in zeilen[2:]:
+        if len(z) == 7:
+            z = [z[0], ""] + z[1:]
+        if len(z) != 8:
+            raise Pruefehler(f"Ergebnistabelle: Zeile mit {len(z)} Zellen ({z[:2]})")
+        out.append(z)
+    return cap, out
+
+
+def _de_zahl(t):
+    """'7.764.858' -> 7764858, '+5,8' -> 5.8, '-' -> None."""
+    t = (t or "").replace("%", "").replace("−", "-").strip()
+    if t in ("", "-"):
+        return None
+    if re.fullmatch(r"[+-]?\d{1,3}(\.\d{3})*", t) or re.fullmatch(r"\d+", t):
+        return int(t.replace(".", ""))
+    return float(t.replace(".", "").replace(",", "."))
+
+
+def praes_abrufen(spec, hole=None):
+    """Auszug der Ergebnispräsentation: Land, alle Wahlkreise, Gewählte; dazu die Wahlkreisflächen als GeoJSON."""
+    hole = hole or (lambda u: _hole(u).decode("utf-8"))
+    b = spec["basis"]
+    start = hole(b + spec["start"])
+    seiten = [start] + [hole(b + m.group(0)) for m in sorted(set(re.finditer(spec["zwischen"], start)), key=lambda m: m.group(0))] if spec.get("zwischen") else [start]
+    links = sorted({m.group(0): m.group(1) for s in seiten for m in re.finditer(spec["wk"], s)}.items(), key=lambda x: x[1])
+    cap, land = praes_ergebnistabelle(start)
+    out = {"quelle": b + spec["start"], "titel": cap, "land": land, "wahlkreise": {}, "gewaehlt": {}}
+    for link, nr in links:
+        c, z = praes_ergebnistabelle(hole(b + link))
+        out["wahlkreise"][nr] = {"titel": c, "zeilen": z}
+    gew = hole(b + spec["gewaehlte"]) if spec.get("gewaehlte") else start
+    for c, z in praes_tabellen(gew):
+        if c.startswith(("Gewählte in Wahlkreisen", "Gewählt im Wahlkreis")):
+            out["gewaehlt"]["direkt"] = z[1:]
+        elif c.startswith("Auf Listen Gewählte"):
+            out["gewaehlt"]["liste"] = z[1:]
+    karte = re.search(r"m_[0-9_]+\.json", start)
+    feats = []
+    for f in (json.loads(hole(b + karte.group(0)))["geoJSON"]["features"] if karte else []):
+        rund = lambda c: [rund(x) for x in c] if isinstance(c[0], list) else [round(c[0], 4), round(c[1], 4)]
+        feats.append({"type": "Feature", "properties": {"id": f["properties"]["gebietNr"], "name": f["properties"]["name"]},
+                      "geometry": {"type": f["geometry"]["type"], "coordinates": rund(f["geometry"]["coordinates"])}})
+    feats.sort(key=lambda f: f["properties"]["id"].zfill(6))
+    geo = {"type": "FeatureCollection", "quelle": f"{spec['herausgeber']}, Wahlkreiskarte der Ergebnispräsentation ({b})", "features": feats}
+    return out, geo
+
+
+def _praes_gebiet(zeilen):
+    """Tabelle -> {'wb', 'w', 'gueltig': {e, z}, 'ungueltig': {e, z}, 'bet_gv', 'p': [(Partei, Bewerber, eAnz, eGv, zAnz, zGv)]}."""
+    d = {z[0]: z for z in zeilen}
+    g = {"wb": _de_zahl(d["Wahlberechtigte"][5]), "w": _de_zahl(d["Wählende"][5]), "bet_gv": _de_zahl(d["Wählende"][7]),
+         "gueltig": {"e": _de_zahl(d["Gültige Stimmen"][2]), "z": _de_zahl(d["Gültige Stimmen"][5])},
+         "ungueltig": {"e": _de_zahl(d["Ungültige Stimmen"][2]), "z": _de_zahl(d["Ungültige Stimmen"][5])}, "p": []}
+    for z in zeilen:
+        if z[0] not in PRAES_FEST:
+            g["p"].append((z[0], z[1], _de_zahl(z[2]), _de_zahl(z[4]), _de_zahl(z[5]), _de_zahl(z[7])))
+    return g
+
+
+def praes_pruefe(d, spec, geo=None):
+    """Widersprüche des Auszugs als Liste von Sätzen (leer = stimmig)."""
+    f = []
+    for titel in [d["titel"]] + [w["titel"] for w in d["wahlkreise"].values()]:
+        if not re.search(r"Endgültiges Ergebnis|Endergebnis", titel):
+            f.append(f"kein endgültiges Ergebnis: {titel[-60:]}")
+            break
+    if len(d["wahlkreise"]) != spec["wahlkreise"]:
+        f.append(f"{len(d['wahlkreise'])} statt {spec['wahlkreise']} Wahlkreise")
+    land = _praes_gebiet(d["land"])
+    gebiete = {nr: _praes_gebiet(w["zeilen"]) for nr, w in d["wahlkreise"].items()}
+    for name, g in [("Land", land)] + sorted(gebiete.items()):
+        for st, i in (("e", 2), ("z", 4)):
+            s = sum(p[i] or 0 for p in g["p"])
+            if s != g["gueltig"][st]:
+                f.append(f"{name}: Summe der Parteien ({st}) = {s}, gültig = {g['gueltig'][st]}")
+            if g["w"] != g["gueltig"][st] + g["ungueltig"][st]:
+                f.append(f"{name}: Wählende ungleich gültige + ungültige Stimmen ({st})")
+    for was, hol in (("Wahlberechtigte", lambda g: g["wb"]), ("Wählende", lambda g: g["w"]), ("gültige Erststimmen", lambda g: g["gueltig"]["e"]),
+                     ("gültige Zweitstimmen", lambda g: g["gueltig"]["z"])):
+        s = sum(hol(g) for g in gebiete.values())
+        if s != hol(land):
+            f.append(f"Summe der Wahlkreise {was} = {s}, Land = {hol(land)}")
+    for p in land["p"]:
+        if p[4] is not None:
+            s = sum(q[4] or 0 for g in gebiete.values() for q in g["p"] if q[0] == p[0])
+            if s != p[4]:
+                f.append(f"Summe der Wahlkreise Zweitstimmen {p[0]} = {s}, Land = {p[4]}")
+    direkt = {re.match(r"0*(\d+)", z[0]).group(1): z for z in d["gewaehlt"].get("direkt", [])}
+    if len(direkt) != spec["wahlkreise"]:
+        f.append(f"{len(direkt)} statt {spec['wahlkreise']} direkt Gewählte")
+    for nr, g in gebiete.items():
+        z = direkt.get(str(int(nr)))
+        if not z:
+            continue
+        erst = max((p for p in g["p"] if p[2] is not None and p[1]), key=lambda p: p[2])
+        if erst[0] != z[2] or erst[1] != z[1]:
+            f.append(f"Wahlkreis {nr}: gewählt {z[1]} ({z[2]}), meiste Erststimmen {erst[1]} ({erst[0]})")
+    if geo is not None and sorted(x["properties"]["id"] for x in geo["features"]) != sorted(d["wahlkreise"]):
+        f.append("Grenzen: Wahlkreise der Karte passen nicht zu den Ergebnissen")
+    return f
+
+
+def praes_laden(code, abruf=True):
+    spec = PRAES[code]
+    p, g = QUELLEN / f"{spec['kuerzel']}_praesentation.json", GEO / (spec["geo"].replace("-", "_") + ".geojson")
+    if (p.exists() and g.exists()) or not abruf:
+        return
+    d, geo = praes_abrufen(spec)
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=0, sort_keys=True) + "\n", encoding="utf-8")
+    g.write_text(json.dumps(geo, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def praes_sitze(code, d):
+    """[(Partei, Sitze, Direktmandate)] aus den Tabellen der Gewählten bzw. der amtlichen Datei der Gewählten."""
+    spec, n, direkt = PRAES[code], {}, {}
+    datei = QUELLEN / f"{spec['kuerzel']}_gewaehlte.csv"
+    if datei.exists():                              # Baden-Württemberg: ltw26-gewaehlte.csv (Gebietsart WAHLKREIS = Direktmandat, LAND = Landesliste)
+        with open(datei, encoding="utf-8", newline="") as f:
+            for z in csv.DictReader(f, delimiter=";"):
+                n[z["Wahlvorschlag-Kurzname"]] = n.get(z["Wahlvorschlag-Kurzname"], 0) + 1
+                if z["Gebietsart"] == "WAHLKREIS":
+                    direkt[z["Wahlvorschlag-Kurzname"]] = direkt.get(z["Wahlvorschlag-Kurzname"], 0) + 1
+    else:
+        for z in d["gewaehlt"].get("direkt", []):
+            n[z[2]] = n.get(z[2], 0) + 1
+            direkt[z[2]] = direkt.get(z[2], 0) + 1
+        for z in d["gewaehlt"].get("liste", []):
+            n[z[2]] = n.get(z[2], 0) + 1
+    return sorted(((p, k, direkt.get(p, 0)) for p, k in n.items()), key=lambda x: -x[1])
+
+
+def praes_wahl(code, kurz=lambda p: p):
+    """Wahl aus dem Auszug der Ergebnispräsentation in der Struktur des Wahlregisters (wie st_ltw26)."""
+    spec = PRAES[code]
+    p, gp = QUELLEN / f"{spec['kuerzel']}_praesentation.json", GEO / (spec["geo"].replace("-", "_") + ".geojson")
+    if not p.exists():
+        return None
+    d = json.loads(p.read_text(encoding="utf-8"))
+    geo = json.loads(gp.read_text(encoding="utf-8")) if gp.exists() else None
+    fehler = praes_pruefe(d, spec, geo)
+    sitze = praes_sitze(code, d)
+    if sum(x[2] for x in sitze) != spec["wahlkreise"]:
+        fehler.append(f"{sum(x[2] for x in sitze)} Direktmandate in der Liste der Gewählten statt {spec['wahlkreise']}")
+    if fehler:
+        raise Pruefehler(f"{code} {spec['wahltag'][:4]}: " + "; ".join(fehler[:8]))
+
+    def gebiet(zeilen):
+        g = _praes_gebiet(zeilen)
+        s = {}
+        for st, i in (("z", 4), ("e", 2)):
+            l = []
+            for q in sorted((q for q in g["p"] if q[i]), key=lambda q: -q[i]):
+                anteil = q[i] / g["gueltig"][st] * 100
+                l.append([kurz("Sonstige" if q[0] == "Übrige" else q[0]), q[i], r1(anteil), r1(anteil - q[i + 1]) if q[i + 1] is not None else None])
+            s[st] = l
+        bet = g["w"] / g["wb"] * 100
+        return {"s": s, "wb": g["wb"], "w": g["w"], "bet": r1(bet), "bet_vor": r1(bet - g["bet_gv"]) if g["bet_gv"] is not None else None}
+
+    g = gebiet(d["land"])
+    g["sitze"] = [[kurz(x[0]), x[1], None] for x in sitze]
+    g["sitze_n"] = sum(x[1] for x in sitze)
+    g["sitze_direkt"] = [[kurz(x[0]), x[2]] for x in sitze if x[2]]
+    g["sitze_hinweis"] = f"Sitze nach der Liste der Gewählten ({spec['herausgeber']}): {g['sitze_n']} Sitze, davon {spec['wahlkreise']} Direktmandate"
+    direkt = {re.match(r"0*(\d+)", z[0]).group(1): z for z in d["gewaehlt"]["direkt"]}
+    wk = {}
+    for nr, w in sorted(d["wahlkreise"].items()):
+        z = direkt[str(int(nr))]
+        nach, _, vorname = z[1].partition(",")
+        name = re.match(r"Ergebnistabelle .*?, (\d.*?) (?:Endgültiges Ergebnis|Amtliches Endergebnis)", w["titel"]).group(1)
+        wk[nr] = {"n": re.sub(r"^0*(\d+) - ", "" if spec.get("name_ohne_nummer") else r"\1 ", name), **gebiet(w["zeilen"]), "direkt": {"name": f"{vorname.strip()} {nach.strip()}".strip(), "partei": kurz(z[2])}}
+    quelle = {"name": f"{spec['herausgeber']}, endgültiges Ergebnis (Ergebnispräsentation); Grenzen: Wahlkreiskarte der Ergebnispräsentation",
+              "url": spec["basis"] + spec["start"], "lizenz": spec["lizenz"]}
+    einheiten = [{"id": "lwk", "name": spec["einheit"], "einzahl": spec["einzahl"], "art": "wahlkreis", "geo": spec["geo"], "werte": wk}] if geo else []
+    return {"g": g, "einheiten": einheiten, "quelle": quelle, "status": "endgültig", "stimmarten": [["z", "Zweitstimmen"], ["e", "Erststimmen"]],
+            "system": spec["system"], "vor": spec["vor"]}
+
+
+# Baden-Württemberg: amtliche Downloaddateien als zweite Quelle (Zeilen LAND und WAHLKREIS der Ergebnisdatei, Liste der Gewählten)
+BW_PARTEIEN = {1: "GRÜNE", 2: "CDU", 3: "SPD", 4: "FDP", 5: "AfD", 6: "Die Linke", 7: "FREIE WÄHLER", 8: "Die PARTEI", 9: "dieBasis", 10: "KlimalisteBW",
+               11: "ÖDP", 12: "Volt", 13: "Bündnis C", 14: "PdH", 15: "Verjüngungsforschung", 16: "BSW", 17: "Die Gerechtigkeitspartei", 18: "PDR",
+               19: "PdF", 20: "Tierschutzpartei", 21: "WerteUnion", 22: "Übrige"}       # Hinweise-Datensatzbeschreibung.pdf; D22 = anderer Kreiswahlvorschlag
+BW_ERGEBNISSE, BW_GEWAEHLTE = QUELLEN / "bw_ltw26_land_wahlkreise.csv", QUELLEN / "bw_ltw26_gewaehlte.csv"
+
+
+def bw_laden(abruf=True):
+    praes_laden("DE-BW", abruf)
+    b = PRAES["DE-BW"]["basis"]
+    if not BW_ERGEBNISSE.exists() and abruf:        # 12.740 Zeilen bis zum Wahlbezirk; im Repository nur Kopf, Land und Wahlkreise
+        zeilen = _hole(b + "ltw26-ergebnisse.csv").decode("utf-8-sig").splitlines()
+        BW_ERGEBNISSE.write_text("\n".join([zeilen[0]] + [z for z in zeilen[1:] if z.split(";")[5] in ("LAND", "WAHLKREIS")]) + "\n", encoding="utf-8")
+    if not BW_GEWAEHLTE.exists() and abruf:
+        BW_GEWAEHLTE.write_text(_hole(b + "ltw26-gewaehlte.csv").decode("cp1252").replace("\r\n", "\n"), encoding="utf-8")
+
+
+def bw_abgleich(d):
+    """Vergleich der Ergebnispräsentation mit der amtlichen Downloaddatei: Liste der Abweichungen (leer = deckungsgleich)."""
+    f = []
+    with open(BW_ERGEBNISSE, encoding="utf-8", newline="") as fh:
+        zeilen = list(csv.DictReader(fh, delimiter=";"))
+    bekannt, uebrige = set(BW_PARTEIEN.values()) - {"Übrige"}, 0
+    for z in zeilen:
+        if z["gemeldete Wahlbezirke"] != z["Anzahl Wahlbezirke"]:
+            f.append(f"{z['Gebietsname']}: {z['gemeldete Wahlbezirke']} von {z['Anzahl Wahlbezirke']} Wahlbezirken gemeldet")
+        g = _praes_gebiet(d["land"] if z["Gebietsart"] == "LAND" else d["wahlkreise"][z["Gebietsnummer"]]["zeilen"])
+        tab = {(p[0], "D"): p[2] for p in g["p"]} | {(p[0], "F"): p[4] for p in g["p"]}
+        soll = [("Wahlberechtigte", int(z["Wahlberechtigte gesamt (A)"]), g["wb"]), ("Wählende", int(z["Waehler gesamt (B)"]), g["w"]),
+                ("gültige Erststimmen", int(z["Erststimmen gueltige (D)"]), g["gueltig"]["e"]), ("gültige Zweitstimmen", int(z["Zweitstimmen gueltige (F)"]), g["gueltig"]["z"])]
+        for b in "DF":
+            for nr, partei in BW_PARTEIEN.items():
+                v = z.get(f"{b}{nr}")
+                if not v or (z["Gebietsart"] == "LAND" and nr == 22):
+                    continue
+                if nr == 22 and z["Gebietsart"] != "LAND":
+                    # D22 = übrige Kreiswahlvorschläge: die Wahlkreisseite nennt sie mit eigenem Namen statt als „Übrige“
+                    ist = sum(p[2] or 0 for p in g["p"] if p[0] not in bekannt)
+                    uebrige += int(v)
+                else:
+                    ist = tab.get((partei, b)) or 0
+                soll.append((f"{b}{nr} {partei}", int(v), ist))
+        f += [f"{z['Gebietsname']}: {was} Datei {a}, Präsentation {b}" for was, a, b in soll if a != b]
+    land = {p[0]: p[2] for p in _praes_gebiet(d["land"])["p"]}.get("Übrige") or 0
+    if land != uebrige:
+        f.append(f"Land: Übrige Erststimmen {land}, Summe D22 der Wahlkreise {uebrige}")
+    return f
+
+
+def bw_ltw26(kurz=lambda p: p):
+    """Landtagswahl Baden-Württemberg 08.03.2026: Land, 70 Wahlkreise, Sitze; Ergebnispräsentation gegen die amtliche Downloaddatei geprüft."""
+    p = QUELLEN / "bw_ltw26_praesentation.json"
+    if p.exists() and BW_ERGEBNISSE.exists():
+        f = bw_abgleich(json.loads(p.read_text(encoding="utf-8")))
+        if f:
+            raise Pruefehler("Landtagswahl Baden-Württemberg 2026, Abgleich mit ltw26-ergebnisse.csv: " + "; ".join(f[:8]))
+    return praes_wahl("DE-BW", kurz)
+
+
+def be_agh26(kurz=lambda p: p):
+    """Wahl zum Abgeordnetenhaus von Berlin 20.09.2026: Land, 78 Wahlkreise, Sitze."""
+    return praes_wahl("DE-BE", kurz)
+
+
 # ---------------------------------------------------------------- Register
 # Je Land die amtlich eingelesenen Wahlen (Wahltag, Lesefunktion). Grenzen: (Schlüssel "geo" der Einheit, Datei unter app/geo) für globus.WAHL_GEO.
-WAHLEN = {"DE-ST": [("2026-09-06", st_ltw26)]}
-LADEN = [st_laden]
-WAHL_GEO = [("landtagswahlkreise-st", "geo/landtagswahlkreise_st.geojson")]
+WAHLEN = {"DE-ST": [("2026-09-06", st_ltw26)], "DE-BW": [("2026-03-08", bw_ltw26)], "DE-BE": [("2026-09-20", be_agh26)]}
+LADEN = [st_laden, bw_laden, lambda abruf=True: praes_laden("DE-BE", abruf)]
+WAHL_GEO = [("landtagswahlkreise-st", "geo/landtagswahlkreise_st.geojson"), ("landtagswahlkreise-bw", "geo/landtagswahlkreise_bw.geojson"),
+            ("landtagswahlkreise-be", "geo/landtagswahlkreise_be.geojson")]
 
 
 def wahl(code, datum=None, kurz=lambda p: p):

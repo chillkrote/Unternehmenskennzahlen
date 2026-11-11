@@ -1,0 +1,16719 @@
+{
+"gewaehlt": {
+"direkt": [
+[
+"0101 - Mitte 1",
+"Gebel, Silke",
+"GRÜNE"
+],
+[
+"0102 - Mitte 2",
+"Diederich, Leonard",
+"Die Linke"
+],
+[
+"0103 - Mitte 3",
+"Omar, Jian",
+"GRÜNE"
+],
+[
+"0104 - Mitte 4",
+"Kurt, Taylan",
+"GRÜNE"
+],
+[
+"0105 - Mitte 5",
+"Dr. Umgelter, Andreas",
+"Die Linke"
+],
+[
+"0106 - Mitte 6",
+"Kleedörfer, Martha",
+"Die Linke"
+],
+[
+"0107 - Mitte 7",
+"Janssen, Deike",
+"Die Linke"
+],
+[
+"0201 - Friedrichshain-Kreuzberg 1",
+"Eralp, Elif",
+"Die Linke"
+],
+[
+"0202 - Friedrichshain-Kreuzberg 2",
+"Efler, Michael",
+"Die Linke"
+],
+[
+"0203 - Friedrichshain-Kreuzberg 3",
+"Wolter-Ehling, Kerstin",
+"Die Linke"
+],
+[
+"0204 - Friedrichshain-Kreuzberg 4",
+"Valgolio, Damiano",
+"Die Linke"
+],
+[
+"0205 - Friedrichshain-Kreuzberg 5",
+"Spiegel, Ekkehard",
+"Die Linke"
+],
+[
+"0301 - Pankow 1",
+"Kraft, Johannes",
+"CDU"
+],
+[
+"0302 - Pankow 2",
+"Bocian, Lars",
+"CDU"
+],
+[
+"0303 - Pankow 3",
+"Zebisch, Christian",
+"Die Linke"
+],
+[
+"0304 - Pankow 4",
+"Mohr, Herbert",
+"AfD"
+],
+[
+"0305 - Pankow 5",
+"Springob, Enja",
+"Die Linke"
+],
+[
+"0306 - Pankow 6",
+"Bigos, Maria",
+"Die Linke"
+],
+[
+"0307 - Pankow 7",
+"Schrader, Niklas",
+"Die Linke"
+],
+[
+"0308 - Pankow 8",
+"Billig, Daniela",
+"GRÜNE"
+],
+[
+"0309 - Pankow 9",
+"Schirmer, Maximilian",
+"Die Linke"
+],
+[
+"0401 - Charlottenburg-Wilmersdorf 1",
+"Schenker, Niklas",
+"Die Linke"
+],
+[
+"0402 - Charlottenburg-Wilmersdorf 2",
+"Hack, Ariturel",
+"CDU"
+],
+[
+"0403 - Charlottenburg-Wilmersdorf 3",
+"Dr. Vandrey, Petra",
+"GRÜNE"
+],
+[
+"0404 - Charlottenburg-Wilmersdorf 4",
+"Niemczyk, Aldona",
+"CDU"
+],
+[
+"0405 - Charlottenburg-Wilmersdorf 5",
+"Khalatbari, Sandra",
+"CDU"
+],
+[
+"0406 - Charlottenburg-Wilmersdorf 6",
+"Zimmer, Jakob",
+"GRÜNE"
+],
+[
+"0407 - Charlottenburg-Wilmersdorf 7",
+"Dr. Badenberg, Felor",
+"CDU"
+],
+[
+"0501 - Spandau 1",
+"Tabor, Tommy",
+"AfD"
+],
+[
+"0502 - Spandau 2",
+"Otti, Andreas",
+"AfD"
+],
+[
+"0503 - Spandau 3",
+"Wulfes, Thomas",
+"Die Linke"
+],
+[
+"0504 - Spandau 4",
+"Melzer, Heiko",
+"CDU"
+],
+[
+"0505 - Spandau 5",
+"Wegner, Kai",
+"CDU"
+],
+[
+"0601 - Steglitz-Zehlendorf 1",
+"Wojahn, Tonka",
+"GRÜNE"
+],
+[
+"0602 - Steglitz-Zehlendorf 2",
+"Cywinski, Tom",
+"CDU"
+],
+[
+"0603 - Steglitz-Zehlendorf 3",
+"Hoffmann, Jens",
+"CDU"
+],
+[
+"0604 - Steglitz-Zehlendorf 4",
+"Seibeld, Cornelia",
+"CDU"
+],
+[
+"0605 - Steglitz-Zehlendorf 5",
+"Hahnfeld, Marco",
+"CDU"
+],
+[
+"0606 - Steglitz-Zehlendorf 6",
+"Wegener, Christoph",
+"CDU"
+],
+[
+"0607 - Steglitz-Zehlendorf 7",
+"Standfuß, Stephan",
+"CDU"
+],
+[
+"0701 - Tempelhof-Schöneberg 1",
+"Walter, Sebastian",
+"GRÜNE"
+],
+[
+"0702 - Tempelhof-Schöneberg 2",
+"Zander-Rade, Martina",
+"GRÜNE"
+],
+[
+"0703 - Tempelhof-Schöneberg 3",
+"Störmer, Christoph",
+"GRÜNE"
+],
+[
+"0704 - Tempelhof-Schöneberg 4",
+"Bremer, Sarah",
+"Die Linke"
+],
+[
+"0705 - Tempelhof-Schöneberg 5",
+"Simon, Roman",
+"CDU"
+],
+[
+"0706 - Tempelhof-Schöneberg 6",
+"Körber, Scott",
+"CDU"
+],
+[
+"0707 - Tempelhof-Schöneberg 7",
+"Zander, Christian",
+"CDU"
+],
+[
+"0801 - Neukölln 1",
+"Emde, Vanessa",
+"Die Linke"
+],
+[
+"0802 - Neukölln 2",
+"Dehne, Philipp-Martin",
+"Die Linke"
+],
+[
+"0803 - Neukölln 3",
+"Taheri, Rouzbeh",
+"Die Linke"
+],
+[
+"0804 - Neukölln 4",
+"Förster, Christopher",
+"CDU"
+],
+[
+"0805 - Neukölln 5",
+"Dr. Juhnke, Robbin",
+"CDU"
+],
+[
+"0806 - Neukölln 6",
+"Schenk, Olaf",
+"CDU"
+],
+[
+"0901 - Treptow-Köpenick 1",
+"Warnke, Moritz",
+"Die Linke"
+],
+[
+"0902 - Treptow-Köpenick 2",
+"Pfitzmann, Lisa",
+"Die Linke"
+],
+[
+"0903 - Treptow-Köpenick 3",
+"Düsterhöft, Lars",
+"SPD"
+],
+[
+"0904 - Treptow-Köpenick 4",
+"Bertram, Alexander",
+"AfD"
+],
+[
+"0905 - Treptow-Köpenick 5",
+"Henkel, Denis",
+"AfD"
+],
+[
+"0906 - Treptow-Köpenick 6",
+"Trefzer, Martin",
+"AfD"
+],
+[
+"0907 - Treptow-Köpenick 7",
+"Dr. Kromrey, Hans",
+"Die Linke"
+],
+[
+"1001 - Marzahn-Hellersdorf 1",
+"Lindemann, Gunnar",
+"AfD"
+],
+[
+"1002 - Marzahn-Hellersdorf 2",
+"Dummer, Anneliese",
+"AfD"
+],
+[
+"1003 - Marzahn-Hellersdorf 3",
+"Auricht, Jeannette",
+"AfD"
+],
+[
+"1004 - Marzahn-Hellersdorf 4",
+"Koblischke, Martin",
+"AfD"
+],
+[
+"1005 - Marzahn-Hellersdorf 5",
+"Günther-Wünsch, Katharina",
+"CDU"
+],
+[
+"1006 - Marzahn-Hellersdorf 6",
+"Geißler, Jörn",
+"AfD"
+],
+[
+"1101 - Lichtenberg 1",
+"Knaute, Stephan",
+"AfD"
+],
+[
+"1102 - Lichtenberg 2",
+"Dr. Pätzold, Martin",
+"CDU"
+],
+[
+"1103 - Lichtenberg 3",
+"Engelmann, Claudia",
+"Die Linke"
+],
+[
+"1104 - Lichtenberg 4",
+"Leonhardt, Antonio",
+"Die Linke"
+],
+[
+"1105 - Lichtenberg 5",
+"Klein, Hendrikje",
+"Die Linke"
+],
+[
+"1106 - Lichtenberg 6",
+"Behrens, Julia",
+"Die Linke"
+],
+[
+"1201 - Reinickendorf 1",
+"Caballero Alvarez, Pilar",
+"Die Linke"
+],
+[
+"1202 - Reinickendorf 2",
+"Schönebeck, Felix",
+"CDU"
+],
+[
+"1203 - Reinickendorf 3",
+"Graßelt, Niklas",
+"CDU"
+],
+[
+"1204 - Reinickendorf 4",
+"Klon, Tomasz",
+"CDU"
+],
+[
+"1205 - Reinickendorf 5",
+"Ubbelohde, Carsten",
+"AfD"
+],
+[
+"1206 - Reinickendorf 6",
+"Gamp, Richard",
+"CDU"
+]
+],
+"liste": [
+[
+"Berlin",
+"Schumacher, Elina",
+"GRÜNE"
+],
+[
+"Berlin",
+"Ahmadi, Gollaleh",
+"GRÜNE"
+],
+[
+"Berlin",
+"Schulze, André",
+"GRÜNE"
+],
+[
+"Berlin",
+"Ghirmai, Philmon",
+"GRÜNE"
+],
+[
+"Berlin",
+"Haghanipour, Bahar",
+"GRÜNE"
+],
+[
+"Berlin",
+"Schedlich, Klara Josephine",
+"GRÜNE"
+],
+[
+"Berlin",
+"Grothe, Pascal",
+"GRÜNE"
+],
+[
+"Berlin",
+"Graf, Werner",
+"GRÜNE"
+],
+[
+"Berlin",
+"Schmidt, Bogusz",
+"GRÜNE"
+],
+[
+"Berlin",
+"Ehlers, Daniela",
+"GRÜNE"
+],
+[
+"Berlin",
+"Steinmetz, Charlotte",
+"GRÜNE"
+],
+[
+"Berlin",
+"Kapek, Antje",
+"GRÜNE"
+],
+[
+"Berlin",
+"Jarasch, Bettina",
+"GRÜNE"
+],
+[
+"Berlin",
+"Ebrahimpour Mirzaie, Ario",
+"GRÜNE"
+],
+[
+"Berlin",
+"Wapler, Christoph",
+"GRÜNE"
+],
+[
+"Berlin",
+"Kohler, Martin",
+"AfD"
+],
+[
+"Berlin",
+"Hansel, Frank-Christian",
+"AfD"
+],
+[
+"Berlin",
+"Eschricht, Robert",
+"AfD"
+],
+[
+"Berlin",
+"Wiedenhaupt, Rolf",
+"AfD"
+],
+[
+"Berlin",
+"Scheermesser, Frank",
+"AfD"
+],
+[
+"Berlin",
+"Bernicke, Marc-Philipp",
+"AfD"
+],
+[
+"Berlin",
+"Eckert, David",
+"AfD"
+],
+[
+"Berlin",
+"Streeck, Jan-Philip",
+"AfD"
+],
+[
+"Berlin",
+"Vallendar, Marc",
+"AfD"
+],
+[
+"Berlin",
+"Adrat, Julian",
+"AfD"
+],
+[
+"Berlin",
+"Dr. Brinker, Kristin",
+"AfD"
+],
+[
+"Berlin",
+"Krüger, Daniel",
+"AfD"
+],
+[
+"Berlin",
+"Gröber, Sarah-Emanuela",
+"AfD"
+],
+[
+"Berlin",
+"Pauli, Hendrik",
+"AfD"
+],
+[
+"Berlin",
+"Dr. Bronson, Hugh",
+"AfD"
+],
+[
+"Berlin",
+"Dr. Conradi, Ralf-Günther",
+"AfD"
+],
+[
+"01 - Mitte",
+"Schaal, Lucas",
+"CDU"
+],
+[
+"01 - Mitte",
+"Rissmann, Sven Nico",
+"CDU"
+],
+[
+"01 - Mitte",
+"Schulz, Mathias",
+"SPD"
+],
+[
+"01 - Mitte",
+"Dr. Lasić, Maja",
+"SPD"
+],
+[
+"01 - Mitte",
+"Schulze, Tobias",
+"Die Linke"
+],
+[
+"02 - Friedrichshain-Kreuzberg",
+"Wansner, Kurt",
+"CDU"
+],
+[
+"02 - Friedrichshain-Kreuzberg",
+"Aydin, Sevim",
+"SPD"
+],
+[
+"02 - Friedrichshain-Kreuzberg",
+"Cichon, Ruby",
+"Die Linke"
+],
+[
+"03 - Pankow",
+"Tietje, Rona",
+"SPD"
+],
+[
+"03 - Pankow",
+"Buchner, Dennis",
+"SPD"
+],
+[
+"03 - Pankow",
+"Häber, Maxi",
+"Die Linke"
+],
+[
+"04 - Charlottenburg-Wilmersdorf",
+"Dörstelmann, Florian",
+"SPD"
+],
+[
+"04 - Charlottenburg-Wilmersdorf",
+"Dr. Biewener, Ann-Kathrin",
+"SPD"
+],
+[
+"04 - Charlottenburg-Wilmersdorf",
+"Radde, Sonja",
+"Die Linke"
+],
+[
+"04 - Charlottenburg-Wilmersdorf",
+"Gronde-Brunner, Frederike-Sophie",
+"Die Linke"
+],
+[
+"05 - Spandau",
+"Saleh, Raed",
+"SPD"
+],
+[
+"05 - Spandau",
+"Atli, Sebahat",
+"SPD"
+],
+[
+"05 - Spandau",
+"Atakul, Ender",
+"Die Linke"
+],
+[
+"06 - Steglitz-Zehlendorf",
+"Krach, Steffen",
+"SPD"
+],
+[
+"06 - Steglitz-Zehlendorf",
+"Dr. Czyborra, Ina",
+"SPD"
+],
+[
+"06 - Steglitz-Zehlendorf",
+"Otto, Marcus",
+"Die Linke"
+],
+[
+"06 - Steglitz-Zehlendorf",
+"Brychcy, Franziska",
+"Die Linke"
+],
+[
+"07 - Tempelhof-Schöneberg",
+"Neumann, Wiebke",
+"SPD"
+],
+[
+"07 - Tempelhof-Schöneberg",
+"Özdemir, Orkan",
+"SPD"
+],
+[
+"07 - Tempelhof-Schöneberg",
+"Marg, Katharina",
+"Die Linke"
+],
+[
+"07 - Tempelhof-Schöneberg",
+"Staudt, Elisabeth",
+"Die Linke"
+],
+[
+"07 - Tempelhof-Schöneberg",
+"Șenyüz, Asya",
+"Die Linke"
+],
+[
+"08 - Neukölln",
+"Hopp, Marcel",
+"SPD"
+],
+[
+"08 - Neukölln",
+"Çağlar, Derya",
+"SPD"
+],
+[
+"08 - Neukölln",
+"Yilmaz-Bergk, Betül Havva",
+"Die Linke"
+],
+[
+"09 - Treptow-Köpenick",
+"Evers, Stefan",
+"CDU"
+],
+[
+"09 - Treptow-Köpenick",
+"Penn, Maik",
+"CDU"
+],
+[
+"09 - Treptow-Köpenick",
+"Dittmar, Julia",
+"SPD"
+],
+[
+"09 - Treptow-Köpenick",
+"Terkan, Eda",
+"Die Linke"
+],
+[
+"10 - Marzahn-Hellersdorf",
+"Herrmann, Alexander",
+"CDU"
+],
+[
+"10 - Marzahn-Hellersdorf",
+"Spranger, Iris",
+"SPD"
+],
+[
+"10 - Marzahn-Hellersdorf",
+"Ostehr, Steffen",
+"Die Linke"
+],
+[
+"10 - Marzahn-Hellersdorf",
+"Bigall, Sarah",
+"Die Linke"
+],
+[
+"10 - Marzahn-Hellersdorf",
+"Tielebein, Björn",
+"Die Linke"
+],
+[
+"11 - Lichtenberg",
+"Freymark, Danny",
+"CDU"
+],
+[
+"11 - Lichtenberg",
+"Lüdke, Tamara",
+"SPD"
+],
+[
+"12 - Reinickendorf",
+"König, Bettina",
+"SPD"
+],
+[
+"12 - Reinickendorf",
+"Meyer, Sven",
+"SPD"
+],
+[
+"12 - Reinickendorf",
+"Gerke, Jessica",
+"Die Linke"
+]
+]
+},
+"land": [
+[
+"Wahlberechtigte",
+"",
+"2.487.318",
+"-",
+"-",
+"2.487.318",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"1.846.344",
+"74,2 %",
+"11,3",
+"1.846.344",
+"74,2 %",
+"11,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"33.460",
+"1,8 %",
+"0,9",
+"20.672",
+"1,1 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"1.812.884",
+"98,2 %",
+"-0,9",
+"1.825.672",
+"98,9 %",
+"-0,4"
+],
+[
+"CDU",
+"",
+"367.377",
+"20,3 %",
+"-9,4",
+"342.746",
+"18,8 %",
+"-9,5"
+],
+[
+"SPD",
+"",
+"248.721",
+"13,7 %",
+"-6,2",
+"221.116",
+"12,1 %",
+"-6,3"
+],
+[
+"GRÜNE",
+"",
+"297.100",
+"16,4 %",
+"-2,8",
+"260.896",
+"14,3 %",
+"-4,1"
+],
+[
+"Die Linke",
+"",
+"435.893",
+"24,0 %",
+"11,7",
+"468.391",
+"25,7 %",
+"13,5"
+],
+[
+"AfD",
+"",
+"289.441",
+"16,0 %",
+"7,0",
+"296.718",
+"16,3 %",
+"7,2"
+],
+[
+"FDP",
+"",
+"40.410",
+"2,2 %",
+"-1,6",
+"46.384",
+"2,5 %",
+"-2,1"
+],
+[
+"Tierschutzpartei",
+"",
+"10.236",
+"0,6 %",
+"-2,3",
+"38.678",
+"2,1 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"4.804",
+"0,3 %",
+"-1,4",
+"13.349",
+"0,7 %",
+"-0,7"
+],
+[
+"Volt",
+"",
+"40.638",
+"2,2 %",
+"2,2",
+"37.950",
+"2,1 %",
+"1,2"
+],
+[
+"MIETERPARTEI",
+"",
+"289",
+"0,0 %",
+"-0,0",
+"-",
+"-",
+"-0,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-0,0",
+"1.518",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"252",
+"0,0 %",
+"0,0",
+"2.051",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,0",
+"2.560",
+"0,1 %",
+"0,0"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,0",
+"521",
+"0,0 %",
+"-0,1"
+],
+[
+"B*",
+"",
+"44",
+"0,0 %",
+"0,0",
+"81",
+"0,0 %",
+"-0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"663",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"",
+"75.704",
+"4,2 %",
+"4,2",
+"86.350",
+"4,7 %",
+"4,7"
+],
+[
+"MERA25",
+"",
+"374",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"5.700",
+"0,3 %",
+"0,3"
+],
+[
+"DL",
+"",
+"57",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"DIE FRAUEN",
+"",
+"57",
+"0,0 %",
+"-0,0",
+"-",
+"-",
+"-"
+],
+[
+"Fleischmann",
+"",
+"126",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Dr. Gerken",
+"",
+"160",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Kanzler",
+"",
+"120",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Lindlmair",
+"",
+"113",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Mansamba",
+"",
+"51",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Mihm",
+"",
+"185",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Ngwa",
+"",
+"207",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Schnitzer",
+"",
+"48",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Snelinski",
+"",
+"295",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Trockle",
+"",
+"83",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+],
+[
+"Worbs",
+"",
+"99",
+"0,0 %",
+"0,0",
+"-",
+"-",
+"-"
+]
+],
+"quelle": "https://www.wahlen-berlin.de/wahlen/BE2026/AFSPRAES/agh/ergebnisse.html",
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, Berlin Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"wahlkreise": {
+"0101": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0101 - Mitte 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.501",
+"-",
+"-",
+"32.501",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.699",
+"79,1 %",
+"11,3",
+"25.699",
+"79,1 %",
+"11,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"253",
+"1,0 %",
+"0,5",
+"149",
+"0,6 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"25.446",
+"99,0 %",
+"-0,5",
+"25.550",
+"99,4 %",
+"-0,2"
+],
+[
+"CDU",
+"Trautmann, Monika",
+"4.118",
+"16,2 %",
+"-5,7",
+"4.878",
+"19,1 %",
+"-1,5"
+],
+[
+"SPD",
+"Dr. Klimovich, Stanislav",
+"2.861",
+"11,2 %",
+"-5,3",
+"2.744",
+"10,7 %",
+"-4,5"
+],
+[
+"GRÜNE",
+"Gebel, Silke",
+"7.222",
+"28,4 %",
+"-5,1",
+"6.181",
+"24,2 %",
+"-6,4"
+],
+[
+"Die Linke",
+"Eiling, Anna",
+"6.409",
+"25,2 %",
+"11,9",
+"6.792",
+"26,6 %",
+"13,8"
+],
+[
+"AfD",
+"Schüler, Sabine",
+"1.615",
+"6,3 %",
+"2,3",
+"1.693",
+"6,6 %",
+"2,6"
+],
+[
+"FDP",
+"Dr. Jasper-Winter, Maren",
+"1.066",
+"4,2 %",
+"-3,4",
+"888",
+"3,5 %",
+"-4,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,2",
+"205",
+"0,8 %",
+"-0,5"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"152",
+"0,6 %",
+"-0,8"
+],
+[
+"Volt",
+"Auerbach, Anna",
+"1.339",
+"5,3 %",
+"5,3",
+"1.133",
+"4,4 %",
+"1,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"22",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Diedrich, Sven",
+"696",
+"2,7 %",
+"2,7",
+"748",
+"2,9 %",
+"2,9"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"61",
+"0,2 %",
+"0,2"
+],
+[
+"Kanzler",
+"Kanzler, Jörg",
+"120",
+"0,5 %",
+"0,5",
+"-",
+"-",
+"-"
+]
+]
+},
+"0102": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0102 - Mitte 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.885",
+"-",
+"-",
+"33.885",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.191",
+"74,3 %",
+"9,9",
+"25.191",
+"74,3 %",
+"9,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"408",
+"1,6 %",
+"0,9",
+"234",
+"0,9 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"24.783",
+"98,4 %",
+"-0,9",
+"24.957",
+"99,1 %",
+"-0,3"
+],
+[
+"CDU",
+"Schaal, Lucas",
+"4.918",
+"19,8 %",
+"-5,1",
+"4.596",
+"18,4 %",
+"-5,8"
+],
+[
+"SPD",
+"Riez, Nadine",
+"2.898",
+"11,7 %",
+"-9,8",
+"2.694",
+"10,8 %",
+"-6,8"
+],
+[
+"GRÜNE",
+"Zimmermann, Katja",
+"4.575",
+"18,5 %",
+"-1,6",
+"3.749",
+"15,0 %",
+"-4,5"
+],
+[
+"Die Linke",
+"Diederich, Leonard",
+"6.978",
+"28,2 %",
+"11,5",
+"7.513",
+"30,1 %",
+"12,5"
+],
+[
+"AfD",
+"Priegnitz, Jens-Hermann",
+"2.780",
+"11,2 %",
+"4,4",
+"2.932",
+"11,7 %",
+"4,7"
+],
+[
+"FDP",
+"Güvercin, Eren",
+"631",
+"2,5 %",
+"-2,6",
+"745",
+"3,0 %",
+"-3,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,0",
+"333",
+"1,3 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,9",
+"152",
+"0,6 %",
+"-0,7"
+],
+[
+"Volt",
+"Dr. Seider, Rainer",
+"725",
+"2,9 %",
+"2,9",
+"730",
+"2,9 %",
+"1,6"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"55",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,0"
+],
+[
+"BSW",
+"Dağdelen, Sevim",
+"1.278",
+"5,2 %",
+"5,2",
+"1.340",
+"5,4 %",
+"5,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"58",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0103": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0103 - Mitte 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.837",
+"-",
+"-",
+"30.837",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.195",
+"75,2 %",
+"11,9",
+"23.195",
+"75,2 %",
+"11,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"312",
+"1,3 %",
+"0,7",
+"161",
+"0,7 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"22.883",
+"98,7 %",
+"-0,7",
+"23.034",
+"99,3 %",
+"-0,1"
+],
+[
+"CDU",
+"Ganz, Sylvia",
+"3.938",
+"17,2 %",
+"-5,1",
+"4.100",
+"17,8 %",
+"-4,4"
+],
+[
+"SPD",
+"Demers, Lucy Merle",
+"2.997",
+"13,1 %",
+"-5,6",
+"2.978",
+"12,9 %",
+"-5,5"
+],
+[
+"GRÜNE",
+"Omar, Jian",
+"6.647",
+"29,0 %",
+"-4,0",
+"4.990",
+"21,7 %",
+"-6,4"
+],
+[
+"Die Linke",
+"Schulze, Tobias",
+"5.615",
+"24,5 %",
+"13,3",
+"6.538",
+"28,4 %",
+"16,0"
+],
+[
+"AfD",
+"Lent, Steffen",
+"1.726",
+"7,5 %",
+"2,9",
+"1.768",
+"7,7 %",
+"3,0"
+],
+[
+"FDP",
+"Cocozza, Gabriele",
+"596",
+"2,6 %",
+"-2,7",
+"620",
+"2,7 %",
+"-3,4"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,1",
+"308",
+"1,3 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,9",
+"141",
+"0,6 %",
+"-0,8"
+],
+[
+"Volt",
+"Tiffert, Ferdinand",
+"522",
+"2,3 %",
+"2,3",
+"591",
+"2,6 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Kardaşlar, Erdinç",
+"771",
+"3,4 %",
+"3,4",
+"889",
+"3,9 %",
+"3,9"
+],
+[
+"MERA25",
+"Asmus, Sophie",
+"71",
+"0,3 %",
+"0,3",
+"-",
+"-",
+"-"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"49",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0104": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0104 - Mitte 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.424",
+"-",
+"-",
+"29.424",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"21.434",
+"72,8 %",
+"13,4",
+"21.434",
+"72,8 %",
+"13,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"281",
+"1,3 %",
+"0,5",
+"182",
+"0,8 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"21.153",
+"98,7 %",
+"-0,5",
+"21.252",
+"99,2 %",
+"-0,2"
+],
+[
+"CDU",
+"Fervers, Sven",
+"1.962",
+"9,3 %",
+"-6,5",
+"2.109",
+"9,9 %",
+"-5,7"
+],
+[
+"SPD",
+"Quadrelli, Federico",
+"1.775",
+"8,4 %",
+"-5,8",
+"2.231",
+"10,5 %",
+"-4,2"
+],
+[
+"GRÜNE",
+"Kurt, Taylan",
+"7.737",
+"36,6 %",
+"-3,5",
+"4.500",
+"21,2 %",
+"-13,1"
+],
+[
+"Die Linke",
+"Sanehy, Jacqueline",
+"6.550",
+"31,0 %",
+"13,4",
+"8.695",
+"40,9 %",
+"24,1"
+],
+[
+"AfD",
+"Müller, Eduard",
+"1.484",
+"7,0 %",
+"2,6",
+"1.496",
+"7,0 %",
+"2,5"
+],
+[
+"FDP",
+"Höllen, Beatrice",
+"317",
+"1,5 %",
+"-1,9",
+"360",
+"1,7 %",
+"-2,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-",
+"270",
+"1,3 %",
+"-0,7"
+],
+[
+"Die PARTEI",
+"Ferguson, Jeremy",
+"247",
+"1,2 %",
+"-1,6",
+"161",
+"0,8 %",
+"-1,1"
+],
+[
+"Volt",
+"Drechsel, Johanna",
+"386",
+"1,8 %",
+"1,8",
+"442",
+"2,1 %",
+"0,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"21",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,3",
+"29",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,1"
+],
+[
+"BSW",
+"El Amrani, Dunya",
+"695",
+"3,3 %",
+"3,3",
+"854",
+"4,0 %",
+"4,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"64",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0105": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0105 - Mitte 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"27.912",
+"-",
+"-",
+"27.912",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"18.679",
+"66,9 %",
+"12,2",
+"18.679",
+"66,9 %",
+"12,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"480",
+"2,6 %",
+"1,6",
+"250",
+"1,3 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"18.199",
+"97,4 %",
+"-1,6",
+"18.429",
+"98,7 %",
+"-0,5"
+],
+[
+"CDU",
+"Rissmann, Sven Nico",
+"2.504",
+"13,8 %",
+"-10,7",
+"2.414",
+"13,1 %",
+"-11,0"
+],
+[
+"SPD",
+"Schulz, Mathias",
+"2.526",
+"13,9 %",
+"-6,7",
+"2.277",
+"12,4 %",
+"-6,1"
+],
+[
+"GRÜNE",
+"Bendzko, Alexandra",
+"2.745",
+"15,1 %",
+"-7,4",
+"2.347",
+"12,7 %",
+"-8,9"
+],
+[
+"Die Linke",
+"Dr. Umgelter, Andreas",
+"6.631",
+"36,4 %",
+"22,5",
+"6.842",
+"37,1 %",
+"23,1"
+],
+[
+"AfD",
+"Adrat, Julian",
+"2.401",
+"13,2 %",
+"4,6",
+"2.404",
+"13,0 %",
+"4,5"
+],
+[
+"FDP",
+"Dr. von Seyfried, Bettina",
+"314",
+"1,7 %",
+"-1,1",
+"366",
+"2,0 %",
+"-1,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,4",
+"382",
+"2,1 %",
+"-0,7"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,0",
+"155",
+"0,8 %",
+"-0,8"
+],
+[
+"Volt",
+"Šarić, Andrija",
+"314",
+"1,7 %",
+"1,7",
+"298",
+"1,6 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"35",
+"0,2 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Ayikpe, Jean-Marie",
+"764",
+"4,2 %",
+"4,2",
+"795",
+"4,3 %",
+"4,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"68",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0106": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0106 - Mitte 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"28.050",
+"-",
+"-",
+"28.050",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"18.029",
+"64,3 %",
+"14,3",
+"18.029",
+"64,3 %",
+"14,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"336",
+"1,9 %",
+"0,9",
+"184",
+"1,0 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"17.693",
+"98,1 %",
+"-0,9",
+"17.845",
+"99,0 %",
+"-0,2"
+],
+[
+"CDU",
+"Kühl, Michael",
+"1.252",
+"7,1 %",
+"-8,0",
+"1.310",
+"7,3 %",
+"-7,4"
+],
+[
+"SPD",
+"Fischer, Susanne",
+"1.646",
+"9,3 %",
+"-6,9",
+"1.592",
+"8,9 %",
+"-5,9"
+],
+[
+"GRÜNE",
+"Bozkurt, Tuba",
+"3.863",
+"21,8 %",
+"-10,2",
+"2.667",
+"14,9 %",
+"-13,8"
+],
+[
+"Die Linke",
+"Kleedörfer, Martha",
+"8.170",
+"46,2 %",
+"25,1",
+"9.019",
+"50,5 %",
+"29,0"
+],
+[
+"AfD",
+"Gołkontt, Adam",
+"1.413",
+"8,0 %",
+"2,3",
+"1.422",
+"8,0 %",
+"2,6"
+],
+[
+"FDP",
+"Roet, Bastian",
+"264",
+"1,5 %",
+"-1,3",
+"235",
+"1,3 %",
+"-1,5"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,1",
+"233",
+"1,3 %",
+"-1,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,7",
+"148",
+"0,8 %",
+"-1,5"
+],
+[
+"Volt",
+"Freifrau von Maltzahn, Felice",
+"236",
+"1,3 %",
+"1,3",
+"234",
+"1,3 %",
+"0,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,5"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"36",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"23",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Čeliković, Faruk",
+"755",
+"4,3 %",
+"4,3",
+"824",
+"4,6 %",
+"4,6"
+],
+[
+"MERA25",
+"Witkiewicz, Ceren",
+"94",
+"0,5 %",
+"0,5",
+"-",
+"-",
+"-"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"65",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0107": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0107 - Mitte 7 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.285",
+"-",
+"-",
+"29.285",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"19.337",
+"66,0 %",
+"15,2",
+"19.337",
+"66,0 %",
+"15,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"370",
+"1,9 %",
+"1,0",
+"210",
+"1,1 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"18.967",
+"98,1 %",
+"-1,0",
+"19.127",
+"98,9 %",
+"-0,3"
+],
+[
+"CDU",
+"Fritz, Daniela",
+"1.707",
+"9,0 %",
+"-10,3",
+"1.757",
+"9,2 %",
+"-8,6"
+],
+[
+"SPD",
+"Dr. Lasić, Maja",
+"2.370",
+"12,5 %",
+"-5,9",
+"2.081",
+"10,9 %",
+"-5,5"
+],
+[
+"GRÜNE",
+"Massalme, Tarek",
+"3.420",
+"18,0 %",
+"-12,1",
+"2.959",
+"15,5 %",
+"-13,0"
+],
+[
+"Die Linke",
+"Janssen, Deike",
+"8.235",
+"43,4 %",
+"25,9",
+"8.438",
+"44,1 %",
+"26,5"
+],
+[
+"AfD",
+"Seefeldt, Volker",
+"1.662",
+"8,8 %",
+"3,4",
+"1.664",
+"8,7 %",
+"3,1"
+],
+[
+"FDP",
+"Teresiak, Franz",
+"288",
+"1,5 %",
+"-1,6",
+"294",
+"1,5 %",
+"-2,0"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,6",
+"288",
+"1,5 %",
+"-0,7"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,3",
+"132",
+"0,7 %",
+"-1,1"
+],
+[
+"Volt",
+"Hergert, Martin",
+"413",
+"2,2 %",
+"2,2",
+"370",
+"1,9 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"15",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,1",
+"25",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,0"
+],
+[
+"BSW",
+"Hantke, Martin",
+"872",
+"4,6 %",
+"4,6",
+"1.020",
+"5,3 %",
+"5,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"43",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0201": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0201 - Friedrichshain-Kreuzberg 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.832",
+"-",
+"-",
+"32.832",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.515",
+"68,6 %",
+"13,5",
+"22.515",
+"68,6 %",
+"13,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"326",
+"1,4 %",
+"0,6",
+"290",
+"1,3 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"22.189",
+"98,6 %",
+"-0,6",
+"22.225",
+"98,7 %",
+"-0,5"
+],
+[
+"CDU",
+"Wansner, Kurt",
+"1.661",
+"7,5 %",
+"-10,5",
+"1.783",
+"8,0 %",
+"-9,0"
+],
+[
+"SPD",
+"Aydin, Sevim",
+"2.353",
+"10,6 %",
+"-9,0",
+"2.235",
+"10,1 %",
+"-6,4"
+],
+[
+"GRÜNE",
+"Beydaș, Kübra",
+"3.817",
+"17,2 %",
+"-14,0",
+"3.980",
+"17,9 %",
+"-11,2"
+],
+[
+"Die Linke",
+"Eralp, Elif",
+"11.185",
+"50,4 %",
+"32,5",
+"10.434",
+"46,9 %",
+"27,4"
+],
+[
+"AfD",
+"Zaucker, Gerhard",
+"1.209",
+"5,4 %",
+"2,3",
+"1.217",
+"5,5 %",
+"2,1"
+],
+[
+"FDP",
+"Höhn, Jörg",
+"311",
+"1,4 %",
+"-1,5",
+"348",
+"1,6 %",
+"-1,4"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,3",
+"277",
+"1,2 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"Cörtlen, Riza",
+"258",
+"1,2 %",
+"-2,0",
+"202",
+"0,9 %",
+"-1,2"
+],
+[
+"Volt",
+"Welker, Jakob",
+"359",
+"1,6 %",
+"1,6",
+"422",
+"1,9 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-0,7",
+"34",
+"0,2 %",
+"-0,4"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"40",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,1"
+],
+[
+"B*",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,2"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"-0,1"
+],
+[
+"BSW",
+"Hassan, Manaf",
+"921",
+"4,2 %",
+"4,2",
+"1.198",
+"5,4 %",
+"5,4"
+],
+[
+"MERA25",
+"Toussaint, Jaroslav",
+"58",
+"0,3 %",
+"0,3",
+"-",
+"-",
+"-"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"0,1"
+],
+[
+"DIE FRAUEN",
+"Werner, Sigrid",
+"57",
+"0,3 %",
+"0,3",
+"-",
+"-",
+"-"
+]
+]
+},
+"0202": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0202 - Friedrichshain-Kreuzberg 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.942",
+"-",
+"-",
+"33.942",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"27.181",
+"80,1 %",
+"11,9",
+"27.181",
+"80,1 %",
+"11,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"318",
+"1,2 %",
+"0,5",
+"169",
+"0,6 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"26.863",
+"98,8 %",
+"-0,5",
+"27.012",
+"99,4 %",
+"-0,2"
+],
+[
+"CDU",
+"Dr. Husein, Timur",
+"2.011",
+"7,5 %",
+"-4,5",
+"2.166",
+"8,0 %",
+"-3,5"
+],
+[
+"SPD",
+"Dr. Schlünz, Britt",
+"2.673",
+"10,0 %",
+"-5,7",
+"2.909",
+"10,8 %",
+"-4,1"
+],
+[
+"GRÜNE",
+"Schmidberger, Katrin",
+"8.992",
+"33,5 %",
+"-9,4",
+"7.051",
+"26,1 %",
+"-14,1"
+],
+[
+"Die Linke",
+"Efler, Michael",
+"9.965",
+"37,1 %",
+"18,8",
+"11.458",
+"42,4 %",
+"23,0"
+],
+[
+"AfD",
+"Klaus, Andreas",
+"923",
+"3,4 %",
+"1,3",
+"951",
+"3,5 %",
+"1,3"
+],
+[
+"FDP",
+"Morrkopf-Widlok, Matthias",
+"344",
+"1,3 %",
+"-1,5",
+"375",
+"1,4 %",
+"-1,8"
+],
+[
+"Tierschutzpartei",
+"Görgen, Jacqueline",
+"358",
+"1,3 %",
+"-0,6",
+"291",
+"1,1 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"Bundels, Jan-Marcel",
+"281",
+"1,0 %",
+"-2,1",
+"223",
+"0,8 %",
+"-1,4"
+],
+[
+"Volt",
+"Zels, Susanne",
+"588",
+"2,2 %",
+"2,2",
+"596",
+"2,2 %",
+"0,9"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-0,1",
+"28",
+"0,1 %",
+"-0,3"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"29",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"0,1"
+],
+[
+"B*",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Falsafi, Simin",
+"654",
+"2,4 %",
+"2,4",
+"840",
+"3,1 %",
+"3,1"
+],
+[
+"MERA25",
+"Fehr, Johannes",
+"74",
+"0,3 %",
+"0,3",
+"-",
+"-",
+"-"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"53",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0203": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0203 - Friedrichshain-Kreuzberg 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.765",
+"-",
+"-",
+"34.765",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"27.600",
+"79,4 %",
+"12,0",
+"27.600",
+"79,4 %",
+"12,0"
+],
+[
+"Ungültige Stimmen",
+"",
+"297",
+"1,1 %",
+"0,4",
+"156",
+"0,6 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"27.303",
+"98,9 %",
+"-0,4",
+"27.444",
+"99,4 %",
+"-0,1"
+],
+[
+"CDU",
+"Kindler, Max",
+"2.246",
+"8,2 %",
+"-4,3",
+"2.309",
+"8,4 %",
+"-3,4"
+],
+[
+"SPD",
+"Heinemann, Sven",
+"2.266",
+"8,3 %",
+"-5,3",
+"2.396",
+"8,7 %",
+"-4,0"
+],
+[
+"GRÜNE",
+"Altaweel, Enad",
+"7.665",
+"28,1 %",
+"-9,7",
+"5.964",
+"21,7 %",
+"-14,7"
+],
+[
+"Die Linke",
+"Wolter-Ehling, Kerstin",
+"11.511",
+"42,2 %",
+"19,0",
+"12.898",
+"47,0 %",
+"25,1"
+],
+[
+"AfD",
+"Meuren, Christof",
+"1.223",
+"4,5 %",
+"1,8",
+"1.274",
+"4,6 %",
+"2,0"
+],
+[
+"FDP",
+"Dallheimer, Johannes",
+"353",
+"1,3 %",
+"-1,7",
+"379",
+"1,4 %",
+"-1,9"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,1",
+"264",
+"1,0 %",
+"-0,8"
+],
+[
+"Die PARTEI",
+"Duden Glatzer, Annett",
+"386",
+"1,4 %",
+"-2,2",
+"257",
+"0,9 %",
+"-1,7"
+],
+[
+"Volt",
+"Dr. Köhler, Anke",
+"680",
+"2,5 %",
+"2,5",
+"674",
+"2,5 %",
+"1,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"33",
+"0,1 %",
+"-0,4"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"41",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"17",
+"0,1 %",
+"-0,1"
+],
+[
+"B*",
+"",
+"-",
+"-",
+"-",
+"22",
+"0,1 %",
+"-0,2"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"-0,1"
+],
+[
+"BSW",
+"Yıldız, Mertcan",
+"719",
+"2,6 %",
+"2,6",
+"845",
+"3,1 %",
+"3,1"
+],
+[
+"MERA25",
+"Strelitz, Mareike",
+"77",
+"0,3 %",
+"0,3",
+"-",
+"-",
+"-"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"64",
+"0,2 %",
+"0,2"
+],
+[
+"Fleischmann",
+"Fleischmann, Florian",
+"126",
+"0,5 %",
+"0,5",
+"-",
+"-",
+"-"
+],
+[
+"Mansamba",
+"Mansamba, Mutombo Kandu",
+"51",
+"0,2 %",
+"0,2",
+"-",
+"-",
+"-"
+]
+]
+},
+"0204": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0204 - Friedrichshain-Kreuzberg 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"35.793",
+"-",
+"-",
+"35.793",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"27.274",
+"76,2 %",
+"11,5",
+"27.274",
+"76,2 %",
+"11,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"466",
+"1,7 %",
+"0,9",
+"254",
+"0,9 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"26.808",
+"98,3 %",
+"-0,9",
+"27.020",
+"99,1 %",
+"-0,3"
+],
+[
+"CDU",
+"Fabeck, Marita",
+"2.921",
+"10,9 %",
+"-5,8",
+"3.035",
+"11,2 %",
+"-5,5"
+],
+[
+"SPD",
+"Giebel, Thomas",
+"2.481",
+"9,3 %",
+"-8,5",
+"2.632",
+"9,7 %",
+"-7,0"
+],
+[
+"GRÜNE",
+"Kapek, Antje",
+"5.240",
+"19,5 %",
+"-5,0",
+"4.333",
+"16,0 %",
+"-8,1"
+],
+[
+"Die Linke",
+"Valgolio, Damiano",
+"10.474",
+"39,1 %",
+"15,2",
+"10.643",
+"39,4 %",
+"18,2"
+],
+[
+"AfD",
+"Scheermesser, Frank",
+"2.789",
+"10,4 %",
+"3,8",
+"2.823",
+"10,4 %",
+"3,9"
+],
+[
+"FDP",
+"Weckowski, Arlett",
+"545",
+"2,0 %",
+"-1,4",
+"535",
+"2,0 %",
+"-1,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,1",
+"427",
+"1,6 %",
+"-0,9"
+],
+[
+"Die PARTEI",
+"Dr. Glatzer, Jens",
+"397",
+"1,5 %",
+"-1,4",
+"272",
+"1,0 %",
+"-1,1"
+],
+[
+"Volt",
+"Brüsch, Dennis",
+"769",
+"2,9 %",
+"2,9",
+"754",
+"2,8 %",
+"1,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"-0,3"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"58",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,1",
+"32",
+"0,1 %",
+"0,0"
+],
+[
+"B*",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"-0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Tursunov, Faruh",
+"1.007",
+"3,8 %",
+"3,8",
+"1.320",
+"4,9 %",
+"4,9"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"103",
+"0,4 %",
+"0,4"
+],
+[
+"Mihm",
+"Mihm, Jan",
+"185",
+"0,7 %",
+"0,7",
+"-",
+"-",
+"-"
+]
+]
+},
+"0205": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0205 - Friedrichshain-Kreuzberg 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.106",
+"-",
+"-",
+"34.106",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"27.891",
+"81,8 %",
+"15,2",
+"27.891",
+"81,8 %",
+"15,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"233",
+"0,8 %",
+"0,5",
+"146",
+"0,5 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"27.658",
+"99,2 %",
+"-0,5",
+"27.745",
+"99,5 %",
+"-0,3"
+],
+[
+"CDU",
+"Schlesiger, Björn",
+"2.015",
+"7,3 %",
+"-3,3",
+"2.213",
+"8,0 %",
+"-2,6"
+],
+[
+"SPD",
+"Opitz, Steffen",
+"2.354",
+"8,5 %",
+"-3,8",
+"2.381",
+"8,6 %",
+"-4,2"
+],
+[
+"GRÜNE",
+"Franco, Vasili",
+"7.630",
+"27,6 %",
+"-11,6",
+"5.910",
+"21,3 %",
+"-15,4"
+],
+[
+"Die Linke",
+"Spiegel, Ekkehard",
+"11.299",
+"40,9 %",
+"18,2",
+"12.711",
+"45,8 %",
+"23,0"
+],
+[
+"AfD",
+"Peter, Christopher John",
+"1.559",
+"5,6 %",
+"2,2",
+"1.620",
+"5,8 %",
+"2,3"
+],
+[
+"FDP",
+"Rogat, Roman-Francesco",
+"388",
+"1,4 %",
+"-2,0",
+"434",
+"1,6 %",
+"-1,9"
+],
+[
+"Tierschutzpartei",
+"Stephan, Katrin",
+"450",
+"1,6 %",
+"-1,1",
+"396",
+"1,4 %",
+"-1,1"
+],
+[
+"Die PARTEI",
+"Damrau, Anne-Kristin",
+"394",
+"1,4 %",
+"-2,9",
+"276",
+"1,0 %",
+"-2,0"
+],
+[
+"Volt",
+"König, Christoph",
+"863",
+"3,1 %",
+"3,1",
+"793",
+"2,9 %",
+"1,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"32",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,1",
+"36",
+"0,1 %",
+"0,1"
+],
+[
+"B*",
+"Jarkowski, Björn",
+"44",
+"0,2 %",
+"0,2",
+"22",
+"0,1 %",
+"-0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Preisner, Andreas",
+"662",
+"2,4 %",
+"2,4",
+"824",
+"3,0 %",
+"3,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"70",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0301": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0301 - Pankow 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.980",
+"-",
+"-",
+"34.980",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.239",
+"75,0 %",
+"11,1",
+"26.239",
+"75,0 %",
+"11,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"501",
+"1,9 %",
+"1,2",
+"349",
+"1,3 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"25.738",
+"98,1 %",
+"-1,2",
+"25.890",
+"98,7 %",
+"-0,6"
+],
+[
+"CDU",
+"Kraft, Johannes",
+"7.279",
+"28,3 %",
+"-13,3",
+"4.990",
+"19,3 %",
+"-14,3"
+],
+[
+"SPD",
+"Tietje, Rona",
+"2.343",
+"9,1 %",
+"-5,2",
+"2.513",
+"9,7 %",
+"-6,5"
+],
+[
+"GRÜNE",
+"Jarasch, Bettina",
+"2.439",
+"9,5 %",
+"0,3",
+"2.473",
+"9,6 %",
+"0,2"
+],
+[
+"Die Linke",
+"Häber, Maxi",
+"4.328",
+"16,8 %",
+"6,7",
+"4.652",
+"18,0 %",
+"6,9"
+],
+[
+"AfD",
+"Buchholz, Christian",
+"6.864",
+"26,7 %",
+"10,9",
+"7.182",
+"27,7 %",
+"10,7"
+],
+[
+"FDP",
+"Andresen, Stefan",
+"546",
+"2,1 %",
+"-0,4",
+"683",
+"2,6 %",
+"-0,8"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,9",
+"767",
+"3,0 %",
+"0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,3",
+"224",
+"0,9 %",
+"-0,2"
+],
+[
+"Volt",
+"Lorenz, Charlene",
+"571",
+"2,2 %",
+"2,2",
+"484",
+"1,9 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"46",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Kübler, Andreas",
+"1.368",
+"5,3 %",
+"5,3",
+"1.720",
+"6,6 %",
+"6,6"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"97",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0302": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0302 - Pankow 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.681",
+"-",
+"-",
+"33.681",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.793",
+"79,5 %",
+"10,3",
+"26.793",
+"79,5 %",
+"10,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"412",
+"1,5 %",
+"0,8",
+"282",
+"1,1 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"26.381",
+"98,5 %",
+"-0,8",
+"26.511",
+"98,9 %",
+"-0,4"
+],
+[
+"CDU",
+"Bocian, Lars",
+"6.605",
+"25,0 %",
+"-6,4",
+"5.177",
+"19,5 %",
+"-10,1"
+],
+[
+"SPD",
+"Hofer, Torsten",
+"2.899",
+"11,0 %",
+"-8,1",
+"2.868",
+"10,8 %",
+"-6,7"
+],
+[
+"GRÜNE",
+"Kascha, Sebastian",
+"4.025",
+"15,3 %",
+"-0,0",
+"3.609",
+"13,6 %",
+"-0,6"
+],
+[
+"Die Linke",
+"Aglibut, Coco",
+"4.796",
+"18,2 %",
+"7,3",
+"5.297",
+"20,0 %",
+"8,1"
+],
+[
+"AfD",
+"Streeck, Jan-Philip",
+"5.521",
+"20,9 %",
+"8,0",
+"5.760",
+"21,7 %",
+"8,7"
+],
+[
+"FDP",
+"Sittner, David",
+"642",
+"2,4 %",
+"-1,4",
+"744",
+"2,8 %",
+"-1,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,9",
+"661",
+"2,5 %",
+"0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,7",
+"187",
+"0,7 %",
+"-0,6"
+],
+[
+"Volt",
+"Bluhm, Beate",
+"564",
+"2,1 %",
+"2,1",
+"514",
+"1,9 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"23",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"27",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"46",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Nevi, Oliver",
+"1.329",
+"5,0 %",
+"5,0",
+"1.499",
+"5,7 %",
+"5,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"93",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0303": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0303 - Pankow 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"35.116",
+"-",
+"-",
+"35.116",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"28.138",
+"80,1 %",
+"10,7",
+"28.138",
+"80,1 %",
+"10,7"
+],
+[
+"Ungültige Stimmen",
+"",
+"370",
+"1,3 %",
+"0,5",
+"237",
+"0,8 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"27.768",
+"98,7 %",
+"-0,5",
+"27.901",
+"99,2 %",
+"-0,2"
+],
+[
+"CDU",
+"Dr. Tölle, Antje",
+"3.600",
+"13,0 %",
+"-6,7",
+"3.759",
+"13,5 %",
+"-6,8"
+],
+[
+"SPD",
+"Krüger, Paul",
+"3.041",
+"11,0 %",
+"-4,2",
+"3.142",
+"11,3 %",
+"-5,8"
+],
+[
+"GRÜNE",
+"Hassepaß, Oda",
+"7.068",
+"25,5 %",
+"0,7",
+"5.294",
+"19,0 %",
+"-4,0"
+],
+[
+"Die Linke",
+"Zebisch, Christian",
+"7.232",
+"26,0 %",
+"4,6",
+"8.017",
+"28,7 %",
+"12,1"
+],
+[
+"AfD",
+"Bachmann, Hanno",
+"3.993",
+"14,4 %",
+"5,0",
+"4.032",
+"14,5 %",
+"5,2"
+],
+[
+"FDP",
+"Wandel, Maria",
+"565",
+"2,0 %",
+"-0,8",
+"582",
+"2,1 %",
+"-1,3"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,7",
+"550",
+"2,0 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,0",
+"224",
+"0,8 %",
+"-1,0"
+],
+[
+"Volt",
+"Zadow, Udo",
+"661",
+"2,4 %",
+"2,4",
+"710",
+"2,5 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"46",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"54",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Radke, Kathrin",
+"1.313",
+"4,7 %",
+"4,7",
+"1.351",
+"4,8 %",
+"4,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"106",
+"0,4 %",
+"0,4"
+],
+[
+"Snelinski",
+"Snelinski, Oliver",
+"295",
+"1,1 %",
+"1,1",
+"-",
+"-",
+"-"
+]
+]
+},
+"0304": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0304 - Pankow 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.178",
+"-",
+"-",
+"29.178",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.063",
+"75,6 %",
+"11,0",
+"22.063",
+"75,6 %",
+"11,0"
+],
+[
+"Ungültige Stimmen",
+"",
+"379",
+"1,7 %",
+"0,9",
+"258",
+"1,2 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"21.684",
+"98,3 %",
+"-0,9",
+"21.805",
+"98,8 %",
+"-0,4"
+],
+[
+"CDU",
+"Stettner, Dirk",
+"3.755",
+"17,3 %",
+"-12,9",
+"3.461",
+"15,9 %",
+"-13,0"
+],
+[
+"SPD",
+"Buchner, Dennis",
+"2.832",
+"13,1 %",
+"-6,7",
+"2.366",
+"10,9 %",
+"-7,2"
+],
+[
+"GRÜNE",
+"Ehrhardt, Friedrich",
+"2.627",
+"12,1 %",
+"-0,6",
+"2.380",
+"10,9 %",
+"-1,2"
+],
+[
+"Die Linke",
+"Bașbolat, Devran",
+"4.626",
+"21,3 %",
+"7,5",
+"5.120",
+"23,5 %",
+"9,2"
+],
+[
+"AfD",
+"Mohr, Herbert",
+"4.969",
+"22,9 %",
+"9,6",
+"5.066",
+"23,2 %",
+"9,7"
+],
+[
+"FDP",
+"Dr. Puente Gamero, Pablo",
+"456",
+"2,1 %",
+"-0,7",
+"508",
+"2,3 %",
+"-0,9"
+],
+[
+"Tierschutzpartei",
+"Weihusen, Elke",
+"708",
+"3,3 %",
+"-0,3",
+"653",
+"3,0 %",
+"0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,1",
+"192",
+"0,9 %",
+"-0,8"
+],
+[
+"Volt",
+"Helmchen, Friederike",
+"473",
+"2,2 %",
+"2,2",
+"430",
+"2,0 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"27",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"32",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"48",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Thyrêt, Josephine",
+"1.238",
+"5,7 %",
+"5,7",
+"1.414",
+"6,5 %",
+"6,5"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"103",
+"0,5 %",
+"0,5"
+]
+]
+},
+"0305": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0305 - Pankow 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.445",
+"-",
+"-",
+"31.445",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.564",
+"78,1 %",
+"11,1",
+"24.564",
+"78,1 %",
+"11,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"360",
+"1,5 %",
+"0,6",
+"217",
+"0,9 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"24.204",
+"98,5 %",
+"-0,6",
+"24.347",
+"99,1 %",
+"-0,1"
+],
+[
+"CDU",
+"Bittner, Denise",
+"2.885",
+"11,9 %",
+"-8,9",
+"2.954",
+"12,1 %",
+"-8,5"
+],
+[
+"SPD",
+"Gröschel, Arne",
+"2.577",
+"10,6 %",
+"-7,5",
+"2.621",
+"10,8 %",
+"-6,7"
+],
+[
+"GRÜNE",
+"Krüger, Louis",
+"5.339",
+"22,1 %",
+"-0,1",
+"4.025",
+"16,5 %",
+"-3,0"
+],
+[
+"Die Linke",
+"Springob, Enja",
+"6.806",
+"28,1 %",
+"10,4",
+"7.171",
+"29,5 %",
+"11,9"
+],
+[
+"AfD",
+"Krüger, Daniel",
+"4.147",
+"17,1 %",
+"6,5",
+"4.056",
+"16,7 %",
+"6,3"
+],
+[
+"FDP",
+"Simon, Oliver",
+"497",
+"2,1 %",
+"-0,6",
+"478",
+"2,0 %",
+"-1,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,3",
+"606",
+"2,5 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,6",
+"237",
+"1,0 %",
+"-1,0"
+],
+[
+"Volt",
+"Schäfer, Tim",
+"642",
+"2,7 %",
+"2,7",
+"568",
+"2,3 %",
+"1,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"27",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"46",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"30",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Liedke, Erwin",
+"1.311",
+"5,4 %",
+"5,4",
+"1.402",
+"5,8 %",
+"5,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"114",
+"0,5 %",
+"0,5"
+]
+]
+},
+"0306": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0306 - Pankow 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.268",
+"-",
+"-",
+"32.268",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.691",
+"82,7 %",
+"11,8",
+"26.691",
+"82,7 %",
+"11,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"206",
+"0,8 %",
+"-0,0",
+"122",
+"0,5 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"26.485",
+"99,2 %",
+"0,0",
+"26.569",
+"99,5 %",
+"-0,1"
+],
+[
+"CDU",
+"Lenz, Stephan",
+"2.520",
+"9,5 %",
+"-2,7",
+"2.835",
+"10,7 %",
+"-1,4"
+],
+[
+"SPD",
+"Vierecke, Linda",
+"3.817",
+"14,4 %",
+"0,5",
+"2.728",
+"10,3 %",
+"-2,9"
+],
+[
+"GRÜNE",
+"Dr. Klaas, Sunčica",
+"8.095",
+"30,6 %",
+"-11,1",
+"7.246",
+"27,3 %",
+"-10,5"
+],
+[
+"Die Linke",
+"Bigos, Maria",
+"8.594",
+"32,4 %",
+"14,2",
+"9.385",
+"35,3 %",
+"16,2"
+],
+[
+"AfD",
+"Dr. Schweer, Christoph",
+"1.409",
+"5,3 %",
+"1,9",
+"1.434",
+"5,4 %",
+"1,9"
+],
+[
+"FDP",
+"Gastel, Ruven",
+"424",
+"1,6 %",
+"-2,4",
+"458",
+"1,7 %",
+"-2,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,1",
+"303",
+"1,1 %",
+"-0,6"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,6",
+"232",
+"0,9 %",
+"-1,2"
+],
+[
+"Volt",
+"Senftleben, Aiga",
+"882",
+"3,3 %",
+"3,3",
+"963",
+"3,6 %",
+"1,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-0,5",
+"17",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"45",
+"0,2 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"37",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Barsch, Frank",
+"744",
+"2,8 %",
+"2,8",
+"804",
+"3,0 %",
+"3,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"73",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0307": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0307 - Pankow 7 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.377",
+"-",
+"-",
+"30.377",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.996",
+"79,0 %",
+"13,2",
+"23.996",
+"79,0 %",
+"13,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"246",
+"1,0 %",
+"0,4",
+"172",
+"0,7 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"23.750",
+"99,0 %",
+"-0,4",
+"23.824",
+"99,3 %",
+"-0,3"
+],
+[
+"CDU",
+"Hohl, Sabrina",
+"2.287",
+"9,6 %",
+"-6,9",
+"2.427",
+"10,2 %",
+"-5,9"
+],
+[
+"SPD",
+"Unger, Annette",
+"2.277",
+"9,6 %",
+"-5,9",
+"2.281",
+"9,6 %",
+"-5,4"
+],
+[
+"GRÜNE",
+"Aru, Can",
+"6.161",
+"25,9 %",
+"-5,0",
+"4.791",
+"20,1 %",
+"-7,4"
+],
+[
+"Die Linke",
+"Schrader, Niklas",
+"7.616",
+"32,1 %",
+"13,7",
+"8.345",
+"35,0 %",
+"16,2"
+],
+[
+"AfD",
+"Kellner, Martin",
+"2.849",
+"12,0 %",
+"4,8",
+"2.868",
+"12,0 %",
+"4,8"
+],
+[
+"FDP",
+"Fischer, David",
+"428",
+"1,8 %",
+"-1,3",
+"447",
+"1,9 %",
+"-1,7"
+],
+[
+"Tierschutzpartei",
+"Böhnig, Mersija",
+"501",
+"2,1 %",
+"-1,1",
+"451",
+"1,9 %",
+"-0,8"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-3,2",
+"289",
+"1,2 %",
+"-1,2"
+],
+[
+"Volt",
+"Schültken, Theresa",
+"663",
+"2,8 %",
+"2,8",
+"665",
+"2,8 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"41",
+"0,2 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"41",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Reichelt, Kim",
+"968",
+"4,1 %",
+"4,1",
+"1.059",
+"4,4 %",
+"4,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"80",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0308": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0308 - Pankow 8 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.301",
+"-",
+"-",
+"30.301",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.984",
+"82,5 %",
+"11,6",
+"24.984",
+"82,5 %",
+"11,6"
+],
+[
+"Ungültige Stimmen",
+"",
+"191",
+"0,8 %",
+"0,3",
+"110",
+"0,4 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"24.793",
+"99,2 %",
+"-0,3",
+"24.874",
+"99,6 %",
+"-0,1"
+],
+[
+"CDU",
+"Meyer, Alexander",
+"2.946",
+"11,9 %",
+"-2,7",
+"3.436",
+"13,8 %",
+"-0,6"
+],
+[
+"SPD",
+"Kretschmer, Heiko",
+"2.523",
+"10,2 %",
+"-4,6",
+"2.493",
+"10,0 %",
+"-3,6"
+],
+[
+"GRÜNE",
+"Billig, Daniela",
+"8.499",
+"34,3 %",
+"-2,9",
+"6.373",
+"25,6 %",
+"-8,7"
+],
+[
+"Die Linke",
+"Viagra, Gloria",
+"6.628",
+"26,7 %",
+"8,6",
+"7.898",
+"31,8 %",
+"13,1"
+],
+[
+"AfD",
+"Rodig, Falk",
+"1.482",
+"6,0 %",
+"2,1",
+"1.511",
+"6,1 %",
+"2,2"
+],
+[
+"FDP",
+"Pfister, Maja",
+"579",
+"2,3 %",
+"-2,6",
+"573",
+"2,3 %",
+"-3,3"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,0",
+"254",
+"1,0 %",
+"-0,6"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,4",
+"184",
+"0,7 %",
+"-1,0"
+],
+[
+"Volt",
+"Bay, Domenic",
+"1.187",
+"4,8 %",
+"4,8",
+"1.158",
+"4,7 %",
+"2,5"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"37",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Berger, Oliver",
+"892",
+"3,6 %",
+"3,6",
+"851",
+"3,4 %",
+"3,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"48",
+"0,2 %",
+"0,2"
+],
+[
+"DL",
+"Dr. Ehrenberg, Eckehart",
+"57",
+"0,2 %",
+"0,2",
+"-",
+"-",
+"-"
+]
+]
+},
+"0309": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0309 - Pankow 9 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.144",
+"-",
+"-",
+"34.144",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.744",
+"78,3 %",
+"11,8",
+"26.744",
+"78,3 %",
+"11,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"329",
+"1,2 %",
+"0,6",
+"271",
+"1,0 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"26.415",
+"98,8 %",
+"-0,6",
+"26.473",
+"99,0 %",
+"-0,4"
+],
+[
+"CDU",
+"Paul, David",
+"2.431",
+"9,2 %",
+"-7,7",
+"3.134",
+"11,8 %",
+"-5,9"
+],
+[
+"SPD",
+"Schopf, Tino",
+"6.668",
+"25,2 %",
+"-0,3",
+"3.305",
+"12,5 %",
+"-5,1"
+],
+[
+"GRÜNE",
+"Dr. Jütting, Oliver",
+"4.373",
+"16,6 %",
+"-7,7",
+"4.847",
+"18,3 %",
+"-6,3"
+],
+[
+"Die Linke",
+"Schirmer, Maximilian",
+"7.423",
+"28,1 %",
+"12,8",
+"8.305",
+"31,4 %",
+"13,4"
+],
+[
+"AfD",
+"Behnke, Frank",
+"3.253",
+"12,3 %",
+"4,5",
+"3.360",
+"12,7 %",
+"4,8"
+],
+[
+"FDP",
+"Grottke, Julius",
+"435",
+"1,6 %",
+"-1,5",
+"489",
+"1,8 %",
+"-2,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,9",
+"512",
+"1,9 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,5",
+"246",
+"0,9 %",
+"-1,0"
+],
+[
+"Volt",
+"von Loeper, Paul-Johann",
+"767",
+"2,9 %",
+"2,9",
+"807",
+"3,0 %",
+"1,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"24",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"51",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"47",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Bürkle, Jobst",
+"1.065",
+"4,0 %",
+"4,0",
+"1.251",
+"4,7 %",
+"4,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"83",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0401": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0401 - Charlottenburg-Wilmersdorf 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"28.767",
+"-",
+"-",
+"28.767",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"20.089",
+"69,8 %",
+"12,8",
+"20.089",
+"69,8 %",
+"12,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"344",
+"1,7 %",
+"0,8",
+"229",
+"1,1 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"19.745",
+"98,3 %",
+"-0,8",
+"19.860",
+"98,9 %",
+"-0,3"
+],
+[
+"CDU",
+"Keilbar, Vivien-Nathalie",
+"3.327",
+"16,8 %",
+"-11,4",
+"3.486",
+"17,6 %",
+"-9,9"
+],
+[
+"SPD",
+"Kaufmann, Nicola Aleksander",
+"4.009",
+"20,3 %",
+"-3,0",
+"2.959",
+"14,9 %",
+"-5,9"
+],
+[
+"GRÜNE",
+"Brix, Jana",
+"2.614",
+"13,2 %",
+"-8,0",
+"2.780",
+"14,0 %",
+"-6,2"
+],
+[
+"Die Linke",
+"Schenker, Niklas",
+"4.905",
+"24,8 %",
+"16,8",
+"5.173",
+"26,0 %",
+"17,2"
+],
+[
+"AfD",
+"Vallendar, Marc",
+"2.771",
+"14,0 %",
+"6,2",
+"2.822",
+"14,2 %",
+"6,2"
+],
+[
+"FDP",
+"Wollschlaeger, Nicolas",
+"510",
+"2,6 %",
+"-2,3",
+"581",
+"2,9 %",
+"-2,5"
+],
+[
+"Tierschutzpartei",
+"Dufossé, Fabian",
+"465",
+"2,4 %",
+"-0,8",
+"459",
+"2,3 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,7",
+"117",
+"0,6 %",
+"-0,6"
+],
+[
+"Volt",
+"Kalbacher, Juliane",
+"354",
+"1,8 %",
+"1,8",
+"393",
+"2,0 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"30",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Schebsdat, Tereza",
+"790",
+"4,0 %",
+"4,0",
+"977",
+"4,9 %",
+"4,9"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"58",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0402": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0402 - Charlottenburg-Wilmersdorf 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.122",
+"-",
+"-",
+"31.122",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.107",
+"77,5 %",
+"8,9",
+"24.107",
+"77,5 %",
+"8,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"358",
+"1,5 %",
+"0,9",
+"232",
+"1,0 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"23.749",
+"98,5 %",
+"-0,9",
+"23.875",
+"99,0 %",
+"-0,4"
+],
+[
+"CDU",
+"Hack, Ariturel",
+"7.860",
+"33,1 %",
+"-5,6",
+"7.327",
+"30,7 %",
+"-4,8"
+],
+[
+"SPD",
+"Brandt, Clemens Wilhelm",
+"3.526",
+"14,8 %",
+"-5,7",
+"3.556",
+"14,9 %",
+"-5,7"
+],
+[
+"GRÜNE",
+"Balkow, Corinna",
+"4.484",
+"18,9 %",
+"-1,3",
+"3.860",
+"16,2 %",
+"-2,3"
+],
+[
+"Die Linke",
+"Brehm, Enrico",
+"3.380",
+"14,2 %",
+"9,6",
+"3.821",
+"16,0 %",
+"10,4"
+],
+[
+"AfD",
+"Dr. Bronson, Hugh",
+"2.267",
+"9,5 %",
+"4,4",
+"2.354",
+"9,9 %",
+"4,5"
+],
+[
+"FDP",
+"Pfeil, Fabian",
+"993",
+"4,2 %",
+"-1,8",
+"1.067",
+"4,5 %",
+"-3,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,0",
+"360",
+"1,5 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,8",
+"113",
+"0,5 %",
+"-0,6"
+],
+[
+"Volt",
+"Borrell-Alvarez, Victoria",
+"576",
+"2,4 %",
+"2,4",
+"564",
+"2,4 %",
+"1,5"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"30",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"3",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Lasert, Norbert",
+"663",
+"2,8 %",
+"2,8",
+"740",
+"3,1 %",
+"3,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"50",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0403": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0403 - Charlottenburg-Wilmersdorf 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.153",
+"-",
+"-",
+"31.153",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.599",
+"79,0 %",
+"10,2",
+"24.599",
+"79,0 %",
+"10,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"305",
+"1,2 %",
+"0,5",
+"180",
+"0,7 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"24.294",
+"98,8 %",
+"-0,5",
+"24.419",
+"99,3 %",
+"-0,1"
+],
+[
+"CDU",
+"Steuer, Kevin",
+"4.713",
+"19,4 %",
+"-6,7",
+"4.894",
+"20,0 %",
+"-4,0"
+],
+[
+"SPD",
+"Dr. Niroomand, Kian",
+"4.769",
+"19,6 %",
+"-2,0",
+"3.756",
+"15,4 %",
+"-5,3"
+],
+[
+"GRÜNE",
+"Dr. Vandrey, Petra",
+"6.243",
+"25,7 %",
+"-3,5",
+"5.406",
+"22,1 %",
+"-5,1"
+],
+[
+"Die Linke",
+"Gronde-Brunner, Frederike-Sophie",
+"4.634",
+"19,1 %",
+"9,7",
+"5.767",
+"23,6 %",
+"13,5"
+],
+[
+"AfD",
+"Kohler, Martin",
+"1.754",
+"7,2 %",
+"3,2",
+"1.846",
+"7,6 %",
+"3,4"
+],
+[
+"FDP",
+"Hamilton, Mark",
+"641",
+"2,6 %",
+"-2,3",
+"761",
+"3,1 %",
+"-3,2"
+],
+[
+"Tierschutzpartei",
+"Tyralla, Nadine",
+"336",
+"1,4 %",
+"-0,7",
+"319",
+"1,3 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,8",
+"164",
+"0,7 %",
+"-0,7"
+],
+[
+"Volt",
+"Kaaz, Rafael",
+"469",
+"1,9 %",
+"1,9",
+"595",
+"2,4 %",
+"1,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"15",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"36",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Gouverneur, Philippe",
+"687",
+"2,8 %",
+"2,8",
+"791",
+"3,2 %",
+"3,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"53",
+"0,2 %",
+"0,2"
+],
+[
+"Schnitzer",
+"Schnitzer, Sebastian Alexander",
+"48",
+"0,2 %",
+"0,2",
+"-",
+"-",
+"-"
+]
+]
+},
+"0404": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0404 - Charlottenburg-Wilmersdorf 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.381",
+"-",
+"-",
+"32.381",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.368",
+"75,3 %",
+"10,1",
+"24.368",
+"75,3 %",
+"10,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"301",
+"1,2 %",
+"0,6",
+"169",
+"0,7 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"24.067",
+"98,8 %",
+"-0,6",
+"24.199",
+"99,3 %",
+"-0,1"
+],
+[
+"CDU",
+"Niemczyk, Aldona",
+"5.895",
+"24,5 %",
+"-4,1",
+"5.963",
+"24,6 %",
+"-3,3"
+],
+[
+"SPD",
+"Sarić, Timur",
+"3.503",
+"14,6 %",
+"-7,8",
+"3.410",
+"14,1 %",
+"-6,0"
+],
+[
+"GRÜNE",
+"Wapler, Christoph",
+"5.805",
+"24,1 %",
+"-1,9",
+"4.750",
+"19,6 %",
+"-4,6"
+],
+[
+"Die Linke",
+"Städler, Felix",
+"4.274",
+"17,8 %",
+"11,0",
+"5.007",
+"20,7 %",
+"12,5"
+],
+[
+"AfD",
+"Marten, Thomas",
+"1.959",
+"8,1 %",
+"3,5",
+"2.024",
+"8,4 %",
+"3,6"
+],
+[
+"FDP",
+"Dr. Recke-Friedrich, Felix",
+"1.033",
+"4,3 %",
+"-3,0",
+"1.062",
+"4,4 %",
+"-3,6"
+],
+[
+"Tierschutzpartei",
+"Tank, Martin",
+"340",
+"1,4 %",
+"-0,5",
+"286",
+"1,2 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,3",
+"114",
+"0,5 %",
+"-0,5"
+],
+[
+"Volt",
+"Weißsteiner, Christian",
+"612",
+"2,5 %",
+"2,5",
+"693",
+"2,9 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"33",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Nguyen Thuy Dung",
+"646",
+"2,7 %",
+"2,7",
+"783",
+"3,2 %",
+"3,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"44",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0405": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0405 - Charlottenburg-Wilmersdorf 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.755",
+"-",
+"-",
+"30.755",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.236",
+"75,6 %",
+"9,4",
+"23.236",
+"75,6 %",
+"9,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"352",
+"1,5 %",
+"0,9",
+"195",
+"0,8 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"22.884",
+"98,5 %",
+"-0,9",
+"23.041",
+"99,2 %",
+"-0,4"
+],
+[
+"CDU",
+"Khalatbari, Sandra",
+"8.124",
+"35,5 %",
+"-6,8",
+"7.824",
+"34,0 %",
+"-5,1"
+],
+[
+"SPD",
+"Dr. Buß, Claudia",
+"3.348",
+"14,6 %",
+"-5,4",
+"3.120",
+"13,5 %",
+"-5,3"
+],
+[
+"GRÜNE",
+"Melnik, Anna",
+"3.765",
+"16,5 %",
+"-0,2",
+"3.332",
+"14,5 %",
+"-1,5"
+],
+[
+"Die Linke",
+"Grigoleit, Kyla",
+"2.830",
+"12,4 %",
+"8,1",
+"3.318",
+"14,4 %",
+"9,2"
+],
+[
+"AfD",
+"Paege, Stefan",
+"2.380",
+"10,4 %",
+"5,3",
+"2.472",
+"10,7 %",
+"5,3"
+],
+[
+"FDP",
+"Meyer, Christoph",
+"1.376",
+"6,0 %",
+"-1,8",
+"1.358",
+"5,9 %",
+"-4,0"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,0",
+"285",
+"1,2 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,2",
+"81",
+"0,4 %",
+"-0,5"
+],
+[
+"Volt",
+"Heitzler, Joshua",
+"479",
+"2,1 %",
+"2,1",
+"520",
+"2,3 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Dementev, Dmitrij",
+"582",
+"2,5 %",
+"2,5",
+"645",
+"2,8 %",
+"2,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"46",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0406": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0406 - Charlottenburg-Wilmersdorf 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.667",
+"-",
+"-",
+"31.667",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.306",
+"76,8 %",
+"8,8",
+"24.306",
+"76,8 %",
+"8,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"337",
+"1,4 %",
+"0,7",
+"185",
+"0,8 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"23.969",
+"98,6 %",
+"-0,7",
+"24.121",
+"99,2 %",
+"-0,2"
+],
+[
+"CDU",
+"Mock-Stümer, Peer",
+"5.736",
+"23,9 %",
+"-5,3",
+"5.758",
+"23,9 %",
+"-3,7"
+],
+[
+"SPD",
+"Dr. Biewener, Ann-Kathrin",
+"3.609",
+"15,1 %",
+"-9,0",
+"3.655",
+"15,2 %",
+"-6,5"
+],
+[
+"GRÜNE",
+"Zimmer, Jakob",
+"7.103",
+"29,6 %",
+"4,0",
+"5.146",
+"21,3 %",
+"-2,9"
+],
+[
+"Die Linke",
+"Radde, Sonja",
+"3.861",
+"16,1 %",
+"9,1",
+"5.034",
+"20,9 %",
+"12,3"
+],
+[
+"AfD",
+"Gall, Tobias",
+"1.869",
+"7,8 %",
+"3,5",
+"1.960",
+"8,1 %",
+"3,8"
+],
+[
+"FDP",
+"Saber-Coad, Sarah",
+"650",
+"2,7 %",
+"-2,7",
+"779",
+"3,2 %",
+"-3,8"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-1,9",
+"328",
+"1,4 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,4",
+"92",
+"0,4 %",
+"-0,6"
+],
+[
+"Volt",
+"Seeberg, Cara",
+"537",
+"2,2 %",
+"2,2",
+"575",
+"2,4 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"29",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Schuchert, Christian Matthias",
+"604",
+"2,5 %",
+"2,5",
+"686",
+"2,8 %",
+"2,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"45",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0407": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0407 - Charlottenburg-Wilmersdorf 7 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.533",
+"-",
+"-",
+"32.533",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.715",
+"79,0 %",
+"8,9",
+"25.715",
+"79,0 %",
+"8,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"441",
+"1,7 %",
+"1,0",
+"216",
+"0,8 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"25.274",
+"98,3 %",
+"-1,0",
+"25.499",
+"99,2 %",
+"-0,2"
+],
+[
+"CDU",
+"Dr. Badenberg, Felor",
+"6.593",
+"26,1 %",
+"-8,1",
+"6.633",
+"26,0 %",
+"-5,9"
+],
+[
+"SPD",
+"Dörstelmann, Florian",
+"4.487",
+"17,8 %",
+"-6,1",
+"4.038",
+"15,8 %",
+"-6,3"
+],
+[
+"GRÜNE",
+"Dr. Blecher, Isabel",
+"5.636",
+"22,3 %",
+"1,2",
+"4.582",
+"18,0 %",
+"-2,1"
+],
+[
+"Die Linke",
+"Kolleck, Johannes",
+"3.763",
+"14,9 %",
+"9,0",
+"4.666",
+"18,3 %",
+"11,0"
+],
+[
+"AfD",
+"Quint, Andreas",
+"2.513",
+"9,9 %",
+"4,7",
+"2.578",
+"10,1 %",
+"4,6"
+],
+[
+"FDP",
+"Dr. Lutzenberger, Martin",
+"948",
+"3,8 %",
+"-1,2",
+"910",
+"3,6 %",
+"-2,7"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,2",
+"417",
+"1,6 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,4",
+"117",
+"0,5 %",
+"-0,5"
+],
+[
+"Volt",
+"Flaam, Markus",
+"649",
+"2,6 %",
+"2,6",
+"677",
+"2,7 %",
+"1,6"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"37",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"3",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Ahmadi, Shayan",
+"685",
+"2,7 %",
+"2,7",
+"765",
+"3,0 %",
+"3,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"44",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0501": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0501 - Spandau 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.898",
+"-",
+"-",
+"34.898",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.050",
+"66,0 %",
+"12,9",
+"23.050",
+"66,0 %",
+"12,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"601",
+"2,6 %",
+"1,5",
+"370",
+"1,6 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"22.449",
+"97,4 %",
+"-1,5",
+"22.680",
+"98,4 %",
+"-0,6"
+],
+[
+"CDU",
+"Meißner, Bettina",
+"5.150",
+"22,9 %",
+"-14,4",
+"4.907",
+"21,6 %",
+"-15,6"
+],
+[
+"SPD",
+"Atli, Sebahat",
+"4.235",
+"18,9 %",
+"-5,6",
+"3.560",
+"15,7 %",
+"-6,5"
+],
+[
+"GRÜNE",
+"Frowitter, Doreen",
+"1.672",
+"7,4 %",
+"-1,7",
+"1.850",
+"8,2 %",
+"-1,4"
+],
+[
+"Die Linke",
+"Sander, Isabella-Marie",
+"3.790",
+"16,9 %",
+"12,2",
+"3.953",
+"17,4 %",
+"12,6"
+],
+[
+"AfD",
+"Tabor, Tommy",
+"5.184",
+"23,1 %",
+"10,5",
+"5.151",
+"22,7 %",
+"10,5"
+],
+[
+"FDP",
+"Maurer, Daniel",
+"700",
+"3,1 %",
+"-1,0",
+"688",
+"3,0 %",
+"-1,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,8",
+"829",
+"3,7 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"Winzen, Jakob",
+"416",
+"1,9 %",
+"0,2",
+"216",
+"1,0 %",
+"-0,2"
+],
+[
+"Volt",
+"Markgraf, Friedrich",
+"320",
+"1,4 %",
+"1,4",
+"289",
+"1,3 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"46",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Dr. Radke, Viola",
+"982",
+"4,4 %",
+"4,4",
+"1.068",
+"4,7 %",
+"4,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"87",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0502": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0502 - Spandau 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"28.442",
+"-",
+"-",
+"28.442",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"18.140",
+"63,8 %",
+"13,4",
+"18.140",
+"63,8 %",
+"13,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"520",
+"2,9 %",
+"1,5",
+"349",
+"1,9 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"17.620",
+"97,1 %",
+"-1,5",
+"17.791",
+"98,1 %",
+"-0,6"
+],
+[
+"CDU",
+"Dr. Nas, Ersin",
+"3.794",
+"21,5 %",
+"-11,7",
+"3.462",
+"19,5 %",
+"-14,4"
+],
+[
+"SPD",
+"Saleh, Raed",
+"3.680",
+"20,9 %",
+"-5,1",
+"2.828",
+"15,9 %",
+"-7,1"
+],
+[
+"GRÜNE",
+"Lange, Maurice",
+"1.349",
+"7,7 %",
+"-2,5",
+"1.448",
+"8,1 %",
+"-1,6"
+],
+[
+"Die Linke",
+"Atakul, Ender",
+"3.098",
+"17,6 %",
+"12,5",
+"3.356",
+"18,9 %",
+"13,3"
+],
+[
+"AfD",
+"Otti, Andreas",
+"4.212",
+"23,9 %",
+"10,6",
+"4.179",
+"23,5 %",
+"10,6"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-3,7",
+"425",
+"2,4 %",
+"-1,4"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-5,1",
+"595",
+"3,3 %",
+"-0,8"
+],
+[
+"Die PARTEI",
+"Hinder, Josch",
+"395",
+"2,2 %",
+"0,1",
+"186",
+"1,0 %",
+"-0,5"
+],
+[
+"Volt",
+"Scharfenort, Helmut",
+"282",
+"1,6 %",
+"1,6",
+"242",
+"1,4 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,3",
+"26",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Anders, Jochen",
+"810",
+"4,6 %",
+"4,6",
+"921",
+"5,2 %",
+"5,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"82",
+"0,5 %",
+"0,5"
+]
+]
+},
+"0503": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0503 - Spandau 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.630",
+"-",
+"-",
+"33.630",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.083",
+"65,7 %",
+"12,3",
+"22.083",
+"65,7 %",
+"12,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"563",
+"2,5 %",
+"1,5",
+"320",
+"1,4 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"21.520",
+"97,5 %",
+"-1,5",
+"21.763",
+"98,6 %",
+"-0,6"
+],
+[
+"CDU",
+"Brauner, Kerstin",
+"4.332",
+"20,1 %",
+"-14,3",
+"4.174",
+"19,2 %",
+"-15,2"
+],
+[
+"SPD",
+"Machulik, Stephan",
+"3.700",
+"17,2 %",
+"-6,7",
+"3.212",
+"14,8 %",
+"-6,5"
+],
+[
+"GRÜNE",
+"Ahmadi, Gollaleh",
+"2.104",
+"9,8 %",
+"-2,7",
+"2.065",
+"9,5 %",
+"-2,7"
+],
+[
+"Die Linke",
+"Wulfes, Thomas",
+"4.566",
+"21,2 %",
+"15,8",
+"4.735",
+"21,8 %",
+"15,8"
+],
+[
+"AfD",
+"Müller, Christian",
+"4.281",
+"19,9 %",
+"8,8",
+"4.272",
+"19,6 %",
+"8,8"
+],
+[
+"FDP",
+"Eshraghi, Leonardo",
+"598",
+"2,8 %",
+"-1,2",
+"620",
+"2,8 %",
+"-1,7"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,8",
+"658",
+"3,0 %",
+"-0,7"
+],
+[
+"Die PARTEI",
+"Grobert, Rhavin",
+"381",
+"1,8 %",
+"-0,2",
+"205",
+"0,9 %",
+"-0,5"
+],
+[
+"Volt",
+"Aurich, Philipp",
+"389",
+"1,8 %",
+"1,8",
+"330",
+"1,5 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"30",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"21",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"51",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Haß, Christian",
+"1.169",
+"5,4 %",
+"5,4",
+"1.296",
+"6,0 %",
+"6,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"84",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0504": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0504 - Spandau 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.088",
+"-",
+"-",
+"31.088",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"21.918",
+"70,5 %",
+"10,6",
+"21.918",
+"70,5 %",
+"10,6"
+],
+[
+"Ungültige Stimmen",
+"",
+"522",
+"2,4 %",
+"1,2",
+"378",
+"1,7 %",
+"0,8"
+],
+[
+"Gültige Stimmen",
+"",
+"21.396",
+"97,6 %",
+"-1,2",
+"21.540",
+"98,3 %",
+"-0,8"
+],
+[
+"CDU",
+"Melzer, Heiko",
+"6.281",
+"29,4 %",
+"-16,0",
+"5.889",
+"27,3 %",
+"-16,5"
+],
+[
+"SPD",
+"Rumza, Marco",
+"3.439",
+"16,1 %",
+"-7,0",
+"3.182",
+"14,8 %",
+"-6,4"
+],
+[
+"GRÜNE",
+"Sporleder, Leif",
+"1.451",
+"6,8 %",
+"-0,5",
+"1.569",
+"7,3 %",
+"-0,5"
+],
+[
+"Die Linke",
+"Krüger, Hanna Lena",
+"2.752",
+"12,9 %",
+"9,7",
+"2.871",
+"13,3 %",
+"9,8"
+],
+[
+"AfD",
+"Mickley, Robert",
+"5.024",
+"23,5 %",
+"12,0",
+"5.181",
+"24,1 %",
+"12,7"
+],
+[
+"FDP",
+"Hamann, Dominik",
+"587",
+"2,7 %",
+"-0,8",
+"663",
+"3,1 %",
+"-1,0"
+],
+[
+"Tierschutzpartei",
+"Pfeiffer, Jan",
+"807",
+"3,8 %",
+"-0,0",
+"739",
+"3,4 %",
+"0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,4",
+"164",
+"0,8 %",
+"-0,3"
+],
+[
+"Volt",
+"Breinl, Marie",
+"266",
+"1,2 %",
+"1,2",
+"248",
+"1,2 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Gellert, Cornelius",
+"789",
+"3,7 %",
+"3,7",
+"907",
+"4,2 %",
+"4,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"72",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0505": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0505 - Spandau 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.802",
+"-",
+"-",
+"31.802",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.279",
+"76,3 %",
+"8,8",
+"24.279",
+"76,3 %",
+"8,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"458",
+"1,9 %",
+"1,1",
+"322",
+"1,3 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"23.821",
+"98,1 %",
+"-1,1",
+"23.957",
+"98,7 %",
+"-0,6"
+],
+[
+"CDU",
+"Wegner, Kai",
+"7.583",
+"31,8 %",
+"-15,1",
+"7.863",
+"32,8 %",
+"-11,0"
+],
+[
+"SPD",
+"Drescher, Susanne",
+"4.619",
+"19,4 %",
+"-2,6",
+"3.622",
+"15,1 %",
+"-5,3"
+],
+[
+"GRÜNE",
+"Kossok-Spieß, Dara",
+"2.566",
+"10,8 %",
+"0,1",
+"2.747",
+"11,5 %",
+"0,3"
+],
+[
+"Die Linke",
+"Stephan, Fritz",
+"2.243",
+"9,4 %",
+"6,7",
+"2.649",
+"11,1 %",
+"7,8"
+],
+[
+"AfD",
+"Porsch, Frithjof",
+"4.088",
+"17,2 %",
+"9,1",
+"4.147",
+"17,3 %",
+"8,8"
+],
+[
+"FDP",
+"Fresdorf, Paul",
+"982",
+"4,1 %",
+"-0,5",
+"939",
+"3,9 %",
+"-2,0"
+],
+[
+"Tierschutzpartei",
+"Maricano, Vivien",
+"603",
+"2,5 %",
+"-0,6",
+"528",
+"2,2 %",
+"-0,5"
+],
+[
+"Die PARTEI",
+"Spötter, Jacob",
+"169",
+"0,7 %",
+"-0,5",
+"133",
+"0,6 %",
+"-0,3"
+],
+[
+"Volt",
+"Schwarm, Danina Margit",
+"360",
+"1,5 %",
+"1,5",
+"395",
+"1,6 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"45",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Rezvani, Peyman",
+"608",
+"2,6 %",
+"2,6",
+"819",
+"3,4 %",
+"3,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"43",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0601": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0601 - Steglitz-Zehlendorf 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.046",
+"-",
+"-",
+"32.046",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.617",
+"79,9 %",
+"9,0",
+"25.617",
+"79,9 %",
+"9,0"
+],
+[
+"Ungültige Stimmen",
+"",
+"343",
+"1,3 %",
+"0,7",
+"196",
+"0,8 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"25.274",
+"98,7 %",
+"-0,7",
+"25.421",
+"99,2 %",
+"-0,3"
+],
+[
+"CDU",
+"Dr. Wein, Claudia",
+"6.147",
+"24,3 %",
+"-5,8",
+"6.013",
+"23,7 %",
+"-5,0"
+],
+[
+"SPD",
+"Grün, Franziska",
+"4.135",
+"16,4 %",
+"-3,5",
+"3.963",
+"15,6 %",
+"-4,9"
+],
+[
+"GRÜNE",
+"Wojahn, Tonka",
+"6.219",
+"24,6 %",
+"-4,0",
+"5.108",
+"20,1 %",
+"-3,4"
+],
+[
+"Die Linke",
+"Otto, Marcus",
+"4.254",
+"16,8 %",
+"11,1",
+"5.186",
+"20,4 %",
+"12,8"
+],
+[
+"AfD",
+"Dr. Brinker, Kristin",
+"2.355",
+"9,3 %",
+"4,0",
+"2.314",
+"9,1 %",
+"3,8"
+],
+[
+"FDP",
+"Concu, Katharina",
+"723",
+"2,9 %",
+"-2,0",
+"750",
+"3,0 %",
+"-3,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,5",
+"387",
+"1,5 %",
+"-0,5"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,5",
+"179",
+"0,7 %",
+"-0,6"
+],
+[
+"Volt",
+"Schäffler, Nina",
+"691",
+"2,7 %",
+"2,7",
+"571",
+"2,2 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"42",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Zimmer, Sabine",
+"750",
+"3,0 %",
+"3,0",
+"788",
+"3,1 %",
+"3,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"80",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0602": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0602 - Steglitz-Zehlendorf 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.957",
+"-",
+"-",
+"30.957",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.961",
+"77,4 %",
+"9,8",
+"23.961",
+"77,4 %",
+"9,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"372",
+"1,6 %",
+"0,7",
+"240",
+"1,0 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"23.589",
+"98,4 %",
+"-0,7",
+"23.721",
+"99,0 %",
+"-0,3"
+],
+[
+"CDU",
+"Cywinski, Tom",
+"5.362",
+"22,7 %",
+"-8,6",
+"5.239",
+"22,1 %",
+"-8,0"
+],
+[
+"SPD",
+"Krach, Steffen",
+"4.647",
+"19,7 %",
+"-4,4",
+"3.914",
+"16,5 %",
+"-5,1"
+],
+[
+"GRÜNE",
+"Eliasson, Daniel",
+"4.848",
+"20,6 %",
+"-1,7",
+"4.241",
+"17,9 %",
+"-2,9"
+],
+[
+"Die Linke",
+"Brychcy, Franziska",
+"4.139",
+"17,5 %",
+"11,5",
+"4.782",
+"20,2 %",
+"13,1"
+],
+[
+"AfD",
+"Estenried, Yasmin",
+"2.607",
+"11,1 %",
+"5,1",
+"2.683",
+"11,3 %",
+"5,3"
+],
+[
+"FDP",
+"Bobeck, Dominique",
+"673",
+"2,9 %",
+"-2,1",
+"732",
+"3,1 %",
+"-3,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,8",
+"487",
+"2,1 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,5",
+"130",
+"0,5 %",
+"-0,6"
+],
+[
+"Volt",
+"Jacobi, Carsten",
+"524",
+"2,2 %",
+"2,2",
+"512",
+"2,2 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"44",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Farner, Jonathan",
+"789",
+"3,3 %",
+"3,3",
+"838",
+"3,5 %",
+"3,5"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"79",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0603": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0603 - Steglitz-Zehlendorf 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.328",
+"-",
+"-",
+"31.328",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.616",
+"81,8 %",
+"7,3",
+"25.616",
+"81,8 %",
+"7,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"362",
+"1,4 %",
+"0,3",
+"181",
+"0,7 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"25.254",
+"98,6 %",
+"-0,3",
+"25.435",
+"99,3 %",
+"-0,2"
+],
+[
+"CDU",
+"Hoffmann, Jens",
+"8.398",
+"33,3 %",
+"-7,2",
+"8.267",
+"32,5 %",
+"-4,3"
+],
+[
+"SPD",
+"Matz, Martin",
+"4.327",
+"17,1 %",
+"-4,5",
+"4.108",
+"16,2 %",
+"-4,3"
+],
+[
+"GRÜNE",
+"Peterson, Rena",
+"5.274",
+"20,9 %",
+"1,6",
+"4.476",
+"17,6 %",
+"-0,4"
+],
+[
+"Die Linke",
+"Dr. Egginger-Gonzalez, Dennis",
+"2.573",
+"10,2 %",
+"6,3",
+"3.145",
+"12,4 %",
+"7,5"
+],
+[
+"AfD",
+"Döhnert, Peer",
+"2.469",
+"9,8 %",
+"5,0",
+"2.553",
+"10,0 %",
+"5,1"
+],
+[
+"FDP",
+"Trommershausen, Jan",
+"954",
+"3,8 %",
+"-2,2",
+"1.027",
+"4,0 %",
+"-4,7"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,0",
+"334",
+"1,3 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,0",
+"104",
+"0,4 %",
+"-0,4"
+],
+[
+"Volt",
+"Partey, Ingo",
+"693",
+"2,7 %",
+"2,7",
+"679",
+"2,7 %",
+"1,6"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Heidloff, Andreas",
+"566",
+"2,2 %",
+"2,2",
+"611",
+"2,4 %",
+"2,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"72",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0604": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0604 - Steglitz-Zehlendorf 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.317",
+"-",
+"-",
+"31.317",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.243",
+"77,4 %",
+"9,1",
+"24.243",
+"77,4 %",
+"9,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"436",
+"1,8 %",
+"1,0",
+"237",
+"1,0 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"23.807",
+"98,2 %",
+"-1,0",
+"24.006",
+"99,0 %",
+"-0,3"
+],
+[
+"CDU",
+"Seibeld, Cornelia",
+"7.782",
+"32,7 %",
+"-9,1",
+"7.234",
+"30,1 %",
+"-8,9"
+],
+[
+"SPD",
+"Macmillan, Carolyn",
+"3.912",
+"16,4 %",
+"-5,6",
+"4.036",
+"16,8 %",
+"-4,2"
+],
+[
+"GRÜNE",
+"Ruhl, Klara",
+"4.126",
+"17,3 %",
+"1,6",
+"3.419",
+"14,2 %",
+"-0,6"
+],
+[
+"Die Linke",
+"Gruner, Mathias",
+"2.821",
+"11,8 %",
+"7,5",
+"3.308",
+"13,8 %",
+"9,1"
+],
+[
+"AfD",
+"Georgi, Hans-Jürgen",
+"2.988",
+"12,6 %",
+"5,9",
+"3.071",
+"12,8 %",
+"6,2"
+],
+[
+"FDP",
+"Specht-Habbel, Mathia",
+"797",
+"3,3 %",
+"-2,0",
+"917",
+"3,8 %",
+"-3,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,7",
+"439",
+"1,8 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"103",
+"0,4 %",
+"-0,5"
+],
+[
+"Volt",
+"Jendis, Ole",
+"590",
+"2,5 %",
+"2,5",
+"517",
+"2,2 %",
+"1,5"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"44",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Wirbel, Anja",
+"791",
+"3,3 %",
+"3,3",
+"822",
+"3,4 %",
+"3,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"64",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0605": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0605 - Steglitz-Zehlendorf 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.171",
+"-",
+"-",
+"30.171",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.397",
+"74,2 %",
+"10,2",
+"22.397",
+"74,2 %",
+"10,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"412",
+"1,8 %",
+"1,0",
+"253",
+"1,1 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"21.985",
+"98,2 %",
+"-1,0",
+"22.144",
+"98,9 %",
+"-0,4"
+],
+[
+"CDU",
+"Hahnfeld, Marco",
+"6.263",
+"28,5 %",
+"-12,7",
+"6.081",
+"27,5 %",
+"-10,9"
+],
+[
+"SPD",
+"Golm, Mirjam",
+"3.708",
+"16,9 %",
+"-4,4",
+"3.403",
+"15,4 %",
+"-5,2"
+],
+[
+"GRÜNE",
+"Dr. Kosmas, Konstantinos",
+"3.393",
+"15,4 %",
+"0,7",
+"2.821",
+"12,7 %",
+"-0,7"
+],
+[
+"Die Linke",
+"Kreis, Kevin",
+"3.070",
+"14,0 %",
+"9,9",
+"3.493",
+"15,8 %",
+"10,9"
+],
+[
+"AfD",
+"Päßler, Frank",
+"3.524",
+"16,0 %",
+"8,1",
+"3.460",
+"15,6 %",
+"7,4"
+],
+[
+"FDP",
+"Preisler, Karoline",
+"828",
+"3,8 %",
+"-1,0",
+"774",
+"3,5 %",
+"-2,8"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,8",
+"531",
+"2,4 %",
+"0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,3",
+"121",
+"0,5 %",
+"-0,4"
+],
+[
+"Volt",
+"Pedraza Jaramillo, Camilo",
+"470",
+"2,1 %",
+"2,1",
+"422",
+"1,9 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"44",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Evdokimov, Wladimir",
+"729",
+"3,3 %",
+"3,3",
+"876",
+"4,0 %",
+"4,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"83",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0606": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0606 - Steglitz-Zehlendorf 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.091",
+"-",
+"-",
+"32.091",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.611",
+"82,9 %",
+"7,5",
+"26.611",
+"82,9 %",
+"7,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"389",
+"1,5 %",
+"0,8",
+"233",
+"0,9 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"26.222",
+"98,5 %",
+"-0,8",
+"26.378",
+"99,1 %",
+"-0,4"
+],
+[
+"CDU",
+"Wegener, Christoph",
+"8.820",
+"33,6 %",
+"-6,3",
+"8.866",
+"33,6 %",
+"-2,9"
+],
+[
+"SPD",
+"Dr. Czyborra, Ina",
+"4.080",
+"15,6 %",
+"-4,4",
+"3.831",
+"14,5 %",
+"-4,3"
+],
+[
+"GRÜNE",
+"Gaedicke, Michael",
+"5.599",
+"21,4 %",
+"1,0",
+"4.766",
+"18,1 %",
+"-1,1"
+],
+[
+"Die Linke",
+"Wiebelt, Lara",
+"2.917",
+"11,1 %",
+"6,9",
+"3.486",
+"13,2 %",
+"7,9"
+],
+[
+"AfD",
+"Hammermeister, Jonas",
+"2.227",
+"8,5 %",
+"3,9",
+"2.406",
+"9,1 %",
+"4,3"
+],
+[
+"FDP",
+"Bauschke, Tobias",
+"1.122",
+"4,3 %",
+"-2,5",
+"1.102",
+"4,2 %",
+"-5,3"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-1,8",
+"356",
+"1,3 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-0,9",
+"103",
+"0,4 %",
+"-0,3"
+],
+[
+"Volt",
+"Dr. Kämmer, Susann",
+"815",
+"3,1 %",
+"3,1",
+"737",
+"2,8 %",
+"1,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"33",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"3",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Röschert, Nicolai",
+"642",
+"2,4 %",
+"2,4",
+"627",
+"2,4 %",
+"2,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"41",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0607": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0607 - Steglitz-Zehlendorf 7 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.929",
+"-",
+"-",
+"29.929",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.048",
+"83,7 %",
+"6,9",
+"25.048",
+"83,7 %",
+"6,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"311",
+"1,2 %",
+"0,7",
+"184",
+"0,7 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"24.737",
+"98,8 %",
+"-0,7",
+"24.864",
+"99,3 %",
+"-0,4"
+],
+[
+"CDU",
+"Standfuß, Stephan",
+"9.458",
+"38,2 %",
+"-1,9",
+"9.216",
+"37,1 %",
+"-1,3"
+],
+[
+"SPD",
+"Buchta, Norbert",
+"3.413",
+"13,8 %",
+"-4,7",
+"3.507",
+"14,1 %",
+"-4,6"
+],
+[
+"GRÜNE",
+"Lambeck, Silke",
+"5.150",
+"20,8 %",
+"1,0",
+"4.337",
+"17,4 %",
+"-0,7"
+],
+[
+"Die Linke",
+"Dr. Günter, Bettina",
+"2.167",
+"8,8 %",
+"5,7",
+"2.644",
+"10,6 %",
+"6,6"
+],
+[
+"AfD",
+"Graffstädt, Volker",
+"2.256",
+"9,1 %",
+"4,7",
+"2.345",
+"9,4 %",
+"4,6"
+],
+[
+"FDP",
+"Krumrey, Hanns-Henning",
+"1.271",
+"5,1 %",
+"-5,1",
+"1.284",
+"5,2 %",
+"-5,5"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-1,9",
+"294",
+"1,2 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-0,8",
+"98",
+"0,4 %",
+"-0,1"
+],
+[
+"Volt",
+"von Jagow, Ludwig",
+"585",
+"2,4 %",
+"2,4",
+"588",
+"2,4 %",
+"1,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Moser, Saskia",
+"437",
+"1,8 %",
+"1,8",
+"439",
+"1,8 %",
+"1,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"49",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0701": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0701 - Tempelhof-Schöneberg 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"35.034",
+"-",
+"-",
+"35.034",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.870",
+"76,7 %",
+"12,4",
+"26.870",
+"76,7 %",
+"12,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"360",
+"1,3 %",
+"0,6",
+"186",
+"0,7 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"26.510",
+"98,7 %",
+"-0,6",
+"26.684",
+"99,3 %",
+"-0,1"
+],
+[
+"CDU",
+"Senge, Katharina",
+"4.420",
+"16,7 %",
+"-5,4",
+"4.503",
+"16,9 %",
+"-4,2"
+],
+[
+"SPD",
+"Neumann, Wiebke",
+"3.698",
+"13,9 %",
+"-7,0",
+"3.600",
+"13,5 %",
+"-5,8"
+],
+[
+"GRÜNE",
+"Walter, Sebastian",
+"7.274",
+"27,4 %",
+"-7,0",
+"5.898",
+"22,1 %",
+"-9,0"
+],
+[
+"Die Linke",
+"Staudt, Elisabeth",
+"6.916",
+"26,1 %",
+"15,0",
+"7.920",
+"29,7 %",
+"17,4"
+],
+[
+"AfD",
+"Schröter, Christoph",
+"1.783",
+"6,7 %",
+"2,9",
+"1.844",
+"6,9 %",
+"2,9"
+],
+[
+"FDP",
+"Frede, Reinhard",
+"544",
+"2,1 %",
+"-2,1",
+"651",
+"2,4 %",
+"-2,3"
+],
+[
+"Tierschutzpartei",
+"Poschinski, Nico",
+"414",
+"1,6 %",
+"1,6",
+"308",
+"1,2 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,7",
+"143",
+"0,5 %",
+"-0,6"
+],
+[
+"Volt",
+"Demant, Rahel",
+"579",
+"2,2 %",
+"2,2",
+"629",
+"2,4 %",
+"1,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"24",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Pietschmann, Cajus",
+"882",
+"3,3 %",
+"3,3",
+"1.052",
+"3,9 %",
+"3,9"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"57",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0702": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0702 - Tempelhof-Schöneberg 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.576",
+"-",
+"-",
+"33.576",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.224",
+"78,1 %",
+"12,1",
+"26.224",
+"78,1 %",
+"12,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"330",
+"1,3 %",
+"0,1",
+"210",
+"0,8 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"25.894",
+"98,7 %",
+"-0,1",
+"26.014",
+"99,2 %",
+"-0,3"
+],
+[
+"CDU",
+"Kulina, Katharina",
+"3.109",
+"12,0 %",
+"-5,7",
+"3.401",
+"13,1 %",
+"-4,1"
+],
+[
+"SPD",
+"Biel, Michael",
+"4.389",
+"16,9 %",
+"-5,1",
+"3.602",
+"13,8 %",
+"-5,4"
+],
+[
+"GRÜNE",
+"Zander-Rade, Martina",
+"7.602",
+"29,4 %",
+"-7,5",
+"6.352",
+"24,4 %",
+"-9,8"
+],
+[
+"Die Linke",
+"Șenyüz, Asya",
+"7.045",
+"27,2 %",
+"15,8",
+"8.462",
+"32,5 %",
+"19,1"
+],
+[
+"AfD",
+"Kraft, Diana Alekseevna",
+"1.629",
+"6,3 %",
+"2,6",
+"1.672",
+"6,4 %",
+"2,8"
+],
+[
+"FDP",
+"Padberg, Ruben",
+"395",
+"1,5 %",
+"-1,5",
+"467",
+"1,8 %",
+"-1,9"
+],
+[
+"Tierschutzpartei",
+"Carroll, Viola",
+"447",
+"1,7 %",
+"-0,5",
+"383",
+"1,5 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,9",
+"159",
+"0,6 %",
+"-0,6"
+],
+[
+"Volt",
+"Cerny, Alain",
+"451",
+"1,7 %",
+"1,7",
+"523",
+"2,0 %",
+"0,5"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"21",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Görülü, Çiǧdem",
+"744",
+"2,9 %",
+"2,9",
+"857",
+"3,3 %",
+"3,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"54",
+"0,2 %",
+"0,2"
+],
+[
+"Trockle",
+"Trockle, Nuri",
+"83",
+"0,3 %",
+"0,3",
+"-",
+"-",
+"-"
+]
+]
+},
+"0703": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0703 - Tempelhof-Schöneberg 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.950",
+"-",
+"-",
+"34.950",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"28.581",
+"81,8 %",
+"9,7",
+"28.581",
+"81,8 %",
+"9,7"
+],
+[
+"Ungültige Stimmen",
+"",
+"265",
+"0,9 %",
+"0,3",
+"223",
+"0,8 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"28.316",
+"99,1 %",
+"-0,3",
+"28.358",
+"99,2 %",
+"-0,3"
+],
+[
+"CDU",
+"Schoeler, Christian",
+"4.897",
+"17,3 %",
+"-5,8",
+"5.121",
+"18,1 %",
+"-4,9"
+],
+[
+"SPD",
+"Özdemir, Orkan",
+"7.405",
+"26,2 %",
+"-6,0",
+"4.686",
+"16,5 %",
+"-5,4"
+],
+[
+"GRÜNE",
+"Störmer, Christoph",
+"7.955",
+"28,1 %",
+"1,3",
+"7.249",
+"25,6 %",
+"-4,5"
+],
+[
+"Die Linke",
+"Immer, Christophe",
+"4.119",
+"14,5 %",
+"8,4",
+"6.471",
+"22,8 %",
+"13,7"
+],
+[
+"AfD",
+"Heinze, André",
+"1.859",
+"6,6 %",
+"2,9",
+"2.003",
+"7,1 %",
+"3,1"
+],
+[
+"FDP",
+"Schwemmlein, Marcel",
+"555",
+"2,0 %",
+"-1,5",
+"683",
+"2,4 %",
+"-2,3"
+],
+[
+"Tierschutzpartei",
+"Hägele, Corinna",
+"415",
+"1,5 %",
+"-0,4",
+"390",
+"1,4 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,3",
+"136",
+"0,5 %",
+"-0,7"
+],
+[
+"Volt",
+"Schneider, Faranak",
+"434",
+"1,5 %",
+"1,5",
+"645",
+"2,3 %",
+"1,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,1",
+"36",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Simmons, Marvin",
+"677",
+"2,4 %",
+"2,4",
+"842",
+"3,0 %",
+"3,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"55",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0704": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0704 - Tempelhof-Schöneberg 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.710",
+"-",
+"-",
+"32.710",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.633",
+"75,3 %",
+"10,6",
+"24.633",
+"75,3 %",
+"10,6"
+],
+[
+"Ungültige Stimmen",
+"",
+"446",
+"1,8 %",
+"1,0",
+"241",
+"1,0 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"24.187",
+"98,2 %",
+"-1,0",
+"24.392",
+"99,0 %",
+"-0,3"
+],
+[
+"CDU",
+"Luhmann, Frank",
+"4.091",
+"16,9 %",
+"-11,5",
+"3.996",
+"16,4 %",
+"-11,4"
+],
+[
+"SPD",
+"Kühnemann-Grunow, Melanie",
+"3.451",
+"14,3 %",
+"-5,8",
+"3.467",
+"14,2 %",
+"-4,9"
+],
+[
+"GRÜNE",
+"Suka, Aferdita",
+"5.929",
+"24,5 %",
+"-1,9",
+"4.535",
+"18,6 %",
+"-4,7"
+],
+[
+"Die Linke",
+"Bremer, Sarah",
+"6.170",
+"25,5 %",
+"16,6",
+"6.937",
+"28,4 %",
+"18,3"
+],
+[
+"AfD",
+"Schroiff, Miriam Rita",
+"2.538",
+"10,5 %",
+"4,7",
+"2.590",
+"10,6 %",
+"4,8"
+],
+[
+"FDP",
+"Stammen, André",
+"512",
+"2,1 %",
+"-1,3",
+"549",
+"2,3 %",
+"-1,7"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,8",
+"506",
+"2,1 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,0",
+"173",
+"0,7 %",
+"-0,7"
+],
+[
+"Volt",
+"Schmid, Laura",
+"529",
+"2,2 %",
+"2,2",
+"415",
+"1,7 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"23",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"32",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Farrherr, Michael",
+"967",
+"4,0 %",
+"4,0",
+"1.049",
+"4,3 %",
+"4,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"73",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0705": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0705 - Tempelhof-Schöneberg 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.239",
+"-",
+"-",
+"33.239",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.319",
+"70,2 %",
+"10,3",
+"23.319",
+"70,2 %",
+"10,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"532",
+"2,3 %",
+"1,3",
+"314",
+"1,3 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"22.787",
+"97,7 %",
+"-1,3",
+"23.005",
+"98,7 %",
+"-0,4"
+],
+[
+"CDU",
+"Simon, Roman",
+"5.682",
+"24,9 %",
+"-15,4",
+"5.392",
+"23,4 %",
+"-15,1"
+],
+[
+"SPD",
+"Schlüsselburg, Sebastian",
+"3.916",
+"17,2 %",
+"-5,1",
+"3.426",
+"14,9 %",
+"-5,4"
+],
+[
+"GRÜNE",
+"Matešković, Dennis",
+"2.710",
+"11,9 %",
+"-0,6",
+"2.503",
+"10,9 %",
+"-1,2"
+],
+[
+"Die Linke",
+"Böltes, Christoph",
+"4.492",
+"19,7 %",
+"13,4",
+"4.826",
+"21,0 %",
+"14,6"
+],
+[
+"AfD",
+"Hansel, Frank-Christian",
+"3.748",
+"16,4 %",
+"7,7",
+"3.754",
+"16,3 %",
+"7,7"
+],
+[
+"FDP",
+"Röder, Frank",
+"654",
+"2,9 %",
+"-1,2",
+"674",
+"2,9 %",
+"-2,0"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,4",
+"583",
+"2,5 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,6",
+"159",
+"0,7 %",
+"-0,4"
+],
+[
+"Volt",
+"Kühne, Niklas",
+"559",
+"2,5 %",
+"2,5",
+"409",
+"1,8 %",
+"1,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,3",
+"48",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Reuther, Dominik",
+"1.026",
+"4,5 %",
+"4,5",
+"1.108",
+"4,8 %",
+"4,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"73",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0706": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0706 - Tempelhof-Schöneberg 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.256",
+"-",
+"-",
+"31.256",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.658",
+"72,5 %",
+"9,3",
+"22.658",
+"72,5 %",
+"9,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"464",
+"2,0 %",
+"1,0",
+"300",
+"1,3 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"22.194",
+"98,0 %",
+"-1,0",
+"22.358",
+"98,7 %",
+"-0,3"
+],
+[
+"CDU",
+"Körber, Scott",
+"7.063",
+"31,8 %",
+"-15,6",
+"6.834",
+"30,6 %",
+"-15,1"
+],
+[
+"SPD",
+"Schworck, Oliver",
+"3.532",
+"15,9 %",
+"-4,8",
+"3.201",
+"14,3 %",
+"-5,7"
+],
+[
+"GRÜNE",
+"Kreft, Charlotte",
+"2.146",
+"9,7 %",
+"0,1",
+"1.965",
+"8,8 %",
+"-0,3"
+],
+[
+"Die Linke",
+"Zahoransky von Worlik, Max",
+"2.580",
+"11,6 %",
+"8,0",
+"2.998",
+"13,4 %",
+"9,6"
+],
+[
+"AfD",
+"Franck, Karsten",
+"4.351",
+"19,6 %",
+"10,0",
+"4.469",
+"20,0 %",
+"10,4"
+],
+[
+"FDP",
+"Deines, Sergej",
+"657",
+"3,0 %",
+"-1,1",
+"757",
+"3,4 %",
+"-1,4"
+],
+[
+"Tierschutzpartei",
+"Monka, Sara",
+"603",
+"2,7 %",
+"-0,3",
+"578",
+"2,6 %",
+"0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,2",
+"111",
+"0,5 %",
+"-0,3"
+],
+[
+"Volt",
+"Ehlting, Jan",
+"308",
+"1,4 %",
+"1,4",
+"273",
+"1,2 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"40",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"King, Alexander",
+"954",
+"4,3 %",
+"4,3",
+"1.028",
+"4,6 %",
+"4,6"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"59",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0707": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0707 - Tempelhof-Schöneberg 7 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.586",
+"-",
+"-",
+"32.586",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.230",
+"74,4 %",
+"7,6",
+"24.230",
+"74,4 %",
+"7,6"
+],
+[
+"Ungültige Stimmen",
+"",
+"525",
+"2,2 %",
+"1,2",
+"314",
+"1,3 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"23.705",
+"97,8 %",
+"-1,2",
+"23.916",
+"98,7 %",
+"-0,5"
+],
+[
+"CDU",
+"Zander, Christian",
+"8.291",
+"35,0 %",
+"-14,7",
+"7.590",
+"31,7 %",
+"-15,6"
+],
+[
+"SPD",
+"Hertlein, Annette",
+"3.236",
+"13,7 %",
+"-5,9",
+"3.253",
+"13,6 %",
+"-5,6"
+],
+[
+"GRÜNE",
+"Hild, Katharina",
+"2.650",
+"11,2 %",
+"1,5",
+"2.411",
+"10,1 %",
+"1,0"
+],
+[
+"Die Linke",
+"Marg, Katharina",
+"2.798",
+"11,8 %",
+"8,6",
+"2.891",
+"12,1 %",
+"8,5"
+],
+[
+"AfD",
+"Turban, Karl-Heinz",
+"4.619",
+"19,5 %",
+"10,6",
+"4.765",
+"19,9 %",
+"11,0"
+],
+[
+"FDP",
+"Bering, Axel",
+"833",
+"3,5 %",
+"-0,8",
+"896",
+"3,7 %",
+"-1,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,1",
+"651",
+"2,7 %",
+"0,5"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,1",
+"110",
+"0,5 %",
+"-0,3"
+],
+[
+"Volt",
+"von Haldenwang, Sebastian",
+"410",
+"1,7 %",
+"1,7",
+"348",
+"1,5 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"34",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Brandt, Christina",
+"868",
+"3,7 %",
+"3,7",
+"848",
+"3,5 %",
+"3,5"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"79",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0801": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0801 - Neukölln 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.892",
+"-",
+"-",
+"31.892",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.535",
+"73,8 %",
+"12,9",
+"23.535",
+"73,8 %",
+"12,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"311",
+"1,3 %",
+"0,7",
+"183",
+"0,8 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"23.224",
+"98,7 %",
+"-0,7",
+"23.352",
+"99,2 %",
+"-0,3"
+],
+[
+"CDU",
+"Annone, Davide",
+"1.404",
+"6,0 %",
+"-4,6",
+"1.420",
+"6,1 %",
+"-4,2"
+],
+[
+"SPD",
+"Roever, Anne",
+"2.163",
+"9,3 %",
+"-5,6",
+"2.056",
+"8,8 %",
+"-5,6"
+],
+[
+"GRÜNE",
+"Schulze, André",
+"6.026",
+"25,9 %",
+"-9,2",
+"4.885",
+"20,9 %",
+"-14,5"
+],
+[
+"Die Linke",
+"Emde, Vanessa",
+"10.731",
+"46,2 %",
+"19,9",
+"11.708",
+"50,1 %",
+"25,3"
+],
+[
+"AfD",
+"Bruns, Tobias",
+"1.271",
+"5,5 %",
+"2,0",
+"1.281",
+"5,5 %",
+"2,1"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-1,6",
+"205",
+"0,9 %",
+"-0,9"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,2",
+"307",
+"1,3 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"Buchwald, Almut",
+"385",
+"1,7 %",
+"-1,5",
+"231",
+"1,0 %",
+"-1,5"
+],
+[
+"Volt",
+"Isensee, Johanna",
+"318",
+"1,4 %",
+"1,4",
+"354",
+"1,5 %",
+"0,6"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-1,9",
+"19",
+"0,1 %",
+"-0,5"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"38",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Diehl, Wiebke",
+"719",
+"3,1 %",
+"3,1",
+"781",
+"3,3 %",
+"3,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"0,2"
+],
+[
+"Ngwa",
+"Ngwa, Albert",
+"207",
+"0,9 %",
+"0,9",
+"-",
+"-",
+"-"
+]
+]
+},
+"0802": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0802 - Neukölln 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.127",
+"-",
+"-",
+"32.127",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.839",
+"71,1 %",
+"13,9",
+"22.839",
+"71,1 %",
+"13,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"385",
+"1,7 %",
+"0,7",
+"173",
+"0,8 %",
+"0,1"
+],
+[
+"Gültige Stimmen",
+"",
+"22.454",
+"98,3 %",
+"-0,7",
+"22.666",
+"99,2 %",
+"-0,1"
+],
+[
+"CDU",
+"Karadaǧ, Büșra",
+"1.180",
+"5,3 %",
+"-5,4",
+"1.193",
+"5,3 %",
+"-4,4"
+],
+[
+"SPD",
+"Mende, Charlotte",
+"1.889",
+"8,4 %",
+"-6,2",
+"1.835",
+"8,1 %",
+"-6,2"
+],
+[
+"GRÜNE",
+"Haghanipour, Bahar",
+"5.263",
+"23,4 %",
+"-11,0",
+"4.439",
+"19,6 %",
+"-16,2"
+],
+[
+"Die Linke",
+"Dehne, Philipp-Martin",
+"11.218",
+"50,0 %",
+"19,2",
+"12.034",
+"53,1 %",
+"27,4"
+],
+[
+"AfD",
+"Marquardt, Matthias",
+"1.247",
+"5,6 %",
+"2,0",
+"1.273",
+"5,6 %",
+"2,3"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-",
+"170",
+"0,8 %",
+"-1,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,1",
+"278",
+"1,2 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"* Hempel, Otto",
+"281",
+"1,3 %",
+"-1,4",
+"176",
+"0,8 %",
+"-1,3"
+],
+[
+"Volt",
+"Dr. Bristow, Mathew",
+"411",
+"1,8 %",
+"1,8",
+"382",
+"1,7 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,6"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,1",
+"22",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Dr. Lüders, Michael",
+"852",
+"3,8 %",
+"3,8",
+"769",
+"3,4 %",
+"3,4"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"38",
+"0,2 %",
+"0,2"
+],
+[
+"Lindlmair",
+"Lindlmair, Thomas",
+"113",
+"0,5 %",
+"0,5",
+"-",
+"-",
+"-"
+]
+]
+},
+"0803": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0803 - Neukölln 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.854",
+"-",
+"-",
+"33.854",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"21.673",
+"64,0 %",
+"14,7",
+"21.673",
+"64,0 %",
+"14,7"
+],
+[
+"Ungültige Stimmen",
+"",
+"477",
+"2,2 %",
+"1,2",
+"264",
+"1,2 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"21.196",
+"97,8 %",
+"-1,2",
+"21.409",
+"98,8 %",
+"-0,4"
+],
+[
+"CDU",
+"Avci, Nimet",
+"2.077",
+"9,8 %",
+"-11,2",
+"2.105",
+"9,8 %",
+"-10,2"
+],
+[
+"SPD",
+"Çağlar, Derya",
+"3.069",
+"14,5 %",
+"-8,9",
+"2.403",
+"11,2 %",
+"-9,1"
+],
+[
+"GRÜNE",
+"Hilmer-Benedict, Christina",
+"3.164",
+"14,9 %",
+"-6,2",
+"2.821",
+"13,2 %",
+"-9,7"
+],
+[
+"Die Linke",
+"Taheri, Rouzbeh",
+"8.722",
+"41,1 %",
+"22,2",
+"9.252",
+"43,2 %",
+"25,6"
+],
+[
+"AfD",
+"Arhelger, Thomas",
+"2.397",
+"11,3 %",
+"4,6",
+"2.326",
+"10,9 %",
+"4,3"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-2,3",
+"272",
+"1,3 %",
+"-1,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,5",
+"391",
+"1,8 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"Richter, Sebastian",
+"324",
+"1,5 %",
+"-0,8",
+"161",
+"0,8 %",
+"-0,9"
+],
+[
+"Volt",
+"Lodel, Max",
+"357",
+"1,7 %",
+"1,7",
+"327",
+"1,5 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"29",
+"0,1 %",
+"-0,4"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"22",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Khalil, Nader",
+"1.086",
+"5,1 %",
+"5,1",
+"1.202",
+"5,6 %",
+"5,6"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"62",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0804": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0804 - Neukölln 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.430",
+"-",
+"-",
+"32.430",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"20.909",
+"64,5 %",
+"10,3",
+"20.909",
+"64,5 %",
+"10,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"579",
+"2,8 %",
+"1,6",
+"371",
+"1,8 %",
+"0,7"
+],
+[
+"Gültige Stimmen",
+"",
+"20.330",
+"97,2 %",
+"-1,6",
+"20.538",
+"98,2 %",
+"-0,7"
+],
+[
+"CDU",
+"Förster, Christopher",
+"5.293",
+"26,0 %",
+"-17,0",
+"4.893",
+"23,8 %",
+"-17,3"
+],
+[
+"SPD",
+"Hopp, Marcel",
+"4.894",
+"24,1 %",
+"-5,7",
+"3.562",
+"17,3 %",
+"-10,2"
+],
+[
+"GRÜNE",
+"Ghirmai, Philmon",
+"861",
+"4,2 %",
+"-0,8",
+"1.068",
+"5,2 %",
+"-0,0"
+],
+[
+"Die Linke",
+"Özdemir, Yurtsever",
+"3.694",
+"18,2 %",
+"13,9",
+"4.005",
+"19,5 %",
+"14,9"
+],
+[
+"AfD",
+"Eschricht, Robert",
+"4.234",
+"20,8 %",
+"10,3",
+"4.353",
+"21,2 %",
+"10,5"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-3,1",
+"492",
+"2,4 %",
+"-1,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,4",
+"560",
+"2,7 %",
+"0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"102",
+"0,5 %",
+"-0,2"
+],
+[
+"Volt",
+"Golcher, Felix",
+"340",
+"1,7 %",
+"1,7",
+"221",
+"1,1 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"15",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"34",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Posselt, Christian",
+"1.014",
+"5,0 %",
+"5,0",
+"1.173",
+"5,7 %",
+"5,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"42",
+"0,2 %",
+"0,2"
+]
+]
+},
+"0805": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0805 - Neukölln 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.372",
+"-",
+"-",
+"33.372",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.647",
+"70,9 %",
+"8,6",
+"23.647",
+"70,9 %",
+"8,6"
+],
+[
+"Ungültige Stimmen",
+"",
+"671",
+"2,8 %",
+"1,9",
+"326",
+"1,4 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"22.976",
+"97,2 %",
+"-1,9",
+"23.321",
+"98,6 %",
+"-0,5"
+],
+[
+"CDU",
+"Dr. Juhnke, Robbin",
+"6.479",
+"28,2 %",
+"-14,9",
+"5.838",
+"25,0 %",
+"-15,3"
+],
+[
+"SPD",
+"Rahmann, Joachim",
+"4.226",
+"18,4 %",
+"-6,5",
+"3.810",
+"16,3 %",
+"-8,9"
+],
+[
+"GRÜNE",
+"Stiermann, Jan",
+"1.945",
+"8,5 %",
+"0,5",
+"1.947",
+"8,3 %",
+"-0,1"
+],
+[
+"Die Linke",
+"Stiegler, Emmi",
+"4.241",
+"18,5 %",
+"13,7",
+"3.947",
+"16,9 %",
+"12,5"
+],
+[
+"AfD",
+"Potthast, Julian",
+"4.699",
+"20,5 %",
+"10,5",
+"4.589",
+"19,7 %",
+"9,8"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-3,6",
+"722",
+"3,1 %",
+"-1,3"
+],
+[
+"Tierschutzpartei",
+"Perotto, Gabriella",
+"864",
+"3,8 %",
+"0,5",
+"604",
+"2,6 %",
+"0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,5",
+"130",
+"0,6 %",
+"-0,3"
+],
+[
+"Volt",
+"Heim, Susanne",
+"423",
+"1,8 %",
+"1,8",
+"293",
+"1,3 %",
+"0,9"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"33",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"",
+"-",
+"-",
+"-",
+"1.302",
+"5,6 %",
+"5,6"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"69",
+"0,3 %",
+"0,3"
+],
+[
+"Worbs",
+"Worbs, Hans-Dieter",
+"99",
+"0,4 %",
+"0,3",
+"-",
+"-",
+"-"
+]
+]
+},
+"0806": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0806 - Neukölln 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.621",
+"-",
+"-",
+"32.621",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.656",
+"72,5 %",
+"9,2",
+"23.656",
+"72,5 %",
+"9,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"456",
+"1,9 %",
+"0,7",
+"460",
+"1,9 %",
+"1,0"
+],
+[
+"Gültige Stimmen",
+"",
+"23.200",
+"98,1 %",
+"-0,7",
+"23.196",
+"98,1 %",
+"-1,0"
+],
+[
+"CDU",
+"Schenk, Olaf",
+"6.415",
+"27,7 %",
+"-17,7",
+"6.438",
+"27,8 %",
+"-16,2"
+],
+[
+"SPD",
+"Giffey, Franziska",
+"6.109",
+"26,3 %",
+"-3,2",
+"3.882",
+"16,7 %",
+"-8,5"
+],
+[
+"GRÜNE",
+"Bilir, Asiye",
+"989",
+"4,3 %",
+"-0,9",
+"1.461",
+"6,3 %",
+"0,7"
+],
+[
+"Die Linke",
+"Biermann, Sybille",
+"3.056",
+"13,2 %",
+"9,5",
+"3.446",
+"14,9 %",
+"11,3"
+],
+[
+"AfD",
+"Pauli, Hendrik",
+"4.910",
+"21,2 %",
+"10,8",
+"5.151",
+"22,2 %",
+"11,4"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-3,6",
+"613",
+"2,6 %",
+"-1,5"
+],
+[
+"Tierschutzpartei",
+"Seitz, Lena",
+"579",
+"2,5 %",
+"2,5",
+"620",
+"2,7 %",
+"0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,6",
+"130",
+"0,6 %",
+"-0,2"
+],
+[
+"Volt",
+"Schirmer, Nikolai",
+"287",
+"1,2 %",
+"1,2",
+"272",
+"1,2 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"21",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Lehmann, Christoph",
+"855",
+"3,7 %",
+"3,7",
+"1.058",
+"4,6 %",
+"4,6"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"59",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0901": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0901 - Treptow-Köpenick 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"28.840",
+"-",
+"-",
+"28.840",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"21.981",
+"76,2 %",
+"11,3",
+"21.981",
+"76,2 %",
+"11,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"437",
+"2,0 %",
+"1,1",
+"245",
+"1,1 %",
+"0,3"
+],
+[
+"Gültige Stimmen",
+"",
+"21.544",
+"98,0 %",
+"-1,1",
+"21.736",
+"98,9 %",
+"-0,3"
+],
+[
+"CDU",
+"Hoffmann, Dustin",
+"2.097",
+"9,7 %",
+"-6,7",
+"2.049",
+"9,4 %",
+"-6,5"
+],
+[
+"SPD",
+"Freier-Winterwerb, Alexander",
+"2.342",
+"10,9 %",
+"-6,7",
+"2.148",
+"9,9 %",
+"-5,2"
+],
+[
+"GRÜNE",
+"Wahlen, Catrin",
+"3.260",
+"15,1 %",
+"-4,8",
+"3.251",
+"15,0 %",
+"-7,5"
+],
+[
+"Die Linke",
+"Warnke, Moritz",
+"8.762",
+"40,7 %",
+"13,5",
+"8.535",
+"39,3 %",
+"17,5"
+],
+[
+"AfD",
+"Häbel, Noah",
+"3.111",
+"14,4 %",
+"5,8",
+"3.168",
+"14,6 %",
+"5,9"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-2,4",
+"311",
+"1,4 %",
+"-1,3"
+],
+[
+"Tierschutzpartei",
+"Pleier, Carolin",
+"530",
+"2,5 %",
+"-0,7",
+"433",
+"2,0 %",
+"-0,7"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,4",
+"239",
+"1,1 %",
+"-1,2"
+],
+[
+"Volt",
+"Voltz, Pia",
+"509",
+"2,4 %",
+"2,4",
+"411",
+"1,9 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,3"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"45",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,4",
+"40",
+"0,2 %",
+"-0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,2"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,2"
+],
+[
+"BSW",
+"Ebertus, Simone",
+"933",
+"4,3 %",
+"4,3",
+"980",
+"4,5 %",
+"4,5"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"78",
+"0,4 %",
+"0,4"
+]
+]
+},
+"0902": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0902 - Treptow-Köpenick 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"27.757",
+"-",
+"-",
+"27.757",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"20.677",
+"74,5 %",
+"13,8",
+"20.677",
+"74,5 %",
+"13,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"427",
+"2,1 %",
+"1,2",
+"240",
+"1,2 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"20.250",
+"97,9 %",
+"-1,2",
+"20.437",
+"98,8 %",
+"-0,4"
+],
+[
+"CDU",
+"Dr. Hegenscheid, Katrin",
+"2.360",
+"11,7 %",
+"-7,7",
+"2.253",
+"11,0 %",
+"-8,6"
+],
+[
+"SPD",
+"Bahlmann, Paul",
+"2.543",
+"12,6 %",
+"-10,5",
+"1.963",
+"9,6 %",
+"-7,5"
+],
+[
+"GRÜNE",
+"Dohnalek, Sven",
+"1.847",
+"9,1 %",
+"-5,7",
+"2.215",
+"10,8 %",
+"-4,7"
+],
+[
+"Die Linke",
+"Pfitzmann, Lisa",
+"7.203",
+"35,6 %",
+"17,2",
+"6.769",
+"33,1 %",
+"15,3"
+],
+[
+"AfD",
+"Paetzel, Janine",
+"4.197",
+"20,7 %",
+"8,6",
+"4.188",
+"20,5 %",
+"8,2"
+],
+[
+"FDP",
+"Maillinger, Michael",
+"376",
+"1,9 %",
+"-1,6",
+"373",
+"1,8 %",
+"-1,9"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,4",
+"495",
+"2,4 %",
+"-1,0"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,8",
+"269",
+"1,3 %",
+"-1,1"
+],
+[
+"Volt",
+"Schäfer, Hendrik",
+"589",
+"2,9 %",
+"2,9",
+"493",
+"2,4 %",
+"1,4"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"-0,3"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"34",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"44",
+"0,2 %",
+"-0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,3",
+"52",
+"0,3 %",
+"-0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Sirotkin, Katja",
+"1.135",
+"5,6 %",
+"5,6",
+"1.162",
+"5,7 %",
+"5,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"103",
+"0,5 %",
+"0,5"
+]
+]
+},
+"0903": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0903 - Treptow-Köpenick 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.817",
+"-",
+"-",
+"29.817",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.521",
+"75,5 %",
+"10,6",
+"22.521",
+"75,5 %",
+"10,6"
+],
+[
+"Ungültige Stimmen",
+"",
+"391",
+"1,7 %",
+"0,9",
+"295",
+"1,3 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"22.130",
+"98,3 %",
+"-0,9",
+"22.226",
+"98,7 %",
+"-0,6"
+],
+[
+"CDU",
+"Vennemann, Lukas",
+"2.477",
+"11,2 %",
+"-13,3",
+"3.036",
+"13,7 %",
+"-11,8"
+],
+[
+"SPD",
+"Düsterhöft, Lars",
+"5.746",
+"26,0 %",
+"-2,3",
+"2.820",
+"12,7 %",
+"-7,9"
+],
+[
+"GRÜNE",
+"Steinmetz, Charlotte",
+"1.538",
+"6,9 %",
+"-3,1",
+"2.134",
+"9,6 %",
+"-2,0"
+],
+[
+"Die Linke",
+"Ulrich, Fabian",
+"5.480",
+"24,8 %",
+"10,3",
+"5.973",
+"26,9 %",
+"12,4"
+],
+[
+"AfD",
+"Mehnert, Andreas",
+"4.836",
+"21,9 %",
+"8,6",
+"5.035",
+"22,7 %",
+"9,5"
+],
+[
+"FDP",
+"Franke, Jeanot",
+"412",
+"1,9 %",
+"-1,1",
+"473",
+"2,1 %",
+"-1,4"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,9",
+"551",
+"2,5 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-0,7",
+"198",
+"0,9 %",
+"-0,6"
+],
+[
+"Volt",
+"Hägler, Marie Louise",
+"404",
+"1,8 %",
+"1,8",
+"431",
+"1,9 %",
+"1,1"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"Wullschläger, Johannes",
+"70",
+"0,3 %",
+"0,3",
+"38",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,0",
+"31",
+"0,1 %",
+"-0,0"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,2",
+"30",
+"0,1 %",
+"-0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"6",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Unruh, Frank",
+"1.167",
+"5,3 %",
+"5,3",
+"1.356",
+"6,1 %",
+"6,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"101",
+"0,5 %",
+"0,5"
+]
+]
+},
+"0904": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0904 - Treptow-Köpenick 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.726",
+"-",
+"-",
+"32.726",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.560",
+"75,0 %",
+"11,5",
+"24.560",
+"75,0 %",
+"11,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"524",
+"2,1 %",
+"1,2",
+"357",
+"1,5 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"24.036",
+"97,9 %",
+"-1,2",
+"24.203",
+"98,5 %",
+"-0,6"
+],
+[
+"CDU",
+"Evers, Stefan",
+"5.889",
+"24,5 %",
+"-11,7",
+"4.856",
+"20,1 %",
+"-14,7"
+],
+[
+"SPD",
+"Haußdörfer, Ellen",
+"2.133",
+"8,9 %",
+"-10,5",
+"2.173",
+"9,0 %",
+"-7,7"
+],
+[
+"GRÜNE",
+"Junga, Willi",
+"1.246",
+"5,2 %",
+"-0,3",
+"1.461",
+"6,0 %",
+"0,1"
+],
+[
+"Die Linke",
+"Fries, Lena",
+"4.662",
+"19,4 %",
+"8,5",
+"4.375",
+"18,1 %",
+"6,7"
+],
+[
+"AfD",
+"Bertram, Alexander",
+"7.570",
+"31,5 %",
+"13,5",
+"7.693",
+"31,8 %",
+"13,8"
+],
+[
+"FDP",
+"Schmidt, Joachim",
+"552",
+"2,3 %",
+"-1,0",
+"560",
+"2,3 %",
+"-1,3"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,6",
+"667",
+"2,8 %",
+"0,0"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,4",
+"192",
+"0,8 %",
+"-0,3"
+],
+[
+"Volt",
+"Dürrschmidt, Erik",
+"379",
+"1,6 %",
+"1,6",
+"290",
+"1,2 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"Seelig, Axel",
+"71",
+"0,3 %",
+"0,3",
+"30",
+"0,1 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,3",
+"42",
+"0,2 %",
+"-0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Pritsch, Sven",
+"1.534",
+"6,4 %",
+"6,4",
+"1.654",
+"6,8 %",
+"6,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"140",
+"0,6 %",
+"0,6"
+]
+]
+},
+"0905": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0905 - Treptow-Köpenick 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.010",
+"-",
+"-",
+"31.010",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.435",
+"75,6 %",
+"13,1",
+"23.435",
+"75,6 %",
+"13,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"497",
+"2,1 %",
+"1,0",
+"275",
+"1,2 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"22.938",
+"97,9 %",
+"-1,0",
+"23.160",
+"98,8 %",
+"-0,2"
+],
+[
+"CDU",
+"Knack, Lisa",
+"4.072",
+"17,8 %",
+"-7,7",
+"3.706",
+"16,0 %",
+"-10,0"
+],
+[
+"SPD",
+"Schaddach, Robert",
+"3.004",
+"13,1 %",
+"-10,4",
+"2.415",
+"10,4 %",
+"-8,6"
+],
+[
+"GRÜNE",
+"Spiering, Henriette",
+"2.060",
+"9,0 %",
+"-2,1",
+"2.223",
+"9,6 %",
+"-2,2"
+],
+[
+"Die Linke",
+"Kliemann, Loic",
+"5.639",
+"24,6 %",
+"10,5",
+"5.639",
+"24,3 %",
+"9,6"
+],
+[
+"AfD",
+"Henkel, Denis",
+"5.721",
+"24,9 %",
+"10,7",
+"5.664",
+"24,5 %",
+"10,2"
+],
+[
+"FDP",
+"Dr. Weisensee, Claudius",
+"527",
+"2,3 %",
+"-1,4",
+"536",
+"2,3 %",
+"-2,0"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,0",
+"614",
+"2,7 %",
+"-0,6"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,1",
+"223",
+"1,0 %",
+"-0,7"
+],
+[
+"Volt",
+"Prange, Tim",
+"621",
+"2,7 %",
+"2,7",
+"526",
+"2,3 %",
+"1,5"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"41",
+"0,2 %",
+"0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,1",
+"31",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Simdorn, Svend",
+"1.294",
+"5,6 %",
+"5,6",
+"1.420",
+"6,1 %",
+"6,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"81",
+"0,3 %",
+"0,3"
+]
+]
+},
+"0906": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0906 - Treptow-Köpenick 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.701",
+"-",
+"-",
+"29.701",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.427",
+"75,5 %",
+"12,8",
+"22.427",
+"75,5 %",
+"12,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"567",
+"2,5 %",
+"1,5",
+"405",
+"1,8 %",
+"1,0"
+],
+[
+"Gültige Stimmen",
+"",
+"21.860",
+"97,5 %",
+"-1,5",
+"22.022",
+"98,2 %",
+"-1,0"
+],
+[
+"CDU",
+"Dr. Sattelkau, Martin",
+"3.894",
+"17,8 %",
+"-10,7",
+"3.387",
+"15,4 %",
+"-13,0"
+],
+[
+"SPD",
+"Rüdiger, Sara",
+"2.164",
+"9,9 %",
+"-12,3",
+"2.254",
+"10,2 %",
+"-9,1"
+],
+[
+"GRÜNE",
+"Dr. Schlaak, Claudia",
+"1.320",
+"6,0 %",
+"-0,5",
+"1.447",
+"6,6 %",
+"-0,0"
+],
+[
+"Die Linke",
+"Terkan, Eda",
+"5.111",
+"23,4 %",
+"8,2",
+"4.917",
+"22,3 %",
+"7,3"
+],
+[
+"AfD",
+"Trefzer, Martin",
+"6.499",
+"29,7 %",
+"10,9",
+"6.587",
+"29,9 %",
+"11,7"
+],
+[
+"FDP",
+"Förster, Stefan",
+"512",
+"2,3 %",
+"-1,1",
+"458",
+"2,1 %",
+"-2,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-",
+"552",
+"2,5 %",
+"-0,0"
+],
+[
+"Die PARTEI",
+"Bauer, Marek",
+"490",
+"2,2 %",
+"0,0",
+"231",
+"1,0 %",
+"-0,4"
+],
+[
+"Volt",
+"Hanschke, Philipp",
+"318",
+"1,5 %",
+"1,5",
+"296",
+"1,3 %",
+"0,9"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"38",
+"0,2 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,3",
+"29",
+"0,1 %",
+"0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,4",
+"46",
+"0,2 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Lindemann, Alina-Viviane",
+"1.552",
+"7,1 %",
+"7,1",
+"1.660",
+"7,5 %",
+"7,5"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"100",
+"0,5 %",
+"0,5"
+]
+]
+},
+"0907": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 0907 - Treptow-Köpenick 7 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.176",
+"-",
+"-",
+"32.176",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"25.804",
+"80,2 %",
+"12,2",
+"25.804",
+"80,2 %",
+"12,2"
+],
+[
+"Ungültige Stimmen",
+"",
+"571",
+"2,2 %",
+"1,3",
+"369",
+"1,4 %",
+"0,6"
+],
+[
+"Gültige Stimmen",
+"",
+"25.233",
+"97,8 %",
+"-1,3",
+"25.435",
+"98,6 %",
+"-0,6"
+],
+[
+"CDU",
+"Penn, Maik",
+"6.215",
+"24,6 %",
+"-8,0",
+"4.836",
+"19,0 %",
+"-10,9"
+],
+[
+"SPD",
+"Wolff, Dunja",
+"2.827",
+"11,2 %",
+"-5,9",
+"2.582",
+"10,2 %",
+"-7,9"
+],
+[
+"GRÜNE",
+"Engel, Nikos",
+"2.024",
+"8,0 %",
+"-4,0",
+"2.865",
+"11,3 %",
+"-1,2"
+],
+[
+"Die Linke",
+"Dr. Kromrey, Hans",
+"6.736",
+"26,7 %",
+"8,4",
+"6.135",
+"24,1 %",
+"7,6"
+],
+[
+"AfD",
+"Krüger, Christian",
+"5.217",
+"20,7 %",
+"8,5",
+"5.411",
+"21,3 %",
+"8,9"
+],
+[
+"FDP",
+"",
+"-",
+"-",
+"-3,2",
+"496",
+"2,0 %",
+"-1,6"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,9",
+"467",
+"1,8 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"249",
+"1,0 %",
+"-0,7"
+],
+[
+"Volt",
+"Heyn, Julian",
+"517",
+"2,0 %",
+"2,0",
+"437",
+"1,7 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"Werner, Heinz",
+"111",
+"0,4 %",
+"0,4",
+"53",
+"0,2 %",
+"0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"56",
+"0,2 %",
+"0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,1",
+"31",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Dr. Warth, Stefanie",
+"1.586",
+"6,3 %",
+"6,3",
+"1.706",
+"6,7 %",
+"6,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"86",
+"0,3 %",
+"0,3"
+]
+]
+},
+"1001": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1001 - Marzahn-Hellersdorf 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.803",
+"-",
+"-",
+"31.803",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"19.652",
+"61,8 %",
+"17,4",
+"19.652",
+"61,8 %",
+"17,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"636",
+"3,2 %",
+"1,9",
+"362",
+"1,8 %",
+"0,7"
+],
+[
+"Gültige Stimmen",
+"",
+"19.016",
+"96,8 %",
+"-1,9",
+"19.290",
+"98,2 %",
+"-0,7"
+],
+[
+"CDU",
+"Gontard, Susanne",
+"1.722",
+"9,1 %",
+"-13,0",
+"1.655",
+"8,6 %",
+"-14,4"
+],
+[
+"SPD",
+"Lemm, Gordon",
+"1.669",
+"8,8 %",
+"-8,5",
+"1.272",
+"6,6 %",
+"-8,4"
+],
+[
+"GRÜNE",
+"Rother, Niclas",
+"613",
+"3,2 %",
+"0,2",
+"600",
+"3,1 %",
+"-0,4"
+],
+[
+"Die Linke",
+"Tielebein, Björn",
+"4.366",
+"23,0 %",
+"4,7",
+"4.106",
+"21,3 %",
+"5,3"
+],
+[
+"AfD",
+"Lindemann, Gunnar",
+"8.575",
+"45,1 %",
+"16,3",
+"8.518",
+"44,2 %",
+"16,2"
+],
+[
+"FDP",
+"Gering, Ingo",
+"311",
+"1,6 %",
+"-0,3",
+"288",
+"1,5 %",
+"-0,7"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-5,2",
+"891",
+"4,6 %",
+"0,6"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,9",
+"167",
+"0,9 %",
+"-0,6"
+],
+[
+"Volt",
+"Gaudian, Lars",
+"401",
+"2,1 %",
+"2,1",
+"237",
+"1,2 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"22",
+"0,1 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"24",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"15",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Voß, Rosemarie",
+"1.359",
+"7,1 %",
+"7,1",
+"1.369",
+"7,1 %",
+"7,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"101",
+"0,5 %",
+"0,5"
+]
+]
+},
+"1002": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1002 - Marzahn-Hellersdorf 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.391",
+"-",
+"-",
+"33.391",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.142",
+"66,3 %",
+"13,9",
+"22.142",
+"66,3 %",
+"13,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"619",
+"2,8 %",
+"1,5",
+"375",
+"1,7 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"21.523",
+"97,2 %",
+"-1,5",
+"21.767",
+"98,3 %",
+"-0,5"
+],
+[
+"CDU",
+"Siggelkow, Bernd",
+"3.829",
+"17,8 %",
+"-7,7",
+"2.758",
+"12,7 %",
+"-14,2"
+],
+[
+"SPD",
+"Spranger, Iris",
+"1.850",
+"8,6 %",
+"-10,4",
+"1.811",
+"8,3 %",
+"-9,7"
+],
+[
+"GRÜNE",
+"Klettbach, Benjamin",
+"734",
+"3,4 %",
+"-0,7",
+"856",
+"3,9 %",
+"-0,2"
+],
+[
+"Die Linke",
+"Bigall, Sarah",
+"5.155",
+"24,0 %",
+"3,7",
+"5.088",
+"23,4 %",
+"5,9"
+],
+[
+"AfD",
+"Dummer, Anneliese",
+"7.545",
+"35,1 %",
+"14,1",
+"7.727",
+"35,5 %",
+"15,1"
+],
+[
+"FDP",
+"Klamann, Konrad",
+"353",
+"1,6 %",
+"-1,1",
+"390",
+"1,8 %",
+"-0,7"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,4",
+"793",
+"3,6 %",
+"0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,7",
+"198",
+"0,9 %",
+"-0,2"
+],
+[
+"Volt",
+"Appelfelder, David",
+"454",
+"2,1 %",
+"2,1",
+"297",
+"1,4 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"30",
+"0,1 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"15",
+"0,1 %",
+"-0,1"
+],
+[
+"BSW",
+"Wolf, Enrico",
+"1.603",
+"7,4 %",
+"7,4",
+"1.666",
+"7,7 %",
+"7,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"94",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1003": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1003 - Marzahn-Hellersdorf 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.408",
+"-",
+"-",
+"34.408",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"21.553",
+"62,6 %",
+"17,1",
+"21.553",
+"62,6 %",
+"17,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"673",
+"3,1 %",
+"1,7",
+"390",
+"1,8 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"20.880",
+"96,9 %",
+"-1,7",
+"21.163",
+"98,2 %",
+"-0,5"
+],
+[
+"CDU",
+"Enderlein, Robin",
+"2.585",
+"12,4 %",
+"-12,4",
+"2.108",
+"10,0 %",
+"-14,6"
+],
+[
+"SPD",
+"Shiferaw, Jeannette",
+"1.363",
+"6,5 %",
+"-9,0",
+"1.383",
+"6,5 %",
+"-8,4"
+],
+[
+"GRÜNE",
+"Münster, Chantal",
+"728",
+"3,5 %",
+"-0,5",
+"757",
+"3,6 %",
+"-0,7"
+],
+[
+"Die Linke",
+"Jüngling, Nadine",
+"4.797",
+"23,0 %",
+"5,9",
+"4.447",
+"21,0 %",
+"6,2"
+],
+[
+"AfD",
+"Auricht, Jeannette",
+"9.060",
+"43,4 %",
+"17,5",
+"8.946",
+"42,3 %",
+"17,1"
+],
+[
+"FDP",
+"Dahler, Benjamin",
+"368",
+"1,8 %",
+"-1,1",
+"315",
+"1,5 %",
+"-1,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-5,9",
+"947",
+"4,5 %",
+"-0,0"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,0",
+"191",
+"0,9 %",
+"-0,5"
+],
+[
+"Volt",
+"Seedig, Christopher",
+"515",
+"2,5 %",
+"2,5",
+"308",
+"1,5 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"35",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"34",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"14",
+"0,1 %",
+"-0,1"
+],
+[
+"BSW",
+"Rutsch, Martin",
+"1.464",
+"7,0 %",
+"7,0",
+"1.544",
+"7,3 %",
+"7,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"103",
+"0,5 %",
+"0,5"
+]
+]
+},
+"1004": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1004 - Marzahn-Hellersdorf 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.922",
+"-",
+"-",
+"34.922",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.177",
+"75,0 %",
+"10,5",
+"26.177",
+"75,0 %",
+"10,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"574",
+"2,2 %",
+"1,2",
+"329",
+"1,3 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"25.603",
+"97,8 %",
+"-1,2",
+"25.848",
+"98,7 %",
+"-0,5"
+],
+[
+"CDU",
+"Martin, Johannes",
+"6.147",
+"24,0 %",
+"-18,9",
+"5.177",
+"20,0 %",
+"-16,4"
+],
+[
+"SPD",
+"Geidel-Künne, Maria",
+"1.861",
+"7,3 %",
+"-5,4",
+"2.224",
+"8,6 %",
+"-7,1"
+],
+[
+"GRÜNE",
+"Grothe, Pascal",
+"3.132",
+"12,2 %",
+"5,1",
+"1.991",
+"7,7 %",
+"0,9"
+],
+[
+"Die Linke",
+"Berg, Markus",
+"4.850",
+"18,9 %",
+"4,0",
+"5.312",
+"20,6 %",
+"6,2"
+],
+[
+"AfD",
+"Koblischke, Martin",
+"6.748",
+"26,4 %",
+"12,3",
+"7.077",
+"27,4 %",
+"12,7"
+],
+[
+"FDP",
+"Molnar, Anja",
+"498",
+"1,9 %",
+"-0,3",
+"583",
+"2,3 %",
+"-0,8"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,5",
+"632",
+"2,4 %",
+"-0,6"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,6",
+"215",
+"0,8 %",
+"-0,2"
+],
+[
+"Volt",
+"Lange, Judith",
+"519",
+"2,0 %",
+"2,0",
+"413",
+"1,6 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"20",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"48",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Schneider, Robert",
+"1.848",
+"7,2 %",
+"7,2",
+"2.028",
+"7,8 %",
+"7,8"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"88",
+"0,3 %",
+"0,3"
+]
+]
+},
+"1005": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1005 - Marzahn-Hellersdorf 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.280",
+"-",
+"-",
+"34.280",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"28.733",
+"83,8 %",
+"7,7",
+"28.733",
+"83,8 %",
+"7,7"
+],
+[
+"Ungültige Stimmen",
+"",
+"556",
+"1,9 %",
+"1,3",
+"293",
+"1,0 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"28.177",
+"98,1 %",
+"-1,3",
+"28.440",
+"99,0 %",
+"-0,5"
+],
+[
+"CDU",
+"Günther-Wünsch, Katharina",
+"8.890",
+"31,6 %",
+"-13,5",
+"7.273",
+"25,6 %",
+"-14,5"
+],
+[
+"SPD",
+"Dr. Lehmann, Luise",
+"2.722",
+"9,7 %",
+"-5,7",
+"2.568",
+"9,0 %",
+"-7,2"
+],
+[
+"GRÜNE",
+"Neubert, Manuela",
+"1.888",
+"6,7 %",
+"-0,4",
+"2.221",
+"7,8 %",
+"0,3"
+],
+[
+"Die Linke",
+"Witt, Juliane",
+"4.651",
+"16,5 %",
+"4,9",
+"4.658",
+"16,4 %",
+"4,8"
+],
+[
+"AfD",
+"Harder, Thomas",
+"6.971",
+"24,7 %",
+"12,1",
+"7.390",
+"26,0 %",
+"12,7"
+],
+[
+"FDP",
+"Langer, Peter",
+"751",
+"2,7 %",
+"-0,5",
+"832",
+"2,9 %",
+"-1,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,9",
+"613",
+"2,2 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,4",
+"178",
+"0,6 %",
+"-0,4"
+],
+[
+"Volt",
+"Kuhn, Stefan",
+"560",
+"2,0 %",
+"2,0",
+"491",
+"1,7 %",
+"1,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"22",
+"0,1 %",
+"0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"42",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Seidel-Grothe, Ina",
+"1.744",
+"6,2 %",
+"6,2",
+"2.005",
+"7,0 %",
+"7,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"112",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1006": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1006 - Marzahn-Hellersdorf 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.966",
+"-",
+"-",
+"30.966",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"20.814",
+"67,2 %",
+"13,9",
+"20.814",
+"67,2 %",
+"13,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"467",
+"2,2 %",
+"1,2",
+"371",
+"1,8 %",
+"0,7"
+],
+[
+"Gültige Stimmen",
+"",
+"20.347",
+"97,8 %",
+"-1,2",
+"20.443",
+"98,2 %",
+"-0,7"
+],
+[
+"CDU",
+"Herrmann, Alexander",
+"5.805",
+"28,5 %",
+"-9,2",
+"3.431",
+"16,8 %",
+"-15,1"
+],
+[
+"SPD",
+"Lehmann, Jan",
+"1.411",
+"6,9 %",
+"-7,1",
+"1.547",
+"7,6 %",
+"-7,7"
+],
+[
+"GRÜNE",
+"Heinecke, Gina",
+"647",
+"3,2 %",
+"-1,3",
+"875",
+"4,3 %",
+"-0,7"
+],
+[
+"Die Linke",
+"Ostehr, Steffen",
+"3.757",
+"18,5 %",
+"3,3",
+"4.033",
+"19,7 %",
+"5,5"
+],
+[
+"AfD",
+"Geißler, Jörn",
+"6.889",
+"33,9 %",
+"14,5",
+"7.400",
+"36,2 %",
+"16,0"
+],
+[
+"FDP",
+"Sussmann, Dominik",
+"305",
+"1,5 %",
+"-0,5",
+"362",
+"1,8 %",
+"-0,8"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,4",
+"708",
+"3,5 %",
+"-0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,7",
+"146",
+"0,7 %",
+"-0,5"
+],
+[
+"Volt",
+"Lange, Leonard",
+"308",
+"1,5 %",
+"1,5",
+"273",
+"1,3 %",
+"0,9"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"21",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"38",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"30",
+"0,1 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,0"
+],
+[
+"BSW",
+"Mnich, Martin",
+"1.225",
+"6,0 %",
+"6,0",
+"1.473",
+"7,2 %",
+"7,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"93",
+"0,5 %",
+"0,5"
+]
+]
+},
+"1101": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1101 - Lichtenberg 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"34.019",
+"-",
+"-",
+"34.019",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.206",
+"68,2 %",
+"15,4",
+"23.206",
+"68,2 %",
+"15,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"757",
+"3,3 %",
+"2,2",
+"464",
+"2,0 %",
+"1,1"
+],
+[
+"Gültige Stimmen",
+"",
+"22.449",
+"96,7 %",
+"-2,2",
+"22.742",
+"98,0 %",
+"-1,1"
+],
+[
+"CDU",
+"Freymark, Danny",
+"6.937",
+"30,9 %",
+"-9,9",
+"3.942",
+"17,3 %",
+"-17,3"
+],
+[
+"SPD",
+"Heinecke, Klaus-Uwe",
+"1.177",
+"5,2 %",
+"-7,2",
+"1.506",
+"6,6 %",
+"-7,4"
+],
+[
+"GRÜNE",
+"Junge, Tim",
+"595",
+"2,7 %",
+"-1,2",
+"797",
+"3,5 %",
+"-0,5"
+],
+[
+"Die Linke",
+"Harting, Christoph",
+"4.353",
+"19,4 %",
+"4,0",
+"4.709",
+"20,7 %",
+"6,3"
+],
+[
+"AfD",
+"Knaute, Stephan",
+"7.536",
+"33,6 %",
+"13,6",
+"8.242",
+"36,2 %",
+"15,3"
+],
+[
+"FDP",
+"Collin-Hoebel, Christina",
+"227",
+"1,0 %",
+"-0,9",
+"282",
+"1,2 %",
+"-0,9"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,4",
+"813",
+"3,6 %",
+"0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"153",
+"0,7 %",
+"-0,4"
+],
+[
+"Volt",
+"Basulto, Tim",
+"292",
+"1,3 %",
+"1,3",
+"221",
+"1,0 %",
+"0,7"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-0,3",
+"59",
+"0,3 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"11",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Sieber, Bastian",
+"1.332",
+"5,9 %",
+"5,9",
+"1.813",
+"8,0 %",
+"8,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"102",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1102": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1102 - Lichtenberg 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.875",
+"-",
+"-",
+"32.875",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.930",
+"72,8 %",
+"12,0",
+"23.930",
+"72,8 %",
+"12,0"
+],
+[
+"Ungültige Stimmen",
+"",
+"531",
+"2,2 %",
+"1,2",
+"359",
+"1,5 %",
+"0,7"
+],
+[
+"Gültige Stimmen",
+"",
+"23.399",
+"97,8 %",
+"-1,2",
+"23.571",
+"98,5 %",
+"-0,7"
+],
+[
+"CDU",
+"Dr. Pätzold, Martin",
+"6.622",
+"28,3 %",
+"-11,2",
+"4.396",
+"18,7 %",
+"-15,9"
+],
+[
+"SPD",
+"Schenck, Stefan",
+"1.574",
+"6,7 %",
+"-7,8",
+"1.852",
+"7,9 %",
+"-7,1"
+],
+[
+"GRÜNE",
+"Otto, Kristin",
+"1.165",
+"5,0 %",
+"-1,5",
+"1.386",
+"5,9 %",
+"-1,0"
+],
+[
+"Die Linke",
+"Kraus, Toni",
+"5.642",
+"24,1 %",
+"7,2",
+"5.578",
+"23,7 %",
+"7,8"
+],
+[
+"AfD",
+"Kleinert, Marianne",
+"6.259",
+"26,7 %",
+"12,0",
+"6.706",
+"28,5 %",
+"13,2"
+],
+[
+"FDP",
+"Apitz, Rico",
+"360",
+"1,5 %",
+"-0,7",
+"410",
+"1,7 %",
+"-1,1"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,8",
+"667",
+"2,8 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"155",
+"0,7 %",
+"-0,5"
+],
+[
+"Volt",
+"Gramenz, Nico",
+"464",
+"2,0 %",
+"2,0",
+"371",
+"1,6 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"40",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"31",
+"0,1 %",
+"0,0"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-",
+"49",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Geißler, Johann",
+"1.313",
+"5,6 %",
+"5,6",
+"1.807",
+"7,7 %",
+"7,7"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"100",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1103": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1103 - Lichtenberg 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.724",
+"-",
+"-",
+"33.724",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.880",
+"67,8 %",
+"13,5",
+"22.880",
+"67,8 %",
+"13,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"659",
+"2,9 %",
+"1,8",
+"364",
+"1,6 %",
+"0,7"
+],
+[
+"Gültige Stimmen",
+"",
+"22.221",
+"97,1 %",
+"-1,8",
+"22.516",
+"98,4 %",
+"-0,7"
+],
+[
+"CDU",
+"Haustein, Dennis",
+"3.694",
+"16,6 %",
+"-6,8",
+"2.820",
+"12,5 %",
+"-10,6"
+],
+[
+"SPD",
+"Scharfenberg, Marie",
+"1.932",
+"8,7 %",
+"-10,3",
+"2.089",
+"9,3 %",
+"-9,2"
+],
+[
+"GRÜNE",
+"Vosberg, Evan",
+"1.276",
+"5,7 %",
+"-3,1",
+"1.531",
+"6,8 %",
+"-2,2"
+],
+[
+"Die Linke",
+"Engelmann, Claudia",
+"7.305",
+"32,9 %",
+"9,5",
+"6.747",
+"30,0 %",
+"10,5"
+],
+[
+"AfD",
+"Beckert, Florian",
+"5.590",
+"25,2 %",
+"10,5",
+"5.725",
+"25,4 %",
+"10,9"
+],
+[
+"FDP",
+"Schmidt, Philip",
+"361",
+"1,6 %",
+"-1,6",
+"400",
+"1,8 %",
+"-1,3"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-5,1",
+"688",
+"3,1 %",
+"-0,5"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"207",
+"0,9 %",
+"-1,0"
+],
+[
+"Volt",
+"Marinoff, Mario",
+"518",
+"2,3 %",
+"2,3",
+"404",
+"1,8 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,2"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,0"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-",
+"56",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"-0,1"
+],
+[
+"BSW",
+"Klipphahn, Sarah",
+"1.545",
+"7,0 %",
+"7,0",
+"1.633",
+"7,3 %",
+"7,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"123",
+"0,5 %",
+"0,5"
+]
+]
+},
+"1104": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1104 - Lichtenberg 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"33.474",
+"-",
+"-",
+"33.474",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.493",
+"73,2 %",
+"12,8",
+"24.493",
+"73,2 %",
+"12,8"
+],
+[
+"Ungültige Stimmen",
+"",
+"475",
+"1,9 %",
+"0,9",
+"314",
+"1,3 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"24.018",
+"98,1 %",
+"-0,9",
+"24.179",
+"98,7 %",
+"-0,5"
+],
+[
+"CDU",
+"Birkenthal, Lennart",
+"2.829",
+"11,8 %",
+"-7,3",
+"2.548",
+"10,5 %",
+"-7,4"
+],
+[
+"SPD",
+"Lüdke, Tamara",
+"2.572",
+"10,7 %",
+"-7,9",
+"2.298",
+"9,5 %",
+"-7,3"
+],
+[
+"GRÜNE",
+"Ahrens, Philipp",
+"2.381",
+"9,9 %",
+"-6,7",
+"2.779",
+"11,5 %",
+"-5,8"
+],
+[
+"Die Linke",
+"Leonhardt, Antonio",
+"9.212",
+"38,4 %",
+"11,1",
+"8.712",
+"36,0 %",
+"14,1"
+],
+[
+"AfD",
+"Knoll, Burkhard",
+"4.215",
+"17,5 %",
+"6,6",
+"4.323",
+"17,9 %",
+"7,2"
+],
+[
+"FDP",
+"Dr. Temiz, Batuhan",
+"394",
+"1,6 %",
+"1,6",
+"385",
+"1,6 %",
+"-1,4"
+],
+[
+"Tierschutzpartei",
+"Schmeding, Florian",
+"744",
+"3,1 %",
+"-2,2",
+"663",
+"2,7 %",
+"-0,8"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"240",
+"1,0 %",
+"-1,3"
+],
+[
+"Volt",
+"Mendec, Marta",
+"479",
+"2,0 %",
+"2,0",
+"492",
+"2,0 %",
+"1,0"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"32",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"63",
+"0,3 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"25",
+"0,1 %",
+"0,0"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-",
+"39",
+"0,2 %",
+"0,1"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,0"
+],
+[
+"BSW",
+"Hofmann, Jürgen",
+"1.192",
+"5,0 %",
+"5,0",
+"1.477",
+"6,1 %",
+"6,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"87",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1105": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1105 - Lichtenberg 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.853",
+"-",
+"-",
+"32.853",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.872",
+"72,7 %",
+"12,4",
+"23.872",
+"72,7 %",
+"12,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"578",
+"2,4 %",
+"1,4",
+"359",
+"1,5 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"23.294",
+"97,6 %",
+"-1,4",
+"23.513",
+"98,5 %",
+"-0,5"
+],
+[
+"CDU",
+"Ribbeck, Sarah",
+"2.598",
+"11,2 %",
+"-8,6",
+"2.476",
+"10,5 %",
+"-9,3"
+],
+[
+"SPD",
+"Bünck, Marlon",
+"1.947",
+"8,4 %",
+"-7,9",
+"2.081",
+"8,9 %",
+"-7,0"
+],
+[
+"GRÜNE",
+"Dr. Taschner, Stefan",
+"1.989",
+"8,5 %",
+"-5,6",
+"2.316",
+"9,8 %",
+"-5,1"
+],
+[
+"Die Linke",
+"Klein, Hendrikje",
+"9.158",
+"39,3 %",
+"14,4",
+"8.009",
+"34,1 %",
+"13,1"
+],
+[
+"AfD",
+"Ebert, Matthias",
+"5.017",
+"21,5 %",
+"8,4",
+"4.926",
+"21,0 %",
+"8,2"
+],
+[
+"FDP",
+"Zapf, Nora",
+"426",
+"1,8 %",
+"-0,9",
+"412",
+"1,8 %",
+"-1,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-4,4",
+"712",
+"3,0 %",
+"-0,6"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-2,8",
+"226",
+"1,0 %",
+"-1,3"
+],
+[
+"Volt",
+"Künzel, Nicolas",
+"700",
+"3,0 %",
+"3,0",
+"554",
+"2,4 %",
+"1,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"19",
+"0,1 %",
+"-0,3"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"36",
+"0,2 %",
+"-0,2"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"37",
+"0,2 %",
+"0,1"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-",
+"42",
+"0,2 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"16",
+"0,1 %",
+"-0,0"
+],
+[
+"BSW",
+"Holze, Torsten",
+"1.459",
+"6,3 %",
+"6,3",
+"1.555",
+"6,6 %",
+"6,6"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"96",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1106": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1106 - Lichtenberg 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"32.731",
+"-",
+"-",
+"32.731",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"26.217",
+"80,1 %",
+"9,9",
+"26.217",
+"80,1 %",
+"9,9"
+],
+[
+"Ungültige Stimmen",
+"",
+"381",
+"1,5 %",
+"0,6",
+"274",
+"1,0 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"25.836",
+"98,5 %",
+"-0,6",
+"25.943",
+"99,0 %",
+"-0,5"
+],
+[
+"CDU",
+"Usik, Lilia",
+"4.794",
+"18,6 %",
+"-3,8",
+"4.032",
+"15,5 %",
+"-7,6"
+],
+[
+"SPD",
+"Pohle, René",
+"2.611",
+"10,1 %",
+"-9,3",
+"2.694",
+"10,4 %",
+"-6,8"
+],
+[
+"GRÜNE",
+"Ehlers, Daniela",
+"2.975",
+"11,5 %",
+"-4,7",
+"3.643",
+"14,0 %",
+"-2,6"
+],
+[
+"Die Linke",
+"Behrens, Julia",
+"8.081",
+"31,3 %",
+"9,6",
+"7.309",
+"28,2 %",
+"9,8"
+],
+[
+"AfD",
+"Drewes, Dietmar",
+"4.018",
+"15,6 %",
+"5,6",
+"4.199",
+"16,2 %",
+"6,3"
+],
+[
+"FDP",
+"Schultheiß, Joachim",
+"495",
+"1,9 %",
+"-1,5",
+"594",
+"2,3 %",
+"-1,7"
+],
+[
+"Tierschutzpartei",
+"Michel, Katja",
+"636",
+"2,5 %",
+"-1,7",
+"559",
+"2,2 %",
+"-0,7"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-",
+"230",
+"0,9 %",
+"-0,9"
+],
+[
+"Volt",
+"Jedelsky, Achim",
+"579",
+"2,2 %",
+"2,2",
+"731",
+"2,8 %",
+"1,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"-0,1"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"49",
+"0,2 %",
+"-0,1"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"38",
+"0,1 %",
+"-0,0"
+],
+[
+"HEIMAT",
+"",
+"-",
+"-",
+"-",
+"28",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,1"
+],
+[
+"BSW",
+"Wolf, Norman",
+"1.487",
+"5,8 %",
+"5,8",
+"1.681",
+"6,5 %",
+"6,5"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"122",
+"0,5 %",
+"0,5"
+],
+[
+"Dr. Gerken",
+"Dr. Gerken, Thomas",
+"160",
+"0,6 %",
+"0,6",
+"-",
+"-",
+"-"
+]
+]
+},
+"1201": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1201 - Reinickendorf 1 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"28.098",
+"-",
+"-",
+"28.098",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"17.551",
+"62,5 %",
+"12,3",
+"17.551",
+"62,5 %",
+"12,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"408",
+"2,3 %",
+"0,4",
+"247",
+"1,4 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"17.143",
+"97,7 %",
+"-0,4",
+"17.304",
+"98,6 %",
+"-0,2"
+],
+[
+"CDU",
+"Dregger, Burkard",
+"3.509",
+"20,5 %",
+"-16,7",
+"2.972",
+"17,2 %",
+"-17,4"
+],
+[
+"SPD",
+"König, Bettina",
+"2.756",
+"16,1 %",
+"-6,9",
+"2.190",
+"12,7 %",
+"-6,7"
+],
+[
+"GRÜNE",
+"Kamm, Jelisaweta",
+"1.336",
+"7,8 %",
+"-3,1",
+"1.498",
+"8,7 %",
+"-3,9"
+],
+[
+"Die Linke",
+"Caballero Alvarez, Pilar",
+"4.631",
+"27,0 %",
+"18,5",
+"4.898",
+"28,3 %",
+"20,1"
+],
+[
+"AfD",
+"Bernicke, Marc-Philipp",
+"3.403",
+"19,9 %",
+"8,3",
+"3.494",
+"20,2 %",
+"8,4"
+],
+[
+"FDP",
+"Dietze-Felberg, Peter",
+"310",
+"1,8 %",
+"-0,7",
+"351",
+"2,0 %",
+"-1,0"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,7",
+"491",
+"2,8 %",
+"-0,4"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,9",
+"114",
+"0,7 %",
+"-0,8"
+],
+[
+"Volt",
+"Dr. Sellmer, Sven",
+"376",
+"2,2 %",
+"2,2",
+"267",
+"1,5 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"23",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-0,2",
+"18",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Aydoǧan, Ömer",
+"822",
+"4,8 %",
+"4,8",
+"918",
+"5,3 %",
+"5,3"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"47",
+"0,3 %",
+"0,3"
+]
+]
+},
+"1202": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1202 - Reinickendorf 2 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"28.783",
+"-",
+"-",
+"28.783",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"19.078",
+"66,3 %",
+"11,4",
+"19.078",
+"66,3 %",
+"11,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"430",
+"2,3 %",
+"1,0",
+"257",
+"1,3 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"18.648",
+"97,7 %",
+"-1,0",
+"18.821",
+"98,7 %",
+"-0,2"
+],
+[
+"CDU",
+"Schönebeck, Felix",
+"5.986",
+"32,1 %",
+"-6,8",
+"4.285",
+"22,8 %",
+"-15,3"
+],
+[
+"SPD",
+"Stroedter, Laurence",
+"2.601",
+"13,9 %",
+"-8,9",
+"2.610",
+"13,9 %",
+"-6,6"
+],
+[
+"GRÜNE",
+"Schmidt, Bogusz",
+"1.405",
+"7,5 %",
+"-1,4",
+"1.518",
+"8,1 %",
+"-1,5"
+],
+[
+"Die Linke",
+"Gerke, Jessica",
+"3.277",
+"17,6 %",
+"12,5",
+"3.608",
+"19,2 %",
+"13,8"
+],
+[
+"AfD",
+"Wiedenhaupt, Christopher Marcel",
+"3.865",
+"20,7 %",
+"7,5",
+"4.278",
+"22,7 %",
+"9,8"
+],
+[
+"FDP",
+"Bergemann, Timo",
+"425",
+"2,3 %",
+"-1,6",
+"512",
+"2,7 %",
+"-1,2"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,9",
+"504",
+"2,7 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,5",
+"121",
+"0,6 %",
+"-0,5"
+],
+[
+"Volt",
+"Marx, Antonia",
+"308",
+"1,7 %",
+"1,7",
+"282",
+"1,5 %",
+"0,9"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"29",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,1 %",
+"-0,0"
+],
+[
+"BSW",
+"Dr. Önel, Serkan",
+"781",
+"4,2 %",
+"4,2",
+"986",
+"5,2 %",
+"5,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"47",
+"0,2 %",
+"0,2"
+]
+]
+},
+"1203": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1203 - Reinickendorf 3 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"30.061",
+"-",
+"-",
+"30.061",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"23.945",
+"79,7 %",
+"8,1",
+"23.945",
+"79,7 %",
+"8,1"
+],
+[
+"Ungültige Stimmen",
+"",
+"456",
+"1,9 %",
+"1,1",
+"267",
+"1,1 %",
+"0,5"
+],
+[
+"Gültige Stimmen",
+"",
+"23.489",
+"98,1 %",
+"-1,1",
+"23.678",
+"98,9 %",
+"-0,5"
+],
+[
+"CDU",
+"Graßelt, Niklas",
+"8.047",
+"34,3 %",
+"-9,8",
+"7.626",
+"32,2 %",
+"-9,5"
+],
+[
+"SPD",
+"Märkt, Samuel",
+"4.018",
+"17,1 %",
+"-5,2",
+"3.543",
+"15,0 %",
+"-5,7"
+],
+[
+"GRÜNE",
+"Zylka, Marei",
+"2.873",
+"12,2 %",
+"-0,2",
+"3.009",
+"12,7 %",
+"-0,2"
+],
+[
+"Die Linke",
+"Irmscher, Robert",
+"2.343",
+"10,0 %",
+"7,1",
+"2.660",
+"11,2 %",
+"7,8"
+],
+[
+"AfD",
+"Dr. Conradi, Ralf-Günther",
+"3.836",
+"16,3 %",
+"8,1",
+"3.915",
+"16,5 %",
+"8,2"
+],
+[
+"FDP",
+"Dr. Schramm, Dieter",
+"772",
+"3,3 %",
+"-1,4",
+"828",
+"3,5 %",
+"-2,4"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-2,9",
+"510",
+"2,2 %",
+"-0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,1",
+"112",
+"0,5 %",
+"-0,4"
+],
+[
+"Volt",
+"Hellwig, Sascha",
+"916",
+"3,9 %",
+"3,9",
+"623",
+"2,6 %",
+"2,2"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"17",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"18",
+"0,1 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"38",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Staege, Bernd",
+"684",
+"2,9 %",
+"2,9",
+"718",
+"3,0 %",
+"3,0"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"56",
+"0,2 %",
+"0,2"
+]
+]
+},
+"1204": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1204 - Reinickendorf 4 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"31.549",
+"-",
+"-",
+"31.549",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"22.787",
+"72,2 %",
+"8,5",
+"22.787",
+"72,2 %",
+"8,5"
+],
+[
+"Ungültige Stimmen",
+"",
+"453",
+"2,0 %",
+"1,0",
+"313",
+"1,4 %",
+"0,4"
+],
+[
+"Gültige Stimmen",
+"",
+"22.334",
+"98,0 %",
+"-1,0",
+"22.474",
+"98,6 %",
+"-0,4"
+],
+[
+"CDU",
+"Klon, Tomasz",
+"5.946",
+"26,6 %",
+"-14,7",
+"5.831",
+"25,9 %",
+"-13,6"
+],
+[
+"SPD",
+"Meyer, Sven",
+"4.205",
+"18,8 %",
+"-4,5",
+"3.446",
+"15,3 %",
+"-5,3"
+],
+[
+"GRÜNE",
+"Mensah, Georg",
+"2.455",
+"11,0 %",
+"-0,6",
+"2.519",
+"11,2 %",
+"-1,1"
+],
+[
+"Die Linke",
+"Dietrich, Sophia-Marie",
+"2.991",
+"13,4 %",
+"10,1",
+"3.301",
+"14,7 %",
+"10,6"
+],
+[
+"AfD",
+"Wiedenhaupt, Rolf",
+"4.356",
+"19,5 %",
+"9,7",
+"4.473",
+"19,9 %",
+"10,0"
+],
+[
+"FDP",
+"Jahn, David",
+"790",
+"3,5 %",
+"-0,7",
+"665",
+"3,0 %",
+"-1,8"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,0",
+"623",
+"2,8 %",
+"0,1"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,2",
+"147",
+"0,7 %",
+"-0,4"
+],
+[
+"Volt",
+"Dr. Gerlinger, Christoph",
+"433",
+"1,9 %",
+"1,9",
+"402",
+"1,8 %",
+"1,2"
+],
+[
+"MIETERPARTEI",
+"Lenz, Hans-Hartmut",
+"289",
+"1,3 %",
+"0,6",
+"-",
+"-",
+"-0,3"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"13",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"34",
+"0,2 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"5",
+"0,0 %",
+"0,0"
+],
+[
+"BSW",
+"Dr. Scholz, Thomas",
+"869",
+"3,9 %",
+"3,9",
+"917",
+"4,1 %",
+"4,1"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"88",
+"0,4 %",
+"0,4"
+]
+]
+},
+"1205": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1205 - Reinickendorf 5 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"27.604",
+"-",
+"-",
+"27.604",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"16.854",
+"61,1 %",
+"11,3",
+"16.854",
+"61,1 %",
+"11,3"
+],
+[
+"Ungültige Stimmen",
+"",
+"489",
+"2,9 %",
+"1,7",
+"329",
+"2,0 %",
+"0,8"
+],
+[
+"Gültige Stimmen",
+"",
+"16.365",
+"97,1 %",
+"-1,7",
+"16.525",
+"98,0 %",
+"-0,8"
+],
+[
+"CDU",
+"Krolo, Matea",
+"3.914",
+"23,9 %",
+"-19,9",
+"3.627",
+"21,9 %",
+"-19,0"
+],
+[
+"SPD",
+"Boyraci, Sevda",
+"2.284",
+"14,0 %",
+"-8,6",
+"2.162",
+"13,1 %",
+"-8,7"
+],
+[
+"GRÜNE",
+"Wanke, Nico",
+"1.063",
+"6,5 %",
+"0,1",
+"1.013",
+"6,1 %",
+"-0,5"
+],
+[
+"Die Linke",
+"Erdil, Gülistan",
+"3.101",
+"18,9 %",
+"15,1",
+"3.116",
+"18,9 %",
+"15,0"
+],
+[
+"AfD",
+"Ubbelohde, Carsten",
+"4.386",
+"26,8 %",
+"12,7",
+"4.373",
+"26,5 %",
+"12,1"
+],
+[
+"FDP",
+"Otto, Andreas",
+"399",
+"2,4 %",
+"-0,7",
+"393",
+"2,4 %",
+"-1,4"
+],
+[
+"Tierschutzpartei",
+"",
+"-",
+"-",
+"-3,3",
+"491",
+"3,0 %",
+"0,3"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-1,1",
+"100",
+"0,6 %",
+"-0,3"
+],
+[
+"Volt",
+"Müller, Nina",
+"292",
+"1,8 %",
+"1,8",
+"189",
+"1,1 %",
+"0,8"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"12",
+"0,1 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"7",
+"0,0 %",
+"0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"15",
+"0,1 %",
+"0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"9",
+"0,1 %",
+"0,0"
+],
+[
+"BSW",
+"Wiemann, Christiane",
+"926",
+"5,7 %",
+"5,7",
+"970",
+"5,9 %",
+"5,9"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"48",
+"0,3 %",
+"0,3"
+]
+]
+},
+"1206": {
+"titel": "Ergebnistabelle Wahl zum 20. Abgeordnetenhaus von Berlin am 20. September 2026, 1206 - Reinickendorf 6 Amtliches Endergebnis, 12.10.2026, 12:29:13",
+"zeilen": [
+[
+"Wahlberechtigte",
+"",
+"29.204",
+"-",
+"-",
+"29.204",
+"-",
+"-"
+],
+[
+"Wählende",
+"",
+"24.661",
+"84,4 %",
+"5,4",
+"24.661",
+"84,4 %",
+"5,4"
+],
+[
+"Ungültige Stimmen",
+"",
+"302",
+"1,2 %",
+"0,5",
+"182",
+"0,7 %",
+"0,2"
+],
+[
+"Gültige Stimmen",
+"",
+"24.359",
+"98,8 %",
+"-0,5",
+"24.479",
+"99,3 %",
+"-0,2"
+],
+[
+"CDU",
+"Gamp, Richard",
+"8.939",
+"36,7 %",
+"-9,0",
+"9.003",
+"36,8 %",
+"-7,2"
+],
+[
+"SPD",
+"Dr. Kottenstede, Kai",
+"4.109",
+"16,9 %",
+"-3,4",
+"3.575",
+"14,6 %",
+"-4,4"
+],
+[
+"GRÜNE",
+"Schedlich, Klara Josephine",
+"4.456",
+"18,3 %",
+"1,6",
+"4.085",
+"16,7 %",
+"1,4"
+],
+[
+"Die Linke",
+"Hennig, Ben",
+"1.740",
+"7,1 %",
+"4,8",
+"2.295",
+"9,4 %",
+"5,9"
+],
+[
+"AfD",
+"Ruschin, Thomas",
+"2.737",
+"11,2 %",
+"5,6",
+"2.839",
+"11,6 %",
+"5,6"
+],
+[
+"FDP",
+"Dr. Bernhardt, Wilfried",
+"961",
+"3,9 %",
+"-1,2",
+"1.044",
+"4,3 %",
+"-2,5"
+],
+[
+"Tierschutzpartei",
+"Rettinghaus, Leonhard",
+"436",
+"1,8 %",
+"-0,1",
+"373",
+"1,5 %",
+"-0,2"
+],
+[
+"Die PARTEI",
+"",
+"-",
+"-",
+"-0,9",
+"101",
+"0,4 %",
+"-0,3"
+],
+[
+"Volt",
+"Brinkmann, Peter",
+"516",
+"2,1 %",
+"2,1",
+"537",
+"2,2 %",
+"1,5"
+],
+[
+"Die Urbane.",
+"",
+"-",
+"-",
+"-",
+"8",
+"0,0 %",
+"-0,0"
+],
+[
+"DKP",
+"",
+"-",
+"-",
+"-",
+"10",
+"0,0 %",
+"-0,0"
+],
+[
+"ÖDP",
+"",
+"-",
+"-",
+"-",
+"26",
+"0,1 %",
+"-0,0"
+],
+[
+"SGP",
+"",
+"-",
+"-",
+"-",
+"4",
+"0,0 %",
+"-0,0"
+],
+[
+"BSW",
+"Erdmann, Philipp Benjamin",
+"465",
+"1,9 %",
+"1,9",
+"536",
+"2,2 %",
+"2,2"
+],
+[
+"PdF",
+"",
+"-",
+"-",
+"-",
+"43",
+"0,2 %",
+"0,2"
+]
+]
+}
+}
+}

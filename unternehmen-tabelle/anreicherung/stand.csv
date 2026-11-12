@@ -1120,3 +1120,153 @@ U002769,Saab,113,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei
 U001181,Skandinaviska Enskilda Banken,113,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker SEB)
 U002770,Skanska,113,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker SKA)
 U002771,Svenska Cellulosa Aktiebolaget,113,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker SCA)
+U001210,Svenska Handelsbanken,114,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker SHB)
+U002773,Tele2,114,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker TEL2)
+U001266,Volvo,114,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker VOLV)
+U002774,SCA,114,,104,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002775,SKF,114,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker SKF)
+U002806,Capgemeni,114,,100,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001191,Sopra Steria,114,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U001160,Sandoz,114,,102,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002812,Julius Bär,114,,72,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002813,Schindler Holding,114,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U001176,SIG Group,115,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002814,Baloise,115,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker BALN)
+U002815,Ems-Chemie,115,,101,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002816,Tecan Group,115,,100,Yahoo; GJ 2021-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002818,Galenica,115,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002819,BKW Energie,115,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002820,Clariant,115,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002821,Ams-Osram,115,,102,Yahoo; GJ 2021-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002822,Galderma,115,,89,Yahoo; GJ 2021-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U000515,SAP SE,115,,100,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U000985,HSBC Holdings Plc,116,,72,Yahoo; GJ 2022-2025,"Yahoo-Kürzel 0005.HK über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U000535,Siemens AG,116,LEI,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001058,LVMH Moët Hennessy,116,,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002847,BE Semiconductor Industries,116,,104,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U000852,BNP Paribas,116,,68,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U000867,Capgemini,116,,100,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U000868,Carrefour,116,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002849,Generali,116,,80,Yahoo; GJ 2021-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001097,Orange,116,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001161,Sanofi,116,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001165,Schneider Electric,117,,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U001235,TotalEnergies,117,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002850,Abitare In,117,,101,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002851,Aedes,117,,96,Yahoo; GJ 2021-2024,"GLEIF: kein eindeutiger Treffer | Yahoo-Kürzel AEDES.MI über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)"
+U002852,Aeffe,117,,100,Yahoo; GJ 2021-2024,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002855,Aquafil,117,,102,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002856,Ariston Holding,117,,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002857,Avio,117,,104,Yahoo; GJ 2021-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002859,Banca Profilo,117,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker BPA)
+U002860,Banca Sistema,117,,72,Yahoo; GJ 2021-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002862,Bastogi,118,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker BMI)
+U002864,Biesse,118,,100,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002867,Cairo Communication,118,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002868,Caleffi,118,,96,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002870,Cellularline,118,,103,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002875,Dexelance,118,,101,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002876,Digital Bros,118,,102,Yahoo; GJ 2022-2026,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002877,doValue,118,,104,Yahoo; GJ 2021-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002878,Elica,118,,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002879,Emak,118,,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002880,Enervit,119,,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002881,EPH Invest,119,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker EPR)
+U002882,Equita Group,119,,94,Geschäftsbericht (teilweise) + Yahoo; GJ 2021-2025,
+U002883,Esprinet,119,,104,Yahoo; GJ 2021-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002885,Eurotech,119,,100,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002886,Fidia,119,,100,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002889,FNM,119,,103,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002890,Gabetti,119,,99,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002891,Gas Plus,119,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002893,Generalfinance,119,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker GENFIN)
+U002894,Geox,120,,100,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002895,GPI,120,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002898,IMMSI,120,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker IMY)
+U002899,Indel B,120,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002900,Industrie De Nora,120,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker M3D)
+U002901,IRCE,120,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002902,Italian Exhibition Group,120,,102,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002903,Itway,120,,100,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002905,Landi Renzo,120,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker LR)
+U002906,MARR,120,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002907,Met.Extra Group,121,,100,Yahoo; GJ 2021-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002908,Mondo TV,121,,96,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002910,Olidata,121,,100,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002911,Orsero,121,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002912,Pininfarina,121,,100,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002913,Piquadro,121,,104,Yahoo; GJ 2023-2026,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002914,Pirelli & C.,121,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002916,Ratti,121,,102,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002917,RCS MediaGroup,121,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002918,Risanamento,121,,100,Yahoo; GJ 2021-2024,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002919,Sabaf,122,,100,Yahoo; GJ 2021-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002920,Seco,122,,102,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,
+U002921,Seri Industrial,122,,100,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002922,SIT,122,,102,Geschäftsbericht (teilweise) + Yahoo; GJ 2021-2025,
+U002924,SOGEFI,122,,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker SO)
+U002927,Sys-Dat,122,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001226,Technoprobe,122,,103,Geschäftsbericht (teilweise) + Yahoo; GJ 2021-2025,
+U002928,Tesmec,122,,100,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U002929,Tessellis,122,,97,Yahoo; GJ 2021-2024,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002932,Triboo,122,,103,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002933,Unidata,123,,78,Yahoo; GJ 2021-2024,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002934,Valsoia,123,,104,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002936,Zucchi,123,,78,Yahoo; GJ 2021-2024,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U002966,XYZ,123,,100,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001307,Aegean Airlines,123,LEI; Sitz; Handelsregisternummer,102,Yahoo; GJ 2022-2025,kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U001120,Public Power Corporation,123,LEI; Sitz; Handelsregisternummer,104,Yahoo; GJ 2022-2025,"Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003008,Cementos Argos,123,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Yahoo-Kürzel F25.F über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)"
+U003018,Interconexión Eléctrica,123,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker ISA)
+U003021,Mineros,123,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker MINEROS)
+U003023,Kweichow Moutai Co Ltd,123,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600519)
+U003024,Ping An Insurance Group Co of China Ltd,124,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601318)
+U003025,Contemporary Amperex Technology Co Ltd Class A,124,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 300750)
+U003026,China Merchants Bank Co Ltd,124,Handelsregisternummer,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600036)
+U003027,Midea Group Co Ltd,124,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003028,Wuliangye Yibin Co Ltd,124,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer
+U003029,China Yangtze Power Co Ltd,124,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600900)
+U003030,Industrial Bank Co Ltd,124,,72,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Yahoo-Kürzel 601166.SS über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003031,Zijin Mining Group Co Ltd Class A,124,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601899)
+U003032,CITIC Securities Co Ltd,124,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600030)
+U003033,Jiangsu Hengrui Medicine Co Ltd,124,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600276)
+U003034,Industrial and Commercial Bank of China Ltd,125,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601398)
+U003035,Inner Mongolia Yili Industrial Group Co Ltd,125,,104,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003036,East Money Information Co Ltd,125,,100,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003039,BYD Co Ltd Class A,125,,104,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003040,Bank of Communications Co,125,,69,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003041,Wanhua Chemical Group Co Ltd,125,,104,Yahoo; GJ 2021-2024,"GLEIF: kein eindeutiger Treffer | Yahoo-Kürzel 600309.SS über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)"
+U003042,BOE Technology Group Co Ltd,125,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003043,Bank of Jiangsu Co Ltd,125,,72,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003044,Luxshare Precision Industry Co Ltd,125,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003046,Agricultural Bank of China Ltd Class A,125,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601288)
+U003048,Luzhou Lao Jiao Co Ltd,126,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003050,China Shenhua Energy Co,126,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601088)
+U003051,Beijing-Shanghai High Speed Railway Co Ltd,126,,100,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003052,China Petroleum & Chemical Corp Class A,126,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600028)
+U003053,Shanxi Xinghuacun Fen Wine Factory Co Ltd,126,,104,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003054,China State Construction Engineering Corp Ltd,126,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601668)
+U003055,WuXi AppTec Co Ltd,126,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 603259)
+U003057,Ping An Bank Co Ltd,126,,72,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003059,China Minsheng Banking Corp Ltd,126,,72,Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003060,PetroChina Co Ltd Class A,126,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601857)
+U003061,Shaanxi Coal Industry Co Ltd,127,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601225)
+U003063,Semiconductor Manufacturing Intl Co,127,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 981)
+U003064,ZTE Corp,127,,104,Geschäftsbericht (teilweise) + Yahoo; GJ 2022-2025,GLEIF: kein eindeutiger Treffer
+U003065,Bank of China Limited,127,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601988)
+U003066,S.F. Holding Co. Ltd,127,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003067,NARI Technology Co Ltd,127,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Yahoo-Kürzel 600406.SS über Namenssuche (Name gleich), Ticker in Tabelle fehlte/passte nicht | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)"
+U003068,China Mobile Limited,127,LEI; Sitz; Handelsregisternummer,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 0941)
+U003069,Weichai Power Co Ltd Class A,127,,101,Yahoo; GJ 2021-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003070,China United Network Communications Ltd,127,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600050)
+U003071,Iflytek Co Ltd,127,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003073,China Telecom Corp Ltd,128,Handelsregisternummer,0,,keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 601728)
+U003074,Sungrow Power Supply Co Ltd,128,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003075,Bank of Ningbo Co Ltd,128,,72,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003077,Qinghai Salt Lake Industry Co.Ltd,128,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003078,China Pacific Insurance Group Co Ltd,128,,77,Yahoo; GJ 2021-2025,GLEIF: kein eindeutiger Treffer | kein Geschäftsbericht-PDF gefunden (Quellen-Dokumente und IR-Seite)
+U003079,TCL Technology Group Corporation,128,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003081,Shanghai Pudong Development Bank Co Ltd,128,,72,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003082,Sany Heavy Industry Co Ltd,128,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600031)
+U003083,China National Nuclear Power,128,,104,Yahoo; GJ 2022-2025,"GLEIF: kein eindeutiger Treffer | Geschäftsbericht-Link vorhanden, Werte dort nicht gefunden"
+U003084,China CSSC Holdings Ltd,128,,0,,GLEIF: kein eindeutiger Treffer | keine Kennzahlen: weder Geschäftsbericht gefunden noch bei Yahoo Daten (Ticker 600150)
